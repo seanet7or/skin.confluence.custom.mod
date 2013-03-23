@@ -720,6 +720,7 @@
 		<include>CommonNowPlaying</include>
 		<include>MainWindowMouseButtons</include>
 		<control type="group">
+			<visible>!Skin.HasSetting(KioskMode)</visible>
 			<posx>-250</posx>
 			<include>SideBladeLeft</include>
 			<control type="grouplist" id="9000">
