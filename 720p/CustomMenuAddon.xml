@@ -44,7 +44,7 @@
 				<aligny>center</aligny>
 				<textcolor>blue</textcolor>
 				<shadowcolor>black</shadowcolor>
-				<label>$LOCALIZE[31201]</label>
+				<label>$LOCALIZE[31143]</label>
 			</control>
 			<control type="list" id="450">
 				<posx>390r</posx>
@@ -109,7 +109,7 @@
 				<content>
 					<item id="1">
 						<description>Clear Setting</description>
-						<label>$LOCALIZE[31202]</label>
+						<label>$LOCALIZE[31144]</label>
 						<include>ClearButtonChoice</include>
 						<include>CloseMenuChoice</include>
 					</item>
@@ -166,21 +166,21 @@
 					</item>
 					<item id="7">
 						<description>Video Nodes</description>
-						<label>$LOCALIZE[1212] - $LOCALIZE[31203]</label>
+						<label>$LOCALIZE[1212] - $LOCALIZE[31145]</label>
 						<include>ClearButtonChoice</include>
 						<onclick>Skin.Setpath(UsrSelectAddon,library://video/)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,ActivateWindow(Videos,$INFO[Skin.String(UsrSelectAddon)],return))</onclick>
-						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[31203])</onclick>
+						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[31145])</onclick>
 						<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Sub,Videos)</onclick>
 						<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Type,Videos)</onclick>
 						<include>CloseMenuChoice</include>
 					</item>
 					<item id="8">
 						<description>Cinema</description>
-						<label>$LOCALIZE[24000] - $LOCALIZE[31204]</label>
+						<label>$LOCALIZE[24000] - $LOCALIZE[31146]</label>
 						<include>ClearButtonChoice</include>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,RunScript(script.cinema.experience,movietitles))</onclick>
-						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[31204])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[31146])</onclick>
 						<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Sub,Movies)</onclick>
 						<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Type,Movies)</onclick>
 						<include>CloseMenuChoice</include>
@@ -274,7 +274,7 @@
 					</item>
 					<item id="17">
 						<description>Video Streaming File</description>
-						<label>$LOCALIZE[31205]</label>
+						<label>$LOCALIZE[31147]</label>
 						<include>ClearButtonChoice</include>
 						<onclick>Skin.SetFile(UsrSelectAddon,.strm,/)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[33002])</onclick>
