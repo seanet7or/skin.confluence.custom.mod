@@ -233,12 +233,12 @@
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
-						<label>31106</label>
+						<label>31068</label>
 						<textcolor>blue</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-					</control>
+					</control>					
 					<control type="radiobutton" id="101">
 						<width>750</width>
 						<height>40</height>
@@ -275,19 +275,93 @@
 						<onclick>Skin.ToggleSetting(HideBackGroundFanart)</onclick>
 						<selected>Skin.HasSetting(HideBackGroundFanart)</selected>
 					</control>
-					<control type="radiobutton" id="104">
+					<control type="label" id="104">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>31062</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>					
+					<control type="radiobutton" id="105">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
-						<label>31129</label>
+						<label>31063</label>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideVisualizationFanart)</onclick>
-						<selected>Skin.HasSetting(HideVisualizationFanart)</selected>
+						<selected>!Skin.HasSetting(HideVisualizationFanart)</selected>
 					</control>
-					<control type="radiobutton" id="105">
+					<control type="radiobutton" id="106">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>31067</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(AnimateVizFanart)</onclick>
+						<selected>Skin.HasSetting(AnimateVizFanart)</selected>
+						<enable>!Skin.HasSetting(HideVisualizationFanart)</enable>
+					</control>
+					<control type="radiobutton" id="107">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>31064</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(AllowTransparentFanart)</onclick>
+						<selected>Skin.HasSetting(AllowTransparentFanart)</selected>
+						<enable>!Skin.HasSetting(HideVisualizationFanart)</enable>
+					</control>
+					<control type="radiobutton" id="108">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>31065</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(AllowVizExtraFanart)</onclick>
+						<onclick>Skin.Reset(AllowSlideShowArt)</onclick>
+						<selected>Skin.HasSetting(AllowVizExtraFanart)</selected>
+						<enable>!Skin.HasSetting(HideVisualizationFanart)</enable>
+					</control>
+					<control type="radiobutton" id="109">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>31066</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(AllowSlideShowArt)</onclick>
+						<onclick>Skin.Reset(AllowVizExtraFanart)</onclick>
+						<selected>Skin.HasSetting(AllowSlideShowArt)</selected>
+						<enable>System.HasAddon(script.artistslideshow) + !Skin.HasSetting(HideVisualizationFanart)</enable>
+					</control>
+					<control type="label" id="110">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>31106</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="radiobutton" id="111">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -299,7 +373,7 @@
 						<onclick>Skin.ToggleSetting(ShowBackgroundVideo)</onclick>
 						<selected>!Skin.HasSetting(ShowBackgroundVideo)</selected>
 					</control>
-					<control type="radiobutton" id="106">
+					<control type="radiobutton" id="112">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -311,7 +385,7 @@
 						<onclick>Skin.ToggleSetting(ShowBackgroundVis)</onclick>
 						<selected>!Skin.HasSetting(ShowBackgroundVis)</selected>
 					</control>
-					<control type="radiobutton" id="107">
+					<control type="radiobutton" id="113">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -323,7 +397,7 @@
 						<onclick>Skin.ToggleSetting(AutoScroll)</onclick>
 						<selected>Skin.HasSetting(AutoScroll)</selected>
 					</control>
-					<control type="radiobutton" id="108">
+					<control type="radiobutton" id="114">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -335,7 +409,7 @@
 						<onclick>Skin.ToggleSetting(Show_SlideShow_Paused)</onclick>
 						<selected>!Skin.HasSetting(Show_SlideShow_Paused)</selected>
 					</control>
-					<control type="radiobutton" id="109">
+					<control type="radiobutton" id="115">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -347,7 +421,7 @@
 						<onclick>Skin.ToggleSetting(WindowedTrailer)</onclick>
 						<selected>Skin.HasSetting(WindowedTrailer)</selected>
 					</control>
-					<control type="radiobutton" id="110">
+					<control type="radiobutton" id="116">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -359,7 +433,7 @@
 						<onclick>Skin.ToggleSetting(HideFilenameFlagging)</onclick>
 						<selected>Skin.HasSetting(HideFilenameFlagging)</selected>
 					</control>
-					<control type="label" id="111">
+					<control type="label" id="117">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -370,7 +444,7 @@
 						<aligny>center</aligny>
 						<visible>System.HasAddon(script.tvtunes)</visible>
 					</control>
-					<control type="radiobutton" id="112">
+					<control type="radiobutton" id="118">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -383,7 +457,7 @@
 						<selected>Skin.HasSetting(ActivateTvTunes)</selected>
 						<visible>System.HasAddon(script.tvtunes)</visible>
 					</control>
-					<control type="label" id="113">
+					<control type="label" id="119">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -393,7 +467,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="114">
+					<control type="radiobutton" id="120">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -405,7 +479,7 @@
 						<onclick>Skin.ToggleSetting(Use_Startup_Playlist)</onclick>
 						<selected>Skin.HasSetting(Use_Startup_Playlist)</selected>
 					</control>
-					<control type="button" id="115">
+					<control type="button" id="121">
 						<description>Startup Playlist Path</description>
 						<width>750</width>
 						<height>40</height>
