@@ -93,10 +93,6 @@
 			</control>	
 			<visible>Skin.HasSetting(AllowTransparentFanart) + !IsEmpty(Visualisation.Name) + !stringcompare(Visualisation.Name,Waveform) + !stringcompare(Visualisation.Name,DirectX Spectrum)</visible>
 		</control>
-		
-		
-		
-		
 		<!-- media infos -->
 		<control type="group">
 			<animation effect="fade" time="200">VisibleChange</animation>
@@ -157,6 +153,31 @@
 				<height>230</height>
 				<texture>HomeNowPlayingBack.png</texture>
 			</control>
+			<control type="group">
+				<animation effect="slide" start="-275,275" end="0,0" time="1000" tween="cubic" easing="out" delay="1000">WindowOpen</animation>
+				<animation effect="slide" start="0,0" end="-275,275" time="400" tween="cubic" easing="in" delay="400">WindowClose</animation>
+				<control type="image">
+					<posx>-250</posx>
+					<posy>250r</posy>
+					<width>500</width>
+					<height>500</height>
+					<aligny>center</aligny>
+					<texture>livecdcase/DefaultCDArt.png</texture>
+					<aspectratio align="center">keep</aspectratio>
+					<animation effect="rotate" end="-360" center="auto" time="4000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+				</control>
+				<control type="image">
+					<posx>-250</posx>
+					<posy>250r</posy>
+					<width>500</width>
+					<height>500</height>
+					<aligny>center</aligny>
+					<texture diffuse="livecdcase/cddiffuse.png" background="true">$INFO[Player.FolderPath]cdart.png</texture>
+					<aspectratio align="center">keep</aspectratio>
+					<animation effect="rotate" end="-360" center="auto" time="4000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+				</control>
+				<visible>!Skin.HasSetting(HideVisualizationCDart)</visible>
+			</control>
 			<control type="image">
 				<description>cover image</description>
 				<posx>20</posx>
@@ -167,27 +188,23 @@
 				<aspectratio aligny="bottom">keep</aspectratio>
 				<bordertexture border="8">ThumbShadow.png</bordertexture>
 				<bordersize>8</bordersize>
+				<visible>Skin.HasSetting(HideVisualizationCDart)</visible>
 			</control>
 			<control type="group">
 				<posx>330</posx>
-				<posy>185r</posy>
-				<control type="label" id="1">
-					<description>Heading label</description>
+				<posy>230r</posy>
+				<control type="image">
 					<posx>0</posx>
-					<posy>0</posy>
-					<width>910</width>
-					<height>25</height>
-					<align>left</align>
-					<font>font13</font>
-					<label>$LOCALIZE[31040]</label>
-					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
-					<animation effect="slide" start="0,0" end="0,25" time="0" condition="IsEmpty(MusicPlayer.Artist) + IsEmpty(MusicPlayer.Album)">conditional</animation>
+					<posy>-10</posy>
+					<width>200</width>
+					<height>78</height>
+					<texture fallback="XBMC_Logo.png">$INFO[Player.FolderPath,,../logo.png]</texture>
+					<aspectratio align="bottom">keep</aspectratio>
 				</control>
 				<control type="label" id="1">
 					<description>Artist label</description>
 					<posx>20</posx>
-					<posy>30</posy>
+					<posy>75</posy>
 					<width>910</width>
 					<height>25</height>
 					<align>left</align>
@@ -198,7 +215,7 @@
 				</control>
 				<control type="grouplist">
 					<posx>20</posx>
-					<posy>60</posy>
+					<posy>105</posy>
 					<width>910</width>
 					<height>35</height>
 					<itemgap>5</itemgap>
@@ -246,7 +263,7 @@
 				</control>
 				<control type="label">
 					<posx>0</posx>
-					<posy>120</posy>
+					<posy>180</posy>
 					<width>910</width>
 					<height>25</height>
 					<label>$LOCALIZE[209]: $INFO[MusicPlayer.offset(1).Artist,, - ]$INFO[MusicPlayer.offset(1).Title]</label>
