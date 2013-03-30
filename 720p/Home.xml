@@ -458,7 +458,10 @@
 			<description>Controls for currently playing media</description>
 			<posx>545r</posx>
 			<posy>370</posy>
-			<animation effect="slide" start="0,0" end="365,0" time="300" condition="!Player.HasMedia">conditional</animation>
+			<!--animation effect="slide" start="0,0" end="365,0" time="300" condition="!Player.HasMedia">conditional</animation-->
+			<animation effect="slide" start="0,0" end="-100,0" time="300" condition="!Player.HasMedia + !Skin.HasSetting(HideHomeStats)">conditional</animation>
+			<animation effect="slide" start="0,0" end="365,0" time="300" condition="!Player.HasMedia + Skin.HasSetting(HideHomeStats)">conditional</animation>
+			
 			<animation type="WindowOpen" reversible="false">
 				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
 				<effect type="fade" start="0" end="100" time="300" />
@@ -518,8 +521,11 @@
 					<height>35</height>
 					<texture flipy="true" border="0,5,0,0">HomeSubNF.png</texture>
 					<colordiffuse>CCFFFFFF</colordiffuse>
+					<animation effect="zoom" start="0,0,205,35" end="0,0,465,35" delay="0" time="300" condition="!Player.HasMedia + !Skin.HasSetting(HideHomeStats)">conditional</animation>
+					<visible>Player.HasMedia | !Skin.HasSetting(HideHomeStats)</visible>
 				</control>
 				<control type="group">
+					<animation effect="slide" end="0,35" time="300" condition="!Player.HasMedia">conditional</animation>
 					<visible>!VideoPlayer.Content(LiveTV)</visible>
 					<control type="button" id="601">
 						<posx>10</posx>
@@ -691,6 +697,7 @@
 				</control>
 			</control>
 			<control type="radiobutton" id="607">
+				<animation effect="slide" end="0,35" time="300" condition="!Player.HasMedia">conditional</animation>
 				<colordiffuse>CCFFFFFF</colordiffuse>
 				<description>Go to fullscreen Playback</description>
 				<posx>385</posx>
@@ -717,7 +724,20 @@
 				<ondown>9000</ondown>
 				<enable>Player.HasMedia</enable>
 			</control>
-		</control>
+			<control type="label">
+				<posx>190</posx>
+				<posy>7</posy>
+				<height>20</height>
+				<width>450</width>
+				<label>$VAR[InfoBarStats]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font12_title</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<visible>!Player.HasMedia + !Skin.HasSetting(HideHomeStats)</visible>
+			</control>
+		</control>		
 		<control type="group">
 			<posy>400</posy>
 			<animation type="WindowOpen" reversible="false">
@@ -739,7 +759,6 @@
 					<onright>9010</onright>
 					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Videos)</visible>
 					<include>HomeSubMenuVideos</include>
-					<!-- Buttons for the grouplist -->
 				</control>
 				<control type="grouplist" id="9016">
 					<include>HomeSubMenuCommonValues</include>
@@ -747,7 +766,6 @@
 					<onright>9016</onright>
 					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Movies)</visible>
 					<include>HomeSubMenuMovies</include>
-					<!-- Buttons for the grouplist -->
 				</control>
 				<control type="grouplist" id="9017">
 					<include>HomeSubMenuCommonValues</include>
@@ -755,7 +773,6 @@
 					<onright>9017</onright>
 					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),TVShows)</visible>
 					<include>HomeSubMenuTVShows</include>
-					<!-- Buttons for the grouplist -->
 				</control>
 				<control type="grouplist" id="9011">
 					<include>HomeSubMenuCommonValues</include>
@@ -763,7 +780,6 @@
 					<onright>9011</onright>
 					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Music)</visible>
 					<include>HomeSubMenuMusic</include>
-					<!-- Buttons for the grouplist -->
 				</control>
 				<control type="grouplist" id="9012">
 					<include>HomeSubMenuCommonValues</include>
@@ -771,7 +787,6 @@
 					<onright>9012</onright>
 					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Settings)</visible>
 					<include>HomeSubMenuSystem</include>
-					<!-- Buttons for the grouplist -->
 				</control>
 				<control type="grouplist" id="9013">
 					<include>HomeSubMenuCommonValues</include>
@@ -779,7 +794,6 @@
 					<onright>9013</onright>
 					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),PlayDisc)</visible>
 					<include>HomeSubMenuPlayDisc</include>
-					<!-- Buttons for the grouplist -->
 				</control>
 				<control type="grouplist" id="9014">
 					<include>HomeSubMenuCommonValues</include>
@@ -787,7 +801,6 @@
 					<onright>9014</onright>
 					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),LiveTV)</visible>
 					<include>HomeSubMenuLiveTV</include>
-					<!-- Buttons for the grouplist -->
 				</control>
 				<control type="grouplist" id="9015">
 					<include>HomeSubMenuCommonValues</include>
@@ -795,9 +808,9 @@
 					<onright>9013</onright>
 					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Pictures)</visible>
 					<include>HomeSubMenuPictures</include>
-					<!-- Buttons for the grouplist -->
 				</control>
 			</control>
+			
 			<control type="image">
 				<posx>-100</posx>
 				<posy>0</posy>
