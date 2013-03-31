@@ -129,15 +129,6 @@
 					<onclick>right</onclick>
 					<onclick>Filter</onclick>
 				</control>
-				<control type="radiobutton" id="99">
-					<description>Show Info Toggle</description>
-					<textwidth>170</textwidth>
-					<include>ButtonCommonValues</include>
-					<label>31005</label>
-					<onclick>Skin.ToggleSetting(View508HideInfo)</onclick>
-					<selected>Skin.HasSetting(View508HideInfo)</selected>
-					<visible>Control.IsVisible(508)</visible>
-				</control>
 				<control type="label" id="201">
 					<width>250</width>
 					<height>35</height>
@@ -146,6 +137,24 @@
 					<textcolor>blue</textcolor>
 					<align>center</align>
 					<aligny>center</aligny>
+				</control>
+				<control type="radiobutton" id="98">
+					<description>Show Logo Toggle</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>31306</label>
+					<onclick>Skin.ToggleSetting(View515Hidelogo)</onclick>
+					<selected>Skin.HasSetting(View515Hidelogo)</selected>
+					<visible>Control.IsVisible(515)</visible>
+				</control>
+				<control type="radiobutton" id="99">
+					<description>Show Info Toggle</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>31005</label>
+					<onclick>Skin.ToggleSetting(View508HideInfo)</onclick>
+					<selected>Skin.HasSetting(View508HideInfo)</selected>
+					<visible>Control.IsVisible(508)</visible>
 				</control>
 				<control type="radiobutton" id="14">
 					<description>Watched Toggle</description>
