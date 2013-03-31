@@ -138,6 +138,15 @@
 					<align>center</align>
 					<aligny>center</aligny>
 				</control>
+				<control type="radiobutton" id="97">
+					<description>Show ExtraFanArt Toggle</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>31305</label>
+					<onclick>Skin.ToggleSetting(View504XtraFanArt)</onclick>
+					<selected>!Skin.HasSetting(View504XtraFanArt)</selected>
+					<visible>Control.IsVisible(504)</visible>
+				</control>
 				<control type="radiobutton" id="98">
 					<description>Show Logo Toggle</description>
 					<textwidth>170</textwidth>
