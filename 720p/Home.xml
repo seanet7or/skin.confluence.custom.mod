@@ -437,7 +437,7 @@
 				</control>
 			</control>
 		</control>
-		<include condition="!Skin.HasSetting(HomepageHideRecentlyAddedVideo) | !Skin.HasSetting(HomepageHideRecentlyAddedAlbums)">HomeRecentlyAddedInfo</include>
+		<include condition="!Skin.HasSetting(HomepageHideRecentlyAddedVideo) | !Skin.HasSetting(HomepageHideRecentlyAddedAlbums) | !Skin.HasSetting(HomepageHideRecentlyAddedConcerts)">HomeRecentlyAddedInfo</include>
 		<control type="button" id="9003">
 			<description>Hidden Button to pass through navigation when recently added is disabled</description>
 			<posx>-20</posx>
@@ -809,8 +809,14 @@
 					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Pictures)</visible>
 					<include>HomeSubMenuPictures</include>
 				</control>
+				<control type="grouplist" id="9019">
+					<include>HomeSubMenuCommonValues</include>
+					<onleft>9019</onleft>
+					<onright>9019</onright>
+					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Concerts)</visible>
+					<include>HomeSubMenuConcerts</include>
+				</control>
 			</control>
-			
 			<control type="image">
 				<posx>-100</posx>
 				<posy>0</posy>

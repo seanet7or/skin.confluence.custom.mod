@@ -297,6 +297,43 @@
 			<texture border="0,0,0,3">HomeSubEnd.png</texture>
 		</control>
 	</include>
+	<include name="HomeSubMenuConcerts">
+		<control type="image" id="90181">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+		</control>
+		<control type="button" id="90182">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>31328</label>
+			<onclick>ActivateWindow(Videos,RecentlyAddedMusicVideos,return)</onclick>
+		</control>
+		<control type="button" id="90183">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>369</label>
+			<onclick>ActivateWindow(Videos,MusicVideoTitles,return)</onclick>
+		</control>
+		<control type="button" id="90184">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>135</label>
+			<onclick>ActivateWindow(Videos,MusicVideoGenres,return)</onclick>
+		</control>
+		<control type="button" id="90185">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>652</label>
+			<onclick>ActivateWindow(Videos,MusicVideoYears,return)</onclick>
+		</control>
+		<control type="button" id="90186">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>20459</label>
+			<onclick>ActivateWindow(Videos,MusicVideoTags,return)</onclick>
+		</control>
+		<control type="image" id="90187">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3">HomeSubEnd.png</texture>
+		</control>
+	</include>	
 	<include name="HomeAddonItemsVideos">
 		<item>
 			<label>$INFO[system.addontitle(Skin.String(HomeVideosButton1))]</label>
