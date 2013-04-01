@@ -63,7 +63,7 @@
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayDisc) + System.HasMediaDVD">$INFO[System.DVDLabel,[B][COLOR=blue]$LOCALIZE[427]: [/COLOR][/B]]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayDisc) + !System.HasMediaDVD">$LOCALIZE[31305,[B][COLOR=blue]$LOCALIZE[427]: [/COLOR][/B]]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Weather)">[B][COLOR=blue]$LOCALIZE[143][/COLOR][/B] $INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits]  [B][COLOR=blue]$LOCALIZE[31302][/COLOR][/B] $INFO[Window(Weather).Property(Day0.Outlook)]</value>
-		<value condition="!substring(System.CPUTemperature,?)">$INFO[Network.IPAddress,[B][COLOR=blue]IP: [/COLOR][/B]]     $INFO[System.CPUUsage,[B][COLOR=blue]CPU: [/COLOR][/B]]     $INFO[System.CPUTemperature,[B][COLOR=blue]$LOCALIZE[401]: [/COLOR][/B]]</value>
+		<value condition="!substring(System.CPUTemperature,?)">$INFO[Network.IPAddress,[B][COLOR=blue]IP: [/COLOR][/B]]     $INFO[System.CPUTemperature,[B][COLOR=blue]$LOCALIZE[401]: [/COLOR][/B]]     $INFO[System.CPUUsage,[B][COLOR=blue]CPU: [/COLOR][/B]]</value>
 		<value>$INFO[Network.IPAddress,[B][COLOR=blue]IP: [/COLOR][/B]]     $INFO[system.memory(used.percent),[B][COLOR=blue]RAM: [/COLOR][/B]]     $INFO[System.CPUUsage,[B][COLOR=blue]CPU: [/COLOR][/B]]</value>
 	</variable>
 	<include name="ClearButtonChoice">
