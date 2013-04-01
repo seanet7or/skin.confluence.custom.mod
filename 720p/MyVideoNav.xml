@@ -154,7 +154,7 @@
 					<label>31306</label>
 					<onclick>Skin.ToggleSetting(View515Hidelogo)</onclick>
 					<selected>Skin.HasSetting(View515Hidelogo)</selected>
-					<visible>Control.IsVisible(515)</visible>
+					<visible>Control.IsVisible(515)+ !Container.Content(Seasons)</visible>
 				</control>
 				<control type="radiobutton" id="99">
 					<description>Show Info Toggle</description>

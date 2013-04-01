@@ -1456,6 +1456,16 @@
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture diffuse="Fanart_Diffuse.png" background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Art(fanart)]</texture>
 				</control>
+				<control type="image">
+					<posx>10</posx>
+					<posy>345</posy>
+					<width>540</width>
+					<height>80</height>
+					<aspectratio align="left" aligny="bottom">keep</aspectratio>
+					<fadetime>IconCrossfadeTime</fadetime>
+					<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+					<visible>!Skin.HasSetting(View515Hidelogo) + !IsEmpty(ListItem.Title) + !IsEmpty(ListItem.Art(clearlogo))</visible>
+				</control>
 				<control type="label">
 					<posx>10</posx>
 					<posy>395</posy>
@@ -1467,6 +1477,7 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>$INFO[ListItem.Label]</label>
+					<visible>Skin.HasSetting(View515Hidelogo) | IsEmpty(ListItem.Title) | IsEmpty(ListItem.Art(clearlogo))</visible>
 				</control>
 				<control type="textbox">
 					<description>Description Value for Video</description>
