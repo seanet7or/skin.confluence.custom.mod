@@ -696,7 +696,19 @@
 						<onclick>Skin.ToggleSetting(AutoHideSubMenu)</onclick>
 						<selected>!Skin.HasSetting(AutoHideSubMenu)</selected>
 					</control>
-					<control type="label" id="209">
+					<control type="radiobutton" id="209">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>31114</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(AutoHidePowerBtn)</onclick>
+						<selected>!Skin.HasSetting(AutoHidePowerBtn)</selected>
+					</control>
+					<control type="label" id="210">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -706,7 +718,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="button" id="210">
+					<control type="button" id="211">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -720,7 +732,7 @@
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.1.Label))">Skin.SetString(HomeItem.1.Label)</onclick>
 					</control>
-					<control type="button" id="211">
+					<control type="button" id="212">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -734,7 +746,7 @@
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.2.Label))">Skin.SetString(HomeItem.2.Label)</onclick>
 					</control>
-					<control type="button" id="212">
+					<control type="button" id="213">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -748,7 +760,7 @@
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.3.Label))">Skin.SetString(HomeItem.3.Label)</onclick>
 					</control>
-					<control type="button" id="213">
+					<control type="button" id="214">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -762,7 +774,7 @@
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.4.Label))">Skin.SetString(HomeItem.4.Label)</onclick>
 					</control>
-					<control type="button" id="214">
+					<control type="button" id="215">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -776,7 +788,7 @@
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.5.Label))">Skin.SetString(HomeItem.5.Label)</onclick>
 					</control>
-					<control type="button" id="215">
+					<control type="button" id="216">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -790,7 +802,7 @@
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.6.Label))">Skin.SetString(HomeItem.6.Label)</onclick>
 					</control>
-					<control type="button" id="216">
+					<control type="button" id="217">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -804,7 +816,7 @@
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.7.Label))">Skin.SetString(HomeItem.7.Label)</onclick>
 					</control>
-					<control type="button" id="217">
+					<control type="button" id="218">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -818,7 +830,7 @@
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.8.Label))">Skin.SetString(HomeItem.8.Label)</onclick>
 					</control>
-					<control type="button" id="218">
+					<control type="button" id="219">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -832,7 +844,7 @@
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.9.Label))">Skin.SetString(HomeItem.9.Label)</onclick>
 					</control>
-					<control type="button" id="219">
+					<control type="button" id="220">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>

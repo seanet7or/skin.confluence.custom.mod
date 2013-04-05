@@ -450,7 +450,8 @@
 			<texturenofocus>-</texturenofocus>
 			<onleft>9000</onleft>
 			<onright>9000</onright>
-			<onup>20</onup>
+			<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
+			<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
 			<ondown>608</ondown>
 			<visible>false</visible>
 		</control>
@@ -1076,14 +1077,16 @@
 		</control>
 		<control type="group" id="9002">
 			<onup>9001</onup>
-			<ondown>20</ondown>
+			<ondown condition="!Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+			<ondown condition="Skin.HasSetting(AutoHidePowerBtn)">21</ondown>
 			<control type="fixedlist" id="700">
 				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(700).NumItems,2) | StringCompare(Container(700).NumItems,4)">conditional</animation>
 				<visible>StringCompare(Container(9000).ListItem.Property(HiLiteItem),Videos) | StringCompare(Container(9000).ListItem.Property(HiLiteItem),Movies) | StringCompare(Container(9000).ListItem.Property(HiLiteItem),TVShows)</visible>
 				<onleft>700</onleft>
 				<onright>700</onright>
 				<onup>9001</onup>
-				<ondown>20</ondown>
+				<ondown condition="!Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+				<ondown condition="Skin.HasSetting(AutoHidePowerBtn)">21</ondown>
 				<include>HomeAddonsCommonLayout</include>
 				<content>
 					<include>HomeAddonItemsVideos</include>
@@ -1095,7 +1098,8 @@
 				<onleft>703</onleft>
 				<onright>703</onright>
 				<onup>9001</onup>
-				<ondown>20</ondown>
+				<ondown condition="!Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+				<ondown condition="Skin.HasSetting(AutoHidePowerBtn)">21</ondown>
 				<include>HomeAddonsCommonLayout</include>
 				<content>
 					<include>HomeAddonItemsMusic</include>
@@ -1107,7 +1111,8 @@
 				<onleft>704</onleft>
 				<onright>704</onright>
 				<onup>9001</onup>
-				<ondown>20</ondown>
+				<ondown condition="!Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+				<ondown condition="Skin.HasSetting(AutoHidePowerBtn)">21</ondown>
 				<include>HomeAddonsCommonLayout</include>
 				<content>
 					<include>HomeAddonItemsPictures</include>
@@ -1119,7 +1124,8 @@
 				<onleft>705</onleft>
 				<onright>705</onright>
 				<onup>9001</onup>
-				<ondown>20</ondown>
+				<ondown condition="!Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+				<ondown condition="Skin.HasSetting(AutoHidePowerBtn)">21</ondown>
 				<include>HomeAddonsCommonLayout</include>
 				<content>
 					<include>HomeAddonItemsPrograms</include>
@@ -1142,6 +1148,20 @@
 				<textcolor>blue</textcolor>
 				<titlecolor>blue</titlecolor>
 				<headlinecolor>white</headlinecolor>
+				<visible>!Skin.HasSetting(AutoHidePowerBtn)</visible>
+			</control>
+			<control type="rss">
+				<description>RSS feed</description>
+				<posx>45</posx>
+				<posy>0</posy>
+				<height>30</height>
+				<width>1200</width>
+				<font>font12</font>
+				<urlset>1</urlset>
+				<textcolor>blue</textcolor>
+				<titlecolor>blue</titlecolor>
+				<headlinecolor>white</headlinecolor>
+				<visible>Skin.HasSetting(AutoHidePowerBtn)</visible>
 			</control>
 			<control type="image">
 				<description>RSS background</description>
@@ -1172,6 +1192,7 @@
 				<onright>21</onright>
 				<onup>9002</onup>
 				<ondown>9003</ondown>
+				<visible>!Skin.HasSetting(AutoHidePowerBtn)</visible>
 			</control>
 			<control type="image">
 				<description>Power Icon</description>
@@ -1181,6 +1202,7 @@
 				<height>35</height>
 				<aspectratio>keep</aspectratio>
 				<texture>icon_power.png</texture>
+				<visible>!Skin.HasSetting(AutoHidePowerBtn)</visible>
 			</control>
 			<control type="button" id="21">
 				<description>Favourites push button</description>
@@ -1194,8 +1216,8 @@
 				<onclick>ActivateWindow(Favourites)</onclick>
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
 				<texturenofocus border="5">floor_button.png</texturenofocus>
-				<onleft>20</onleft>
-				<onright>20</onright>
+				<onleft condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onleft>
+				<onright condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onright>
 				<onup>9002</onup>
 				<ondown>9003</ondown>
 			</control>
