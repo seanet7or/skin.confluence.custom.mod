@@ -193,8 +193,9 @@
 		<control type="button" id="90123">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>31123</label>
-			<onclick>RunAddon(os.openelec.settings)</onclick>
-			<visible>System.HasAddon(os.openelec.settings)</visible>
+			<onclick condition="System.HasAddon(os.openelec.settings)">RunAddon(os.openelec.settings)</onclick>
+			<onclick condition="System.HasAddon(service.openelec.settings)">RunAddon(service.openelec.settings)</onclick>
+			<visible>System.HasAddon(os.openelec.settings) | System.HasAddon(service.openelec.settings)</visible>
 		</control>
 		<control type="button" id="90124">
 			<include>ButtonHomeSubCommonValues</include>
