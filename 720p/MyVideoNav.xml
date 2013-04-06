@@ -138,6 +138,15 @@
 					<align>center</align>
 					<aligny>center</aligny>
 				</control>
+				<control type="radiobutton" id="96">
+					<description>Show Watched Banners</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>31304</label>
+					<onclick>Skin.ToggleSetting(ViewStatusBanner)</onclick>
+					<selected>Skin.HasSetting(ViewStatusBanner)</selected>
+					<visible>Control.IsVisible(501)</visible>
+				</control>
 				<control type="radiobutton" id="97">
 					<description>Show ExtraFanArt Toggle</description>
 					<textwidth>170</textwidth>

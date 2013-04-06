@@ -39,6 +39,27 @@
 						<bordersize>4</bordersize>
 						<texture background="true">$VAR[PosterThumb]</texture>
 					</control>
+					<control type="group">
+						<visible>Skin.HasSetting(ViewStatusBanner) + !IsEmpty(ListItem.Overlay)</visible>
+						<control type="image">
+							<posx>111</posx>
+							<posy>40</posy>
+							<width>105</width>
+							<height>105</height>
+							<fadetime>IconCrossfadeTime</fadetime>
+							<texture background="true" fallback="banner/DefaultWatched.png">banner/$LOCALIZE[16102].png</texture>
+							<visible>StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						</control>
+						<control type="image">
+							<posx>111</posx>
+							<posy>40</posy>
+							<width>105</width>
+							<height>105</height>
+							<fadetime>IconCrossfadeTime</fadetime>
+							<texture background="true" fallback="banner/DefaultUnwatched.png">banner/$LOCALIZE[16101].png</texture>
+							<visible>!StringCompare(ListItem.Overlay,OverlayWatched.png) + !IntegerGreaterThan(ListItem.PercentPlayed,2)</visible>
+						</control>
+					</control>					
 				</itemlayout>
 				<focusedlayout height="310" width="218">
 					<control type="image">
@@ -53,6 +74,31 @@
 						<animation reversible="false" effect="zoom" start="-2,36,222,318" end="-28,0,284,390" time="200">focus</animation>
 						<animation reversible="false" effect="zoom" end="-2,36,222,318" start="-28,0,284,390" time="200">unfocus</animation>
 					</control>
+					<control type="group">
+						<visible>Skin.HasSetting(ViewStatusBanner) + !IsEmpty(ListItem.Overlay)</visible>
+						<control type="image">
+							<posx>112</posx>
+							<posy>39</posy>
+							<width>105</width>
+							<height>105</height>
+							<fadetime>IconCrossfadeTime</fadetime>
+							<texture background="true" fallback="banner/DefaultWatched.png">banner/$LOCALIZE[16102].png</texture>
+							<animation reversible="false" effect="zoom" start="112,39,105,105" end="134,3,118,118" time="200">focus</animation>
+							<animation reversible="false" effect="zoom" end="112,39,105,105" start="134,3,118,118" time="200">unfocus</animation>
+							<visible>StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						</control>
+						<control type="image">
+							<posx>112</posx>
+							<posy>39</posy>
+							<width>105</width>
+							<height>105</height>
+							<fadetime>IconCrossfadeTime</fadetime>
+							<texture background="true" fallback="banner/DefaultUnwatched.png">banner/$LOCALIZE[16101].png</texture>
+							<animation reversible="false" effect="zoom" start="112,39,105,105" end="134,3,118,118" time="200">focus</animation>
+							<animation reversible="false" effect="zoom" end="112,39,105,105" start="134,3,118,118" time="200">unfocus</animation>
+							<visible>!StringCompare(ListItem.Overlay,OverlayWatched.png) + !IntegerGreaterThan(ListItem.PercentPlayed,2)</visible>
+						</control>
+					</control>					
 					<control type="image">
 						<posx>6</posx>
 						<posy>44</posy>
@@ -78,6 +124,7 @@
 							<effect type="fade" start="100" end="0" time="200" />
 							<effect type="slide" end="0,0" start="40,40" time="200" />
 						</animation>
+						<visible>!Skin.HasSetting(ViewStatusBanner)</visible>
 					</control>
 				</focusedlayout>
 			</control>
