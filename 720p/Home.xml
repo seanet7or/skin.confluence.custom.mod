@@ -4,6 +4,7 @@
 	<allowoverlay>no</allowoverlay>
 	<onload condition="!IsEmpty(Window(home).Property(MenuItemSelected))">ClearProperty(MenuItemSelected,Home)</onload>
 	<onload condition="!IsEmpty(Window(home).Property(MenuItemActive))">ClearProperty(MenuItemActive,Home)</onload>
+	<onload condition="!Skin.HasSetting(HideHomeSearch) + !System.HasAddon(script.globalsearch)">Skin.Setbool(HideHomeSearch)</onload>
 	<include>DefaultInitialSetup</include>
 	<controls>
 		<include>CommonBackground</include>
@@ -459,10 +460,8 @@
 			<description>Controls for currently playing media</description>
 			<posx>545r</posx>
 			<posy>370</posy>
-			<!--animation effect="slide" start="0,0" end="365,0" time="300" condition="!Player.HasMedia">conditional</animation-->
 			<animation effect="slide" start="0,0" end="-100,0" time="300" condition="!Player.HasMedia + !Skin.HasSetting(HideHomeStats)">conditional</animation>
 			<animation effect="slide" start="0,0" end="365,0" time="300" condition="!Player.HasMedia + Skin.HasSetting(HideHomeStats)">conditional</animation>
-			
 			<animation type="WindowOpen" reversible="false">
 				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
 				<effect type="fade" start="0" end="100" time="300" />
@@ -479,7 +478,7 @@
 				<height>35</height>
 				<colordiffuse>CCFFFFFF</colordiffuse>
 				<texture flipy="true" border="0,5,0,0" flipx="true">HomeSubEnd.png</texture>
-				<animation effect="slide" start="0,0" end="145,0" time="0" condition="!System.HasAddon(script.globalsearch)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="145,0" time="0" condition="Skin.HasSetting(HideHomeSearch)">Conditional</animation>
 			</control>
 			<control type="radiobutton" id="608">
 				<colordiffuse>CCFFFFFF</colordiffuse>
@@ -506,7 +505,7 @@
 				<onright>601</onright>
 				<onup>9003</onup>
 				<ondown>9000</ondown>
-				<visible>System.HasAddon(script.globalsearch)</visible>
+				<visible>!Skin.HasSetting(HideHomeSearch)</visible>
 			</control>
 			<control type="group" id="600">
 				<posx>180</posx>
@@ -839,8 +838,8 @@
 				<height>60</height>
 				<onleft>9000</onleft>
 				<onright>9000</onright>
-				<onup condition="System.HasAddon(script.globalsearch)">608</onup>
-				<onup condition="!System.HasAddon(script.globalsearch)">603</onup>
+				<onup condition="!Skin.HasSetting(HideHomeSearch)">608</onup>
+				<onup condition="Skin.HasSetting(HideHomeSearch)">603</onup>
 				<ondown>9001</ondown>
 				<pagecontrol>-</pagecontrol>
 				<scrolltime>300</scrolltime>

@@ -4,8 +4,8 @@
 		<control type="group" id="9003">
 			<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
 			<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
-			<ondown condition="System.HasAddon(script.globalsearch)">608</ondown>
-			<ondown condition="!System.HasAddon(script.globalsearch)">603</ondown>
+			<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
+			<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
 			<visible>!Window.IsVisible(Favourites)</visible>
 			<include>VisibleFadeEffect</include>
 			<animation effect="fade" time="300" delay="1000">WindowOpen</animation>
@@ -42,8 +42,8 @@
 					<onright>8000</onright>
 					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
 					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
-					<ondown condition="System.HasAddon(script.globalsearch)">608</ondown>
-					<ondown condition="!System.HasAddon(script.globalsearch)">603</ondown>
+					<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>-</pagecontrol>
 					<scrolltime>200</scrolltime>
@@ -275,8 +275,8 @@
 					<onright>8001</onright>
 					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
 					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
-					<ondown condition="System.HasAddon(script.globalsearch)">608</ondown>
-					<ondown condition="!System.HasAddon(script.globalsearch)">603</ondown>
+					<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>-</pagecontrol>
 					<scrolltime>200</scrolltime>
@@ -539,8 +539,8 @@
 					<onright>8002</onright>
 					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
 					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
-					<ondown condition="System.HasAddon(script.globalsearch)">608</ondown>
-					<ondown condition="!System.HasAddon(script.globalsearch)">603</ondown>
+					<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>-</pagecontrol>
 					<scrolltime>200</scrolltime>
@@ -812,8 +812,8 @@
 					<onright>8003</onright>
 					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
 					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
-					<ondown condition="System.HasAddon(script.globalsearch)">608</ondown>
-					<ondown condition="!System.HasAddon(script.globalsearch)">603</ondown>
+					<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>-</pagecontrol>
 					<scrolltime>200</scrolltime>
