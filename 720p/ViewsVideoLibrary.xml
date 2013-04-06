@@ -110,10 +110,10 @@
 						<animation reversible="false" effect="zoom" end="6,44,170,180" start="-24,4,240,250" time="200">unfocus</animation>
 					</control>
 					<control type="image">
-						<posx>185</posx>
+						<posx>175</posx>
 						<posy>310</posy>
-						<width>35</width>
-						<height>35</height>
+						<width>50</width>
+						<height>50</height>
 						<aspectratio>keep</aspectratio>
 						<texture>$INFO[ListItem.Overlay]</texture>
 						<animation type="focus">
@@ -124,7 +124,7 @@
 							<effect type="fade" start="100" end="0" time="200" />
 							<effect type="slide" end="0,0" start="40,40" time="200" />
 						</animation>
-						<visible>!Skin.HasSetting(ViewStatusBanner)</visible>
+						<visible>!Skin.HasSetting(ViewStatusBanner) + !Skin.HasSetting(HideWatchStatus)</visible>
 					</control>
 				</focusedlayout>
 			</control>
@@ -431,10 +431,10 @@
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$VAR[PosterThumb]</texture>
 					</control>
 					<control type="image">
-						<posx>90</posx>
-						<posy>150</posy>
-						<width>35</width>
-						<height>35</height>
+						<posx>75</posx>
+						<posy>135</posy>
+						<width>50</width>
+						<height>50</height>
 						<aspectratio>keep</aspectratio>
 						<texture>$INFO[ListItem.Overlay]</texture>
 						<animation type="focus">
@@ -445,6 +445,7 @@
 							<effect type="fade" start="100" end="0" time="200" />
 							<effect type="slide" end="0,0" start="10,5" time="200" />
 						</animation>
+						<visible>!Skin.HasSetting(HideWatchStatus)</visible>
 					</control>
 				</focusedlayout>
 			</control>
@@ -522,6 +523,7 @@
 						<label>$INFO[ListItem.Label2]</label>
 						<visible>Window.IsVisible(Videos)</visible>
 						<animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]">conditional</animation>
+						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
 					</control>
 					<control type="image">
 						<posx>515</posx>
@@ -530,14 +532,15 @@
 						<height>26</height>
 						<texture>$INFO[ListItem.VideoResolution,flagging/lists/,.png]</texture>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
+						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
 					</control>
 					<control type="image">
-						<posx>555</posx>
+						<posx>550</posx>
 						<posy>14</posy>
-						<width>20</width>
-						<height>16</height>
+						<width>25</width>
+						<height>21</height>
 						<texture>$INFO[ListItem.Overlay]</texture>
-						<visible>!ListItem.IsResumable</visible>
+						<visible>!ListItem.IsResumable + !Skin.HasSetting(HideWatchStatus)</visible>
 					</control>
 					<control type="image">
 						<posx>555</posx>
@@ -545,7 +548,7 @@
 						<width>16</width>
 						<height>16</height>
 						<texture>OverlayWatching.png</texture>
-						<visible>ListItem.IsResumable</visible>
+						<visible>ListItem.IsResumable + !Skin.HasSetting(HideWatchStatus)</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout height="40" width="580">
@@ -600,6 +603,7 @@
 						<label>$INFO[ListItem.Label2]</label>
 						<visible>Window.IsVisible(Videos)</visible>
 						<animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]">conditional</animation>
+						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
 					</control>
 					<control type="image">
 						<posx>515</posx>
@@ -608,14 +612,15 @@
 						<height>26</height>
 						<texture>$INFO[ListItem.VideoResolution,flagging/lists/,.png]</texture>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
+						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
 					</control>
 					<control type="image">
-						<posx>555</posx>
+						<posx>550</posx>
 						<posy>14</posy>
-						<width>20</width>
-						<height>16</height>
+						<width>25</width>
+						<height>21</height>
 						<texture>$INFO[ListItem.Overlay]</texture>
-						<visible>!ListItem.IsResumable</visible>
+						<visible>!ListItem.IsResumable + !Skin.HasSetting(HideWatchStatus)</visible>
 					</control>
 					<control type="image">
 						<posx>555</posx>
@@ -623,7 +628,7 @@
 						<width>16</width>
 						<height>16</height>
 						<texture>OverlayWatching.png</texture>
-						<visible>ListItem.IsResumable</visible>
+						<visible>ListItem.IsResumable + !Skin.HasSetting(HideWatchStatus)</visible>
 					</control>
 				</focusedlayout>
 			</control>
@@ -950,6 +955,7 @@
 						<label>$INFO[ListItem.Label2]</label>
 						<visible>Window.IsVisible(Videos)</visible>
 						<animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]">conditional</animation>
+						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
 					</control>
 					<control type="image">
 						<posx>515</posx>
@@ -958,14 +964,15 @@
 						<height>26</height>
 						<texture>$INFO[ListItem.VideoResolution,flagging/lists/,.png]</texture>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
+						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
 					</control>
 					<control type="image">
-						<posx>555</posx>
+						<posx>550</posx>
 						<posy>14</posy>
-						<width>20</width>
-						<height>16</height>
+						<width>25</width>
+						<height>21</height>
 						<texture>$INFO[ListItem.Overlay]</texture>
-						<visible>!ListItem.IsResumable</visible>
+						<visible>!ListItem.IsResumable + !Skin.HasSetting(HideWatchStatus)</visible>
 					</control>
 					<control type="image">
 						<posx>555</posx>
@@ -973,7 +980,7 @@
 						<width>16</width>
 						<height>16</height>
 						<texture>OverlayWatching.png</texture>
-						<visible>ListItem.IsResumable</visible>
+						<visible>ListItem.IsResumable + !Skin.HasSetting(HideWatchStatus)</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout height="40" width="580">
@@ -1028,6 +1035,7 @@
 						<label>$INFO[ListItem.Label2]</label>
 						<visible>Window.IsVisible(Videos)</visible>
 						<animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]">conditional</animation>
+						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
 					</control>
 					<control type="image">
 						<posx>515</posx>
@@ -1036,14 +1044,15 @@
 						<height>26</height>
 						<texture>$INFO[ListItem.VideoResolution,flagging/lists/,.png]</texture>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
+						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
 					</control>
 					<control type="image">
-						<posx>555</posx>
+						<posx>550</posx>
 						<posy>14</posy>
-						<width>20</width>
-						<height>16</height>
+						<width>25</width>
+						<height>21</height>
 						<texture>$INFO[ListItem.Overlay]</texture>
-						<visible>!ListItem.IsResumable</visible>
+						<visible>!ListItem.IsResumable + !Skin.HasSetting(HideWatchStatus)</visible>
 					</control>
 					<control type="image">
 						<posx>555</posx>
@@ -1051,7 +1060,7 @@
 						<width>16</width>
 						<height>16</height>
 						<texture>OverlayWatching.png</texture>
-						<visible>ListItem.IsResumable</visible>
+						<visible>ListItem.IsResumable + !Skin.HasSetting(HideWatchStatus)</visible>
 					</control>
 				</focusedlayout>
 			</control>
@@ -1314,7 +1323,7 @@
 				<pagecontrol>60</pagecontrol>
 				<scrolltime>200</scrolltime>
 				<visible>Container.Content(TVShows) | Container.Content(Movies) | Container.Content(Episodes) | Container.Content(Seasons)</visible>
-				<itemlayout height="40" width="345">
+				<itemlayout condition="!Skin.HasSetting(HideWatchStatus)" height="40" width="345">
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
@@ -1335,10 +1344,10 @@
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 					<control type="image">
-						<posx>320</posx>
+						<posx>315</posx>
 						<posy>14</posy>
-						<width>20</width>
-						<height>16</height>
+						<width>25</width>
+						<height>21</height>
 						<texture>$INFO[ListItem.Overlay]</texture>
 						<visible>!ListItem.IsResumable</visible>
 					</control>
@@ -1351,7 +1360,7 @@
 						<visible>ListItem.IsResumable</visible>
 					</control>
 				</itemlayout>
-				<focusedlayout height="40" width="345">
+				<focusedlayout condition="!Skin.HasSetting(HideWatchStatus)" height="40" width="345">
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
@@ -1383,10 +1392,10 @@
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 					<control type="image">
-						<posx>320</posx>
+						<posx>315</posx>
 						<posy>14</posy>
-						<width>20</width>
-						<height>16</height>
+						<width>25</width>
+						<height>21</height>
 						<texture>$INFO[ListItem.Overlay]</texture>
 						<visible>!ListItem.IsResumable</visible>
 					</control>
@@ -1397,6 +1406,59 @@
 						<height>16</height>
 						<texture>OverlayWatching.png</texture>
 						<visible>ListItem.IsResumable</visible>
+					</control>
+				</focusedlayout>
+				<itemlayout condition="Skin.HasSetting(HideWatchStatus)" height="40" width="345">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>345</width>
+						<height>41</height>
+						<texture border="0,2,0,2">MenuItemNF.png</texture>
+					</control>
+					<control type="label">
+						<posx>10</posx>
+						<posy>0</posy>
+						<width>340</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout condition="Skin.HasSetting(HideWatchStatus)" height="40" width="345">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>345</width>
+						<height>41</height>
+						<texture border="0,2,0,2">MenuItemNF.png</texture>
+						<visible>!Control.HasFocus(515)</visible>
+						<include>VisibleFadeEffect</include>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>345</width>
+						<height>41</height>
+						<texture border="0,2,0,2">MenuItemFO.png</texture>
+						<visible>Control.HasFocus(515)</visible>
+						<include>VisibleFadeEffect</include>
+					</control>
+					<control type="label">
+						<posx>10</posx>
+						<posy>0</posy>
+						<width>340</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>white</textcolor>
+						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</focusedlayout>
 			</control>
