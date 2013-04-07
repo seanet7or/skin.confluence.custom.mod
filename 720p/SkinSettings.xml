@@ -670,47 +670,77 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<visible>System.HasAddon(script.globalsearch)</visible>
-					</control>	
+					</control>
 					<control type="radiobutton" id="206">
-						<description>Show Recently added Video info</description>
+						<description>Show Videos Widget</description>
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<label>31117</label>
-						<onclick>Skin.ToggleSetting(HomepageHideRecentlyAddedVideo)</onclick>
-						<selected>!Skin.HasSetting(HomepageHideRecentlyAddedVideo)</selected>
+						<label>31137</label>
+						<onclick>Skin.ToggleSetting(HideHomeVideoWidget)</onclick>
+						<selected>!Skin.HasSetting(HideHomeVideoWidget)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
 					<control type="radiobutton" id="207">
-						<description>Show Recently added Concert info</description>
+						<description>Show Concerts Widget</description>
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<label>31120</label>
-						<onclick>Skin.ToggleSetting(HomepageHideRecentlyAddedConcerts)</onclick>
-						<selected>!Skin.HasSetting(HomepageHideRecentlyAddedConcerts)</selected>
+						<label>31139</label>
+						<onclick>Skin.ToggleSetting(HideHomeConcertsWidget)</onclick>
+						<selected>!Skin.HasSetting(HideHomeConcertsWidget)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
 					<control type="radiobutton" id="208">
-						<description>Show Recently added info</description>
+						<description>Show albums Widget</description>
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<label>31116</label>
-						<onclick>Skin.ToggleSetting(HomepageHideRecentlyAddedAlbums)</onclick>
-						<selected>!Skin.HasSetting(HomepageHideRecentlyAddedAlbums)</selected>
+						<label>31138</label>
+						<onclick>Skin.ToggleSetting(HideHomeAlbumsWidget)</onclick>
+						<selected>!Skin.HasSetting(HideHomeAlbumsWidget)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
 					<control type="radiobutton" id="209">
+						<description>Show Random Items Widget</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>31130</label>
+						<onclick>Skin.ToggleSetting(RandomWidgetInfo)</onclick>
+						<onclick>Skin.Reset(SuggestedWidgetInfo)</onclick>
+						<selected>Skin.HasSetting(RandomWidgetInfo)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<enable>SubString(Window(Home).Property(SkinWidgets_RandomItems),true)</enable>
+					</control>
+					<control type="radiobutton" id="210">
+						<description>Show Suggested Items Widget</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>31131</label>
+						<onclick>Skin.ToggleSetting(SuggestedWidgetInfo)</onclick>
+						<onclick>Skin.Reset(RandomWidgetInfo)</onclick>
+						<selected>Skin.HasSetting(SuggestedWidgetInfo)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<enable>SubString(Window(Home).Property(SkinWidgets_Recommended),true)</enable>
+					</control>
+					<control type="radiobutton" id="211">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -722,7 +752,7 @@
 						<onclick>Skin.ToggleSetting(AutoHideSubMenu)</onclick>
 						<selected>!Skin.HasSetting(AutoHideSubMenu)</selected>
 					</control>
-					<control type="radiobutton" id="210">
+					<control type="radiobutton" id="212">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -734,7 +764,7 @@
 						<onclick>Skin.ToggleSetting(AutoHidePowerBtn)</onclick>
 						<selected>!Skin.HasSetting(AutoHidePowerBtn)</selected>
 					</control>
-					<control type="label" id="211">
+					<control type="label" id="213">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -744,7 +774,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="button" id="212">
+					<control type="button" id="214">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -758,7 +788,7 @@
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.1.Label))">Skin.SetString(HomeItem.1.Label)</onclick>
 					</control>
-					<control type="button" id="213">
+					<control type="button" id="215">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -772,7 +802,7 @@
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.2.Label))">Skin.SetString(HomeItem.2.Label)</onclick>
 					</control>
-					<control type="button" id="214">
+					<control type="button" id="216">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -786,7 +816,7 @@
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.3.Label))">Skin.SetString(HomeItem.3.Label)</onclick>
 					</control>
-					<control type="button" id="215">
+					<control type="button" id="217">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -800,7 +830,7 @@
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.4.Label))">Skin.SetString(HomeItem.4.Label)</onclick>
 					</control>
-					<control type="button" id="216">
+					<control type="button" id="218">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -814,7 +844,7 @@
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.5.Label))">Skin.SetString(HomeItem.5.Label)</onclick>
 					</control>
-					<control type="button" id="217">
+					<control type="button" id="219">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -828,7 +858,7 @@
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.6.Label))">Skin.SetString(HomeItem.6.Label)</onclick>
 					</control>
-					<control type="button" id="218">
+					<control type="button" id="220">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -842,7 +872,7 @@
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.7.Label))">Skin.SetString(HomeItem.7.Label)</onclick>
 					</control>
-					<control type="button" id="219">
+					<control type="button" id="221">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -856,7 +886,7 @@
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.8.Label))">Skin.SetString(HomeItem.8.Label)</onclick>
 					</control>
-					<control type="button" id="220">
+					<control type="button" id="222">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -870,7 +900,7 @@
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.9.Label))">Skin.SetString(HomeItem.9.Label)</onclick>
 					</control>
-					<control type="button" id="221">
+					<control type="button" id="223">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>

@@ -4,7 +4,6 @@
 	<allowoverlay>no</allowoverlay>
 	<onload condition="!IsEmpty(Window(home).Property(MenuItemSelected))">ClearProperty(MenuItemSelected,Home)</onload>
 	<onload condition="!IsEmpty(Window(home).Property(MenuItemActive))">ClearProperty(MenuItemActive,Home)</onload>
-	<onload condition="!Skin.HasSetting(HideHomeSearch) + !System.HasAddon(script.globalsearch)">Skin.Setbool(HideHomeSearch)</onload>
 	<include>DefaultInitialSetup</include>
 	<controls>
 		<include>CommonBackground</include>
@@ -438,7 +437,7 @@
 				</control>
 			</control>
 		</control>
-		<include condition="!Skin.HasSetting(HomepageHideRecentlyAddedVideo) | !Skin.HasSetting(HomepageHideRecentlyAddedAlbums) | !Skin.HasSetting(HomepageHideRecentlyAddedConcerts)">HomeRecentlyAddedInfo</include>
+		<include condition="!Skin.HasSetting(HideHomeVideoWidget) | !Skin.HasSetting(HideHomeAlbumsWidget) | !Skin.HasSetting(HideHomeConcertsWidget)">HomeWidgetPanel</include>
 		<control type="button" id="9003">
 			<description>Hidden Button to pass through navigation when recently added is disabled</description>
 			<posx>-20</posx>
