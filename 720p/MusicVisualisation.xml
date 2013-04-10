@@ -105,7 +105,7 @@
 				<texture flipy="true">HomeNowPlayingBack.png</texture>
 			</control>
 			<control type="label">
-				<description>Partymode Header label</description>
+				<description>Header label</description>
 				<posx>30</posx>
 				<posy>5</posy>
 				<width>800</width>
@@ -115,22 +115,7 @@
 				<font>font13</font>
 				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
-				<label>$LOCALIZE[589]</label>
-				<visible>MusicPartyMode.Enabled</visible>
-			</control>
-			<control type="label">
-				<description>Normal Header label</description>
-				<posx>30</posx>
-				<posy>5</posy>
-				<width>800</width>
-				<height>25</height>
-				<align>left</align>
-				<aligny>center</aligny>
-				<font>font13</font>
-				<textcolor>white</textcolor>
-				<shadowcolor>black</shadowcolor>
-				<label>$INFO[musicplayer.Playlistposition,$LOCALIZE[554]: ]$INFO[musicplayer.Playlistlength, / ]</label>
-				<visible>!MusicPartyMode.Enabled</visible>
+				<label>$VAR[MusicHeaderLabel]</label>
 			</control>
 			<control type="label">
 				<description>Clock label</description>

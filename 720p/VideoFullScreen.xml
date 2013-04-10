@@ -4,15 +4,16 @@
 	<controls>
 		<!-- media infos -->
 		<control type="group" id="1">
-			<visible>[Player.ShowInfo | Window.IsActive(VideoOSD)] | [!Skin.HasSetting(HideInfoStartOSD) + !IntegerGreaterThan(Player.time,5)]</visible>
-			<visible>![Window.IsVisible(123) | Window.IsVisible(124) | Window.IsVisible(125) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
-			<animation effect="fade" time="200">VisibleChange</animation>
+			<visible>!StringCompare(VideoPlayer.Title,XBMC-Intro-Video.mkv)</visible>
+			<visible>[Player.ShowInfo | Window.IsActive(VideoOSD)] | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | [!Skin.HasSetting(HideInfoStartOSD) + !IntegerGreaterThan(Player.time,5)]</visible>
+			<visible>![Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
 			<control type="image" id="1">
-				<posx>0</posx>
+				<posx>-150</posx>
 				<posy>-150</posy>
-				<width>1280</width>
+				<width>1580</width>
 				<height>256</height>
-				<texture flipy="true">HomeNowPlayingBack.png</texture>
+				<texture flipy="true">homefloor.png</texture>
+				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
 			</control>
 			<control type="label" id="1">
 				<description>Chapter Count Header label</description>
@@ -23,10 +24,26 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font13</font>
+				<textcolor>grey</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<label>$INFO[Player.ChapterName,[B][COLOR=white]$LOCALIZE[21396]: [/COLOR][/B]]</label>
+				<visible>Player.ChapterCount + !VideoPlayer.Content(LiveTV) + [!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)]</visible>
+				<visible>!SubString(Player.ChapterName,$LOCALIZE[21396],left)</visible>
+			</control>
+						<control type="label" id="1">
+				<description>Chapter Count Header label</description>
+				<posx>30</posx>
+				<posy>5</posy>
+				<width>1000</width>
+				<height>25</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>font13</font>
 				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
-				<label>$INFO[Player.Chapter,$LOCALIZE[21396]: ]$INFO[Player.ChapterCount, / ]$INFO[Player.ChapterName,[COLOR=grey] - (,)[/COLOR]]</label>
-				<visible>Player.ChapterCount + !VideoPlayer.Content(LiveTV)</visible>
+				<label>[B]$INFO[Player.ChapterName][/B]</label>
+				<visible>Player.ChapterCount + !VideoPlayer.Content(LiveTV) + [!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)]</visible>
+				<visible>SubString(Player.ChapterName,$LOCALIZE[21396],left)</visible>
 			</control>
 			<control type="label" id="1">
 				<description>Channel Group label</description>
@@ -43,21 +60,36 @@
 				<visible>VideoPlayer.Content(LiveTV)</visible>
 			</control>
 			<control type="label" id="1">
-				<description>Clock label</description>
-				<posx>1250</posx>
+				<description>date label</description>
+				<posx>15r</posx>
 				<posy>5</posy>
-				<width>800</width>
-				<height>25</height>
+				<width>345</width>
+				<height>10</height>
 				<align>right</align>
 				<aligny>center</aligny>
-				<font>font13</font>
+				<font>font10_title</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<info>System.Date</info>
+				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
+			</control>
+			<control type="label" id="1">
+				<description>time label</description>
+				<posx>15r</posx>
+				<posy>20</posy>
+				<width>345</width>
+				<height>30</height>
+				<align>right</align>
+				<aligny>center</aligny>
+				<font>font35_title</font>
 				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
 				<label>$INFO[System.Time]</label>
-				<animation effect="slide" start="0,0" end="-70,0" time="0" condition="Window.IsVisible(VideoOSD)">conditional</animation>
+				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
 			</control>
 			<control type="group" id="1">
 				<visible>!Skin.HasSetting(HidePauseInfo) + !IsEmpty(VideoPlayer.Plot) + Player.Paused + !Player.Caching</visible>
+				<animation effect="slide" end="-300,160" time="100" tween="back" easing="out" condition="!Window.IsActive(VideoOSD) + Skin.HasSetting(HideSeekBarOSD)" reversible="true">Conditional</animation>
 				<posx>320</posx>
 				<posy>390r</posy>
 				<control type="image" id="1">
@@ -82,11 +114,12 @@
 				</control>
 			</control>
 			<control type="image" id="1">
-				<posx>0</posx>
+				<posx>-150</posx>
 				<posy>230r</posy>
-				<width>1280</width>
+				<width>1580</width>
 				<height>230</height>
-				<texture>HomeNowPlayingBack.png</texture>
+				<texture>homefloor.png</texture>
+				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
 			</control>
 			<control type="group" id="1">
 				<control type="image" id="1">
@@ -112,6 +145,7 @@
 					<visible>IsEmpty(Player.Art(clearart))</visible>
 				</control>		
 				<visible>VideoPlayer.Content(Movies)</visible>
+				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
 			</control>
 			<control type="group" id="1">
 				<control type="image" id="1">
@@ -137,6 +171,7 @@
 					<visible>IsEmpty(Player.Art(tvshow.clearart))</visible>
 				</control>
 				<visible>VideoPlayer.Content(Episodes)</visible>
+				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
 			</control>
 			<control type="image" id="1">
 				<description>cover image</description>
@@ -149,8 +184,10 @@
 				<bordertexture border="8">ThumbShadow.png</bordertexture>
 				<bordersize>8</bordersize>
 				<visible>!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes)</visible>
+				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
 			</control>
 			<control type="group" id="1">
+				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
 				<posx>330</posx>
 				<posy>185r</posy>
 				<control type="label" id="1">
@@ -313,6 +350,7 @@
 			<control type="group" id="1">
 				<posx>330</posx>
 				<posy>95r</posy>
+				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
 				<visible>!VideoPlayer.Content(LiveTV) | [VideoPlayer.Content(LiveTV) + VideoPlayer.HasEpg]</visible>
 				<control type="label" id="1">
 					<visible>!VideoPlayer.Content(LiveTV)</visible>

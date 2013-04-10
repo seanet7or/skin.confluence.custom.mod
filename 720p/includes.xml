@@ -71,6 +71,13 @@
 		<value condition="Skin.HasSetting(SuggestedWidgetInfo) + SubString(Window(Home).Property(SkinWidgets_Recommended),true)">$LOCALIZE[31076]</value>
 		<value>$LOCALIZE[31074]</value>
 	</variable>
+	<variable name="MusicHeaderLabel">
+		<value condition="MusicPartyMode.Enabled">[B]($LOCALIZE[589])[/B] $INFO[musicplayer.Playlistposition,$LOCALIZE[554]: ]$INFO[musicplayer.Playlistlength, / ]</value>
+		<value condition="Playlist.IsRandom">[B]($LOCALIZE[31085])[/B] $INFO[musicplayer.Playlistposition,$LOCALIZE[554]: ]$INFO[musicplayer.Playlistlength, / ]</value>
+		<value condition="Playlist.IsRepeat">[B]($LOCALIZE[31086])[/B] $INFO[musicplayer.Playlistposition,$LOCALIZE[554]: ]$INFO[musicplayer.Playlistlength, / ]</value>
+		<value condition="Playlist.IsRepeatOne">[B]($LOCALIZE[31087])[/B] $INFO[musicplayer.Playlistposition,$LOCALIZE[554]: ]$INFO[musicplayer.Playlistlength, / ]</value>
+		<value>$INFO[musicplayer.Playlistposition,$LOCALIZE[554]: ]$INFO[musicplayer.Playlistlength, / ]</value>
+	</variable>
 	<include name="ClearButtonChoice">
 		<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Label)</onclick>
 		<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Path)</onclick>

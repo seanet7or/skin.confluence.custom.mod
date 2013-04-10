@@ -8,7 +8,15 @@
 			<onfocus>ReplaceWindow(Home)</onfocus>
 			<texturenofocus>-</texturenofocus>
 			<texturefocus>-</texturefocus>
-			<visible>!Skin.HasSetting(Use_Startup_Playlist)</visible>
+			<visible>!Skin.HasSetting(Use_Startup_Playlist) + Skin.HasSetting(HideXBMCIntro)</visible>
+		</control>
+		<control type="button" id="10">
+			<description>trigger with XBMC Intro Movie</description>
+			<onfocus>XBMC.PlayMedia(special://skin/extras/Intro/XBMC-Intro-Video.mkv)</onfocus>
+			<onfocus>ReplaceWindow(Home)</onfocus>
+			<texturenofocus>-</texturenofocus>
+			<texturefocus>-</texturefocus>
+			<visible>!Skin.HasSetting(HideXBMCIntro)</visible>
 		</control>
 		<control type="button" id="10">
 			<description>trigger with startup Playlist</description>
@@ -18,6 +26,5 @@
 			<texturefocus>-</texturefocus>
 			<visible>Skin.HasSetting(Use_Startup_Playlist)</visible>
 		</control>
-		<include>CommonBackground</include>
 	</controls>
 </window>
