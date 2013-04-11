@@ -592,7 +592,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
-							<label>$INFO[ListItem.Label]</label>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 					</itemlayout>
 					<focusedlayout condition="Container.Content(Artists)" height="40" width="430">
@@ -621,7 +621,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
-							<label>$INFO[ListItem.Label]</label>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 					</focusedlayout>
 				</control>

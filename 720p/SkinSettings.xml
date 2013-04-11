@@ -120,7 +120,7 @@
 						<textcolor>grey3</textcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>250</posx>
@@ -152,7 +152,7 @@
 						<textcolor>white</textcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>250</posx>
@@ -1110,7 +1110,7 @@
 								<textcolor>grey2</textcolor>
 								<align>right</align>
 								<aligny>center</aligny>
-								<label>$INFO[ListItem.Label]</label>
+								<label>$VAR[MainItemLabel]</label>
 								<visible>![Control.HasFocus(304) | Control.HasFocus(305)]</visible>
 							</control>
 							<control type="label">
@@ -1122,7 +1122,7 @@
 								<textcolor>white</textcolor>
 								<align>right</align>
 								<aligny>center</aligny>
-								<label>$INFO[ListItem.Label]</label>
+								<label>$VAR[MainItemLabel]</label>
 								<visible>[Control.HasFocus(304) | Control.HasFocus(305)]</visible>
 							</control>
 						</focusedlayout>

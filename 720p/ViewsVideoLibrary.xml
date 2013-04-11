@@ -175,7 +175,7 @@
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label>$INFO[ListItem.Label]</label>
+				<label>$VAR[MainItemLabel]</label>
 			</control>
 			<control type="label">
 				<posx>0</posx>
@@ -230,7 +230,7 @@
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label>$INFO[ListItem.Label]</label>
+				<label>$VAR[MainItemLabel]</label>
 			</control>
 			<control type="label">
 				<posx>0</posx>
@@ -281,7 +281,7 @@
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label>$INFO[ListItem.Label]</label>
+				<label>$VAR[MainItemLabel]</label>
 			</control>
 			<control type="label">
 				<posx>0</posx>
@@ -345,7 +345,7 @@
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label>$INFO[ListItem.Label]</label>
+				<label>$VAR[MainItemLabel]</label>
 				<animation effect="slide" start="0,0" end="0,25" time="200" condition="!Control.HasFocus(508)">conditional</animation>
 			</control>
 		</control>
@@ -508,7 +508,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>510</posx>
@@ -588,7 +588,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>510</posx>
@@ -940,7 +940,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>510</posx>
@@ -1020,7 +1020,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>510</posx>
@@ -1341,7 +1341,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="image">
 						<posx>315</posx>
@@ -1389,7 +1389,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="image">
 						<posx>315</posx>
@@ -1426,7 +1426,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$VAR[MainItemLabel]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout condition="Skin.HasSetting(HideWatchStatus)" height="40" width="345">
@@ -1458,7 +1458,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$VAR[MainItemLabel]</label>
 					</control>
 				</focusedlayout>
 			</control>
@@ -1511,7 +1511,7 @@
 					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>center</aligny>
-					<label>$INFO[ListItem.Label]</label>
+					<label>$VAR[MainItemLabel]</label>
 					<visible>Skin.HasSetting(View515Hidelogo) | IsEmpty(ListItem.Title) | IsEmpty(ListItem.Art(clearlogo))</visible>
 				</control>
 				<control type="textbox">
@@ -1585,7 +1585,7 @@
 					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>center</aligny>
-					<label>$INFO[ListItem.Label]</label>
+					<label>$VAR[MainItemLabel]</label>
 					<visible>Skin.HasSetting(View515Hidelogo) | IsEmpty(ListItem.Title) | IsEmpty(ListItem.Art(clearlogo))</visible>
 				</control>
 				<control type="textbox">
@@ -1624,6 +1624,27 @@
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture diffuse="Fanart_Diffuse.png" background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Art(fanart)]</texture>
+					<visible>!StringCompare(ListItem.Label,..)</visible>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>750</width>
+					<height>420</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<fadetime>IconCrossfadeTime</fadetime>
+					<texture diffuse="Fanart_Diffuse.png" background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[Fanart.Image]</texture>
+					<visible>StringCompare(ListItem.Label,..)</visible>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>750</width>
+					<height>420</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<fadetime>IconCrossfadeTime</fadetime>
+					<texture diffuse="Fanart_Diffuse.png" background="true">$INFO[ListItem.Path]$INFO[ListItem.Label,,/fanart.jpg]</texture>
+					<visible>Skin.HasSetting(View515SeasonArt)</visible>
 				</control>
 				<control type="label">
 					<posx>10</posx>
@@ -1635,7 +1656,7 @@
 					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>center</aligny>
-					<label>$INFO[ListItem.Label]</label>
+					<label>$VAR[MainItemLabel]</label>
 				</control>
 				<control type="textbox">
 					<description>Description Value for Video</description>
@@ -1673,8 +1694,29 @@
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture diffuse="Fanart_Diffuse.png" background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Art(fanart)]</texture>
+					<visible>!StringCompare(ListItem.Label,..)</visible>
 				</control>
-				<control type="label">
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>750</width>
+					<height>420</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<fadetime>IconCrossfadeTime</fadetime>
+					<texture diffuse="Fanart_Diffuse.png" background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[Fanart.Image]</texture>
+					<visible>StringCompare(ListItem.Label,..)</visible>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>750</width>
+					<height>420</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<fadetime>IconCrossfadeTime</fadetime>
+					<texture diffuse="Fanart_Diffuse.png" background="true">$INFO[ListItem.Path,,fanart.jpg]</texture>
+					<visible>Skin.HasSetting(View515SeasonArt)</visible>
+				</control>
+					<control type="label">
 					<posx>10</posx>
 					<posy>395</posy>
 					<width>400</width>
@@ -1684,7 +1726,7 @@
 					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>center</aligny>
-					<label>$INFO[ListItem.Label]</label>
+					<label>$VAR[MainItemLabel]</label>
 				</control>
 				<control type="textbox">
 					<description>Description Value for Video</description>
@@ -1750,7 +1792,7 @@
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label>$INFO[ListItem.Label]</label>
+				<label>$VAR[MainItemLabel]</label>
 			</control>
 			<control type="group">
 				<posx>40</posx>

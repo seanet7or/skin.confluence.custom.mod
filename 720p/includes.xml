@@ -78,6 +78,10 @@
 		<value condition="Playlist.IsRepeatOne">[B]($LOCALIZE[31087])[/B] $INFO[musicplayer.Playlistposition,$LOCALIZE[554]: ]$INFO[musicplayer.Playlistlength, / ]</value>
 		<value>$INFO[musicplayer.Playlistposition,$LOCALIZE[554]: ]$INFO[musicplayer.Playlistlength, / ]</value>
 	</variable>
+	<variable name="MainItemLabel">
+		<value condition="StringCompare(ListItem.Label,..)">$LOCALIZE[31316]</value>
+		<value>$INFO[ListItem.Label]</value>
+	</variable>
 	<include name="ClearButtonChoice">
 		<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Label)</onclick>
 		<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Path)</onclick>
@@ -1021,14 +1025,28 @@
 	</include>
 	<include name="Clock">
 		<control type="label">
-			<description>time label</description>
-			<posx>20r</posx>
+			<description>date label</description>
+			<posx>15r</posx>
 			<posy>5</posy>
-			<width>200</width>
+			<width>345</width>
+			<height>10</height>
+			<align>right</align>
+			<aligny>center</aligny>
+			<font>font10_title</font>
+			<textcolor>white</textcolor>
+			<shadowcolor>black</shadowcolor>
+			<info>System.Date</info>
+			<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
+		</control>
+		<control type="label">
+			<description>time label</description>
+			<posx>15r</posx>
+			<posy>20</posy>
+			<width>345</width>
 			<height>30</height>
 			<align>right</align>
 			<aligny>center</aligny>
-			<font>font28_title</font>
+			<font>font35_title</font>
 			<textcolor>white</textcolor>
 			<shadowcolor>black</shadowcolor>
 			<label>$INFO[System.Time]</label>
@@ -1083,7 +1101,7 @@
 				<textcolor>grey2</textcolor>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label>$INFO[ListItem.Label]</label>
+				<label>$VAR[MainItemLabel]</label>
 			</control>
 		</itemlayout>
 		<focusedlayout height="200" width="182">
@@ -1126,7 +1144,7 @@
 				<textcolor>white</textcolor>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label>$INFO[ListItem.Label]</label>
+				<label>$VAR[MainItemLabel]</label>
 				<visible>Control.HasFocus(9002)</visible>
 			</control>
 			<control type="label">
@@ -1138,7 +1156,7 @@
 				<textcolor>grey2</textcolor>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label>$INFO[ListItem.Label]</label>
+				<label>$VAR[MainItemLabel]</label>
 				<visible>!Control.HasFocus(9002)</visible>
 			</control>
 		</focusedlayout>
