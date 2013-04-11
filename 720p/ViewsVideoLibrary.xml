@@ -12,7 +12,7 @@
 			<usecontrolcoords>true</usecontrolcoords>
 			<include>VisibleFadeEffect</include>
 			<control type="fixedlist" id="501">
-				<visible>Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows) | Container.Content(Sets)</visible>
+				<visible>Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows) | Container.Content(Sets) | Container.Content(MusicVideos)</visible>
 				<visible>!Container.Content(LiveTV)</visible>
 				<posx>-183</posx>
 				<posy>0</posy>
@@ -163,7 +163,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>Control.IsVisible(501) + [Container.Content(Movies) | Container.Content(Sets)]</visible>
+			<visible>Control.IsVisible(501) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(MusicVideos)]</visible>
 			<control type="label">
 				<posx>30</posx>
 				<posy>500</posy>
@@ -355,7 +355,7 @@
 			<posx>0</posx>
 			<posy>460</posy>
 			<control type="fixedlist" id="508">
-				<visible>Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Sets)</visible>
+				<visible>Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Sets) | Container.Content(MusicVideos)</visible>
 				<hitrect x="0" y="-10" w="1280" h="190" />
 				<posx>-20</posx>
 				<posy>0</posy>
@@ -489,7 +489,7 @@
 				<viewtype label="$LOCALIZE[544] 2">list</viewtype>
 				<pagecontrol>60</pagecontrol>
 				<scrolltime>200</scrolltime>
-				<visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Movies)</visible>
+				<visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Movies) | Container.Content(MusicVideos)</visible>
 				<itemlayout height="40" width="580">
 					<control type="image">
 						<posx>0</posx>
@@ -864,7 +864,7 @@
 			<control type="group">
 				<posx>710</posx>
 				<posy>245</posy>
-				<visible>Container.Content(Movies)</visible>
+				<visible>Container.Content(Movies) | Container.Content(MusicVideos)</visible>
 				<control type="image">
 					<posx>0</posx>
 					<posy>0</posy>
@@ -921,7 +921,7 @@
 				<viewtype label="$LOCALIZE[544]">list</viewtype>
 				<pagecontrol>60</pagecontrol>
 				<scrolltime>200</scrolltime>
-				<visible>Container.Content(TVShows) | Container.Content(Movies) | Container.Content(Episodes)</visible>
+				<visible>Container.Content(TVShows) | Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)</visible>
 				<itemlayout height="40" width="580">
 					<control type="image">
 						<posx>0</posx>
@@ -1083,7 +1083,7 @@
 			<control type="group">
 				<posx>710</posx>
 				<posy>70</posy>
-				<visible>Control.IsVisible(504) + [Container.Content(Movies) | Container.Content(TVShows)]</visible>
+				<visible>Control.IsVisible(504) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(MusicVideos)]</visible>
 				<control type="image">
 					<posx>0</posx>
 					<posy>0</posy>
@@ -1322,7 +1322,7 @@
 				<viewtype label="$LOCALIZE[544] 3">list</viewtype>
 				<pagecontrol>60</pagecontrol>
 				<scrolltime>200</scrolltime>
-				<visible>Container.Content(TVShows) | Container.Content(Movies) | Container.Content(Episodes) | Container.Content(Seasons)</visible>
+				<visible>Container.Content(TVShows) | Container.Content(Movies) | Container.Content(Episodes) | Container.Content(Seasons) | Container.Content(MusicVideos)</visible>
 				<itemlayout condition="!Skin.HasSetting(HideWatchStatus)" height="40" width="345">
 					<control type="image">
 						<posx>0</posx>
@@ -1481,7 +1481,7 @@
 			<control type="group">
 				<posx>470</posx>
 				<posy>70</posy>
-				<visible>Control.IsVisible(515) + Container.Content(Movies)</visible>
+				<visible>Control.IsVisible(515) + [Container.Content(Movies)  | Container.Content(MusicVideos)]</visible>
 				<control type="image">
 					<posx>0</posx>
 					<posy>0</posy>
