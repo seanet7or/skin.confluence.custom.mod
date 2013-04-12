@@ -138,6 +138,15 @@
 					<align>center</align>
 					<aligny>center</aligny>
 				</control>
+				<control type="radiobutton" id="94">
+					<description>TVShow Character Art</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>31318</label>
+					<onclick>Skin.ToggleSetting(View503CharacterArt)</onclick>
+					<selected>Skin.HasSetting(View503CharacterArt)</selected>
+					<visible>Control.IsVisible(503) + Container.Content(TVShows)</visible>
+				</control>
 				<control type="radiobutton" id="95">
 					<description>Show Season FanArt</description>
 					<textwidth>170</textwidth>
