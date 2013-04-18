@@ -137,8 +137,10 @@
 						</control>
 					</focusedlayout>
 					<include condition="!Skin.HasSetting(RandomWidgetInfo) + !Skin.HasSetting(SuggestedWidgetInfo)">RecentVideoContent</include>
-					<include condition="Skin.HasSetting(RandomWidgetInfo)">RandomVideoContent</include>
-					<include condition="Skin.HasSetting(SuggestedWidgetInfo)">SuggestedVideoContent</include>
+					<include condition="Skin.HasSetting(RandomWidgetInfo) + !SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">RecentVideoContent</include>
+					<include condition="Skin.HasSetting(RandomWidgetInfo) + SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">RandomVideoContent</include>
+					<include condition="Skin.HasSetting(SuggestedWidgetInfo) + SubString(Window(Home).Property(SkinWidgets_Recommended),true)">SuggestedVideoContent</include>
+					<include condition="Skin.HasSetting(SuggestedWidgetInfo) + !SubString(Window(Home).Property(SkinWidgets_Recommended),true)">RecentVideoContent</include>
 				</control>
 				<control type="button">
 					<description>left Arrow</description>
@@ -360,8 +362,10 @@
 						</control>
 					</focusedlayout>
 					<include condition="!Skin.HasSetting(RandomWidgetInfo) + !Skin.HasSetting(SuggestedWidgetInfo)">RecentTVShowContent</include>
-					<include condition="Skin.HasSetting(RandomWidgetInfo)">RandomTVShowContent</include>
-					<include condition="Skin.HasSetting(SuggestedWidgetInfo)">SuggestedTVShowContent</include>
+					<include condition="Skin.HasSetting(RandomWidgetInfo) + !SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">RecentTVShowContent</include>
+					<include condition="Skin.HasSetting(RandomWidgetInfo) + SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">RandomTVShowContent</include>
+					<include condition="Skin.HasSetting(SuggestedWidgetInfo) + SubString(Window(Home).Property(SkinWidgets_Recommended),true)">SuggestedTVShowContent</include>
+					<include condition="Skin.HasSetting(SuggestedWidgetInfo) + !SubString(Window(Home).Property(SkinWidgets_Recommended),true)">RecentTVShowContent</include>
 				</control>
 				<control type="button">
 					<description>left Arrow</description>
@@ -543,8 +547,10 @@
 						</control>
 					</focusedlayout>
 					<include condition="!Skin.HasSetting(RandomWidgetInfo) + !Skin.HasSetting(SuggestedWidgetInfo)">RecentAlbumContent</include>
-					<include condition="Skin.HasSetting(RandomWidgetInfo)">RandomAlbumContent</include>
-					<include condition="Skin.HasSetting(SuggestedWidgetInfo)">SuggestedAlbumContent</include>
+					<include condition="Skin.HasSetting(RandomWidgetInfo) + !SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">RecentAlbumContent</include>
+					<include condition="Skin.HasSetting(RandomWidgetInfo) + SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">RandomAlbumContent</include>
+					<include condition="Skin.HasSetting(SuggestedWidgetInfo) + SubString(Window(Home).Property(SkinWidgets_Recommended),true)">SuggestedAlbumContent</include>
+					<include condition="Skin.HasSetting(SuggestedWidgetInfo) + !SubString(Window(Home).Property(SkinWidgets_Recommended),true)">RecentAlbumContent</include>
 				</control>
 				<control type="button">
 					<description>left Arrow</description>
@@ -698,8 +704,10 @@
 						</control>
 					</focusedlayout>
 					<include condition="!Skin.HasSetting(RandomWidgetInfo) + !Skin.HasSetting(SuggestedWidgetInfo)">RecentConcertContent</include>
-					<include condition="Skin.HasSetting(RandomWidgetInfo)">RandomConcertContent</include>
-					<include condition="Skin.HasSetting(SuggestedWidgetInfo)">SuggestedConcertContent</include>
+					<include condition="Skin.HasSetting(RandomWidgetInfo) + !SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">RecentConcertContent</include>
+					<include condition="Skin.HasSetting(RandomWidgetInfo) + SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">RandomConcertContent</include>
+					<include condition="Skin.HasSetting(SuggestedWidgetInfo) + SubString(Window(Home).Property(SkinWidgets_Recommended),true)">SuggestedConcertContent</include>
+					<include condition="Skin.HasSetting(SuggestedWidgetInfo) + !SubString(Window(Home).Property(SkinWidgets_Recommended),true)">RecentConcertContent</include>
 				</control>
 				<control type="button">
 					<description>left Arrow</description>
