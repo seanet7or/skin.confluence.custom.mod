@@ -137,6 +137,15 @@
 					<align>center</align>
 					<aligny>center</aligny>
 				</control>
+				<control type="radiobutton" id="93">
+					<description>TVShow Character Art</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>31090</label>
+					<onclick>Skin.ToggleSetting(View515HideTVBanners)</onclick>
+					<selected>!Skin.HasSetting(View515HideTVBanners)</selected>
+					<visible>Control.IsVisible(515) + Container.Content(TVShows)</visible>
+				</control>
 				<control type="radiobutton" id="94">
 					<description>TVShow Character Art</description>
 					<textwidth>170</textwidth>

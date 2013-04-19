@@ -1388,7 +1388,7 @@
 				<pagecontrol>60</pagecontrol>
 				<scrolltime>200</scrolltime>
 				<visible>Container.Content(TVShows) | Container.Content(Movies) | Container.Content(Episodes) | Container.Content(Seasons) | Container.Content(MusicVideos)</visible>
-				<itemlayout condition="!Skin.HasSetting(HideWatchStatus)" height="40" width="345">
+				<itemlayout condition="!Container.Content(TVShows) | Skin.HasSetting(View515HideTVBanners)" height="40" width="345">
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
@@ -1407,6 +1407,20 @@
 						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
+						<visible>!Skin.HasSetting(HideWatchStatus)</visible>
+					</control>
+					<control type="label">
+						<posx>10</posx>
+						<posy>0</posy>
+						<width>335</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$VAR[MainItemLabel]</label>
+						<visible>Skin.HasSetting(HideWatchStatus)</visible>
 					</control>
 					<control type="image">
 						<posx>315</posx>
@@ -1414,7 +1428,7 @@
 						<width>25</width>
 						<height>21</height>
 						<texture>$INFO[ListItem.Overlay]</texture>
-						<visible>!ListItem.IsResumable</visible>
+						<visible>!ListItem.IsResumable + !Skin.HasSetting(HideWatchStatus)</visible>
 					</control>
 					<control type="image">
 						<posx>320</posx>
@@ -1422,10 +1436,10 @@
 						<width>16</width>
 						<height>16</height>
 						<texture>OverlayWatching.png</texture>
-						<visible>ListItem.IsResumable</visible>
+						<visible>ListItem.IsResumable + !Skin.HasSetting(HideWatchStatus)</visible>
 					</control>
 				</itemlayout>
-				<focusedlayout condition="!Skin.HasSetting(HideWatchStatus)" height="40" width="345">
+				<focusedlayout condition="!Container.Content(TVShows) | Skin.HasSetting(View515HideTVBanners)" height="40" width="345">
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
@@ -1455,6 +1469,20 @@
 						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
+						<visible>!Skin.HasSetting(HideWatchStatus)</visible>
+					</control>
+					<control type="label">
+						<posx>10</posx>
+						<posy>0</posy>
+						<width>335</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>white</textcolor>
+						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$VAR[MainItemLabel]</label>
+						<visible>Skin.HasSetting(HideWatchStatus)</visible>
 					</control>
 					<control type="image">
 						<posx>315</posx>
@@ -1462,7 +1490,7 @@
 						<width>25</width>
 						<height>21</height>
 						<texture>$INFO[ListItem.Overlay]</texture>
-						<visible>!ListItem.IsResumable</visible>
+						<visible>!ListItem.IsResumable + !Skin.HasSetting(HideWatchStatus)</visible>
 					</control>
 					<control type="image">
 						<posx>320</posx>
@@ -1470,60 +1498,101 @@
 						<width>16</width>
 						<height>16</height>
 						<texture>OverlayWatching.png</texture>
-						<visible>ListItem.IsResumable</visible>
+						<visible>ListItem.IsResumable + !Skin.HasSetting(HideWatchStatus)</visible>
 					</control>
 				</focusedlayout>
-				<itemlayout condition="Skin.HasSetting(HideWatchStatus)" height="40" width="345">
+				<itemlayout condition="Container.Content(TVShows) + !Skin.HasSetting(View515HideTVBanners)" height="70" width="345">
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>345</width>
-						<height>41</height>
+						<height>70</height>
+						<aspectratio align="left" aligny="bottom">keep</aspectratio>
+						<bordertexture border="5">button-nofocus.png</bordertexture>
+						<bordersize>5</bordersize>
+						<texture background="true">$INFO[ListItem.Art(banner)]</texture>
+						<visible>!IsEmpty(ListItem.Art(banner))</visible>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>345</width>
+						<height>71</height>
 						<texture border="0,2,0,2">MenuItemNF.png</texture>
+						<visible>IsEmpty(ListItem.Art(banner))</visible>
 					</control>
 					<control type="label">
 						<posx>10</posx>
 						<posy>0</posy>
 						<width>340</width>
-						<height>40</height>
+						<height>70</height>
 						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
+						<visible>IsEmpty(ListItem.Art(banner))</visible>
+					</control>
+					<control type="image">
+						<posx>313</posx>
+						<posy>38</posy>
+						<width>32</width>
+						<height>32</height>
+						<texture>$INFO[ListItem.Overlay]</texture>
+						<visible>!Skin.HasSetting(HideWatchStatus)</visible>
 					</control>
 				</itemlayout>
-				<focusedlayout condition="Skin.HasSetting(HideWatchStatus)" height="40" width="345">
+				<focusedlayout condition="Container.Content(TVShows) + !Skin.HasSetting(View515HideTVBanners)" height="70" width="345">
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>345</width>
-						<height>41</height>
+						<height>70</height>
+						<aspectratio align="left" aligny="bottom">keep</aspectratio>
+						<bordertexture border="5">folder-focus.png</bordertexture>
+						<bordersize>5</bordersize>
+						<texture background="true">$INFO[ListItem.Art(banner)]</texture>
+						<visible>!IsEmpty(ListItem.Art(banner))</visible>
+					</control>					
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>345</width>
+						<height>71</height>
 						<texture border="0,2,0,2">MenuItemNF.png</texture>
-						<visible>!Control.HasFocus(515)</visible>
+						<visible>!Control.HasFocus(515) + IsEmpty(ListItem.Art(banner))</visible>
 						<include>VisibleFadeEffect</include>
 					</control>
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>345</width>
-						<height>41</height>
+						<height>71</height>
 						<texture border="0,2,0,2">MenuItemFO.png</texture>
-						<visible>Control.HasFocus(515)</visible>
+						<visible>Control.HasFocus(515) + IsEmpty(ListItem.Art(banner))</visible>
 						<include>VisibleFadeEffect</include>
 					</control>
 					<control type="label">
 						<posx>10</posx>
 						<posy>0</posy>
 						<width>340</width>
-						<height>40</height>
+						<height>70</height>
 						<font>font13</font>
 						<textcolor>white</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
+						<visible>IsEmpty(ListItem.Art(banner))</visible>
+					</control>
+					<control type="image">
+						<posx>313</posx>
+						<posy>38</posy>
+						<width>32</width>
+						<height>32</height>
+						<texture>$INFO[ListItem.Overlay]</texture>
+						<visible>!Skin.HasSetting(HideWatchStatus)</visible>
 					</control>
 				</focusedlayout>
 			</control>
