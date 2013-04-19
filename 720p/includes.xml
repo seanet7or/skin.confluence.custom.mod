@@ -63,9 +63,10 @@
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Music)">$INFO[Window.Property(Music.AlbumsCount),[B][COLOR=blue]$LOCALIZE[132]: [/COLOR][/B]]     $INFO[Window.Property(Music.ArtistsCount),[B][COLOR=blue]$LOCALIZE[133]: [/COLOR][/B]]     $INFO[Window.Property(Music.SongsCount),[B][COLOR=blue]$LOCALIZE[134]: [/COLOR][/B]]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayDisc) + System.HasMediaDVD">$INFO[System.DVDLabel,[B][COLOR=blue]$LOCALIZE[427]: [/COLOR][/B]]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayDisc) + !System.HasMediaDVD">$LOCALIZE[31305,[B][COLOR=blue]$LOCALIZE[427]: [/COLOR][/B]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Weather)">[B][COLOR=blue]$LOCALIZE[143][/COLOR][/B] $INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits]  [B][COLOR=blue]$LOCALIZE[31302][/COLOR][/B] $INFO[Window(Weather).Property(Day0.Outlook)]</value>
-		<value condition="!substring(System.CPUTemperature,?)">$INFO[Network.IPAddress,[B][COLOR=blue]IP: [/COLOR][/B]]     $INFO[System.CPUTemperature,[B][COLOR=blue]$LOCALIZE[401]: [/COLOR][/B]]     $INFO[System.CPUUsage,[B][COLOR=blue]CPU: [/COLOR][/B]]</value>
-		<value>$INFO[Network.IPAddress,[B][COLOR=blue]IP: [/COLOR][/B]]     $INFO[system.memory(used.percent),[B][COLOR=blue]RAM: [/COLOR][/B]]     $INFO[System.CPUUsage,[B][COLOR=blue]CPU: [/COLOR][/B]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Weather) + Weather.IsFetched">[B][COLOR=blue]$LOCALIZE[143][/COLOR][/B] $INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits]  [B][COLOR=blue]$LOCALIZE[31302][/COLOR][/B] $INFO[Window(Weather).Property(Day0.Outlook)]</value>
+		<value condition="!substring(System.CPUTemperature,?) + !substring(System.GPUTemperature,?)">$INFO[Network.IPAddress,[B][COLOR=blue]IP: [/COLOR][/B]]     $INFO[System.CPUTemperature,[B][COLOR=blue]$LOCALIZE[401]: [/COLOR][/B]]     $INFO[System.GPUTemperature,[B][COLOR=blue]$LOCALIZE[141]: [/COLOR][/B]]</value>
+		<value condition="!substring(System.CPUTemperature,?)">$INFO[Network.IPAddress,[B][COLOR=blue]IP: [/COLOR][/B]]     $INFO[System.CPUTemperature,[B][COLOR=blue]$LOCALIZE[401]: [/COLOR][/B]]     $INFO[System.UsedSpacePercent,[B][COLOR=blue]$LOCALIZE[155]: [/COLOR][/B]]</value>
+		<value>$INFO[Network.IPAddress,[B][COLOR=blue]IP: [/COLOR][/B]]     $INFO[system.memory(used.percent),[B][COLOR=blue]RAM: [/COLOR][/B]]     $INFO[System.UsedSpacePercent,[B][COLOR=blue]$LOCALIZE[155]: [/COLOR][/B]]</value>
 	</variable>
 	<variable name="WidgetTitle">
 		<value condition="Skin.HasSetting(RandomWidgetInfo) + SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">$LOCALIZE[31075]</value>
@@ -73,12 +74,33 @@
 		<value>$LOCALIZE[31074]</value>
 	</variable>
 	<variable name="MusicHeaderLabel">
-		<value condition="MusicPartyMode.Enabled">[B]($LOCALIZE[589])[/B] $INFO[musicplayer.Playlistposition,$LOCALIZE[554]: ]$INFO[musicplayer.Playlistlength, / ]</value>
+		<value condition="MusicPartyMode.Enabled">[B]($LOCALIZE[589])[/B]</value>
 		<value condition="Playlist.IsRandom">[B]($LOCALIZE[31085])[/B] $INFO[musicplayer.Playlistposition,$LOCALIZE[554]: ]$INFO[musicplayer.Playlistlength, / ]</value>
 		<value condition="Playlist.IsRepeat">[B]($LOCALIZE[31086])[/B] $INFO[musicplayer.Playlistposition,$LOCALIZE[554]: ]$INFO[musicplayer.Playlistlength, / ]</value>
 		<value condition="Playlist.IsRepeatOne">[B]($LOCALIZE[31087])[/B] $INFO[musicplayer.Playlistposition,$LOCALIZE[554]: ]$INFO[musicplayer.Playlistlength, / ]</value>
 		<value>$INFO[musicplayer.Playlistposition,$LOCALIZE[554]: ]$INFO[musicplayer.Playlistlength, / ]</value>
 	</variable>
+	<variable name="NextFiveSongScroller" type="text">
+		<value condition="!IsEmpty(MusicPlayer.offset(5).Artist) + Player.HasAudio">[COLOR=blue][B]$LOCALIZE[31088]   1:[/B][/COLOR]  $INFO[MusicPlayer.offset(1).Artist] - $INFO[MusicPlayer.offset(1).Title]    [COLOR=blue][B]2:[/B][/COLOR]  $INFO[MusicPlayer.offset(2).Artist] - $INFO[MusicPlayer.offset(2).Title]    [COLOR=blue][B]3:[/B][/COLOR]  $INFO[MusicPlayer.offset(3).Artist] - $INFO[MusicPlayer.offset(3).Title]    [COLOR=blue][B]4:[/B][/COLOR]  $INFO[MusicPlayer.offset(4).Artist] - $INFO[MusicPlayer.offset(4).Title]    [COLOR=blue][B]5:[/B][/COLOR]  $INFO[MusicPlayer.offset(5).Artist] - $INFO[MusicPlayer.offset(5).Title]</value>
+		<value condition="!IsEmpty(MusicPlayer.offset(4).Artist) + IsEmpty(MusicPlayer.offset(5).Artist) + Player.HasAudio">[COLOR=blue][B]$LOCALIZE[31088]   1:[/B][/COLOR]  $INFO[MusicPlayer.offset(1).Artist] - $INFO[MusicPlayer.offset(1).Title]    [COLOR=blue][B]2:[/B][/COLOR]  $INFO[MusicPlayer.offset(2).Artist] - $INFO[MusicPlayer.offset(2).Title]    [COLOR=blue][B]3:[/B][/COLOR]  $INFO[MusicPlayer.offset(3).Artist] - $INFO[MusicPlayer.offset(3).Title]    [COLOR=blue][B]4:[/B][/COLOR]  $INFO[MusicPlayer.offset(4).Artist] - $INFO[MusicPlayer.offset(4).Title]</value>
+		<value condition="!IsEmpty(MusicPlayer.offset(3).Artist) + IsEmpty(MusicPlayer.offset(4).Artist) + IsEmpty(MusicPlayer.offset(5).Artist) + Player.HasAudio">[COLOR=blue][B]$LOCALIZE[31088]   1:[/B][/COLOR]  $INFO[MusicPlayer.offset(1).Artist] - $INFO[MusicPlayer.offset(1).Title]    [COLOR=blue][B]2:[/B][/COLOR]  $INFO[MusicPlayer.offset(2).Artist] - $INFO[MusicPlayer.offset(2).Title]     [COLOR=blue][B]3:[/B][/COLOR]  $INFO[MusicPlayer.offset(3).Artist] - $INFO[MusicPlayer.offset(3).Title]</value>
+		<value condition="!IsEmpty(MusicPlayer.offset(2).Artist) + IsEmpty(MusicPlayer.offset(3).Artist) + IsEmpty(MusicPlayer.offset(4).Artist) + IsEmpty(MusicPlayer.offset(5).Artist) + Player.HasAudio">[COLOR=blue][B]$LOCALIZE[31088]   1:[/B][/COLOR]  $INFO[MusicPlayer.offset(1).Artist] - $INFO[MusicPlayer.offset(1).Title]    [COLOR=blue][B]2:[/B][/COLOR]  $INFO[MusicPlayer.offset(2).Artist] - $INFO[MusicPlayer.offset(2).Title]</value>
+		<value condition="!IsEmpty(MusicPlayer.offset(1).Artist) + IsEmpty(MusicPlayer.offset(2).Artist) + IsEmpty(MusicPlayer.offset(3).Artist) + IsEmpty(MusicPlayer.offset(4).Artist) + IsEmpty(MusicPlayer.offset(5).Artist) + Player.HasAudio">[COLOR=blue][B]$LOCALIZE[31088]   1:[/B][/COLOR]  $INFO[MusicPlayer.offset(1).Artist] - $INFO[MusicPlayer.offset(1).Title]</value>
+	</variable>
+	<include name="CDArtSpinner">
+		<animation effect="slide" start="-70,0" end="0,0" time="900" delay="2000" condition="Player.HasMedia">conditional</animation>
+		<animation effect="rotate" end="-360" center="auto" time="2400" loop="true" reversible="false" condition="Player.Playing">Conditional</animation>
+		<animation effect="rotate" end="-360" center="auto" time="2000" loop="true" reversible="false" condition="Player.Forwarding2x">Conditional</animation>
+		<animation effect="rotate" end="-360" center="auto" time="1600" loop="true" reversible="false" condition="Player.Forwarding4x">Conditional</animation>
+		<animation effect="rotate" end="-360" center="auto" time="1200" loop="true" reversible="false" condition="Player.Forwarding8x">Conditional</animation>
+		<animation effect="rotate" end="-360" center="auto" time="800" loop="true" reversible="false" condition="Player.Forwarding16x">Conditional</animation>
+		<animation effect="rotate" end="-360" center="auto" time="400" loop="true" reversible="false" condition="Player.Forwarding32x">Conditional</animation>
+		<animation effect="rotate" end="720" center="auto" time="2000" loop="true" reversible="false" condition="Player.Rewinding2x">Conditional</animation>
+		<animation effect="rotate" end="720" center="auto" time="1600" loop="true" reversible="false" condition="Player.Rewinding4x">Conditional</animation>
+		<animation effect="rotate" end="720" center="auto" time="1200" loop="true" reversible="false" condition="Player.Rewinding8x">Conditional</animation>
+		<animation effect="rotate" end="720" center="auto" time="800" loop="true" reversible="false" condition="Player.Rewinding16x">Conditional</animation>
+		<animation effect="rotate" end="720" center="auto" time="400" loop="true" reversible="false" condition="Player.Rewinding32x">Conditional</animation>
+	</include>
 	<variable name="MainItemLabel">
 		<value condition="StringCompare(ListItem.Label,..)">$LOCALIZE[31316]</value>
 		<value>$INFO[ListItem.Label]</value>

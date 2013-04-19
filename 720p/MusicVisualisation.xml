@@ -134,21 +134,43 @@
 					<width>500</width>
 					<height>500</height>
 					<aligny>center</aligny>
-					<texture>livecdcase/DefaultCDArt.png</texture>
+					<texture  fallback="livecdcase/DefaultCDArt.png" diffuse="livecdcase/cddiffuse.png" background="true">$INFO[Player.FolderPath,,cdart.png]</texture>
 					<aspectratio align="center">keep</aspectratio>
-					<animation effect="rotate" end="-360" center="auto" time="4000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+					<include>CDArtSpinner</include>
+				</control>
+				<visible>!Skin.HasSetting(HideVisualizationCDart) + Skin.HasSetting(HideTraditionalCDart)</visible>
+			</control>
+			<control type="group">
+				<posx>10</posx>
+				<posy>215r</posy>
+				<control type="image">
+					<description>Cd overlay</description>
+					<posx>120</posx>
+					<posy>15</posy>>
+					<width>170</width>
+					<height>175</height>
+					<include>CDArtSpinner</include>
+					<texture fallback="livecdcase/DefaultCDArt.png" background="true">$INFO[Player.FolderPath,,cdart.png]</texture>
+					<aspectratio align="center">keep</aspectratio>
 				</control>
 				<control type="image">
-					<posx>-250</posx>
-					<posy>250r</posy>
-					<width>500</width>
-					<height>500</height>
-					<aligny>center</aligny>
-					<texture diffuse="livecdcase/cddiffuse.png" background="true">$INFO[Player.FolderPath]cdart.png</texture>
-					<aspectratio align="center">keep</aspectratio>
-					<animation effect="rotate" end="-360" center="auto" time="4000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+					<description>Cover Image</description>
+					<posx>40</posx>
+					<posy>13</posy>
+					<width>180</width>
+					<height>180</height>
+					<aspectratio aligny="bottom">stretch</aspectratio>
+					<texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[MusicPlayer.Cover]</texture>
 				</control>
-				<visible>!Skin.HasSetting(HideVisualizationCDart)</visible>
+				<control type="image">
+					<posx>4</posx>
+					<posy>3</posy>
+                    <width>229</width>
+                    <height>207</height>
+                    <bordertexture>livecdcase/cdshadow.png</bordertexture>
+                    <texture background="true">livecdcase/cdglass.png</texture>
+                </control>
+				<visible>!Skin.HasSetting(HideVisualizationCDart) + !Skin.HasSetting(HideTraditionalCDart)</visible>
 			</control>
 			<control type="image">
 				<description>cover image</description>
@@ -233,17 +255,20 @@
 						</control>
 					</control>
 				</control>
-				<control type="label">
+				<control type="fadelabel" id="1">
+					<description>Next Five Songs</description>
 					<posx>0</posx>
 					<posy>180</posy>
-					<width>910</width>
+					<width>950</width>
 					<height>25</height>
-					<label>$LOCALIZE[209]: $INFO[MusicPlayer.offset(1).Artist,, - ]$INFO[MusicPlayer.offset(1).Title]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12</font>
-					<textcolor>grey</textcolor>
 					<scroll>true</scroll>
+					<scrollout>true</scrollout>
+					<scrollspeed>30</scrollspeed>
+					<pauseatend>400</pauseatend>
+					<label>$VAR[NextFiveSongScroller]</label>
+					<font>font12</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<visible>MusicPlayer.HasNext + !Window.IsVisible(MusicOSD)</visible>
 					<animation effect="fade" time="200">VisibleChange</animation>
 				</control>

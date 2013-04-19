@@ -1133,7 +1133,7 @@
 		<control type="group">
 			<posx>0</posx>
 			<posy>33r</posy>
-			<visible>system.getbool(lookandfeel.enablerssfeeds)</visible>
+			<visible>system.getbool(lookandfeel.enablerssfeeds) | Player.HasMedia</visible>
 			<include>Window_OpenClose_Animation</include>
 			<control type="rss">
 				<description>RSS feed</description>
@@ -1146,7 +1146,7 @@
 				<textcolor>blue</textcolor>
 				<titlecolor>blue</titlecolor>
 				<headlinecolor>white</headlinecolor>
-				<visible>!Skin.HasSetting(AutoHidePowerBtn)</visible>
+				<visible>!Skin.HasSetting(AutoHidePowerBtn) + !Player.HasMedia</visible>
 			</control>
 			<control type="rss">
 				<description>RSS feed</description>
@@ -1159,7 +1159,39 @@
 				<textcolor>blue</textcolor>
 				<titlecolor>blue</titlecolor>
 				<headlinecolor>white</headlinecolor>
-				<visible>Skin.HasSetting(AutoHidePowerBtn)</visible>
+				<visible>Skin.HasSetting(AutoHidePowerBtn) + !Player.HasMedia</visible>
+			</control>
+			<control type="fadelabel" id="1">
+				<description>Next Five Songs</description>
+				<posx>100</posx>
+				<posy>0</posy>
+				<height>30</height>
+				<width>1145</width>
+				<scroll>true</scroll>
+				<scrollout>true</scrollout>
+				<pauseatend>200</pauseatend>
+				<label>$VAR[NextFiveSongScroller]</label>
+				<font>font12</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<textoffsetx>20</textoffsetx>
+				<visible>!Skin.HasSetting(AutoHidePowerBtn) + Player.HasMedia</visible>
+			</control>
+			<control type="fadelabel" id="1">
+				<description>Next Five Songs</description>
+				<posx>45</posx>
+				<posy>0</posy>
+				<height>30</height>
+				<width>1200</width>
+				<scroll>true</scroll>
+				<scrollout>true</scrollout>
+				<pauseatend>200</pauseatend>
+				<label>$VAR[NextFiveSongScroller]</label>
+				<font>font12</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<textoffsetx>20</textoffsetx>
+				<visible>Skin.HasSetting(AutoHidePowerBtn) + Player.HasMedia</visible>
 			</control>
 			<control type="image">
 				<description>RSS background</description>
