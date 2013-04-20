@@ -137,8 +137,17 @@
 					<align>center</align>
 					<aligny>center</aligny>
 				</control>
+				<control type="radiobutton" id="92">
+					<description>individual Genre Icons</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>31091</label>
+					<onclick>Skin.ToggleSetting(View501GenreIcons)</onclick>
+					<selected>Skin.HasSetting(View501GenreIcons)</selected>
+					<visible>Control.IsVisible(501) + [Container.Content(TVShows) | Container.Content(Movies)]</visible>
+				</control>
 				<control type="radiobutton" id="93">
-					<description>TVShow Character Art</description>
+					<description>TVShow Banners Banners</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
 					<label>31090</label>

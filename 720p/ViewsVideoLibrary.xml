@@ -210,6 +210,28 @@
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Year]</label>
 			</control>
+			<control type="grouplist">
+				<description>Media Genre Flagging</description>
+				<posx>100</posx>
+				<posy>580</posy>
+				<width>1080</width>
+				<align>center</align>
+				<itemgap>0</itemgap>
+				<orientation>horizontal</orientation>
+				<include>MultiVideoGenreFlagging</include>
+				<visible>Skin.HasSetting(View501GenreIcons)</visible>
+			</control>
+			<control type="grouplist">
+				<description>Media Genre Flagging</description>
+				<posx>135</posx>
+				<posy>635</posy>
+				<width>1080</width>
+				<align>center</align>
+				<itemgap>0</itemgap>
+				<orientation>horizontal</orientation>
+				<include>GenreText</include>
+				<visible>Skin.HasSetting(View501GenreIcons)</visible>
+			</control>			
 			<control type="label">
 				<posx>0</posx>
 				<posy>580</posy>
@@ -222,6 +244,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Duration,$LOCALIZE[2050] , $LOCALIZE[12391]]</label>
+				<visible>!Skin.HasSetting(View501GenreIcons)</visible>
 			</control>
 			<control type="grouplist">
 				<description>Media Codec Flagging Images</description>
@@ -237,6 +260,7 @@
 				<include>AudioChannelsFlaggingConditions</include>
 				<include>AspectCodecFlaggingConditions</include>
 				<include>VideoTypeHackFlaggingConditions</include>
+				<visible>!Skin.HasSetting(View501GenreIcons)</visible>
 			</control>
 		</control>
 		<control type="group">
@@ -315,6 +339,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Genre]</label>
+				<visible>!Skin.HasSetting(View501GenreIcons)</visible>
 			</control>
 			<control type="label">
 				<posx>0</posx>
@@ -327,6 +352,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Episode,, $LOCALIZE[20453]]</label>
+				<animation effect="slide" start="0,0" end="0,-45" time="0" condition="Skin.HasSetting(View501GenreIcons)">Conditional</animation>				
 			</control>
 			<control type="label">
 				<posx>0</posx>
@@ -339,7 +365,30 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<label>($INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102]] - $INFO[ListItem.Property(UnWatchedEpisodes), , $LOCALIZE[16101]])</label>
+				<animation effect="slide" start="0,0" end="0,-55" time="0" condition="Skin.HasSetting(View501GenreIcons)">Conditional</animation>							
 			</control>
+			<control type="grouplist">
+				<description>Media Genre Flagging</description>
+				<posx>100</posx>
+				<posy>580</posy>
+				<width>1080</width>
+				<align>center</align>
+				<itemgap>0</itemgap>
+				<orientation>horizontal</orientation>
+				<include>MultiVideoGenreFlagging</include>
+				<visible>Skin.HasSetting(View501GenreIcons)</visible>
+			</control>
+			<control type="grouplist">
+				<description>Media Genre Flagging</description>
+				<posx>135</posx>
+				<posy>635</posy>
+				<width>1080</width>
+				<align>center</align>
+				<itemgap>0</itemgap>
+				<orientation>horizontal</orientation>
+				<include>GenreText</include>
+				<visible>Skin.HasSetting(View501GenreIcons)</visible>
+			</control>						
 		</control>
 	</include>
 	<include name="PosterWrapView2_Fanart">
