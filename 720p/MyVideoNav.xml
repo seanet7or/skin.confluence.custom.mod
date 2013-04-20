@@ -137,6 +137,16 @@
 					<align>center</align>
 					<aligny>center</aligny>
 				</control>
+				<control type="radiobutton" id="91">
+					<description>Subtitle Flags</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>31092</label>
+					<onclick>Skin.ToggleSetting(ViewSubTitleFlag)</onclick>
+					<selected>Skin.HasSetting(ViewSubTitleFlag)</selected>
+					<visible>Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(503) | Control.IsVisible(504)</visible>
+					<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
+				</control>
 				<control type="radiobutton" id="92">
 					<description>individual Genre Icons</description>
 					<textwidth>170</textwidth>

@@ -601,9 +601,21 @@
 						<width>40</width>
 						<height>26</height>
 						<texture>$INFO[ListItem.VideoResolution,flagging/lists/,.png]</texture>
-						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
+						<visible>!Skin.HasSetting(ViewSubTitleFlag)</visible>
+						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 					</control>
+					<control type="image">
+						<posx>521</posx>
+						<posy>8</posy>
+						<width>26</width>
+						<height>26</height>
+						<fadetime>IconCrossfadeTime</fadetime>
+						<texture>$INFO[ListItem.SubtitleLanguage,Language/,.png]</texture>
+						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
+						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
+						<visible>Skin.HasSetting(ViewSubTitleFlag) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
+					</control>					
 					<control type="image">
 						<posx>550</posx>
 						<posy>14</posy>
@@ -681,9 +693,21 @@
 						<width>40</width>
 						<height>26</height>
 						<texture>$INFO[ListItem.VideoResolution,flagging/lists/,.png]</texture>
-						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
+						<visible>!Skin.HasSetting(ViewSubTitleFlag)</visible>
+						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 					</control>
+					<control type="image">
+						<posx>521</posx>
+						<posy>8</posy>
+						<width>26</width>
+						<height>26</height>
+						<fadetime>IconCrossfadeTime</fadetime>
+						<texture>$INFO[ListItem.SubtitleLanguage,Language/,.png]</texture>
+						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
+						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
+						<visible>Skin.HasSetting(ViewSubTitleFlag) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
+					</control>					
 					<control type="image">
 						<posx>550</posx>
 						<posy>14</posy>
@@ -1063,9 +1087,21 @@
 						<width>40</width>
 						<height>26</height>
 						<texture>$INFO[ListItem.VideoResolution,flagging/lists/,.png]</texture>
-						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
+						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
+						<visible>!Skin.HasSetting(ViewSubTitleFlag)</visible>
 					</control>
+					<control type="image">
+						<posx>521</posx>
+						<posy>8</posy>
+						<width>26</width>
+						<height>26</height>
+						<fadetime>IconCrossfadeTime</fadetime>
+						<texture>$INFO[ListItem.SubtitleLanguage,Language/,.png]</texture>
+						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
+						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
+						<visible>Skin.HasSetting(ViewSubTitleFlag) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
+					</control>					
 					<control type="image">
 						<posx>550</posx>
 						<posy>14</posy>
@@ -1143,9 +1179,21 @@
 						<width>40</width>
 						<height>26</height>
 						<texture>$INFO[ListItem.VideoResolution,flagging/lists/,.png]</texture>
-						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
+						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
+						<visible>!Skin.HasSetting(ViewSubTitleFlag)</visible>
 					</control>
+					<control type="image">
+						<posx>521</posx>
+						<posy>8</posy>
+						<width>26</width>
+						<height>26</height>
+						<fadetime>IconCrossfadeTime<visible>Skin.HasSetting(ViewSubTitleFlag) + !IsEmpty(ListItem.SubtitleLanguage)</visible></fadetime>
+						<texture>$INFO[ListItem.SubtitleLanguage,Language/,.png]</texture>
+						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
+						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
+						<visible>Skin.HasSetting(ViewSubTitleFlag) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
+					</control>					
 					<control type="image">
 						<posx>550</posx>
 						<posy>14</posy>
