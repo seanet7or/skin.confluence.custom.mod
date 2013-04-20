@@ -97,6 +97,10 @@
 		<animation effect="rotate" end="720" center="auto" time="800" loop="true" reversible="false" condition="Player.Rewinding16x">Conditional</animation>
 		<animation effect="rotate" end="720" center="auto" time="400" loop="true" reversible="false" condition="Player.Rewinding32x">Conditional</animation>
 	</include>
+	<variable name="GenreFlagPath">
+		<!--value condition="Skin.HasSetting(UsrGenreFanArt)">MovieGenre/</value-->
+		<value>DefaultGenre/</value>
+	</variable>
 	<variable name="MainItemLabel">
 		<value condition="StringCompare(ListItem.Label,..)">$LOCALIZE[31316]</value>
 		<value>$INFO[ListItem.Label]</value>
