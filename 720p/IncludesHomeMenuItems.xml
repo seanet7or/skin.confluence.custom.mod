@@ -340,6 +340,70 @@
 			<texture border="0,0,0,3">HomeSubEnd.png</texture>
 		</control>
 	</include>	
+	
+	
+	<include name="HomeSubMenuFavourites">
+		<control type="image" id="90191">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+			<visible>IntegerGreaterThan(Window(Home).Property(favourite.count),0)</visible>
+		</control>
+		<control type="button" id="90192">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Window(0).Property(favourite.1.name)]</label>
+			<onclick>$INFO[Window(0).Property(favourite.1.path)]</onclick>
+			<visible>!IsEmpty(Window(0).Property(favourite.1.name))</visible>
+			<visible>!IsEmpty(Window(0).Property(favourite.1.path))</visible>
+		</control>
+		<control type="button" id="90193">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Window(0).Property(favourite.2.name)]</label>
+			<onclick>$INFO[Window(0).Property(favourite.2.path)]</onclick>
+			<visible>!IsEmpty(Window(0).Property(favourite.2.name))</visible>
+			<visible>!IsEmpty(Window(0).Property(favourite.2.path))</visible>
+		</control>
+		<control type="button" id="90194">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Window(0).Property(favourite.3.name)]</label>
+			<onclick>$INFO[Window(0).Property(favourite.3.path)]</onclick>
+			<visible>!IsEmpty(Window(0).Property(favourite.3.name))</visible>
+			<visible>!IsEmpty(Window(0).Property(favourite.3.path))</visible>
+		</control>
+		<control type="button" id="90195">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Window(0).Property(favourite.4.name)]</label>
+			<onclick>$INFO[Window(0).Property(favourite.4.path)]</onclick>
+			<visible>!IsEmpty(Window(0).Property(favourite.4.name))</visible>
+			<visible>!IsEmpty(Window(0).Property(favourite.4.path))</visible>
+		</control>
+		<control type="button" id="90196">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Window(0).Property(favourite.5.name)]</label>
+			<onclick>$INFO[Window(0).Property(favourite.5.path)]</onclick>
+			<visible>!IsEmpty(Window(0).Property(favourite.5.name))</visible>
+			<visible>!IsEmpty(Window(0).Property(favourite.5.path))</visible>
+		</control>
+		<control type="button" id="90197">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Window(0).Property(favourite.6.name)]</label>
+			<onclick>$INFO[Window(0).Property(favourite.6.path)]</onclick>
+			<visible>!IsEmpty(Window(0).Property(favourite.6.name))</visible>
+			<visible>!IsEmpty(Window(0).Property(favourite.6.path))</visible>
+		</control>
+		<control type="image" id="90198">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3">HomeSubEnd.png</texture>
+			<visible>IntegerGreaterThan(Window(Home).Property(favourite.count),0)</visible>
+		</control>
+	</include>
+	
+	
+	
+	
+	
+	
 	<include name="HomeAddonItemsVideos">
 		<item>
 			<label>$INFO[system.addontitle(Skin.String(HomeVideosButton1))]</label>
