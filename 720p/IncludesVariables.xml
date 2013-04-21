@@ -49,7 +49,25 @@
 		<value condition="StringCompare(Window(home).Property(MenuItemActive),ItemTen) + !IsEmpty(Skin.String(HomeItem.10.FanArt))">$INFO[Skin.String(HomeItem.10.FanArt)]</value>
 		<value condition="StringCompare(Window(home).Property(MenuItemActive),PlayDisc) + !IsEmpty(Skin.String(HomeItem.11.FanArt))">$INFO[Skin.String(HomeItem.11.FanArt)]</value>
 		<value condition="StringCompare(Window(home).Property(MenuItemActive),Settings) + !IsEmpty(Skin.String(HomeItem.12.FanArt))">$INFO[Skin.String(HomeItem.12.FanArt)]</value>
+		<value condition="!IsEmpty(Window(home).Property(SubMenuBackground))">$INFO[Window(home).Property(SubMenuBackground)]</value>
 		<value>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
+	</variable>
+	<variable name="SubMenuItemBackground" type="text">
+		<value condition="Skin.HasSetting(UseCustomBackground) + !IsEmpty(Skin.String(CustomBackgroundPath))">$INFO[Skin.String(CustomBackgroundPath)]</value>
+		<value condition="Skin.HasSetting(UseCustomBackground) + IsEmpty(Skin.String(CustomBackgroundPath))">$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
+		<value condition="Container(9000).Hasfocus(1) + !IsEmpty(Skin.String(HomeItem.1.FanArt))">$INFO[Skin.String(HomeItem.1.FanArt)]</value>
+		<value condition="Container(9000).Hasfocus(2) + !IsEmpty(Skin.String(HomeItem.2.FanArt))">$INFO[Skin.String(HomeItem.2.FanArt)]</value>
+		<value condition="Container(9000).Hasfocus(3) + !IsEmpty(Skin.String(HomeItem.3.FanArt))">$INFO[Skin.String(HomeItem.3.FanArt)]</value>
+		<value condition="Container(9000).Hasfocus(4) + !IsEmpty(Skin.String(HomeItem.4.FanArt))">$INFO[Skin.String(HomeItem.4.FanArt)]</value>
+		<value condition="Container(9000).Hasfocus(5) + !IsEmpty(Skin.String(HomeItem.5.FanArt))">$INFO[Skin.String(HomeItem.5.FanArt)]</value>
+		<value condition="Container(9000).Hasfocus(6) + !IsEmpty(Skin.String(HomeItem.6.FanArt))">$INFO[Skin.String(HomeItem.6.FanArt)]</value>
+		<value condition="Container(9000).Hasfocus(7) + !IsEmpty(Skin.String(HomeItem.7.FanArt))">$INFO[Skin.String(HomeItem.7.FanArt)]</value>
+		<value condition="Container(9000).Hasfocus(8) + !IsEmpty(Skin.String(HomeItem.8.FanArt))">$INFO[Skin.String(HomeItem.8.FanArt)]</value>
+		<value condition="Container(9000).Hasfocus(9) + !IsEmpty(Skin.String(HomeItem.9.FanArt))">$INFO[Skin.String(HomeItem.9.FanArt)]</value>
+		<value condition="Container(9000).Hasfocus(10) + !IsEmpty(Skin.String(HomeItem.10.FanArt))">$INFO[Skin.String(HomeItem.10.FanArt)]</value>
+		<value condition="Container(9000).Hasfocus(11) + !IsEmpty(Skin.String(HomeItem.11.FanArt))">$INFO[Skin.String(HomeItem.11.FanArt)]</value>
+		<value condition="Container(9000).Hasfocus(12) + !IsEmpty(Skin.String(HomeItem.12.FanArt))">$INFO[Skin.String(HomeItem.12.FanArt)]</value>
+		<value>special://skin/backgrounds/SKINDEFAULT.jpg</value>
 	</variable>
 	<variable name="InfoBarStats" type="text">
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Videos)">$INFO[Window.Property(Movies.Count),[B][COLOR=blue]$LOCALIZE[20342]: [/COLOR][/B]]     $INFO[Window.Property(TVShows.Count),[B][COLOR=blue]$LOCALIZE[20343]: [/COLOR][/B]]     $INFO[Window.Property(MusicVideos.Count),[B][COLOR=blue]$LOCALIZE[20389]: [/COLOR][/B]]</value>

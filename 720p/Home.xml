@@ -4,6 +4,7 @@
 	<allowoverlay>no</allowoverlay>
 	<onload condition="!IsEmpty(Window(home).Property(MenuItemSelected))">ClearProperty(MenuItemSelected,Home)</onload>
 	<onload condition="!IsEmpty(Window(home).Property(MenuItemActive))">ClearProperty(MenuItemActive,Home)</onload>
+	<onload condition="!IsEmpty(Window(home).Property(SubMenuBackground))">ClearProperty(SubMenuBackground,Home)</onload>
 	<include>DefaultInitialSetup</include>
 	<controls>
 		<include>CommonBackground</include>
