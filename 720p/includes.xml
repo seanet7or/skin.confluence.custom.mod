@@ -1300,7 +1300,7 @@
 			<include>Window_OpenClose_Animation</include>
 			<include>VisibleFadeEffect</include>
 			<visible>IsEmpty(Player.Art(fanart)) | Skin.HasSetting(HideVisualizationFanart)</visible>
-            <visible>!Skin.HasSetting(AllowSlideShowArt)</visible>
+            <visible>Window.IsVisible(home) | !Skin.HasSetting(AllowSlideShowArt)</visible>
 			<control type="group">
                 <posx>-133</posx>
 				<control type="group">

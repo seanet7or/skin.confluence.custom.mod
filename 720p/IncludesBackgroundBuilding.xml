@@ -87,9 +87,6 @@
 				<include>Window_OpenClose_Animation</include>
 				<visible>!IsEmpty(ListItem.Property(Fanart_Image))</visible>
 			</control>
-
-			
-		
 		</control>
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
@@ -98,36 +95,20 @@
 			<include>VisibleFadeEffect</include>
 		</control>
 		<control type="group">
-			<include>LiveCDCasesbackground</include>
-			<control type="visualisation">
-				<include>Dimensions_Fullscreen</include>
-			</control>
+			<include condition="!Skin.HasSetting(HideBackGroundFanart)">LiveCDCasesbackground</include>
 			<control type="image">
 				<description>Fanart Image for Artist</description>
 				<include>Dimensions_Fullscreen</include>
 				<include condition="Skin.HasSetting(AnimateVizFanart)">KBurnsAnimateFanart</include>
 				<texture background="true">$INFO[Player.Art(fanart)]</texture>
-				<colordiffuse>AAFFFFFF</colordiffuse>
 				<fadetime>600</fadetime>
 				<animation effect="fade" start="0" end="100" time="300">Visible</animation>
 				<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
-				<visible>!IsEmpty(Player.Art(fanart))</visible>
+				<visible>!IsEmpty(Player.Art(fanart)) + !Skin.HasSetting(HideVisualizationFanart) + !Skin.HasSetting(HideBackGroundFanart)</visible>
 			</control>
-			<control type="multiimage">
-				<description>Artist ExtraFanArt Multi-image Background</description>
+			<control type="visualisation">
 				<include>Dimensions_Fullscreen</include>
-				<include condition="Skin.HasSetting(AnimateVizFanart)">KBurnsAnimateFanart</include>
-				<imagepath background="true">$INFO[Player.FolderPath,,../extrafanart/]</imagepath>
-				<colordiffuse>AAFFFFFF</colordiffuse>
-				<aspectratio>keep</aspectratio>
-				<randomize>true</randomize>
-				<fadetime>4000</fadetime>
-				<timeperimage>9000</timeperimage>
-				<animation effect="fade" start="0" end="100" time="300">Visible</animation>
-				<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
-				<visible>Skin.HasSetting(AllowVizExtraFanart)</visible>
-				<visible>![SubString(Player.FolderPath,mms://,Left) | SubString(Player.FolderPath,http://,Left)]</visible>
-			</control>	
+			</control>
 			<visible>Player.HasAudio + !Skin.HasSetting(ShowBackgroundVis) + ![Window.IsVisible(PVR) + [Control.IsVisible(11) | Control.IsVisible(12)]]</visible>
 			<visible>!SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
 		</control>
