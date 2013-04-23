@@ -264,11 +264,6 @@
 						<onclick>Skin.ToggleSetting(ABCKeyBoard)</onclick>
 						<selected>!Skin.HasSetting(ABCKeyBoard)</selected>
 					</control>
-					
-					
-					
-					
-					
 					<control type="radiobutton" id="103">
 						<width>750</width>
 						<height>40</height>
@@ -281,13 +276,6 @@
 						<onclick>Skin.ToggleSetting(ParentDirLabel)</onclick>
 						<selected>!Skin.HasSetting(ParentDirLabel)</selected>
 					</control>
-					
-					
-					
-					
-					
-					
-					
 					<control type="radiobutton" id="104">
 						<width>750</width>
 						<height>40</height>
@@ -2251,6 +2239,43 @@
 						<onright>61</onright>
 						<onup>9004</onup>
 						<ondown>9004</ondown>
+						
+						
+						
+						
+						
+						<control type="label" id="400">
+							<width>750</width>
+							<height>45</height>
+							<font>font13_title</font>
+							<label>31360</label>
+							<textcolor>blue</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+						</control>
+						<control type="radiobutton" id="401">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>31361</label>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.ToggleSetting(HideArtworkDownloader)</onclick>
+							<selected>!Skin.HasSetting(HideArtworkDownloader)</selected>
+						</control>						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 						<control type="label" id="453">
 							<width>750</width>
 							<height>45</height>
