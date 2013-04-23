@@ -630,7 +630,20 @@
 						<selected>Skin.HasSetting(AllowSlideShowBio)</selected>
 						<enable>System.HasAddon(script.artistslideshow)</enable>
 					</control>
-					<control type="label" id="132">
+					<control type="button" id="132">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>- $LOCALIZE[31364]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Addon.OpenSettings(script.artistslideshow)</onclick>
+						<enable>Skin.HasSetting(AllowSlideShowArt) | Skin.HasSetting(AllowSlideShowBio)</enable>
+						<visible>System.HasAddon(script.artistslideshow)</visible>
+					</control>						
+					<control type="label" id="133">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -640,7 +653,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>	
-					<control type="radiobutton" id="133">
+					<control type="radiobutton" id="134">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -652,7 +665,7 @@
 						<onclick>Skin.ToggleSetting(HideInfoStartOSD)</onclick>
 						<selected>!Skin.HasSetting(HideInfoStartOSD)</selected>
 					</control>
-					<control type="radiobutton" id="134">
+					<control type="radiobutton" id="135">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -664,7 +677,7 @@
 						<onclick>Skin.ToggleSetting(HidePauseInfo)</onclick>
 						<selected>!Skin.HasSetting(HidePauseInfo)</selected>
 					</control>
-					<control type="radiobutton" id="135">
+					<control type="radiobutton" id="136">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -676,7 +689,7 @@
 						<onclick>Skin.ToggleSetting(HideSeekBarOSD)</onclick>
 						<selected>!Skin.HasSetting(HideSeekBarOSD)</selected>
 					</control>					
-					<control type="label" id="136">
+					<control type="label" id="137">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -686,7 +699,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="137">
+					<control type="radiobutton" id="138">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -698,7 +711,7 @@
 						<onclick>Skin.ToggleSetting(HideWatchStatus)</onclick>
 						<selected>!Skin.HasSetting(HideWatchStatus)</selected>
 					</control>
-					<control type="radiobutton" id="138">
+					<control type="radiobutton" id="139">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -710,7 +723,7 @@
 						<onclick>Skin.ToggleSetting(AutoScroll)</onclick>
 						<selected>Skin.HasSetting(AutoScroll)</selected>
 					</control>
-					<control type="radiobutton" id="139">
+					<control type="radiobutton" id="140">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -722,7 +735,7 @@
 						<onclick>Skin.ToggleSetting(Show_SlideShow_Paused)</onclick>
 						<selected>!Skin.HasSetting(Show_SlideShow_Paused)</selected>
 					</control>
-					<control type="radiobutton" id="140">
+					<control type="radiobutton" id="141">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -734,7 +747,7 @@
 						<onclick>Skin.ToggleSetting(WindowedTrailer)</onclick>
 						<selected>Skin.HasSetting(WindowedTrailer)</selected>
 					</control>
-					<control type="radiobutton" id="141">
+					<control type="radiobutton" id="142">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -746,7 +759,7 @@
 						<onclick>Skin.ToggleSetting(HideFilenameFlagging)</onclick>
 						<selected>Skin.HasSetting(HideFilenameFlagging)</selected>
 					</control>
-					<control type="label" id="145">
+					<control type="label" id="143">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -756,7 +769,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="146">
+					<control type="radiobutton" id="144">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -769,7 +782,7 @@
 						<onclick>Skin.Reset(EnableStartupPlaylist)</onclick>
 						<selected>!Skin.HasSetting(HideXBMCIntro)</selected>
 					</control>
-					<control type="radiobutton" id="147">
+					<control type="radiobutton" id="145">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -782,7 +795,7 @@
 						<onclick>Skin.ToggleSetting(Use_Startup_Playlist)</onclick>
 						<selected>Skin.HasSetting(Use_Startup_Playlist)</selected>
 					</control>
-					<control type="button" id="148">
+					<control type="button" id="146">
 						<description>Startup Playlist Path</description>
 						<width>750</width>
 						<height>40</height>
@@ -2267,23 +2280,6 @@
 							<enable>!Skin.HasSetting(HideTvTunes)</enable>
 							<visible>System.HasAddon(script.tvtunes)</visible>
 						</control>							
-						
-						
-
-
-
-
-
-
-
-
-
-						
-						
-						
-						
-						
-						
 						<control type="label" id="453">
 							<width>750</width>
 							<height>45</height>
