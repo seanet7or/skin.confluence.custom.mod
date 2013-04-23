@@ -746,43 +746,6 @@
 						<onclick>Skin.ToggleSetting(HideFilenameFlagging)</onclick>
 						<selected>Skin.HasSetting(HideFilenameFlagging)</selected>
 					</control>
-					<control type="label" id="142">
-						<width>750</width>
-						<height>45</height>
-						<font>font13_title</font>
-						<label>20343</label>
-						<textcolor>blue</textcolor>
-						<shadowcolor>black</shadowcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<visible>System.HasAddon(script.tvtunes)</visible>
-					</control>
-					<control type="radiobutton" id="143">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>31126</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(ActivateTvTunes)</onclick>
-						<selected>Skin.HasSetting(ActivateTvTunes)</selected>
-						<visible>System.HasAddon(script.tvtunes)</visible>
-					</control>
-					<control type="button" id="144">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label> - $LOCALIZE[31082]</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Addon.OpenSettings(script.tvtunes)</onclick>
-						<enable>Skin.HasSetting(ActivateTvTunes)</enable>
-						<visible>System.HasAddon(script.tvtunes)</visible>
-					</control>	
 					<control type="label" id="145">
 						<width>750</width>
 						<height>45</height>
@@ -2266,10 +2229,55 @@
 							<onclick>Skin.ToggleSetting(HideArtworkDownloader)</onclick>
 							<selected>!Skin.HasSetting(HideArtworkDownloader)</selected>
 						</control>						
+						<control type="button" id="402">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>- $LOCALIZE[31363]</label>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Addon.OpenSettings(script.artwork.downloader)</onclick>
+							<enable>!Skin.HasSetting(HideArtworkDownloader)</enable>
+							<visible>System.HasAddon(script.artwork.downloader)</visible>
+						</control>						
+						<control type="radiobutton" id="403">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>31362</label>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.ToggleSetting(HideTvTunes)</onclick>
+							<selected>!Skin.HasSetting(HideTvTunes)</selected>
+						</control>						
+						<control type="button" id="404">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label> - $LOCALIZE[31082]</label>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Addon.OpenSettings(script.tvtunes)</onclick>
+							<enable>!Skin.HasSetting(HideTvTunes)</enable>
+							<visible>System.HasAddon(script.tvtunes)</visible>
+						</control>							
 						
 						
-						
-						
+
+
+
+
+
+
+
+
+
 						
 						
 						
