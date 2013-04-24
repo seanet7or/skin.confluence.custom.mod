@@ -5,7 +5,12 @@
 	<allowoverlay>no</allowoverlay>
 	<controls>
 		<control type="group">
-			<include>CommonBackground</include>
+			<!--include>CommonBackground</include-->
+			<control type="image">
+				<description>Fanart Image for Artist</description>
+				<include>Dimensions_Fullscreen</include>
+				<texture background="true">black-back.png</texture>
+			</control>
 			<include>LiveCDCasesbackground</include>
 			<control type="multiimage">
 				<description>Artist Slideshow Image for Artist</description>
