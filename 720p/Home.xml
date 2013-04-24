@@ -1072,6 +1072,7 @@
 						<thumb>$INFO[Skin.String(HomeItem.12.FanArt)]</thumb>
 						<property name="SubMenu">Settings</property>
 						<property name="HiLiteItem">Settings</property>
+						<visible>!Skin.HasSetting(HideSytemMenuItem)</visible>
 					</item>
 				</content>
 			</control>
