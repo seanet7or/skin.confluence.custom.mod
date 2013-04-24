@@ -1150,7 +1150,7 @@
 		<control type="group">
 			<posx>0</posx>
 			<posy>33r</posy>
-			<visible>system.getbool(lookandfeel.enablerssfeeds) | [Player.HasAudio + !IsEmpty(MusicPlayer.offset(1).Artist)]</visible>
+			<visible>system.getbool(lookandfeel.enablerssfeeds) | [Player.HasAudio + !IsEmpty(MusicPlayer.offset(1).Artist) + !Skin.HasSetting(HideNextSongsInfo)]</visible>
 			<include>Window_OpenClose_Animation</include>
 			<control type="rss">
 				<description>RSS feed</description>
@@ -1163,7 +1163,7 @@
 				<textcolor>blue</textcolor>
 				<titlecolor>blue</titlecolor>
 				<headlinecolor>white</headlinecolor>
-				<visible>!Skin.HasSetting(AutoHidePowerBtn) + [!Player.HasAudio | IsEmpty(MusicPlayer.offset(1).Artist)]</visible>
+				<visible>!Skin.HasSetting(AutoHidePowerBtn) + [!Player.HasAudio | IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(HideNextSongsInfo)]</visible>
 			</control>
 			<control type="rss">
 				<description>RSS feed</description>
@@ -1176,7 +1176,7 @@
 				<textcolor>blue</textcolor>
 				<titlecolor>blue</titlecolor>
 				<headlinecolor>white</headlinecolor>
-				<visible>Skin.HasSetting(AutoHidePowerBtn) + [!Player.HasAudio | IsEmpty(MusicPlayer.offset(1).Artist)]</visible>
+				<visible>Skin.HasSetting(AutoHidePowerBtn) + [!Player.HasAudio | IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(HideNextSongsInfo)]</visible>
 			</control>
 			<control type="fadelabel" id="1">
 				<description>Next Five Songs</description>
@@ -1192,7 +1192,7 @@
 				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
 				<textoffsetx>20</textoffsetx>
-				<visible>!Skin.HasSetting(AutoHidePowerBtn) + Player.HasAudio + !IsEmpty(MusicPlayer.offset(1).Artist)</visible>
+				<visible>!Skin.HasSetting(AutoHidePowerBtn) + Player.HasAudio + !IsEmpty(MusicPlayer.offset(1).Artist) + !Skin.HasSetting(HideNextSongsInfo)</visible>
 			</control>
 			<control type="fadelabel" id="1">
 				<description>Next Five Songs</description>
@@ -1208,7 +1208,7 @@
 				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
 				<textoffsetx>20</textoffsetx>
-				<visible>Skin.HasSetting(AutoHidePowerBtn) + Player.HasAudio + !IsEmpty(MusicPlayer.offset(1).Artist)</visible>
+				<visible>Skin.HasSetting(AutoHidePowerBtn) + Player.HasAudio + !IsEmpty(MusicPlayer.offset(1).Artist) + !Skin.HasSetting(HideNextSongsInfo)</visible>
 			</control>
 			<control type="image">
 				<description>RSS background</description>
