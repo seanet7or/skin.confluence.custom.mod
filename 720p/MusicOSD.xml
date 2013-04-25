@@ -23,34 +23,6 @@
 				<colordiffuse>AAFFFFFF</colordiffuse>
 				<texture border="10">ContentPanel.png</texture>
 			</control>
-			<control type="grouplist" id="1102">
-				<posx>10</posx>
-				<posy>10</posy>
-				<height>415</height>
-				<aligny>center</aligny>
-				<itemgap>5</itemgap>
-				<orientation>vertical</orientation>
-				<control type="image" id="1103">
-					<width>100</width>
-					<height>100</height>
-					<texture diffuse="livecdcase/cdmask.png">$INFO[Window(Visualisation).Property(ArtistSlideshow.1.AlbumThumb)]</texture>
-				</control>
-				<control type="image" id="1104">
-					<width>100</width>
-					<height>100</height>
-					<texture diffuse="livecdcase/cdmask.png">$INFO[Window(Visualisation).Property(ArtistSlideshow.2.AlbumThumb)]</texture>
-				</control>
-				<control type="image" id="1105">
-					<width>100</width>
-					<height>100</height>
-					<texture diffuse="livecdcase/cdmask.png">$INFO[Window(Visualisation).Property(ArtistSlideshow.3.AlbumThumb)]</texture>
-				</control>
-				<control type="image" id="1106">
-					<width>100</width>
-					<height>100</height>
-					<texture diffuse="livecdcase/cdmask.png">$INFO[Window(Visualisation).Property(ArtistSlideshow.4.AlbumThumb)]</texture>
-				</control>
-			</control>
 			<control type="label" id="1107">
 				<posx>120</posx>
 				<posy>10</posy>
@@ -72,10 +44,10 @@
 				<texture fallback="Fanart_Fallback_Music_Small.jpg" background="true" diffuse="episodematte.png">$INFO[MusicPlayer.Property(Fanart_Image)]</texture>
 			</control>
 			<control type="textbox" id="1109">
-				<posx>120</posx>
-				<posy>45</posy>
-				<width>510</width>
-				<height>380</height>
+				<posx>20</posx>
+				<posy>70</posy>
+				<width>600</width>
+				<height>350</height>
 				<align>justify</align>
 				<aligny>top</aligny>
 				<font>font13</font>
