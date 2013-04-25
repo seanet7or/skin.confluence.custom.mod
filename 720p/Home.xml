@@ -940,6 +940,7 @@
 						<thumb>$INFO[Skin.String(HomeItem.1.FanArt)]</thumb>
 						<property name="SubMenu">$INFO[Skin.String(HomeItem.1.Sub)]</property>
 						<property name="HiLiteItem">$INFO[Skin.String(HomeItem.1.Type)]</property>
+						<property name="AddOnSet">$INFO[Skin.String(HomeItem.1.Addon)]</property>
 						<visible>!IsEmpty(Skin.String(HomeItem.1.Path))</visible>
 					</item>
 					<item id="2">
@@ -952,6 +953,7 @@
 						<thumb>$INFO[Skin.String(HomeItem.2.FanArt)]</thumb>
 						<property name="SubMenu">$INFO[Skin.String(HomeItem.2.Sub)]</property>
 						<property name="HiLiteItem">$INFO[Skin.String(HomeItem.2.Type)]</property>
+						<property name="AddOnSet">$INFO[Skin.String(HomeItem.2.Addon)]</property>
 						<visible>!IsEmpty(Skin.String(HomeItem.2.Path))</visible>
 					</item>
 					<item id="3">
@@ -964,6 +966,7 @@
 						<thumb>$INFO[Skin.String(HomeItem.3.FanArt)]</thumb>
 						<property name="SubMenu">$INFO[Skin.String(HomeItem.3.Sub)]</property>
 						<property name="HiLiteItem">$INFO[Skin.String(HomeItem.3.Type)]</property>
+						<property name="AddOnSet">$INFO[Skin.String(HomeItem.3.Addon)]</property>
 						<visible>!IsEmpty(Skin.String(HomeItem.3.Path))</visible>
 					</item>
 					<item id="4">
@@ -976,6 +979,7 @@
 						<thumb>$INFO[Skin.String(HomeItem.4.FanArt)]</thumb>
 						<property name="SubMenu">$INFO[Skin.String(HomeItem.4.Sub)]</property>
 						<property name="HiLiteItem">$INFO[Skin.String(HomeItem.4.Type)]</property>
+						<property name="AddOnSet">$INFO[Skin.String(HomeItem.4.Addon)]</property>
 						<visible>!IsEmpty(Skin.String(HomeItem.4.Path))</visible>
 					</item>
 					<item id="5">
@@ -988,6 +992,7 @@
 						<thumb>$INFO[Skin.String(HomeItem.5.FanArt)]</thumb>
 						<property name="SubMenu">$INFO[Skin.String(HomeItem.5.Sub)]</property>
 						<property name="HiLiteItem">$INFO[Skin.String(HomeItem.5.Type)]</property>
+						<property name="AddOnSet">$INFO[Skin.String(HomeItem.5.Addon)]</property>
 						<visible>!IsEmpty(Skin.String(HomeItem.5.Path))</visible>
 					</item>
 					<item id="6">
@@ -1000,6 +1005,7 @@
 						<thumb>$INFO[Skin.String(HomeItem.6.FanArt)]</thumb>
 						<property name="SubMenu">$INFO[Skin.String(HomeItem.6.Sub)]</property>
 						<property name="HiLiteItem">$INFO[Skin.String(HomeItem.6.Type)]</property>
+						<property name="AddOnSet">$INFO[Skin.String(HomeItem.6.Addon)]</property>
 						<visible>!IsEmpty(Skin.String(HomeItem.6.Path))</visible>
 					</item>
 					<item id="7">
@@ -1012,6 +1018,7 @@
 						<thumb>$INFO[Skin.String(HomeItem.7.FanArt)]</thumb>
 						<property name="SubMenu">$INFO[Skin.String(HomeItem.7.Sub)]</property>
 						<property name="HiLiteItem">$INFO[Skin.String(HomeItem.7.Type)]</property>
+						<property name="AddOnSet">$INFO[Skin.String(HomeItem.7.Addon)]</property>
 						<visible>!IsEmpty(Skin.String(HomeItem.7.Path))</visible>
 					</item>
 					<item id="8">
@@ -1024,6 +1031,7 @@
 						<thumb>$INFO[Skin.String(HomeItem.8.FanArt)]</thumb>
 						<property name="SubMenu">$INFO[Skin.String(HomeItem.8.Sub)]</property>
 						<property name="HiLiteItem">$INFO[Skin.String(HomeItem.8.Type)]</property>
+						<property name="AddOnSet">$INFO[Skin.String(HomeItem.8.Addon)]</property>
 						<visible>!IsEmpty(Skin.String(HomeItem.8.Path))</visible>
 					</item>
 					<item id="9">
@@ -1036,6 +1044,7 @@
 						<thumb>$INFO[Skin.String(HomeItem.9.FanArt)]</thumb>
 						<property name="SubMenu">$INFO[Skin.String(HomeItem.9.Sub)]</property>
 						<property name="HiLiteItem">$INFO[Skin.String(HomeItem.9.Type)]</property>
+						<property name="AddOnSet">$INFO[Skin.String(HomeItem.9.Addon)]</property>
 						<visible>!IsEmpty(Skin.String(HomeItem.9.Path))</visible>
 					</item>
 					<item id="10">
@@ -1048,6 +1057,7 @@
 						<thumb>$INFO[Skin.String(HomeItem.10.FanArt)]</thumb>
 						<property name="SubMenu">$INFO[Skin.String(HomeItem.10.Sub)]</property>
 						<property name="HiLiteItem">$INFO[Skin.String(HomeItem.10.Type)]</property>
+						<property name="AddOnSet">$INFO[Skin.String(HomeItem.10.Addon)]</property>
 						<visible>!IsEmpty(Skin.String(HomeItem.10.Path))</visible>
 					</item>
 					<item id="11">
@@ -1060,6 +1070,7 @@
 						<thumb>$INFO[Skin.String(HomeItem.11.FanArt)]</thumb>
 						<property name="SubMenu">PlayDisc</property>
 						<property name="HiLiteItem">PlayDisc</property>
+						<property name="AddOnSet">None</property>
 						<visible>System.HasMediaDVD</visible>
 					</item>
 					<item id="12">
@@ -1072,6 +1083,7 @@
 						<thumb>$INFO[Skin.String(HomeItem.12.FanArt)]</thumb>
 						<property name="SubMenu">Settings</property>
 						<property name="HiLiteItem">Settings</property>
+						<property name="AddOnSet">None</property>
 						<visible>!Skin.HasSetting(HideSytemMenuItem)</visible>
 					</item>
 				</content>
@@ -1097,7 +1109,7 @@
 			<ondown condition="Skin.HasSetting(AutoHidePowerBtn)">21</ondown>
 			<control type="fixedlist" id="700">
 				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(700).NumItems,2) | StringCompare(Container(700).NumItems,4)">conditional</animation>
-				<visible>StringCompare(Container(9000).ListItem.Property(HiLiteItem),Videos) | StringCompare(Container(9000).ListItem.Property(HiLiteItem),Movies) | StringCompare(Container(9000).ListItem.Property(HiLiteItem),TVShows)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),Videos)</visible>
 				<onleft>700</onleft>
 				<onright>700</onright>
 				<onup>9001</onup>
@@ -1110,7 +1122,7 @@
 			</control>
 			<control type="fixedlist" id="703">
 				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(703).NumItems,2) | StringCompare(Container(703).NumItems,4)">conditional</animation>
-				<visible>StringCompare(Container(9000).ListItem.Property(HiLiteItem),Music)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),Music)</visible>
 				<onleft>703</onleft>
 				<onright>703</onright>
 				<onup>9001</onup>
@@ -1123,7 +1135,7 @@
 			</control>
 			<control type="fixedlist" id="704">
 				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(704).NumItems,2) | StringCompare(Container(704).NumItems,4)">conditional</animation>
-				<visible>StringCompare(Container(9000).ListItem.Property(HiLiteItem),Pictures)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),Pictures)</visible>
 				<onleft>704</onleft>
 				<onright>704</onright>
 				<onup>9001</onup>
@@ -1136,7 +1148,7 @@
 			</control>
 			<control type="fixedlist" id="705">
 				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(705).NumItems,2) | StringCompare(Container(705).NumItems,4)">conditional</animation>
-				<visible>StringCompare(Container(9000).ListItem.Property(HiLiteItem),Programs)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),Programs)</visible>
 				<onleft>705</onleft>
 				<onright>705</onright>
 				<onup>9001</onup>
