@@ -442,98 +442,20 @@
 						<onclick>Skin.ToggleSetting(AutoHidePowerBtn)</onclick>
 						<selected>!Skin.HasSetting(AutoHidePowerBtn)</selected>
 					</control>
-					<control type="label" id="117">
-						<width>750</width>
-						<height>45</height>
-						<font>font13_title</font>
-						<label>31080</label>
-						<textcolor>blue</textcolor>
-						<shadowcolor>black</shadowcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-					</control>
-					<control type="radiobutton" id="118">
-						<description>Show Videos Widget</description>
+					<control type="radiobutton" id="117">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>31137</label>
-						<onclick>Skin.ToggleSetting(HideHomeVideoWidget)</onclick>
-						<selected>!Skin.HasSetting(HideHomeVideoWidget)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-					</control>
-					<control type="radiobutton" id="119">
-						<description>Show Concerts Widget</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>31139</label>
-						<onclick>Skin.ToggleSetting(HideHomeConcertsWidget)</onclick>
-						<selected>!Skin.HasSetting(HideHomeConcertsWidget)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-					</control>
-					<control type="radiobutton" id="120">
-						<description>Show albums Widget</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>31138</label>
-						<onclick>Skin.ToggleSetting(HideHomeAlbumsWidget)</onclick>
-						<selected>!Skin.HasSetting(HideHomeAlbumsWidget)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-					</control>
-					<control type="radiobutton" id="121">
-						<description>Show Random Items Widget</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>31130</label>
-						<onclick>Skin.ToggleSetting(RandomWidgetInfo)</onclick>
-						<onclick>Skin.Reset(SuggestedWidgetInfo)</onclick>
-						<selected>Skin.HasSetting(RandomWidgetInfo)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<enable>SubString(Window(Home).Property(SkinWidgets_RandomItems),true)</enable>
-					</control>
-					<control type="radiobutton" id="122">
-						<description>Show Suggested Items Widget</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>31131</label>
-						<onclick>Skin.ToggleSetting(SuggestedWidgetInfo)</onclick>
-						<onclick>Skin.Reset(RandomWidgetInfo)</onclick>
-						<selected>Skin.HasSetting(SuggestedWidgetInfo)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<enable>SubString(Window(Home).Property(SkinWidgets_Recommended),true)</enable>
-					</control>
-					<control type="button" id="123">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label> - $LOCALIZE[31081]</label>
+						<label>31187</label>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Addon.OpenSettings(service.skin.widgets)</onclick>
-						<enable>System.HasAddon(service.skin.widgets)</enable>
+						<onclick>Skin.ToggleSetting(HideWidgetFanArt)</onclick>
+						<selected>!Skin.HasSetting(HideWidgetFanArt)</selected>
+						<enable>!Skin.HasSetting(HideBackGroundFanart)</enable>
 					</control>
-					<control type="label" id="124">
+					<control type="label" id="118">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -543,7 +465,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>					
-					<control type="radiobutton" id="125">
+					<control type="radiobutton" id="119">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -555,7 +477,7 @@
 						<onclick>Skin.ToggleSetting(HideVisualizationCDart)</onclick>
 						<selected>!Skin.HasSetting(HideVisualizationCDart)</selected>
 					</control>
-					<control type="radiobutton" id="126">
+					<control type="radiobutton" id="120">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -568,7 +490,7 @@
 						<selected>!Skin.HasSetting(HideTraditionalCDart)</selected>
 						<enable>!Skin.HasSetting(HideVisualizationCDart)</enable>
 					</control>
-					<control type="radiobutton" id="127">
+					<control type="radiobutton" id="121">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -580,7 +502,7 @@
 						<onclick>Skin.ToggleSetting(HideVisualizationFanart)</onclick>
 						<selected>!Skin.HasSetting(HideVisualizationFanart)</selected>
 					</control>
-					<control type="radiobutton" id="128">
+					<control type="radiobutton" id="122">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -593,7 +515,7 @@
 						<selected>Skin.HasSetting(AnimateVizFanart)</selected>
 						<enable>!Skin.HasSetting(HideVisualizationFanart)</enable>
 					</control>
-					<control type="radiobutton" id="129">
+					<control type="radiobutton" id="123">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -606,7 +528,7 @@
 						<selected>Skin.HasSetting(AllowTransparentFanart)</selected>
 						<enable>!Skin.HasSetting(HideVisualizationFanart)</enable>
 					</control>
-					<control type="radiobutton" id="130">
+					<control type="radiobutton" id="124">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -620,7 +542,7 @@
 						<selected>Skin.HasSetting(AllowVizExtraFanart)</selected>
 						<enable>!Skin.HasSetting(HideVisualizationFanart)</enable>
 					</control>
-					<control type="radiobutton" id="131">
+					<control type="radiobutton" id="125">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -634,7 +556,7 @@
 						<selected>Skin.HasSetting(AllowSlideShowArt)</selected>
 						<enable>System.HasAddon(script.artistslideshow) + !Skin.HasSetting(HideVisualizationFanart)</enable>
 					</control>
-					<control type="radiobutton" id="132">
+					<control type="radiobutton" id="126">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -647,7 +569,7 @@
 						<selected>Skin.HasSetting(AllowSlideShowBio)</selected>
 						<enable>System.HasAddon(script.artistslideshow)</enable>
 					</control>
-					<control type="button" id="133">
+					<control type="button" id="127">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -660,7 +582,7 @@
 						<enable>Skin.HasSetting(AllowSlideShowArt) | Skin.HasSetting(AllowSlideShowBio)</enable>
 						<visible>System.HasAddon(script.artistslideshow)</visible>
 					</control>						
-					<control type="label" id="134">
+					<control type="label" id="128">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -670,7 +592,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>	
-					<control type="radiobutton" id="135">
+					<control type="radiobutton" id="129">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -682,7 +604,7 @@
 						<onclick>Skin.ToggleSetting(HideInfoStartOSD)</onclick>
 						<selected>!Skin.HasSetting(HideInfoStartOSD)</selected>
 					</control>
-					<control type="radiobutton" id="136">
+					<control type="radiobutton" id="130">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -694,7 +616,7 @@
 						<onclick>Skin.ToggleSetting(HidePauseInfo)</onclick>
 						<selected>!Skin.HasSetting(HidePauseInfo)</selected>
 					</control>
-					<control type="radiobutton" id="137">
+					<control type="radiobutton" id="131">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -706,7 +628,7 @@
 						<onclick>Skin.ToggleSetting(HideSeekBarOSD)</onclick>
 						<selected>!Skin.HasSetting(HideSeekBarOSD)</selected>
 					</control>					
-					<control type="label" id="138">
+					<control type="label" id="132">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -716,7 +638,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="139">
+					<control type="radiobutton" id="133">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -728,7 +650,7 @@
 						<onclick>Skin.ToggleSetting(HideNextSongsInfo)</onclick>
 						<selected>!Skin.HasSetting(HideNextSongsInfo)</selected>
 					</control>
-					<control type="radiobutton" id="140">
+					<control type="radiobutton" id="134">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -740,7 +662,7 @@
 						<onclick>Skin.ToggleSetting(HideWatchStatus)</onclick>
 						<selected>!Skin.HasSetting(HideWatchStatus)</selected>
 					</control>
-					<control type="radiobutton" id="141">
+					<control type="radiobutton" id="135">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -752,7 +674,7 @@
 						<onclick>Skin.ToggleSetting(AutoScroll)</onclick>
 						<selected>Skin.HasSetting(AutoScroll)</selected>
 					</control>
-					<control type="radiobutton" id="142">
+					<control type="radiobutton" id="136">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -764,7 +686,7 @@
 						<onclick>Skin.ToggleSetting(Show_SlideShow_Paused)</onclick>
 						<selected>!Skin.HasSetting(Show_SlideShow_Paused)</selected>
 					</control>
-					<control type="radiobutton" id="143">
+					<control type="radiobutton" id="137">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -776,7 +698,7 @@
 						<onclick>Skin.ToggleSetting(WindowedTrailer)</onclick>
 						<selected>Skin.HasSetting(WindowedTrailer)</selected>
 					</control>
-					<control type="radiobutton" id="144">
+					<control type="radiobutton" id="138">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -788,7 +710,7 @@
 						<onclick>Skin.ToggleSetting(HideFilenameFlagging)</onclick>
 						<selected>Skin.HasSetting(HideFilenameFlagging)</selected>
 					</control>
-					<control type="label" id="145">
+					<control type="label" id="139">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -798,7 +720,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="146">
+					<control type="radiobutton" id="140">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -811,7 +733,7 @@
 						<onclick>Skin.Reset(EnableStartupPlaylist)</onclick>
 						<selected>!Skin.HasSetting(HideXBMCIntro)</selected>
 					</control>
-					<control type="radiobutton" id="147">
+					<control type="radiobutton" id="141">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -824,7 +746,7 @@
 						<onclick>Skin.ToggleSetting(Use_Startup_Playlist)</onclick>
 						<selected>Skin.HasSetting(Use_Startup_Playlist)</selected>
 					</control>
-					<control type="button" id="148">
+					<control type="button" id="142">
 						<description>Startup Playlist Path</description>
 						<width>750</width>
 						<height>40</height>
@@ -933,8 +855,21 @@
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.1.Label))</visible>
 					</control>					
-
-					
+					<control type="button" id="205">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label> - $LOCALIZE[31174]</label>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemOneWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,HomeItem.1,home)</onclick>
+						<onclick>ActivateWindow(2118)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItem.1.Label))</visible>
+					</control>	
 					<control type="button" id="206">
 						<width>750</width>
 						<height>40</height>
@@ -978,8 +913,21 @@
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.2.Label))</visible>
 					</control>					
-					
-
+					<control type="button" id="209">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label> - $LOCALIZE[31174]</label>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemTwoWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,HomeItem.2,home)</onclick>
+						<onclick>ActivateWindow(2118)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItem.2.Label))</visible>
+					</control>	
 					<control type="button" id="210">
 						<width>750</width>
 						<height>40</height>
@@ -1023,8 +971,21 @@
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.3.Label))</visible>
 					</control>					
-					
-
+					<control type="button" id="213">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label> - $LOCALIZE[31174]</label>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemThreeWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,HomeItem.3,home)</onclick>
+						<onclick>ActivateWindow(2118)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItem.3.Label))</visible>
+					</control>	
 					<control type="button" id="214">
 						<width>750</width>
 						<height>40</height>
@@ -1068,8 +1029,21 @@
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.4.Label))</visible>
 					</control>					
-					
-
+					<control type="button" id="217">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label> - $LOCALIZE[31174]</label>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemFourWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,HomeItem.4,home)</onclick>
+						<onclick>ActivateWindow(2118)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItem.4.Label))</visible>
+					</control>	
 					<control type="button" id="218">
 						<width>750</width>
 						<height>40</height>
@@ -1113,8 +1087,21 @@
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.5.Label))</visible>
 					</control>					
-					
-
+					<control type="button" id="221">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label> - $LOCALIZE[31174]</label>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemFiveWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,HomeItem.5,home)</onclick>
+						<onclick>ActivateWindow(2118)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItem.5.Label))</visible>
+					</control>	
 					<control type="button" id="222">
 						<width>750</width>
 						<height>40</height>
@@ -1158,8 +1145,21 @@
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.6.Label))</visible>
 					</control>					
-
-					
+					<control type="button" id="225">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label> - $LOCALIZE[31174]</label>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemSixWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,HomeItem.6,home)</onclick>
+						<onclick>ActivateWindow(2118)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItem.6.Label))</visible>
+					</control>	
 					<control type="button" id="226">
 						<width>750</width>
 						<height>40</height>
@@ -1203,8 +1203,21 @@
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.7.Label))</visible>
 					</control>					
-					
-
+					<control type="button" id="229">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label> - $LOCALIZE[31174]</label>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemSevenWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,HomeItem.7,home)</onclick>
+						<onclick>ActivateWindow(2118)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItem.7.Label))</visible>
+					</control>	
 					<control type="button" id="230">
 						<width>750</width>
 						<height>40</height>
@@ -1248,8 +1261,21 @@
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.8.Label))</visible>
 					</control>					
-					
-
+					<control type="button" id="233">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label> - $LOCALIZE[31174]</label>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemEightWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,HomeItem.8,home)</onclick>
+						<onclick>ActivateWindow(2118)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItem.8.Label))</visible>
+					</control>	
 					<control type="button" id="234">
 						<width>750</width>
 						<height>40</height>
@@ -1293,8 +1319,21 @@
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.9.Label))</visible>
 					</control>					
-					
-
+					<control type="button" id="237">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label> - $LOCALIZE[31174]</label>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemNineWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,HomeItem.9,home)</onclick>
+						<onclick>ActivateWindow(2118)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItem.9.Label))</visible>
+					</control>	
 					<control type="button" id="238">
 						<width>750</width>
 						<height>40</height>
@@ -1338,9 +1377,21 @@
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.10.Label))</visible>
 					</control>					
-
-
-					
+					<control type="button" id="241">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label> - $LOCALIZE[31174]</label>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemTenWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,HomeItem.10,home)</onclick>
+						<onclick>ActivateWindow(2118)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItem.10.Label))</visible>
+					</control>	
 				</control>
 				<control type="scrollbar" id="60">
 					<posx>1060</posx>
@@ -2486,7 +2537,21 @@
 							<onclick>Addon.OpenSettings(script.tvtunes)</onclick>
 							<enable>!Skin.HasSetting(HideTvTunes)</enable>
 							<visible>System.HasAddon(script.tvtunes)</visible>
-						</control>							
+						</control>	
+<!--
+					<control type="button" id="123">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label> - $LOCALIZE[31081]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Addon.OpenSettings(service.skin.widgets)</onclick>
+						<enable>System.HasAddon(service.skin.widgets)</enable>
+					</control>
+-->						
 						<control type="label" id="453">
 							<width>750</width>
 							<height>45</height>

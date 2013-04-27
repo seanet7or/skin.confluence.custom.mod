@@ -14,7 +14,7 @@
 				<posx>190</posx>
 				<posy>50</posy>
 				<visible>Library.HasContent(Movies)</visible>
-				<visible>StringCompare(Container(9000).ListItem.Property(HiLiteItem),Movies) + !Skin.HasSetting(HideHomeVideoWidget)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies)</visible>
 				<include>VisibleFadeEffect</include>
 				<control type="label">
 					<description>Title label</description>
@@ -22,7 +22,7 @@
 					<posy>220</posy>
 					<height>20</height>
 					<width>540</width>
-					<label>$VAR[WidgetTitle]</label>
+					<label>$LOCALIZE[31175]</label>
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font12_title</font>
@@ -136,11 +136,7 @@
 							<visible>Control.HasFocus(8000)</visible>
 						</control>
 					</focusedlayout>
-					<include condition="!Skin.HasSetting(RandomWidgetInfo) + !Skin.HasSetting(SuggestedWidgetInfo)">RecentVideoContent</include>
-					<include condition="Skin.HasSetting(RandomWidgetInfo) + !SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">RecentVideoContent</include>
-					<include condition="Skin.HasSetting(RandomWidgetInfo) + SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">RandomVideoContent</include>
-					<include condition="Skin.HasSetting(SuggestedWidgetInfo) + SubString(Window(Home).Property(SkinWidgets_Recommended),true)">SuggestedVideoContent</include>
-					<include condition="Skin.HasSetting(SuggestedWidgetInfo) + !SubString(Window(Home).Property(SkinWidgets_Recommended),true)">RecentVideoContent</include>
+					<include>RecentVideoContent</include>
 				</control>
 				<control type="button">
 					<description>left Arrow</description>
@@ -171,7 +167,7 @@
 				<posx>160</posx>
 				<posy>50</posy>
 				<visible>Library.HasContent(TVShows)</visible>
-				<visible>StringCompare(Container(9000).ListItem.Property(HiLiteItem),TVShows) + !Skin.HasSetting(HideHomeVideoWidget)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes)</visible>
 				<include>VisibleFadeEffect</include>
 				<control type="label">
 					<description>Title label</description>
@@ -179,7 +175,7 @@
 					<posy>220</posy>
 					<height>20</height>
 					<width>480</width>
-					<label>$VAR[WidgetTitle]</label>
+					<label>$LOCALIZE[31178]</label>
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font12_title</font>
@@ -361,11 +357,7 @@
 							<visible>Control.HasFocus(8001)</visible>
 						</control>
 					</focusedlayout>
-					<include condition="!Skin.HasSetting(RandomWidgetInfo) + !Skin.HasSetting(SuggestedWidgetInfo)">RecentTVShowContent</include>
-					<include condition="Skin.HasSetting(RandomWidgetInfo) + !SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">RecentTVShowContent</include>
-					<include condition="Skin.HasSetting(RandomWidgetInfo) + SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">RandomTVShowContent</include>
-					<include condition="Skin.HasSetting(SuggestedWidgetInfo) + SubString(Window(Home).Property(SkinWidgets_Recommended),true)">SuggestedTVShowContent</include>
-					<include condition="Skin.HasSetting(SuggestedWidgetInfo) + !SubString(Window(Home).Property(SkinWidgets_Recommended),true)">RecentTVShowContent</include>
+					<include>RecentTVShowContent</include>
 				</control>
 				<control type="button">
 					<description>left Arrow</description>
@@ -396,7 +388,7 @@
 				<posx>240</posx>
 				<posy>50</posy>
 				<visible>Library.HasContent(Music)</visible>
-				<visible>StringCompare(Container(9000).ListItem.Property(HiLiteItem),Music) + !Skin.HasSetting(HideHomeAlbumsWidget)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentAlbums)</visible>
 				<include>VisibleFadeEffect</include>
 				<control type="label">
 					<description>Title label</description>
@@ -404,7 +396,7 @@
 					<posy>220</posy>
 					<height>20</height>
 					<width>480</width>
-					<label>$VAR[WidgetTitle]</label>
+					<label>$LOCALIZE[31181]</label>
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font12_title</font>
@@ -546,11 +538,7 @@
 							<visible>Control.HasFocus(8002)</visible>
 						</control>
 					</focusedlayout>
-					<include condition="!Skin.HasSetting(RandomWidgetInfo) + !Skin.HasSetting(SuggestedWidgetInfo)">RecentAlbumContent</include>
-					<include condition="Skin.HasSetting(RandomWidgetInfo) + !SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">RecentAlbumContent</include>
-					<include condition="Skin.HasSetting(RandomWidgetInfo) + SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">RandomAlbumContent</include>
-					<include condition="Skin.HasSetting(SuggestedWidgetInfo) + SubString(Window(Home).Property(SkinWidgets_Recommended),true)">SuggestedAlbumContent</include>
-					<include condition="Skin.HasSetting(SuggestedWidgetInfo) + !SubString(Window(Home).Property(SkinWidgets_Recommended),true)">RecentAlbumContent</include>
+					<include>RecentAlbumContent</include>
 				</control>
 				<control type="button">
 					<description>left Arrow</description>
@@ -581,7 +569,7 @@
 				<posx>190</posx>
 				<posy>50</posy>
 				<visible>Library.HasContent(MusicVideos)</visible>
-				<visible>StringCompare(Container(9000).ListItem.Property(HiLiteItem),Concerts) + !Skin.HasSetting(HideHomeConcertsWidget)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentConcerts)</visible>
 				<include>VisibleFadeEffect</include>
 				<control type="label">
 					<description>Title label</description>
@@ -589,7 +577,7 @@
 					<posy>220</posy>
 					<height>20</height>
 					<width>540</width>
-					<label>$VAR[WidgetTitle]</label>
+					<label>$LOCALIZE[31184]</label>
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font12_title</font>
@@ -703,11 +691,7 @@
 							<visible>Control.HasFocus(8003)</visible>
 						</control>
 					</focusedlayout>
-					<include condition="!Skin.HasSetting(RandomWidgetInfo) + !Skin.HasSetting(SuggestedWidgetInfo)">RecentConcertContent</include>
-					<include condition="Skin.HasSetting(RandomWidgetInfo) + !SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">RecentConcertContent</include>
-					<include condition="Skin.HasSetting(RandomWidgetInfo) + SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">RandomConcertContent</include>
-					<include condition="Skin.HasSetting(SuggestedWidgetInfo) + SubString(Window(Home).Property(SkinWidgets_Recommended),true)">SuggestedConcertContent</include>
-					<include condition="Skin.HasSetting(SuggestedWidgetInfo) + !SubString(Window(Home).Property(SkinWidgets_Recommended),true)">RecentConcertContent</include>
+					<include>RecentConcertContent</include>
 				</control>
 				<control type="button">
 					<description>left Arrow</description>
@@ -733,7 +717,1423 @@
 					<visible>Control.HasFocus(8003) + Container(8003).HasNext</visible>
 					<include>VisibleFadeEffect</include>
 				</control>
+			</control>			
+			<control type="group">
+				<posx>190</posx>
+				<posy>50</posy>
+				<visible>Library.HasContent(Movies)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies)</visible>
+				<include>VisibleFadeEffect</include>
+				<control type="label">
+					<description>Title label</description>
+					<posx>180</posx>
+					<posy>220</posy>
+					<height>20</height>
+					<width>540</width>
+					<label>$LOCALIZE[31176]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="list" id="8004">
+					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8004).NumItems,4)">conditional</animation>
+					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8004).NumItems,3)">conditional</animation>
+					<animation effect="slide" start="0,0" end="270,0" time="0" condition="StringCompare(Container(8004).NumItems,2)">conditional</animation>
+					<animation effect="slide" start="0,0" end="360,0" time="0" condition="StringCompare(Container(8004).NumItems,1)">conditional</animation>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>900</width>
+					<height>220</height>
+					<onleft>8004</onleft>
+					<onright>8004</onright>
+					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
+					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
+					<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<viewtype label="535">list</viewtype>
+					<pagecontrol>-</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<orientation>Horizontal</orientation>
+					<itemlayout height="220" width="180">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>160</width>
+							<height>170</height>
+							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="220" width="180">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>160</width>
+							<height>170</height>
+							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">folder-focus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>Control.HasFocus(8004)</visible>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>160</width>
+							<height>170</height>
+							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>!Control.HasFocus(8004)</visible>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>blue</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+							<visible>Control.HasFocus(8004)</visible>
+						</control>
+					</focusedlayout>
+					<include>RandomVideoContent</include>
+				</control>
+				<control type="button">
+					<description>left Arrow</description>
+					<posx>-40</posx>
+					<posy>90</posy>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>arrow-big-left.png</texturefocus>
+					<texturenofocus>arrow-big-left.png</texturenofocus>
+					<onclick>Control.Move(8004,-1)</onclick>
+					<visible>Control.HasFocus(8004) + Container(8004).HasPrevious</visible>
+					<include>VisibleFadeEffect</include>
+				</control>
+				<control type="button">
+					<description>right Arrow</description>
+					<posx>910</posx>
+					<posy>90</posy>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>arrow-big-right.png</texturefocus>
+					<texturenofocus>arrow-big-right.png</texturenofocus>
+					<onclick>Control.Move(8004,1)</onclick>
+					<visible>Control.HasFocus(8004) + Container(8004).HasNext</visible>
+					<include>VisibleFadeEffect</include>
+				</control>
 			</control>
+			<control type="group">
+				<posx>160</posx>
+				<posy>50</posy>
+				<visible>Library.HasContent(TVShows)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes)</visible>
+				<include>VisibleFadeEffect</include>
+				<control type="label">
+					<description>Title label</description>
+					<posx>240</posx>
+					<posy>220</posy>
+					<height>20</height>
+					<width>480</width>
+					<label>$LOCALIZE[31179]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="list" id="8005">
+					<animation effect="slide" start="0,0" end="120,0" time="0" condition="StringCompare(Container(8005).NumItems,3)">conditional</animation>
+					<animation effect="slide" start="0,0" end="240,0" time="0" condition="StringCompare(Container(8005).NumItems,2)">conditional</animation>
+					<animation effect="slide" start="0,0" end="360,0" time="0" condition="StringCompare(Container(8005).NumItems,1)">conditional</animation>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>960</width>
+					<height>240</height>
+					<onleft>8005</onleft>
+					<onright>8005</onright>
+					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
+					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
+					<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<viewtype label="535">list</viewtype>
+					<pagecontrol>-</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<orientation>Horizontal</orientation>
+					<focusposition>1</focusposition>
+					<movement>2</movement>
+					<itemlayout height="220" width="240">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>240</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>220</width>
+							<height>155</height>
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>220</width>
+							<height>155</height>
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$INFO[ListItem.Thumb]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>168</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>185</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="220" width="240">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>240</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>220</width>
+							<height>155</height>
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">folder-focus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>Control.HasFocus(8005)</visible>
+							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>220</width>
+							<height>155</height>
+							<aspectratio>scale</aspectratio>
+							<texture>$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>!Control.HasFocus(8005)</visible>
+							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>220</width>
+							<height>155</height>
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$INFO[ListItem.Thumb]</texture>
+							<bordertexture border="5">folder-focus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>Control.HasFocus(8005)</visible>
+							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>220</width>
+							<height>155</height>
+							<aspectratio>scale</aspectratio>
+							<texture>$INFO[ListItem.Thumb]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>!Control.HasFocus(8005)</visible>
+							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>168</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>185</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>185</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>blue</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+							<visible>Control.HasFocus(8005)</visible>
+						</control>
+					</focusedlayout>
+					<include>RandomTVShowContent</include>
+				</control>
+				<control type="button">
+					<description>left Arrow</description>
+					<posx>-40</posx>
+					<posy>90</posy>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>arrow-big-left.png</texturefocus>
+					<texturenofocus>arrow-big-left.png</texturenofocus>
+					<onclick>Control.Move(8005,-1)</onclick>
+					<visible>Control.HasFocus(8005) + Container(8005).HasPrevious</visible>
+					<include>VisibleFadeEffect</include>
+				</control>
+				<control type="button">
+					<description>right Arrow</description>
+					<posx>970</posx>
+					<posy>90</posy>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>arrow-big-right.png</texturefocus>
+					<texturenofocus>arrow-big-right.png</texturenofocus>
+					<onclick>Control.Move(8005,1)</onclick>
+					<visible>Control.HasFocus(8005) + Container(8005).HasNext</visible>
+					<include>VisibleFadeEffect</include>
+				</control>
+			</control>
+			<control type="group">
+				<posx>240</posx>
+				<posy>50</posy>
+				<visible>Library.HasContent(Music)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomAlbums)</visible>
+				<include>VisibleFadeEffect</include>
+				<control type="label">
+					<description>Title label</description>
+					<posx>160</posx>
+					<posy>220</posy>
+					<height>20</height>
+					<width>480</width>
+					<label>$LOCALIZE[31182]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="list" id="8006">
+					<animation effect="slide" start="0,0" end="100,0" time="0" condition="StringCompare(Container(8006).NumItems,3)">conditional</animation>
+					<animation effect="slide" start="0,0" end="200,0" time="0" condition="StringCompare(Container(8006).NumItems,2)">conditional</animation>
+					<animation effect="slide" start="0,0" end="300,0" time="0" condition="StringCompare(Container(8006).NumItems,1)">conditional</animation>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>800</width>
+					<height>240</height>
+					<onleft>8006</onleft>
+					<onright>8006</onright>
+					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
+					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
+					<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<viewtype label="535">list</viewtype>
+					<pagecontrol>-</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<orientation>Horizontal</orientation>
+					<itemlayout height="220" width="200">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>200</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>180</width>
+							<height>155</height>
+							<aspectratio>keep</aspectratio>
+							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>170</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>190</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="220" width="200">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>200</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>180</width>
+							<height>155</height>
+							<aspectratio>keep</aspectratio>
+							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">folder-focus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>Control.HasFocus(8006)</visible>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>180</width>
+							<height>155</height>
+							<aspectratio>keep</aspectratio>
+							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>!Control.HasFocus(8006)</visible>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>170</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>190</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>190</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>blue</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+							<visible>Control.HasFocus(8006)</visible>
+						</control>
+					</focusedlayout>
+					<include>RandomAlbumContent</include>
+				</control>
+				<control type="button">
+					<description>left Arrow</description>
+					<posx>-40</posx>
+					<posy>90</posy>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>arrow-big-left.png</texturefocus>
+					<texturenofocus>arrow-big-left.png</texturenofocus>
+					<onclick>Control.Move(8006,-1)</onclick>
+					<visible>Control.HasFocus(8006) + Container(8006).HasPrevious</visible>
+					<include>VisibleFadeEffect</include>
+				</control>
+				<control type="button">
+					<description>right Arrow</description>
+					<posx>810</posx>
+					<posy>90</posy>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>arrow-big-right.png</texturefocus>
+					<texturenofocus>arrow-big-right.png</texturenofocus>
+					<onclick>Control.Move(8006,1)</onclick>
+					<visible>Control.HasFocus(8006) + Container(8006).HasNext</visible>
+					<include>VisibleFadeEffect</include>
+				</control>
+			</control>
+			<control type="group">
+				<posx>190</posx>
+				<posy>50</posy>
+				<visible>Library.HasContent(MusicVideos)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomConcerts)</visible>
+				<include>VisibleFadeEffect</include>
+				<control type="label">
+					<description>Title label</description>
+					<posx>180</posx>
+					<posy>220</posy>
+					<height>20</height>
+					<width>540</width>
+					<label>$LOCALIZE[31185]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="list" id="8007">
+					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8007).NumItems,4)">conditional</animation>
+					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8007).NumItems,3)">conditional</animation>
+					<animation effect="slide" start="0,0" end="270,0" time="0" condition="StringCompare(Container(8007).NumItems,2)">conditional</animation>
+					<animation effect="slide" start="0,0" end="360,0" time="0" condition="StringCompare(Container(8007).NumItems,1)">conditional</animation>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>900</width>
+					<height>220</height>
+					<onleft>8007</onleft>
+					<onright>8007</onright>
+					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
+					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
+					<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<viewtype label="535">list</viewtype>
+					<pagecontrol>-</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<orientation>Horizontal</orientation>
+					<itemlayout height="220" width="180">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>160</width>
+							<height>170</height>
+							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="220" width="180">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>160</width>
+							<height>170</height>
+							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">folder-focus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>Control.HasFocus(8007)</visible>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>160</width>
+							<height>170</height>
+							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>!Control.HasFocus(8007)</visible>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>blue</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+							<visible>Control.HasFocus(8007)</visible>
+						</control>
+					</focusedlayout>
+					<include>RandomConcertContent</include>
+				</control>
+				<control type="button">
+					<description>left Arrow</description>
+					<posx>-40</posx>
+					<posy>90</posy>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>arrow-big-left.png</texturefocus>
+					<texturenofocus>arrow-big-left.png</texturenofocus>
+					<onclick>Control.Move(8007,-1)</onclick>
+					<visible>Control.HasFocus(8007) + Container(8007).HasPrevious</visible>
+					<include>VisibleFadeEffect</include>
+				</control>
+				<control type="button">
+					<description>right Arrow</description>
+					<posx>910</posx>
+					<posy>90</posy>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>arrow-big-right.png</texturefocus>
+					<texturenofocus>arrow-big-right.png</texturenofocus>
+					<onclick>Control.Move(8007,1)</onclick>
+					<visible>Control.HasFocus(8007) + Container(8007).HasNext</visible>
+					<include>VisibleFadeEffect</include>
+				</control>
+			</control>				
+			<control type="group">
+				<posx>190</posx>
+				<posy>50</posy>
+				<visible>Library.HasContent(Movies)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies)</visible>
+				<include>VisibleFadeEffect</include>
+				<control type="label">
+					<description>Title label</description>
+					<posx>180</posx>
+					<posy>220</posy>
+					<height>20</height>
+					<width>540</width>
+					<label>$LOCALIZE[31177]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="list" id="8008">
+					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8008).NumItems,4)">conditional</animation>
+					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8008).NumItems,3)">conditional</animation>
+					<animation effect="slide" start="0,0" end="270,0" time="0" condition="StringCompare(Container(8008).NumItems,2)">conditional</animation>
+					<animation effect="slide" start="0,0" end="360,0" time="0" condition="StringCompare(Container(8008).NumItems,1)">conditional</animation>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>900</width>
+					<height>220</height>
+					<onleft>8008</onleft>
+					<onright>8008</onright>
+					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
+					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
+					<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<viewtype label="535">list</viewtype>
+					<pagecontrol>-</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<orientation>Horizontal</orientation>
+					<itemlayout height="220" width="180">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>160</width>
+							<height>170</height>
+							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="220" width="180">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>160</width>
+							<height>170</height>
+							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">folder-focus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>Control.HasFocus(8008)</visible>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>160</width>
+							<height>170</height>
+							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>!Control.HasFocus(8008)</visible>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>blue</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+							<visible>Control.HasFocus(8008)</visible>
+						</control>
+					</focusedlayout>
+					<include>SuggestedVideoContent</include>
+				</control>
+				<control type="button">
+					<description>left Arrow</description>
+					<posx>-40</posx>
+					<posy>90</posy>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>arrow-big-left.png</texturefocus>
+					<texturenofocus>arrow-big-left.png</texturenofocus>
+					<onclick>Control.Move(8008,-1)</onclick>
+					<visible>Control.HasFocus(8008) + Container(8008).HasPrevious</visible>
+					<include>VisibleFadeEffect</include>
+				</control>
+				<control type="button">
+					<description>right Arrow</description>
+					<posx>910</posx>
+					<posy>90</posy>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>arrow-big-right.png</texturefocus>
+					<texturenofocus>arrow-big-right.png</texturenofocus>
+					<onclick>Control.Move(8008,1)</onclick>
+					<visible>Control.HasFocus(8008) + Container(8008).HasNext</visible>
+					<include>VisibleFadeEffect</include>
+				</control>
+			</control>
+			<control type="group">
+				<posx>160</posx>
+				<posy>50</posy>
+				<visible>Library.HasContent(TVShows)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes)</visible>
+				<include>VisibleFadeEffect</include>
+				<control type="label">
+					<description>Title label</description>
+					<posx>240</posx>
+					<posy>220</posy>
+					<height>20</height>
+					<width>480</width>
+					<label>$LOCALIZE[31180]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="list" id="8009">
+					<animation effect="slide" start="0,0" end="120,0" time="0" condition="StringCompare(Container(8009).NumItems,3)">conditional</animation>
+					<animation effect="slide" start="0,0" end="240,0" time="0" condition="StringCompare(Container(8009).NumItems,2)">conditional</animation>
+					<animation effect="slide" start="0,0" end="360,0" time="0" condition="StringCompare(Container(8009).NumItems,1)">conditional</animation>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>960</width>
+					<height>240</height>
+					<onleft>8009</onleft>
+					<onright>8009</onright>
+					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
+					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
+					<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<viewtype label="535">list</viewtype>
+					<pagecontrol>-</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<orientation>Horizontal</orientation>
+					<focusposition>1</focusposition>
+					<movement>2</movement>
+					<itemlayout height="220" width="240">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>240</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>220</width>
+							<height>155</height>
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>220</width>
+							<height>155</height>
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$INFO[ListItem.Thumb]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>168</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>185</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="220" width="240">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>240</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>220</width>
+							<height>155</height>
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">folder-focus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>Control.HasFocus(8009)</visible>
+							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>220</width>
+							<height>155</height>
+							<aspectratio>scale</aspectratio>
+							<texture>$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>!Control.HasFocus(8009)</visible>
+							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>220</width>
+							<height>155</height>
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$INFO[ListItem.Thumb]</texture>
+							<bordertexture border="5">folder-focus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>Control.HasFocus(8009)</visible>
+							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>220</width>
+							<height>155</height>
+							<aspectratio>scale</aspectratio>
+							<texture>$INFO[ListItem.Thumb]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>!Control.HasFocus(8009)</visible>
+							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>168</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>185</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>185</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>blue</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+							<visible>Control.HasFocus(8009)</visible>
+						</control>
+					</focusedlayout>
+					<include>SuggestedTVShowContent</include>
+				</control>
+				<control type="button">
+					<description>left Arrow</description>
+					<posx>-40</posx>
+					<posy>90</posy>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>arrow-big-left.png</texturefocus>
+					<texturenofocus>arrow-big-left.png</texturenofocus>
+					<onclick>Control.Move(8009,-1)</onclick>
+					<visible>Control.HasFocus(8009) + Container(8009).HasPrevious</visible>
+					<include>VisibleFadeEffect</include>
+				</control>
+				<control type="button">
+					<description>right Arrow</description>
+					<posx>970</posx>
+					<posy>90</posy>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>arrow-big-right.png</texturefocus>
+					<texturenofocus>arrow-big-right.png</texturenofocus>
+					<onclick>Control.Move(8009,1)</onclick>
+					<visible>Control.HasFocus(8009) + Container(8009).HasNext</visible>
+					<include>VisibleFadeEffect</include>
+				</control>
+			</control>
+			<control type="group">
+				<posx>240</posx>
+				<posy>50</posy>
+				<visible>Library.HasContent(Music)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedAlbums)</visible>
+				<include>VisibleFadeEffect</include>
+				<control type="label">
+					<description>Title label</description>
+					<posx>160</posx>
+					<posy>220</posy>
+					<height>20</height>
+					<width>480</width>
+					<label>$LOCALIZE[31183]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="list" id="8010">
+					<animation effect="slide" start="0,0" end="100,0" time="0" condition="StringCompare(Container(8010).NumItems,3)">conditional</animation>
+					<animation effect="slide" start="0,0" end="200,0" time="0" condition="StringCompare(Container(8010).NumItems,2)">conditional</animation>
+					<animation effect="slide" start="0,0" end="300,0" time="0" condition="StringCompare(Container(8010).NumItems,1)">conditional</animation>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>800</width>
+					<height>240</height>
+					<onleft>8010</onleft>
+					<onright>8010</onright>
+					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
+					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
+					<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<viewtype label="535">list</viewtype>
+					<pagecontrol>-</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<orientation>Horizontal</orientation>
+					<itemlayout height="220" width="200">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>200</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>180</width>
+							<height>155</height>
+							<aspectratio>keep</aspectratio>
+							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>170</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>190</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="220" width="200">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>200</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>180</width>
+							<height>155</height>
+							<aspectratio>keep</aspectratio>
+							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">folder-focus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>Control.HasFocus(8010)</visible>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>180</width>
+							<height>155</height>
+							<aspectratio>keep</aspectratio>
+							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>!Control.HasFocus(8010)</visible>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>170</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>190</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>190</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>blue</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+							<visible>Control.HasFocus(8010)</visible>
+						</control>
+					</focusedlayout>
+					<include>SuggestedAlbumContent</include>
+				</control>
+				<control type="button">
+					<description>left Arrow</description>
+					<posx>-40</posx>
+					<posy>90</posy>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>arrow-big-left.png</texturefocus>
+					<texturenofocus>arrow-big-left.png</texturenofocus>
+					<onclick>Control.Move(8010,-1)</onclick>
+					<visible>Control.HasFocus(8010) + Container(8010).HasPrevious</visible>
+					<include>VisibleFadeEffect</include>
+				</control>
+				<control type="button">
+					<description>right Arrow</description>
+					<posx>810</posx>
+					<posy>90</posy>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>arrow-big-right.png</texturefocus>
+					<texturenofocus>arrow-big-right.png</texturenofocus>
+					<onclick>Control.Move(8010,1)</onclick>
+					<visible>Control.HasFocus(8010) + Container(8010).HasNext</visible>
+					<include>VisibleFadeEffect</include>
+				</control>
+			</control>
+			<control type="group">
+				<posx>190</posx>
+				<posy>50</posy>
+				<visible>Library.HasContent(MusicVideos)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedConcerts)</visible>
+				<include>VisibleFadeEffect</include>
+				<control type="label">
+					<description>Title label</description>
+					<posx>180</posx>
+					<posy>220</posy>
+					<height>20</height>
+					<width>540</width>
+					<label>$LOCALIZE[31186]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="list" id="8011">
+					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8011).NumItems,4)">conditional</animation>
+					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8011).NumItems,3)">conditional</animation>
+					<animation effect="slide" start="0,0" end="270,0" time="0" condition="StringCompare(Container(8011).NumItems,2)">conditional</animation>
+					<animation effect="slide" start="0,0" end="360,0" time="0" condition="StringCompare(Container(8011).NumItems,1)">conditional</animation>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>900</width>
+					<height>220</height>
+					<onleft>8011</onleft>
+					<onright>8011</onright>
+					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
+					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
+					<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<viewtype label="535">list</viewtype>
+					<pagecontrol>-</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<orientation>Horizontal</orientation>
+					<itemlayout height="220" width="180">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>160</width>
+							<height>170</height>
+							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="220" width="180">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>160</width>
+							<height>170</height>
+							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">folder-focus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>Control.HasFocus(8011)</visible>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>160</width>
+							<height>170</height>
+							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>!Control.HasFocus(8011)</visible>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>blue</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+							<visible>Control.HasFocus(8011)</visible>
+						</control>
+					</focusedlayout>
+					<include>SuggestedConcertContent</include>
+				</control>
+				<control type="button">
+					<description>left Arrow</description>
+					<posx>-40</posx>
+					<posy>90</posy>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>arrow-big-left.png</texturefocus>
+					<texturenofocus>arrow-big-left.png</texturenofocus>
+					<onclick>Control.Move(8011,-1)</onclick>
+					<visible>Control.HasFocus(8011) + Container(8011).HasPrevious</visible>
+					<include>VisibleFadeEffect</include>
+				</control>
+				<control type="button">
+					<description>right Arrow</description>
+					<posx>910</posx>
+					<posy>90</posy>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>arrow-big-right.png</texturefocus>
+					<texturenofocus>arrow-big-right.png</texturenofocus>
+					<onclick>Control.Move(8011,1)</onclick>
+					<visible>Control.HasFocus(8011) + Container(8011).HasNext</visible>
+					<include>VisibleFadeEffect</include>
+				</control>
+			</control>				
 		</control>
 	</include>
 	<include name="RecentVideoContent">	
@@ -1954,4 +3354,573 @@
 			</item>
 		</content>		
 	</include>
+	<!-- #############
+			<control type="group">
+				<posx>160</posx>
+				<posy>50</posy>
+				<visible>Library.HasContent(TVShows)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(HiLiteItem),TVShows) + !Skin.HasSetting(HideHomeVideoWidget)</visible>
+				<include>VisibleFadeEffect</include>
+				<control type="label">
+					<description>Title label</description>
+					<posx>240</posx>
+					<posy>220</posy>
+					<height>20</height>
+					<width>480</width>
+					<label>$VAR[WidgetTitle]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="list" id="8001">
+					<animation effect="slide" start="0,0" end="120,0" time="0" condition="StringCompare(Container(8001).NumItems,3)">conditional</animation>
+					<animation effect="slide" start="0,0" end="240,0" time="0" condition="StringCompare(Container(8001).NumItems,2)">conditional</animation>
+					<animation effect="slide" start="0,0" end="360,0" time="0" condition="StringCompare(Container(8001).NumItems,1)">conditional</animation>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>960</width>
+					<height>240</height>
+					<onleft>8001</onleft>
+					<onright>8001</onright>
+					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
+					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
+					<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<viewtype label="535">list</viewtype>
+					<pagecontrol>-</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<orientation>Horizontal</orientation>
+					<focusposition>1</focusposition>
+					<movement>2</movement>
+					<itemlayout height="220" width="240">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>240</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>220</width>
+							<height>155</height>
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>220</width>
+							<height>155</height>
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$INFO[ListItem.Thumb]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>168</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>185</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="220" width="240">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>240</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>220</width>
+							<height>155</height>
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">folder-focus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>Control.HasFocus(8001)</visible>
+							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>220</width>
+							<height>155</height>
+							<aspectratio>scale</aspectratio>
+							<texture>$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>!Control.HasFocus(8001)</visible>
+							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>220</width>
+							<height>155</height>
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$INFO[ListItem.Thumb]</texture>
+							<bordertexture border="5">folder-focus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>Control.HasFocus(8001)</visible>
+							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>220</width>
+							<height>155</height>
+							<aspectratio>scale</aspectratio>
+							<texture>$INFO[ListItem.Thumb]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>!Control.HasFocus(8001)</visible>
+							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>168</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>185</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>185</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>blue</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+							<visible>Control.HasFocus(8001)</visible>
+						</control>
+					</focusedlayout>
+					<include condition="!Skin.HasSetting(RandomWidgetInfo) + !Skin.HasSetting(SuggestedWidgetInfo)">RecentTVShowContent</include>
+					<include condition="Skin.HasSetting(RandomWidgetInfo) + !SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">RecentTVShowContent</include>
+					<include condition="Skin.HasSetting(RandomWidgetInfo) + SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">RandomTVShowContent</include>
+					<include condition="Skin.HasSetting(SuggestedWidgetInfo) + SubString(Window(Home).Property(SkinWidgets_Recommended),true)">SuggestedTVShowContent</include>
+					<include condition="Skin.HasSetting(SuggestedWidgetInfo) + !SubString(Window(Home).Property(SkinWidgets_Recommended),true)">RecentTVShowContent</include>
+				</control>
+				<control type="button">
+					<description>left Arrow</description>
+					<posx>-40</posx>
+					<posy>90</posy>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>arrow-big-left.png</texturefocus>
+					<texturenofocus>arrow-big-left.png</texturenofocus>
+					<onclick>Control.Move(8001,-1)</onclick>
+					<visible>Control.HasFocus(8001) + Container(8001).HasPrevious</visible>
+					<include>VisibleFadeEffect</include>
+				</control>
+				<control type="button">
+					<description>right Arrow</description>
+					<posx>970</posx>
+					<posy>90</posy>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>arrow-big-right.png</texturefocus>
+					<texturenofocus>arrow-big-right.png</texturenofocus>
+					<onclick>Control.Move(8001,1)</onclick>
+					<visible>Control.HasFocus(8001) + Container(8001).HasNext</visible>
+					<include>VisibleFadeEffect</include>
+				</control>
+			</control>
+			<control type="group">
+				<posx>240</posx>
+				<posy>50</posy>
+				<visible>Library.HasContent(Music)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(HiLiteItem),Music) + !Skin.HasSetting(HideHomeAlbumsWidget)</visible>
+				<include>VisibleFadeEffect</include>
+				<control type="label">
+					<description>Title label</description>
+					<posx>160</posx>
+					<posy>220</posy>
+					<height>20</height>
+					<width>480</width>
+					<label>$VAR[WidgetTitle]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="list" id="8002">
+					<animation effect="slide" start="0,0" end="100,0" time="0" condition="StringCompare(Container(8002).NumItems,3)">conditional</animation>
+					<animation effect="slide" start="0,0" end="200,0" time="0" condition="StringCompare(Container(8002).NumItems,2)">conditional</animation>
+					<animation effect="slide" start="0,0" end="300,0" time="0" condition="StringCompare(Container(8002).NumItems,1)">conditional</animation>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>800</width>
+					<height>240</height>
+					<onleft>8002</onleft>
+					<onright>8002</onright>
+					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
+					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
+					<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<viewtype label="535">list</viewtype>
+					<pagecontrol>-</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<orientation>Horizontal</orientation>
+					<itemlayout height="220" width="200">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>200</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>180</width>
+							<height>155</height>
+							<aspectratio>keep</aspectratio>
+							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>170</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>190</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="220" width="200">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>200</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>180</width>
+							<height>155</height>
+							<aspectratio>keep</aspectratio>
+							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">folder-focus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>Control.HasFocus(8002)</visible>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>180</width>
+							<height>155</height>
+							<aspectratio>keep</aspectratio>
+							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>!Control.HasFocus(8002)</visible>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>170</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>190</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>190</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>blue</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+							<visible>Control.HasFocus(8002)</visible>
+						</control>
+					</focusedlayout>
+					<include condition="!Skin.HasSetting(RandomWidgetInfo) + !Skin.HasSetting(SuggestedWidgetInfo)">RecentAlbumContent</include>
+					<include condition="Skin.HasSetting(RandomWidgetInfo) + !SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">RecentAlbumContent</include>
+					<include condition="Skin.HasSetting(RandomWidgetInfo) + SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">RandomAlbumContent</include>
+					<include condition="Skin.HasSetting(SuggestedWidgetInfo) + SubString(Window(Home).Property(SkinWidgets_Recommended),true)">SuggestedAlbumContent</include>
+					<include condition="Skin.HasSetting(SuggestedWidgetInfo) + !SubString(Window(Home).Property(SkinWidgets_Recommended),true)">RecentAlbumContent</include>
+				</control>
+				<control type="button">
+					<description>left Arrow</description>
+					<posx>-40</posx>
+					<posy>90</posy>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>arrow-big-left.png</texturefocus>
+					<texturenofocus>arrow-big-left.png</texturenofocus>
+					<onclick>Control.Move(8002,-1)</onclick>
+					<visible>Control.HasFocus(8002) + Container(8002).HasPrevious</visible>
+					<include>VisibleFadeEffect</include>
+				</control>
+				<control type="button">
+					<description>right Arrow</description>
+					<posx>810</posx>
+					<posy>90</posy>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>arrow-big-right.png</texturefocus>
+					<texturenofocus>arrow-big-right.png</texturenofocus>
+					<onclick>Control.Move(8002,1)</onclick>
+					<visible>Control.HasFocus(8002) + Container(8002).HasNext</visible>
+					<include>VisibleFadeEffect</include>
+				</control>
+			</control>
+			<control type="group">
+				<posx>190</posx>
+				<posy>50</posy>
+				<visible>Library.HasContent(MusicVideos)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(HiLiteItem),Concerts) + !Skin.HasSetting(HideHomeConcertsWidget)</visible>
+				<include>VisibleFadeEffect</include>
+				<control type="label">
+					<description>Title label</description>
+					<posx>180</posx>
+					<posy>220</posy>
+					<height>20</height>
+					<width>540</width>
+					<label>$VAR[WidgetTitle]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="list" id="8003">
+					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8003).NumItems,4)">conditional</animation>
+					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8003).NumItems,3)">conditional</animation>
+					<animation effect="slide" start="0,0" end="270,0" time="0" condition="StringCompare(Container(8003).NumItems,2)">conditional</animation>
+					<animation effect="slide" start="0,0" end="360,0" time="0" condition="StringCompare(Container(8003).NumItems,1)">conditional</animation>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>900</width>
+					<height>220</height>
+					<onleft>8003</onleft>
+					<onright>8003</onright>
+					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
+					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
+					<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<viewtype label="535">list</viewtype>
+					<pagecontrol>-</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<orientation>Horizontal</orientation>
+					<itemlayout height="220" width="180">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>160</width>
+							<height>170</height>
+							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="220" width="180">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>160</width>
+							<height>170</height>
+							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">folder-focus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>Control.HasFocus(8003)</visible>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>160</width>
+							<height>170</height>
+							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>!Control.HasFocus(8003)</visible>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>blue</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+							<visible>Control.HasFocus(8003)</visible>
+						</control>
+					</focusedlayout>
+					<include condition="!Skin.HasSetting(RandomWidgetInfo) + !Skin.HasSetting(SuggestedWidgetInfo)">RecentConcertContent</include>
+					<include condition="Skin.HasSetting(RandomWidgetInfo) + !SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">RecentConcertContent</include>
+					<include condition="Skin.HasSetting(RandomWidgetInfo) + SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">RandomConcertContent</include>
+					<include condition="Skin.HasSetting(SuggestedWidgetInfo) + SubString(Window(Home).Property(SkinWidgets_Recommended),true)">SuggestedConcertContent</include>
+					<include condition="Skin.HasSetting(SuggestedWidgetInfo) + !SubString(Window(Home).Property(SkinWidgets_Recommended),true)">RecentConcertContent</include>
+				</control>
+				<control type="button">
+					<description>left Arrow</description>
+					<posx>-40</posx>
+					<posy>90</posy>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>arrow-big-left.png</texturefocus>
+					<texturenofocus>arrow-big-left.png</texturenofocus>
+					<onclick>Control.Move(8003,-1)</onclick>
+					<visible>Control.HasFocus(8003) + Container(8003).HasPrevious</visible>
+					<include>VisibleFadeEffect</include>
+				</control>
+				<control type="button">
+					<description>right Arrow</description>
+					<posx>910</posx>
+					<posy>90</posy>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>arrow-big-right.png</texturefocus>
+					<texturenofocus>arrow-big-right.png</texturenofocus>
+					<onclick>Control.Move(8003,1)</onclick>
+					<visible>Control.HasFocus(8003) + Container(8003).HasNext</visible>
+					<include>VisibleFadeEffect</include>
+				</control>
+			</control>	
+	###############-->
 </includes>
