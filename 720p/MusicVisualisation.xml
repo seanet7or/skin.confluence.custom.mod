@@ -54,7 +54,7 @@
 		<control type="visualisation" id="2">
 			<description>visualisation</description>
 			<include>Dimensions_Fullscreen</include>
-		</control>		
+		</control>
 		<control type="group">
 			<control type="multiimage">
 				<description>Artist Slideshow Image for Artist</description>
@@ -95,7 +95,7 @@
 				<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
 				<visible>Skin.HasSetting(AllowVizExtraFanart) + !Skin.HasSetting(HideVisualizationFanart) + !Skin.HasSetting(AllowSlideShowArt)</visible>
 				<visible>![SubString(Player.FolderPath,mms://,Left) | SubString(Player.FolderPath,http://,Left)]</visible>
-			</control>	
+			</control>
 			<visible>Skin.HasSetting(AllowTransparentFanart) + !IsEmpty(Visualisation.Name) + !stringcompare(Visualisation.Name,Waveform) + !stringcompare(Visualisation.Name,DirectX Spectrum)</visible>
 		</control>
 		<!-- media infos -->
@@ -139,7 +139,7 @@
 					<width>500</width>
 					<height>500</height>
 					<aligny>center</aligny>
-					<texture  fallback="livecdcase/DefaultCDArt.png" diffuse="livecdcase/cddiffuse.png" background="true">$INFO[Player.FolderPath,,cdart.png]</texture>
+					<texture fallback="livecdcase/DefaultCDArt.png" diffuse="livecdcase/cddiffuse.png" background="true">$INFO[Player.FolderPath,,cdart.png]</texture>
 					<aspectratio align="center">keep</aspectratio>
 					<include>CDArtSpinner</include>
 				</control>
@@ -151,13 +151,8 @@
 				<control type="image">
 					<description>Cd overlay</description>
 					<posx>120</posx>
-					<posy>15</posy>>
-					<width>170</width>
-					<height>175</height>
-					<include>CDArtSpinner</include>
-					<texture fallback="livecdcase/DefaultCDArt.png" background="true">$INFO[Player.FolderPath,,cdart.png]</texture>
-					<aspectratio align="center">keep</aspectratio>
-				</control>
+					<posy>15</posy>&gt;
+					<width>170</width><height>175</height><include>CDArtSpinner</include><texture fallback="livecdcase/DefaultCDArt.png" background="true">$INFO[Player.FolderPath,,cdart.png]</texture><aspectratio align="center">keep</aspectratio></control>
 				<control type="image">
 					<description>Cover Image</description>
 					<posx>40</posx>
@@ -170,11 +165,11 @@
 				<control type="image">
 					<posx>4</posx>
 					<posy>3</posy>
-                    <width>229</width>
-                    <height>207</height>
-                    <bordertexture>livecdcase/cdshadow.png</bordertexture>
-                    <texture background="true">livecdcase/cdglass.png</texture>
-                </control>
+					<width>229</width>
+					<height>207</height>
+					<bordertexture>livecdcase/cdshadow.png</bordertexture>
+					<texture background="true">livecdcase/cdglass.png</texture>
+				</control>
 				<visible>!Skin.HasSetting(HideVisualizationCDart) + !Skin.HasSetting(HideTraditionalCDart)</visible>
 			</control>
 			<control type="image">

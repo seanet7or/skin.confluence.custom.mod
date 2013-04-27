@@ -717,7 +717,7 @@
 					<visible>Control.HasFocus(8003) + Container(8003).HasNext</visible>
 					<include>VisibleFadeEffect</include>
 				</control>
-			</control>			
+			</control>
 			<control type="group">
 				<posx>190</posx>
 				<posy>50</posy>
@@ -1425,7 +1425,7 @@
 					<visible>Control.HasFocus(8007) + Container(8007).HasNext</visible>
 					<include>VisibleFadeEffect</include>
 				</control>
-			</control>				
+			</control>
 			<control type="group">
 				<posx>190</posx>
 				<posy>50</posy>
@@ -2133,10 +2133,10 @@
 					<visible>Control.HasFocus(8011) + Container(8011).HasNext</visible>
 					<include>VisibleFadeEffect</include>
 				</control>
-			</control>				
+			</control>
 		</control>
 	</include>
-	<include name="RecentVideoContent">	
+	<include name="RecentVideoContent">
 		<content>
 			<item>
 				<label>$INFO[Window(Home).Property(RecentMovie.1.Title)]</label>
@@ -2318,9 +2318,9 @@
 				<thumb>$INFO[Window.Property(LatestMovie.10.Fanart)]</thumb>
 				<visible>!IsEmpty(Window.Property(LatestMovie.10.Title)) + !SubString(Window(Home).Property(SkinWidgets_RecentItems),true)</visible>
 			</item>
-		</content>					
+		</content>
 	</include>
-	<include name="RandomVideoContent">	
+	<include name="RandomVideoContent">
 		<content>
 			<item id="1">
 				<label>$INFO[Window(Home).Property(RandomMovie.1.Title)]</label>
@@ -2412,9 +2412,9 @@
 				<thumb>$INFO[Window(Home).Property(RandomMovie.10.Art(fanart))]</thumb>
 				<visible>!IsEmpty(Window(Home).Property(RandomMovie.10.Title))</visible>
 			</item>
-		</content>	
+		</content>
 	</include>
-	<include name="SuggestedVideoContent">	
+	<include name="SuggestedVideoContent">
 		<content>
 			<item id="1">
 				<label>$INFO[Window(Home).Property(RecommendedMovie.1.Title)]</label>
@@ -2506,7 +2506,7 @@
 				<thumb>$INFO[Window(Home).Property(RecommendedMovie.10.Art(fanart))]</thumb>
 				<visible>!IsEmpty(Window(Home).Property(RecommendedMovie.10.Title))</visible>
 			</item>
-		</content>		
+		</content>
 	</include>
 	<include name="RecentTVShowContent">
 		<content>
@@ -2547,7 +2547,7 @@
 				<visible>!IsEmpty(Window.Property(LatestEpisode.4.EpisodeTitle))</visible>
 			</item>
 			<item>
-			<label>$INFO[Window.Property(LatestEpisode.5.EpisodeTitle)]</label>
+				<label>$INFO[Window.Property(LatestEpisode.5.EpisodeTitle)]</label>
 				<label2>$INFO[Window.Property(LatestEpisode.5.ShowTitle)] - $INFO[Window.Property(LatestEpisode.5.EpisodeNo)]</label2>
 				<onclick>PlayList.Clear</onclick>
 				<onclick>PlayMedia($ESCINFO[Window.Property(LatestEpisode.5.Path)])</onclick>
@@ -2696,7 +2696,7 @@
 			</item>
 		</content>
 	</include>
-	<include name="SuggestedTVShowContent">	
+	<include name="SuggestedTVShowContent">
 		<content>
 			<item id="1">
 				<label>$INFO[Window(Home).Property(RecommendedEpisode.1.Title)]</label>
@@ -2976,7 +2976,7 @@
 				<thumb>$INFO[Window(Home).Property(RandomAlbum.10.Fanart)]</thumb>
 				<visible>!IsEmpty(Window(Home).Property(RandomAlbum.10.Title))</visible>
 			</item>
-		</content>	
+		</content>
 	</include>
 	<include name="SuggestedAlbumContent">
 		<content>
@@ -3070,7 +3070,7 @@
 				<thumb>$INFO[Window(Home).Property(RecommendedAlbum.10.Fanart)]</thumb>
 				<visible>!IsEmpty(Window(Home).Property(RecommendedAlbum.10.Title))</visible>
 			</item>
-		</content>		
+		</content>
 	</include>
 	<include name="RecentConcertContent">
 		<content>
@@ -3258,10 +3258,10 @@
 				<thumb>$INFO[Window(Home).Property(RandomMusicVideo.10.Art(fanart))]</thumb>
 				<visible>!IsEmpty(Window(Home).Property(RandomMusicVideo.10.Title))</visible>
 			</item>
-		</content>	
+		</content>
 	</include>
 	<include name="SuggestedConcertContent">
-			<content>
+		<content>
 			<item id="1">
 				<label>$INFO[Window(Home).Property(RecommendedMusicVideo.1.Title)]</label>
 				<label2></label2>
@@ -3352,6 +3352,6 @@
 				<thumb>$INFO[Window(Home).Property(RecommendedMusicVideo.10.Art(fanart))]</thumb>
 				<visible>!IsEmpty(Window(Home).Property(RecommendedMusicVideo.10.Title))</visible>
 			</item>
-		</content>		
+		</content>
 	</include>
 </includes>

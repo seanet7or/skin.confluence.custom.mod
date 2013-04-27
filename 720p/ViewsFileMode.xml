@@ -74,7 +74,7 @@
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<visible>Skin.HasSetting(ViewSubTitleFlag) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
-					</control>					
+					</control>
 					<control type="image">
 						<posx>625</posx>
 						<posy>8</posy>
@@ -203,7 +203,7 @@
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<visible>Skin.HasSetting(ViewSubTitleFlag) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
-					</control>					
+					</control>
 					<control type="image">
 						<posx>660</posx>
 						<posy>14</posy>
@@ -314,7 +314,7 @@
 						<bordersize>5</bordersize>
 						<texture background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
 						<visible>Container.Content(Episodes) + Skin.HasSetting(HideEpisodeThumb) + !StringCompare(ListItem.Label,..)</visible>
-					</control>					
+					</control>
 					<control type="label">
 						<posx>108</posx>
 						<posy>160</posy>
@@ -652,7 +652,7 @@
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<visible>Skin.HasSetting(ViewSubTitleFlag) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
-					</control>					
+					</control>
 					<control type="image">
 						<posx>1045</posx>
 						<posy>14</posy>
@@ -773,7 +773,7 @@
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<visible>Skin.HasSetting(ViewSubTitleFlag) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
-					</control>					
+					</control>
 					<control type="image">
 						<posx>1045</posx>
 						<posy>14</posy>

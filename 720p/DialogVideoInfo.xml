@@ -981,7 +981,7 @@
 						<onclick>PlayMedia($INFO[ListItem.Trailer],1)</onclick>
 						<visible>!IsEmpty(ListItem.Trailer) + Skin.HasSetting(WindowedTrailer)</visible>
 					</control>
-				<control type="button" id="100">
+					<control type="button" id="100">
 						<description>Get Artwork</description>
 						<include>ButtonInfoDialogsCommonValues</include>
 						<label>$LOCALIZE[31323]</label>

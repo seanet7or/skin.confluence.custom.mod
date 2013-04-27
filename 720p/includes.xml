@@ -79,13 +79,13 @@
 		<onload condition="!Skin.HasSetting(InitialSetUpRun) + Library.HasContent(TVShows) + IsEmpty(Skin.String(HomeItem.6.Widget))">Skin.SetString(HomeItem.6.Widget,RecentEpisodes)</onload>
 		<onload condition="!Skin.HasSetting(InitialSetUpRun) + Library.HasContent(TVShows) + IsEmpty(Skin.String(HomeItem.6.Type))">Skin.SetString(HomeItem.6.Type,TVShows)</onload>
 		<onload condition="!Skin.HasSetting(InitialSetUpRun) + IsEmpty(Skin.String(HomeItem.7.Label))">Skin.SetString(HomeItem.7.Label,$LOCALIZE[31332])</onload>
-		<onload condition="!Skin.HasSetting(InitialSetUpRun) + IsEmpty(Skin.String(HomeItem.7.Path))">Skin.SetString(HomeItem.7.Path,ActivateWindow(VideoLibrary,&quot;special://skin/extras/Playlists/GenreFamily.xsp&quot;,return))</onload>
+		<onload condition="!Skin.HasSetting(InitialSetUpRun) + IsEmpty(Skin.String(HomeItem.7.Path))">Skin.SetString(HomeItem.7.Path,ActivateWindow(VideoLibrary,"special://skin/extras/Playlists/GenreFamily.xsp",return))</onload>
 		<onload condition="!Skin.HasSetting(InitialSetUpRun) + IsEmpty(Skin.String(HomeItem.7.Sub))">Skin.SetString(HomeItem.7.Sub,Movies)</onload>
 		<onload condition="!Skin.HasSetting(InitialSetUpRun) + IsEmpty(Skin.String(HomeItem.7.Addon))">Skin.SetString(HomeItem.7.Addon,Videos)</onload>
 		<onload condition="!Skin.HasSetting(InitialSetUpRun) + IsEmpty(Skin.String(HomeItem.7.Widget))">Skin.SetString(HomeItem.7.Widget,None)</onload>
 		<onload condition="!Skin.HasSetting(InitialSetUpRun) + IsEmpty(Skin.String(HomeItem.7.Type))">Skin.SetString(HomeItem.7.Type,Movies)</onload>
 		<onload condition="!Skin.HasSetting(InitialSetUpRun) + IsEmpty(Skin.String(HomeItem.8.Label))">Skin.SetString(HomeItem.8.Label,Virgin)</onload>
-		<onload condition="!Skin.HasSetting(InitialSetUpRun) + IsEmpty(Skin.String(HomeItem.8.Path))">Skin.SetString(HomeItem.8.Path,PlayMedia(&quot;special://skin/extras/Streaming/Virgin.strm&quot;))</onload>
+		<onload condition="!Skin.HasSetting(InitialSetUpRun) + IsEmpty(Skin.String(HomeItem.8.Path))">Skin.SetString(HomeItem.8.Path,PlayMedia("special://skin/extras/Streaming/Virgin.strm"))</onload>
 		<onload condition="!Skin.HasSetting(InitialSetUpRun) + IsEmpty(Skin.String(HomeItem.8.Sub))">Skin.SetString(HomeItem.8.Sub,None)</onload>
 		<onload condition="!Skin.HasSetting(InitialSetUpRun) + IsEmpty(Skin.String(HomeItem.8.Addon))">Skin.SetString(HomeItem.8.Addon,None)</onload>
 		<onload condition="!Skin.HasSetting(InitialSetUpRun) + IsEmpty(Skin.String(HomeItem.8.Widget))">Skin.SetString(HomeItem.8.Widget,None)</onload>
@@ -1319,224 +1319,224 @@
 		<animation effect="fade" time="300">Hidden</animation>
 	</include>
 	<include name="LiveCDCasesbackground">
-        <control type="group">
-            <animation effect="fade" time="600">VisibleChange</animation>
+		<control type="group">
+			<animation effect="fade" time="600">VisibleChange</animation>
 			<include>Window_OpenClose_Animation</include>
 			<include>VisibleFadeEffect</include>
 			<visible>IsEmpty(Player.Art(fanart)) | Skin.HasSetting(HideVisualizationFanart)</visible>
-            <visible>Window.IsVisible(home) | !Skin.HasSetting(AllowSlideShowArt)</visible>
+			<visible>Window.IsVisible(home) | !Skin.HasSetting(AllowSlideShowArt)</visible>
 			<control type="group">
-                <posx>-133</posx>
+				<posx>-133</posx>
 				<control type="group">
-                    <posx>746</posx>
-                    <posy>446</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="9" end="9" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>36</posx>
-                        <posy>11</posy>
-                        <width>201</width>
-                        <height>201</height>
-                        <fadetime>600</fadetime>
-                        <texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[Window(home).Property(RandomAlbum.5.Art(thumb))]</texture>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                    </control>
-                    <control type="image">
-                        <width>250</width>
-                        <height>228</height>
-                        <bordertexture>livecdcase/cdshadow.png</bordertexture>
-                        <texture background="true">livecdcase/cdglass.png</texture>
-                    </control>
-                </control>
-                <control type="group">
-                    <posx>466</posx>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="65" end="65" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>36</posx>
-                        <posy>11</posy>
-                        <width>201</width>
-                        <height>201</height>
-                        <fadetime>600</fadetime>
-                        <texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[Window(home).Property(RandomAlbum.9.Art(thumb))]</texture>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                    </control>
-                    <control type="image">
-                        <width>250</width>
-                        <height>228</height>
-                        <bordertexture>livecdcase/cdshadow.png</bordertexture>
-                        <texture background="true">livecdcase/cdglass.png</texture>
-                    </control>
-                </control>
-                <control type="group">
-                    <posx>336</posx>
-                    <posy>100</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="10" end="10" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>36</posx>
-                        <posy>11</posy>
-                        <width>201</width>
-                        <height>201</height>
-                        <texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[Window(home).Property(RandomAlbum.8.Art(thumb))]</texture>
-                        <fadetime>600</fadetime>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                    </control>
-                    <control type="image">
-                        <width>250</width>
-                        <height>228</height>
-                        <bordertexture>livecdcase/cdshadow.png</bordertexture>
-                        <texture background="true">livecdcase/cdglass.png</texture>
-                    </control>
-                </control>
-                <control type="group">
-                    <posx>1026</posx>
-                    <posy>133</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="-20" end="-20" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>36</posx>
-                        <posy>11</posy>
-                        <width>201</width>
-                        <height>201</height>
-                        <fadetime>600</fadetime>
-                        <texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[Window(home).Property(RandomAlbum.7.Art(thumb))]</texture>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                    </control>
-                    <control type="image">
-                        <width>250</width>
-                        <height>228</height>
-                        <bordertexture>livecdcase/cdshadow.png</bordertexture>
-                        <texture background="true">livecdcase/cdglass.png</texture>
-                    </control>
-                </control>
-                <control type="group">
-                    <posx>666</posx>
-                    <posy>66</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="25" end="25" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>36</posx>
-                        <posy>11</posy>
-                        <width>201</width>
-                        <height>201</height>
-                        <texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[Window(home).Property(RandomAlbum.4.Art(thumb))]</texture>
-                        <fadetime>600</fadetime>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                    </control>
-                    <control type="image">
-                        <width>250</width>
-                        <height>228</height>
-                        <bordertexture>livecdcase/cdshadow.png</bordertexture>
-                        <texture background="true">livecdcase/cdglass.png</texture>
-                    </control>
-                </control>
-                <control type="group">
-                    <posx>1250</posx>
-                    <posy>-6</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="75" end="75" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>36</posx>
-                        <posy>11</posy>
-                        <width>201</width>
-                        <height>201</height>
-                        <fadetime>600</fadetime>
-                        <texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[Window(home).Property(RandomAlbum.6.Art(thumb))]</texture>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                    </control>
-                    <control type="image">
-                        <width>250</width>
-                        <height>228</height>
-                        <bordertexture>livecdcase/cdshadow.png</bordertexture>
-                        <texture background="true">livecdcase/cdglass.png</texture>
-                    </control>
-                </control>
-                <control type="group">
-                    <posx>1113</posx>
-                    <posy>533</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="45" end="45" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>36</posx>
-                        <posy>11</posy>
-                        <width>201</width>
-                        <height>201</height>
-                        <fadetime>600</fadetime>
-                        <texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[Window(home).Property(RandomAlbum.10.Art(thumb))]</texture>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                    </control>
-                    <control type="image">
-                        <width>250</width>
-                        <height>228</height>
-                        <bordertexture>livecdcase/cdshadow.png</bordertexture>
-                        <texture background="true">livecdcase/cdglass.png</texture>
-                    </control>
-                </control>
-                <control type="group">
-                    <posx>980</posx>
-                    <posy>340</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="-15" end="-15" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>36</posx>
-                        <posy>11</posy>
-                        <width>201</width>
-                        <fadetime>600</fadetime>
-                        <height>201</height>
-                        <texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[Window(home).Property(RandomAlbum.3.Art(thumb))]</texture>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                    </control>
-                    <control type="image">
-                        <width>250</width>
-                        <height>228</height>
-                        <bordertexture>livecdcase/cdshadow.png</bordertexture>
-                        <texture background="true">livecdcase/cdglass.png</texture>
-                    </control>
-                </control>
-                <control type="group">
-                    <posx>700</posx>
-                    <posy>286</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="-10" end="-10" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>36</posx>
-                        <posy>11</posy>
-                        <width>201</width>
-                        <height>201</height>
-                        <fadetime>600</fadetime>
-                        <texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[Window(home).Property(RandomAlbum.2.Art(thumb))]</texture>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                    </control>
-                    <control type="image">
-                        <width>250</width>
-                        <height>228</height>
-                        <bordertexture>livecdcase/cdshadow.png</bordertexture>
-                        <texture background="true">livecdcase/cdglass.png</texture>
-                    </control>
-                </control>
-                <control type="group">
-                    <posx>500</posx>
-                    <posy>366</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="3" end="3" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>36</posx>
-                        <posy>11</posy>
-                        <width>201</width>
-                        <height>201</height>
-                        <texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[Window(home).Property(RandomAlbum.1.Art(thumb))]</texture>
+					<posx>746</posx>
+					<posy>446</posy>
+					<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+					<animation effect="rotate" center="auto" start="9" end="9" time="0" condition="true">Conditional</animation>
+					<control type="image">
+						<posx>36</posx>
+						<posy>11</posy>
+						<width>201</width>
+						<height>201</height>
 						<fadetime>600</fadetime>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                    </control>
-                    <control type="image">
-                        <width>250</width>
-                        <height>228</height>
-                        <bordertexture>livecdcase/cdshadow.png</bordertexture>
-                        <texture background="true">livecdcase/cdglass.png</texture>
-                    </control>
-                </control>
-            </control>
-        </control>
-    </include>
+						<texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[Window(home).Property(RandomAlbum.5.Art(thumb))]</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>
+					<control type="image">
+						<width>250</width>
+						<height>228</height>
+						<bordertexture>livecdcase/cdshadow.png</bordertexture>
+						<texture background="true">livecdcase/cdglass.png</texture>
+					</control>
+				</control>
+				<control type="group">
+					<posx>466</posx>
+					<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+					<animation effect="rotate" center="auto" start="65" end="65" time="0" condition="true">Conditional</animation>
+					<control type="image">
+						<posx>36</posx>
+						<posy>11</posy>
+						<width>201</width>
+						<height>201</height>
+						<fadetime>600</fadetime>
+						<texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[Window(home).Property(RandomAlbum.9.Art(thumb))]</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>
+					<control type="image">
+						<width>250</width>
+						<height>228</height>
+						<bordertexture>livecdcase/cdshadow.png</bordertexture>
+						<texture background="true">livecdcase/cdglass.png</texture>
+					</control>
+				</control>
+				<control type="group">
+					<posx>336</posx>
+					<posy>100</posy>
+					<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+					<animation effect="rotate" center="auto" start="10" end="10" time="0" condition="true">Conditional</animation>
+					<control type="image">
+						<posx>36</posx>
+						<posy>11</posy>
+						<width>201</width>
+						<height>201</height>
+						<texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[Window(home).Property(RandomAlbum.8.Art(thumb))]</texture>
+						<fadetime>600</fadetime>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>
+					<control type="image">
+						<width>250</width>
+						<height>228</height>
+						<bordertexture>livecdcase/cdshadow.png</bordertexture>
+						<texture background="true">livecdcase/cdglass.png</texture>
+					</control>
+				</control>
+				<control type="group">
+					<posx>1026</posx>
+					<posy>133</posy>
+					<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+					<animation effect="rotate" center="auto" start="-20" end="-20" time="0" condition="true">Conditional</animation>
+					<control type="image">
+						<posx>36</posx>
+						<posy>11</posy>
+						<width>201</width>
+						<height>201</height>
+						<fadetime>600</fadetime>
+						<texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[Window(home).Property(RandomAlbum.7.Art(thumb))]</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>
+					<control type="image">
+						<width>250</width>
+						<height>228</height>
+						<bordertexture>livecdcase/cdshadow.png</bordertexture>
+						<texture background="true">livecdcase/cdglass.png</texture>
+					</control>
+				</control>
+				<control type="group">
+					<posx>666</posx>
+					<posy>66</posy>
+					<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+					<animation effect="rotate" center="auto" start="25" end="25" time="0" condition="true">Conditional</animation>
+					<control type="image">
+						<posx>36</posx>
+						<posy>11</posy>
+						<width>201</width>
+						<height>201</height>
+						<texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[Window(home).Property(RandomAlbum.4.Art(thumb))]</texture>
+						<fadetime>600</fadetime>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>
+					<control type="image">
+						<width>250</width>
+						<height>228</height>
+						<bordertexture>livecdcase/cdshadow.png</bordertexture>
+						<texture background="true">livecdcase/cdglass.png</texture>
+					</control>
+				</control>
+				<control type="group">
+					<posx>1250</posx>
+					<posy>-6</posy>
+					<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+					<animation effect="rotate" center="auto" start="75" end="75" time="0" condition="true">Conditional</animation>
+					<control type="image">
+						<posx>36</posx>
+						<posy>11</posy>
+						<width>201</width>
+						<height>201</height>
+						<fadetime>600</fadetime>
+						<texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[Window(home).Property(RandomAlbum.6.Art(thumb))]</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>
+					<control type="image">
+						<width>250</width>
+						<height>228</height>
+						<bordertexture>livecdcase/cdshadow.png</bordertexture>
+						<texture background="true">livecdcase/cdglass.png</texture>
+					</control>
+				</control>
+				<control type="group">
+					<posx>1113</posx>
+					<posy>533</posy>
+					<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+					<animation effect="rotate" center="auto" start="45" end="45" time="0" condition="true">Conditional</animation>
+					<control type="image">
+						<posx>36</posx>
+						<posy>11</posy>
+						<width>201</width>
+						<height>201</height>
+						<fadetime>600</fadetime>
+						<texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[Window(home).Property(RandomAlbum.10.Art(thumb))]</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>
+					<control type="image">
+						<width>250</width>
+						<height>228</height>
+						<bordertexture>livecdcase/cdshadow.png</bordertexture>
+						<texture background="true">livecdcase/cdglass.png</texture>
+					</control>
+				</control>
+				<control type="group">
+					<posx>980</posx>
+					<posy>340</posy>
+					<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+					<animation effect="rotate" center="auto" start="-15" end="-15" time="0" condition="true">Conditional</animation>
+					<control type="image">
+						<posx>36</posx>
+						<posy>11</posy>
+						<width>201</width>
+						<fadetime>600</fadetime>
+						<height>201</height>
+						<texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[Window(home).Property(RandomAlbum.3.Art(thumb))]</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>
+					<control type="image">
+						<width>250</width>
+						<height>228</height>
+						<bordertexture>livecdcase/cdshadow.png</bordertexture>
+						<texture background="true">livecdcase/cdglass.png</texture>
+					</control>
+				</control>
+				<control type="group">
+					<posx>700</posx>
+					<posy>286</posy>
+					<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+					<animation effect="rotate" center="auto" start="-10" end="-10" time="0" condition="true">Conditional</animation>
+					<control type="image">
+						<posx>36</posx>
+						<posy>11</posy>
+						<width>201</width>
+						<height>201</height>
+						<fadetime>600</fadetime>
+						<texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[Window(home).Property(RandomAlbum.2.Art(thumb))]</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>
+					<control type="image">
+						<width>250</width>
+						<height>228</height>
+						<bordertexture>livecdcase/cdshadow.png</bordertexture>
+						<texture background="true">livecdcase/cdglass.png</texture>
+					</control>
+				</control>
+				<control type="group">
+					<posx>500</posx>
+					<posy>366</posy>
+					<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+					<animation effect="rotate" center="auto" start="3" end="3" time="0" condition="true">Conditional</animation>
+					<control type="image">
+						<posx>36</posx>
+						<posy>11</posy>
+						<width>201</width>
+						<height>201</height>
+						<texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[Window(home).Property(RandomAlbum.1.Art(thumb))]</texture>
+						<fadetime>600</fadetime>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>
+					<control type="image">
+						<width>250</width>
+						<height>228</height>
+						<bordertexture>livecdcase/cdshadow.png</bordertexture>
+						<texture background="true">livecdcase/cdglass.png</texture>
+					</control>
+				</control>
+			</control>
+		</control>
+	</include>
 </includes>

@@ -54,7 +54,7 @@
 				<height>52</height>
 				<texture>$INFO[Player.FolderPath,,../logo.png]</texture>
 				<aspectratio aligny="bottom" align="left">keep</aspectratio>
-				<visible>![Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding]</visible>	
+				<visible>![Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding]</visible>
 			</control>
 			<control type="label">
 				<description>Album Label</description>
@@ -746,7 +746,7 @@
 				<shadowcolor>black</shadowcolor>
 				<visible>!Player.HasMedia + !Skin.HasSetting(HideHomeStats)</visible>
 			</control>
-		</control>		
+		</control>
 		<control type="group">
 			<posy>400</posy>
 			<animation type="WindowOpen" reversible="false">

@@ -68,7 +68,7 @@
 							<texture background="true" fallback="banner/DefaultInProgress.png">banner/$LOCALIZE[31357].png</texture>
 							<visible>ListItem.IsResumable</visible>
 						</control>
-					</control>					
+					</control>
 				</itemlayout>
 				<focusedlayout height="310" width="218">
 					<control type="image">
@@ -118,7 +118,7 @@
 							<animation reversible="false" effect="zoom" end="112,39,105,105" start="134,3,118,118" time="200">unfocus</animation>
 							<visible>ListItem.IsResumable</visible>
 						</control>
-					</control>					
+					</control>
 					<control type="image">
 						<posx>6</posx>
 						<posy>44</posy>
@@ -231,7 +231,7 @@
 				<orientation>horizontal</orientation>
 				<include>GenreText</include>
 				<visible>Skin.HasSetting(View501GenreIcons)</visible>
-			</control>			
+			</control>
 			<control type="label">
 				<posx>0</posx>
 				<posy>580</posy>
@@ -352,7 +352,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Episode,, $LOCALIZE[20453]]</label>
-				<animation effect="slide" start="0,0" end="0,-45" time="0" condition="Skin.HasSetting(View501GenreIcons)">Conditional</animation>				
+				<animation effect="slide" start="0,0" end="0,-45" time="0" condition="Skin.HasSetting(View501GenreIcons)">Conditional</animation>
 			</control>
 			<control type="label">
 				<posx>0</posx>
@@ -365,7 +365,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<label>($INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102]] - $INFO[ListItem.Property(UnWatchedEpisodes), , $LOCALIZE[16101]])</label>
-				<animation effect="slide" start="0,0" end="0,-55" time="0" condition="Skin.HasSetting(View501GenreIcons)">Conditional</animation>							
+				<animation effect="slide" start="0,0" end="0,-55" time="0" condition="Skin.HasSetting(View501GenreIcons)">Conditional</animation>
 			</control>
 			<control type="grouplist">
 				<description>Media Genre Flagging</description>
@@ -388,7 +388,7 @@
 				<orientation>horizontal</orientation>
 				<include>GenreText</include>
 				<visible>Skin.HasSetting(View501GenreIcons)</visible>
-			</control>						
+			</control>
 		</control>
 	</include>
 	<include name="PosterWrapView2_Fanart">
@@ -615,7 +615,7 @@
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<visible>Skin.HasSetting(ViewSubTitleFlag) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
-					</control>					
+					</control>
 					<control type="image">
 						<posx>550</posx>
 						<posy>14</posy>
@@ -707,7 +707,7 @@
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<visible>Skin.HasSetting(ViewSubTitleFlag) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
-					</control>					
+					</control>
 					<control type="image">
 						<posx>550</posx>
 						<posy>14</posy>
@@ -1101,7 +1101,7 @@
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<visible>Skin.HasSetting(ViewSubTitleFlag) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
-					</control>					
+					</control>
 					<control type="image">
 						<posx>550</posx>
 						<posy>14</posy>
@@ -1193,7 +1193,7 @@
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<visible>Skin.HasSetting(ViewSubTitleFlag) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
-					</control>					
+					</control>
 					<control type="image">
 						<posx>550</posx>
 						<posy>14</posy>
@@ -1256,7 +1256,7 @@
 					<bordertexture background="true" border="8">ThumbShadow.png</bordertexture>
 					<bordersize>8</bordersize>
 					<visible>!Skin.HasSetting(View504XtraFanArt) + !StringCompare(ListItem.Label,..)</visible>
-				</control>		
+				</control>
 				<control type="grouplist">
 					<description>Media Codec Flagging Images</description>
 					<posx>0</posx>
@@ -1651,7 +1651,7 @@
 						<bordersize>5</bordersize>
 						<texture background="true">$INFO[ListItem.Art(banner)]</texture>
 						<visible>!IsEmpty(ListItem.Art(banner))</visible>
-					</control>					
+					</control>
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
@@ -1948,7 +1948,7 @@
 					<texture diffuse="Fanart_Diffuse.png" background="true">$INFO[ListItem.Path,,fanart.jpg]</texture>
 					<visible>Skin.HasSetting(View515SeasonArt)</visible>
 				</control>
-					<control type="label">
+				<control type="label">
 					<posx>10</posx>
 					<posy>395</posy>
 					<width>400</width>
@@ -2347,6 +2347,6 @@
 				<orientation>horizontal</orientation>
 				<include>VideoMPAAFlaggingConditions</include>
 			</control>
-		</control>	
+		</control>
 	</include>
 </includes>

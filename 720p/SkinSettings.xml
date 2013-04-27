@@ -191,7 +191,7 @@
 						<label>31171</label>
 						<label2>31172</label2>
 						<onclick>noop</onclick>
-					</item>					
+					</item>
 				</content>
 			</control>
 			<control type="image">
@@ -256,7 +256,7 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideSystemClock)</onclick>
 						<selected>!Skin.HasSetting(HideSystemClock)</selected>
-					</control>	
+					</control>
 					<control type="radiobutton" id="102">
 						<width>750</width>
 						<height>40</height>
@@ -268,7 +268,7 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(KioskMode)</onclick>
 						<selected>Skin.HasSetting(KioskMode)</selected>
-					</control>					
+					</control>
 					<control type="radiobutton" id="103">
 						<width>750</width>
 						<height>40</height>
@@ -285,7 +285,7 @@
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
-						<label>$LOCALIZE[31359] &quot;$LOCALIZE[31316]&quot;</label>
+						<label>$LOCALIZE[31359] "$LOCALIZE[31316]"</label>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
@@ -403,7 +403,7 @@
 						<selected>!Skin.HasSetting(HideHomeStats)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-					</control>	
+					</control>
 					<control type="radiobutton" id="114">
 						<description>Show Global Search</description>
 						<width>750</width>
@@ -464,7 +464,7 @@
 						<shadowcolor>black</shadowcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-					</control>					
+					</control>
 					<control type="radiobutton" id="119">
 						<width>750</width>
 						<height>40</height>
@@ -581,7 +581,7 @@
 						<onclick>Addon.OpenSettings(script.artistslideshow)</onclick>
 						<enable>Skin.HasSetting(AllowSlideShowArt) | Skin.HasSetting(AllowSlideShowBio)</enable>
 						<visible>System.HasAddon(script.artistslideshow)</visible>
-					</control>						
+					</control>
 					<control type="label" id="128">
 						<width>750</width>
 						<height>45</height>
@@ -591,7 +591,7 @@
 						<shadowcolor>black</shadowcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-					</control>	
+					</control>
 					<control type="radiobutton" id="129">
 						<width>750</width>
 						<height>40</height>
@@ -627,7 +627,7 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideSeekBarOSD)</onclick>
 						<selected>!Skin.HasSetting(HideSeekBarOSD)</selected>
-					</control>					
+					</control>
 					<control type="label" id="132">
 						<width>750</width>
 						<height>45</height>
@@ -810,7 +810,7 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideSytemMenuItem)</onclick>
 						<selected>!Skin.HasSetting(HideSytemMenuItem)</selected>
-					</control>					
+					</control>
 					<control type="button" id="202">
 						<width>750</width>
 						<height>40</height>
@@ -854,7 +854,7 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.1,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.1.Label))</visible>
-					</control>					
+					</control>
 					<control type="button" id="205">
 						<width>750</width>
 						<height>40</height>
@@ -869,7 +869,7 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.1,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.1.Label))</visible>
-					</control>	
+					</control>
 					<control type="button" id="206">
 						<width>750</width>
 						<height>40</height>
@@ -912,7 +912,7 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.2,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.2.Label))</visible>
-					</control>					
+					</control>
 					<control type="button" id="209">
 						<width>750</width>
 						<height>40</height>
@@ -927,7 +927,7 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.2,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.2.Label))</visible>
-					</control>	
+					</control>
 					<control type="button" id="210">
 						<width>750</width>
 						<height>40</height>
@@ -970,7 +970,7 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.3,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.3.Label))</visible>
-					</control>					
+					</control>
 					<control type="button" id="213">
 						<width>750</width>
 						<height>40</height>
@@ -985,7 +985,7 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.3,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.3.Label))</visible>
-					</control>	
+					</control>
 					<control type="button" id="214">
 						<width>750</width>
 						<height>40</height>
@@ -1028,7 +1028,7 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.4,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.4.Label))</visible>
-					</control>					
+					</control>
 					<control type="button" id="217">
 						<width>750</width>
 						<height>40</height>
@@ -1043,7 +1043,7 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.4,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.4.Label))</visible>
-					</control>	
+					</control>
 					<control type="button" id="218">
 						<width>750</width>
 						<height>40</height>
@@ -1086,7 +1086,7 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.5,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.5.Label))</visible>
-					</control>					
+					</control>
 					<control type="button" id="221">
 						<width>750</width>
 						<height>40</height>
@@ -1101,7 +1101,7 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.5,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.5.Label))</visible>
-					</control>	
+					</control>
 					<control type="button" id="222">
 						<width>750</width>
 						<height>40</height>
@@ -1144,7 +1144,7 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.6,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.6.Label))</visible>
-					</control>					
+					</control>
 					<control type="button" id="225">
 						<width>750</width>
 						<height>40</height>
@@ -1159,7 +1159,7 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.6,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.6.Label))</visible>
-					</control>	
+					</control>
 					<control type="button" id="226">
 						<width>750</width>
 						<height>40</height>
@@ -1202,7 +1202,7 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.7,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.7.Label))</visible>
-					</control>					
+					</control>
 					<control type="button" id="229">
 						<width>750</width>
 						<height>40</height>
@@ -1217,7 +1217,7 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.7,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.7.Label))</visible>
-					</control>	
+					</control>
 					<control type="button" id="230">
 						<width>750</width>
 						<height>40</height>
@@ -1260,7 +1260,7 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.8,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.8.Label))</visible>
-					</control>					
+					</control>
 					<control type="button" id="233">
 						<width>750</width>
 						<height>40</height>
@@ -1275,7 +1275,7 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.8,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.8.Label))</visible>
-					</control>	
+					</control>
 					<control type="button" id="234">
 						<width>750</width>
 						<height>40</height>
@@ -1318,7 +1318,7 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.9,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.9.Label))</visible>
-					</control>					
+					</control>
 					<control type="button" id="237">
 						<width>750</width>
 						<height>40</height>
@@ -1333,7 +1333,7 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.9,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.9.Label))</visible>
-					</control>	
+					</control>
 					<control type="button" id="238">
 						<width>750</width>
 						<height>40</height>
@@ -1376,7 +1376,7 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.10,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.10.Label))</visible>
-					</control>					
+					</control>
 					<control type="button" id="241">
 						<width>750</width>
 						<height>40</height>
@@ -1391,7 +1391,7 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.10,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.10.Label))</visible>
-					</control>	
+					</control>
 				</control>
 				<control type="scrollbar" id="60">
 					<posx>1060</posx>
@@ -2499,7 +2499,7 @@
 							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>Skin.ToggleSetting(HideArtworkDownloader)</onclick>
 							<selected>!Skin.HasSetting(HideArtworkDownloader)</selected>
-						</control>						
+						</control>
 						<control type="button" id="402">
 							<width>750</width>
 							<height>40</height>
@@ -2512,7 +2512,7 @@
 							<onclick>Addon.OpenSettings(script.artwork.downloader)</onclick>
 							<enable>!Skin.HasSetting(HideArtworkDownloader)</enable>
 							<visible>System.HasAddon(script.artwork.downloader)</visible>
-						</control>						
+						</control>
 						<control type="radiobutton" id="403">
 							<width>750</width>
 							<height>40</height>
@@ -2524,7 +2524,7 @@
 							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>Skin.ToggleSetting(HideTvTunes)</onclick>
 							<selected>!Skin.HasSetting(HideTvTunes)</selected>
-						</control>						
+						</control>
 						<control type="button" id="404">
 							<width>750</width>
 							<height>40</height>
@@ -2537,8 +2537,8 @@
 							<onclick>Addon.OpenSettings(script.tvtunes)</onclick>
 							<enable>!Skin.HasSetting(HideTvTunes)</enable>
 							<visible>System.HasAddon(script.tvtunes)</visible>
-						</control>	
-<!--
+						</control>
+						<!--
 					<control type="button" id="123">
 						<width>750</width>
 						<height>40</height>
@@ -2551,7 +2551,7 @@
 						<onclick>Addon.OpenSettings(service.skin.widgets)</onclick>
 						<enable>System.HasAddon(service.skin.widgets)</enable>
 					</control>
--->						
+-->
 						<control type="label" id="453">
 							<width>750</width>
 							<height>45</height>
@@ -2968,7 +2968,7 @@
 						<texturenofocus border="5">button-nofocus.png</texturenofocus>
 						<pulseonselect>false</pulseonselect>
 					</control>
-				</control>	
+				</control>
 				<control type="scrollbar" id="61">
 					<posx>1060</posx>
 					<posy>60</posy>

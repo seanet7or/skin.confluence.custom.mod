@@ -30,7 +30,7 @@
 				<visible>Player.ChapterCount + !VideoPlayer.Content(LiveTV) + [!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)]</visible>
 				<visible>!SubString(Player.ChapterName,$LOCALIZE[21396],left)</visible>
 			</control>
-						<control type="label" id="1">
+			<control type="label" id="1">
 				<description>Chapter Count Header label</description>
 				<posx>30</posx>
 				<posy>5</posy>
@@ -135,7 +135,7 @@
 					<texture>$INFO[Player.Art(clearart)]</texture>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<visible>!IsEmpty(Player.Art(clearart))</visible>
-				</control>			
+				</control>
 				<control type="image" id="1">
 					<description>Movie cover image</description>
 					<posx>20</posx>
@@ -147,7 +147,7 @@
 					<bordertexture border="8">ThumbShadow.png</bordertexture>
 					<bordersize>8</bordersize>
 					<visible>IsEmpty(Player.Art(clearart))</visible>
-				</control>		
+				</control>
 				<visible>VideoPlayer.Content(Movies)</visible>
 				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
 			</control>
@@ -161,7 +161,7 @@
 					<texture>$INFO[Player.Art(tvshow.clearart)]</texture>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<visible>!IsEmpty(Player.Art(tvshow.clearart))</visible>
-				</control>			
+				</control>
 				<control type="image" id="1">
 					<description>cover image</description>
 					<posx>20</posx>
