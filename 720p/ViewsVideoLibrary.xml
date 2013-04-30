@@ -1718,7 +1718,7 @@
 					<posy>0</posy>
 					<width>750</width>
 					<height>420</height>
-					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture diffuse="Fanart_Diffuse.png" background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Art(fanart)]</texture>
 				</control>
@@ -1793,7 +1793,7 @@
 					<posy>0</posy>
 					<width>750</width>
 					<height>420</height>
-					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture diffuse="Fanart_Diffuse.png" background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Art(fanart)]</texture>
 				</control>
@@ -1853,7 +1853,7 @@
 					<posy>0</posy>
 					<width>750</width>
 					<height>420</height>
-					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture diffuse="Fanart_Diffuse.png" background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Art(fanart)]</texture>
 					<visible>!StringCompare(ListItem.Label,..)</visible>
@@ -1863,7 +1863,7 @@
 					<posy>0</posy>
 					<width>750</width>
 					<height>420</height>
-					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture diffuse="Fanart_Diffuse.png" background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[Fanart.Image]</texture>
 					<visible>StringCompare(ListItem.Label,..)</visible>
@@ -1873,7 +1873,7 @@
 					<posy>0</posy>
 					<width>750</width>
 					<height>420</height>
-					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture diffuse="Fanart_Diffuse.png" background="true">$INFO[ListItem.Path]$INFO[ListItem.Label,,/fanart.jpg]</texture>
 					<visible>Skin.HasSetting(View515SeasonArt) + SubString(ListItem.Label,$LOCALIZE[20373],Left)</visible>
@@ -1923,7 +1923,7 @@
 					<posy>0</posy>
 					<width>750</width>
 					<height>420</height>
-					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture diffuse="Fanart_Diffuse.png" background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Art(fanart)]</texture>
 					<visible>!StringCompare(ListItem.Label,..)</visible>
@@ -1933,7 +1933,7 @@
 					<posy>0</posy>
 					<width>750</width>
 					<height>420</height>
-					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture diffuse="Fanart_Diffuse.png" background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[Fanart.Image]</texture>
 					<visible>StringCompare(ListItem.Label,..)</visible>
@@ -1943,7 +1943,7 @@
 					<posy>0</posy>
 					<width>750</width>
 					<height>420</height>
-					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture diffuse="Fanart_Diffuse.png" background="true">$INFO[ListItem.Path,,fanart.jpg]</texture>
 					<visible>Skin.HasSetting(View515SeasonArt) + !StringCompare(ListItem.Label,..)</visible>
