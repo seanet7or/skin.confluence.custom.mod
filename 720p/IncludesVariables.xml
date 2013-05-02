@@ -24,11 +24,23 @@
 		<value condition="substring(ListItem.FilenameAndPath,vhs)">vhs</value>
 	</variable>
 	<variable name="rating">
-		<value condition="substring(listitem.mpaa,Rated G)">mpaa_general</value>
-		<value condition="substring(listitem.mpaa,Rated PG) + !substring(listitem.mpaa,Rated PG-13)">mpaa_pg</value>
-		<value condition="substring(listitem.mpaa,Rated PG-13)">mpaa_pg13</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,U)">bbfc_u</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,PG)">bbfc_pg</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,12A)">bbfc_12a</value>		
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,12)">bbfc_12</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,15)">bbfc_15</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,R18)">bbfc_r18</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,18)">bbfc_18</value>
+	
+	
+	
+	
+		<value condition="substring(listitem.mpaa,G) + !substring(listitem.mpaa,PG)">mpaa_general</value>
+		<value condition="substring(listitem.mpaa,PG) + !substring(listitem.mpaa,PG-13)">mpaa_pg</value>
+		<value condition="substring(listitem.mpaa,PG-13)">mpaa_pg13</value>
+		<value condition="substring(Listitem.mpaa,NC)">mpaa_nc17</value>
+		<value condition="substring(Listitem.mpaa,R) + !substring(listitem.mpaa,Rated)">mpaa_restricted</value>
 		<value condition="substring(Listitem.mpaa,Rated R)">mpaa_restricted</value>
-		<value condition="substring(Listitem.mpaa,Rated NC)">mpaa_nc17</value>
 	</variable>
 	<variable name="videocodec">
 		<value condition="[substring(ListItem.VideoCodec,div,left) | stringcompare(ListItem.VideoCodec,dx50)]">divx</value>
@@ -118,6 +130,15 @@
 		<value condition="StringCompare(ListItem.Label,..) + !Skin.HasSetting(ParentDirLabel)">..$LOCALIZE[31316]</value>
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
+	<variable name="UsrMPAACountry" type="text">
+		<value condition="!IsEmpty(Skin.String(MPAACountryCert))">$INFO[Skin.String(MPAACountryCert)]</value>
+		<value>$LOCALIZE[31700]</value>
+	</variable>
+	
+	
+	
+	
+	
 	<variable name="UsrDefItemOneSubLabel" type="text">
 		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),UserOne)">$LOCALIZE[31094]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),UserTwo)">$LOCALIZE[31095]</value>

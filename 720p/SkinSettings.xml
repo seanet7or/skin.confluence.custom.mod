@@ -710,7 +710,20 @@
 						<onclick>Skin.ToggleSetting(HideFilenameFlagging)</onclick>
 						<selected>Skin.HasSetting(HideFilenameFlagging)</selected>
 					</control>
-					<control type="label" id="139">
+					<control type="button" id="139">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31698]</label>
+						<label2>[COLOR=selected]$VAR[UsrMPAACountry][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Control.Move(9008,1)</onclick>
+						<onclick>Skin.SetString(MPAACountryCert,$INFO[Container(9008).ListItem.Label])</onclick>
+					</control>					
+					<control type="label" id="140">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -720,7 +733,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="140">
+					<control type="radiobutton" id="141">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -733,7 +746,7 @@
 						<onclick>Skin.Reset(EnableStartupPlaylist)</onclick>
 						<selected>!Skin.HasSetting(HideXBMCIntro)</selected>
 					</control>
-					<control type="radiobutton" id="141">
+					<control type="radiobutton" id="142">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -746,7 +759,7 @@
 						<onclick>Skin.ToggleSetting(Use_Startup_Playlist)</onclick>
 						<selected>Skin.HasSetting(Use_Startup_Playlist)</selected>
 					</control>
-					<control type="button" id="142">
+					<control type="button" id="143">
 						<description>Startup Playlist Path</description>
 						<width>750</width>
 						<height>40</height>
@@ -776,6 +789,37 @@
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 					<visible>Container(9000).Hasfocus(1)</visible>
+				</control>
+				<control type="list" id="9008">
+					<visible>Container(9000).Hasfocus(1)</visible>
+					<itemlayout height="1" width="750"></itemlayout>
+					<focusedlayout height="1" width="750"></focusedlayout>
+					<content>
+						<item id="1">
+							<label>$LOCALIZE[31700]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item id="2">
+							<label>$LOCALIZE[31701]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<!--item id="3">
+							<label>$LOCALIZE[31702]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item-->
+						<!--item id="4">
+							<label>$LOCALIZE[31703]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item-->
+					</content>
 				</control>
 				<control type="grouplist" id="9002">
 					<visible>Container(9000).Hasfocus(2)</visible>
