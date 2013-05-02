@@ -28,37 +28,12 @@
 	</include>
 	<include name="VideoMPAAFlaggingConditions">
 		<control type="image">
-			<description>USA Rating image</description>
+			<description>Rating image</description>
 			<width>80</width>
 			<height>35</height>
 			<aspectratio>keep</aspectratio>
 			<texture>$VAR[rating,flagging/ratings/,.png]</texture>
-			<visible>IsEmpty(Skin.String(MPAACountryCert)) | stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31700])</visible>
 		</control>
-		<control type="image">
-			<description>UK Rating image</description>
-			<width>80</width>
-			<height>35</height>
-			<aspectratio>keep</aspectratio>
-			<texture>$VAR[rating,flagging/ratings/UK/,.png]</texture>
-			<visible>stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701])</visible>
-		</control>	
-		<control type="image">
-			<description>German Rating image</description>
-			<width>80</width>
-			<height>35</height>
-			<aspectratio>keep</aspectratio>
-			<texture>$VAR[rating,flagging/ratings/Ger/,.png]</texture>
-			<visible>stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702])</visible>
-		</control>	
-		<control type="image">
-			<description>Australia Rating image</description>
-			<width>80</width>
-			<height>35</height>
-			<aspectratio>keep</aspectratio>
-			<texture>$VAR[rating,flagging/ratings/Aus/,.png]</texture>
-			<visible>stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703])</visible>
-		</control>			
 	</include>
 	<include name="AudioCodecFlaggingConditions">
 		<control type="image">
