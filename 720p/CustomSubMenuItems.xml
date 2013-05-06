@@ -191,6 +191,42 @@
 						<visible>System.HasAddon(script.cinema.experience) + Library.HasContent(Movies)</visible>
 					</item>
 					<item>
+						<description>RecentlyAddedMovies</description>
+						<label>$LOCALIZE[31328] $LOCALIZE[20342]</label>
+						<include>ClearButtonChoice</include>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,ActivateWindow(Videos,RecentlyAddedMovies,return))</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[31328] $LOCALIZE[20342])</onclick>
+						<include>CloseMenuChoice</include>
+						<visible>Library.HasContent(Movies)</visible>
+					</item>					
+					<item>
+						<description>MovieSets</description>
+						<label>$LOCALIZE[20338] $LOCALIZE[20434]</label>
+						<include>ClearButtonChoice</include>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,ActivateWindow(Videos,MovieSets,return))</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[20338] $LOCALIZE[20434])</onclick>
+						<include>CloseMenuChoice</include>
+						<visible>Library.HasContent(MovieSets)</visible>
+					</item>					
+					<item>
+						<description>MovieGenres</description>
+						<label>$LOCALIZE[20338] $LOCALIZE[135]</label>
+						<include>ClearButtonChoice</include>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,ActivateWindow(Videos,MovieGenres,return))</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[20338] $LOCALIZE[135])</onclick>
+						<include>CloseMenuChoice</include>
+						<visible>Library.HasContent(Movies)</visible>
+					</item>					
+					<item>
+						<description>MovieTags</description>
+						<label>$LOCALIZE[20338] $LOCALIZE[20459]</label>
+						<include>ClearButtonChoice</include>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,ActivateWindow(Videos,MovieTags,return))</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[20338] $LOCALIZE[20459])</onclick>
+						<include>CloseMenuChoice</include>
+						<visible>Library.HasContent(Movies)</visible>
+					</item>					
+					<item>
 						<description>Concerts</description>
 						<label>$LOCALIZE[20389]</label>
 						<include>ClearButtonChoice</include>
@@ -205,6 +241,42 @@
 						<include>ClearButtonChoice</include>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,ActivateWindow(Videos,TVShowTitles,return))</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[20343])</onclick>
+						<include>CloseMenuChoice</include>
+						<visible>Library.HasContent(TVShows)</visible>
+					</item>
+					<item>
+						<description>In Progress TVShows</description>
+						<label>$LOCALIZE[575] $LOCALIZE[20343]</label>
+						<include>ClearButtonChoice</include>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,ActivateWindow(Videos,library://video/inprogressshows.xml/,return))</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[575])</onclick>
+						<include>CloseMenuChoice</include>
+						<visible>Library.HasContent(TVShows)</visible>
+					</item>
+					<item>
+						<description>Recently Added TVShows</description>
+						<label>$LOCALIZE[31328] $LOCALIZE[20343]</label>
+						<include>ClearButtonChoice</include>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,ActivateWindow(Videos,RecentlyAddedEpisodes,return))</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[31328])</onclick>
+						<include>CloseMenuChoice</include>
+						<visible>Library.HasContent(TVShows)</visible>
+					</item>					
+					<item>
+						<description>TVShows Genre</description>
+						<label>$LOCALIZE[20343] $LOCALIZE[135]</label>
+						<include>ClearButtonChoice</include>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,ActivateWindow(Videos,TVShowGenres,return))</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[135])</onclick>
+						<include>CloseMenuChoice</include>
+						<visible>Library.HasContent(TVShows)</visible>
+					</item>		
+					<item>
+						<description>TVShows Tags</description>
+						<label>$LOCALIZE[20343] $LOCALIZE[20459]</label>
+						<include>ClearButtonChoice</include>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,ActivateWindow(Videos,TVShowTags, return))</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[20459])</onclick>
 						<include>CloseMenuChoice</include>
 						<visible>Library.HasContent(TVShows)</visible>
 					</item>
@@ -224,6 +296,37 @@
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[2])</onclick>
 						<include>CloseMenuChoice</include>
 					</item>
+					<item>
+						<description>Music Files</description>
+						<label>$LOCALIZE[2] $LOCALIZE[744]</label>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,ActivateWindow(MusicFiles))</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[2] $LOCALIZE[744])</onclick>
+						<include>CloseMenuChoice</include>
+					</item>
+					<item>
+						<description>Music Artists</description>
+						<label>$LOCALIZE[2] $LOCALIZE[133]</label>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,ActivateWindow(MusicLibrary,Artists,return))</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[2] $LOCALIZE[133])</onclick>
+						<include>CloseMenuChoice</include>
+						<visible>Library.HasContent(Music)</visible>
+					</item>
+					<item>
+						<description>Music Albums</description>
+						<label>$LOCALIZE[2] $LOCALIZE[132]</label>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,ActivateWindow(MusicLibrary,Albums,return))</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[2] $LOCALIZE[132])</onclick>
+						<include>CloseMenuChoice</include>
+						<visible>Library.HasContent(Music)</visible>
+					</item>
+					<item>
+						<description>Music PartyMode</description>
+						<label>$LOCALIZE[2] $LOCALIZE[589]</label>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,PlayerControl(PartyMode(music))</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[589])</onclick>
+						<include>CloseMenuChoice</include>
+						<visible>Library.HasContent(Music)</visible>
+					</item>					
 					<item>
 						<description>Programs</description>
 						<label>$LOCALIZE[0]</label>
