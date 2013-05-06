@@ -53,28 +53,15 @@
 			<ondown>10</ondown>
 			<visible>system.getbool(input.enablemouse)</visible>
 		</control>
-		<control type="grouplist">
+		<control type="label">
 			<posx>0</posx>
 			<posy>90</posy>
-			<height>65</height>
 			<width>550</width>
+			<height>65</height>
 			<align>center</align>
-			<orientation>horizontal</orientation>
-			<control type="image">
-				<width>65</width>
-				<height>65</height>
-				<aligny>center</aligny>
-				<aspectratio>keep</aspectratio>
-				<texture>DefaultIconWarning.png</texture>
-			</control>
-			<control type="label">
-				<width min="50" max="475">auto</width>
-				<height>65</height>
-				<align>left</align>
-				<aligny>center</aligny>
-				<label>$LOCALIZE[19194]</label>
-				<font>font24_title</font>
-			</control>
+			<aligny>center</aligny>
+			<label>$LOCALIZE[19194]</label>
+			<font>font24_title</font>
 		</control>
 		<control type="label">
 			<posx>30</posx>
