@@ -36,12 +36,14 @@
 	</include>
 	<include name="CloseMenuChoice">
 		<onclick condition="Window.IsVisible(2114)">Dialog.Close(2114)</onclick>
+		<onclick condition="Window.IsVisible(2115)">Dialog.Close(2115)</onclick>
 		<onclick>Skin.Reset(UsrSelectAddon)</onclick>
 		<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 	</include>
 	<include name="DefaultInitialSetup">
 		<onload condition="System.HasAddon(script.favourites)">XBMC.RunScript(script.favourites)</onload>
 		<onload condition="!Skin.HasSetting(HideHomeSearch) + !System.HasAddon(script.globalsearch)">Skin.Setbool(HideHomeSearch)</onload>
+		<onload condition="!Skin.HasSetting(InitialSetUpRun) + IsEmpty(Skin.String(MPAACountryCert))">Skin.SetString(MPAACountryCert,$LOCALIZE[31701])</onload>
 		<onload condition="!Skin.HasSetting(InitialSetUpRun) + !IsEmpty(Weather.Plugin) + IsEmpty(Skin.String(HomeItem.1.Label))">Skin.SetString(HomeItem.1.Label,$LOCALIZE[8])</onload>
 		<onload condition="!Skin.HasSetting(InitialSetUpRun) + !IsEmpty(Weather.Plugin) + IsEmpty(Skin.String(HomeItem.1.Path))">Skin.SetString(HomeItem.1.Path,ActivateWindow(Weather))</onload>
 		<onload condition="!Skin.HasSetting(InitialSetUpRun) + !IsEmpty(Weather.Plugin) + IsEmpty(Skin.String(HomeItem.1.Sub))">Skin.SetString(HomeItem.1.Sub,None)</onload>

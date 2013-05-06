@@ -832,6 +832,20 @@
 					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Favourites)</visible>
 					<include>HomeSubMenuFavourites</include>
 				</control>
+				<control type="grouplist" id="9021">
+					<include>HomeSubMenuCommonValues</include>
+					<onleft>9021</onleft>
+					<onright>9021</onright>
+					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),UserOne)</visible>
+					<include>HomeSubMenuUserOne</include>
+				</control>
+				<control type="grouplist" id="9022">
+					<include>HomeSubMenuCommonValues</include>
+					<onleft>9022</onleft>
+					<onright>9022</onright>
+					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),UserTwo)</visible>
+					<include>HomeSubMenuUserTwo</include>
+				</control>
 			</control>
 			<control type="image">
 				<posx>-100</posx>
