@@ -112,7 +112,7 @@
 						<label>$LOCALIZE[31390]</label>
 						<include>ClearButtonChoice</include>
 						<include>CloseMenuChoice</include>
-						<visible>!substring(Window(home).Property(UsrSelectBtn),UserSub)</visible>			
+						<visible>!substring(Window(home).Property(UsrSelectBtn),UserSub)</visible>
 					</item>
 					<item>
 						<description>Clear Setting</description>
@@ -120,8 +120,8 @@
 						<onclick>Dialog.Close(2117)</onclick>
 						<include>ClearButtonChoice</include>
 						<include>CloseMenuChoice</include>
-						<visible>substring(Window(home).Property(UsrSelectBtn),UserSub)</visible>			
-					</item>		
+						<visible>substring(Window(home).Property(UsrSelectBtn),UserSub)</visible>
+					</item>
 					<item>
 						<description>Hide Item</description>
 						<label>$LOCALIZE[31139]</label>
@@ -129,7 +129,7 @@
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,Hidden)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[31138])</onclick>
 						<include>CloseMenuChoice</include>
-						<visible>!substring(Window(home).Property(UsrSelectBtn),UserSub)</visible>			
+						<visible>!substring(Window(home).Property(UsrSelectBtn),UserSub)</visible>
 					</item>
 					<item>
 						<description>Weather</description>
@@ -198,7 +198,7 @@
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[31328] $LOCALIZE[20342])</onclick>
 						<include>CloseMenuChoice</include>
 						<visible>Library.HasContent(Movies)</visible>
-					</item>					
+					</item>
 					<item>
 						<description>MovieSets</description>
 						<label>$LOCALIZE[20338] $LOCALIZE[20434]</label>
@@ -207,7 +207,7 @@
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[20338] $LOCALIZE[20434])</onclick>
 						<include>CloseMenuChoice</include>
 						<visible>Library.HasContent(MovieSets)</visible>
-					</item>					
+					</item>
 					<item>
 						<description>MovieGenres</description>
 						<label>$LOCALIZE[20338] $LOCALIZE[135]</label>
@@ -216,7 +216,7 @@
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[20338] $LOCALIZE[135])</onclick>
 						<include>CloseMenuChoice</include>
 						<visible>Library.HasContent(Movies)</visible>
-					</item>					
+					</item>
 					<item>
 						<description>MovieTags</description>
 						<label>$LOCALIZE[20338] $LOCALIZE[20459]</label>
@@ -225,7 +225,7 @@
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[20338] $LOCALIZE[20459])</onclick>
 						<include>CloseMenuChoice</include>
 						<visible>Library.HasContent(Movies)</visible>
-					</item>					
+					</item>
 					<item>
 						<description>Concerts</description>
 						<label>$LOCALIZE[20389]</label>
@@ -261,7 +261,7 @@
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[31328])</onclick>
 						<include>CloseMenuChoice</include>
 						<visible>Library.HasContent(TVShows)</visible>
-					</item>					
+					</item>
 					<item>
 						<description>TVShows Genre</description>
 						<label>$LOCALIZE[20343] $LOCALIZE[135]</label>
@@ -270,7 +270,7 @@
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[135])</onclick>
 						<include>CloseMenuChoice</include>
 						<visible>Library.HasContent(TVShows)</visible>
-					</item>		
+					</item>
 					<item>
 						<description>TVShows Tags</description>
 						<label>$LOCALIZE[20343] $LOCALIZE[20459]</label>
@@ -326,7 +326,7 @@
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[589])</onclick>
 						<include>CloseMenuChoice</include>
 						<visible>Library.HasContent(Music)</visible>
-					</item>					
+					</item>
 					<item>
 						<description>Programs</description>
 						<label>$LOCALIZE[0]</label>

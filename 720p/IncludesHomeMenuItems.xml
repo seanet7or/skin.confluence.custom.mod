@@ -493,7 +493,7 @@
 			<visible>IntegerGreaterThan(Window(Home).Property(favourite.count),0)</visible>
 		</control>
 	</include>
-	<include name="HomeSubMenuUserOne">	
+	<include name="HomeSubMenuUserOne">
 		<control type="image" id="90200">
 			<width>35</width>
 			<height>35</height>
@@ -506,50 +506,50 @@
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(UserSubOne.1.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(UserSubOne.1.Path))</visible>
-		</control>	
+		</control>
 		<control type="button" id="90202">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>$INFO[Skin.String(UserSubOne.2.Label)]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(UserSubOne.2.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(UserSubOne.2.Path))</visible>
-		</control>	
+		</control>
 		<control type="button" id="90203">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>$INFO[Skin.String(UserSubOne.3.Label)]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(UserSubOne.3.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(UserSubOne.3.Path))</visible>
-		</control>	
+		</control>
 		<control type="button" id="90204">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>$INFO[Skin.String(UserSubOne.4.Label)]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(UserSubOne.4.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(UserSubOne.4.Path))</visible>
-		</control>	
+		</control>
 		<control type="button" id="90205">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>$INFO[Skin.String(UserSubOne.5.Label)]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(UserSubOne.5.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(UserSubOne.5.Path))</visible>
-		</control>	
+		</control>
 		<control type="button" id="90206">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>$INFO[Skin.String(UserSubOne.6.Label)]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(UserSubOne.6.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(UserSubOne.6.Path))</visible>
-		</control>	
+		</control>
 		<control type="image" id="90207">
 			<width>35</width>
 			<height>35</height>
 			<texture border="0,0,0,3">HomeSubEnd.png</texture>
 			<visible>!IsEmpty(Skin.String(UserSubOne.1.Path)) | !IsEmpty(Skin.String(UserSubOne.2.Path)) | !IsEmpty(Skin.String(UserSubOne.3.Path)) | !IsEmpty(Skin.String(UserSubOne.4.Path)) | !IsEmpty(Skin.String(UserSubOne.5.Path)) | !IsEmpty(Skin.String(UserSubOne.6.Path))</visible>
 		</control>
-	</include>	
-	<include name="HomeSubMenuUserTwo">	
+	</include>
+	<include name="HomeSubMenuUserTwo">
 		<control type="image" id="90210">
 			<width>35</width>
 			<height>35</height>
@@ -562,49 +562,49 @@
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(UserSubTwo.1.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(UserSubTwo.1.Path))</visible>
-		</control>	
+		</control>
 		<control type="button" id="90212">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>$INFO[Skin.String(UserSubTwo.2.Label)]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(UserSubTwo.2.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(UserSubTwo.2.Path))</visible>
-		</control>	
+		</control>
 		<control type="button" id="90213">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>$INFO[Skin.String(UserSubTwo.3.Label)]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(UserSubTwo.3.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(UserSubTwo.3.Path))</visible>
-		</control>	
+		</control>
 		<control type="button" id="90214">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>$INFO[Skin.String(UserSubTwo.4.Label)]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(UserSubTwo.4.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(UserSubTwo.4.Path))</visible>
-		</control>	
+		</control>
 		<control type="button" id="90215">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>$INFO[Skin.String(UserSubTwo.5.Label)]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(UserSubTwo.5.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(UserSubTwo.5.Path))</visible>
-		</control>	
+		</control>
 		<control type="button" id="90216">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>$INFO[Skin.String(UserSubTwo.6.Label)]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(UserSubTwo.6.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(UserSubTwo.6.Path))</visible>
-		</control>	
+		</control>
 		<control type="image" id="90217">
 			<width>35</width>
 			<height>35</height>
 			<texture border="0,0,0,3">HomeSubEnd.png</texture>
 			<visible>!IsEmpty(Skin.String(UserSubTwo.1.Path)) | !IsEmpty(Skin.String(UserSubTwo.2.Path)) | !IsEmpty(Skin.String(UserSubTwo.3.Path)) | !IsEmpty(Skin.String(UserSubTwo.4.Path)) | !IsEmpty(Skin.String(UserSubTwo.5.Path)) | !IsEmpty(Skin.String(UserSubTwo.6.Path))</visible>
 		</control>
-	</include>	
+	</include>
 	<include name="HomeAddonItemsVideos">
 		<item>
 			<label>$INFO[system.addontitle(Skin.String(HomeVideosButton1))]</label>
