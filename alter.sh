@@ -121,4 +121,22 @@ perlregex 720p/ViewsPictures.xml 's|<texture background="true">.INFO.ListItem.Fi
 # use thumb in picture wrap view
 perlregex 720p/MyPics.xml 's|<texture background="true">.INFO.ListItem.FilenameAndPath.</texture>|<texture background="true">\$INFO\[ListItem.Icon\]</texture>|g'
 
+# remove panel mirrors
+LIST=$(grep "ContentPanelMirror.png" 720p/* | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
+for F in $LIST ; do
+	perlregex "$F" 's|\s*?<control type="image">\s*?\000'\
+'\s*?<posx>[0-9]*?</posx>\s*?\000'\
+'\s*?<posy>[0-9]*?</posy>\s*?\000'\
+'\s*?<width>[0-9]*?</width>\s*?\000'\
+'\s*?<height>[0-9]*?</height>\s*?\000'\
+'\s*?<texture border="[0-9]+">ContentPanelMirror.png</texture>\s*?\000*'\
+'\s*</control>\s*?\000||g'
+done
+if grep -q "ContentPanelMirror.png" 720p/* ; then
+	echo "ERROR: Not all occurrences of 'ContentPanelMirror.png' could be removed, please check:"
+	grep "ContentPanelMirror.png" 720p/*
+	exit 3
+fi
+rm media/ContentPanelMirror.png 2>/dev/null
+
 exit
