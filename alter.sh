@@ -76,6 +76,14 @@ perlregex 720p/IncludesHomeWidget.xml 's|\s*?<control type="label">\s*?\000'\
 '(\s*<(posx\|posy\|height\|width\|label\|align\|aligny\|font\|textcolor\|shadowcolor)>[^>]*>\s*?\000)*'\
 '\s*</control>\s*?\000||g'
 
+# remove label for widgets that are not focused
+perlregex 720p/IncludesHomeWidget.xml 's|\s*?<control type="label">\s*?\000'\
+'\s*?<posx>[0-9]*?</posx>\s*?\000'\
+'\s*?<posy>[0-9]*?</posy>\s*?\000'\
+'(\s*<(height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|selectedcolor)>[^>]*>\s*?\000)*'\
+'\s*?<label>.VAR.MainItemLabel.</label>\s*?\000*'\
+'\s*</control>\s*?\000||g'
+
 exit
 #cat 720p/IncludesVariables.xml | tr '\n' '\0' | ssed -R "$R" | tr '\0' '\n' >720p/IncludesVariables.xml2	
 
