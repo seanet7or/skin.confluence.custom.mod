@@ -561,13 +561,6 @@
 				<scrolltime>200</scrolltime>
 				<visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Movies) | Container.Content(MusicVideos)</visible>
 				<itemlayout height="40" width="580">
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>580</width>
-						<height>41</height>
-						<texture border="0,2,0,2">MenuItemNF.png</texture>
-					</control>
 					<control type="label">
 						<posx>10</posx>
 						<posy>0</posy>
@@ -634,15 +627,6 @@
 					</control>
 				</itemlayout>
 				<focusedlayout height="40" width="580">
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>580</width>
-						<height>41</height>
-						<texture border="0,2,0,2">MenuItemNF.png</texture>
-						<visible>!Control.HasFocus(503)</visible>
-						<include>VisibleFadeEffect</include>
-					</control>
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
@@ -1047,13 +1031,6 @@
 				<scrolltime>200</scrolltime>
 				<visible>Container.Content(TVShows) | Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)</visible>
 				<itemlayout height="40" width="580">
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>580</width>
-						<height>41</height>
-						<texture border="0,2,0,2">MenuItemNF.png</texture>
-					</control>
 					<control type="label">
 						<posx>10</posx>
 						<posy>0</posy>
@@ -1120,15 +1097,6 @@
 					</control>
 				</itemlayout>
 				<focusedlayout height="40" width="580">
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>580</width>
-						<height>41</height>
-						<texture border="0,2,0,2">MenuItemNF.png</texture>
-						<visible>!Control.HasFocus(504)</visible>
-						<include>VisibleFadeEffect</include>
-					</control>
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
@@ -1486,13 +1454,6 @@
 				<scrolltime>200</scrolltime>
 				<visible>Container.Content(TVShows) | Container.Content(Movies) | Container.Content(Episodes) | Container.Content(Seasons) | Container.Content(MusicVideos)</visible>
 				<itemlayout condition="!Container.Content(TVShows) | Skin.HasSetting(View515HideTVBanners)" height="40" width="345">
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>345</width>
-						<height>41</height>
-						<texture border="0,2,0,2">MenuItemNF.png</texture>
-					</control>
 					<control type="label">
 						<posx>10</posx>
 						<posy>0</posy>
@@ -1537,15 +1498,6 @@
 					</control>
 				</itemlayout>
 				<focusedlayout condition="!Container.Content(TVShows) | Skin.HasSetting(View515HideTVBanners)" height="40" width="345">
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>345</width>
-						<height>41</height>
-						<texture border="0,2,0,2">MenuItemNF.png</texture>
-						<visible>!Control.HasFocus(515)</visible>
-						<include>VisibleFadeEffect</include>
-					</control>
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
@@ -1610,14 +1562,6 @@
 						<texture background="true">$INFO[ListItem.Art(banner)]</texture>
 						<visible>!IsEmpty(ListItem.Art(banner))</visible>
 					</control>
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>345</width>
-						<height>71</height>
-						<texture border="0,2,0,2">MenuItemNF.png</texture>
-						<visible>IsEmpty(ListItem.Art(banner))</visible>
-					</control>
 					<control type="label">
 						<posx>10</posx>
 						<posy>0</posy>
@@ -1651,15 +1595,6 @@
 						<bordersize>5</bordersize>
 						<texture background="true">$INFO[ListItem.Art(banner)]</texture>
 						<visible>!IsEmpty(ListItem.Art(banner))</visible>
-					</control>
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>345</width>
-						<height>71</height>
-						<texture border="0,2,0,2">MenuItemNF.png</texture>
-						<visible>!Control.HasFocus(515) + IsEmpty(ListItem.Art(banner))</visible>
-						<include>VisibleFadeEffect</include>
 					</control>
 					<control type="image">
 						<posx>0</posx>

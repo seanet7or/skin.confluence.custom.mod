@@ -51,4 +51,34 @@ if grep -q 'RecentAddedBack' '720p/IncludesHomeWidget.xml' ; then
 	rm media/RecentAddedBack.png
 fi
 
+# remove menu items seperator
+for F in 720p/ViewsVideoLibrary.xml 720p/ViewsPVR.xml 720p/ViewsMusicLibrary.xml 720p/ViewsLiveTV.xml 720p/ViewsFileMode.xml 720p/ViewsAddonBrowser.xml 720p/SkinSettings.xml 720p/Settings.xml 720p/script-XBMC_Lyrics-main.xml 720p/script-globalsearch-main.xml 720p/MyWeather.xml 720p/FileManager.xml 720p/FileBrowser.xml ; do
+	perlregex "$F" 's|\s*?<control type="image">\s*?\000'\
+'\s*?<posx>[0-9]+</posx>\s*?\000'\
+'\s*?<posy>[0-9]+</posy>\s*?\000'\
+'\s*?<width>[0-9]+</width>\s*?\000'\
+'\s*?<height>[0-9]+</height>\s*?\000'\
+'(\s*\|\s*?<visible>[^<]*?</visible>\s*?\000\|\s*?<include>[^<]*?</include>\s*?\000)'\
+'\s*?<texture[^>]*>MenuItemNF.png</texture>\s*?\000'\
+'(\s*\|\s*?<visible>[^<]*?</visible>\s*?\000\|\s*?<include>[^<]*?</include>\s*?\000)'\
+'(\s*\|\s*?<include>[^<]*?</include>\s*?\000\|\s*?<visible>[^<]*?</visible>\s*?\000)'\
+'\s*?</control>\s*?\000||g'	
+	perlregex "$F" 's|(\s*?<texturenofocus[^>]*>)MenuItemNF.png(</texturenofocus>\s*?\000)|\1-\2|g'
+done
+for F in 720p/SettingsCategory.xml 720p/SettingsSystemInfo.xml 720p/SettingsProfile.xml ; do
+	perlregex "$F" 's|(\s*?<texturenofocus[^>]*>)MenuItemNF.png(</texturenofocus>\s*?\000)|\1-\2|g'
+done
+rm media/MenuItemNF.png
+
+exit
 #cat 720p/IncludesVariables.xml | tr '\n' '\0' | ssed -R "$R" | tr '\0' '\n' >720p/IncludesVariables.xml2	
+
+#\000\s*?<control type="image">\s*?\000'\
+'\s*?<posx>[0-9]+</posx>\s*?\000'\
+'\s*?<posy>[0-9]+</posy>\s*?\000'\
+'\s*?<width>[0-9]+</width>\s*?\000'\
+'\s*?<height>[0-9]+</height>\s*?\000'\
+'\s*?<texture[^>]*>MenuItemNF.png</texture>\s*?\000'\
+'\s*?<visible>[^<]</visible>\s*?\000'\
+'\s*?<include>[^<]</include>\s*?\000'\
+'\s*?</control>\s*?||g'
