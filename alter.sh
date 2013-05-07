@@ -139,4 +139,39 @@ if grep -q "ContentPanelMirror.png" 720p/* ; then
 fi
 rm media/ContentPanelMirror.png 2>/dev/null
 
+# change picturethumbview
+	#panel
+	perlregex 720p/ViewsPictures.xml 's|(\s*<control type="panel" id="514">\s*\000)'\
+'(\s*<posx>60</posx>\s*\000)'\
+'(\s*)<posy>75</posy>\s*\000'\
+'(\s*)<width>432</width>\s*\000'\
+'(\s*)<height>576</height>\s*\000'\
+'|\1\2\3\<posy>0</posy>\000\4<width>144</width>\000\5<height>720</height>\000|'
+	#scrollbar
+	perlregex 720p/ViewsPictures.xml 's|(\s*<control type="scrollbar" id="60">\s*\000)'\
+'(\s*)<posx>500</posx>|\1\2<posx>212</posx>|'
+	#left panel
+	perlregex 720p/IncludesBackgroundBuilding.xml 's|(\s*<visible>Control.IsVisible.514.</visible>\s*\000'\
+'\s*<control type="image">\s*\000'\
+'\s*<posx>50</posx>\s*\000'\
+'\s*)<posy>60</posy>(\s*\000'\
+'\s*)<width>490</width>(\s*\000'\
+'\s*)<height>600</height>'\
+'|\1<posy>-15</posy>\2<width>202</width>\3<height>750</height>|'
+	#picture preview
+	perlregex 720p/ViewsPictures.xml 's|<posx>570</posx>|<posx>282</posx>|'
+	perlregex 720p/ViewsPictures.xml 's|<width>640</width>|<width>928</width>|g'
+	perlregex 720p/ViewsPictures.xml 's|<height>470</height>|<height>540</height>|g'
+	perlregex 720p/IncludesBackgroundBuilding.xml 's|<width>680</width>|<width>968</width>|'
+	perlregex 720p/IncludesBackgroundBuilding.xml 's|<posx>550</posx>|<posx>262</posx>|'
+	#remove date+res labels
+	perlregex 720p/ViewsPictures.xml 's|\s*<control type="label">\s*\000'\
+'\s*<description>Date time txt</description>\s*\000'\
+'(\s*<(posx\|posy\|height\|width\|label\|align\|aligny\|font\|textcolor\|shadowcolor)>[^>]*>\s*?\000)*'\
+'\s*</control>\s*\000||'
+	perlregex 720p/ViewsPictures.xml 's|\s*<control type="label">\s*\000'\
+'\s*<description>Resolution txt</description>\s*\000'\
+'(\s*<(posx\|posy\|height\|width\|label\|align\|aligny\|font\|textcolor\|shadowcolor)>[^>]*>\s*?\000)*'\
+'\s*</control>\s*\000||'
+	
 exit
