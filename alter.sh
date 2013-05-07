@@ -68,7 +68,7 @@ done
 for F in 720p/SettingsCategory.xml 720p/SettingsSystemInfo.xml 720p/SettingsProfile.xml ; do
 	perlregex "$F" 's|(\s*?<texturenofocus[^>]*>)MenuItemNF.png(</texturenofocus>\s*?\000)|\1-\2|g'
 done
-rm media/MenuItemNF.png
+if [ -f media/MenuItemNF.png ] ; then rm media/MenuItemNF.png ; fi
 
 # remove widgets titel label
 perlregex 720p/IncludesHomeWidget.xml 's|\s*?<control type="label">\s*?\000'\
@@ -84,15 +84,12 @@ perlregex 720p/IncludesHomeWidget.xml 's|\s*?<control type="label">\s*?\000'\
 '\s*?<label>.VAR.MainItemLabel.</label>\s*?\000*'\
 '\s*</control>\s*?\000||g'
 
-exit
-#cat 720p/IncludesVariables.xml | tr '\n' '\0' | ssed -R "$R" | tr '\0' '\n' >720p/IncludesVariables.xml2	
+# remove info for widgets that are not focused
+perlregex 720p/IncludesHomeWidget.xml 's|\s*?<control type="label">\s*?\000'\
+'\s*?<posx>[0-9]*?</posx>\s*?\000'\
+'\s*?<posy>[0-9]*?</posy>\s*?\000'\
+'(\s*<(height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|selectedcolor)>[^>]*>\s*?\000)*'\
+'\s*?<label>.INFO.ListItem.Label2.</label>\s*?\000*'\
+'\s*</control>\s*?\000||g'
 
-#\000\s*?<control type="image">\s*?\000'\
-'\s*?<posx>[0-9]+</posx>\s*?\000'\
-'\s*?<posy>[0-9]+</posy>\s*?\000'\
-'\s*?<width>[0-9]+</width>\s*?\000'\
-'\s*?<height>[0-9]+</height>\s*?\000'\
-'\s*?<texture[^>]*>MenuItemNF.png</texture>\s*?\000'\
-'\s*?<visible>[^<]</visible>\s*?\000'\
-'\s*?<include>[^<]</include>\s*?\000'\
-'\s*?</control>\s*?||g'
+exit
