@@ -70,6 +70,12 @@ for F in 720p/SettingsCategory.xml 720p/SettingsSystemInfo.xml 720p/SettingsProf
 done
 rm media/MenuItemNF.png
 
+# remove widgets titel label
+perlregex 720p/IncludesHomeWidget.xml 's|\s*?<control type="label">\s*?\000'\
+'\s*?<description>Title label</description>\s*?\000'\
+'(\s*<(posx\|posy\|height\|width\|label\|align\|aligny\|font\|textcolor\|shadowcolor)>[^>]*>\s*?\000)*'\
+'\s*</control>\s*?\000||g'
+
 exit
 #cat 720p/IncludesVariables.xml | tr '\n' '\0' | ssed -R "$R" | tr '\0' '\n' >720p/IncludesVariables.xml2	
 

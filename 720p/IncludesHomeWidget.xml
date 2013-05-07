@@ -16,19 +16,6 @@
 				<visible>Library.HasContent(Movies)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies)</visible>
 				<include>VisibleFadeEffect</include>
-				<control type="label">
-					<description>Title label</description>
-					<posx>180</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>540</width>
-					<label>$LOCALIZE[31175]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
-				</control>
 				<control type="list" id="8000">
 					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8000).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8000).NumItems,3)">conditional</animation>
@@ -153,19 +140,6 @@
 				<visible>Library.HasContent(TVShows)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes)</visible>
 				<include>VisibleFadeEffect</include>
-				<control type="label">
-					<description>Title label</description>
-					<posx>240</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>480</width>
-					<label>$LOCALIZE[31178]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
-				</control>
 				<control type="list" id="8001">
 					<animation effect="slide" start="0,0" end="120,0" time="0" condition="StringCompare(Container(8001).NumItems,3)">conditional</animation>
 					<animation effect="slide" start="0,0" end="240,0" time="0" condition="StringCompare(Container(8001).NumItems,2)">conditional</animation>
@@ -358,19 +332,6 @@
 				<visible>Library.HasContent(Music)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentAlbums)</visible>
 				<include>VisibleFadeEffect</include>
-				<control type="label">
-					<description>Title label</description>
-					<posx>160</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>480</width>
-					<label>$LOCALIZE[31181]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
-				</control>
 				<control type="list" id="8002">
 					<animation effect="slide" start="0,0" end="100,0" time="0" condition="StringCompare(Container(8002).NumItems,3)">conditional</animation>
 					<animation effect="slide" start="0,0" end="200,0" time="0" condition="StringCompare(Container(8002).NumItems,2)">conditional</animation>
@@ -523,19 +484,6 @@
 				<visible>Library.HasContent(MusicVideos)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentConcerts)</visible>
 				<include>VisibleFadeEffect</include>
-				<control type="label">
-					<description>Title label</description>
-					<posx>180</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>540</width>
-					<label>$LOCALIZE[31184]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
-				</control>
 				<control type="list" id="8003">
 					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8003).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8003).NumItems,3)">conditional</animation>
@@ -660,19 +608,6 @@
 				<visible>Library.HasContent(Movies)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies)</visible>
 				<include>VisibleFadeEffect</include>
-				<control type="label">
-					<description>Title label</description>
-					<posx>180</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>540</width>
-					<label>$LOCALIZE[31176]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
-				</control>
 				<control type="list" id="8004">
 					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8004).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8004).NumItems,3)">conditional</animation>
@@ -797,19 +732,6 @@
 				<visible>Library.HasContent(TVShows)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes)</visible>
 				<include>VisibleFadeEffect</include>
-				<control type="label">
-					<description>Title label</description>
-					<posx>240</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>480</width>
-					<label>$LOCALIZE[31179]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
-				</control>
 				<control type="list" id="8005">
 					<animation effect="slide" start="0,0" end="120,0" time="0" condition="StringCompare(Container(8005).NumItems,3)">conditional</animation>
 					<animation effect="slide" start="0,0" end="240,0" time="0" condition="StringCompare(Container(8005).NumItems,2)">conditional</animation>
@@ -1002,19 +924,6 @@
 				<visible>Library.HasContent(Music)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomAlbums)</visible>
 				<include>VisibleFadeEffect</include>
-				<control type="label">
-					<description>Title label</description>
-					<posx>160</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>480</width>
-					<label>$LOCALIZE[31182]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
-				</control>
 				<control type="list" id="8006">
 					<animation effect="slide" start="0,0" end="100,0" time="0" condition="StringCompare(Container(8006).NumItems,3)">conditional</animation>
 					<animation effect="slide" start="0,0" end="200,0" time="0" condition="StringCompare(Container(8006).NumItems,2)">conditional</animation>
@@ -1167,19 +1076,6 @@
 				<visible>Library.HasContent(MusicVideos)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomConcerts)</visible>
 				<include>VisibleFadeEffect</include>
-				<control type="label">
-					<description>Title label</description>
-					<posx>180</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>540</width>
-					<label>$LOCALIZE[31185]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
-				</control>
 				<control type="list" id="8007">
 					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8007).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8007).NumItems,3)">conditional</animation>
@@ -1304,19 +1200,6 @@
 				<visible>Library.HasContent(Movies)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies)</visible>
 				<include>VisibleFadeEffect</include>
-				<control type="label">
-					<description>Title label</description>
-					<posx>180</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>540</width>
-					<label>$LOCALIZE[31177]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
-				</control>
 				<control type="list" id="8008">
 					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8008).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8008).NumItems,3)">conditional</animation>
@@ -1441,19 +1324,6 @@
 				<visible>Library.HasContent(TVShows)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes)</visible>
 				<include>VisibleFadeEffect</include>
-				<control type="label">
-					<description>Title label</description>
-					<posx>240</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>480</width>
-					<label>$LOCALIZE[31180]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
-				</control>
 				<control type="list" id="8009">
 					<animation effect="slide" start="0,0" end="120,0" time="0" condition="StringCompare(Container(8009).NumItems,3)">conditional</animation>
 					<animation effect="slide" start="0,0" end="240,0" time="0" condition="StringCompare(Container(8009).NumItems,2)">conditional</animation>
@@ -1646,19 +1516,6 @@
 				<visible>Library.HasContent(Music)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedAlbums)</visible>
 				<include>VisibleFadeEffect</include>
-				<control type="label">
-					<description>Title label</description>
-					<posx>160</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>480</width>
-					<label>$LOCALIZE[31183]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
-				</control>
 				<control type="list" id="8010">
 					<animation effect="slide" start="0,0" end="100,0" time="0" condition="StringCompare(Container(8010).NumItems,3)">conditional</animation>
 					<animation effect="slide" start="0,0" end="200,0" time="0" condition="StringCompare(Container(8010).NumItems,2)">conditional</animation>
@@ -1811,19 +1668,6 @@
 				<visible>Library.HasContent(MusicVideos)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedConcerts)</visible>
 				<include>VisibleFadeEffect</include>
-				<control type="label">
-					<description>Title label</description>
-					<posx>180</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>540</width>
-					<label>$LOCALIZE[31186]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
-				</control>
 				<control type="list" id="8011">
 					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8011).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8011).NumItems,3)">conditional</animation>
