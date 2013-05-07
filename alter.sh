@@ -10,6 +10,26 @@ perlregex() {
 	rm "$FILE.tmp"
 }
 
+findunused() {
+	FILES=$(find media -type f)
+	IFS_OLD=$IFS
+	IFS=$'\n'
+	for F in $FILES ; do
+		FS=$(basename $F)
+		if ! grep -q "$FS" 720p/* ; then
+			echo "'$FS' was not found in the .xmls."
+			echo "File is '$F'."
+			BASE=$(echo "$F" | sed "s|\.[a-zA-Z]+||")
+			echo "Occurences of '$BASE':"
+			grep "$BASE" 720p/*
+		else
+			echo "'$FS' was found in the .xmls."
+			echo "File is '$F'."	
+		fi
+	done
+	IFS=$IFS_OLD
+}
+
 # enable germany mpaa setting 
 perlregex '720p/SkinSettings.xml' 's|<!--(item[^>]*id="3".*31702.*?)/item-->|<\1/item>|'
 
