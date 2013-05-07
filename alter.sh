@@ -92,4 +92,7 @@ perlregex 720p/IncludesHomeWidget.xml 's|\s*?<control type="label">\s*?\000'\
 '\s*?<label>.INFO.ListItem.Label2.</label>\s*?\000*'\
 '\s*</control>\s*?\000||g'
 
+# remove bordertexture for widgets that are not focused
+perlregex 720p/IncludesHomeWidget.xml 's|\s*<bordertexture border="5">button-nofocus.png</bordertexture>\s*\000||g'
+
 exit
