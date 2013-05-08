@@ -140,13 +140,13 @@ fi
 rm media/ContentPanelMirror.png 2>/dev/null
 
 # change picturethumbview
-	#panel
-	perlregex 720p/ViewsPictures.xml 's|(\s*<control type="panel" id="514">\s*\000)'\
+	#selection panel
+	perlregex 720p/ViewsPictures.xml 's|(\s*<control type)="panel" id="514">\s*\000'\
 '(\s*<posx>60</posx>\s*\000)'\
 '(\s*)<posy>75</posy>\s*\000'\
 '(\s*)<width>432</width>\s*\000'\
 '(\s*)<height>576</height>\s*\000'\
-'|\1\2\3\<posy>0</posy>\000\4<width>144</width>\000\5<height>720</height>\000|'
+'|\1="fixedlist" id="514">\000\2\3\<posy>-72</posy>\000\4<width>144</width>\000\5<height>864</height>\000\5<focusposition>1</focusposition>\000|'
 	#scrollbar
 	perlregex 720p/ViewsPictures.xml 's|(\s*<control type="scrollbar" id="60">\s*\000)'\
 '(\s*)<posx>500</posx>|\1\2<posx>212</posx>|'
@@ -161,8 +161,9 @@ rm media/ContentPanelMirror.png 2>/dev/null
 	#picture preview
 	perlregex 720p/ViewsPictures.xml 's|<posx>570</posx>|<posx>282</posx>|'
 	perlregex 720p/ViewsPictures.xml 's|<width>640</width>|<width>928</width>|g'
-	perlregex 720p/ViewsPictures.xml 's|<height>470</height>|<height>540</height>|g'
-	perlregex 720p/IncludesBackgroundBuilding.xml 's|<width>680</width>|<width>968</width>|'
+	perlregex 720p/ViewsPictures.xml 's|<height>470</height>|<height>570</height>|g'
+	perlregex 720p/IncludesBackgroundBuilding.xml 's|<width>680</width>\s*\000'\
+'(\s*)<height>600</height>|<width>968</width>\000\1<height>640</height>|'
 	perlregex 720p/IncludesBackgroundBuilding.xml 's|<posx>550</posx>|<posx>262</posx>|'
 	#remove date+res labels
 	perlregex 720p/ViewsPictures.xml 's|\s*<control type="label">\s*\000'\
@@ -173,5 +174,53 @@ rm media/ContentPanelMirror.png 2>/dev/null
 '\s*<description>Resolution txt</description>\s*\000'\
 '(\s*<(posx\|posy\|height\|width\|label\|align\|aligny\|font\|textcolor\|shadowcolor)>[^>]*>\s*?\000)*'\
 '\s*</control>\s*\000||'
-	
+	#remove common page count
+	perlregex 720p/MyPics.xml 's|\s*<include>CommonPageCount</include>\s*\000||g'
+	#remove sections icon
+	perlregex 720p/MyPics.xml 's|\s*<control type="image">\s*\000'\
+'\s*<description>Section header image</description>\s*\000'\
+'(\s*<(posx\|posy\|height\|width\|aspectratio\|texture)>[^>]*>\s*?\000)*'\
+'\s*</control>\s*\000||'
+	#remove location labels
+	perlregex 720p/MyPics.xml 's|\s*<control type="label">\s*\000'\
+'\s*<include>WindowTitleCommons</include>\s*\000'\
+'(\s*<(posx\|posy\|height\|width\|aspectratio\|texture\|visible\|label)>[^>]*>\s*?\000)*'\
+'\s*</control>\s*\000||g'
+	#remove location grouplist
+perlregex 720p/MyPics.xml 's|\s*<control type="grouplist">\s*\000'\
+'\s*<posx>65</posx>\s*\000'\
+'\s*<posy>5</posy>\s*\000'\
+'(\s*<(height\|width\|orientation\|align\|itemgap\|aspectratio\|texture\|visible\|label)>[^>]*>\s*?\000)*'\
+'\s*</control>\s*\000||'
+
+#remove homefloor
+perlregex 720p/Home.xml 's|\s*<control type="image">\s*\000'\
+'(\s*<(posx\|posy\|height\|width\|aspectratio\|animation)>[^>]*>\s*\000)*'\
+'\s*<texture>homefloor.png</texture>\s*\000'\
+'(\s*<(posx\|posy\|height\|width\|aspectratio\|animation)[^>]*>[^>]*>\s*\000)*'\
+'\s*</control>\s*\000||'
+if grep -q "homefloor.png" 720p/* ; then
+	echo "ERROR: Not all occurrences of 'homefloor.png' could be removed, please check:"
+	grep "homefloor.png" 720p/*
+	exit 3
+fi
+rm media/homefloor.png 2>/dev/null
+
+#remove floor.png
+IMG='floor.png'
+LIST=$(grep "$IMG" 720p/* | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
+for F in $LIST ; do
+	perlregex "$F" 's|\s*?<control type="image">\s*?\000'\
+'(\s*<(posx\|posy\|height\|width\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*'\
+'\s*<texture>'$IMG'</texture>\s*\000'\
+'(\s*<(posx\|posy\|height\|width\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*'\
+'\s*</control>\s*?\000||g'
+done
+if grep -q "$IMG" 720p/* ; then
+	echo "ERROR: Not all occurrences of '$IMG' could be removed, please check:"
+	grep "$IMG" 720p/*
+	exit 3
+fi
+rm "media/$IMG" 2>/dev/null
+
 exit
