@@ -192,6 +192,8 @@ perlregex 720p/MyPics.xml 's|\s*<control type="grouplist">\s*\000'\
 '\s*<posy>5</posy>\s*\000'\
 '(\s*<(height\|width\|orientation\|align\|itemgap\|aspectratio\|texture\|visible\|label)>[^>]*>\s*?\000)*'\
 '\s*</control>\s*\000||'
+	#remove thumbshadows
+perlregex 720p/ViewsPictures.xml 's|\s*<bordertexture[^>]*>ThumbShadow.png</bordertexture>\s*\000||g'
 
 #remove homefloor
 perlregex 720p/Home.xml 's|\s*<control type="image">\s*\000'\
