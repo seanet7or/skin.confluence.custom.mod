@@ -146,6 +146,17 @@ if grep -q "ContentPanelMirror.png" 720p/* ; then
 fi
 rm media/ContentPanelMirror.png 2>/dev/null
 
+#remove common page count
+INC='CommonPageCount'
+LIST=$(grep "<include>$INC</include>" 720p/* | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
+for F in $LIST ; do
+	perlregex "$F" 's|\s*<include>'$INC'</include>\s*\000||g'
+done
+#remove CommonPageCount definition
+perlregex 720p/includes.xml 's|\s*<include name="CommonPageCount">\s*\000'\
+'(\s*<(animation\|control\|/control\|description\|posx\|posy\|scroll\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|include)[^>]*>.*?\000)*?'\
+'\s*</include>\s*\000||'
+
 # change picturethumbview
 	#selection panel
 	perlregex 720p/ViewsPictures.xml 's|(\s*<control type)="panel" id="514">\s*\000'\
@@ -181,8 +192,6 @@ rm media/ContentPanelMirror.png 2>/dev/null
 '\s*<description>Resolution txt</description>\s*\000'\
 '(\s*<(posx\|posy\|height\|width\|label\|align\|aligny\|font\|textcolor\|shadowcolor)>[^>]*>\s*?\000)*'\
 '\s*</control>\s*\000||'
-	#remove common page count
-	perlregex 720p/MyPics.xml 's|\s*<include>CommonPageCount</include>\s*\000||g'
 	#remove sections icon
 	perlregex 720p/MyPics.xml 's|\s*<control type="image">\s*\000'\
 '\s*<description>Section header image</description>\s*\000'\
