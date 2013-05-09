@@ -280,4 +280,19 @@ perlregex 720p/includes.xml 's|\s*<control type="label">\s*\000'\
 '(\|\s*<visible>.Control.HasFocus.9002.</visible>\s*\000)'\
 '\s*</control>\s*\000||g'
 
+#remove weather location
+perlregex 720p/Home.xml 's|\s*<control type="label">\s*\000'\
+'\s*<description>Location label</description>\s*\000'\
+'\s*<posx>65</posx>\s*\000'\
+'(\s*<(posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
+'\s*</control>\s*\000||'
+#center temp label
+perlregex 720p/Home.xml 's|(<posx>65</posx>\s*\000'\
+'\s*<posy)>20</posy>|\1>15</posy>|'
+#remove weather condition
+perlregex 720p/Home.xml 's|\s*<control type="label">\s*\000'\
+'\s*<description>Conditions Label</description>\s*\000'\
+'(\s*<(posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
+'\s*</control>\s*\000||'
+
 exit
