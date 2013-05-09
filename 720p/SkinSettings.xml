@@ -709,13 +709,96 @@
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
+						<label>$LOCALIZE[31007]</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="group" id="141">
+						<width>750</width>
+						<height>40</height>
+						<control type="grouplist" id="142">
+							<orientation>horizontal</orientation>
+							<width>750</width>
+							<height>40</height>
+							<itemgap>0</itemgap>
+							<onup>139</onup>
+							<ondown>149</ondown>
+							<align>left</align>
+							<control type="radiobutton" id="143">
+								<description>Default</description>
+								<width>150</width>
+								<height>40</height>
+								<label> $LOCALIZE[571]</label>
+								<font>font10</font>
+								<align>left</align>
+								<texturefocus>MenuItemFO.png</texturefocus>
+								<texturenofocus>MenuItemNF.png</texturenofocus>
+								<onclick>Skin.Reset(MediaPanelTrans)</onclick>
+								<selected>IsEmpty(Skin.String(MediaPanelTrans))</selected>
+							</control>							
+							<control type="radiobutton" id="144">
+								<description>Step 1</description>
+								<width>150</width>
+								<height>40</height>
+								<label> $LOCALIZE[31368] 1</label>
+								<font>font10</font>
+								<align>left</align>
+								<texturefocus>MenuItemFO.png</texturefocus>
+								<texturenofocus>MenuItemNF.png</texturenofocus>
+								<onclick>Skin.SetString(MediaPanelTrans,EEEEEEEE)</onclick>
+								<selected>stringcompare(Skin.String(MediaPanelTrans),EEEEEEEE)</selected>
+							</control>							
+							<control type="radiobutton" id="145">
+								<description>Step 2</description>
+								<width>150</width>
+								<height>40</height>
+								<label> $LOCALIZE[31368] 2</label>
+								<font>font10</font>
+								<align>left</align>
+								<texturefocus>MenuItemFO.png</texturefocus>
+								<texturenofocus>MenuItemNF.png</texturenofocus>
+								<onclick>Skin.SetString(MediaPanelTrans,DDDDDDDD)</onclick>
+								<selected>stringcompare(Skin.String(MediaPanelTrans),DDDDDDDD)</selected>
+							</control>								
+							<control type="radiobutton" id="146">
+								<description>Step 3</description>
+								<width>150</width>
+								<height>40</height>
+								<label> $LOCALIZE[31368] 3</label>
+								<font>font10</font>
+								<align>left</align>
+								<texturefocus>MenuItemFO.png</texturefocus>
+								<texturenofocus>MenuItemNF.png</texturenofocus>
+								<onclick>Skin.SetString(MediaPanelTrans,CCCCCCCC)</onclick>
+								<selected>stringcompare(Skin.String(MediaPanelTrans),CCCCCCCC)</selected>
+							</control>									
+							<control type="radiobutton" id="147">
+								<description>Step 4</description>
+								<width>150</width>
+								<height>40</height>
+								<label> $LOCALIZE[31368] 4</label>
+								<font>font10</font>
+								<align>left</align>
+								<texturefocus>MenuItemFO.png</texturefocus>
+								<texturenofocus>MenuItemNF.png</texturenofocus>
+								<onclick>Skin.SetString(MediaPanelTrans,99999999)</onclick>
+								<selected>stringcompare(Skin.String(MediaPanelTrans),99999999)</selected>
+							</control>								
+						</control>
+					</control>					
+					<control type="label" id="148">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
 						<label>512</label>
 						<textcolor>blue</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="141">
+					<control type="radiobutton" id="149">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -728,7 +811,7 @@
 						<onclick>Skin.Reset(EnableStartupPlaylist)</onclick>
 						<selected>!Skin.HasSetting(HideXBMCIntro)</selected>
 					</control>
-					<control type="radiobutton" id="142">
+					<control type="radiobutton" id="150">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -741,7 +824,7 @@
 						<onclick>Skin.ToggleSetting(Use_Startup_Playlist)</onclick>
 						<selected>Skin.HasSetting(Use_Startup_Playlist)</selected>
 					</control>
-					<control type="button" id="143">
+					<control type="button" id="151">
 						<description>Startup Playlist Path</description>
 						<width>750</width>
 						<height>40</height>
