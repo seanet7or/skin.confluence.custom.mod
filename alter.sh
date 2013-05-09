@@ -270,7 +270,7 @@ perlregex 720p/includes.xml 's|\s*<control type="label">\s*\000'\
 '\s*<align>center</align>\s*\000'\
 '\s*<aligny>center</aligny>\s*\000'\
 '\s*<label>.VAR.MainItemLabel.</label>\s*\000'\
-'\s*</control>\s*\000||g'\
-
+'(\|\s*<visible>.Control.HasFocus.9002.</visible>\s*\000)'\
+'\s*</control>\s*\000||g'
 
 exit
