@@ -252,5 +252,12 @@ perlregex 720p/includes.xml 's|(\s*<width>180</width>\s*\000)'\
 '(\s*<aspectratio aligny="bottom">keep</aspectratio>\s*\000)'\
 '\s*<bordertexture border="5">button-nofocus.png</bordertexture>\s*\000'\
 '|\1\2\3|g'
+#remove mirror of addons on the home view
+perlregex 720p/includes.xml 's|\s*?<control type="image">\s*?\000'\
+'(\s*<(posx\|posy\|height\|width\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
+'\s*<texture diffuse="diffuse_mirror2.png" flipy="true" background="true">.INFO.ListItem.Icon.</texture>\s*\000'\
+'(\s*<(posx\|posy\|height\|width\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
+'\s*</control>\000'\
+'||g'
 
 exit
