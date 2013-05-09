@@ -320,5 +320,20 @@ perlregex 720p/includes.xml 's|(<control type="label">\s*\000'\
 #rm media/Fanart_Diffuse.png 2>/dev/null
 #remove ThumbShadow from video views
 perlregex 720p/ViewsVideoLibrary.xml 's|\s*<bordertexture border="8">ThumbShadow.png</bordertexture>\s*\000||g'
-
+	#remove sections icon
+	perlregex 720p/MyVideoNav.xml 's|\s*<control type="image">\s*\000'\
+'\s*<description>Section header image</description>\s*\000'\
+'(\s*<(posx\|posy\|height\|width\|aspectratio\|texture)>[^>]*>\s*?\000)*'\
+'\s*</control>\s*\000||'
+	#remove location labels
+	perlregex 720p/MyVideoNav.xml 's|\s*<control type="label">\s*\000'\
+'\s*<include>WindowTitleCommons</include>\s*\000'\
+'(\s*<(posx\|posy\|height\|width\|aspectratio\|texture\|visible\|label)>[^>]*>\s*?\000)*'\
+'\s*</control>\s*\000||g'
+	#remove location grouplist
+perlregex 720p/MyVideoNav.xml 's|\s*<control type="grouplist">\s*\000'\
+'\s*<posx>65</posx>\s*\000'\
+'\s*<posy>5</posy>\s*\000'\
+'(\s*<(height\|width\|orientation\|align\|itemgap\|aspectratio\|texture\|visible\|label)>[^>]*>\s*?\000)*'\
+'\s*</control>\s*\000||'
 exit
