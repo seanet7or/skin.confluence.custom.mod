@@ -3,6 +3,9 @@
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<include>DefaultInitialSetup</include>
 	<onload>SetProperty(MenuItemActive,Settings,Home)</onload>
+	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701])">Control.Move(9008,1)</onload>
+	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702])">Control.Move(9008,2)</onload>
+	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703])">Control.Move(9008,3)</onload>
 	<controls>
 		<include>CommonBackground</include>
 		<control type="image">
@@ -883,25 +886,25 @@
 					<itemlayout height="1" width="750"></itemlayout>
 					<focusedlayout height="1" width="750"></focusedlayout>
 					<content>
-						<item id="1">
+						<item>
 							<label>$LOCALIZE[31700]</label>
 							<onclick>noop</onclick>
 							<icon>-</icon>
 							<thumb>-</thumb>
 						</item>
-						<item id="2">
+						<item>
 							<label>$LOCALIZE[31701]</label>
 							<onclick>noop</onclick>
 							<icon>-</icon>
 							<thumb>-</thumb>
 						</item>
-						<!--item id="3">
+						<!--item>
 							<label>$LOCALIZE[31702]</label>
 							<onclick>noop</onclick>
 							<icon>-</icon>
 							<thumb>-</thumb>
-						</item-->
-						<!--item id="4">
+						</item>
+						<item>
 							<label>$LOCALIZE[31703]</label>
 							<onclick>noop</onclick>
 							<icon>-</icon>
