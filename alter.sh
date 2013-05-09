@@ -259,5 +259,18 @@ perlregex 720p/includes.xml 's|\s*?<control type="image">\s*?\000'\
 '(\s*<(posx\|posy\|height\|width\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
 '\s*</control>\000'\
 '||g'
+#remove label for addons that are not focused on the home view
+perlregex 720p/includes.xml 's|\s*<control type="label">\s*\000'\
+'\s*<posx>91</posx>\s*\000'\
+'\s*<posy>125</posy>\s*\000'\
+'\s*<width>180</width>\s*\000'\
+'\s*<height>20</height>\s*\000'\
+'\s*<font>font12</font>\s*\000'\
+'\s*<textcolor>grey2</textcolor>\s*\000'\
+'\s*<align>center</align>\s*\000'\
+'\s*<aligny>center</aligny>\s*\000'\
+'\s*<label>.VAR.MainItemLabel.</label>\s*\000'\
+'\s*</control>\s*\000||g'\
+
 
 exit
