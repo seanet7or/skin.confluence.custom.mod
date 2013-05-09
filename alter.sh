@@ -295,4 +295,15 @@ perlregex 720p/Home.xml 's|\s*<control type="label">\s*\000'\
 '(\s*<(posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
 '\s*</control>\s*\000||'
 
+#remove date label
+perlregex 720p/includes.xml 's|\s*<control type="label">\s*\000'\
+'\s*<description>date label</description>\s*\000'\
+'(\s*<(posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
+'\s*</control>\s*\000||'
+#move time label up
+perlregex 720p/includes.xml 's|(<control type="label">\s*\000'\
+'\s*<description>time label</description>\s*\000'\
+'\s*<posx>15r</posx>\s*\000'\
+'\s*<posy)>20<|\1>5<|'
+
 exit
