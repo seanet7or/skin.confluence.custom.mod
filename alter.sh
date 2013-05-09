@@ -246,4 +246,11 @@ rm "media/$IMG" 2>/dev/null
 #remove ThumbShadow.png from list view
 perlregex 720p/ViewsFileMode.xml 's|\s*<bordertexture border="8">ThumbShadow.png</bordertexture>\s*\000||g'
 
+#remove border from addons that are not focused on the home view
+perlregex 720p/includes.xml 's|(\s*<width>180</width>\s*\000)'\
+'(\s*<height>120</height>\s*\000)'\
+'(\s*<aspectratio aligny="bottom">keep</aspectratio>\s*\000)'\
+'\s*<bordertexture border="5">button-nofocus.png</bordertexture>\s*\000'\
+'|\1\2\3|g'
+
 exit
