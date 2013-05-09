@@ -243,4 +243,7 @@ if grep -q "$IMG" 720p/* ; then
 fi
 rm "media/$IMG" 2>/dev/null
 
+#remove ThumbShadow.png from list view
+perlregex 720p/ViewsFileMode.xml 's|\s*<bordertexture border="8">ThumbShadow.png</bordertexture>\s*\000||g'
+
 exit
