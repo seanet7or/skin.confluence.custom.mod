@@ -315,4 +315,8 @@ perlregex 720p/includes.xml 's|(<control type="label">\s*\000'\
 '\s*<posx>15r</posx>\s*\000'\
 '\s*<posy)>20<|\1>5<|'
 
+#remove Fanart_Diffuse.png
+perlregex 720p/ViewsVideoLibrary.xml 's| diffuse="Fanart_Diffuse.png"||g'
+rm media/Fanart_Diffuse.png 2>/dev/null
+
 exit
