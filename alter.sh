@@ -31,7 +31,7 @@ findunused() {
 }
 
 # enable germany mpaa setting 
-perlregex '720p/SkinSettings.xml' 's|<!--(item[^>]*id="3".*31702.*?)/item-->|<\1/item>|'
+#perlregex '720p/SkinSettings.xml' 's|<!--(item[^>]*id="3".*31702.*?)/item-->|<\1/item>|'
 
 # choose right flag for german mpaa ratings
 if ! grep -q 'fsk-18' '720p/IncludesVariables.xml' ; then
