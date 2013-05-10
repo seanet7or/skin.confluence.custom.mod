@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
 	<include name="CommonBackground">
-		<control type="multiimage">
-			<include>Dimensions_Fullscreen</include>
-			<imagepath background="true">$INFO[Container(9000).ListItem.Icon]</imagepath>
-			<timeperimage>8000</timeperimage>
-			<randomize>true</randomize>
-			<fadetime>1000</fadetime>
+		<control type="group">
+			<!--control type="multiimage">
+				<include>Dimensions_Fullscreen</include>
+				<imagepath background="true">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
+				<timeperimage>8000</timeperimage>
+				<randomize>true</randomize>
+				<fadetime>1000</fadetime>
+				<visible>StringCompare(Container(9000).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(ShowWeatherFanart)</visible>
+			</control-->	
+			<control type="multiimage">
+				<include>Dimensions_Fullscreen</include>
+				<imagepath background="true">$INFO[Container(9000).ListItem.Icon]</imagepath>
+				<timeperimage>8000</timeperimage>
+				<randomize>true</randomize>
+				<fadetime>1000</fadetime>
+				<!--visible>![StringCompare(Container(9000).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(ShowWeatherFanart)]</visible-->
+			</control>
 			<visible>Window.IsVisible(home) + Skin.HasSetting(IndividualBackgrounds)</visible>
 		</control>
 		<control type="image">
