@@ -336,4 +336,12 @@ perlregex 720p/MyVideoNav.xml 's|\s*<control type="grouplist">\s*\000'\
 '\s*<posy>5</posy>\s*\000'\
 '(\s*<(height\|width\|orientation\|align\|itemgap\|aspectratio\|texture\|visible\|label)>[^>]*>\s*?\000)*'\
 '\s*</control>\s*\000||'
+
+#remove background top
+perlregex 720p/IncludesBackgroundBuilding.xml 's|\s*<control type="image">\s*\000'\
+'(\s*<(posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
+'\s*<texture flipy="true">HomeNowPlayingBack.png</texture>\s*\000'\
+'(\s*<(posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
+'\s*</control>\s*\000||'
+
 exit
