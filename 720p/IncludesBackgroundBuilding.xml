@@ -7,7 +7,7 @@
 			<timeperimage>8000</timeperimage>
 			<randomize>true</randomize>
 			<fadetime>1000</fadetime>
-			<visible>Window.IsVisible(home) + !Skin.HasSetting(UseCustomBackground)</visible>
+			<visible>Window.IsVisible(home) + Skin.HasSetting(IndividualBackgrounds)</visible>
 		</control>
 		<control type="image">
 			<description>Default Global Background Image</description>
@@ -15,7 +15,7 @@
 			<aspectratio>scale</aspectratio>
 			<include>VisibleFadeEffect</include>
 			<texture>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</texture>
-			<visible>Skin.HasSetting(UseCustomBackground) + IsEmpty(Skin.String(CustomBackgroundPath))</visible>
+			<visible>!Skin.HasSetting(IndividualBackgrounds) + IsEmpty(Skin.String(CustomBackgroundPath))</visible>
 		</control>
 		<control type="multiimage">
 			<description>User Set Global Background Image</description>
@@ -25,7 +25,7 @@
 			<randomize>true</randomize>
 			<fadetime>1000</fadetime>
 			<visible>Window.IsVisible(home)</visible>
-			<visible>Skin.HasSetting(UseCustomBackground) + !IsEmpty(Skin.String(CustomBackgroundPath))</visible>
+			<visible>!Skin.HasSetting(IndividualBackgrounds) + !IsEmpty(Skin.String(CustomBackgroundPath))</visible>
 		</control>
 		<control type="group">
 			<visible>!Skin.HasSetting(HideBackGroundFanart) + !Skin.HasSetting(HideWidgetFanArt)</visible>

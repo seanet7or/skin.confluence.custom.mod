@@ -2463,13 +2463,13 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(UseCustomBackground)</onclick>
+						<onclick>Skin.ToggleSetting(IndividualBackgrounds)</onclick>
 						<!--onclick>Control.Move(9005,1)</onclick-->
 						<onleft>9000</onleft>
 						<onright>9000</onright>
 						<onup>505</onup>
 						<ondown>504</ondown>
-						<selected>Skin.HasSetting(UseCustomBackground)</selected>
+						<selected>!Skin.HasSetting(IndividualBackgrounds)</selected>
 					</control>
 					<control type="button" id="504">
 						<description>Menu Item Next Button</description>
@@ -2589,7 +2589,7 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(CustomBackgroundPath)]</thumb>
-								<visible>Skin.HasSetting(UseCustomBackground)</visible>
+								<visible>!Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 							<item id="2">
 								<description>Home Menu Item One</description>
@@ -2597,8 +2597,8 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.1.FanArt)]</thumb>
-								<visible>!Skin.HasSetting(UseCustomBackground)</visible>
-								<visible>!IsEmpty(Skin.String(HomeItem.1.Path)) + !Skin.HasSetting(UseCustomBackground)</visible>
+								<visible>!Skin.HasSetting(IndividualBackgrounds)</visible>
+								<visible>!IsEmpty(Skin.String(HomeItem.1.Path)) + Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 							<item id="3">
 								<description>Home Menu Item Two</description>
@@ -2606,7 +2606,7 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.2.FanArt)]</thumb>
-								<visible>!IsEmpty(Skin.String(HomeItem.2.Path)) + !Skin.HasSetting(UseCustomBackground)</visible>
+								<visible>!IsEmpty(Skin.String(HomeItem.2.Path)) + Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 							<item id="4">
 								<description>Home Menu Item Three</description>
@@ -2614,7 +2614,7 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.3.FanArt)]</thumb>
-								<visible>!IsEmpty(Skin.String(HomeItem.3.Path)) + !Skin.HasSetting(UseCustomBackground)</visible>
+								<visible>!IsEmpty(Skin.String(HomeItem.3.Path)) + Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 							<item id="5">
 								<description>Home Menu Item Four</description>
@@ -2622,7 +2622,7 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.4.FanArt)]</thumb>
-								<visible>!IsEmpty(Skin.String(HomeItem.4.Path)) + !Skin.HasSetting(UseCustomBackground)</visible>
+								<visible>!IsEmpty(Skin.String(HomeItem.4.Path)) + Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 							<item id="6">
 								<description>Home Menu Item Five</description>
@@ -2630,7 +2630,7 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.5.FanArt)]</thumb>
-								<visible>!IsEmpty(Skin.String(HomeItem.5.Path)) + !Skin.HasSetting(UseCustomBackground)</visible>
+								<visible>!IsEmpty(Skin.String(HomeItem.5.Path)) + Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 							<item id="7">
 								<description>Home Menu Item Six</description>
@@ -2638,7 +2638,7 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.6.FanArt)]</thumb>
-								<visible>!IsEmpty(Skin.String(HomeItem.6.Path)) + !Skin.HasSetting(UseCustomBackground)</visible>
+								<visible>!IsEmpty(Skin.String(HomeItem.6.Path)) + Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 							<item id="8">
 								<description>Home Menu Item Seven</description>
@@ -2646,7 +2646,7 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.7.FanArt)]</thumb>
-								<visible>!IsEmpty(Skin.String(HomeItem.7.Path)) + !Skin.HasSetting(UseCustomBackground)</visible>
+								<visible>!IsEmpty(Skin.String(HomeItem.7.Path)) + Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 							<item id="9">
 								<description>Home Menu Item Eight</description>
@@ -2654,7 +2654,7 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.8.FanArt)]</thumb>
-								<visible>!IsEmpty(Skin.String(HomeItem.8.Path)) + !Skin.HasSetting(UseCustomBackground)</visible>
+								<visible>!IsEmpty(Skin.String(HomeItem.8.Path)) + Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 							<item id="10">
 								<description>Home Menu Item Nine</description>
@@ -2662,7 +2662,7 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.9.FanArt)]</thumb>
-								<visible>!IsEmpty(Skin.String(HomeItem.9.Path)) + !Skin.HasSetting(UseCustomBackground)</visible>
+								<visible>!IsEmpty(Skin.String(HomeItem.9.Path)) + Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 							<item id="11">
 								<description>Home Menu Item Ten</description>
@@ -2670,7 +2670,7 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.10.FanArt)]</thumb>
-								<visible>!IsEmpty(Skin.String(HomeItem.10.Path)) + !Skin.HasSetting(UseCustomBackground)</visible>
+								<visible>!IsEmpty(Skin.String(HomeItem.10.Path)) + Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 							<item id="12">
 								<description>DVD Tray</description>
@@ -2678,7 +2678,7 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.11.FanArt)]</thumb>
-								<visible>!Skin.HasSetting(UseCustomBackground)</visible>
+								<visible>Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 							<item id="13">
 								<description>Home Menu Settings</description>
@@ -2686,7 +2686,7 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.12.FanArt)]</thumb>
-								<visible>!Skin.HasSetting(HideHomeMenuSystem) + !Skin.HasSetting(UseCustomBackground)</visible>
+								<visible>!Skin.HasSetting(HideHomeMenuSystem) + Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 						</content>
 					</control>
