@@ -123,13 +123,6 @@
 				<label>$VAR[MusicHeaderLabel]</label>
 			</control>
 			<include>Clock</include>
-			<control type="image">
-				<posx>0</posx>
-				<posy>230r</posy>
-				<width>1280</width>
-				<height>230</height>
-				<texture>HomeNowPlayingBack.png</texture>
-			</control>
 			<control type="group">
 				<animation effect="slide" start="-275,275" end="0,0" time="1000" tween="cubic" easing="out" delay="1000">WindowOpen</animation>
 				<animation effect="slide" start="0,0" end="-275,275" time="400" tween="cubic" easing="in" delay="400">WindowClose</animation>

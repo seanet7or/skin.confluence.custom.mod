@@ -337,10 +337,27 @@ perlregex 720p/MyVideoNav.xml 's|\s*<control type="grouplist">\s*\000'\
 '(\s*<(height\|width\|orientation\|align\|itemgap\|aspectratio\|texture\|visible\|label)>[^>]*>\s*?\000)*'\
 '\s*</control>\s*\000||'
 
+#remove HomeNowPlayingBack.png
+IMG='HomeNowPlayingBack.png'
+LIST=$(grep "$IMG" 720p/* | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
+for F in $LIST ; do
+	perlregex "$F" 's|\s*?<control type="image">\s*?\000'\
+'(\s*<(posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
+'\s*<texture>'$IMG'</texture>\s*\000'\
+'(\s*<(posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
+'\s*</control>\s*?\000||g'
+done
+if grep -q "$IMG" 720p/* ; then
+	echo "ERROR: Not all occurrences of '$IMG' could be removed, please check:"
+	grep "$IMG" 720p/*
+	exit 3
+fi
+rm "media/$IMG" 2>/dev/null
+
 #remove background top
 perlregex 720p/IncludesBackgroundBuilding.xml 's|\s*<control type="image">\s*\000'\
 '(\s*<(posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
-'\s*<texture flipy="true">HomeNowPlayingBack.png</texture>\s*\000'\
+'\s*<texture[^>]*>HomeNowPlayingBack.png</texture>\s*\000'\
 '(\s*<(posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
 '\s*</control>\s*\000||'
 
