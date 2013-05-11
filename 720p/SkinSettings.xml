@@ -776,7 +776,7 @@
 								<texturenofocus>MenuItemNF.png</texturenofocus>
 								<onclick>Skin.Reset(MediaPanelTrans)</onclick>
 								<selected>IsEmpty(Skin.String(MediaPanelTrans))</selected>
-							</control>							
+							</control>
 							<control type="radiobutton" id="145">
 								<description>Step 1</description>
 								<width>150</width>
@@ -788,7 +788,7 @@
 								<texturenofocus>MenuItemNF.png</texturenofocus>
 								<onclick>Skin.SetString(MediaPanelTrans,EEEEEEEE)</onclick>
 								<selected>stringcompare(Skin.String(MediaPanelTrans),EEEEEEEE)</selected>
-							</control>							
+							</control>
 							<control type="radiobutton" id="146">
 								<description>Step 2</description>
 								<width>150</width>
@@ -800,7 +800,7 @@
 								<texturenofocus>MenuItemNF.png</texturenofocus>
 								<onclick>Skin.SetString(MediaPanelTrans,DDDDDDDD)</onclick>
 								<selected>stringcompare(Skin.String(MediaPanelTrans),DDDDDDDD)</selected>
-							</control>								
+							</control>
 							<control type="radiobutton" id="147">
 								<description>Step 3</description>
 								<width>150</width>
@@ -812,7 +812,7 @@
 								<texturenofocus>MenuItemNF.png</texturenofocus>
 								<onclick>Skin.SetString(MediaPanelTrans,CCCCCCCC)</onclick>
 								<selected>stringcompare(Skin.String(MediaPanelTrans),CCCCCCCC)</selected>
-							</control>									
+							</control>
 							<control type="radiobutton" id="148">
 								<description>Step 4</description>
 								<width>150</width>
@@ -824,9 +824,9 @@
 								<texturenofocus>MenuItemNF.png</texturenofocus>
 								<onclick>Skin.SetString(MediaPanelTrans,99999999)</onclick>
 								<selected>stringcompare(Skin.String(MediaPanelTrans),99999999)</selected>
-							</control>								
+							</control>
 						</control>
-					</control>					
+					</control>
 					<control type="label" id="149">
 						<width>750</width>
 						<height>45</height>
@@ -2602,6 +2602,7 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(CustomBackgroundPath)]</thumb>
+								<property name="HiLiteItem">Global</property>
 								<visible>!Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 							<item id="2">
@@ -2610,6 +2611,7 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.1.FanArt)]</thumb>
+								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.1.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.1.Path)) + Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 							<item id="3">
@@ -2618,6 +2620,7 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.2.FanArt)]</thumb>
+								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.2.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.2.Path)) + Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 							<item id="4">
@@ -2626,6 +2629,7 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.3.FanArt)]</thumb>
+								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.3.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.3.Path)) + Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 							<item id="5">
@@ -2634,6 +2638,7 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.4.FanArt)]</thumb>
+								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.4.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.4.Path)) + Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 							<item id="6">
@@ -2642,6 +2647,7 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.5.FanArt)]</thumb>
+								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.5.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.5.Path)) + Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 							<item id="7">
@@ -2650,6 +2656,7 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.6.FanArt)]</thumb>
+								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.6.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.6.Path)) + Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 							<item id="8">
@@ -2658,6 +2665,7 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.7.FanArt)]</thumb>
+								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.7.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.7.Path)) + Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 							<item id="9">
@@ -2666,6 +2674,7 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.8.FanArt)]</thumb>
+								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.8.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.8.Path)) + Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 							<item id="10">
@@ -2674,6 +2683,7 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.9.FanArt)]</thumb>
+								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.9.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.9.Path)) + Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 							<item id="11">
@@ -2682,6 +2692,7 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.10.FanArt)]</thumb>
+								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.10.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.10.Path)) + Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 							<item id="12">
@@ -2690,6 +2701,7 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.11.FanArt)]</thumb>
+								<property name="HiLiteItem">PlayDisc</property>
 								<visible>Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 							<item id="13">
@@ -2698,6 +2710,7 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.12.FanArt)]</thumb>
+								<property name="HiLiteItem">Settings</property>
 								<visible>!Skin.HasSetting(HideHomeMenuSystem) + Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 							<item id="14">
@@ -2706,6 +2719,7 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(SearchBtnBackground)]</thumb>
+								<property name="HiLiteItem">MenuButton</property>
 								<visible>!Skin.HasSetting(HideHomeSearch) + Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 							<item id="15">
@@ -2714,6 +2728,7 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(PowerBtnBackground)]</thumb>
+								<property name="HiLiteItem">MenuButton</property>
 								<visible>!Skin.HasSetting(AutoHidePowerBtn) + Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 							<item id="16">
@@ -2722,6 +2737,7 @@
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(FavBtnBackground)]</thumb>
+								<property name="HiLiteItem">MenuButton</property>
 								<visible>Skin.HasSetting(IndividualBackgrounds)</visible>
 							</item>
 						</content>
@@ -2811,6 +2827,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetImage(HomeItem.1.FanArt)</onclick>
 								<onleft>502</onleft>
 								<onright>501</onright>
@@ -2830,6 +2847,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetPath(HomeItem.1.FanArt)</onclick>
 								<onleft>500</onleft>
 								<onright>502</onright>
@@ -2849,6 +2867,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetString(HomeItem.1.FanArt,$VAR[SetMenuOneBackground])</onclick>
 								<onleft>501</onleft>
 								<onright>500</onright>
@@ -2871,6 +2890,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetImage(HomeItem.2.FanArt)</onclick>
 								<onleft>502</onleft>
 								<onright>501</onright>
@@ -2890,6 +2910,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetPath(HomeItem.2.FanArt)</onclick>
 								<onleft>500</onleft>
 								<onright>502</onright>
@@ -2909,6 +2930,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetString(HomeItem.2.FanArt,$VAR[SetMenuTwoBackground])</onclick>
 								<onleft>501</onleft>
 								<onright>500</onright>
@@ -2931,6 +2953,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetImage(HomeItem.3.FanArt)</onclick>
 								<onleft>502</onleft>
 								<onright>501</onright>
@@ -2950,6 +2973,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetPath(HomeItem.3.FanArt)</onclick>
 								<onleft>500</onleft>
 								<onright>502</onright>
@@ -2969,6 +2993,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetString(HomeItem.3.FanArt,$VAR[SetMenuThreeBackground])</onclick>
 								<onleft>501</onleft>
 								<onright>500</onright>
@@ -2991,6 +3016,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetImage(HomeItem.4.FanArt)</onclick>
 								<onleft>502</onleft>
 								<onright>501</onright>
@@ -3010,6 +3036,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetPath(HomeItem.4.FanArt)</onclick>
 								<onleft>500</onleft>
 								<onright>502</onright>
@@ -3029,6 +3056,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetString(HomeItem.4.FanArt,$VAR[SetMenuFourBackground])</onclick>
 								<onleft>501</onleft>
 								<onright>500</onright>
@@ -3051,6 +3079,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetImage(HomeItem.5.FanArt)</onclick>
 								<onleft>502</onleft>
 								<onright>501</onright>
@@ -3070,6 +3099,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetPath(HomeItem.5.FanArt)</onclick>
 								<onleft>500</onleft>
 								<onright>502</onright>
@@ -3089,6 +3119,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetString(HomeItem.5.FanArt,$VAR[SetMenuFiveBackground])</onclick>
 								<onleft>501</onleft>
 								<onright>500</onright>
@@ -3111,6 +3142,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetImage(HomeItem.6.FanArt)</onclick>
 								<onleft>502</onleft>
 								<onright>501</onright>
@@ -3130,6 +3162,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetPath(HomeItem.6.FanArt)</onclick>
 								<onleft>500</onleft>
 								<onright>502</onright>
@@ -3149,6 +3182,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetString(HomeItem.6.FanArt,$VAR[SetMenuSixBackground])</onclick>
 								<onleft>501</onleft>
 								<onright>500</onright>
@@ -3171,6 +3205,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetImage(HomeItem.7.FanArt)</onclick>
 								<onleft>502</onleft>
 								<onright>501</onright>
@@ -3190,6 +3225,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetPath(HomeItem.7.FanArt)</onclick>
 								<onleft>500</onleft>
 								<onright>502</onright>
@@ -3209,6 +3245,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetString(HomeItem.7.FanArt,$VAR[SetMenuSevenBackground])</onclick>
 								<onleft>501</onleft>
 								<onright>500</onright>
@@ -3231,6 +3268,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetImage(HomeItem.8.FanArt)</onclick>
 								<onleft>502</onleft>
 								<onright>501</onright>
@@ -3250,6 +3288,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetPath(HomeItem.8.FanArt)</onclick>
 								<onleft>500</onleft>
 								<onright>502</onright>
@@ -3269,6 +3308,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetString(HomeItem.8.FanArt,$VAR[SetMenuEightBackground])</onclick>
 								<onleft>501</onleft>
 								<onright>500</onright>
@@ -3291,6 +3331,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetImage(HomeItem.9.FanArt)</onclick>
 								<onleft>502</onleft>
 								<onright>501</onright>
@@ -3310,6 +3351,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetPath(HomeItem.9.FanArt)</onclick>
 								<onleft>500</onleft>
 								<onright>502</onright>
@@ -3329,6 +3371,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetString(HomeItem.9.FanArt,$VAR[SetMenuNineBackground])</onclick>
 								<onleft>501</onleft>
 								<onright>500</onright>
@@ -3351,6 +3394,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetImage(HomeItem.10.FanArt)</onclick>
 								<onleft>502</onleft>
 								<onright>501</onright>
@@ -3370,6 +3414,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetPath(HomeItem.10.FanArt)</onclick>
 								<onleft>500</onleft>
 								<onright>502</onright>
@@ -3389,6 +3434,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetString(HomeItem.10.FanArt,$VAR[SetMenuTenBackground])</onclick>
 								<onleft>501</onleft>
 								<onright>500</onright>
@@ -3702,7 +3748,7 @@
 						<posy>160</posy>
 						<width>560</width>
 						<height>335</height>
-						<imagepath background="true">$INFO[Container(9005).ListItem.Icon]</imagepath>
+						<imagepath background="true">$VAR[HomeBackgroundPreview]</imagepath>
 						<timeperimage>6000</timeperimage>
 						<randomize>true</randomize>
 						<fadetime>500</fadetime>
@@ -3716,7 +3762,7 @@
 						<aligny>center</aligny>
 						<font>font11</font>
 						<haspath>yes</haspath>
-						<label fallback="571">$INFO[Container(9005).ListItem.Thumb]</label>
+						<label>$VAR[HomeBackgroundLabel]</label>
 						<textcolor>white</textcolor>
 					</control>
 				</control>

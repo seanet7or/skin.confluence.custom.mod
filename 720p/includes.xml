@@ -14,17 +14,8 @@
 	<include file="IncludesHomeMenuItems.xml" />
 	<include file="IncludesBackgroundBuilding.xml" />
 	<include file="IncludesGenreFlagging.xml" />
-	<include file="weather\10DayForecast.xml" />
-	<include file="weather\36HourForecast.xml" />
-	<include file="weather\WeekendForecast.xml" />
-	<include file="weather\HourlyForecast.xml" />
-	<include file="weather\MapAlerts.xml" />
 	<constant name="FanartCrossfadeTime">500</constant>
 	<constant name="IconCrossfadeTime">400</constant>
-	<include name="KBurnsAnimateFanart">
-		<animation effect="zoom" start="110" end="130" center="auto" time="16000" tween="cubic" easing="inout" pulse="true" condition="!Skin.HasSetting(NoAnimateFanArt)">Conditional</animation>
-		<animation effect="slide" start="-10,-10" end="20,20" time="8000" tween="cubic" easing="inout" pulse="true" condition="!Skin.HasSetting(NoAnimateFanArt)">Conditional</animation>
-	</include>
 	<include name="ClearButtonChoice">
 		<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Label)</onclick>
 		<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Path)</onclick>
@@ -42,8 +33,9 @@
 	</include>
 	<include name="DefaultInitialSetup">
 		<onload condition="System.HasAddon(script.favourites)">XBMC.RunScript(script.favourites)</onload>
-		<onload condition="IsEmpty(Skin.String(WeatherFanartDir))">Skin.SetString(WeatherFanartDir,special://skin/backgrounds/weather/)</onload>
 		<onload condition="!Skin.HasSetting(HideHomeSearch) + !System.HasAddon(script.globalsearch)">Skin.Setbool(HideHomeSearch)</onload>
+		<onload condition="IsEmpty(Skin.String(WeatherFanartDir))">Skin.SetString(WeatherFanartDir,special://skin/backgrounds/weather/)</onload>
+		<onload condition="!Skin.HasSetting(InitialSetUpRun)">Skin.SetBool(ShowWeatherFanart)</onload>
 		<onload condition="!Skin.HasSetting(InitialSetUpRun)">Skin.SetString(MPAACountryCert,$LOCALIZE[31701])</onload>
 		<onload condition="!Skin.HasSetting(InitialSetUpRun) + !IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Label,$LOCALIZE[8])</onload>
 		<onload condition="!Skin.HasSetting(InitialSetUpRun) + !IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Path,ActivateWindow(Weather))</onload>
@@ -1323,7 +1315,11 @@
 			</control>
 		</focusedlayout>
 	</include>
-	<include name="backgroundfade">
+	<include name="KBurnsAnimateFanart">
+		<animation effect="zoom" start="110" end="130" center="auto" time="16000" tween="cubic" easing="inout" pulse="true" condition="!Skin.HasSetting(NoAnimateFanArt)">Conditional</animation>
+		<animation effect="slide" start="-10,-10" end="20,20" time="8000" tween="cubic" easing="inout" pulse="true" condition="!Skin.HasSetting(NoAnimateFanArt)">Conditional</animation>
+	</include>
+	<include name="BackgroundFade">
 		<animation effect="fade" time="600">Visible</animation>
 		<animation effect="fade" time="600">Hidden</animation>
 	</include>
@@ -1341,6 +1337,12 @@
 	<include name="VisibleFadeEffect">
 		<animation effect="fade" time="300">Visible</animation>
 		<animation effect="fade" time="300">Hidden</animation>
+	</include>
+	<include name="Dimensions_Fullscreen">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
 	</include>
 	<include name="LiveCDCasesbackground">
 		<control type="group">

@@ -9,108 +9,76 @@
 	</coordinates>
 	<controls>
 		<control type="group" id="100">
-			<include>VisibleFadeEffect</include>
-			<!-- control type="image">
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>1280</width>
-				<height>720</height>
-				<texture background="true">$INFO[Container(111).ListItem.Property(Fanart_Image)]</texture>
-				<aspectratio>scale</aspectratio>
-				<fadetime>200</fadetime>
-				<animation effect="fade" time="200">Visible</animation>
-				<animation effect="fade" time="200">Hidden</animation>
-				<visible>Control.HasFocus(111)</visible>
-			</control>
+			<control type="group">
+				<visible>!Skin.HasSetting(HideBackGroundFanart) + !Skin.HasSetting(HideWidgetFanArt)</visible>
+				<include>VisibleFadeEffect</include>
+				<control type="image">
+					<include>Dimensions_Fullscreen</include>
+					<texture background="true">$INFO[Container(111).ListItem.Property(Fanart)]</texture>
+					<aspectratio>scale</aspectratio>
+					<fadetime>FanartCrossfadeTime</fadetime>
+					<include>VisibleFadeEffect</include>
+					<visible>Control.HasFocus(111)</visible>
+				</control>
+				<control type="image">
+					<include>Dimensions_Fullscreen</include>
+					<texture background="true">$INFO[Container(121).ListItem.Property(Fanart)]</texture>
+					<aspectratio>scale</aspectratio>
+					<fadetime>FanartCrossfadeTime</fadetime>
+					<include>VisibleFadeEffect</include>
+					<visible>Control.HasFocus(121)</visible>
+				</control>
+				<control type="image">
+					<include>Dimensions_Fullscreen</include>
+					<texture background="true">$INFO[Container(131).ListItem.Property(Fanart)]</texture>
+					<aspectratio>scale</aspectratio>
+					<fadetime>FanartCrossfadeTime</fadetime>
+					<include>VisibleFadeEffect</include>
+					<visible>Control.HasFocus(131)</visible>
+				</control>
+				<control type="image">
+					<include>Dimensions_Fullscreen</include>
+					<texture background="true">$INFO[Container(141).ListItem.Property(Fanart)]</texture>
+					<aspectratio>scale</aspectratio>
+					<fadetime>FanartCrossfadeTime</fadetime>
+					<include>VisibleFadeEffect</include>
+					<visible>Control.HasFocus(141)</visible>
+				</control>
+				<control type="image">
+					<include>Dimensions_Fullscreen</include>
+					<texture background="true">$INFO[Container(151).ListItem.Property(Fanart)]</texture>
+					<aspectratio>scale</aspectratio>
+					<fadetime>FanartCrossfadeTime</fadetime>
+					<include>VisibleFadeEffect</include>
+					<visible>Control.HasFocus(151)</visible>
+				</control>
+				<control type="image">
+					<include>Dimensions_Fullscreen</include>
+					<texture background="true">$INFO[Container(161).ListItem.Property(Fanart)]</texture>
+					<aspectratio>scale</aspectratio>
+					<fadetime>FanartCrossfadeTime</fadetime>
+					<include>VisibleFadeEffect</include>
+					<visible>Control.HasFocus(161)</visible>
+				</control>
+				<control type="image">
+					<include>Dimensions_Fullscreen</include>
+					<texture background="true">$INFO[Container(171).ListItem.Property(Fanart)]</texture>
+					<aspectratio>scale</aspectratio>
+					<fadetime>FanartCrossfadeTime</fadetime>
+					<include>VisibleFadeEffect</include>
+					<visible>Control.HasFocus(171)</visible>
+				</control>
+				<control type="image">
+					<include>Dimensions_Fullscreen</include>
+					<texture background="true">$INFO[Container(181).ListItem.Property(Fanart)]</texture>
+					<aspectratio>scale</aspectratio>
+					<fadetime>FanartCrossfadeTime</fadetime>
+					<include>VisibleFadeEffect</include>
+					<visible>Control.HasFocus(181)</visible>
+				</control>
+			</control>	
 			<control type="image">
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>1280</width>
-				<height>720</height>
-				<texture background="true">$INFO[Container(121).ListItem.Property(Fanart_Image)]</texture>
-				<aspectratio>scale</aspectratio>
-				<fadetime>200</fadetime>
-				<animation effect="fade" time="200">Visible</animation>
-				<animation effect="fade" time="200">Hidden</animation>
-				<visible>Control.HasFocus(121)</visible>
-			</control>
-			<control type="image">
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>1280</width>
-				<height>720</height>
-				<texture background="true">$INFO[Container(131).ListItem.Property(Fanart_Image)]</texture>
-				<aspectratio>scale</aspectratio>
-				<fadetime>200</fadetime>
-				<animation effect="fade" time="200">Visible</animation>
-				<animation effect="fade" time="200">Hidden</animation>
-				<visible>Control.HasFocus(131)</visible>
-			</control>
-			<control type="image">
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>1280</width>
-				<height>720</height>
-				<texture background="true">$INFO[Container(141).ListItem.Property(Fanart_Image)]</texture>
-				<aspectratio>scale</aspectratio>
-				<fadetime>200</fadetime>
-				<animation effect="fade" time="200">Visible</animation>
-				<animation effect="fade" time="200">Hidden</animation>
-				<visible>Control.HasFocus(141)</visible>
-			</control>
-			<control type="image">
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>1280</width>
-				<height>720</height>
-				<texture background="true">$INFO[Container(151).ListItem.Property(Fanart_Image)]</texture>
-				<aspectratio>scale</aspectratio>
-				<fadetime>200</fadetime>
-				<animation effect="fade" time="200">Visible</animation>
-				<animation effect="fade" time="200">Hidden</animation>
-				<visible>Control.HasFocus(151)</visible>
-			</control>
-			<control type="image">
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>1280</width>
-				<height>720</height>
-				<texture background="true">$INFO[Container(161).ListItem.Property(Fanart_Image)]</texture>
-				<aspectratio>scale</aspectratio>
-				<fadetime>200</fadetime>
-				<animation effect="fade" time="200">Visible</animation>
-				<animation effect="fade" time="200">Hidden</animation>
-				<visible>Control.HasFocus(161)</visible>
-			</control>
-			<control type="image">
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>1280</width>
-				<height>720</height>
-				<texture background="true">$INFO[Container(171).ListItem.Property(Fanart_Image)]</texture>
-				<aspectratio>scale</aspectratio>
-				<fadetime>200</fadetime>
-				<animation effect="fade" time="200">Visible</animation>
-				<animation effect="fade" time="200">Hidden</animation>
-				<visible>Control.HasFocus(171)</visible>
-			</control>
-			<control type="image">
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>1280</width>
-				<height>720</height>
-				<texture background="true">$INFO[Container(181).ListItem.Property(Fanart_Image)]</texture>
-				<aspectratio>scale</aspectratio>
-				<fadetime>200</fadetime>
-				<animation effect="fade" time="200">Visible</animation>
-				<animation effect="fade" time="200">Hidden</animation>
-				<visible>Control.HasFocus(181)</visible>
-			</control -->
-			<control type="image">
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>1280</width>
-				<height>720</height>
+				<include>Dimensions_Fullscreen</include>
 				<texture>black-back.png</texture>
 				<animation effect="fade" time="400">WindowOpen</animation>
 				<animation effect="fade" time="200">WindowClose</animation>
@@ -132,6 +100,7 @@
 					<width>1090</width>
 					<height>630</height>
 					<texture border="15">ContentPanel.png</texture>
+					<include condition="!IsEmpty(Skin.String(MediaPanelTrans))">TransparentEffect</include>
 				</control>
 				<control type="image">
 					<posx>5</posx>
@@ -139,6 +108,7 @@
 					<width>1090</width>
 					<height>630</height>
 					<texture border="15">ContentPanel.png</texture>
+					<include condition="!IsEmpty(Skin.String(MediaPanelTrans))">TransparentEffect</include>
 				</control>
 				<control type="button">
 					<description>Close Window button</description>
