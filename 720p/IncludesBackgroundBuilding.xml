@@ -2,21 +2,45 @@
 <includes>
 	<include name="CommonBackground">
 		<control type="group">
-			<!--control type="multiimage">
+			<control type="multiimage">
 				<include>Dimensions_Fullscreen</include>
 				<imagepath background="true">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
 				<timeperimage>8000</timeperimage>
 				<randomize>true</randomize>
 				<fadetime>1000</fadetime>
 				<visible>StringCompare(Container(9000).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(ShowWeatherFanart)</visible>
-			</control-->	
+			</control>	
 			<control type="multiimage">
 				<include>Dimensions_Fullscreen</include>
 				<imagepath background="true">$INFO[Container(9000).ListItem.Icon]</imagepath>
 				<timeperimage>8000</timeperimage>
 				<randomize>true</randomize>
 				<fadetime>1000</fadetime>
-				<!--visible>![StringCompare(Container(9000).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(ShowWeatherFanart)]</visible-->
+				<visible>![StringCompare(Container(9000).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(ShowWeatherFanart)]</visible>
+			</control>
+			<control type="image">
+				<description>Search Background Image</description>
+				<include>Dimensions_Fullscreen</include>
+				<aspectratio>scale</aspectratio>
+				<include>VisibleFadeEffect</include>
+				<texture>$INFO[Skin.String(SearchBtnBackground)]</texture>
+				<visible>Control.HasFocus(608) + !IsEmpty(Skin.String(SearchBtnBackground))</visible>
+			</control>
+			<control type="image">
+				<description>Power Button Background Image</description>
+				<include>Dimensions_Fullscreen</include>
+				<aspectratio>scale</aspectratio>
+				<include>VisibleFadeEffect</include>
+				<texture>$INFO[Skin.String(PowerBtnBackground)]</texture>
+				<visible>Control.HasFocus(20) + !IsEmpty(Skin.String(PowerBtnBackground))</visible>
+			</control>
+			<control type="image">
+				<description>Favourites Button Background Image</description>
+				<include>Dimensions_Fullscreen</include>
+				<aspectratio>scale</aspectratio>
+				<include>VisibleFadeEffect</include>
+				<texture>$INFO[Skin.String(FavBtnBackground)]</texture>
+				<visible>Control.HasFocus(21) + !IsEmpty(Skin.String(FavBtnBackground))</visible>
 			</control>
 			<visible>Window.IsVisible(home) + Skin.HasSetting(IndividualBackgrounds)</visible>
 		</control>
