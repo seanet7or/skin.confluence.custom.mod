@@ -6,6 +6,15 @@
 	<onload>SetProperty(MenuItemActive,Settings,Home)</onload>
 	<controls>
 		<include>CommonBackground</include>
+		<control type="image">
+			<posx>0</posx>
+			<posy>100r</posy>
+			<width>1280</width>
+			<height>100</height>
+			<aspectratio>stretch</aspectratio>
+			<include>VisibleFadeEffect</include>
+			<texture>floor.png</texture>
+		</control>
 		<control type="group">
 			<posx>90</posx>
 			<posy>30</posy>
@@ -22,7 +31,14 @@
 				<posy>5</posy>
 				<width>1090</width>
 				<height>630</height>
-				<texture border="15">ContentPanel.jpg</texture>
+				<texture border="15">ContentPanel.png</texture>
+			</control>
+			<control type="image">
+				<posx>5</posx>
+				<posy>625</posy>
+				<width>1090</width>
+				<height>64</height>
+				<texture border="15">ContentPanelMirror.png</texture>
 			</control>
 			<control type="button">
 				<description>Close Window button</description>
@@ -62,6 +78,13 @@
 				<pagecontrol>-</pagecontrol>
 				<scrolltime>300</scrolltime>
 				<itemlayout height="54" width="260">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>260</width>
+						<height>55</height>
+						<texture border="5">MenuItemNF.png</texture>
+					</control>
 					<control type="label">
 						<posx>250</posx>
 						<posy>0</posy>

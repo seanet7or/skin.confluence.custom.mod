@@ -4,8 +4,9 @@
 		<control type="group" id="9003">
 			<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
 			<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
-			<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
-			<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
+			<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+			<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
+			<ondown condition="Skin.HasSetting(LowerMainMenuBar)">9002</ondown>
 			<visible>!Window.IsVisible(Favourites)</visible>
 			<include>VisibleFadeEffect</include>
 			<animation effect="fade" time="300" delay="1000">WindowOpen</animation>
@@ -16,6 +17,19 @@
 				<visible>Library.HasContent(Movies)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies)</visible>
 				<include>VisibleFadeEffect</include>
+				<control type="label">
+					<description>Title label</description>
+					<posx>180</posx>
+					<posy>220</posy>
+					<height>20</height>
+					<width>540</width>
+					<label>$LOCALIZE[31175]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
 				<control type="list" id="8000">
 					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8000).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8000).NumItems,3)">conditional</animation>
@@ -29,23 +43,54 @@
 					<onright>8000</onright>
 					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
 					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
-					<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
-					<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="Skin.HasSetting(LowerMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>-</pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="180">
 						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 					</itemlayout>
 					<focusedlayout height="220" width="180">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
 						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
@@ -62,8 +107,22 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8000)</visible>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 						<control type="label">
 							<posx>90</posx>
@@ -112,6 +171,19 @@
 				<visible>Library.HasContent(TVShows)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes)</visible>
 				<include>VisibleFadeEffect</include>
+				<control type="label">
+					<description>Title label</description>
+					<posx>240</posx>
+					<posy>220</posy>
+					<height>20</height>
+					<width>480</width>
+					<label>$LOCALIZE[31178]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
 				<control type="list" id="8001">
 					<animation effect="slide" start="0,0" end="120,0" time="0" condition="StringCompare(Container(8001).NumItems,3)">conditional</animation>
 					<animation effect="slide" start="0,0" end="240,0" time="0" condition="StringCompare(Container(8001).NumItems,2)">conditional</animation>
@@ -124,8 +196,9 @@
 					<onright>8001</onright>
 					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
 					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
-					<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
-					<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="Skin.HasSetting(LowerMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>-</pagecontrol>
 					<scrolltime>200</scrolltime>
@@ -134,12 +207,21 @@
 					<movement>2</movement>
 					<itemlayout height="220" width="240">
 						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>240</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
 							<width>220</width>
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
 						</control>
@@ -150,11 +232,46 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.Thumb]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
 						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>168</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>185</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
 					</itemlayout>
 					<focusedlayout height="220" width="240">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>240</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
 						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
@@ -174,6 +291,7 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture>$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8001)</visible>
 							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
@@ -197,9 +315,36 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture>$INFO[ListItem.Thumb]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8001)</visible>
 							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>168</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>185</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 						<control type="label">
 							<posx>120</posx>
@@ -248,6 +393,19 @@
 				<visible>Library.HasContent(Music)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentAlbums)</visible>
 				<include>VisibleFadeEffect</include>
+				<control type="label">
+					<description>Title label</description>
+					<posx>160</posx>
+					<posy>220</posy>
+					<height>20</height>
+					<width>480</width>
+					<label>$LOCALIZE[31181]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
 				<control type="list" id="8002">
 					<animation effect="slide" start="0,0" end="100,0" time="0" condition="StringCompare(Container(8002).NumItems,3)">conditional</animation>
 					<animation effect="slide" start="0,0" end="200,0" time="0" condition="StringCompare(Container(8002).NumItems,2)">conditional</animation>
@@ -260,13 +418,22 @@
 					<onright>8002</onright>
 					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
 					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
-					<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
-					<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="Skin.HasSetting(LowerMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>-</pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="200">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>200</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
 						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
@@ -274,10 +441,45 @@
 							<height>155</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>170</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>190</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 					</itemlayout>
 					<focusedlayout height="220" width="200">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>200</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
 						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
@@ -296,8 +498,35 @@
 							<height>155</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8002)</visible>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>170</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>190</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 						<control type="label">
 							<posx>100</posx>
@@ -346,6 +575,19 @@
 				<visible>Library.HasContent(MusicVideos)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentConcerts)</visible>
 				<include>VisibleFadeEffect</include>
+				<control type="label">
+					<description>Title label</description>
+					<posx>180</posx>
+					<posy>220</posy>
+					<height>20</height>
+					<width>540</width>
+					<label>$LOCALIZE[31184]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
 				<control type="list" id="8003">
 					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8003).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8003).NumItems,3)">conditional</animation>
@@ -359,23 +601,54 @@
 					<onright>8003</onright>
 					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
 					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
-					<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
-					<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="Skin.HasSetting(LowerMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>-</pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="180">
 						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 					</itemlayout>
 					<focusedlayout height="220" width="180">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
 						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
@@ -392,8 +665,22 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8003)</visible>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 						<control type="label">
 							<posx>90</posx>
@@ -442,6 +729,19 @@
 				<visible>Library.HasContent(Movies)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies)</visible>
 				<include>VisibleFadeEffect</include>
+				<control type="label">
+					<description>Title label</description>
+					<posx>180</posx>
+					<posy>220</posy>
+					<height>20</height>
+					<width>540</width>
+					<label>$LOCALIZE[31176]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
 				<control type="list" id="8004">
 					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8004).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8004).NumItems,3)">conditional</animation>
@@ -455,23 +755,54 @@
 					<onright>8004</onright>
 					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
 					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
-					<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
-					<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="Skin.HasSetting(LowerMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>-</pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="180">
 						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 					</itemlayout>
 					<focusedlayout height="220" width="180">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
 						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
@@ -488,8 +819,22 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8004)</visible>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 						<control type="label">
 							<posx>90</posx>
@@ -538,6 +883,19 @@
 				<visible>Library.HasContent(TVShows)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes)</visible>
 				<include>VisibleFadeEffect</include>
+				<control type="label">
+					<description>Title label</description>
+					<posx>240</posx>
+					<posy>220</posy>
+					<height>20</height>
+					<width>480</width>
+					<label>$LOCALIZE[31179]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
 				<control type="list" id="8005">
 					<animation effect="slide" start="0,0" end="120,0" time="0" condition="StringCompare(Container(8005).NumItems,3)">conditional</animation>
 					<animation effect="slide" start="0,0" end="240,0" time="0" condition="StringCompare(Container(8005).NumItems,2)">conditional</animation>
@@ -550,8 +908,9 @@
 					<onright>8005</onright>
 					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
 					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
-					<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
-					<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="Skin.HasSetting(LowerMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>-</pagecontrol>
 					<scrolltime>200</scrolltime>
@@ -560,12 +919,21 @@
 					<movement>2</movement>
 					<itemlayout height="220" width="240">
 						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>240</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
 							<width>220</width>
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
 						</control>
@@ -576,11 +944,46 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.Thumb]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
 						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>168</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>185</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
 					</itemlayout>
 					<focusedlayout height="220" width="240">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>240</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
 						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
@@ -600,6 +1003,7 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture>$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8005)</visible>
 							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
@@ -623,9 +1027,36 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture>$INFO[ListItem.Thumb]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8005)</visible>
 							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>168</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>185</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 						<control type="label">
 							<posx>120</posx>
@@ -674,6 +1105,19 @@
 				<visible>Library.HasContent(Music)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomAlbums)</visible>
 				<include>VisibleFadeEffect</include>
+				<control type="label">
+					<description>Title label</description>
+					<posx>160</posx>
+					<posy>220</posy>
+					<height>20</height>
+					<width>480</width>
+					<label>$LOCALIZE[31182]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
 				<control type="list" id="8006">
 					<animation effect="slide" start="0,0" end="100,0" time="0" condition="StringCompare(Container(8006).NumItems,3)">conditional</animation>
 					<animation effect="slide" start="0,0" end="200,0" time="0" condition="StringCompare(Container(8006).NumItems,2)">conditional</animation>
@@ -686,13 +1130,22 @@
 					<onright>8006</onright>
 					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
 					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
-					<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
-					<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="Skin.HasSetting(LowerMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>-</pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="200">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>200</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
 						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
@@ -700,10 +1153,45 @@
 							<height>155</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>170</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>190</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 					</itemlayout>
 					<focusedlayout height="220" width="200">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>200</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
 						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
@@ -722,8 +1210,35 @@
 							<height>155</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8006)</visible>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>170</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>190</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 						<control type="label">
 							<posx>100</posx>
@@ -772,6 +1287,19 @@
 				<visible>Library.HasContent(MusicVideos)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomConcerts)</visible>
 				<include>VisibleFadeEffect</include>
+				<control type="label">
+					<description>Title label</description>
+					<posx>180</posx>
+					<posy>220</posy>
+					<height>20</height>
+					<width>540</width>
+					<label>$LOCALIZE[31185]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
 				<control type="list" id="8007">
 					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8007).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8007).NumItems,3)">conditional</animation>
@@ -785,23 +1313,54 @@
 					<onright>8007</onright>
 					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
 					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
-					<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
-					<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="Skin.HasSetting(LowerMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>-</pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="180">
 						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 					</itemlayout>
 					<focusedlayout height="220" width="180">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
 						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
@@ -818,8 +1377,22 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8007)</visible>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 						<control type="label">
 							<posx>90</posx>
@@ -868,6 +1441,19 @@
 				<visible>Library.HasContent(Movies)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies)</visible>
 				<include>VisibleFadeEffect</include>
+				<control type="label">
+					<description>Title label</description>
+					<posx>180</posx>
+					<posy>220</posy>
+					<height>20</height>
+					<width>540</width>
+					<label>$LOCALIZE[31177]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
 				<control type="list" id="8008">
 					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8008).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8008).NumItems,3)">conditional</animation>
@@ -881,23 +1467,54 @@
 					<onright>8008</onright>
 					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
 					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
-					<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
-					<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="Skin.HasSetting(LowerMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>-</pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="180">
 						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 					</itemlayout>
 					<focusedlayout height="220" width="180">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
 						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
@@ -914,8 +1531,22 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8008)</visible>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 						<control type="label">
 							<posx>90</posx>
@@ -964,6 +1595,19 @@
 				<visible>Library.HasContent(TVShows)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes)</visible>
 				<include>VisibleFadeEffect</include>
+				<control type="label">
+					<description>Title label</description>
+					<posx>240</posx>
+					<posy>220</posy>
+					<height>20</height>
+					<width>480</width>
+					<label>$LOCALIZE[31180]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
 				<control type="list" id="8009">
 					<animation effect="slide" start="0,0" end="120,0" time="0" condition="StringCompare(Container(8009).NumItems,3)">conditional</animation>
 					<animation effect="slide" start="0,0" end="240,0" time="0" condition="StringCompare(Container(8009).NumItems,2)">conditional</animation>
@@ -976,8 +1620,9 @@
 					<onright>8009</onright>
 					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
 					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
-					<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
-					<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="Skin.HasSetting(LowerMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>-</pagecontrol>
 					<scrolltime>200</scrolltime>
@@ -986,12 +1631,21 @@
 					<movement>2</movement>
 					<itemlayout height="220" width="240">
 						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>240</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
 							<width>220</width>
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
 						</control>
@@ -1002,11 +1656,46 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.Thumb]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
 						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>168</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>185</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
 					</itemlayout>
 					<focusedlayout height="220" width="240">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>240</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
 						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
@@ -1026,6 +1715,7 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture>$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8009)</visible>
 							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
@@ -1049,9 +1739,36 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture>$INFO[ListItem.Thumb]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8009)</visible>
 							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>168</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>185</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 						<control type="label">
 							<posx>120</posx>
@@ -1100,6 +1817,19 @@
 				<visible>Library.HasContent(Music)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedAlbums)</visible>
 				<include>VisibleFadeEffect</include>
+				<control type="label">
+					<description>Title label</description>
+					<posx>160</posx>
+					<posy>220</posy>
+					<height>20</height>
+					<width>480</width>
+					<label>$LOCALIZE[31183]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
 				<control type="list" id="8010">
 					<animation effect="slide" start="0,0" end="100,0" time="0" condition="StringCompare(Container(8010).NumItems,3)">conditional</animation>
 					<animation effect="slide" start="0,0" end="200,0" time="0" condition="StringCompare(Container(8010).NumItems,2)">conditional</animation>
@@ -1112,13 +1842,22 @@
 					<onright>8010</onright>
 					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
 					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
-					<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
-					<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="Skin.HasSetting(LowerMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>-</pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="200">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>200</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
 						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
@@ -1126,10 +1865,45 @@
 							<height>155</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>170</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>190</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 					</itemlayout>
 					<focusedlayout height="220" width="200">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>200</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
 						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
@@ -1148,8 +1922,35 @@
 							<height>155</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8010)</visible>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>170</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>190</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 						<control type="label">
 							<posx>100</posx>
@@ -1198,6 +1999,19 @@
 				<visible>Library.HasContent(MusicVideos)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedConcerts)</visible>
 				<include>VisibleFadeEffect</include>
+				<control type="label">
+					<description>Title label</description>
+					<posx>180</posx>
+					<posy>220</posy>
+					<height>20</height>
+					<width>540</width>
+					<label>$LOCALIZE[31186]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
 				<control type="list" id="8011">
 					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8011).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8011).NumItems,3)">conditional</animation>
@@ -1211,23 +2025,54 @@
 					<onright>8011</onright>
 					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
 					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
-					<ondown condition="!Skin.HasSetting(HideHomeSearch)">608</ondown>
-					<ondown condition="Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="Skin.HasSetting(LowerMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>-</pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="180">
 						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 					</itemlayout>
 					<focusedlayout height="220" width="180">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
 						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
@@ -1244,8 +2089,22 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8011)</visible>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 						<control type="label">
 							<posx>90</posx>

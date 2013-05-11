@@ -4,6 +4,15 @@
 	<allowoverlay>no</allowoverlay>
 	<controls>
 		<include>CommonBackground</include>
+		<control type="image">
+			<posx>0</posx>
+			<posy>100r</posy>
+			<width>1280</width>
+			<height>100</height>
+			<aspectratio>stretch</aspectratio>
+			<include>VisibleFadeEffect</include>
+			<texture>floor.png</texture>
+		</control>
 		<control type="group">
 			<posx>90</posx>
 			<posy>30</posy>
@@ -20,7 +29,14 @@
 				<posy>5</posy>
 				<width>1090</width>
 				<height>630</height>
-				<texture border="15">ContentPanel.jpg</texture>
+				<texture border="15">ContentPanel.png</texture>
+			</control>
+			<control type="image">
+				<posx>5</posx>
+				<posy>625</posy>
+				<width>1090</width>
+				<height>64</height>
+				<texture border="15">ContentPanelMirror.png</texture>
 			</control>
 			<control type="button">
 				<description>Close Window button</description>
@@ -67,7 +83,7 @@
 					<textcolor>grey2</textcolor>
 					<focusedcolor>white</focusedcolor>
 					<texturefocus border="5">MenuItemFO.png</texturefocus>
-					<texturenofocus border="5">-</texturenofocus>
+					<texturenofocus border="5">MenuItemNF.png</texturenofocus>
 					<pulseonselect>false</pulseonselect>
 					<label>20037</label>
 				</control>
@@ -82,7 +98,7 @@
 					<textcolor>grey2</textcolor>
 					<focusedcolor>white</focusedcolor>
 					<texturefocus border="5">MenuItemFO.png</texturefocus>
-					<texturenofocus border="5">-</texturenofocus>
+					<texturenofocus border="5">MenuItemNF.png</texturenofocus>
 					<pulseonselect>false</pulseonselect>
 					<label>13277</label>
 				</control>
@@ -97,7 +113,7 @@
 					<textcolor>grey2</textcolor>
 					<focusedcolor>white</focusedcolor>
 					<texturefocus border="5">MenuItemFO.png</texturefocus>
-					<texturenofocus border="5">-</texturenofocus>
+					<texturenofocus border="5">MenuItemNF.png</texturenofocus>
 					<pulseonselect>false</pulseonselect>
 					<label>13279</label>
 				</control>
@@ -112,7 +128,7 @@
 					<textcolor>grey2</textcolor>
 					<focusedcolor>white</focusedcolor>
 					<texturefocus border="5">MenuItemFO.png</texturefocus>
-					<texturenofocus border="5">-</texturenofocus>
+					<texturenofocus border="5">MenuItemNF.png</texturenofocus>
 					<pulseonselect>false</pulseonselect>
 					<label>13280</label>
 				</control>
@@ -127,7 +143,7 @@
 					<textcolor>grey2</textcolor>
 					<focusedcolor>white</focusedcolor>
 					<texturefocus border="5">MenuItemFO.png</texturefocus>
-					<texturenofocus border="5">-</texturenofocus>
+					<texturenofocus border="5">MenuItemNF.png</texturenofocus>
 					<pulseonselect>false</pulseonselect>
 					<label>13281</label>
 				</control>
@@ -142,7 +158,7 @@
 					<textcolor>grey2</textcolor>
 					<focusedcolor>white</focusedcolor>
 					<texturefocus border="5">MenuItemFO.png</texturefocus>
-					<texturenofocus border="5">-</texturenofocus>
+					<texturenofocus border="5">MenuItemNF.png</texturenofocus>
 					<pulseonselect>false</pulseonselect>
 					<label>19191</label>
 				</control>

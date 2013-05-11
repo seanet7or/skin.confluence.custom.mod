@@ -1,13 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
 	<include name="CommonBackground">
-		<control type="multiimage">
-			<include>Dimensions_Fullscreen</include>
-			<imagepath background="true">$INFO[Container(9000).ListItem.Icon]</imagepath>
-			<timeperimage>8000</timeperimage>
-			<randomize>true</randomize>
-			<fadetime>1000</fadetime>
-			<visible>Window.IsVisible(home) + !Skin.HasSetting(UseCustomBackground)</visible>
+		<control type="group">
+			<control type="multiimage">
+				<include>Dimensions_Fullscreen</include>
+				<imagepath background="true">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
+				<timeperimage>8000</timeperimage>
+				<randomize>true</randomize>
+				<fadetime>1000</fadetime>
+				<visible>StringCompare(Container(9000).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(ShowWeatherFanart)</visible>
+			</control>
+			<control type="multiimage">
+				<include>Dimensions_Fullscreen</include>
+				<imagepath background="true">$INFO[Container(9000).ListItem.Icon]</imagepath>
+				<timeperimage>8000</timeperimage>
+				<randomize>true</randomize>
+				<fadetime>1000</fadetime>
+				<visible>![StringCompare(Container(9000).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(ShowWeatherFanart)]</visible>
+			</control>
+			<control type="image">
+				<description>Search Background Image</description>
+				<include>Dimensions_Fullscreen</include>
+				<aspectratio>scale</aspectratio>
+				<include>VisibleFadeEffect</include>
+				<texture>$INFO[Skin.String(SearchBtnBackground)]</texture>
+				<visible>Control.HasFocus(608) + !IsEmpty(Skin.String(SearchBtnBackground))</visible>
+			</control>
+			<control type="image">
+				<description>Power Button Background Image</description>
+				<include>Dimensions_Fullscreen</include>
+				<aspectratio>scale</aspectratio>
+				<include>VisibleFadeEffect</include>
+				<texture>$INFO[Skin.String(PowerBtnBackground)]</texture>
+				<visible>Control.HasFocus(20) + !IsEmpty(Skin.String(PowerBtnBackground))</visible>
+			</control>
+			<control type="image">
+				<description>Favourites Button Background Image</description>
+				<include>Dimensions_Fullscreen</include>
+				<aspectratio>scale</aspectratio>
+				<include>VisibleFadeEffect</include>
+				<texture>$INFO[Skin.String(FavBtnBackground)]</texture>
+				<visible>Control.HasFocus(21) + !IsEmpty(Skin.String(FavBtnBackground))</visible>
+			</control>
+			<visible>Window.IsVisible(home) + Skin.HasSetting(IndividualBackgrounds)</visible>
 		</control>
 		<control type="image">
 			<description>Default Global Background Image</description>
@@ -15,7 +50,7 @@
 			<aspectratio>scale</aspectratio>
 			<include>VisibleFadeEffect</include>
 			<texture>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</texture>
-			<visible>Skin.HasSetting(UseCustomBackground) + IsEmpty(Skin.String(CustomBackgroundPath))</visible>
+			<visible>!Skin.HasSetting(IndividualBackgrounds) + IsEmpty(Skin.String(CustomBackgroundPath))</visible>
 		</control>
 		<control type="multiimage">
 			<description>User Set Global Background Image</description>
@@ -25,7 +60,7 @@
 			<randomize>true</randomize>
 			<fadetime>1000</fadetime>
 			<visible>Window.IsVisible(home)</visible>
-			<visible>Skin.HasSetting(UseCustomBackground) + !IsEmpty(Skin.String(CustomBackgroundPath))</visible>
+			<visible>!Skin.HasSetting(IndividualBackgrounds) + !IsEmpty(Skin.String(CustomBackgroundPath))</visible>
 		</control>
 		<control type="group">
 			<visible>!Skin.HasSetting(HideBackGroundFanart) + !Skin.HasSetting(HideWidgetFanArt)</visible>
@@ -34,7 +69,7 @@
 				<include>Dimensions_Fullscreen</include>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[Container(8000).ListItem.Thumb]</texture>
-				<include>backgroundfade</include>
+				<include>BackgroundFade</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<include>Window_OpenClose_Animation</include>
 				<visible>Control.HasFocus(8000)</visible>
@@ -44,7 +79,7 @@
 				<include>Dimensions_Fullscreen</include>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[Container(8001).ListItem.Thumb]</texture>
-				<include>backgroundfade</include>
+				<include>BackgroundFade</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<include>Window_OpenClose_Animation</include>
 				<visible>Control.HasFocus(8001)</visible>
@@ -54,7 +89,7 @@
 				<include>Dimensions_Fullscreen</include>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[Container(8002).ListItem.Thumb]</texture>
-				<include>backgroundfade</include>
+				<include>BackgroundFade</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<include>Window_OpenClose_Animation</include>
 				<visible>Control.HasFocus(8002)</visible>
@@ -64,7 +99,7 @@
 				<include>Dimensions_Fullscreen</include>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[Container(8003).ListItem.Thumb]</texture>
-				<include>backgroundfade</include>
+				<include>BackgroundFade</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<include>Window_OpenClose_Animation</include>
 				<visible>Control.HasFocus(8003)</visible>
@@ -74,7 +109,7 @@
 				<include>Dimensions_Fullscreen</include>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[Container(8004).ListItem.Thumb]</texture>
-				<include>backgroundfade</include>
+				<include>BackgroundFade</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<include>Window_OpenClose_Animation</include>
 				<visible>Control.HasFocus(8004)</visible>
@@ -84,7 +119,7 @@
 				<include>Dimensions_Fullscreen</include>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[Container(8005).ListItem.Thumb]</texture>
-				<include>backgroundfade</include>
+				<include>BackgroundFade</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<include>Window_OpenClose_Animation</include>
 				<visible>Control.HasFocus(8005)</visible>
@@ -94,7 +129,7 @@
 				<include>Dimensions_Fullscreen</include>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[Container(8006).ListItem.Thumb]</texture>
-				<include>backgroundfade</include>
+				<include>BackgroundFade</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<include>Window_OpenClose_Animation</include>
 				<visible>Control.HasFocus(8006)</visible>
@@ -104,7 +139,7 @@
 				<include>Dimensions_Fullscreen</include>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[Container(8007).ListItem.Thumb]</texture>
-				<include>backgroundfade</include>
+				<include>BackgroundFade</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<include>Window_OpenClose_Animation</include>
 				<visible>Control.HasFocus(8007)</visible>
@@ -114,7 +149,7 @@
 				<include>Dimensions_Fullscreen</include>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[Container(8008).ListItem.Thumb]</texture>
-				<include>backgroundfade</include>
+				<include>BackgroundFade</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<include>Window_OpenClose_Animation</include>
 				<visible>Control.HasFocus(8008)</visible>
@@ -124,7 +159,7 @@
 				<include>Dimensions_Fullscreen</include>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[Container(8009).ListItem.Thumb]</texture>
-				<include>backgroundfade</include>
+				<include>BackgroundFade</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<include>Window_OpenClose_Animation</include>
 				<visible>Control.HasFocus(8009)</visible>
@@ -134,7 +169,7 @@
 				<include>Dimensions_Fullscreen</include>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[Container(8010).ListItem.Thumb]</texture>
-				<include>backgroundfade</include>
+				<include>BackgroundFade</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<include>Window_OpenClose_Animation</include>
 				<visible>Control.HasFocus(8010)</visible>
@@ -144,7 +179,7 @@
 				<include>Dimensions_Fullscreen</include>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[Container(8011).ListItem.Thumb]</texture>
-				<include>backgroundfade</include>
+				<include>BackgroundFade</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<include>Window_OpenClose_Animation</include>
 				<visible>Control.HasFocus(8011)</visible>
@@ -165,7 +200,7 @@
 				<include>Dimensions_Fullscreen</include>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
-				<include>backgroundfade</include>
+				<include>BackgroundFade</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<include>Window_OpenClose_Animation</include>
 				<visible>!IsEmpty(ListItem.Property(Fanart_Image))</visible>
@@ -199,8 +234,26 @@
 			<include>Dimensions_Fullscreen</include>
 			<visible>Player.HasVideo + !Skin.HasSetting(ShowBackgroundVideo) + ![Window.IsVisible(PVR) + [Control.IsVisible(11) | Control.IsVisible(12)]]</visible>
 		</control>
+		<control type="image">
+			<posx>0</posx>
+			<posy>-40</posy>
+			<width>1280</width>
+			<height>120</height>
+			<texture flipy="true">HomeNowPlayingBack.png</texture>
+			<visible>[Player.HasVideo + !Skin.HasSetting(ShowBackgroundVideo)] | [Player.HasAudio + ![Skin.HasSetting(ShowBackgroundVis) | SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]] | [!Skin.HasSetting(HideBackGroundFanart) + !IsEmpty(ListItem.Property(Fanart_Image))]</visible>
+			<include>VisibleFadeEffect</include>
+		</control>
 	</include>
 	<include name="ContentPanelBackgrounds">
+		<control type="image">
+			<posx>0</posx>
+			<posy>100r</posy>
+			<width>1280</width>
+			<height>100</height>
+			<aspectratio>stretch</aspectratio>
+			<include>VisibleFadeEffect</include>
+			<texture>floor.png</texture>
+		</control>
 		<control type="group">
 			<include>Window_OpenClose_Animation</include>
 			<control type="group">
@@ -211,8 +264,15 @@
 					<posy>60</posy>
 					<width>750</width>
 					<height>600</height>
-					<texture border="15">ContentPanel.jpg</texture>
+					<texture border="15">ContentPanel.png</texture>
 					<include condition="!IsEmpty(Skin.String(MediaPanelTrans))">TransparentEffect</include>
+				</control>
+				<control type="image">
+					<posx>50</posx>
+					<posy>652</posy>
+					<width>750</width>
+					<height>64</height>
+					<texture border="15">ContentPanelMirror.png</texture>
 				</control>
 			</control>
 			<control type="group">
@@ -223,16 +283,30 @@
 					<posy>60</posy>
 					<width>640</width>
 					<height>600</height>
-					<texture border="15">ContentPanel.jpg</texture>
+					<texture border="15">ContentPanel.png</texture>
 					<include condition="!IsEmpty(Skin.String(MediaPanelTrans))">TransparentEffect</include>
+				</control>
+				<control type="image">
+					<posx>50</posx>
+					<posy>652</posy>
+					<width>640</width>
+					<height>64</height>
+					<texture border="15">ContentPanelMirror.png</texture>
 				</control>
 				<control type="image">
 					<posx>700</posx>
 					<posy>60</posy>
 					<width>530</width>
 					<height>600</height>
-					<texture border="15">ContentPanel.jpg</texture>
+					<texture border="15">ContentPanel.png</texture>
 					<include condition="!IsEmpty(Skin.String(MediaPanelTrans))">TransparentEffect</include>
+				</control>
+				<control type="image">
+					<posx>700</posx>
+					<posy>652</posy>
+					<width>530</width>
+					<height>64</height>
+					<texture border="15">ContentPanelMirror.png</texture>
 				</control>
 			</control>
 			<control type="group">
@@ -243,16 +317,30 @@
 					<posy>60</posy>
 					<width>840</width>
 					<height>600</height>
-					<texture border="15">ContentPanel.jpg</texture>
+					<texture border="15">ContentPanel.png</texture>
 					<include condition="!IsEmpty(Skin.String(MediaPanelTrans))">TransparentEffect</include>
+				</control>
+				<control type="image">
+					<posx>50</posx>
+					<posy>652</posy>
+					<width>840</width>
+					<height>64</height>
+					<texture border="15">ContentPanelMirror.png</texture>
 				</control>
 				<control type="image">
 					<posx>900</posx>
 					<posy>60</posy>
 					<width>330</width>
 					<height>600</height>
-					<texture border="15">ContentPanel.jpg</texture>
+					<texture border="15">ContentPanel.png</texture>
 					<include condition="!IsEmpty(Skin.String(MediaPanelTrans))">TransparentEffect</include>
+				</control>
+				<control type="image">
+					<posx>900</posx>
+					<posy>652</posy>
+					<width>330</width>
+					<height>64</height>
+					<texture border="15">ContentPanelMirror.png</texture>
 				</control>
 			</control>
 			<control type="group">
@@ -263,8 +351,15 @@
 					<posy>50</posy>
 					<width>1180</width>
 					<height>610</height>
-					<texture border="15">ContentPanel.jpg</texture>
+					<texture border="15">ContentPanel.png</texture>
 					<include condition="!IsEmpty(Skin.String(MediaPanelTrans))">TransparentEffect</include>
+				</control>
+				<control type="image">
+					<posx>50</posx>
+					<posy>652</posy>
+					<width>1180</width>
+					<height>64</height>
+					<texture border="15">ContentPanelMirror.png</texture>
 				</control>
 			</control>
 			<control type="group">
@@ -275,16 +370,30 @@
 					<posy>230</posy>
 					<width>640</width>
 					<height>430</height>
-					<texture border="15">ContentPanel.jpg</texture>
+					<texture border="15">ContentPanel.png</texture>
 					<include condition="!IsEmpty(Skin.String(MediaPanelTrans))">TransparentEffect</include>
+				</control>
+				<control type="image">
+					<posx>50</posx>
+					<posy>652</posy>
+					<width>640</width>
+					<height>64</height>
+					<texture border="15">ContentPanelMirror.png</texture>
 				</control>
 				<control type="image">
 					<posx>700</posx>
 					<posy>230</posy>
 					<width>550</width>
 					<height>430</height>
-					<texture border="15">ContentPanel.jpg</texture>
+					<texture border="15">ContentPanel.png</texture>
 					<include condition="!IsEmpty(Skin.String(MediaPanelTrans))">TransparentEffect</include>
+				</control>
+				<control type="image">
+					<posx>700</posx>
+					<posy>652</posy>
+					<width>550</width>
+					<height>64</height>
+					<texture border="15">ContentPanelMirror.png</texture>
 				</control>
 			</control>
 			<control type="group">
@@ -295,8 +404,15 @@
 					<posy>60</posy>
 					<width>1130</width>
 					<height>600</height>
-					<texture border="15">ContentPanel.jpg</texture>
+					<texture border="15">ContentPanel.png</texture>
 					<include condition="!IsEmpty(Skin.String(MediaPanelTrans))">TransparentEffect</include>
+				</control>
+				<control type="image">
+					<posx>75</posx>
+					<posy>652</posy>
+					<width>1130</width>
+					<height>64</height>
+					<texture border="15">ContentPanelMirror.png</texture>
 				</control>
 			</control>
 			<control type="group">
@@ -304,19 +420,33 @@
 				<visible>Control.IsVisible(514)</visible>
 				<control type="image">
 					<posx>50</posx>
-					<posy>-15</posy>
-					<width>202</width>
-					<height>750</height>
-					<texture border="15">ContentPanel.jpg</texture>
+					<posy>60</posy>
+					<width>490</width>
+					<height>600</height>
+					<texture border="15">ContentPanel.png</texture>
 					<include condition="!IsEmpty(Skin.String(MediaPanelTrans))">TransparentEffect</include>
 				</control>
 				<control type="image">
-					<posx>262</posx>
+					<posx>50</posx>
+					<posy>652</posy>
+					<width>490</width>
+					<height>64</height>
+					<texture border="15">ContentPanelMirror.png</texture>
+				</control>
+				<control type="image">
+					<posx>550</posx>
 					<posy>60</posy>
-					<width>968</width>
-					<height>640</height>
-					<texture border="15">ContentPanel.jpg</texture>
+					<width>680</width>
+					<height>600</height>
+					<texture border="15">ContentPanel.png</texture>
 					<include condition="!IsEmpty(Skin.String(MediaPanelTrans))">TransparentEffect</include>
+				</control>
+				<control type="image">
+					<posx>550</posx>
+					<posy>652</posy>
+					<width>680</width>
+					<height>64</height>
+					<texture border="15">ContentPanelMirror.png</texture>
 				</control>
 			</control>
 			<control type="group">
@@ -327,21 +457,44 @@
 					<posy>60</posy>
 					<width>400</width>
 					<height>600</height>
-					<texture border="15">ContentPanel.jpg</texture>
+					<texture border="15">ContentPanel.png</texture>
 					<include condition="!IsEmpty(Skin.String(MediaPanelTrans))">TransparentEffect</include>
+				</control>
+				<control type="image">
+					<posx>50</posx>
+					<posy>652</posy>
+					<width>400</width>
+					<height>64</height>
+					<texture border="15">ContentPanelMirror.png</texture>
 				</control>
 				<control type="image">
 					<posx>460</posx>
 					<posy>60</posy>
 					<width>770</width>
 					<height>600</height>
-					<texture border="15">ContentPanel.jpg</texture>
+					<texture border="15">ContentPanel.png</texture>
 					<include condition="!IsEmpty(Skin.String(MediaPanelTrans))">TransparentEffect</include>
+				</control>
+				<control type="image">
+					<posx>460</posx>
+					<posy>652</posy>
+					<width>770</width>
+					<height>64</height>
+					<texture border="15">ContentPanelMirror.png</texture>
 				</control>
 			</control>
 		</control>
 	</include>
 	<include name="ContentPanelBackgroundsPVR">
+		<control type="image">
+			<posx>0</posx>
+			<posy>100r</posy>
+			<width>1280</width>
+			<height>100</height>
+			<aspectratio>stretch</aspectratio>
+			<include>VisibleFadeEffect</include>
+			<texture>floor.png</texture>
+		</control>
 		<control type="group">
 			<include>Window_OpenClose_Animation</include>
 			<control type="group">
@@ -352,7 +505,14 @@
 					<posy>60</posy>
 					<width>1170</width>
 					<height>600</height>
-					<texture border="15">ContentPanel.jpg</texture>
+					<texture border="15">ContentPanel.png</texture>
+				</control>
+				<control type="image">
+					<posx>55</posx>
+					<posy>652</posy>
+					<width>1170</width>
+					<height>64</height>
+					<texture border="15">ContentPanelMirror.png</texture>
 				</control>
 			</control>
 			<control type="group">
@@ -363,14 +523,28 @@
 					<posy>60</posy>
 					<width>450</width>
 					<height>600</height>
-					<texture border="15">ContentPanel.jpg</texture>
+					<texture border="15">ContentPanel.png</texture>
+				</control>
+				<control type="image">
+					<posx>50</posx>
+					<posy>652</posy>
+					<width>450</width>
+					<height>64</height>
+					<texture border="15">ContentPanelMirror.png</texture>
 				</control>
 				<control type="image">
 					<posx>510</posx>
 					<posy>60</posy>
 					<width>730</width>
 					<height>600</height>
-					<texture border="15">ContentPanel.jpg</texture>
+					<texture border="15">ContentPanel.png</texture>
+				</control>
+				<control type="image">
+					<posx>510</posx>
+					<posy>652</posy>
+					<width>730</width>
+					<height>64</height>
+					<texture border="15">ContentPanelMirror.png</texture>
 				</control>
 			</control>
 			<control type="group">
@@ -381,14 +555,28 @@
 					<posy>60</posy>
 					<width>840</width>
 					<height>600</height>
-					<texture border="15">ContentPanel.jpg</texture>
+					<texture border="15">ContentPanel.png</texture>
+				</control>
+				<control type="image">
+					<posx>50</posx>
+					<posy>652</posy>
+					<width>840</width>
+					<height>64</height>
+					<texture border="15">ContentPanelMirror.png</texture>
 				</control>
 				<control type="image">
 					<posx>900</posx>
 					<posy>60</posy>
 					<width>330</width>
 					<height>600</height>
-					<texture border="15">ContentPanel.jpg</texture>
+					<texture border="15">ContentPanel.png</texture>
+				</control>
+				<control type="image">
+					<posx>900</posx>
+					<posy>652</posy>
+					<width>330</width>
+					<height>64</height>
+					<texture border="15">ContentPanelMirror.png</texture>
 				</control>
 			</control>
 		</control>
