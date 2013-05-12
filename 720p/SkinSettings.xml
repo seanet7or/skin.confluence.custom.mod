@@ -654,6 +654,18 @@
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
+						<label>$LOCALIZE[31126]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(OSDInfoLogo)</onclick>
+						<selected>Skin.HasSetting(OSDInfoLogo)</selected>
+					</control>					
+					<control type="radiobutton" id="134">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
 						<label>$LOCALIZE[31083]</label>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
@@ -662,7 +674,7 @@
 						<onclick>Skin.ToggleSetting(HideSeekBarOSD)</onclick>
 						<selected>!Skin.HasSetting(HideSeekBarOSD)</selected>
 					</control>
-					<control type="label" id="134">
+					<control type="label" id="135">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -672,7 +684,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="135">
+					<control type="radiobutton" id="136">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -684,7 +696,7 @@
 						<onclick>Skin.ToggleSetting(HideNextSongsInfo)</onclick>
 						<selected>!Skin.HasSetting(HideNextSongsInfo)</selected>
 					</control>
-					<control type="radiobutton" id="136">
+					<control type="radiobutton" id="137">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -696,7 +708,7 @@
 						<onclick>Skin.ToggleSetting(HideWatchStatus)</onclick>
 						<selected>!Skin.HasSetting(HideWatchStatus)</selected>
 					</control>
-					<control type="radiobutton" id="137">
+					<control type="radiobutton" id="138">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -708,7 +720,7 @@
 						<onclick>Skin.ToggleSetting(AutoScroll)</onclick>
 						<selected>Skin.HasSetting(AutoScroll)</selected>
 					</control>
-					<control type="radiobutton" id="138">
+					<control type="radiobutton" id="139">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -720,7 +732,7 @@
 						<onclick>Skin.ToggleSetting(Show_SlideShow_Paused)</onclick>
 						<selected>!Skin.HasSetting(Show_SlideShow_Paused)</selected>
 					</control>
-					<control type="radiobutton" id="139">
+					<control type="radiobutton" id="140">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -732,7 +744,7 @@
 						<onclick>Skin.ToggleSetting(WindowedTrailer)</onclick>
 						<selected>Skin.HasSetting(WindowedTrailer)</selected>
 					</control>
-					<control type="radiobutton" id="140">
+					<control type="radiobutton" id="141">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -744,7 +756,7 @@
 						<onclick>Skin.ToggleSetting(HideFilenameFlagging)</onclick>
 						<selected>Skin.HasSetting(HideFilenameFlagging)</selected>
 					</control>
-					<control type="button" id="141">
+					<control type="button" id="142">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -757,7 +769,7 @@
 						<onclick>Control.Move(9008,1)</onclick>
 						<onclick>Skin.SetString(MPAACountryCert,$INFO[Container(9008).ListItem.Label])</onclick>
 					</control>
-					<control type="label" id="142">
+					<control type="label" id="143">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -767,18 +779,18 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="group" id="143">
+					<control type="group" id="144">
 						<width>750</width>
 						<height>40</height>
-						<control type="grouplist" id="144">
+						<control type="grouplist" id="145">
 							<orientation>horizontal</orientation>
 							<width>750</width>
 							<height>40</height>
 							<itemgap>0</itemgap>
-							<onup>141</onup>
-							<ondown>151</ondown>
+							<onup>142</onup>
+							<ondown>152</ondown>
 							<align>left</align>
-							<control type="radiobutton" id="145">
+							<control type="radiobutton" id="146">
 								<description>Default</description>
 								<width>150</width>
 								<height>40</height>
@@ -790,7 +802,7 @@
 								<onclick>Skin.Reset(MediaPanelTrans)</onclick>
 								<selected>IsEmpty(Skin.String(MediaPanelTrans))</selected>
 							</control>
-							<control type="radiobutton" id="146">
+							<control type="radiobutton" id="147">
 								<description>Step 1</description>
 								<width>150</width>
 								<height>40</height>
@@ -802,7 +814,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,EEEEEEEE)</onclick>
 								<selected>stringcompare(Skin.String(MediaPanelTrans),EEEEEEEE)</selected>
 							</control>
-							<control type="radiobutton" id="147">
+							<control type="radiobutton" id="148">
 								<description>Step 2</description>
 								<width>150</width>
 								<height>40</height>
@@ -814,7 +826,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,DDDDDDDD)</onclick>
 								<selected>stringcompare(Skin.String(MediaPanelTrans),DDDDDDDD)</selected>
 							</control>
-							<control type="radiobutton" id="148">
+							<control type="radiobutton" id="149">
 								<description>Step 3</description>
 								<width>150</width>
 								<height>40</height>
@@ -826,7 +838,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,CCCCCCCC)</onclick>
 								<selected>stringcompare(Skin.String(MediaPanelTrans),CCCCCCCC)</selected>
 							</control>
-							<control type="radiobutton" id="149">
+							<control type="radiobutton" id="150">
 								<description>Step 4</description>
 								<width>150</width>
 								<height>40</height>
@@ -840,7 +852,7 @@
 							</control>
 						</control>
 					</control>
-					<control type="label" id="150">
+					<control type="label" id="151">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -850,7 +862,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="151">
+					<control type="radiobutton" id="152">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -863,7 +875,7 @@
 						<onclick>Skin.Reset(EnableStartupPlaylist)</onclick>
 						<selected>!Skin.HasSetting(HideXBMCIntro)</selected>
 					</control>
-					<control type="radiobutton" id="152">
+					<control type="radiobutton" id="153">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -876,7 +888,7 @@
 						<onclick>Skin.ToggleSetting(Use_Startup_Playlist)</onclick>
 						<selected>Skin.HasSetting(Use_Startup_Playlist)</selected>
 					</control>
-					<control type="button" id="153">
+					<control type="button" id="154">
 						<description>Startup Playlist Path</description>
 						<width>750</width>
 						<height>40</height>
