@@ -1675,6 +1675,7 @@
 						<onclick>SetProperty(UsrSelectBtn,UserSubOne.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubOne.6.Label))">Skin.SetString(UserSubOne.6.Label)</onclick>
+						<enable>!Skin.HasSetting(LowerMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable>
 					</control>
 					<control type="label" id="307">
 						<width>750</width>
@@ -1769,6 +1770,7 @@
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubTwo.6.Label))">Skin.SetString(UserSubTwo.6.Label)</onclick>
+						<enable>!Skin.HasSetting(LowerMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable>
 					</control>
 					<control type="label" id="314">
 						<width>750</width>
@@ -1863,6 +1865,7 @@
 						<onclick>SetProperty(UsrSelectBtn,SubVideos.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubVideos.6.Label)) + !stringcompare(Skin.String(SubVideos.6.Path),Hidden)">Skin.SetString(SubVideos.6.Label)</onclick>
+						<enable>!Skin.HasSetting(LowerMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable>
 					</control>
 					<control type="label" id="321">
 						<width>750</width>
@@ -1957,6 +1960,7 @@
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMovies.6.Label)) + !stringcompare(Skin.String(SubMovies.6.Path),Hidden)">Skin.SetString(SubMovies.6.Label)</onclick>
+						<enable>!Skin.HasSetting(LowerMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable>
 					</control>
 					<control type="label" id="328">
 						<width>750</width>
@@ -2051,6 +2055,7 @@
 						<onclick>SetProperty(UsrSelectBtn,SubTVShows.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubTVShows.6.Label)) + !stringcompare(Skin.String(SubTVShows.6.Path),Hidden)">Skin.SetString(SubTVShows.6.Label)</onclick>
+						<enable>!Skin.HasSetting(LowerMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable>
 					</control>
 					<control type="label" id="335">
 						<width>750</width>
@@ -2145,6 +2150,7 @@
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMusic.6.Label)) + !stringcompare(Skin.String(SubMusic.6.Path),Hidden)">Skin.SetString(SubMusic.6.Label)</onclick>
+						<enable>!Skin.HasSetting(LowerMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable>
 					</control>
 				</control>
 				<control type="scrollbar" id="61">
