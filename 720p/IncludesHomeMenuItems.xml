@@ -57,6 +57,7 @@
 			<onclick condition="IsEmpty(Skin.String(SubVideos.6.Path))">ActivateWindow(Videos,Addons,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubVideos.6.Path))">$INFO[Skin.String(SubVideos.1.Path)]</onclick>
 			<visible>!stringcompare(Skin.String(SubVideos.6.Path),Hidden)</visible>
+			<visible>!Skin.HasSetting(LowerMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</visible>
 		</control>
 		<control type="image" id="90108">
 			<width>35</width>
@@ -118,6 +119,7 @@
 			<onclick condition="IsEmpty(Skin.String(SubMovies.6.Path))">ActivateWindow(VideoLibrary,special://videoplaylists/,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubMovies.6.Path))">$INFO[Skin.String(SubMovies.6.Path)]</onclick>
 			<visible>!stringcompare(Skin.String(SubMovies.6.Path),Hidden)</visible>
+			<visible>!Skin.HasSetting(LowerMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</visible>
 		</control>
 		<control type="image" id="90168">
 			<width>35</width>
@@ -178,6 +180,7 @@
 			<onclick condition="IsEmpty(Skin.String(SubTVShows.6.Path))">ActivateWindow(Videos,TVShowYears,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubTVShows.6.Path))">$INFO[Skin.String(SubTVShows.6.Path)]</onclick>
 			<visible>!stringcompare(Skin.String(SubTVShows.6.Path),Hidden)</visible>
+			<visible>!Skin.HasSetting(LowerMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</visible>
 		</control>
 		<control type="image" id="90178">
 			<width>35</width>
@@ -243,6 +246,7 @@
 			<onclick condition="!IsEmpty(Skin.String(SubMusic.6.Path))">$INFO[Skin.String(SubMusic.6.Path)]</onclick>
 			<visible>Library.HasContent(Music) | !IsEmpty(Skin.String(SubMusic.6.Path))</visible>
 			<visible>!stringcompare(Skin.String(SubMusic.6.Path),Hidden)</visible>
+			<visible>!Skin.HasSetting(LowerMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</visible>
 		</control>
 		<control type="button" id="90118">
 			<include>ButtonHomeSubCommonValues</include>
@@ -250,6 +254,7 @@
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>ActivateWindow(MusicFiles,Addons,return)</onclick>
 			<visible>!Library.HasContent(Music) + IsEmpty(Skin.String(SubMusic.6.Path))</visible>
+			<visible>!Skin.HasSetting(LowerMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</visible>
 		</control>
 		<control type="image" id="90119">
 			<width>35</width>
@@ -301,6 +306,7 @@
 			<label>130</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>ActivateWindow(SystemInfo)</onclick>
+			<visible>!Skin.HasSetting(LowerMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</visible>
 		</control>
 		<control type="image" id="90128">
 			<width>35</width>
@@ -485,6 +491,7 @@
 			<onclick>$INFO[Window(0).Property(favourite.6.path)]</onclick>
 			<visible>!IsEmpty(Window(0).Property(favourite.6.name))</visible>
 			<visible>!IsEmpty(Window(0).Property(favourite.6.path))</visible>
+			<visible>!Skin.HasSetting(LowerMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</visible>
 		</control>
 		<control type="image" id="90198">
 			<width>35</width>
@@ -541,6 +548,7 @@
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(UserSubOne.6.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(UserSubOne.6.Path))</visible>
+			<visible>!Skin.HasSetting(LowerMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</visible>
 		</control>
 		<control type="image" id="90207">
 			<width>35</width>
@@ -597,6 +605,7 @@
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(UserSubTwo.6.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(UserSubTwo.6.Path))</visible>
+			<visible>!Skin.HasSetting(LowerMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</visible>
 		</control>
 		<control type="image" id="90217">
 			<width>35</width>

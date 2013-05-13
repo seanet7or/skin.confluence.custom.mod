@@ -40,17 +40,19 @@ perlregex '720p/SkinSettings.xml' 's|<!--(item>\s*\000'\
 '\s*)<item>'\
 '|<\1<!--item>|'
 
+exit
+
 # choose right flag for german mpaa ratings
 if ! grep -q 'fsk-18' '720p/IncludesVariables.xml' ; then
 	perlregex '720p/IncludesVariables.xml' \
-	's|(\000\s*)(<variable name="rating">).*?\000|\1\2'\
-	'\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,18)">de/fsk-18</value>'\
-	'\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,16)">de/fsk-16</value>'\
-	'\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,12)">de/fsk-12</value>'\
-	'\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,6)">de/fsk-6</value>'\
-	'\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,0)">de/fsk-0</value>'\
-	'\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,o)">de/fsk-0</value>'\
-	'\n\n|' 
+'s|(\000\s*)(<variable name="rating">).*?\000|\1\2'\
+'\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,18)">de/fsk-18</value>'\
+'\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,16)">de/fsk-16</value>'\
+'\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,12)">de/fsk-12</value>'\
+'\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,6)">de/fsk-6</value>'\
+'\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,0)">de/fsk-0</value>'\
+'\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,o)">de/fsk-0</value>'\
+'\n\n|' 
 fi
 
 # remove Home menu seperator
@@ -341,9 +343,9 @@ perlregex 720p/MyVideoNav.xml 's|\s*<control type="grouplist">\s*\000'\
 IMG='HomeNowPlayingBack.png'
 LIST=$(grep "$IMG" 720p/* | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
 for F in $LIST ; do
-	perlregex "$F" 's|\s*?<control type="image">\s*?\000'\
+	perlregex "$F" 's|\s*?<control type="image"[^>]*>\s*?\000'\
 '(\s*<(posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
-'\s*<texture>'$IMG'</texture>\s*\000'\
+'\s*<texture[^>]*>'$IMG'</texture>\s*\000'\
 '(\s*<(posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
 '\s*</control>\s*?\000||g'
 done
