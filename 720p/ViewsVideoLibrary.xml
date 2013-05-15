@@ -144,7 +144,7 @@
 							<effect type="fade" start="100" end="0" time="200" />
 							<effect type="slide" end="0,0" start="40,40" time="200" />
 						</animation>
-						<visible>!Skin.HasSetting(ViewStatusBanner) + !Skin.HasSetting(HideWatchStatus)</visible>
+						<visible>!Skin.HasSetting(ViewStatusBanner) + !stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])</visible>
 					</control>
 				</focusedlayout>
 			</control>
@@ -515,7 +515,7 @@
 							<effect type="fade" start="100" end="0" time="200" />
 							<effect type="slide" end="0,0" start="10,5" time="200" />
 						</animation>
-						<visible>!Skin.HasSetting(HideWatchStatus)</visible>
+						<visible>!stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])</visible>
 					</control>
 				</focusedlayout>
 			</control>
@@ -593,7 +593,7 @@
 						<label>$INFO[ListItem.Label2]</label>
 						<visible>Window.IsVisible(Videos)</visible>
 						<animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]">conditional</animation>
-						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
+						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])">conditional</animation>
 					</control>
 					<control type="image">
 						<posx>515</posx>
@@ -601,7 +601,7 @@
 						<width>40</width>
 						<height>26</height>
 						<texture>$INFO[ListItem.VideoResolution,flagging/lists/,.png]</texture>
-						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
+						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])">conditional</animation>
 						<visible>!Skin.HasSetting(ViewSubTitleFlag)</visible>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 					</control>
@@ -612,7 +612,7 @@
 						<height>26</height>
 						<fadetime>IconCrossfadeTime</fadetime>
 						<texture>$INFO[ListItem.SubtitleLanguage,Language/,.png]</texture>
-						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
+						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])">conditional</animation>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<visible>Skin.HasSetting(ViewSubTitleFlag) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
 					</control>
@@ -621,8 +621,8 @@
 						<posy>14</posy>
 						<width>25</width>
 						<height>21</height>
-						<texture>$INFO[ListItem.Overlay]</texture>
-						<visible>!ListItem.IsResumable + !Skin.HasSetting(HideWatchStatus)</visible>
+						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
+						<visible>Window.IsVisible(Videos) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])</visible>
 					</control>
 					<control type="image">
 						<posx>555</posx>
@@ -630,7 +630,7 @@
 						<width>16</width>
 						<height>16</height>
 						<texture>OverlayWatching.png</texture>
-						<visible>ListItem.IsResumable + !Skin.HasSetting(HideWatchStatus)</visible>
+						<visible>ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout height="40" width="580">
@@ -685,7 +685,7 @@
 						<label>$INFO[ListItem.Label2]</label>
 						<visible>Window.IsVisible(Videos)</visible>
 						<animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]">conditional</animation>
-						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
+						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])">conditional</animation>
 					</control>
 					<control type="image">
 						<posx>515</posx>
@@ -693,7 +693,7 @@
 						<width>40</width>
 						<height>26</height>
 						<texture>$INFO[ListItem.VideoResolution,flagging/lists/,.png]</texture>
-						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
+						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])">conditional</animation>
 						<visible>!Skin.HasSetting(ViewSubTitleFlag)</visible>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 					</control>
@@ -704,7 +704,7 @@
 						<height>26</height>
 						<fadetime>IconCrossfadeTime</fadetime>
 						<texture>$INFO[ListItem.SubtitleLanguage,Language/,.png]</texture>
-						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
+						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])">conditional</animation>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<visible>Skin.HasSetting(ViewSubTitleFlag) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
 					</control>
@@ -713,8 +713,8 @@
 						<posy>14</posy>
 						<width>25</width>
 						<height>21</height>
-						<texture>$INFO[ListItem.Overlay]</texture>
-						<visible>!ListItem.IsResumable + !Skin.HasSetting(HideWatchStatus)</visible>
+						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
+						<visible>Window.IsVisible(Videos) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])</visible>
 					</control>
 					<control type="image">
 						<posx>555</posx>
@@ -722,7 +722,7 @@
 						<width>16</width>
 						<height>16</height>
 						<texture>OverlayWatching.png</texture>
-						<visible>ListItem.IsResumable + !Skin.HasSetting(HideWatchStatus)</visible>
+						<visible>ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])</visible>
 					</control>
 				</focusedlayout>
 			</control>
@@ -1079,7 +1079,7 @@
 						<label>$INFO[ListItem.Label2]</label>
 						<visible>Window.IsVisible(Videos)</visible>
 						<animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]">conditional</animation>
-						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
+						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])">conditional</animation>
 					</control>
 					<control type="image">
 						<posx>515</posx>
@@ -1087,7 +1087,7 @@
 						<width>40</width>
 						<height>26</height>
 						<texture>$INFO[ListItem.VideoResolution,flagging/lists/,.png]</texture>
-						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
+						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])">conditional</animation>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<visible>!Skin.HasSetting(ViewSubTitleFlag)</visible>
 					</control>
@@ -1098,7 +1098,7 @@
 						<height>26</height>
 						<fadetime>IconCrossfadeTime</fadetime>
 						<texture>$INFO[ListItem.SubtitleLanguage,Language/,.png]</texture>
-						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
+						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])">conditional</animation>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<visible>Skin.HasSetting(ViewSubTitleFlag) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
 					</control>
@@ -1107,8 +1107,8 @@
 						<posy>14</posy>
 						<width>25</width>
 						<height>21</height>
-						<texture>$INFO[ListItem.Overlay]</texture>
-						<visible>!ListItem.IsResumable + !Skin.HasSetting(HideWatchStatus)</visible>
+						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
+						<visible>Window.IsVisible(Videos) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])</visible>
 					</control>
 					<control type="image">
 						<posx>555</posx>
@@ -1116,7 +1116,7 @@
 						<width>16</width>
 						<height>16</height>
 						<texture>OverlayWatching.png</texture>
-						<visible>ListItem.IsResumable + !Skin.HasSetting(HideWatchStatus)</visible>
+						<visible>ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout height="40" width="580">
@@ -1171,7 +1171,7 @@
 						<label>$INFO[ListItem.Label2]</label>
 						<visible>Window.IsVisible(Videos)</visible>
 						<animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]">conditional</animation>
-						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
+						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])">conditional</animation>
 					</control>
 					<control type="image">
 						<posx>515</posx>
@@ -1179,7 +1179,7 @@
 						<width>40</width>
 						<height>26</height>
 						<texture>$INFO[ListItem.VideoResolution,flagging/lists/,.png]</texture>
-						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
+						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])">conditional</animation>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<visible>!Skin.HasSetting(ViewSubTitleFlag)</visible>
 					</control>
@@ -1190,7 +1190,7 @@
 						<height>26</height>
 						<fadetime>IconCrossfadeTime<visible>Skin.HasSetting(ViewSubTitleFlag) + !IsEmpty(ListItem.SubtitleLanguage)</visible></fadetime>
 						<texture>$INFO[ListItem.SubtitleLanguage,Language/,.png]</texture>
-						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="Skin.HasSetting(HideWatchStatus)">conditional</animation>
+						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])">conditional</animation>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<visible>Skin.HasSetting(ViewSubTitleFlag) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
 					</control>
@@ -1199,8 +1199,8 @@
 						<posy>14</posy>
 						<width>25</width>
 						<height>21</height>
-						<texture>$INFO[ListItem.Overlay]</texture>
-						<visible>!ListItem.IsResumable + !Skin.HasSetting(HideWatchStatus)</visible>
+						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
+						<visible>Window.IsVisible(Videos) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])</visible>
 					</control>
 					<control type="image">
 						<posx>555</posx>
@@ -1208,7 +1208,7 @@
 						<width>16</width>
 						<height>16</height>
 						<texture>OverlayWatching.png</texture>
-						<visible>ListItem.IsResumable + !Skin.HasSetting(HideWatchStatus)</visible>
+						<visible>ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])</visible>
 					</control>
 				</focusedlayout>
 			</control>
@@ -1504,7 +1504,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
-						<visible>!Skin.HasSetting(HideWatchStatus)</visible>
+						<visible>!stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])</visible>
 					</control>
 					<control type="label">
 						<posx>10</posx>
@@ -1524,8 +1524,8 @@
 						<posy>14</posy>
 						<width>25</width>
 						<height>21</height>
-						<texture>$INFO[ListItem.Overlay]</texture>
-						<visible>!ListItem.IsResumable + !Skin.HasSetting(HideWatchStatus)</visible>
+						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
+						<visible>Window.IsVisible(Videos) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])</visible>
 					</control>
 					<control type="image">
 						<posx>320</posx>
@@ -1533,7 +1533,7 @@
 						<width>16</width>
 						<height>16</height>
 						<texture>OverlayWatching.png</texture>
-						<visible>ListItem.IsResumable + !Skin.HasSetting(HideWatchStatus)</visible>
+						<visible>ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout condition="!Container.Content(TVShows) | Skin.HasSetting(View515HideTVBanners)" height="40" width="345">
@@ -1566,7 +1566,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
-						<visible>!Skin.HasSetting(HideWatchStatus)</visible>
+						<visible>!stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])</visible>
 					</control>
 					<control type="label">
 						<posx>10</posx>
@@ -1586,8 +1586,8 @@
 						<posy>14</posy>
 						<width>25</width>
 						<height>21</height>
-						<texture>$INFO[ListItem.Overlay]</texture>
-						<visible>!ListItem.IsResumable + !Skin.HasSetting(HideWatchStatus)</visible>
+						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
+						<visible>Window.IsVisible(Videos) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])</visible>
 					</control>
 					<control type="image">
 						<posx>320</posx>
@@ -1595,7 +1595,7 @@
 						<width>16</width>
 						<height>16</height>
 						<texture>OverlayWatching.png</texture>
-						<visible>ListItem.IsResumable + !Skin.HasSetting(HideWatchStatus)</visible>
+						<visible>ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])</visible>
 					</control>
 				</focusedlayout>
 				<itemlayout condition="Container.Content(TVShows) + !Skin.HasSetting(View515HideTVBanners)" height="70" width="345">
@@ -1636,8 +1636,8 @@
 						<posy>38</posy>
 						<width>32</width>
 						<height>32</height>
-						<texture>$INFO[ListItem.Overlay]</texture>
-						<visible>!Skin.HasSetting(HideWatchStatus)</visible>
+						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
+						<visible>Window.IsVisible(Videos) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout condition="Container.Content(TVShows) + !Skin.HasSetting(View515HideTVBanners)" height="70" width="345">
@@ -1688,8 +1688,8 @@
 						<posy>38</posy>
 						<width>32</width>
 						<height>32</height>
-						<texture>$INFO[ListItem.Overlay]</texture>
-						<visible>!Skin.HasSetting(HideWatchStatus)</visible>
+						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
+						<visible>Window.IsVisible(Videos) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])</visible>
 					</control>
 				</focusedlayout>
 			</control>

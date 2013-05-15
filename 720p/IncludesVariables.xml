@@ -114,6 +114,26 @@
 		<animation effect="rotate" end="720" center="auto" time="800" loop="true" reversible="false" condition="Player.Rewinding16x">Conditional</animation>
 		<animation effect="rotate" end="720" center="auto" time="400" loop="true" reversible="false" condition="Player.Rewinding32x">Conditional</animation>
 	</include>
+	<variable name="WatchTypeName">
+		<value condition="IsEmpty(Skin.String(WatchStatusType))">$LOCALIZE[571]</value>
+		<value>$INFO[Skin.String(WatchStatusType)]</value>
+	</variable>
+	<variable name="WatchTypePath">
+		<value condition="IsEmpty(Skin.String(WatchStatusType))">default/$INFO[ListItem.Overlay]</value>
+		<value condition="stringcompare(Skin.String(WatchStatusType),$LOCALIZE[571])">default/$INFO[ListItem.Overlay]</value>
+		<value condition="stringcompare(Skin.String(WatchStatusType),$LOCALIZE[762])">blue/$INFO[ListItem.Overlay]</value>
+		<value condition="stringcompare(Skin.String(WatchStatusType),$LOCALIZE[13341])">green/$INFO[ListItem.Overlay]</value>
+		<value condition="stringcompare(Skin.String(WatchStatusType),$LOCALIZE[743])">yellow/$INFO[ListItem.Overlay]</value>
+	</variable>	
+	<variable name="PartlyWatched">
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,0) + !IntegerGreaterThan(ListItem.PercentPlayed,19)">OverlayPartlywatched1</value>
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,19) + !IntegerGreaterThan(ListItem.PercentPlayed,31)">OverlayPartlywatched2</value>
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,31) + !IntegerGreaterThan(ListItem.PercentPlayed,43)">OverlayPartlywatched3</value>
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,43) + !IntegerGreaterThan(ListItem.PercentPlayed,56)">OverlayPartlywatched4</value>
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,56) + !IntegerGreaterThan(ListItem.PercentPlayed,68)">OverlayPartlywatched5</value>
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,68) + !IntegerGreaterThan(ListItem.PercentPlayed,81)">OverlayPartlywatched6</value>
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,81)">OverlayPartlywatched7</value>
+	</variable>
 	<variable name="GenreFlagPath">
 		<!--value condition="Skin.HasSetting(UsrGenreFanArt)">MovieGenre/</value-->
 		<value>DefaultGenre/</value>

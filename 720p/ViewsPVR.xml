@@ -676,8 +676,8 @@
 						<posy>14</posy>
 						<width>20</width>
 						<height>16</height>
-						<texture>$INFO[ListItem.Overlay]</texture>
-						<visible>!ListItem.IsResumable</visible>
+						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
+						<visible>!ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])</visible>
 					</control>
 					<control type="image">
 						<posx>730</posx>
@@ -685,7 +685,7 @@
 						<width>16</width>
 						<height>16</height>
 						<texture>OverlayWatching.png</texture>
-						<visible>ListItem.IsResumable</visible>
+						<visible>ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout height="40" width="760">
@@ -751,8 +751,8 @@
 						<posy>14</posy>
 						<width>20</width>
 						<height>16</height>
-						<texture>$INFO[ListItem.Overlay]</texture>
-						<visible>!ListItem.IsResumable</visible>
+						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
+						<visible>!ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])</visible>
 					</control>
 					<control type="image">
 						<posx>730</posx>
@@ -760,7 +760,7 @@
 						<width>16</width>
 						<height>16</height>
 						<texture>OverlayWatching.png</texture>
-						<visible>ListItem.IsResumable</visible>
+						<visible>ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])</visible>
 					</control>
 				</focusedlayout>
 			</control>

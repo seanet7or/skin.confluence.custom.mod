@@ -6,6 +6,10 @@
 	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701])">Control.Move(9008,1)</onload>
 	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702])">Control.Move(9008,2)</onload>
 	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703])">Control.Move(9008,3)</onload>
+	<onload condition="stringcompare(Container(9009).ListItem.Label,$LOCALIZE[571]) + stringcompare(Skin.String(WatchStatusType),$LOCALIZE[31138])">Control.Move(9009,1)</onload>
+	<onload condition="stringcompare(Container(9009).ListItem.Label,$LOCALIZE[571]) + stringcompare(Skin.String(WatchStatusType),$LOCALIZE[762])">Control.Move(9009,2)</onload>
+	<onload condition="stringcompare(Container(9009).ListItem.Label,$LOCALIZE[571]) + stringcompare(Skin.String(WatchStatusType),$LOCALIZE[13341])">Control.Move(9009,3)</onload>
+	<onload condition="stringcompare(Container(9009).ListItem.Label,$LOCALIZE[571]) + stringcompare(Skin.String(WatchStatusType),$LOCALIZE[743])">Control.Move(9009,4)</onload>
 	<controls>
 		<include>CommonBackground</include>
 		<control type="image">
@@ -696,18 +700,20 @@
 						<onclick>Skin.ToggleSetting(HideNextSongsInfo)</onclick>
 						<selected>!Skin.HasSetting(HideNextSongsInfo)</selected>
 					</control>
-					<control type="radiobutton" id="137">
+					<control type="button" id="137">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
-						<label>31115</label>
+						<label>$LOCALIZE[31111]</label>
+						<label2>[COLOR=selected]$VAR[WatchTypeName][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(HideWatchStatus)</onclick>
-						<selected>!Skin.HasSetting(HideWatchStatus)</selected>
-					</control>
+						<onclick>Control.Move(9009,1)</onclick>
+						<onclick condition="stringcompare(Container(9009).ListItem.Label,$LOCALIZE[571])">Skin.Reset(WatchStatusType)</onclick>
+						<onclick condition="!stringcompare(Container(9009).ListItem.Label,$LOCALIZE[571])">Skin.SetString(WatchStatusType,$INFO[Container(9009).ListItem.Label])</onclick>
+					</control>					
 					<control type="radiobutton" id="138">
 						<width>750</width>
 						<height>40</height>
@@ -948,6 +954,43 @@
 							<icon>-</icon>
 							<thumb>-</thumb>
 						</item-->
+					</content>
+				</control>
+				<control type="list" id="9009">
+					<visible>Container(9000).Hasfocus(1)</visible>
+					<itemlayout height="1" width="750"></itemlayout>
+					<focusedlayout height="1" width="750"></focusedlayout>
+					<content>
+						<item>
+							<label>$LOCALIZE[571]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31138]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[762]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[13341]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[743]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
 					</content>
 				</control>
 				<control type="grouplist" id="9002">
