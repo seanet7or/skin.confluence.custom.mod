@@ -133,8 +133,6 @@ perlregex 720p/ViewsPictures.xml 's|<texture background="true">.INFO.ListItem.Fi
 # use thumb in picture wrap view
 perlregex 720p/MyPics.xml 's|<texture background="true">.INFO.ListItem.FilenameAndPath.</texture>|<texture background="true">\$INFO\[ListItem.Icon\]</texture>|g'
 
-exit
-
 # remove panel mirrors
 LIST=$(grep "ContentPanelMirror.png" 720p/* | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
 for F in $LIST ; do
@@ -152,6 +150,8 @@ if grep -q "ContentPanelMirror.png" 720p/* ; then
 	exit 3
 fi
 rm media/ContentPanelMirror.png 2>/dev/null
+
+exit
 
 #remove common page count
 INC='CommonPageCount'
