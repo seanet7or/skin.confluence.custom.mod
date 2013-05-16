@@ -78,8 +78,6 @@ if grep -q 'RecentAddedBack' '720p/IncludesHomeWidget.xml' ; then
 	rm media/RecentAddedBack.png
 fi
 
-exit
-
 # remove menu items seperator
 for F in 720p/ViewsVideoLibrary.xml 720p/ViewsPVR.xml 720p/ViewsMusicLibrary.xml 720p/ViewsLiveTV.xml 720p/ViewsFileMode.xml 720p/ViewsAddonBrowser.xml 720p/SkinSettings.xml 720p/Settings.xml 720p/script-XBMC_Lyrics-main.xml 720p/script-globalsearch-main.xml 720p/MyWeather.xml 720p/FileManager.xml 720p/FileBrowser.xml ; do
 	perlregex "$F" 's|\s*?<control type="image">\s*?\000'\
@@ -97,7 +95,14 @@ done
 for F in 720p/SettingsCategory.xml 720p/SettingsSystemInfo.xml 720p/SettingsProfile.xml ; do
 	perlregex "$F" 's|(\s*?<texturenofocus[^>]*>)MenuItemNF.png(</texturenofocus>\s*?\000)|\1-\2|g'
 done
+if grep -q "MenuItemNF.png" 720p/* ; then
+	echo "ERROR: Not all occurrences of 'MenuItemNF.png' could be removed, please check:"
+	grep "MenuItemNF.png" 720p/*
+	exit 3
+fi
 if [ -f media/MenuItemNF.png ] ; then rm media/MenuItemNF.png ; fi
+
+exit
 
 # remove widgets titel label
 perlregex 720p/IncludesHomeWidget.xml 's|\s*?<control type="label">\s*?\000'\
