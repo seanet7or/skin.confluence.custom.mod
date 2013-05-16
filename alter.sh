@@ -19,7 +19,7 @@ findunused() {
 		if ! grep -q "$FS" 720p/* ; then
 			echo "'$FS' was not found in the .xmls."
 			echo "File is '$F'."
-			BASE=$(echo "$F" | sed "s|\.[a-zA-Z]+||")
+			BASE=$(echo "$FS" | sed 's|\.[a-zA-Z]*||g')
 			echo "Occurences of '$BASE':"
 			grep "$BASE" 720p/*
 		else
@@ -39,6 +39,8 @@ read_origmaster() {
 	rm -rf media/OverlayStatus
 	cp -r Mudislander-master/skin.confluence.custom.mod-master/media/OverlayStatus media
 }
+
+#findunused ; exit
 
 read_origmaster
 
