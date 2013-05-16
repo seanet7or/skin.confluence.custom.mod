@@ -162,8 +162,6 @@ perlregex 720p/includes.xml 's|\s*<include name="CommonPageCount">\s*\000'\
 '(\s*<(animation\|control\|/control\|description\|posx\|posy\|scroll\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|include)[^>]*>.*?\000)*?'\
 '\s*</include>\s*\000||'
 
-exit
-
 # change picturethumbview
 	#selection panel
 	perlregex 720p/ViewsPictures.xml 's|(\s*<control type)="panel" id="514">\s*\000'\
@@ -217,6 +215,10 @@ perlregex 720p/MyPics.xml 's|\s*<control type="grouplist">\s*\000'\
 '\s*</control>\s*\000||'
 	#remove thumbshadows
 perlregex 720p/ViewsPictures.xml 's|\s*<bordertexture[^>]*>ThumbShadow.png</bordertexture>\s*\000||g'
+
+exit
+
+
 	#remove ThumbBG.png
 IMG='ThumbBG.png'
 LIST=$(grep "$IMG" 720p/* | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
