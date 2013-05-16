@@ -53,8 +53,6 @@ if ! grep -q 'fsk-18' '720p/IncludesVariables.xml' ; then
 '\n\n|' 
 fi
 
-exit
-
 # remove Home menu seperator
 if grep -q 'HomeSeperator' '720p/Home.xml' ; then
 	perlregex '720p/Home.xml' 's|\000\s*?<control type="image">\s*?\000\s*?<posx>[0-9]+</posx>\s*?\000\s*?<posy>[0-9]+</posy>\s*?\000\s*?<width>[0-9]+</width>\s*?\000\s*?<height>[0-9]+</height>\s*?\000\s*?<texture>HomeSeperator.png</texture>\s*?\000\s*?</control>\s*?||g'
@@ -66,6 +64,8 @@ if grep -q 'HomeOverlay1.png' '720p/Home.xml' ; then
 	perlregex '720p/Home.xml' 's|\000\s*?<control type="image">\s*?\000\s*?<posx>[0-9]+</posx>\s*?\000\s*?<posy>[0-9]+</posy>\s*?\000\s*?<width>[0-9]+</width>\s*?\000\s*?<height>[0-9]+</height>\s*?\000\s*?<texture>HomeOverlay1.png</texture>\s*?\000\s*?</control>\s*?||g'
 	rm 'media/HomeOverlay1.png'
 fi
+
+exit
 
 # remove widgets background
 if grep -q 'RecentAddedBack' '720p/IncludesHomeWidget.xml' ; then
