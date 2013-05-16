@@ -295,8 +295,6 @@ perlregex 720p/includes.xml 's|\s*<control type="label">\s*\000'\
 '(\|\s*<visible>.Control.HasFocus.9002.</visible>\s*\000)'\
 '\s*</control>\s*\000||g'
 
-exit
-
 #remove weather location
 perlregex 720p/Home.xml 's|\s*<control type="label">\s*\000'\
 '\s*<description>Location label</description>\s*\000'\
@@ -322,6 +320,8 @@ perlregex 720p/includes.xml 's|(<control type="label">\s*\000'\
 '\s*<description>time label</description>\s*\000'\
 '\s*<posx>15r</posx>\s*\000'\
 '\s*<posy)>20<|\1>5<|'
+
+exit
 
 #remove Fanart_Diffuse.png
 #perlregex 720p/ViewsVideoLibrary.xml 's| diffuse="Fanart_Diffuse.png"||g'

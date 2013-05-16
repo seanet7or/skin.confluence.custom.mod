@@ -1325,22 +1325,9 @@
 				<aspectratio>keep</aspectratio>
 				<texture>$INFO[Weather.Conditions]</texture>
 			</control>
-			<control type="label">
-				<description>Location label</description>
-				<posx>65</posx>
-				<posy>5</posy>
-				<width>500</width>
-				<height>15</height>
-				<align>left</align>
-				<aligny>center</aligny>
-				<font>font10</font>
-				<textcolor>white</textcolor>
-				<shadowcolor>black</shadowcolor>
-				<label>$INFO[Window(Weather).Property(Location)]</label>
-			</control>
 			<control type="grouplist">
 				<posx>65</posx>
-				<posy>20</posy>
+				<posy>15</posy>
 				<width>1000</width>
 				<height>30</height>
 				<orientation>horizontal</orientation>
@@ -1367,16 +1354,6 @@
 					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
 					<visible>!IsEmpty(Window(Weather).Property(Current.Temperature))</visible>
-				</control>
-				<control type="label">
-					<description>Conditions Label</description>
-					<width>500</width>
-					<height>22</height>
-					<font>font10</font>
-					<aligny>center</aligny>
-					<label>$INFO[Window(Weather).Property(Current.Condition),  ]</label>
-					<textcolor>grey2</textcolor>
-					<shadowcolor>black</shadowcolor>
 				</control>
 			</control>
 		</control>
