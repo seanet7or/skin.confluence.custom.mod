@@ -116,14 +116,18 @@
 	</include>
 	<variable name="WatchTypeName">
 		<value condition="IsEmpty(Skin.String(WatchStatusType))">$LOCALIZE[571]</value>
-		<value>$INFO[Skin.String(WatchStatusType)]</value>
+		<value condition="stringcompare(Skin.String(WatchStatusType),Default)">$LOCALIZE[571]</value>
+		<value condition="stringcompare(Skin.String(WatchStatusType),Hidden)">$LOCALIZE[31138]</value>
+		<value condition="stringcompare(Skin.String(WatchStatusType),Blue)">$LOCALIZE[762]</value>
+		<value condition="stringcompare(Skin.String(WatchStatusType),Green)">$LOCALIZE[13341]</value>
+		<value condition="stringcompare(Skin.String(WatchStatusType),Yellow)">$LOCALIZE[743]</value>
 	</variable>
 	<variable name="WatchTypePath">
 		<value condition="IsEmpty(Skin.String(WatchStatusType))">default/$INFO[ListItem.Overlay]</value>
-		<value condition="stringcompare(Skin.String(WatchStatusType),$LOCALIZE[571])">default/$INFO[ListItem.Overlay]</value>
-		<value condition="stringcompare(Skin.String(WatchStatusType),$LOCALIZE[762])">blue/$INFO[ListItem.Overlay]</value>
-		<value condition="stringcompare(Skin.String(WatchStatusType),$LOCALIZE[13341])">green/$INFO[ListItem.Overlay]</value>
-		<value condition="stringcompare(Skin.String(WatchStatusType),$LOCALIZE[743])">yellow/$INFO[ListItem.Overlay]</value>
+		<value condition="stringcompare(Skin.String(WatchStatusType),Hidden)">default/$INFO[ListItem.Overlay]</value>
+		<value condition="stringcompare(Skin.String(WatchStatusType),Blue)">blue/$INFO[ListItem.Overlay]</value>
+		<value condition="stringcompare(Skin.String(WatchStatusType),Green)">green/$INFO[ListItem.Overlay]</value>
+		<value condition="stringcompare(Skin.String(WatchStatusType),Yellow)">yellow/$INFO[ListItem.Overlay]</value>
 	</variable>	
 	<variable name="PartlyWatched">
 		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,0) + !IntegerGreaterThan(ListItem.PercentPlayed,19)">OverlayPartlywatched1</value>
