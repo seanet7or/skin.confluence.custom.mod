@@ -127,13 +127,13 @@ perlregex 720p/IncludesHomeWidget.xml 's|\s*?<control type="label">\s*?\000'\
 # remove bordertexture for widgets that are not focused
 perlregex 720p/IncludesHomeWidget.xml 's|\s*<bordertexture border="5">button-nofocus.png</bordertexture>\s*\000||g'
 
-exit
-
 # use thumb in picture preview view
 perlregex 720p/ViewsPictures.xml 's|<texture background="true">.INFO.ListItem.FilenameAndPath.</texture>|<texture background="true">\$INFO\[ListItem.Icon\]</texture>|g'
 
 # use thumb in picture wrap view
 perlregex 720p/MyPics.xml 's|<texture background="true">.INFO.ListItem.FilenameAndPath.</texture>|<texture background="true">\$INFO\[ListItem.Icon\]</texture>|g'
+
+exit
 
 # remove panel mirrors
 LIST=$(grep "ContentPanelMirror.png" 720p/* | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
