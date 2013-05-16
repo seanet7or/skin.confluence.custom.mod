@@ -34,7 +34,7 @@ read_origmaster() {
 	ZIP=Mudislander-master.zip
 	wget -O- -nv --no-check-certificate https://github.com/Mudislander/skin.confluence.custom.mod/archive/master.zip >$ZIP
 	mkdir -p Mudislander-master
-	unzip "$ZIP" -d Mudislander-master
+	unzip -o "$ZIP" -d Mudislander-master
 	cp -r Mudislander-master/skin.confluence.custom.mod-master/720p .	
 	rm -rf media/OverlayStatus
 	cp -r Mudislander-master/skin.confluence.custom.mod-master/media/OverlayStatus media
