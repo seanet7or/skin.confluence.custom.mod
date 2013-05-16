@@ -151,8 +151,6 @@ if grep -q "ContentPanelMirror.png" 720p/* ; then
 fi
 rm media/ContentPanelMirror.png 2>/dev/null
 
-exit
-
 #remove common page count
 INC='CommonPageCount'
 LIST=$(grep "<include>$INC</include>" 720p/* | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
@@ -163,6 +161,8 @@ done
 perlregex 720p/includes.xml 's|\s*<include name="CommonPageCount">\s*\000'\
 '(\s*<(animation\|control\|/control\|description\|posx\|posy\|scroll\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|include)[^>]*>.*?\000)*?'\
 '\s*</include>\s*\000||'
+
+exit
 
 # change picturethumbview
 	#selection panel
