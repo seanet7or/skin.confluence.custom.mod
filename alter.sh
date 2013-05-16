@@ -65,8 +65,6 @@ if grep -q 'HomeOverlay1.png' '720p/Home.xml' ; then
 	rm 'media/HomeOverlay1.png'
 fi
 
-exit
-
 # remove widgets background
 if grep -q 'RecentAddedBack' '720p/IncludesHomeWidget.xml' ; then
 	perlregex '720p/IncludesHomeWidget.xml' 's|\000\s*?<control type="image">\s*?\000'\
@@ -79,6 +77,8 @@ if grep -q 'RecentAddedBack' '720p/IncludesHomeWidget.xml' ; then
 '\s*?</control>\s*?||g'
 	rm media/RecentAddedBack.png
 fi
+
+exit
 
 # remove menu items seperator
 for F in 720p/ViewsVideoLibrary.xml 720p/ViewsPVR.xml 720p/ViewsMusicLibrary.xml 720p/ViewsLiveTV.xml 720p/ViewsFileMode.xml 720p/ViewsAddonBrowser.xml 720p/SkinSettings.xml 720p/Settings.xml 720p/script-XBMC_Lyrics-main.xml 720p/script-globalsearch-main.xml 720p/MyWeather.xml 720p/FileManager.xml 720p/FileBrowser.xml ; do
