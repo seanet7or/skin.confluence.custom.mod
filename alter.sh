@@ -65,19 +65,6 @@ if grep -q 'HomeOverlay1.png' '720p/Home.xml' ; then
 	rm 'media/HomeOverlay1.png'
 fi
 
-# remove widgets background
-if grep -q 'RecentAddedBack' '720p/IncludesHomeWidget.xml' ; then
-	perlregex '720p/IncludesHomeWidget.xml' 's|\000\s*?<control type="image">\s*?\000'\
-'\s*?<description>background</description>\s*?\000'\
-'\s*?<posx>[0-9]+</posx>\s*?\000'\
-'\s*?<posy>[0-9]+</posy>\s*?\000'\
-'\s*?<width>[0-9]+</width>\s*?\000'\
-'\s*?<height>[0-9]+</height>\s*?\000'\
-'\s*?<texture[^>]*>RecentAddedBack.png</texture>\s*?\000'\
-'\s*?</control>\s*?||g'
-	rm media/RecentAddedBack.png
-fi
-
 # remove menu items seperator
 for F in 720p/ViewsVideoLibrary.xml 720p/ViewsPVR.xml 720p/ViewsMusicLibrary.xml 720p/ViewsLiveTV.xml 720p/ViewsFileMode.xml 720p/ViewsAddonBrowser.xml 720p/SkinSettings.xml 720p/Settings.xml 720p/script-XBMC_Lyrics-main.xml 720p/script-globalsearch-main.xml 720p/MyWeather.xml 720p/FileManager.xml 720p/FileBrowser.xml ; do
 	perlregex "$F" 's|\s*?<control type="image">\s*?\000'\
@@ -102,7 +89,18 @@ if grep -q "MenuItemNF.png" 720p/* ; then
 fi
 if [ -f media/MenuItemNF.png ] ; then rm media/MenuItemNF.png ; fi
 
-exit
+# remove widgets background
+if grep -q 'RecentAddedBack' '720p/IncludesHomeWidget.xml' ; then
+	perlregex '720p/IncludesHomeWidget.xml' 's|\000\s*?<control type="image">\s*?\000'\
+'\s*?<description>background</description>\s*?\000'\
+'\s*?<posx>[0-9]+</posx>\s*?\000'\
+'\s*?<posy>[0-9]+</posy>\s*?\000'\
+'\s*?<width>[0-9]+</width>\s*?\000'\
+'\s*?<height>[0-9]+</height>\s*?\000'\
+'\s*?<texture[^>]*>RecentAddedBack.png</texture>\s*?\000'\
+'\s*?</control>\s*?||g'
+	rm media/RecentAddedBack.png
+fi
 
 # remove widgets titel label
 perlregex 720p/IncludesHomeWidget.xml 's|\s*?<control type="label">\s*?\000'\
@@ -128,6 +126,8 @@ perlregex 720p/IncludesHomeWidget.xml 's|\s*?<control type="label">\s*?\000'\
 
 # remove bordertexture for widgets that are not focused
 perlregex 720p/IncludesHomeWidget.xml 's|\s*<bordertexture border="5">button-nofocus.png</bordertexture>\s*\000||g'
+
+exit
 
 # use thumb in picture preview view
 perlregex 720p/ViewsPictures.xml 's|<texture background="true">.INFO.ListItem.FilenameAndPath.</texture>|<texture background="true">\$INFO\[ListItem.Icon\]</texture>|g'
