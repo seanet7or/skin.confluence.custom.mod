@@ -321,8 +321,6 @@ perlregex 720p/includes.xml 's|(<control type="label">\s*\000'\
 '\s*<posx>15r</posx>\s*\000'\
 '\s*<posy)>20<|\1>5<|'
 
-exit
-
 #remove Fanart_Diffuse.png
 #perlregex 720p/ViewsVideoLibrary.xml 's| diffuse="Fanart_Diffuse.png"||g'
 #rm media/Fanart_Diffuse.png 2>/dev/null
@@ -344,6 +342,8 @@ perlregex 720p/MyVideoNav.xml 's|\s*<control type="grouplist">\s*\000'\
 '\s*<posy>5</posy>\s*\000'\
 '(\s*<(height\|width\|orientation\|align\|itemgap\|aspectratio\|texture\|visible\|label)>[^>]*>\s*?\000)*'\
 '\s*</control>\s*\000||'
+
+exit
 
 #remove HomeNowPlayingBack.png
 IMG='HomeNowPlayingBack.png'
