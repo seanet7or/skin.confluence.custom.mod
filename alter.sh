@@ -216,9 +216,6 @@ perlregex 720p/MyPics.xml 's|\s*<control type="grouplist">\s*\000'\
 	#remove thumbshadows
 perlregex 720p/ViewsPictures.xml 's|\s*<bordertexture[^>]*>ThumbShadow.png</bordertexture>\s*\000||g'
 
-exit
-
-
 	#remove ThumbBG.png
 IMG='ThumbBG.png'
 LIST=$(grep "$IMG" 720p/* | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
@@ -237,6 +234,8 @@ if grep -q "$IMG" 720p/* ; then
 	exit 3
 fi
 rm "media/$IMG" 2>/dev/null
+
+exit
 
 #remove homefloor
 perlregex 720p/Home.xml 's|\s*<control type="image">\s*\000'\
