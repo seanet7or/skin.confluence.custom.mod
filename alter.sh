@@ -367,4 +367,7 @@ perlregex 720p/IncludesBackgroundBuilding.xml 's|\s*<control type="image">\s*\00
 '(\s*<(posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
 '\s*</control>\s*\000||'
 
+#correct typo
+perlregex 720p/ViewsPictures.xml 's|folder-Focus.png|folder-focus.png|g'
+
 exit
