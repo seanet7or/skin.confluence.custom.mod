@@ -234,15 +234,6 @@
 			<include>Dimensions_Fullscreen</include>
 			<visible>Player.HasVideo + !Skin.HasSetting(ShowBackgroundVideo) + ![Window.IsVisible(PVR) + [Control.IsVisible(11) | Control.IsVisible(12)]]</visible>
 		</control>
-		<control type="image">
-			<posx>0</posx>
-			<posy>-40</posy>
-			<width>1280</width>
-			<height>120</height>
-			<texture flipy="true">HomeNowPlayingBack.png</texture>
-			<visible>[Player.HasVideo + !Skin.HasSetting(ShowBackgroundVideo)] | [Player.HasAudio + ![Skin.HasSetting(ShowBackgroundVis) | SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]] | [!Skin.HasSetting(HideBackGroundFanart) + !IsEmpty(ListItem.Property(Fanart_Image))]</visible>
-			<include>VisibleFadeEffect</include>
-		</control>
 	</include>
 	<include name="ContentPanelBackgrounds">
 		<control type="group">

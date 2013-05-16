@@ -343,8 +343,6 @@ perlregex 720p/MyVideoNav.xml 's|\s*<control type="grouplist">\s*\000'\
 '(\s*<(height\|width\|orientation\|align\|itemgap\|aspectratio\|texture\|visible\|label)>[^>]*>\s*?\000)*'\
 '\s*</control>\s*\000||'
 
-exit
-
 #remove HomeNowPlayingBack.png
 IMG='HomeNowPlayingBack.png'
 LIST=$(grep "$IMG" 720p/* | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
