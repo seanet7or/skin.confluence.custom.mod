@@ -268,8 +268,6 @@ rm "media/$IMG" 2>/dev/null
 #remove ThumbShadow.png from list view
 perlregex 720p/ViewsFileMode.xml 's|\s*<bordertexture border="8">ThumbShadow.png</bordertexture>\s*\000||g'
 
-exit
-
 #remove border from addons that are not focused on the home view
 perlregex 720p/includes.xml 's|(\s*<width>180</width>\s*\000)'\
 '(\s*<height>120</height>\s*\000)'\
@@ -296,6 +294,8 @@ perlregex 720p/includes.xml 's|\s*<control type="label">\s*\000'\
 '\s*<label>.VAR.MainItemLabel.</label>\s*\000'\
 '(\|\s*<visible>.Control.HasFocus.9002.</visible>\s*\000)'\
 '\s*</control>\s*\000||g'
+
+exit
 
 #remove weather location
 perlregex 720p/Home.xml 's|\s*<control type="label">\s*\000'\

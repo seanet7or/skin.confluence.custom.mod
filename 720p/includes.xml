@@ -1034,28 +1034,8 @@
 				<width>180</width>
 				<height>120</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<bordertexture border="5">button-nofocus.png</bordertexture>
 				<bordersize>3</bordersize>
 				<texture background="true">$INFO[ListItem.Icon]</texture>
-			</control>
-			<control type="image">
-				<posx>5</posx>
-				<posy>120</posy>
-				<width>170</width>
-				<height>110</height>
-				<aspectratio aligny="top">keep</aspectratio>
-				<texture diffuse="diffuse_mirror2.png" flipy="true" background="true">$INFO[ListItem.Icon]</texture>
-			</control>
-			<control type="label">
-				<posx>91</posx>
-				<posy>125</posy>
-				<width>180</width>
-				<height>20</height>
-				<font>font12</font>
-				<textcolor>grey2</textcolor>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label>$VAR[MainItemLabel]</label>
 			</control>
 		</itemlayout>
 		<focusedlayout height="200" width="182">
@@ -1065,7 +1045,6 @@
 				<width>180</width>
 				<height>120</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<bordertexture border="5">button-nofocus.png</bordertexture>
 				<bordersize>3</bordersize>
 				<texture background="true">$INFO[ListItem.Icon]</texture>
 				<visible>!ControlGroup(9002).HasFocus</visible>
@@ -1081,14 +1060,6 @@
 				<texture background="true">$INFO[ListItem.Icon]</texture>
 				<visible>ControlGroup(9002).HasFocus</visible>
 			</control>
-			<control type="image">
-				<posx>5</posx>
-				<posy>120</posy>
-				<width>170</width>
-				<height>110</height>
-				<aspectratio aligny="top">keep</aspectratio>
-				<texture diffuse="diffuse_mirror2.png" flipy="true" background="true">$INFO[ListItem.Icon]</texture>
-			</control>
 			<control type="label">
 				<posx>91</posx>
 				<posy>125</posy>
@@ -1100,18 +1071,6 @@
 				<aligny>center</aligny>
 				<label>$VAR[MainItemLabel]</label>
 				<visible>Control.HasFocus(9002)</visible>
-			</control>
-			<control type="label">
-				<posx>91</posx>
-				<posy>125</posy>
-				<width>180</width>
-				<height>20</height>
-				<font>font12</font>
-				<textcolor>grey2</textcolor>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label>$VAR[MainItemLabel]</label>
-				<visible>!Control.HasFocus(9002)</visible>
 			</control>
 		</focusedlayout>
 	</include>
