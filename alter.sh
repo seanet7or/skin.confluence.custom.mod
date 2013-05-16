@@ -235,8 +235,6 @@ if grep -q "$IMG" 720p/* ; then
 fi
 rm "media/$IMG" 2>/dev/null
 
-exit
-
 #remove homefloor
 perlregex 720p/Home.xml 's|\s*<control type="image">\s*\000'\
 '(\s*<(posx\|posy\|height\|width\|aspectratio\|animation)>[^>]*>\s*\000)*'\
@@ -266,6 +264,8 @@ if grep -q "$IMG" 720p/* ; then
 	exit 3
 fi
 rm "media/$IMG" 2>/dev/null
+
+exit
 
 #remove ThumbShadow.png from list view
 perlregex 720p/ViewsFileMode.xml 's|\s*<bordertexture border="8">ThumbShadow.png</bordertexture>\s*\000||g'
