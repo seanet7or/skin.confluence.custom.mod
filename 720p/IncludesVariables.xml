@@ -18,6 +18,13 @@
 		<value condition="substring(ListItem.FilenameAndPath,vhs)">vhs</value>
 	</variable>
 	<variable name="rating">
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,18)">de/fsk-18</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,16)">de/fsk-16</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,12)">de/fsk-12</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,6)">de/fsk-6</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,0)">de/fsk-0</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,o)">de/fsk-0</value>
+
 		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,U)">bbfc_u</value>
 		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,PG)">bbfc_pg</value>
 		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,12A)">bbfc_12a</value>

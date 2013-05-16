@@ -30,7 +30,7 @@ findunused() {
 	IFS=$IFS_OLD
 }
 
-# enable germany mpaa setting 
+# enable 'germany' as option in mpaa settings
 perlregex '720p/SkinSettings.xml' 's|<!--(item>\s*\000'\
 '\s*<label>.LOCALIZE.31702.</label>\s*\000'\
 '\s*<onclick>noop</onclick>\s*\000'\
@@ -39,8 +39,6 @@ perlregex '720p/SkinSettings.xml' 's|<!--(item>\s*\000'\
 '\s*</item>\s*\000'\
 '\s*)<item>'\
 '|<\1<!--item>|'
-
-exit
 
 # choose right flag for german mpaa ratings
 if ! grep -q 'fsk-18' '720p/IncludesVariables.xml' ; then
@@ -54,6 +52,8 @@ if ! grep -q 'fsk-18' '720p/IncludesVariables.xml' ; then
 '\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,o)">de/fsk-0</value>'\
 '\n\n|' 
 fi
+
+exit
 
 # remove Home menu seperator
 if grep -q 'HomeSeperator' '720p/Home.xml' ; then
