@@ -265,10 +265,10 @@ if grep -q "$IMG" 720p/* ; then
 fi
 rm "media/$IMG" 2>/dev/null
 
-exit
-
 #remove ThumbShadow.png from list view
 perlregex 720p/ViewsFileMode.xml 's|\s*<bordertexture border="8">ThumbShadow.png</bordertexture>\s*\000||g'
+
+exit
 
 #remove border from addons that are not focused on the home view
 perlregex 720p/includes.xml 's|(\s*<width>180</width>\s*\000)'\
