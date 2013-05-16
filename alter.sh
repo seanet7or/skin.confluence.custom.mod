@@ -370,4 +370,8 @@ perlregex 720p/IncludesBackgroundBuilding.xml 's|\s*<control type="image">\s*\00
 #correct typo
 perlregex 720p/ViewsPictures.xml 's|folder-Focus.png|folder-focus.png|g'
 
+#remove left panel arrow
+perlregex 720p/includes.xml 's|<texturefocus>HasSub.png</texturefocus>|<texturefocus>-</texturefocus>|g'
+perlregex 720p/includes.xml 's|<texturenofocus>HasSub.png</texturenofocus>|<texturenofocus>-</texturenofocus>|g'
+
 exit
