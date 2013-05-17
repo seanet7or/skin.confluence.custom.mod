@@ -30,26 +30,26 @@ findunused() {
 	IFS=$IFS_OLD
 }
 
+# removes <control type="image .... </control> structure from xml file
+# the controle structure to remove is identified by the characteristic line
 # $1 characteristic line
 # $2 .xml file ; if empty, all occurrencies are searched
 remove_imagecontrol() {
 	local LINE="$1"
 	if [ -z "$2" ] ; then
-		echo "Param2 is empty, building file list:"
+		#echo "Param2 is empty, building file list:"
 		local LIST=$(grep "$LINE" 720p/* | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
-		echo "$LIST"
+		#echo "$LIST"
 	else
 		local LIST="$2"
 	fi
 	
 	for F in $LIST ; do
-		set -x
 		perlregex "$F" 's|\s*?<control type="image"[^>]*>\s*?\000'\
 '(\s*<(bordersize\|bordertexture\|fadetime\|posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
 '\s*'$LINE'\s*\000'\
 '(\s*<(bordersize\|bordertexture\|fadetime\|posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
 '\s*</control>\s*?\000||g'
-		set +x
 	done
 
 	if grep -q "$LINE" 720p/* ; then
