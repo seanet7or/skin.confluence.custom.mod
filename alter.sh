@@ -34,9 +34,9 @@ findunused() {
 # $2 characteristic line
 remove_imagecontrol() {
 	perlregex "$1" 's|\s*?<control type="image"[^>]*>\s*?\000'\
-'(\s*<(fadetime\|posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
+'(\s*<(bordersize\|bordertexture\|fadetime\|posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
 '\s*'$2'\s*\000'\
-'(\s*<(fadetime\|posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
+'(\s*<(bordersize\|bordertexture\|fadetime\|posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
 '\s*</control>\s*?\000||g'
 }
 
@@ -398,5 +398,9 @@ perlregex 720p/ViewsPictures.xml 's|folder-Focus.png|folder-focus.png|g'
 perlregex 720p/includes.xml 's|<texturefocus>HasSub.png</texturefocus>|<texturefocus>-</texturefocus>|g'
 perlregex 720p/includes.xml 's|<texturenofocus>HasSub.png</texturenofocus>|<texturenofocus>-</texturenofocus>|g'
 
-remove_imagecontrol 720p/ViewsFileMode.xml '<texture.diffuse="diffuse_mirror3.png"[^<]*</texture>'
+#remove mirror poster from list view
+remove_imagecontrol 720p/ViewsFileMode.xml '<texture[^>]*diffuse="diffuse_mirror3.png"[^>]*>[^<]*</texture>'
+
+#remove mirror posters from other views
+remove_imagecontrol 720p/ViewsVideoLibrary.xml '<texture[^>]*diffuse="diffuse_mirror2.png"[^>]*>[^<]*</texture>'
 exit
