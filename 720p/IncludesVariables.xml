@@ -143,7 +143,7 @@
 		<value>DefaultGenre/</value>
 	</variable>
 	<variable name="MainItemLabel">
-		<value condition="StringCompare(ListItem.Label,..) + !Skin.HasSetting(ParentDirLabel)">..$LOCALIZE[31316]</value>
+		<value condition="StringCompare(ListItem.Label,..) + !Skin.HasSetting(ParentDirLabel)">[B][COLOR=blue]$LOCALIZE[31316][/COLOR][/B]</value>
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
 	<variable name="UsrMPAACountry" type="text">
