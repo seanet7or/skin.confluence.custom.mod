@@ -30,14 +30,33 @@ findunused() {
 	IFS=$IFS_OLD
 }
 
-# $1 .xml file
-# $2 characteristic line
+# $1 characteristic line
+# $2 .xml file ; if empty, all occurrencies are searched
 remove_imagecontrol() {
-	perlregex "$1" 's|\s*?<control type="image"[^>]*>\s*?\000'\
+	local LINE="$1"
+	if [ -z "$2" ] ; then
+		echo "Param2 is empty, building file list:"
+		local LIST=$(grep "$LINE" 720p/* | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
+		echo "$LIST"
+	else
+		local LIST="$2"
+	fi
+	
+	for F in $LIST ; do
+		set -x
+		perlregex "$F" 's|\s*?<control type="image"[^>]*>\s*?\000'\
 '(\s*<(bordersize\|bordertexture\|fadetime\|posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
-'\s*'$2'\s*\000'\
+'\s*'$LINE'\s*\000'\
 '(\s*<(bordersize\|bordertexture\|fadetime\|posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
 '\s*</control>\s*?\000||g'
+		set +x
+	done
+
+	if grep -q "$LINE" 720p/* ; then
+		echo "ERROR: Not all occurrences of '$LINE' could be removed, please check:"
+		grep "$LINE" 720p/*
+		exit 3
+	fi
 }
 
 read_origmaster() {
@@ -399,12 +418,9 @@ perlregex 720p/includes.xml 's|<texturefocus>HasSub.png</texturefocus>|<texturef
 perlregex 720p/includes.xml 's|<texturenofocus>HasSub.png</texturenofocus>|<texturenofocus>-</texturenofocus>|g'
 
 #remove mirror poster from list view
-remove_imagecontrol 720p/ViewsFileMode.xml '<texture[^>]*diffuse="diffuse_mirror3.png"[^>]*>[^<]*</texture>'
+remove_imagecontrol '<texture[^>]*diffuse="diffuse_mirror3.png"[^>]*>[^<]*</texture>' 720p/ViewsFileMode.xml
 
-#remove mirror posters from video fanart view
-remove_imagecontrol 720p/ViewsVideoLibrary.xml '<texture[^>]*diffuse="diffuse_mirror2.png"[^>]*>[^<]*</texture>'
-
-#remove mirror posters from music fanart
-remove_imagecontrol 720p/ViewsMusicLibrary.xml '<texture[^>]*diffuse="diffuse_mirror2.png"[^>]*>[^<]*</texture>'
+#remove mirror posters from other views
+remove_imagecontrol '<texture[^>]*diffuse="diffuse_mirror2.png"[^>]*>[^<]*</texture>'
 
 exit
