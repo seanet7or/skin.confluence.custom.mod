@@ -10,25 +10,6 @@ perlregex() {
 	rm "$FILE.tmp"
 }
 
-findunused() {
-	FILES=$(find media -type f)
-	IFS_OLD=$IFS
-	IFS=$'\n'
-	for F in $FILES ; do
-		FS=$(basename $F)
-		if ! grep -q "$FS" 720p/* ; then
-			echo "'$FS' was not found in the .xmls."
-			echo "File is '$F'."
-			BASE=$(echo "$FS" | sed 's|\.[a-zA-Z]*||g')
-			echo "Occurences of '$BASE':"
-			grep "$BASE" 720p/*
-		else
-			echo "'$FS' was found in the .xmls."
-			echo "File is '$F'."	
-		fi
-	done
-	IFS=$IFS_OLD
-}
 
 # removes <control type="image .... </control> structure from xml file
 # the controle structure to remove is identified by the characteristic line
@@ -59,6 +40,75 @@ remove_imagecontrol() {
 	fi
 }
 
+# checks if image file is linked in the xmls ; if not, the image is deleted
+# $1 image file with full path
+check_and_remove() {
+	F=$1
+	FS=$(basename $F)
+	if ! grep -q "$FS" 720p/* ; then
+		
+		BASE=$(echo "$FS" | sed 's|\.[a-zA-Z]*||g')
+		#echo "Occurences of '$BASE':"
+		if ! grep -q "$BASE" 720p/* ; then
+			rm "$F" 2>/dev/null
+		else
+			"'$BASE' ('$F') was found in the .xmls:"
+			grep "$BASE" 720p/*
+			exit 3
+		fi
+	else
+		"'$FS' ('$F') was found in the .xmls:"
+		grep "$FS" 720p/*
+		exit 3
+	fi
+}
+
+findunused() {
+	FILES=$(find media -type f)
+	IFS_OLD=$IFS
+	IFS=$'\n'
+
+	#generic
+	for F in DefaultAddSource.png DefaultCDDA.png DefaultDVDEmpty.png DefaultDVDRom.png DefaultFile.png DefaultFolder.png DefaultFolderBack.png DefaultHardDisk.png DefaultNetwork.png DefaultPicture.png DefaultPlaylist.png DefaultProgram.png DefaultRemovableDisk.png DefaultScript.png DefaultShortcut.png DefaultVCD.png OverlayHasTrainer.png OverlayHD.png OverlayLocked.png OverlayRAR.png OverlayTrained.png OverlayUnwatched.png OverlayWatched.png OverlayZIP.png ; do
+		FILES=$(echo "$FILES" | grep -v $F)
+	done
+	#music
+	for F in DefaultAlbumCover.png DefaultArtist.png DefaultAudio.png DefaultMusicAlbums.png DefaultMusicArtists.png DefaultMusicCompilations.png DefaultMusicGenres.png DefaultMusicPlaylists.png DefaultMusicPlugins.png DefaultMusicRecentlyAdded.png DefaultMusicRecentlyPlayed.png DefaultMusicSearch.png DefaultMusicSongs.png DefaultMusicTop100.png DefaultMusicTop100Albums.png DefaultMusicTop100Songs.png DefaultMusicVideos.png DefaultMusicVideoTitle.png DefaultMusicYears.png ; do
+		FILES=$(echo "$FILES" | grep -v $F)
+	done
+	#video
+	for F in DefaultActor.png DefaultCountry.png DefaultDirector.png DefaultGenre.png DefaultInProgressShows.png DefaultMovies.png DefaultMovieTitle.png DefaultRecentlyAddedEpisodes.png DefaultRecentlyAddedMovies.png DefaultRecentlyAddedMusicVideos.png DefaultSets.png DefaultStudios.png DefaultTVShows.png DefaultTVShowTitle.png DefaultVideo.png DefaultVideoCover.png DefaultVideoPlaylists.png DefaultVideoPlugins.png DefaultYear.png ; do
+		FILES=$(echo "$FILES" | grep -v $F)
+	done	
+	#addons
+	for F in DefaultAddon.png DefaultAddonAlbumInfo.png DefaultAddonArtistInfo.png DefaultAddonLyrics.png DefaultAddonMovieInfo.png DefaultAddonMusic.png DefaultAddonMusicVideoInfo.png DefaultAddonNone.png DefaultAddonPicture.png DefaultAddonProgram.png DefaultAddonPVRClient.png DefaultAddonRepository.png DefaultAddonScreensaver.png DefaultAddonService.png DefaultAddonSkin.png DefaultAddonSubtitles.png DefaultAddonTvInfo.png DefaultAddonVideo.png DefaultAddonVisualization.png DefaultAddonWeather.png DefaultAddonWebSkin.png	; do
+		FILES=$(echo "$FILES" | grep -v $F)
+	done	
+	#own
+	for F in genre-numbers.txt Thumbs.db media/Language/*.png media/flagging/* media/DefaultGenre/* media/LeftRating/* media/CenterRating/* MakeFile.in ; do
+		FILES=$(echo "$FILES" | grep -v $F)
+	done
+	
+	for F in $FILES ; do
+		FS=$(basename $F)
+		if ! grep -q "$FS" 720p/* ; then
+			#echo "'$FS' was not found in the .xmls."
+			#echo "File is '$F'."
+			BASE=$(echo "$FS" | sed 's|\.[a-zA-Z]*||g')
+			#echo "Occurences of '$BASE':"
+			if ! grep -q "$BASE" 720p/* ; then
+				echo "Whether '$FS' nor '$BASE' was found in the .xmls."
+				echo "File is '$F'."
+			fi
+		else
+			#echo "'$FS' was found in the .xmls."
+			#echo "File is '$F'."	
+			:
+		fi
+	done
+	IFS=$IFS_OLD
+}
+
 read_origmaster() {
 	ZIP=Mudislander-master.zip
 	wget -O- -nv --no-check-certificate https://github.com/Mudislander/skin.confluence.custom.mod/archive/master.zip >$ZIP
@@ -69,7 +119,7 @@ read_origmaster() {
 	cp -r Mudislander-master/skin.confluence.custom.mod-master/media/OverlayStatus media
 }
 
-#findunused ; exit
+findunused
 
 #read_origmaster
 
@@ -422,5 +472,14 @@ remove_imagecontrol '<texture[^>]*diffuse="diffuse_mirror3.png"[^>]*>[^<]*</text
 
 #remove mirror posters from other views
 remove_imagecontrol '<texture[^>]*diffuse="diffuse_mirror2.png"[^>]*>[^<]*</texture>'
+
+#remove unnecessary files
+check_and_remove media/HasSub.png
+check_and_remove media/diffuse_mirror3.png
+check_and_remove media/diffuse_mirror2.png
+check_and_remove media/icon-weather.png
+check_and_remove media/icon-video.png
+check_and_remove media/icon-pictures.png
+check_and_remove media/poster_diffuse.png
 
 exit
