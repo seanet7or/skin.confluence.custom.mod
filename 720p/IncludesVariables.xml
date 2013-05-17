@@ -128,7 +128,7 @@
 		<value condition="stringcompare(Skin.String(WatchStatusType),Blue)">blue/$INFO[ListItem.Overlay]</value>
 		<value condition="stringcompare(Skin.String(WatchStatusType),Green)">green/$INFO[ListItem.Overlay]</value>
 		<value condition="stringcompare(Skin.String(WatchStatusType),Yellow)">yellow/$INFO[ListItem.Overlay]</value>
-	</variable>	
+	</variable>
 	<variable name="PartlyWatched">
 		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,0) + !IntegerGreaterThan(ListItem.PercentPlayed,19)">OverlayPartlywatched1</value>
 		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,19) + !IntegerGreaterThan(ListItem.PercentPlayed,31)">OverlayPartlywatched2</value>

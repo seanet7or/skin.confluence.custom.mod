@@ -37,7 +37,7 @@
 				<label>$LOCALIZE[31167]</label>
 				<onclick>RunPlugin(plugin://script.simpleplaylists/?mode=addCurrentUrl)</onclick>
 				<visible>System.HasAddon(script.simpleplaylists)+ !Skin.HasSetting(DisableWatchItLater) + [Container.Content(Episodes) | Container.Content(Movies) | Container.Content(Songs)]</visible>
-			</control>			
+			</control>
 		</control>
 		<control type="button">
 			<description>Close Window button</description>

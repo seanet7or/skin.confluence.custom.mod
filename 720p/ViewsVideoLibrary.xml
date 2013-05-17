@@ -2469,7 +2469,7 @@
 			<control type="image">
 				<include>Dimensions_Fullscreen</include>
 				<texture background="true">black-back.png</texture>
-			</control>	
+			</control>
 			<control type="panel" id="732">
 				<posx>29</posx>
 				<posy>55</posy>
@@ -2561,15 +2561,15 @@
 					</control>
 				</itemlayout>
 				<focusedlayout height="205" width="142">
-					<control type="group">	
+					<control type="group">
 						<posx>0</posx>
 						<posy>0</posy>
-    					<animation effect="slide" end="22,0" time="200" reversible="true" condition="Container.Column(0)">conditional</animation>
-    					<animation effect="slide" end="0,26" time="200" reversible="true" condition="Container.Row(0)">conditional</animation>
-    					<animation effect="slide" end="0,-26" time="200" reversible="true" condition="Container.Row(2)">conditional</animation>
-    					<animation effect="slide" end="-22,0" time="200" reversible="true" condition="Container.Column(8)">conditional</animation>
-						<animation reversible="false" effect="zoom"  end="-27,-33,185,267" time="100">focus</animation>
-						<animation reversible="false" effect="zoom" start="-27,-33,185,267" time="100">unfocus</animation>			
+						<animation effect="slide" end="22,0" time="200" reversible="true" condition="Container.Column(0)">conditional</animation>
+						<animation effect="slide" end="0,26" time="200" reversible="true" condition="Container.Row(0)">conditional</animation>
+						<animation effect="slide" end="0,-26" time="200" reversible="true" condition="Container.Row(2)">conditional</animation>
+						<animation effect="slide" end="-22,0" time="200" reversible="true" condition="Container.Column(8)">conditional</animation>
+						<animation reversible="false" effect="zoom" end="-27,-33,185,267" time="100">focus</animation>
+						<animation reversible="false" effect="zoom" start="-27,-33,185,267" time="100">unfocus</animation>
 						<control type="image">
 							<posx>0</posx>
 							<posy>0</posy>
@@ -2582,47 +2582,47 @@
 							<bordertexture border="8">ThumbBorder.png</bordertexture>
 						</control>
 						<control type="group">
-						<visible>Skin.HasSetting(ViewStatusBanner) + !IsEmpty(ListItem.Overlay)</visible>
-						<control type="image">
-							<posx>54</posx>
-							<posy>7</posy>
-							<width>80</width>
-							<height>80</height>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<texture background="true" fallback="banner/DefaultWatched.png">banner/$LOCALIZE[16102].png</texture>
-							<visible>StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
+							<visible>Skin.HasSetting(ViewStatusBanner) + !IsEmpty(ListItem.Overlay)</visible>
+							<control type="image">
+								<posx>54</posx>
+								<posy>7</posy>
+								<width>80</width>
+								<height>80</height>
+								<fadetime>IconCrossfadeTime</fadetime>
+								<texture background="true" fallback="banner/DefaultWatched.png">banner/$LOCALIZE[16102].png</texture>
+								<visible>StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
+							</control>
+							<control type="image">
+								<posx>54</posx>
+								<posy>7</posy>
+								<width>80</width>
+								<height>80</height>
+								<fadetime>IconCrossfadeTime</fadetime>
+								<texture background="true" fallback="banner/DefaultUnwatched.png">banner/$LOCALIZE[16101].png</texture>
+								<visible>!StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
+							</control>
+							<control type="image">
+								<posx>54</posx>
+								<posy>7</posy>
+								<width>80</width>
+								<height>80</height>
+								<fadetime>IconCrossfadeTime</fadetime>
+								<texture background="true" fallback="banner/DefaultInProgress.png">banner/$LOCALIZE[31357].png</texture>
+								<visible>ListItem.IsResumable</visible>
+							</control>
 						</control>
 						<control type="image">
-							<posx>54</posx>
-							<posy>7</posy>
-							<width>80</width>
-							<height>80</height>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<texture background="true" fallback="banner/DefaultUnwatched.png">banner/$LOCALIZE[16101].png</texture>
-							<visible>!StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
+							<posx>85</posx>
+							<posy>150</posy>
+							<width>50</width>
+							<height>50</height>
+							<aspectratio>keep</aspectratio>
+							<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
+							<visible>!Skin.HasSetting(ViewStatusBanner) + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
 						</control>
-						<control type="image">
-							<posx>54</posx>
-							<posy>7</posy>
-							<width>80</width>
-							<height>80</height>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<texture background="true" fallback="banner/DefaultInProgress.png">banner/$LOCALIZE[31357].png</texture>
-							<visible>ListItem.IsResumable</visible>
-						</control>
-					</control>
-					<control type="image">
-						<posx>85</posx>
-						<posy>150</posy>
-						<width>50</width>
-						<height>50</height>
-						<aspectratio>keep</aspectratio>
-						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
-						<visible>!Skin.HasSetting(ViewStatusBanner) + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
-					</control>
 					</control>
 				</focusedlayout>
 			</control>
-		</control>	
+		</control>
 	</include>
 </includes>
