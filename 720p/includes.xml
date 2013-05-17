@@ -1328,6 +1328,9 @@
 	<include name="TransparentEffect">
 		<colordiffuse>$INFO[Skin.String(MediaPanelTrans)]</colordiffuse>
 	</include>
+	<include name="TransparentWallEffect">
+		<colordiffuse>3FFFFFFF</colordiffuse>
+	</include>
 	<include name="Window_OpenClose_Animation">
 		<animation effect="fade" time="250">WindowOpen</animation>
 		<animation effect="fade" time="250">WindowClose</animation>
@@ -1567,7 +1570,7 @@
 			</control>
 		</control>
 	</include>
-	<include name="MusicPlayingBackground">
+	<include name="MusicPlayingBottom">
 		<control type="group">
 			<control type="image">
 				<description>Fanart Image for Artist</description>
@@ -1614,10 +1617,8 @@
 			</control>
 			<visible>IsEmpty(Visualisation.Name) | stringcompare(Visualisation.Name,Waveform) | stringcompare(Visualisation.Name,DirectX Spectrum)</visible>
 		</control>
-		<control type="visualisation" id="2">
-			<description>visualisation</description>
-			<include>Dimensions_Fullscreen</include>
-		</control>
+	</include>
+	<include name="MusicPlayingTop">
 		<control type="group">
 			<control type="multiimage">
 				<description>Artist Slideshow Image for Artist</description>

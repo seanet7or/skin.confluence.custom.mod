@@ -213,7 +213,11 @@
 			<include>VisibleFadeEffect</include>
 		</control>
 		<control type="group">
-			<include condition="!Skin.HasSetting(HideBackGroundFanart)">MusicPlayingBackground</include>
+			<include condition="!Skin.HasSetting(HideBackGroundFanart)">MusicPlayingBottom</include>
+			<control type="visualisation">
+				<include>Dimensions_Fullscreen</include>
+			</control>
+			<include condition="!Skin.HasSetting(HideBackGroundFanart)">MusicPlayingTop</include>
 			<visible>Player.HasAudio + !Skin.HasSetting(ShowBackgroundVis) + ![Window.IsVisible(PVR) + [Control.IsVisible(11) | Control.IsVisible(12)]]</visible>
 			<visible>!SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
 		</control>

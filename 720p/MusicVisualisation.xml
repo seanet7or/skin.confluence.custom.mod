@@ -4,7 +4,12 @@
 	<defaultcontrol>-</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<controls>
-		<include>MusicPlayingBackground</include>
+		<include condition="!Skin.HasSetting(HideBackGroundFanart)">MusicPlayingBottom</include>
+		<control type="visualisation" id="2">
+			<description>visualisation</description>
+			<include>Dimensions_Fullscreen</include>
+		</control>
+		<include condition="!Skin.HasSetting(HideBackGroundFanart)">MusicPlayingTop</include>
 		<!-- media infos -->
 		<control type="group">
 			<animation effect="fade" time="200">VisibleChange</animation>
