@@ -85,7 +85,7 @@ findunused() {
 		FILES=$(echo "$FILES" | grep -v $F)
 	done	
 	#own
-	for F in genre-numbers.txt Thumbs.db media/Language/*.png media/flagging/* media/DefaultGenre/* media/LeftRating/* media/CenterRating/* MakeFile.in ; do
+	for F in genre-numbers.txt Thumbs.db media/Language/*.png media/flagging/* media/DefaultGenre/* media/LeftRating/* media/CenterRating/* Makefile.in ; do
 		FILES=$(echo "$FILES" | grep -v $F)
 	done
 	
@@ -479,7 +479,10 @@ check_and_remove media/diffuse_mirror3.png
 check_and_remove media/diffuse_mirror2.png
 check_and_remove media/icon-weather.png
 check_and_remove media/icon-video.png
-check_and_remove media/icon-pictures.png
+check_and_remove media/icon_pictures.png
+check_and_remove media/icon_volume.png
 check_and_remove media/poster_diffuse.png
-
+check_and_remove media/OSDFullScreenFO.png
+check_and_remove media/OSDFullScreenNF.png
+check_and_remove media/defaultDVDFull.png
 exit
