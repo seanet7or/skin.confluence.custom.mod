@@ -30,6 +30,16 @@ findunused() {
 	IFS=$IFS_OLD
 }
 
+# $1 .xml file
+# $2 characteristic line
+remove_imagecontrol() {
+	perlregex "$1" 's|\s*?<control type="image"[^>]*>\s*?\000'\
+'(\s*<(fadetime\|posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
+'\s*'$2'\s*\000'\
+'(\s*<(fadetime\|posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
+'\s*</control>\s*?\000||g'
+}
+
 read_origmaster() {
 	ZIP=Mudislander-master.zip
 	wget -O- -nv --no-check-certificate https://github.com/Mudislander/skin.confluence.custom.mod/archive/master.zip >$ZIP
@@ -42,7 +52,7 @@ read_origmaster() {
 
 #findunused ; exit
 
-read_origmaster
+#read_origmaster
 
 # enable 'germany' as option in mpaa settings
 perlregex '720p/SkinSettings.xml' 's|<!--(item>\s*\000'\
@@ -376,9 +386,9 @@ rm "media/$IMG" 2>/dev/null
 
 #remove background top
 perlregex 720p/IncludesBackgroundBuilding.xml 's|\s*<control type="image">\s*\000'\
-'(\s*<(posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
+'(\s*<(posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000\|)*?'\
 '\s*<texture[^>]*>HomeNowPlayingBack.png</texture>\s*\000'\
-'(\s*<(posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
+'(\s*<(posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000\|)*?'\
 '\s*</control>\s*\000||'
 
 #correct typo
@@ -388,4 +398,5 @@ perlregex 720p/ViewsPictures.xml 's|folder-Focus.png|folder-focus.png|g'
 perlregex 720p/includes.xml 's|<texturefocus>HasSub.png</texturefocus>|<texturefocus>-</texturefocus>|g'
 perlregex 720p/includes.xml 's|<texturenofocus>HasSub.png</texturenofocus>|<texturenofocus>-</texturenofocus>|g'
 
+remove_imagecontrol 720p/ViewsFileMode.xml '<texture.diffuse="diffuse_mirror3.png"[^<]*</texture>'
 exit
