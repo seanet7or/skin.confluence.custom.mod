@@ -87,12 +87,20 @@
 					</control>
 					<control type="group">
 						<control type="image">
+							<posx>658</posx>
+							<posy>3</posy>
+							<width>32</width>
+							<height>32</height>
+							<texture diffuse="poster-diffuse.png">OverlayStatus/resumable/OverlayUnwatched.png</texture>
+							<visible>Skin.HasSetting(ResumeStatusPosi)</visible>
+						</control>
+						<control type="image">
 							<posx>665</posx>
 							<posy>14</posy>
 							<width>16</width>
 							<height>16</height>
 							<texture>OverlayWatching.png</texture>
-							<visible>!Skin.HasSetting(ResumeStatusPosi)</visible>
+							<visible>!Skin.HasSetting(ResumeStatusPosi) + ListItem.IsResumable</visible>
 						</control>
 						<control type="image">
 							<posx>658</posx>
@@ -100,17 +108,17 @@
 							<width>32</width>
 							<height>32</height>
 							<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,OverlayStatus/resumable/,.png]</texture>
-							<visible>Skin.HasSetting(ResumeStatusPosi)</visible>
+							<visible>Skin.HasSetting(ResumeStatusPosi) + ListItem.IsResumable</visible>
 						</control>
-						<visible>Window.IsVisible(Videos) + ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
-					</control>
-					<control type="image">
-						<posx>660</posx>
-						<posy>10</posy>
-						<width>25</width>
-						<height>21</height>
-						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
-						<visible>Window.IsVisible(Videos) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
+						<control type="image">
+							<posx>662</posx>
+							<posy>10</posy>
+							<width>25</width>
+							<height>21</height>
+							<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
+							<visible>!ListItem.IsResumable</visible>
+						</control>
+						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout height="40" width="580">
@@ -217,12 +225,20 @@
 					</control>
 					<control type="group">
 						<control type="image">
+							<posx>658</posx>
+							<posy>3</posy>
+							<width>32</width>
+							<height>32</height>
+							<texture diffuse="poster-diffuse.png">OverlayStatus/resumable/OverlayUnwatched.png</texture>
+							<visible>Skin.HasSetting(ResumeStatusPosi)</visible>
+						</control>
+						<control type="image">
 							<posx>665</posx>
 							<posy>14</posy>
 							<width>16</width>
 							<height>16</height>
 							<texture>OverlayWatching.png</texture>
-							<visible>!Skin.HasSetting(ResumeStatusPosi)</visible>
+							<visible>!Skin.HasSetting(ResumeStatusPosi) + ListItem.IsResumable</visible>
 						</control>
 						<control type="image">
 							<posx>658</posx>
@@ -230,17 +246,17 @@
 							<width>32</width>
 							<height>32</height>
 							<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,OverlayStatus/resumable/,.png]</texture>
-							<visible>Skin.HasSetting(ResumeStatusPosi)</visible>
+							<visible>Skin.HasSetting(ResumeStatusPosi) + ListItem.IsResumable</visible>
 						</control>
-						<visible>Window.IsVisible(Videos) + ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
-					</control>
-					<control type="image">
-						<posx>660</posx>
-						<posy>10</posy>
-						<width>25</width>
-						<height>21</height>
-						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
-						<visible>Window.IsVisible(Videos) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
+						<control type="image">
+							<posx>662</posx>
+							<posy>10</posy>
+							<width>25</width>
+							<height>21</height>
+							<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
+							<visible>!ListItem.IsResumable</visible>
+						</control>
+						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
 					</control>
 				</focusedlayout>
 			</control>
@@ -677,30 +693,38 @@
 					</control>
 					<control type="group">
 						<control type="image">
-						<posx>1050</posx>
-						<posy>14</posy>
+							<posx>1045</posx>
+							<posy>3</posy>
+							<width>32</width>
+							<height>32</height>
+							<texture diffuse="poster-diffuse.png">OverlayStatus/resumable/OverlayUnwatched.png</texture>
+							<visible>Skin.HasSetting(ResumeStatusPosi)</visible>
+						</control>
+						<control type="image">
+							<posx>1050</posx>
+							<posy>14</posy>
 							<width>16</width>
 							<height>16</height>
 							<texture>OverlayWatching.png</texture>
-							<visible>!Skin.HasSetting(ResumeStatusPosi)</visible>
+							<visible>!Skin.HasSetting(ResumeStatusPosi) + ListItem.IsResumable</visible>
 						</control>
 						<control type="image">
-						<posx>1045</posx>
-						<posy>3</posy>
+							<posx>1045</posx>
+							<posy>3</posy>
 							<width>32</width>
 							<height>32</height>
 							<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,OverlayStatus/resumable/,.png]</texture>
-							<visible>Skin.HasSetting(ResumeStatusPosi)</visible>
+							<visible>Skin.HasSetting(ResumeStatusPosi) + ListItem.IsResumable</visible>
 						</control>
-						<visible>Window.IsVisible(Videos) + ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
-					</control>
-					<control type="image">
-						<posx>1045</posx>
-						<posy>14</posy>
-						<width>25</width>
-						<height>21</height>
-						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
-						<visible>Window.IsVisible(Videos) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
+						<control type="image">
+							<posx>1047</posx>
+							<posy>14</posy>
+							<width>25</width>
+							<height>21</height>
+							<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
+							<visible>!ListItem.IsResumable</visible>
+						</control>
+						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout height="40" width="1080">
@@ -809,30 +833,38 @@
 					</control>
 					<control type="group">
 						<control type="image">
-						<posx>1050</posx>
-						<posy>14</posy>
+							<posx>1045</posx>
+							<posy>3</posy>
+							<width>32</width>
+							<height>32</height>
+							<texture diffuse="poster-diffuse.png">OverlayStatus/resumable/OverlayUnwatched.png</texture>
+							<visible>Skin.HasSetting(ResumeStatusPosi)</visible>
+						</control>
+						<control type="image">
+							<posx>1050</posx>
+							<posy>14</posy>
 							<width>16</width>
 							<height>16</height>
 							<texture>OverlayWatching.png</texture>
-							<visible>!Skin.HasSetting(ResumeStatusPosi)</visible>
+							<visible>!Skin.HasSetting(ResumeStatusPosi) + ListItem.IsResumable</visible>
 						</control>
 						<control type="image">
-						<posx>1045</posx>
-						<posy>3</posy>
+							<posx>1045</posx>
+							<posy>3</posy>
 							<width>32</width>
 							<height>32</height>
 							<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,OverlayStatus/resumable/,.png]</texture>
-							<visible>Skin.HasSetting(ResumeStatusPosi)</visible>
+							<visible>Skin.HasSetting(ResumeStatusPosi) + ListItem.IsResumable</visible>
 						</control>
-						<visible>Window.IsVisible(Videos) + ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
-					</control>
-					<control type="image">
-						<posx>1045</posx>
-						<posy>14</posy>
-						<width>25</width>
-						<height>21</height>
-						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
-						<visible>Window.IsVisible(Videos) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
+						<control type="image">
+							<posx>1047</posx>
+							<posy>14</posy>
+							<width>25</width>
+							<height>21</height>
+							<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
+							<visible>!ListItem.IsResumable</visible>
+						</control>
+						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
 					</control>
 				</focusedlayout>
 			</control>
