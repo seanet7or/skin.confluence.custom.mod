@@ -304,6 +304,7 @@
 				<aligny>center</aligny>
 				<label>([COLOR=blue]$INFO[Container(11).NumItems][/COLOR]) $LOCALIZE[19019] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(11).CurrentPage]/$INFO[Container(11).NumPages][/COLOR])</label>
 				<include>Window_OpenClose_Animation</include>
+				<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
 			</control>
 		</control>
 	</include>
@@ -611,6 +612,7 @@
 				<aligny>center</aligny>
 				<label>([COLOR=blue]$INFO[Container(12).NumItems][/COLOR]) $LOCALIZE[19019] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(12).CurrentPage]/$INFO[Container(12).NumPages][/COLOR])</label>
 				<include>Window_OpenClose_Animation</include>
+				<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
 			</control>
 		</control>
 	</include>
@@ -793,6 +795,7 @@
 				<aligny>center</aligny>
 				<label>([COLOR=blue]$INFO[Container(13).NumItems][/COLOR]) $LOCALIZE[19163] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(13).CurrentPage]/$INFO[Container(13).NumPages][/COLOR])</label>
 				<include>Window_OpenClose_Animation</include>
+				<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
 			</control>
 			<control type="group">
 				<posx>910</posx>
@@ -1348,6 +1351,7 @@
 				<aligny>center</aligny>
 				<label>([COLOR=blue]$INFO[Container(14).NumItems][/COLOR]) $LOCALIZE[19040] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(14).CurrentPage]/$INFO[Container(14).NumPages][/COLOR])</label>
 				<include>Window_OpenClose_Animation</include>
+				<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
 			</control>
 		</control>
 	</include>
@@ -1701,6 +1705,7 @@
 				<align>right</align>
 				<aligny>center</aligny>
 				<label>([COLOR=blue]$INFO[Container(17).NumItems][/COLOR]) $LOCALIZE[31025] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(17).CurrentPage]/$INFO[Container(17).NumPages][/COLOR])</label>
+				<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
 			</control>
 		</control>
 	</include>
@@ -2024,6 +2029,7 @@
 				<align>right</align>
 				<aligny>center</aligny>
 				<label>([COLOR=blue]$INFO[Container(15).NumItems][/COLOR]) $LOCALIZE[31025] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(15).CurrentPage]/$INFO[Container(15).NumPages][/COLOR])</label>
+				<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
 			</control>
 		</control>
 	</include>
@@ -2398,6 +2404,7 @@
 				<align>right</align>
 				<aligny>center</aligny>
 				<label>([COLOR=blue]$INFO[Container(16).NumItems][/COLOR]) $LOCALIZE[31025] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(16).CurrentPage]/$INFO[Container(16).NumPages][/COLOR])</label>
+				<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
 			</control>
 		</control>
 	</include>

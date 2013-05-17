@@ -309,6 +309,7 @@
 					<font>font12</font>
 					<label>([COLOR=blue]$INFO[Container(450).NumItems][/COLOR]) $LOCALIZE[31025] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(450).CurrentPage]/$INFO[Container(450).NumPages][/COLOR])</label>
 					<visible>!Control.IsVisible(451)</visible>
+					<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
 				</control>
 				<control type="label">
 					<description>Page label</description>
@@ -322,6 +323,7 @@
 					<font>font12</font>
 					<label>([COLOR=blue]$INFO[Container(451).NumItems][/COLOR]) $LOCALIZE[31025] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(451).CurrentPage]/$INFO[Container(451).NumPages][/COLOR])</label>
 					<visible>Control.IsVisible(451)</visible>
+					<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
 				</control>
 			</control>
 		</control>

@@ -680,6 +680,7 @@
 					<textcolor>grey</textcolor>
 					<shadowcolor>black</shadowcolor>
 					<label>([COLOR=blue]$INFO[Container(50).NumItems][/COLOR]) $LOCALIZE[12393] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(50).CurrentPage]/$INFO[Container(50).NumPages][/COLOR])</label>
+					<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
 				</control>
 			</control>
 			<control type="group">
@@ -969,6 +970,7 @@
 							<textcolor>grey</textcolor>
 							<shadowcolor>black</shadowcolor>
 							<label>([COLOR=blue]$INFO[Container(51).NumItems][/COLOR]) $LOCALIZE[31025] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(51).CurrentPage]/$INFO[Container(51).NumPages][/COLOR])</label>
+							<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
 						</control>
 					</control>
 					<control type="group">
@@ -1693,6 +1695,7 @@
 							<textcolor>grey</textcolor>
 							<shadowcolor>black</shadowcolor>
 							<label>([COLOR=blue]$INFO[Container(52).NumItems][/COLOR]) $LOCALIZE[31025] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(52).CurrentPage]/$INFO[Container(52).NumPages][/COLOR])</label>
+							<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
 						</control>
 					</control>
 					<control type="group">

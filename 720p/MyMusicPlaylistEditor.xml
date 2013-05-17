@@ -165,6 +165,7 @@
 				<textcolor>blue</textcolor>
 				<shadowcolor>black</shadowcolor>
 				<label>($INFO[Container(50).NumItems]) $LOCALIZE[31025] - $LOCALIZE[31024] ($INFO[Container(50).CurrentPage]/$INFO[Container(50).NumPages])</label>
+				<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
 			</control>
 			<control type="scrollbar" id="30">
 				<posx>20</posx>
@@ -305,6 +306,7 @@
 				<align>right</align>
 				<aligny>center</aligny>
 				<label>($INFO[Container(100).NumItems]) $LOCALIZE[31025] - $LOCALIZE[31024] ($INFO[Container(100).CurrentPage]/$INFO[Container(100).NumPages])</label>
+				<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
 			</control>
 			<control type="scrollbar" id="31">
 				<posx>430</posx>
