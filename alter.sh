@@ -496,5 +496,6 @@ remove_imagecontrol '<description>LOGO</description>' 720p/Home.xml
 remove_imagecontrol '<texture>xbmc-logo.png</texture>' 720p/LoginScreen.xml
 #remove logo fallback from music visualisation
 perlregex 720p/MusicVisualisation.xml 's| fallback="xbmc-logo.png"||g'
-
+#remove xbmc-logo.png
+check_and_remove media/xbmc-logo.png
 exit
