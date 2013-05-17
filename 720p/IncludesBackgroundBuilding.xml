@@ -213,20 +213,7 @@
 			<include>VisibleFadeEffect</include>
 		</control>
 		<control type="group">
-			<include condition="!Skin.HasSetting(HideBackGroundFanart)">LiveCDCasesbackground</include>
-			<control type="image">
-				<description>Fanart Image for Artist</description>
-				<include>Dimensions_Fullscreen</include>
-				<include condition="Skin.HasSetting(AnimateVizFanart)">KBurnsAnimateFanart</include>
-				<texture background="true">$INFO[Player.Art(fanart)]</texture>
-				<fadetime>600</fadetime>
-				<animation effect="fade" start="0" end="100" time="300">Visible</animation>
-				<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
-				<visible>!IsEmpty(Player.Art(fanart)) + !Skin.HasSetting(HideVisualizationFanart) + !Skin.HasSetting(HideBackGroundFanart)</visible>
-			</control>
-			<control type="visualisation">
-				<include>Dimensions_Fullscreen</include>
-			</control>
+			<include condition="!Skin.HasSetting(HideBackGroundFanart)">MusicPlayingBackground</include>
 			<visible>Player.HasAudio + !Skin.HasSetting(ShowBackgroundVis) + ![Window.IsVisible(PVR) + [Control.IsVisible(11) | Control.IsVisible(12)]]</visible>
 			<visible>!SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
 		</control>
