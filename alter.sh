@@ -401,6 +401,10 @@ perlregex 720p/includes.xml 's|<texturenofocus>HasSub.png</texturenofocus>|<text
 #remove mirror poster from list view
 remove_imagecontrol 720p/ViewsFileMode.xml '<texture[^>]*diffuse="diffuse_mirror3.png"[^>]*>[^<]*</texture>'
 
-#remove mirror posters from other views
+#remove mirror posters from video fanart view
 remove_imagecontrol 720p/ViewsVideoLibrary.xml '<texture[^>]*diffuse="diffuse_mirror2.png"[^>]*>[^<]*</texture>'
+
+#remove mirror posters from music fanart
+remove_imagecontrol 720p/ViewsMusicLibrary.xml '<texture[^>]*diffuse="diffuse_mirror2.png"[^>]*>[^<]*</texture>'
+
 exit
