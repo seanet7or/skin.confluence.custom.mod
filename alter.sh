@@ -492,5 +492,7 @@ check_and_remove media/defaultDVDFull.png
 
 #remove logo from home screen
 remove_imagecontrol '<description>LOGO</description>' 720p/Home.xml
+#remove logo from login screen
+remove_imagecontrol '<texture>xbmc-logo.png</texture>' 720p/LoginScreen.xml
 
 exit
