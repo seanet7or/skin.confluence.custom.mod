@@ -20,23 +20,27 @@ remove_imagecontrol() {
 	if [ -z "$2" ] ; then
 		#echo "Param2 is empty, building file list:"
 		local LIST=$(grep "$LINE" 720p/* | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
+		local CHECK=true
 		#echo "$LIST"
 	else
 		local LIST="$2"
+		local CHECK=false
 	fi
 	
 	for F in $LIST ; do
 		perlregex "$F" 's|\s*?<control type="image"[^>]*>\s*?\000'\
-'(\s*<(bordersize\|bordertexture\|fadetime\|posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
+'(\s*<(texture\|description\|bordersize\|bordertexture\|fadetime\|posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
 '\s*'$LINE'\s*\000'\
-'(\s*<(bordersize\|bordertexture\|fadetime\|posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
+'(\s*<(texture\|description\|bordersize\|bordertexture\|fadetime\|posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
 '\s*</control>\s*?\000||g'
 	done
-
-	if grep -q "$LINE" 720p/* ; then
-		echo "ERROR: Not all occurrences of '$LINE' could be removed, please check:"
-		grep "$LINE" 720p/*
-		exit 3
+	
+	if $CHECK ; then
+		if grep -q "$LINE" 720p/* ; then
+			echo "ERROR: Not all occurrences of '$LINE' could be removed, please check:"
+			grep "$LINE" 720p/*
+			exit 3
+		fi
 	fi
 }
 
@@ -119,7 +123,7 @@ read_origmaster() {
 	cp -r Mudislander-master/skin.confluence.custom.mod-master/media/OverlayStatus media
 }
 
-findunused
+#findunused
 
 #read_origmaster
 
@@ -485,4 +489,8 @@ check_and_remove media/poster_diffuse.png
 check_and_remove media/OSDFullScreenFO.png
 check_and_remove media/OSDFullScreenNF.png
 check_and_remove media/defaultDVDFull.png
+
+#remove logo from home screen
+remove_imagecontrol '<description>LOGO</description>' 720p/Home.xml
+
 exit
