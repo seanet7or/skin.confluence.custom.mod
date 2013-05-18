@@ -687,7 +687,7 @@
 						<width>16</width>
 						<height>16</height>
 						<texture>OverlayWatching.png</texture>
-						<visible>ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
+						<visible>ListItem.IsResumable + !IsEmpty(ListItem.Overlay) + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout height="40" width="760">
@@ -754,7 +754,7 @@
 						<width>20</width>
 						<height>16</height>
 						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
-						<visible>!ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
+						<visible>!ListItem.IsResumable + !IsEmpty(ListItem.Overlay) + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
 					</control>
 					<control type="image">
 						<posx>730</posx>

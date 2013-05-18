@@ -372,7 +372,7 @@
 						<height>30</height>
 						<aspectratio>keep</aspectratio>
 						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
-						<visible>Window.IsVisible(Videos) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
+						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout condition="!Container.Content(Movies) + !Container.Content(Seasons) + !Container.Content(TVShows) + !Container.Content(Sets)" height="186" width="216">
@@ -427,7 +427,7 @@
 						<height>30</height>
 						<aspectratio>keep</aspectratio>
 						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
-						<visible>Window.IsVisible(Videos) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
+						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
 					</control>
 				</focusedlayout>
 				<itemlayout condition="Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows) | Container.Content(Sets)" height="279" width="216">
@@ -459,7 +459,7 @@
 						<height>40</height>
 						<aspectratio>keep</aspectratio>
 						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
-						<visible>Window.IsVisible(Videos) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
+						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout condition="Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows) | Container.Content(Sets)" height="276" width="216">
@@ -491,7 +491,7 @@
 						<height>40</height>
 						<aspectratio>keep</aspectratio>
 						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
-						<visible>Window.IsVisible(Videos) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
+						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
 					</control>
 				</focusedlayout>
 			</control>
@@ -548,7 +548,7 @@
 						<height>40</height>
 						<aspectratio>keep</aspectratio>
 						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
-						<visible>Window.IsVisible(Videos) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
+						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout height="110" width="540">
@@ -568,7 +568,7 @@
 						<height>40</height>
 						<aspectratio>keep</aspectratio>
 						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
-						<visible>Window.IsVisible(Videos) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
+						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
 					</control>
 				</focusedlayout>
 			</control>
