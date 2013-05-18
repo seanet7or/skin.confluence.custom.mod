@@ -638,6 +638,19 @@
 				<include>CloseMenuChoice</include>
 			</item>
 			<item>
+				<description>Log In Screen</description>
+				<label>$LOCALIZE[10029]</label>
+				<include>ClearButtonChoice</include>
+				<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,ActivateWindow(LoginScreen))</onclick>
+				<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[31422])</onclick>
+				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Sub,Settings)</onclick>
+				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Addon,None)</onclick>
+				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,None)</onclick>
+				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Type,Settings)</onclick>
+				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Fanart,special://skin/backgrounds/homescreen/shutdown.jpg)</onclick>
+				<include>CloseMenuChoice</include>
+			</item>
+			<item>
 				<description>File Manager</description>
 				<label>$LOCALIZE[7]</label>
 				<include>ClearButtonChoice</include>
