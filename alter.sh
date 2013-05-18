@@ -117,7 +117,7 @@ read_origmaster() {
 	ZIP=Mudislander-master.zip
 	wget -O- -nv --no-check-certificate https://github.com/Mudislander/skin.confluence.custom.mod/archive/master.zip >$ZIP
 	mkdir -p Mudislander-master
-	unzip -o "$ZIP" -d Mudislander-master
+	unzip -o -q "$ZIP" -d Mudislander-master
 	cp -r Mudislander-master/skin.confluence.custom.mod-master/720p .	
 	rm -rf media/OverlayStatus
 	cp -r Mudislander-master/skin.confluence.custom.mod-master/media/OverlayStatus media
@@ -506,4 +506,7 @@ remove_imagecontrol '<texture>xbmc-logo.png</texture>' 720p/LoginScreen.xml
 perlregex 720p/MusicVisualisation.xml 's| fallback="xbmc-logo.png"||g'
 #remove xbmc-logo.png
 check_and_remove media/xbmc-logo.png
+
+perlregex language/German/strings.po 's|(\s*msgctxt "#31153"\s*\000\s*msgid "Home Menu"\s*\000\s*msgstr ")Gesehen Status Overlay benutzen|\1Haupt Menü|'
+
 exit

@@ -2552,7 +2552,6 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(IndividualBackgrounds)</onclick>
-						<!--onclick>Control.Move(9005,1)</onclick-->
 						<onleft>9000</onleft>
 						<onright>9000</onright>
 						<onup>505</onup>
@@ -2588,7 +2587,7 @@
 						<onclick>Control.Move(9005,-1)</onclick>
 						<onleft>504</onleft>
 						<onright>9000</onright>
-						<onup>500</onup>
+						<onup>506</onup>
 						<ondown>500</ondown>
 					</control>
 					<control type="list" id="9005">
@@ -2810,22 +2809,22 @@
 						</content>
 					</control>
 					<control type="image">
-						<posx>85</posx>
+						<posx>0</posx>
 						<posy>100</posy>
-						<width>580</width>
+						<width>740</width>
 						<height>435</height>
 						<texture>black-back.png</texture>
 					</control>
 					<control type="group">
-						<posx>95</posx>
+						<posx>45</posx>
 						<posy>110</posy>
 						<control type="group">
 							<visible>Container(9005).HasFocus(1)</visible>
 							<control type="button" id="500">
-								<description>Single Image button</description>
+								<description>Global Single Image button</description>
 								<posx>5</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
@@ -2834,17 +2833,18 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick>Skin.Reset(GlobalWeatherFanart)</onclick>
 								<onclick>Skin.SetImage(CustomBackgroundPath)</onclick>
-								<onleft>502</onleft>
+								<onleft>503</onleft>
 								<onright>501</onright>
 								<onup>504</onup>
 								<ondown>504</ondown>
 							</control>
 							<control type="button" id="501">
-								<description>Multi Image button</description>
-								<posx>190</posx>
+								<description>Global Multi Image button</description>
+								<posx>170</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>31150</label>
 								<font>font12_title</font>
@@ -2853,6 +2853,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick>Skin.Reset(GlobalWeatherFanart)</onclick>
 								<onclick>Skin.SetPath(CustomBackgroundPath)</onclick>
 								<onleft>500</onleft>
 								<onright>502</onright>
@@ -2860,20 +2861,41 @@
 								<ondown>504</ondown>
 							</control>
 							<control type="button" id="502">
-								<description>Default Image button</description>
-								<posx>375</posx>
+								<description>Global Live Weather Image button</description>
+								<posx>335</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
-								<label>571</label>
+								<label>24027</label>
 								<font>font12_title</font>
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick>Skin.SetBool(GlobalWeatherFanart)</onclick>
 								<onclick>Skin.Reset(CustomBackgroundPath)</onclick>
 								<onleft>501</onleft>
+								<onright>503</onright>
+								<onup>504</onup>
+								<ondown>504</ondown>
+							</control>		
+							<control type="button" id="503">
+								<description>Default Image button</description>
+								<posx>500</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31189</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick>Skin.Reset(GlobalWeatherFanart)</onclick>
+								<onclick>Skin.Reset(CustomBackgroundPath)</onclick>
+								<onleft>502</onleft>
 								<onright>500</onright>
 								<onup>504</onup>
 								<ondown>504</ondown>
@@ -2885,7 +2907,7 @@
 								<description>Single Image button</description>
 								<posx>5</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
@@ -2896,16 +2918,16 @@
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetImage(HomeItem.1.FanArt)</onclick>
-								<onleft>502</onleft>
+								<onleft>503</onleft>
 								<onright>501</onright>
 								<onup>504</onup>
 								<ondown>504</ondown>
 							</control>
 							<control type="button" id="501">
 								<description>Multi Image button</description>
-								<posx>190</posx>
+								<posx>170</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>31150</label>
 								<font>font12_title</font>
@@ -2923,9 +2945,9 @@
 							</control>
 							<control type="button" id="502">
 								<description>Default Image button</description>
-								<posx>375</posx>
+								<posx>335</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>571</label>
 								<font>font12_title</font>
@@ -2937,10 +2959,30 @@
 								<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetString(HomeItem.1.FanArt,$VAR[SetMenuOneBackground])</onclick>
 								<onleft>501</onleft>
-								<onright>500</onright>
+								<onright>503</onright>
 								<onup>504</onup>
 								<ondown>504</ondown>
 							</control>
+							<control type="button" id="503">
+								<description>Theme Image button</description>
+								<posx>500</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31189</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
+								<onclick>Skin.Reset(HomeItem.1.FanArt)</onclick>
+								<onleft>502</onleft>
+								<onright>500</onright>
+								<onup>504</onup>
+								<ondown>504</ondown>
+							</control>						
 						</control>
 						<control type="group">
 							<visible>Container(9005).Hasfocus(3)</visible>
@@ -2948,7 +2990,7 @@
 								<description>Single Image button</description>
 								<posx>5</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
@@ -2959,16 +3001,16 @@
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetImage(HomeItem.2.FanArt)</onclick>
-								<onleft>502</onleft>
+								<onleft>503</onleft>
 								<onright>501</onright>
 								<onup>504</onup>
 								<ondown>504</ondown>
 							</control>
 							<control type="button" id="501">
 								<description>Multi Image button</description>
-								<posx>190</posx>
+								<posx>170</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>31150</label>
 								<font>font12_title</font>
@@ -2986,9 +3028,9 @@
 							</control>
 							<control type="button" id="502">
 								<description>Default Image button</description>
-								<posx>375</posx>
+								<posx>335</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>571</label>
 								<font>font12_title</font>
@@ -3000,6 +3042,26 @@
 								<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetString(HomeItem.2.FanArt,$VAR[SetMenuTwoBackground])</onclick>
 								<onleft>501</onleft>
+								<onright>503</onright>
+								<onup>504</onup>
+								<ondown>504</ondown>
+							</control>
+							<control type="button" id="503">
+								<description>Theme Image button</description>
+								<posx>500</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31189</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
+								<onclick>Skin.Reset(HomeItem.2.FanArt)</onclick>
+								<onleft>502</onleft>
 								<onright>500</onright>
 								<onup>504</onup>
 								<ondown>504</ondown>
@@ -3011,7 +3073,7 @@
 								<description>Single Image button</description>
 								<posx>5</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
@@ -3022,16 +3084,16 @@
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetImage(HomeItem.3.FanArt)</onclick>
-								<onleft>502</onleft>
+								<onleft>503</onleft>
 								<onright>501</onright>
 								<onup>504</onup>
 								<ondown>504</ondown>
 							</control>
 							<control type="button" id="501">
 								<description>Multi Image button</description>
-								<posx>190</posx>
+								<posx>170</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>31150</label>
 								<font>font12_title</font>
@@ -3049,9 +3111,9 @@
 							</control>
 							<control type="button" id="502">
 								<description>Default Image button</description>
-								<posx>375</posx>
+								<posx>335</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>571</label>
 								<font>font12_title</font>
@@ -3063,10 +3125,30 @@
 								<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetString(HomeItem.3.FanArt,$VAR[SetMenuThreeBackground])</onclick>
 								<onleft>501</onleft>
-								<onright>500</onright>
+								<onright>503</onright>
 								<onup>504</onup>
 								<ondown>504</ondown>
 							</control>
+							<control type="button" id="503">
+								<description>Theme Image button</description>
+								<posx>500</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31189</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
+								<onclick>Skin.Reset(HomeItem.3.FanArt)</onclick>
+								<onleft>502</onleft>
+								<onright>500</onright>
+								<onup>504</onup>
+								<ondown>504</ondown>
+							</control>						
 						</control>
 						<control type="group">
 							<visible>Container(9005).HasFocus(5)</visible>
@@ -3074,7 +3156,7 @@
 								<description>Single Image button</description>
 								<posx>5</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
@@ -3085,16 +3167,16 @@
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetImage(HomeItem.4.FanArt)</onclick>
-								<onleft>502</onleft>
+								<onleft>503</onleft>
 								<onright>501</onright>
 								<onup>504</onup>
 								<ondown>504</ondown>
 							</control>
 							<control type="button" id="501">
 								<description>Multi Image button</description>
-								<posx>190</posx>
+								<posx>170</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>31150</label>
 								<font>font12_title</font>
@@ -3112,9 +3194,9 @@
 							</control>
 							<control type="button" id="502">
 								<description>Default Image button</description>
-								<posx>375</posx>
+								<posx>335</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>571</label>
 								<font>font12_title</font>
@@ -3126,10 +3208,30 @@
 								<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetString(HomeItem.4.FanArt,$VAR[SetMenuFourBackground])</onclick>
 								<onleft>501</onleft>
-								<onright>500</onright>
+								<onright>503</onright>
 								<onup>504</onup>
 								<ondown>504</ondown>
 							</control>
+							<control type="button" id="503">
+								<description>Theme Image button</description>
+								<posx>500</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31189</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
+								<onclick>Skin.Reset(HomeItem.4.FanArt)</onclick>
+								<onleft>502</onleft>
+								<onright>500</onright>
+								<onup>504</onup>
+								<ondown>504</ondown>
+							</control>						
 						</control>
 						<control type="group">
 							<visible>Container(9005).HasFocus(6)</visible>
@@ -3137,7 +3239,7 @@
 								<description>Single Image button</description>
 								<posx>5</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
@@ -3148,16 +3250,16 @@
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetImage(HomeItem.5.FanArt)</onclick>
-								<onleft>502</onleft>
+								<onleft>503</onleft>
 								<onright>501</onright>
 								<onup>504</onup>
 								<ondown>504</ondown>
 							</control>
 							<control type="button" id="501">
 								<description>Multi Image button</description>
-								<posx>190</posx>
+								<posx>170</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>31150</label>
 								<font>font12_title</font>
@@ -3175,9 +3277,9 @@
 							</control>
 							<control type="button" id="502">
 								<description>Default Image button</description>
-								<posx>375</posx>
+								<posx>335</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>571</label>
 								<font>font12_title</font>
@@ -3189,10 +3291,30 @@
 								<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetString(HomeItem.5.FanArt,$VAR[SetMenuFiveBackground])</onclick>
 								<onleft>501</onleft>
-								<onright>500</onright>
+								<onright>503</onright>
 								<onup>504</onup>
 								<ondown>504</ondown>
 							</control>
+							<control type="button" id="503">
+								<description>Theme Image button</description>
+								<posx>500</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31189</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
+								<onclick>Skin.Reset(HomeItem.5.FanArt)</onclick>
+								<onleft>502</onleft>
+								<onright>500</onright>
+								<onup>504</onup>
+								<ondown>504</ondown>
+							</control>						
 						</control>
 						<control type="group">
 							<visible>Container(9005).HasFocus(7)</visible>
@@ -3200,7 +3322,7 @@
 								<description>Single Image button</description>
 								<posx>5</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
@@ -3211,16 +3333,16 @@
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetImage(HomeItem.6.FanArt)</onclick>
-								<onleft>502</onleft>
+								<onleft>503</onleft>
 								<onright>501</onright>
 								<onup>504</onup>
 								<ondown>504</ondown>
 							</control>
 							<control type="button" id="501">
 								<description>Multi Image button</description>
-								<posx>190</posx>
+								<posx>170</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>31150</label>
 								<font>font12_title</font>
@@ -3238,9 +3360,9 @@
 							</control>
 							<control type="button" id="502">
 								<description>Default Image button</description>
-								<posx>375</posx>
+								<posx>335</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>571</label>
 								<font>font12_title</font>
@@ -3252,10 +3374,30 @@
 								<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetString(HomeItem.6.FanArt,$VAR[SetMenuSixBackground])</onclick>
 								<onleft>501</onleft>
-								<onright>500</onright>
+								<onright>503</onright>
 								<onup>504</onup>
 								<ondown>504</ondown>
 							</control>
+							<control type="button" id="503">
+								<description>Theme Image button</description>
+								<posx>500</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31189</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
+								<onclick>Skin.Reset(HomeItem.6.FanArt)</onclick>
+								<onleft>502</onleft>
+								<onright>500</onright>
+								<onup>504</onup>
+								<ondown>504</ondown>
+							</control>						
 						</control>
 						<control type="group">
 							<visible>Container(9005).HasFocus(8)</visible>
@@ -3263,7 +3405,7 @@
 								<description>Single Image button</description>
 								<posx>5</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
@@ -3274,16 +3416,16 @@
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetImage(HomeItem.7.FanArt)</onclick>
-								<onleft>502</onleft>
+								<onleft>503</onleft>
 								<onright>501</onright>
 								<onup>504</onup>
 								<ondown>504</ondown>
 							</control>
 							<control type="button" id="501">
 								<description>Multi Image button</description>
-								<posx>190</posx>
+								<posx>170</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>31150</label>
 								<font>font12_title</font>
@@ -3301,9 +3443,9 @@
 							</control>
 							<control type="button" id="502">
 								<description>Default Image button</description>
-								<posx>375</posx>
+								<posx>335</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>571</label>
 								<font>font12_title</font>
@@ -3315,10 +3457,30 @@
 								<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetString(HomeItem.7.FanArt,$VAR[SetMenuSevenBackground])</onclick>
 								<onleft>501</onleft>
-								<onright>500</onright>
+								<onright>503</onright>
 								<onup>504</onup>
 								<ondown>504</ondown>
 							</control>
+							<control type="button" id="503">
+								<description>Theme Image button</description>
+								<posx>500</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31189</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
+								<onclick>Skin.Reset(HomeItem.7.FanArt)</onclick>
+								<onleft>502</onleft>
+								<onright>500</onright>
+								<onup>504</onup>
+								<ondown>504</ondown>
+							</control>						
 						</control>
 						<control type="group">
 							<visible>Container(9005).HasFocus(9)</visible>
@@ -3326,7 +3488,7 @@
 								<description>Single Image button</description>
 								<posx>5</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
@@ -3337,16 +3499,16 @@
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetImage(HomeItem.8.FanArt)</onclick>
-								<onleft>502</onleft>
+								<onleft>503</onleft>
 								<onright>501</onright>
 								<onup>504</onup>
 								<ondown>504</ondown>
 							</control>
 							<control type="button" id="501">
 								<description>Multi Image button</description>
-								<posx>190</posx>
+								<posx>170</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>31150</label>
 								<font>font12_title</font>
@@ -3364,9 +3526,9 @@
 							</control>
 							<control type="button" id="502">
 								<description>Default Image button</description>
-								<posx>375</posx>
+								<posx>335</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>571</label>
 								<font>font12_title</font>
@@ -3378,10 +3540,30 @@
 								<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetString(HomeItem.8.FanArt,$VAR[SetMenuEightBackground])</onclick>
 								<onleft>501</onleft>
-								<onright>500</onright>
+								<onright>503</onright>
 								<onup>504</onup>
 								<ondown>504</ondown>
 							</control>
+							<control type="button" id="503">
+								<description>Theme Image button</description>
+								<posx>500</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31189</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
+								<onclick>Skin.Reset(HomeItem.8.FanArt)</onclick>
+								<onleft>502</onleft>
+								<onright>500</onright>
+								<onup>504</onup>
+								<ondown>504</ondown>
+							</control>						
 						</control>
 						<control type="group">
 							<visible>Container(9005).HasFocus(10)</visible>
@@ -3389,7 +3571,7 @@
 								<description>Single Image button</description>
 								<posx>5</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
@@ -3400,16 +3582,16 @@
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetImage(HomeItem.9.FanArt)</onclick>
-								<onleft>502</onleft>
+								<onleft>503</onleft>
 								<onright>501</onright>
 								<onup>504</onup>
 								<ondown>504</ondown>
 							</control>
 							<control type="button" id="501">
 								<description>Multi Image button</description>
-								<posx>190</posx>
+								<posx>170</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>31150</label>
 								<font>font12_title</font>
@@ -3427,9 +3609,9 @@
 							</control>
 							<control type="button" id="502">
 								<description>Default Image button</description>
-								<posx>375</posx>
+								<posx>335</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>571</label>
 								<font>font12_title</font>
@@ -3441,10 +3623,30 @@
 								<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetString(HomeItem.9.FanArt,$VAR[SetMenuNineBackground])</onclick>
 								<onleft>501</onleft>
-								<onright>500</onright>
+								<onright>503</onright>
 								<onup>504</onup>
 								<ondown>504</ondown>
 							</control>
+							<control type="button" id="503">
+								<description>Theme Image button</description>
+								<posx>500</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31189</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
+								<onclick>Skin.Reset(HomeItem.9.FanArt)</onclick>
+								<onleft>502</onleft>
+								<onright>500</onright>
+								<onup>504</onup>
+								<ondown>504</ondown>
+							</control>						
 						</control>
 						<control type="group">
 							<visible>Container(9005).HasFocus(11)</visible>
@@ -3452,7 +3654,7 @@
 								<description>Single Image button</description>
 								<posx>5</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
@@ -3463,16 +3665,16 @@
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetImage(HomeItem.10.FanArt)</onclick>
-								<onleft>502</onleft>
+								<onleft>503</onleft>
 								<onright>501</onright>
 								<onup>504</onup>
 								<ondown>504</ondown>
 							</control>
 							<control type="button" id="501">
 								<description>Multi Image button</description>
-								<posx>190</posx>
+								<posx>170</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>31150</label>
 								<font>font12_title</font>
@@ -3490,9 +3692,9 @@
 							</control>
 							<control type="button" id="502">
 								<description>Default Image button</description>
-								<posx>375</posx>
+								<posx>335</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>571</label>
 								<font>font12_title</font>
@@ -3504,6 +3706,26 @@
 								<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick>Skin.SetString(HomeItem.10.FanArt,$VAR[SetMenuTenBackground])</onclick>
 								<onleft>501</onleft>
+								<onright>503</onright>
+								<onup>504</onup>
+								<ondown>504</ondown>
+							</control>
+							<control type="button" id="503">
+								<description>Theme Image button</description>
+								<posx>500</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31189</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
+								<onclick>Skin.Reset(HomeItem.10.FanArt)</onclick>
+								<onleft>502</onleft>
 								<onright>500</onright>
 								<onup>504</onup>
 								<ondown>504</ondown>
@@ -3515,7 +3737,7 @@
 								<description>Single Image button</description>
 								<posx>5</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
@@ -3525,16 +3747,16 @@
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick>Skin.SetImage(HomeItem.11.FanArt)</onclick>
-								<onleft>502</onleft>
+								<onleft>503</onleft>
 								<onright>501</onright>
 								<onup>504</onup>
 								<ondown>504</ondown>
 							</control>
 							<control type="button" id="501">
 								<description>Multi Image button</description>
-								<posx>190</posx>
+								<posx>170</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>31150</label>
 								<font>font12_title</font>
@@ -3551,9 +3773,9 @@
 							</control>
 							<control type="button" id="502">
 								<description>Default Image button</description>
-								<posx>375</posx>
+								<posx>335</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>571</label>
 								<font>font12_title</font>
@@ -3564,6 +3786,25 @@
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick>Skin.SetString(HomeItem.11.FanArt,special://skin/backgrounds/homescreen/playdisc.jpg)</onclick>
 								<onleft>501</onleft>
+								<onright>503</onright>
+								<onup>504</onup>
+								<ondown>504</ondown>
+							</control>
+							<control type="button" id="503">
+								<description>Theme Image button</description>
+								<posx>500</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31189</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick>Skin.Reset(HomeItem.11.FanArt)</onclick>
+								<onleft>502</onleft>
 								<onright>500</onright>
 								<onup>504</onup>
 								<ondown>504</ondown>
@@ -3575,7 +3816,7 @@
 								<description>Single Image button</description>
 								<posx>5</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
@@ -3585,16 +3826,16 @@
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick>Skin.SetImage(HomeItem.12.FanArt)</onclick>
-								<onleft>502</onleft>
+								<onleft>503</onleft>
 								<onright>501</onright>
 								<onup>504</onup>
 								<ondown>504</ondown>
 							</control>
 							<control type="button" id="501">
 								<description>Multi Image button</description>
-								<posx>190</posx>
+								<posx>170</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>31150</label>
 								<font>font12_title</font>
@@ -3611,9 +3852,9 @@
 							</control>
 							<control type="button" id="502">
 								<description>Default Image button</description>
-								<posx>375</posx>
+								<posx>335</posx>
 								<posy>0</posy>
-								<width>180</width>
+								<width>160</width>
 								<height>40</height>
 								<label>571</label>
 								<font>font12_title</font>
@@ -3624,6 +3865,25 @@
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick>Skin.SetString(HomeItem.12.FanArt,special://skin/backgrounds/homescreen/settings.jpg)</onclick>
 								<onleft>501</onleft>
+								<onright>503</onright>
+								<onup>504</onup>
+								<ondown>504</ondown>
+							</control>
+							<control type="button" id="503">
+								<description>Theme Image button</description>
+								<posx>500</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31189</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick>Skin.Reset(HomeItem.12.FanArt)</onclick>
+								<onleft>502</onleft>
 								<onright>500</onright>
 								<onup>504</onup>
 								<ondown>504</ondown>
@@ -3633,7 +3893,7 @@
 							<visible>Container(9005).HasFocus(14)</visible>
 							<control type="button" id="500">
 								<description>Single Image button</description>
-								<posx>5</posx>
+								<posx>55</posx>
 								<posy>0</posy>
 								<width>180</width>
 								<height>40</height>
@@ -3652,7 +3912,7 @@
 							</control>
 							<control type="button" id="501">
 								<description>No Image button</description>
-								<posx>190</posx>
+								<posx>240</posx>
 								<posy>0</posy>
 								<width>180</width>
 								<height>40</height>
@@ -3671,7 +3931,7 @@
 							</control>
 							<control type="button" id="502">
 								<description>Default Image button</description>
-								<posx>375</posx>
+								<posx>425</posx>
 								<posy>0</posy>
 								<width>180</width>
 								<height>40</height>
@@ -3693,7 +3953,7 @@
 							<visible>Container(9005).HasFocus(15)</visible>
 							<control type="button" id="500">
 								<description>Single Image button</description>
-								<posx>5</posx>
+								<posx>55</posx>
 								<posy>0</posy>
 								<width>180</width>
 								<height>40</height>
@@ -3712,7 +3972,7 @@
 							</control>
 							<control type="button" id="501">
 								<description>No Image button</description>
-								<posx>190</posx>
+								<posx>240</posx>
 								<posy>0</posy>
 								<width>180</width>
 								<height>40</height>
@@ -3731,7 +3991,7 @@
 							</control>
 							<control type="button" id="502">
 								<description>Default Image button</description>
-								<posx>375</posx>
+								<posx>425</posx>
 								<posy>0</posy>
 								<width>180</width>
 								<height>40</height>
@@ -3753,7 +4013,7 @@
 							<visible>Container(9005).HasFocus(16)</visible>
 							<control type="button" id="500">
 								<description>Single Image button</description>
-								<posx>5</posx>
+								<posx>55</posx>
 								<posy>0</posy>
 								<width>180</width>
 								<height>40</height>
@@ -3772,7 +4032,7 @@
 							</control>
 							<control type="button" id="501">
 								<description>No Image button</description>
-								<posx>190</posx>
+								<posx>240</posx>
 								<posy>0</posy>
 								<width>180</width>
 								<height>40</height>
@@ -3791,7 +4051,7 @@
 							</control>
 							<control type="button" id="502">
 								<description>Default Image button</description>
-								<posx>375</posx>
+								<posx>425</posx>
 								<posy>0</posy>
 								<width>180</width>
 								<height>40</height>
