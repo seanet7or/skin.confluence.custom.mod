@@ -135,7 +135,7 @@
 		<value condition="stringcompare(Skin.String(WatchStatusType),Blue)">blue/$INFO[ListItem.Overlay]</value>
 		<value condition="stringcompare(Skin.String(WatchStatusType),Green)">green/$INFO[ListItem.Overlay]</value>
 		<value condition="stringcompare(Skin.String(WatchStatusType),Yellow)">yellow/$INFO[ListItem.Overlay]</value>
-	</variable>	
+	</variable>
 	<variable name="PartlyWatched">
 		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,0) + !IntegerGreaterThan(ListItem.PercentPlayed,19)">OverlayPartlywatched1</value>
 		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,19) + !IntegerGreaterThan(ListItem.PercentPlayed,31)">OverlayPartlywatched2</value>
@@ -150,7 +150,7 @@
 		<value>DefaultGenre/</value>
 	</variable>
 	<variable name="MainItemLabel">
-		<value condition="StringCompare(ListItem.Label,..) + !Skin.HasSetting(ParentDirLabel)">..$LOCALIZE[31316]</value>
+		<value condition="StringCompare(ListItem.Label,..) + !Skin.HasSetting(ParentDirLabel)">[B][COLOR=blue]$LOCALIZE[31316][/COLOR][/B]</value>
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
 	<variable name="UsrMPAACountry" type="text">

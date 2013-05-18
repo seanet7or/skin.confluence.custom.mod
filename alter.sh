@@ -121,11 +121,19 @@ read_origmaster() {
 	cp -r Mudislander-master/skin.confluence.custom.mod-master/720p .	
 	rm -rf media/OverlayStatus
 	cp -r Mudislander-master/skin.confluence.custom.mod-master/media/OverlayStatus media
+	rm -rf backgrounds
+	cp -r Mudislander-master/skin.confluence.custom.mod-master/backgrounds .	
+	rm -rf colors
+	cp -r Mudislander-master/skin.confluence.custom.mod-master/colors .	
+	rm -rf language
+	cp -r Mudislander-master/skin.confluence.custom.mod-master/language .	
+	rm -rf themes
+	cp -r Mudislander-master/skin.confluence.custom.mod-master/themes .	
 }
 
 #findunused
 
-#read_origmaster
+read_origmaster
 
 # enable 'germany' as option in mpaa settings
 perlregex '720p/SkinSettings.xml' 's|<!--(item>\s*\000'\

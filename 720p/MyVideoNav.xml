@@ -2,7 +2,7 @@
 <window>
 	<defaultcontrol always="true">50</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<views>50,51,500,550,551,560,501,508,504,503,515,505,511</views>
+	<views>50,51,500,550,551,560,501,508,504,503,515,505,511,732</views>
 	<onload condition="!Skin.HasSetting(HideTvTunes) + System.HasAddon(script.tvtunes)">XBMC.RunScript(script.tvtunes,backend=True&amp;loop=False)</onload>
 	<controls>
 		<include>CommonBackground</include>
@@ -35,7 +35,10 @@
 			<!-- view id = 551 -->
 			<include>LiveTVView1</include>
 			<!-- view id = 560 -->
+			<include>FullWallView</include>
+			<!-- view id = 732 -->
 		</control>
+		<include condition="!Skin.HasSetting(HideNumItemsCount)">CommonPageCount</include>
 		<include>CommonNowPlaying</include>
 		<include>MainWindowMouseButtons</include>
 		<include>BehindDialogFadeOut</include>
@@ -190,6 +193,15 @@
 					<onclick>Skin.ToggleSetting(View508HideInfo)</onclick>
 					<selected>Skin.HasSetting(View508HideInfo)</selected>
 					<visible>Control.IsVisible(508)</visible>
+				</control>
+				<control type="radiobutton" id="100">
+					<description>Show Watched Banners</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>31304</label>
+					<onclick>Skin.ToggleSetting(ViewStatusBanner)</onclick>
+					<selected>Skin.HasSetting(ViewStatusBanner)</selected>
+					<visible>Control.IsVisible(732)</visible>
 				</control>
 				<control type="radiobutton" id="14">
 					<description>Watched Toggle</description>

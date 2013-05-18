@@ -184,6 +184,7 @@
 				<scroll>true</scroll>
 				<textcolor>grey</textcolor>
 				<label>([COLOR=blue]$INFO[Container(5).NumItems][/COLOR]) $LOCALIZE[31025] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(5).CurrentPage]/$INFO[Container(5).NumPages][/COLOR])</label>
+				<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
 			</control>
 		</control>
 	</controls>
