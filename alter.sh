@@ -129,6 +129,10 @@ read_origmaster() {
 	cp -r Mudislander-master/skin.confluence.custom.mod-master/language .	
 	rm -rf themes
 	cp -r Mudislander-master/skin.confluence.custom.mod-master/themes .	
+	cp -r Mudislander-master/skin.confluence.custom.mod-master/addon.xml .
+	cp -r Mudislander-master/skin.confluence.custom.mod-master/changelog.txt .
+	cp -r Mudislander-master/skin.confluence.custom.mod-master/fanart.jpg .
+	cp -r Mudislander-master/skin.confluence.custom.mod-master/icon.png .
 }
 
 #findunused
@@ -507,6 +511,7 @@ perlregex 720p/MusicVisualisation.xml 's| fallback="xbmc-logo.png"||g'
 #remove xbmc-logo.png
 check_and_remove media/xbmc-logo.png
 
+#correct translation
 perlregex language/German/strings.po 's|(\s*msgctxt "#31153"\s*\000\s*msgid "Home Menu"\s*\000\s*msgstr ")Gesehen Status Overlay benutzen|\1Haupt Menü|'
 
 exit
