@@ -135,28 +135,18 @@ read_origmaster() {
 	wget -O- -nv --no-check-certificate https://github.com/Mudislander/skin.confluence.custom.mod/archive/master.zip >$ZIP
 	mkdir -p Mudislander-master
 	unzip -o -q "$ZIP" -d Mudislander-master
-	#cp -r Mudislander-master/skin.confluence.custom.mod-master/720p .	
 	rm -rf media
-	#cp -r Mudislander-master/skin.confluence.custom.mod-master/media/OverlayStatus media
 	rm -rf backgrounds
-	#cp -r Mudislander-master/skin.confluence.custom.mod-master/backgrounds .	
 	rm -rf colors
-	#cp -r Mudislander-master/skin.confluence.custom.mod-master/colors .	
 	rm -rf language
-	#cp -r Mudislander-master/skin.confluence.custom.mod-master/language .	
 	rm -rf themes
-	#cp -r Mudislander-master/skin.confluence.custom.mod-master/themes .	
-	#cp -r Mudislander-master/skin.confluence.custom.mod-master/addon.xml .
-	#cp -r Mudislander-master/skin.confluence.custom.mod-master/changelog.txt .
-	#cp -r Mudislander-master/skin.confluence.custom.mod-master/fanart.jpg .
-	#cp -r Mudislander-master/skin.confluence.custom.mod-master/icon.png .
 	cp -r Mudislander-master/skin.confluence.custom.mod-master/* .
 	cp -r lightmod/* .
 }
 
 #findunused
 
-read_origmaster
+#read_origmaster
 
 # enable 'germany' as option in mpaa settings
 perlregex '720p/SkinSettings.xml' 's|<!--(item>\s*\000'\
@@ -536,3 +526,6 @@ perlregex language/German/strings.po 's|(\s*msgctxt "#31153"\s*\000\s*msgid "Hom
 #replace default background
 replace_all '<value>special://skin/backgrounds/SKINDEFAULT.jpg</value>' '<value>special://skin/extras/lightmod/default.jpg</value>'
 replace_all '.INFO.Skin.CurrentTheme,special://skin/backgrounds/,.jpg.' 'special://skin/extras/lightmod/default.jpg'
+
+#replace submenu item (not focused)
+replace_all '[^/]HomeSubNF.png' '>special://skin/extras/lightmod/HomeSubNF.png'
