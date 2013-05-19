@@ -41,9 +41,9 @@ remove_imagecontrol() {
 	
 	for F in $LIST ; do
 		perlregex "$F" 's|\s*?<control type="image"[^>]*>\s*?\000'\
-'(\s*<(texture\|description\|bordersize\|bordertexture\|fadetime\|posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
+'(\s*<(colordiffuse\|texture\|description\|bordersize\|bordertexture\|fadetime\|posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
 '\s*'$LINE'\s*\000'\
-'(\s*<(texture\|description\|bordersize\|bordertexture\|fadetime\|posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
+'(\s*<(colordiffuse\|texture\|description\|bordersize\|bordertexture\|fadetime\|posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
 '\s*</control>\s*?\000||g'
 	done
 	
@@ -526,3 +526,7 @@ replace_all 's|.INFO.Skin.CurrentTheme,special://skin/backgrounds/,.jpg.|special
 
 #replace submenu item (not focused)
 replace_all 's|[^/]HomeSubNF.png|>special://skin/extras/lightmod/HomeSubNF.png|g'
+
+#remove GlassOverlay.png
+remove_imagecontrol '<texture>GlassOverlay.png</texture>'
+check_and_remove media/GlassOverlay.png
