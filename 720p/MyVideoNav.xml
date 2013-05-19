@@ -222,6 +222,16 @@
 					<visible>Control.IsVisible(508)</visible>
 				</control>
 				<control type="radiobutton" id="100">
+					<description>Disable Show Info Toggle 508 Delay</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31307]</label>
+					<onclick>Skin.ToggleSetting(View508DelayInfo)</onclick>
+					<selected>!Skin.HasSetting(View508DelayInfo)</selected>
+					<enable>!Skin.HasSetting(View508HideInfo)</enable>
+					<visible>Control.IsVisible(508)</visible>
+				</control>
+				<control type="radiobutton" id="101">
 					<description>Show Watched Banners</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
