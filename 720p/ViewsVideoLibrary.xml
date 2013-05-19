@@ -77,7 +77,6 @@
 						<width>222</width>
 						<height>318</height>
 						<aspectratio>stretch</aspectratio>
-						<bordertexture border="8">ThumbBorder.png</bordertexture>
 						<bordersize>8</bordersize>
 						<texture background="true">$VAR[PosterThumb]</texture>
 						<animation reversible="false" effect="zoom" start="-2,36,222,318" end="-28,0,284,390" time="200">focus</animation>
@@ -464,7 +463,6 @@
 						<width>128</width>
 						<height>168</height>
 						<aspectratio>stretch</aspectratio>
-						<bordertexture border="8">ThumbBorder.png</bordertexture>
 						<bordersize>8</bordersize>
 						<fadetime>200</fadetime>
 						<texture background="true">$VAR[PosterThumb]</texture>
@@ -2471,7 +2469,6 @@
 							<include>VisibleFadeEffect</include>
 							<bordersize>8</bordersize>
 							<texture background="true">$VAR[PosterThumb]</texture>
-							<bordertexture border="8">ThumbBorder.png</bordertexture>
 						</control>
 						<control type="group">
 							<visible>Skin.HasSetting(ViewStatusBanner) + !IsEmpty(ListItem.Overlay)</visible>

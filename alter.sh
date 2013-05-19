@@ -381,6 +381,10 @@ rm "media/$IMG" 2>/dev/null
 replace_all 's|\s*.bordertexture[^>]*>ThumbShadow.png</bordertexture.\s*\000||g'
 check_and_remove media/ThumbShadow.png
 
+#remove all references to ThumbBorder.png
+replace_all 's|\s*.bordertexture[^>]*>ThumbBorder.png</bordertexture.\s*\000||g'
+check_and_remove media/ThumbBorder.png
+
 #remove border from addons that are not focused on the home view
 perlregex 720p/includes.xml 's|(\s*<width>180</width>\s*\000)'\
 '(\s*<height>120</height>\s*\000)'\
