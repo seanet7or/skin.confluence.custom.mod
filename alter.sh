@@ -66,10 +66,10 @@ check_and_remove() {
 		
 		BASE=$(echo "$FS" | sed 's|\.[a-zA-Z]*||g')
 		#echo "Occurences of '$BASE':"
-		if ! grep -q "$BASE" 720p/* ; then
+		if ! grep -q "$BASE[^a-zA-Z0-9]" 720p/* ; then
 			rm "$F" 2>/dev/null
 		else
-			"'$BASE' ('$F') was found in the .xmls:"
+			echo "'$BASE' ('$F') was found in the .xmls:"
 			grep "$BASE" 720p/*
 			exit 3
 		fi
@@ -530,3 +530,7 @@ replace_all 's|[^/]HomeSubNF.png|>special://skin/extras/lightmod/HomeSubNF.png|g
 #remove GlassOverlay.png
 remove_imagecontrol '<texture>GlassOverlay.png</texture>'
 check_and_remove media/GlassOverlay.png
+
+#replace ContentPanel.png
+replace_all 's|ContentPanel.png|special://skin/backgrounds/media-overlay.jpg|g'
+check_and_remove media/ContentPanel.png
