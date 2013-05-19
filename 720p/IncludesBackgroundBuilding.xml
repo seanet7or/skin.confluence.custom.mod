@@ -58,7 +58,7 @@
 				<include>Dimensions_Fullscreen</include>
 				<aspectratio>scale</aspectratio>
 				<include>VisibleFadeEffect</include>
-				<texture>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</texture>
+				<texture>special://skin/extras/lightmod/default.jpg</texture>
 				<visible>[!Skin.HasSetting(GlobalWeatherFanart) + IsEmpty(Skin.String(CustomBackgroundPath))] | [Skin.HasSetting(GlobalWeatherFanart) + !Window.IsVisible(home)]</visible>
 			</control>
 			<control type="multiimage">

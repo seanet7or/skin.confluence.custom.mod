@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # $1 file
 # $2 regex
 perlregex() {
@@ -8,6 +9,21 @@ perlregex() {
 	cp "$FILE" "$FILE.tmp"
 	cat "$FILE.tmp" | tr '\n' '\0' | ssed -R "$REGEX" | tr '\0' '\n' >"$FILE"
 	rm "$FILE.tmp"
+}
+
+
+# replace all occurences in 720p subfolder
+# $1 occurence
+# $2 replace with
+replace_all() {
+	local REPLACE=$1
+	local WITH=$2
+	
+	local REGEX='s|'$REPLACE'|'$WITH'|g'
+	local LIST=$(grep "$REPLACE" 720p/* | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
+	for F in $LIST ; do
+		perlregex "$F" "$REGEX"
+	done
 }
 
 
@@ -43,6 +59,7 @@ remove_imagecontrol() {
 		fi
 	fi
 }
+
 
 # checks if image file is linked in the xmls ; if not, the image is deleted
 # $1 image file with full path
@@ -118,21 +135,23 @@ read_origmaster() {
 	wget -O- -nv --no-check-certificate https://github.com/Mudislander/skin.confluence.custom.mod/archive/master.zip >$ZIP
 	mkdir -p Mudislander-master
 	unzip -o -q "$ZIP" -d Mudislander-master
-	cp -r Mudislander-master/skin.confluence.custom.mod-master/720p .	
-	rm -rf media/OverlayStatus
-	cp -r Mudislander-master/skin.confluence.custom.mod-master/media/OverlayStatus media
+	#cp -r Mudislander-master/skin.confluence.custom.mod-master/720p .	
+	rm -rf media
+	#cp -r Mudislander-master/skin.confluence.custom.mod-master/media/OverlayStatus media
 	rm -rf backgrounds
-	cp -r Mudislander-master/skin.confluence.custom.mod-master/backgrounds .	
+	#cp -r Mudislander-master/skin.confluence.custom.mod-master/backgrounds .	
 	rm -rf colors
-	cp -r Mudislander-master/skin.confluence.custom.mod-master/colors .	
+	#cp -r Mudislander-master/skin.confluence.custom.mod-master/colors .	
 	rm -rf language
-	cp -r Mudislander-master/skin.confluence.custom.mod-master/language .	
+	#cp -r Mudislander-master/skin.confluence.custom.mod-master/language .	
 	rm -rf themes
-	cp -r Mudislander-master/skin.confluence.custom.mod-master/themes .	
-	cp -r Mudislander-master/skin.confluence.custom.mod-master/addon.xml .
-	cp -r Mudislander-master/skin.confluence.custom.mod-master/changelog.txt .
-	cp -r Mudislander-master/skin.confluence.custom.mod-master/fanart.jpg .
-	cp -r Mudislander-master/skin.confluence.custom.mod-master/icon.png .
+	#cp -r Mudislander-master/skin.confluence.custom.mod-master/themes .	
+	#cp -r Mudislander-master/skin.confluence.custom.mod-master/addon.xml .
+	#cp -r Mudislander-master/skin.confluence.custom.mod-master/changelog.txt .
+	#cp -r Mudislander-master/skin.confluence.custom.mod-master/fanart.jpg .
+	#cp -r Mudislander-master/skin.confluence.custom.mod-master/icon.png .
+	cp -r Mudislander-master/skin.confluence.custom.mod-master/* .
+	cp -r lightmod/* .
 }
 
 #findunused
@@ -514,4 +533,6 @@ check_and_remove media/xbmc-logo.png
 #correct translation
 perlregex language/German/strings.po 's|(\s*msgctxt "#31153"\s*\000\s*msgid "Home Menu"\s*\000\s*msgstr ")Gesehen Status Overlay benutzen|\1Haupt Menü|'
 
-exit
+#replace default background
+replace_all '<value>special://skin/backgrounds/SKINDEFAULT.jpg</value>' '<value>special://skin/extras/lightmod/default.jpg</value>'
+replace_all '.INFO.Skin.CurrentTheme,special://skin/backgrounds/,.jpg.' 'special://skin/extras/lightmod/default.jpg'
