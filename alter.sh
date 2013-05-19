@@ -12,15 +12,11 @@ perlregex() {
 }
 
 
-# replace all occurences in 720p subfolder
-# $1 occurence
-# $2 replace with
+# apply regex to all files in 720p subfolder
+# $1 regex
 replace_all() {
-	local REPLACE=$1
-	local WITH=$2
-	local REGEX="s|"$REPLACE"|"$WITH"|g"
-	local REPLACE_GREP=$(echo "$REPLACE" | ssed 's|\000\n||')
-	local LIST=$(grep "$REPLACE_GREP" 720p/* | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
+	local REGEX="$1"
+	local LIST=$(find 720p -type f)
 	for F in $LIST ; do
 		perlregex "$F" "$REGEX"
 	done
@@ -78,7 +74,7 @@ check_and_remove() {
 			exit 3
 		fi
 	else
-		"'$FS' ('$F') was found in the .xmls:"
+		echo "'$FS' ('$F') was found in the .xmls:"
 		grep "$FS" 720p/*
 		exit 3
 	fi
@@ -331,8 +327,6 @@ perlregex 720p/MyPics.xml 's|\s*<control type="grouplist">\s*\000'\
 '\s*<posy>5</posy>\s*\000'\
 '(\s*<(height\|width\|orientation\|align\|itemgap\|aspectratio\|texture\|visible\|label)>[^>]*>\s*?\000)*'\
 '\s*</control>\s*\000||'
-	#remove thumbshadows
-perlregex 720p/ViewsPictures.xml 's|\s*<bordertexture[^>]*>ThumbShadow.png</bordertexture>\s*\000||g'
 
 	#remove ThumbBG.png
 IMG='ThumbBG.png'
@@ -384,10 +378,8 @@ fi
 rm "media/$IMG" 2>/dev/null
 
 #remove all references to ThumbShadow.png
-replace_all '\s*.bordertexture border="8">ThumbShadow.png</bordertexture.\s*\000' ''
-
-#remove ThumbShadow.png from list view
-perlregex 720p/ViewsFileMode.xml 's|\s*<bordertexture border="8">ThumbShadow.png</bordertexture>\s*\000||g'
+replace_all 's|\s*.bordertexture[^>]*>ThumbShadow.png</bordertexture.\s*\000||g'
+check_and_remove media/ThumbShadow.png
 
 #remove border from addons that are not focused on the home view
 perlregex 720p/includes.xml 's|(\s*<width>180</width>\s*\000)'\
@@ -445,8 +437,6 @@ perlregex 720p/includes.xml 's|(<control type="label">\s*\000'\
 #remove Fanart_Diffuse.png
 #perlregex 720p/ViewsVideoLibrary.xml 's| diffuse="Fanart_Diffuse.png"||g'
 #rm media/Fanart_Diffuse.png 2>/dev/null
-#remove ThumbShadow from video views
-perlregex 720p/ViewsVideoLibrary.xml 's|\s*<bordertexture border="8">ThumbShadow.png</bordertexture>\s*\000||g'
 	#remove sections icon
 	perlregex 720p/MyVideoNav.xml 's|\s*<control type="image">\s*\000'\
 '\s*<description>Section header image</description>\s*\000'\
@@ -527,8 +517,8 @@ check_and_remove media/xbmc-logo.png
 perlregex language/German/strings.po 's|(\s*msgctxt "#31153"\s*\000\s*msgid "Home Menu"\s*\000\s*msgstr ")Gesehen Status Overlay benutzen|\1Haupt Menü|'
 
 #replace default background
-replace_all '<value>special://skin/backgrounds/SKINDEFAULT.jpg</value>' '<value>special://skin/extras/lightmod/default.jpg</value>'
-replace_all '.INFO.Skin.CurrentTheme,special://skin/backgrounds/,.jpg.' 'special://skin/extras/lightmod/default.jpg'
+replace_all 's|<value>special://skin/backgrounds/SKINDEFAULT.jpg</value>|<value>special://skin/extras/lightmod/default.jpg</value>|g'
+replace_all 's|.INFO.Skin.CurrentTheme,special://skin/backgrounds/,.jpg.|special://skin/extras/lightmod/default.jpg|g'
 
 #replace submenu item (not focused)
-replace_all '[^/]HomeSubNF.png' '>special://skin/extras/lightmod/HomeSubNF.png'
+replace_all 's|[^/]HomeSubNF.png|>special://skin/extras/lightmod/HomeSubNF.png|g'
