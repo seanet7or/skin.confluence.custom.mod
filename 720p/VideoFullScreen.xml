@@ -138,7 +138,6 @@
 					<height>330</height>
 					<texture fallback="DefaultVideoCover.png">$INFO[Player.Art(thumb)]</texture>
 					<aspectratio aligny="bottom">keep</aspectratio>
-					<bordertexture border="8">ThumbShadow.png</bordertexture>
 					<bordersize>8</bordersize>
 					<visible>[IsEmpty(Player.Art(clearart)) + IsEmpty(Player.Art(clearlogo)) + !Skin.HasSetting(OSDInfoLogo)] | [IsEmpty(Player.Art(clearlogo)) + Skin.HasSetting(OSDInfoLogo)]</visible>
 				</control>
@@ -174,7 +173,6 @@
 					<height>230</height>
 					<texture fallback="DefaultVideoCover.png">$INFO[Player.Art(thumb)]</texture>
 					<aspectratio aligny="bottom">keep</aspectratio>
-					<bordertexture border="8">ThumbShadow.png</bordertexture>
 					<bordersize>8</bordersize>
 					<visible>[IsEmpty(Player.Art(tvshow.clearart)) + IsEmpty(Player.Art(tvshow.clearlogo)) + !Skin.HasSetting(OSDInfoLogo)] | [IsEmpty(Player.Art(tvshow.clearlogo)) + Skin.HasSetting(OSDInfoLogo)]</visible>
 				</control>
@@ -189,7 +187,6 @@
 				<height>230</height>
 				<texture fallback="DefaultVideoCover.png">$INFO[Player.Art(thumb)]</texture>
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<bordertexture border="8">ThumbShadow.png</bordertexture>
 				<bordersize>8</bordersize>
 				<visible>!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes)</visible>
 				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>

@@ -18,9 +18,9 @@ perlregex() {
 replace_all() {
 	local REPLACE=$1
 	local WITH=$2
-	
-	local REGEX='s|'$REPLACE'|'$WITH'|g'
-	local LIST=$(grep "$REPLACE" 720p/* | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
+	local REGEX="s|"$REPLACE"|"$WITH"|g"
+	local REPLACE_GREP=$(echo "$REPLACE" | ssed 's|\000\n||')
+	local LIST=$(grep "$REPLACE_GREP" 720p/* | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
 	for F in $LIST ; do
 		perlregex "$F" "$REGEX"
 	done
@@ -382,6 +382,9 @@ if grep -q "$IMG" 720p/* ; then
 	exit 3
 fi
 rm "media/$IMG" 2>/dev/null
+
+#remove all references to ThumbShadow.png
+replace_all '\s*.bordertexture border="8">ThumbShadow.png</bordertexture.\s*\000' ''
 
 #remove ThumbShadow.png from list view
 perlregex 720p/ViewsFileMode.xml 's|\s*<bordertexture border="8">ThumbShadow.png</bordertexture>\s*\000||g'
