@@ -142,7 +142,10 @@ read_origmaster() {
 
 #findunused
 
-read_origmaster
+#read_origmaster
+
+#lets choose all types of addons for the home window
+perlregex '720p/SkinSettings.xml' 's|(Skin.SetAddon.[^,]*),[^\)]*\)|\1,xbmc.addon.video,xbmc.addon.executable,xbmc.addon.audio,xbmc.addon.image)|g'
 
 # enable 'germany' as option in mpaa settings
 perlregex '720p/SkinSettings.xml' 's|<!--(item>\s*\000'\
