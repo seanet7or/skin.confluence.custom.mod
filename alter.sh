@@ -144,6 +144,10 @@ read_origmaster() {
 
 #read_origmaster
 
+#removed media/separator_vertical.png
+remove_imagecontrol '<texture>separator_vertical.png</texture>' 720p/DialogContentSettings.xml
+check_and_remove media/separator_vertical.png
+
 #removed separator.png
 replace_all 's|separator.png|-|g'
 check_and_remove media/separator.png
