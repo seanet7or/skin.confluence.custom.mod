@@ -165,7 +165,7 @@
 					<label>31304</label>
 					<onclick>Skin.ToggleSetting(ViewStatusBanner)</onclick>
 					<selected>Skin.HasSetting(ViewStatusBanner)</selected>
-					<visible>Control.IsVisible(501)</visible>
+					<visible>Control.IsVisible(501) | Control.IsVisible(508) | Control.IsVisible(732)</visible>
 				</control>
 				<control type="radiobutton" id="97">
 					<description>Show ExtraFanArt Toggle</description>
@@ -195,14 +195,16 @@
 					<visible>Control.IsVisible(508)</visible>
 				</control>
 				<control type="radiobutton" id="100">
-					<description>Show Watched Banners</description>
+					<description>Disable Show Info Toggle 508 Delay</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
-					<label>31304</label>
-					<onclick>Skin.ToggleSetting(ViewStatusBanner)</onclick>
-					<selected>Skin.HasSetting(ViewStatusBanner)</selected>
-					<visible>Control.IsVisible(732)</visible>
+					<label>$LOCALIZE[31307]</label>
+					<onclick>Skin.ToggleSetting(View508DelayInfo)</onclick>
+					<selected>!Skin.HasSetting(View508DelayInfo)</selected>
+					<enable>!Skin.HasSetting(View508HideInfo)</enable>
+					<visible>Control.IsVisible(508)</visible>
 				</control>
+				
 				<control type="radiobutton" id="14">
 					<description>Watched Toggle</description>
 					<textwidth>170</textwidth>

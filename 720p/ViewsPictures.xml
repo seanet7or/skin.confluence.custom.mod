@@ -23,6 +23,16 @@
 				<preloaditems>4</preloaditems>
 				<itemlayout height="200" width="190">
 					<control type="image">
+						<posx>15</posx>
+						<posy>40</posy>
+						<width>160</width>
+						<height>160</height>
+						<aspectratio>stretch</aspectratio>
+						<bordersize>8</bordersize>
+						<fadetime>200</fadetime>
+						<texture border="10">folder-focus.png</texture>
+					</control>
+					<control type="image">
 						<posx>25</posx>
 						<posy>50</posy>
 						<width>140</width>
@@ -32,6 +42,18 @@
 					</control>
 				</itemlayout>
 				<focusedlayout height="200" width="190">
+					<control type="image">
+						<posx>15</posx>
+						<posy>40</posy>
+						<width>160</width>
+						<height>160</height>
+						<aspectratio>stretch</aspectratio>
+						<bordersize>8</bordersize>
+						<fadetime>200</fadetime>
+						<texture border="10">folder-focus.png</texture>
+						<animation reversible="false" effect="zoom" start="15,40,160,160" end="-10,-5,210,210" time="200">focus</animation>
+						<animation reversible="false" effect="zoom" end="15,40,160,160" start="-10,-5,210,210" time="200">unfocus</animation>
+					</control>
 					<control type="image">
 						<posx>25</posx>
 						<posy>50</posy>
@@ -80,6 +102,16 @@
 				<scrolltime>200</scrolltime>
 				<preloaditems>2</preloaditems>
 				<itemlayout height="144" width="144">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>144</width>
+						<height>144</height>
+						<aspectratio>stretch</aspectratio>
+						<bordersize>8</bordersize>
+						<fadetime>200</fadetime>
+						<texture border="10">folder-focus.png</texture>
+					</control>
 					<control type="image">
 						<posx>10</posx>
 						<posy>10</posy>

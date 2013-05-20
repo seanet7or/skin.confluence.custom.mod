@@ -153,6 +153,14 @@
 		<value condition="StringCompare(ListItem.Label,..) + !Skin.HasSetting(ParentDirLabel)">[B][COLOR=blue]$LOCALIZE[31316][/COLOR][/B]</value>
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
+	<variable name="DescriptiveLabel" type="text">
+		<value condition="StringCompare(ListItem.label,..)">$LOCALIZE[31316]</value>
+		<value condition="!IsEmpty(ListItem.Year) + Container.Content(Movies)">$INFO[ListItem.label] ([COLOR=white]$INFO[ListItem.Year][/COLOR])</value>
+		<value condition="Container.Content(Seasons) | Container.Content(Episodes)">$INFO[ListItem.TVShowTitle] - $INFO[ListItem.label]</value>
+		<value condition="!IsEmpty(Window.Property(current.actor.agelong)) + [Container.Content(Actors) | Container.Content(Directors)]">$INFO[ListItem.label] ([COLOR=white]$INFO[Window.Property(current.actor.agelong)][/COLOR])</value>
+		<value condition="!IsEmpty(ListItem.Property(date))">$INFO[ListItem.label] ([COLOR=white]$INFO[ListItem.Property(date)][/COLOR])</value>
+		<value>$INFO[ListItem.label]</value>
+	</variable>
 	<variable name="UsrMPAACountry" type="text">
 		<value condition="!IsEmpty(Skin.String(MPAACountryCert))">$INFO[Skin.String(MPAACountryCert)]</value>
 		<value>$LOCALIZE[31700]</value>

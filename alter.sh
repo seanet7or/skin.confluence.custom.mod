@@ -142,7 +142,7 @@ read_origmaster() {
 
 #findunused
 
-#read_origmaster
+read_origmaster
 
 # enable 'germany' as option in mpaa settings
 perlregex '720p/SkinSettings.xml' 's|<!--(item>\s*\000'\
