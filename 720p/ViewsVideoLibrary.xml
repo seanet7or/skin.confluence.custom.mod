@@ -195,20 +195,22 @@
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label>$VAR[MainItemLabel]</label>
+				<label>$VAR[DescriptiveLabel]</label>
 			</control>
 			<control type="label">
-				<posx>0</posx>
+				<posx>60</posx>
 				<posy>540</posy>
-				<width>1280</width>
+				<width>1160</width>
 				<height>35</height>
-				<font>font30</font>
+				<font>font13</font>
 				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
-				<scroll>true</scroll>
+				<wrapmultiline>true</wrapmultiline>
+				<scroll>false</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label>$INFO[ListItem.Year]</label>
+				<label>$INFO[ListItem.Tagline]</label>
+				<visible>!IsEmpty(ListItem.Tagline) + Container.Content(Movies)</visible>
 			</control>
 			<control type="grouplist">
 				<description>Media Genre Flagging</description>
