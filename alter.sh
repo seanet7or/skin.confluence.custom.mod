@@ -66,7 +66,7 @@ check_and_remove() {
 		
 		BASE=$(echo "$FS" | sed 's|\.[a-zA-Z]*||g')
 		#echo "Occurences of '$BASE':"
-		if ! grep -q "$BASE[^a-zA-Z0-9]" 720p/* ; then
+		if ! grep -q "$BASE[^a-zA-Z0-9 _]" 720p/* ; then
 			rm "$F" 2>/dev/null
 		else
 			echo "'$BASE' ('$F') was found in the .xmls:"
@@ -143,6 +143,10 @@ read_origmaster() {
 #findunused
 
 #read_origmaster
+
+#removed separator.png
+replace_all 's|separator.png|-|g'
+check_and_remove media/separator.png
 
 #removed separator2.png
 replace_all 's|separator2.png|-|g'
