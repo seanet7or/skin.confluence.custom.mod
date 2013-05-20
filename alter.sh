@@ -28,10 +28,10 @@ replace_all() {
 # $1 characteristic line
 # $2 .xml file ; if empty, all occurrencies are searched
 remove_imagecontrol() {
-	local LINE="$1"
+	local LINE=$1 #$(echo "$1" | tr ' ' '.')
 	if [ -z "$2" ] ; then
 		#echo "Param2 is empty, building file list:"
-		local LIST=$(grep "$LINE" 720p/* | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
+		local LIST=$(grep "$LINE" 720p/*.xml | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
 		local CHECK=true
 		#echo "$LIST"
 	else
@@ -42,7 +42,7 @@ remove_imagecontrol() {
 	for F in $LIST ; do
 		perlregex "$F" 's|\s*?<control type="image"[^>]*>\s*?\000'\
 '(\s*<(colordiffuse\|texture\|description\|bordersize\|bordertexture\|fadetime\|posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
-'\s*'$LINE'\s*\000'\
+'\s*'"$LINE"'\s*\000'\
 '(\s*<(colordiffuse\|texture\|description\|bordersize\|bordertexture\|fadetime\|posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
 '\s*</control>\s*?\000||g'
 	done
@@ -143,6 +143,12 @@ read_origmaster() {
 #findunused
 
 #read_origmaster
+
+remove_imagecontrol '<description>background [a-z]* image</description>' 720p/DialogButtonMenu.xml
+perlregex '720p/DialogButtonMenu.xml' 's|ShutdownButtonNoFocus.png|black-back.png|g'
+perlregex '720p/DialogButtonMenu.xml' 's|ShutdownButtonFocus.png|button-focus.png|g'
+check_and_remove media/ShutdownButtonFocus.png
+check_and_remove media/ShutdownButtonNoFocus.png
 
 #lets choose all types of addons for the home window
 perlregex '720p/SkinSettings.xml' 's|(Skin.SetAddon.[^,]*),[^\)]*\)|\1,xbmc.addon.video,xbmc.addon.executable,xbmc.addon.audio,xbmc.addon.image)|g'
