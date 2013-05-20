@@ -144,6 +144,10 @@ read_origmaster() {
 
 #read_origmaster
 
+#removed separator2.png
+replace_all 's|separator2.png|-|g'
+check_and_remove media/separator2.png
+
 #removed side fade
 remove_imagecontrol '<texture[^>]*>SideFade.png</texture>'
 check_and_remove media/SideFade.png
