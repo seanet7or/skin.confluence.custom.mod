@@ -192,7 +192,7 @@
 					<label>31304</label>
 					<onclick>Skin.ToggleSetting(ViewStatusBanner)</onclick>
 					<selected>Skin.HasSetting(ViewStatusBanner)</selected>
-					<visible>Control.IsVisible(501)</visible>
+					<visible>Control.IsVisible(501) | Control.IsVisible(508) | Control.IsVisible(732)</visible>
 				</control>
 				<control type="radiobutton" id="97">
 					<description>Show ExtraFanArt Toggle</description>
@@ -231,15 +231,7 @@
 					<enable>!Skin.HasSetting(View508HideInfo)</enable>
 					<visible>Control.IsVisible(508)</visible>
 				</control>
-				<control type="radiobutton" id="101">
-					<description>Show Watched Banners</description>
-					<textwidth>170</textwidth>
-					<include>ButtonCommonValues</include>
-					<label>31304</label>
-					<onclick>Skin.ToggleSetting(ViewStatusBanner)</onclick>
-					<selected>Skin.HasSetting(ViewStatusBanner)</selected>
-					<visible>Control.IsVisible(732)</visible>
-				</control>
+				
 				<control type="radiobutton" id="14">
 					<description>Watched Toggle</description>
 					<textwidth>170</textwidth>
