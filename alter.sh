@@ -144,6 +144,11 @@ read_origmaster() {
 
 #read_origmaster
 
+#removed side fade
+remove_imagecontrol '<texture[^>]*>SideFade.png</texture>'
+check_and_remove media/SideFade.png
+
+#simplified shutdown menu
 remove_imagecontrol '<description>background [a-z]* image</description>' 720p/DialogButtonMenu.xml
 perlregex '720p/DialogButtonMenu.xml' 's|ShutdownButtonNoFocus.png|black-back.png|g'
 perlregex '720p/DialogButtonMenu.xml' 's|ShutdownButtonFocus.png|button-focus.png|g'
