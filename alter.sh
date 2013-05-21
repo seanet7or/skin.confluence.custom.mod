@@ -144,6 +144,13 @@ read_origmaster() {
 
 #read_origmaster
 
+#remove temporary files if script was canceled
+rm 720p/*.tmp 2>/dev/null
+
+#changed scroll bar to make it besser visible
+replace_all 's|<texturesliderbar border="14,0,14,0">ScrollBarH_bar.png</texturesliderbar>|<texturesliderbar border="14,0,14,0">special://skin/extras/lightmod/ScrollBarH_bar.png</texturesliderbar>|g'
+replace_all 's|<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>|<texturesliderbar border="0,14,0,14">special://skin/extras/lightmod/ScrollBarV_bar.png</texturesliderbar>|g'
+
 #removed media/separator_vertical.png
 remove_imagecontrol '<texture>separator_vertical.png</texture>' 720p/DialogContentSettings.xml
 check_and_remove media/separator_vertical.png
