@@ -362,23 +362,10 @@ perlregex 720p/MyPics.xml 's|\s*<control type="grouplist">\s*\000'\
 '\s*</control>\s*\000||'
 
 	#remove ThumbBG.png
-IMG='ThumbBG.png'
-LIST=$(grep "$IMG" 720p/* | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
-for F in $LIST ; do
-	perlregex "$F" 's|\s*?<control type="image">\s*?\000'\
-'(\s*<(posx\|posy\|height\|width\|aspectratio\|animation\|include\|bordersize\|fadetime)[^>]*>[^>]*>\s*\000)*'\
-'\s*<texture[^>]*>'ThumbBG.png'</texture>\s*\000'\
-'(\s*<(posx\|posy\|height\|width\|aspectratio\|animation\|include\|bordersize\|fadetime)[^>]*>[^>]*>\s*\000)*'\
-'\s*</control>\s*?\000||g'
-done
-	perlregex 720p/ViewsPictures.xml 's|<texture border="2">ThumbBG.png</texture>|<texture border="10">folder-Focus.png</texture>|g'
-	perlregex 720p/ViewsPictures.xml 's|\s*<bordertexture border="10">folder-Focus.png</bordertexture>\s*\000||g'
-if grep -q "$IMG" 720p/* ; then
-	echo "ERROR: Not all occurrences of '$IMG' could be removed, please check:"
-	grep "$IMG" 720p/*
-	exit 3
-fi
-rm "media/$IMG" 2>/dev/null
+#remove_imagecontrol '<bordertexture[^>]*>ThumbShadow.png</bordertexture>' 720p/ViewsPictures.xml
+perlregex 720p/ViewsPictures.xml 's|<texture border="2">ThumbBG.png</texture>|<texture border="10">folder-focus.png</texture>|g' 
+perlregex 720p/ViewsPictures.xml 's|\s*<bordertexture border="10">folder-focus.png</bordertexture>\s*\000||'
+#check_and_remove media/ThumbBG.png
 
 #remove homefloor
 perlregex 720p/Home.xml 's|\s*<control type="image">\s*\000'\
