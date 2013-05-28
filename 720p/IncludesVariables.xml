@@ -163,7 +163,8 @@
 		<value>$INFO[ListItem.label]</value>
 	</variable>
 	<variable name="VideoDescription" type="text">
-		<value condition="Skin.HasSetting(MediaShortDescription)">$INFO[ListItem.Tagline]</value>
+		<value condition="Skin.HasSetting(MediaShortDescription) + IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.Tagline]</value>
+		<value condition="Skin.HasSetting(MediaShortDescription)">$INFO[ListItem.PlotOutline]</value>
 		<value>$INFO[ListItem.Plot]</value>
 	</variable>
 	<variable name="UsrMPAACountry" type="text">
