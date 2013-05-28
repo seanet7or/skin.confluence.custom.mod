@@ -20,6 +20,7 @@
 	<include name="ClearButtonChoice">
 		<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Label)</onclick>
 		<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Path)</onclick>
+		<onclick condition="Window.IsVisible(2114)">Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].PlayList)</onclick>
 		<onclick condition="Window.IsVisible(2114)">Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Sub)</onclick>
 		<onclick condition="Window.IsVisible(2114)">Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Addon)</onclick>
 		<onclick condition="Window.IsVisible(2114)">Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Type)</onclick>
@@ -36,6 +37,7 @@
 		<onload condition="System.HasAddon(script.favourites)">XBMC.RunScript(script.favourites)</onload>
 		<onload condition="System.HasAddon(script.artistslideshow) + IsEmpty(Window.Property(ArtistSlideshowRunning)) + Skin.HasSetting(AllowSlideShowArt)">RunScript(script.artistslideshow, daemon=True)</onload>
 		<onload condition="!Skin.HasSetting(HideHomeSearch) + !System.HasAddon(script.globalsearch)">Skin.Setbool(HideHomeSearch)</onload>
+		<onload condition="!Skin.HasSetting(DisableScriptPlayList) + !System.HasAddon(script.randomandlastitems)">Skin.Setbool(DisableScriptPlayList)</onload>
 		<onload condition="IsEmpty(Skin.String(WeatherFanartDir))">Skin.SetString(WeatherFanartDir,special://skin/backgrounds/weather/)</onload>
 		<onload condition="!Skin.HasSetting(InitialSetUpRun)">Skin.SetBool(ShowWeatherFanart)</onload>
 		<onload condition="!Skin.HasSetting(InitialSetUpRun)">Skin.SetString(MPAACountryCert,$LOCALIZE[31701])</onload>
@@ -83,6 +85,7 @@
 		<onload condition="!Skin.HasSetting(InitialSetUpRun) + Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Fanart,special://skin/backgrounds/homescreen/videos.jpg)</onload>
 		<onload condition="!Skin.HasSetting(InitialSetUpRun)">Skin.SetString(HomeItem.7.Label,$LOCALIZE[31332])</onload>
 		<onload condition="!Skin.HasSetting(InitialSetUpRun)">Skin.SetString(HomeItem.7.Path,ActivateWindow(VideoLibrary,"special://skin/extras/Playlists/GenreFamily.xsp",return))</onload>
+		<onload condition="!Skin.HasSetting(InitialSetUpRun)">Skin.SetString(HomeItem.7.PlayList,special://skin/extras/Playlists/GenreFamily.xsp)</onload>
 		<onload condition="!Skin.HasSetting(InitialSetUpRun)">Skin.SetString(HomeItem.7.Sub,Movies)</onload>
 		<onload condition="!Skin.HasSetting(InitialSetUpRun)">Skin.SetString(HomeItem.7.Addon,Videos)</onload>
 		<onload condition="!Skin.HasSetting(InitialSetUpRun)">Skin.SetString(HomeItem.7.Widget,None)</onload>

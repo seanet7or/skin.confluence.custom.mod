@@ -2147,7 +2147,407 @@
 					<include>VisibleFadeEffect</include>
 				</control>
 			</control>
+			
+###############################################			
+			
+			
+			
+			<control type="group">
+				<posx>190</posx>
+				<posy>50</posy>
+				<!-- Movies Playlist-->
+				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),PlayListVideo) + !Skin.HasSetting(DisableScriptPlayList)</visible>
+				<include>VisibleFadeEffect</include>
+				<control type="label">
+					<description>Recent Title label</description>
+					<posx>180</posx>
+					<posy>220</posy>
+					<height>20</height>
+					<width>540</width>
+					<label>$INFO[Container(9000).ListItem.Label] - $LOCALIZE[31175]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<visible>Skin.HasSetting(EnableRandomPlaylist)</visible>
+				</control>
+				<control type="label">
+					<description>Random Title label</description>
+					<posx>180</posx>
+					<posy>220</posy>
+					<height>20</height>
+					<width>540</width>
+					<label>$INFO[Container(9000).ListItem.Label] - $LOCALIZE[31176]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<visible>!Skin.HasSetting(EnableRandomPlaylist)</visible>
+				</control>
+				<control type="list" id="8012">
+					<visible>Container(9000).HasFocus(1) + StringCompare(Window(home).Property(HomePlayListOne.Type),Movie)</visible>
+					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8012).NumItems,4)">conditional</animation>
+					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8012).NumItems,3)">conditional</animation>
+					<animation effect="slide" start="0,0" end="270,0" time="0" condition="StringCompare(Container(8012).NumItems,2)">conditional</animation>
+					<animation effect="slide" start="0,0" end="360,0" time="0" condition="StringCompare(Container(8012).NumItems,1)">conditional</animation>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>900</width>
+					<height>220</height>
+					<onleft>8012</onleft>
+					<onright>8012</onright>
+					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
+					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="Skin.HasSetting(LowerMainMenuBar)">9002</ondown>
+					<viewtype label="535">list</viewtype>
+					<pagecontrol>-</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<orientation>Horizontal</orientation>
+					<include>MovieWidgetLayout</include>
+					<include>PlayListOneContent</include>
+				</control>
+				<control type="list" id="8012">
+					<visible>Container(9000).HasFocus(2) + StringCompare(Window(home).Property(HomePlayListTwo.Type),Movie)</visible>
+					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8012).NumItems,4)">conditional</animation>
+					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8012).NumItems,3)">conditional</animation>
+					<animation effect="slide" start="0,0" end="270,0" time="0" condition="StringCompare(Container(8012).NumItems,2)">conditional</animation>
+					<animation effect="slide" start="0,0" end="360,0" time="0" condition="StringCompare(Container(8012).NumItems,1)">conditional</animation>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>900</width>
+					<height>220</height>
+					<onleft>8012</onleft>
+					<onright>8012</onright>
+					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
+					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="Skin.HasSetting(LowerMainMenuBar)">9002</ondown>
+					<viewtype label="535">list</viewtype>
+					<pagecontrol>-</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<orientation>Horizontal</orientation>
+					<include>MovieWidgetLayout</include>
+					<include>PlayListTwoContent</include>
+				</control>
+				<control type="list" id="8012">
+					<visible>Container(9000).HasFocus(3) + StringCompare(Window(home).Property(HomePlayListThree.Type),Movie)</visible>
+					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8012).NumItems,4)">conditional</animation>
+					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8012).NumItems,3)">conditional</animation>
+					<animation effect="slide" start="0,0" end="270,0" time="0" condition="StringCompare(Container(8012).NumItems,2)">conditional</animation>
+					<animation effect="slide" start="0,0" end="360,0" time="0" condition="StringCompare(Container(8012).NumItems,1)">conditional</animation>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>900</width>
+					<height>220</height>
+					<onleft>8012</onleft>
+					<onright>8012</onright>
+					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
+					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="Skin.HasSetting(LowerMainMenuBar)">9002</ondown>
+					<viewtype label="535">list</viewtype>
+					<pagecontrol>-</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<orientation>Horizontal</orientation>
+					<include>MovieWidgetLayout</include>
+					<include>PlayListThreeContent</include>
+				</control>
+				<control type="list" id="8012">
+					<visible>Container(9000).HasFocus(4) + StringCompare(Window(home).Property(HomePlayListFour.Type),Movie)</visible>
+					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8012).NumItems,4)">conditional</animation>
+					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8012).NumItems,3)">conditional</animation>
+					<animation effect="slide" start="0,0" end="270,0" time="0" condition="StringCompare(Container(8012).NumItems,2)">conditional</animation>
+					<animation effect="slide" start="0,0" end="360,0" time="0" condition="StringCompare(Container(8012).NumItems,1)">conditional</animation>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>900</width>
+					<height>220</height>
+					<onleft>8012</onleft>
+					<onright>8012</onright>
+					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
+					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="Skin.HasSetting(LowerMainMenuBar)">9002</ondown>
+					<viewtype label="535">list</viewtype>
+					<pagecontrol>-</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<orientation>Horizontal</orientation>
+					<include>MovieWidgetLayout</include>
+					<include>PlayListFourContent</include>
+				</control>
+				<control type="list" id="8012">
+					<visible>Container(9000).HasFocus(5) + StringCompare(Window(home).Property(HomePlayListFive.Type),Movie)</visible>
+					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8012).NumItems,4)">conditional</animation>
+					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8012).NumItems,3)">conditional</animation>
+					<animation effect="slide" start="0,0" end="270,0" time="0" condition="StringCompare(Container(8012).NumItems,2)">conditional</animation>
+					<animation effect="slide" start="0,0" end="360,0" time="0" condition="StringCompare(Container(8012).NumItems,1)">conditional</animation>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>900</width>
+					<height>220</height>
+					<onleft>8012</onleft>
+					<onright>8012</onright>
+					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
+					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="Skin.HasSetting(LowerMainMenuBar)">9002</ondown>
+					<viewtype label="535">list</viewtype>
+					<pagecontrol>-</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<orientation>Horizontal</orientation>
+					<include>MovieWidgetLayout</include>
+					<include>PlayListFiveContent</include>
+				</control>
+				<control type="list" id="8012">
+					<visible>Container(9000).HasFocus(6) + StringCompare(Window(home).Property(HomePlayListSix.Type),Movie)</visible>
+					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8012).NumItems,4)">conditional</animation>
+					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8012).NumItems,3)">conditional</animation>
+					<animation effect="slide" start="0,0" end="270,0" time="0" condition="StringCompare(Container(8012).NumItems,2)">conditional</animation>
+					<animation effect="slide" start="0,0" end="360,0" time="0" condition="StringCompare(Container(8012).NumItems,1)">conditional</animation>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>900</width>
+					<height>220</height>
+					<onleft>8012</onleft>
+					<onright>8012</onright>
+					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
+					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="Skin.HasSetting(LowerMainMenuBar)">9002</ondown>
+					<viewtype label="535">list</viewtype>
+					<pagecontrol>-</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<orientation>Horizontal</orientation>
+					<include>MovieWidgetLayout</include>
+					<include>PlayListSixContent</include>
+				</control>
+				<control type="list" id="8012">
+					<visible>Container(9000).HasFocus(7) + StringCompare(Window(home).Property(HomePlayListSeven.Type),Movie)</visible>
+					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8012).NumItems,4)">conditional</animation>
+					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8012).NumItems,3)">conditional</animation>
+					<animation effect="slide" start="0,0" end="270,0" time="0" condition="StringCompare(Container(8012).NumItems,2)">conditional</animation>
+					<animation effect="slide" start="0,0" end="360,0" time="0" condition="StringCompare(Container(8012).NumItems,1)">conditional</animation>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>900</width>
+					<height>220</height>
+					<onleft>8012</onleft>
+					<onright>8012</onright>
+					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
+					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="Skin.HasSetting(LowerMainMenuBar)">9002</ondown>
+					<viewtype label="535">list</viewtype>
+					<pagecontrol>-</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<orientation>Horizontal</orientation>
+					<include>MovieWidgetLayout</include>
+					<include>PlayListSevenContent</include>
+				</control>
+				<control type="list" id="8012">
+					<visible>Container(9000).HasFocus(8) + StringCompare(Window(home).Property(HomePlayListEight.Type),Movie)</visible>
+					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8012).NumItems,4)">conditional</animation>
+					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8012).NumItems,3)">conditional</animation>
+					<animation effect="slide" start="0,0" end="270,0" time="0" condition="StringCompare(Container(8012).NumItems,2)">conditional</animation>
+					<animation effect="slide" start="0,0" end="360,0" time="0" condition="StringCompare(Container(8012).NumItems,1)">conditional</animation>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>900</width>
+					<height>220</height>
+					<onleft>8012</onleft>
+					<onright>8012</onright>
+					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
+					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="Skin.HasSetting(LowerMainMenuBar)">9002</ondown>
+					<viewtype label="535">list</viewtype>
+					<pagecontrol>-</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<orientation>Horizontal</orientation>
+					<include>MovieWidgetLayout</include>
+					<include>PlayListEightContent</include>
+				</control>
+				<control type="list" id="8012">
+					<visible>Container(9000).HasFocus(9) + StringCompare(Window(home).Property(HomePlayListNine.Type),Movie)</visible>
+					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8012).NumItems,4)">conditional</animation>
+					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8012).NumItems,3)">conditional</animation>
+					<animation effect="slide" start="0,0" end="270,0" time="0" condition="StringCompare(Container(8012).NumItems,2)">conditional</animation>
+					<animation effect="slide" start="0,0" end="360,0" time="0" condition="StringCompare(Container(8012).NumItems,1)">conditional</animation>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>900</width>
+					<height>220</height>
+					<onleft>8012</onleft>
+					<onright>8012</onright>
+					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
+					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="Skin.HasSetting(LowerMainMenuBar)">9002</ondown>
+					<viewtype label="535">list</viewtype>
+					<pagecontrol>-</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<orientation>Horizontal</orientation>
+					<include>MovieWidgetLayout</include>
+					<include>PlayListNineContent</include>
+				</control>
+				<control type="list" id="8012">
+					<visible>Container(9000).HasFocus(10) + StringCompare(Window(home).Property(HomePlayListTen.Type),Movie)</visible>
+					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8012).NumItems,4)">conditional</animation>
+					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8012).NumItems,3)">conditional</animation>
+					<animation effect="slide" start="0,0" end="270,0" time="0" condition="StringCompare(Container(8012).NumItems,2)">conditional</animation>
+					<animation effect="slide" start="0,0" end="360,0" time="0" condition="StringCompare(Container(8012).NumItems,1)">conditional</animation>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>900</width>
+					<height>220</height>
+					<onleft>8012</onleft>
+					<onright>8012</onright>
+					<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
+					<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+					<ondown condition="!Skin.HasSetting(LowerMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
+					<ondown condition="Skin.HasSetting(LowerMainMenuBar)">9002</ondown>
+					<viewtype label="535">list</viewtype>
+					<pagecontrol>-</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<orientation>Horizontal</orientation>
+					<include>MovieWidgetLayout</include>
+					<include>PlayListTenContent</include>
+				</control>
+				<control type="button">
+					<description>left Arrow</description>
+					<posx>-40</posx>
+					<posy>90</posy>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>arrow-big-left.png</texturefocus>
+					<texturenofocus>arrow-big-left.png</texturenofocus>
+					<onclick>Control.Move(8012,-1)</onclick>
+					<visible>Control.HasFocus(8012) + Container(8012).HasPrevious</visible>
+					<include>VisibleFadeEffect</include>
+				</control>
+				<control type="button">
+					<description>right Arrow</description>
+					<posx>910</posx>
+					<posy>90</posy>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>arrow-big-right.png</texturefocus>
+					<texturenofocus>arrow-big-right.png</texturenofocus>
+					<onclick>Control.Move(8012,1)</onclick>
+					<visible>Control.HasFocus(8012) + Container(8012).HasNext</visible>
+					<include>VisibleFadeEffect</include>
+				</control>
+			</control>
+			
+			
+			
+			
+################################################			
+			
 		</control>
+	</include>
+	<include name="MovieWidgetLayout">
+					<itemlayout height="220" width="180">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>160</width>
+							<height>170</height>
+							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="220" width="180">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture border="15">RecentAddedBack.png</texture>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>160</width>
+							<height>170</height>
+							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">folder-focus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>Control.HasFocus(8012)</visible>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>160</width>
+							<height>170</height>
+							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+							<visible>!Control.HasFocus(8012)</visible>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<textcolor>blue</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+							<visible>Control.HasFocus(8012)</visible>
+						</control>
+					</focusedlayout>
 	</include>
 	<include name="RecentVideoContent">
 		<content>
@@ -3364,6 +3764,846 @@
 				<icon>$INFO[Window(Home).Property(RecommendedMusicVideo.10.Art(poster))]</icon>
 				<thumb>$INFO[Window(Home).Property(RecommendedMusicVideo.10.Art(fanart))]</thumb>
 				<visible>!IsEmpty(Window(Home).Property(RecommendedMusicVideo.10.Title))</visible>
+			</item>
+		</content>
+	</include>
+	<include name="PlayListOneContent">
+		<content>
+			<item id="1">
+				<label>$INFO[Window(home).Property(HomePlayListOne.1.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListOne.1.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListOne.1.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListOne.1.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListOne.1.Title))</visible>
+			</item>
+			<item id="2">
+				<label>$INFO[Window(home).Property(HomePlayListOne.2.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListOne.2.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListOne.2.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListOne.2.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListOne.2.Title))</visible>
+			</item>
+			<item id="3">
+				<label>$INFO[Window(home).Property(HomePlayListOne.3.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListOne.3.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListOne.3.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListOne.3.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListOne.3.Title))</visible>
+			</item>
+			<item id="4">
+				<label>$INFO[Window(home).Property(HomePlayListOne.4.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListOne.4.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListOne.4.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListOne.4.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListOne.4.Title))</visible>
+			</item>
+			<item id="5">
+				<label>$INFO[Window(home).Property(HomePlayListOne.5.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListOne.5.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListOne.5.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListOne.5.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListOne.5.Title))</visible>
+			</item>
+			<item id="6">
+				<label>$INFO[Window(home).Property(HomePlayListOne.6.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListOne.6.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListOne.6.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListOne.6.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListOne.6.Title))</visible>
+			</item>
+			<item id="7">
+				<label>$INFO[Window(home).Property(HomePlayListOne.7.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListOne.7.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListOne.7.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListOne.7.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListOne.7.Title))</visible>
+			</item>
+			<item id="8">
+				<label>$INFO[Window(home).Property(HomePlayListOne.8.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListOne.8.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListOne.8.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListOne.8.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListOne.8.Title))</visible>
+			</item>
+			<item id="9">
+				<label>$INFO[Window(home).Property(HomePlayListOne.9.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListOne.9.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListOne.9.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListOne.9.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListOne.9.Title))</visible>
+			</item>
+			<item id="10">
+				<label>$INFO[Window(home).Property(HomePlayListOne.10.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListOne.10.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListOne.10.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListOne.10.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListOne.10.Title))</visible>
+			</item>
+		</content>
+	</include>
+	<include name="PlayListTwoContent">
+		<content>
+			<item id="1">
+				<label>$INFO[Window(home).Property(HomePlayListTwo.1.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListTwo.1.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListTwo.1.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListTwo.1.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListTwo.1.Title))</visible>
+			</item>
+			<item id="2">
+				<label>$INFO[Window(home).Property(HomePlayListTwo.2.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListTwo.2.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListTwo.2.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListTwo.2.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListTwo.2.Title))</visible>
+			</item>
+			<item id="3">
+				<label>$INFO[Window(home).Property(HomePlayListTwo.3.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListTwo.3.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListTwo.3.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListTwo.3.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListTwo.3.Title))</visible>
+			</item>
+			<item id="4">
+				<label>$INFO[Window(home).Property(HomePlayListTwo.4.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListTwo.4.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListTwo.4.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListTwo.4.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListTwo.4.Title))</visible>
+			</item>
+			<item id="5">
+				<label>$INFO[Window(home).Property(HomePlayListTwo.5.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListTwo.5.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListTwo.5.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListTwo.5.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListTwo.5.Title))</visible>
+			</item>
+			<item id="6">
+				<label>$INFO[Window(home).Property(HomePlayListTwo.6.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListTwo.6.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListTwo.6.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListTwo.6.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListTwo.6.Title))</visible>
+			</item>
+			<item id="7">
+				<label>$INFO[Window(home).Property(HomePlayListTwo.7.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListTwo.7.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListTwo.7.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListTwo.7.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListTwo.7.Title))</visible>
+			</item>
+			<item id="8">
+				<label>$INFO[Window(home).Property(HomePlayListTwo.8.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListTwo.8.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListTwo.8.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListTwo.8.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListTwo.8.Title))</visible>
+			</item>
+			<item id="9">
+				<label>$INFO[Window(home).Property(HomePlayListTwo.9.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListTwo.9.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListTwo.9.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListTwo.9.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListTwo.9.Title))</visible>
+			</item>
+			<item id="10">
+				<label>$INFO[Window(home).Property(HomePlayListTwo.10.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListTwo.10.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListTwo.10.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListTwo.10.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListTwo.10.Title))</visible>
+			</item>
+		</content>
+	</include>
+	<include name="PlayListThreeContent">
+		<content>
+			<item id="1">
+				<label>$INFO[Window(home).Property(HomePlayListThree.1.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListThree.1.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListThree.1.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListThree.1.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListThree.1.Title))</visible>
+			</item>
+			<item id="2">
+				<label>$INFO[Window(home).Property(HomePlayListThree.2.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListThree.2.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListThree.2.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListThree.2.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListThree.2.Title))</visible>
+			</item>
+			<item id="3">
+				<label>$INFO[Window(home).Property(HomePlayListThree.3.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListThree.3.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListThree.3.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListThree.3.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListThree.3.Title))</visible>
+			</item>
+			<item id="4">
+				<label>$INFO[Window(home).Property(HomePlayListThree.4.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListThree.4.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListThree.4.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListThree.4.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListThree.4.Title))</visible>
+			</item>
+			<item id="5">
+				<label>$INFO[Window(home).Property(HomePlayListThree.5.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListThree.5.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListThree.5.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListThree.5.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListThree.5.Title))</visible>
+			</item>
+			<item id="6">
+				<label>$INFO[Window(home).Property(HomePlayListThree.6.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListThree.6.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListThree.6.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListThree.6.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListThree.6.Title))</visible>
+			</item>
+			<item id="7">
+				<label>$INFO[Window(home).Property(HomePlayListThree.7.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListThree.7.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListThree.7.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListThree.7.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListThree.7.Title))</visible>
+			</item>
+			<item id="8">
+				<label>$INFO[Window(home).Property(HomePlayListThree.8.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListThree.8.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListThree.8.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListThree.8.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListThree.8.Title))</visible>
+			</item>
+			<item id="9">
+				<label>$INFO[Window(home).Property(HomePlayListThree.9.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListThree.9.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListThree.9.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListThree.9.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListThree.9.Title))</visible>
+			</item>
+			<item id="10">
+				<label>$INFO[Window(home).Property(HomePlayListThree.10.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListThree.10.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListThree.10.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListThree.10.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListThree.10.Title))</visible>
+			</item>
+		</content>
+	</include>
+	<include name="PlayListFourContent">
+		<content>
+			<item id="1">
+				<label>$INFO[Window(home).Property(HomePlayListFour.1.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListFour.1.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListFour.1.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListFour.1.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListFour.1.Title))</visible>
+			</item>
+			<item id="2">
+				<label>$INFO[Window(home).Property(HomePlayListFour.2.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListFour.2.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListFour.2.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListFour.2.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListFour.2.Title))</visible>
+			</item>
+			<item id="3">
+				<label>$INFO[Window(home).Property(HomePlayListFour.3.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListFour.3.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListFour.3.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListFour.3.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListFour.3.Title))</visible>
+			</item>
+			<item id="4">
+				<label>$INFO[Window(home).Property(HomePlayListFour.4.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListFour.4.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListFour.4.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListFour.4.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListFour.4.Title))</visible>
+			</item>
+			<item id="5">
+				<label>$INFO[Window(home).Property(HomePlayListFour.5.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListFour.5.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListFour.5.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListFour.5.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListFour.5.Title))</visible>
+			</item>
+			<item id="6">
+				<label>$INFO[Window(home).Property(HomePlayListFour.6.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListFour.6.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListFour.6.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListFour.6.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListFour.6.Title))</visible>
+			</item>
+			<item id="7">
+				<label>$INFO[Window(home).Property(HomePlayListFour.7.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListFour.7.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListFour.7.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListFour.7.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListFour.7.Title))</visible>
+			</item>
+			<item id="8">
+				<label>$INFO[Window(home).Property(HomePlayListFour.8.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListFour.8.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListFour.8.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListFour.8.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListFour.8.Title))</visible>
+			</item>
+			<item id="9">
+				<label>$INFO[Window(home).Property(HomePlayListFour.9.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListFour.9.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListFour.9.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListFour.9.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListFour.9.Title))</visible>
+			</item>
+			<item id="10">
+				<label>$INFO[Window(home).Property(HomePlayListFour.10.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListFour.10.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListFour.10.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListFour.10.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListFour.10.Title))</visible>
+			</item>
+		</content>
+	</include>
+	<include name="PlayListFiveContent">
+		<content>
+			<item id="1">
+				<label>$INFO[Window(home).Property(HomePlayListFive.1.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListFive.1.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListFive.1.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListFive.1.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListFive.1.Title))</visible>
+			</item>
+			<item id="2">
+				<label>$INFO[Window(home).Property(HomePlayListFive.2.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListFive.2.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListFive.2.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListFive.2.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListFive.2.Title))</visible>
+			</item>
+			<item id="3">
+				<label>$INFO[Window(home).Property(HomePlayListFive.3.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListFive.3.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListFive.3.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListFive.3.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListFive.3.Title))</visible>
+			</item>
+			<item id="4">
+				<label>$INFO[Window(home).Property(HomePlayListFive.4.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListFive.4.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListFive.4.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListFive.4.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListFive.4.Title))</visible>
+			</item>
+			<item id="5">
+				<label>$INFO[Window(home).Property(HomePlayListFive.5.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListFive.5.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListFive.5.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListFive.5.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListFive.5.Title))</visible>
+			</item>
+			<item id="6">
+				<label>$INFO[Window(home).Property(HomePlayListFive.6.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListFive.6.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListFive.6.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListFive.6.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListFive.6.Title))</visible>
+			</item>
+			<item id="7">
+				<label>$INFO[Window(home).Property(HomePlayListFive.7.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListFive.7.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListFive.7.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListFive.7.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListFive.7.Title))</visible>
+			</item>
+			<item id="8">
+				<label>$INFO[Window(home).Property(HomePlayListFive.8.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListFive.8.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListFive.8.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListFive.8.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListFive.8.Title))</visible>
+			</item>
+			<item id="9">
+				<label>$INFO[Window(home).Property(HomePlayListFive.9.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListFive.9.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListFive.9.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListFive.9.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListFive.9.Title))</visible>
+			</item>
+			<item id="10">
+				<label>$INFO[Window(home).Property(HomePlayListFive.10.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListFive.10.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListFive.10.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListFive.10.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListFive.10.Title))</visible>
+			</item>
+		</content>
+	</include>
+	<include name="PlayListSixContent">
+		<content>
+			<item id="1">
+				<label>$INFO[Window(home).Property(HomePlayListSix.1.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListSix.1.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListSix.1.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListSix.1.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListSix.1.Title))</visible>
+			</item>
+			<item id="2">
+				<label>$INFO[Window(home).Property(HomePlayListSix.2.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListSix.2.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListSix.2.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListSix.2.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListSix.2.Title))</visible>
+			</item>
+			<item id="3">
+				<label>$INFO[Window(home).Property(HomePlayListSix.3.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListSix.3.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListSix.3.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListSix.3.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListSix.3.Title))</visible>
+			</item>
+			<item id="4">
+				<label>$INFO[Window(home).Property(HomePlayListSix.4.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListSix.4.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListSix.4.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListSix.4.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListSix.4.Title))</visible>
+			</item>
+			<item id="5">
+				<label>$INFO[Window(home).Property(HomePlayListSix.5.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListSix.5.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListSix.5.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListSix.5.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListSix.5.Title))</visible>
+			</item>
+			<item id="6">
+				<label>$INFO[Window(home).Property(HomePlayListSix.6.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListSix.6.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListSix.6.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListSix.6.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListSix.6.Title))</visible>
+			</item>
+			<item id="7">
+				<label>$INFO[Window(home).Property(HomePlayListSix.7.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListSix.7.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListSix.7.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListSix.7.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListSix.7.Title))</visible>
+			</item>
+			<item id="8">
+				<label>$INFO[Window(home).Property(HomePlayListSix.8.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListSix.8.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListSix.8.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListSix.8.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListSix.8.Title))</visible>
+			</item>
+			<item id="9">
+				<label>$INFO[Window(home).Property(HomePlayListSix.9.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListSix.9.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListSix.9.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListSix.9.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListSix.9.Title))</visible>
+			</item>
+			<item id="10">
+				<label>$INFO[Window(home).Property(HomePlayListSix.10.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListSix.10.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListSix.10.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListSix.10.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListSix.10.Title))</visible>
+			</item>
+		</content>
+	</include>
+	<include name="PlayListSevenContent">
+		<content>
+			<item id="1">
+				<label>$INFO[Window(home).Property(HomePlayListSeven.1.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListSeven.1.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListSeven.1.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListSeven.1.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListSeven.1.Title))</visible>
+			</item>
+			<item id="2">
+				<label>$INFO[Window(home).Property(HomePlayListSeven.2.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListSeven.2.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListSeven.2.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListSeven.2.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListSeven.2.Title))</visible>
+			</item>
+			<item id="3">
+				<label>$INFO[Window(home).Property(HomePlayListSeven.3.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListSeven.3.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListSeven.3.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListSeven.3.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListSeven.3.Title))</visible>
+			</item>
+			<item id="4">
+				<label>$INFO[Window(home).Property(HomePlayListSeven.4.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListSeven.4.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListSeven.4.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListSeven.4.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListSeven.4.Title))</visible>
+			</item>
+			<item id="5">
+				<label>$INFO[Window(home).Property(HomePlayListSeven.5.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListSeven.5.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListSeven.5.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListSeven.5.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListSeven.5.Title))</visible>
+			</item>
+			<item id="6">
+				<label>$INFO[Window(home).Property(HomePlayListSeven.6.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListSeven.6.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListSeven.6.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListSeven.6.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListSeven.6.Title))</visible>
+			</item>
+			<item id="7">
+				<label>$INFO[Window(home).Property(HomePlayListSeven.7.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListSeven.7.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListSeven.7.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListSeven.7.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListSeven.7.Title))</visible>
+			</item>
+			<item id="8">
+				<label>$INFO[Window(home).Property(HomePlayListSeven.8.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListSeven.8.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListSeven.8.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListSeven.8.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListSeven.8.Title))</visible>
+			</item>
+			<item id="9">
+				<label>$INFO[Window(home).Property(HomePlayListSeven.9.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListSeven.9.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListSeven.9.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListSeven.9.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListSeven.9.Title))</visible>
+			</item>
+			<item id="10">
+				<label>$INFO[Window(home).Property(HomePlayListSeven.10.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListSeven.10.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListSeven.10.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListSeven.10.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListSeven.10.Title))</visible>
+			</item>
+		</content>
+	</include>
+	<include name="PlayListEightContent">
+		<content>
+			<item id="1">
+				<label>$INFO[Window(home).Property(HomePlayListEight.1.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListEight.1.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListEight.1.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListEight.1.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListEight.1.Title))</visible>
+			</item>
+			<item id="2">
+				<label>$INFO[Window(home).Property(HomePlayListEight.2.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListEight.2.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListEight.2.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListEight.2.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListEight.2.Title))</visible>
+			</item>
+			<item id="3">
+				<label>$INFO[Window(home).Property(HomePlayListEight.3.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListEight.3.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListEight.3.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListEight.3.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListEight.3.Title))</visible>
+			</item>
+			<item id="4">
+				<label>$INFO[Window(home).Property(HomePlayListEight.4.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListEight.4.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListEight.4.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListEight.4.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListEight.4.Title))</visible>
+			</item>
+			<item id="5">
+				<label>$INFO[Window(home).Property(HomePlayListEight.5.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListEight.5.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListEight.5.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListEight.5.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListEight.5.Title))</visible>
+			</item>
+			<item id="6">
+				<label>$INFO[Window(home).Property(HomePlayListEight.6.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListEight.6.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListEight.6.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListEight.6.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListEight.6.Title))</visible>
+			</item>
+			<item id="7">
+				<label>$INFO[Window(home).Property(HomePlayListEight.7.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListEight.7.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListEight.7.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListEight.7.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListEight.7.Title))</visible>
+			</item>
+			<item id="8">
+				<label>$INFO[Window(home).Property(HomePlayListEight.8.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListEight.8.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListEight.8.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListEight.8.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListEight.8.Title))</visible>
+			</item>
+			<item id="9">
+				<label>$INFO[Window(home).Property(HomePlayListEight.9.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListEight.9.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListEight.9.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListEight.9.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListEight.9.Title))</visible>
+			</item>
+			<item id="10">
+				<label>$INFO[Window(home).Property(HomePlayListEight.10.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListEight.10.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListEight.10.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListEight.10.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListEight.10.Title))</visible>
+			</item>
+		</content>
+	</include>
+	<include name="PlayListNineContent">
+		<content>
+			<item id="1">
+				<label>$INFO[Window(home).Property(HomePlayListNine.1.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListNine.1.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListNine.1.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListNine.1.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListNine.1.Title))</visible>
+			</item>
+			<item id="2">
+				<label>$INFO[Window(home).Property(HomePlayListNine.2.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListNine.2.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListNine.2.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListNine.2.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListNine.2.Title))</visible>
+			</item>
+			<item id="3">
+				<label>$INFO[Window(home).Property(HomePlayListNine.3.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListNine.3.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListNine.3.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListNine.3.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListNine.3.Title))</visible>
+			</item>
+			<item id="4">
+				<label>$INFO[Window(home).Property(HomePlayListNine.4.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListNine.4.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListNine.4.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListNine.4.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListNine.4.Title))</visible>
+			</item>
+			<item id="5">
+				<label>$INFO[Window(home).Property(HomePlayListNine.5.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListNine.5.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListNine.5.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListNine.5.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListNine.5.Title))</visible>
+			</item>
+			<item id="6">
+				<label>$INFO[Window(home).Property(HomePlayListNine.6.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListNine.6.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListNine.6.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListNine.6.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListNine.6.Title))</visible>
+			</item>
+			<item id="7">
+				<label>$INFO[Window(home).Property(HomePlayListNine.7.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListNine.7.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListNine.7.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListNine.7.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListNine.7.Title))</visible>
+			</item>
+			<item id="8">
+				<label>$INFO[Window(home).Property(HomePlayListNine.8.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListNine.8.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListNine.8.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListNine.8.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListNine.8.Title))</visible>
+			</item>
+			<item id="9">
+				<label>$INFO[Window(home).Property(HomePlayListNine.9.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListNine.9.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListNine.9.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListNine.9.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListNine.9.Title))</visible>
+			</item>
+			<item id="10">
+				<label>$INFO[Window(home).Property(HomePlayListNine.10.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListNine.10.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListNine.10.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListNine.10.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListNine.10.Title))</visible>
+			</item>
+		</content>
+	</include>
+	<include name="PlayListTenContent">
+		<content>
+			<item id="1">
+				<label>$INFO[Window(home).Property(HomePlayListTen.1.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListTen.1.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListTen.1.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListTen.1.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListTen.1.Title))</visible>
+			</item>
+			<item id="2">
+				<label>$INFO[Window(home).Property(HomePlayListTen.2.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListTen.2.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListTen.2.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListTen.2.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListTen.2.Title))</visible>
+			</item>
+			<item id="3">
+				<label>$INFO[Window(home).Property(HomePlayListTen.3.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListTen.3.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListTen.3.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListTen.3.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListTen.3.Title))</visible>
+			</item>
+			<item id="4">
+				<label>$INFO[Window(home).Property(HomePlayListTen.4.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListTen.4.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListTen.4.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListTen.4.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListTen.4.Title))</visible>
+			</item>
+			<item id="5">
+				<label>$INFO[Window(home).Property(HomePlayListTen.5.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListTen.5.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListTen.5.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListTen.5.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListTen.5.Title))</visible>
+			</item>
+			<item id="6">
+				<label>$INFO[Window(home).Property(HomePlayListTen.6.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListTen.6.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListTen.6.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListTen.6.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListTen.6.Title))</visible>
+			</item>
+			<item id="7">
+				<label>$INFO[Window(home).Property(HomePlayListTen.7.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListTen.7.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListTen.7.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListTen.7.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListTen.7.Title))</visible>
+			</item>
+			<item id="8">
+				<label>$INFO[Window(home).Property(HomePlayListTen.8.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListTen.8.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListTen.8.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListTen.8.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListTen.8.Title))</visible>
+			</item>
+			<item id="9">
+				<label>$INFO[Window(home).Property(HomePlayListTen.9.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListTen.9.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListTen.9.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListTen.9.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListTen.9.Title))</visible>
+			</item>
+			<item id="10">
+				<label>$INFO[Window(home).Property(HomePlayListTen.10.Title)]</label>
+				<onclick>PlayList.Clear</onclick>
+				<onclick>$INFO[Window(home).Property(HomePlayListTen.10.Play)]</onclick>
+				<icon>$INFO[Window(home).Property(HomePlayListTen.10.Art(poster))]</icon>
+				<thumb>$INFO[Window(home).Property(HomePlayListTen.10.Art(fanart))]</thumb>
+				<visible>!IsEmpty(Window(home).Property(HomePlayListTen.10.Title))</visible>
 			</item>
 		</content>
 	</include>

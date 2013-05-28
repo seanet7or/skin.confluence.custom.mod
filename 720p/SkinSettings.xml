@@ -4286,7 +4286,48 @@
 						<onclick>Addon.OpenSettings(service.skin.widgets)</onclick>
 						<enable>System.HasAddon(service.skin.widgets)</enable>
 					</control>
-					<control type="label" id="609">
+					<control type="radiobutton" id="609">
+						<description>Enable Script RandomAndLastItems</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31372]</label>
+						<onclick>Skin.ToggleSetting(DisableScriptPlayList)</onclick>
+						<selected>!Skin.HasSetting(DisableScriptPlayList)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>
+					<control type="radiobutton" id="610">
+						<description>randomandlastitems.script uses last not random</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label> - $LOCALIZE[31373]</label>
+						<onclick>Skin.ToggleSetting(EnableRandomPlaylist)</onclick>
+						<selected>Skin.HasSetting(EnableRandomPlaylist)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<enable>System.HasAddon(script.randomandlastitems) + !Skin.HasSetting(DisableScriptPlayList)</enable>
+					</control>
+					<control type="radiobutton" id="611">
+						<description>randomandlastitems.script only shows unwatched items</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label> - $LOCALIZE[31374]</label>
+						<onclick>Skin.ToggleSetting(EnableUnWatchedPlaylist)</onclick>
+						<selected>Skin.HasSetting(EnableUnWatchedPlaylist)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<enable>System.HasAddon(script.randomandlastitems) + !Skin.HasSetting(DisableScriptPlayList)</enable>
+					</control>
+					<control type="label" id="612">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -4296,7 +4337,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="610">
+					<control type="radiobutton" id="613">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -4309,7 +4350,7 @@
 						<selected>!Skin.HasSetting(HideArtworkDownloader)</selected>
 						<enable>System.HasAddon(script.artwork.downloader)</enable>
 					</control>
-					<control type="button" id="611">
+					<control type="button" id="614">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -4322,7 +4363,7 @@
 						<enable>!Skin.HasSetting(HideArtworkDownloader)</enable>
 						<visible>System.HasAddon(script.artwork.downloader)</visible>
 					</control>
-					<control type="radiobutton" id="612">
+					<control type="radiobutton" id="615">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -4335,7 +4376,7 @@
 						<selected>!Skin.HasSetting(HideTvTunes)</selected>
 						<enable>System.HasAddon(script.tvtunes)</enable>
 					</control>
-					<control type="button" id="613">
+					<control type="button" id="616">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -4348,7 +4389,7 @@
 						<enable>!Skin.HasSetting(HideTvTunes)</enable>
 						<visible>System.HasAddon(script.tvtunes)</visible>
 					</control>
-					<control type="radiobutton" id="614">
+					<control type="radiobutton" id="617">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -4361,7 +4402,7 @@
 						<selected>!Skin.HasSetting(DisableWatchItLater)</selected>
 						<enable>System.HasAddon(script.simpleplaylists)</enable>
 					</control>
-					<control type="button" id="615">
+					<control type="button" id="618">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -4374,7 +4415,7 @@
 						<enable>!Skin.HasSetting(DisableWatchItLater)</enable>
 						<visible>System.HasAddon(script.simpleplaylists)</visible>
 					</control>
-					<control type="label" id="616">
+					<control type="label" id="619">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -4384,13 +4425,13 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="image" id="617">
+					<control type="image" id="620">
 						<width>750</width>
 						<height>120</height>
 						<aspectratio aligny="center" align="center">keep</aspectratio>
 						<texture>warning.png</texture>
 					</control>
-					<control type="button" id="618">
+					<control type="button" id="621">
 						<description>Reset Skin Values</description>
 						<width>750</width>
 						<height>40</height>
