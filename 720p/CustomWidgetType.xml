@@ -107,91 +107,111 @@
 					</control>
 				</focusedlayout>
 				<content>
-					<item id="1">
+					<item>
 						<description>Clear Setting</description>
 						<label>$LOCALIZE[31144]</label>
 						<onclick>Dialog.Close(2118)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,None)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
-					<item id="2">
+					<item>
+						<description>Playlist Movies</description>
+						<label>$LOCALIZE[136]</label>
+						<onclick>Dialog.Close(2118)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,PlayListVideo)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>
+							!IsEmpty(Skin.String(HomeItem.1.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.1) |
+							!IsEmpty(Skin.String(HomeItem.2.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.2) |
+							!IsEmpty(Skin.String(HomeItem.3.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.3) |
+							!IsEmpty(Skin.String(HomeItem.4.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.4) |
+							!IsEmpty(Skin.String(HomeItem.5.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.5) |
+							!IsEmpty(Skin.String(HomeItem.6.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.6) |
+							!IsEmpty(Skin.String(HomeItem.7.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.7) |
+							!IsEmpty(Skin.String(HomeItem.8.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.8) |
+							!IsEmpty(Skin.String(HomeItem.9.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.9) |
+							!IsEmpty(Skin.String(HomeItem.10.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.10)
+						</visible>
+						<visible>!Skin.HasSetting(DisableScriptPlayList)</visible>
+					</item>
+					<item>
 						<description>Recent Movies</description>
 						<label>$LOCALIZE[31175]</label>
 						<onclick>Dialog.Close(2118)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,RecentMovies)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
-					<item id="3">
+					<item>
 						<description>Random Movies</description>
 						<label>$LOCALIZE[31176]</label>
 						<onclick>Dialog.Close(2118)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,RandomMovies)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
-					<item id="4">
+					<item>
 						<description>Suggested Movies</description>
 						<label>$LOCALIZE[31177]</label>
 						<onclick>Dialog.Close(2118)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,SuggestedMovies)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
-					<item id="5">
+					<item>
 						<description>Recent Episodes</description>
 						<label>$LOCALIZE[31178]</label>
 						<onclick>Dialog.Close(2118)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,RecentEpisodes)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
-					<item id="6">
+					<item>
 						<description>Random Episodes</description>
 						<label>$LOCALIZE[31179]</label>
 						<onclick>Dialog.Close(2118)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,RandomEpisodes)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
-					<item id="7">
+					<item>
 						<description>Suggested Episodes</description>
 						<label>$LOCALIZE[31180]</label>
 						<onclick>Dialog.Close(2118)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,SuggestedEpisodes)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
-					<item id="8">
+					<item>
 						<description>Recent Albums</description>
 						<label>$LOCALIZE[31181]</label>
 						<onclick>Dialog.Close(2118)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,RecentAlbums)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
-					<item id="9">
+					<item>
 						<description>Random Albums</description>
 						<label>$LOCALIZE[31182]</label>
 						<onclick>Dialog.Close(2118)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,RandomAlbums)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
-					<item id="10">
+					<item>
 						<description>Suggested Albums</description>
 						<label>$LOCALIZE[31183]</label>
 						<onclick>Dialog.Close(2118)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,SuggestedAlbums)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
-					<item id="11">
+					<item>
 						<description>Recent Concerts</description>
 						<label>$LOCALIZE[31184]</label>
 						<onclick>Dialog.Close(2118)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,RecentConcerts)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
-					<item id="12">
+					<item>
 						<description>Random Concerts</description>
 						<label>$LOCALIZE[31185]</label>
 						<onclick>Dialog.Close(2118)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,RandomConcerts)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
-					<item id="13">
+					<item>
 						<description>Suggested Concerts</description>
 						<label>$LOCALIZE[31186]</label>
 						<onclick>Dialog.Close(2118)</onclick>
