@@ -195,6 +195,16 @@
 				<include>Window_OpenClose_Animation</include>
 				<visible>Control.HasFocus(8011)</visible>
 			</control>
+			<control type="image">
+				<description>Playlist Movies Background Image</description>
+				<include>Dimensions_Fullscreen</include>
+				<aspectratio>scale</aspectratio>
+				<texture background="true">$INFO[Container(8012).ListItem.Thumb]</texture>
+				<include>BackgroundFade</include>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<include>Window_OpenClose_Animation</include>
+				<visible>Control.HasFocus(8012)</visible>
+			</control>
 		</control>
 		<control type="multiimage">
 			<include>Dimensions_Fullscreen</include>
