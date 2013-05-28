@@ -154,6 +154,10 @@
 		<value condition="!IsEmpty(ListItem.Property(date))">$INFO[ListItem.label] ([COLOR=white]$INFO[ListItem.Property(date)][/COLOR])</value>
 		<value>$INFO[ListItem.label]</value>
 	</variable>
+	<variable name="VideoDescription" type="text">
+		<value condition="Skin.HasSetting(MediaShortDescription)">$INFO[ListItem.Tagline]</value>
+		<value>$INFO[ListItem.Plot]</value>
+	</variable>
 	<variable name="UsrMPAACountry" type="text">
 		<value condition="!IsEmpty(Skin.String(MPAACountryCert))">$INFO[Skin.String(MPAACountryCert)]</value>
 		<value>$LOCALIZE[31700]</value>
