@@ -143,7 +143,7 @@
 				<width>880</width>
 				<height>25</height>
 				<texturesliderbackground border="14,0,14,0">ScrollBarH.png</texturesliderbackground>
-				<texturesliderbar border="14,0,14,0">special://skin/extras/lightmod/ScrollBarH_bar.png</texturesliderbar>
+				<texturesliderbar border="14,0,14,0">ScrollBarH_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus border="14,0,14,0">ScrollBarH_bar_focus.png</texturesliderbarfocus>
 				<textureslidernib>ScrollBarNib.png</textureslidernib>
 				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
@@ -214,7 +214,7 @@
 				<posy>580</posy>
 				<width>1280</width>
 				<height>20</height>
-				<font>font13</font>
+				<font>font12</font>
 				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
 				<scroll>true</scroll>
@@ -550,7 +550,7 @@
 				<width>660</width>
 				<height>25</height>
 				<texturesliderbackground border="14,0,14,0">ScrollBarH.png</texturesliderbackground>
-				<texturesliderbar border="14,0,14,0">special://skin/extras/lightmod/ScrollBarH_bar.png</texturesliderbar>
+				<texturesliderbar border="14,0,14,0">ScrollBarH_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus border="14,0,14,0">ScrollBarH_bar_focus.png</texturesliderbarfocus>
 				<textureslidernib>ScrollBarNib.png</textureslidernib>
 				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
@@ -789,7 +789,7 @@
 				<width>25</width>
 				<height>400</height>
 				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="0,14,0,14">special://skin/extras/lightmod/ScrollBarV_bar.png</texturesliderbar>
+				<texturesliderbar border="0,14,0,14">ScrollBarV_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
 				<textureslidernib>ScrollBarNib.png</textureslidernib>
 				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
@@ -900,14 +900,6 @@
 						<pauseatend>1000</pauseatend>
 					</control>
 				</control>
-				<control type="image">
-					<posx>0</posx>
-					<posy>200</posy>
-					<width>530</width>
-					<height>4</height>
-					<texture>-</texture>
-					<animation effect="slide" start="0,0" end="0,88" delay="0" time="0" condition="Skin.HasSetting(View503CharacterArt) + !IsEmpty(ListItem.Art(clearart))">conditional</animation>
-				</control>
 				<control type="textbox">
 					<description>Description Value for TVShows</description>
 					<posx>10</posx>
@@ -917,7 +909,7 @@
 					<font>font12</font>
 					<align>justify</align>
 					<textcolor>white</textcolor>
-					<label>$INFO[ListItem.Plot]</label>
+					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 					<visible>!Skin.HasSetting(View503CharacterArt) | IsEmpty(ListItem.Art(clearart))</visible>
 				</control>
@@ -976,13 +968,6 @@
 					<shadowcolor>black</shadowcolor>
 					<wrapmultiline>true</wrapmultiline>
 				</control>
-				<control type="image">
-					<posx>0</posx>
-					<posy>275</posy>
-					<width>530</width>
-					<height>4</height>
-					<texture>-</texture>
-				</control>
 				<control type="textbox">
 					<description>Description Value for TVShows</description>
 					<posx>10</posx>
@@ -992,7 +977,7 @@
 					<font>font12</font>
 					<align>justify</align>
 					<textcolor>white</textcolor>
-					<label>$INFO[ListItem.Plot]</label>
+					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
 			</control>
@@ -1075,7 +1060,7 @@
 					<font>font12</font>
 					<align>justify</align>
 					<textcolor>white</textcolor>
-					<label>$INFO[ListItem.Plot]</label>
+					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
 			</control>
@@ -1292,7 +1277,7 @@
 				<width>25</width>
 				<height>560</height>
 				<texturesliderbackground border="10,14,10,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="10,14,10,14">ScrollBarV_bar.png</texturesliderbar>
+				<texturesliderbar border="10,14,10,14">ScrollBarV_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus border="10,14,10,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
 				<textureslidernib>ScrollBarNib.png</textureslidernib>
 				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
@@ -1344,13 +1329,6 @@
 					<include>AspectCodecFlaggingConditions</include>
 					<include>VideoTypeHackFlaggingConditions</include>
 				</control>
-				<control type="image">
-					<posx>0</posx>
-					<posy>330</posy>
-					<width>510</width>
-					<height>4</height>
-					<texture>-</texture>
-				</control>
 				<control type="label">
 					<description>Year txt</description>
 					<posx>150</posx>
@@ -1400,13 +1378,6 @@
 					<scrollout>false</scrollout>
 					<pauseatend>1000</pauseatend>
 				</control>
-				<control type="image">
-					<posx>0</posx>
-					<posy>390</posy>
-					<width>510</width>
-					<height>4</height>
-					<texture>-</texture>
-				</control>
 				<control type="textbox">
 					<description>Description Value for Video</description>
 					<posx>10</posx>
@@ -1416,7 +1387,7 @@
 					<font>font12</font>
 					<align>justify</align>
 					<textcolor>white</textcolor>
-					<label>$INFO[ListItem.Plot]</label>
+					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
 			</control>
@@ -1459,13 +1430,6 @@
 					<include>AudioChannelsFlaggingConditions</include>
 					<include>AspectCodecFlaggingConditions</include>
 					<include>VideoTypeHackFlaggingConditions</include>
-				</control>
-				<control type="image">
-					<posx>0</posx>
-					<posy>330</posy>
-					<width>510</width>
-					<height>4</height>
-					<texture>-</texture>
 				</control>
 				<control type="label">
 					<description>Aired txt</description>
@@ -1516,13 +1480,6 @@
 					<scrollout>false</scrollout>
 					<pauseatend>1000</pauseatend>
 				</control>
-				<control type="image">
-					<posx>0</posx>
-					<posy>390</posy>
-					<width>510</width>
-					<height>4</height>
-					<texture>-</texture>
-				</control>
 				<control type="textbox">
 					<description>Description Value for Video</description>
 					<posx>10</posx>
@@ -1532,7 +1489,7 @@
 					<font>font12</font>
 					<align>justify</align>
 					<textcolor>white</textcolor>
-					<label>$INFO[ListItem.Plot]</label>
+					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
 			</control>
@@ -1774,7 +1731,7 @@
 				<width>25</width>
 				<height>560</height>
 				<texturesliderbackground border="10,14,10,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="10,14,10,14">ScrollBarV_bar.png</texturesliderbar>
+				<texturesliderbar border="10,14,10,14">ScrollBarV_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus border="10,14,10,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
 				<textureslidernib>ScrollBarNib.png</textureslidernib>
 				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
@@ -1829,7 +1786,7 @@
 					<font>font12</font>
 					<align>justify</align>
 					<textcolor>white</textcolor>
-					<label>$INFO[ListItem.Plot]</label>
+					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
 				<control type="grouplist">
@@ -1903,7 +1860,7 @@
 					<font>font12</font>
 					<align>justify</align>
 					<textcolor>white</textcolor>
-					<label>$INFO[ListItem.Plot]</label>
+					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
 				<control type="image">
@@ -2041,7 +1998,7 @@
 					<font>font12</font>
 					<align>justify</align>
 					<textcolor>white</textcolor>
-					<label>$INFO[ListItem.Plot]</label>
+					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
 				<control type="grouplist">
@@ -2094,7 +2051,7 @@
 				<posy>0</posy>
 				<width>920</width>
 				<height>410</height>
-				<texture border="20">special://skin/backgrounds/media-overlay.jpg</texture>
+				<texture>black-back.png</texture>
 			</control>
 			<control type="label">
 				<posx>40</posx>
@@ -2389,7 +2346,7 @@
 					<font>font12</font>
 					<align>justify</align>
 					<textcolor>white</textcolor>
-					<label>$INFO[ListItem.Plot]</label>
+					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
 			</control>

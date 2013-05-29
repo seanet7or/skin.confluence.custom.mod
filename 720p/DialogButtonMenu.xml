@@ -72,7 +72,7 @@
 				<align>center</align>
 				<textwidth>290</textwidth>
 				<texturefocus border="25,5,25,5">button-focus.png</texturefocus>
-				<texturenofocus border="25,5,25,5">black-back.png</texturenofocus>
+				<texturenofocus>black-back.png</texturenofocus>
 				<onclick>XBMC.Quit()</onclick>
 				<pulseonselect>no</pulseonselect>
 				<font>font13</font>
@@ -88,7 +88,7 @@
 				<align>center</align>
 				<textwidth>290</textwidth>
 				<texturefocus border="25,5,25,5">button-focus.png</texturefocus>
-				<texturenofocus border="25,5,25,5">black-back.png</texturenofocus>
+				<texturenofocus>black-back.png</texturenofocus>
 				<onclick>XBMC.Powerdown()</onclick>
 				<visible>System.CanPowerDown</visible>
 				<pulseonselect>no</pulseonselect>
@@ -104,7 +104,7 @@
 				<align>center</align>
 				<textwidth>290</textwidth>
 				<texturefocus border="25,5,25,5">button-focus.png</texturefocus>
-				<texturenofocus border="25,5,25,5">black-back.png</texturenofocus>
+				<texturenofocus>black-back.png</texturenofocus>
 				<onclick>XBMC.AlarmClock(shutdowntimer,XBMC.Shutdown())</onclick>
 				<pulseonselect>no</pulseonselect>
 				<font>font13</font>
@@ -121,7 +121,7 @@
 				<align>center</align>
 				<textwidth>290</textwidth>
 				<texturefocus border="25,5,25,5">button-focus.png</texturefocus>
-				<texturenofocus border="25,5,25,5">black-back.png</texturenofocus>
+				<texturenofocus>black-back.png</texturenofocus>
 				<onclick>XBMC.CancelAlarm(shutdowntimer)</onclick>
 				<pulseonselect>no</pulseonselect>
 				<font>font13</font>
@@ -137,7 +137,7 @@
 				<align>center</align>
 				<textwidth>290</textwidth>
 				<texturefocus border="25,5,25,5">button-focus.png</texturefocus>
-				<texturenofocus border="25,5,25,5">black-back.png</texturenofocus>
+				<texturenofocus>black-back.png</texturenofocus>
 				<onclick>XBMC.Suspend()</onclick>
 				<visible>System.CanSuspend</visible>
 				<pulseonselect>no</pulseonselect>
@@ -153,7 +153,7 @@
 				<align>center</align>
 				<textwidth>290</textwidth>
 				<texturefocus border="25,5,25,5">button-focus.png</texturefocus>
-				<texturenofocus border="25,5,25,5">black-back.png</texturenofocus>
+				<texturenofocus>black-back.png</texturenofocus>
 				<onclick>XBMC.Hibernate()</onclick>
 				<visible>System.CanHibernate</visible>
 				<pulseonselect>no</pulseonselect>
@@ -169,7 +169,7 @@
 				<align>center</align>
 				<textwidth>290</textwidth>
 				<texturefocus border="25,5,25,5">button-focus.png</texturefocus>
-				<texturenofocus border="25,5,25,5">black-back.png</texturenofocus>
+				<texturenofocus>black-back.png</texturenofocus>
 				<onclick>XBMC.Reset()</onclick>
 				<visible>System.CanReboot</visible>
 				<pulseonselect>no</pulseonselect>
@@ -185,7 +185,7 @@
 				<align>center</align>
 				<textwidth>290</textwidth>
 				<texturefocus border="25,5,25,5">button-focus.png</texturefocus>
-				<texturenofocus border="25,5,25,5">black-back.png</texturenofocus>
+				<texturenofocus>black-back.png</texturenofocus>
 				<onclick>dialog.close(all,true)</onclick>
 				<onclick>System.LogOff</onclick>
 				<pulseonselect>no</pulseonselect>
@@ -206,10 +206,10 @@
 				<textcolor>grey2</textcolor>
 				<focusedcolor>white</focusedcolor>
 				<texturefocus border="25,5,25,5">button-focus.png</texturefocus>
-				<texturenofocus border="25,5,25,5">black-back.png</texturenofocus>
+				<texturenofocus>black-back.png</texturenofocus>
 				<usealttexture>!System.IsMaster</usealttexture>
 				<alttexturefocus border="25,5,25,5">button-focus.png</alttexturefocus>
-				<alttexturenofocus border="25,5,25,5">black-back.png</alttexturenofocus>
+				<alttexturenofocus>black-back.png</alttexturenofocus>
 				<onclick>xbmc.mastermode</onclick>
 				<pulseonselect>no</pulseonselect>
 				<font>font13</font>
@@ -240,7 +240,7 @@
 				<align>center</align>
 				<textwidth>290</textwidth>
 				<texturefocus border="25,5,25,5">button-focus.png</texturefocus>
-				<texturenofocus border="25,5,25,5">black-back.png</texturenofocus>
+				<texturenofocus>black-back.png</texturenofocus>
 				<onclick>XBMC.InhibitIdleShutdown(true)</onclick>
 				<pulseonselect>no</pulseonselect>
 				<font>font13</font>
@@ -256,7 +256,7 @@
 				<align>center</align>
 				<textwidth>290</textwidth>
 				<texturefocus border="25,5,25,5">button-focus.png</texturefocus>
-				<texturenofocus border="25,5,25,5">black-back.png</texturenofocus>
+				<texturenofocus>black-back.png</texturenofocus>
 				<onclick>XBMC.InhibitIdleShutdown(false)</onclick>
 				<pulseonselect>no</pulseonselect>
 				<font>font13</font>
@@ -272,13 +272,20 @@
 				<align>center</align>
 				<textwidth>290</textwidth>
 				<texturefocus border="25,5,25,5">button-focus.png</texturefocus>
-				<texturenofocus border="25,5,25,5">black-back.png</texturenofocus>
+				<texturenofocus>black-back.png</texturenofocus>
 				<onclick>dialog.close(shutdownmenu)</onclick>
 				<onclick>ActivateWindow(SkinSettings),return</onclick>
 				<pulseonselect>no</pulseonselect>
 				<font>font13</font>
 				<label>$LOCALIZE[166] $LOCALIZE[5]</label>
 				<visible>Skin.HasSetting(HideSytemMenuItem)</visible>
+			</control>
+			<control type="image" id="15">
+				<description>background bottom image</description>
+				<posx>0</posx>
+				<width>340</width>
+				<height>25</height>
+				<texture border="20,0,19,20">DialogContextBottom.png</texture>
 			</control>
 		</control>
 	</controls>

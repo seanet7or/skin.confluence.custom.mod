@@ -251,14 +251,6 @@
 							</item>
 						</content>
 					</control>
-					<control type="image">
-						<posx>390</posx>
-						<posy>370</posy>
-						<width>640</width>
-						<height>4</height>
-						<aspectratio>stretch</aspectratio>
-						<texture>-</texture>
-					</control>
 				</control>
 				<control type="group">
 					<visible>container.content(Artists) + !Control.HasFocus(12)</visible>
@@ -403,14 +395,6 @@
 								<visible>!IsEmpty(ListItem.Property(Artist_YearsActive))</visible>
 							</item>
 						</content>
-					</control>
-					<control type="image">
-						<posx>390</posx>
-						<posy>370</posy>
-						<width>640</width>
-						<height>4</height>
-						<aspectratio>stretch</aspectratio>
-						<texture>-</texture>
 					</control>
 				</control>
 				<control type="label">

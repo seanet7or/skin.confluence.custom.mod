@@ -313,14 +313,6 @@
 							</item>
 						</content>
 					</control>
-					<control type="image">
-						<posx>290</posx>
-						<posy>370</posy>
-						<width>740</width>
-						<height>4</height>
-						<aspectratio>stretch</aspectratio>
-						<texture>-</texture>
-					</control>
 				</control>
 				<control type="group">
 					<visible>Container.Content(TVShows) + !Control.HasFocus(12)</visible>
@@ -447,14 +439,6 @@
 								<visible>!IsEmpty(ListItem.FilenameAndPath)</visible>
 							</item>
 						</content>
-					</control>
-					<control type="image">
-						<posx>290</posx>
-						<posy>370</posy>
-						<width>740</width>
-						<height>4</height>
-						<aspectratio>stretch</aspectratio>
-						<texture>-</texture>
 					</control>
 				</control>
 				<control type="group">
@@ -613,14 +597,6 @@
 							</item>
 						</content>
 					</control>
-					<control type="image">
-						<posx>290</posx>
-						<posy>370</posy>
-						<width>740</width>
-						<height>4</height>
-						<aspectratio>stretch</aspectratio>
-						<texture>-</texture>
-					</control>
 				</control>
 				<control type="group">
 					<visible>container.content(musicvideos) + !Control.HasFocus(12)</visible>
@@ -766,14 +742,6 @@
 							</item>
 						</content>
 					</control>
-					<control type="image">
-						<posx>390</posx>
-						<posy>370</posy>
-						<width>640</width>
-						<height>4</height>
-						<aspectratio>stretch</aspectratio>
-						<texture>-</texture>
-					</control>
 				</control>
 				<control type="label">
 					<posx>130r</posx>
@@ -826,7 +794,7 @@
 					<align>justify</align>
 					<textcolor>white</textcolor>
 					<pagecontrol>61</pagecontrol>
-					<label>$INFO[ListItem.Plot]</label>
+					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="3000" delay="4000" repeat="5000">!Control.HasFocus(61) + Skin.HasSetting(AutoScroll)</autoscroll>
 					<visible>!Control.IsVisible(50)</visible>
 				</control>

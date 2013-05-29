@@ -117,7 +117,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$VAR[MainItemLabel]</label>
+						<label>$INFO[ListItem.Plot]</label>
 					</control>
 					<control type="label">
 						<posx>50</posx>
@@ -203,7 +203,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$VAR[MainItemLabel]</label>
+						<label>$INFO[ListItem.Plot]</label>
 					</control>
 					<control type="label">
 						<posx>50</posx>
@@ -264,7 +264,7 @@
 				<width>25</width>
 				<height>540</height>
 				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="0,14,0,14">special://skin/extras/lightmod/ScrollBarV_bar.png</texturesliderbar>
+				<texturesliderbar border="0,14,0,14">ScrollBarV_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
 				<textureslidernib>ScrollBarNib.png</textureslidernib>
 				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
@@ -408,7 +408,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$VAR[MainItemLabel]</label>
+						<label>$INFO[ListItem.Plot]</label>
 					</control>
 					<control type="label">
 						<posx>50</posx>
@@ -494,7 +494,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$VAR[MainItemLabel]</label>
+						<label>$INFO[ListItem.Plot]</label>
 					</control>
 					<control type="label">
 						<posx>50</posx>
@@ -555,7 +555,7 @@
 				<width>25</width>
 				<height>540</height>
 				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="0,14,0,14">special://skin/extras/lightmod/ScrollBarV_bar.png</texturesliderbar>
+				<texturesliderbar border="0,14,0,14">ScrollBarV_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
 				<textureslidernib>ScrollBarNib.png</textureslidernib>
 				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
@@ -617,7 +617,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$VAR[MainItemLabel]</label>
+						<label>$INFO[ListItem.Plot]</label>
 					</control>
 					<control type="label">
 						<posx>725</posx>
@@ -683,7 +683,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$VAR[MainItemLabel]</label>
+						<label>$INFO[ListItem.Plot]</label>
 					</control>
 					<control type="label">
 						<posx>725</posx>
@@ -721,7 +721,7 @@
 				<width>25</width>
 				<height>560</height>
 				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="0,14,0,14">special://skin/extras/lightmod/ScrollBarV_bar.png</texturesliderbar>
+				<texturesliderbar border="0,14,0,14">ScrollBarV_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
 				<textureslidernib>ScrollBarNib.png</textureslidernib>
 				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
@@ -824,7 +824,7 @@
 						<aligny>center</aligny>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
-						<label>$VAR[MainItemLabel]</label>
+						<label>$INFO[ListItem.Plot]</label>
 					</control>
 				</rulerlayout>
 				<channellayout height="52" width="280">
@@ -1051,15 +1051,6 @@
 					<aligny>center</aligny>
 					<label>126</label>
 				</control>
-				<control type="image">
-					<description>separator image</description>
-					<posx>0</posx>
-					<posy>50</posy>
-					<width>1100</width>
-					<height>1</height>
-					<colordiffuse>88FFFFFF</colordiffuse>
-					<texture>-</texture>
-				</control>
 				<control type="list" id="14">
 					<posx>0</posx>
 					<posy>55</posy>
@@ -1238,7 +1229,7 @@
 					<width>25</width>
 					<height>480</height>
 					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-					<texturesliderbar border="0,14,0,14">special://skin/extras/lightmod/ScrollBarV_bar.png</texturesliderbar>
+					<texturesliderbar border="0,14,0,14">ScrollBarV_bar_light.png</texturesliderbar>
 					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
 					<textureslidernib>ScrollBarNib.png</textureslidernib>
 					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
@@ -1246,15 +1237,6 @@
 					<onright>35</onright>
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
-				</control>
-				<control type="image">
-					<description>separator image</description>
-					<posx>55</posx>
-					<posy>540</posy>
-					<width>1010</width>
-					<height>1</height>
-					<colordiffuse>88FFFFFF</colordiffuse>
-					<texture>-</texture>
 				</control>
 				<control type="label">
 					<description>Next timer date</description>
@@ -1348,15 +1330,6 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<label>126</label>
-				</control>
-				<control type="image">
-					<description>separator image</description>
-					<posx>0</posx>
-					<posy>50</posy>
-					<width>1100</width>
-					<height>1</height>
-					<colordiffuse>88FFFFFF</colordiffuse>
-					<texture>-</texture>
 				</control>
 				<control type="list" id="17">
 					<posx>0</posx>
@@ -1602,7 +1575,7 @@
 					<width>25</width>
 					<height>520</height>
 					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-					<texturesliderbar border="0,14,0,14">special://skin/extras/lightmod/ScrollBarV_bar.png</texturesliderbar>
+					<texturesliderbar border="0,14,0,14">ScrollBarV_bar_light.png</texturesliderbar>
 					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
 					<textureslidernib>ScrollBarNib.png</textureslidernib>
 					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
@@ -1675,15 +1648,6 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<label>126</label>
-				</control>
-				<control type="image">
-					<description>separator image</description>
-					<posx>0</posx>
-					<posy>50</posy>
-					<width>1100</width>
-					<height>1</height>
-					<colordiffuse>88FFFFFF</colordiffuse>
-					<texture>-</texture>
 				</control>
 				<control type="list" id="15">
 					<posx>0</posx>
@@ -1860,7 +1824,7 @@
 							<textcolor>grey2</textcolor>
 							<shadowcolor>black</shadowcolor>
 							<pagecontrol>-</pagecontrol>
-							<label>$INFO[ListItem.Plot]</label>
+							<label>$VAR[VideoDescription]</label>
 						</control>
 						<control type="image">
 							<posx>970</posx>
@@ -1912,7 +1876,7 @@
 					<width>25</width>
 					<height>500</height>
 					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-					<texturesliderbar border="0,14,0,14">special://skin/extras/lightmod/ScrollBarV_bar.png</texturesliderbar>
+					<texturesliderbar border="0,14,0,14">ScrollBarV_bar_light.png</texturesliderbar>
 					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
 					<textureslidernib>ScrollBarNib.png</textureslidernib>
 					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
@@ -1998,15 +1962,6 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<label>126</label>
-				</control>
-				<control type="image">
-					<description>separator image</description>
-					<posx>0</posx>
-					<posy>50</posy>
-					<width>1100</width>
-					<height>1</height>
-					<colordiffuse>88FFFFFF</colordiffuse>
-					<texture>-</texture>
 				</control>
 				<control type="list" id="16">
 					<posx>0</posx>
@@ -2221,7 +2176,7 @@
 							<textcolor>grey2</textcolor>
 							<shadowcolor>black</shadowcolor>
 							<pagecontrol>-</pagecontrol>
-							<label>$INFO[ListItem.Plot]</label>
+							<label>$VAR[VideoDescription]</label>
 						</control>
 						<control type="image">
 							<posx>970</posx>
@@ -2273,7 +2228,7 @@
 					<width>25</width>
 					<height>500</height>
 					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-					<texturesliderbar border="0,14,0,14">special://skin/extras/lightmod/ScrollBarV_bar.png</texturesliderbar>
+					<texturesliderbar border="0,14,0,14">ScrollBarV_bar_light.png</texturesliderbar>
 					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
 					<textureslidernib>ScrollBarNib.png</textureslidernib>
 					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>

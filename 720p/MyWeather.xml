@@ -57,7 +57,7 @@
 					<posy>0</posy>
 					<width>500</width>
 					<height>620</height>
-					<texture border="20">special://skin/backgrounds/media-overlay.jpg</texture>
+					<texture>black-back.png</texture>
 					<include condition="!IsEmpty(Skin.String(MediaPanelTrans))">TransparentEffect</include>
 				</control>
 				<control type="image">
@@ -168,13 +168,6 @@
 					<aligny>center</aligny>
 					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
-				</control>
-				<control type="image">
-					<posx>20</posx>
-					<posy>390</posy>
-					<width>460</width>
-					<height>4</height>
-					<texture>-</texture>
 				</control>
 				<control type="label">
 					<description>current feels like label</description>
@@ -345,7 +338,7 @@
 					<posy>0</posy>
 					<width>650</width>
 					<height>620</height>
-					<texture border="20">special://skin/backgrounds/media-overlay.jpg</texture>
+					<texture>black-back.png</texture>
 					<include condition="!IsEmpty(Skin.String(MediaPanelTrans))">TransparentEffect</include>
 				</control>
 				<control type="image">
@@ -603,7 +596,7 @@
 					<width>25</width>
 					<height>540</height>
 					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-					<texturesliderbar border="0,14,0,14">special://skin/extras/lightmod/ScrollBarV_bar.png</texturesliderbar>
+					<texturesliderbar border="0,14,0,14">ScrollBarV_bar_light.png</texturesliderbar>
 					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
 					<textureslidernib>ScrollBarNib.png</textureslidernib>
 					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
@@ -637,7 +630,7 @@
 					<posy>0</posy>
 					<width>650</width>
 					<height>620</height>
-					<texture border="20">special://skin/backgrounds/media-overlay.jpg</texture>
+					<texture>black-back.png</texture>
 					<include condition="!IsEmpty(Skin.String(MediaPanelTrans))">TransparentEffect</include>
 				</control>
 				<control type="image">
@@ -870,7 +863,7 @@
 							<width>25</width>
 							<height>540</height>
 							<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-							<texturesliderbar border="0,14,0,14">special://skin/extras/lightmod/ScrollBarV_bar.png</texturesliderbar>
+							<texturesliderbar border="0,14,0,14">ScrollBarV_bar_light.png</texturesliderbar>
 							<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
 							<textureslidernib>ScrollBarNib.png</textureslidernib>
 							<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
@@ -996,13 +989,6 @@
 									<align>center</align>
 									<label>$INFO[Window.Property(36hour.1.Forecast),[COLOR=grey2]$LOCALIZE[31905]: [/COLOR]]</label>
 								</control>
-								<control type="image">
-									<posx>0</posx>
-									<posy>180</posy>
-									<width>650</width>
-									<height>4</height>
-									<texture>-</texture>
-								</control>
 							</control>
 							<control type="group">
 								<posx>0</posx>
@@ -1060,13 +1046,6 @@
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<label>$INFO[Window.Property(36hour.2.Forecast),[COLOR=grey2]$LOCALIZE[31905]: [/COLOR]]</label>
-								</control>
-								<control type="image">
-									<posx>0</posx>
-									<posy>180</posy>
-									<width>650</width>
-									<height>4</height>
-									<texture>-</texture>
 								</control>
 							</control>
 							<control type="group">
@@ -1251,13 +1230,6 @@
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<label>$INFO[Window.Property(Weekend.1.LongOutlookDay),[COLOR=grey2]$LOCALIZE[31905]: [/COLOR]][CR]</label>
-								</control>
-								<control type="image">
-									<posx>0</posx>
-									<posy>270</posy>
-									<width>650</width>
-									<height>4</height>
-									<texture>-</texture>
 								</control>
 							</control>
 							<control type="group">
@@ -1579,7 +1551,7 @@
 							<width>25</width>
 							<height>540</height>
 							<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-							<texturesliderbar border="0,14,0,14">special://skin/extras/lightmod/ScrollBarV_bar.png</texturesliderbar>
+							<texturesliderbar border="0,14,0,14">ScrollBarV_bar_light.png</texturesliderbar>
 							<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
 							<textureslidernib>ScrollBarNib.png</textureslidernib>
 							<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
@@ -1653,13 +1625,6 @@
 							<loop>yes</loop>
 							<aspectratio>keep</aspectratio>
 							<aligny>center</aligny>
-						</control>
-						<control type="image">
-							<posx>0</posx>
-							<posy>410</posy>
-							<width>650</width>
-							<height>4</height>
-							<texture>-</texture>
 						</control>
 						<control type="label">
 							<posx>40</posx>

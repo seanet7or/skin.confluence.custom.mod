@@ -4,8 +4,8 @@
 # $1 file
 # $2 regex
 perlregex() {
-	local FILE=$1
-	local REGEX=$2
+	local FILE="$1"
+	local REGEX="$2"
 	cp "$FILE" "$FILE.tmp"
 	cat "$FILE.tmp" | tr '\n' '\0' | ssed -R "$REGEX" | tr '\0' '\n' >"$FILE"
 	rm "$FILE.tmp"
@@ -40,7 +40,7 @@ remove_imagecontrol() {
 	fi
 	
 	for F in $LIST ; do
-		perlregex "$F" 's|\s*?<control type="image"[^>]*>\s*?\000'\
+		perlregex "$F" 's|\s*?<control type="image">\s*?\000'\
 '(\s*<(colordiffuse\|texture\|description\|bordersize\|bordertexture\|fadetime\|posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
 '\s*'"$LINE"'\s*\000'\
 '(\s*<(colordiffuse\|texture\|description\|bordersize\|bordertexture\|fadetime\|posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
@@ -49,9 +49,41 @@ remove_imagecontrol() {
 	
 	if $CHECK ; then
 		if grep -q "$LINE" 720p/* ; then
-			echo "ERROR: Not all occurrences of '$LINE' could be removed, please check:"
+			echo "WARNING: Not all occurrences of '$LINE' could be removed, please check:"
 			grep "$LINE" 720p/*
-			exit 3
+		fi
+	fi
+}
+
+
+# removes <control type="label .... </control> structure from xml file
+# the controle structure to remove is identified by the characteristic line
+# $1 characteristic line
+# $2 .xml file ; if empty, all occurrencies are searched
+remove_labelcontrol() {
+	local LINE=$1 #$(echo "$1" | tr ' ' '.')
+	if [ -z "$2" ] ; then
+		#echo "Param2 is empty, building file list:"
+		local LIST=$(grep "$LINE" 720p/*.xml | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
+		local CHECK=true
+		#echo "$LIST"
+	else
+		local LIST="$2"
+		local CHECK=false
+	fi
+	
+	for F in $LIST ; do
+		perlregex "$F" 's|\s*?<control type="label">\s*?\000'\
+'(\s*<(animation\|include\|info\|posx\|posy\|visible\|height\|width\|label\|align\|aligny\|selectedcolor\|font\|textcolor\|shadowcolor)[^>]*>[^>]*>\s*?\000)*'\
+'\s*'"$LINE"'\s*\000'\
+'(\s*<(animation\|include\|info\|posx\|posy\|visible\|height\|width\|label\|align\|aligny\|selectedcolor\|font\|textcolor\|shadowcolor)[^>]*>[^>]*>\s*?\000)*'\
+'\s*</control>\s*?\000||g'
+	done
+	
+	if $CHECK ; then
+		if grep -q "$LINE" 720p/* ; then
+			echo "WARNING: Not all occurrences of '$LINE' could be removed, please check:"
+			grep "$LINE" 720p/*
 		fi
 	fi
 }
@@ -61,12 +93,17 @@ remove_imagecontrol() {
 # $1 image file with full path
 check_and_remove() {
 	F=$1
+	if [ ! -f "$F" ] ; then
+		#echo "'$F' doesn't exist."
+		return 0
+	fi
+	
 	FS=$(basename $F)
-	if ! grep -q "$FS" 720p/* ; then
+	if ! grep -q "[^a-z]$FS" 720p/* ; then
 		
 		BASE=$(echo "$FS" | sed 's|\.[a-zA-Z]*||g')
 		#echo "Occurences of '$BASE':"
-		if ! grep -q "$BASE[^a-zA-Z0-9 _]" 720p/* ; then
+		if ! grep -q "[^a-z]$BASE[^a-zA-Z0-9 _]" 720p/* ; then
 			rm "$F" 2>/dev/null
 		else
 			echo "'$BASE' ('$F') was found in the .xmls:"
@@ -127,58 +164,222 @@ findunused() {
 }
 
 read_origmaster() {
-	ZIP=Mudislander-master.zip
-	wget -O- -nv --no-check-certificate https://github.com/Mudislander/skin.confluence.custom.mod/archive/master.zip >$ZIP
+	ZIP='Mudislander-master.zip'
+	echo "Downloading from GitHub."
+	wget -O- --no-check-certificate https://github.com/Mudislander/skin.confluence.custom.mod/archive/master.zip >$ZIP
 	mkdir -p Mudislander-master
+	echo "Extracting the archive."
 	unzip -o -q "$ZIP" -d Mudislander-master
+	echo "Copying the files to the right place."
 	rm -rf media
 	rm -rf backgrounds
 	rm -rf colors
 	rm -rf language
 	rm -rf themes
+	rm -rf extras
 	cp -r Mudislander-master/skin.confluence.custom.mod-master/* .
 	cp -r lightmod/* .
+	echo "Copied all files."
 }
 
 #findunused
 
-#read_origmaster
+if [ "$1" == "read" ] ; then
+	echo "#################### BUILDING BASE FILES ########################"
+	echo "Reading original repository."
+	read_origmaster
+	echo "Completed creating the base files."
+fi
 
-#remove temporary files if script was canceled
+#remove temporary files (if script was canceled before)
 rm 720p/*.tmp 2>/dev/null
 
+
+
+echo "#################### APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ########################"
+
+#remove unnecessary files
+	check_and_remove media/icon-weather.png
+	check_and_remove media/icon-video.png
+	check_and_remove media/icon_volume.png
+	check_and_remove media/poster_diffuse.png
+	check_and_remove media/OSDFullScreenFO.png
+	check_and_remove media/OSDFullScreenNF.png
+	check_and_remove media/defaultDVDFull.png
+	
+#correct translation
+	if cat language/German/strings.po | tr '\n' '\000' | grep -q -P 'msgid "Home Menu"\s*\000\s*msgstr "Gesehen Status Overlay benutzen'
+	then
+		echo "Correcting wrong translation."
+		perlregex language/German/strings.po 's|(\s*msgctxt "#31153"\s*\000\s*msgid "Home Menu"\s*\000\s*msgstr ")Gesehen Status Overlay benutzen|\1Haupt Menü|'
+	fi
+	
+#replace ContentPanel.png
+	if grep -q 'ContentPanel.png' 720p/* ; then
+		echo "Replacing content panel background."
+		replace_all 's|<texture[^>]*>ContentPanel.png|<texture>black-back.png|g'
+	fi
+	check_and_remove media/ContentPanel.png
+	
+
+#replace default background	
+	if grep -q 'SKINDEFAULT.jpg' 720p/* ; then
+		echo "Replacing default background."
+		replace_all 's|<value>special://skin/backgrounds/SKINDEFAULT.jpg</value>|<value>special://skin/extras/lightmod/default.jpg</value>|g'
+		replace_all 's|.INFO.Skin.CurrentTheme,special://skin/backgrounds/,.jpg.|special://skin/extras/lightmod/default.jpg|g'
+	fi
+
 #changed scroll bar to make it besser visible
-replace_all 's|<texturesliderbar border="14,0,14,0">ScrollBarH_bar.png</texturesliderbar>|<texturesliderbar border="14,0,14,0">special://skin/extras/lightmod/ScrollBarH_bar.png</texturesliderbar>|g'
-replace_all 's|<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>|<texturesliderbar border="0,14,0,14">special://skin/extras/lightmod/ScrollBarV_bar.png</texturesliderbar>|g'
+	if grep ScrollBarH_bar.png 720p/* >/dev/null ; then
+		echo "Replacing scroll bars with better visible ones."
+		replace_all 's|ScrollBarH_bar.png|ScrollBarH_bar_light.png|g'
+		replace_all 's|ScrollBarV_bar.png|ScrollBarV_bar_light.png|g'
+	fi
+	check_and_remove 'media/ScrollBarH_bar.png'
+	check_and_remove 'media/ScrollBarV_bar.png'
+	
+#remove left panel arrow
+	if grep -q HasSub.png 720p/* ; then
+		echo "Removing hidden panel arrow."
+		perlregex 720p/includes.xml 's|<texturefocus>HasSub.png</texturefocus>|<texturefocus>-</texturefocus>|g'
+		perlregex 720p/includes.xml 's|<texturenofocus>HasSub.png</texturenofocus>|<texturenofocus>-</texturenofocus>|g'
+	fi
+	check_and_remove media/HasSub.png	
+	
+#remove xbmc logo
+	if grep -q xbmc-logo.png 720p/* ; then
+		echo "Removing xbmc logo."
+		#remove logo from all screens
+		remove_imagecontrol '<texture>xbmc-logo.png</texture>'
+		#remove logo fallback from music visualisation
+		perlregex 720p/MusicVisualisation.xml 's| fallback="xbmc-logo.png"||g'
+	fi
+	check_and_remove media/xbmc-logo.png
+	
+#remove GlassOverlay.png
+	if grep -q 'GlassOverlay.png' 720p/* ; then
+		echo "Removing GlassOverlay.png."
+		remove_imagecontrol '<texture>GlassOverlay.png</texture>'
+	fi
+	check_and_remove media/GlassOverlay.png
 
-#removed media/separator_vertical.png
-remove_imagecontrol '<texture>separator_vertical.png</texture>' 720p/DialogContentSettings.xml
-check_and_remove media/separator_vertical.png
+#removed some separator images to get a cleaner look
+	if grep separator.png 720p/* >/dev/null ; then
+		echo "Removing references to 'media/separator.png'".
+		remove_imagecontrol '<texture>separator.png</texture>'
+	fi
+	check_and_remove media/separator.png
+	if grep separator2.png 720p/* >/dev/null ; then
+		echo "Removing references to 'media/separator2.png'".
+		remove_imagecontrol '<texture>separator2.png</texture>' >/dev/null
+		#not all controls can be removed, some have an id and are used for navigation
+		replace_all 's|separator2.png|-|g'
+	fi
+	check_and_remove media/separator2.png
+	if grep -q 'MenuItemNF.png' 720p/* ; then
+		echo "Removing menu items separator 'MenuItemNF.png'."
+		remove_imagecontrol '<texture[^>]*>MenuItemNF.png</texture>'
+		replace_all 's|(\s*?<texturenofocus[^>]*>)MenuItemNF.png(</texturenofocus>\s*?\000)|\1-\2|g'
+	fi
+	check_and_remove 'media/MenuItemNF.png'
+	
+#removed content panel mirrors
+	if grep -q 'ContentPanelMirror' 720p/* ; then
+		echo "Removing content panel mirrors."
+		remove_imagecontrol '<texture[^>]*>ContentPanelMirror.png</texture>'
+	fi
+	check_and_remove 'media/ContentPanelMirror.png'
 
-#removed separator.png
-replace_all 's|separator.png|-|g'
-check_and_remove media/separator.png
+#removed mirrors from everywhere
+	if grep -q 'diffuse_mirror2.png' 720p/* ; then
+		echo "Removing diffuse_mirror2.png."
+		remove_imagecontrol '<texture[^>]*diffuse="diffuse_mirror2.png"[^>]*>[^<]*</texture>'
+	fi
+	check_and_remove media/diffuse_mirror2.png
 
-#removed separator2.png
-replace_all 's|separator2.png|-|g'
-check_and_remove media/separator2.png
+#removed poster mirrors
+	if grep -q 'diffuse_mirror3.png' 720p/* ; then
+		echo "Removing diffuse_mirror3.png."
+		remove_imagecontrol '<texture[^>]*diffuse="diffuse_mirror3.png"[^>]*>[^<]*</texture>'
+	fi
+	check_and_remove media/diffuse_mirror3.png
 
-#removed side fade
-remove_imagecontrol '<texture[^>]*>SideFade.png</texture>'
-check_and_remove media/SideFade.png
-
-#simplified shutdown menu
-remove_imagecontrol '<description>background [a-z]* image</description>' 720p/DialogButtonMenu.xml
-perlregex '720p/DialogButtonMenu.xml' 's|ShutdownButtonNoFocus.png|black-back.png|g'
-perlregex '720p/DialogButtonMenu.xml' 's|ShutdownButtonFocus.png|button-focus.png|g'
-check_and_remove media/ShutdownButtonFocus.png
-check_and_remove media/ShutdownButtonNoFocus.png
-
-#lets choose all types of addons for the home window
-perlregex '720p/SkinSettings.xml' 's|(Skin.SetAddon.[^,]*),[^\)]*\)|\1,xbmc.addon.video,xbmc.addon.executable,xbmc.addon.audio,xbmc.addon.image)|g'
-
-# enable 'germany' as option in mpaa settings
-perlregex '720p/SkinSettings.xml' 's|<!--(item>\s*\000'\
+#remove floor.png
+	if grep -q 'floor.png' 720p/* ; then
+		echo "Removing floor image."
+		remove_imagecontrol '<texture[^>]*>floor.png</texture>'
+	fi
+	check_and_remove 'media/floor.png'
+	
+#remove HomeNowPlayingBack.png
+	if grep -q 'HomeNowPlayingBack.png' 720p/* ; then
+		echo "Removing HomeNowPlayingBack.png."
+		remove_imagecontrol '<texture[^>]*>HomeNowPlayingBack.png</texture>' >/dev/null
+		replace_all 's|\s*<control type="image" id="1">\s*\000'\
+'\s*<posx>[a-z0-9-]*</posx>\s*\000'\
+'\s*<posy>[a-z0-9-]*</posy>\s*\000'\
+'\s*<width>[a-z0-9]*</width>\s*\000'\
+'\s*<height>[a-z0-9]*</height>\s*\000'\
+'\s*<texture[^>]*>HomeNowPlayingBack.png</texture>\s*\000'\
+'\s*<visible>[^<]*</visible>\s*\000'\
+'\s*</control>\s*\000'\
+'||g'
+	fi
+	check_and_remove 'media/HomeNowPlayingBack.png'
+	
+#removed ThumbShadow
+	if grep -q 'ThumbShadow.png' 720p/* ; then
+		echo "Removing thumb shadows."
+		replace_all 's|\s*.bordertexture[^>]*>ThumbShadow.png</bordertexture.\s*\000||g'
+	fi
+	check_and_remove 'media/ThumbShadow.png'
+	
+#remove ThumbBG.png
+	if grep -q 'ThumbBG.png' 720p/* ; then
+		echo "Removing thumb background."
+		remove_imagecontrol '<texture border="2">ThumbBG.png</texture>'
+	fi
+	check_and_remove 'media/ThumbBG.png'	
+	
+#remove all references to ThumbBorder.png
+	if grep -q 'ThumbBorder.png' 720p/* ; then
+		echo "Removing thumb border."
+		replace_all 's|\s*.bordertexture[^>]*>ThumbBorder.png</bordertexture.\s*\000||g'
+	fi
+	check_and_remove media/ThumbBorder.png
+	
+#removed CommonPageCount
+	if grep -q 'CommonPageCount' 720p/* ; then
+		echo "Removing page count info."
+		#includes
+		replace_all 's|\s*<include[^>]*>CommonPageCount</include>\s*\000||g'
+		#CommonPageCount definition
+		perlregex 720p/includes.xml 's|\s*<include name="CommonPageCount">\s*\000'\
+'(\s*<(animation\|control\|/control\|description\|posx\|posy\|scroll\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|include)[^>]*>.*?\000)*?'\
+'\s*</include>\s*\000||'
+		if grep -q 'CommonPageCount' 720p/* ; then
+			echo "Error: CommonPageCount could not be removed totally."
+			exit 3
+		fi
+	fi
+	
+#change time
+	if grep -q '<description>date label</description>' 720p/includes.xml ; then
+		echo "Changing time display mode."
+		#remove date label
+		remove_labelcontrol '<description>date label</description>' 720p/includes.xml
+		#move time label up
+		perlregex 720p/includes.xml 's|(<control type="label">\s*\000'\
+'\s*<description>time label</description>\s*\000'\
+'\s*<posx>15r</posx>\s*\000'\
+'\s*<posy)>20<|\1>5<|'
+	fi
+	
+# enable German movie ratings
+	if ! grep -q 'fsk-18' '720p/IncludesVariables.xml' ; then
+		echo "Enabling German movie ratings."
+		#uncommenting the "Germany" option from the settings window
+		perlregex '720p/SkinSettings.xml' 's|<!--(item>\s*\000'\
 '\s*<label>.LOCALIZE.31702.</label>\s*\000'\
 '\s*<onclick>noop</onclick>\s*\000'\
 '\s*<icon>.</icon>\s*\000'\
@@ -186,10 +387,8 @@ perlregex '720p/SkinSettings.xml' 's|<!--(item>\s*\000'\
 '\s*</item>\s*\000'\
 '\s*)<item>'\
 '|<\1<!--item>|'
-
-# choose right flag for german mpaa ratings
-if ! grep -q 'fsk-18' '720p/IncludesVariables.xml' ; then
-	perlregex '720p/IncludesVariables.xml' \
+		#choose right flag depending on the FSK
+		perlregex '720p/IncludesVariables.xml' \
 's|(\000\s*)(<variable name="rating">).*?\000|\1\2'\
 '\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,18)">de/fsk-18</value>'\
 '\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,16)">de/fsk-16</value>'\
@@ -198,359 +397,207 @@ if ! grep -q 'fsk-18' '720p/IncludesVariables.xml' ; then
 '\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,0)">de/fsk-0</value>'\
 '\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,o)">de/fsk-0</value>'\
 '\n\n|' 
-fi
+	fi
+
+#not needed anymore as it is in the original now
+	#lets choose all types of addons for the home window addons
+	#	echo "Changing selection of addons for the home screen."
+	#	perlregex '720p/SkinSettings.xml' 's|(Skin.SetAddon.[^,]*),[^\)]*\)|\1,xbmc.addon.video,xbmc.addon.executable,xbmc.addon.audio,xbmc.addon.image)|g'	
+
+
+	
+echo "#################### APPLYING HOME SCREEN MODIFICATIONS ##############################"
+
+#replace submenu item (not focused)
+	if grep -q 'HomeSubNF.png' 720p/* ; then
+		echo "Replacing submenus item texture (for items that are not focused)."
+		replace_all 's|HomeSubNF.png|HomeSubNF_light.png|g'
+	fi
+	check_and_remove media/HomeSubNF.png
+
+#changed weather info
+	if grep -q '<description>Location label</description>' '720p/Home.xml' ; then
+		echo "Modifying weather info."
+		#remove weather location
+		remove_labelcontrol '<description>Location label</description>' 720p/Home.xml
+		#center temp label
+		perlregex 720p/Home.xml 's|(<posx>65</posx>\s*\000'\
+'\s*<posy)>20</posy>|\1>15</posy>|'
+		#remove weather condition
+		remove_labelcontrol '<description>Conditions Label</description>' 720p/Home.xml
+	fi
+	
+#removed side fade
+	if grep SideFade.png 720p/* >/dev/null ; then
+		echo "Removing Main menu side fade effect."
+		remove_imagecontrol '<texture[^>]*>SideFade.png</texture>'
+	fi
+	check_and_remove media/SideFade.png
 
 # remove Home menu seperator
-if grep -q 'HomeSeperator' '720p/Home.xml' ; then
-	perlregex '720p/Home.xml' 's|\000\s*?<control type="image">\s*?\000\s*?<posx>[0-9]+</posx>\s*?\000\s*?<posy>[0-9]+</posy>\s*?\000\s*?<width>[0-9]+</width>\s*?\000\s*?<height>[0-9]+</height>\s*?\000\s*?<texture>HomeSeperator.png</texture>\s*?\000\s*?</control>\s*?||g'
-	rm 'media/HomeSeperator.png' 2>/dev/null
-fi
+	if grep -q 'HomeSeperator' '720p/Home.xml' ; then
+		echo "Removing Main menu items separator."
+		remove_imagecontrol '<texture>HomeSeperator.png</texture>'
+	fi
+	check_and_remove 'media/HomeSeperator.png'
 
 # remove Home overlay
-if grep -q 'HomeOverlay1.png' '720p/Home.xml' ; then
-	perlregex '720p/Home.xml' 's|\000\s*?<control type="image">\s*?\000\s*?<posx>[0-9]+</posx>\s*?\000\s*?<posy>[0-9]+</posy>\s*?\000\s*?<width>[0-9]+</width>\s*?\000\s*?<height>[0-9]+</height>\s*?\000\s*?<texture>HomeOverlay1.png</texture>\s*?\000\s*?</control>\s*?||g'
-	rm 'media/HomeOverlay1.png' 2>/dev/null
-fi
+	if grep -q 'HomeOverlay1.png' '720p/Home.xml' ; then
+		echo "Removing main menu overlay."
+		remove_imagecontrol '<texture>HomeOverlay1.png</texture>'
+	fi
+	check_and_remove 'media/HomeOverlay1.png'
+	
+#changed addons on the home screen
+	if grep -q '<bordertexture border="5">button-nofocus.png</bordertexture>' 720p/includes.xml
+	then
+		echo "Changing addons on the home screen."
+		#remove border from addons that are not focused on the home view
+		perlregex 720p/includes.xml 's|(\s*<width>180</width>\s*\000)'\
+'(\s*<height>120</height>\s*\000)'\
+'(\s*<aspectratio aligny="bottom">keep</aspectratio>\s*\000)'\
+'\s*<bordertexture border="5">button-nofocus.png</bordertexture>\s*\000'\
+'\s*<bordersize>3</bordersize>\s*\000'\
+'|\1\2\3|g'
+		#remove label for addons that are not focused on the home view
+		remove_labelcontrol '<posx>91</posx>' 720p/includes.xml
+	fi
+	
+#Changed widgets on home screen
+	if grep -q 'RecentAddedBack.png' 720p/* ; then
+		echo "Changing widgets on the home screen."
+		#removing widgets background
+		remove_imagecontrol '<texture[^>]*>RecentAddedBack.png</texture>' '720p/IncludesHomeWidget.xml'
+		#widget group title label
+		remove_labelcontrol '<description>Title label</description>' '720p/IncludesHomeWidget.xml'
+		#label for widgets without focus
+		remove_labelcontrol '<textcolor>white</textcolor>' '720p/IncludesHomeWidget.xml'
+		remove_labelcontrol '<textcolor>grey2</textcolor>' '720p/IncludesHomeWidget.xml'
+		#remove bordertexture for widgets that are not focused
+		echo "Removing bordertexture from widgets without focus."
+		perlregex 720p/IncludesHomeWidget.xml 's|\s*<bordertexture border="5">button-nofocus.png</bordertexture>\s*\000||g'	
+	fi
+	check_and_remove 'media/RecentAddedBack.png'
 
-# remove menu items seperator
-for F in 720p/ViewsVideoLibrary.xml 720p/ViewsPVR.xml 720p/ViewsMusicLibrary.xml 720p/ViewsLiveTV.xml 720p/ViewsFileMode.xml 720p/ViewsAddonBrowser.xml 720p/SkinSettings.xml 720p/Settings.xml 720p/script-XBMC_Lyrics-main.xml 720p/script-globalsearch-main.xml 720p/MyWeather.xml 720p/FileManager.xml 720p/FileBrowser.xml ; do
-	perlregex "$F" 's|\s*?<control type="image">\s*?\000'\
-'\s*?<posx>[0-9]+</posx>\s*?\000'\
-'\s*?<posy>[0-9]+</posy>\s*?\000'\
-'\s*?<width>[0-9]+</width>\s*?\000'\
-'\s*?<height>[0-9]+</height>\s*?\000'\
-'(\s*\|\s*?<visible>[^<]*?</visible>\s*?\000\|\s*?<include>[^<]*?</include>\s*?\000)'\
-'\s*?<texture[^>]*>MenuItemNF.png</texture>\s*?\000'\
-'(\s*\|\s*?<visible>[^<]*?</visible>\s*?\000\|\s*?<include>[^<]*?</include>\s*?\000)'\
-'(\s*\|\s*?<include>[^<]*?</include>\s*?\000\|\s*?<visible>[^<]*?</visible>\s*?\000)'\
-'\s*?</control>\s*?\000||g'	
-	perlregex "$F" 's|(\s*?<texturenofocus[^>]*>)MenuItemNF.png(</texturenofocus>\s*?\000)|\1-\2|g'
-done
-for F in 720p/SettingsCategory.xml 720p/SettingsSystemInfo.xml 720p/SettingsProfile.xml ; do
-	perlregex "$F" 's|(\s*?<texturenofocus[^>]*>)MenuItemNF.png(</texturenofocus>\s*?\000)|\1-\2|g'
-done
-if grep -q "MenuItemNF.png" 720p/* ; then
-	echo "ERROR: Not all occurrences of 'MenuItemNF.png' could be removed, please check:"
-	grep "MenuItemNF.png" 720p/*
-	exit 3
-fi
-if [ -f media/MenuItemNF.png ] ; then rm media/MenuItemNF.png ; fi
+#remove homefloor
+	if grep -q "homefloor.png" 720p/* ; then
+		echo "Removing home floor."
+		remove_imagecontrol '<texture>homefloor.png</texture>' 720p/Home.xml
+	fi
+	check_and_remove media/homefloor.png
+	
 
-# remove widgets background
-if grep -q 'RecentAddedBack' '720p/IncludesHomeWidget.xml' ; then
-	perlregex '720p/IncludesHomeWidget.xml' 's|\000\s*?<control type="image">\s*?\000'\
-'\s*?<description>background</description>\s*?\000'\
-'\s*?<posx>[0-9]+</posx>\s*?\000'\
-'\s*?<posy>[0-9]+</posy>\s*?\000'\
-'\s*?<width>[0-9]+</width>\s*?\000'\
-'\s*?<height>[0-9]+</height>\s*?\000'\
-'\s*?<texture[^>]*>RecentAddedBack.png</texture>\s*?\000'\
-'\s*?</control>\s*?||g'
-	rm media/RecentAddedBack.png 2>/dev/null
-fi
+echo "#################### APPLYING MODIFICATIONS TO PICTURE LIBRARY #######################"
 
-# remove widgets titel label
-perlregex 720p/IncludesHomeWidget.xml 's|\s*?<control type="label">\s*?\000'\
-'\s*?<description>Title label</description>\s*?\000'\
-'(\s*<(posx\|posy\|height\|width\|label\|align\|aligny\|font\|textcolor\|shadowcolor)>[^>]*>\s*?\000)*'\
-'\s*</control>\s*?\000||g'
-
-# remove label for widgets that are not focused
-perlregex 720p/IncludesHomeWidget.xml 's|\s*?<control type="label">\s*?\000'\
-'\s*?<posx>[0-9]*?</posx>\s*?\000'\
-'\s*?<posy>[0-9]*?</posy>\s*?\000'\
-'(\s*<(height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|selectedcolor)>[^>]*>\s*?\000)*'\
-'\s*?<label>.VAR.MainItemLabel.</label>\s*?\000*'\
-'\s*</control>\s*?\000||g'
-
-# remove info for widgets that are not focused
-perlregex 720p/IncludesHomeWidget.xml 's|\s*?<control type="label">\s*?\000'\
-'\s*?<posx>[0-9]*?</posx>\s*?\000'\
-'\s*?<posy>[0-9]*?</posy>\s*?\000'\
-'(\s*<(height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|selectedcolor)>[^>]*>\s*?\000)*'\
-'\s*?<label>.INFO.ListItem.Label2.</label>\s*?\000*'\
-'\s*</control>\s*?\000||g'
-
-# remove bordertexture for widgets that are not focused
-perlregex 720p/IncludesHomeWidget.xml 's|\s*<bordertexture border="5">button-nofocus.png</bordertexture>\s*\000||g'
-
-# use thumb in picture preview view
-perlregex 720p/ViewsPictures.xml 's|<texture background="true">.INFO.ListItem.FilenameAndPath.</texture>|<texture background="true">\$INFO\[ListItem.Icon\]</texture>|g'
-
-# use thumb in picture wrap view
-perlregex 720p/MyPics.xml 's|<texture background="true">.INFO.ListItem.FilenameAndPath.</texture>|<texture background="true">\$INFO\[ListItem.Icon\]</texture>|g'
-
-# remove panel mirrors
-LIST=$(grep "ContentPanelMirror.png" 720p/* | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
-for F in $LIST ; do
-	perlregex "$F" 's|\s*?<control type="image">\s*?\000'\
-'\s*?<posx>[0-9]*?</posx>\s*?\000'\
-'\s*?<posy>[0-9]*?</posy>\s*?\000'\
-'\s*?<width>[0-9]*?</width>\s*?\000'\
-'\s*?<height>[0-9]*?</height>\s*?\000'\
-'\s*?<texture border="[0-9]+">ContentPanelMirror.png</texture>\s*?\000*'\
-'\s*</control>\s*?\000||g'
-done
-if grep -q "ContentPanelMirror.png" 720p/* ; then
-	echo "ERROR: Not all occurrences of 'ContentPanelMirror.png' could be removed, please check:"
-	grep "ContentPanelMirror.png" 720p/*
-	exit 3
-fi
-rm media/ContentPanelMirror.png 2>/dev/null
-
-#remove common page count
-INC='CommonPageCount'
-LIST=$(grep "<include>$INC</include>" 720p/* | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
-for F in $LIST ; do
-	perlregex "$F" 's|\s*<include>'$INC'</include>\s*\000||g'
-done
-#remove CommonPageCount definition
-perlregex 720p/includes.xml 's|\s*<include name="CommonPageCount">\s*\000'\
-'(\s*<(animation\|control\|/control\|description\|posx\|posy\|scroll\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|include)[^>]*>.*?\000)*?'\
-'\s*</include>\s*\000||'
-
+# use thumb in picture view for preview
+	if grep -q '<texture background="true">.INFO.ListItem.FilenameAndPath.</texture>' 720p/ViewsPictures.xml
+	then
+		echo "Changing picture views to use thumbnails for preview."
+		perlregex 720p/ViewsPictures.xml 's|<texture background="true">.INFO.ListItem.FilenameAndPath.</texture>|<texture background="true">\$INFO\[ListItem.Icon\]</texture>|g'
+		perlregex 720p/MyPics.xml 's|<texture background="true">.INFO.ListItem.FilenameAndPath.</texture>|<texture background="true">\$INFO\[ListItem.Icon\]</texture>|g'
+	fi
+		
 # change picturethumbview
-	#selection panel
-	perlregex 720p/ViewsPictures.xml 's|(\s*<control type)="panel" id="514">\s*\000'\
+	if grep -q '<description>Date time txt</description>' 720p/ViewsPictures.xml ; then
+		echo "Changing picture preview/thumb view."
+		#resize left selection panel (to 1 column, 6 rows and fixedlist)
+		perlregex 720p/ViewsPictures.xml 's|(\s*<control type)="panel" id="514">\s*\000'\
 '(\s*<posx>60</posx>\s*\000)'\
 '(\s*)<posy>75</posy>\s*\000'\
 '(\s*)<width>432</width>\s*\000'\
 '(\s*)<height>576</height>\s*\000'\
 '|\1="fixedlist" id="514">\000\2\3\<posy>-72</posy>\000\4<width>144</width>\000\5<height>864</height>\000\5<focusposition>1</focusposition>\000|'
-	#scrollbar
-	perlregex 720p/ViewsPictures.xml 's|(\s*<control type="scrollbar" id="60">\s*\000)'\
-'(\s*)<posx>500</posx>|\1\2<posx>212</posx>|'
-	#left panel
-	perlregex 720p/IncludesBackgroundBuilding.xml 's|(\s*<visible>Control.IsVisible.514.</visible>\s*\000'\
+		#resize background of the left panel accordingly
+		perlregex 720p/IncludesBackgroundBuilding.xml 's|(\s*<visible>Control.IsVisible.514.</visible>\s*\000'\
 '\s*<control type="image">\s*\000'\
 '\s*<posx>50</posx>\s*\000'\
 '\s*)<posy>60</posy>(\s*\000'\
 '\s*)<width>490</width>(\s*\000'\
 '\s*)<height>600</height>'\
 '|\1<posy>-15</posy>\2<width>202</width>\3<height>750</height>|'
-	#picture preview
-	perlregex 720p/ViewsPictures.xml 's|<posx>570</posx>|<posx>282</posx>|'
-	perlregex 720p/ViewsPictures.xml 's|<width>640</width>|<width>928</width>|g'
-	perlregex 720p/ViewsPictures.xml 's|<height>470</height>|<height>570</height>|g'
-	perlregex 720p/IncludesBackgroundBuilding.xml 's|<width>680</width>\s*\000'\
+		#move the scrollbar of the selection panel left
+		perlregex 720p/ViewsPictures.xml 's|(\s*<control type="scrollbar" id="60">\s*\000)'\
+'(\s*)<posx>500</posx>|\1\2<posx>212</posx>|'
+		#resize and move the picture preview on the right
+		perlregex 720p/ViewsPictures.xml 's|<posx>570</posx>|<posx>282</posx>|'
+		perlregex 720p/ViewsPictures.xml 's|<width>640</width>|<width>928</width>|g'
+		perlregex 720p/ViewsPictures.xml 's|<height>470</height>|<height>570</height>|g'
+		#and the background of the preview on the right side accordingly
+		perlregex 720p/IncludesBackgroundBuilding.xml 's|<width>680</width>\s*\000'\
 '(\s*)<height>600</height>|<width>968</width>\000\1<height>640</height>|'
-	perlregex 720p/IncludesBackgroundBuilding.xml 's|<posx>550</posx>|<posx>262</posx>|'
-	#remove date+res labels
-	perlregex 720p/ViewsPictures.xml 's|\s*<control type="label">\s*\000'\
-'\s*<description>Date time txt</description>\s*\000'\
-'(\s*<(posx\|posy\|height\|width\|label\|align\|aligny\|font\|textcolor\|shadowcolor)>[^>]*>\s*?\000)*'\
-'\s*</control>\s*\000||'
-	perlregex 720p/ViewsPictures.xml 's|\s*<control type="label">\s*\000'\
-'\s*<description>Resolution txt</description>\s*\000'\
-'(\s*<(posx\|posy\|height\|width\|label\|align\|aligny\|font\|textcolor\|shadowcolor)>[^>]*>\s*?\000)*'\
-'\s*</control>\s*\000||'
-	#remove sections icon
-	perlregex 720p/MyPics.xml 's|\s*<control type="image">\s*\000'\
-'\s*<description>Section header image</description>\s*\000'\
-'(\s*<(posx\|posy\|height\|width\|aspectratio\|texture)>[^>]*>\s*?\000)*'\
-'\s*</control>\s*\000||'
-	#remove location labels
-	perlregex 720p/MyPics.xml 's|\s*<control type="label">\s*\000'\
-'\s*<include>WindowTitleCommons</include>\s*\000'\
-'(\s*<(posx\|posy\|height\|width\|aspectratio\|texture\|visible\|label)>[^>]*>\s*?\000)*'\
-'\s*</control>\s*\000||g'
-	#remove location grouplist
+		perlregex 720p/IncludesBackgroundBuilding.xml 's|<posx>550</posx>|<posx>262</posx>|'
+		#remove date+res labels for the preview panel
+		remove_labelcontrol '<description>Date time txt</description>' 720p/ViewsPictures.xml
+		remove_labelcontrol '<description>Resolution txt</description>' 720p/ViewsPictures.xml
+		#add border texture directly to the picture that is focused in the left selection panel
+		perlregex 720p/ViewsPictures.xml 's|(<control type="image">\s*\000'\
+'\s*)<posx>10</posx>(\s*\000'\
+'\s*)<posy>10</posy>(\s*\000'\
+'\s*)<width>124</width>(\s*\000'\
+'\s*)<height>124</height>(\s*\000'\
+'\s*<aspectratio>keep</aspectratio>\s*\000)'\
+'(\s*)(<texture background="true">.INFO.ListItem.Icon.</texture>\s*\000'\
+'\s*</control>\s*\000'\
+'\s*</focusedlayout>\s*\000)'\
+'|\1<posx>8</posx>\2<posy>8</posy>\3<width>128</width>\4<height>128</height>\5'\
+'\6<bordersize>2</bordersize>\000'\
+'\6<bordertexture border="2">folder-focus.png</bordertexture>\000'\
+'\6\7|'
+	fi
+	
+#remove location header
+	if grep -q '<description>Section header image</description>' 720p/MyPics.xml 
+	then
+		echo "Removing location header."
+		#section icon
+		remove_imagecontrol '<description>Section header image</description>' 720p/MyPics.xml
+		#remove location labels
+		remove_labelcontrol '<include>WindowTitleCommons</include>' 720p/MyPics.xml
+		#remove location grouplist
 perlregex 720p/MyPics.xml 's|\s*<control type="grouplist">\s*\000'\
 '\s*<posx>65</posx>\s*\000'\
 '\s*<posy>5</posy>\s*\000'\
 '(\s*<(height\|width\|orientation\|align\|itemgap\|aspectratio\|texture\|visible\|label)>[^>]*>\s*?\000)*'\
 '\s*</control>\s*\000||'
+	fi
+	check_and_remove media/icon_pictures.png
 
-	#remove ThumbBG.png
-#remove_imagecontrol '<bordertexture[^>]*>ThumbShadow.png</bordertexture>' 720p/ViewsPictures.xml
-perlregex 720p/ViewsPictures.xml 's|<texture border="2">ThumbBG.png</texture>|<texture border="10">folder-focus.png</texture>|g' 
-perlregex 720p/ViewsPictures.xml 's|\s*<bordertexture border="10">folder-focus.png</bordertexture>\s*\000||'
-#check_and_remove media/ThumbBG.png
+echo "#################### APPLYING MODIFICATIONS TO VIDEO LIBRARY #########################"
 
-#remove homefloor
-perlregex 720p/Home.xml 's|\s*<control type="image">\s*\000'\
-'(\s*<(posx\|posy\|height\|width\|aspectratio\|animation)>[^>]*>\s*\000)*'\
-'\s*<texture>homefloor.png</texture>\s*\000'\
-'(\s*<(posx\|posy\|height\|width\|aspectratio\|animation)[^>]*>[^>]*>\s*\000)*'\
-'\s*</control>\s*\000||'
-if grep -q "homefloor.png" 720p/* ; then
-	echo "ERROR: Not all occurrences of 'homefloor.png' could be removed, please check:"
-	grep "homefloor.png" 720p/*
-	exit 3
-fi
-rm media/homefloor.png 2>/dev/null
-
-#remove floor.png
-IMG='floor.png'
-LIST=$(grep "$IMG" 720p/* | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
-for F in $LIST ; do
-	perlregex "$F" 's|\s*?<control type="image">\s*?\000'\
-'(\s*<(posx\|posy\|height\|width\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*'\
-'\s*<texture>'$IMG'</texture>\s*\000'\
-'(\s*<(posx\|posy\|height\|width\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*'\
-'\s*</control>\s*?\000||g'
-done
-if grep -q "$IMG" 720p/* ; then
-	echo "ERROR: Not all occurrences of '$IMG' could be removed, please check:"
-	grep "$IMG" 720p/*
-	exit 3
-fi
-rm "media/$IMG" 2>/dev/null
-
-#remove all references to ThumbShadow.png
-replace_all 's|\s*.bordertexture[^>]*>ThumbShadow.png</bordertexture.\s*\000||g'
-check_and_remove media/ThumbShadow.png
-
-#remove all references to ThumbBorder.png
-replace_all 's|\s*.bordertexture[^>]*>ThumbBorder.png</bordertexture.\s*\000||g'
-check_and_remove media/ThumbBorder.png
-
-#remove border from addons that are not focused on the home view
-perlregex 720p/includes.xml 's|(\s*<width>180</width>\s*\000)'\
-'(\s*<height>120</height>\s*\000)'\
-'(\s*<aspectratio aligny="bottom">keep</aspectratio>\s*\000)'\
-'\s*<bordertexture border="5">button-nofocus.png</bordertexture>\s*\000'\
-'|\1\2\3|g'
-#remove mirror of addons on the home view
-perlregex 720p/includes.xml 's|\s*?<control type="image">\s*?\000'\
-'(\s*<(posx\|posy\|height\|width\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
-'\s*<texture diffuse="diffuse_mirror2.png" flipy="true" background="true">.INFO.ListItem.Icon.</texture>\s*\000'\
-'(\s*<(posx\|posy\|height\|width\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
-'\s*</control>\000'\
-'||g'
-#remove label for addons that are not focused on the home view
-perlregex 720p/includes.xml 's|\s*<control type="label">\s*\000'\
-'\s*<posx>91</posx>\s*\000'\
-'\s*<posy>125</posy>\s*\000'\
-'\s*<width>180</width>\s*\000'\
-'\s*<height>20</height>\s*\000'\
-'\s*<font>font12</font>\s*\000'\
-'\s*<textcolor>grey2</textcolor>\s*\000'\
-'\s*<align>center</align>\s*\000'\
-'\s*<aligny>center</aligny>\s*\000'\
-'\s*<label>.VAR.MainItemLabel.</label>\s*\000'\
-'(\|\s*<visible>.Control.HasFocus.9002.</visible>\s*\000)'\
-'\s*</control>\s*\000||g'
-
-#remove weather location
-perlregex 720p/Home.xml 's|\s*<control type="label">\s*\000'\
-'\s*<description>Location label</description>\s*\000'\
-'\s*<posx>65</posx>\s*\000'\
-'(\s*<(posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
-'\s*</control>\s*\000||'
-#center temp label
-perlregex 720p/Home.xml 's|(<posx>65</posx>\s*\000'\
-'\s*<posy)>20</posy>|\1>15</posy>|'
-#remove weather condition
-perlregex 720p/Home.xml 's|\s*<control type="label">\s*\000'\
-'\s*<description>Conditions Label</description>\s*\000'\
-'(\s*<(posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
-'\s*</control>\s*\000||'
-
-#remove date label
-perlregex 720p/includes.xml 's|\s*<control type="label">\s*\000'\
-'\s*<description>date label</description>\s*\000'\
-'(\s*<(posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
-'\s*</control>\s*\000||'
-#move time label up
-perlregex 720p/includes.xml 's|(<control type="label">\s*\000'\
-'\s*<description>time label</description>\s*\000'\
-'\s*<posx>15r</posx>\s*\000'\
-'\s*<posy)>20<|\1>5<|'
-
-#remove Fanart_Diffuse.png
-#perlregex 720p/ViewsVideoLibrary.xml 's| diffuse="Fanart_Diffuse.png"||g'
-#rm media/Fanart_Diffuse.png 2>/dev/null
-	#remove sections icon
-	perlregex 720p/MyVideoNav.xml 's|\s*<control type="image">\s*\000'\
-'\s*<description>Section header image</description>\s*\000'\
-'(\s*<(posx\|posy\|height\|width\|aspectratio\|texture)>[^>]*>\s*?\000)*'\
-'\s*</control>\s*\000||'
-	#remove location labels
-	perlregex 720p/MyVideoNav.xml 's|\s*<control type="label">\s*\000'\
-'\s*<include>WindowTitleCommons</include>\s*\000'\
-'(\s*<(posx\|posy\|height\|width\|aspectratio\|texture\|visible\|label)>[^>]*>\s*?\000)*'\
-'\s*</control>\s*\000||g'
-	#remove location grouplist
-perlregex 720p/MyVideoNav.xml 's|\s*<control type="grouplist">\s*\000'\
+#Removing location info.
+	if grep -q '<description>Section header image</description>' 720p/MyVideoNav.xml
+	then
+		echo "Removing location info."
+		#remove sections icon
+		remove_imagecontrol '<description>Section header image</description>' 720p/MyVideoNav.xml
+		#remove location labels
+		remove_labelcontrol '<include>WindowTitleCommons</include>' 720p/MyVideoNav.xml
+		#remove location grouplist
+		perlregex 720p/MyVideoNav.xml 's|\s*<control type="grouplist">\s*\000'\
 '\s*<posx>65</posx>\s*\000'\
 '\s*<posy>5</posy>\s*\000'\
 '(\s*<(height\|width\|orientation\|align\|itemgap\|aspectratio\|texture\|visible\|label)>[^>]*>\s*?\000)*'\
 '\s*</control>\s*\000||'
+	fi
+	
+echo "#################### APPLYING MODIFICATIONS TO SPECIAL DIALOGS #######################"
 
-#remove HomeNowPlayingBack.png
-IMG='HomeNowPlayingBack.png'
-LIST=$(grep "$IMG" 720p/* | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
-for F in $LIST ; do
-	perlregex "$F" 's|\s*?<control type="image"[^>]*>\s*?\000'\
-'(\s*<(posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
-'\s*<texture[^>]*>'$IMG'</texture>\s*\000'\
-'(\s*<(posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
-'\s*</control>\s*?\000||g'
-done
-if grep -q "$IMG" 720p/* ; then
-	echo "ERROR: Not all occurrences of '$IMG' could be removed, please check:"
-	grep "$IMG" 720p/*
-	exit 3
-fi
-rm "media/$IMG" 2>/dev/null
+#removed media/separator_vertical.png
+	if grep -q "separator_vertical.png" 720p/* ; then
+		echo "Removing references to 'media/separator_vertical.png'".
+		remove_imagecontrol '<texture>separator_vertical.png</texture>'
+	fi
+	check_and_remove media/separator_vertical.png
 
-#remove background top
-perlregex 720p/IncludesBackgroundBuilding.xml 's|\s*<control type="image">\s*\000'\
-'(\s*<(posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000\|)*?'\
-'\s*<texture[^>]*>HomeNowPlayingBack.png</texture>\s*\000'\
-'(\s*<(posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000\|)*?'\
-'\s*</control>\s*\000||'
+#simplified shutdown menu
+	if grep -q "ShutdownButtonNoFocus" 720p/* ; then
+		echo "Changing shutdown menu."
+		remove_imagecontrol '<description>background [a-z]* image</description>' 720p/DialogButtonMenu.xml
+		perlregex '720p/DialogButtonMenu.xml' 's|texturenofocus border="25,5,25,5">ShutdownButtonNoFocus.png|texturenofocus>black-back.png|g'
+		perlregex '720p/DialogButtonMenu.xml' 's|ShutdownButtonFocus.png|button-focus.png|g'
+	fi
+	check_and_remove media/ShutdownButtonFocus.png
+	check_and_remove media/ShutdownButtonNoFocus.png
 
-#correct typo
-perlregex 720p/ViewsPictures.xml 's|folder-Focus.png|folder-focus.png|g'
-
-#remove left panel arrow
-perlregex 720p/includes.xml 's|<texturefocus>HasSub.png</texturefocus>|<texturefocus>-</texturefocus>|g'
-perlregex 720p/includes.xml 's|<texturenofocus>HasSub.png</texturenofocus>|<texturenofocus>-</texturenofocus>|g'
-
-#remove mirror poster from list view
-remove_imagecontrol '<texture[^>]*diffuse="diffuse_mirror3.png"[^>]*>[^<]*</texture>' 720p/ViewsFileMode.xml
-
-#remove mirror posters from other views
-remove_imagecontrol '<texture[^>]*diffuse="diffuse_mirror2.png"[^>]*>[^<]*</texture>'
-
-#remove unnecessary files
-check_and_remove media/HasSub.png
-check_and_remove media/diffuse_mirror3.png
-check_and_remove media/diffuse_mirror2.png
-check_and_remove media/icon-weather.png
-check_and_remove media/icon-video.png
-check_and_remove media/icon_pictures.png
-check_and_remove media/icon_volume.png
-check_and_remove media/poster_diffuse.png
-check_and_remove media/OSDFullScreenFO.png
-check_and_remove media/OSDFullScreenNF.png
-check_and_remove media/defaultDVDFull.png
-
-#remove logo from home screen
-remove_imagecontrol '<description>LOGO</description>' 720p/Home.xml
-#remove logo from login screen
-remove_imagecontrol '<texture>xbmc-logo.png</texture>' 720p/LoginScreen.xml
-#remove logo fallback from music visualisation
-perlregex 720p/MusicVisualisation.xml 's| fallback="xbmc-logo.png"||g'
-#remove xbmc-logo.png
-check_and_remove media/xbmc-logo.png
-
-#correct translation
-perlregex language/German/strings.po 's|(\s*msgctxt "#31153"\s*\000\s*msgid "Home Menu"\s*\000\s*msgstr ")Gesehen Status Overlay benutzen|\1Haupt Menü|'
-
-#replace default background
-replace_all 's|<value>special://skin/backgrounds/SKINDEFAULT.jpg</value>|<value>special://skin/extras/lightmod/default.jpg</value>|g'
-replace_all 's|.INFO.Skin.CurrentTheme,special://skin/backgrounds/,.jpg.|special://skin/extras/lightmod/default.jpg|g'
-
-#replace submenu item (not focused)
-replace_all 's|[^/]HomeSubNF.png|>special://skin/extras/lightmod/HomeSubNF.png|g'
-
-#remove GlassOverlay.png
-remove_imagecontrol '<texture>GlassOverlay.png</texture>'
-check_and_remove media/GlassOverlay.png
-
-#replace ContentPanel.png
-replace_all 's|ContentPanel.png|special://skin/backgrounds/media-overlay.jpg|g'
-check_and_remove media/ContentPanel.png
+echo "All modifications are completed."
+exit

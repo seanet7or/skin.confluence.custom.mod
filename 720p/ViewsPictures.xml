@@ -23,16 +23,6 @@
 				<preloaditems>4</preloaditems>
 				<itemlayout height="200" width="190">
 					<control type="image">
-						<posx>15</posx>
-						<posy>40</posy>
-						<width>160</width>
-						<height>160</height>
-						<aspectratio>stretch</aspectratio>
-						<bordersize>8</bordersize>
-						<fadetime>200</fadetime>
-						<texture border="10">folder-focus.png</texture>
-					</control>
-					<control type="image">
 						<posx>25</posx>
 						<posy>50</posy>
 						<width>140</width>
@@ -42,18 +32,6 @@
 					</control>
 				</itemlayout>
 				<focusedlayout height="200" width="190">
-					<control type="image">
-						<posx>15</posx>
-						<posy>40</posy>
-						<width>160</width>
-						<height>160</height>
-						<aspectratio>stretch</aspectratio>
-						<bordersize>8</bordersize>
-						<fadetime>200</fadetime>
-						<texture border="10">folder-focus.png</texture>
-						<animation reversible="false" effect="zoom" start="15,40,160,160" end="-10,-5,210,210" time="200">focus</animation>
-						<animation reversible="false" effect="zoom" end="15,40,160,160" start="-10,-5,210,210" time="200">unfocus</animation>
-					</control>
 					<control type="image">
 						<posx>25</posx>
 						<posy>50</posy>
@@ -72,7 +50,7 @@
 				<width>660</width>
 				<height>25</height>
 				<texturesliderbackground border="14,0,14,0">ScrollBarH.png</texturesliderbackground>
-				<texturesliderbar border="14,0,14,0">special://skin/extras/lightmod/ScrollBarH_bar.png</texturesliderbar>
+				<texturesliderbar border="14,0,14,0">ScrollBarH_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus border="14,0,14,0">ScrollBarH_bar_focus.png</texturesliderbarfocus>
 				<textureslidernib>ScrollBarNib.png</textureslidernib>
 				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
@@ -103,16 +81,6 @@
 				<preloaditems>2</preloaditems>
 				<itemlayout height="144" width="144">
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>144</width>
-						<height>144</height>
-						<aspectratio>stretch</aspectratio>
-						<bordersize>8</bordersize>
-						<fadetime>200</fadetime>
-						<texture border="10">folder-focus.png</texture>
-					</control>
-					<control type="image">
 						<posx>10</posx>
 						<posy>10</posy>
 						<width>124</width>
@@ -123,22 +91,13 @@
 				</itemlayout>
 				<focusedlayout height="144" width="144">
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>144</width>
-						<height>144</height>
-						<aspectratio>stretch</aspectratio>
-						<bordertexture border="10">folder-focus.png</bordertexture>
-						<bordersize>8</bordersize>
-						<fadetime>200</fadetime>
-						<texture border="10">folder-focus.png</texture>
-					</control>
-					<control type="image">
-						<posx>10</posx>
-						<posy>10</posy>
-						<width>124</width>
-						<height>124</height>
+						<posx>8</posx>
+						<posy>8</posy>
+						<width>128</width>
+						<height>128</height>
 						<aspectratio>keep</aspectratio>
+						<bordersize>2</bordersize>
+						<bordertexture border="2">folder-focus.png</bordertexture>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
 					</control>
 				</focusedlayout>
@@ -149,7 +108,7 @@
 				<width>25</width>
 				<height>576</height>
 				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="0,14,0,14">special://skin/extras/lightmod/ScrollBarV_bar.png</texturesliderbar>
+				<texturesliderbar border="0,14,0,14">ScrollBarV_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
 				<textureslidernib>ScrollBarNib.png</textureslidernib>
 				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
