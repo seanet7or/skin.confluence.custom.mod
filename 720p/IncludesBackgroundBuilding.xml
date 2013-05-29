@@ -52,7 +52,7 @@
 				<randomize>true</randomize>
 				<fadetime>1000</fadetime>
 				<visible>Skin.HasSetting(GlobalWeatherFanart) + Window.IsVisible(home)</visible>
-			</control>		
+			</control>
 			<control type="image">
 				<description>Default Global Background Image</description>
 				<include>Dimensions_Fullscreen</include>
@@ -204,6 +204,16 @@
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<include>Window_OpenClose_Animation</include>
 				<visible>Control.HasFocus(8012)</visible>
+			</control>
+			<control type="image">
+				<description>Playlist Episodes Background Image</description>
+				<include>Dimensions_Fullscreen</include>
+				<aspectratio>scale</aspectratio>
+				<texture background="true">$INFO[Container(8013).ListItem.Thumb]</texture>
+				<include>BackgroundFade</include>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<include>Window_OpenClose_Animation</include>
+				<visible>Control.HasFocus(8013)</visible>
 			</control>
 		</control>
 		<control type="multiimage">
