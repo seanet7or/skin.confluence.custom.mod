@@ -73,7 +73,7 @@ remove_labelcontrol() {
 	fi
 	
 	for F in $LIST ; do
-		perlregex "$F" 's|\s*?<control type="label">\s*?\000'\
+		perlregex "$F" 's|\s*?<control type="label"(\| id="1")>\s*?\000'\
 '(\s*<(animation\|include\|info\|posx\|posy\|visible\|height\|width\|label\|align\|aligny\|selectedcolor\|font\|textcolor\|shadowcolor)[^>]*>[^>]*>\s*?\000)*'\
 '\s*'"$LINE"'\s*\000'\
 '(\s*<(animation\|include\|info\|posx\|posy\|visible\|height\|width\|label\|align\|aligny\|selectedcolor\|font\|textcolor\|shadowcolor)[^>]*>[^>]*>\s*?\000)*'\
@@ -191,6 +191,7 @@ if [ "$1" == "read" ] ; then
 	echo "Completed creating the base files."
 fi
 
+
 #remove temporary files (if script was canceled before)
 rm 720p/*.tmp 2>/dev/null
 
@@ -207,6 +208,13 @@ echo "#################### APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ############
 	check_and_remove media/OSDFullScreenNF.png
 	check_and_remove media/defaultDVDFull.png
 	
+#only run intial setup if not already done
+	if grep -q '<include>DefaultInitialSetup</include>' 720p/*; then
+		echo "Only run intial setup if not already done."
+		replace_all 's|<include>DefaultInitialSetup</include>|'\
+'<include condition="!Skin.HasSetting(InitialSetUpRun)">DefaultInitialSetup</include>|g'
+	fi
+
 #correct translation
 	if cat language/German/strings.po | tr '\n' '\000' | grep -q -P 'msgid "Home Menu"\s*\000\s*msgstr "Gesehen Status Overlay benutzen'
 	then
@@ -312,7 +320,7 @@ echo "#################### APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ############
 	check_and_remove 'media/floor.png'
 
 #remove HomeNowPlayingBack.png from most places (but not behind the seek bar on video osd)
-	if grep -q 'HomeNowPlayingBack.png' 720p/* ; then
+	if grep -q '<texture flipy="true">HomeNowPlayingBack.png' 720p/* ; then
 		echo "Removing HomeNowPlayingBack.png."
 		remove_imagecontrol '<texture[^>]*>HomeNowPlayingBack.png</texture>' >/dev/null
 		#remove behind time label on video osd
@@ -369,7 +377,7 @@ echo "#################### APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ############
 		#remove date label
 		remove_labelcontrol '<description>date label</description>' 720p/includes.xml
 		#move time label up
-		perlregex 720p/includes.xml 's|(<control type="label">\s*\000'\
+		perlregex 720p/includes.xml 's|(<control type="label"[^>]*>\s*\000'\
 '\s*<description>time label</description>\s*\000'\
 '\s*<posx>15r</posx>\s*\000'\
 '\s*<posy)>20<|\1>5<|'
@@ -579,7 +587,21 @@ echo "#################### APPLYING MODIFICATIONS TO VIDEO LIBRARY #############
 '(\s*<(height\|width\|orientation\|align\|itemgap\|aspectratio\|texture\|visible\|label)>[^>]*>\s*?\000)*'\
 '\s*</control>\s*\000||'
 	fi
-	
+
+echo "#################### APPLYING MODIFICATIONS TO VIDEO OSD #############################"
+
+#change time on video osd
+	if grep -q '<description>date label</description>' 720p/VideoFullScreen.xml ; then
+		echo "Changing time on video osd."
+		#remove date label
+		remove_labelcontrol '<description>date label</description>' 720p/VideoFullScreen.xml
+		#move time label up
+		perlregex 720p/VideoFullScreen.xml 's|(<control type="label">\s*\000'\
+'\s*<description>time label</description>\s*\000'\
+'\s*<posx>15r</posx>\s*\000'\
+'\s*<posy)>20<|\1>5<|'
+	fi
+
 echo "#################### APPLYING MODIFICATIONS TO SPECIAL DIALOGS #######################"
 
 #removed media/separator_vertical.png
