@@ -109,6 +109,14 @@
 					<autoscroll time="4000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
 			</control>
+			<control type="image" id="1">
+				<posx>0</posx>
+				<posy>230r</posy>
+				<width>1280</width>
+				<height>230</height>
+				<texture>HomeNowPlayingBack.png</texture>
+				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
+			</control>
 			<control type="group" id="1">
 				<control type="image" id="1">
 					<description>clearart image</description>

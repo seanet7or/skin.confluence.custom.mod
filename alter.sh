@@ -310,22 +310,22 @@ echo "#################### APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ############
 		remove_imagecontrol '<texture[^>]*>floor.png</texture>'
 	fi
 	check_and_remove 'media/floor.png'
-	
-#remove HomeNowPlayingBack.png
+
+#remove HomeNowPlayingBack.png from most places (but not behind the seek bar on video osd)
 	if grep -q 'HomeNowPlayingBack.png' 720p/* ; then
 		echo "Removing HomeNowPlayingBack.png."
 		remove_imagecontrol '<texture[^>]*>HomeNowPlayingBack.png</texture>' >/dev/null
+		#remove behind time label on video osd
 		replace_all 's|\s*<control type="image" id="1">\s*\000'\
 '\s*<posx>[a-z0-9-]*</posx>\s*\000'\
 '\s*<posy>[a-z0-9-]*</posy>\s*\000'\
 '\s*<width>[a-z0-9]*</width>\s*\000'\
 '\s*<height>[a-z0-9]*</height>\s*\000'\
-'\s*<texture[^>]*>HomeNowPlayingBack.png</texture>\s*\000'\
+'\s*<texture flipy="true">HomeNowPlayingBack.png</texture>\s*\000'\
 '\s*<visible>[^<]*</visible>\s*\000'\
 '\s*</control>\s*\000'\
 '||g'
 	fi
-	check_and_remove 'media/HomeNowPlayingBack.png'
 	
 #removed ThumbShadow
 	if grep -q 'ThumbShadow.png' 720p/* ; then
