@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
 	<defaultcontrol always="true">9000</defaultcontrol>
-	<include>DefaultInitialSetup</include>
+	<include condition="!Skin.HasSetting(InitialSetUpRun)">DefaultInitialSetup</include>
 	<onload>SetProperty(MenuItemActive,Settings,Home)</onload>
 	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701])">Control.Move(9008,1)</onload>
 	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702])">Control.Move(9008,2)</onload>
