@@ -89,6 +89,39 @@ remove_labelcontrol() {
 }
 
 
+# removes <control type="button .... </control> structure from xml file
+# the controle structure to remove is identified by the characteristic line
+# $1 characteristic line
+# $2 .xml file ; if empty, all occurrencies are searched
+remove_buttoncontrol() {
+	local LINE=$1 #$(echo "$1" | tr ' ' '.')
+	if [ -z "$2" ] ; then
+		#echo "Param2 is empty, building file list:"
+		local LIST=$(grep "$LINE" 720p/*.xml | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
+		local CHECK=true
+		#echo "$LIST"
+	else
+		local LIST="$2"
+		local CHECK=false
+	fi
+	
+	for F in $LIST ; do
+		perlregex "$F" 's|\s*?<control type="button"(\| id="[0-9]*")>\s*?\000'\
+'(\s*<(description\|posx\|posy\|width\|height\|label\|font\|onclick\|include\|texturefocus\|texturenofocus\|onleft\|onright\|onup\|ondown\|visible)[^>]*>[^>]*>\s*?\000)*'\
+'\s*'"$LINE"'\s*\000'\
+'(\s*<(description\|posx\|posy\|width\|height\|label\|font\|onclick\|include\|texturefocus\|texturenofocus\|onleft\|onright\|onup\|ondown\|visible)[^>]*>[^>]*>\s*?\000)*'\
+'\s*</control>\s*?\000||g'
+	done
+	
+	if $CHECK ; then
+		if grep -q "$LINE" 720p/* ; then
+			echo "WARNING: Not all occurrences of '$LINE' could be removed, please check:"
+			grep "$LINE" 720p/*
+		fi
+	fi
+}
+
+
 # checks if image file is linked in the xmls ; if not, the image is deleted
 # $1 image file with full path
 check_and_remove() {
@@ -207,14 +240,24 @@ echo "#################### APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ############
 	check_and_remove media/OSDFullScreenFO.png
 	check_and_remove media/OSDFullScreenNF.png
 	check_and_remove media/defaultDVDFull.png
-	
-#only run intial setup if not already done
-	if grep -q '<include>DefaultInitialSetup</include>' 720p/*; then
-		echo "Only run intial setup if not already done."
-		replace_all 's|<include>DefaultInitialSetup</include>|'\
-'<include condition="!Skin.HasSetting(InitialSetUpRun)">DefaultInitialSetup</include>|g'
-	fi
 
+#already included in original
+	#only run intial setup if not already done
+		#if grep -q '<include>DefaultInitialSetup</include>' 720p/*; then
+			#echo "Only run intial setup if not already done."
+			#replace_all 's|<include>DefaultInitialSetup</include>|'\
+	#'<include condition="!Skin.HasSetting(InitialSetUpRun)">DefaultInitialSetup</include>|g'
+		#fi
+		
+#remove close button for mouse
+	if grep -q '<texturenofocus>DialogCloseButton.png</texturenofocus>' 720p/*
+	then
+		echo "Removing mouse close buttons."
+		remove_buttoncontrol '<texturenofocus>DialogCloseButton.png</texturenofocus>'
+	fi
+	check_and_remove media/DialogCloseButton.png
+	check_and_remove media/DialogCloseButton-focus.png
+	
 #correct translation
 	if cat language/German/strings.po | tr '\n' '\000' | grep -q -P 'msgid "Home Menu"\s*\000\s*msgstr "Gesehen Status Overlay benutzen'
 	then
