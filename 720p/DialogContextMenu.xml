@@ -14,7 +14,7 @@
 			<posy>0</posy>
 			<width>340</width>
 			<height>720</height>
-			<texture border="20">DialogBack.png</texture>
+			<texture>-</texture>
 		</control>
 		<control type="grouplist" id="996">
 			<description>grouplist for context buttons</description>
@@ -22,9 +22,10 @@
 			<posy>30</posy>
 			<width>300</width>
 			<height max="670">auto</height>
-			<itemgap>2</itemgap>
+			<itemgap>0</itemgap>
 			<control type="button" id="3001">
 				<description>Watch it Later</description>
+				<texturenofocus>black-back.png</texturenofocus>
 				<posx>-</posx>
 				<posy>-</posy>
 				<width>300</width>
@@ -41,6 +42,7 @@
 		</control>
 		<control type="button" id="1000">
 			<description>button template</description>
+			<texturenofocus>black-back.png</texturenofocus>
 			<posx>-</posx>
 			<posy>-</posy>
 			<width>300</width>

@@ -224,7 +224,6 @@ if [ "$1" == "read" ] ; then
 	echo "Completed creating the base files."
 fi
 
-
 #remove temporary files (if script was canceled before)
 rm 720p/*.tmp 2>/dev/null
 
@@ -663,6 +662,19 @@ echo "#################### APPLYING MODIFICATIONS TO SPECIAL DIALOGS ###########
 	fi
 	check_and_remove media/ShutdownButtonFocus.png
 	check_and_remove media/ShutdownButtonNoFocus.png
+	
+#changed context menu
+	if grep -q '<description>background image</description>' 720p/DialogContextMenu.xml
+	then
+		echo "Changing context menu."
+		#changing texturenofocus for buttons (instead default one)
+		perlregex '720p/DialogContextMenu.xml' 's|(\s*)<description>button template</description>|\1<description>button template</description>\000\1<texturenofocus>black-back.png</texturenofocus>|g'
+		perlregex '720p/DialogContextMenu.xml' 's|(\s*)<description>Watch it Later</description>|\1<description>Watch it Later</description>\000\1<texturenofocus>black-back.png</texturenofocus>|g'		
+		#remove itemgap
+		perlregex '720p/DialogContextMenu.xml' 's|<itemgap>2</itemgap>|<itemgap>0</itemgap>|g'
+		#remove background image
+		perlregex '720p/DialogContextMenu.xml' 's|<texture border="20">DialogBack.png</texture>|<texture>-</texture>|g'
+	fi
 
 echo "All modifications are completed."
 exit
