@@ -23,36 +23,66 @@ replace_all() {
 }
 
 
-# removes <control type="image .... </control> structure from xml file
+# removes <control type="? .... </control> structure from xml file
 # the controle structure to remove is identified by the characteristic line
-# $1 characteristic line
-# $2 .xml file ; if empty, all occurrencies are searched
-remove_imagecontrol() {
-	local LINE=$1 #$(echo "$1" | tr ' ' '.')
-	if [ -z "$2" ] ; then
-		#echo "Param2 is empty, building file list:"
+# $1 regex matching the opening control tag, example: '<control type="label" id="[0-9]*">'
+# $2 regex matching all other lines (incl. whitespace), example:
+#		'(\s*<(description\|posx\|posy\|height\|width)[^>]*>[^>]*>\s*\000)*?'\
+# $3 characteristic line, example: '<description>time label</description>
+# $4 .xml file ; if empty, all occurrencies are searched
+remove_control() {
+	local TAG=$1
+	local OTHERS=$2
+	local LINE=$3 #$(echo "$1" | tr ' ' '.')
+
+	if [ -z "$4" ] ; then
+		#echo "Param4 is empty, building file list:"
 		local LIST=$(grep "$LINE" 720p/*.xml | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
 		local CHECK=true
 		#echo "$LIST"
 	else
-		local LIST="$2"
+		local LIST="$4"
 		local CHECK=false
 	fi
-	
+
 	for F in $LIST ; do
-		perlregex "$F" 's|\s*?<control type="image">\s*?\000'\
-'(\s*<(colordiffuse\|texture\|description\|bordersize\|bordertexture\|fadetime\|posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
+		perlregex "$F" 's|\s*?'"$TAG"'\s*?\000'\
+"$OTHERS"\
 '\s*'"$LINE"'\s*\000'\
-'(\s*<(colordiffuse\|texture\|description\|bordersize\|bordertexture\|fadetime\|posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
+"$OTHERS"\
 '\s*</control>\s*?\000||g'
 	done
-	
+
 	if $CHECK ; then
 		if grep -q "$LINE" 720p/* ; then
 			echo "WARNING: Not all occurrences of '$LINE' could be removed, please check:"
 			grep "$LINE" 720p/*
 		fi
 	fi
+}
+
+
+# removes <control type="image"> .... </control> structure from xml file
+# this function removes only controls without an id!
+# the controle structure to remove is identified by the characteristic line
+# $1 characteristic line
+# $2 .xml file ; if empty, all occurrencies are searched
+remove_imagecontrol() {
+	remove_control '<control type="image">' \
+'(\s*<(colordiffuse\|texture\|description\|bordersize\|bordertexture\|fadetime\|posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
+ "$1" "$2"
+}
+
+
+# removes <control type="image"> .... </control> structure from xml file
+# this function removes controls with and without an id!
+# the controle structure to remove is identified by the characteristic line
+# $1 characteristic line
+# $2 .xml file ; if empty, all occurrencies are searched
+remove_imagecontrolid() {
+	remove_control '<control type="image"[^>]*>' \
+'(\s*<(colordiffuse\|texture\|description\|bordersize\|bordertexture\|fadetime\|posx\|posy\|height\|width\|align\|aligny\|font\|textcolor\|shadowcolor\|label\|info\|visible\|aspectratio\|animation\|include)[^>]*>[^>]*>\s*\000)*?'\
+ "$1" "$2"
 }
 
 
@@ -245,6 +275,14 @@ echo "#################### APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ############
 			#replace_all 's|<include>DefaultInitialSetup</include>|'\
 	#'<include condition="!Skin.HasSetting(InitialSetUpRun)">DefaultInitialSetup</include>|g'
 		#fi
+
+#change dialog background
+	if grep -q "DialogBack.png" 720p/* ; then
+		echo "Changing Dialog background."
+		#change background image
+		replace_all 's|<texture border="[0-9]*">DialogBack.png</texture>|<texture>black-back.png</texture>|g'
+	fi
+	check_and_remove media/DialogBack.png
 		
 #remove close button for mouse
 	if grep -q '<texturenofocus>DialogCloseButton.png</texturenofocus>' 720p/*
@@ -652,17 +690,23 @@ echo "#################### APPLYING MODIFICATIONS TO SPECIAL DIALOGS ###########
 	check_and_remove media/separator_vertical.png
 
 #simplified shutdown menu
-	if grep -q "ShutdownButtonNoFocus" 720p/* ; then
+	if grep -q "ShutdownButtonNoFocus" 720p/* \
+		|| grep -q DialogContextBottom.png 720p/* \
+		|| grep -q DialogContextMiddle.png 720p/*
+	then
 		echo "Changing shutdown menu."
-		remove_imagecontrol '<description>background [a-z]* image</description>' 720p/DialogButtonMenu.xml
+		remove_imagecontrolid '<description>background [a-z]* image</description>' 720p/DialogButtonMenu.xml
 		perlregex '720p/DialogButtonMenu.xml' 's|texturenofocus border="25,5,25,5">ShutdownButtonNoFocus.png|texturenofocus>black-back.png|g'
 		perlregex '720p/DialogButtonMenu.xml' 's|ShutdownButtonFocus.png|button-focus.png|g'
 	fi
 	check_and_remove media/ShutdownButtonFocus.png
 	check_and_remove media/ShutdownButtonNoFocus.png
+	check_and_remove media/DialogContextBottom.png
+	check_and_remove media/DialogContextMiddle.png
+	check_and_remove media/DialogContextTop.png
 	
 #changed context menu
-	if grep -q '<description>background image</description>' 720p/DialogContextMenu.xml
+	if grep -q '<itemgap>2</itemgap>' 720p/DialogContextMenu.xml
 	then
 		echo "Changing context menu."
 		#changing texturenofocus for buttons (instead default one)
@@ -670,8 +714,9 @@ echo "#################### APPLYING MODIFICATIONS TO SPECIAL DIALOGS ###########
 		perlregex '720p/DialogContextMenu.xml' 's|(\s*)<description>Watch it Later</description>|\1<description>Watch it Later</description>\000\1<texturenofocus>black-back.png</texturenofocus>|g'		
 		#remove itemgap
 		perlregex '720p/DialogContextMenu.xml' 's|<itemgap>2</itemgap>|<itemgap>0</itemgap>|g'
-		#remove background image
-		perlregex '720p/DialogContextMenu.xml' 's|<texture border="20">DialogBack.png</texture>|<texture>black-back.png</texture>|g'
+		#no more necessary because done generally now...
+			#remove background image
+			#perlregex '720p/DialogContextMenu.xml' 's|<texture border="20">DialogBack.png</texture>|<texture>black-back.png</texture>|g'
 	fi
 
 echo "All modifications are completed."
