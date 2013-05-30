@@ -227,8 +227,6 @@ fi
 #remove temporary files (if script was canceled before)
 rm 720p/*.tmp 2>/dev/null
 
-
-
 echo "#################### APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ########################"
 
 #remove unnecessary files
@@ -673,7 +671,7 @@ echo "#################### APPLYING MODIFICATIONS TO SPECIAL DIALOGS ###########
 		#remove itemgap
 		perlregex '720p/DialogContextMenu.xml' 's|<itemgap>2</itemgap>|<itemgap>0</itemgap>|g'
 		#remove background image
-		perlregex '720p/DialogContextMenu.xml' 's|<texture border="20">DialogBack.png</texture>|<texture>-</texture>|g'
+		perlregex '720p/DialogContextMenu.xml' 's|<texture border="20">DialogBack.png</texture>|<texture>black-back.png</texture>|g'
 	fi
 
 echo "All modifications are completed."
