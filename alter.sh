@@ -254,6 +254,8 @@ if [ "$1" == "read" ] ; then
 	echo "Completed creating the base files."
 fi
 
+#exit
+
 #remove temporary files (if script was canceled before)
 rm 720p/*.tmp 2>/dev/null
 
@@ -280,7 +282,8 @@ echo "#################### APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ############
 	if grep -q "DialogBack.png" 720p/* ; then
 		echo "Changing Dialog background."
 		#change background image
-		replace_all 's|<texture border="[0-9]*">DialogBack.png</texture>|<texture>black-back.png</texture>|g'
+		replace_all 's|(\s*)<texture border="[0-9]*">DialogBack.png</texture>|'\
+'\1<texture>black100_light.png</texture>\000\1<colordiffuse>DFFFFFFF</colordiffuse>|g'
 	fi
 	check_and_remove media/DialogBack.png
 		
