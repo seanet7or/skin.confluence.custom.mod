@@ -283,7 +283,7 @@ echo "#################### APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ############
 		echo "Changing Dialog background."
 		#change background image
 		replace_all 's|(\s*)<texture border="[0-9]*">DialogBack.png</texture>|'\
-'\1<texture>black100_light.png</texture>\000\1<colordiffuse>DFFFFFFF</colordiffuse>|g'
+'\1<texture>white100_light.png</texture>\000\1<colordiffuse>DF0C0C0C</colordiffuse>|g'
 	fi
 	check_and_remove media/DialogBack.png
 		
