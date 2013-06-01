@@ -124,31 +124,9 @@ remove_labelcontrol() {
 # $1 characteristic line
 # $2 .xml file ; if empty, all occurrencies are searched
 remove_buttoncontrol() {
-	local LINE=$1 #$(echo "$1" | tr ' ' '.')
-	if [ -z "$2" ] ; then
-		#echo "Param2 is empty, building file list:"
-		local LIST=$(grep "$LINE" 720p/*.xml | cut -f1 | uniq | tr -d ':' | tr '\n' ' ')
-		local CHECK=true
-		#echo "$LIST"
-	else
-		local LIST="$2"
-		local CHECK=false
-	fi
-	
-	for F in $LIST ; do
-		perlregex "$F" 's|\s*?<control type="button"(\| id="[0-9]*")>\s*?\000'\
-'(\s*<(description\|posx\|posy\|width\|height\|label\|font\|onclick\|include\|texturefocus\|texturenofocus\|onleft\|onright\|onup\|ondown\|visible)[^>]*>[^>]*>\s*?\000)*'\
-'\s*'"$LINE"'\s*\000'\
-'(\s*<(description\|posx\|posy\|width\|height\|label\|font\|onclick\|include\|texturefocus\|texturenofocus\|onleft\|onright\|onup\|ondown\|visible)[^>]*>[^>]*>\s*?\000)*'\
-'\s*</control>\s*?\000||g'
-	done
-	
-	if $CHECK ; then
-		if grep -q "$LINE" 720p/* ; then
-			echo "WARNING: Not all occurrences of '$LINE' could be removed, please check:"
-			grep "$LINE" 720p/*
-		fi
-	fi
+	remove_control '<control type="button"(\| id="[0-9]*")>' \
+		'(\s*<(description\|height\|label\|onclick\|posx\|posy\|width\|font\|onclick\|include\|texturefocus\|texturenofocus\|onleft\|onright\|onup\|ondown\|visible)[^>]*>[^>]*>\s*?\000)*?'\
+		"$1" "$2"
 }
 
 
@@ -715,7 +693,17 @@ echo "#################### APPLYING MODIFICATIONS TO SPECIAL DIALOGS ###########
 			perlregex "$F" 's|<texture border="[0-9]*">button-nofocus.png</texture>|<texture>black-back.png</texture>|g'
 		fi
 	done
-
+	
+#removed up and down arrows
+	if grep -q '<texturefocus>arrow-big-up.png</texturefocus>' 720p/* ||
+		grep -q '<texturefocus>arrow-big-down.png</texturefocus>' 720p/* ; then
+		echo "Removing up and down arrows from several dialogs."
+		remove_buttoncontrol '<texturefocus>arrow-big-up.png</texturefocus>'
+		remove_buttoncontrol '<texturefocus>arrow-big-down.png</texturefocus>'
+	fi
+	check_and_remove media/arrow-big-up.png
+	check_and_remove media/arrow-big-down.png
+	
 echo "All modifications are completed."
 
 exit
