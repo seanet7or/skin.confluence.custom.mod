@@ -248,6 +248,12 @@ echo "#################### APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ############
 	check_and_remove media/OSDFullScreenFO.png
 	check_and_remove media/OSDFullScreenNF.png
 	check_and_remove media/defaultDVDFull.png
+	
+#changed default button backrounds
+	if grep -q '<texturenofocus border="[0-9]*">button-nofocus.png</texturenofocus>' 720p/defaults.xml ; then
+		echo "Changing default button backgrounds."
+		perlregex 720p/defaults.xml 's|<texturenofocus border="[0-9]*">button-nofocus.png</texturenofocus>|<texturenofocus>black-back.png</texturenofocus>|g'
+	fi
 
 #change dialog background
 	if grep -q "DialogBack.png" 720p/* ; then
