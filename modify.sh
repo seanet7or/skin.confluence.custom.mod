@@ -700,6 +700,12 @@ echo "#################### APPLYING MODIFICATIONS TO SPECIAL DIALOGS ###########
 		fi
 	done
 	
+#changed background for buttons that are not focused
+	if grep -q '<texturenofocus border="5">button-nofocus.png</texturenofocus>' 720p/DialogAddonSettings.xml ; then
+		echo "Changing SpinControl background for DialogAddonSettings."
+		perlregex 720p/DialogAddonSettings.xml 's|<texturenofocus border="5">button-nofocus.png</texturenofocus>|<texturenofocus>black-back.png</texturenofocus>|g'
+	fi
+	
 #removed up and down arrows
 	if grep -q '<texturefocus>arrow-big-up.png</texturefocus>' 720p/* ||
 		grep -q '<texturefocus>arrow-big-down.png</texturefocus>' 720p/* ; then
