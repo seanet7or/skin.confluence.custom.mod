@@ -716,6 +716,15 @@ echo "#################### APPLYING MODIFICATIONS TO SPECIAL DIALOGS ###########
 	check_and_remove media/arrow-big-up.png
 	check_and_remove media/arrow-big-down.png
 	
+#removed DialogAlbumInfo.xml bordertextures
+	if grep -q '<bordertexture border="5">button-nofocus.png</bordertexture>' 720p/DialogAlbumInfo.xml
+	then
+		echo "Removing DialogAlbumInfo.xml bordertextures."
+		#remove border from addons that are not focused on the home view
+		perlregex 720p/DialogAlbumInfo.xml 's|\s*<bordertexture border="5">button-nofocus.png</bordertexture>\s*\000'\
+'\s*<bordersize>[0-9]*</bordersize>\s*\000||g'	
+	fi
+	
 echo "All modifications are completed."
 
 exit
