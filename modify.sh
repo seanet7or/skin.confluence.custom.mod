@@ -27,7 +27,7 @@ replace_all() {
 # the controle structure to remove is identified by the characteristic line
 # $1 regex matching the opening control tag, example: '<control type="label" id="[0-9]*">'
 # $2 regex matching all other lines (incl. whitespace), example:
-#		'(\s*<(description\|posx\|posy\|height\|width)[^>]*>[^>]*>\s*\000)*?'\
+#		'(\s*<(description\|posx\|posy\|height\|width)[^>]*>[^>]*>\s*\000)*?'
 # $3 characteristic line, example: '<description>time label</description>
 # $4 .xml file ; if empty, all occurrencies are searched
 remove_control() {
@@ -247,6 +247,7 @@ read_origmaster() {
 
 #findunused
 
+
 if [ "$1" == "read" ] ; then
 	echo "#################### BUILDING BASE FILES ########################"
 	echo "Reading original repository."
@@ -269,14 +270,6 @@ echo "#################### APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ############
 	check_and_remove media/OSDFullScreenFO.png
 	check_and_remove media/OSDFullScreenNF.png
 	check_and_remove media/defaultDVDFull.png
-
-#already included in original
-	#only run intial setup if not already done
-		#if grep -q '<include>DefaultInitialSetup</include>' 720p/*; then
-			#echo "Only run intial setup if not already done."
-			#replace_all 's|<include>DefaultInitialSetup</include>|'\
-	#'<include condition="!Skin.HasSetting(InitialSetUpRun)">DefaultInitialSetup</include>|g'
-		#fi
 
 #change dialog background
 	if grep -q "DialogBack.png" 720p/* ; then
@@ -326,7 +319,7 @@ echo "#################### APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ############
 	fi
 	check_and_remove 'media/ScrollBarH_bar.png'
 	check_and_remove 'media/ScrollBarV_bar.png'
-	
+
 #remove left panel arrow
 	if grep -q HasSub.png 720p/* ; then
 		echo "Removing hidden panel arrow."
@@ -334,7 +327,7 @@ echo "#################### APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ############
 		perlregex 720p/includes.xml 's|<texturenofocus>HasSub.png</texturenofocus>|<texturenofocus>-</texturenofocus>|g'
 	fi
 	check_and_remove media/HasSub.png	
-	
+
 #remove xbmc logo
 	if grep -q xbmc-logo.png 720p/* ; then
 		echo "Removing xbmc logo."
@@ -344,7 +337,7 @@ echo "#################### APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ############
 		perlregex 720p/MusicVisualisation.xml 's| fallback="xbmc-logo.png"||g'
 	fi
 	check_and_remove media/xbmc-logo.png
-	
+
 #remove GlassOverlay.png
 	if grep -q 'GlassOverlay.png' 720p/* ; then
 		echo "Removing GlassOverlay.png."
@@ -371,7 +364,7 @@ echo "#################### APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ############
 		replace_all 's|(\s*?<texturenofocus[^>]*>)MenuItemNF.png(</texturenofocus>\s*?\000)|\1-\2|g'
 	fi
 	check_and_remove 'media/MenuItemNF.png'
-	
+
 #removed content panel mirrors
 	if grep -q 'ContentPanelMirror' 720p/* ; then
 		echo "Removing content panel mirrors."
@@ -415,28 +408,28 @@ echo "#################### APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ############
 '\s*</control>\s*\000'\
 '||g'
 	fi
-	
+
 #removed ThumbShadow
 	if grep -q 'ThumbShadow.png' 720p/* ; then
 		echo "Removing thumb shadows."
 		replace_all 's|\s*.bordertexture[^>]*>ThumbShadow.png</bordertexture.\s*\000||g'
 	fi
 	check_and_remove 'media/ThumbShadow.png'
-	
+
 #remove ThumbBG.png
 	if grep -q 'ThumbBG.png' 720p/* ; then
 		echo "Removing thumb background."
 		remove_imagecontrol '<texture border="2">ThumbBG.png</texture>'
 	fi
 	check_and_remove 'media/ThumbBG.png'	
-	
+
 #remove all references to ThumbBorder.png
 	if grep -q 'ThumbBorder.png' 720p/* ; then
 		echo "Removing thumb border."
 		replace_all 's|\s*.bordertexture[^>]*>ThumbBorder.png</bordertexture.\s*\000||g'
 	fi
 	check_and_remove media/ThumbBorder.png
-	
+
 #removed CommonPageCount
 	if grep -q 'CommonPageCount' 720p/* ; then
 		echo "Removing page count info."
@@ -451,7 +444,7 @@ echo "#################### APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ############
 			exit 3
 		fi
 	fi
-	
+
 #change time
 	if grep -q '<description>date label</description>' 720p/includes.xml ; then
 		echo "Changing time display mode."
@@ -463,7 +456,7 @@ echo "#################### APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ############
 '\s*<posx>15r</posx>\s*\000'\
 '\s*<posy)>20<|\1>5<|'
 	fi
-	
+
 # enable German movie ratings
 	if ! grep -q 'fsk-18' '720p/IncludesVariables.xml' ; then
 		echo "Enabling German movie ratings."
@@ -487,12 +480,6 @@ echo "#################### APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ############
 '\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,o)">de/fsk-0</value>'\
 '\n\n|' 
 	fi
-
-#not needed anymore as it is in the original now
-	#lets choose all types of addons for the home window addons
-	#	echo "Changing selection of addons for the home screen."
-	#	perlregex '720p/SkinSettings.xml' 's|(Skin.SetAddon.[^,]*),[^\)]*\)|\1,xbmc.addon.video,xbmc.addon.executable,xbmc.addon.audio,xbmc.addon.image)|g'	
-
 
 	
 echo "#################### APPLYING HOME SCREEN MODIFICATIONS ##############################"
@@ -693,9 +680,7 @@ echo "#################### APPLYING MODIFICATIONS TO SPECIAL DIALOGS ###########
 	check_and_remove media/separator_vertical.png
 
 #simplified shutdown menu
-	if grep -q "ShutdownButtonNoFocus" 720p/* \
-		|| grep -q DialogContextBottom.png 720p/* \
-		|| grep -q DialogContextMiddle.png 720p/*
+	if grep -q "ShutdownButtonNoFocus" 720p/* || grep -q DialogContextBottom.png 720p/* || grep -q DialogContextMiddle.png 720p/*
 	then
 		echo "Changing shutdown menu."
 		remove_imagecontrolid '<description>background [a-z]* image</description>' 720p/DialogButtonMenu.xml
@@ -721,6 +706,16 @@ echo "#################### APPLYING MODIFICATIONS TO SPECIAL DIALOGS ###########
 			#remove background image
 			#perlregex '720p/DialogContextMenu.xml' 's|<texture border="20">DialogBack.png</texture>|<texture>black-back.png</texture>|g'
 	fi
+	
+#changed background for buttons that are not focused
+	FILES='720p\CustomAddMenuItems.xml 720p\CustomAddonType.xml 720p\CustomAddSubMenuItems.xml 720p\CustomSubMenuType.xml 720p\CustomWidgetType.xml'
+	for F in $FILES ; do
+		if grep -q '<texture border="5">button-nofocus.png</texture>' "$F" ; then
+			echo "Changing background for buttons without focus in $F."
+			perlregex "$F" 's|<texture border="[0-9]*">button-nofocus.png</texture>|<texture>black-back.png</texture>|g'
+		fi
+	done
 
 echo "All modifications are completed."
+
 exit
