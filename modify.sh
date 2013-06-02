@@ -509,14 +509,14 @@ echo "#################### APPLYING HOME SCREEN MODIFICATIONS ##################
 	check_and_remove 'media/HomeOverlay1.png'
 	
 #changed addons on the home screen
-	if grep -q '<bordertexture border="5">button-nofocus.png</bordertexture>' 720p/includes.xml
+	if cat 720p/includes.xml | tr '\n' '\0' | grep -q -P '\s*<height>120</height>\s*\000\s*<aspectratio aligny="bottom">keep</aspectratio>\s*\000\s*<bordertexture border="5">[^>]*</bordertexture>\s*\000'
 	then
 		echo "Changing addons on the home screen."
 		#remove border from addons that are not focused on the home view
 		perlregex 720p/includes.xml 's|(\s*<width>180</width>\s*\000)'\
 '(\s*<height>120</height>\s*\000)'\
 '(\s*<aspectratio aligny="bottom">keep</aspectratio>\s*\000)'\
-'\s*<bordertexture border="5">button-nofocus.png</bordertexture>\s*\000'\
+'\s*<bordertexture border="5">[^>]*</bordertexture>\s*\000'\
 '\s*<bordersize>3</bordersize>\s*\000'\
 '|\1\2\3|g'
 		#remove label for addons that are not focused on the home view
@@ -692,7 +692,7 @@ echo "#################### APPLYING MODIFICATIONS TO SPECIAL DIALOGS ###########
 	fi
 	
 #changed background for buttons that are not focused
-	FILES='720p\DialogPeripheralManager.xml 720p\DialogMediaSource.xml 720p\DialogFavourites.xml 720p\DialogContentSettings.xml 720p/DialogAlbumInfo.xml 720p\CustomAddMenuItems.xml 720p\CustomAddonType.xml 720p\CustomAddSubMenuItems.xml 720p\CustomSubMenuType.xml 720p\CustomWidgetType.xml'
+	FILES='720p\DialogPVRGuideOSD.xml 720p\DialogPVRGroupManager.xml 720p\DialogPVRChannelsOSD.xml 720p\DialogPVRChannelManager.xml 720p\DialogPictureInfo.xml 720p\DialogPeripheralManager.xml 720p\DialogMediaSource.xml 720p\DialogFavourites.xml 720p\DialogContentSettings.xml 720p/DialogAlbumInfo.xml 720p\CustomAddMenuItems.xml 720p\CustomAddonType.xml 720p\CustomAddSubMenuItems.xml 720p\CustomSubMenuType.xml 720p\CustomWidgetType.xml'
 	for F in $FILES ; do
 		if grep -q '<texture border="5">button-nofocus.png</texture>' "$F" ; then
 			echo "Changing background for buttons without focus in $F."
@@ -701,7 +701,7 @@ echo "#################### APPLYING MODIFICATIONS TO SPECIAL DIALOGS ###########
 	done
 	
 #Changed control background for items that are not focused
-	FILES='720p\DialogPeripheralSettings.xml 720p\DialogNetworkSetup.xml 720p\DialogMediaSource.xml 720p\DialogMediaFilter.xml 720p\DialogContentSettings.xml 720p/DialogAddonSettings.xml'
+	FILES='720p\DialogPVRTimerSettings.xml 720p\DialogPVRTimerSettings.xml 720p\DialogPVRGuideSearch.xml 720p/DialogPVRChannelManager.xml 720p\DialogPeripheralSettings.xml 720p\DialogNetworkSetup.xml 720p\DialogMediaSource.xml 720p\DialogMediaFilter.xml 720p\DialogContentSettings.xml 720p/DialogAddonSettings.xml'
 	for F in $FILES ; do
 		if grep -q '<texturenofocus border="5">button-nofocus.png</texturenofocus>' "$F" ; then
 			echo "Changing control background for $F."
