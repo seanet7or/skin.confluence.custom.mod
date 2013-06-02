@@ -724,6 +724,13 @@ echo "#################### APPLYING MODIFICATIONS TO SPECIAL DIALOGS ###########
 		perlregex 720p/DialogAlbumInfo.xml 's|\s*<bordertexture border="5">button-nofocus.png</bordertexture>\s*\000'\
 '\s*<bordersize>[0-9]*</bordersize>\s*\000||g'	
 	fi
+
+#Replaced background for items without focus in DialogAlbumInfo.xml
+	if grep -q '<texture border="5">button-nofocus.png</texture>' 720p/DialogAlbumInfo.xml
+	then
+		echo "Replacing background for items without focus in DialogAlbumInfo.xml."
+		perlregex 720p/DialogAlbumInfo.xml 's|<texture border="5">button-nofocus.png</texture>|<texture>black-back.png</texture>|g'
+	fi
 	
 echo "All modifications are completed."
 
