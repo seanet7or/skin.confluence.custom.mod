@@ -692,7 +692,7 @@ echo "#################### APPLYING MODIFICATIONS TO SPECIAL DIALOGS ###########
 	fi
 	
 #changed background for buttons that are not focused
-	FILES='720p\CustomAddMenuItems.xml 720p\CustomAddonType.xml 720p\CustomAddSubMenuItems.xml 720p\CustomSubMenuType.xml 720p\CustomWidgetType.xml'
+	FILES='720p\DialogContentSettings.xml 720p/DialogAlbumInfo.xml 720p\CustomAddMenuItems.xml 720p\CustomAddonType.xml 720p\CustomAddSubMenuItems.xml 720p\CustomSubMenuType.xml 720p\CustomWidgetType.xml'
 	for F in $FILES ; do
 		if grep -q '<texture border="5">button-nofocus.png</texture>' "$F" ; then
 			echo "Changing background for buttons without focus in $F."
@@ -700,10 +700,22 @@ echo "#################### APPLYING MODIFICATIONS TO SPECIAL DIALOGS ###########
 		fi
 	done
 	
-#changed background for buttons that are not focused
-	if grep -q '<texturenofocus border="5">button-nofocus.png</texturenofocus>' 720p/DialogAddonSettings.xml ; then
-		echo "Changing SpinControl background for DialogAddonSettings."
-		perlregex 720p/DialogAddonSettings.xml 's|<texturenofocus border="5">button-nofocus.png</texturenofocus>|<texturenofocus>black-back.png</texturenofocus>|g'
+#Changed SpinControl background for items that are not focused
+	FILES='720p\DialogContentSettings.xml 720p/DialogAddonSettings.xml'
+	for F in $FILES ; do
+		if grep -q '<texturenofocus border="5">button-nofocus.png</texturenofocus>' "$F" ; then
+			echo "Changing SpinControl background for $F."
+			perlregex "$F" 's|<texturenofocus border="5">button-nofocus.png</texturenofocus>|<texturenofocus>black-back.png</texturenofocus>|g'
+		fi
+	done
+		
+#removed DialogAlbumInfo.xml bordertextures
+	if grep -q '<bordertexture border="5">button-nofocus.png</bordertexture>' 720p/DialogAlbumInfo.xml
+	then
+		echo "Removing DialogAlbumInfo.xml bordertextures."
+		#remove border from addons that are not focused on the home view
+		perlregex 720p/DialogAlbumInfo.xml 's|\s*<bordertexture border="5">button-nofocus.png</bordertexture>\s*\000'\
+'\s*<bordersize>[0-9]*</bordersize>\s*\000||g'	
 	fi
 	
 #removed up and down arrows
@@ -715,23 +727,7 @@ echo "#################### APPLYING MODIFICATIONS TO SPECIAL DIALOGS ###########
 	fi
 	check_and_remove media/arrow-big-up.png
 	check_and_remove media/arrow-big-down.png
-	
-#removed DialogAlbumInfo.xml bordertextures
-	if grep -q '<bordertexture border="5">button-nofocus.png</bordertexture>' 720p/DialogAlbumInfo.xml
-	then
-		echo "Removing DialogAlbumInfo.xml bordertextures."
-		#remove border from addons that are not focused on the home view
-		perlregex 720p/DialogAlbumInfo.xml 's|\s*<bordertexture border="5">button-nofocus.png</bordertexture>\s*\000'\
-'\s*<bordersize>[0-9]*</bordersize>\s*\000||g'	
-	fi
 
-#Replaced background for items without focus in DialogAlbumInfo.xml
-	if grep -q '<texture border="5">button-nofocus.png</texture>' 720p/DialogAlbumInfo.xml
-	then
-		echo "Replacing background for items without focus in DialogAlbumInfo.xml."
-		perlregex 720p/DialogAlbumInfo.xml 's|<texture border="5">button-nofocus.png</texture>|<texture>black-back.png</texture>|g'
-	fi
-	
 echo "All modifications are completed."
 
 exit

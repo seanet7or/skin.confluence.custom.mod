@@ -60,7 +60,7 @@
 				<width>320</width>
 				<height>40</height>
 				<texturefocus border="5">button-focus.png</texturefocus>
-				<texturenofocus border="5">button-nofocus.png</texturenofocus>
+				<texturenofocus>black-back.png</texturenofocus>
 				<font>-</font>
 				<label>-</label>
 				<reverse>yes</reverse>
@@ -147,7 +147,7 @@
 						<posy>0</posy>
 						<width>360</width>
 						<height>40</height>
-						<texture border="5">button-nofocus.png</texture>
+						<texture>black-back.png</texture>
 					</control>
 					<control type="image">
 						<posx>5</posx>
@@ -176,7 +176,7 @@
 						<width>360</width>
 						<height>40</height>
 						<visible>!Control.HasFocus(4)</visible>
-						<texture border="5">button-nofocus.png</texture>
+						<texture>black-back.png</texture>
 					</control>
 					<control type="image">
 						<posx>0</posx>
