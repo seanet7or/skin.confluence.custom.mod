@@ -692,7 +692,7 @@ echo "#################### APPLYING MODIFICATIONS TO SPECIAL DIALOGS ###########
 	fi
 	
 #changed background for buttons that are not focused
-	FILES='720p\DialogMediaSource.xml 720p\DialogFavourites.xml 720p\DialogContentSettings.xml 720p/DialogAlbumInfo.xml 720p\CustomAddMenuItems.xml 720p\CustomAddonType.xml 720p\CustomAddSubMenuItems.xml 720p\CustomSubMenuType.xml 720p\CustomWidgetType.xml'
+	FILES='720p\DialogPeripheralManager.xml 720p\DialogMediaSource.xml 720p\DialogFavourites.xml 720p\DialogContentSettings.xml 720p/DialogAlbumInfo.xml 720p\CustomAddMenuItems.xml 720p\CustomAddonType.xml 720p\CustomAddSubMenuItems.xml 720p\CustomSubMenuType.xml 720p\CustomWidgetType.xml'
 	for F in $FILES ; do
 		if grep -q '<texture border="5">button-nofocus.png</texture>' "$F" ; then
 			echo "Changing background for buttons without focus in $F."
@@ -701,7 +701,7 @@ echo "#################### APPLYING MODIFICATIONS TO SPECIAL DIALOGS ###########
 	done
 	
 #Changed control background for items that are not focused
-	FILES='720p\DialogMediaSource.xml 720p\DialogMediaFilter.xml 720p\DialogContentSettings.xml 720p/DialogAddonSettings.xml'
+	FILES='720p\DialogPeripheralSettings.xml 720p\DialogNetworkSetup.xml 720p\DialogMediaSource.xml 720p\DialogMediaFilter.xml 720p\DialogContentSettings.xml 720p/DialogAddonSettings.xml'
 	for F in $FILES ; do
 		if grep -q '<texturenofocus border="5">button-nofocus.png</texturenofocus>' "$F" ; then
 			echo "Changing control background for $F."
