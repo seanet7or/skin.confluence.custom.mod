@@ -158,7 +158,7 @@
 		<aligny>center</aligny>
 		<font>font12_title</font>
 		<texturefocus border="5">button-focus.png</texturefocus>
-		<texturenofocus border="5">button-nofocus.png</texturenofocus>
+		<texturenofocus>black-back.png</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</include>
 	<include name="ButtonHomeSubCommonValues">
@@ -200,7 +200,7 @@
 		<aligny>center</aligny>
 		<font>font12_title</font>
 		<texturefocus border="5">button-focus.png</texturefocus>
-		<texturenofocus border="5">button-nofocus.png</texturenofocus>
+		<texturenofocus>black-back.png</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</include>
 	<include name="SideBladeLeft">
@@ -1037,6 +1037,8 @@
 				<width>180</width>
 				<height>120</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
+				<bordertexture border="5">folder-focus.png</bordertexture>
+				<bordersize>3</bordersize>
 				<texture background="true">$INFO[ListItem.Icon]</texture>
 				<visible>ControlGroup(9002).HasFocus</visible>
 			</control>
@@ -1049,7 +1051,7 @@
 				<posy>0</posy>
 				<width>280</width>
 				<height>145</height>
-				<texture border="10">button-nofocus.png</texture>
+				<texture>black-back.png</texture>
 			</control>
 			<control type="image">
 				<description>Thumb</description>

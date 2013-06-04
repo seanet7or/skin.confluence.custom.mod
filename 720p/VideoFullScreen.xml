@@ -54,7 +54,7 @@
 			<control type="label" id="1">
 				<description>time label</description>
 				<posx>15r</posx>
-				<posy>20</posy>
+				<posy>5</posy>
 				<width>345</width>
 				<height>30</height>
 				<align>right</align>
@@ -130,7 +130,6 @@
 					<height>330</height>
 					<texture fallback="DefaultVideoCover.png">$INFO[Player.Art(thumb)]</texture>
 					<aspectratio aligny="bottom">keep</aspectratio>
-					<bordersize>8</bordersize>
 					<visible>[IsEmpty(Player.Art(clearart)) + IsEmpty(Player.Art(clearlogo)) + !Skin.HasSetting(OSDInfoLogo)] | [IsEmpty(Player.Art(clearlogo)) + Skin.HasSetting(OSDInfoLogo)]</visible>
 				</control>
 				<visible>VideoPlayer.Content(Movies)</visible>
@@ -165,7 +164,6 @@
 					<height>230</height>
 					<texture fallback="DefaultVideoCover.png">$INFO[Player.Art(thumb)]</texture>
 					<aspectratio aligny="bottom">keep</aspectratio>
-					<bordersize>8</bordersize>
 					<visible>[IsEmpty(Player.Art(tvshow.clearart)) + IsEmpty(Player.Art(tvshow.clearlogo)) + !Skin.HasSetting(OSDInfoLogo)] | [IsEmpty(Player.Art(tvshow.clearlogo)) + Skin.HasSetting(OSDInfoLogo)]</visible>
 				</control>
 				<visible>VideoPlayer.Content(Episodes)</visible>
@@ -179,7 +177,6 @@
 				<height>230</height>
 				<texture fallback="DefaultVideoCover.png">$INFO[Player.Art(thumb)]</texture>
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<bordersize>8</bordersize>
 				<visible>!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes)</visible>
 				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
 			</control>

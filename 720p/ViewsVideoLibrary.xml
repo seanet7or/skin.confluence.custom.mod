@@ -35,8 +35,6 @@
 						<width>214</width>
 						<height>310</height>
 						<aspectratio>stretch</aspectratio>
-						<bordertexture border="5">button-nofocus.png</bordertexture>
-						<bordersize>4</bordersize>
 						<texture background="true">$VAR[PosterThumb]</texture>
 					</control>
 					<control type="group">
@@ -77,7 +75,6 @@
 						<width>222</width>
 						<height>318</height>
 						<aspectratio>stretch</aspectratio>
-						<bordersize>8</bordersize>
 						<texture background="true">$VAR[PosterThumb]</texture>
 						<animation reversible="false" effect="zoom" start="-2,36,222,318" end="-28,0,284,390" time="200">focus</animation>
 						<animation reversible="false" effect="zoom" end="-2,36,222,318" start="-28,0,284,390" time="200">unfocus</animation>
@@ -142,7 +139,7 @@
 				<posy>0</posy>
 				<width>880</width>
 				<height>25</height>
-				<texturesliderbackground border="14,0,14,0">ScrollBarH.png</texturesliderbackground>
+				<texturesliderbackground border="14,0,14,0">ScrollBarH_light.png</texturesliderbackground>
 				<texturesliderbar border="14,0,14,0">ScrollBarH_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus border="14,0,14,0">ScrollBarH_bar_focus.png</texturesliderbarfocus>
 				<textureslidernib>ScrollBarNib.png</textureslidernib>
@@ -419,8 +416,6 @@
 						<width>120</width>
 						<height>160</height>
 						<aspectratio>stretch</aspectratio>
-						<bordertexture border="5">button-nofocus.png</bordertexture>
-						<bordersize>4</bordersize>
 						<fadetime>200</fadetime>
 						<texture background="true">$VAR[PosterThumb]</texture>
 					</control>
@@ -471,7 +466,6 @@
 						<width>128</width>
 						<height>168</height>
 						<aspectratio>stretch</aspectratio>
-						<bordersize>8</bordersize>
 						<fadetime>200</fadetime>
 						<texture background="true">$VAR[PosterThumb]</texture>
 						<animation reversible="false" effect="zoom" start="-2,16,128,168" end="-12,-10,148,198" time="200">focus</animation>
@@ -549,7 +543,7 @@
 				<posy>185</posy>
 				<width>660</width>
 				<height>25</height>
-				<texturesliderbackground border="14,0,14,0">ScrollBarH.png</texturesliderbackground>
+				<texturesliderbackground border="14,0,14,0">ScrollBarH_light.png</texturesliderbackground>
 				<texturesliderbar border="14,0,14,0">ScrollBarH_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus border="14,0,14,0">ScrollBarH_bar_focus.png</texturesliderbarfocus>
 				<textureslidernib>ScrollBarNib.png</textureslidernib>
@@ -787,7 +781,7 @@
 				<posy>245</posy>
 				<width>25</width>
 				<height>400</height>
-				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+				<texturesliderbackground border="0,14,0,14">ScrollBarV_light.png</texturesliderbackground>
 				<texturesliderbar border="0,14,0,14">ScrollBarV_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
 				<textureslidernib>ScrollBarNib.png</textureslidernib>
@@ -810,7 +804,6 @@
 					<aspectratio>keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true">$VAR[BannerThumb]</texture>
-					<bordersize>8</bordersize>
 					<visible>!Skin.HasSetting(View503CharacterArt) | IsEmpty(ListItem.Art(clearart))</visible>
 				</control>
 				<control type="image">
@@ -925,7 +918,6 @@
 					<aspectratio>keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true">$INFO[ListItem.Icon]</texture>
-					<bordersize>8</bordersize>
 					<visible>!Skin.HasSetting(HideEpisodeThumb) | StringCompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="image">
@@ -936,7 +928,6 @@
 					<aspectratio>keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Property(Fanart_Image)]</texture>
-					<bordersize>8</bordersize>
 					<visible>Skin.HasSetting(HideEpisodeThumb) + !StringCompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="grouplist">
@@ -992,7 +983,6 @@
 					<aspectratio>keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true">$INFO[ListItem.Icon]</texture>
-					<bordersize>8</bordersize>
 				</control>
 				<control type="textbox">
 					<description>Description Value for Seasons</description>
@@ -1033,7 +1023,6 @@
 					<aspectratio>keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true">$VAR[PosterThumb]</texture>
-					<bordersize>8</bordersize>
 				</control>
 				<control type="grouplist">
 					<description>Media Codec Flagging Images</description>
@@ -1275,7 +1264,7 @@
 				<posy>78</posy>
 				<width>25</width>
 				<height>560</height>
-				<texturesliderbackground border="10,14,10,14">ScrollBarV.png</texturesliderbackground>
+				<texturesliderbackground border="10,14,10,14">ScrollBarV_light.png</texturesliderbackground>
 				<texturesliderbar border="10,14,10,14">ScrollBarV_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus border="10,14,10,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
 				<textureslidernib>ScrollBarNib.png</textureslidernib>
@@ -1298,7 +1287,6 @@
 					<aspectratio>scale</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Art(fanart)]</texture>
-					<bordersize>8</bordersize>
 				</control>
 				<control type="multiimage">
 					<posx>0</posx>
@@ -1310,7 +1298,6 @@
 					<imagepath background="true">$INFO[ListItem.Path,,extrafanart/]</imagepath>
 					<timeperimage>5000</timeperimage>
 					<randomize>true</randomize>
-					<bordersize>8</bordersize>
 					<visible>!Skin.HasSetting(View504XtraFanArt) + !StringCompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="grouplist">
@@ -1402,7 +1389,6 @@
 					<aspectratio>scale</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true">$INFO[ListItem.Icon]</texture>
-					<bordersize>8</bordersize>
 					<visible>StringCompare(ListItem.Label,..) | !Skin.HasSetting(HideEpisodeThumb)</visible>
 				</control>
 				<control type="image">
@@ -1413,7 +1399,6 @@
 					<aspectratio>scale</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Property(Fanart_Image)]</texture>
-					<bordersize>8</bordersize>
 					<visible>!StringCompare(ListItem.Label,..) + Skin.HasSetting(HideEpisodeThumb)</visible>
 				</control>
 				<control type="grouplist">
@@ -1653,8 +1638,6 @@
 						<width>345</width>
 						<height>70</height>
 						<aspectratio align="left" aligny="bottom">keep</aspectratio>
-						<bordertexture border="5">button-nofocus.png</bordertexture>
-						<bordersize>5</bordersize>
 						<texture background="true">$INFO[ListItem.Art(banner)]</texture>
 						<visible>!IsEmpty(ListItem.Art(banner))</visible>
 					</control>
@@ -1729,7 +1712,7 @@
 				<posy>78</posy>
 				<width>25</width>
 				<height>560</height>
-				<texturesliderbackground border="10,14,10,14">ScrollBarV.png</texturesliderbackground>
+				<texturesliderbackground border="10,14,10,14">ScrollBarV_light.png</texturesliderbackground>
 				<texturesliderbar border="10,14,10,14">ScrollBarV_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus border="10,14,10,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
 				<textureslidernib>ScrollBarNib.png</textureslidernib>
@@ -1811,7 +1794,6 @@
 					<aspectratio align="left" aligny="bottom">keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true">$VAR[PosterThumb]</texture>
-					<bordersize>8</bordersize>
 				</control>
 			</control>
 			<control type="group">
@@ -1870,7 +1852,6 @@
 					<aspectratio align="left" aligny="bottom">keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true">$VAR[PosterThumb]</texture>
-					<bordersize>8</bordersize>
 				</control>
 			</control>
 			<control type="group">
@@ -1939,7 +1920,6 @@
 					<aspectratio align="left" aligny="bottom">keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true">$INFO[ListItem.Icon]</texture>
-					<bordersize>8</bordersize>
 				</control>
 			</control>
 			<control type="group">
@@ -2023,7 +2003,6 @@
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true">$INFO[ListItem.Icon]</texture>
 					<visible>!Skin.HasSetting(HideEpisodeThumb) | StringCompare(ListItem.Label,..)</visible>
-					<bordersize>8</bordersize>
 				</control>
 				<control type="image">
 					<posx>420</posx>
@@ -2033,7 +2012,6 @@
 					<aspectratio align="left" aligny="bottom">keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Property(Fanart_Image)]</texture>
-					<bordersize>8</bordersize>
 					<visible>Skin.HasSetting(HideEpisodeThumb) + !StringCompare(ListItem.Label,..)</visible>
 				</control>
 			</control>
@@ -2402,8 +2380,6 @@
 						<posy>0</posy>
 						<width>139</width>
 						<height>202</height>
-						<bordersize>5</bordersize>
-						<bordertexture border="5">button-nofocus.png</bordertexture>
 						<aspectratio scalediffuse="false">scale</aspectratio>
 						<include>VisibleFadeEffect</include>
 						<texture background="true">$VAR[PosterThumb]</texture>
@@ -2413,8 +2389,6 @@
 						<posy>0</posy>
 						<width>139</width>
 						<height>202</height>
-						<bordersize>5</bordersize>
-						<bordertexture border="5">button-nofocus.png</bordertexture>
 						<aspectratio>stretch</aspectratio>
 						<texture>black-back.png</texture>
 						<colordiffuse>AAFFFFFF</colordiffuse>
@@ -2455,8 +2429,6 @@
 						<posy>0</posy>
 						<width>139</width>
 						<height>202</height>
-						<bordersize>5</bordersize>
-						<bordertexture border="5">button-nofocus.png</bordertexture>
 						<aspectratio>stretch</aspectratio>
 						<texture>black-back.png</texture>
 						<colordiffuse>AAFFFFFF</colordiffuse>
@@ -2489,7 +2461,6 @@
 							<height>205</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<include>VisibleFadeEffect</include>
-							<bordersize>8</bordersize>
 							<texture background="true">$VAR[PosterThumb]</texture>
 						</control>
 						<control type="group">

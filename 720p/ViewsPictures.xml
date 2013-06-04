@@ -49,7 +49,7 @@
 				<posy>200</posy>
 				<width>660</width>
 				<height>25</height>
-				<texturesliderbackground border="14,0,14,0">ScrollBarH.png</texturesliderbackground>
+				<texturesliderbackground border="14,0,14,0">ScrollBarH_light.png</texturesliderbackground>
 				<texturesliderbar border="14,0,14,0">ScrollBarH_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus border="14,0,14,0">ScrollBarH_bar_focus.png</texturesliderbarfocus>
 				<textureslidernib>ScrollBarNib.png</textureslidernib>
@@ -91,13 +91,11 @@
 				</itemlayout>
 				<focusedlayout height="144" width="144">
 					<control type="image">
-						<posx>8</posx>
-						<posy>8</posy>
-						<width>128</width>
-						<height>128</height>
+						<posx>10</posx>
+						<posy>10</posy>
+						<width>124</width>
+						<height>124</height>
 						<aspectratio>keep</aspectratio>
-						<bordersize>2</bordersize>
-						<bordertexture border="2">folder-focus.png</bordertexture>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
 					</control>
 				</focusedlayout>
@@ -107,7 +105,7 @@
 				<posy>70</posy>
 				<width>25</width>
 				<height>576</height>
-				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+				<texturesliderbackground border="0,14,0,14">ScrollBarV_light.png</texturesliderbackground>
 				<texturesliderbar border="0,14,0,14">ScrollBarV_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
 				<textureslidernib>ScrollBarNib.png</textureslidernib>
@@ -142,7 +140,6 @@
 					<texture background="true">$INFO[ListItem.Icon]</texture>
 					<fadetime>600</fadetime>
 					<aspectratio>keep</aspectratio>
-					<bordersize>9</bordersize>
 				</control>
 			</control>
 		</control>
