@@ -153,7 +153,7 @@ read_origmaster() {
 	#wget -O- --no-check-certificate --progress=bar "$URL" >"$ZIP"
 	curl -L --progress-bar "$URL" >"$ZIP"
 	mkdir -p Mudislander-master
-	printf "\nExtracting the archive."
+	printf "Extracting the archive."
 	unzip -o -q "$ZIP" -d Mudislander-master
 	printf "\nCopying the files to the right place."
 	rm -rf media
@@ -764,7 +764,8 @@ printf "\n############# APPLYING MODIFICATIONS TO SPECIAL DIALOGS ##############
 
 printf "\nChanging shutdown menu: "
 if grep -I -q "DialogContextTop.png" 720p/* ; then
-	remove_controlid 'image' '<description>background [a-z]* image</description>' 720p/DialogButtonMenu.xml
+	remove_controlid 'image' '<description>background top image</description>' 720p/DialogButtonMenu.xml
+	remove_controlid 'image' '<description>background bottom image</description>' 720p/DialogButtonMenu.xml
 	perlregex '720p/DialogButtonMenu.xml' 's|texturenofocus border="25,5,25,5">ShutdownButtonNoFocus.png|texturenofocus>black-back.png|g'
 	perlregex '720p/DialogButtonMenu.xml' 's|ShutdownButtonFocus.png|button-focus.png|g'
 	check_and_remove media/ShutdownButtonFocus.png
