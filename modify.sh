@@ -36,6 +36,7 @@ perlregex() {
 		if [ -z "$I" ] ; then continue ; fi
 		if [ "$I" == "--nocheck" ] ; then
 			CHANGED=true
+			continue
 		fi
 		if [ -f "$I" ] ; then
 			debug "'Adding '$I' to the files."
@@ -825,13 +826,28 @@ fi
 
 printf "\n############# CLEANING UP #####################################################"
 
+printf "\nScanning for include definitions: "
+INCDEFS=$(grep '<include[^s]' 720p/* | grep -v '</include>' | grep -v 'file' \
+	| cut -f2 -d':' | sed 's|^\s*<include name="||' | sed 's|">$||')
+printf "%sDONE!%s" $GREEN $RESET	
+
+printf "\nScanning for unused includes: "
+OLDIFS=$IFS ; IFS=$'\n'
+for DEF in $INCDEFS ; do
+	#printf "$DEF... "
+	USES=$(grep '<include' 720p/* | grep -v name | grep "$DEF" | head -n 1)
+	if [ -z "$USES" ] ; then
+		printf "\n%sWARNING: Include '$DEF' is unused.\n%s" $RED $RESET
+	fi
+done
+IFS=$OLDIFS
+
 printf "\nScanning defaults.xml for default values: "
 FILE=720p/defaults.xml
 DEFS=$(grep '<default type="' $FILE | sed 's|^\s*[^"]*"||g' | cut -f1 -d'"')
 printf "%sDONE!%s" $GREEN $RESET
 
 OLDIFS=$IFS ; IFS=$'\n'
-
 for DEF in $DEFS ; do
 	printf "\nRemoving default tags for control type '$DEF': "
 	if [ -z "$DEF" ] ; then 
@@ -850,7 +866,10 @@ for DEF in $DEFS ; do
 				R='s|'
 				R+='(<control type="'"$DEF"'"[^#]*#(\s*<[a-z][^#]*#)*)\s*'"$L"'#'
 				R+='|\1|g'
-				perlregex "$R" --nocheck
+				XMLS=$(2>/dev/null grep '<control type="'"$DEF"'"' -l 720p/*)
+				if [ ! -z "$XMLS" ] ; then
+					perlregex "$R" --nocheck $XMLS
+				fi
 			fi
 		done
 	else
