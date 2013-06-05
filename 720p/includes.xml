@@ -459,7 +459,6 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font13_title</font>
-			<textcolor>white</textcolor>
 			<shadowcolor>black</shadowcolor>
 			<scrollout>false</scrollout>
 			<pauseatend>2000</pauseatend>
@@ -474,7 +473,6 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font12</font>
-			<textcolor>white</textcolor>
 			<shadowcolor>black</shadowcolor>
 		</control>
 		<control type="label">
@@ -487,7 +485,6 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font12</font>
-			<textcolor>white</textcolor>
 			<shadowcolor>black</shadowcolor>
 		</control>
 		<control type="label">
@@ -547,7 +544,6 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font12_title</font>
-			<textcolor>white</textcolor>
 			<shadowcolor>black</shadowcolor>
 			<visible>videoplayer.content(episodes)</visible>
 		</control>
@@ -561,7 +557,6 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font12_title</font>
-			<textcolor>white</textcolor>
 			<shadowcolor>black</shadowcolor>
 			<visible>videoplayer.content(musicvideos)</visible>
 			<scrollout>false</scrollout>
@@ -577,7 +572,6 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font13_title</font>
-			<textcolor>white</textcolor>
 			<shadowcolor>black</shadowcolor>
 			<scrollout>false</scrollout>
 			<pauseatend>2000</pauseatend>
@@ -592,7 +586,6 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font12</font>
-			<textcolor>white</textcolor>
 			<shadowcolor>black</shadowcolor>
 			<visible>!videoplayer.content(episodes) + !videoplayer.content(musicvideos)</visible>
 		</control>
@@ -605,7 +598,6 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font12</font>
-			<textcolor>white</textcolor>
 			<shadowcolor>black</shadowcolor>
 			<visible>videoplayer.content(musicvideos)</visible>
 		</control>
@@ -619,7 +611,6 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font12</font>
-			<textcolor>white</textcolor>
 			<shadowcolor>black</shadowcolor>
 			<visible>videoplayer.content(episodes)</visible>
 		</control>
@@ -633,7 +624,6 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font12</font>
-			<textcolor>white</textcolor>
 			<shadowcolor>black</shadowcolor>
 		</control>
 	</include>
@@ -706,7 +696,6 @@
 				<posy>2</posy>
 				<width>39</width>
 				<height>39</height>
-				<label>-</label>
 				<texturefocus>OSDPauseFO.png</texturefocus>
 				<texturenofocus>OSDPauseNF.png</texturenofocus>
 				<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
@@ -783,7 +772,6 @@
 					<posy>2</posy>
 					<width>39</width>
 					<height>39</height>
-					<label>-</label>
 					<texturefocus>OSDPauseFO.png</texturefocus>
 					<texturenofocus>OSDPauseNF.png</texturenofocus>
 					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
@@ -921,7 +909,6 @@
 					<posy>2</posy>
 					<width>39</width>
 					<height>39</height>
-					<label>-</label>
 					<texturefocus>OSDRandomOffFO.png</texturefocus>
 					<texturenofocus>OSDRandomOffNF.png</texturenofocus>
 					<usealttexture>Playlist.IsRandom</usealttexture>
@@ -968,7 +955,6 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.SortLetter]</label>
-				<textcolor>white</textcolor>
 				<font>font30_title</font>
 			</control>
 		</control>
@@ -983,7 +969,6 @@
 			<align>right</align>
 			<aligny>center</aligny>
 			<font>font35_title</font>
-			<textcolor>white</textcolor>
 			<shadowcolor>black</shadowcolor>
 			<label>$INFO[System.Time]</label>
 			<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
@@ -1090,7 +1075,6 @@
 				<width>260</width>
 				<height>15</height>
 				<label>$INFO[ListItem.Property(NextNumber),$LOCALIZE[20359] [COLOR=blue]-[/COLOR] ]</label>
-				<textcolor>white</textcolor>
 				<font>font12</font>
 				<align>center</align>
 			</control>
@@ -1101,7 +1085,6 @@
 				<width>260</width>
 				<height>15</height>
 				<label>$INFO[ListItem.Property(NextTitle)]</label>
-				<textcolor>white</textcolor>
 				<font>font12</font>
 				<align>center</align>
 			</control>
@@ -1195,7 +1178,6 @@
 				<width>260</width>
 				<height>15</height>
 				<label>$INFO[ListItem.Property(ShortTime)]$INFO[ListItem.Property(NextDate), [COLOR=blue]-[/COLOR] ]</label>
-				<textcolor>white</textcolor>
 				<font>font12</font>
 				<align>center</align>
 			</control>
@@ -1206,7 +1188,6 @@
 				<width>260</width>
 				<height>15</height>
 				<label>$INFO[ListItem.Property(Runtime),, $LOCALIZE[12391]]$INFO[ListItem.Property(Network), [COLOR=blue]-[/COLOR] (,)]</label>
-				<textcolor>white</textcolor>
 				<font>font12</font>
 				<align>center</align>
 			</control>

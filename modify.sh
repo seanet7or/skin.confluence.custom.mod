@@ -1,7 +1,8 @@
 #!/bin/bash
 #set -e
 set -o pipefail
-DEBUG=false
+2>/dev/null rm debug.log
+DEBUG=true
 
 RED=$(tput setaf 1)
 GREEN=$(tput setaf 2)
@@ -13,7 +14,7 @@ CYAN=$(tput setaf 6)
 #prints the parameter, if debug mode is enabled
 debug() {
 	if $DEBUG ; then
-		printf "\n$1"
+		printf "\n$1" >>debug.log
 	fi
 }
 
@@ -21,14 +22,21 @@ debug() {
 # applies a perlregex to the given file(s)
 # Valid parameters are one regex and the files; if no files are given,
 # the regex will be applied to all files in the 720p subfolder
+# parameters: 
+#	--nocheck doesn't check if any changes were applied if given
 perlregex() {
 	debug "perlregex() entered."
 	#parse parameters
 	local LIST=''
 	local REGEX=''
+	local CHANGED=false
+	
 	for I in "$@" ; do
 		debug "Parameter: '$I'."
 		if [ -z "$I" ] ; then continue ; fi
+		if [ "$I" == "--nocheck" ] ; then
+			CHANGED=true
+		fi
 		if [ -f "$I" ] ; then
 			debug "'Adding '$I' to the files."
 			LIST+="$I"$'\n'
@@ -45,7 +53,7 @@ perlregex() {
 	if [ -z "$LIST" ] ; then
 		LIST=$(find 720p -type f)
 	fi
-	debug "Files are '$LIST'."
+	#debug "Files are '$LIST'."
 	debug "Regex is '$REGEX'."
 	#apply regex
 	local OLDIFS=$IFS ; IFS=$'\n' ; for FILE in $LIST ; do
@@ -59,8 +67,18 @@ perlregex() {
 			printf "\nRegex is: '$REGEX'."
 			exit 3
 		fi
+		if ! $CHANGED ; then
+			if ! >/dev/null diff -q "$FILE.tmp" "$FILE" ; then
+				#printf "\n Changed '$FILE'."
+				CHANGED=true
+			fi
+		fi
 		mv -f "$FILE.tmp" "$FILE"
 	done ; IFS=$OLDIFS
+	if ! $CHANGED ; then
+		printf "\n%sWARNING: No changes were made.%s" $RED $RESET
+		printf "\nREGEX: '$REGEX'."
+	fi
 }
 
 
@@ -209,7 +227,7 @@ else
 fi
 
 printf "\nChanging texture for items without focus: "
-if grep -q '>button-nofocus.png' 720p/* | head -n 1 ; then
+if [ -f media/button-nofocus.png ] ; then
 	R='s|(<(item\|focused\|ruler\|channel)layout [^#]*#'
 	# matching lines beginning with any opening tag and </control>:
 	R+='(\s*<[a-z][^#]*#\|\s*</control>#)*?'
@@ -222,31 +240,31 @@ else
 fi
 
 printf "\nChanging default texture for controls without focus: "
-if grep -q '>button-nofocus.png' 720p/* | head -n 1 ; then
+if [ -f media/button-nofocus.png ] ; then
 	R='s|(<default type="[^#]*#'
 	R+='(\s*<[a-z][^#]*#)*?' # matching lines beginning with any opening tag
 	R+='\s*<texturenofocus) border="[0-9]*">button-nofocus.png</texturenofocus>'
 	R+='|\1>black-back.png</texturenofocus>|g'
-	perlregex "$R"
+	perlregex "$R" 720p/defaults.xml
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 
 printf "\nChanging default texture for control presets without focus: "
-if grep -q '>button-nofocus.png' 720p/* | head -n 1 ; then
+if [ -f media/button-nofocus.png ] ; then
 	R='s|(<include name="Button[^#]*#'
 	R+='(\s*<[a-z][^#]*#)*?' # matching lines beginning with any opening tag
 	R+='\s*<texturenofocus) border="[0-9]*">button-nofocus.png</texturenofocus>'
 	R+='|\1>black-back.png</texturenofocus>|g'
-	perlregex "$R"
+	perlregex "$R" 720p/includes.xml
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 
 printf "\nChanging texture for controls without focus: "
-if grep -q '>button-nofocus.png' 720p/* | head -n 1 ; then
+if [ -f media/button-nofocus.png ] ; then
 	R='s|(<control type="[^#]*#'
 	R+='(\s*(<[a-z]\|<!--)[^#]*#)*?' # matching lines beginning with any opening tag and comments
 	R+='\s*<texturenofocus) border="[0-9]*">button-nofocus.png</texturenofocus>'
@@ -258,7 +276,7 @@ else
 fi
 
 printf "\nChanging alttexture for controls without focus: "
-if grep -q '>button-nofocus.png' 720p/* | head -n 1 ; then
+if [ -f media/button-nofocus.png ] ; then
 	R='s|(<control type="[^#]*#'
 	R+='(\s*<[a-z][^#]*#)*?' # matching lines beginning with any opening tag
 	R+='\s*<alttexturenofocus) border="[0-9]*">button-nofocus.png</alttexturenofocus>'
@@ -270,7 +288,7 @@ else
 fi
 
 printf "\nRemoving button-nofocus.png bordertextures: "
-if grep -q '>button-nofocus.png' 720p/* | head -n 1 ; then
+if [ -f media/button-nofocus.png ] ; then
 	R='s|(\s*<bordertexture border="[0-9]*"[^>]*>button-nofocus.png</bordertexture>#\|'
 	R+='\s*<bordersize>[0-9]*</bordersize>#){2}'
 	R+='||g'
@@ -281,7 +299,7 @@ else
 fi
 
 printf "\nRemoving button-nofocus.png where used as border background: "
-if grep -q '>button-nofocus.png' 720p/* | head -n 1 ; then
+if [ -f media/button-nofocus.png ] ; then
 	R='s|\s*<control type="image">#'
 	R+='(\s*<[a-z][^#]*#)*?' # matching lines beginning with any opening tag
 	R+='\s*<height>[23456789][0-9][0-9]</height>#' # 200 or more pixels high
@@ -296,7 +314,7 @@ else
 fi
 
 printf "\nRemoving reflections: "
-if grep -q 'diffuse_mirror[23].png' 720p/* | head -n 1 ; then
+if [ -f media/diffuse_mirror3.png ] ; then
 	remove_control 'image' '<texture[^>]*diffuse="diffuse_mirror[23].png"[^>]*>[^<]*</texture>'
 	check_and_remove media/diffuse_mirror2.png
 	check_and_remove media/diffuse_mirror3.png
@@ -306,7 +324,7 @@ else
 fi
 
 printf "\nChanging dialog background: "
-if grep -I -q "DialogBack.png" 720p/* ; then
+if [ -f media/DialogBack.png ] ; then
 	R='s|(\s*)<texture border="[0-9]*">DialogBack.png</texture>'
 	R+='|\1<texture>white100_light.png</texture>#\1<colordiffuse>DF101314</colordiffuse>|g'
 	perlregex "$R"
@@ -317,7 +335,7 @@ else
 fi
 		
 printf "\nRemoving mouse close buttons: "
-if grep -I -q '>DialogCloseButton.png' 720p/* ; then
+if [ -f  media/DialogCloseButton-focus.png ] ; then
 	remove_controlid 'button' '<texturenofocus>DialogCloseButton.png</texturenofocus>'
 	check_and_remove media/DialogCloseButton.png
 	check_and_remove media/DialogCloseButton-focus.png
@@ -327,7 +345,7 @@ else
 fi
 	
 printf "\nReplacing content panel background: "
-if grep -I -q 'ContentPanel.png' 720p/* ; then	
+if [ -f media/ContentPanel.png ] ; then	
 	perlregex 's|<texture[^>]*>ContentPanel.png|<texture>black-back.png|g'
 	check_and_remove media/ContentPanel.png
 	printf "%sDONE!%s" $GREEN $RESET
@@ -345,9 +363,9 @@ else
 fi	
 	
 printf "\nRemoving hidden panel arrow: "	
-if grep -I -q HasSub.png 720p/* ; then
-	perlregex 's|<texturefocus>HasSub.png</texturefocus>|<texturefocus>-</texturefocus>|g'
-	perlregex 's|<texturenofocus>HasSub.png</texturenofocus>|<texturenofocus>-</texturenofocus>|g'
+if [ -f media/HasSub.png ] ; then
+	perlregex 720p/includes.xml 's|<texturefocus>HasSub.png</texturefocus>|<texturefocus>-</texturefocus>|g'
+	perlregex 720p/includes.xml 's|<texturenofocus>HasSub.png</texturenofocus>|<texturenofocus>-</texturenofocus>|g'
 	check_and_remove media/HasSub.png	
 	printf "%sDONE!%s" $GREEN $RESET
 else
@@ -435,7 +453,7 @@ else
 fi
 
 printf "\nRemoving floor image: "
-if grep -I -q '>floor.png' 720p/* ; then
+if [ -f media/floor.png ] ; then
 	remove_control 'image' '<texture[^>]*>floor.png</texture>'
 	check_and_remove 'media/floor.png'
 	printf "%sDONE!%s" $GREEN $RESET
@@ -454,7 +472,7 @@ else
 fi
 
 printf "\nRemoving thumb shadows: "
-if grep -q '>ThumbShadow.png' 720p/* | head -n 1 ; then
+if [ -f media/ThumbShadow.png ] ; then
 	R='s|(\s*<bordertexture[^>]*>ThumbShadow.png</bordertexture>#\|'
 	R+='\s*<bordersize>[0-9]*</bordersize>#){2}'
 	R+='||g'
@@ -471,7 +489,7 @@ else
 fi
 
 printf "\nRemoving thumb background: "
-if grep -I -q 'ThumbBG.png' 720p/* ; then
+if [ -f media/ThumbBG.png ] ; then
 	remove_control 'image' '<texture border="2">ThumbBG.png</texture>'
 	check_and_remove 'media/ThumbBG.png'	
 	printf "%sDONE!%s" $GREEN $RESET
@@ -480,7 +498,7 @@ else
 fi
 
 printf "\nRemoving thumb border: "
-if grep -I -q 'ThumbBorder.png' 720p/* ; then
+if [ -f media/ThumbBorder.png ] ; then
 	R='s|(\s*<bordertexture[^>]*>ThumbBorder.png</bordertexture>#\|'
 	R+='\s*<bordersize>[0-9]*</bordersize>#){2}'
 	R+='||g'
@@ -663,7 +681,7 @@ then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-	
+
 # change picturethumbview
 printf "\nChanging picture preview/thumb view: "
 if grep -I -q '<description>Date time txt</description>' 720p/ViewsPictures.xml ; then
@@ -718,7 +736,7 @@ if grep -I -q '<description>Date time txt</description>' 720p/ViewsPictures.xml 
 	R+='\6<bordersize>2</bordersize>#'
 	R+='\6<bordertexture border="2">folder-focus.png</bordertexture>#'
 	R+='\6\7|'
-	perlregex 720p/IncludesBackgroundBuilding.xml "$R"
+	perlregex 720p/ViewsPictures.xml "$R"
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -794,9 +812,8 @@ else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 
-#removed up and down arrows
+printf "\nRemoving up and down arrows from several dialogs: "
 if [ -f media/arrow-big-up.png ] ; then
-	printf "\nRemoving up and down arrows from several dialogs: "
 	remove_control 'button' '<texturefocus>arrow-big-up.png</texturefocus>'
 	remove_control 'button' '<texturefocus>arrow-big-down.png</texturefocus>'
 	check_and_remove media/arrow-big-up.png
@@ -805,6 +822,44 @@ if [ -f media/arrow-big-up.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
+
+printf "\n############# CLEANING UP #####################################################"
+
+printf "\nScanning defaults.xml for default values: "
+FILE=720p/defaults.xml
+DEFS=$(grep '<default type="' $FILE | sed 's|^\s*[^"]*"||g' | cut -f1 -d'"')
+printf "%sDONE!%s" $GREEN $RESET
+
+OLDIFS=$IFS ; IFS=$'\n'
+
+for DEF in $DEFS ; do
+	printf "\nRemoving default tags for control type '$DEF': "
+	if [ -z "$DEF" ] ; then 
+		printf "\nERROR: Found empty type."
+		exit 3
+	fi
+	DEFSTART=$(grep -n '<default type="'"$DEF"'">' 720p/defaults.xml | cut -f1 -d:)
+	debug "DEFSTART is '$DEFSTART'."
+	if [ ! -z "$DEFSTART" ] ; then
+		DEFSTOP=$(tail -n+"$DEFSTART" 720p/defaults.xml | grep -n '</default>' | head -n 1 | cut -f1 -d:)
+		STRUCT=$(tail -n+"$DEFSTART" 720p/defaults.xml | head -n "$DEFSTOP" | grep -v '<[/]*default' | \
+			egrep -v '<posx|<posy|<width|<height')
+		for L in $STRUCT ; do
+			if [ ! -z "$L" ] ; then
+				L=$(echo "$L" | sed 's|^\s*<|<|')
+				R='s|'
+				R+='(<control type="'"$DEF"'"[^#]*#(\s*<[a-z][^#]*#)*)\s*'"$L"'#'
+				R+='|\1|g'
+				perlregex "$R" --nocheck
+			fi
+		done
+	else
+		printf "\nERROR: Unable to find start default structure for type '$DEF'."
+		exit 3		
+	fi
+	printf "%sDONE!%s" $GREEN $RESET
+done
+IFS=$OLDIFS
 
 printf "%s\nAll modifications are completed.\n%s" $GREEN $RESET
 

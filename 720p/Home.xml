@@ -59,7 +59,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
 			</control>
 			<control type="label">
@@ -72,7 +71,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font13_title</font>
-				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
 			</control>
 			<control type="label">
@@ -85,7 +83,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
 			</control>
 		</control>
@@ -259,7 +256,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
-					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
@@ -272,7 +268,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
-					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
 				</control>
 			</control>
@@ -297,7 +292,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
-					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
@@ -310,7 +304,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
-					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
@@ -323,7 +316,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
-					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
 				</control>
 			</control>
@@ -348,7 +340,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
-					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
@@ -361,7 +352,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
-					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
@@ -374,7 +364,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
-					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
 				</control>
 			</control>
@@ -399,7 +388,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
-					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
@@ -412,7 +400,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
-					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
@@ -425,7 +412,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
-					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
 				</control>
 			</control>
@@ -485,7 +471,6 @@
 				<textwidth>150</textwidth>
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
-				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey2</textcolor>
 				<focusedcolor>white</focusedcolor>
@@ -559,7 +544,6 @@
 						<posy>2</posy>
 						<width>30</width>
 						<height>30</height>
-						<label>-</label>
 						<texturefocus>OSDPauseFO.png</texturefocus>
 						<texturenofocus>OSDPauseNF.png</texturenofocus>
 						<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
@@ -672,7 +656,6 @@
 						<posy>2</posy>
 						<width>30</width>
 						<height>30</height>
-						<label>-</label>
 						<texturefocus>OSDPauseFO.png</texturefocus>
 						<texturenofocus>OSDPauseNF.png</texturenofocus>
 						<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
@@ -715,7 +698,6 @@
 				<textwidth>150</textwidth>
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
-				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey2</textcolor>
 				<focusedcolor>white</focusedcolor>
@@ -742,7 +724,6 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<font>font12_title</font>
-				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
 				<visible>!Player.HasMedia + !Skin.HasSetting(HideHomeStats)</visible>
 			</control>
@@ -1205,7 +1186,6 @@
 				<pauseatend>200</pauseatend>
 				<label>$VAR[NextFiveSongScroller]</label>
 				<font>font12</font>
-				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
 				<textoffsetx>20</textoffsetx>
 				<visible>!Skin.HasSetting(AutoHidePowerBtn) + Player.HasAudio + !IsEmpty(MusicPlayer.offset(1).Artist) + !Skin.HasSetting(HideNextSongsInfo)</visible>
@@ -1221,7 +1201,6 @@
 				<pauseatend>200</pauseatend>
 				<label>$VAR[NextFiveSongScroller]</label>
 				<font>font12</font>
-				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
 				<textoffsetx>20</textoffsetx>
 				<visible>Skin.HasSetting(AutoHidePowerBtn) + Player.HasAudio + !IsEmpty(MusicPlayer.offset(1).Artist) + !Skin.HasSetting(HideNextSongsInfo)</visible>
@@ -1325,7 +1304,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font28_title</font>
-					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
 					<label>[B]$INFO[Window(Weather).Property(Current.Temperature)][/B]</label>
 				</control>
@@ -1336,7 +1314,6 @@
 					<font>font10</font>
 					<aligny>center</aligny>
 					<label>$INFO[System.TemperatureUnits]</label>
-					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
 					<visible>!IsEmpty(Window(Weather).Property(Current.Temperature))</visible>
 				</control>

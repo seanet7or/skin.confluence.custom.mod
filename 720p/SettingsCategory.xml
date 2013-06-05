@@ -70,7 +70,6 @@
 				<label>$INFO[Control.GetLabel(2)] - $LOCALIZE[5]</label>
 				<align>left</align>
 				<aligny>center</aligny>
-				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
 			</control>
 			<control type="grouplist" id="5">
@@ -107,12 +106,10 @@
 			<width>260</width>
 			<textoffsetx>20</textoffsetx>
 			<align>right</align>
-			<aligny>center</aligny>
 			<font>font13_title</font>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
 			<texturefocus border="5">MenuItemFO.png</texturefocus>
-			<texturenofocus>black-back.png</texturenofocus>
 			<pulseonselect>false</pulseonselect>
 		</control>
 		<control type="button" id="7">
@@ -120,40 +117,32 @@
 			<posx>0</posx>
 			<posy>0</posy>
 			<height>40</height>
-			<font>font13</font>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
 			<texturefocus border="0,2,0,2">MenuItemFO.png</texturefocus>
-			<texturenofocus>black-back.png</texturenofocus>
 		</control>
 		<control type="radiobutton" id="8">
 			<description>Default RadioButton</description>
 			<posx>0</posx>
 			<posy>0</posy>
 			<height>40</height>
-			<font>font13</font>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
 			<texturefocus border="0,2,0,2">MenuItemFO.png</texturefocus>
-			<texturenofocus>black-back.png</texturenofocus>
 		</control>
 		<control type="spincontrolex" id="9">
 			<description>Default SpinControlex</description>
 			<posx>0</posx>
 			<posy>0</posy>
 			<height>40</height>
-			<font>font13</font>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
 			<texturefocus border="0,2,0,2">MenuItemFO.png</texturefocus>
 			<texturenofocus>black-back.png</texturenofocus>
-			<aligny>center</aligny>
-			<reverse>yes</reverse>
 		</control>
 		<control type="image" id="11">
 			<description>separator image</description>
 			<height>2</height>
-			<texture>-</texture>
 		</control>
 		<control type="label" id="2">
 			<description>Fake Label so we can pass it value down to the one below</description>

@@ -89,11 +89,13 @@
 				</itemlayout>
 				<focusedlayout height="144" width="144">
 					<control type="image">
-						<posx>10</posx>
-						<posy>10</posy>
-						<width>124</width>
-						<height>124</height>
+						<posx>8</posx>
+						<posy>8</posy>
+						<width>128</width>
+						<height>128</height>
 						<aspectratio>keep</aspectratio>
+						<bordersize>2</bordersize>
+						<bordertexture border="2">folder-focus.png</bordertexture>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
 					</control>
 				</focusedlayout>
@@ -125,7 +127,6 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font24_title</font>
-					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="image">

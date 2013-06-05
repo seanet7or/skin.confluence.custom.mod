@@ -78,7 +78,6 @@
 					<label>31300</label>
 					<align>center</align>
 					<aligny>center</aligny>
-					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
@@ -88,7 +87,6 @@
 					<width>460</width>
 					<height>35</height>
 					<font>font12</font>
-					<textcolor>white</textcolor>
 					<scroll>true</scroll>
 					<align>center</align>
 					<aligny>center</aligny>
@@ -102,7 +100,6 @@
 					<width>460</width>
 					<height>30</height>
 					<font>font13_title</font>
-					<textcolor>white</textcolor>
 					<scroll>false</scroll>
 					<align>center</align>
 					<aligny>center</aligny>
@@ -130,7 +127,6 @@
 					<align>right</align>
 					<aligny>top</aligny>
 					<label>$INFO[Window.Property(Current.Temperature)]</label>
-					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
@@ -143,7 +139,6 @@
 					<align>left</align>
 					<aligny>top</aligny>
 					<label>$INFO[System.TemperatureUnits]</label>
-					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="image">
@@ -163,10 +158,8 @@
 					<height>30</height>
 					<info>Window.Property(Current.Condition)</info>
 					<wrapmultiline>true</wrapmultiline>
-					<font>font13</font>
 					<align>center</align>
 					<aligny>center</aligny>
-					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
@@ -175,7 +168,6 @@
 					<posy>400</posy>
 					<width>170</width>
 					<height>35</height>
-					<font>font13</font>
 					<align>right</align>
 					<aligny>center</aligny>
 					<label>$LOCALIZE[402] :</label>
@@ -188,7 +180,6 @@
 					<posy>430</posy>
 					<width>170</width>
 					<height>35</height>
-					<font>font13</font>
 					<align>right</align>
 					<aligny>center</aligny>
 					<label>$LOCALIZE[405] :</label>
@@ -201,7 +192,6 @@
 					<posy>460</posy>
 					<width>170</width>
 					<height>35</height>
-					<font>font13</font>
 					<align>right</align>
 					<aligny>center</aligny>
 					<label>$LOCALIZE[406] :</label>
@@ -214,7 +204,6 @@
 					<posy>490</posy>
 					<width>170</width>
 					<height>35</height>
-					<font>font13</font>
 					<align>right</align>
 					<aligny>center</aligny>
 					<label>$LOCALIZE[403] :</label>
@@ -227,7 +216,6 @@
 					<posy>520</posy>
 					<width>170</width>
 					<height>35</height>
-					<font>font13</font>
 					<align>right</align>
 					<aligny>center</aligny>
 					<label>$LOCALIZE[404] :</label>
@@ -240,11 +228,9 @@
 					<posy>400</posy>
 					<width>300</width>
 					<height>35</height>
-					<font>font13</font>
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>$INFO[Window.Property(Current.FeelsLike)]$INFO[System.TemperatureUnits]</label>
-					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
@@ -253,11 +239,9 @@
 					<posy>430</posy>
 					<width>300</width>
 					<height>35</height>
-					<font>font13</font>
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>$INFO[Window.Property(Current.DewPoint)]$INFO[System.TemperatureUnits]</label>
-					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
@@ -266,11 +250,9 @@
 					<posy>460</posy>
 					<width>300</width>
 					<height>35</height>
-					<font>font13</font>
 					<align>left</align>
 					<aligny>center</aligny>
 					<info>Window.Property(Current.Humidity)</info>
-					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
@@ -279,11 +261,9 @@
 					<posy>490</posy>
 					<width>300</width>
 					<height>35</height>
-					<font>font13</font>
 					<align>left</align>
 					<aligny>center</aligny>
 					<info>Window.Property(Current.UVIndex)</info>
-					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
@@ -292,11 +272,9 @@
 					<posy>520</posy>
 					<width>300</width>
 					<height>35</height>
-					<font>font13</font>
 					<align>left</align>
 					<aligny>center</aligny>
 					<info>Window.Property(Current.Wind)</info>
-					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="group">
@@ -307,7 +285,6 @@
 						<posy>570</posy>
 						<width>300</width>
 						<height>35</height>
-						<font>font13</font>
 						<align>left</align>
 						<aligny>center</aligny>
 						<label>$LOCALIZE[33027] : [COLOR=white]$INFO[Window.Property(Today.Sunrise)][/COLOR]</label>
@@ -320,7 +297,6 @@
 						<posy>570</posy>
 						<width>300</width>
 						<height>35</height>
-						<font>font13</font>
 						<align>right</align>
 						<aligny>center</aligny>
 						<label>$LOCALIZE[33028] : [COLOR=white]$INFO[Window.Property(Today.Sunset)][/COLOR]</label>
@@ -359,7 +335,6 @@
 					<label>10508</label>
 					<align>center</align>
 					<aligny>center</aligny>
-					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="list" id="50">
@@ -381,7 +356,6 @@
 							<width>300</width>
 							<height>25</height>
 							<font>font13_title</font>
-							<textcolor>white</textcolor>
 							<shadowcolor>black</shadowcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
@@ -401,8 +375,6 @@
 							<posy>35</posy>
 							<width>390</width>
 							<height>30</height>
-							<font>font13</font>
-							<textcolor>white</textcolor>
 							<shadowcolor>black</shadowcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
@@ -415,11 +387,8 @@
 							<posy>70</posy>
 							<width>400</width>
 							<height>50</height>
-							<font>font13</font>
-							<textcolor>white</textcolor>
 							<shadowcolor>black</shadowcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
 							<label>$INFO[ListItem.Property(Outlook)]</label>
 						</control>
 					</itemlayout>
@@ -439,7 +408,6 @@
 							<width>300</width>
 							<height>25</height>
 							<font>font13_title</font>
-							<textcolor>white</textcolor>
 							<shadowcolor>black</shadowcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
@@ -459,8 +427,6 @@
 							<posy>35</posy>
 							<width>390</width>
 							<height>30</height>
-							<font>font13</font>
-							<textcolor>white</textcolor>
 							<shadowcolor>black</shadowcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
@@ -473,11 +439,8 @@
 							<posy>70</posy>
 							<width>400</width>
 							<height>50</height>
-							<font>font13</font>
-							<textcolor>white</textcolor>
 							<shadowcolor>black</shadowcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
 							<label>$INFO[ListItem.Property(Outlook)]</label>
 						</control>
 					</focusedlayout>
@@ -653,7 +616,6 @@
 							<label>31904</label>
 							<align>center</align>
 							<aligny>center</aligny>
-							<textcolor>white</textcolor>
 							<shadowcolor>black</shadowcolor>
 						</control>
 						<control type="list" id="51">
@@ -675,7 +637,6 @@
 									<width>100</width>
 									<height>120</height>
 									<font>font12</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<aligny>center</aligny>
@@ -695,7 +656,6 @@
 									<width>390</width>
 									<height>70</height>
 									<font>font12</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>right</align>
 									<aligny>center</aligny>
@@ -707,7 +667,6 @@
 									<width>590</width>
 									<height>50</height>
 									<font>font12</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<label>$INFO[ListItem.ActualIcon]</label>
@@ -729,7 +688,6 @@
 									<width>100</width>
 									<height>120</height>
 									<font>font12</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<aligny>center</aligny>
@@ -749,7 +707,6 @@
 									<width>390</width>
 									<height>70</height>
 									<font>font12</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>right</align>
 									<aligny>center</aligny>
@@ -761,7 +718,6 @@
 									<width>590</width>
 									<height>50</height>
 									<font>font12</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<label>$INFO[ListItem.ActualIcon]</label>
@@ -908,7 +864,6 @@
 							<label>31901</label>
 							<align>center</align>
 							<aligny>center</aligny>
-							<textcolor>white</textcolor>
 							<shadowcolor>black</shadowcolor>
 						</control>
 						<control type="label">
@@ -916,8 +871,6 @@
 							<posy>200</posy>
 							<width>600</width>
 							<height>30</height>
-							<font>font13</font>
-							<textcolor>white</textcolor>
 							<align>center</align>
 							<aligny>center</aligny>
 							<label>$LOCALIZE[31909]</label>
@@ -956,7 +909,6 @@
 									<width>100</width>
 									<height>40</height>
 									<font>font13_title</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<aligny>center</aligny>
@@ -968,7 +920,6 @@
 									<width>390</width>
 									<height>20</height>
 									<font>font12</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>right</align>
 									<aligny>center</aligny>
@@ -980,7 +931,6 @@
 									<width>590</width>
 									<height>70</height>
 									<font>font12</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<label>$INFO[Window.Property(36hour.1.Forecast),[COLOR=grey2]$LOCALIZE[31905]: [/COLOR]]</label>
@@ -1014,7 +964,6 @@
 									<width>100</width>
 									<height>40</height>
 									<font>font13_title</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<aligny>center</aligny>
@@ -1026,7 +975,6 @@
 									<width>390</width>
 									<height>20</height>
 									<font>font12</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>right</align>
 									<aligny>center</aligny>
@@ -1038,7 +986,6 @@
 									<width>590</width>
 									<height>70</height>
 									<font>font12</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<label>$INFO[Window.Property(36hour.2.Forecast),[COLOR=grey2]$LOCALIZE[31905]: [/COLOR]]</label>
@@ -1072,7 +1019,6 @@
 									<width>100</width>
 									<height>40</height>
 									<font>font13_title</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<aligny>center</aligny>
@@ -1084,7 +1030,6 @@
 									<width>390</width>
 									<height>20</height>
 									<font>font12</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>right</align>
 									<aligny>center</aligny>
@@ -1096,7 +1041,6 @@
 									<width>590</width>
 									<height>70</height>
 									<font>font12</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<label>$INFO[Window.Property(36hour.3.Forecast),[COLOR=grey2]$LOCALIZE[31905]: [/COLOR]]</label>
@@ -1128,7 +1072,6 @@
 							<label>31903</label>
 							<align>center</align>
 							<aligny>center</aligny>
-							<textcolor>white</textcolor>
 							<shadowcolor>black</shadowcolor>
 						</control>
 						<control type="label">
@@ -1136,8 +1079,6 @@
 							<posy>200</posy>
 							<width>600</width>
 							<height>30</height>
-							<font>font13</font>
-							<textcolor>white</textcolor>
 							<align>center</align>
 							<aligny>center</aligny>
 							<label>$LOCALIZE[31909]</label>
@@ -1176,7 +1117,6 @@
 									<width>100</width>
 									<height>50</height>
 									<font>font13_title</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<aligny>center</aligny>
@@ -1188,7 +1128,6 @@
 									<width>100</width>
 									<height>50</height>
 									<font>font13_title</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<aligny>center</aligny>
@@ -1200,7 +1139,6 @@
 									<width>350</width>
 									<height>130</height>
 									<font>font12</font>
-									<textcolor>white</textcolor>
 									<align>right</align>
 									<label>$INFO[Window.Property(Weekend.1.Humidity),[COLOR=grey2]$LOCALIZE[406] :[/COLOR][B] ,[/B]][CR][CR]$INFO[Window.Property(Weekend.1.ShortWindDirection),[COLOR=grey2]$LOCALIZE[404] :[/COLOR][B] ,[/B]][CR][CR]$INFO[Window.Property(Weekend.1.Precipitation),[COLOR=grey2]$LOCALIZE[33021] :[/COLOR][B] ,[/B]]</label>
 								</control>
@@ -1210,7 +1148,6 @@
 									<width>590</width>
 									<height>20</height>
 									<font>font12</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<aligny>center</aligny>
@@ -1222,7 +1159,6 @@
 									<width>590</width>
 									<height>70</height>
 									<font>font12</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<label>$INFO[Window.Property(Weekend.1.LongOutlookDay),[COLOR=grey2]$LOCALIZE[31905]: [/COLOR]][CR]</label>
@@ -1256,7 +1192,6 @@
 									<width>100</width>
 									<height>50</height>
 									<font>font13_title</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<aligny>center</aligny>
@@ -1268,7 +1203,6 @@
 									<width>100</width>
 									<height>50</height>
 									<font>font13_title</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<aligny>center</aligny>
@@ -1280,7 +1214,6 @@
 									<width>350</width>
 									<height>130</height>
 									<font>font12</font>
-									<textcolor>white</textcolor>
 									<align>right</align>
 									<label>$INFO[Window.Property(Weekend.2.Humidity),[COLOR=grey2]$LOCALIZE[406] :[/COLOR][B] ,[/B]][CR][CR]$INFO[Window.Property(Weekend.2.ShortWindDirection),[COLOR=grey2]$LOCALIZE[404] :[/COLOR][B] ,[/B]][CR][CR]$INFO[Window.Property(Weekend.2.Precipitation),[COLOR=grey2]$LOCALIZE[33021] :[/COLOR][B] ,[/B]]</label>
 								</control>
@@ -1290,7 +1223,6 @@
 									<width>590</width>
 									<height>20</height>
 									<font>font12</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<aligny>center</aligny>
@@ -1302,7 +1234,6 @@
 									<width>590</width>
 									<height>70</height>
 									<font>font12</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<label>$INFO[Window.Property(Weekend.2.LongOutlookDay),[COLOR=grey2]$LOCALIZE[31905]: [/COLOR]][CR]</label>
@@ -1323,7 +1254,6 @@
 							<label>31902</label>
 							<align>center</align>
 							<aligny>center</aligny>
-							<textcolor>white</textcolor>
 							<shadowcolor>black</shadowcolor>
 						</control>
 						<control type="list" id="52">
@@ -1345,7 +1275,6 @@
 									<width>100</width>
 									<height>120</height>
 									<font>font12</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<aligny>center</aligny>
@@ -1365,7 +1294,6 @@
 									<width>390</width>
 									<height>70</height>
 									<font>font12</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>right</align>
 									<aligny>center</aligny>
@@ -1377,7 +1305,6 @@
 									<width>590</width>
 									<height>50</height>
 									<font>font12</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<label>$INFO[ListItem.ActualIcon]</label>
@@ -1399,7 +1326,6 @@
 									<width>100</width>
 									<height>120</height>
 									<font>font12</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<aligny>center</aligny>
@@ -1419,7 +1345,6 @@
 									<width>390</width>
 									<height>70</height>
 									<font>font12</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>right</align>
 									<aligny>center</aligny>
@@ -1431,7 +1356,6 @@
 									<width>590</width>
 									<height>50</height>
 									<font>font12</font>
-									<textcolor>white</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<label>$INFO[ListItem.ActualIcon]</label>
@@ -1594,7 +1518,6 @@
 							<label>31910</label>
 							<align>center</align>
 							<aligny>center</aligny>
-							<textcolor>white</textcolor>
 							<shadowcolor>black</shadowcolor>
 						</control>
 						<control type="multiimage">
@@ -1631,7 +1554,6 @@
 								<width>570</width>
 								<height>100</height>
 								<font>font12</font>
-								<textcolor>white</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<align>center</align>
 								<label>$INFO[Window.Property(Alerts)]</label>
@@ -1644,7 +1566,6 @@
 							<width>570</width>
 							<height>30</height>
 							<font>font13_title</font>
-							<textcolor>white</textcolor>
 							<align>center</align>
 							<aligny>center</aligny>
 							<label>$LOCALIZE[19055]</label>
@@ -1700,9 +1621,7 @@
 						<posy>0</posy>
 						<width>200</width>
 						<height>40</height>
-						<font>font13</font>
 						<label>31027</label>
-						<textcolor>white</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
