@@ -618,32 +618,38 @@ else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 
-printf "\nSearching controls with default back-black.png texturenofocus: "
+printf "\n[ Controls with default back-black.png texturenofocus:"
 DEFS=$(grep '<default type="' 720p/defaults.xml | sed 's|^\s*[^"]*"||g' | cut -f1 -d'"')
 OLDIFS=$IFS ; IFS=$'\n'
+CONTROLS=""
 for DEF in $DEFS ; do
+	#printf "\nCandidate '$DEF'."
 	DEFSTART=$(grep -n '<default type="'"$DEF"'">' 720p/defaults.xml | cut -f1 -d:)
 	DEFSTOP=$(tail -n+"$DEFSTART" 720p/defaults.xml | grep -n '</default>' | head -n 1 | cut -f1 -d:)
-	if tail -n+"$DEFSTART" 720p/defaults.xml | head -n "$DEFSTOP" | \
-		grep texturenofocus | grep back-black.png ; then
-		printf "found $DEF..."
+	STRUCT=$(tail -n+"$DEFSTART" 720p/defaults.xml | head -n "$DEFSTOP")
+	if echo "$STRUCT" | grep -q 'black-back.png</texturenofocus>' ; then
+		printf " '$DEF'"
+		CONTROLS+="$DEF"$'\n'
 	fi
 done
-printf "%sDONE!%s" $GREEN $RESET
-			
-printf "\nReplacing focused texture for default buttons: "
-L=$(grep -n '<control type="button" id="3">' 720p/DialogAddonSettings.xml | cut -f1 -d':' )
-if tail -n+"$L"  720p/DialogAddonSettings.xml | head -n 10 | grep -q button-focus2.png ; then
-	R='s|(<control type="button"[^#]*#'
-	R+='(\s*(?!<texturenofocus)<[a-z][^#]*#)*?'
-	R+='\s*)<texturefocus[^>]*>(?!button-focus.png)(?!floor_buttonFO.png)(?!ShutdownButton)[^<]*(<[^#]*#'
-	R+='(\s*(?!<texturenofocus>)<[a-z][^#]*#)*?'
-	R+='\s*</control>)|\1<texturefocus border="2">button-focus_light.png\3|g'
-	perlregex "$R"
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
+printf " ]"
+		
+for C in $CONTROLS ; do
+	printf "\nReplacing focused texture for default %ss: " $C
+	L=$(grep -n '<control type="'$C'" id="[3458]">' 720p/DialogAddonSettings.xml | cut -f1 -d':' )
+	if [ -z "$L" ] ; then L=1 ; fi
+	if tail -n+"$L"  720p/DialogAddonSettings.xml | head -n 10 | grep -q button-focus2.png ; then
+		R='s|(<control type="'$C'"[^#]*#'
+		R+='(\s*(?!<texturenofocus)<[a-z][^#]*#)*?'
+		R+='\s*)<texturefocus[^>]*>(?!button-focus.png)(?!floor_buttonFO.png)(?!ShutdownButton)[^<]*(<[^#]*#'
+		R+='(\s*(?!<texturenofocus>)<[a-z][^#]*#)*?'
+		R+='\s*</control>)|\1<texturefocus border="2">button-focus_light.png\3|g'
+		perlregex "$R"
+		printf "%sDONE!%s" $GREEN $RESET
+	else
+		printf "%sSKIPPED.%s" $CYAN $RESET
+	fi
+done ; IFS=$OLDIFS
 
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
