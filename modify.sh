@@ -2,7 +2,7 @@
 #set -e
 set -o pipefail
 2>/dev/null rm debug.log
-DEBUG=true
+DEBUG=false
 
 RED=$(tput setaf 1)
 GREEN=$(tput setaf 2)
@@ -15,6 +15,7 @@ CYAN=$(tput setaf 6)
 debug() {
 	if $DEBUG ; then
 		printf "\n$1" >>debug.log
+		printf "%s\n%s%s" $CYAN "$1" $RESET >&2
 	fi
 }
 
@@ -32,6 +33,7 @@ perlregex() {
 	local CHANGED=false
 	
 	for I in "$@" ; do
+		I=$(echo "$I" | sed 's|^\s*||' | sed 's|\s*$||')
 		debug "Parameter: '$I'."
 		if [ -z "$I" ] ; then continue ; fi
 		if [ "$I" == "--nocheck" ] ; then
@@ -88,21 +90,38 @@ perlregex() {
 # $1 type of structure (control, include, etc...)
 # $2 structure tags ( type="" id="", etc...)
 # $3 characteristic line
-# $4 .xml file ; if empty, all occurrencies are searched
+# $4 files where to search
 remove_structure() {
-	local TYPE=$1
-	local TAGS=$2
-	local LINE="$3"
+	TYPE=$1
+	TAGS=$2
+	LINE="$3"
+	FILES=$4
+	debug "remove_structure() entered."
+	debug "Parameters are: TYPE='$TYPE'."
+	debug "TAGS='$TAGS'."
+	debug "LINE='$LINE'."
+	debug "FILES='$FILES'."
+	if [ -z "$FILES" ] ; then
+		FILES=$( local STRUCT='<'"$TYPE""$TAGS"'>'
+			debug "Structure is '$STRUCT'."
+			for F in $( egrep -l -q "$LINE" 720p/* ) ; do
+			debug "'$F' contains '$LINE'."
+			if grep -q -l '<'"$TYPE""$TAGS"'>' $F ; then
+				debug "'$F' contains also '$STRUCT'."
+				echo \"$F\"
+			fi
+		done )
+	fi
 	LINE=$(echo $LINE | sed 's|^<|\\s\*<|g')
 	LINE=$(echo $LINE | sed 's|>$|>#|g')
 	local REGEX='s|\s*<'"$TYPE""$TAGS"'>#'
-	local FILE="$4"
 	REGEX+='(\s*<[a-z][^#]*#\|)*?' # matching lines beginning with any opening tag
 	REGEX+="$LINE"
 	REGEX+='(\s*<[a-z][^#]*#\|)*?' # matching lines beginning with any opening tag
 	REGEX+='\s*</'"$TYPE"'>#'
 	REGEX+='||g'
-	perlregex "$REGEX" "$FILE"	
+	debug "Calling 'perlregex $FILES'."
+	perlregex "$REGEX" "$FILES"
 }
 
 
@@ -111,12 +130,12 @@ remove_structure() {
 # the controle structure to remove is identified by the characteristic line
 # $1 type of controle (image, button, etc...)
 # $2 characteristic line
-# $3 .xml file ; if empty, all occurrencies are searched
+# $3 files where to search
 remove_control() {
 	local TYPE=$1
 	local LINE="$2"
-	local FILE="$3"
-	remove_structure "control" " type=\"$TYPE\"" "$LINE" "$FILE"
+	local FILES=$3
+	remove_structure "control" " type=\"$TYPE\"" "$LINE" $FILES
 }
 
 
@@ -126,12 +145,12 @@ remove_control() {
 # the controle structure to remove is identified by the characteristic line
 # $1 type of controle (image, button, etc...)
 # $2 characteristic line
-# $3 .xml file ; if empty, all occurrencies are searched
+# $3 files where to search
 remove_controlid() {
 	local TYPE=$1
 	local LINE="$2"
-	local FILE="$3"
-	remove_structure "control" " type=\"$TYPE\"[^>]*" "$LINE" "$FILE"
+	local FILES=$3
+	remove_structure "control" " type=\"$TYPE\"[^>]*" "$LINE" $FILES
 }
 
 
@@ -186,6 +205,14 @@ read_origmaster() {
 	printf "\nCopied all files."
 }
 
+####################################### CODE STARTS HERE! ####################################
+debug "Parsing parameters."
+for I in "$@" ; do
+	debug "Read parameter '$I'."
+	if [ "$I" == "--debug" ] ; then
+		DEBUG=true
+	fi
+done
 
 if [ "$1" == "read" ] || [ "$1" == "readexit" ] ; then
 	printf "\n############# BUILDING BASE FILES #############################################"
@@ -229,12 +256,13 @@ fi
 
 printf "\nChanging texture for items without focus: "
 if [ -f media/button-nofocus.png ] ; then
+	XMLS=$(2>/dev/null grep 'button-nofocus.png</texture>' -l 720p/*)
 	R='s|(<(item\|focused\|ruler\|channel)layout [^#]*#'
 	# matching lines beginning with any opening tag and </control>:
 	R+='(\s*<[a-z][^#]*#\|\s*</control>#)*?'
 	R+='\s*<texture) border="[0-9]*">button-nofocus.png</texture>'
 	R+='|\1>black-back.png</texture>|g'
-	perlregex "$R"
+	perlregex "$R" $XMLS
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -266,11 +294,12 @@ fi
 
 printf "\nChanging texture for controls without focus: "
 if [ -f media/button-nofocus.png ] ; then
+	XMLS=$(2>/dev/null grep 'button-nofocus.png</texturenofocus>' -l 720p/*)
 	R='s|(<control type="[^#]*#'
 	R+='(\s*(<[a-z]\|<!--)[^#]*#)*?' # matching lines beginning with any opening tag and comments
 	R+='\s*<texturenofocus) border="[0-9]*">button-nofocus.png</texturenofocus>'
 	R+='|\1>black-back.png</texturenofocus>|g'
-	perlregex "$R"
+	perlregex "$R" $XMLS
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -278,11 +307,12 @@ fi
 
 printf "\nChanging alttexture for controls without focus: "
 if [ -f media/button-nofocus.png ] ; then
+	XMLS=$(2>/dev/null grep 'button-nofocus.png</alttexturenofocus>' -l 720p/*)
 	R='s|(<control type="[^#]*#'
 	R+='(\s*<[a-z][^#]*#)*?' # matching lines beginning with any opening tag
 	R+='\s*<alttexturenofocus) border="[0-9]*">button-nofocus.png</alttexturenofocus>'
 	R+='|\1>black-back.png</alttexturenofocus>|g'
-	perlregex "$R"
+	perlregex "$R" $XMLS
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -290,10 +320,11 @@ fi
 
 printf "\nRemoving button-nofocus.png bordertextures: "
 if [ -f media/button-nofocus.png ] ; then
+	XMLS=$(2>/dev/null grep 'button-nofocus.png</bordertexture>' -l 720p/*)
 	R='s|(\s*<bordertexture border="[0-9]*"[^>]*>button-nofocus.png</bordertexture>#\|'
 	R+='\s*<bordersize>[0-9]*</bordersize>#){2}'
 	R+='||g'
-	perlregex "$R"
+	perlregex "$R" $XMLS
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -301,13 +332,14 @@ fi
 
 printf "\nRemoving button-nofocus.png where used as border background: "
 if [ -f media/button-nofocus.png ] ; then
+	XMLS=$(2>/dev/null grep 'button-nofocus.png</texture>' -l 720p/*)
 	R='s|\s*<control type="image">#'
 	R+='(\s*<[a-z][^#]*#)*?' # matching lines beginning with any opening tag
 	R+='\s*<height>[23456789][0-9][0-9]</height>#' # 200 or more pixels high
 	R+='\s*<texture border="[0-9]">button-nofocus.png</texture>#'
 	R+='\s*</control>#'
 	R+='||g'
-	perlregex "$R"
+	perlregex "$R" $XMLS
 	check_and_remove media/button-nofocus.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
@@ -387,14 +419,15 @@ fi
 	
 printf "\nReplacing scroll bars: "
 if grep -q ScrollBarNib.png 720p/ViewsPictures.xml ; then
-	perlregex 's|<texturesliderbar border="[0-9,]*">ScrollBarH_bar.png|<texturesliderbar>ScrollBarH_bar_light.png|g'
-	perlregex 's|<texturesliderbar border="[0-9,]*">ScrollBarV_bar.png|<texturesliderbar>ScrollBarV_bar_light.png|g'
-	perlregex 's|<texturesliderbackground border="[0-9,]*">ScrollBarH.png|<texturesliderbackground>ScrollBarH_light.png|g'
-	perlregex 's|<texturesliderbackground border="[0-9,]*">ScrollBarV.png|<texturesliderbackground>ScrollBarV_light.png|g'
-	perlregex 's|<texturesliderbarfocus border="[0-9,]*">ScrollBarV_bar_focus.png|<texturesliderbarfocus>ScrollBarV_bar_focus_light.png|g'
-	perlregex 's|<texturesliderbarfocus border="[0-9,]*">ScrollBarH_bar_focus.png|<texturesliderbarfocus>ScrollBarH_bar_focus_light.png|g'
-	perlregex 's|\s*<textureslidernib>ScrollBarNib.png</textureslidernib>#||g'
-	perlregex 's|\s*<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>#||g'	
+	XMLS=$(2>/dev/null grep 'ScrollBar' -l 720p/*)
+	perlregex $XMLS 's|<texturesliderbar border="[0-9,]*">ScrollBarH_bar.png|<texturesliderbar>ScrollBarH_bar_light.png|g'
+	perlregex $XMLS 's|<texturesliderbar border="[0-9,]*">ScrollBarV_bar.png|<texturesliderbar>ScrollBarV_bar_light.png|g'
+	perlregex $XMLS 's|<texturesliderbackground border="[0-9,]*">ScrollBarH.png|<texturesliderbackground>ScrollBarH_light.png|g'
+	perlregex $XMLS 's|<texturesliderbackground border="[0-9,]*">ScrollBarV.png|<texturesliderbackground>ScrollBarV_light.png|g'
+	perlregex $XMLS 's|<texturesliderbarfocus border="[0-9,]*">ScrollBarV_bar_focus.png|<texturesliderbarfocus>ScrollBarV_bar_focus_light.png|g'
+	perlregex $XMLS 's|<texturesliderbarfocus border="[0-9,]*">ScrollBarH_bar_focus.png|<texturesliderbarfocus>ScrollBarH_bar_focus_light.png|g'
+	perlregex $XMLS 's|\s*<textureslidernib>ScrollBarNib.png</textureslidernib>#||g'
+	perlregex $XMLS 's|\s*<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>#||g'	
 	check_and_remove 'media/ScrollBarH_bar.png'
 	check_and_remove 'media/ScrollBarV_bar.png'
 	check_and_remove 'media/ScrollBarH.png'
@@ -417,8 +450,9 @@ else
 fi
 
 printf "\nRemoving separators: "
-if grep -q separator.png 720p/* | head -n 1 ; then
-	remove_control 'image' '<texture>separator(\|2).png</texture>'
+if [ -f media/separator2.png ] ; then
+	remove_control 'image' '<texture>separator.png</texture>'
+	remove_control 'image' '<texture>separator2.png</texture>'
 	#not all controls can be removed, some have an id and are used for navigation
 	perlregex 's|separator2.png|-|g'
 	check_and_remove media/separator.png
@@ -579,6 +613,33 @@ printf "\nRemoving references to 'media/separator_vertical.png': "
 if [ -f media/separator_vertical.png ] ; then
 	remove_control 'image' '<texture>separator_vertical.png</texture>'
 	check_and_remove media/separator_vertical.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+
+printf "\nSearching controls with default back-black.png texturenofocus: "
+DEFS=$(grep '<default type="' 720p/defaults.xml | sed 's|^\s*[^"]*"||g' | cut -f1 -d'"')
+OLDIFS=$IFS ; IFS=$'\n'
+for DEF in $DEFS ; do
+	DEFSTART=$(grep -n '<default type="'"$DEF"'">' 720p/defaults.xml | cut -f1 -d:)
+	DEFSTOP=$(tail -n+"$DEFSTART" 720p/defaults.xml | grep -n '</default>' | head -n 1 | cut -f1 -d:)
+	if tail -n+"$DEFSTART" 720p/defaults.xml | head -n "$DEFSTOP" | \
+		grep texturenofocus | grep back-black.png ; then
+		printf "found $DEF..."
+	fi
+done
+printf "%sDONE!%s" $GREEN $RESET
+			
+printf "\nReplacing focused texture for default buttons: "
+L=$(grep -n '<control type="button" id="3">' 720p/DialogAddonSettings.xml | cut -f1 -d':' )
+if tail -n+"$L"  720p/DialogAddonSettings.xml | head -n 10 | grep -q button-focus2.png ; then
+	R='s|(<control type="button"[^#]*#'
+	R+='(\s*(?!<texturenofocus)<[a-z][^#]*#)*?'
+	R+='\s*)<texturefocus[^>]*>(?!button-focus.png)(?!floor_buttonFO.png)(?!ShutdownButton)[^<]*(<[^#]*#'
+	R+='(\s*(?!<texturenofocus>)<[a-z][^#]*#)*?'
+	R+='\s*</control>)|\1<texturefocus border="2">button-focus_light.png\3|g'
+	perlregex "$R"
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -841,10 +902,10 @@ for DEF in $INCDEFS ; do
 	fi
 done
 IFS=$OLDIFS
+printf "%sDONE!%s" $GREEN $RESET
 
 printf "\nScanning defaults.xml for default values: "
-FILE=720p/defaults.xml
-DEFS=$(grep '<default type="' $FILE | sed 's|^\s*[^"]*"||g' | cut -f1 -d'"')
+DEFS=$(grep '<default type="' 720p/defaults.xml | sed 's|^\s*[^"]*"||g' | cut -f1 -d'"')
 printf "%sDONE!%s" $GREEN $RESET
 
 OLDIFS=$IFS ; IFS=$'\n'
