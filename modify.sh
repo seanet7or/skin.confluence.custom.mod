@@ -367,15 +367,22 @@ else
 fi	
 	
 printf "\nReplacing scroll bars: "
-if grep ScrollBarH.png 720p/* >/dev/null ; then
-	perlregex 's|ScrollBarH_bar.png|ScrollBarH_bar_light.png|g'
-	perlregex 's|ScrollBarV_bar.png|ScrollBarV_bar_light.png|g'
-	perlregex 's|ScrollBarH.png|ScrollBarH_light.png|g'
-	perlregex 's|ScrollBarV.png|ScrollBarV_light.png|g'
+if grep -q ScrollBarNib.png 720p/ViewsPictures.xml ; then
+	perlregex 's|<texturesliderbar border="[0-9,]*">ScrollBarH_bar.png|<texturesliderbar>ScrollBarH_bar_light.png|g'
+	perlregex 's|<texturesliderbar border="[0-9,]*">ScrollBarV_bar.png|<texturesliderbar>ScrollBarV_bar_light.png|g'
+	perlregex 's|<texturesliderbackground border="[0-9,]*">ScrollBarH.png|<texturesliderbackground>ScrollBarH_light.png|g'
+	perlregex 's|<texturesliderbackground border="[0-9,]*">ScrollBarV.png|<texturesliderbackground>ScrollBarV_light.png|g'
+	perlregex 's|<texturesliderbarfocus border="[0-9,]*">ScrollBarV_bar_focus.png|<texturesliderbarfocus>ScrollBarV_bar_focus_light.png|g'
+	perlregex 's|<texturesliderbarfocus border="[0-9,]*">ScrollBarH_bar_focus.png|<texturesliderbarfocus>ScrollBarH_bar_focus_light.png|g'
+	perlregex 's|\s*<textureslidernib>ScrollBarNib.png</textureslidernib>#||g'
+	perlregex 's|\s*<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>#||g'	
 	check_and_remove 'media/ScrollBarH_bar.png'
 	check_and_remove 'media/ScrollBarV_bar.png'
 	check_and_remove 'media/ScrollBarH.png'
 	check_and_remove 'media/ScrollBarV.png'
+	check_and_remove 'media/ScrollBarH_bar_focus.png'
+	check_and_remove 'media/ScrollBarV_bar_focus.png'
+	check_and_remove 'media/ScrollBarNib.png'
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -550,7 +557,7 @@ else
 fi
 
 printf "\nRemoving references to 'media/separator_vertical.png': "
-if grep -I -q "separator_vertical.png" 720p/* ; then
+if [ -f media/separator_vertical.png ] ; then
 	remove_control 'image' '<texture>separator_vertical.png</texture>'
 	check_and_remove media/separator_vertical.png
 	printf "%sDONE!%s" $GREEN $RESET
@@ -561,7 +568,7 @@ fi
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
 printf "\nReplacing submenus item texture (for items that are not focused): "
-if grep -I -q 'HomeSubNF.png' 720p/* ; then
+if [ -f media/HomeSubNF.png ] ; then
 	perlregex 's|HomeSubNF.png|HomeSubNF_light.png|g'
 	check_and_remove media/HomeSubNF.png
 	printf "%sDONE!%s" $GREEN $RESET
@@ -586,7 +593,7 @@ else
 fi
 
 printf "\nRemoving Main menu side fade effect: "
-if grep -q SideFade.png 720p/* | head -n 1 ; then
+if [ -f media/SideFade.png ] ; then
 	remove_control 'image' '<texture[^>]*>SideFade.png</texture>'
 	check_and_remove media/SideFade.png
 	printf "%sDONE!%s" $GREEN $RESET
@@ -622,7 +629,7 @@ else
 fi
 
 printf "\nChanging widgets on the home screen: "
-if grep -I -q 'RecentAddedBack.png' 720p/* ; then
+if [ -f media/RecentAddedBack.png ] ; then
 	#removing widgets background
 	remove_control 'image' '<texture[^>]*>RecentAddedBack.png</texture>'
 	#widget group title label
@@ -637,7 +644,7 @@ else
 fi
 
 printf "\nRemoving home floor: "
-if grep -I -q "homefloor.png" 720p/* ; then
+if [ -f media/homefloor.png ] ; then
 	remove_control 'image' '<texture>homefloor.png</texture>' 720p/Home.xml
 	check_and_remove media/homefloor.png
 	printf "%sDONE!%s" $GREEN $RESET
@@ -763,7 +770,7 @@ fi
 printf "\n############# APPLYING MODIFICATIONS TO SPECIAL DIALOGS #######################"
 
 printf "\nChanging shutdown menu: "
-if grep -I -q "DialogContextTop.png" 720p/* ; then
+if [ -f media/DialogContextTop.png ] ; then
 	remove_controlid 'image' '<description>background top image</description>' 720p/DialogButtonMenu.xml
 	remove_controlid 'image' '<description>background bottom image</description>' 720p/DialogButtonMenu.xml
 	perlregex '720p/DialogButtonMenu.xml' 's|texturenofocus border="25,5,25,5">ShutdownButtonNoFocus.png|texturenofocus>black-back.png|g'
@@ -788,7 +795,7 @@ else
 fi
 
 #removed up and down arrows
-if grep -I -q '<texturefocus>arrow-big-down.png</texturefocus>' 720p/* ; then
+if [ -f media/arrow-big-up.png ] ; then
 	printf "\nRemoving up and down arrows from several dialogs: "
 	remove_control 'button' '<texturefocus>arrow-big-up.png</texturefocus>'
 	remove_control 'button' '<texturefocus>arrow-big-down.png</texturefocus>'
@@ -799,11 +806,6 @@ else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 
-printf "%s\nAll modifications are completed.%s" $GREEN $RESET
+printf "%s\nAll modifications are completed.\n%s" $GREEN $RESET
 
 exit
-
-
-	#changing texturenofocus for buttons (instead default one)
-	perlregex '720p/DialogContextMenu.xml' 's|(\s*)<description>button template</description>|\1<description>button template</description>#\1<texturenofocus>black-back.png</texturenofocus>|g'
-	perlregex '720p/DialogContextMenu.xml' 's|(\s*)<description>Watch it Later</description>|\1<description>Watch it Later</description>#\1<texturenofocus>black-back.png</texturenofocus>|g'		
