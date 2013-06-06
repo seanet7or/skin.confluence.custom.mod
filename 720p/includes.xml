@@ -426,7 +426,8 @@
 			<width>500</width>
 			<height>165</height>
 			<colordiffuse>DDFFFFFF</colordiffuse>
-			<texture border="20">OverlayDialogBackground.png</texture>
+			<texture>white100_light.png</texture>
+			<colordiffuse>DF101314</colordiffuse>
 		</control>
 		<control type="image">
 			<description>Cover image</description>
@@ -509,7 +510,8 @@
 			<width>500</width>
 			<height>165</height>
 			<colordiffuse>DDFFFFFF</colordiffuse>
-			<texture border="20">OverlayDialogBackground.png</texture>
+			<texture>white100_light.png</texture>
+			<colordiffuse>DF101314</colordiffuse>
 		</control>
 		<control type="image">
 			<description>Cover image</description>
@@ -1022,7 +1024,7 @@
 				<width>180</width>
 				<height>120</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<bordertexture border="5">folder-focus.png</bordertexture>
+				<bordertexture border="2">folder-focus.png</bordertexture>
 				<bordersize>3</bordersize>
 				<texture background="true">$INFO[ListItem.Icon]</texture>
 				<visible>ControlGroup(9002).HasFocus</visible>
@@ -1117,7 +1119,7 @@
 				<posy>0</posy>
 				<width>280</width>
 				<height>145</height>
-				<texture border="10">button-focus2.png</texture>
+				<texture border="2">button-focus2.png</texture>
 			</control>
 			<control type="image">
 				<description>Thumb</description>

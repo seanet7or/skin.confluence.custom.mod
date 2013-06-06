@@ -119,7 +119,7 @@
 						<posy>0</posy>
 						<width>690</width>
 						<height>41</height>
-						<texture border="0,2,0,2">button-focus2.png</texture>
+						<texture border="2">button-focus2.png</texture>
 						<visible>Control.HasFocus(50)</visible>
 						<include>VisibleFadeEffect</include>
 					</control>
@@ -341,7 +341,7 @@
 						<posy>0</posy>
 						<width>214</width>
 						<height>160</height>
-						<bordertexture border="5">folder-focus.png</bordertexture>
+						<bordertexture border="2">folder-focus.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$INFO[Listitem.Icon]</texture>
 						<visible>!Container.Content(Episodes)</visible>
@@ -352,7 +352,7 @@
 						<width>214</width>
 						<height>160</height>
 						<aspectratio>scale</aspectratio>
-						<bordertexture border="5">folder-focus.png</bordertexture>
+						<bordertexture border="2">folder-focus.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$INFO[Listitem.Icon]</texture>
 						<visible>Container.Content(Episodes) + [StringCompare(ListItem.Label,..) | !Skin.HasSetting(HideEpisodeThumb)]</visible>
@@ -363,7 +363,7 @@
 						<width>214</width>
 						<height>160</height>
 						<aspectratio>scale</aspectratio>
-						<bordertexture border="5">folder-focus.png</bordertexture>
+						<bordertexture border="2">folder-focus.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
 						<visible>Container.Content(Episodes) + Skin.HasSetting(HideEpisodeThumb) + !StringCompare(ListItem.Label,..)</visible>
@@ -425,7 +425,7 @@
 						<posy>0</posy>
 						<width>214</width>
 						<height>240</height>
-						<bordertexture border="5">folder-focus.png</bordertexture>
+						<bordertexture border="2">folder-focus.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$VAR[PosterThumb]</texture>
 					</control>
@@ -509,7 +509,7 @@
 						<posy>0</posy>
 						<width>538</width>
 						<height>105</height>
-						<bordertexture border="5">folder-focus.png</bordertexture>
+						<bordertexture border="2">folder-focus.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$VAR[BannerThumb]</texture>
 					</control>
@@ -675,7 +675,7 @@
 						<posy>0</posy>
 						<width>1080</width>
 						<height>41</height>
-						<texture border="0,2,0,2">button-focus2.png</texture>
+						<texture border="2">button-focus2.png</texture>
 						<visible>Control.HasFocus(51)</visible>
 						<include>VisibleFadeEffect</include>
 					</control>

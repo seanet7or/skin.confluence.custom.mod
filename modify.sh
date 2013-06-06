@@ -199,6 +199,7 @@ read_origmaster() {
 	rm -rf colors
 	rm -rf language
 	rm -rf extras
+	rm -rf themes 2>/dev/null
 	rm -rf Mudislander-master/skin.confluence.custom.mod-master/themes
 	cp -rf Mudislander-master/skin.confluence.custom.mod-master/* .
 	cp -rf lightmod/* .
@@ -376,7 +377,20 @@ if [ -f media/DialogBack.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-		
+	
+printf "\nChanging dialog background overlay: "
+if [ -f media/OverlayDialogBackground.png ] ; then
+	R='s|<texturebg border="20">OverlayDialogBackground.png</texturebg>|<texturebg>back-black.png</texturebg>|g'
+	perlregex "$R"
+	R='s|(\s*)<texture border="[0-9]*">OverlayDialogBackground.png</texture>'
+	R+='|\1<texture>white100_light.png</texture>#\1<colordiffuse>DF101314</colordiffuse>|g'
+	perlregex "$R"
+	check_and_remove media/OverlayDialogBackground.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+	
 printf "\nRemoving mouse close buttons: "
 if [ -f  media/DialogCloseButton-focus.png ] ; then
 	remove_controlid 'button' '<texturenofocus>DialogCloseButton.png</texturenofocus>'
@@ -662,18 +676,33 @@ for C in $CONTROLS ; do
 done ; IFS=$OLDIFS
 
 printf "\nReplacing focused texture for all controls with custom black-back.png texturenofocus: "
-R='s|(<texturenofocus[^>]*>black-back.png</texturenofocus>#' # black-back texturenofocus
-R+='(\s*(?!<texturenofocus>)(?!<control)(?!<image)(?!<texturefocus>)<[a-z][^#]*#)*?' # match opening tags (0+)
-# match bad texturefocus combination for black-back texturenofocus
-R+='\s*)<texturefocus[^>]*>(?!button-focus.png)(?!HomeSubFO.png)(?!floor_buttonFO.png)(?!ShutdownButton)[^<]*<[^#]*#'
-R+='|\1<texturefocus border="2">button-focus_light.png</texturefocus>#|g'
-perlregex "$R"
-# match bad texturefocus combination for black-back texturenofocus
-R='s|<texturefocus[^>]*>(?!button-focus.png)(?!HomeSubFO.png)(?!floor_buttonFO.png)(?!ShutdownButton)[^<]*<[^#]*#'
-R+='((\s*(?!<texturenofocus>)(?!<control)(?!<image)(?!<texturefocus>)<[a-z][^#]*#)*?' # match opening tags (0+)
-R+='\s*<texturenofocus[^>]*>black-back.png</texturenofocus>#)' # black-back texturenofocus
-R+='|<texturefocus border="2">button-focus_light.png</texturefocus>#\1|g'
-perlregex "$R"
+if true ; then
+	R='s|(<texturenofocus[^>]*>black-back.png</texturenofocus>#' # black-back texturenofocus
+	R+='(\s*(?!<texturenofocus>)(?!<control)(?!<image)(?!<texturefocus>)<[a-z][^#]*#)*?' # match opening tags (0+)
+	# match bad texturefocus combination for black-back texturenofocus
+	R+='\s*)<texturefocus[^>]*>(?!button-focus.png)(?!HomeSubFO.png)(?!floor_buttonFO.png)(?!ShutdownButton)[^<]*<[^#]*#'
+	R+='|\1<texturefocus border="2">button-focus_light.png</texturefocus>#|g'
+	perlregex "$R"
+	# match bad texturefocus combination for black-back texturenofocus
+	R='s|<texturefocus[^>]*>(?!button-focus.png)(?!HomeSubFO.png)(?!floor_buttonFO.png)(?!ShutdownButton)[^<]*<[^#]*#'
+	R+='((\s*(?!<texturenofocus>)(?!<control)(?!<image)(?!<texturefocus>)<[a-z][^#]*#)*?' # match opening tags (0+)
+	R+='\s*<texturenofocus[^>]*>black-back.png</texturenofocus>#)' # black-back texturenofocus
+	R+='|<texturefocus border="2">button-focus_light.png</texturefocus>#\1|g'
+	perlregex "$R"
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+
+printf "\nReplacing focused texture for all items with custom black-back.png texturenofocus: "
+	R='s|(<focusedlayout[^#]*#'
+	R+='(\s*<[a-z][^#]*#)*?' # match opening tags (0+)
+	R+='\s*<texture[^>]*>black-back.png</texture>#'
+	R+='(\s*(<[a-z][^#]*\|</control>)#)*?' # match opening or </control> tags (0+)
+	# match bad texture combination for black-back texture
+	R+='\s*)<texture[^>]*>(?!button-focus.png)(?!HomeSubFO.png)(?!floor_buttonFO.png)(?!ShutdownButton)[^>]*>'
+	R+='|\1<texture border="2">button-focus_light.png</texture>|g'
+	perlregex "$R"
 printf "%sDONE!%s" $GREEN $RESET
 
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
@@ -880,6 +909,16 @@ fi
 
 printf "\n############# APPLYING MODIFICATIONS TO SPECIAL DIALOGS #######################"
 
+printf "\nChanging busy dialog: "
+if [ -f media/busy.png ] ; then
+	remove_control 'image' '<texture>busy.png</texture>' 720p/DialogBusy.xml
+	perlregex 's|(<description>Busy label</description>#\s*<posx)>60|\1>40|' 720p/DialogBusy.xml
+	check_and_remove media/busy.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+
 printf "\nChanging shutdown menu: "
 if [ -f media/DialogContextTop.png ] ; then
 	remove_controlid 'image' '<description>background top image</description>' 720p/DialogButtonMenu.xml
@@ -918,6 +957,24 @@ fi
 
 printf "\n############# CLEANING UP #####################################################"
 
+TEXLIST='button-focus2.png;2
+folder-focus.png;2'
+OLDIFS=$IFS ; IFS=$'\n'
+for T in $TEXLIST ; do
+	TEXTURE=$(echo "$T" | cut -f1 -d';')
+	BORDER=$(echo "$T" |cut -f2 -d';')
+	printf "\nSetting correct borders for $TEXTURE: "
+	if grep "$TEXTURE" 720p/* | grep -v -q 'border="'$BORDER'"' ; then
+		R='s|border="[0-9,]*">'$TEXTURE'</|border="'$BORDER'">'$TEXTURE'</|g'
+		perlregex "$R"
+		R='s|<texture>'$TEXTURE'</|<texture border="'$BORDER'">'$TEXTURE'</|g'
+		perlregex "$R"
+		printf "%sDONE!%s" $GREEN $RESET
+	else
+		printf "%sSKIPPED.%s" $CYAN $RESET
+	fi
+done ; IFS=$OLDIFS
+	
 printf "\nScanning for include definitions: "
 INCDEFS=$(grep '<include[^s]' 720p/* | grep -v '</include>' | grep -v 'file' \
 	| cut -f2 -d':' | sed 's|^\s*<include name="||' | sed 's|">$||')
