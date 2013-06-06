@@ -198,8 +198,8 @@ read_origmaster() {
 	rm -rf backgrounds
 	rm -rf colors
 	rm -rf language
-	rm -rf themes
 	rm -rf extras
+	rm -rf Mudislander-master/skin.confluence.custom.mod-master/themes
 	cp -rf Mudislander-master/skin.confluence.custom.mod-master/* .
 	cp -rf lightmod/* .
 	printf "\nCopied all files."
@@ -249,6 +249,16 @@ if [ -f media/defaultDVDFull.png ] ; then
 	check_and_remove media/OSDFullScreenFO.png
 	check_and_remove media/OSDFullScreenNF.png
 	check_and_remove media/defaultDVDFull.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+
+printf "\nReplacing MenuItemFO.png (equal to button-focus2.png): "
+if [ -f media/MenuItemFO.png ] ; then
+	# these images are the same
+	perlregex 's|>MenuItemFO.png|>button-focus2.png|g'
+	check_and_remove media/MenuItemFO.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
