@@ -636,12 +636,12 @@ printf " ]"
 		
 for C in $CONTROLS ; do
 	printf "\nReplacing focused texture for default %ss: " $C
-	L=$(grep -n '<control type="'$C'" id="[3458]">' 720p/DialogAddonSettings.xml | cut -f1 -d':' )
-	if [ -z "$L" ] ; then L=1 ; fi
-	if tail -n+"$L"  720p/DialogAddonSettings.xml | head -n 10 | grep -q button-focus2.png ; then
+	#L=$(grep -n '<control type="'$C'" id="[3458]">' 720p/DialogAddonSettings.xml | cut -f1 -d':' )
+	#if [ -z "$L" ] ; then L=1 ; fi
+	if true ; then #tail -n+"$L"  720p/DialogAddonSettings.xml | head -n 10 | grep -q button-focus2.png ; then
 		R='s|(<control type="'$C'"[^#]*#'
 		R+='(\s*(?!<texturenofocus)<[a-z][^#]*#)*?'
-		R+='\s*)<texturefocus[^>]*>(?!button-focus.png)(?!floor_buttonFO.png)(?!ShutdownButton)[^<]*(<[^#]*#'
+		R+='\s*)<texturefocus[^>]*>(?!button-focus.png)(?!HomeSubFO.png)(?!floor_buttonFO.png)(?!ShutdownButton)[^<]*(<[^#]*#'
 		R+='(\s*(?!<texturenofocus>)<[a-z][^#]*#)*?'
 		R+='\s*</control>)|\1<texturefocus border="2">button-focus_light.png\3|g'
 		perlregex "$R"
@@ -650,6 +650,21 @@ for C in $CONTROLS ; do
 		printf "%sSKIPPED.%s" $CYAN $RESET
 	fi
 done ; IFS=$OLDIFS
+
+printf "\nReplacing focused texture for all controls with custom black-back.png texturenofocus: "
+R='s|(<texturenofocus[^>]*>black-back.png</texturenofocus>#' # black-back texturenofocus
+R+='(\s*(?!<texturenofocus>)(?!<control)(?!<image)(?!<texturefocus>)<[a-z][^#]*#)*?' # match opening tags (0+)
+# match bad texturefocus combination for black-back texturenofocus
+R+='\s*)<texturefocus[^>]*>(?!button-focus.png)(?!HomeSubFO.png)(?!floor_buttonFO.png)(?!ShutdownButton)[^<]*<[^#]*#'
+R+='|\1<texturefocus border="2">button-focus_light.png</texturefocus>#|g'
+perlregex "$R"
+# match bad texturefocus combination for black-back texturenofocus
+R='s|<texturefocus[^>]*>(?!button-focus.png)(?!HomeSubFO.png)(?!floor_buttonFO.png)(?!ShutdownButton)[^<]*<[^#]*#'
+R+='((\s*(?!<texturenofocus>)(?!<control)(?!<image)(?!<texturefocus>)<[a-z][^#]*#)*?' # match opening tags (0+)
+R+='\s*<texturenofocus[^>]*>black-back.png</texturenofocus>#)' # black-back texturenofocus
+R+='|<texturefocus border="2">button-focus_light.png</texturefocus>#\1|g'
+perlregex "$R"
+printf "%sDONE!%s" $GREEN $RESET
 
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 

@@ -397,7 +397,7 @@
 						<label> - $LOCALIZE[31371]</label>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Addon.OpenSettings(script.globalsearch)</onclick>
 						<enable>!Skin.HasSetting(HideHomeSearch)</enable>
 						<visible>System.HasAddon(script.globalsearch)</visible>
@@ -537,7 +537,7 @@
 						<label>- $LOCALIZE[31364]</label>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Addon.OpenSettings(script.artistslideshow)</onclick>
 						<enable>Skin.HasSetting(AllowSlideShowArt) | Skin.HasSetting(AllowSlideShowBio)</enable>
 						<visible>System.HasAddon(script.artistslideshow)</visible>
@@ -619,7 +619,7 @@
 						<label2>[COLOR=selected]$VAR[WatchTypeName][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Control.Move(9009,1)</onclick>
 						<onclick condition="stringcompare(Container(9009).ListItem.Label,Default)">Skin.Reset(WatchStatusType)</onclick>
 						<onclick condition="!stringcompare(Container(9009).ListItem.Label,Default)">Skin.SetString(WatchStatusType,$INFO[Container(9009).ListItem.Label])</onclick>
@@ -681,7 +681,7 @@
 						<label2>[COLOR=selected]$VAR[UsrMPAACountry][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Control.Move(9008,1)</onclick>
 						<onclick>Skin.SetString(MPAACountryCert,$INFO[Container(9008).ListItem.Label])</onclick>
 					</control>
@@ -804,7 +804,7 @@
 						<label>15311</label>
 						<label2>$INFO[Skin.String(Startup_Playlist_Path)]</label2>
 						<onclick>Skin.SetFile(Startup_Playlist_Path,,special://MusicPlaylists/)</onclick>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<enable>Skin.HasSetting(Use_Startup_Playlist)</enable>
 					</control>
 				</control>
@@ -929,7 +929,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.1.Label)][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.1,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.1.Label))">Skin.SetString(HomeItem.1.Label)</onclick>
@@ -941,7 +941,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemOneSubLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.1,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
@@ -954,7 +954,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemOneAddOnLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.1,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
@@ -967,7 +967,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemOneWidgetLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.1,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
@@ -980,7 +980,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.2.Label)][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.2,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.2.Label))">Skin.SetString(HomeItem.2.Label)</onclick>
@@ -992,7 +992,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemTwoSubLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.2,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.2.Label))</visible>
@@ -1004,7 +1004,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemTwoAddOnLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.2,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
@@ -1017,7 +1017,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemTwoWidgetLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.2,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
@@ -1030,7 +1030,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.3.Label)][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.3,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.3.Label))">Skin.SetString(HomeItem.3.Label)</onclick>
@@ -1042,7 +1042,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemThreeSubLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.3,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.3.Label))</visible>
@@ -1054,7 +1054,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemThreeAddOnLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.3,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
@@ -1067,7 +1067,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemThreeWidgetLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.3,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
@@ -1080,7 +1080,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.4.Label)][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.4,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.4.Label))">Skin.SetString(HomeItem.4.Label)</onclick>
@@ -1092,7 +1092,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemFourSubLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.4,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.4.Label))</visible>
@@ -1104,7 +1104,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemFourAddOnLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.4,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
@@ -1117,7 +1117,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemFourWidgetLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.4,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
@@ -1130,7 +1130,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.5.Label)][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.5,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.5.Label))">Skin.SetString(HomeItem.5.Label)</onclick>
@@ -1142,7 +1142,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemFiveSubLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.5,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.5.Label))</visible>
@@ -1154,7 +1154,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemFiveAddOnLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.5,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
@@ -1167,7 +1167,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemFiveWidgetLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.5,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
@@ -1180,7 +1180,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.6.Label)][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.6,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.6.Label))">Skin.SetString(HomeItem.6.Label)</onclick>
@@ -1192,7 +1192,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemSixSubLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.6,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.6.Label))</visible>
@@ -1204,7 +1204,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemSixAddOnLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.6,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
@@ -1217,7 +1217,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemSixWidgetLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.6,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
@@ -1230,7 +1230,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.7.Label)][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.7,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.7.Label))">Skin.SetString(HomeItem.7.Label)</onclick>
@@ -1242,7 +1242,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemSevenSubLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.7,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.7.Label))</visible>
@@ -1254,7 +1254,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemSevenAddOnLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.7,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
@@ -1267,7 +1267,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemSevenWidgetLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.7,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
@@ -1280,7 +1280,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.8.Label)][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.8,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.8.Label))">Skin.SetString(HomeItem.8.Label)</onclick>
@@ -1292,7 +1292,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemEightSubLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.8,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.8.Label))</visible>
@@ -1304,7 +1304,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemEightAddOnLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.8,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
@@ -1317,7 +1317,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemEightWidgetLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.8,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
@@ -1330,7 +1330,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.9.Label)][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.9,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.9.Label))">Skin.SetString(HomeItem.9.Label)</onclick>
@@ -1342,7 +1342,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemNineSubLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.9,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.9.Label))</visible>
@@ -1354,7 +1354,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemNineAddOnLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.9,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
@@ -1367,7 +1367,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemNineWidgetLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.9,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
@@ -1380,7 +1380,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.10.Label)][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.10,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.10.Label))">Skin.SetString(HomeItem.10.Label)</onclick>
@@ -1392,7 +1392,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemTenSubLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.10,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.10.Label))</visible>
@@ -1404,7 +1404,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemTenAddOnLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.10,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
@@ -1417,7 +1417,7 @@
 						<label2>[COLOR=grey2]$VAR[UsrDefItemTenWidgetLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.10,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
@@ -1467,7 +1467,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubOne.1.Label)][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubOne.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubOne.1.Label))">Skin.SetString(UserSubOne.1.Label)</onclick>
@@ -1479,7 +1479,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubOne.2.Label)][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubOne.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubOne.2.Label))">Skin.SetString(UserSubOne.2.Label)</onclick>
@@ -1491,7 +1491,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubOne.3.Label)][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubOne.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubOne.3.Label))">Skin.SetString(UserSubOne.3.Label)</onclick>
@@ -1503,7 +1503,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubOne.4.Label)][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubOne.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubOne.4.Label))">Skin.SetString(UserSubOne.4.Label)</onclick>
@@ -1515,7 +1515,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubOne.5.Label)][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubOne.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubOne.5.Label))">Skin.SetString(UserSubOne.5.Label)</onclick>
@@ -1527,7 +1527,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubOne.6.Label)][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubOne.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubOne.6.Label))">Skin.SetString(UserSubOne.6.Label)</onclick>
@@ -1550,7 +1550,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubTwo.1.Label)][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubTwo.1.Label))">Skin.SetString(UserSubTwo.1.Label)</onclick>
@@ -1562,7 +1562,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubTwo.2.Label)][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubTwo.2.Label))">Skin.SetString(UserSubTwo.2.Label)</onclick>
@@ -1574,7 +1574,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubTwo.3.Label)][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubTwo.3.Label))">Skin.SetString(UserSubTwo.3.Label)</onclick>
@@ -1586,7 +1586,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubTwo.4.Label)][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubTwo.4.Label))">Skin.SetString(UserSubTwo.4.Label)</onclick>
@@ -1598,7 +1598,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubTwo.5.Label)][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubTwo.5.Label))">Skin.SetString(UserSubTwo.5.Label)</onclick>
@@ -1610,7 +1610,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubTwo.6.Label)][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubTwo.6.Label))">Skin.SetString(UserSubTwo.6.Label)</onclick>
@@ -1633,7 +1633,7 @@
 						<label2>[COLOR=selected]$VAR[SubMenuVideosOne][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,SubVideos.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubVideos.1.Label)) + !stringcompare(Skin.String(SubVideos.1.Path),Hidden)">Skin.SetString(SubVideos.1.Label)</onclick>
@@ -1645,7 +1645,7 @@
 						<label2>[COLOR=selected]$VAR[SubMenuVideosTwo][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,SubVideos.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubVideos.2.Label)) + !stringcompare(Skin.String(SubVideos.2.Path),Hidden)">Skin.SetString(SubVideos.2.Label)</onclick>
@@ -1657,7 +1657,7 @@
 						<label2>[COLOR=selected]$VAR[SubMenuVideosThree][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,SubVideos.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubVideos.3.Label)) + !stringcompare(Skin.String(SubVideos.3.Path),Hidden)">Skin.SetString(SubVideos.3.Label)</onclick>
@@ -1669,7 +1669,7 @@
 						<label2>[COLOR=selected]$VAR[SubMenuVideosFour][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,SubVideos.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubVideos.4.Label)) + !stringcompare(Skin.String(SubVideos.4.Path),Hidden)">Skin.SetString(SubVideos.4.Label)</onclick>
@@ -1681,7 +1681,7 @@
 						<label2>[COLOR=selected]$VAR[SubMenuVideosFive][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,SubVideos.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubVideos.5.Label)) + !stringcompare(Skin.String(SubVideos.5.Path),Hidden)">Skin.SetString(SubVideos.5.Label)</onclick>
@@ -1693,7 +1693,7 @@
 						<label2>[COLOR=selected]$VAR[SubMenuVideosSix][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,SubVideos.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubVideos.6.Label)) + !stringcompare(Skin.String(SubVideos.6.Path),Hidden)">Skin.SetString(SubVideos.6.Label)</onclick>
@@ -1716,7 +1716,7 @@
 						<label2>[COLOR=selected]$VAR[SubMenuMoviesOne][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMovies.1.Label)) + !stringcompare(Skin.String(SubMovies.1.Path),Hidden)">Skin.SetString(SubMovies.1.Label)</onclick>
@@ -1728,7 +1728,7 @@
 						<label2>[COLOR=selected]$VAR[SubMenuMoviesTwo][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMovies.2.Label)) + !stringcompare(Skin.String(SubMovies.2.Path),Hidden)">Skin.SetString(SubMovies.2.Label)</onclick>
@@ -1740,7 +1740,7 @@
 						<label2>[COLOR=selected]$VAR[SubMenuMoviesThree][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMovies.3.Label)) + !stringcompare(Skin.String(SubMovies.3.Path),Hidden)">Skin.SetString(SubMovies.3.Label)</onclick>
@@ -1752,7 +1752,7 @@
 						<label2>[COLOR=selected]$VAR[SubMenuMoviesFour][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMovies.4.Label)) + !stringcompare(Skin.String(SubMovies.4.Path),Hidden)">Skin.SetString(SubMovies.4.Label)</onclick>
@@ -1764,7 +1764,7 @@
 						<label2>[COLOR=selected]$VAR[SubMenuMoviesFive][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMovies.5.Label)) + !stringcompare(Skin.String(SubMovies.5.Path),Hidden)">Skin.SetString(SubMovies.5.Label)</onclick>
@@ -1776,7 +1776,7 @@
 						<label2>[COLOR=selected]$VAR[SubMenuMoviesSix][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMovies.6.Label)) + !stringcompare(Skin.String(SubMovies.6.Path),Hidden)">Skin.SetString(SubMovies.6.Label)</onclick>
@@ -1799,7 +1799,7 @@
 						<label2>[COLOR=selected]$VAR[SubMenuTVShowsOne][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,SubTVShows.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubTVShows.1.Label)) + !stringcompare(Skin.String(SubTVShows.1.Path),Hidden)">Skin.SetString(SubTVShows.1.Label)</onclick>
@@ -1811,7 +1811,7 @@
 						<label2>[COLOR=selected]$VAR[SubMenuTVShowsTwo][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,SubTVShows.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubTVShows.2.Label)) + !stringcompare(Skin.String(SubTVShows.2.Path),Hidden)">Skin.SetString(SubTVShows.2.Label)</onclick>
@@ -1823,7 +1823,7 @@
 						<label2>[COLOR=selected]$VAR[SubMenuTVShowsThree][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,SubTVShows.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubTVShows.3.Label)) + !stringcompare(Skin.String(SubTVShows.3.Path),Hidden)">Skin.SetString(SubTVShows.3.Label)</onclick>
@@ -1835,7 +1835,7 @@
 						<label2>[COLOR=selected]$VAR[SubMenuTVShowsFour][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,SubTVShows.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubTVShows.4.Label)) + !stringcompare(Skin.String(SubTVShows.4.Path),Hidden)">Skin.SetString(SubTVShows.4.Label)</onclick>
@@ -1847,7 +1847,7 @@
 						<label2>[COLOR=selected]$VAR[SubMenuTVShowsFive][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,SubTVShows.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubTVShows.5.Label)) + !stringcompare(Skin.String(SubTVShows.5.Path),Hidden)">Skin.SetString(SubTVShows.5.Label)</onclick>
@@ -1859,7 +1859,7 @@
 						<label2>[COLOR=selected]$VAR[SubMenuTVShowsSix][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,SubTVShows.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubTVShows.6.Label)) + !stringcompare(Skin.String(SubTVShows.6.Path),Hidden)">Skin.SetString(SubTVShows.6.Label)</onclick>
@@ -1882,7 +1882,7 @@
 						<label2>[COLOR=selected]$VAR[SubMenuMusicOne][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMusic.1.Label)) + !stringcompare(Skin.String(SubMusic.1.Path),Hidden)">Skin.SetString(SubMusic.1.Label)</onclick>
@@ -1894,7 +1894,7 @@
 						<label2>[COLOR=selected]$VAR[SubMenuMusicTwo][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMusic.2.Label)) + !stringcompare(Skin.String(SubMusic.2.Path),Hidden)">Skin.SetString(SubMusic.2.Label)</onclick>
@@ -1906,7 +1906,7 @@
 						<label2>[COLOR=selected]$VAR[SubMenuMusicThree][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMusic.3.Label)) + !stringcompare(Skin.String(SubMusic.3.Path),Hidden)">Skin.SetString(SubMusic.3.Label)</onclick>
@@ -1918,7 +1918,7 @@
 						<label2>[COLOR=selected]$VAR[SubMenuMusicFour][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMusic.4.Label)) + !stringcompare(Skin.String(SubMusic.4.Path),Hidden)">Skin.SetString(SubMusic.4.Label)</onclick>
@@ -1930,7 +1930,7 @@
 						<label2>[COLOR=selected]$VAR[SubMenuMusicFive][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMusic.5.Label)) + !stringcompare(Skin.String(SubMusic.5.Path),Hidden)">Skin.SetString(SubMusic.5.Label)</onclick>
@@ -1942,7 +1942,7 @@
 						<label2>[COLOR=selected]$VAR[SubMenuMusicSix][/COLOR]</label2>
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMusic.6.Label)) + !stringcompare(Skin.String(SubMusic.6.Path),Hidden)">Skin.SetString(SubMusic.6.Label)</onclick>
@@ -1993,7 +1993,7 @@
 							<label2>[COLOR=white]$INFO[Skin.String(UserSelectAddon.1.Label)][/COLOR]</label2>
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturefocus border="2">button-focus_light.png</texturefocus>
 							<onclick>Skin.SetString(UserSelectAddon.1.Label)</onclick>
 						</control>
 						<control type="button" id="402">
@@ -2003,7 +2003,7 @@
 							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeVideosButton1))][/COLOR]</label2>
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturefocus border="2">button-focus_light.png</texturefocus>
 							<onclick>Skin.SetAddon(HomeVideosButton1,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
 						</control>
 						<control type="button" id="403">
@@ -2013,7 +2013,7 @@
 							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeVideosButton2))][/COLOR]</label2>
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturefocus border="2">button-focus_light.png</texturefocus>
 							<onclick>Skin.SetAddon(HomeVideosButton2,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
 						</control>
 						<control type="button" id="404">
@@ -2023,7 +2023,7 @@
 							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeVideosButton3))][/COLOR]</label2>
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturefocus border="2">button-focus_light.png</texturefocus>
 							<onclick>Skin.SetAddon(HomeVideosButton3,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
 						</control>
 						<control type="button" id="405">
@@ -2033,7 +2033,7 @@
 							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeVideosButton4))][/COLOR]</label2>
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturefocus border="2">button-focus_light.png</texturefocus>
 							<onclick>Skin.SetAddon(HomeVideosButton4,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
 						</control>
 						<control type="button" id="406">
@@ -2043,7 +2043,7 @@
 							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeVideosButton5))][/COLOR]</label2>
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturefocus border="2">button-focus_light.png</texturefocus>
 							<onclick>Skin.SetAddon(HomeVideosButton5,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
 						</control>
 						<control type="label" id="407">
@@ -2063,7 +2063,7 @@
 							<label2>[COLOR=white]$INFO[Skin.String(UserSelectAddon.2.Label)][/COLOR]</label2>
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturefocus border="2">button-focus_light.png</texturefocus>
 							<onclick>Skin.SetString(UserSelectAddon.2.Label)</onclick>
 						</control>
 						<control type="button" id="409">
@@ -2073,7 +2073,7 @@
 							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeMusicButton1))][/COLOR]</label2>
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturefocus border="2">button-focus_light.png</texturefocus>
 							<onclick>Skin.SetAddon(HomeMusicButton1,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
 						</control>
 						<control type="button" id="410">
@@ -2083,7 +2083,7 @@
 							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeMusicButton2))][/COLOR]</label2>
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturefocus border="2">button-focus_light.png</texturefocus>
 							<onclick>Skin.SetAddon(HomeMusicButton2,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
 						</control>
 						<control type="button" id="411">
@@ -2093,7 +2093,7 @@
 							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeMusicButton3))][/COLOR]</label2>
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturefocus border="2">button-focus_light.png</texturefocus>
 							<onclick>Skin.SetAddon(HomeMusicButton3,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
 						</control>
 						<control type="button" id="412">
@@ -2103,7 +2103,7 @@
 							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeMusicButton4))][/COLOR]</label2>
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturefocus border="2">button-focus_light.png</texturefocus>
 							<onclick>Skin.SetAddon(HomeMusicButton4,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
 						</control>
 						<control type="button" id="413">
@@ -2113,7 +2113,7 @@
 							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeMusicButton5))][/COLOR]</label2>
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturefocus border="2">button-focus_light.png</texturefocus>
 							<onclick>Skin.SetAddon(HomeMusicButton5,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
 						</control>
 						<control type="label" id="414">
@@ -2133,7 +2133,7 @@
 							<label2>[COLOR=white]$INFO[Skin.String(UserSelectAddon.3.Label)][/COLOR]</label2>
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturefocus border="2">button-focus_light.png</texturefocus>
 							<onclick>Skin.SetString(UserSelectAddon.3.Label)</onclick>
 						</control>
 						<control type="button" id="416">
@@ -2143,7 +2143,7 @@
 							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomePictureButton1))][/COLOR]</label2>
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturefocus border="2">button-focus_light.png</texturefocus>
 							<onclick>Skin.SetAddon(HomePictureButton1,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
 						</control>
 						<control type="button" id="417">
@@ -2153,7 +2153,7 @@
 							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomePictureButton2))][/COLOR]</label2>
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturefocus border="2">button-focus_light.png</texturefocus>
 							<onclick>Skin.SetAddon(HomePictureButton2,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
 						</control>
 						<control type="button" id="418">
@@ -2163,7 +2163,7 @@
 							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomePictureButton3))][/COLOR]</label2>
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturefocus border="2">button-focus_light.png</texturefocus>
 							<onclick>Skin.SetAddon(HomePictureButton3,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
 						</control>
 						<control type="button" id="419">
@@ -2173,7 +2173,7 @@
 							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomePictureButton4))][/COLOR]</label2>
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturefocus border="2">button-focus_light.png</texturefocus>
 							<onclick>Skin.SetAddon(HomePictureButton4,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
 						</control>
 						<control type="button" id="420">
@@ -2183,7 +2183,7 @@
 							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomePictureButton5))][/COLOR]</label2>
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturefocus border="2">button-focus_light.png</texturefocus>
 							<onclick>Skin.SetAddon(HomePictureButton5,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
 						</control>
 						<control type="label" id="421">
@@ -2203,7 +2203,7 @@
 							<label2>[COLOR=white]$INFO[Skin.String(UserSelectAddon.4.Label)][/COLOR]</label2>
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturefocus border="2">button-focus_light.png</texturefocus>
 							<onclick>Skin.SetString(UserSelectAddon.4.Label)</onclick>
 						</control>
 						<control type="button" id="423">
@@ -2213,7 +2213,7 @@
 							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeProgramButton1))][/COLOR]</label2>
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturefocus border="2">button-focus_light.png</texturefocus>
 							<onclick>Skin.SetAddon(HomeProgramButton1,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
 						</control>
 						<control type="button" id="424">
@@ -2223,7 +2223,7 @@
 							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeProgramButton2))][/COLOR]</label2>
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturefocus border="2">button-focus_light.png</texturefocus>
 							<onclick>Skin.SetAddon(HomeProgramButton2,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
 						</control>
 						<control type="button" id="425">
@@ -2233,7 +2233,7 @@
 							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeProgramButton3))][/COLOR]</label2>
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturefocus border="2">button-focus_light.png</texturefocus>
 							<onclick>Skin.SetAddon(HomeProgramButton3,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
 						</control>
 						<control type="button" id="426">
@@ -2243,7 +2243,7 @@
 							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeProgramButton4))][/COLOR]</label2>
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturefocus border="2">button-focus_light.png</texturefocus>
 							<onclick>Skin.SetAddon(HomeProgramButton4,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
 						</control>
 						<control type="button" id="427">
@@ -2253,7 +2253,7 @@
 							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeProgramButton5))][/COLOR]</label2>
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturefocus border="2">button-focus_light.png</texturefocus>
 							<onclick>Skin.SetAddon(HomeProgramButton5,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
 						</control>
 					</control>
@@ -3727,7 +3727,7 @@
 						<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(LyricScript_Path))][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</onclick>
 					</control>
 					<control type="button" id="602">
@@ -3736,7 +3736,7 @@
 						<label>- $LOCALIZE[24020]</label>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<enable>!IsEmpty(Skin.String(LyricScript_Path))</enable>
 						<onclick>Addon.OpenSettings($INFO[Skin.String(LyricScript_Path)])</onclick>
 					</control>
@@ -3757,7 +3757,7 @@
 						<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(SubtitleScript_Path))][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Skin.SetAddon(SubtitleScript_Path,xbmc.python.subtitles)</onclick>
 					</control>
 					<control type="button" id="605">
@@ -3766,7 +3766,7 @@
 						<label>- $LOCALIZE[24020]</label>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<enable>!IsEmpty(Skin.String(SubtitleScript_Path))</enable>
 						<onclick>Addon.OpenSettings($INFO[Skin.String(SubtitleScript_Path)])</onclick>
 					</control>
@@ -3786,7 +3786,7 @@
 						<label> - $LOCALIZE[31081]</label>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Addon.OpenSettings(service.skin.widgets)</onclick>
 						<enable>System.HasAddon(service.skin.widgets)</enable>
 					</control>
@@ -3852,7 +3852,7 @@
 						<label>- $LOCALIZE[31363]</label>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Addon.OpenSettings(script.artwork.downloader)</onclick>
 						<enable>!Skin.HasSetting(HideArtworkDownloader)</enable>
 						<visible>System.HasAddon(script.artwork.downloader)</visible>
@@ -3874,7 +3874,7 @@
 						<label> - $LOCALIZE[31082]</label>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Addon.OpenSettings(script.tvtunes)</onclick>
 						<enable>!Skin.HasSetting(HideTvTunes)</enable>
 						<visible>System.HasAddon(script.tvtunes)</visible>
@@ -3896,7 +3896,7 @@
 						<label> - $LOCALIZE[31370]</label>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturefocus border="2">button-focus_light.png</texturefocus>
 						<onclick>Addon.OpenSettings(script.simpleplaylists)</onclick>
 						<enable>!Skin.HasSetting(DisableWatchItLater)</enable>
 						<visible>System.HasAddon(script.simpleplaylists)</visible>
