@@ -264,8 +264,10 @@ SCROLLBAR_HOR='ScrollBarH_light.png'
 SCROLLBAR_VER='ScrollBarV_light.png'
 SCROLLBAR_HOR_BAR_FO='ScrollBarH_bar_focus_light.png'
 SCROLLBAR_VER_BAR_FO='ScrollBarV_bar_focus_light.png'
+MEDIA_BLADE='MediaBladeSub_light.png'
+HOME_BLADE='MediaBladeSub_light.png'
 printf "\nBUTTON_NF: '%s'" $BUTTON_NF
-printf "\nBUTTON_FO: '%s'" $BUTTON_FO''
+printf "\nBUTTON_FO: '%s'" $BUTTON_FO
 printf "\nDIALOG_BG: '%s'" $DIALOG_BG
 printf "\nDIALOG_BG_COLOR: '%s'" $DIALOG_BG_COLOR
 printf "\nCONTENT_BG: '%s'" $CONTENT_BG
@@ -276,6 +278,8 @@ printf "\nSCROLLBAR_HOR: '%s'" $SCROLLBAR_HOR
 printf "\nSCROLLBAR_VER: '%s'" $SCROLLBAR_VER
 printf "\nSCROLLBAR_HOR_BAR_FO: '%s'" $SCROLLBAR_HOR_BAR_FO
 printf "\nSCROLLBAR_VER_BAR_FO: '%s'" $SCROLLBAR_HOR_BAR_FO
+printf "\nHOME_BLADE: '%s'" $HOME_BLADE
+printf "\nMEDIA_BLADE: '%s'" $MEDIA_BLADE
 
 
 STEP=0
@@ -885,8 +889,19 @@ step
 printf "\nReplacing MediaBladeSub: "
 if [ -f media/MediaBladeSub.png ] ; then
 	XMLS=$(2>/dev/null grep 'MediaBladeSub.png' -l 720p/*)
-	perlregex $XMLS 's|>MediaBladeSub.png|>MediaBladeSub_light.png|g'
+	perlregex $XMLS 's|>MediaBladeSub.png|>'$MEDIA_BLADE'|g'
 	check_and_remove media/MediaBladeSub.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nReplacing HomeBladeSub: "
+if [ -f media/HomeBladeSub.png ] ; then
+	XMLS=$(2>/dev/null grep 'HomeBladeSub.png' -l 720p/*)
+	perlregex $XMLS 's|>HomeBladeSub.png|>'$HOME_BLADE'|g'
+	check_and_remove media/HomeBladeSub.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -1137,6 +1152,7 @@ black-back2.png;0
 KeyboardKey.png;4
 KeyboardEditArea_light.png;0
 MediaBladeSub_light.png;7,0,7,0
+HomeBladeSub_light.png;7,0,7,0
 MenuItemFO_light.png;2
 KeyboardKeyNF.png;1'
 OLDIFS=$IFS ; IFS=$'\n'
