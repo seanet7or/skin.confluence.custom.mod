@@ -863,6 +863,23 @@ else
 fi
 step
 
+printf "\nChanging keyboard: "
+if [ -f media/KeyboardCornerBottomNF.png ] ; then
+	XMLS="720p/DialogKeyboard.xml 720p\DialogNumeric.xml"
+	perlregex $XMLS 's|>KeyboardCornerTopNF.png|>KeyboardKeyNF.png|g'
+	perlregex $XMLS 's|>KeyboardCornerTop.png|>KeyboardKey.png|g'
+	perlregex $XMLS 's|>KeyboardCornerBottomNF.png|>KeyboardKeyNF.png|g'
+	perlregex $XMLS 's|>KeyboardCornerBottom.png|>KeyboardKey.png|g'
+	check_and_remove media/KeyboardCornerTopNF.png
+	check_and_remove media/KeyboardCornerTop.png
+	check_and_remove media/KeyboardCornerBottomNF.png
+	check_and_remove media/KeyboardCornerBottom.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
 printf "\nReplacing submenus item texture (for items that are not focused): "

@@ -25,8 +25,9 @@ for T in $TEXLIST ; do
 done
 
 ARGS=$(echo "$ARGS" | sed 's/^|//')
+REMOVED='>ShutdownButtonNoFocus.png|>ShutdownButtonFocus.png|>KeyboardCornerTopNF.png|>KeyboardCornerBottom.png|>KeyboardCornerBottomNF.png'
 #echo "ARGS: '$ARGS'"	
 echo ""
 echo ""
 echo "Others: "
-grep 2>/dev/null border 720p/* | grep -v '<bordersize>' | egrep -v 'KeyboardCorner|KeyboardCornerTop' | egrep -v $ARGS | head -n 10
+grep 2>/dev/null border 720p/* | grep -v '<bordersize>' | egrep -v "$REMOVED" | egrep -v $ARGS | head -n 10
