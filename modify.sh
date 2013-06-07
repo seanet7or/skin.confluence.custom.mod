@@ -210,7 +210,7 @@ read_origmaster() {
 
 
 step() {
-	let MAXSTEPS=56 
+	let MAXSTEPS=59
 	STEP=$((STEP+1))
 	if [ $STEP -gt $MAXSTEPS ] ; then
 		sed -i 's|let MAXSTEPS=[0-9]*|let MAXSTEPS='$MAXSTEPS'|' "$SCRIPTFILE"
@@ -898,6 +898,16 @@ if [ -f media/MenuItemFO.png ] ; then
 	XMLS=$(2>/dev/null grep 'MenuItemFO.png' -l 720p/*)
 	perlregex $XMLS 's|>MenuItemFO.png|>MenuItemFO_light.png|g'
 	check_and_remove media/MenuItemFO.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nRemoving MediaItemDetailBG.png: "
+if [ -f media/MediaItemDetailBG.png ] ; then
+	remove_control 'image' '<texture border="[0-9,]*">MediaItemDetailBG.png</texture>'
+	check_and_remove media/MediaItemDetailBG.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
