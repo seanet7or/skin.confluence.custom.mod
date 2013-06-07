@@ -1,3 +1,4 @@
+
 TEXLIST='button-focus2.png;2
 button-focus_light.png;2
 folder-focus.png;2
@@ -5,6 +6,8 @@ button-focus.png;2
 black-back2.png;0
 KeyboardKey.png;4
 KeyboardEditArea_light.png;0
+MediaBladeSub_light.png;7,0,7,0
+MenuItemFO_light.png;2
 KeyboardKeyNF.png;1'
 
 OLDIFS=$IFS ; IFS=$'\n'
@@ -13,14 +16,14 @@ for T in $TEXLIST ; do
 	BORDER=$(echo "$T" |cut -f2 -d';')
 	ARGS+='|'$TEXTURE
 	if [ "$BORDER" == "0" ] ; then
-		if grep ">$TEXTURE" 720p/* 2>/dev/null | grep -q 'border="' ; then
+		if grep ">$TEXTURE" 720p/*.xml 2>/dev/null | grep -q 'border="' ; then
 			echo "ERROR: $TEXTURE"
-			grep ">$TEXTURE" 720p/* 2>/dev/null | grep 'border="'	| head -n 1	
+			grep ">$TEXTURE" 720p/*.xml 2>/dev/null | grep 'border="'	| head -n 1	
 		fi
 		else
-		if grep ">$TEXTURE" 720p/* 2>/dev/null | grep -v -q 'border="'$BORDER'"' ; then
+		if grep ">$TEXTURE" 720p/*.xml 2>/dev/null | grep -v -q 'border="'$BORDER'"' ; then
 			echo "ERROR: $TEXTURE"
-			grep ">$TEXTURE" 720p/* 2>/dev/null | grep -v 'border="'$BORDER'"'	| head -n 1	
+			grep ">$TEXTURE" 720p/*.xml 2>/dev/null | grep -v 'border="'$BORDER'"'	| head -n 1	
 		fi
 	fi
 done
@@ -31,4 +34,4 @@ REMOVED='>DialogContextTop.png|>DialogContextMiddle.png|>KeyboardEditArea.png|>K
 echo ""
 echo ""
 echo "Others: "
-grep 2>/dev/null border 720p/* | grep -v '<bordersize>' | egrep -v "$REMOVED" | egrep -v $ARGS | head -n 10
+grep 2>/dev/null border 720p/*.xml | grep -v '<bordersize>' | egrep -v "$REMOVED" | egrep -v $ARGS | head -n 10

@@ -893,6 +893,17 @@ else
 fi
 step
 
+printf "\nReplacing MenuItemFO.png: "
+if [ -f media/MenuItemFO.png ] ; then
+	XMLS=$(2>/dev/null grep 'MenuItemFO.png' -l 720p/*)
+	perlregex $XMLS 's|>MenuItemFO.png|>MenuItemFO_light.png|g'
+	check_and_remove media/MenuItemFO.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
 printf "\nReplacing submenus item texture (for items that are not focused): "
@@ -1116,6 +1127,7 @@ black-back2.png;0
 KeyboardKey.png;4
 KeyboardEditArea_light.png;0
 MediaBladeSub_light.png;7,0,7,0
+MenuItemFO_light.png;2
 KeyboardKeyNF.png;1'
 OLDIFS=$IFS ; IFS=$'\n'
 for T in $TEXLIST ; do
@@ -1123,7 +1135,7 @@ for T in $TEXLIST ; do
 	BORDER=$(echo "$T" |cut -f2 -d';')
 	printf "\nSetting correct borders for $TEXTURE: "
 	if ! [ "$BORDER" == "0" ] ; then
-		if grep "$TEXTURE" 720p/* | grep -v -q 'border="'$BORDER'"' ; then
+		if grep ">$TEXTURE" 720p/* | grep -v -q 'border="'$BORDER'"' ; then
 			XMLS=$(2>/dev/null grep "$TEXTURE" -l 720p/*)
 			R='s|border="[0-9,]*"(\| flipx="true")>'$TEXTURE'</|border="'$BORDER'"\1>'$TEXTURE'</|g'
 			perlregex $XMLS "$R" --nocheck
@@ -1134,7 +1146,7 @@ for T in $TEXLIST ; do
 			printf "%sSKIPPED.%s" $CYAN $RESET
 		fi
 	else
-		if grep "$TEXTURE" 720p/* | grep -q 'border="' ; then
+		if grep ">$TEXTURE" 720p/* | grep -q 'border="' ; then
 			XMLS=$(2>/dev/null grep "$TEXTURE" -l 720p/*)
 			R='s| border="[0-9,]*">'$TEXTURE'</|>'$TEXTURE'</|g'
 			perlregex $XMLS "$R"
