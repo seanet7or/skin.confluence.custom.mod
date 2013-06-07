@@ -1,5 +1,6 @@
 #!/bin/bash
 #set -e
+SCRIPTFILE=$0
 set -o pipefail
 2>/dev/null rm debug.log
 DEBUG=false
@@ -209,8 +210,12 @@ read_origmaster() {
 
 
 step() {
+	let MAXSTEPS=54   
 	STEP=$((STEP+1))
-	printf " [$STEP/53] "
+	if [ $STEP -gt $MAXSTEPS ] ; then
+		sed -i 's|let MAXSTEPS=[0-9]*|let MAXSTEPS='$MAXSTEPS'|' "$SCRIPTFILE"
+	fi
+	printf " [$STEP/%d] " $MAXSTEPS
 	if [ $TILL -gt 0 ] ; then
 		if [ $STEP -eq $TILL ] ; then
 			printf "\n Step $STEP reached, exiting."
@@ -289,8 +294,6 @@ step
 
 printf "\nRemoving media files: "
 if [ -f media/defaultDVDFull.png ] ; then
-	check_and_remove media/icon-weather.png
-	check_and_remove media/icon-video.png
 	check_and_remove media/icon_volume.png
 	check_and_remove media/poster_diffuse.png
 	check_and_remove media/OSDFullScreenFO.png
@@ -813,6 +816,22 @@ else
 fi
 step #35
 
+printf "\nRemoving section header images: "
+if [ -f media/icon_addons.png ] ; then
+	#section icon
+	remove_control 'image' '<description>Section header image</description>'
+	check_and_remove media/icon_addons.png
+	check_and_remove media/icon_system.png
+	check_and_remove media/icon_music.png
+	check_and_remove media/icon_video.png
+	check_and_remove media/icon_weather.png
+	check_and_remove media/icon_pictures.png	
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
 printf "\nReplacing submenus item texture (for items that are not focused): "
@@ -985,8 +1004,6 @@ step #45
 printf "\nRemoving location header: "
 if grep -I -q '<description>Section header image</description>' 720p/MyPics.xml 
 then
-	#section icon
-	remove_control 'image' '<description>Section header image</description>' 720p/MyPics.xml
 	#remove location labels
 	remove_control 'label' '<include>WindowTitleCommons</include>' 720p/MyPics.xml
 	#remove location grouplist
@@ -996,12 +1013,12 @@ then
 	R+='(\s*<[a-z][^>]*>[^>]*>\s*?#)*'
 	R+='\s*</control>\s*#||'
 	perlregex 720p/MyPics.xml "$R"
-	check_and_remove media/icon_pictures.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step #46
+exit
 
 printf "\n############# APPLYING MODIFICATIONS TO VIDEO LIBRARY #########################"
 
