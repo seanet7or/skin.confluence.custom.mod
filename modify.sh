@@ -210,7 +210,7 @@ read_origmaster() {
 
 
 step() {
-	let MAXSTEPS=55 
+	let MAXSTEPS=56 
 	STEP=$((STEP+1))
 	if [ $STEP -gt $MAXSTEPS ] ; then
 		sed -i 's|let MAXSTEPS=[0-9]*|let MAXSTEPS='$MAXSTEPS'|' "$SCRIPTFILE"
@@ -882,6 +882,17 @@ else
 fi
 step
 
+printf "\nReplacing MediaBladeSub: "
+if [ -f media/MediaBladeSub.png ] ; then
+	XMLS=$(2>/dev/null grep 'MediaBladeSub.png' -l 720p/*)
+	perlregex $XMLS 's|>MediaBladeSub.png|>MediaBladeSub_light.png|g'
+	check_and_remove media/MediaBladeSub.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
 printf "\nReplacing submenus item texture (for items that are not focused): "
@@ -1104,16 +1115,17 @@ button-focus.png;2
 black-back2.png;0
 KeyboardKey.png;4
 KeyboardEditArea_light.png;0
+MediaBladeSub_light.png;7,0,7,0
 KeyboardKeyNF.png;1'
 OLDIFS=$IFS ; IFS=$'\n'
 for T in $TEXLIST ; do
 	TEXTURE=$(echo "$T" | cut -f1 -d';')
 	BORDER=$(echo "$T" |cut -f2 -d';')
 	printf "\nSetting correct borders for $TEXTURE: "
-	if [ $BORDER -ne 0 ] ; then
+	if ! [ "$BORDER" == "0" ] ; then
 		if grep "$TEXTURE" 720p/* | grep -v -q 'border="'$BORDER'"' ; then
 			XMLS=$(2>/dev/null grep "$TEXTURE" -l 720p/*)
-			R='s|border="[0-9,]*">'$TEXTURE'</|border="'$BORDER'">'$TEXTURE'</|g'
+			R='s|border="[0-9,]*"(\| flipx="true")>'$TEXTURE'</|border="'$BORDER'"\1>'$TEXTURE'</|g'
 			perlregex $XMLS "$R" --nocheck
 			R='s|([a-z])>'$TEXTURE'</|\1 border="'$BORDER'">'$TEXTURE'</|g'
 			perlregex $XMLS "$R" --nocheck

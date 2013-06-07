@@ -26,7 +26,7 @@ for T in $TEXLIST ; do
 done
 
 ARGS=$(echo "$ARGS" | sed 's/^|//')
-REMOVED='>KeyboardEditArea.png|>KeyboardCornerTop.png|>ScrollBarV_bar_focus.png|>ShutdownButtonNoFocus.png|>ShutdownButtonFocus.png|>KeyboardCornerTopNF.png|>KeyboardCornerBottom.png|>KeyboardCornerBottomNF.png'
+REMOVED='>DialogContextTop.png|>DialogContextMiddle.png|>KeyboardEditArea.png|>KeyboardCornerTop.png|>ScrollBarV_bar_focus.png|>ShutdownButtonNoFocus.png|>ShutdownButtonFocus.png|>KeyboardCornerTopNF.png|>KeyboardCornerBottom.png|>KeyboardCornerBottomNF.png'
 #echo "ARGS: '$ARGS'"	
 echo ""
 echo ""
