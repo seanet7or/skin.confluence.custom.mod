@@ -1,11 +1,12 @@
 TEXLIST='button-focus2.png;2
+button-focus_light.png;2
 folder-focus.png;2
-HomeBladeSub.png;15,0,0,0
 button-focus.png;2
-button-focus_light;2
-KeyboardKey.png;4
 black-back2.png;0
+KeyboardKey.png;4
+KeyboardEditArea_light.png;0
 KeyboardKeyNF.png;1'
+
 OLDIFS=$IFS ; IFS=$'\n'
 for T in $TEXLIST ; do
 	TEXTURE=$(echo "$T" | cut -f1 -d';')
@@ -25,7 +26,7 @@ for T in $TEXLIST ; do
 done
 
 ARGS=$(echo "$ARGS" | sed 's/^|//')
-REMOVED='>ShutdownButtonNoFocus.png|>ShutdownButtonFocus.png|>KeyboardCornerTopNF.png|>KeyboardCornerBottom.png|>KeyboardCornerBottomNF.png'
+REMOVED='>KeyboardEditArea.png|>KeyboardCornerTop.png|>ScrollBarV_bar_focus.png|>ShutdownButtonNoFocus.png|>ShutdownButtonFocus.png|>KeyboardCornerTopNF.png|>KeyboardCornerBottom.png|>KeyboardCornerBottomNF.png'
 #echo "ARGS: '$ARGS'"	
 echo ""
 echo ""

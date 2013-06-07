@@ -210,7 +210,7 @@ read_origmaster() {
 
 
 step() {
-	let MAXSTEPS=54   
+	let MAXSTEPS=55 
 	STEP=$((STEP+1))
 	if [ $STEP -gt $MAXSTEPS ] ; then
 		sed -i 's|let MAXSTEPS=[0-9]*|let MAXSTEPS='$MAXSTEPS'|' "$SCRIPTFILE"
@@ -864,16 +864,18 @@ fi
 step
 
 printf "\nChanging keyboard: "
-if [ -f media/KeyboardCornerBottomNF.png ] ; then
+if [ -f media/KeyboardEditArea.png ] ; then
 	XMLS="720p/DialogKeyboard.xml 720p\DialogNumeric.xml"
 	perlregex $XMLS 's|>KeyboardCornerTopNF.png|>KeyboardKeyNF.png|g'
 	perlregex $XMLS 's|>KeyboardCornerTop.png|>KeyboardKey.png|g'
 	perlregex $XMLS 's|>KeyboardCornerBottomNF.png|>KeyboardKeyNF.png|g'
 	perlregex $XMLS 's|>KeyboardCornerBottom.png|>KeyboardKey.png|g'
+	perlregex $XMLS 's|>KeyboardEditArea.png|>KeyboardEditArea_light.png|g' 720p/DialogPVRGuideSearch.xml
 	check_and_remove media/KeyboardCornerTopNF.png
 	check_and_remove media/KeyboardCornerTop.png
 	check_and_remove media/KeyboardCornerBottomNF.png
 	check_and_remove media/KeyboardCornerBottom.png
+	check_and_remove media/KeyboardEditArea.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -1096,10 +1098,12 @@ step
 printf "\n############# CLEANING UP #####################################################"
 
 TEXLIST='button-focus2.png;2
+button-focus_light.png;2
 folder-focus.png;2
 button-focus.png;2
 black-back2.png;0
 KeyboardKey.png;4
+KeyboardEditArea_light.png;0
 KeyboardKeyNF.png;1'
 OLDIFS=$IFS ; IFS=$'\n'
 for T in $TEXLIST ; do
