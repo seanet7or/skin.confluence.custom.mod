@@ -346,7 +346,7 @@ if [ -f media/button-nofocus.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #5
+step
 
 printf "\nChanging texture for controls without focus: "
 if [ -f media/button-nofocus.png ] ; then
@@ -360,7 +360,7 @@ if [ -f media/button-nofocus.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #6
+step
 
 printf "\nChanging alttexture for controls without focus: "
 if [ -f media/button-nofocus.png ] ; then
@@ -374,7 +374,7 @@ if [ -f media/button-nofocus.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #7
+step
 
 printf "\nRemoving button-nofocus.png bordertextures: "
 if [ -f media/button-nofocus.png ] ; then
@@ -387,7 +387,7 @@ if [ -f media/button-nofocus.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #8
+step
 
 printf "\nRemoving button-nofocus.png where used as border background: "
 if [ -f media/button-nofocus.png ] ; then
@@ -404,7 +404,7 @@ if [ -f media/button-nofocus.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #9
+step
 
 printf "\nRemoving reflections: "
 if [ -f media/diffuse_mirror3.png ] ; then
@@ -415,7 +415,7 @@ if [ -f media/diffuse_mirror3.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #10
+step
 
 printf "\nChanging dialog background: "
 if [ -f media/DialogBack2.png ] ; then
@@ -431,7 +431,7 @@ if [ -f media/DialogBack2.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #11
+step
 	
 printf "\nChanging info message dialog background: "
 if [ -f media/InfoMessagePanel.png ] ; then
@@ -443,7 +443,7 @@ if [ -f media/InfoMessagePanel.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #11
+step
 
 printf "\nChanging dialog background overlay: "
 if [ -f media/OverlayDialogBackground.png ] ; then
@@ -458,7 +458,7 @@ if [ -f media/OverlayDialogBackground.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #12
+step
 	
 printf "\nRemoving mouse close buttons: "
 if [ -f  media/DialogCloseButton-focus.png ] ; then
@@ -469,7 +469,7 @@ if [ -f  media/DialogCloseButton-focus.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #13
+step
 	
 printf "\nReplacing content panel background: "
 if [ -f media/ContentPanel.png ] ; then	
@@ -481,7 +481,7 @@ if [ -f media/ContentPanel.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #14
+step
 	
 printf "\nReplacing some backgrounds: "
 if [ -f backgrounds/media-overlay.jpg ] ; then
@@ -494,7 +494,7 @@ if [ -f backgrounds/media-overlay.jpg ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #15
+step
 	
 printf "\nRemoving hidden panel arrow: "	
 if [ -f media/HasSub.png ] ; then
@@ -504,7 +504,7 @@ if [ -f media/HasSub.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #16
+step
 
 printf "\nRemoving xbmc logo: "
 if grep -I -q xbmc-logo.png 720p/* ; then
@@ -518,7 +518,7 @@ if grep -I -q xbmc-logo.png 720p/* ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #17
+step
 	
 printf "\nReplacing scroll bars: "
 if grep -q ScrollBarNib.png 720p/ViewsPictures.xml ; then
@@ -542,7 +542,7 @@ if grep -q ScrollBarNib.png 720p/ViewsPictures.xml ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #18
+step
 	
 printf "\nRemoving GlassOverlay.png: "
 if grep -I -q 'GlassOverlay.png' 720p/* ; then
@@ -552,7 +552,7 @@ if grep -I -q 'GlassOverlay.png' 720p/* ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #19
+step
 
 printf "\nRemoving separators: "
 if [ -f media/separator2.png ] ; then
@@ -567,7 +567,7 @@ if [ -f media/separator2.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #20
+step
 
 printf "\nRemoving menu items separator 'MenuItemNF.png': "
 if [ -f media/MenuItemNF.png ] ; then
@@ -584,7 +584,7 @@ if [ -f media/MenuItemNF.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #21
+step
 
 printf "\nRemoving content panel mirrors: "
 if [ -f media/ContentPanelMirror.png ] ; then
@@ -594,7 +594,7 @@ if [ -f media/ContentPanelMirror.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #22
+step
 
 printf "\nRemoving floor image: "
 if [ -f media/floor.png ] ; then
@@ -604,7 +604,7 @@ if [ -f media/floor.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #23
+step
 
 printf "\nRemoving HomeNowPlayingBack.png: "
 if grep -q 'HomeNowPlayingBack.png' 720p/ViewsVideoLibrary.xml ; then
@@ -615,7 +615,7 @@ if grep -q 'HomeNowPlayingBack.png' 720p/ViewsVideoLibrary.xml ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #24
+step
 
 printf "\nRemoving thumb shadows: "
 if [ -f media/ThumbShadow.png ] ; then
@@ -633,7 +633,7 @@ if [ -f media/ThumbShadow.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #25
+step
 
 printf "\nRemoving thumb background: "
 if [ -f media/ThumbBG.png ] ; then
@@ -643,7 +643,7 @@ if [ -f media/ThumbBG.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #26
+step
 
 printf "\nRemoving thumb border: "
 if [ -f media/ThumbBorder.png ] ; then
@@ -661,7 +661,7 @@ if [ -f media/ThumbBorder.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #27
+step
 
 printf "\nRemoving page count info: "
 if grep -q 'CommonPageCount' 720p/includes.xml ; then		
@@ -681,7 +681,7 @@ if grep -q 'CommonPageCount' 720p/includes.xml ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #28
+step
 
 printf "\nChanging time display: "
 if grep -q '<description>date label</description>' 720p/includes.xml ; then
@@ -698,7 +698,7 @@ if grep -q '<description>date label</description>' 720p/includes.xml ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #29
+step
 
 printf "\nEnabling German movie ratings: "
 if ! grep -q 'fsk-18' '720p/IncludesVariables.xml' ; then
@@ -726,7 +726,7 @@ if ! grep -q 'fsk-18' '720p/IncludesVariables.xml' ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #30
+step
 
 printf "\nRemoving references to 'media/separator_vertical.png': "
 if [ -f media/separator_vertical.png ] ; then
@@ -736,7 +736,7 @@ if [ -f media/separator_vertical.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #31
+step
 
 printf "\nReplacing focused texture for controls with default $BUTTON_NF texturenofocus: "
 if [ $(grep 'button-focus2.png' 720p/DialogAddonSettings.xml | wc -l) -gt 1 ] ; then
@@ -766,7 +766,7 @@ if [ $(grep 'button-focus2.png' 720p/DialogAddonSettings.xml | wc -l) -gt 1 ] ; 
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #32
+step
 
 printf "\nReplacing focused texture for all controls with custom '$BUTTON_NF' texturenofocus: "
 if grep -q 'button-focus2.png' 720p/DialogAddonSettings.xml ; then
@@ -786,7 +786,7 @@ if grep -q 'button-focus2.png' 720p/DialogAddonSettings.xml ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #33
+step
 
 printf "\nReplacing focused texture for all items with custom '$BUTTON_NF' texturenofocus: "
 if grep -q 'button-focus2.png' 720p/DialogAlbumInfo.xml ; then
@@ -802,7 +802,7 @@ if grep -q 'button-focus2.png' 720p/DialogAlbumInfo.xml ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #34
+step
 
 printf "\nRemoving up and down arrows from several dialogs: "
 if [ -f media/arrow-big-up.png ] ; then
@@ -814,10 +814,10 @@ if [ -f media/arrow-big-up.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #35
+step
 
 printf "\nRemoving section header images: "
-if [ -f media/icon_addons.png ] ; then
+if [ -f media/icon-weather.png ] ; then
 	#section icon
 	remove_control 'image' '<description>Section header image</description>'
 	check_and_remove media/icon_addons.png
@@ -825,7 +825,38 @@ if [ -f media/icon_addons.png ] ; then
 	check_and_remove media/icon_music.png
 	check_and_remove media/icon_video.png
 	check_and_remove media/icon_weather.png
+	check_and_remove media/icon-video.png
+	check_and_remove media/icon-weather.png
 	check_and_remove media/icon_pictures.png	
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nRemoving location headers: "
+if grep -I -q '<include>WindowTitleCommons</include>' 720p/FileManager.xml
+then
+	#remove location labels
+	remove_control 'label' '<include>WindowTitleCommons</include>'
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nRemoving location grouplists: "
+if grep -I -q '<posx>65</posx>' 720p/AddonBrowser.xml
+then
+	#remove location grouplists
+	R='s|\s*<control type="grouplist">\s*#'
+	R+='\s*<posx>65</posx>\s*#'
+	R+='\s*<posy>5</posy>\s*#'
+	R+='\s*<width>1000</width>\s*#'
+	R+='\s*<height>30</height>\s*#'
+	R+='(\s*<[a-z][^>]*>[^>]*>\s*?#)*'
+	R+='\s*</control>\s*#||'
+	perlregex "$R"
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -843,7 +874,7 @@ if [ -f media/HomeSubNF.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #36
+step
 
 printf "\nModifying weather info: "
 if grep -I -q '<description>Location label</description>' '720p/Home.xml' ; then
@@ -860,7 +891,7 @@ if grep -I -q '<description>Location label</description>' '720p/Home.xml' ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #37
+step
 
 printf "\nRemoving main menu side fade effect: "
 if [ -f media/SideFade.png ] ; then
@@ -870,7 +901,7 @@ if [ -f media/SideFade.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #38
+step
 
 printf "\nRemoving main menu items separator: "
 if grep -I -q 'HomeSeperator' '720p/Home.xml' ; then
@@ -880,7 +911,7 @@ if grep -I -q 'HomeSeperator' '720p/Home.xml' ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #39
+step
 
 printf "\nRemoving main menu overlay: "
 if grep -I -q 'HomeOverlay1.png' '720p/Home.xml' ; then
@@ -890,7 +921,7 @@ if grep -I -q 'HomeOverlay1.png' '720p/Home.xml' ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #40
+step
 
 printf "\nRemoving labels for addons on the main menu: "
 if grep -q '<posx>91</posx>' 720p/includes.xml | head -n 1 ; then
@@ -899,7 +930,7 @@ if grep -q '<posx>91</posx>' 720p/includes.xml | head -n 1 ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #41
+step
 
 printf "\nChanging widgets on the home screen: "
 if [ -f media/RecentAddedBack.png ] ; then
@@ -915,7 +946,7 @@ if [ -f media/RecentAddedBack.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #42
+step
 
 printf "\nRemoving home floor: "
 if [ -f media/homefloor.png ] ; then
@@ -925,7 +956,7 @@ if [ -f media/homefloor.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #43
+step
 
 printf "\n############# APPLYING MODIFICATIONS TO PICTURE LIBRARY #######################"
 
@@ -938,7 +969,7 @@ then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #44
+step
 
 # change picturethumbview
 printf "\nChanging picture preview/thumb view: "
@@ -999,48 +1030,9 @@ if grep -I -q '<description>Date time txt</description>' 720p/ViewsPictures.xml 
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #45
+step
 
-printf "\nRemoving location header: "
-if grep -I -q '<description>Section header image</description>' 720p/MyPics.xml 
-then
-	#remove location labels
-	remove_control 'label' '<include>WindowTitleCommons</include>' 720p/MyPics.xml
-	#remove location grouplist
-	R='s|\s*<control type="grouplist">\s*#'
-	R+='\s*<posx>65</posx>\s*#'
-	R+='\s*<posy>5</posy>\s*#'
-	R+='(\s*<[a-z][^>]*>[^>]*>\s*?#)*'
-	R+='\s*</control>\s*#||'
-	perlregex 720p/MyPics.xml "$R"
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step #46
-exit
-
-printf "\n############# APPLYING MODIFICATIONS TO VIDEO LIBRARY #########################"
-
-printf "\nRemoving location info: "
-if grep -I -q '<description>Section header image</description>' 720p/MyVideoNav.xml
-then
-	#remove sections icon
-	remove_control 'image' '<description>Section header image</description>' 720p/MyVideoNav.xml
-	#remove location labels
-	remove_control 'label' '<include>WindowTitleCommons</include>' 720p/MyVideoNav.xml
-	#remove location grouplist
-	R='s|\s*<control type="grouplist">\s*#'
-	R+='\s*<posx>65</posx>\s*#'
-	R+='\s*<posy>5</posy>\s*#'
-	R+='(\s*<[a-z][^>]*>[^>]*>\s*?#)*'
-	R+='\s*</control>\s*#||'
-	perlregex 720p/MyVideoNav.xml "$R"
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step #47
+#printf "\n############# APPLYING MODIFICATIONS TO VIDEO LIBRARY #########################"
 
 #printf "\n############# APPLYING MODIFICATIONS TO VIDEO OSD #############################"
 
@@ -1055,7 +1047,7 @@ if [ -f media/busy.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #48
+step
 
 printf "\nChanging shutdown menu: "
 if [ -f media/DialogContextTop.png ] ; then
@@ -1072,7 +1064,7 @@ if [ -f media/DialogContextTop.png ] ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #49
+step
 
 printf "\nChanging context menu: "
 if grep -I -q '<itemgap>2</itemgap>' 720p/DialogContextMenu.xml ; then
@@ -1082,7 +1074,7 @@ if grep -I -q '<itemgap>2</itemgap>' 720p/DialogContextMenu.xml ; then
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step #50
+step
 
 printf "\n############# CLEANING UP #####################################################"
 
@@ -1119,7 +1111,7 @@ for T in $TEXLIST ; do
 		fi
 	fi
 done ; IFS=$OLDIFS
-step #51
+step
 
 printf "\nScanning defaults.xml for default values: "
 DEFS=$(grep '<default type="' 720p/defaults.xml | sed 's|^\s*[^"]*"||g' | cut -f1 -d'"')
@@ -1157,7 +1149,7 @@ for DEF in $DEFS ; do
 	printf "%sDONE!%s" $GREEN $RESET
 done
 IFS=$OLDIFS
-step #52
+step
 
 printf "%s\nAll modifications are completed.\n%s" $GREEN $RESET
 
