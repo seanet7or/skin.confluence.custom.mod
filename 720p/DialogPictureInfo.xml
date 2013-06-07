@@ -15,7 +15,7 @@
 				<posy>0</posy>
 				<width>800</width>
 				<height>630</height>
-				<texture>white100_light.png</texture>
+				<texture>dialog-back_light.png</texture>
 				<colordiffuse>DF101314</colordiffuse>
 				<visible>!Window.IsVisible(Slideshow)</visible>
 			</control>
@@ -25,7 +25,8 @@
 				<posy>0</posy>
 				<width>800</width>
 				<height>630</height>
-				<texture border="40">DialogBack2.png</texture>
+				<texture>dialog-back_light.png</texture>
+				<colordiffuse>DF101314</colordiffuse>
 				<visible>Window.IsVisible(Slideshow)</visible>
 			</control>
 			<control type="image">
@@ -80,7 +81,7 @@
 						<posy>0</posy>
 						<width>720</width>
 						<height>40</height>
-						<texture>black-back.png</texture>
+						<texture>button-nf_light.png</texture>
 					</control>
 					<control type="label">
 						<posx>10</posx>
@@ -113,7 +114,7 @@
 						<width>720</width>
 						<height>40</height>
 						<visible>!Control.HasFocus(5)</visible>
-						<texture>black-back.png</texture>
+						<texture>button-nf_light.png</texture>
 					</control>
 					<control type="image">
 						<posx>0</posx>

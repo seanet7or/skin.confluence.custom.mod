@@ -22,7 +22,7 @@
 				<posy>5</posy>
 				<width>1090</width>
 				<height>630</height>
-				<texture>black-back.png</texture>
+				<texture>content-back_light.png</texture>
 			</control>
 			<control type="image">
 				<description>LOGO</description>
@@ -50,7 +50,7 @@
 				<posy>10</posy>
 				<width>790</width>
 				<height>618</height>
-				<texture border="5">black-back2.png</texture>
+				<texture>black-back2.png</texture>
 			</control>
 			<control type="image">
 				<posx>268</posx>
@@ -109,7 +109,8 @@
 			<font>font13_title</font>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
-			<texturefocus border="2">button-focus_light.png</texturefocus>
+			<texturefocus border="5">MenuItemFO.png</texturefocus>
+			<texturenofocus>-</texturenofocus>
 			<pulseonselect>false</pulseonselect>
 		</control>
 		<control type="button" id="7">
@@ -119,7 +120,8 @@
 			<height>40</height>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
-			<texturefocus border="2">button-focus_light.png</texturefocus>
+			<texturefocus border="0,2,0,2">MenuItemFO.png</texturefocus>
+			<texturenofocus>-</texturenofocus>
 		</control>
 		<control type="radiobutton" id="8">
 			<description>Default RadioButton</description>
@@ -128,7 +130,8 @@
 			<height>40</height>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
-			<texturefocus border="2">button-focus_light.png</texturefocus>
+			<texturefocus border="0,2,0,2">MenuItemFO.png</texturefocus>
+			<texturenofocus>-</texturenofocus>
 		</control>
 		<control type="spincontrolex" id="9">
 			<description>Default SpinControlex</description>
@@ -137,8 +140,7 @@
 			<height>40</height>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
-			<texturefocus border="2">button-focus_light.png</texturefocus>
-			<texturenofocus>black-back.png</texturenofocus>
+			<texturefocus border="0,2,0,2">MenuItemFO.png</texturefocus>
 		</control>
 		<control type="image" id="11">
 			<description>separator image</description>

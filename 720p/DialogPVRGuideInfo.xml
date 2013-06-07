@@ -16,7 +16,8 @@
 				<posy>0</posy>
 				<width>730</width>
 				<height>660</height>
-				<texture border="40">DialogBack2.png</texture>
+				<texture>dialog-back_light.png</texture>
+				<colordiffuse>DF101314</colordiffuse>
 				<visible>Window.IsVisible(FullscreenVideo) | Window.IsVisible(Visualisation)</visible>
 			</control>
 			<control type="image">
@@ -25,7 +26,7 @@
 				<posy>0</posy>
 				<width>730</width>
 				<height>660</height>
-				<texture>white100_light.png</texture>
+				<texture>dialog-back_light.png</texture>
 				<colordiffuse>DF101314</colordiffuse>
 				<visible>![Window.IsVisible(FullscreenVideo) | Window.IsVisible(Visualisation)]</visible>
 			</control>

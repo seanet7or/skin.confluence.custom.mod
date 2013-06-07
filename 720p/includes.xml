@@ -146,7 +146,7 @@
 		<textwidth>200</textwidth>
 		<aligny>center</aligny>
 		<font>font13</font>
-		<texturefocus border="5">button-focus.png</texturefocus>
+		<texturefocus border="2">button-focus.png</texturefocus>
 		<texturenofocus>-</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</include>
@@ -157,8 +157,8 @@
 		<textwidth>195</textwidth>
 		<aligny>center</aligny>
 		<font>font12_title</font>
-		<texturefocus border="5">button-focus.png</texturefocus>
-		<texturenofocus>black-back.png</texturenofocus>
+		<texturefocus border="2">button-focus.png</texturefocus>
+		<texturenofocus>button-nf_light.png</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</include>
 	<include name="ButtonHomeSubCommonValues">
@@ -199,8 +199,8 @@
 		<align>center</align>
 		<aligny>center</aligny>
 		<font>font12_title</font>
-		<texturefocus border="5">button-focus.png</texturefocus>
-		<texturenofocus>black-back.png</texturenofocus>
+		<texturefocus border="2">button-focus.png</texturefocus>
+		<texturenofocus>button-nf_light.png</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</include>
 	<include name="SideBladeLeft">
@@ -426,7 +426,7 @@
 			<width>500</width>
 			<height>165</height>
 			<colordiffuse>DDFFFFFF</colordiffuse>
-			<texture>white100_light.png</texture>
+			<texture>dialog-back_light.png</texture>
 			<colordiffuse>DF101314</colordiffuse>
 		</control>
 		<control type="image">
@@ -510,7 +510,7 @@
 			<width>500</width>
 			<height>165</height>
 			<colordiffuse>DDFFFFFF</colordiffuse>
-			<texture>white100_light.png</texture>
+			<texture>dialog-back_light.png</texture>
 			<colordiffuse>DF101314</colordiffuse>
 		</control>
 		<control type="image">
@@ -947,7 +947,8 @@
 				<posy>0</posy>
 				<width>70</width>
 				<height>65</height>
-				<texture border="20,20,20,2">InfoMessagePanel.png</texture>
+				<texture>dialog-back_light.png</texture>
+				<colordiffuse>DF101314</colordiffuse>
 			</control>
 			<control type="label">
 				<posx>5</posx>
@@ -1038,7 +1039,7 @@
 				<posy>0</posy>
 				<width>280</width>
 				<height>145</height>
-				<texture>black-back.png</texture>
+				<texture>button-nf_light.png</texture>
 			</control>
 			<control type="image">
 				<description>Thumb</description>

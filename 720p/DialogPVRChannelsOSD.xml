@@ -15,7 +15,8 @@
 				<posy>0</posy>
 				<width>480</width>
 				<height>660</height>
-				<texture border="40">DialogBack2.png</texture>
+				<texture>dialog-back_light.png</texture>
+				<colordiffuse>DF101314</colordiffuse>
 			</control>
 			<control type="image">
 				<description>Dialog Header image</description>
@@ -84,7 +85,7 @@
 						<posy>0</posy>
 						<width>410</width>
 						<height>65</height>
-						<texture>black-back.png</texture>
+						<texture>button-nf_light.png</texture>
 						<include>VisibleFadeEffect</include>
 					</control>
 					<control type="label">
@@ -191,7 +192,7 @@
 						<posy>0</posy>
 						<width>410</width>
 						<height>65</height>
-						<texture>black-back.png</texture>
+						<texture>button-nf_light.png</texture>
 						<visible>!Control.HasFocus(11)</visible>
 						<include>VisibleFadeEffect</include>
 					</control>

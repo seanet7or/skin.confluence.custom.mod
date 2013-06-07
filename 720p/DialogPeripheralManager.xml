@@ -17,7 +17,7 @@
 				<posy>0</posy>
 				<width>610</width>
 				<height>650</height>
-				<texture>white100_light.png</texture>
+				<texture>dialog-back_light.png</texture>
 				<colordiffuse>DF101314</colordiffuse>
 				<visible>![Window.IsVisible(FullscreenVideo) | Window.IsVisible(Visualisation)]</visible>
 			</control>
@@ -27,7 +27,8 @@
 				<posy>0</posy>
 				<width>610</width>
 				<height>650</height>
-				<texture border="40">DialogBack2.png</texture>
+				<texture>dialog-back_light.png</texture>
+				<colordiffuse>DF101314</colordiffuse>
 				<visible>Window.IsVisible(FullscreenVideo) | Window.IsVisible(Visualisation)</visible>
 			</control>
 			<control type="image">
@@ -69,7 +70,7 @@
 						<posy>0</posy>
 						<width>550</width>
 						<height>80</height>
-						<texture>black-back.png</texture>
+						<texture>button-nf_light.png</texture>
 					</control>
 					<control type="label">
 						<description>Name</description>
@@ -112,7 +113,7 @@
 						<posy>0</posy>
 						<width>550</width>
 						<height>80</height>
-						<texture>black-back.png</texture>
+						<texture>button-nf_light.png</texture>
 						<visible>!Control.HasFocus(20)</visible>
 						<include>VisibleFadeEffect</include>
 					</control>
