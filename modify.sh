@@ -454,6 +454,10 @@ if [ -f media/OverlayDialogBackground.png ] ; then
 	R='s|<texturebg border="20">OverlayDialogBackground.png</texturebg>'
 	R+='|<texturebg>'$BUTTON_NF'</texturebg>|g'
 	perlregex "$R"
+	R='s|\s*<colordiffuse>[A-Z0-9]*</colordiffuse>#'
+	R+='(\s*)<texture border="[0-9]*">OverlayDialogBackground.png</texture>'
+	R+='|\1<texture>'$DIALOG_BG'</texture>#\1<colordiffuse>'$DIALOG_BG_COLOR'</colordiffuse>|g'
+	perlregex "$R"
 	R='s|(\s*)<texture border="[0-9]*">OverlayDialogBackground.png</texture>'
 	R+='|\1<texture>'$DIALOG_BG'</texture>#\1<colordiffuse>'$DIALOG_BG_COLOR'</colordiffuse>|g'
 	perlregex "$R"
