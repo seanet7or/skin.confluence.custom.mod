@@ -458,7 +458,7 @@
 				<width>35</width>
 				<height>35</height>
 				<colordiffuse>CCFFFFFF</colordiffuse>
-				<texture flipy="true" border="0,5,0,0" flipx="true">HomeSubEnd.png</texture>
+				<texture flipy="true" border="0,2,0,2" flipx="true">HomeSubEnd.png</texture>
 				<animation effect="slide" start="0,0" end="145,0" time="0" condition="Skin.HasSetting(HideHomeSearch)">Conditional</animation>
 			</control>
 			<control type="radiobutton" id="608">
@@ -474,8 +474,8 @@
 				<font>font12</font>
 				<textcolor>grey2</textcolor>
 				<focusedcolor>white</focusedcolor>
-				<texturefocus flipy="true" border="5">HomeSubFO.png</texturefocus>
-				<texturenofocus flipy="true" border="5">HomeSubNF_light.png</texturenofocus>
+				<texturefocus flipy="true" border="2">HomeSubFO.png</texturefocus>
+				<texturenofocus flipy="true" border="0,2,0,0">HomeSubNF_light.png</texturenofocus>
 				<pulseonselect>false</pulseonselect>
 				<label>137</label>
 				<onclick>RunScript(script.globalsearch)</onclick>
@@ -501,7 +501,7 @@
 					<posy>0</posy>
 					<width>205</width>
 					<height>35</height>
-					<texture flipy="true" border="0,5,0,0">HomeSubNF_light.png</texture>
+					<texture flipy="true" border="0,2,0,0">HomeSubNF_light.png</texture>
 					<colordiffuse>CCFFFFFF</colordiffuse>
 					<animation effect="zoom" start="0,0,205,35" end="0,0,465,35" delay="0" time="300" condition="!Player.HasMedia + !Skin.HasSetting(HideHomeStats)">conditional</animation>
 					<visible>Player.HasMedia | !Skin.HasSetting(HideHomeStats)</visible>
@@ -701,8 +701,8 @@
 				<font>font12</font>
 				<textcolor>grey2</textcolor>
 				<focusedcolor>white</focusedcolor>
-				<texturefocus flipy="true" border="5">HomeSubFO.png</texturefocus>
-				<texturenofocus flipy="true" border="5">HomeSubNF_light.png</texturenofocus>
+				<texturefocus flipy="true" border="2">HomeSubFO.png</texturefocus>
+				<texturenofocus flipy="true" border="0,2,0,0">HomeSubNF_light.png</texturenofocus>
 				<pulseonselect>false</pulseonselect>
 				<label>31008</label>
 				<onclick>fullscreen</onclick>

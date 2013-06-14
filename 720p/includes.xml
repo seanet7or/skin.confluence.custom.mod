@@ -170,8 +170,8 @@
 		<font>font12</font>
 		<textcolor>grey2</textcolor>
 		<focusedcolor>white</focusedcolor>
-		<texturefocus border="5">HomeSubFO.png</texturefocus>
-		<texturenofocus border="5">HomeSubNF_light.png</texturenofocus>
+		<texturefocus border="2">HomeSubFO.png</texturefocus>
+		<texturenofocus border="0,2,0,0">HomeSubNF_light.png</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</include>
 	<include name="HomeSubMenuCommonValues">
@@ -1246,12 +1246,6 @@
 						<texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[Window(home).Property(RandomAlbum.5.Art(thumb))]</texture>
 						<aspectratio scalediffuse="false">scale</aspectratio>
 					</control>
-					<control type="image">
-						<width>250</width>
-						<height>228</height>
-						<bordertexture>livecdcase/cdshadow.png</bordertexture>
-						<texture background="true">livecdcase/cdglass.png</texture>
-					</control>
 				</control>
 				<control type="group">
 					<posx>466</posx>
@@ -1265,12 +1259,6 @@
 						<fadetime>600</fadetime>
 						<texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[Window(home).Property(RandomAlbum.9.Art(thumb))]</texture>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-					</control>
-					<control type="image">
-						<width>250</width>
-						<height>228</height>
-						<bordertexture>livecdcase/cdshadow.png</bordertexture>
-						<texture background="true">livecdcase/cdglass.png</texture>
 					</control>
 				</control>
 				<control type="group">
@@ -1287,12 +1275,6 @@
 						<fadetime>600</fadetime>
 						<aspectratio scalediffuse="false">scale</aspectratio>
 					</control>
-					<control type="image">
-						<width>250</width>
-						<height>228</height>
-						<bordertexture>livecdcase/cdshadow.png</bordertexture>
-						<texture background="true">livecdcase/cdglass.png</texture>
-					</control>
 				</control>
 				<control type="group">
 					<posx>1026</posx>
@@ -1307,12 +1289,6 @@
 						<fadetime>600</fadetime>
 						<texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[Window(home).Property(RandomAlbum.7.Art(thumb))]</texture>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-					</control>
-					<control type="image">
-						<width>250</width>
-						<height>228</height>
-						<bordertexture>livecdcase/cdshadow.png</bordertexture>
-						<texture background="true">livecdcase/cdglass.png</texture>
 					</control>
 				</control>
 				<control type="group">
@@ -1329,12 +1305,6 @@
 						<fadetime>600</fadetime>
 						<aspectratio scalediffuse="false">scale</aspectratio>
 					</control>
-					<control type="image">
-						<width>250</width>
-						<height>228</height>
-						<bordertexture>livecdcase/cdshadow.png</bordertexture>
-						<texture background="true">livecdcase/cdglass.png</texture>
-					</control>
 				</control>
 				<control type="group">
 					<posx>1250</posx>
@@ -1349,12 +1319,6 @@
 						<fadetime>600</fadetime>
 						<texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[Window(home).Property(RandomAlbum.6.Art(thumb))]</texture>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-					</control>
-					<control type="image">
-						<width>250</width>
-						<height>228</height>
-						<bordertexture>livecdcase/cdshadow.png</bordertexture>
-						<texture background="true">livecdcase/cdglass.png</texture>
 					</control>
 				</control>
 				<control type="group">
@@ -1371,12 +1335,6 @@
 						<texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[Window(home).Property(RandomAlbum.10.Art(thumb))]</texture>
 						<aspectratio scalediffuse="false">scale</aspectratio>
 					</control>
-					<control type="image">
-						<width>250</width>
-						<height>228</height>
-						<bordertexture>livecdcase/cdshadow.png</bordertexture>
-						<texture background="true">livecdcase/cdglass.png</texture>
-					</control>
 				</control>
 				<control type="group">
 					<posx>980</posx>
@@ -1391,12 +1349,6 @@
 						<height>201</height>
 						<texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[Window(home).Property(RandomAlbum.3.Art(thumb))]</texture>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-					</control>
-					<control type="image">
-						<width>250</width>
-						<height>228</height>
-						<bordertexture>livecdcase/cdshadow.png</bordertexture>
-						<texture background="true">livecdcase/cdglass.png</texture>
 					</control>
 				</control>
 				<control type="group">
@@ -1413,12 +1365,6 @@
 						<texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[Window(home).Property(RandomAlbum.2.Art(thumb))]</texture>
 						<aspectratio scalediffuse="false">scale</aspectratio>
 					</control>
-					<control type="image">
-						<width>250</width>
-						<height>228</height>
-						<bordertexture>livecdcase/cdshadow.png</bordertexture>
-						<texture background="true">livecdcase/cdglass.png</texture>
-					</control>
 				</control>
 				<control type="group">
 					<posx>500</posx>
@@ -1433,12 +1379,6 @@
 						<texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[Window(home).Property(RandomAlbum.1.Art(thumb))]</texture>
 						<fadetime>600</fadetime>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-					</control>
-					<control type="image">
-						<width>250</width>
-						<height>228</height>
-						<bordertexture>livecdcase/cdshadow.png</bordertexture>
-						<texture background="true">livecdcase/cdglass.png</texture>
 					</control>
 				</control>
 			</control>

@@ -210,7 +210,7 @@ read_origmaster() {
 
 
 step() {
-	let MAXSTEPS=59
+	let MAXSTEPS=60
 	STEP=$((STEP+1))
 	if [ $STEP -gt $MAXSTEPS ] ; then
 		sed -i 's|let MAXSTEPS=[0-9]*|let MAXSTEPS='$MAXSTEPS'|' "$SCRIPTFILE"
@@ -933,6 +933,17 @@ else
 fi
 step
 
+printf "\nRemoving CD shadows: "
+if [ -f media/livecdcase/cdglass.png ] ; then
+	remove_control 'image' '<texture background="true">livecdcase/cdglass.png</texture>'
+	check_and_remove media/livecdcase/cdglass.png
+	check_and_remove media/livecdcase/cdshadow.png	
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
 printf "\nReplacing submenus item texture (for items that are not focused): "
@@ -1158,6 +1169,11 @@ KeyboardEditArea_light.png;0
 MediaBladeSub_light.png;7,0,7,0
 HomeBladeSub_light.png;7,0,7,0
 MenuItemFO_light.png;2
+HomeSubNF_light.png;0,2,0,0
+HomeSubFO.png;2
+HomeSubEnd.png;0,2,0,2
+floor_button.png;5
+floor_buttonFO.png;5
 KeyboardKeyNF.png;1'
 OLDIFS=$IFS ; IFS=$'\n'
 for T in $TEXLIST ; do

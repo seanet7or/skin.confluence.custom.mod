@@ -1,4 +1,3 @@
-
 TEXLIST='button-focus2.png;2
 button-focus_light.png;2
 folder-focus.png;2
@@ -7,7 +6,13 @@ black-back2.png;0
 KeyboardKey.png;4
 KeyboardEditArea_light.png;0
 MediaBladeSub_light.png;7,0,7,0
+HomeBladeSub_light.png;7,0,7,0
 MenuItemFO_light.png;2
+HomeSubNF_light.png;0,2,0,0
+HomeSubFO.png;2
+HomeSubEnd.png;0,2,0,2
+floor_button.png;5
+floor_buttonFO.png;5
 KeyboardKeyNF.png;1'
 
 OLDIFS=$IFS ; IFS=$'\n'
