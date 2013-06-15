@@ -210,7 +210,7 @@ read_origmaster() {
 
 
 step() {
-	let MAXSTEPS=60
+	let MAXSTEPS=61
 	STEP=$((STEP+1))
 	if [ $STEP -gt $MAXSTEPS ] ; then
 		sed -i 's|let MAXSTEPS=[0-9]*|let MAXSTEPS='$MAXSTEPS'|' "$SCRIPTFILE"
@@ -944,6 +944,20 @@ else
 fi
 step
 
+printf "\nChanging progress bars: "
+if [ -f media/OSDProgressBack.png ] ; then
+	perlregex 's|OSDProgressMidLight.png|OSDProgressMidLight_light.png|g'
+	perlregex 's|OSDProgressMid.png|OSDProgressMid_light.png|g'
+	perlregex 's|OSDProgressBack.png|OSDProgressBack_light.png|g'
+	check_and_remove media/OSDProgressMidLight.png
+	check_and_remove media/OSDProgressMid.png
+	check_and_remove media/OSDProgressBack.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
 printf "\nReplacing submenus item texture (for items that are not focused): "
@@ -1174,6 +1188,12 @@ HomeSubFO.png;2
 HomeSubEnd.png;0,2,0,2
 floor_button.png;5
 floor_buttonFO.png;5
+StackFO.png;5
+\$INFO\[ListItem\.Icon\];0
+OSDProgressMidLight_light.png;0
+OSDProgressMid_light.png;0
+OSDProgressBack_light.png;0
+epg-genres/\$INFO\[ListItem.Property\(GenreType\)\].png;3
 KeyboardKeyNF.png;1'
 OLDIFS=$IFS ; IFS=$'\n'
 for T in $TEXLIST ; do

@@ -13,6 +13,9 @@ HomeSubFO.png;2
 HomeSubEnd.png;0,2,0,2
 floor_button.png;5
 floor_buttonFO.png;5
+StackFO.png;5
+\$INFO\[ListItem\.Icon\];0
+epg-genres/\$INFO\[ListItem.Property\(GenreType\)\].png;3
 KeyboardKeyNF.png;1'
 
 OLDIFS=$IFS ; IFS=$'\n'
