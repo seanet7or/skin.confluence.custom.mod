@@ -20,6 +20,9 @@ OSDProgressMidLight_light.png;0
 OSDProgressMid_light.png;0
 OSDProgressBack_light.png;0
 epg-genres/\$INFO\[ListItem.Property\(GenreType\)\].png;3
+NoCover_1.png;4
+flagging/blank.png;4
+HomeBack.png;0,6,0,6
 KeyboardKeyNF.png;1'
 OLDIFS=$IFS ; IFS=$'\n'
 for T in $TEXLIST ; do
@@ -52,3 +55,4 @@ echo ""
 echo ""
 echo "Others: "
 grep 2>/dev/null border 720p/*.xml | grep -v '<bordersize>' | egrep -v "$REMOVED" | egrep -v $ARGS | head -n 10
+grep 2>/dev/null texture 720p/*.xml | grep -v '_light.png' | grep -v '>-<' | grep -v '<bordersize>' | egrep -v "$REMOVED" | egrep -v $ARGS | head -n 10

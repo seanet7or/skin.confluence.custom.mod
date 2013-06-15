@@ -210,7 +210,7 @@ read_origmaster() {
 
 
 step() {
-	let MAXSTEPS=61
+	let MAXSTEPS=62
 	STEP=$((STEP+1))
 	if [ $STEP -gt $MAXSTEPS ] ; then
 		sed -i 's|let MAXSTEPS=[0-9]*|let MAXSTEPS='$MAXSTEPS'|' "$SCRIPTFILE"
@@ -958,6 +958,18 @@ else
 fi
 step
 
+printf "\nRemoving NoCover border: "
+if grep -q '<bordertexture border="3">NoCover_1.png</bordertexture>' 720p/SlideShow.xml ; then
+	R='s|\s*<bordertexture border="3">NoCover_1.png</bordertexture>#'
+	R+='\s*<bordersize>5</bordersize>#'
+	R+='||g'
+	perlregex 720p/SlideShow.xml "$R"
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
 printf "\nReplacing submenus item texture (for items that are not focused): "
@@ -1194,6 +1206,9 @@ OSDProgressMidLight_light.png;0
 OSDProgressMid_light.png;0
 OSDProgressBack_light.png;0
 epg-genres/\$INFO\[ListItem.Property\(GenreType\)\].png;3
+NoCover_1.png;4
+flagging/blank.png;4
+HomeBack.png;0,6,0,6
 KeyboardKeyNF.png;1'
 OLDIFS=$IFS ; IFS=$'\n'
 for T in $TEXLIST ; do
