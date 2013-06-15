@@ -1,3 +1,4 @@
+
 TEXLIST='button-focus2.png;2
 button-focus_light.png;2
 folder-focus.png;2
@@ -15,9 +16,11 @@ floor_button.png;5
 floor_buttonFO.png;5
 StackFO.png;5
 \$INFO\[ListItem\.Icon\];0
+OSDProgressMidLight_light.png;0
+OSDProgressMid_light.png;0
+OSDProgressBack_light.png;0
 epg-genres/\$INFO\[ListItem.Property\(GenreType\)\].png;3
 KeyboardKeyNF.png;1'
-
 OLDIFS=$IFS ; IFS=$'\n'
 for T in $TEXLIST ; do
 	TEXTURE=$(echo "$T" | cut -f1 -d';')
