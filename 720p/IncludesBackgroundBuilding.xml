@@ -4,20 +4,11 @@
 		<control type="group">
 			<control type="multiimage">
 				<include>Dimensions_Fullscreen</include>
-				<imagepath background="true">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
+				<imagepath background="true">$VAR[HomeMenuItemBackground]</imagepath>
 				<timeperimage>8000</timeperimage>
 				<randomize>true</randomize>
 				<fadetime>1000</fadetime>
-				<visible>StringCompare(Container(9000).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(ShowWeatherFanart)</visible>
-			</control>
-			<control type="multiimage">
-				<include>Dimensions_Fullscreen</include>
-				<imagepath background="true">$INFO[Container(9000).ListItem.Icon]</imagepath>
-				<timeperimage>8000</timeperimage>
-				<randomize>true</randomize>
-				<fadetime>1000</fadetime>
-				<visible>![StringCompare(Container(9000).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(ShowWeatherFanart)]</visible>
-			</control>
+			</control>		
 			<control type="image">
 				<description>Search Background Image</description>
 				<include>Dimensions_Fullscreen</include>
@@ -42,7 +33,7 @@
 				<texture>$INFO[Skin.String(FavBtnBackground)]</texture>
 				<visible>Control.HasFocus(21) + !IsEmpty(Skin.String(FavBtnBackground))</visible>
 			</control>
-			<visible>Window.IsVisible(home) + Skin.HasSetting(IndividualBackgrounds)</visible>
+			<visible>Window.IsVisible(home) + !Skin.HasSetting(GlobalBackground)</visible>
 		</control>
 		<control type="group">
 			<control type="multiimage">
@@ -71,7 +62,7 @@
 				<visible>Window.IsVisible(home)</visible>
 				<visible>!Skin.HasSetting(GlobalWeatherFanart) + !IsEmpty(Skin.String(CustomBackgroundPath))</visible>
 			</control>
-			<visible>!Skin.HasSetting(IndividualBackgrounds)</visible>
+			<visible>Skin.HasSetting(GlobalBackground)</visible>
 		</control>
 		<control type="group">
 			<visible>!Skin.HasSetting(HideBackGroundFanart) + !Skin.HasSetting(HideWidgetFanArt)</visible>
@@ -215,6 +206,16 @@
 				<include>Window_OpenClose_Animation</include>
 				<visible>Control.HasFocus(8013)</visible>
 			</control>
+			<control type="image">
+				<description>Playlist Movies Background Image</description>
+				<include>Dimensions_Fullscreen</include>
+				<aspectratio>scale</aspectratio>
+				<texture background="true">$INFO[Container(8014).ListItem.Thumb]</texture>
+				<include>BackgroundFade</include>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<include>Window_OpenClose_Animation</include>
+				<visible>Control.HasFocus(8014)</visible>
+			</control>
 		</control>
 		<control type="multiimage">
 			<include>Dimensions_Fullscreen</include>
@@ -236,6 +237,14 @@
 				<include>Window_OpenClose_Animation</include>
 				<visible>!IsEmpty(ListItem.Property(Fanart_Image))</visible>
 			</control>
+			<control type="image">
+				<include>Dimensions_Fullscreen</include>
+				<texture background="true">$VAR[GenreBackgroundImage]</texture>
+				<include>BackgroundFade</include>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<include>Window_OpenClose_Animation</include>
+				<visible>!StringCompare(ListItem.Label,..) + Container.Content(genres)</visible>
+			</control>			
 		</control>
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>

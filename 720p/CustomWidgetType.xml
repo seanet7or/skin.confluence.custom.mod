@@ -118,6 +118,14 @@
 						<visible>!Skin.HasSetting(DisableScriptPlayList)</visible>
 					</item>
 					<item>
+						<description>UnWatched Movies</description>
+						<label>$LOCALIZE[16101] $LOCALIZE[20342]</label>
+						<onclick>Dialog.Close(2118)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,UnWatched)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>!Skin.HasSetting(DisableScriptPlayList)</visible>
+					</item>
+					<item>
 						<description>Recent Movies</description>
 						<label>$LOCALIZE[31175]</label>
 						<onclick>Dialog.Close(2118)</onclick>

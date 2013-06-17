@@ -15,6 +15,8 @@
 	<include file="IncludesHomeMenuItems.xml" />
 	<include file="IncludesBackgroundBuilding.xml" />
 	<include file="IncludesGenreFlagging.xml" />
+	<include file="IncludesBackgroundEffect.xml" />
+	<include file="IncludesCDWall.xml" />
 	<constant name="FanartCrossfadeTime">500</constant>
 	<constant name="IconCrossfadeTime">400</constant>
 	<include name="ClearButtonChoice">
@@ -34,7 +36,15 @@
 		<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 	</include>
 	<include name="DefaultInitialSetup">
+		<onload condition="!System.HasAddon(script.globalsearch)">Skin.Setbool(HideHomeSearch)</onload>
+		<onload condition="!System.HasAddon(script.randomandlastitems)">Skin.Setbool(DisableScriptPlayList)</onload>
+		<onload>Skin.SetString(WeatherFanartDir,special://skin/backgrounds/weather/)</onload>
+		<onload>Skin.SetString(UsrGenreFanartDir,special://skin/backgrounds/moviegenre/)</onload>
 		<onload>Skin.SetBool(ShowWeatherFanart)</onload>
+		<onload>Skin.SetBool(ShowMovieDBFanart)</onload>
+		<onload>Skin.SetBool(ShowTVShowDBFanart)</onload>
+		<onload>Skin.SetBool(ShowMusicDBFanart)</onload>
+		<onload>Skin.SetBool(ShowConcertDBFanart)</onload>
 		<onload>Skin.SetString(MPAACountryCert,$LOCALIZE[31701])</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Label,$LOCALIZE[8])</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Path,ActivateWindow(Weather))</onload>
@@ -61,21 +71,21 @@
 		<onload>Skin.SetString(HomeItem.4.Path,ActivateWindow(Videos,Files,return))</onload>
 		<onload>Skin.SetString(HomeItem.4.Sub,Videos)</onload>
 		<onload>Skin.SetString(HomeItem.4.Addon,Videos)</onload>
-		<onload>Skin.SetString(HomeItem.4.Widget,None)</onload>
+		<onload>Skin.SetString(HomeItem.4.Widget,UnWatched)</onload>
 		<onload>Skin.SetString(HomeItem.4.Type,Videos)</onload>
 		<onload>Skin.SetString(HomeItem.4.Fanart,special://skin/backgrounds/homescreen/videos.jpg)</onload>
 		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Label,$LOCALIZE[20342])</onload>
 		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Path,ActivateWindow(Videos,MovieTitles,return))</onload>
 		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Sub,Movies)</onload>
 		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Addon,Videos)</onload>
-		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Widget,RecentMovies)</onload>
+		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Widget,None)</onload>
 		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Type,Movies)</onload>
 		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Fanart,special://skin/backgrounds/homescreen/videos.jpg)</onload>
 		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Label,$LOCALIZE[20343])</onload>
 		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Path,ActivateWindow(Videos,TVShowTitles,return))</onload>
 		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Sub,TVShows)</onload>
 		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Addon,Videos)</onload>
-		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Widget,RecentEpisodes)</onload>
+		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Widget,None)</onload>
 		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Type,TVShows)</onload>
 		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Fanart,special://skin/backgrounds/homescreen/videos.jpg)</onload>
 		<onload>Skin.SetString(HomeItem.7.Label,$LOCALIZE[31332])</onload>
@@ -97,7 +107,7 @@
 		<onload>Skin.SetString(HomeItem.9.Path,ActivateWindow(Music))</onload>
 		<onload>Skin.SetString(HomeItem.9.Sub,Music)</onload>
 		<onload>Skin.SetString(HomeItem.9.Addon,Music)</onload>
-		<onload>Skin.SetString(HomeItem.9.Widget,RecentAlbums)</onload>
+		<onload>Skin.SetString(HomeItem.9.Widget,None)</onload>
 		<onload>Skin.SetString(HomeItem.9.Type,Music)</onload>
 		<onload>Skin.SetString(HomeItem.9.Fanart,special://skin/backgrounds/homescreen/music.jpg)</onload>
 		<onload>Skin.SetString(HomeItem.10.Label,$LOCALIZE[0])</onload>
@@ -181,9 +191,9 @@
 		<height>35</height>
 		<align>center</align>
 		<onup>9000</onup>
-		<ondown condition="!Skin.HasSetting(LowerMainMenuBar)">9002</ondown>
-		<ondown condition="Skin.HasSetting(LowerMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
-		<ondown condition="Skin.HasSetting(LowerMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown>
+		<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
+		<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+		<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown>
 		<itemgap>0</itemgap>
 		<orientation>Horizontal</orientation>
 		<animation effect="slide" start="0,-40" end="0,0" delay="200" time="200" tween="quadratic" easing="out">Visible</animation>
@@ -978,7 +988,7 @@
 	</include>
 	<include name="HomeAddonsCommonLayout">
 		<include>Window_OpenClose_Animation</include>
-		<animation effect="slide" start="0,0" end="0,-195" time="0" condition="Skin.HasSetting(LowerMainMenuBar)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,-195" time="0" condition="!Skin.HasSetting(RaiseMainMenuBar)">Conditional</animation>
 		<animation type="Visible">
 			<effect type="slide" start="0,30" end="0,0" delay="200" easing="out" tween="quadratic" time="200" />
 			<effect type="fade" start="0" end="100" delay="200" time="200" />
