@@ -17,11 +17,14 @@
 	<include file="IncludesGenreFlagging.xml" />
 	<include file="IncludesBackgroundEffect.xml" />
 	<include file="IncludesCDWall.xml" />
+	<include file="ViewsLogoVertical.xml" />
 	<constant name="FanartCrossfadeTime">500</constant>
 	<constant name="IconCrossfadeTime">400</constant>
 	<include name="ClearButtonChoice">
 		<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Label)</onclick>
 		<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Path)</onclick>
+		<onclick condition="Window.IsVisible(2114) + stringcompare(Skin.String(UsrSelectBtn),HomeItem.1)">Skin.Reset(HomeItemLastAction)</onclick>
+		<onclick condition="Window.IsVisible(2114) + stringcompare(Skin.String(UsrSelectBtn),HomeItem.1)">Skin.Reset(HomeItemLastLabel)</onclick>
 		<onclick condition="Window.IsVisible(2114)">Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].PlayList)</onclick>
 		<onclick condition="Window.IsVisible(2114)">Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Sub)</onclick>
 		<onclick condition="Window.IsVisible(2114)">Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Addon)</onclick>
@@ -50,7 +53,7 @@
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Path,ActivateWindow(Weather))</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Sub,None)</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Addon,None)</onload>
-		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Widget,None)</onload>
+		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Widget,Weather)</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Type,Weather)</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Fanart,special://skin/backgrounds/homescreen/weather.jpg)</onload>
 		<onload>Skin.SetString(HomeItem.2.Label,$LOCALIZE[1])</onload>
@@ -78,14 +81,14 @@
 		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Path,ActivateWindow(Videos,MovieTitles,return))</onload>
 		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Sub,Movies)</onload>
 		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Addon,Videos)</onload>
-		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Widget,None)</onload>
+		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Widget,SuggestedMovies)</onload>
 		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Type,Movies)</onload>
 		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Fanart,special://skin/backgrounds/homescreen/videos.jpg)</onload>
 		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Label,$LOCALIZE[20343])</onload>
 		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Path,ActivateWindow(Videos,TVShowTitles,return))</onload>
 		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Sub,TVShows)</onload>
 		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Addon,Videos)</onload>
-		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Widget,None)</onload>
+		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Widget,SuggestedEpisodes)</onload>
 		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Type,TVShows)</onload>
 		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Fanart,special://skin/backgrounds/homescreen/videos.jpg)</onload>
 		<onload>Skin.SetString(HomeItem.7.Label,$LOCALIZE[31332])</onload>
@@ -107,7 +110,7 @@
 		<onload>Skin.SetString(HomeItem.9.Path,ActivateWindow(Music))</onload>
 		<onload>Skin.SetString(HomeItem.9.Sub,Music)</onload>
 		<onload>Skin.SetString(HomeItem.9.Addon,Music)</onload>
-		<onload>Skin.SetString(HomeItem.9.Widget,None)</onload>
+		<onload>Skin.SetString(HomeItem.9.Widget,SuggestedAlbums)</onload>
 		<onload>Skin.SetString(HomeItem.9.Type,Music)</onload>
 		<onload>Skin.SetString(HomeItem.9.Fanart,special://skin/backgrounds/homescreen/music.jpg)</onload>
 		<onload>Skin.SetString(HomeItem.10.Label,$LOCALIZE[0])</onload>
@@ -120,6 +123,8 @@
 		<onload>Skin.SetString(HomeItem.10.Fanart,special://skin/backgrounds/homescreen/programs.jpg)</onload>
 		<onload>Skin.SetString(HomeItem.11.Fanart,special://skin/backgrounds/homescreen/playdisc.jpg)</onload>
 		<onload>Skin.SetString(HomeItem.12.Fanart,special://skin/backgrounds/homescreen/settings.jpg)</onload>
+		<onload>Skin.SetString(HomeItem.12.Addon,None)</onload>
+		<onload>Skin.SetString(HomeItem.12.Widget,None)</onload>
 		<onload>Skin.SetString(SearchBtnBackground,special://skin/backgrounds/homescreen/search.jpg)</onload>
 		<onload>Skin.SetString(PowerBtnBackground,special://skin/backgrounds/homescreen/shutdown.jpg)</onload>
 		<onload>Skin.SetString(FavBtnBackground,special://skin/backgrounds/homescreen/favourite.jpg)</onload>
@@ -136,18 +141,6 @@
 			<animation effect="fade" time="200">Hidden</animation>
 			<visible>Window.IsActive(MovieInformation) | Window.IsActive(MusicInformation) | Window.IsActive(SongInformation) | Window.IsActive(FileBrowser) | Window.IsActive(TextViewer) | Window.IsActive(AddonSettings) | Window.IsActive(ContentSettings) | Window.IsActive(SelectDialog) | Window.IsActive(FileStackingDialog) | Window.IsActive(MediaSource) | Window.IsActive(PictureInfo) | Window.IsActive(PlayerControls) | Window.IsActive(VirtualKeyboard) | Window.IsActive(NumericInput) | Window.IsActive(ProfileSettings) | Window.IsActive(LockSettings) | Window.IsActive(SmartPlaylistEditor) | Window.IsActive(SmartPlaylistRule) | Window.IsActive(script-RSS_Editor-rssEditor.xml) | Window.IsActive(script-RSS_Editor-setEditor.xml) | Window.IsActive(AddonInformation) | Window.IsActive(Peripherals) | Window.IsActive(PeripheralSettings) | Window.IsActive(script-XBMC_Lyrics-main.xml) | Window.IsActive(PVRChannelManager) | Window.IsActive(MediaFilter)</visible>
 		</control>
-	</include>
-	<include name="WindowTitleCommons">
-		<posx>0</posx>
-		<posy>0</posy>
-		<width min="0" max="800">auto</width>
-		<height>30</height>
-		<font>font14</font>
-		<textcolor>white</textcolor>
-		<shadowcolor>black</shadowcolor>
-		<scroll>false</scroll>
-		<align>left</align>
-		<aligny>center</aligny>
 	</include>
 	<include name="ButtonCommonValues">
 		<height>40</height>

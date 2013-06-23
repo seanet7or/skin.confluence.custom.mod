@@ -2,7 +2,7 @@
 <window>
 	<defaultcontrol always="true">50</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<views>50,51,500,550,551,560,501,508,504,503,515,505,511,732</views>
+	<views>50,51,500,550,551,560,501,508,504,503,515,505,511,730,732</views>
 	<onload condition="!Skin.HasSetting(HideTvTunes) + System.HasAddon(script.tvtunes)">XBMC.RunScript(script.tvtunes,backend=True&amp;loop=False)</onload>
 	<controls>
 		<include>CommonBackground</include>
@@ -35,6 +35,8 @@
 			<!-- view id = 551 -->
 			<include>LiveTVView1</include>
 			<!-- view id = 560 -->
+			<include>LogoVertical</include>
+			<!-- view id = 730 -->
 			<include>FullWallView</include>
 			<!-- view id = 732 -->
 		</control>
@@ -203,6 +205,24 @@
 					<enable>!Skin.HasSetting(View508HideInfo)</enable>
 					<visible>Control.IsVisible(508)</visible>
 				</control>
+				<control type="radiobutton" id="101">
+					<description>Show Logo Toggle</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>31306</label>
+					<onclick>Skin.ToggleSetting(View730HideLogo)</onclick>
+					<selected>Skin.HasSetting(View730HideLogo)</selected>
+					<visible>Control.IsVisible(730) + !Container.Content(Seasons) + !Container.Content(Episodes)</visible>
+				</control>
+				<control type="radiobutton" id="102">
+					<description>Show Episode Thumbnail Toggle</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>31195</label>
+					<onclick>Skin.ToggleSetting(View730ShowThumb)</onclick>
+					<selected>Skin.HasSetting(View730ShowThumb)</selected>
+					<visible>Control.IsVisible(730) + Container.Content(Episodes)</visible>
+				</control>				
 				<control type="radiobutton" id="14">
 					<description>Watched Toggle</description>
 					<textwidth>170</textwidth>

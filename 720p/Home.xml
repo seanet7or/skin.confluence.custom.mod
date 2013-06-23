@@ -909,7 +909,25 @@
 						<property name="AddOnSet">$INFO[Skin.String(HomeItem.1.Addon)]</property>
 						<property name="WidgetSet">$INFO[Skin.String(HomeItem.1.Widget)]</property>
 						<property name="PlayListType">$INFO[Window(home).Property(HomePlayListOne.Type)]</property>
-						<visible>!IsEmpty(Skin.String(HomeItem.1.Path))</visible>
+						<visible>
+							[!IsEmpty(Skin.String(HomeItem.1.Path)) + !Skin.HasSetting(StickyHomeMenuAction)]|
+							[IsEmpty(Skin.String(HomeItemLastAction)) + Skin.HasSetting(StickyHomeMenuAction)]
+						</visible>
+					</item>
+					<item id="1">
+						<description>Home Menu Item One</description>
+						<label>$INFO[Skin.String(HomeItemLastLabel)]</label>
+						<onclick>SetProperty(MenuItemActive,ItemOne,Home)</onclick>
+						<onclick>SetProperty(MenuItemSelected,$INFO[Skin.String(HomeItem.1.Type)],Home)</onclick>
+						<onclick>$INFO[Skin.String(HomeItemLastAction)]</onclick>
+						<icon>special://skin/backgrounds/default_light.jpg</icon>
+						<thumb>$INFO[Skin.String(HomeItem.1.FanArt)]</thumb>
+						<property name="SubMenu">$INFO[Skin.String(HomeItem.1.Sub)]</property>
+						<property name="HiLiteItem">$INFO[Skin.String(HomeItem.1.Type)]</property>
+						<property name="AddOnSet">$INFO[Skin.String(HomeItem.1.Addon)]</property>
+						<property name="WidgetSet">$INFO[Skin.String(HomeItem.1.Widget)]</property>
+						<property name="PlayListType">$INFO[Window(home).Property(HomePlayListOne.Type)]</property>
+						<visible>!IsEmpty(Skin.String(HomeItemLastAction)) + Skin.HasSetting(StickyHomeMenuAction)</visible>
 					</item>
 					<item id="2">
 						<description>Home Menu Item Two</description>
@@ -1069,7 +1087,8 @@
 						<thumb>$INFO[Skin.String(HomeItem.12.FanArt)]</thumb>
 						<property name="SubMenu">Settings</property>
 						<property name="HiLiteItem">Settings</property>
-						<property name="AddOnSet">None</property>
+						<property name="AddOnSet">$INFO[Skin.String(HomeItem.12.Addon)]</property>
+						<property name="WidgetSet">$INFO[Skin.String(HomeItem.12.Widget)]</property>
 						<visible>!Skin.HasSetting(HideSytemMenuItem)</visible>
 					</item>
 				</content>

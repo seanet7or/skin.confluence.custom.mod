@@ -127,6 +127,20 @@ remove_structure() {
 }
 
 
+# removes <include name="?"> .... </include> structure from a xml file
+# $1 name of include
+# $2 files where to search
+remove_include() {
+	local NAME=$1
+	local FILES=$2
+	local REGEX='s|\s*<include name="'$NAME'">#'
+	REGEX+='(\s*<[/a-z][^#]*#\|)*?'
+	REGEX+='\s*</include>#'
+	REGEX+='||g'
+	perlregex "$REGEX" "$FILES"
+}
+
+
 # removes <control type="?"> .... </control> structure from a xml file
 # this function removes only controls without an id!
 # the controle structure to remove is identified by the characteristic line
@@ -210,7 +224,7 @@ read_origmaster() {
 
 
 step() {
-	let MAXSTEPS=62
+	let MAXSTEPS=65
 	STEP=$((STEP+1))
 	if [ $STEP -gt $MAXSTEPS ] ; then
 		sed -i 's|let MAXSTEPS=[0-9]*|let MAXSTEPS='$MAXSTEPS'|' "$SCRIPTFILE"
@@ -478,6 +492,16 @@ else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
+
+printf "\nRemoving studio logos: "
+if grep -q 'listitem.Studio,studios' 720p/ViewsLogoVertical.xml ; then
+	remove_control 'image' '<texture>.INFO.listitem.Studio,studios.,.png.</texture>'
+	rm -rf media/studios
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
 	
 printf "\nReplacing content panel background: "
 if [ -f media/ContentPanel.png ] ; then	
@@ -582,9 +606,9 @@ if [ -f media/MenuItemNF.png ] ; then
 	#remove all image controls using it as texture
 	remove_control 'image' '<texture[^>]*>MenuItemNF.png</texture>'
 	#remove when used as texture for controls without focus
-	R='s|(<control type="[^#]*#'
-	R+='(\s*(<[a-z]\|<!--)[^#]*#)*?' # matching lines beginning with any opening tag and comments
-	R+='\s*<texturenofocus)(\| border="[0-9,]*")>MenuItemNF.png</texturenofocus>'
+		#R='s|(<control type="[^#]*#'
+		#R+='(\s*(<[a-z]\|<!--)[^#]*#)*?' # matching lines beginning with any opening tag and comments
+	R='s|(\s*<texturenofocus)(\| border="[0-9,]*")>MenuItemNF.png</texturenofocus>'
 	R+='|\1>-</texturenofocus>|g'
 	perlregex "$R"
 	check_and_remove media/MenuItemNF.png
@@ -1184,6 +1208,24 @@ fi
 step
 
 printf "\n############# CLEANING UP #####################################################"
+
+printf "\nRemoving unused include WindowTitleCommons: "
+if grep -I -q 'WindowTitleCommons' 720p/includes.xml ; then
+	remove_structure include ' name="WindowTitleCommons"' '' 720p/includes.xml	
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nRemoving unused include MediaStudioFlagging: "
+if grep -I -q 'MediaStudioFlagging' 720p/includes.xml ; then
+	remove_include 'MediaStudioFlagging' 720p/includes.xml	
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
 
 TEXLIST='button-focus2.png;2
 button-focus_light.png;2
