@@ -212,7 +212,7 @@
 		<value>$INFO[ListItem.label]</value>
 	</variable>
 	<variable name="VideoNowPlaying">
-		<value condition="VideoPlayer.Content(Movies) + !IsEmpty(VideoPlayer.Year)">$INFO[VideoPlayer.Title] ([COLOR=white]$INFO[VideoPlayer.Year][/COLOR])</value>
+		<value condition="VideoPlayer.Content(Movies) + !IsEmpty(VideoPlayer.Year)">$INFO[VideoPlayer.Title] ($INFO[VideoPlayer.Year])</value>
 		<value>$INFO[VideoPlayer.Title]</value>
 	</variable>	
 	<variable name="VideoDescription" type="text">

@@ -1011,7 +1011,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus border="2">MenuItemFO_light.png</texturefocus>
 						<texturenofocus>-</texturenofocus>
-						<!--onclick>Skin.Reset(HomeItemLastLabel)</onclick-->
+						<onclick>Skin.Reset(StickyHomeMenuAction)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.1,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.1.Label))</visible>
@@ -1025,8 +1025,8 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus border="2">MenuItemFO_light.png</texturefocus>
 						<texturenofocus>-</texturenofocus>
-						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
-						<!--onclick>SetProperty(UsrSelectBtn,HomeItem.1,home)</onclick-->
+						<!--onclick>Skin.Reset(HomeItemLastLabel)</onclick-->
+						<onclick>SetProperty(UsrSelectBtn,HomeItem.1,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.1.Label))</visible>
 					</control>

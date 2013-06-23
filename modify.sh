@@ -994,6 +994,26 @@ else
 fi
 step
 
+printf "\nReplacing folder-focus.png: "
+if [ -f media/folder-focus.png ] ; then
+	XMLS=$(2>/dev/null grep 'folder-focus.png' -l 720p/*)
+	perlregex $XMLS 's|folder-focus.png|folder-focus_light.png|g'
+	check_and_remove media/folder-focus.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nReplacing backgrounds: "
+if [ -f backgrounds/homescreen/addons.jpg ] ; then
+	perlregex 720p/includes.xml 's|skin/backgrounds/homescreen/[a-z]*.jpg|skin/backgrounds/default_light.jpg|g' 
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
 printf "\nReplacing submenus item texture (for items that are not focused): "
@@ -1154,7 +1174,7 @@ if grep -I -q '<description>Date time txt</description>' 720p/ViewsPictures.xml 
 	R+='\s*</focusedlayout>\s*#)'
 	R+='|\1<posx>8</posx>\2<posy>8</posy>\3<width>128</width>\4<height>128</height>\5'
 	R+='\6<bordersize>2</bordersize>#'
-	R+='\6<bordertexture border="2">folder-focus.png</bordertexture>#'
+	R+='\6<bordertexture border="2">folder-focus_light.png</bordertexture>#'
 	R+='\6\7|'
 	perlregex 720p/ViewsPictures.xml "$R"
 	printf "%sDONE!%s" $GREEN $RESET
@@ -1229,7 +1249,7 @@ step
 
 TEXLIST='button-focus2.png;2
 button-focus_light.png;2
-folder-focus.png;2
+folder-focus_light.png;2
 button-focus.png;2
 black-back2.png;0
 KeyboardKey.png;4
