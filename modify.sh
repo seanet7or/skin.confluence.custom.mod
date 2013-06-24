@@ -181,21 +181,21 @@ check_and_remove() {
 	fi
 	
 	local FILENAME=$(basename "$FILE")
-	if ! grep -I -q "[^a-z]$FILENAME" 720p/* ; then
+	if ! grep -I -q "[^a-z_]$FILENAME" 720p/* ; then
 		
 		local BASE=$(echo "$FILENAME" | sed 's|\.[a-zA-Z]*||g')
 
-		if ! grep -I -q "[^a-z]$BASE[^a-zA-Z0-9 _]" 720p/* ; then
+		if ! grep -I -q "[^a-z_\.\(]$BASE[^a-zA-Z0-9 _\.=]" 720p/* ; then
 			rm "$FILE" # 2>/dev/null
 		else
-			printf "\n'$BASE' ('$FILE') was found in the .xmls: "
-			grep "$BASE" 720p/*
-			exit 3
+			printf "\n'$BASE' ('$FILE') was found in the .xmls: \n"
+			grep "[^a-z_\.\(]$BASE[^a-zA-Z0-9 _\.=]" 720p/*
+			#exit 3
 		fi
 	else
-		printf "\n'$FILENAME' ('$FILE') was found in the .xmls: "
+		printf "\n'$FILENAME' ('$FILE') was found in the .xmls: \n"
 		grep "$FILENAME" 720p/*
-		exit 3
+		#exit 3
 	fi
 }
 
@@ -224,7 +224,7 @@ read_origmaster() {
 
 
 step() {
-	let MAXSTEPS=65
+	let MAXSTEPS=67
 	STEP=$((STEP+1))
 	if [ $STEP -gt $MAXSTEPS ] ; then
 		sed -i 's|let MAXSTEPS=[0-9]*|let MAXSTEPS='$MAXSTEPS'|' "$SCRIPTFILE"
@@ -1006,8 +1006,15 @@ fi
 step
 
 printf "\nReplacing backgrounds: "
-if [ -f backgrounds/homescreen/addons.jpg ] ; then
-	perlregex 720p/includes.xml 's|skin/backgrounds/homescreen/[a-z]*.jpg|skin/backgrounds/default_light.jpg|g' 
+if [ -f backgrounds/homescreen/weather.jpg ] ; then
+	R='s|skin/backgrounds/homescreen/[a-z]*.jpg|skin/backgrounds/default_light.jpg|g' 
+	perlregex 720p/SkinSettings.xml 720p/includes.xml 720p/IncludesMenuContentItems.xml "$R"
+	R='s|\s*<value condition="stringcompare[^]>special://skin/backgrounds/homescreen/[a-z]*.jpg</value>#||g'
+	perlregex 720p/IncludesVariables.xml "$R"
+	for F in backgrounds/homescreen/*.jpg ; do
+		check_and_remove "$F"
+	done
+	rm -r backgrounds/homescreen
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
