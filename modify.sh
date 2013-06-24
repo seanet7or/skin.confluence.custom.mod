@@ -185,11 +185,11 @@ check_and_remove() {
 		
 		local BASE=$(echo "$FILENAME" | sed 's|\.[a-zA-Z]*||g')
 
-		if ! grep -I -q "[^a-z_\.\(]$BASE[^a-zA-Z0-9 _\.=]" 720p/* ; then
+		if ! grep -I -q "[^a-z_\.\(]$BASE[^a-zA-Z0-9 _\.=/]" 720p/* ; then
 			rm "$FILE" # 2>/dev/null
 		else
 			printf "\n'$BASE' ('$FILE') was found in the .xmls: \n"
-			grep "[^a-z_\.\(]$BASE[^a-zA-Z0-9 _\.=]" 720p/*
+			grep "[^a-z_\.\(]$BASE[^a-zA-Z0-9 _\.=/]" 720p/*
 			#exit 3
 		fi
 	else
@@ -1009,7 +1009,7 @@ printf "\nReplacing backgrounds: "
 if [ -f backgrounds/homescreen/weather.jpg ] ; then
 	R='s|skin/backgrounds/homescreen/[a-z]*.jpg|skin/backgrounds/default_light.jpg|g' 
 	perlregex 720p/SkinSettings.xml 720p/includes.xml 720p/IncludesMenuContentItems.xml "$R"
-	R='s|\s*<value condition="stringcompare[^]>special://skin/backgrounds/homescreen/[a-z]*.jpg</value>#||g'
+	R='s|\s*<value condition="stringcompare[^>]*>special://skin/backgrounds/homescreen/[a-z]*.jpg</value>#||g'
 	perlregex 720p/IncludesVariables.xml "$R"
 	for F in backgrounds/homescreen/*.jpg ; do
 		check_and_remove "$F"
