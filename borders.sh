@@ -23,11 +23,10 @@ for T in $TEXLIST ; do
 done
 
 ARGS=$(echo "$ARGS" | sed 's/^|//')
-echo "$ARGS"
 REMOVED='>DialogBack.png|>DialogContextBottom.png|>DialogContextMiddle.png|>DialogContextTop.png|'
 REMOVED+='>InfoMessagePanel.png|'
 REMOVED+='>KeyboardEditArea.png|>KeyboardCornerTop.png|>KeyboardCornerTopNF.png|>KeyboardCornerBottom.png|>KeyboardCornerBottomNF.png'
-REMOVED+='>MediaBladeSub.png|'
+REMOVED+='>MediaBladeSub.png|>MediaStatus/OverlayUnwatched.png|'
 REMOVED+='>OverlayDialogBackground.png|'
 REMOVED+='>ThumbShadow.png|'
 REMOVED+='>ScrollBarV.png|>ScrollBarV_bar.png|>ScrollBarV_bar_focus.png|>ShutdownButtonNoFocus.png|>ShutdownButtonFocus.png'
@@ -35,5 +34,5 @@ REMOVED+='>ScrollBarV.png|>ScrollBarV_bar.png|>ScrollBarV_bar_focus.png|>Shutdow
 echo ""
 echo ""
 echo "Others: "
-grep 2>/dev/null border 720p/*.xml | egrep -v '<bordersize>|<usealttexture>' | egrep -v "$REMOVED" | egrep -v $ARGS | head -n 10
-grep 2>/dev/null texture 720p/*.xml | egrep -v '<bordersize>|<usealttexture>|_light.png' | grep -v '>-<' | grep -v '<bordersize>' | egrep -v "$REMOVED" | egrep -v $ARGS | head -n 10
+grep 2>/dev/null border 720p/*.xml | egrep -v '<bordersize>|<usealttexture>' | egrep -v $ARGS | head -n 10
+grep 2>/dev/null texture 720p/*.xml | egrep -v '<bordersize>|<usealttexture>|_light.png' | grep -v '>-<' | grep -v '<bordersize>' | egrep -v $ARGS | head -n 10

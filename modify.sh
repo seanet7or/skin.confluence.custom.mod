@@ -243,11 +243,12 @@ step() {
 debug "Parsing parameters."
 for I in "$@" ; do
 	debug "Read parameter '$I'."
-	if [ "$I" == "--debug" ] ; then
+	if echo "$I" | >/dev/null egrep 'debug' ; then
+		printf "\nUsing debug mode!"
 		DEBUG=true
 		continue
 	fi
-	if echo "$I" | egrep 'steps=[0-9]*' ; then
+	if echo "$I" | >/dev/null egrep 'steps=[0-9]*' ; then
 		TILL=$(echo "$I" | cut -f2 -d'=')
 		printf "\n Running till step %d." $TILL
 	fi
@@ -1117,6 +1118,56 @@ else
 fi
 step
 
+printf "\nRemoving Confluence_Logo.png: "
+if [ -f media/Confluence_Logo.png ] ; then
+	remove_control image '<texture>Confluence_Logo.png</texture>'
+	>/dev/null check_and_remove media/Confluence_Logo.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nReplacing seeksliders: "
+if [ -f media/seekslider2.png ] ; then
+	perlregex 's|seekslider2.png|seekslider_light.png|g'
+	perlregex 's|seekslider.png|seekslider_light.png|g'
+	check_and_remove media/seekslider.png
+	check_and_remove media/seekslider2.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nCorrecting filenames: "
+if grep 'OSD_' 720p/VideoOSD.xml ; then
+	perlregex 720p/VideoOSD.xml 's|OSD_|osd_|g'
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nRemoving reference to non-existing file home-power-focus.gif: "
+if grep -q 'home-power-focus.gif' 720p/LoginScreen.xml ; then
+	remove_control 'image' '<texture>home-power-focus.gif</texture>'
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nReplacing default sliderbar: "
+if [ -f media/osd_slider_bg.png ] ; then
+	perlregex  720p/defaults.xml 's|osd_slider_bg.png|osd_slider_bg_2.png|g'
+	check_and_remove media/osd_slider_bg.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
 printf "\nReplacing submenus item texture (for items that are not focused): "
@@ -1359,21 +1410,23 @@ for T in $TEXLIST ; do
 	TEXTURE=$(echo "$T" | cut -f1 -d';')
 	BORDER=$(echo "$T" |cut -f2 -d';')
 	printf "\nSetting correct borders for $TEXTURE: "
-	if ! [ "$BORDER" == "0" ] ; then
+	if [ "$BORDER" != "0" ] ; then
+		debug "Border is not zero: '$BORDER'."
 		if grep ">$TEXTURE" 720p/* | grep -v -q 'border="'$BORDER'"' ; then
 			XMLS=$(2>/dev/null grep "$TEXTURE" -l 720p/*)
-			R='s|border="[0-9,]*"(\| flipx="true")>('$TEXTURE')</|border="'$BORDER'"\1>\2</|g'
+			R='s|border="[0-9,]*"(\| flipx="true")>('"$TEXTURE"')</|border="'$BORDER'"\1>\2</|g'
 			perlregex $XMLS "$R" --nocheck
-			R='s|([a-z])>('$TEXTURE')</|\1 border="'$BORDER'">\2</|g'
+			R='s|([a-z])>('"$TEXTURE"')</|\1 border="'$BORDER'">\2</|g'
 			perlregex $XMLS "$R" --nocheck
 			printf "%sDONE!%s" $GREEN $RESET
 		else
 			printf "%sSKIPPED.%s" $CYAN $RESET
 		fi
 	else
-		if grep ">$TEXTURE" 720p/* | grep -q 'border="' ; then
+		debug "Border is '$BORDER'."
+		if grep ">$TEXTURE" 720p/* | >/dev/null grep 'border="' ; then
 			XMLS=$(2>/dev/null grep "$TEXTURE" -l 720p/*)
-			R='s| border="[0-9,]*">('$TEXTURE')</|>\1</|g'
+			R='s| border="[0-9,]*">('"$TEXTURE"')</|>\1</|g'
 			perlregex $XMLS "$R"
 			printf "%sDONE!%s" $GREEN $RESET
 		else

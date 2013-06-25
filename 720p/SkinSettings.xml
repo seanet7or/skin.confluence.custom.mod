@@ -31,15 +31,6 @@
 				<height>630</height>
 				<texture>content-back_light.png</texture>
 			</control>
-			<control type="image">
-				<description>LOGO</description>
-				<posx>30</posx>
-				<posy>15</posy>
-				<width>220</width>
-				<height>80</height>
-				<aspectratio>keep</aspectratio>
-				<texture>Confluence_Logo.png</texture>
-			</control>
 			<control type="list" id="9000">
 				<posx>10</posx>
 				<posy>90</posy>
@@ -2433,8 +2424,8 @@
 						<height>22</height>
 						<label>-</label>
 						<font>-</font>
-						<texturenofocus border="12">scroll-down-2.png</texturenofocus>
-						<texturefocus border="5">scroll-down-focus-2.png</texturefocus>
+						<texturenofocus>scroll-down-2.png</texturenofocus>
+						<texturefocus>scroll-down-focus-2.png</texturefocus>
 						<onclick>Control.Move(9005,1)</onclick>
 						<onleft>9000</onleft>
 						<onright>505</onright>
@@ -2449,8 +2440,8 @@
 						<height>22</height>
 						<label>-</label>
 						<font>-</font>
-						<texturenofocus border="12">scroll-up-2.png</texturenofocus>
-						<texturefocus border="5">scroll-up-focus-2.png</texturefocus>
+						<texturenofocus>scroll-up-2.png</texturenofocus>
+						<texturefocus>scroll-up-focus-2.png</texturefocus>
 						<onclick>Control.Move(9005,-1)</onclick>
 						<onleft>504</onleft>
 						<onright>9000</onright>
