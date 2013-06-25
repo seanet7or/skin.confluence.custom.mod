@@ -1059,13 +1059,24 @@ fi
 step
 
 printf "\nRemoving standard intro: "
-if true ; then #[ -f extras/Intro/XBMC-Intro-Video.mkv ] ; then
+if [ -f extras/Intro/XBMC-Intro-Video.mkv ] ; then
 	remove_controlid radiobutton '<onclick>Skin.ToggleSetting.HideXBMCIntro.</onclick>'
 	perlregex 720p/SkinSettings.xml 's|\s*<onclick>Skin.SetBool.HideXBMCIntro.</onclick>#||g'
 	perlregex 720p/Startup.xml 's| . Skin.HasSetting.HideXBMCIntro.||'
 	remove_controlid button '<visible>!Skin.HasSetting.HideXBMCIntro.</visible>'
 	perlregex 720p/VideoFullScreen.xml 720p/VideoOSD.xml 's|\s*<visible>!StringCompare.VideoPlayer.Title,XBMC-Intro-Video.mkv.</visible>#||g'
 	rm -rf extras/Intro
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nRemoving standard TV background: "
+if [ -f backgrounds/tv.jpg ] ; then
+	perlregex 720p/Settings.xml 's|\s*<icon>[^<]*</icon>||g'
+	perlregex 720p/MyPVR.xml 's|special://skin/backgrounds/tv.jpg|special://skin/backgrounds/default_light.jpg|g'
+	check_and_remove backgrounds/tv.jpg
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
