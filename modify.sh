@@ -738,6 +738,23 @@ else
 fi
 step
 
+printf "\nChanging weather fanart: "
+if true ; then #[ -d backgrounds/weather ] ; then
+	perlregex 720p/Home.xml 's|\s*<onload condition="IsEmpty.Skin.String.WeatherFanartDir..">Skin.SetString.WeatherFanartDir,special://skin/backgrounds/weather/.</onload>#||g'
+	perlregex 720p/includes.xml 's|special://skin/backgrounds/weather/||g'	
+	R='s|(Skin.HasSetting.ShowWeatherFanart.)">'
+	R+='|\1 \+ \!IsEmpty\(Skin.String\(WeatherFanartDir\)\)">|g'
+	perlregex 720p/IncludesVariables.xml "$R"
+	R='s|(Skin.HasSetting.ShowWeatherFanart.)<'
+	R+='|\1 \+ \!IsEmpty\(Skin.String\(WeatherFanartDir\)\)<|g'
+	perlregex 720p/MyWeather.xml "$R"
+	rm -rf backgrounds/weather
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\nChanging time display: "
 if grep -q '<description>date label</description>' 720p/includes.xml ; then
 	#remove date label - in 720p\includes.xml and 720p\VideoFullScreen.xml
@@ -1034,16 +1051,12 @@ if [ -f backgrounds/homescreen/weather.jpg ] ; then
 	perlregex 720p/SkinSettings.xml 720p/includes.xml 720p/IncludesMenuContentItems.xml "$R"
 	R='s|\s*<value condition="stringcompare[^>]*>special://skin/backgrounds/homescreen/[a-z]*.jpg</value>#||g'
 	perlregex 720p/IncludesVariables.xml "$R"
-	for F in backgrounds/homescreen/*.jpg ; do
-		check_and_remove "$F"
-	done
-	rm -r backgrounds/homescreen
+	rm -rf backgrounds/homescreen
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
-
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
 printf "\nReplacing submenus item texture (for items that are not focused): "
