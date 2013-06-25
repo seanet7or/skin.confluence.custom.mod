@@ -1168,6 +1168,16 @@ else
 fi
 step
 
+printf "\nReplacing button-focus2.png: "
+if [ -f media/button-focus2.png ] ; then
+	perlregex  's|button-focus2.png|MenuItemFO_light.png|g'
+	check_and_remove media/button-focus2.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
 printf "\nReplacing submenus item texture (for items that are not focused): "
