@@ -739,7 +739,7 @@ fi
 step
 
 printf "\nChanging weather fanart: "
-if true ; then #[ -d backgrounds/weather ] ; then
+if [ -d backgrounds/weather ] ; then
 	perlregex 720p/Home.xml 's|\s*<onload condition="IsEmpty.Skin.String.WeatherFanartDir..">Skin.SetString.WeatherFanartDir,special://skin/backgrounds/weather/.</onload>#||g'
 	perlregex 720p/includes.xml 's|special://skin/backgrounds/weather/||g'	
 	R='s|(Skin.HasSetting.ShowWeatherFanart.)">'
@@ -1057,6 +1057,21 @@ else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
+
+printf "\nRemoving standard intro: "
+if true ; then #[ -f extras/Intro/XBMC-Intro-Video.mkv ] ; then
+	remove_controlid radiobutton '<onclick>Skin.ToggleSetting.HideXBMCIntro.</onclick>'
+	perlregex 720p/SkinSettings.xml 's|\s*<onclick>Skin.SetBool.HideXBMCIntro.</onclick>#||g'
+	perlregex 720p/Startup.xml 's| . Skin.HasSetting.HideXBMCIntro.||'
+	remove_controlid button '<visible>!Skin.HasSetting.HideXBMCIntro.</visible>'
+	perlregex 720p/VideoFullScreen.xml 720p/VideoOSD.xml 's|\s*<visible>!StringCompare.VideoPlayer.Title,XBMC-Intro-Video.mkv.</visible>#||g'
+	rm -rf extras/Intro
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
 printf "\nReplacing submenus item texture (for items that are not focused): "
