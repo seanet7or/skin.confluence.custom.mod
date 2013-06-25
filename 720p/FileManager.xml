@@ -282,32 +282,6 @@
 				</focusedlayout>
 			</control>
 		</control>
-		<control type="label">
-			<description>number of files/pages in left list text label</description>
-			<posx>40</posx>
-			<posy>53r</posy>
-			<width>570</width>
-			<font>font12</font>
-			<align>left</align>
-			<scroll>true</scroll>
-			<textcolor>grey</textcolor>
-			<shadowcolor>black</shadowcolor>
-			<label>([COLOR=blue]$INFO[Container(20).NumItems][/COLOR]) $LOCALIZE[31025] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(20).CurrentPage]/$INFO[Container(20).NumPages][/COLOR])</label>
-			<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
-		</control>
-		<control type="label">
-			<description>number of files/pages in left list text label</description>
-			<posx>40r</posx>
-			<posy>53r</posy>
-			<width>570</width>
-			<font>font12</font>
-			<align>right</align>
-			<scroll>true</scroll>
-			<textcolor>grey</textcolor>
-			<shadowcolor>black</shadowcolor>
-			<label>([COLOR=blue]$INFO[Container(21).NumItems][/COLOR]) $LOCALIZE[31025] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(21).CurrentPage]/$INFO[Container(21).NumPages][/COLOR])</label>
-			<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
-		</control>
 		<control type="group" id="10">
 			<posx>595</posx>
 			<posy>55r</posy>

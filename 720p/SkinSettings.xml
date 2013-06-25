@@ -187,17 +187,6 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="101">
-						<width>750</width>
-						<height>40</height>
-						<label>31075</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus border="2">MenuItemFO_light.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
-						<onclick>Skin.ToggleSetting(HideMousePointer)</onclick>
-						<selected>Skin.HasSetting(HideMousePointer)</selected>
-					</control>
 					<control type="radiobutton" id="102">
 						<width>750</width>
 						<height>40</height>
@@ -253,17 +242,6 @@
 						<onclick>Skin.ToggleSetting(MediaShortDescription)</onclick>
 						<selected>Skin.HasSetting(MediaShortDescription)</selected>
 					</control>
-					<control type="radiobutton" id="107">
-						<width>750</width>
-						<height>40</height>
-						<label>31115</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus border="2">MenuItemFO_light.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
-						<onclick>Skin.ToggleSetting(HideNumItemsCount)</onclick>
-						<selected>Skin.HasSetting(HideNumItemsCount)</selected>
-					</control>
 					<control type="radiobutton" id="108">
 						<width>750</width>
 						<height>40</height>
@@ -285,17 +263,6 @@
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideEpisodeThumb)</onclick>
 						<selected>!Skin.HasSetting(HideEpisodeThumb)</selected>
-					</control>
-					<control type="radiobutton" id="110">
-						<width>750</width>
-						<height>40</height>
-						<label>31124</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus border="2">MenuItemFO_light.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
-						<onclick>Skin.ToggleSetting(ShowBackgroundVideo)</onclick>
-						<selected>!Skin.HasSetting(ShowBackgroundVideo)</selected>
 					</control>
 					<control type="radiobutton" id="111">
 						<width>750</width>
@@ -669,17 +636,6 @@
 						<onclick condition="stringcompare(Container(9009).ListItem.Label,Default)">Skin.Reset(WatchStatusType)</onclick>
 						<onclick condition="!stringcompare(Container(9009).ListItem.Label,Default)">Skin.SetString(WatchStatusType,$INFO[Container(9009).ListItem.Label])</onclick>
 					</control>
-					<control type="radiobutton" id="143">
-						<width>750</width>
-						<height>40</height>
-						<label>31074</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus border="2">MenuItemFO_light.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
-						<onclick>Skin.ToggleSetting(ResumeStatusPosi)</onclick>
-						<selected>!Skin.HasSetting(ResumeStatusPosi)</selected>
-					</control>
 					<control type="radiobutton" id="144">
 						<width>750</width>
 						<height>40</height>
@@ -712,17 +668,6 @@
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(WindowedTrailer)</onclick>
 						<selected>Skin.HasSetting(WindowedTrailer)</selected>
-					</control>
-					<control type="radiobutton" id="147">
-						<width>750</width>
-						<height>40</height>
-						<label>31107</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus border="2">MenuItemFO_light.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
-						<onclick>Skin.ToggleSetting(HideFilenameFlagging)</onclick>
-						<selected>Skin.HasSetting(HideFilenameFlagging)</selected>
 					</control>
 					<control type="button" id="148">
 						<width>750</width>

@@ -11,7 +11,6 @@
 	<onload condition="!Skin.HasSetting(HideHomeSearch) + !System.HasAddon(script.globalsearch)">Skin.Setbool(HideHomeSearch)</onload>
 	<onload condition="!Skin.HasSetting(DisableScriptPlayList) + !System.HasAddon(script.randomandlastitems)">Skin.Setbool(DisableScriptPlayList)</onload>
 	<onload condition="IsEmpty(Skin.String(WeatherFanartDir))">Skin.SetString(WeatherFanartDir,special://skin/backgrounds/weather/)</onload>
-	<onload condition="IsEmpty(Skin.String(UsrGenreFanartDir))">Skin.SetString(UsrGenreFanartDir,special://skin/backgrounds/moviegenre/)</onload>
 	<onload condition="!Skin.HasSetting(DisableScriptPlayList) + Library.HasContent(Movies)">XBMC.RunScript(script.randomandlastitems,type=Movie,limit=10,method=Random,playlist=special://skin/extras/Playlists/UnwatchedMovies.xsp,menu=UnWatched)</onload>
 	<onload condition="!Skin.HasSetting(DisableScriptPlayList) + !IsEmpty(Skin.String(HomeItem.1.Playlist))">XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(HomeItem.1.Playlist)],method=$VAR[RandomOrLastAction],limit=10,unwatched=$VAR[RandomOrLastUnWatched],resume=False,property=HomePlayListOne)</onload>
 	<onload condition="!Skin.HasSetting(DisableScriptPlayList) + !IsEmpty(Skin.String(HomeItem.2.Playlist))">XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(HomeItem.2.Playlist)],method=$VAR[RandomOrLastAction],limit=10,unwatched=$VAR[RandomOrLastUnWatched],resume=False,property=HomePlayListTwo)</onload>
@@ -25,7 +24,7 @@
 	<onload condition="!Skin.HasSetting(DisableScriptPlayList) + !IsEmpty(Skin.String(HomeItem.10.Playlist))">XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(HomeItem.10.Playlist)],method=$VAR[RandomOrLastAction],limit=10,unwatched=$VAR[RandomOrLastUnWatched],resume=False,property=HomePlayListTen)</onload>
 	<controls>
 		<include>CommonBackground</include>
-		<include condition="!Player.HasVideo | Skin.HasSetting(ShowBackgroundVideo)">BackgroundRainDropEffect</include>
+		<include>BackgroundRainDropEffect</include>
 		<!-- Music Info -->
 		<control type="group">
 			<posx>0</posx>
@@ -434,7 +433,7 @@
 			<onright>9000</onright>
 			<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
 			<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
-			<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+			<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">610</ondown>
 			<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 			<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 			<visible>false</visible>
@@ -464,7 +463,7 @@
 				<texture flipy="true" border="0,2,0,2" flipx="true">HomeSubEnd.png</texture>
 				<animation effect="slide" start="0,0" end="145,0" time="0" condition="Skin.HasSetting(HideHomeSearch)">Conditional</animation>
 			</control>
-			<control type="radiobutton" id="608">
+			<control type="radiobutton" id="610">
 				<colordiffuse>CCFFFFFF</colordiffuse>
 				<description>Global Search</description>
 				<posx>35</posx>
@@ -484,7 +483,7 @@
 				<onclick>RunScript(script.globalsearch)</onclick>
 				<textureradiofocus>icon_search.png</textureradiofocus>
 				<textureradionofocus>icon_search.png</textureradionofocus>
-				<onleft>607</onleft>
+				<onleft>609</onleft>
 				<onright>601</onright>
 				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
 				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</onup>
@@ -507,9 +506,10 @@
 					<texture flipy="true" border="0,2,0,0">HomeSubNF_light.png</texture>
 					<colordiffuse>CCFFFFFF</colordiffuse>
 					<animation effect="zoom" start="0,0,205,35" end="0,0,465,35" delay="0" time="300" condition="!Player.HasMedia + !Skin.HasSetting(HideHomeStats)">conditional</animation>
+					<animation effect="zoom" start="0,0,205,35" end="0,0,265,35" delay="0" time="0" condition="System.HasAddon(plugin.audio.lastfm) + Player.HasAudio">conditional</animation>
 					<visible>Player.HasMedia | !Skin.HasSetting(HideHomeStats)</visible>
 				</control>
-				<control type="group">
+					<control type="group">
 					<animation effect="slide" end="0,35" time="300" condition="!Player.HasMedia">conditional</animation>
 					<visible>!VideoPlayer.Content(LiveTV)</visible>
 					<control type="button" id="601">
@@ -520,7 +520,7 @@
 						<label>-</label>
 						<texturefocus>OSDPrevTrackFO.png</texturefocus>
 						<texturenofocus>OSDPrevTrackNF.png</texturenofocus>
-						<onleft>608</onleft>
+						<onleft>610</onleft>
 						<onright>602</onright>
 						<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
 						<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</onup>
@@ -605,6 +605,42 @@
 						<ondown>9000</ondown>
 						<onclick>XBMC.PlayerControl(Next)</onclick>
 					</control>
+					
+					
+<control type="button" id="607">
+						<posx>190</posx>
+						<posy>2</posy>
+						<width>30</width>
+						<height>30</height>
+						<label>-</label>
+						<texturefocus>lastfm/lastfm-love-focus.png</texturefocus>
+						<texturenofocus>lastfm/lastfm-love-nofocus.png</texturenofocus>
+						<onleft>604</onleft>
+						<onright>608</onright>
+						<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
+						<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</onup>
+						<ondown>9000</ondown>
+						<onclick>RunScript(plugin.audio.lastfm,action=LastFM.Love&amp;artist=$INFO[MusicPlayer.Artist]&amp;song=$INFO[MusicPlayer.Title])</onclick>
+						<enable>SubString(Window(Home).Property(LastFM.CanLove),true)</enable>
+						<visible>System.HasAddon(plugin.audio.lastfm) + Player.HasAudio</visible>
+					</control>
+					<control type="button" id="608">
+						<posx>220</posx>
+						<posy>2</posy>
+						<width>30</width>
+						<height>30</height>
+						<label>-</label>
+						<texturefocus>lastfm/lastfm-hate-focus.png</texturefocus>
+						<texturenofocus>lastfm/lastfm-hate-nofocus.png</texturenofocus>
+						<onleft>607</onleft>
+						<onright>609</onright>
+						<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
+						<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</onup>
+						<ondown>9000</ondown>
+						<onclick>RunScript(plugin.audio.lastfm,action=LastFM.Ban&amp;artist=$INFO[MusicPlayer.Artist]&amp;song=$INFO[MusicPlayer.Title])</onclick>
+						<enable>SubString(Window(Home).Property(LastFM.CanBan),true)</enable>
+						<visible>System.HasAddon(plugin.audio.lastfm) + Player.HasAudio</visible>
+</control>			
 				</control>
 				<control type="group" id="600">
 					<visible>VideoPlayer.Content(LiveTV)</visible>
@@ -616,7 +652,7 @@
 						<label>-</label>
 						<texturefocus>OSDChannelUPFO.png</texturefocus>
 						<texturenofocus>OSDChannelUPNF.png</texturenofocus>
-						<onleft>608</onleft>
+						<onleft>610</onleft>
 						<onright>602</onright>
 						<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
 						<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</onup>
@@ -682,7 +718,7 @@
 						<texturefocus>OSDRecordOffFO.png</texturefocus>
 						<texturenofocus>OSDRecordOffNF.png</texturenofocus>
 						<onleft>604</onleft>
-						<onright>607</onright>
+						<onright>609</onright>
 						<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
 						<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</onup>
 						<ondown>9000</ondown>
@@ -690,8 +726,9 @@
 					</control>
 				</control>
 			</control>
-			<control type="radiobutton" id="607">
+			<control type="radiobutton" id="609">
 				<animation effect="slide" end="0,35" time="300" condition="!Player.HasMedia">conditional</animation>
+				<animation effect="slide" start="0,0" end="60,0" time="0" condition="System.HasAddon(plugin.audio.lastfm) + Player.HasAudio">Conditional</animation>			
 				<colordiffuse>CCFFFFFF</colordiffuse>
 				<description>Go to fullscreen Playback</description>
 				<posx>385</posx>
@@ -711,8 +748,8 @@
 				<onclick>fullscreen</onclick>
 				<textureradiofocus>GoFullscreen.png</textureradiofocus>
 				<textureradionofocus>GoFullscreen.png</textureradionofocus>
-				<onleft>606</onleft>
-				<onright>608</onright>
+<onleft>608</onleft>	
+				<onright>610</onright>
 				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
 				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</onup>
 				<ondown>9000</ondown>
@@ -848,7 +885,7 @@
 				<height>60</height>
 				<onleft>9000</onleft>
 				<onright>9000</onright>
-				<onup condition="!Skin.HasSetting(HideHomeSearch)">608</onup>
+				<onup condition="!Skin.HasSetting(HideHomeSearch)">610</onup>
 				<onup condition="Skin.HasSetting(HideHomeSearch)">603</onup>
 				<ondown>9001</ondown>
 				<pagecontrol>-</pagecontrol>
@@ -1099,7 +1136,7 @@
 			<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
 			<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 			<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown>
-			<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+			<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">610</ondown>
 			<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 			<control type="fixedlist" id="700">
 				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(700).NumItems,2) | StringCompare(Container(700).NumItems,4)">conditional</animation>
@@ -1110,7 +1147,7 @@
 				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
 				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">610</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 				<include>HomeAddonsCommonLayout</include>
 				<content>
@@ -1126,7 +1163,7 @@
 				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
 				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">610</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 				<include>HomeAddonsCommonLayout</include>
 				<content>
@@ -1142,7 +1179,7 @@
 				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
 				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">610</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 				<include>HomeAddonsCommonLayout</include>
 				<content>
@@ -1158,7 +1195,7 @@
 				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
 				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">608</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch)">610</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 				<include>HomeAddonsCommonLayout</include>
 				<content>

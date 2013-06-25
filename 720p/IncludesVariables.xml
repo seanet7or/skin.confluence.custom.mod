@@ -10,12 +10,16 @@
 		<value condition="IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Icon]</value>
 	</variable>
 	<variable name="typehackflagging">
-		<value condition="[SubString(ListItem.FilenameAndPath,3d) | SubString(ListItem.FilenameAndPath,.SBS.)]">3Dbluray</value>
+		<!--value condition="[SubString(ListItem.FilenameAndPath,3d) | SubString(ListItem.FilenameAndPath,.SBS.)]">3Dbluray</value-->
 		<value condition="[substring(ListItem.FilenameAndPath,bluray) | substring(ListItem.FilenameAndPath,bdrip) | substring(ListItem.FilenameAndPath,bd25) | substring(ListItem.FilenameAndPath,bd50)]">bluray</value>
 		<value condition="substring(ListItem.FilenameAndPath,hddvd)">hddvd</value>
 		<value condition="substring(ListItem.FilenameAndPath,dvd)">dvd</value>
 		<value condition="[substring(ListItem.FilenameAndPath,pdtv) | substring(ListItem.FilenameAndPath,hdtv) | substring(ListItem.FilenameAndPath,dsr)]">TV</value>
 		<value condition="substring(ListItem.FilenameAndPath,vhs)">vhs</value>
+	</variable>
+	<variable name="VideoResolutionFlag">
+		<value condition="SubString(ListItem.FilenameAndPath,3d) | SubString(ListItem.FilenameAndPath,.SBS.)">flagging/lists/3D.png</value>
+		<value>$INFO[ListItem.VideoResolution,flagging/lists/,.png]</value>
 	</variable>
 	<variable name="rating">
 		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,18)">de/fsk-18</value>
@@ -168,11 +172,11 @@
 		<value condition="stringcompare(Skin.String(WatchStatusType),Yellow)">$LOCALIZE[743]</value>
 	</variable>
 	<variable name="WatchTypePath">
-		<value condition="IsEmpty(Skin.String(WatchStatusType))">default/$INFO[ListItem.Overlay]</value>
-		<value condition="stringcompare(Skin.String(WatchStatusType),Hidden)">default/$INFO[ListItem.Overlay]</value>
-		<value condition="stringcompare(Skin.String(WatchStatusType),Blue)">blue/$INFO[ListItem.Overlay]</value>
-		<value condition="stringcompare(Skin.String(WatchStatusType),Green)">green/$INFO[ListItem.Overlay]</value>
-		<value condition="stringcompare(Skin.String(WatchStatusType),Yellow)">yellow/$INFO[ListItem.Overlay]</value>
+		<value condition="IsEmpty(Skin.String(WatchStatusType))">$INFO[ListItem.Overlay,default/]</value>
+		<value condition="stringcompare(Skin.String(WatchStatusType),Hidden)">$INFO[ListItem.Overlay,default/]</value>
+		<value condition="stringcompare(Skin.String(WatchStatusType),Blue)">$INFO[ListItem.Overlay,blue/]</value>
+		<value condition="stringcompare(Skin.String(WatchStatusType),Green)">$INFO[ListItem.Overlay,green/]</value>
+		<value condition="stringcompare(Skin.String(WatchStatusType),Yellow)">$INFO[ListItem.Overlay,yellow/]</value>
 	</variable>
 	<variable name="PartlyWatched">
 		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,0) + !IntegerGreaterThan(ListItem.PercentPlayed,19)">OverlayPartlywatched1</value>

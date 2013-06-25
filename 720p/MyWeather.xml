@@ -545,20 +545,6 @@
 					<orientation>vertical</orientation>
 					<visible>Control.IsVisible(50)</visible>
 				</control>
-				<control type="label">
-					<animation effect="slide" start="0,0" end="-90,0" time="0" condition="system.getbool(input.enablemouse)">Conditional</animation>
-					<description>number of files/pages</description>
-					<posx>660</posx>
-					<posy>627</posy>
-					<width>570</width>
-					<font>font12</font>
-					<align>right</align>
-					<scroll>true</scroll>
-					<textcolor>grey</textcolor>
-					<shadowcolor>black</shadowcolor>
-					<label>([COLOR=blue]$INFO[Container(50).NumItems][/COLOR]) $LOCALIZE[12393] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(50).CurrentPage]/$INFO[Container(50).NumPages][/COLOR])</label>
-					<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
-				</control>
 			</control>
 			<control type="group">
 				<visible>StringCompare(Weather.Plugin,weather.wunderground)</visible>
@@ -802,20 +788,6 @@
 							<showonepage>true</showonepage>
 							<orientation>vertical</orientation>
 							<visible>Control.IsVisible(50)</visible>
-						</control>
-						<control type="label">
-							<animation effect="slide" start="0,0" end="-90,0" time="0" condition="system.getbool(input.enablemouse)">Conditional</animation>
-							<description>number of files/pages</description>
-							<posx>660</posx>
-							<posy>627</posy>
-							<width>570</width>
-							<font>font12</font>
-							<align>right</align>
-							<scroll>true</scroll>
-							<textcolor>grey</textcolor>
-							<shadowcolor>black</shadowcolor>
-							<label>([COLOR=blue]$INFO[Container(51).NumItems][/COLOR]) $LOCALIZE[31025] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(51).CurrentPage]/$INFO[Container(51).NumPages][/COLOR])</label>
-							<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
 						</control>
 					</control>
 					<control type="group">
@@ -1456,20 +1428,6 @@
 							<showonepage>true</showonepage>
 							<orientation>vertical</orientation>
 							<visible>Control.IsVisible(50)</visible>
-						</control>
-						<control type="label">
-							<animation effect="slide" start="0,0" end="-90,0" time="0" condition="system.getbool(input.enablemouse)">Conditional</animation>
-							<description>number of files/pages</description>
-							<posx>660</posx>
-							<posy>627</posy>
-							<width>570</width>
-							<font>font12</font>
-							<align>right</align>
-							<scroll>true</scroll>
-							<textcolor>grey</textcolor>
-							<shadowcolor>black</shadowcolor>
-							<label>([COLOR=blue]$INFO[Container(52).NumItems][/COLOR]) $LOCALIZE[31025] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(52).CurrentPage]/$INFO[Container(52).NumPages][/COLOR])</label>
-							<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
 						</control>
 					</control>
 					<control type="group">

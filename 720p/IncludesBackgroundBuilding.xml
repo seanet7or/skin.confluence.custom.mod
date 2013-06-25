@@ -236,8 +236,7 @@
 			<visible>!Window.IsVisible(home)</visible>
 		</control>
 		<control type="group">
-			<visible>!Skin.HasSetting(HideBackGroundFanart)</visible>
-			<visible>![Player.HasVideo + !Skin.HasSetting(ShowBackgroundVideo)]</visible>
+			<visible>!Skin.HasSetting(HideBackGroundFanart) + !Player.HasVideo</visible>
 			<control type="image">
 				<include>Dimensions_Fullscreen</include>
 				<aspectratio>scale</aspectratio>
@@ -253,13 +252,13 @@
 				<include>BackgroundFade</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<include>Window_OpenClose_Animation</include>
-				<visible>!StringCompare(ListItem.Label,..) + Container.Content(genres)</visible>
+				<visible>!IsEmpty(Skin.String(UsrGenreFanartDir)) + !StringCompare(ListItem.Label,..) + Container.Content(genres)</visible>
 			</control>
 		</control>
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
 			<texture>special://skin/backgrounds/default_light.jpg</texture>
-			<visible>[Player.HasVideo + !Skin.HasSetting(ShowBackgroundVideo)] + ![Window.IsVisible(PVR) + [Control.IsVisible(11) | Control.IsVisible(12)]]</visible>
+			<visible>Player.HasVideo + ![Window.IsVisible(PVR) + [Control.IsVisible(11) | Control.IsVisible(12)]]</visible>
 			<include>VisibleFadeEffect</include>
 		</control>
 		<control type="group">
@@ -273,7 +272,7 @@
 		</control>
 		<control type="videowindow">
 			<include>Dimensions_Fullscreen</include>
-			<visible>Player.HasVideo + !Skin.HasSetting(ShowBackgroundVideo) + ![Window.IsVisible(PVR) + [Control.IsVisible(11) | Control.IsVisible(12)]]</visible>
+			<visible>Player.HasVideo + ![Window.IsVisible(PVR) + [Control.IsVisible(11) | Control.IsVisible(12)]]</visible>
 		</control>
 	</include>
 	<include name="ContentPanelBackgrounds">

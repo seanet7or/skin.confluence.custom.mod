@@ -264,22 +264,6 @@
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
 			</control>
-			<control type="label">
-				<animation effect="slide" start="0,0" end="-90,0" time="0" condition="system.getbool(input.enablemouse)">Conditional</animation>
-				<description>Page Count Label</description>
-				<posx>40r</posx>
-				<posy>53r</posy>
-				<width>500</width>
-				<height>20</height>
-				<font>font12</font>
-				<textcolor>grey</textcolor>
-				<scroll>false</scroll>
-				<align>right</align>
-				<aligny>center</aligny>
-				<label>([COLOR=blue]$INFO[Container(11).NumItems][/COLOR]) $LOCALIZE[19019] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(11).CurrentPage]/$INFO[Container(11).NumPages][/COLOR])</label>
-				<include>Window_OpenClose_Animation</include>
-				<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
-			</control>
 		</control>
 	</include>
 	<include name="LiveRadioChannelView">
@@ -546,22 +530,6 @@
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
 			</control>
-			<control type="label">
-				<animation effect="slide" start="0,0" end="-90,0" time="0" condition="system.getbool(input.enablemouse)">Conditional</animation>
-				<description>Page Count Label</description>
-				<posx>40r</posx>
-				<posy>53r</posy>
-				<width>500</width>
-				<height>20</height>
-				<font>font12</font>
-				<textcolor>grey</textcolor>
-				<scroll>false</scroll>
-				<align>right</align>
-				<aligny>center</aligny>
-				<label>([COLOR=blue]$INFO[Container(12).NumItems][/COLOR]) $LOCALIZE[19019] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(12).CurrentPage]/$INFO[Container(12).NumPages][/COLOR])</label>
-				<include>Window_OpenClose_Animation</include>
-				<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
-			</control>
 		</control>
 	</include>
 	<include name="LiveTVRecordingsView">
@@ -612,21 +580,32 @@
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Date]</label>
 					</control>
-					<control type="image">
-						<posx>730</posx>
-						<posy>14</posy>
-						<width>20</width>
-						<height>16</height>
-						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
-						<visible>!ListItem.IsResumable + !IsEmpty(ListItem.Overlay)  + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
-					</control>
-					<control type="image">
-						<posx>730</posx>
-						<posy>14</posy>
-						<width>16</width>
-						<height>16</height>
-						<texture>OverlayWatching.png</texture>
-						<visible>ListItem.IsResumable + !IsEmpty(ListItem.Overlay) + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
+					<control type="group">
+						<control type="image">
+							<posx>730</posx>
+							<posy>0</posy>
+							<width>32</width>
+							<height>32</height>
+							<texture diffuse="poster-diffuse.png">OverlayStatus/resumable/OverlayUnwatched.png</texture>
+							<visible>ListItem.IsResumable</visible>
+						</control>
+						<control type="image">
+							<posx>730</posx>
+							<posy>0</posy>
+							<width>32</width>
+							<height>32</height>
+							<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,OverlayStatus/resumable/,.png]</texture>
+							<visible>ListItem.IsResumable</visible>
+						</control>
+						<control type="image">
+							<posx>730</posx>
+							<posy>14</posy>
+							<width>20</width>
+							<height>16</height>
+							<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
+							<visible>!ListItem.IsResumable</visible>
+						</control>
+						<visible>!IsEmpty(ListItem.Overlay) + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout height="40" width="760">
@@ -668,21 +647,32 @@
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Date]</label>
 					</control>
-					<control type="image">
-						<posx>730</posx>
-						<posy>14</posy>
-						<width>20</width>
-						<height>16</height>
-						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
-						<visible>!ListItem.IsResumable + !IsEmpty(ListItem.Overlay) + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
-					</control>
-					<control type="image">
-						<posx>730</posx>
-						<posy>14</posy>
-						<width>16</width>
-						<height>16</height>
-						<texture>OverlayWatching.png</texture>
-						<visible>ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
+					<control type="group">
+						<control type="image">
+							<posx>730</posx>
+							<posy>0</posy>
+							<width>32</width>
+							<height>32</height>
+							<texture diffuse="poster-diffuse.png">OverlayStatus/resumable/OverlayUnwatched.png</texture>
+							<visible>ListItem.IsResumable</visible>
+						</control>
+						<control type="image">
+							<posx>730</posx>
+							<posy>0</posy>
+							<width>32</width>
+							<height>32</height>
+							<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,OverlayStatus/resumable/,.png]</texture>
+							<visible>ListItem.IsResumable</visible>
+						</control>
+						<control type="image">
+							<posx>730</posx>
+							<posy>14</posy>
+							<width>20</width>
+							<height>16</height>
+							<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
+							<visible>!ListItem.IsResumable</visible>
+						</control>
+						<visible>!IsEmpty(ListItem.Overlay) + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
 					</control>
 				</focusedlayout>
 			</control>
@@ -698,22 +688,6 @@
 				<onright>34</onright>
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
-			</control>
-			<control type="label">
-				<animation effect="slide" start="0,0" end="-90,0" time="0" condition="system.getbool(input.enablemouse)">Conditional</animation>
-				<description>Page Count Label</description>
-				<posx>40r</posx>
-				<posy>53r</posy>
-				<width>500</width>
-				<height>20</height>
-				<font>font12</font>
-				<textcolor>grey</textcolor>
-				<scroll>false</scroll>
-				<align>right</align>
-				<aligny>center</aligny>
-				<label>([COLOR=blue]$INFO[Container(13).NumItems][/COLOR]) $LOCALIZE[19163] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(13).CurrentPage]/$INFO[Container(13).NumPages][/COLOR])</label>
-				<include>Window_OpenClose_Animation</include>
-				<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
 			</control>
 			<control type="group">
 				<posx>910</posx>
@@ -1211,22 +1185,6 @@
 					<visible>PVR.HasTimer</visible>
 				</control>
 			</control>
-			<control type="label">
-				<animation effect="slide" start="0,0" end="-90,0" time="0" condition="system.getbool(input.enablemouse)">Conditional</animation>
-				<description>Page Count Label</description>
-				<posx>40r</posx>
-				<posy>53r</posy>
-				<width>500</width>
-				<height>20</height>
-				<font>font12</font>
-				<textcolor>grey</textcolor>
-				<scroll>false</scroll>
-				<align>right</align>
-				<aligny>center</aligny>
-				<label>([COLOR=blue]$INFO[Container(14).NumItems][/COLOR]) $LOCALIZE[19040] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(14).CurrentPage]/$INFO[Container(14).NumPages][/COLOR])</label>
-				<include>Window_OpenClose_Animation</include>
-				<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
-			</control>
 		</control>
 	</include>
 	<include name="LiveTVSearchView">
@@ -1533,21 +1491,6 @@
 					<orientation>vertical</orientation>
 				</control>
 			</control>
-			<control type="label">
-				<animation effect="slide" start="0,0" end="-90,0" time="0" condition="system.getbool(input.enablemouse)">Conditional</animation>
-				<description>Page Count Label</description>
-				<posx>40r</posx>
-				<posy>53r</posy>
-				<width>500</width>
-				<height>20</height>
-				<font>font12</font>
-				<textcolor>grey</textcolor>
-				<scroll>false</scroll>
-				<align>right</align>
-				<aligny>center</aligny>
-				<label>([COLOR=blue]$INFO[Container(17).NumItems][/COLOR]) $LOCALIZE[31025] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(17).CurrentPage]/$INFO[Container(17).NumPages][/COLOR])</label>
-				<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
-			</control>
 		</control>
 	</include>
 	<include name="LiveTVGuideChannelView">
@@ -1824,21 +1767,6 @@
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 				</control>
-			</control>
-			<control type="label">
-				<animation effect="slide" start="0,0" end="-90,0" time="0" condition="system.getbool(input.enablemouse)">Conditional</animation>
-				<description>Page Count Label</description>
-				<posx>40r</posx>
-				<posy>53r</posy>
-				<width>500</width>
-				<height>20</height>
-				<font>font12</font>
-				<textcolor>grey</textcolor>
-				<scroll>false</scroll>
-				<align>right</align>
-				<aligny>center</aligny>
-				<label>([COLOR=blue]$INFO[Container(15).NumItems][/COLOR]) $LOCALIZE[31025] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(15).CurrentPage]/$INFO[Container(15).NumPages][/COLOR])</label>
-				<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
 			</control>
 		</control>
 	</include>
@@ -2165,21 +2093,6 @@
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 				</control>
-			</control>
-			<control type="label">
-				<animation effect="slide" start="0,0" end="-90,0" time="0" condition="system.getbool(input.enablemouse)">Conditional</animation>
-				<description>Page Count Label</description>
-				<posx>40r</posx>
-				<posy>53r</posy>
-				<width>500</width>
-				<height>20</height>
-				<font>font12</font>
-				<textcolor>grey</textcolor>
-				<scroll>false</scroll>
-				<align>right</align>
-				<aligny>center</aligny>
-				<label>([COLOR=blue]$INFO[Container(16).NumItems][/COLOR]) $LOCALIZE[31025] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(16).CurrentPage]/$INFO[Container(16).NumPages][/COLOR])</label>
-				<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
 			</control>
 		</control>
 	</include>

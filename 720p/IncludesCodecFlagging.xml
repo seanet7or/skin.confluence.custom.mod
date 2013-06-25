@@ -6,7 +6,16 @@
 			<width>55</width>
 			<height>35</height>
 			<aspectratio align="right">keep</aspectratio>
+			<texture>flagging/video/3D.png</texture>
+			<visible>SubString(ListItem.FilenameAndPath,3d) | SubString(ListItem.FilenameAndPath,.SBS.)</visible>
+		</control>		
+		<control type="image">
+			<description>Video rez Image</description>
+			<width>55</width>
+			<height>35</height>
+			<aspectratio align="right">keep</aspectratio>
 			<texture>$INFO[ListItem.VideoResolution,flagging/video/,.png]</texture>
+			<visible>!SubString(ListItem.FilenameAndPath,3d) + !SubString(ListItem.FilenameAndPath,.SBS.)</visible>
 		</control>
 		<control type="image">
 			<description>Codec Image</description>
@@ -23,7 +32,6 @@
 			<height>35</height>
 			<aspectratio align="left">keep</aspectratio>
 			<texture>$VAR[typehackflagging,flagging/video/,.png]</texture>
-			<visible>!Skin.HasSetting(HideFilenameFlagging)</visible>
 		</control>
 	</include>
 	<include name="VideoMPAAFlaggingConditions">

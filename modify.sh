@@ -224,11 +224,10 @@ read_origmaster() {
 
 
 step() {
-	let MAXSTEPS=67
-	STEP=$((STEP+1))
-	if [ $STEP -gt $MAXSTEPS ] ; then
-		sed -i 's|let MAXSTEPS=[0-9]*|let MAXSTEPS='$MAXSTEPS'|' "$SCRIPTFILE"
+	if [ -z "$MAXSTEPS" ] ; then
+		let MAXSTEPS=$(grep '^step$' modify.sh | wc -l)
 	fi
+	STEP=$((STEP+1))
 	printf " [$STEP/%d] " $MAXSTEPS
 	if [ $TILL -gt 0 ] ; then
 		if [ $STEP -eq $TILL ] ; then
@@ -695,7 +694,7 @@ else
 fi
 step
 
-printf "\nRemoving page count info: "
+printf "\nRemoving page count info info: "
 if grep -q 'CommonPageCount' 720p/includes.xml ; then		
 	#includes
 	XMLS=$(2>/dev/null grep 'CommonPageCount' -l 720p/*)
@@ -709,6 +708,30 @@ if grep -q 'CommonPageCount' 720p/includes.xml ; then
 		printf "\nError: CommonPageCount could not be removed totally."
 		exit 3
 	fi
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nRemoving more page count info: "
+if grep -q '<visible>.Skin.HasSetting.HideNumItemsCount.</visible>' 720p/ViewsPVR.xml ; then		
+	remove_control label '<visible>.Skin.HasSetting.HideNumItemsCount.</visible>'
+	remove_controlid radiobutton '<selected>Skin.HasSetting.HideNumItemsCount.</selected>'
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nChanging genre background settings: "
+if grep -q 'Skin.SetString.UsrGenreFanartDir,special://skin/backgrounds/moviegenre/.' 720p/Home.xml ; then		
+	perlregex 720p/Home.xml 's|\s*<onload condition="IsEmpty.Skin.String.UsrGenreFanartDir..">Skin.SetString.UsrGenreFanartDir,special://skin/backgrounds/moviegenre/.</onload>#||g'
+	perlregex 720p/includes.xml 's|special://skin/backgrounds/moviegenre/||g'
+	R='s|<visible>(!StringCompare.ListItem.Label,... . Container.Content.genres.</visible>)'
+	R+='|<visible>!IsEmpty\(Skin\.String\(UsrGenreFanartDir\)\) \+ \1|g'
+	perlregex 720p/IncludesBackgroundBuilding.xml "$R"
+	rm -rf backgrounds/moviegenre
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
