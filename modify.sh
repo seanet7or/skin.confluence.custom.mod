@@ -310,7 +310,7 @@ fi
 step
 
 printf "\nRemoving media files: "
-if [ -f media/defaultDVDFull.png ] ; then
+if [ -f media/OverlayWatching.png ] ; then
 	check_and_remove media/icon_volume.png
 	check_and_remove media/poster_diffuse.png
 	check_and_remove media/OSDFullScreenFO.png
@@ -318,6 +318,8 @@ if [ -f media/defaultDVDFull.png ] ; then
 	check_and_remove media/defaultDVDFull.png
 	check_and_remove backgrounds/Fire.jpg
 	check_and_remove backgrounds/Kryptonite.jpg
+	check_and_remove media/OverlayWatching.png
+	check_and_remove media/Invisable.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
