@@ -1095,6 +1095,17 @@ else
 fi
 step
 
+printf "\nChanging title bars: "
+if true ; then #[ -f media/GlassTitleBar.png ] ; then
+	remove_control image '<texture>GlassTitleBar.png</texture>'
+	remove_control image '<texture flipy="true">GlassTitleBar.png</texture>'
+	check_and_remove media/GlassTitleBar.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
 printf "\nReplacing submenus item texture (for items that are not focused): "
@@ -1329,6 +1340,16 @@ fi
 step
 
 TEXLIST='button-focus2.png;2
+icon-mute.png;0
+OverlayWatched.png;0
+DefaultIconError.png;0
+Fanart_Fallback_Music_Small.jpg;0
+black-back.png;0
+StackNF.png;3
+StackFO.png;3
+DefaultFile.png;0
+DefaultIconWarning;0
+DefaultIconInfo;0
 button-focus_light.png;2
 folder-focus_light.png;2
 button-focus.png;2
@@ -1344,11 +1365,16 @@ HomeSubEnd.png;0,2,0,2
 floor_button.png;5
 floor_buttonFO.png;5
 StackFO.png;5
+\$INFO\[ListItem.Property\(Icon\)\];0
+\$INFO\[ListItem.Property\(Addon.StarRating\),LeftRating/\];0
+\$INFO\[ListItem.Art\(fanart\)\];0
 \$INFO\[ListItem\.Icon\];0
 OSDProgressMidLight_light.png;0
 OSDProgressMid_light.png;0
 OSDProgressBack_light.png;0
+\$INFO\[Container\(50\).Listitem.Icon\];0
 epg-genres/\$INFO\[ListItem.Property\(GenreType\)\].png;3
+\$INFO\[Listitem.Icon\];0
 NoCover_1.png;4
 flagging/blank.png;4
 HomeBack.png;0,6,0,6
