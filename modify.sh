@@ -1085,6 +1085,16 @@ else
 fi
 step
 
+printf "\nChanging dialog headers: "
+if [ -f media/dialogheader.png ] ; then
+	remove_control image '<texture>dialogheader.png</texture>'
+	check_and_remove media/dialogheader.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
 printf "\nReplacing submenus item texture (for items that are not focused): "
@@ -1342,6 +1352,22 @@ epg-genres/\$INFO\[ListItem.Property\(GenreType\)\].png;3
 NoCover_1.png;4
 flagging/blank.png;4
 HomeBack.png;0,6,0,6
+scroll-down-2.png;12
+scroll-up-2.png;12
+scroll-down-focus-2.png;12
+scroll-up-focus-2.png;12
+scroll-right-focus.png;0
+scroll-left-focus.png;0
+scroll-right.png;0
+scroll-left.png;0
+osd_slider_nib.png;0
+osd_slider_nibNF.png;0
+osd_slider_bg.png;0
+radiobutton-nofocus.png;0
+scroll-down-focus.png;0
+scroll-down.png;0
+scroll-up-focus.png;0
+scroll-up.png;0
 KeyboardKeyNF.png;1'
 OLDIFS=$IFS ; IFS=$'\n'
 for T in $TEXLIST ; do

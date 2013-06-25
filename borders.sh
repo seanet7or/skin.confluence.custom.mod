@@ -1,7 +1,6 @@
-
 TEXLIST='button-focus2.png;2
 button-focus_light.png;2
-folder-focus.png;2
+folder-focus_light.png;2
 button-focus.png;2
 black-back2.png;0
 KeyboardKey.png;4
@@ -23,7 +22,24 @@ epg-genres/\$INFO\[ListItem.Property\(GenreType\)\].png;3
 NoCover_1.png;4
 flagging/blank.png;4
 HomeBack.png;0,6,0,6
+scroll-down-2.png;12
+scroll-up-2.png;12
+scroll-down-focus-2.png;12
+scroll-up-focus-2.png;12
+scroll-right-focus.png;0
+scroll-left-focus.png;0
+scroll-right.png;0
+scroll-left.png;0
+osd_slider_nib.png;0
+osd_slider_nibNF.png;0
+osd_slider_bg.png;0
+radiobutton-nofocus.png;0
+scroll-down-focus.png;0
+scroll-down.png;0
+scroll-up-focus.png;0
+scroll-up.png;0
 KeyboardKeyNF.png;1'
+
 OLDIFS=$IFS ; IFS=$'\n'
 for T in $TEXLIST ; do
 	TEXTURE=$(echo "$T" | cut -f1 -d';')
