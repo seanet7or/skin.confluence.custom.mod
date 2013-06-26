@@ -15,7 +15,6 @@
 			<width>800</width>
 			<height>440</height>
 			<texture>dialog-back_light.png</texture>
-			<colordiffuse>DF1C1C1C</colordiffuse>
 		</control>
 		<control type="label" id="2">
 			<description>header label</description>
@@ -36,8 +35,13 @@
 			<posy>70</posy>
 			<height>40</height>
 			<width>740</width>
+			<texturefocus>buttons/fo_light.png</texturefocus>
 			<texturenofocus>buttons/nf_light.png</texturenofocus>
+			<textcolor>white</textcolor>
+			<disabledcolor>grey3</disabledcolor>
 			<textoffsetx>12</textoffsetx>
+			<aligny>center</aligny>
+			<reverse>yes</reverse>
 			<font>font132</font>
 			<label>1008</label>
 			<onup>18</onup>

@@ -5,9 +5,6 @@ banner/[a-zA-Z]*.png;0
 banner/\$LOCALIZE\[16102\].png;0
 black-back2.png;0
 black-back.png;0
-button-focus2.png;2
-button-focus_light.png;2
-button-focus.png;2
 buttons/fo_light.png;0
 buttons/nf_light.png;0
 Calibrate[a-zA-Z]*.png;0
@@ -36,12 +33,9 @@ icon_[a-z]*.png;0
 icon-[a-z]*.png;0
 \$INFO\[[A-Za-z0-9\.,/\(\)_]*\];0
 KeyboardEditArea_light.png;0
-KeyboardKeyNF.png;1
-KeyboardKey.png;4
 lastfm/[a-z-]*.png;0
 LeftRating/\$INFO\[ListItem.StarRating\];0
 MediaBladeSub_light.png;7,0,7,0
-MenuItemFO_light.png;2
 NoCover_1.png;4
 OSD[a-zA-Z0-9]*.png;0
 progressbar/OSDProgressBack_light.png;0

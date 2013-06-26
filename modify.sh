@@ -270,7 +270,7 @@ rm 720p/*.tmp 2>/dev/null
 BUTTON_NF='buttons/nf_light.png'
 BUTTON_FO='buttons/fo_light.png'
 DIALOG_BG='dialog-back_light.png'
-DIALOG_BG_COLOR='DF1C1C1C'
+#DIALOG_BG_COLOR='DF1C1C1C'
 CONTENT_BG='content-back_light.png'
 BACKGROUND_DEF='special://skin/backgrounds/default_light.jpg'
 SCROLLBAR_HOR_BAR='scrollbar/ScrollBarH_bar_light.png'
@@ -284,7 +284,7 @@ HOME_BLADE='MediaBladeSub_light.png'
 printf "\nBUTTON_NF: '%s'" $BUTTON_NF
 printf "\nBUTTON_FO: '%s'" $BUTTON_FO
 printf "\nDIALOG_BG: '%s'" $DIALOG_BG
-printf "\nDIALOG_BG_COLOR: '%s'" $DIALOG_BG_COLOR
+#printf "\nDIALOG_BG_COLOR: '%s'" $DIALOG_BG_COLOR
 printf "\nCONTENT_BG: '%s'" $CONTENT_BG
 printf "\nBACKGROUND_DEF: '%s'" $BACKGROUND_DEF
 printf "\nSCROLLBAR_HOR_BAR: '%s'" $SCROLLBAR_HOR_BAR
@@ -441,10 +441,10 @@ step
 printf "\nChanging dialog background: "
 if [ -f media/DialogBack2.png ] ; then
 	R='s|(\s*)<texture border="[0-9]*">DialogBack.png</texture>'
-	R+='|\1<texture>'$DIALOG_BG'</texture>#\1<colordiffuse>'$DIALOG_BG_COLOR'</colordiffuse>|g'
+	R+='|\1<texture>'$DIALOG_BG'</texture>|g'
 	perlregex "$R"
 	R='s|(\s*)<texture border="[0-9]*">DialogBack2.png</texture>'
-	R+='|\1<texture>'$DIALOG_BG'</texture>#\1<colordiffuse>'$DIALOG_BG_COLOR'</colordiffuse>|g'
+	R+='|\1<texture>'$DIALOG_BG'</texture>|g'
 	perlregex "$R"
 	check_and_remove media/DialogBack.png
 	check_and_remove media/DialogBack2.png
@@ -457,7 +457,7 @@ step
 printf "\nChanging info message dialog background: "
 if [ -f media/InfoMessagePanel.png ] ; then
 	R='s|(\s*)<texture[^>]*>InfoMessagePanel.png</texture>'
-	R+='|\1<texture>'$DIALOG_BG'</texture>#\1<colordiffuse>'$DIALOG_BG_COLOR'</colordiffuse>|g'
+	R+='|\1<texture>'$DIALOG_BG'</texture>|g'
 	perlregex "$R"
 	check_and_remove media/InfoMessagePanel.png
 	printf "%sDONE!%s" $GREEN $RESET
@@ -473,10 +473,10 @@ if [ -f media/OverlayDialogBackground.png ] ; then
 	perlregex "$R"
 	R='s|\s*<colordiffuse>[A-Z0-9]*</colordiffuse>#'
 	R+='(\s*)<texture border="[0-9]*">OverlayDialogBackground.png</texture>'
-	R+='|\1<texture>'$DIALOG_BG'</texture>#\1<colordiffuse>'$DIALOG_BG_COLOR'</colordiffuse>|g'
+	R+='|\1<texture>'$DIALOG_BG'</texture>|g'
 	perlregex "$R"
 	R='s|(\s*)<texture border="[0-9]*">OverlayDialogBackground.png</texture>'
-	R+='|\1<texture>'$DIALOG_BG'</texture>#\1<colordiffuse>'$DIALOG_BG_COLOR'</colordiffuse>|g'
+	R+='|\1<texture>'$DIALOG_BG'</texture>|g'
 	perlregex "$R"
 	check_and_remove media/OverlayDialogBackground.png
 	printf "%sDONE!%s" $GREEN $RESET
