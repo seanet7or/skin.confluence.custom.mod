@@ -267,18 +267,18 @@ fi
 #remove temporary files (if script was canceled before)
 rm 720p/*.tmp 2>/dev/null
 
-BUTTON_NF='button-nf_light.png'
-BUTTON_FO='button-focus_light.png'
+BUTTON_NF='buttons/nf_light.png'
+BUTTON_FO='buttons/fo_light.png'
 DIALOG_BG='dialog-back_light.png'
-DIALOG_BG_COLOR='DF101314'
+DIALOG_BG_COLOR='DF1C1C1C'
 CONTENT_BG='content-back_light.png'
 BACKGROUND_DEF='special://skin/backgrounds/default_light.jpg'
-SCROLLBAR_HOR_BAR='ScrollBarH_bar_light.png'
-SCROLLBAR_VER_BAR='ScrollBarV_bar_light.png'
-SCROLLBAR_HOR='ScrollBarH_light.png'
-SCROLLBAR_VER='ScrollBarV_light.png'
-SCROLLBAR_HOR_BAR_FO='ScrollBarH_bar_focus_light.png'
-SCROLLBAR_VER_BAR_FO='ScrollBarV_bar_focus_light.png'
+SCROLLBAR_HOR_BAR='scrollbar/ScrollBarH_bar_light.png'
+SCROLLBAR_VER_BAR='scrollbar/ScrollBarV_bar_light.png'
+SCROLLBAR_HOR='scrollbar/ScrollBarH_light.png'
+SCROLLBAR_VER='scrollbar/ScrollBarV_light.png'
+SCROLLBAR_HOR_BAR_FO='scrollbar/ScrollBarH_bar_focus_light.png'
+SCROLLBAR_VER_BAR_FO='scrollbar/ScrollBarV_bar_focus_light.png'
 MEDIA_BLADE='MediaBladeSub_light.png'
 HOME_BLADE='MediaBladeSub_light.png'
 printf "\nBUTTON_NF: '%s'" $BUTTON_NF
@@ -580,7 +580,7 @@ fi
 step
 	
 printf "\nRemoving GlassOverlay.png: "
-if grep -I -q 'GlassOverlay.png' 720p/* ; then
+if [ -f  media/GlassOverlay.png ] ; then
 	remove_control 'image' '<texture>GlassOverlay.png</texture>'
 	check_and_remove media/GlassOverlay.png
 	printf "%sDONE!%s" $GREEN $RESET
@@ -942,16 +942,20 @@ step
 printf "\nChanging keyboard: "
 if [ -f media/KeyboardEditArea.png ] ; then
 	XMLS="720p/DialogKeyboard.xml 720p\DialogNumeric.xml"
-	perlregex $XMLS 's|>KeyboardCornerTopNF.png|>KeyboardKeyNF.png|g'
-	perlregex $XMLS 's|>KeyboardCornerTop.png|>KeyboardKey.png|g'
-	perlregex $XMLS 's|>KeyboardCornerBottomNF.png|>KeyboardKeyNF.png|g'
-	perlregex $XMLS 's|>KeyboardCornerBottom.png|>KeyboardKey.png|g'
+	perlregex $XMLS 's|>KeyboardCornerTopNF.png|>'$BUTTON_NF'|g'
+	perlregex $XMLS 's|>KeyboardCornerTop.png|>'$BUTTON_FO'|g'
+	perlregex $XMLS 's|>KeyboardCornerBottomNF.png|>'$BUTTON_NF'|g'
+	perlregex $XMLS 's|>KeyboardCornerBottom.png|>'$BUTTON_FO'|g'
 	perlregex $XMLS 's|>KeyboardEditArea.png|>KeyboardEditArea_light.png|g' 720p/DialogPVRGuideSearch.xml
+	perlregex $XMLS 's|>KeyboardKeyNF.png|>'$BUTTON_NF'|g'
+	perlregex $XMLS 's|>KeyboardKey.png|>'$BUTTON_FO'|g'
 	check_and_remove media/KeyboardCornerTopNF.png
 	check_and_remove media/KeyboardCornerTop.png
 	check_and_remove media/KeyboardCornerBottomNF.png
 	check_and_remove media/KeyboardCornerBottom.png
 	check_and_remove media/KeyboardEditArea.png
+	check_and_remove media/KeyboardKeyNF.png
+	check_and_remove media/KeyboardKey.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -983,7 +987,7 @@ step
 printf "\nReplacing MenuItemFO.png: "
 if [ -f media/MenuItemFO.png ] ; then
 	XMLS=$(2>/dev/null grep 'MenuItemFO.png' -l 720p/*)
-	perlregex $XMLS 's|>MenuItemFO.png|>MenuItemFO_light.png|g'
+	perlregex $XMLS 's|>MenuItemFO.png|>'$BUTTON_FO'|g'
 	check_and_remove media/MenuItemFO.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
@@ -1014,9 +1018,9 @@ step
 
 printf "\nChanging progress bars: "
 if [ -f media/OSDProgressBack.png ] ; then
-	perlregex 's|OSDProgressMidLight.png|OSDProgressMidLight_light.png|g'
-	perlregex 's|OSDProgressMid.png|OSDProgressMid_light.png|g'
-	perlregex 's|OSDProgressBack.png|OSDProgressBack_light.png|g'
+	perlregex 's|OSDProgressMidLight.png|progressbar/OSDProgressMidLight_light.png|g'
+	perlregex 's|OSDProgressMid.png|progressbar/OSDProgressMid_light.png|g'
+	perlregex 's|OSDProgressBack.png|progressbar/OSDProgressBack_light.png|g'
 	check_and_remove media/OSDProgressMidLight.png
 	check_and_remove media/OSDProgressMid.png
 	check_and_remove media/OSDProgressBack.png
@@ -1170,8 +1174,18 @@ step
 
 printf "\nReplacing button-focus2.png: "
 if [ -f media/button-focus2.png ] ; then
-	perlregex  's|button-focus2.png|MenuItemFO_light.png|g'
+	perlregex  's|>button-focus2.png<|>'$BUTTON_FO'<|g'
 	check_and_remove media/button-focus2.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nReplacing button-focus.png: "
+if [ -f media/button-focus.png ] ; then
+	perlregex  's|>button-focus.png<|>'$BUTTON_FO'<|g'
+	check_and_remove media/button-focus.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -1238,24 +1252,27 @@ else
 fi
 step
 
-printf "\nRemoving labels for addons on the main menu: "
-if grep -q '<posx>91</posx>' 720p/includes.xml | head -n 1 ; then
-	remove_control 'label' '<posx>91</posx>' 720p/includes.xml
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
+#printf "\nRemoving labels for addons on the main menu: "
+#if grep -q '<posx>91</posx>' 720p/includes.xml | head -n 1 ; then
+#	remove_control 'label' '<posx>91</posx>' 720p/includes.xml
+#	printf "%sDONE!%s" $GREEN $RESET
+#else
+#	printf "%sSKIPPED.%s" $CYAN $RESET
+#fi
+#step
 
 printf "\nChanging widgets on the home screen: "
-if [ -f media/RecentAddedBack.png ] ; then
-	#removing widgets background
-	remove_control 'image' '<texture[^>]*>RecentAddedBack.png</texture>'
+if true ; then #[ -f media/RecentAddedBack.png ] ; then
+	#changing widgets background
+	perlregex 's|>RecentAddedBack.png<|>'$BUTTON_NF'<|g'
+	#remove_control 'image' '<texture[^>]*>RecentAddedBack.png</texture>'
 	#widget group title label
 	remove_control 'label' '<description>Title label</description>' '720p/IncludesHomeWidget.xml'
+	remove_control 'label' '<description>Random Title label</description>' '720p/IncludesHomeWidget.xml'
+	remove_control 'label' '<description>Recent Title label</description>' '720p/IncludesHomeWidget.xml'
 	#label for widgets without focus
-	remove_control 'label' '<textcolor>white</textcolor>' '720p/IncludesHomeWidget.xml'
-	remove_control 'label' '<textcolor>grey2</textcolor>' '720p/IncludesHomeWidget.xml'
+	#remove_control 'label' '<textcolor>white</textcolor>' '720p/IncludesHomeWidget.xml'
+	#remove_control 'label' '<textcolor>grey2</textcolor>' '720p/IncludesHomeWidget.xml'
 	check_and_remove 'media/RecentAddedBack.png'
 	printf "%sDONE!%s" $GREEN $RESET
 else
@@ -1369,7 +1386,7 @@ if [ -f media/DialogContextTop.png ] ; then
 	remove_controlid 'image' '<description>background top image</description>' 720p/DialogButtonMenu.xml
 	remove_controlid 'image' '<description>background bottom image</description>' 720p/DialogButtonMenu.xml
 	perlregex '720p/DialogButtonMenu.xml' 's|texturenofocus border="25,5,25,5">ShutdownButtonNoFocus.png|texturenofocus>'$BUTTON_NF'|g'
-	perlregex '720p/DialogButtonMenu.xml' 's|ShutdownButtonFocus.png|button-focus.png|g'
+	perlregex '720p/DialogButtonMenu.xml' 's|ShutdownButtonFocus.png|'$BUTTON_FO'|g'
 	check_and_remove media/ShutdownButtonFocus.png
 	check_and_remove media/ShutdownButtonNoFocus.png
 	check_and_remove media/DialogContextBottom.png

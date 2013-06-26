@@ -8,6 +8,8 @@ black-back.png;0
 button-focus2.png;2
 button-focus_light.png;2
 button-focus.png;2
+buttons/fo_light.png;0
+buttons/nf_light.png;0
 Calibrate[a-zA-Z]*.png;0
 cdwall-grid.png;0
 DefaultFile.png;0
@@ -42,9 +44,9 @@ MediaBladeSub_light.png;7,0,7,0
 MenuItemFO_light.png;2
 NoCover_1.png;4
 OSD[a-zA-Z0-9]*.png;0
-OSDProgressBack_light.png;0
-OSDProgressMidLight_light.png;0
-OSDProgressMid_light.png;0
+progressbar/OSDProgressBack_light.png;0
+progressbar/OSDProgressMidLight_light.png;0
+progressbar/OSDProgressMid_light.png;0
 osd_slider_bg_2.png;0
 osd_slider_nibNF.png;0
 osd_slider_nib.png;0

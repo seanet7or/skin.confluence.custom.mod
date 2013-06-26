@@ -39,14 +39,42 @@
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="180">
 						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture>buttons/nf_light.png</texture>
+						</control>
+						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
 					</itemlayout>
 					<focusedlayout height="220" width="180">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture>buttons/nf_light.png</texture>
+						</control>
 						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
@@ -64,6 +92,18 @@
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 							<visible>!Control.HasFocus(8000)</visible>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 						<control type="label">
 							<posx>90</posx>
@@ -135,6 +175,14 @@
 					<movement>2</movement>
 					<itemlayout height="220" width="240">
 						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>240</width>
+							<height>220</height>
+							<texture>buttons/nf_light.png</texture>
+						</control>
+						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
 							<width>220</width>
@@ -161,9 +209,42 @@
 							<texture background="true">$INFO[ListItem.Property(Logo)]</texture>
 							<visible>Skin.HasSetting(HideEpisodeThumb) + !IsEmpty(Container(8001).ListItem.Property(Logo))</visible>
 						</control>	
+						<control type="label">
+							<posx>120</posx>
+							<posy>168</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>185</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font12</font>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
+						</control>
 					</itemlayout>
 					<focusedlayout height="220" width="240">
 						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>240</width>
+							<height>220</height>
+							<texture>buttons/nf_light.png</texture>
+						</control>
+						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
 							<width>220</width>
@@ -216,6 +297,31 @@
 							<texture background="true">$INFO[ListItem.Property(Logo)]</texture>
 							<visible>Skin.HasSetting(HideEpisodeThumb) + !IsEmpty(Container(8001).ListItem.Property(Logo))</visible>
 						</control>	
+						<control type="label">
+							<posx>120</posx>
+							<posy>168</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>185</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font12</font>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
+						</control>
 						<control type="label">
 							<posx>120</posx>
 							<posy>185</posy>
@@ -284,6 +390,14 @@
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="200">
 						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>200</width>
+							<height>220</height>
+							<texture>buttons/nf_light.png</texture>
+						</control>
+						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
 							<width>180</width>
@@ -291,8 +405,41 @@
 							<aspectratio>keep</aspectratio>
 							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
 						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>170</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>190</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font12</font>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
 					</itemlayout>
 					<focusedlayout height="220" width="200">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>200</width>
+							<height>220</height>
+							<texture>buttons/nf_light.png</texture>
+						</control>
 						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
@@ -312,6 +459,31 @@
 							<aspectratio>keep</aspectratio>
 							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
 							<visible>!Control.HasFocus(8002)</visible>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>170</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>190</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font12</font>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 						<control type="label">
 							<posx>100</posx>
@@ -382,14 +554,42 @@
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="180">
 						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture>buttons/nf_light.png</texture>
+						</control>
+						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
 					</itemlayout>
 					<focusedlayout height="220" width="180">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture>buttons/nf_light.png</texture>
+						</control>
 						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
@@ -407,6 +607,18 @@
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 							<visible>!Control.HasFocus(8003)</visible>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 						<control type="label">
 							<posx>90</posx>
@@ -477,14 +689,42 @@
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="180">
 						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture>buttons/nf_light.png</texture>
+						</control>
+						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
 					</itemlayout>
 					<focusedlayout height="220" width="180">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture>buttons/nf_light.png</texture>
+						</control>
 						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
@@ -502,6 +742,18 @@
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 							<visible>!Control.HasFocus(8004)</visible>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 						<control type="label">
 							<posx>90</posx>
@@ -573,6 +825,14 @@
 					<movement>2</movement>
 					<itemlayout height="220" width="240">
 						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>240</width>
+							<height>220</height>
+							<texture>buttons/nf_light.png</texture>
+						</control>
+						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
 							<width>220</width>
@@ -599,9 +859,42 @@
 							<texture background="true">$INFO[ListItem.Property(Logo)]</texture>
 							<visible>Skin.HasSetting(HideEpisodeThumb) + !IsEmpty(ListItem.Property(Logo))</visible>
 						</control>	
+						<control type="label">
+							<posx>120</posx>
+							<posy>168</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>185</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font12</font>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
+						</control>
 					</itemlayout>
 					<focusedlayout height="220" width="240">
 						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>240</width>
+							<height>220</height>
+							<texture>buttons/nf_light.png</texture>
+						</control>
+						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
 							<width>220</width>
@@ -654,6 +947,31 @@
 							<texture background="true">$INFO[ListItem.Property(Logo)]</texture>
 							<visible>Skin.HasSetting(HideEpisodeThumb) + !IsEmpty(ListItem.Property(Logo))</visible>
 						</control>	
+						<control type="label">
+							<posx>120</posx>
+							<posy>168</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>185</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font12</font>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
+						</control>
 						<control type="label">
 							<posx>120</posx>
 							<posy>185</posy>
@@ -722,6 +1040,14 @@
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="200">
 						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>200</width>
+							<height>220</height>
+							<texture>buttons/nf_light.png</texture>
+						</control>
+						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
 							<width>180</width>
@@ -729,8 +1055,41 @@
 							<aspectratio>keep</aspectratio>
 							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
 						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>170</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>190</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font12</font>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
 					</itemlayout>
 					<focusedlayout height="220" width="200">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>200</width>
+							<height>220</height>
+							<texture>buttons/nf_light.png</texture>
+						</control>
 						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
@@ -750,6 +1109,31 @@
 							<aspectratio>keep</aspectratio>
 							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
 							<visible>!Control.HasFocus(8006)</visible>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>170</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>190</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font12</font>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 						<control type="label">
 							<posx>100</posx>
@@ -820,14 +1204,42 @@
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="180">
 						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture>buttons/nf_light.png</texture>
+						</control>
+						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
 					</itemlayout>
 					<focusedlayout height="220" width="180">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture>buttons/nf_light.png</texture>
+						</control>
 						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
@@ -845,6 +1257,18 @@
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 							<visible>!Control.HasFocus(8007)</visible>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 						<control type="label">
 							<posx>90</posx>
@@ -915,14 +1339,42 @@
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="180">
 						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture>buttons/nf_light.png</texture>
+						</control>
+						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
 					</itemlayout>
 					<focusedlayout height="220" width="180">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture>buttons/nf_light.png</texture>
+						</control>
 						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
@@ -940,6 +1392,18 @@
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 							<visible>!Control.HasFocus(8008)</visible>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 						<control type="label">
 							<posx>90</posx>
@@ -1011,6 +1475,14 @@
 					<movement>2</movement>
 					<itemlayout height="220" width="240">
 						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>240</width>
+							<height>220</height>
+							<texture>buttons/nf_light.png</texture>
+						</control>
+						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
 							<width>220</width>
@@ -1037,8 +1509,41 @@
 							<texture background="true">$INFO[ListItem.Property(Logo)]</texture>
 							<visible>Skin.HasSetting(HideEpisodeThumb) + !IsEmpty(ListItem.Property(Logo))</visible>
 						</control>	
+						<control type="label">
+							<posx>120</posx>
+							<posy>168</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>185</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font12</font>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
+						</control>
 					</itemlayout>
 					<focusedlayout height="220" width="240">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>240</width>
+							<height>220</height>
+							<texture>buttons/nf_light.png</texture>
+						</control>
 						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
@@ -1092,6 +1597,31 @@
 							<texture background="true">$INFO[ListItem.Property(Logo)]</texture>
 							<visible>Skin.HasSetting(HideEpisodeThumb) + !IsEmpty(ListItem.Property(Logo))</visible>
 						</control>	
+						<control type="label">
+							<posx>120</posx>
+							<posy>168</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>185</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font12</font>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
+						</control>
 						<control type="label">
 							<posx>120</posx>
 							<posy>185</posy>
@@ -1160,6 +1690,14 @@
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="200">
 						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>200</width>
+							<height>220</height>
+							<texture>buttons/nf_light.png</texture>
+						</control>
+						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
 							<width>180</width>
@@ -1167,8 +1705,41 @@
 							<aspectratio>keep</aspectratio>
 							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
 						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>170</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>190</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font12</font>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
 					</itemlayout>
 					<focusedlayout height="220" width="200">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>200</width>
+							<height>220</height>
+							<texture>buttons/nf_light.png</texture>
+						</control>
 						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
@@ -1188,6 +1759,31 @@
 							<aspectratio>keep</aspectratio>
 							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
 							<visible>!Control.HasFocus(8010)</visible>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>170</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>190</posy>
+							<width>180</width>
+							<height>20</height>
+							<font>font12</font>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 						<control type="label">
 							<posx>100</posx>
@@ -1258,14 +1854,42 @@
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="180">
 						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture>buttons/nf_light.png</texture>
+						</control>
+						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
 					</itemlayout>
 					<focusedlayout height="220" width="180">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture>buttons/nf_light.png</texture>
+						</control>
 						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
@@ -1283,6 +1907,18 @@
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 							<visible>!Control.HasFocus(8011)</visible>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 						<control type="label">
 							<posx>90</posx>
@@ -1908,14 +2544,42 @@
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="180">
 						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture>buttons/nf_light.png</texture>
+						</control>
+						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
+						</control>
 					</itemlayout>
 					<focusedlayout height="220" width="180">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>180</width>
+							<height>220</height>
+							<texture>buttons/nf_light.png</texture>
+						</control>
 						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
@@ -1933,6 +2597,18 @@
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 							<visible>!Control.HasFocus(8014)</visible>
+						</control>
+						<control type="label">
+							<posx>90</posx>
+							<posy>185</posy>
+							<width>150</width>
+							<height>20</height>
+							<font>font12</font>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 						<control type="label">
 							<posx>90</posx>
@@ -2004,6 +2680,14 @@
 					<movement>2</movement>
 					<itemlayout height="220" width="240">
 						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>240</width>
+							<height>220</height>
+							<texture>buttons/nf_light.png</texture>
+						</control>
+						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
 							<width>220</width>
@@ -2011,8 +2695,41 @@
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>168</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>185</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font12</font>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
 					</itemlayout>
 					<focusedlayout height="220" width="240">
+						<control type="image">
+							<description>background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>240</width>
+							<height>220</height>
+							<texture>buttons/nf_light.png</texture>
+						</control>
 						<control type="image">
 							<posx>10</posx>
 							<posy>10</posy>
@@ -2035,6 +2752,31 @@
 						</control>	
 						<control type="label">
 							<posx>120</posx>
+							<posy>168</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font10</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<posx>120</posx>
+							<posy>185</posy>
+							<width>200</width>
+							<height>20</height>
+							<font>font12</font>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<posx>120</posx>
 							<posy>185</posy>
 							<width>200</width>
 							<height>20</height>
@@ -2055,14 +2797,42 @@
 	<include name="MovieWidgetLayout">
 		<itemlayout height="220" width="180">
 			<control type="image">
+				<description>background</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>180</width>
+				<height>220</height>
+				<texture>buttons/nf_light.png</texture>
+			</control>
+			<control type="image">
 				<posx>10</posx>
 				<posy>10</posy>
 				<width>160</width>
 				<height>170</height>
 				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 			</control>
+			<control type="label">
+				<posx>90</posx>
+				<posy>185</posy>
+				<width>150</width>
+				<height>20</height>
+				<font>font12</font>
+				<shadowcolor>black</shadowcolor>
+				<selectedcolor>selected</selectedcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$VAR[MainItemLabel]</label>
+			</control>
 		</itemlayout>
 		<focusedlayout height="220" width="180">
+			<control type="image">
+				<description>background</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>180</width>
+				<height>220</height>
+				<texture>buttons/nf_light.png</texture>
+			</control>
 			<control type="image">
 				<posx>10</posx>
 				<posy>10</posy>
@@ -2087,6 +2857,18 @@
 				<width>150</width>
 				<height>20</height>
 				<font>font12</font>
+				<shadowcolor>black</shadowcolor>
+				<selectedcolor>selected</selectedcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$VAR[MainItemLabel]</label>
+			</control>
+			<control type="label">
+				<posx>90</posx>
+				<posy>185</posy>
+				<width>150</width>
+				<height>20</height>
+				<font>font12</font>
 				<textcolor>blue</textcolor>
 				<selectedcolor>selected</selectedcolor>
 				<align>center</align>
@@ -2098,6 +2880,14 @@
 	</include>
 	<include name="EpisodeWidgetLayout">
 		<itemlayout height="220" width="240">
+			<control type="image">
+				<description>background</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>240</width>
+				<height>220</height>
+				<texture>buttons/nf_light.png</texture>
+			</control>
 			<control type="image">
 				<posx>10</posx>
 				<posy>10</posy>
@@ -2116,8 +2906,41 @@
 				<texture background="true">$INFO[ListItem.Thumb]</texture>
 				<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
 			</control>
+			<control type="label">
+				<posx>120</posx>
+				<posy>168</posy>
+				<width>200</width>
+				<height>20</height>
+				<font>font10</font>
+				<textcolor>grey2</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<selectedcolor>selected</selectedcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Label2]</label>
+			</control>
+			<control type="label">
+				<posx>120</posx>
+				<posy>185</posy>
+				<width>200</width>
+				<height>20</height>
+				<font>font12</font>
+				<shadowcolor>black</shadowcolor>
+				<selectedcolor>selected</selectedcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$VAR[MainItemLabel]</label>
+			</control>
 		</itemlayout>
 		<focusedlayout height="220" width="240">
+			<control type="image">
+				<description>background</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>240</width>
+				<height>220</height>
+				<texture>buttons/nf_light.png</texture>
+			</control>
 			<control type="image">
 				<posx>10</posx>
 				<posy>10</posy>
@@ -2161,6 +2984,31 @@
 				<texture>$INFO[ListItem.Thumb]</texture>
 				<visible>!Control.HasFocus(8013)</visible>
 				<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
+			</control>
+			<control type="label">
+				<posx>120</posx>
+				<posy>168</posy>
+				<width>200</width>
+				<height>20</height>
+				<font>font10</font>
+				<textcolor>grey2</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<selectedcolor>selected</selectedcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Label2]</label>
+			</control>
+			<control type="label">
+				<posx>120</posx>
+				<posy>185</posy>
+				<width>200</width>
+				<height>20</height>
+				<font>font12</font>
+				<shadowcolor>black</shadowcolor>
+				<selectedcolor>selected</selectedcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$VAR[MainItemLabel]</label>
 			</control>
 			<control type="label">
 				<posx>120</posx>

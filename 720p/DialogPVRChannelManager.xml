@@ -15,7 +15,7 @@
 			<width>900</width>
 			<height>660</height>
 			<texture>dialog-back_light.png</texture>
-			<colordiffuse>DF101314</colordiffuse>
+			<colordiffuse>DF1C1C1C</colordiffuse>
 		</control>
 		<control type="label">
 			<description>header label</description>
@@ -53,9 +53,9 @@
 				<posy>5</posy>
 				<width>25</width>
 				<height>470</height>
-				<texturesliderbackground>ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar>ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>9002</onleft>
 				<onright>20</onright>
 				<showonepage>false</showonepage>
@@ -78,7 +78,7 @@
 						<posy>0</posy>
 						<width>420</width>
 						<height>40</height>
-						<texture>button-nf_light.png</texture>
+						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="image">
 						<posx>5</posx>
@@ -137,7 +137,7 @@
 						<posy>0</posy>
 						<width>420</width>
 						<height>60</height>
-						<texture border="2">MenuItemFO_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 						<animation effect="fade" start="100" end="30" time="0" condition="!Control.HasFocus(20)">conditional</animation>
 					</control>
 					<control type="image">
@@ -232,7 +232,7 @@
 					<focusedcolor>white</focusedcolor>
 					<shadowcolor>black</shadowcolor>
 					<align>left</align>
-					<texturefocus border="2">button-focus_light.png</texturefocus>
+					<texturefocus>buttons/fo_light.png</texturefocus>
 					<label>19074</label>
 					<onleft>20</onleft>
 					<onright>60</onright>
@@ -248,7 +248,7 @@
 					<font>font12</font>
 					<focusedcolor>white</focusedcolor>
 					<shadowcolor>black</shadowcolor>
-					<texturefocus border="2">button-focus_light.png</texturefocus>
+					<texturefocus>buttons/fo_light.png</texturefocus>
 					<label>19201</label>
 					<onright>60</onright>
 					<onleft>20</onleft>
@@ -262,7 +262,6 @@
 					<width>380</width>
 					<height>35</height>
 					<font>font12</font>
-					<texturefocus border="2">button-focus_light.png</texturefocus>
 					<label>19202</label>
 					<onleft>20</onleft>
 					<onright>60</onright>
@@ -288,7 +287,7 @@
 					<focusedcolor>white</focusedcolor>
 					<shadowcolor>black</shadowcolor>
 					<align>left</align>
-					<texturefocus border="2">button-focus_light.png</texturefocus>
+					<texturefocus>buttons/fo_light.png</texturefocus>
 					<label>19206</label>
 					<onleft>20</onleft>
 					<onright>60</onright>
@@ -302,8 +301,8 @@
 					<width>380</width>
 					<height>35</height>
 					<font>font12</font>
-					<texturefocus border="2">button-focus_light.png</texturefocus>
-					<texturenofocus>button-nf_light.png</texturenofocus>
+					<texturefocus>buttons/fo_light.png</texturefocus>
+					<texturenofocus>buttons/nf_light.png</texturenofocus>
 					<label>19200</label>
 					<onright>60</onright>
 					<onleft>20</onleft>
@@ -320,7 +319,7 @@
 					<focusedcolor>white</focusedcolor>
 					<shadowcolor>black</shadowcolor>
 					<align>left</align>
-					<texturefocus border="2">button-focus_light.png</texturefocus>
+					<texturefocus>buttons/fo_light.png</texturefocus>
 					<label>19267</label>
 					<onleft>20</onleft>
 					<onright>60</onright>
@@ -351,7 +350,6 @@
 					<width>190</width>
 					<height>35</height>
 					<font>font12</font>
-					<texturefocus border="2">button-focus_light.png</texturefocus>
 					<align>center</align>
 					<label>19205</label>
 					<onleft>20</onleft>
@@ -367,7 +365,6 @@
 					<height>35</height>
 					<font>font12</font>
 					<visible>IsEmpty(Window.Property(IsRadio))</visible>
-					<texturefocus border="2">button-focus_light.png</texturefocus>
 					<align>center</align>
 					<label>19024</label>
 					<onleft>30</onleft>
@@ -383,7 +380,6 @@
 					<height>35</height>
 					<font>font12</font>
 					<visible>!IsEmpty(Window.Property(IsRadio))</visible>
-					<texturefocus border="2">button-focus_light.png</texturefocus>
 					<align>center</align>
 					<label>19023</label>
 					<onleft>30</onleft>
@@ -398,7 +394,6 @@
 					<width>380</width>
 					<height>35</height>
 					<font>font12</font>
-					<texturefocus border="2">button-focus_light.png</texturefocus>
 					<align>center</align>
 					<label>19203</label>
 					<onleft>20</onleft>
@@ -413,7 +408,6 @@
 					<width>380</width>
 					<height>35</height>
 					<font>font12</font>
-					<texturefocus border="2">button-focus_light.png</texturefocus>
 					<align>center</align>
 					<label>19211</label>
 					<onleft>20</onleft>
@@ -428,7 +422,6 @@
 					<width>380</width>
 					<height>35</height>
 					<font>font12</font>
-					<texturefocus border="2">button-focus_light.png</texturefocus>
 					<align>center</align>
 					<label>19204</label>
 					<onleft>20</onleft>

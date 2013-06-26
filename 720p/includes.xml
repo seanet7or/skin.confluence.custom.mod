@@ -149,7 +149,7 @@
 		<textwidth>200</textwidth>
 		<aligny>center</aligny>
 		<font>font13</font>
-		<texturefocus border="2">button-focus.png</texturefocus>
+		<texturefocus>buttons/fo_light.png</texturefocus>
 		<texturenofocus>-</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</include>
@@ -160,8 +160,8 @@
 		<textwidth>195</textwidth>
 		<aligny>center</aligny>
 		<font>font12_title</font>
-		<texturefocus border="2">button-focus.png</texturefocus>
-		<texturenofocus>button-nf_light.png</texturenofocus>
+		<texturefocus>buttons/fo_light.png</texturefocus>
+		<texturenofocus>buttons/nf_light.png</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</include>
 	<include name="ButtonHomeSubCommonValues">
@@ -202,8 +202,8 @@
 		<align>center</align>
 		<aligny>center</aligny>
 		<font>font12_title</font>
-		<texturefocus border="2">button-focus.png</texturefocus>
-		<texturenofocus>button-nf_light.png</texturenofocus>
+		<texturefocus>buttons/fo_light.png</texturefocus>
+		<texturenofocus>buttons/nf_light.png</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</include>
 	<include name="SideBladeLeft">
@@ -420,7 +420,7 @@
 			<width>500</width>
 			<height>165</height>
 			<texture>dialog-back_light.png</texture>
-			<colordiffuse>DF101314</colordiffuse>
+			<colordiffuse>DF1C1C1C</colordiffuse>
 		</control>
 		<control type="image">
 			<description>Cover image</description>
@@ -503,7 +503,7 @@
 			<width>500</width>
 			<height>165</height>
 			<texture>dialog-back_light.png</texture>
-			<colordiffuse>DF101314</colordiffuse>
+			<colordiffuse>DF1C1C1C</colordiffuse>
 		</control>
 		<control type="image">
 			<description>Cover image</description>
@@ -940,7 +940,7 @@
 				<width>70</width>
 				<height>65</height>
 				<texture>dialog-back_light.png</texture>
-				<colordiffuse>DF101314</colordiffuse>
+				<colordiffuse>DF1C1C1C</colordiffuse>
 			</control>
 			<control type="label">
 				<posx>5</posx>
@@ -1000,6 +1000,17 @@
 				<aspectratio aligny="bottom">keep</aspectratio>
 				<texture background="true">$INFO[ListItem.Icon]</texture>
 			</control>
+			<control type="label">
+				<posx>91</posx>
+				<posy>125</posy>
+				<width>180</width>
+				<height>20</height>
+				<font>font12</font>
+				<textcolor>grey2</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$VAR[MainItemLabel]</label>
+			</control>
 		</itemlayout>
 		<focusedlayout height="200" width="182">
 			<control type="image">
@@ -1022,6 +1033,29 @@
 				<texture background="true">$INFO[ListItem.Icon]</texture>
 				<visible>ControlGroup(9002).HasFocus</visible>
 			</control>
+			<control type="label">
+				<posx>91</posx>
+				<posy>125</posy>
+				<width>180</width>
+				<height>20</height>
+				<font>font12</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$VAR[MainItemLabel]</label>
+				<visible>Control.HasFocus(9002)</visible>
+			</control>
+			<control type="label">
+				<posx>91</posx>
+				<posy>125</posy>
+				<width>180</width>
+				<height>20</height>
+				<font>font12</font>
+				<textcolor>grey2</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$VAR[MainItemLabel]</label>
+				<visible>!Control.HasFocus(9002)</visible>
+			</control>
 		</focusedlayout>
 	</include>
 	<include name="TVNextAiredListCommonLayout">
@@ -1031,7 +1065,7 @@
 				<posy>0</posy>
 				<width>280</width>
 				<height>145</height>
-				<texture>button-nf_light.png</texture>
+				<texture>buttons/nf_light.png</texture>
 			</control>
 			<control type="image">
 				<description>Thumb</description>
@@ -1112,7 +1146,7 @@
 				<posy>0</posy>
 				<width>280</width>
 				<height>145</height>
-				<texture border="2">MenuItemFO_light.png</texture>
+				<texture>buttons/fo_light.png</texture>
 			</control>
 			<control type="image">
 				<description>Thumb</description>

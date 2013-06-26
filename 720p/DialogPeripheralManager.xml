@@ -18,7 +18,7 @@
 				<width>610</width>
 				<height>650</height>
 				<texture>dialog-back_light.png</texture>
-				<colordiffuse>DF101314</colordiffuse>
+				<colordiffuse>DF1C1C1C</colordiffuse>
 				<visible>![Window.IsVisible(FullscreenVideo) | Window.IsVisible(Visualisation)]</visible>
 			</control>
 			<control type="image">
@@ -28,7 +28,7 @@
 				<width>610</width>
 				<height>650</height>
 				<texture>dialog-back_light.png</texture>
-				<colordiffuse>DF101314</colordiffuse>
+				<colordiffuse>DF1C1C1C</colordiffuse>
 				<visible>Window.IsVisible(FullscreenVideo) | Window.IsVisible(Visualisation)</visible>
 			</control>
 			<control type="label" id="1">
@@ -62,7 +62,7 @@
 						<posy>0</posy>
 						<width>550</width>
 						<height>80</height>
-						<texture>button-nf_light.png</texture>
+						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="label">
 						<description>Name</description>
@@ -105,7 +105,7 @@
 						<posy>0</posy>
 						<width>550</width>
 						<height>80</height>
-						<texture>button-nf_light.png</texture>
+						<texture>buttons/nf_light.png</texture>
 						<visible>!Control.HasFocus(20)</visible>
 						<include>VisibleFadeEffect</include>
 					</control>
@@ -114,7 +114,7 @@
 						<posy>0</posy>
 						<width>550</width>
 						<height>80</height>
-						<texture border="2">button-focus_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(20)</visible>
 						<include>VisibleFadeEffect</include>
 					</control>
@@ -159,9 +159,9 @@
 				<posy>65</posy>
 				<width>25</width>
 				<height>510</height>
-				<texturesliderbackground>ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar>ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>20</onleft>
 				<onright>10</onright>
 				<ondown>61</ondown>
