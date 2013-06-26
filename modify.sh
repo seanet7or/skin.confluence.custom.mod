@@ -1262,7 +1262,7 @@ step
 #step
 
 printf "\nChanging widgets on the home screen: "
-if true ; then #[ -f media/RecentAddedBack.png ] ; then
+if [ -f media/RecentAddedBack.png ] ; then
 	#changing widgets background
 	perlregex 's|>RecentAddedBack.png<|>'$BUTTON_NF'<|g'
 	#remove_control 'image' '<texture[^>]*>RecentAddedBack.png</texture>'
