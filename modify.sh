@@ -1192,6 +1192,37 @@ else
 fi
 step
 
+printf "\nReplacing spin controls: "
+if [ -f media/scroll-down-2.png ] ; then
+	XMLS=$(2>/dev/null grep '>scroll-' -l 720p/*)
+	perlregex $XMLS 's|>scroll-down-2.png<|>buttons/spin-down-nf_light.png<|g'
+	perlregex $XMLS 's|>scroll-down-focus-2.png<|>buttons/spin-down-fo_light.png<|g'
+	perlregex $XMLS 's|>scroll-up-2.png<|>buttons/spin-up-nf_light.png<|g'
+	perlregex $XMLS 's|>scroll-up-focus-2.png<|>buttons/spin-up-fo_light.png<|g'
+	R='s|(<default type="spincontrol">#'
+	R+='\s*<posx>330</posx>#'
+	R+='\s*<posy>126</posy>#'
+	R+='\s*<textureup>[^<]*</textureup>#'
+	R+='\s*<texturedown>[^<]*</texturedown>#'
+	R+='\s*<textureupfocus>[^<]*</textureupfocus>#'
+	R+='\s*<texturedownfocus>[^<]*</texturedownfocus>#'
+	R+='\s*<align>right</align>#'
+	R+='\s*<width)>33<(/width>#'
+	R+='\s*<height)>22<'
+	R+='|\1>23<\2>13<|g'
+	perlregex 720p/defaults.xml "$R"
+	perlregex $XMLS 's|<spinwidth>33</spinwidth>|<spinwidth>23</spinwidth>|g'
+	perlregex $XMLS 's|<spinheight>22</spinheight>|<spinheight>13</spinheight>|g'
+	check_and_remove media/scroll-down-2.png
+	check_and_remove media/scroll-down-focus-2.png
+	check_and_remove media/scroll-up-2.png
+	check_and_remove media/scroll-up-focus-2.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
 printf "\nReplacing submenus item texture (for items that are not focused): "

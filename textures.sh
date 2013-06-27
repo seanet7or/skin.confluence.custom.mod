@@ -1,4 +1,5 @@
 TEXLIST='
+buttons/spin-[a-z-]*.png;0
 arrow-big-[a-z]*.png;0
 BackgroundEffect/rain-drop.png;0
 banner/[a-zA-Z]*.png;0
@@ -49,16 +50,12 @@ OverlayWatched.png;0
 pointer-[a-z-]*.png;0
 PVR-[A-Za-z]*.png;0
 radiobutton-nofocus.png;0
-scroll-down-2.png;0
-scroll-down-focus-2.png;0
 scroll-down-focus.png;0
 scroll-down.png;0
 scroll-left-focus.png;0
 scroll-left.png;0
 scroll-right-focus.png;0
 scroll-right.png;0
-scroll-up-2.png;0
-scroll-up-focus-2.png;0
 scroll-up-focus.png;0
 scroll-up.png;0
 seekslider_light.png;0
@@ -70,4 +67,5 @@ unknown-user.png;0
 \$VAR\[[a-zA-Z,\.\/]*\];0
 VolumeIcon.png;0
 warning.png;0
+radiobutton-focus.png;0
 '
