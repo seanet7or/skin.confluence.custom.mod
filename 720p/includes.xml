@@ -173,8 +173,8 @@
 		<font>font12</font>
 		<textcolor>grey2</textcolor>
 		<focusedcolor>white</focusedcolor>
-		<texturefocus border="2">HomeSubFO.png</texturefocus>
-		<texturenofocus border="0,2,0,0">HomeSubNF_light.png</texturenofocus>
+		<texturefocus border="0,2,0,2">home/sub-fo_light.png</texturefocus>
+		<texturenofocus border="0,2,0,2">home/sub-nf_light.png</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</include>
 	<include name="HomeSubMenuCommonValues">
@@ -237,7 +237,7 @@
 			<posy>0</posy>
 			<width>260</width>
 			<height>720</height>
-			<texture border="7,0,7,0">MediaBladeSub_light.png</texture>
+			<texture border="7,0,7,0">dialogs/bladesub_light.png</texture>
 		</control>
 	</include>
 	<include name="MainWindowMouseButtons">
@@ -419,7 +419,7 @@
 			<posy>0</posy>
 			<width>500</width>
 			<height>165</height>
-			<texture>dialog-back_light.png</texture>
+			<texture>dialogs/dialog-back_light.png</texture>
 		</control>
 		<control type="image">
 			<description>Cover image</description>
@@ -501,7 +501,7 @@
 			<posy>0</posy>
 			<width>500</width>
 			<height>165</height>
-			<texture>dialog-back_light.png</texture>
+			<texture>dialogs/dialog-back_light.png</texture>
 		</control>
 		<control type="image">
 			<description>Cover image</description>
@@ -937,7 +937,7 @@
 				<posy>0</posy>
 				<width>70</width>
 				<height>65</height>
-				<texture>dialog-back_light.png</texture>
+				<texture>dialogs/dialog-back_light.png</texture>
 			</control>
 			<control type="label">
 				<posx>5</posx>
@@ -1025,7 +1025,7 @@
 				<width>180</width>
 				<height>120</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<bordertexture border="6">folder-focus_light.png</bordertexture>
+				<bordertexture border="6">buttons/folder-focus_light.png</bordertexture>
 				<bordersize>3</bordersize>
 				<texture background="true">$INFO[ListItem.Icon]</texture>
 				<visible>ControlGroup(9002).HasFocus</visible>

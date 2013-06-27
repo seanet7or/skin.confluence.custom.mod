@@ -269,9 +269,9 @@ rm 720p/*.tmp 2>/dev/null
 
 BUTTON_NF='buttons/nf_light.png'
 BUTTON_FO='buttons/fo_light.png'
-DIALOG_BG='dialog-back_light.png'
+DIALOG_BG='dialogs/dialog-back_light.png'
 #DIALOG_BG_COLOR='DF1C1C1C'
-CONTENT_BG='content-back_light.png'
+CONTENT_BG='dialogs/content-back_light.png'
 BACKGROUND_DEF='special://skin/backgrounds/default_light.jpg'
 SCROLLBAR_HOR_BAR='scrollbar/ScrollBarH_bar_light.png'
 SCROLLBAR_VER_BAR='scrollbar/ScrollBarV_bar_light.png'
@@ -279,8 +279,8 @@ SCROLLBAR_HOR='scrollbar/ScrollBarH_light.png'
 SCROLLBAR_VER='scrollbar/ScrollBarV_light.png'
 SCROLLBAR_HOR_BAR_FO='scrollbar/ScrollBarH_bar_focus_light.png'
 SCROLLBAR_VER_BAR_FO='scrollbar/ScrollBarV_bar_focus_light.png'
-MEDIA_BLADE='MediaBladeSub_light.png'
-HOME_BLADE='MediaBladeSub_light.png'
+MEDIA_BLADE='dialogs/bladesub_light.png'
+HOME_BLADE='dialogs/bladesub_light.png'
 printf "\nBUTTON_NF: '%s'" $BUTTON_NF
 printf "\nBUTTON_FO: '%s'" $BUTTON_FO
 printf "\nDIALOG_BG: '%s'" $DIALOG_BG
@@ -1045,7 +1045,7 @@ step
 printf "\nReplacing folder-focus.png: "
 if [ -f media/folder-focus.png ] ; then
 	XMLS=$(2>/dev/null grep 'folder-focus.png' -l 720p/*)
-	perlregex $XMLS 's|folder-focus.png|folder-focus_light.png|g'
+	perlregex $XMLS 's|folder-focus.png|buttons/folder-focus_light.png|g'
 	check_and_remove media/folder-focus.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
@@ -1250,11 +1250,14 @@ step
 
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
-printf "\nReplacing submenus item texture (for items that are not focused): "
-if [ -f media/HomeSubNF.png ] ; then
+printf "\nReplacing submenu item textures: "
+if [ -f media/HomeSubFO.png ] ; then
 	XMLS=$(2>/dev/null grep 'HomeSubNF.png' -l 720p/*)
-	perlregex $XMLS 's|HomeSubNF.png|HomeSubNF_light.png|g'
+	perlregex $XMLS 's|HomeSubNF.png|home/sub-nf_light.png|g'
+	XMLS=$(2>/dev/null grep 'HomeSubFO.png' -l 720p/*)
+	perlregex $XMLS 's|HomeSubFO.png|home/sub-fo_light.png|g'
 	check_and_remove media/HomeSubNF.png
+	check_and_remove media/HomeSubFO.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -1411,7 +1414,7 @@ if grep -I -q '<description>Date time txt</description>' 720p/ViewsPictures.xml 
 	R+='\s*</focusedlayout>\s*#)'
 	R+='|\1<posx>8</posx>\2<posy>8</posy>\3<width>128</width>\4<height>128</height>\5'
 	R+='\6<bordersize>2</bordersize>#'
-	R+='\6<bordertexture border="2">folder-focus_light.png</bordertexture>#'
+	R+='\6<bordertexture border="6">buttons/folder-focus_light.png</bordertexture>#'
 	R+='\6\7|'
 	perlregex 720p/ViewsPictures.xml "$R"
 	printf "%sDONE!%s" $GREEN $RESET
@@ -1465,6 +1468,22 @@ fi
 step
 
 printf "\n############# CLEANING UP #####################################################"
+
+printf "\nSetting pulseonselect to false for all controls: "
+if true ; then #grep -I -q '<pulseonselect>no</pulseonselect>' 720p/defaults.xml ; then
+	XMLS=$(2>/dev/null grep '<pulseonselect>no</pulseonselect>' -l 720p/*)
+	perlregex $XMLS 's|<pulseonselect>no</pulseonselect>|<pulseonselect>false</pulseonselect>|g'
+	R='s|(\s*)(<default type="[a-z]*"[^#]*#'
+	#opening tags, but not pulseonselect
+	R+='((\s*)(?!<pulseonselect)<[a-z][^#]*#)*?' 		
+	R+=')\s*</default>'
+	R+='|\1\2\4<pulseonselect>false</pulseonselect>#\1</default>|g'
+	perlregex 720p/defaults.xml "$R"
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
 
 printf "\nRemoving unused include WindowTitleCommons: "
 if grep -I -q 'WindowTitleCommons' 720p/includes.xml ; then

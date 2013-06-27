@@ -463,9 +463,8 @@
 				<font>font12</font>
 				<textcolor>grey2</textcolor>
 				<focusedcolor>white</focusedcolor>
-				<texturefocus flipy="true" border="2">HomeSubFO.png</texturefocus>
-				<texturenofocus flipy="true" border="0,2,0,0">HomeSubNF_light.png</texturenofocus>
-				<pulseonselect>false</pulseonselect>
+				<texturefocus flipy="true" border="0,2,0,2">home/sub-fo_light.png</texturefocus>
+				<texturenofocus flipy="true" border="0,2,0,2">home/sub-nf_light.png</texturenofocus>
 				<label>137</label>
 				<onclick>RunScript(script.globalsearch)</onclick>
 				<textureradiofocus>icon_search.png</textureradiofocus>
@@ -490,7 +489,7 @@
 					<posy>0</posy>
 					<width>205</width>
 					<height>35</height>
-					<texture flipy="true" border="0,2,0,0">HomeSubNF_light.png</texture>
+					<texture flipy="true" border="0,2,0,2">home/sub-nf_light.png</texture>
 					<colordiffuse>CCFFFFFF</colordiffuse>
 					<animation effect="zoom" start="0,0,205,35" end="0,0,465,35" delay="0" time="300" condition="!Player.HasMedia + !Skin.HasSetting(HideHomeStats)">conditional</animation>
 					<animation effect="zoom" start="0,0,205,35" end="0,0,265,35" delay="0" time="0" condition="System.HasAddon(plugin.audio.lastfm) + Player.HasAudio">conditional</animation>
@@ -726,9 +725,8 @@
 				<font>font12</font>
 				<textcolor>grey2</textcolor>
 				<focusedcolor>white</focusedcolor>
-				<texturefocus flipy="true" border="2">HomeSubFO.png</texturefocus>
-				<texturenofocus flipy="true" border="0,2,0,0">HomeSubNF_light.png</texturenofocus>
-				<pulseonselect>false</pulseonselect>
+				<texturefocus flipy="true" border="0,2,0,2">home/sub-fo_light.png</texturefocus>
+				<texturenofocus flipy="true" border="0,2,0,2">home/sub-nf_light.png</texturenofocus>
 				<label>31008</label>
 				<onclick>fullscreen</onclick>
 				<textureradiofocus>GoFullscreen.png</textureradiofocus>

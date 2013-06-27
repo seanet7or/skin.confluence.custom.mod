@@ -14,7 +14,7 @@
 			<posy>0</posy>
 			<width>800</width>
 			<height>600</height>
-			<texture>dialog-back_light.png</texture>
+			<texture>dialogs/dialog-back_light.png</texture>
 			<visible>![Window.IsVisible(FullscreenVideo) | Window.IsVisible(Visualisation)]</visible>
 		</control>
 		<control type="image">
@@ -23,7 +23,7 @@
 			<posy>0</posy>
 			<width>800</width>
 			<height>600</height>
-			<texture>dialog-back_light.png</texture>
+			<texture>dialogs/dialog-back_light.png</texture>
 			<visible>Window.IsVisible(FullscreenVideo) | Window.IsVisible(Visualisation)</visible>
 		</control>
 		<control type="label" id="20">
@@ -148,7 +148,6 @@
 			<width>173</width>
 			<align>center</align>
 			<font>font12_title</font>
-			<pulseonselect>false</pulseonselect>
 		</control>
 		<control type="button" id="3">
 			<description>Default Button</description>
