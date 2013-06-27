@@ -1470,7 +1470,7 @@ step
 printf "\n############# CLEANING UP #####################################################"
 
 printf "\nSetting pulseonselect to false for all controls: "
-if true ; then #grep -I -q '<pulseonselect>no</pulseonselect>' 720p/defaults.xml ; then
+if grep -I -q '<pulseonselect>no</pulseonselect>' 720p/defaults.xml ; then
 	XMLS=$(2>/dev/null grep '<pulseonselect>no</pulseonselect>' -l 720p/*)
 	perlregex $XMLS 's|<pulseonselect>no</pulseonselect>|<pulseonselect>false</pulseonselect>|g'
 	R='s|(\s*)(<default type="[a-z]*"[^#]*#'
@@ -1479,6 +1479,21 @@ if true ; then #grep -I -q '<pulseonselect>no</pulseonselect>' 720p/defaults.xml
 	R+=')\s*</default>'
 	R+='|\1\2\4<pulseonselect>false</pulseonselect>#\1</default>|g'
 	perlregex 720p/defaults.xml "$R"
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nDon't clear background: "
+if ! grep -I -q '<backgroundcolor>0</backgroundcolor>' 720p/AddonBrowser.xml ; then
+	XMLS=$(2>/dev/null grep '<window>' -l 720p/*)
+	R='s|(\s*<window[^#]*#)'
+	#all kind of lines, but not <backgroundcolor
+	R+='(((\s*)(?!<backgroundcolor)(?!</window)[^#]*#)*?' 		
+	R+=')\s*</window>'
+	R+='|\1\4<backgroundcolor>0</backgroundcolor>#\2</window>|g'
+	perlregex $XML "$R"
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
