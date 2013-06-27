@@ -1223,6 +1223,31 @@ else
 fi
 step
 
+
+printf "\nReplacing toggle buttons: "
+if [ -f media/scroll-down.png ] ; then
+	XMLS=$(2>/dev/null grep '>scroll-' -l 720p/*)
+	R='s|(<default type="togglebutton">#'
+	R+='\s*<posx>140</posx>#'
+	R+='\s*<posy>167</posy>#'
+	R+='\s*<width)>20<(/width>#'
+	R+='\s*<height)>20<'
+	R+='|\1>23<\2>13<|g'
+	perlregex 720p/defaults.xml "$R"
+	perlregex $XMLS 's|>scroll-down.png<|>buttons/spin-down-nf_light.png<|g'
+	perlregex $XMLS 's|>scroll-down-focus.png<|>buttons/spin-down-fo_light.png<|g'
+	perlregex $XMLS 's|>scroll-up.png<|>buttons/spin-up-nf_light.png<|g'
+	perlregex $XMLS 's|>scroll-up-focus.png<|>buttons/spin-up-fo_light.png<|g'
+	check_and_remove media/scroll-down.png
+	check_and_remove media/scroll-down-focus.png
+	check_and_remove media/scroll-up.png
+	check_and_remove media/scroll-up-focus.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
 printf "\nReplacing submenus item texture (for items that are not focused): "

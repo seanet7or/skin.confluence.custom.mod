@@ -50,14 +50,10 @@ OverlayWatched.png;0
 pointer-[a-z-]*.png;0
 PVR-[A-Za-z]*.png;0
 radiobutton-nofocus.png;0
-scroll-down-focus.png;0
-scroll-down.png;0
 scroll-left-focus.png;0
 scroll-left.png;0
 scroll-right-focus.png;0
 scroll-right.png;0
-scroll-up-focus.png;0
-scroll-up.png;0
 seekslider_light.png;0
 special://skin/backgrounds/default_light.jpg;0
 special://skin/backgrounds/settings.jpg;0
