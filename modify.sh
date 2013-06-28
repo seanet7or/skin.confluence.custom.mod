@@ -1248,6 +1248,23 @@ else
 fi
 step
 
+printf "\nReplacing left/right arrows: "
+if [ -f media/arrow-big-left.png ] ; then
+	perlregex 720p/IncludesHomeWidget.xml 's|<texturenofocus>arrow-big-left.png</texturenofocus>|<texturenofocus>buttons/spin-left-fo_light.png</texturenofocus>|g'
+	perlregex 720p/IncludesHomeWidget.xml 's|<texturenofocus>arrow-big-right.png</texturenofocus>|<texturenofocus>buttons/spin-right-fo_light.png</texturenofocus>|g'
+	perlregex 720p/IncludesHomeWidget.xml 's|<texturefocus>arrow-big-left.png</texturefocus>|<colordiffuse>BBFFFFFF</colordiffuse>|g'
+	perlregex 720p/IncludesHomeWidget.xml 's|<texturefocus>arrow-big-right.png</texturefocus>|<colordiffuse>BBFFFFFF</colordiffuse>|g'
+	XMLS=$(2>/dev/null grep 'arrow-big-' -l 720p/*)
+	perlregex $XMLS 's|>arrow-big-left.png<|>buttons/spin-left-fo_light.png<|g'
+	perlregex $XMLS 's|>arrow-big-right.png<|>buttons/spin-right-fo_light.png<|g'
+	check_and_remove media/arrow-big-left.png
+	check_and_remove media/arrow-big-right.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
 printf "\nReplacing submenu item textures: "
