@@ -1121,7 +1121,7 @@ step
 printf "\nReplacing seeksliders: "
 if [ -f media/seekslider2.png ] ; then
 	perlregex 's|seekslider2.png|seekslider_light.png|g'
-	perlregex 's|seekslider.png|seekslider_light.png|g'
+	perlregex 's|seekslider.png|seekslider_light.png|g' --nocheck
 	check_and_remove media/seekslider.png
 	check_and_remove media/seekslider2.png
 	printf "%sDONE!%s" $GREEN $RESET
@@ -1131,7 +1131,7 @@ fi
 step
 
 printf "\nCorrecting filenames: "
-if grep 'OSD_' 720p/VideoOSD.xml ; then
+if grep -q 'OSD_' 720p/VideoOSD.xml ; then
 	perlregex 720p/VideoOSD.xml 's|OSD_|osd_|g'
 	printf "%sDONE!%s" $GREEN $RESET
 else
@@ -1274,13 +1274,39 @@ step
 printf "\nReplacing black-back2.png: "
 if [ -f media/black-back2.png ] ; then
 	XMLS=$(2>/dev/null grep '<texture>black-back2.png' -l 720p/*)
-	perlregex $XMLS 's|<texture>black-back2.png</texture>|<texture>dialogs/dialog-sub_light.png</texture>|g'
+	perlregex $XMLS 's|<texture(\| border="[0-9]*")>black-back2.png</texture>|<texture>dialogs/dialog-sub_light.png</texture>|g'
 	XMLS=$(2>/dev/null grep '<bordertexture>black-back2.png' -l 720p/*)
-	R='s|\s*<bordertexture>black-back2.png</bordertexture>#'
+	R='s|\s*<bordertexture(\| border="[0-9]*")>black-back2.png</bordertexture>#'
 	R+='\s*<bordersize>2</bordersize>#'
 	R+='||g'
 	perlregex $XMLS "$R"
 	check_and_remove media/black-back2.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nReplacing calibration controls: "
+if [ -f media/CalibrateSubtitles.png ] ; then
+	perlregex 720p/SettingsScreenCalibration.xml 's|<texturefocus>CalibrateTopLeft.png</texturefocus>|<texturefocus border="6">buttons/calibrate/topleft_light.png</texturefocus>|g'
+	perlregex 720p/SettingsScreenCalibration.xml 's|<texturefocus>CalibrateBottomRight.png</texturefocus>|<texturefocus flipx="true" flipy="true" border="6">buttons/calibrate/topleft_light.png</texturefocus>|g'
+	perlregex 720p/SettingsScreenCalibration.xml 's|<texturefocus>CalibratePixelRatio.png</texturefocus>|<texturefocus>buttons/calibrate/pixelratio_light.png</texturefocus>|g'
+	perlregex 720p/SettingsScreenCalibration.xml 's|<texturefocus>CalibrateSubtitles.png</texturefocus>|<texturefocus>buttons/calibrate/subtitles_light.png</texturefocus>|g'
+	check_and_remove media/CalibrateTopLeft.png
+	check_and_remove media/CalibrateBottomRight.png
+	check_and_remove media/CalibrateSubtitles.png
+	check_and_remove media/CalibratePixelRatio.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nRemoving cdwall-grid.png: "
+if [ -f media/cdwall-grid.png ] ; then
+	remove_control image '<texture background="true">cdwall-grid.png</texture>'
+	check_and_remove media/cdwall-grid.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -1533,6 +1559,9 @@ if ! grep -I -q '<backgroundcolor>0</backgroundcolor>' 720p/AddonBrowser.xml ; t
 	R+=')\s*</window>'
 	R+='|\1\4<backgroundcolor>0</backgroundcolor>#\2</window>|g'
 	perlregex $XML "$R"
+	#not for dialogs without background
+	R='s|\s*<backgroundcolor>0</backgroundcolor>#||g'
+	perlregex 720p/SettingsScreenCalibration.xml 720p/SlideShow.xml "$R"
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
