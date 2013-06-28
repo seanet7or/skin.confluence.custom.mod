@@ -435,15 +435,6 @@
 							<visible>ListItem.IsResumable</visible>
 						</control>
 					</control>
-					<control type="image">
-						<posx>6</posx>
-						<posy>24</posy>
-						<width>112</width>
-						<height>152</height>
-						<aspectratio>stretch</aspectratio>
-						<texture>black-back.png</texture>
-						<colordiffuse>AAFFFFFF</colordiffuse>
-					</control>
 				</itemlayout>
 				<focusedlayout height="310" width="120">
 					<control type="image">
@@ -509,18 +500,6 @@
 							<texture background="true" fallback="banner/DefaultInProgress.png">banner/$LOCALIZE[31357].png</texture>
 							<visible>ListItem.IsResumable</visible>
 						</control>
-					</control>
-					<control type="image">
-						<posx>6</posx>
-						<posy>24</posy>
-						<width>112</width>
-						<height>152</height>
-						<aspectratio>stretch</aspectratio>
-						<texture>black-back.png</texture>
-						<colordiffuse>AAFFFFFF</colordiffuse>
-						<animation reversible="false" effect="fade" start="100" end="0" time="0">focus</animation>
-						<animation reversible="false" effect="zoom" start="6,24,112,152" end="-3,-1,130,180" time="200">focus</animation>
-						<animation reversible="false" effect="zoom" end="6,24,112,152" start="-3,-1,130,180" time="200">unfocus</animation>
 					</control>
 				</focusedlayout>
 			</control>
@@ -2205,10 +2184,6 @@
 	<include name="FullWallView">
 		<control type="group">
 			<visible>Control.IsVisible(732)</visible>
-			<control type="image">
-				<include>Dimensions_Fullscreen</include>
-				<texture background="true">black-back.png</texture>
-			</control>
 			<control type="panel" id="732">
 				<posx>29</posx>
 				<posy>55</posy>
@@ -2232,16 +2207,6 @@
 						<aspectratio scalediffuse="false">scale</aspectratio>
 						<include>VisibleFadeEffect</include>
 						<texture background="true">$VAR[PosterThumb]</texture>
-					</control>
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>139</width>
-						<height>202</height>
-						<aspectratio>stretch</aspectratio>
-						<texture>black-back.png</texture>
-						<colordiffuse>AAFFFFFF</colordiffuse>
-						<visible>!StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="group">
 						<visible>Skin.HasSetting(ViewStatusBanner) + !IsEmpty(ListItem.Overlay)</visible>
@@ -2272,16 +2237,6 @@
 							<texture background="true" fallback="banner/DefaultInProgress.png">banner/$LOCALIZE[31357].png</texture>
 							<visible>ListItem.IsResumable</visible>
 						</control>
-					</control>
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>139</width>
-						<height>202</height>
-						<aspectratio>stretch</aspectratio>
-						<texture>black-back.png</texture>
-						<colordiffuse>AAFFFFFF</colordiffuse>
-						<visible>!StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="image">
 						<posx>85</posx>

@@ -281,21 +281,7 @@ SCROLLBAR_HOR_BAR_FO='scrollbar/ScrollBarH_bar_focus_light.png'
 SCROLLBAR_VER_BAR_FO='scrollbar/ScrollBarV_bar_focus_light.png'
 MEDIA_BLADE='dialogs/bladesub_light.png'
 HOME_BLADE='dialogs/bladesub_light.png'
-printf "\nBUTTON_NF: '%s'" $BUTTON_NF
-printf "\nBUTTON_FO: '%s'" $BUTTON_FO
-printf "\nDIALOG_BG: '%s'" $DIALOG_BG
-#printf "\nDIALOG_BG_COLOR: '%s'" $DIALOG_BG_COLOR
-printf "\nCONTENT_BG: '%s'" $CONTENT_BG
-printf "\nBACKGROUND_DEF: '%s'" $BACKGROUND_DEF
-printf "\nSCROLLBAR_HOR_BAR: '%s'" $SCROLLBAR_HOR_BAR
-printf "\nSCROLLBAR_VER_BAR: '%s'" $SCROLLBAR_HOR_BAR
-printf "\nSCROLLBAR_HOR: '%s'" $SCROLLBAR_HOR
-printf "\nSCROLLBAR_VER: '%s'" $SCROLLBAR_VER
-printf "\nSCROLLBAR_HOR_BAR_FO: '%s'" $SCROLLBAR_HOR_BAR_FO
-printf "\nSCROLLBAR_VER_BAR_FO: '%s'" $SCROLLBAR_HOR_BAR_FO
-printf "\nHOME_BLADE: '%s'" $HOME_BLADE
-printf "\nMEDIA_BLADE: '%s'" $MEDIA_BLADE
-
+OVERLAY_BG='dialogs/overlay-background.png'
 
 STEP=0
 printf "\n############# APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ########################"
@@ -1259,6 +1245,26 @@ if [ -f media/arrow-big-left.png ] ; then
 	perlregex $XMLS 's|>arrow-big-right.png<|>buttons/spin-right-fo_light.png<|g'
 	check_and_remove media/arrow-big-left.png
 	check_and_remove media/arrow-big-right.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nReplacing black-back.png: "
+if [ -f media/black-back.png ] ; then
+	# remove where not needed
+	remove_control 'image' '<texture(\| background="true")>black-back.png</texture>' 720p/ViewsVideoLibrary.xml
+	remove_control 'image' '<texture(\| background="true")>black-back.png</texture>' 720p/ViewsMusicLibrary.xml
+	remove_control 'image' '<texture(\| background="true")>black-back.png</texture>' 720p/DialogVideoInfo.xml
+	# replace with dialog background
+	perlregex 720p/SlideShow.xml 720p/MyMusicPlaylistEditor.xml 720p/MusicVisualisation.xml 's|>black-back.png<|>'$DIALOG_BG'<|g'
+	# replace with nf-background
+	perlregex 720p/SkinSettings.xml 720p/VideoFullScreen.xml 's|>black-back.png<|>'$BUTTON_NF'<|g'	
+	# replace where used as overlay background
+	XMLS=$(2>/dev/null grep 'black-back.png' -l 720p/*)
+	perlregex $XMLS 's|>black-back.png<|>'$OVERLAY_BG'<|g'	
+	check_and_remove media/black-back.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
