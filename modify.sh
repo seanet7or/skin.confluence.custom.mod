@@ -629,9 +629,10 @@ step
 
 printf "\nRemoving HomeNowPlayingBack.png: "
 if grep -q 'HomeNowPlayingBack.png' 720p/ViewsVideoLibrary.xml ; then
-	remove_control 'image' '<texture[^>]*>HomeNowPlayingBack.png</texture>'
-	#remove behind time label on video osd, but not behind seek bar
+	# remove from top
 	remove_controlid 'image' '<texture flipy="true">HomeNowPlayingBack.png</texture>'
+	# remove on bottom for some windows
+	#remove_control 'image' '<texture[^>]*>HomeNowPlayingBack.png</texture>'
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
