@@ -432,7 +432,7 @@
 			<animation effect="slide" start="0,0" end="0,175" time="0" condition="!Skin.HasSetting(RaiseMainMenuBar)">Conditional</animation>
 			<animation effect="slide" start="0,0" end="-100,0" time="300" condition="!Player.HasMedia + !Skin.HasSetting(HideHomeStats)">conditional</animation>
 			<animation effect="slide" start="0,0" end="365,0" time="300" condition="!Player.HasMedia + Skin.HasSetting(HideHomeStats)">conditional</animation>
-			<animation effect="slide" start="0,0" end="-60,0" time="0" condition="System.HasAddon(plugin.audio.lastfm) + Player.HasAudio">conditional</animation>			
+			<animation effect="slide" start="0,0" end="-60,0" time="0" condition="System.HasAddon(plugin.audio.lastfm) + Player.HasAudio">conditional</animation>
 			<animation type="WindowOpen" reversible="false">
 				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
 				<effect type="fade" start="0" end="100" time="300" />
@@ -496,7 +496,7 @@
 					<animation effect="zoom" start="0,0,205,35" end="0,0,265,35" delay="0" time="0" condition="System.HasAddon(plugin.audio.lastfm) + Player.HasAudio">conditional</animation>
 					<visible>Player.HasMedia | !Skin.HasSetting(HideHomeStats)</visible>
 				</control>
-					<control type="group">
+				<control type="group">
 					<animation effect="slide" end="0,35" time="300" condition="!Player.HasMedia">conditional</animation>
 					<visible>!VideoPlayer.Content(LiveTV)</visible>
 					<control type="button" id="601">
@@ -625,7 +625,7 @@
 						<onclick>RunScript(plugin.audio.lastfm,action=LastFM.Ban&amp;artist=$INFO[MusicPlayer.Artist]&amp;song=$INFO[MusicPlayer.Title])</onclick>
 						<enable>SubString(Window(Home).Property(LastFM.CanBan),true)</enable>
 						<visible>System.HasAddon(plugin.audio.lastfm) + Player.HasAudio</visible>
-					</control>			
+					</control>
 				</control>
 				<control type="group" id="600">
 					<visible>VideoPlayer.Content(LiveTV)</visible>
@@ -713,7 +713,7 @@
 			</control>
 			<control type="radiobutton" id="609">
 				<animation effect="slide" end="0,35" time="300" condition="!Player.HasMedia">conditional</animation>
-				<animation effect="slide" start="0,0" end="60,0" time="0" condition="System.HasAddon(plugin.audio.lastfm) + Player.HasAudio">Conditional</animation>			
+				<animation effect="slide" start="0,0" end="60,0" time="0" condition="System.HasAddon(plugin.audio.lastfm) + Player.HasAudio">Conditional</animation>
 				<colordiffuse>CCFFFFFF</colordiffuse>
 				<description>Go to fullscreen Playback</description>
 				<posx>385</posx>
@@ -732,7 +732,7 @@
 				<onclick>fullscreen</onclick>
 				<textureradiofocus>GoFullscreen.png</textureradiofocus>
 				<textureradionofocus>GoFullscreen.png</textureradionofocus>
-				<onleft>608</onleft>	
+				<onleft>608</onleft>
 				<onright>610</onright>
 				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
 				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</onup>

@@ -226,6 +226,16 @@
 				<fadetime>1000</fadetime>
 				<visible>Control.HasFocus(8015)</visible>
 			</control>
+			<control type="image">
+				<description>Favourites Widget Background Image</description>
+				<include>Dimensions_Fullscreen</include>
+				<aspectratio>scale</aspectratio>
+				<texture background="true">$INFO[Container(8016).ListItem.ActualIcon]</texture>
+				<include>BackgroundFade</include>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<include>Window_OpenClose_Animation</include>
+				<visible>Control.HasFocus(8016)</visible>
+			</control>
 		</control>
 		<control type="multiimage">
 			<include>Dimensions_Fullscreen</include>

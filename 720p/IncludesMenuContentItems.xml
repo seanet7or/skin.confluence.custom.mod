@@ -102,7 +102,7 @@
 				<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[1036])</onclick>
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Sub,Favourites)</onclick>
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Addon,None)</onclick>
-				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,None)</onclick>
+				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,Favourites)</onclick>
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Type,Favourites)</onclick>
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Fanart,special://skin/backgrounds/default_light.jpg)</onclick>
 				<include>CloseMenuChoice</include>
@@ -113,7 +113,7 @@
 				<include>ClearButtonChoice</include>
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Sub,Favourites)</onclick>
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Addon,None)</onclick>
-				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,None)</onclick>
+				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,Favourites)</onclick>
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Type,Favourites)</onclick>
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Fanart,special://skin/backgrounds/default_light.jpg)</onclick>
 				<onclick condition="Window.IsVisible(2115)">Dialog.Close(2115)</onclick>
@@ -228,7 +228,7 @@
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Fanart,special://skin/backgrounds/default_light.jpg)</onclick>
 				<include>CloseMenuChoice</include>
 			</item>
-				<item>
+			<item>
 				<description>Library Music Addons</description>
 				<label>$LOCALIZE[2] - $LOCALIZE[24001]</label>
 				<include>ClearButtonChoice</include>
@@ -241,7 +241,7 @@
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Fanart,special://skin/backgrounds/default_light.jpg)</onclick>
 				<include>CloseMenuChoice</include>
 				<visible>Library.HasContent(Music)</visible>
-			</item>			
+			</item>
 			<item>
 				<description>Library Music Addons</description>
 				<label>$LOCALIZE[2] - $LOCALIZE[24001]</label>
@@ -255,7 +255,7 @@
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Fanart,special://skin/backgrounds/default_light.jpg)</onclick>
 				<include>CloseMenuChoice</include>
 				<visible>!Library.HasContent(Music)</visible>
-			</item>						
+			</item>
 			<item>
 				<description>Update Library Music</description>
 				<label>$LOCALIZE[2] - $LOCALIZE[653]</label>
@@ -558,7 +558,7 @@
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Type,Videos)</onclick>
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Fanart,special://skin/backgrounds/default_light.jpg)</onclick>
 				<include>CloseMenuChoice</include>
-			</item>					
+			</item>
 			<item>
 				<description>Playlist Window</description>
 				<label>$LOCALIZE[559] ([COLOR=selected]$LOCALIZE[513][/COLOR])</label>
@@ -728,7 +728,7 @@
 				<onclick condition="Window.IsVisible(2114) + !IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Fanart,special://skin/backgrounds/default_light.jpg)</onclick>
 				<include>CloseMenuChoice</include>
 				<visible>Library.HasContent(TVShows)</visible>
-			</item>			
+			</item>
 			<item>
 				<description>PreSet Playlist Video</description>
 				<label>$LOCALIZE[31154] ([COLOR=selected]$LOCALIZE[31194][/COLOR])</label>
@@ -744,7 +744,7 @@
 				<onclick condition="Window.IsVisible(2114) + !IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Fanart,special://skin/backgrounds/default_light.jpg)</onclick>
 				<include>CloseMenuChoice</include>
 				<visible>Library.HasContent(TVShows)</visible>
-			</item>				
+			</item>
 			<item>
 				<description>Video Streaming File</description>
 				<label>$LOCALIZE[31147]</label>
@@ -904,7 +904,7 @@
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Type,Settings)</onclick>
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Fanart,special://skin/backgrounds/default_light.jpg)</onclick>
 				<include>CloseMenuChoice</include>
-			</item>		
+			</item>
 			<item>
 				<description>Exit</description>
 				<label>$LOCALIZE[13005]</label>
