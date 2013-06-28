@@ -1271,6 +1271,22 @@ else
 fi
 step
 
+printf "\nReplacing black-back2.png: "
+if [ -f media/black-back2.png ] ; then
+	XMLS=$(2>/dev/null grep '<texture>black-back2.png' -l 720p/*)
+	perlregex $XMLS 's|<texture>black-back2.png</texture>|<texture>dialogs/dialog-sub_light.png</texture>|g'
+	XMLS=$(2>/dev/null grep '<bordertexture>black-back2.png' -l 720p/*)
+	R='s|\s*<bordertexture>black-back2.png</bordertexture>#'
+	R+='\s*<bordersize>2</bordersize>#'
+	R+='||g'
+	perlregex $XMLS "$R"
+	check_and_remove media/black-back2.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
 printf "\nReplacing submenu item textures: "
