@@ -730,152 +730,189 @@
 			<visible>!IsEmpty(Skin.String(UserSubTwo.1.Path)) | !IsEmpty(Skin.String(UserSubTwo.2.Path)) | !IsEmpty(Skin.String(UserSubTwo.3.Path)) | !IsEmpty(Skin.String(UserSubTwo.4.Path)) | !IsEmpty(Skin.String(UserSubTwo.5.Path)) | !IsEmpty(Skin.String(UserSubTwo.6.Path))</visible>
 		</control>
 	</include>
-	<include name="HomeAddonItemsVideos">
+	<include name="HomeAddonSetOne">
 		<item>
-			<label>$INFO[system.addontitle(Skin.String(HomeVideosButton1))]</label>
-			<onclick>RunAddon($INFO[Skin.String(HomeVideosButton1)])</onclick>
-			<icon>$INFO[system.addonicon(Skin.String(HomeVideosButton1))]</icon>
-			<thumb>-</thumb>
-			<visible>!IsEmpty(Skin.String(HomeVideosButton1))</visible>
+			<label>$INFO[Skin.String(AddonSetOne.1.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetOne.1.Path)]</onclick>
+			<icon>DefaultUserAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetOne.1.Icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetOne.1.Path))</visible>
 		</item>
 		<item>
-			<label>$INFO[system.addontitle(Skin.String(HomeVideosButton2))]</label>
-			<onclick>RunAddon($INFO[Skin.String(HomeVideosButton2)])</onclick>
-			<icon>$INFO[system.addonicon(Skin.String(HomeVideosButton2))]</icon>
-			<thumb>-</thumb>
-			<visible>!IsEmpty(Skin.String(HomeVideosButton2))</visible>
+			<label>$INFO[Skin.String(AddonSetOne.2.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetOne.2.Path)]</onclick>
+			<icon>DefaultUserAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetOne.2.Icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetOne.2.Path))</visible>
 		</item>
 		<item>
-			<label>$INFO[system.addontitle(Skin.String(HomeVideosButton3))]</label>
-			<onclick>RunAddon($INFO[Skin.String(HomeVideosButton3)])</onclick>
-			<icon>$INFO[system.addonicon(Skin.String(HomeVideosButton3))]</icon>
-			<thumb>-</thumb>
-			<visible>!IsEmpty(Skin.String(HomeVideosButton3))</visible>
+			<label>$INFO[Skin.String(AddonSetOne.3.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetOne.3.Path)]</onclick>
+			<icon>DefaultUserAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetOne.3.Icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetOne.3.Path))</visible>
 		</item>
 		<item>
-			<label>$INFO[system.addontitle(Skin.String(HomeVideosButton4))]</label>
-			<onclick>RunAddon($INFO[Skin.String(HomeVideosButton4)])</onclick>
-			<icon>$INFO[system.addonicon(Skin.String(HomeVideosButton4))]</icon>
-			<thumb>-</thumb>
-			<visible>!IsEmpty(Skin.String(HomeVideosButton4))</visible>
+			<label>$INFO[Skin.String(AddonSetOne.4.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetOne.4.Path)]</onclick>
+			<icon>DefaultUserAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetOne.4.Icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetOne.4.Path))</visible>
 		</item>
 		<item>
-			<label>$INFO[system.addontitle(Skin.String(HomeVideosButton5))]</label>
-			<onclick>RunAddon($INFO[Skin.String(HomeVideosButton5)])</onclick>
-			<icon>$INFO[system.addonicon(Skin.String(HomeVideosButton5))]</icon>
-			<thumb>-</thumb>
-			<visible>!IsEmpty(Skin.String(HomeVideosButton5))</visible>
-		</item>
-	</include>
-	<include name="HomeAddonItemsMusic">
-		<item>
-			<label>$INFO[system.addontitle(Skin.String(HomeMusicButton1))]</label>
-			<onclick>RunAddon($INFO[Skin.String(HomeMusicButton1)])</onclick>
-			<icon>$INFO[system.addonicon(Skin.String(HomeMusicButton1))]</icon>
-			<thumb>-</thumb>
-			<visible>!IsEmpty(Skin.String(HomeMusicButton1))</visible>
-		</item>
-		<item>
-			<label>$INFO[system.addontitle(Skin.String(HomeMusicButton2))]</label>
-			<onclick>RunAddon($INFO[Skin.String(HomeMusicButton2)])</onclick>
-			<icon>$INFO[system.addonicon(Skin.String(HomeMusicButton2))]</icon>
-			<thumb>-</thumb>
-			<visible>!IsEmpty(Skin.String(HomeMusicButton2))</visible>
-		</item>
-		<item>
-			<label>$INFO[system.addontitle(Skin.String(HomeMusicButton3))]</label>
-			<onclick>RunAddon($INFO[Skin.String(HomeMusicButton3)])</onclick>
-			<icon>$INFO[system.addonicon(Skin.String(HomeMusicButton3))]</icon>
-			<thumb>-</thumb>
-			<visible>!IsEmpty(Skin.String(HomeMusicButton3))</visible>
-		</item>
-		<item>
-			<label>$INFO[system.addontitle(Skin.String(HomeMusicButton4))]</label>
-			<onclick>RunAddon($INFO[Skin.String(HomeMusicButton4)])</onclick>
-			<icon>$INFO[system.addonicon(Skin.String(HomeMusicButton4))]</icon>
-			<thumb>-</thumb>
-			<visible>!IsEmpty(Skin.String(HomeMusicButton4))</visible>
-		</item>
-		<item>
-			<label>$INFO[system.addontitle(Skin.String(HomeMusicButton5))]</label>
-			<onclick>RunAddon($INFO[Skin.String(HomeMusicButton5)])</onclick>
-			<icon>$INFO[system.addonicon(Skin.String(HomeMusicButton5))]</icon>
-			<thumb>-</thumb>
-			<visible>!IsEmpty(Skin.String(HomeMusicButton5))</visible>
+			<label>$INFO[Skin.String(AddonSetOne.5.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetOne.5.Path)]</onclick>
+			<icon>DefaultUserAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetOne.5.Icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetOne.5.Path))</visible>
 		</item>
 	</include>
-	<include name="HomeAddonItemsPictures">
+	<include name="HomeAddonSetTwo">
 		<item>
-			<label>$INFO[system.addontitle(Skin.String(HomePictureButton1))]</label>
-			<onclick>RunAddon($INFO[Skin.String(HomePictureButton1)])</onclick>
-			<icon>$INFO[system.addonicon(Skin.String(HomePictureButton1))]</icon>
-			<thumb>-</thumb>
-			<visible>!IsEmpty(Skin.String(HomePictureButton1))</visible>
+			<label>$INFO[Skin.String(AddonSetTwo.1.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetTwo.1.Path)]</onclick>
+			<icon>DefaultUserAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetTwo.1.Icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetTwo.1.Path))</visible>
 		</item>
 		<item>
-			<label>$INFO[system.addontitle(Skin.String(HomePictureButton2))]</label>
-			<onclick>RunAddon($INFO[Skin.String(HomePictureButton2)])</onclick>
-			<icon>$INFO[system.addonicon(Skin.String(HomePictureButton2))]</icon>
-			<thumb>-</thumb>
-			<visible>!IsEmpty(Skin.String(HomePictureButton2))</visible>
+			<label>$INFO[Skin.String(AddonSetTwo.2.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetTwo.2.Path)]</onclick>
+			<icon>DefaultUserAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetTwo.2.Icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetTwo.2.Path))</visible>
 		</item>
 		<item>
-			<label>$INFO[system.addontitle(Skin.String(HomePictureButton3))]</label>
-			<onclick>RunAddon($INFO[Skin.String(HomePictureButton3)])</onclick>
-			<icon>$INFO[system.addonicon(Skin.String(HomePictureButton3))]</icon>
-			<thumb>-</thumb>
-			<visible>!IsEmpty(Skin.String(HomePictureButton3))</visible>
+			<label>$INFO[Skin.String(AddonSetTwo.3.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetTwo.3.Path)]</onclick>
+			<icon>DefaultUserAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetTwo.3.Icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetTwo.3.Path))</visible>
 		</item>
 		<item>
-			<label>$INFO[system.addontitle(Skin.String(HomePictureButton4))]</label>
-			<onclick>RunAddon($INFO[Skin.String(HomePictureButton4)])</onclick>
-			<icon>$INFO[system.addonicon(Skin.String(HomePictureButton4))]</icon>
-			<thumb>-</thumb>
-			<visible>!IsEmpty(Skin.String(HomePictureButton4))</visible>
+			<label>$INFO[Skin.String(AddonSetTwo.4.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetTwo.4.Path)]</onclick>
+			<icon>DefaultUserAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetTwo.4.Icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetTwo.4.Path))</visible>
 		</item>
 		<item>
-			<label>$INFO[system.addontitle(Skin.String(HomePictureButton5))]</label>
-			<onclick>RunAddon($INFO[Skin.String(HomePictureButton5)])</onclick>
-			<icon>$INFO[system.addonicon(Skin.String(HomePictureButton5))]</icon>
-			<thumb>-</thumb>
-			<visible>!IsEmpty(Skin.String(HomePictureButton5))</visible>
+			<label>$INFO[Skin.String(AddonSetTwo.5.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetTwo.5.Path)]</onclick>
+			<icon>DefaultUserAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetTwo.5.Icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetTwo.5.Path))</visible>
 		</item>
 	</include>
-	<include name="HomeAddonItemsPrograms">
+	<include name="HomeAddonSetThree">
 		<item>
-			<label>$INFO[system.addontitle(Skin.String(HomeProgramButton1))]</label>
-			<onclick>RunAddon($INFO[Skin.String(HomeProgramButton1)])</onclick>
-			<icon>$INFO[system.addonicon(Skin.String(HomeProgramButton1))]</icon>
-			<thumb>-</thumb>
-			<visible>!IsEmpty(Skin.String(HomeProgramButton1))</visible>
+			<label>$INFO[Skin.String(AddonSetThree.1.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetThree.1.Path)]</onclick>
+			<icon>DefaultUserAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetThree.1.Icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetThree.1.Path))</visible>
 		</item>
 		<item>
-			<label>$INFO[system.addontitle(Skin.String(HomeProgramButton2))]</label>
-			<onclick>RunAddon($INFO[Skin.String(HomeProgramButton2)])</onclick>
-			<icon>$INFO[system.addonicon(Skin.String(HomeProgramButton2))]</icon>
-			<thumb>-</thumb>
-			<visible>!IsEmpty(Skin.String(HomeProgramButton2))</visible>
+			<label>$INFO[Skin.String(AddonSetThree.2.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetThree.2.Path)]</onclick>
+			<icon>DefaultUserAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetThree.2.Icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetThree.2.Path))</visible>
 		</item>
 		<item>
-			<label>$INFO[system.addontitle(Skin.String(HomeProgramButton3))]</label>
-			<onclick>RunAddon($INFO[Skin.String(HomeProgramButton3)])</onclick>
-			<icon>$INFO[system.addonicon(Skin.String(HomeProgramButton3))]</icon>
-			<thumb>-</thumb>
-			<visible>!IsEmpty(Skin.String(HomeProgramButton3))</visible>
+			<label>$INFO[Skin.String(AddonSetThree.3.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetThree.3.Path)]</onclick>
+			<icon>DefaultUserAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetThree.3.Icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetThree.3.Path))</visible>
 		</item>
 		<item>
-			<label>$INFO[system.addontitle(Skin.String(HomeProgramButton4))]</label>
-			<onclick>RunAddon($INFO[Skin.String(HomeProgramButton4)])</onclick>
-			<icon>$INFO[system.addonicon(Skin.String(HomeProgramButton4))]</icon>
-			<thumb>-</thumb>
-			<visible>!IsEmpty(Skin.String(HomeProgramButton4))</visible>
+			<label>$INFO[Skin.String(AddonSetThree.4.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetThree.4.Path)]</onclick>
+			<icon>DefaultUserAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetThree.4.Icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetThree.4.Path))</visible>
 		</item>
 		<item>
-			<label>$INFO[system.addontitle(Skin.String(HomeProgramButton5))]</label>
-			<onclick>RunAddon($INFO[Skin.String(HomeProgramButton5)])</onclick>
-			<icon>$INFO[system.addonicon(Skin.String(HomeProgramButton5))]</icon>
-			<thumb>-</thumb>
-			<visible>!IsEmpty(Skin.String(HomeProgramButton5))</visible>
+			<label>$INFO[Skin.String(AddonSetThree.5.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetThree.5.Path)]</onclick>
+			<icon>DefaultUserAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetThree.5.Icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetThree.5.Path))</visible>
+		</item>
+	</include>
+	<include name="HomeAddonSetFour">
+		<item>
+			<label>$INFO[Skin.String(AddonSetFour.1.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetFour.1.Path)]</onclick>
+			<icon>DefaultUserAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetFour.1.Icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetFour.1.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetFour.2.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetFour.2.Path)]</onclick>
+			<icon>DefaultUserAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetFour.2.Icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetFour.2.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetFour.3.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetFour.3.Path)]</onclick>
+			<icon>DefaultUserAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetFour.3.Icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetFour.3.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetFour.4.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetFour.4.Path)]</onclick>
+			<icon>DefaultUserAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetFour.4.Icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetFour.4.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetFour.5.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetFour.5.Path)]</onclick>
+			<icon>DefaultUserAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetFour.5.Icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetFour.5.Path))</visible>
+		</item>
+	</include>
+	<include name="HomeAddonSetFive">
+		<item>
+			<label>$INFO[Skin.String(AddonSetFive.1.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetFive.1.Path)]</onclick>
+			<icon>DefaultUserAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetFive.1.Icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetFive.1.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetFive.2.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetFive.2.Path)]</onclick>
+			<icon>DefaultUserAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetFive.2.Icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetFive.2.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetFive.3.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetFive.3.Path)]</onclick>
+			<icon>DefaultUserAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetFive.3.Icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetFive.3.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetFive.4.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetFive.4.Path)]</onclick>
+			<icon>DefaultUserAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetFive.4.Icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetFive.4.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetFive.5.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetFive.5.Path)]</onclick>
+			<icon>DefaultUserAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetFive.5.Icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetFive.5.Path))</visible>
 		</item>
 	</include>
 </includes>

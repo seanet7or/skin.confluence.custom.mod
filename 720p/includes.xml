@@ -59,7 +59,7 @@
 		<onload>Skin.SetString(HomeItem.2.Label,$LOCALIZE[1])</onload>
 		<onload>Skin.SetString(HomeItem.2.Path,ActivateWindow(Pictures))</onload>
 		<onload>Skin.SetString(HomeItem.2.Sub,Pictures)</onload>
-		<onload>Skin.SetString(HomeItem.2.Addon,Pictures)</onload>
+		<onload>Skin.SetString(HomeItem.2.Addon,None)</onload>
 		<onload>Skin.SetString(HomeItem.2.Widget,None)</onload>
 		<onload>Skin.SetString(HomeItem.2.Type,Pictures)</onload>
 		<onload>Skin.SetString(HomeItem.2.Fanart,special://skin/backgrounds/default_light.jpg)</onload>
@@ -1026,7 +1026,7 @@
 				<height>120</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
 				<bordertexture border="6">buttons/folder-focus_light.png</bordertexture>
-				<bordersize>3</bordersize>
+				<bordersize>6</bordersize>
 				<texture background="true">$INFO[ListItem.Icon]</texture>
 				<visible>ControlGroup(9002).HasFocus</visible>
 			</control>

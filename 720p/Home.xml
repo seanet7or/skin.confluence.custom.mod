@@ -1126,7 +1126,7 @@
 			<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">609</ondown>
 			<control type="fixedlist" id="700">
 				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(700).NumItems,2) | StringCompare(Container(700).NumItems,4)">conditional</animation>
-				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),Videos)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetOne)</visible>
 				<onleft>700</onleft>
 				<onright>700</onright>
 				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
@@ -1138,12 +1138,12 @@
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">609</ondown>
 				<include>HomeAddonsCommonLayout</include>
 				<content>
-					<include>HomeAddonItemsVideos</include>
+					<include>HomeAddonSetOne</include>
 				</content>
 			</control>
 			<control type="fixedlist" id="703">
 				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(703).NumItems,2) | StringCompare(Container(703).NumItems,4)">conditional</animation>
-				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),Music)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetTwo)</visible>
 				<onleft>703</onleft>
 				<onright>703</onright>
 				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
@@ -1155,12 +1155,12 @@
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">609</ondown>
 				<include>HomeAddonsCommonLayout</include>
 				<content>
-					<include>HomeAddonItemsMusic</include>
+					<include>HomeAddonSetTwo</include>
 				</content>
 			</control>
 			<control type="fixedlist" id="704">
 				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(704).NumItems,2) | StringCompare(Container(704).NumItems,4)">conditional</animation>
-				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),Pictures)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetThree)</visible>
 				<onleft>704</onleft>
 				<onright>704</onright>
 				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
@@ -1172,12 +1172,12 @@
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">609</ondown>
 				<include>HomeAddonsCommonLayout</include>
 				<content>
-					<include>HomeAddonItemsPictures</include>
+					<include>HomeAddonSetThree</include>
 				</content>
 			</control>
 			<control type="fixedlist" id="705">
 				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(705).NumItems,2) | StringCompare(Container(705).NumItems,4)">conditional</animation>
-				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),Programs)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetFour)</visible>
 				<onleft>705</onleft>
 				<onright>705</onright>
 				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
@@ -1189,7 +1189,24 @@
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">609</ondown>
 				<include>HomeAddonsCommonLayout</include>
 				<content>
-					<include>HomeAddonItemsPrograms</include>
+					<include>HomeAddonSetFour</include>
+				</content>
+			</control>
+			<control type="fixedlist" id="706">
+				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(706).NumItems,2) | StringCompare(Container(706).NumItems,4)">conditional</animation>
+				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetFive)</visible>
+				<onleft>705</onleft>
+				<onright>705</onright>
+				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
+				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
+				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">609</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">610</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">609</ondown>
+				<include>HomeAddonsCommonLayout</include>
+				<content>
+					<include>HomeAddonSetFive</include>
 				</content>
 			</control>
 		</control>

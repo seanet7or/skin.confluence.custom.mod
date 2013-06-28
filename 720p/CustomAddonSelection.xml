@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window type="dialog" id="2119">
+	<backgroundcolor>0</backgroundcolor>
+	<defaultcontrol always="true">450</defaultcontrol>
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
+	<controls>
+		<control type="group">
+			<animation effect="slide" start="400,0" end="0,0" time="400" tween="quadratic" easing="out">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="400,0" time="400" tween="quadratic" easing="out">WindowClose</animation>
+			<control type="image">
+				<posx>400r</posx>
+				<posy>0</posy>
+				<width>400</width>
+				<height>720</height>
+				<texture border="7,0,7,0" flipx="true">dialogs/bladesub_light.png</texture>
+			</control>
+			<control type="label">
+				<posx>380r</posx>
+				<posy>35</posy>
+				<width>360</width>
+				<height>40</height>
+				<font>font13_title</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>blue</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<label>$LOCALIZE[31118]</label>
+			</control>
+			<control type="list" id="450">
+				<posx>390r</posx>
+				<posy>130</posy>
+				<width>440</width>
+				<height>480</height>
+				<onup>450</onup>
+				<onleft>Dialog.Close(2119)</onleft>
+				<onright>60</onright>
+				<ondown>450</ondown>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime>200</scrolltime>
+				<itemlayout height="40">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>360</width>
+						<height>40</height>
+						<texture>buttons/nf_light.png</texture>
+					</control>
+					<control type="label">
+						<posx>10</posx>
+						<posy>0</posy>
+						<width>340</width>
+						<height>40</height>
+						<font>font12_title</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<selectedcolor>selected</selectedcolor>
+						<info>ListItem.Label</info>
+					</control>
+				</itemlayout>
+				<focusedlayout height="40">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>360</width>
+						<height>40</height>
+						<visible>!Control.HasFocus(450)</visible>
+						<texture>buttons/nf_light.png</texture>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>360</width>
+						<height>40</height>
+						<visible>Control.HasFocus(450)</visible>
+						<texture>buttons/fo_light.png</texture>
+					</control>
+					<control type="label">
+						<posx>10</posx>
+						<posy>0</posy>
+						<width>340</width>
+						<height>40</height>
+						<font>font12_title</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<selectedcolor>selected</selectedcolor>
+						<info>ListItem.Label</info>
+					</control>
+				</focusedlayout>
+				<content>
+					<item>
+						<description>Clear Setting</description>
+						<label>$LOCALIZE[31144]</label>
+						<onclick>Dialog.Close(2119)</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Label)</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Path)</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Icon)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+					</item>
+					<item>
+						<description>Favourites</description>
+						<label>$LOCALIZE[1036]</label>
+						<onclick>Dialog.Close(2119)</onclick>
+						<onclick>RunScript(script.favourites,changetitle=true&amp;property=$INFO[Window(home).Property(UsrSelectBtn)])</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>System.HasAddon(script.favourites)</visible>
+					</item>
+					<item>
+						<description>Video addons</description>
+						<label>$LOCALIZE[1037]</label>
+						<onclick>Dialog.Close(2119)</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Label)</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Path)</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Icon)</onclick>
+						<onclick>Skin.SetAddon(UsrSelectAddon,xbmc.addon.video)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$INFO[system.addontitle(Skin.String(UsrSelectAddon))])</onclick>
+						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,RunAddon($INFO[Skin.String(UsrSelectAddon)]))</onclick>
+						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Icon,$INFO[system.addonicon(Skin.String(UsrSelectAddon))])</onclick>
+					</item>					
+					<item>
+						<description>Music addons</description>
+						<label>$LOCALIZE[1038]</label>
+						<onclick>Dialog.Close(2119)</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Label)</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Path)</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Icon)</onclick>
+						<onclick>Skin.SetAddon(UsrSelectAddon,xbmc.addon.audio)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$INFO[system.addontitle(Skin.String(UsrSelectAddon))])</onclick>
+						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,RunAddon($INFO[Skin.String(UsrSelectAddon)]))</onclick>
+						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Icon,$INFO[system.addonicon(Skin.String(UsrSelectAddon))])</onclick>
+					</item>			
+					<item>
+						<description>Picture addons</description>
+						<label>$LOCALIZE[1039]</label>
+						<onclick>Dialog.Close(2119)</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Label)</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Path)</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Icon)</onclick>
+						<onclick>Skin.SetAddon(UsrSelectAddon,xbmc.addon.image)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$INFO[system.addontitle(Skin.String(UsrSelectAddon))])</onclick>
+						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,RunAddon($INFO[Skin.String(UsrSelectAddon)]))</onclick>
+						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Icon,$INFO[system.addonicon(Skin.String(UsrSelectAddon))])</onclick>
+					</item>
+					<item>
+						<description>Programme addons</description>
+						<label>$LOCALIZE[1043]</label>
+						<onclick>Dialog.Close(2119)</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Label)</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Path)</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Icon)</onclick>
+						<onclick>Skin.SetAddon(UsrSelectAddon,xbmc.addon.executable)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$INFO[system.addontitle(Skin.String(UsrSelectAddon))])</onclick>
+						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,RunAddon($INFO[Skin.String(UsrSelectAddon)]))</onclick>
+						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Icon,$INFO[system.addonicon(Skin.String(UsrSelectAddon))])</onclick>
+					</item>					
+				</content>
+			</control>
+			<control type="scrollbar" id="60">
+				<posx>1250</posx>
+				<posy>95</posy>
+				<width>25</width>
+				<height>550</height>
+				<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<onleft>450</onleft>
+				<onright>450</onright>
+				<showonepage>false</showonepage>
+				<orientation>vertical</orientation>
+				<visible>Control.IsVisible(450)</visible>
+			</control>
+		</control>
+	</controls>
+</window>
