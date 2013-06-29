@@ -7,7 +7,7 @@
 			<height>35</height>
 			<aspectratio align="right">keep</aspectratio>
 			<texture>flagging/video/3D.png</texture>
-			<visible>SubString(ListItem.FilenameAndPath,3d) | SubString(ListItem.FilenameAndPath,.SBS.)</visible>
+			<visible>SubString(ListItem.FilenameAndPath,3dbd) | SubString(ListItem.FilenameAndPath,.SBS.)</visible>
 		</control>
 		<control type="image">
 			<description>Video rez Image</description>
@@ -15,7 +15,7 @@
 			<height>35</height>
 			<aspectratio align="right">keep</aspectratio>
 			<texture>$INFO[ListItem.VideoResolution,flagging/video/,.png]</texture>
-			<visible>!SubString(ListItem.FilenameAndPath,3d) + !SubString(ListItem.FilenameAndPath,.SBS.)</visible>
+			<visible>!SubString(ListItem.FilenameAndPath,3dbd) + !SubString(ListItem.FilenameAndPath,.SBS.)</visible>
 		</control>
 		<control type="image">
 			<description>Codec Image</description>
