@@ -417,8 +417,9 @@
 			<texturenofocus>-</texturenofocus>
 			<onleft>9000</onleft>
 			<onright>9000</onright>
-			<onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
-			<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup>
+			<!--onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
+			<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup-->
+			<onup>21</onup>
 			<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">609</ondown>
 			<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">610</ondown>
 			<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">609</ondown>
@@ -768,8 +769,9 @@
 				<posy>70</posy>
 				<onup>9000</onup>
 				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown>
+				<!--ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown-->
+				<ondown  condition="!Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
 				<control type="grouplist" id="9010">
 					<include>HomeSubMenuCommonValues</include>
 					<onleft>9010</onleft>
@@ -1119,8 +1121,9 @@
 		<control type="group" id="9002">
 			<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
 			<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
-			<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
-			<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown>
+			<!--ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+			<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown-->
+			<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
 			<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">609</ondown>
 			<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">610</ondown>
 			<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">609</ondown>
@@ -1131,8 +1134,9 @@
 				<onright>700</onright>
 				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
 				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
-				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
-				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown>
+				<!--ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown-->
+				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">609</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">610</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">609</ondown>
@@ -1148,8 +1152,9 @@
 				<onright>703</onright>
 				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
 				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
-				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
-				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown>
+				<!--ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown-->
+				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">609</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">610</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">609</ondown>
@@ -1165,8 +1170,9 @@
 				<onright>704</onright>
 				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
 				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
-				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
-				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown>
+				<!--ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown-->
+				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">609</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">610</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">609</ondown>
@@ -1182,8 +1188,9 @@
 				<onright>705</onright>
 				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
 				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
-				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
-				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown>
+				<!--ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown-->
+				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">609</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">610</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">609</ondown>
@@ -1199,8 +1206,9 @@
 				<onright>705</onright>
 				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
 				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
-				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
-				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown>
+				<!--ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown-->
+				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">609</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">610</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">609</ondown>
