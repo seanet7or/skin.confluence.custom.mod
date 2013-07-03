@@ -628,7 +628,7 @@ fi
 step
 
 printf "\nRemoving HomeNowPlayingBack.png: "
-if grep -q 'HomeNowPlayingBack.png' 720p/ViewsVideoLibrary.xml ; then
+if grep -q '<texture flipy="true">HomeNowPlayingBack.png</texture>' 720p/ViewsVideoLibrary.xml ; then
 	# remove from top
 	remove_controlid 'image' '<texture flipy="true">HomeNowPlayingBack.png</texture>'
 	# remove on bottom for some windows
@@ -1534,6 +1534,35 @@ fi
 step
 
 printf "\n############# CLEANING UP #####################################################"
+
+printf "\nRemoving useless visible conditions: "
+if true #grep -I -q '<visible>!.Window.IsVisible.FullscreenVideo. . Window.IsVisible.Visualisation..</visible>' 720p\DialogAddonInfo.xml
+then
+	R='s|(\s*<control type="image">#'
+	R+='\s*<description>background image</description>#'
+	R+='\s*<posx>0</posx>#'
+	R+='\s*<posy>0</posy>#'
+	R+='\s*<width>[0-9]*</width>#'
+	R+='\s*<height>[0-9]*</height>#'
+	R+='\s*<texture>dialogs/dialog-back_light.png</texture>#)'
+	R+='\s*<visible>[^<]*</visible>#'
+	R+='(\s*</control>#)'
+	R+='\s*<control type="image">#'
+	R+='\s*<description>background image</description>#'
+	R+='\s*<posx>0</posx>#'
+	R+='\s*<posy>0</posy>#'
+	R+='\s*<width>[0-9]*</width>#'
+	R+='\s*<height>[0-9]*</height>#'
+	R+='\s*<texture>dialogs/dialog-back_light.png</texture>#'
+	R+='\s*<visible>[^<]*</visible>#'
+	R+='\s*</control>#'
+	R+='|\1\2|g'
+	perlregex "$R" 720p/DialogAddonSettings.xml 720p/DialogPeripheralManager.xml 720p/DialogPictureInfo.xml 720p/DialogPVRGuideInfo.xml 720p/DialogPVRRecordingInfo.xml 720p/DialogSelect.xml
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
 
 printf "\nSetting pulseonselect to false for all controls: "
 if grep -I -q '<pulseonselect>no</pulseonselect>' 720p/defaults.xml ; then
