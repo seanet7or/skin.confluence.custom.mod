@@ -1314,6 +1314,20 @@ else
 fi
 step
 
+printf "\nReplacing floor buttons: "
+if [ -f media/floor_buttonFO.png ] ; then
+	XMLS=$(2>/dev/null grep 'floor_button.png' -l 720p/*)
+	perlregex $XMLS 's|floor_button.png|buttons/nf_light.png|g'
+	XMLS=$(2>/dev/null grep 'floor_buttonFO.png' -l 720p/*)
+	perlregex $XMLS 's|floor_buttonFO.png|buttons/fo_light.png|g'
+	check_and_remove media/floor_button.png
+	check_and_remove media/floor_buttonFO.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
 printf "\nReplacing submenu item textures: "
@@ -1536,7 +1550,7 @@ step
 printf "\n############# CLEANING UP #####################################################"
 
 printf "\nRemoving useless visible conditions: "
-if true #grep -I -q '<visible>!.Window.IsVisible.FullscreenVideo. . Window.IsVisible.Visualisation..</visible>' 720p\DialogAddonInfo.xml
+if grep -I -q '<visible>!.Window.IsVisible.FullscreenVideo. . Window.IsVisible.Visualisation..</visible>' 720p/DialogAddonInfo.xml
 then
 	R='s|(\s*<control type="image">#'
 	R+='\s*<description>background image</description>#'

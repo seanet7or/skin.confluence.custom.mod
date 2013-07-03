@@ -22,7 +22,7 @@ flagging/blank.png;4
 flagging/video/3D.png;0
 floor_buttonFO.png;5
 floor_button.png;5
-buttons/folder-focus_light.png;6
+buttons/folder-focus_light.png;7
 GoFullscreen.png;0
 HomeBack.png;0,6,0,6
 HomeNowPlayingBack.png;0

@@ -258,8 +258,8 @@
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>back</onclick>
-				<texturefocus border="5">floor_buttonFO.png</texturefocus>
-				<texturenofocus border="5">floor_button.png</texturenofocus>
+				<texturefocus>buttons/fo_light.png</texturefocus>
+				<texturenofocus>buttons/nf_light.png</texturenofocus>
 				<onleft>50</onleft>
 				<onright>50</onright>
 				<onup>50</onup>
@@ -284,8 +284,8 @@
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>ActivateWindow(home)</onclick>
-				<texturefocus border="5">floor_buttonFO.png</texturefocus>
-				<texturenofocus border="5">floor_button.png</texturenofocus>
+				<texturefocus>buttons/fo_light.png</texturefocus>
+				<texturenofocus>buttons/nf_light.png</texturenofocus>
 				<onleft>50</onleft>
 				<onright>50</onright>
 				<onup>50</onup>
@@ -318,8 +318,8 @@
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>ActivateWindow(PlayerControls)</onclick>
-				<texturefocus border="5">floor_buttonFO.png</texturefocus>
-				<texturenofocus border="5">floor_button.png</texturenofocus>
+				<texturefocus>buttons/fo_light.png</texturefocus>
+				<texturenofocus>buttons/nf_light.png</texturenofocus>
 				<onleft>50</onleft>
 				<onright>50</onright>
 				<onup>50</onup>
@@ -1026,7 +1026,7 @@
 				<width>180</width>
 				<height>120</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<bordertexture border="6">buttons/folder-focus_light.png</bordertexture>
+				<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 				<bordersize>6</bordersize>
 				<texture background="true">$INFO[ListItem.Icon]</texture>
 				<visible>ControlGroup(9002).HasFocus</visible>
