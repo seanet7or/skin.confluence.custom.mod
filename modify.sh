@@ -1586,6 +1586,16 @@ step
 
 printf "\n############# CLEANING UP #####################################################"
 
+printf "\nRemoving font dropshadows: "
+if grep -I -q '<shadowcolor>black</shadowcolor>' 720p/DialogPictureInfo.xml ; then
+	XMLS=$(2>/dev/null grep '<shadowcolor>' -l 720p/*)
+	perlregex $XMLS 's|\s*<shadowcolor>[a-z]*</shadowcolor>#||g'
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\nRemoving buttons/nf_light.png where not nedded: "
 if grep -I -q 'buttons/nf_light.png' 720p/DialogPictureInfo.xml ; then
 	#remove itemgap

@@ -49,7 +49,6 @@
 					<label>31300</label>
 					<align>center</align>
 					<aligny>center</aligny>
-					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>Provider Text</description>
@@ -98,7 +97,6 @@
 					<align>right</align>
 					<aligny>top</aligny>
 					<label>$INFO[Window.Property(Current.Temperature)]</label>
-					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>current temp Value Units</description>
@@ -110,7 +108,6 @@
 					<align>left</align>
 					<aligny>top</aligny>
 					<label>$INFO[System.TemperatureUnits]</label>
-					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="image">
 					<description>current weather icon</description>
@@ -131,7 +128,6 @@
 					<wrapmultiline>true</wrapmultiline>
 					<align>center</align>
 					<aligny>center</aligny>
-					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>current feels like label</description>
@@ -143,7 +139,6 @@
 					<aligny>center</aligny>
 					<label>$LOCALIZE[402] :</label>
 					<textcolor>grey2</textcolor>
-					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>current dew label</description>
@@ -155,7 +150,6 @@
 					<aligny>center</aligny>
 					<label>$LOCALIZE[405] :</label>
 					<textcolor>grey2</textcolor>
-					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>current humidity label</description>
@@ -167,7 +161,6 @@
 					<aligny>center</aligny>
 					<label>$LOCALIZE[406] :</label>
 					<textcolor>grey2</textcolor>
-					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>current UV Index label</description>
@@ -179,7 +172,6 @@
 					<aligny>center</aligny>
 					<label>$LOCALIZE[403] :</label>
 					<textcolor>grey2</textcolor>
-					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>current Wind label</description>
@@ -191,7 +183,6 @@
 					<aligny>center</aligny>
 					<label>$LOCALIZE[404] :</label>
 					<textcolor>grey2</textcolor>
-					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>current feels like Value</description>
@@ -202,7 +193,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>$INFO[Window.Property(Current.FeelsLike)]$INFO[System.TemperatureUnits]</label>
-					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>current dew Value</description>
@@ -213,7 +203,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>$INFO[Window.Property(Current.DewPoint)]$INFO[System.TemperatureUnits]</label>
-					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>current humidity Value</description>
@@ -224,7 +213,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<info>Window.Property(Current.Humidity)</info>
-					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>current UV Index Value</description>
@@ -235,7 +223,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<info>Window.Property(Current.UVIndex)</info>
-					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>current Wind Value</description>
@@ -246,7 +233,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<info>Window.Property(Current.Wind)</info>
-					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="group">
 					<visible>StringCompare(Weather.Plugin,weather.wunderground) + !IsEmpty(Window.Property(36Hour.IsFetched))</visible>
@@ -260,7 +246,6 @@
 						<aligny>center</aligny>
 						<label>$LOCALIZE[33027] : [COLOR=white]$INFO[Window.Property(Today.Sunrise)][/COLOR]</label>
 						<textcolor>grey2</textcolor>
-						<shadowcolor>black</shadowcolor>
 					</control>
 					<control type="label">
 						<description>Sunset label</description>
@@ -272,7 +257,6 @@
 						<aligny>center</aligny>
 						<label>$LOCALIZE[33028] : [COLOR=white]$INFO[Window.Property(Today.Sunset)][/COLOR]</label>
 						<textcolor>grey2</textcolor>
-						<shadowcolor>black</shadowcolor>
 					</control>
 				</control>
 			</control>
@@ -298,7 +282,6 @@
 					<label>10508</label>
 					<align>center</align>
 					<aligny>center</aligny>
-					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="list" id="50">
 					<posx>15</posx>
@@ -319,7 +302,6 @@
 							<width>300</width>
 							<height>25</height>
 							<font>font13_title</font>
-							<shadowcolor>black</shadowcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -338,7 +320,6 @@
 							<posy>35</posy>
 							<width>390</width>
 							<height>30</height>
-							<shadowcolor>black</shadowcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
 							<aligny>center</aligny>
@@ -350,7 +331,6 @@
 							<posy>70</posy>
 							<width>400</width>
 							<height>50</height>
-							<shadowcolor>black</shadowcolor>
 							<selectedcolor>selected</selectedcolor>
 							<label>$INFO[ListItem.Property(Outlook)]</label>
 						</control>
@@ -371,7 +351,6 @@
 							<width>300</width>
 							<height>25</height>
 							<font>font13_title</font>
-							<shadowcolor>black</shadowcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -390,7 +369,6 @@
 							<posy>35</posy>
 							<width>390</width>
 							<height>30</height>
-							<shadowcolor>black</shadowcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
 							<aligny>center</aligny>
@@ -402,7 +380,6 @@
 							<posy>70</posy>
 							<width>400</width>
 							<height>50</height>
-							<shadowcolor>black</shadowcolor>
 							<selectedcolor>selected</selectedcolor>
 							<label>$INFO[ListItem.Property(Outlook)]</label>
 						</control>
@@ -557,7 +534,6 @@
 							<label>31904</label>
 							<align>center</align>
 							<aligny>center</aligny>
-							<shadowcolor>black</shadowcolor>
 						</control>
 						<control type="list" id="51">
 							<posx>15</posx>
@@ -791,7 +767,6 @@
 							<label>31901</label>
 							<align>center</align>
 							<aligny>center</aligny>
-							<shadowcolor>black</shadowcolor>
 						</control>
 						<control type="label">
 							<posx>0</posx>
@@ -999,7 +974,6 @@
 							<label>31903</label>
 							<align>center</align>
 							<aligny>center</aligny>
-							<shadowcolor>black</shadowcolor>
 						</control>
 						<control type="label">
 							<posx>0</posx>
@@ -1181,7 +1155,6 @@
 							<label>31902</label>
 							<align>center</align>
 							<aligny>center</aligny>
-							<shadowcolor>black</shadowcolor>
 						</control>
 						<control type="list" id="52">
 							<posx>15</posx>
@@ -1431,7 +1404,6 @@
 							<label>31910</label>
 							<align>center</align>
 							<aligny>center</aligny>
-							<shadowcolor>black</shadowcolor>
 						</control>
 						<control type="multiimage">
 							<description>map multiimage</description>
