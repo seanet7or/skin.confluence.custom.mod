@@ -6,7 +6,7 @@ buttons/[nfo]*_light.png;0
 buttons/spin-[a-z-]*.png;0
 buttons/calibrate/[a-z_]*.png;0
 Default[a-zA-Z]*.png;0
-dialogs/bladesub_light.png;6,0,6,0
+dialogs/bladesub_light.png;4,0,4,0
 epg-genres/[0-9]*.png;3
 FallbackAlbumCover.png;0
 Fanart_Fallback_Music_Small.jpg;0

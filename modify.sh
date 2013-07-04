@@ -1341,6 +1341,18 @@ else
 fi
 step
 
+printf "\nReplacing standard album cover: "
+if [ -f media/FallbackAlbumCover.png ] ; then
+	XMLS=$(2>/dev/null grep 'FallbackAlbumCover.png' -l 720p/*)
+	perlregex $XMLS 's|"FallbackAlbumCover.png"|"DefaultAlbumCover.png"|g'
+	XMLS=$(2>/dev/null grep 'FallbackAlbumCover.png' -l 720p/*)
+	perlregex $XMLS 's|>FallbackAlbumCover.png<|>DefaultAlbumCover.png<|g'
+	check_and_remove media/FallbackAlbumCover.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
 
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
