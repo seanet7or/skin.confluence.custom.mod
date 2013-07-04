@@ -52,5 +52,4 @@ StackNF.png;3
 unknown-user.png;0
 \$VAR\[[a-zA-Z,\.\/]*\];0
 VolumeIcon.png;0
-warning.png;0
 '
