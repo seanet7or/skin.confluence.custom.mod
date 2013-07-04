@@ -630,7 +630,7 @@ fi
 step
 
 printf "\nRemoving HomeNowPlayingBack.png: "
-if grep -q '<texture flipy="true">HomeNowPlayingBack.png</texture>' 720p/ViewsVideoLibrary.xml ; then
+if grep -q '<texture flipy="true">HomeNowPlayingBack.png</texture>' 720p/VideoFullScreen.xml ; then
 	# remove from top
 	remove_controlid 'image' '<texture flipy="true">HomeNowPlayingBack.png</texture>'
 	# remove on bottom for some windows
@@ -1333,7 +1333,7 @@ step
 printf "\nRemoving startup background: "
 if [ -f backgrounds/InitialStartup.jpg ] ; then
 	remove_control image '<texture>special://skin/backgrounds/InitialStartup.jpg</texture>' 720p/Startup.xml
-	remove_control image '<texture>special://skin/backgrounds/InitialStartup.jpg</texture>' 720p/SkinSettings.xml
+	remove_control image '<texture>special://skin/backgrounds/InitialStartup.jpg</texture>' 720p/LoginScreen.xml
 	check_and_remove backgrounds/InitialStartup.jpg
 	printf "%sDONE!%s" $GREEN $RESET
 else
@@ -1345,9 +1345,20 @@ printf "\nReplacing standard album cover: "
 if [ -f media/FallbackAlbumCover.png ] ; then
 	XMLS=$(2>/dev/null grep 'FallbackAlbumCover.png' -l 720p/*)
 	perlregex $XMLS 's|"FallbackAlbumCover.png"|"DefaultAlbumCover.png"|g'
-	XMLS=$(2>/dev/null grep 'FallbackAlbumCover.png' -l 720p/*)
-	perlregex $XMLS 's|>FallbackAlbumCover.png<|>DefaultAlbumCover.png<|g'
+	#XMLS=$(2>/dev/null grep 'FallbackAlbumCover.png' -l 720p/*)
+	#perlregex $XMLS 's|>FallbackAlbumCover.png<|>DefaultAlbumCover.png<|g'
 	check_and_remove media/FallbackAlbumCover.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nReplacing warning sign: "
+if [ -f media/warning.png ] ; then
+	XMLS=$(2>/dev/null grep 'warning.png' -l 720p/*)
+	perlregex $XMLS 's|>warning.png<|>DefaultIconWarning.png<|g'
+	check_and_remove media/warning.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -1576,7 +1587,7 @@ step
 printf "\n############# CLEANING UP #####################################################"
 
 printf "\nRemoving useless visible conditions: "
-if grep -I -q '<visible>!.Window.IsVisible.FullscreenVideo. . Window.IsVisible.Visualisation..</visible>' 720p/DialogAddonInfo.xml
+if grep -I -q '<visible>!.Window.IsVisible.FullscreenVideo. . Window.IsVisible.Visualisation..</visible>' 720p/DialogAddonSettings.xml
 then
 	R='s|(\s*<control type="image">#'
 	R+='\s*<description>background image</description>#'

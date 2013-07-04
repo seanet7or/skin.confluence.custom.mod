@@ -7,8 +7,8 @@ buttons/spin-[a-z-]*.png;0
 buttons/calibrate/[a-z_]*.png;0
 Default[a-zA-Z]*.png;0
 dialogs/bladesub_light.png;4,0,4,0
+dialogs/overlay-background.png;0
 epg-genres/[0-9]*.png;3
-FallbackAlbumCover.png;0
 Fanart_Fallback_Music_Small.jpg;0
 Fanart_Fallback_Small.jpg;0
 flagging/blank.png;4
