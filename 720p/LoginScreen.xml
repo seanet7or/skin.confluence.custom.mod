@@ -9,13 +9,6 @@
 		<posy>0</posy>
 	</coordinates>
 	<controls>
-		<control type="image">
-			<description>Default Global Background Image</description>
-			<include>Dimensions_Fullscreen</include>
-			<aspectratio>scale</aspectratio>
-			<include>VisibleFadeEffect</include>
-			<texture>special://skin/backgrounds/InitialStartup.jpg</texture>
-		</control>
 		<control type="group">
 			<include>Window_OpenClose_Animation</include>
 			<control type="image">
@@ -160,8 +153,6 @@
 					<font>-</font>
 					<aligny>-</aligny>
 					<onclick>ActivateWindow(ShutdownMenu)</onclick>
-					<texturefocus>buttons/fo_light.png</texturefocus>
-					<texturenofocus>buttons/nf_light.png</texturenofocus>
 					<onleft>52</onleft>
 					<onright>52</onright>
 					<onup>52</onup>

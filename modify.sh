@@ -82,7 +82,9 @@ perlregex() {
 	done ; IFS=$OLDIFS
 	if ! $CHANGED ; then
 		printf "\n%sWARNING: No changes were made.%s" $RED $RESET
-		printf "\nREGEX: '$REGEX'."
+			printf "\n"
+			printf "\nFile is: '$FILE'."
+			printf "\nRegex is: '$REGEX'."
 	fi
 }
 
@@ -115,12 +117,12 @@ remove_structure() {
 		done )
 	fi
 	LINE=$(echo $LINE | sed 's|^<|\\s\*<|g')
-	LINE=$(echo $LINE | sed 's|>$|>#|g')
-	local REGEX='s|\s*<'"$TYPE""$TAGS"'>#'
+	LINE=$(echo $LINE | sed 's|>$|>\\s\*#|g')
+	local REGEX='s|\s*<'"$TYPE""$TAGS"'>\s*#'
 	REGEX+='(\s*<[a-z][^#]*#\|)*?' # matching lines beginning with any opening tag
 	REGEX+="$LINE"
 	REGEX+='(\s*<[a-z][^#]*#\|)*?' # matching lines beginning with any opening tag
-	REGEX+='\s*</'"$TYPE"'>#'
+	REGEX+='\s*</'"$TYPE"'>\s*#'
 	REGEX+='||g'
 	debug "Calling 'perlregex $FILES'."
 	perlregex "$REGEX" "$FILES"
@@ -1327,6 +1329,18 @@ else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
+
+printf "\nRemoving startup background: "
+if [ -f backgrounds/InitialStartup.jpg ] ; then
+	remove_control image '<texture>special://skin/backgrounds/InitialStartup.jpg</texture>' 720p/Startup.xml
+	remove_control image '<texture>special://skin/backgrounds/InitialStartup.jpg</texture>' 720p/SkinSettings.xml
+	check_and_remove backgrounds/InitialStartup.jpg
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
