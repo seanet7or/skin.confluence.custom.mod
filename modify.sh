@@ -1385,8 +1385,9 @@ if ! grep -q 'buttonfocus' colors/defaults.xml ; then
 	R+='\2<color name="heading1">ff0084ff</color>#'
 	R+='\2<color name="heading2">ff7fc1ff</color>#'
 	R+='\2<color name="textfocus">ffffffff</color>#'
-	R+='\2<color name="textdisabled">ff505050</color>#'
+	R+='\2<color name="textdisabled">ff999999</color>#'
 	R+='\2<color name="itemselected">ffeb9e17</color>#'
+	R+='\2<color name="mainmenufocus">ff505050</color>#'
 	R+='\2|'
 	perlregex colors/defaults.xml "$R"
 	printf "%sDONE!%s" $GREEN $RESET
@@ -1509,11 +1510,10 @@ fi
 step
 
 printf "\nRemoving more PageCounts: "
-if true ; then #grep -q '<description>Description Page Count</description>' 720p/DialogAddonInfo.xml ; then
-	remove_control label '<description>Description Page Count</description>' 720p/DialogAddonInfo.xml
-	remove_control label '<label>.COLOR=blue.[^>]*>' 720p/DialogAlbumInfo.xml
-	remove_control label '<label>.COLOR=blue.[^>]*>' 720p/DialogPVRRecordingInfo.xml
-	remove_control label '<label>.COLOR=blue.[^>]*>' 720p/DialogVideoInfo.xml
+if grep -q '<posx>130r</posx>' 720p/DialogAlbumInfo.xml ; then
+	remove_control label '<posx>130r</posx>' 720p/DialogAlbumInfo.xml
+	remove_control label '<label>.LOCALIZE.207.[^#]*#' 720p/DialogPVRRecordingInfo.xml
+	remove_control label '<label>.LOCALIZE.20[67].[^#]*#' 720p/DialogVideoInfo.xml
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -1573,7 +1573,7 @@ if grep -q '<movement>1</movement>' 720p/Home.xml ; then
 	R+='\1</control>#'
 	R+='\1\2\3\4|'
 	perlregex 720p/Home.xml "$R"
-	perlregex 720p/Home.xml 's|(<font>font_MainMenu</font>#\s*<textcolor)>(heading2\|blue)<|\1>grey2<|'
+	perlregex 720p/Home.xml 's|(<font>font_MainMenu</font>#\s*<textcolor)>(heading2\|blue)<|\1>mainmenufocus<|'
 	
 
 	printf "%sDONE!%s" $GREEN $RESET
