@@ -1365,6 +1365,18 @@ else
 fi
 step
 
+
+printf "\nRemoving VisibleFadeEffect: "
+if grep -q 'VisibleFadeEffect' 720p/DialogAlbumInfo.xml ; then
+	XMLS=$(2>/dev/null grep 'VisibleFadeEffect' -l 720p/*)
+	perlregex $XMLS 's|\s*<include>VisibleFadeEffect</include>#||g'
+	remove_include 'VisibleFadeEffect' 720p/includes.xml
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
 printf "\nReplacing submenu item textures: "

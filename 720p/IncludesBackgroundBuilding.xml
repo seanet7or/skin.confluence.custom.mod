@@ -22,7 +22,6 @@
 				<description>Default Global Background Image</description>
 				<include>Dimensions_Fullscreen</include>
 				<aspectratio>scale</aspectratio>
-				<include>VisibleFadeEffect</include>
 				<texture>special://skin/backgrounds/default_light.jpg</texture>
 				<visible>[!Skin.HasSetting(GlobalWeatherFanart) + IsEmpty(Skin.String(CustomBackgroundPath))] | [Skin.HasSetting(GlobalWeatherFanart) + !Window.IsVisible(home)]</visible>
 			</control>
@@ -255,7 +254,6 @@
 			<include>Dimensions_Fullscreen</include>
 			<texture>special://skin/backgrounds/default_light.jpg</texture>
 			<visible>Player.HasVideo + ![Window.IsVisible(PVR) + [Control.IsVisible(11) | Control.IsVisible(12)]]</visible>
-			<include>VisibleFadeEffect</include>
 		</control>
 		<control type="group">
 			<include condition="!Skin.HasSetting(HideBackGroundFanart)">MusicPlayingBottom</include>
@@ -275,7 +273,6 @@
 		<control type="group">
 			<include>Window_OpenClose_Animation</include>
 			<control type="group">
-				<include>VisibleFadeEffect</include>
 				<visible>Control.IsVisible(50)</visible>
 				<control type="image">
 					<posx>50</posx>
@@ -287,7 +284,6 @@
 				</control>
 			</control>
 			<control type="group">
-				<include>VisibleFadeEffect</include>
 				<visible>Control.IsVisible(504) | Control.IsVisible(550) | Control.IsVisible(512)</visible>
 				<control type="image">
 					<posx>50</posx>
@@ -307,7 +303,6 @@
 				</control>
 			</control>
 			<control type="group">
-				<include>VisibleFadeEffect</include>
 				<visible>Control.IsVisible(730)</visible>
 				<control type="image">
 					<posx>35</posx>
@@ -319,7 +314,6 @@
 				</control>
 			</control>
 			<control type="group">
-				<include>VisibleFadeEffect</include>
 				<visible>Control.IsVisible(551) | Control.IsVisible(560) | Control.IsVisible(511) | Control.IsVisible(506) | Control.IsVisible(513)</visible>
 				<control type="image">
 					<posx>50</posx>
@@ -339,7 +333,6 @@
 				</control>
 			</control>
 			<control type="group">
-				<include>VisibleFadeEffect</include>
 				<visible>Control.IsVisible(501)</visible>
 				<control type="image">
 					<posx>50</posx>
@@ -351,7 +344,6 @@
 				</control>
 			</control>
 			<control type="group">
-				<include>VisibleFadeEffect</include>
 				<visible>Control.IsVisible(503)</visible>
 				<control type="image">
 					<posx>50</posx>
@@ -371,7 +363,6 @@
 				</control>
 			</control>
 			<control type="group">
-				<include>VisibleFadeEffect</include>
 				<visible>Control.IsVisible(51) | Control.IsVisible(500) | Control.IsVisible(505)</visible>
 				<control type="image">
 					<posx>75</posx>
@@ -383,7 +374,6 @@
 				</control>
 			</control>
 			<control type="group">
-				<include>VisibleFadeEffect</include>
 				<visible>Control.IsVisible(514)</visible>
 				<control type="image">
 					<posx>50</posx>
@@ -403,7 +393,6 @@
 				</control>
 			</control>
 			<control type="group">
-				<include>VisibleFadeEffect</include>
 				<visible>Control.IsVisible(515)</visible>
 				<control type="image">
 					<posx>50</posx>
@@ -428,7 +417,6 @@
 		<control type="group">
 			<include>Window_OpenClose_Animation</include>
 			<control type="group">
-				<include>VisibleFadeEffect</include>
 				<visible>Control.IsVisible(10) | Control.IsVisible(14) | Control.IsVisible(15) | Control.IsVisible(16) | Control.IsVisible(17)</visible>
 				<control type="image">
 					<posx>55</posx>
@@ -439,7 +427,6 @@
 				</control>
 			</control>
 			<control type="group">
-				<include>VisibleFadeEffect</include>
 				<visible>Control.IsVisible(11) | Control.IsVisible(12)</visible>
 				<control type="image">
 					<posx>50</posx>
@@ -457,7 +444,6 @@
 				</control>
 			</control>
 			<control type="group">
-				<include>VisibleFadeEffect</include>
 				<visible>Control.IsVisible(13)</visible>
 				<control type="image">
 					<posx>50</posx>

@@ -14,7 +14,6 @@
 			<timeperimage>10000</timeperimage>
 			<randomize>true</randomize>
 			<fadetime>1000</fadetime>
-			<include>VisibleFadeEffect</include>
 			<visible>Skin.HasSetting(ShowWeatherFanart) + !IsEmpty(Skin.String(WeatherFanartDir))</visible>
 			<animation effect="fade" time="200">WindowClose</animation>
 		</control>
@@ -27,7 +26,6 @@
 				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
 				<effect type="fade" start="100" end="0" time="300" />
 			</animation>
-			<include>VisibleFadeEffect</include>
 			<control type="group">
 				<posx>60</posx>
 				<posy>40</posy>
@@ -343,7 +341,6 @@
 							<height>136</height>
 							<texture>buttons/fo_light.png</texture>
 							<visible>Control.HasFocus(50)</visible>
-							<include>VisibleFadeEffect</include>
 						</control>
 						<control type="label">
 							<posx>300</posx>
@@ -523,7 +520,6 @@
 				<control type="group" id="50">
 					<control type="group">
 						<visible>IsEmpty(Window.Property(Weather.CurrentView))</visible>
-						<include>VisibleFadeEffect</include>
 						<control type="label">
 							<description>header label</description>
 							<posx>20</posx>
@@ -597,7 +593,6 @@
 									<height>136</height>
 									<texture>buttons/fo_light.png</texture>
 									<visible>Control.HasFocus(51)</visible>
-									<include>VisibleFadeEffect</include>
 								</control>
 								<control type="label">
 									<posx>50</posx>
@@ -745,7 +740,6 @@
 					</control>
 					<control type="group">
 						<visible>StringCompare(Window.Property(Weather.CurrentView),36hour)</visible>
-						<include>VisibleFadeEffect</include>
 						<control type="button" id="997">
 							<description>Hidden Button for focus</description>
 							<posx>-600</posx>
@@ -782,7 +776,6 @@
 							<posx>20</posx>
 							<posy>50</posy>
 							<visible>!IsEmpty(Window.Property(36Hour.IsFetched))</visible>
-							<include>VisibleFadeEffect</include>
 							<control type="group">
 								<posx>0</posx>
 								<posy>0</posy>
@@ -952,7 +945,6 @@
 					</control>
 					<control type="group">
 						<visible>StringCompare(Window.Property(Weather.CurrentView),weekend)</visible>
-						<include>VisibleFadeEffect</include>
 						<control type="button" id="998">
 							<description>Hidden Button for focus</description>
 							<posx>-600</posx>
@@ -989,7 +981,6 @@
 							<posx>20</posx>
 							<posy>50</posy>
 							<visible>!IsEmpty(Window.Property(Weekend.IsFetched))</visible>
-							<include>VisibleFadeEffect</include>
 							<control type="group">
 								<posx>0</posx>
 								<posy>0</posy>
@@ -1144,7 +1135,6 @@
 					</control>
 					<control type="group">
 						<visible>StringCompare(Window.Property(Weather.CurrentView),hourly)</visible>
-						<include>VisibleFadeEffect</include>
 						<control type="label">
 							<description>header label</description>
 							<posx>20</posx>
@@ -1218,7 +1208,6 @@
 									<height>136</height>
 									<texture>buttons/fo_light.png</texture>
 									<visible>Control.HasFocus(52)</visible>
-									<include>VisibleFadeEffect</include>
 								</control>
 								<control type="label">
 									<posx>50</posx>
@@ -1382,7 +1371,6 @@
 					</control>
 					<control type="group">
 						<visible>StringCompare(Window.Property(Weather.CurrentView),map)</visible>
-						<include>VisibleFadeEffect</include>
 						<control type="button" id="999">
 							<description>Hidden Button for focus</description>
 							<posx>-600</posx>

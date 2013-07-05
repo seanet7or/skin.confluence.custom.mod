@@ -20,7 +20,6 @@
 			<posx>530</posx>
 			<posy>80</posy>
 			<visible>Control.IsVisible(11) | Control.IsVisible(12)</visible>
-			<include>VisibleFadeEffect</include>
 			<include>Window_OpenClose_Animation</include>
 			<control type="image">
 				<posx>5</posx>
@@ -28,7 +27,6 @@
 				<width>680</width>
 				<height>390</height>
 				<texture fallback="special://skin/backgrounds/default_light.jpg">$INFO[Skin.String(Home_Custom_Back_TV_Folder)]</texture>
-				<include>VisibleFadeEffect</include>
 				<visible>!Player.HasVideo</visible>
 			</control>
 			<control type="videowindow">

@@ -3,7 +3,6 @@
 	<include name="AddonInfoListView1">
 		<control type="group">
 			<visible>Control.IsVisible(550)</visible>
-			<include>VisibleFadeEffect</include>
 			<control type="list" id="550">
 				<posx>70</posx>
 				<posy>78</posy>
@@ -50,7 +49,6 @@
 						<height>41</height>
 						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(550)</visible>
-						<include>VisibleFadeEffect</include>
 					</control>
 					<control type="label">
 						<posx>10</posx>
@@ -200,7 +198,6 @@
 	<include name="AddonInfoThumbView1">
 		<control type="group">
 			<visible>Control.IsVisible(551)</visible>
-			<include>VisibleFadeEffect</include>
 			<control type="panel" id="551">
 				<posx>70</posx>
 				<posy>78</posy>

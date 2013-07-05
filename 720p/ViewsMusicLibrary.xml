@@ -3,7 +3,6 @@
 	<include name="MusicInfoListView">
 		<control type="group">
 			<visible>Control.IsVisible(506)</visible>
-			<include>VisibleFadeEffect</include>
 			<control type="list" id="506">
 				<posx>70</posx>
 				<posy>75</posy>
@@ -50,7 +49,6 @@
 						<height>41</height>
 						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(506)</visible>
-						<include>VisibleFadeEffect</include>
 					</control>
 					<control type="label">
 						<posx>10</posx>
@@ -189,7 +187,6 @@
 			<posx>0</posx>
 			<posy>350</posy>
 			<visible>Control.IsVisible(509) + Skin.HasSetting(View509HideInfo)</visible>
-			<include>VisibleFadeEffect</include>
 			<control type="image">
 				<posx>0</posx>
 				<posy>0</posy>
@@ -212,7 +209,6 @@
 		</control>
 		<control type="group">
 			<visible>Control.IsVisible(509)</visible>
-			<include>VisibleFadeEffect</include>
 			<posx>0</posx>
 			<posy>450</posy>
 			<control type="fixedlist" id="509">
@@ -293,7 +289,6 @@
 			<posx>180</posx>
 			<posy>40</posy>
 			<visible>Control.IsVisible(509) + !Skin.HasSetting(View509HideInfo)</visible>
-			<include>VisibleFadeEffect</include>
 			<control type="image">
 				<posx>0</posx>
 				<posy>0</posy>
@@ -398,7 +393,6 @@
 	<include name="MusicVideoInfoListView">
 		<control type="group">
 			<visible>Control.IsVisible(511)</visible>
-			<include>VisibleFadeEffect</include>
 			<control type="list" id="511">
 				<posx>70</posx>
 				<posy>75</posy>
@@ -452,7 +446,6 @@
 						<height>41</height>
 						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(511)</visible>
-						<include>VisibleFadeEffect</include>
 					</control>
 					<control type="label">
 						<posx>10</posx>
@@ -586,7 +579,6 @@
 	<include name="ArtistMediaListView">
 		<control type="group">
 			<visible>Control.IsVisible(512)</visible>
-			<include>VisibleFadeEffect</include>
 			<control type="list" id="512">
 				<posx>70</posx>
 				<posy>78</posy>
@@ -621,7 +613,6 @@
 						<height>41</height>
 						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(512)</visible>
-						<include>VisibleFadeEffect</include>
 					</control>
 					<control type="label">
 						<posx>10</posx>
@@ -754,7 +745,6 @@
 	<include name="AlbumInfoListView">
 		<control type="group">
 			<visible>Control.IsVisible(513)</visible>
-			<include>VisibleFadeEffect</include>
 			<control type="list" id="513">
 				<posx>70</posx>
 				<posy>75</posy>
@@ -801,7 +791,6 @@
 						<height>41</height>
 						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(513)</visible>
-						<include>VisibleFadeEffect</include>
 					</control>
 					<control type="label">
 						<posx>10</posx>
