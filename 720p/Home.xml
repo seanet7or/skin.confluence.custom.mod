@@ -121,7 +121,7 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font12_title</font>
-					<textcolor>blue</textcolor>
+					<textcolor>heading2</textcolor>
 				</control>
 				<control type="label">
 					<description>NextRecordingDateTime</description>
@@ -176,7 +176,7 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font12_title</font>
-					<textcolor>blue</textcolor>
+					<textcolor>heading2</textcolor>
 				</control>
 				<control type="label">
 					<description>NextRecordingDateTime</description>
@@ -881,9 +881,9 @@
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="image">
-						<posx>0</posx>
+						<posx>-50</posx>
 						<posy>0</posy>
-						<width>340</width>
+						<width>440</width>
 						<height>65</height>
 						<texture border="0,2,0,2">home/main-fo_light.png</texture>
 						<visible>Control.HasFocus(9000)</visible>
@@ -1213,7 +1213,7 @@
 				<width>1145</width>
 				<font>font12</font>
 				<urlset>1</urlset>
-				<textcolor>blue</textcolor>
+				<textcolor>textfocus</textcolor>
 				<titlecolor>blue</titlecolor>
 				<headlinecolor>white</headlinecolor>
 				<visible>!Skin.HasSetting(AutoHidePowerBtn) + [!Player.HasAudio | IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(HideNextSongsInfo)]</visible>
@@ -1226,7 +1226,7 @@
 				<width>1200</width>
 				<font>font12</font>
 				<urlset>1</urlset>
-				<textcolor>blue</textcolor>
+				<textcolor>textfocus</textcolor>
 				<titlecolor>blue</titlecolor>
 				<headlinecolor>white</headlinecolor>
 				<visible>Skin.HasSetting(AutoHidePowerBtn) + [!Player.HasAudio | IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(HideNextSongsInfo)]</visible>

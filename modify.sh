@@ -750,7 +750,7 @@ step
 
 printf "\nChanging time display: "
 if grep -q '<description>date label</description>' 720p/includes.xml ; then
-	#remove date label - in 720p\includes.xml and 720p\VideoFullScreen.xml
+	#remove date label - in 720p/includes.xml and 720p/VideoFullScreen.xml
 	remove_controlid 'label' '<description>date label</description>'
 	#move time label up
 	XMLS=$(2>/dev/null grep '<description>time label</description>' -l 720p/*)
@@ -930,7 +930,7 @@ step
 
 printf "\nChanging keyboard: "
 if [ -f media/KeyboardEditArea.png ] ; then
-	XMLS="720p/DialogKeyboard.xml 720p\DialogNumeric.xml"
+	XMLS="720p/DialogKeyboard.xml 720p/DialogNumeric.xml"
 	perlregex $XMLS 's|>KeyboardCornerTopNF.png|>'$BUTTON_NF'|g'
 	perlregex $XMLS 's|>KeyboardCornerTop.png|>'$BUTTON_FO'|g'
 	perlregex $XMLS 's|>KeyboardCornerBottomNF.png|>'$BUTTON_NF'|g'
@@ -1379,7 +1379,96 @@ step
 
 printf "\nChanging color scheme: "
 if ! grep -q 'buttonfocus' colors/defaults.xml ; then
-	perlregex 's|(\s*<colors>#)(\s*)|\1\2<color name="buttonfocus">ff4b5e68</color>#\2|' colors/defaults.xml
+	R='s|(\s*<colors>#)(\s*)'
+	R+='|\1\2<color name="buttonfocus">ff4b5e68</color>#'
+	R+='\2<color name="heading1">ff0084ff</color>#'
+	R+='\2<color name="heading2">ff7fc1ff</color>#'
+	R+='\2<color name="textfocus">ffffffff</color>#'
+	R+='\2<color name="textdisabled">ff505050</color>#'
+	R+='\2|'
+	perlregex colors/defaults.xml "$R"
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nChanging font colors: "
+if grep -q '<textcolor>blue</textcolor>' 720p/ViewsVideoLibrary.xml ; then
+
+	R='s|(<control type="label">#'
+	R+='\s*<description>(header label\|Title label)</description>#'
+	R+='(\s*<[a-z][^#]*#)*?'
+	R+='\s*<textcolor)>blue</'
+	R+='|\1>heading1</'
+	R+='|g'
+	XMLS="720p/DialogPVRChannelsOSD.xml 720p/DialogPVRGuideInfo.xml 720p/DialogPVRRecordingInfo.xml "
+	perlregex $XMLS "$R"
+	
+	R='s|(<control type="rss">#'
+	R+='\s*<description>RSS feed</description>#'
+	R+='(\s*<[a-z][^#]*#)*?'
+	R+='\s*<textcolor)>blue</'
+	R+='|\1>textfocus</'
+	R+='|g'
+	XMLS="720p/Home.xml "
+	perlregex $XMLS "$R"	
+
+	R='s|<textcolor>blue</textcolor>|<textcolor>heading1</textcolor>|g'
+	XMLS="720p/CustomAddMenuItems.xml 720p/CustomAddonSelection.xml 720p/CustomAddonType.xml 720p/CustomAddSubMenuItems.xml "
+	XMLS+="720p/CustomSubMenuType.xml 720p/CustomWidgetType.xml 720p/DialogPVRChannelManager.xml "
+	XMLS+="720p/DialogPVRGuideOSD.xml 720p/DialogPVRGuideSearch.xml 720p/DialogSlider.xml "
+	XMLS+="720p/MyMusicPlaylistEditor.xml 720p/script-globalsearch-main.xml 720p/SettingsSystemInfo.xml "
+	XMLS+=" "
+	XMLS+=" "
+	perlregex $XMLS "$R"
+
+	R='s|<textcolor>blue</textcolor>|<textcolor>heading2</textcolor>|g'
+	XMLS="720p/AddonBrowser.xml 720p/DialogAddonInfo.xml 720p/DialogAlbumInfo.xml 720p/DialogContentSettings.xml "
+	XMLS+="720p/DialogKaraokeSongSelector.xml 720p/DialogKaraokeSongSelectorLarge.xml 720p/DialogMediaSource.xml "
+	XMLS+="720p/DialogPVRGroupManager.xml 720p/DialogSeekBar.xml 720p/DialogSongInfo.xml 720p/DialogVideoInfo.xml "
+	XMLS+="720p/FileManager.xml 720p/includes.xml 720p/MusicKaraokeLyrics.xml 720p/MusicOSD.xml "
+	XMLS+="720p/MyMusicNav.xml 720p/MyMusicPlaylist.xml 720p/DialogPeripheralManager.xml "
+	XMLS+="720p/DialogPVRChannelsOSD.xml 720p/DialogPVRGuideInfo.xml 720p/DialogPVRRecordingInfo.xml "
+	XMLS+="720p/Home.xml 720p/MyPics.xml  720p/MyMusicSongs.xml 720p/MyPrograms.xml 720p/MyPVR.xml 720p/MyVideoNav.xml "
+	XMLS+="720p/MyVideoPlaylist.xml 720p/MyWeather.xml 720p/ProfileSettings.xml 720p/script-NextAired-TVGuide.xml "
+	XMLS+="720p/script-RSS_Editor-rssEditor.xml 720p/script-RSS_Editor-setEditor.xml 720p/script-XBMC_Lyrics-main.xml "
+	XMLS+="720p/SettingsProfile.xml 720p/SkinSettings.xml 720p/SmartPlaylistEditor.xml 720p/SmartPlaylistRule.xml "
+	XMLS+="720p/VideoFullScreen.xml 720p/ViewsAddonBrowser.xml 720p/ViewsLiveTV.xml 720p/ViewsMusicLibrary.xml "
+	XMLS+="720p/ViewsPVR.xml 720p/ViewsVideoLibrary.xml "
+	perlregex $XMLS "$R"
+	
+	R='s|<textcolor>blue</textcolor>|<textcolor>textfocus</textcolor>|g'
+	XMLS="720p/DialogAddonSettings.xml 720p/IncludesHomeWidget.xml "
+	XMLS+=" "
+	perlregex $XMLS "$R"
+		
+	if false ; then
+		R='s|<selectedcolor>selected</selectedcolor>|<selectedcolor>heading2</selectedcolor>|g'
+		XMLS="720p/CustomAddMenuItems.xml 720p/CustomAddonSelection.xml "
+		XMLS+=" "
+		perlregex $XMLS "$R"
+		
+		R='s|<textcolor>selected</textcolor>|<textcolor>heading</textcolor>|g'
+		XMLS=" "
+		XMLS+=" "
+		perlregex $XMLS "$R"
+
+		R='s|<focusedcolor>white</focusedcolor>|<focusedcolor>textfocus</focusedcolor>|g'
+		XMLS=" "
+		XMLS+=" "
+		perlregex $XMLS "$R"
+
+		R='s|<textcolor>white</textcolor>|<textcolor>textfocus</textcolor>|g'
+		XMLS=" "
+		XMLS+=" "
+		perlregex $XMLS "$R"
+		
+		R='s|<disabledcolor>grey3</disabledcolor>|<disabledcolor>textdisabled</disabledcolor>|g'
+		XMLS=" "
+		XMLS+=" "
+		perlregex $XMLS "$R"
+	fi
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -1404,9 +1493,9 @@ if grep -q '<movement>1</movement>' 720p/Home.xml ; then
  	R+='\s*<font>font_MainMenu</font>#'
 	R+='\s*<textcolor>blue</textcolor>#)'
 	R+='|\1<control type="image">#'
-	R+='\3<posx>0</posx>#'
+	R+='\3<posx>-50</posx>#'
 	R+='\3<posy>0</posy>#'
-	R+='\3<width>340</width>#'
+	R+='\3<width>440</width>#'
 	R+='\3<height>65</height>#'
 	R+='\3<texture>home/main-fo_light.png</texture>#'
 	R+='\3<visible>Control.HasFocus\(9000\)</visible>#'

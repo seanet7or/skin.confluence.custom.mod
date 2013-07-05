@@ -147,7 +147,7 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font10_title</font>
-					<textcolor>blue</textcolor>
+					<textcolor>heading2</textcolor>
 					<label>$LOCALIZE[31042]</label>
 					<visible>Player.Playing + !Player.Seeking + !Player.DisplayAfterSeek</visible>
 				</control>
@@ -160,7 +160,7 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font10_title</font>
-					<textcolor>blue</textcolor>
+					<textcolor>heading2</textcolor>
 					<label>31043</label>
 					<visible>[Player.Paused + !Player.Caching] + !Player.Seeking + !Player.DisplayAfterSeek</visible>
 				</control>
@@ -173,7 +173,7 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font10_title</font>
-					<textcolor>blue</textcolor>
+					<textcolor>heading2</textcolor>
 					<label>$LOCALIZE[15107] $INFO[Player.CacheLevel]%</label>
 					<visible>[Player.Paused + Player.Caching] + !Player.Seeking</visible>
 				</control>
@@ -186,7 +186,7 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font10_title</font>
-					<textcolor>blue</textcolor>
+					<textcolor>heading2</textcolor>
 					<label>[UPPERCASE]$LOCALIZE[773][/UPPERCASE]</label>
 					<visible>Player.Seeking</visible>
 				</control>
@@ -199,7 +199,7 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font10_title</font>
-					<textcolor>blue</textcolor>
+					<textcolor>heading2</textcolor>
 					<label>[UPPERCASE]$LOCALIZE[773][/UPPERCASE][COLOR=grey] $INFO[Player.SeekOffset][/COLOR]</label>
 					<visible>Player.DisplayAfterSeek + ![player.forwarding | player.rewinding]</visible>
 				</control>
@@ -212,7 +212,7 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font10_title</font>
-					<textcolor>blue</textcolor>
+					<textcolor>heading2</textcolor>
 					<label>31044</label>
 					<visible>Player.Forwarding</visible>
 				</control>
@@ -225,7 +225,7 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font10_title</font>
-					<textcolor>blue</textcolor>
+					<textcolor>heading2</textcolor>
 					<label>31045</label>
 					<visible>Player.Rewinding</visible>
 				</control>
