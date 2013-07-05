@@ -1379,6 +1379,15 @@ step
 
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
+printf "\nFixing the main menu: "
+if grep -q '<movement>1</movement>' 720p/Home.xml ; then
+	perlregex 720p/Home.xml 's|\s*<movement>1</movement>#||'
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\nReplacing submenu item textures: "
 if [ -f media/HomeSubFO.png ] ; then
 	XMLS=$(2>/dev/null grep 'HomeSubNF.png' -l 720p/*)
