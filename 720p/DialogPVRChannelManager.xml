@@ -27,7 +27,7 @@
 			<label>$LOCALIZE[19199] - $LOCALIZE[19023]</label>
 			<align>center</align>
 			<aligny>center</aligny>
-			<textcolor>selected</textcolor>
+			<textcolor>itemselected</textcolor>
 			<visible>IsEmpty(Window.Property(IsRadio))</visible>
 		</control>
 		<control type="label">
@@ -40,7 +40,7 @@
 			<label>$LOCALIZE[19199] - $LOCALIZE[19024]</label>
 			<align>center</align>
 			<aligny>center</aligny>
-			<textcolor>selected</textcolor>
+			<textcolor>itemselected</textcolor>
 			<visible>!IsEmpty(Window.Property(IsRadio))</visible>
 		</control>
 		<control type="group">
@@ -103,7 +103,7 @@
 						<font>font12</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<selectedcolor>selected</selectedcolor>
+						<selectedcolor>itemselected</selectedcolor>
 						<label>$INFO[ListItem.Property(Number),(,) - ]$INFO[ListItem.Property(Name)]</label>
 						<visible>ListItem.Property(ActiveChannel)</visible>
 					</control>
@@ -116,7 +116,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 						<textcolor>grey3</textcolor>
-						<selectedcolor>selected</selectedcolor>
+						<selectedcolor>itemselected</selectedcolor>
 						<label>$INFO[ListItem.Property(Number),(,) - ]$INFO[ListItem.Property(Name)]</label>
 						<visible>!ListItem.Property(ActiveChannel)</visible>
 					</control>
@@ -163,7 +163,7 @@
 						<font>font12</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<selectedcolor>selected</selectedcolor>
+						<selectedcolor>itemselected</selectedcolor>
 						<label>$INFO[ListItem.Property(Number),(,) - ]$INFO[ListItem.Property(Name)]</label>
 						<visible>ListItem.Property(ActiveChannel)</visible>
 					</control>
@@ -176,7 +176,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 						<textcolor>grey3</textcolor>
-						<selectedcolor>selected</selectedcolor>
+						<selectedcolor>itemselected</selectedcolor>
 						<label>$INFO[ListItem.Property(Number),(,) - ]$INFO[ListItem.Property(Name)]</label>
 						<visible>!ListItem.Property(ActiveChannel)</visible>
 					</control>
@@ -197,7 +197,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 						<textcolor>grey2</textcolor>
-						<selectedcolor>selected</selectedcolor>
+						<selectedcolor>itemselected</selectedcolor>
 						<label>$LOCALIZE[19210]: $INFO[ListItem.Property(ClientName)]</label>
 					</control>
 				</focusedlayout>

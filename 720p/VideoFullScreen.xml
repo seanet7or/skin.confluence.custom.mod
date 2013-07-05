@@ -16,7 +16,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<textcolor>grey</textcolor>
-				<label>$INFO[Player.ChapterName,[B][COLOR=white]$LOCALIZE[21396]: [/COLOR][/B]]</label>
+				<label>$INFO[Player.ChapterName,[B]$LOCALIZE[21396]: [/B]]</label>
 				<visible>Player.ChapterCount + !VideoPlayer.Content(LiveTV) + [!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)]</visible>
 				<visible>!SubString(Player.ChapterName,$LOCALIZE[21396],left)</visible>
 			</control>

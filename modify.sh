@@ -1386,8 +1386,33 @@ if ! grep -q 'buttonfocus' colors/defaults.xml ; then
 	R+='\2<color name="heading2">ff7fc1ff</color>#'
 	R+='\2<color name="textfocus">ffffffff</color>#'
 	R+='\2<color name="textdisabled">ff505050</color>#'
+	R+='\2<color name="itemselected">ffeb9e17</color>#'
 	R+='\2|'
 	perlregex colors/defaults.xml "$R"
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nRemoving multi-color strings: "
+if grep -q 'COLOR=' 720p/SkinSettings.xml ; then
+	XMLS=$(2>/dev/null grep 'COLOR=' -l 720p/*)
+	perlregex $XMLS 's|\[COLOR\=[a-z0-9]*\]||g'	
+	XMLS=$(2>/dev/null grep 'COLOR' -l 720p/*)
+	perlregex $XMLS 's|\[/COLOR\]||g'	
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nChanging font colors for original 'selected color' strings: "
+if grep -q '>selected<' 720p/VisualisationPresetList.xml ; then
+	XMLS=$(2>/dev/null grep '>selected<' -l 720p/*)
+	perlregex $XMLS 's|<selectedcolor>selected</selectedcolor>|<selectedcolor>itemselected</selectedcolor>|g'	
+	XMLS=$(2>/dev/null grep '>selected<' -l 720p/*)
+	perlregex $XMLS 's|<textcolor>selected</textcolor>|<textcolor>itemselected</textcolor>|g'	
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -1449,33 +1474,33 @@ if grep -q 'blue' 720p/ViewsVideoLibrary.xml ; then
 	
 	perlregex 's|\s*<selectedcolor>blue</selectedcolor>#||g' 720p/DialogPVRChannelsOSD.xml
 	
-	perlregex 's|\[COLOR=blue\] / \[/COLOR\]| / |g' 720p/Home.xml
-	perlregex 's|\[COLOR=blue\]\(\[/COLOR\]|\(|g' 720p/Home.xml
-	perlregex 's|\[COLOR=blue\]\)\[/COLOR\]|\)|g' 720p/Home.xml
+	#perlregex 's|\[COLOR=blue\] / \[/COLOR\]| / |g' 720p/Home.xml
+	#perlregex 's|\[COLOR=blue\]\(\[/COLOR\]|\(|g' 720p/Home.xml
+	#perlregex 's|\[COLOR=blue\]\)\[/COLOR\]|\)|g' 720p/Home.xml
 	perlregex 's|<titlecolor>blue</titlecolor>|<titlecolor>heading2</titlecolor>|g' 720p/Home.xml
 	
-	perlregex 's|\[COLOR=blue\](.INFO.Player.Time. / .INFO.Player.Duration..)\[/COLOR\]|\1|g' 720p/includes.xml
-	perlregex 's|\[COLOR=blue\]\,\[/COLOR\]|\,|g' 720p/includes.xml
-	perlregex 's|\[COLOR=blue\]([^\[]*)\[/COLOR\]|\1|g' 720p/includes.xml
-	perlregex 's|\[COLOR=blue\]([^\[]*\[209\][^\[]*)\[/COLOR\]|\1|g' 720p/includes.xml
+	#perlregex 's|\[COLOR=blue\](.INFO.Player.Time. / .INFO.Player.Duration..)\[/COLOR\]|\1|g' 720p/includes.xml
+	#perlregex 's|\[COLOR=blue\]\,\[/COLOR\]|\,|g' 720p/includes.xml
+	#perlregex 's|\[COLOR=blue\]([^\[]*)\[/COLOR\]|\1|g' 720p/includes.xml
+	#perlregex 's|\[COLOR=blue\]([^\[]*\[209\][^\[]*)\[/COLOR\]|\1|g' 720p/includes.xml
 	
-	perlregex 's|\[COLOR=blue\]([^\[]*\[[0-9]*\][^\[]*)\[/COLOR\]|\1|g' 720p/IncludesVariables.xml
-	perlregex 's|\[COLOR=blue\]([^\[]*)\[/COLOR\]|\1|g' 720p/IncludesVariables.xml
-	perlregex 's|\[COLOR=blue\](.B..LOCALIZE.[0-9]*.\s*1...B.)\[/COLOR\]|\1|g' 720p/IncludesVariables.xml
-	perlregex 's|\[COLOR=blue\](\[B\][^\[]*\[/B\])\[/COLOR\]|\1|g' 720p/IncludesVariables.xml
+	#perlregex 's|\[COLOR=blue\]([^\[]*\[[0-9]*\][^\[]*)\[/COLOR\]|\1|g' 720p/IncludesVariables.xml
+	#perlregex 's|\[COLOR=blue\]([^\[]*)\[/COLOR\]|\1|g' 720p/IncludesVariables.xml
+	#perlregex 's|\[COLOR=blue\](.B..LOCALIZE.[0-9]*.\s*1...B.)\[/COLOR\]|\1|g' 720p/IncludesVariables.xml
+	#perlregex 's|\[COLOR=blue\](\[B\][^\[]*\[/B\])\[/COLOR\]|\1|g' 720p/IncludesVariables.xml
 
-	perlregex 's|\[COLOR=blue\](.LOCALIZE.[0-9]*.\s*[\:]*)\[/COLOR\]|\1|g' 720p/MusicKaraokeLyrics.xml
+	#perlregex 's|\[COLOR=blue\](.LOCALIZE.[0-9]*.\s*[\:]*)\[/COLOR\]|\1|g' 720p/MusicKaraokeLyrics.xml
 
-	perlregex 's|\[COLOR=blue\](.LOCALIZE.[0-9]*.\s*[\:]*)\[/COLOR\]|\1|g' 720p/MyMusicPlaylistEditor.xml
+	#perlregex 's|\[COLOR=blue\](.LOCALIZE.[0-9]*.\s*[\:]*)\[/COLOR\]|\1|g' 720p/MyMusicPlaylistEditor.xml
 	
-	perlregex 's|\[COLOR=blue\](.INFO.Control.GetLabel.198..)\[/COLOR\]|\1|g' 720p/script-globalsearch-main.xml
+	#perlregex 's|\[COLOR=blue\](.INFO.Control.GetLabel.198..)\[/COLOR\]|\1|g' 720p/script-globalsearch-main.xml
 	
-	perlregex 's|\[COLOR=blue\]\,\[/COLOR\]|\,|g' 720p/VideoFullScreen.xml
+	#perlregex 's|\[COLOR=blue\]\,\[/COLOR\]|\,|g' 720p/VideoFullScreen.xml
 
-	perlregex 's|\[COLOR=blue\](.LOCALIZE.[0-9]*.[\:\s]*)\[/COLOR\]|\1|g' 720p/ViewsLogoVertical.xml
-	perlregex 's|\[COLOR=blue\](.LOCALIZE.[0-9]*.[\:\s]*)\[/COLOR\]|\1|g' 720p/ViewsMusicLibrary.xml
-	perlregex 's|\[COLOR=blue\](\s*.LOCALIZE.[0-9]*.[\:\s]*)\[/COLOR\]|\1|g' 720p/ViewsVideoLibrary.xml
-	perlregex 's|\[COLOR=blue\]\,\[/COLOR\]|\,|g' 720p/ViewsVideoLibrary.xml
+	#perlregex 's|\[COLOR=blue\](.LOCALIZE.[0-9]*.[\:\s]*)\[/COLOR\]|\1|g' 720p/ViewsLogoVertical.xml
+	#perlregex 's|\[COLOR=blue\](.LOCALIZE.[0-9]*.[\:\s]*)\[/COLOR\]|\1|g' 720p/ViewsMusicLibrary.xml
+	#perlregex 's|\[COLOR=blue\](\s*.LOCALIZE.[0-9]*.[\:\s]*)\[/COLOR\]|\1|g' 720p/ViewsVideoLibrary.xml
+	#perlregex 's|\[COLOR=blue\]\,\[/COLOR\]|\,|g' 720p/ViewsVideoLibrary.xml
 	
 	printf "%sDONE!%s" $GREEN $RESET
 else
