@@ -844,7 +844,7 @@
 				<posx>-210</posx>
 				<posy>5</posy>
 				<width>1700</width>
-				<height>60</height>
+				<height>70</height>
 				<onleft>9000</onleft>
 				<onright>9000</onright>
 				<onup condition="!Skin.HasSetting(HideHomeSearch) + Player.HasMedia">609</onup>
@@ -862,7 +862,7 @@
 						<width>340</width>
 						<height>60</height>
 						<font>font_MainMenu</font>
-						<textcolor>grey3</textcolor>
+						<textcolor>buttonfocus</textcolor>
 						<align>center</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
@@ -875,10 +875,18 @@
 						<width>330</width>
 						<height>60</height>
 						<font>font_MainMenu</font>
-						<textcolor>grey3</textcolor>
+						<textcolor>buttonfocus</textcolor>
 						<align>center</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>340</width>
+						<height>65</height>
+						<texture border="0,2,0,2">home/main-fo_light.png</texture>
+						<visible>Control.HasFocus(9000)</visible>
 					</control>
 					<control type="label">
 						<posx>170</posx>
@@ -886,7 +894,7 @@
 						<width>330</width>
 						<height>60</height>
 						<font>font_MainMenu</font>
-						<textcolor>blue</textcolor>
+						<textcolor>grey2</textcolor>
 						<align>center</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>

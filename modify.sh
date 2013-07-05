@@ -1377,11 +1377,46 @@ else
 fi
 step
 
+printf "\nChanging color scheme: "
+if ! grep -q 'buttonfocus' colors/defaults.xml ; then
+	perlregex 's|(\s*<colors>#)(\s*)|\1\2<color name="buttonfocus">ff4b5e68</color>#\2|' colors/defaults.xml
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
-printf "\nFixing the main menu: "
+printf "\nChanging main menu layout: "
 if grep -q '<movement>1</movement>' 720p/Home.xml ; then
+	#fixing list
 	perlregex 720p/Home.xml 's|\s*<movement>1</movement>#||'
+
+	R='s|>60<(/height>#\s*<onleft>9000</onleft>#\s*<onright>9000</onright>#)|>70<\1|'
+	perlregex 720p/Home.xml "$R"
+	#texture focusing selected item
+	R='s|(\s*)(<control type="label">#)'
+ 	R+='(\s*)(<posx>170</posx>#'
+ 	R+='\s*<posy>0</posy>#'
+ 	R+='\s*<width>330</width>#'
+ 	R+='\s*<height>60</height>#'
+ 	R+='\s*<font>font_MainMenu</font>#'
+	R+='\s*<textcolor>blue</textcolor>#)'
+	R+='|\1<control type="image">#'
+	R+='\3<posx>0</posx>#'
+	R+='\3<posy>0</posy>#'
+	R+='\3<width>340</width>#'
+	R+='\3<height>65</height>#'
+	R+='\3<texture>home/main-fo_light.png</texture>#'
+	R+='\3<visible>Control.HasFocus\(9000\)</visible>#'
+	R+='\1</control>#'
+	R+='\1\2\3\4|'
+	perlregex 720p/Home.xml "$R"
+	
+	perlregex 720p/Home.xml 's|(<font>font_MainMenu</font>#\s*<textcolor)>blue<|\1>grey2<|g'
+	perlregex 720p/Home.xml 's|(<font>font_MainMenu</font>#\s*<textcolor)>grey3<|\1>buttonfocus<|g'
+
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET

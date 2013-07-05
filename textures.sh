@@ -1,4 +1,5 @@
 TEXLIST='
+home/main-fo_light.png;0,2,0,2
 BackgroundEffect/rain-drop.png;0
 banner/[^\.]*.png;0
 buttons/folder-focus_light.png;7
