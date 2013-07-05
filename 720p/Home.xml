@@ -78,7 +78,7 @@
 				<posy>310</posy>
 				<height>30</height>
 				<width>300</width>
-				<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=blue] / [/COLOR]]</label>
+				<label>$INFO[Player.Time]$INFO[Player.Duration, / ]</label>
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
@@ -141,7 +141,7 @@
 					<posy>50</posy>
 					<height>25</height>
 					<width>800</width>
-					<label>$INFO[PVR.NextRecordingTitle][COLOR=grey]$INFO[PVR.NextRecordingChannel, - [COLOR=blue]([/COLOR],[COLOR=blue])[/COLOR]][/COLOR]</label>
+					<label>$INFO[PVR.NextRecordingTitle][COLOR=grey]$INFO[PVR.NextRecordingChannel, - (,)][/COLOR]</label>
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font12_title</font>
@@ -196,7 +196,7 @@
 					<posy>50</posy>
 					<height>30</height>
 					<width>800</width>
-					<label>$INFO[PVR.NowRecordingTitle][COLOR=grey]$INFO[PVR.NowRecordingChannel, - [COLOR=blue]([/COLOR],[COLOR=blue])[/COLOR]][/COLOR]</label>
+					<label>$INFO[PVR.NowRecordingTitle][COLOR=grey]$INFO[PVR.NowRecordingChannel, - (,)][/COLOR]</label>
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font12_title</font>
@@ -239,7 +239,7 @@
 					<posy>310</posy>
 					<height>30</height>
 					<width>300</width>
-					<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=blue] / [/COLOR]]</label>
+					<label>$INFO[Player.Time]$INFO[Player.Duration, / ]</label>
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
@@ -284,7 +284,7 @@
 					<posy>310</posy>
 					<height>30</height>
 					<width>300</width>
-					<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=blue] / [/COLOR]]</label>
+					<label>$INFO[Player.Time]$INFO[Player.Duration, / ]</label>
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
@@ -329,7 +329,7 @@
 					<posy>310</posy>
 					<height>30</height>
 					<width>300</width>
-					<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=blue] / [/COLOR]]</label>
+					<label>$INFO[Player.Time]$INFO[Player.Duration, / ]</label>
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
@@ -374,7 +374,7 @@
 					<posy>310</posy>
 					<height>30</height>
 					<width>300</width>
-					<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=blue] / [/COLOR]]</label>
+					<label>$INFO[Player.Time]$INFO[Player.Duration, / ]</label>
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
@@ -1214,7 +1214,7 @@
 				<font>font12</font>
 				<urlset>1</urlset>
 				<textcolor>textfocus</textcolor>
-				<titlecolor>blue</titlecolor>
+				<titlecolor>heading2</titlecolor>
 				<headlinecolor>white</headlinecolor>
 				<visible>!Skin.HasSetting(AutoHidePowerBtn) + [!Player.HasAudio | IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(HideNextSongsInfo)]</visible>
 			</control>
@@ -1227,7 +1227,7 @@
 				<font>font12</font>
 				<urlset>1</urlset>
 				<textcolor>textfocus</textcolor>
-				<titlecolor>blue</titlecolor>
+				<titlecolor>heading2</titlecolor>
 				<headlinecolor>white</headlinecolor>
 				<visible>Skin.HasSetting(AutoHidePowerBtn) + [!Player.HasAudio | IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(HideNextSongsInfo)]</visible>
 			</control>

@@ -1394,8 +1394,8 @@ else
 fi
 step
 
-printf "\nChanging font colors: "
-if grep -q '<textcolor>blue</textcolor>' 720p/ViewsVideoLibrary.xml ; then
+printf "\nChanging font colors for original blue strings: "
+if grep -q 'blue' 720p/ViewsVideoLibrary.xml ; then
 
 	perlregex 720p/Home.xml 's|(<font>font_MainMenu</font>#\s*<textcolor)>blue<|\1>grey2<|g'
 	perlregex 720p/Home.xml 's|(<font>font_MainMenu</font>#\s*<textcolor)>grey3<|\1>buttonfocus<|g'
@@ -1446,33 +1446,49 @@ if grep -q '<textcolor>blue</textcolor>' 720p/ViewsVideoLibrary.xml ; then
 	XMLS="720p/DialogAddonSettings.xml 720p/IncludesHomeWidget.xml "
 	XMLS+=" "
 	perlregex $XMLS "$R"
-		
-	if false ; then
-		R='s|<selectedcolor>selected</selectedcolor>|<selectedcolor>heading2</selectedcolor>|g'
-		XMLS="720p/CustomAddMenuItems.xml 720p/CustomAddonSelection.xml "
-		XMLS+=" "
-		perlregex $XMLS "$R"
-		
-		R='s|<textcolor>selected</textcolor>|<textcolor>heading</textcolor>|g'
-		XMLS=" "
-		XMLS+=" "
-		perlregex $XMLS "$R"
+	
+	perlregex 's|\s*<selectedcolor>blue</selectedcolor>#||g' 720p/DialogPVRChannelsOSD.xml
+	
+	perlregex 's|\[COLOR=blue\] / \[/COLOR\]| / |g' 720p/Home.xml
+	perlregex 's|\[COLOR=blue\]\(\[/COLOR\]|\(|g' 720p/Home.xml
+	perlregex 's|\[COLOR=blue\]\)\[/COLOR\]|\)|g' 720p/Home.xml
+	perlregex 's|<titlecolor>blue</titlecolor>|<titlecolor>heading2</titlecolor>|g' 720p/Home.xml
+	
+	perlregex 's|\[COLOR=blue\](.INFO.Player.Time. / .INFO.Player.Duration..)\[/COLOR\]|\1|g' 720p/includes.xml
+	perlregex 's|\[COLOR=blue\]\,\[/COLOR\]|\,|g' 720p/includes.xml
+	perlregex 's|\[COLOR=blue\]([^\[]*)\[/COLOR\]|\1|g' 720p/includes.xml
+	perlregex 's|\[COLOR=blue\]([^\[]*\[209\][^\[]*)\[/COLOR\]|\1|g' 720p/includes.xml
+	
+	perlregex 's|\[COLOR=blue\]([^\[]*\[[0-9]*\][^\[]*)\[/COLOR\]|\1|g' 720p/IncludesVariables.xml
+	perlregex 's|\[COLOR=blue\]([^\[]*)\[/COLOR\]|\1|g' 720p/IncludesVariables.xml
+	perlregex 's|\[COLOR=blue\](.B..LOCALIZE.[0-9]*.\s*1...B.)\[/COLOR\]|\1|g' 720p/IncludesVariables.xml
+	perlregex 's|\[COLOR=blue\](\[B\][^\[]*\[/B\])\[/COLOR\]|\1|g' 720p/IncludesVariables.xml
 
-		R='s|<focusedcolor>white</focusedcolor>|<focusedcolor>textfocus</focusedcolor>|g'
-		XMLS=" "
-		XMLS+=" "
-		perlregex $XMLS "$R"
+	perlregex 's|\[COLOR=blue\](.LOCALIZE.[0-9]*.\s*[\:]*)\[/COLOR\]|\1|g' 720p/MusicKaraokeLyrics.xml
 
-		R='s|<textcolor>white</textcolor>|<textcolor>textfocus</textcolor>|g'
-		XMLS=" "
-		XMLS+=" "
-		perlregex $XMLS "$R"
-		
-		R='s|<disabledcolor>grey3</disabledcolor>|<disabledcolor>textdisabled</disabledcolor>|g'
-		XMLS=" "
-		XMLS+=" "
-		perlregex $XMLS "$R"
-	fi
+	perlregex 's|\[COLOR=blue\](.LOCALIZE.[0-9]*.\s*[\:]*)\[/COLOR\]|\1|g' 720p/MyMusicPlaylistEditor.xml
+	
+	perlregex 's|\[COLOR=blue\](.INFO.Control.GetLabel.198..)\[/COLOR\]|\1|g' 720p/script-globalsearch-main.xml
+	
+	perlregex 's|\[COLOR=blue\]\,\[/COLOR\]|\,|g' 720p/VideoFullScreen.xml
+
+	perlregex 's|\[COLOR=blue\](.LOCALIZE.[0-9]*.[\:\s]*)\[/COLOR\]|\1|g' 720p/ViewsLogoVertical.xml
+	perlregex 's|\[COLOR=blue\](.LOCALIZE.[0-9]*.[\:\s]*)\[/COLOR\]|\1|g' 720p/ViewsMusicLibrary.xml
+	perlregex 's|\[COLOR=blue\](\s*.LOCALIZE.[0-9]*.[\:\s]*)\[/COLOR\]|\1|g' 720p/ViewsVideoLibrary.xml
+	perlregex 's|\[COLOR=blue\]\,\[/COLOR\]|\,|g' 720p/ViewsVideoLibrary.xml
+	
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nRemoving more PageCounts: "
+if true ; then #grep -q '<description>Description Page Count</description>' 720p/DialogAddonInfo.xml ; then
+	remove_control label '<description>Description Page Count</description>' 720p/DialogAddonInfo.xml
+	remove_control label '<label>.COLOR=blue.[^>]*>' 720p/DialogAlbumInfo.xml
+	remove_control label '<label>.COLOR=blue.[^>]*>' 720p/DialogPVRRecordingInfo.xml
+	remove_control label '<label>.COLOR=blue.[^>]*>' 720p/DialogVideoInfo.xml
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET

@@ -176,18 +176,6 @@
 				</control>
 				<control type="group">
 					<visible>!IsEmpty(ListItem.Property(Addon.Disclaimer))</visible>
-					<control type="label">
-						<description>Description Page Count</description>
-						<posx>610</posx>
-						<posy>170</posy>
-						<width>300</width>
-						<height>25</height>
-						<label>$INFO[Container(400).CurrentPage, $LOCALIZE[31024] [COLOR=blue]([/COLOR]]$INFO[Container(400).NumPages,/,[COLOR=blue])[/COLOR]]</label>
-						<align>right</align>
-						<aligny>center</aligny>
-						<font>font12</font>
-						<textcolor>grey</textcolor>
-					</control>
 					<control type="textbox" id="400">
 						<description>Description</description>
 						<posx>10</posx>
@@ -237,18 +225,6 @@
 				</control>
 				<control type="group">
 					<visible>IsEmpty(ListItem.Property(Addon.Disclaimer))</visible>
-					<control type="label">
-						<description>Description Page Count</description>
-						<posx>610</posx>
-						<posy>170</posy>
-						<width>300</width>
-						<height>25</height>
-						<label>$INFO[Container(401).CurrentPage, $LOCALIZE[31024] [COLOR=blue]([/COLOR]]$INFO[Container(401).NumPages,/,[COLOR=blue])[/COLOR]]</label>
-						<align>right</align>
-						<aligny>center</aligny>
-						<font>font12</font>
-						<textcolor>grey</textcolor>
-					</control>
 					<control type="textbox" id="401">
 						<description>Description</description>
 						<posx>10</posx>

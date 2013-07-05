@@ -159,18 +159,6 @@
 				<visible>!IsEmpty(ListItem.PlotOutline)</visible>
 			</control>
 		</control>
-		<control type="label">
-			<posx>610</posx>
-			<posy>370</posy>
-			<width>400</width>
-			<height>30</height>
-			<font>font12</font>
-			<textcolor>grey</textcolor>
-			<scroll>true</scroll>
-			<align>right</align>
-			<aligny>center</aligny>
-			<label>[COLOR=blue]$LOCALIZE[207][/COLOR]$INFO[Container(400).CurrentPage, ( $LOCALIZE[31024] ]$INFO[Container(400).NumPages,/, )]</label>
-		</control>
 		<control type="spincontrol" id="60">
 			<description>Next page button</description>
 			<posx>620</posx>
