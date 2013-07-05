@@ -48,9 +48,6 @@ scroll-right.png;0
 seekslider_light.png;0
 special://skin/backgrounds/default_light.jpg;0
 special://skin/backgrounds/settings.jpg;0
-StackFO.png;3
-StackNF.png;3
-unknown-user.png;0
 \$VAR\[[a-zA-Z,\.\/]*\];0
 VolumeIcon.png;0
 '

@@ -1347,7 +1347,8 @@ if [ -f media/FallbackAlbumCover.png ] ; then
 	perlregex $XMLS 's|"FallbackAlbumCover.png"|"DefaultAlbumCover.png"|g'
 	#XMLS=$(2>/dev/null grep 'FallbackAlbumCover.png' -l 720p/*)
 	#perlregex $XMLS 's|>FallbackAlbumCover.png<|>DefaultAlbumCover.png<|g'
-	check_and_remove media/FallbackAlbumCover.png
+	rm media/DefaultAlbumCover.png
+	mv media/FallbackAlbumCover.png media/DefaultAlbumCover.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -1396,6 +1397,9 @@ step
 printf "\nChanging font colors: "
 if grep -q '<textcolor>blue</textcolor>' 720p/ViewsVideoLibrary.xml ; then
 
+	perlregex 720p/Home.xml 's|(<font>font_MainMenu</font>#\s*<textcolor)>blue<|\1>grey2<|g'
+	perlregex 720p/Home.xml 's|(<font>font_MainMenu</font>#\s*<textcolor)>grey3<|\1>buttonfocus<|g'
+	
 	R='s|(<control type="label">#'
 	R+='\s*<description>(header label\|Title label)</description>#'
 	R+='(\s*<[a-z][^#]*#)*?'
@@ -1475,6 +1479,32 @@ else
 fi
 step
 
+printf "\nReplacing unknown-user.png: "
+if [ -f media/unknown-user.png ] ; then
+	XMLS=$(2>/dev/null grep 'unknown-user.png' -l 720p/*)
+	perlregex $XMLS 's|>unknown-user.png<|>DefaultActor.png<|g' >/dev/null
+	perlregex $XMLS 's|"unknown-user.png"|"DefaultActor.png"|g'
+	check_and_remove media/unknown-user.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nReplacing stack buttons: "
+if [ -f media/StackNF.png ] ; then
+	XMLS=$(2>/dev/null grep 'StackNF.png' -l 720p/*)
+	perlregex $XMLS 's|>StackNF.png<|>'$BUTTON_NF'<|g'
+	XMLS=$(2>/dev/null grep 'StackFO.png' -l 720p/*)
+	perlregex $XMLS 's|>StackFO.png<|>'$BUTTON_FO'<|g'
+	check_and_remove media/StackNF.png
+	check_and_remove media/StackFO.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
 printf "\nChanging main menu layout: "
@@ -1491,7 +1521,7 @@ if grep -q '<movement>1</movement>' 720p/Home.xml ; then
  	R+='\s*<width>330</width>#'
  	R+='\s*<height>60</height>#'
  	R+='\s*<font>font_MainMenu</font>#'
-	R+='\s*<textcolor>blue</textcolor>#)'
+	R+='\s*<textcolor>(heading2\|blue\|grey2)</textcolor>#)'
 	R+='|\1<control type="image">#'
 	R+='\3<posx>-50</posx>#'
 	R+='\3<posy>0</posy>#'
@@ -1502,9 +1532,8 @@ if grep -q '<movement>1</movement>' 720p/Home.xml ; then
 	R+='\1</control>#'
 	R+='\1\2\3\4|'
 	perlregex 720p/Home.xml "$R"
+	perlregex 720p/Home.xml 's|(<font>font_MainMenu</font>#\s*<textcolor)>(heading2\|blue)<|\1>grey2<|'
 	
-	perlregex 720p/Home.xml 's|(<font>font_MainMenu</font>#\s*<textcolor)>blue<|\1>grey2<|g'
-	perlregex 720p/Home.xml 's|(<font>font_MainMenu</font>#\s*<textcolor)>grey3<|\1>buttonfocus<|g'
 
 	printf "%sDONE!%s" $GREEN $RESET
 else
