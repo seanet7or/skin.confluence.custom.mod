@@ -7,14 +7,14 @@
 				<label>$LOCALIZE[31390]</label>
 				<include>ClearButtonChoice</include>
 				<include>CloseMenuChoice</include>
-				<visible>!substring(Window(home).Property(UsrSelectBtn),UserSub) + Window.IsVisible(2115)</visible>
+				<visible>!substring(Window(home).Property(UsrSelectBtn),UserSub) + !substring(Window(home).Property(UsrSelectBtn),SubProg) + Window.IsVisible(2115)</visible>
 			</item>
 			<item>
 				<description>Clear Setting</description>
 				<label>$LOCALIZE[31144]</label>
 				<include>ClearButtonChoice</include>
 				<include>CloseMenuChoice</include>
-				<visible>substring(Window(home).Property(UsrSelectBtn),UserSub) | Window.IsVisible(2114)</visible>
+				<visible>substring(Window(home).Property(UsrSelectBtn),UserSub) | substring(Window(home).Property(UsrSelectBtn),SubProg) | Window.IsVisible(2114)</visible>
 			</item>
 			<item>
 				<description>Hide Item</description>
@@ -23,7 +23,7 @@
 				<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,Hidden)</onclick>
 				<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[31138])</onclick>
 				<include>CloseMenuChoice</include>
-				<visible>!substring(Window(home).Property(UsrSelectBtn),UserSub) + Window.IsVisible(2115)</visible>
+				<visible>!substring(Window(home).Property(UsrSelectBtn),UserSub) + !substring(Window(home).Property(UsrSelectBtn),SubProg) + Window.IsVisible(2115)</visible>
 			</item>
 			<item>
 				<description>Weather</description>

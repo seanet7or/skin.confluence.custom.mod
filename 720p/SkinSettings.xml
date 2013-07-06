@@ -1906,6 +1906,88 @@
 						<onclick condition="!IsEmpty(Skin.String(SubMusic.6.Label)) + !stringcompare(Skin.String(SubMusic.6.Path),Hidden)">Skin.SetString(SubMusic.6.Label)</onclick>
 						<enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable>
 					</control>
+					<control type="label" id="342">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>$LOCALIZE[10506] $LOCALIZE[31120]</label>
+						<textcolor>heading2</textcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="button" id="343">
+						<width>750</width>
+						<height>40</height>
+						<label>$LOCALIZE[31130] - 1</label>
+						<label2>$INFO[Skin.String(SubProg.1.Label)]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturenofocus>-</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubProg.1,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubProg.1.Label)) + !stringcompare(Skin.String(SubProg.1.Path),Hidden)">Skin.SetString(SubProg.1.Label)</onclick>
+					</control>
+					<control type="button" id="344">
+						<width>750</width>
+						<height>40</height>
+						<label>$LOCALIZE[31130] - 2</label>
+						<label2>$INFO[Skin.String(SubProg.2.Label)]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturenofocus>-</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubProg.2,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubProg.2.Label)) + !stringcompare(Skin.String(SubProg.2.Path),Hidden)">Skin.SetString(SubProg.2.Label)</onclick>
+					</control>
+					<control type="button" id="345">
+						<width>750</width>
+						<height>40</height>
+						<label>$LOCALIZE[31130] - 3</label>
+						<label2>$INFO[Skin.String(SubProg.3.Label)]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturenofocus>-</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubProg.3,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubProg.3.Label)) + !stringcompare(Skin.String(SubProg.3.Path),Hidden)">Skin.SetString(SubProg.3.Label)</onclick>
+					</control>
+					<control type="button" id="346">
+						<width>750</width>
+						<height>40</height>
+						<label>$LOCALIZE[31130] - 4</label>
+						<label2>$INFO[Skin.String(SubProg.4.Label)]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturenofocus>-</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubProg.4,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubProg.4.Label)) + !stringcompare(Skin.String(SubProg.4.Path),Hidden)">Skin.SetString(SubProg.4.Label)</onclick>
+					</control>
+					<control type="button" id="347">
+						<width>750</width>
+						<height>40</height>
+						<label>$LOCALIZE[31130] - 5</label>
+						<label2>$INFO[Skin.String(SubProg.5.Label)]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturenofocus>-</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubProg.5,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubProg.5.Label)) + !stringcompare(Skin.String(SubProg.5.Path),Hidden)">Skin.SetString(SubProg.5.Label)</onclick>
+					</control>
+					<control type="button" id="348">
+						<width>750</width>
+						<height>40</height>
+						<label>$LOCALIZE[31130] - 6</label>
+						<label2>$INFO[Skin.String(SubProg.6.Label)]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturenofocus>-</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubProg.6,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubProg.6.Label)) + !stringcompare(Skin.String(SubProg.6.Path),Hidden)">Skin.SetString(SubProg.6.Label)</onclick>
+						<enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable>
+					</control>					
 				</control>
 				<control type="scrollbar" id="61">
 					<posx>1060</posx>
@@ -2582,6 +2664,14 @@
 								<property name="HiLiteItem">MenuButton</property>
 								<visible>!Skin.HasSetting(GlobalBackground)</visible>
 							</item>
+							<item id="17">
+								<description>Startup Window</description>
+								<label>$LOCALIZE[31333]</label>
+								<onclick>noop</onclick>
+								<icon>special://skin/backgrounds/homescreen/Startup.jpg</icon>
+								<thumb>$INFO[Skin.String(StartUpBackgroundPath)]</thumb>
+								<property name="HiLiteItem">StartUp</property>
+							</item>							
 						</content>
 					</control>
 					<control type="image">
@@ -3878,6 +3968,63 @@
 								<align>center</align>
 								<onclick condition="IsEmpty(Skin.String(FavouritesFanartDir))">Skin.SetString(FavBtnBackground,special://skin/backgrounds/default_light.jpg)</onclick>
 								<onclick condition="!IsEmpty(Skin.String(FavouritesFanartDir))">Skin.SetString(FavBtnBackground,$INFO[Skin.String(FavouritesFanartDir)])</onclick>
+								<onleft>501</onleft>
+								<onright>500</onright>
+								<onup>504</onup>
+								<ondown>504</ondown>
+							</control>
+						</control>
+						<control type="group">
+							<visible>Container(9005).HasFocus(17)</visible>
+							<control type="button" id="500">
+								<description>Single Image button</description>
+								<posx>55</posx>
+								<posy>0</posy>
+								<width>180</width>
+								<height>40</height>
+								<label>31149</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<onclick>Skin.SetImage(StartUpBackgroundPath)</onclick>
+								<onclick>Skin.Reset(HideStartUpBackground)</onclick>
+								<onleft>502</onleft>
+								<onright>501</onright>
+								<onup>504</onup>
+								<ondown>504</ondown>
+							</control>
+							<control type="button" id="501">
+								<description>No Image button</description>
+								<posx>240</posx>
+								<posy>0</posy>
+								<width>180</width>
+								<height>40</height>
+								<label>31170</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<onclick>Skin.Reset(StartUpBackgroundPath)</onclick>
+								<onclick>Skin.SetBool(HideStartUpBackground)</onclick>
+								<onleft>500</onleft>
+								<onright>502</onright>
+								<onup>504</onup>
+								<ondown>504</ondown>
+							</control>
+							<control type="button" id="502">
+								<description>Default Image button</description>
+								<posx>425</posx>
+								<posy>0</posy>
+								<width>180</width>
+								<height>40</height>
+								<label>571</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<onclick>Skin.SetString(StartUpBackground,special://skin/backgrounds/homescreen/Startup.jpg)</onclick>
+								<onclick>Skin.Reset(HideStartUpBackground)</onclick>
 								<onleft>501</onleft>
 								<onright>500</onright>
 								<onup>504</onup>

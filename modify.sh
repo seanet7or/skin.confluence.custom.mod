@@ -508,7 +508,8 @@ step
 	
 printf "\nReplacing some backgrounds: "
 if [ -f backgrounds/media-overlay.jpg ] ; then
-	perlregex 's|<value>special://skin/backgrounds/SKINDEFAULT.jpg</value>|<value>'$BACKGROUND_DEF'</value>|g'
+	XMLS=$(2>/dev/null grep 'SKINDEFAULT.jpg' -l 720p/*)
+	perlregex $XMLS 's|special://skin/backgrounds/SKINDEFAULT.jpg|'$BACKGROUND_DEF'|g'
 	perlregex 's|.INFO.Skin.CurrentTheme,special://skin/backgrounds/,.jpg.|'$BACKGROUND_DEF'|g'
 	perlregex 's|<texture>special://skin/backgrounds/media-overlay.jpg</texture>|<texture>'$BACKGROUND_DEF'</texture>|g'
 	check_and_remove backgrounds/SKINDEFAULT.jpg
@@ -1385,9 +1386,9 @@ if ! grep -q 'buttonfocus' colors/defaults.xml ; then
 	R+='\2<color name="heading1">ff0084ff</color>#'
 	R+='\2<color name="heading2">ff7fc1ff</color>#'
 	R+='\2<color name="textfocus">ffffffff</color>#'
-	R+='\2<color name="textdisabled">ff999999</color>#'
+	R+='\2<color name="textnofocus">ff999999</color>#'
+	R+='\2<color name="textdisabled">ff505050</color>#'
 	R+='\2<color name="itemselected">ffeb9e17</color>#'
-	R+='\2<color name="mainmenufocus">ff505050</color>#'
 	R+='\2|'
 	perlregex colors/defaults.xml "$R"
 	printf "%sDONE!%s" $GREEN $RESET
@@ -1408,6 +1409,20 @@ else
 fi
 step
 
+#printf "\nChanging font colors for original light grey strings: "
+#if grep -q '>grey2<' 720p/DialogContextMenu.xml ; then
+#	XMLS=$(2>/dev/null grep '<textcolor>grey2</textcolor>' -l 720p/*)
+#	perlregex 's|(<textcolor)>grey2<(/textcolor>#\s*<focusedcolor)|\1>textnofocus<\2|g'
+#	R='s|(\s*<textcolor)>grey2<(/textcolor>#'
+#	R+='\s*<selectedcolor>itemselected</selectedcolor>#'
+#	R+='\s*<align>right</align>#'
+#	R+='|
+#	printf "%sDONE!%s" $GREEN $RESET
+#else
+#	printf "%sSKIPPED.%s" $CYAN $RESET
+#fi
+#step
+
 printf "\nChanging font colors for original 'selected color' strings: "
 if grep -q '>selected<' 720p/VisualisationPresetList.xml ; then
 	XMLS=$(2>/dev/null grep '>selected<' -l 720p/*)
@@ -1423,7 +1438,7 @@ step
 printf "\nChanging font colors for original blue strings: "
 if grep -q 'blue' 720p/ViewsVideoLibrary.xml ; then
 
-	perlregex 720p/Home.xml 's|(<font>font_MainMenu</font>#\s*<textcolor)>blue<|\1>grey2<|g'
+	perlregex 720p/Home.xml 's|(<font>font_MainMenu</font>#\s*<textcolor)>blue<|\1>textnofocus<|g'
 	perlregex 720p/Home.xml 's|(<font>font_MainMenu</font>#\s*<textcolor)>grey3<|\1>buttonfocus<|g'
 	
 	R='s|(<control type="label">#'
@@ -1509,11 +1524,12 @@ else
 fi
 step
 
-printf "\nRemoving more PageCounts: "
-if grep -q '<posx>130r</posx>' 720p/DialogAlbumInfo.xml ; then
+printf "\nRemoving even more PageCounts: "
+if grep -q '>Description Page Count<' 720p/DialogAddonInfo.xml ; then
 	remove_control label '<posx>130r</posx>' 720p/DialogAlbumInfo.xml
 	remove_control label '<label>.LOCALIZE.207.[^#]*#' 720p/DialogPVRRecordingInfo.xml
 	remove_control label '<label>.LOCALIZE.20[67].[^#]*#' 720p/DialogVideoInfo.xml
+	remove_control label '<description>Description Page Count</description>' 720p/DialogAddonInfo.xml
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -1573,9 +1589,7 @@ if grep -q '<movement>1</movement>' 720p/Home.xml ; then
 	R+='\1</control>#'
 	R+='\1\2\3\4|'
 	perlregex 720p/Home.xml "$R"
-	perlregex 720p/Home.xml 's|(<font>font_MainMenu</font>#\s*<textcolor)>(heading2\|blue)<|\1>mainmenufocus<|'
-	
-
+	perlregex 720p/Home.xml 's|(<font>font_MainMenu</font>#\s*<textcolor)>(heading2\|blue)<|\1>textnofocus<|'
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET

@@ -103,6 +103,7 @@
 						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$INFO[system.addontitle(Skin.String(UsrSelectAddon))])</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,RunAddon($INFO[Skin.String(UsrSelectAddon)]))</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Icon,$INFO[system.addonicon(Skin.String(UsrSelectAddon))])</onclick>
+						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label)</onclick>
 					</item>
 					<item>
 						<description>Music addons</description>
@@ -115,6 +116,7 @@
 						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$INFO[system.addontitle(Skin.String(UsrSelectAddon))])</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,RunAddon($INFO[Skin.String(UsrSelectAddon)]))</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Icon,$INFO[system.addonicon(Skin.String(UsrSelectAddon))])</onclick>
+						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label)</onclick>
 					</item>
 					<item>
 						<description>Picture addons</description>
@@ -127,6 +129,7 @@
 						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$INFO[system.addontitle(Skin.String(UsrSelectAddon))])</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,RunAddon($INFO[Skin.String(UsrSelectAddon)]))</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Icon,$INFO[system.addonicon(Skin.String(UsrSelectAddon))])</onclick>
+						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label)</onclick>
 					</item>
 					<item>
 						<description>Programme addons</description>
@@ -139,6 +142,7 @@
 						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$INFO[system.addontitle(Skin.String(UsrSelectAddon))])</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,RunAddon($INFO[Skin.String(UsrSelectAddon)]))</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Icon,$INFO[system.addonicon(Skin.String(UsrSelectAddon))])</onclick>
+						<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label)</onclick>
 					</item>
 				</content>
 			</control>

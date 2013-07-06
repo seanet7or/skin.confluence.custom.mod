@@ -4,6 +4,13 @@
 	<defaultcontrol always="true">10</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<controls>
+		<control type="image">
+			<description>Startup Background Image</description>
+			<include>Dimensions_Fullscreen</include>
+			<aspectratio>scale</aspectratio>
+			<texture fallback="special://skin/backgrounds/homescreen/Startup.jpg">$INFO[Skin.String(StartUpBackgroundPath)]</texture>
+			<visible>!Skin.HasSetting(HideStartUpBackground))</visible>
+		</control>		
 		<control type="button" id="10">
 			<description>trigger</description>
 			<onfocus>ReplaceWindow(Home)</onfocus>
