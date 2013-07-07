@@ -507,13 +507,16 @@ fi
 step
 	
 printf "\nReplacing some backgrounds: "
-if [ -f backgrounds/media-overlay.jpg ] ; then
+if [ -f backgrounds/media-overlay.jpg ] || [ -f media/media-overlay.jpg ]  ; then
 	XMLS=$(2>/dev/null grep 'SKINDEFAULT.jpg' -l 720p/*)
 	perlregex $XMLS 's|special://skin/backgrounds/SKINDEFAULT.jpg|'$BACKGROUND_DEF'|g'
 	perlregex 's|.INFO.Skin.CurrentTheme,special://skin/backgrounds/,.jpg.|'$BACKGROUND_DEF'|g'
+	XMLS=$(2>/dev/null grep 'media-overlay.jpg' -l 720p/*)
 	perlregex 's|<texture>special://skin/backgrounds/media-overlay.jpg</texture>|<texture>'$BACKGROUND_DEF'</texture>|g'
+	perlregex $XMLS 's|<texture>media-overlay.jpg</texture>|<texture>'$BACKGROUND_DEF'</texture>|g'
 	check_and_remove backgrounds/SKINDEFAULT.jpg
 	check_and_remove backgrounds/media-overlay.jpg
+	check_and_remove media/media-overlay.jpg
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -1044,11 +1047,12 @@ fi
 step
 
 printf "\nReplacing backgrounds: "
-if [ -f backgrounds/homescreen/weather.jpg ] ; then
-	R='s|skin/backgrounds/homescreen/[a-z]*.jpg|skin/backgrounds/default_light.jpg|g' 
-	perlregex 720p/SkinSettings.xml 720p/includes.xml 720p/IncludesMenuContentItems.xml "$R"
+if true ; then #[ -f backgrounds/homescreen/weather.jpg ] ; then
 	R='s|\s*<value condition="stringcompare[^>]*>special://skin/backgrounds/homescreen/[a-z]*.jpg</value>#||g'
 	perlregex 720p/IncludesVariables.xml "$R"
+	XMLS=$(2>/dev/null grep 'backgrounds/homescreen/' -l 720p/*)
+	R='s|skin/backgrounds/homescreen/[a-z]*.jpg</texture>|skin/backgrounds/default_light.jpg</texture>|g' 
+	perlregex $XMLS "$R"
 	rm -rf backgrounds/homescreen
 	printf "%sDONE!%s" $GREEN $RESET
 else
@@ -1072,8 +1076,9 @@ step
 
 printf "\nRemoving standard TV background: "
 if [ -f backgrounds/tv.jpg ] ; then
+	XMLS=$(2>/dev/null grep 'tv.jpg' -l 720p/*)
 	perlregex 720p/Settings.xml 's|\s*<icon>[^<]*</icon>||g'
-	perlregex 720p/MyPVR.xml 's|special://skin/backgrounds/tv.jpg|special://skin/backgrounds/default_light.jpg|g'
+	perlregex $XMLS 's|special://skin/backgrounds/homescreen/tv.jpg|'$BACKGROUND_DEF'|g'
 	check_and_remove backgrounds/tv.jpg
 	printf "%sDONE!%s" $GREEN $RESET
 else
@@ -1333,8 +1338,8 @@ step
 
 printf "\nRemoving startup background: "
 if [ -f backgrounds/InitialStartup.jpg ] ; then
-	remove_control image '<texture>special://skin/backgrounds/InitialStartup.jpg</texture>' 720p/Startup.xml
-	remove_control image '<texture>special://skin/backgrounds/InitialStartup.jpg</texture>' 720p/LoginScreen.xml
+	remove_control image '<description>Startup Background Image</description>' 720p/Startup.xml
+	remove_control image '<description>Startup Background Image</description>' 720p/LoginScreen.xml
 	check_and_remove backgrounds/InitialStartup.jpg
 	printf "%sDONE!%s" $GREEN $RESET
 else
@@ -1578,7 +1583,7 @@ if grep -q '<movement>1</movement>' 720p/Home.xml ; then
  	R+='\s*<width>330</width>#'
  	R+='\s*<height>60</height>#'
  	R+='\s*<font>font_MainMenu</font>#'
-	R+='\s*<textcolor>(heading2\|blue\|grey2)</textcolor>#)'
+	R+='\s*<textcolor>(heading2\|blue\|grey2\|textnofocus)</textcolor>#)'
 	R+='|\1<control type="image">#'
 	R+='\3<posx>-50</posx>#'
 	R+='\3<posy>0</posy>#'
@@ -1589,7 +1594,6 @@ if grep -q '<movement>1</movement>' 720p/Home.xml ; then
 	R+='\1</control>#'
 	R+='\1\2\3\4|'
 	perlregex 720p/Home.xml "$R"
-	perlregex 720p/Home.xml 's|(<font>font_MainMenu</font>#\s*<textcolor)>(heading2\|blue)<|\1>textnofocus<|'
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET

@@ -747,7 +747,7 @@
 				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 				<!--ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown-->
-				<ondown  condition="!Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
 				<control type="grouplist" id="9010">
 					<include>HomeSubMenuCommonValues</include>
 					<onleft>9010</onleft>
@@ -886,6 +886,14 @@
 						<align>center</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
+					</control>
+					<control type="image">
+						<posx>-50</posx>
+						<posy>0</posy>
+						<width>440</width>
+						<height>65</height>
+						<texture border="0,2,0,2">home/main-fo_light.png</texture>
+						<visible>Control.HasFocus(9000)</visible>
 					</control>
 					<control type="label">
 						<posx>170</posx>

@@ -414,23 +414,74 @@
 		</control>
 	</include>
 	<include name="HomeSubMenuPictures">
-		<control type="image" id="90147">
+		<control type="image" id="90150">
 			<width>35</width>
 			<height>35</height>
 			<texture border="0,2,0,2" flipx="true">HomeSubEnd.png</texture>
+			<visible>!stringcompare(Skin.String(SubPictures.1.Path),Hidden) | !IsEmpty(Skin.String(SubPictures.2.Path)) | !IsEmpty(Skin.String(SubPictures.3.Path)) | !IsEmpty(Skin.String(SubPictures.4.Path)) | !IsEmpty(Skin.String(SubPictures.5.Path)) | !IsEmpty(Skin.String(SubPictures.6.Path))</visible>
 		</control>
-		<control type="button" id="90148">
+		<control type="button" id="90151">
 			<include>ButtonHomeSubCommonValues</include>
-			<label>24001</label>
-			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastAction,ActivateWindow(Pictures,Addons,return))</onclick>
-			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$LOCALIZE[24001])</onclick>
+			<label>$VAR[SubMenuPicturesOne]</label>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubPictures.1.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubPictures.1.Path)])</onclick>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubPictures.1.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Pictures,Addons,return))</onclick>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuPicturesOne])</onclick>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-			<onclick>ActivateWindow(Pictures,Addons,return)</onclick>
+			<onclick condition="IsEmpty(Skin.String(SubPictures.1.Path))">ActivateWindow(Pictures,Addons,return)</onclick>
+			<onclick condition="!IsEmpty(Skin.String(SubPictures.1.Path))">$INFO[Skin.String(SubPictures.1.Path)]</onclick>
+			<visible>!stringcompare(Skin.String(SubPictures.1.Path),Hidden)</visible>
 		</control>
-		<control type="image" id="90149">
+		<control type="button" id="90152">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(SubPictures.2.Label)]</label>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubPictures.2.Path)])</onclick>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$INFO[Skin.String(SubPictures.2.Label)])</onclick>
+			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
+			<onclick>$INFO[Skin.String(SubPictures.2.Path)]</onclick>
+			<visible>!IsEmpty(Skin.String(SubPictures.2.Path))</visible>
+		</control>
+		<control type="button" id="90153">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(SubPictures.3.Label)]</label>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubPictures.3.Path)])</onclick>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$INFO[Skin.String(SubPictures.3.Label)])</onclick>
+			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
+			<onclick>$INFO[Skin.String(SubPictures.3.Path)]</onclick>
+			<visible>!IsEmpty(Skin.String(SubPictures.3.Path))</visible>
+		</control>
+		<control type="button" id="90154">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(SubPictures.4.Label)]</label>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubPictures.4.Path)])</onclick>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$INFO[Skin.String(SubPictures.4.Label)])</onclick>
+			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
+			<onclick>$INFO[Skin.String(SubPictures.4.Path)]</onclick>
+			<visible>!IsEmpty(Skin.String(SubPictures.4.Path))</visible>
+		</control>
+		<control type="button" id="90155">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(SubPictures.5.Label)]</label>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubPictures.5.Path)])</onclick>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$INFO[Skin.String(SubPictures.5.Label)])</onclick>
+			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
+			<onclick>$INFO[Skin.String(SubPictures.5.Path)]</onclick>
+			<visible>!IsEmpty(Skin.String(SubPictures.5.Path))</visible>
+		</control>
+		<control type="button" id="90156">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(SubPictures.6.Label)]</label>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubPictures.6.Path)])</onclick>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$INFO[Skin.String(SubPictures.6.Label)])</onclick>
+			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
+			<onclick>$INFO[Skin.String(SubPictures.6.Path)]</onclick>
+			<visible>!IsEmpty(Skin.String(SubPictures.6.Path))</visible>
+			<visible>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</visible>
+		</control>
+		<control type="image" id="90157">
 			<width>35</width>
 			<height>35</height>
 			<texture border="0,2,0,2">HomeSubEnd.png</texture>
+			<visible>!stringcompare(Skin.String(SubPictures.1.Path),Hidden) | !IsEmpty(Skin.String(SubPictures.2.Path)) | !IsEmpty(Skin.String(SubPictures.3.Path)) | !IsEmpty(Skin.String(SubPictures.4.Path)) | !IsEmpty(Skin.String(SubPictures.5.Path)) | !IsEmpty(Skin.String(SubPictures.6.Path))</visible>
 		</control>
 	</include>
 	<include name="HomeSubMenuLiveTV">
@@ -485,45 +536,70 @@
 		</control>
 		<control type="button" id="90182">
 			<include>ButtonHomeSubCommonValues</include>
-			<label>31328</label>
-			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,RecentlyAddedMusicVideos,return))</onclick>
-			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$LOCALIZE[31328])</onclick>
+			<label>$VAR[SubMenuConcertsOne]</label>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubConcerts.1.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,RecentlyAddedMusicVideos,return))</onclick>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubConcerts.1.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubConcerts.1.Path)])</onclick>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuConcertsOne])</onclick>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-			<onclick>ActivateWindow(Videos,RecentlyAddedMusicVideos,return)</onclick>
+			<onclick condition="IsEmpty(Skin.String(SubConcerts.1.Path))">ActivateWindow(Videos,RecentlyAddedMusicVideos,return)</onclick>
+			<onclick condition="!IsEmpty(Skin.String(SubConcerts.1.Path))">$INFO[Skin.String(SubConcerts.1.Path)]</onclick>
+			<visible>!stringcompare(Skin.String(SubConcerts.1.Path),Hidden)</visible>
 		</control>
 		<control type="button" id="90183">
 			<include>ButtonHomeSubCommonValues</include>
-			<label>369</label>
-			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,MusicVideoTitles,return))</onclick>
-			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$LOCALIZE[369])</onclick>
+			<label>$VAR[SubMenuConcertsTwo]</label>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubConcerts.2.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,MusicVideoTitles,return))</onclick>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubConcerts.2.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubConcerts.2.Path)])</onclick>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuConcertsTwo])</onclick>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-			<onclick>ActivateWindow(Videos,MusicVideoTitles,return)</onclick>
+			<onclick condition="IsEmpty(Skin.String(SubConcerts.2.Path))">ActivateWindow(Videos,MusicVideoTitles,return)</onclick>
+			<onclick condition="!IsEmpty(Skin.String(SubConcerts.2.Path))">$INFO[Skin.String(SubConcerts.2.Path)]</onclick>
+			<visible>!stringcompare(Skin.String(SubConcerts.2.Path),Hidden)</visible>
 		</control>
 		<control type="button" id="90184">
 			<include>ButtonHomeSubCommonValues</include>
-			<label>135</label>
-			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,MusicVideoGenres,return))</onclick>
-			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$LOCALIZE[135])</onclick>
+			<label>$VAR[SubMenuConcertsThree]</label>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubConcerts.3.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,MusicVideoGenres,return))</onclick>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubConcerts.3.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubConcerts.3.Path)])</onclick>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuConcertsThree])</onclick>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-			<onclick>ActivateWindow(Videos,MusicVideoGenres,return)</onclick>
+			<onclick condition="IsEmpty(Skin.String(SubConcerts.3.Path))">ActivateWindow(Videos,MusicVideoGenres,return)</onclick>
+			<onclick condition="!IsEmpty(Skin.String(SubConcerts.3.Path))">$INFO[Skin.String(SubConcerts.3.Path)]</onclick>
+			<visible>!stringcompare(Skin.String(SubConcerts.3.Path),Hidden)</visible>
 		</control>
 		<control type="button" id="90185">
 			<include>ButtonHomeSubCommonValues</include>
-			<label>652</label>
-			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,MusicVideoYears,return))</onclick>
-			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$LOCALIZE[652])</onclick>
+			<label>$VAR[SubMenuConcertsFour]</label>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubConcerts.4.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,MusicVideoYears,return))</onclick>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubConcerts.4.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubConcerts.4.Path)])</onclick>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuConcertsFour])</onclick>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-			<onclick>ActivateWindow(Videos,MusicVideoYears,return)</onclick>
+			<onclick condition="IsEmpty(Skin.String(SubConcerts.4.Path))">ActivateWindow(Videos,MusicVideoYears,return)</onclick>
+			<onclick condition="!IsEmpty(Skin.String(SubConcerts.4.Path))">$INFO[Skin.String(SubConcerts.4.Path)]</onclick>
+			<visible>!stringcompare(Skin.String(SubConcerts.4.Path),Hidden)</visible>
 		</control>
 		<control type="button" id="90186">
 			<include>ButtonHomeSubCommonValues</include>
-			<label>20459</label>
-			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,MusicVideoTags,return))</onclick>
-			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$LOCALIZE[20459])</onclick>
+			<label>$VAR[SubMenuConcertsFive]</label>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubConcerts.5.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,MusicVideoTags,return))</onclick>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubConcerts.5.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubConcerts.5.Path)])</onclick>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuConcertsFive])</onclick>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-			<onclick>ActivateWindow(Videos,MusicVideoTags,return)</onclick>
+			<onclick condition="IsEmpty(Skin.String(SubConcerts.5.Path))">ActivateWindow(Videos,MusicVideoTags,return)</onclick>
+			<onclick condition="!IsEmpty(Skin.String(SubConcerts.5.Path))">$INFO[Skin.String(SubConcerts.5.Path)]</onclick>
+			<visible>!stringcompare(Skin.String(SubConcerts.5.Path),Hidden)</visible>
 		</control>
-		<control type="image" id="90187">
+		<control type="button" id="90187">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(SubConcerts.6.Label)]</label>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubConcerts.6.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubConcerts.6.Path)])</onclick>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$INFO[Skin.String(SubConcerts.6.Label)])</onclick>
+			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
+			<onclick>$INFO[Skin.String(SubConcerts.6.Path)]</onclick>
+			<visible>!IsEmpty(Skin.String(SubConcerts.6.Path))</visible>
+			<visible>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</visible>
+		</control>
+		<control type="image" id="90188">
 			<width>35</width>
 			<height>35</height>
 			<texture border="0,2,0,2">HomeSubEnd.png</texture>
@@ -757,7 +833,7 @@
 		</control>
 		<control type="button" id="90303">
 			<include>ButtonHomeSubCommonValues</include>
-			$INFO[Skin.String(SubProg.3.Label)]
+			<label>$INFO[Skin.String(SubProg.3.Label)]</label>
 			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubProg.3.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubProg.3.Path)])</onclick>
 			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$INFO[Skin.String(SubProg.3.Label)])</onclick>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
@@ -766,7 +842,7 @@
 		</control>
 		<control type="button" id="90304">
 			<include>ButtonHomeSubCommonValues</include>
-			$INFO[Skin.String(SubProg.4.Label)]
+			<label>$INFO[Skin.String(SubProg.4.Label)]</label>
 			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubProg.4.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubProg.4.Path)])</onclick>
 			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$INFO[Skin.String(SubProg.4.Label)])</onclick>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
@@ -775,7 +851,7 @@
 		</control>
 		<control type="button" id="90305">
 			<include>ButtonHomeSubCommonValues</include>
-			$INFO[Skin.String(SubProg.5.Label)]
+			<label>$INFO[Skin.String(SubProg.5.Label)]</label>
 			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubProg.5.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubProg.5.Path)])</onclick>
 			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$INFO[Skin.String(SubProg.5.Label)])</onclick>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
@@ -784,7 +860,7 @@
 		</control>
 		<control type="button" id="90306">
 			<include>ButtonHomeSubCommonValues</include>
-			$INFO[Skin.String(SubProg.6.Label)]
+			<label>$INFO[Skin.String(SubProg.6.Label)]</label>
 			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubProg.6.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubProg.6.Path)])</onclick>
 			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$INFO[Skin.String(SubProg.6.Label)])</onclick>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>

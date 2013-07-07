@@ -1828,12 +1828,94 @@
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
-						<label>$LOCALIZE[1211] $LOCALIZE[31120]</label>
+						<label>$LOCALIZE[31121] $LOCALIZE[31120]</label>
 						<textcolor>heading2</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
 					<control type="button" id="336">
+						<width>750</width>
+						<height>40</height>
+						<label>$LOCALIZE[31130] - 1</label>
+						<label2>$VAR[SubMenuConcertsOne]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturenofocus>-</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubConcerts.1,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubConcerts.1.Label)) + !stringcompare(Skin.String(SubConcerts.1.Path),Hidden)">Skin.SetString(SubConcerts.1.Label)</onclick>
+					</control>
+					<control type="button" id="337">
+						<width>750</width>
+						<height>40</height>
+						<label>$LOCALIZE[31130] - 2</label>
+						<label2>$VAR[SubMenuConcertsTwo]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturenofocus>-</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubConcerts.2,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubConcerts.2.Label)) + !stringcompare(Skin.String(SubConcerts.2.Path),Hidden)">Skin.SetString(SubConcerts.2.Label)</onclick>
+					</control>
+					<control type="button" id="338">
+						<width>750</width>
+						<height>40</height>
+						<label>$LOCALIZE[31130] - 3</label>
+						<label2>$VAR[SubMenuConcertsThree]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturenofocus>-</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubConcerts.3,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubConcerts.3.Label)) + !stringcompare(Skin.String(SubConcerts.3.Path),Hidden)">Skin.SetString(SubConcerts.3.Label)</onclick>
+					</control>
+					<control type="button" id="339">
+						<width>750</width>
+						<height>40</height>
+						<label>$LOCALIZE[31130] - 4</label>
+						<label2>$VAR[SubMenuConcertsFour]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturenofocus>-</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubConcerts.4,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubConcerts.4.Label)) + !stringcompare(Skin.String(SubConcerts.4.Path),Hidden)">Skin.SetString(SubConcerts.4.Label)</onclick>
+					</control>
+					<control type="button" id="340">
+						<width>750</width>
+						<height>40</height>
+						<label>$LOCALIZE[31130] - 5</label>
+						<label2>$VAR[SubMenuConcertsFive]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturenofocus>-</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubConcerts.5,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubConcerts.5.Label)) + !stringcompare(Skin.String(SubConcerts.5.Path),Hidden)">Skin.SetString(SubConcerts.5.Label)</onclick>
+					</control>
+					<control type="button" id="341">
+						<width>750</width>
+						<height>40</height>
+						<label>$LOCALIZE[31130] - 6</label>
+						<label2>$INFO[Skin.String(SubConcerts.6.Label)]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturenofocus>-</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubConcerts.6,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubConcerts.6.Label)) + !stringcompare(Skin.String(SubConcerts.6.Path),Hidden)">Skin.SetString(SubConcerts.6.Label)</onclick>
+						<enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable>
+					</control>
+					<control type="label" id="342">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>$LOCALIZE[1211] $LOCALIZE[31120]</label>
+						<textcolor>heading2</textcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="button" id="343">
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 1</label>
@@ -1845,7 +1927,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMusic.1.Label)) + !stringcompare(Skin.String(SubMusic.1.Path),Hidden)">Skin.SetString(SubMusic.1.Label)</onclick>
 					</control>
-					<control type="button" id="337">
+					<control type="button" id="344">
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 2</label>
@@ -1857,7 +1939,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMusic.2.Label)) + !stringcompare(Skin.String(SubMusic.2.Path),Hidden)">Skin.SetString(SubMusic.2.Label)</onclick>
 					</control>
-					<control type="button" id="338">
+					<control type="button" id="345">
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 3</label>
@@ -1869,7 +1951,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMusic.3.Label)) + !stringcompare(Skin.String(SubMusic.3.Path),Hidden)">Skin.SetString(SubMusic.3.Label)</onclick>
 					</control>
-					<control type="button" id="339">
+					<control type="button" id="346">
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 4</label>
@@ -1881,7 +1963,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMusic.4.Label)) + !stringcompare(Skin.String(SubMusic.4.Path),Hidden)">Skin.SetString(SubMusic.4.Label)</onclick>
 					</control>
-					<control type="button" id="340">
+					<control type="button" id="347">
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 5</label>
@@ -1893,7 +1975,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMusic.5.Label)) + !stringcompare(Skin.String(SubMusic.5.Path),Hidden)">Skin.SetString(SubMusic.5.Label)</onclick>
 					</control>
-					<control type="button" id="341">
+					<control type="button" id="348">
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 6</label>
@@ -1906,7 +1988,7 @@
 						<onclick condition="!IsEmpty(Skin.String(SubMusic.6.Label)) + !stringcompare(Skin.String(SubMusic.6.Path),Hidden)">Skin.SetString(SubMusic.6.Label)</onclick>
 						<enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable>
 					</control>
-					<control type="label" id="342">
+					<control type="label" id="349">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -1915,7 +1997,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="button" id="343">
+					<control type="button" id="350">
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 1</label>
@@ -1927,7 +2009,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubProg.1.Label)) + !stringcompare(Skin.String(SubProg.1.Path),Hidden)">Skin.SetString(SubProg.1.Label)</onclick>
 					</control>
-					<control type="button" id="344">
+					<control type="button" id="351">
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 2</label>
@@ -1939,7 +2021,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubProg.2.Label)) + !stringcompare(Skin.String(SubProg.2.Path),Hidden)">Skin.SetString(SubProg.2.Label)</onclick>
 					</control>
-					<control type="button" id="345">
+					<control type="button" id="352">
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 3</label>
@@ -1951,7 +2033,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubProg.3.Label)) + !stringcompare(Skin.String(SubProg.3.Path),Hidden)">Skin.SetString(SubProg.3.Label)</onclick>
 					</control>
-					<control type="button" id="346">
+					<control type="button" id="353">
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 4</label>
@@ -1963,7 +2045,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubProg.4.Label)) + !stringcompare(Skin.String(SubProg.4.Path),Hidden)">Skin.SetString(SubProg.4.Label)</onclick>
 					</control>
-					<control type="button" id="347">
+					<control type="button" id="354">
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 5</label>
@@ -1975,7 +2057,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubProg.5.Label)) + !stringcompare(Skin.String(SubProg.5.Path),Hidden)">Skin.SetString(SubProg.5.Label)</onclick>
 					</control>
-					<control type="button" id="348">
+					<control type="button" id="355">
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 6</label>
@@ -1987,7 +2069,89 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubProg.6.Label)) + !stringcompare(Skin.String(SubProg.6.Path),Hidden)">Skin.SetString(SubProg.6.Label)</onclick>
 						<enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable>
-					</control>					
+					</control>
+					<control type="label" id="356">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>$LOCALIZE[1213] $LOCALIZE[31120]</label>
+						<textcolor>heading2</textcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="button" id="357">
+						<width>750</width>
+						<height>40</height>
+						<label>$LOCALIZE[31130] - 1</label>
+						<label2>$VAR[SubMenuPicturesOne]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturenofocus>-</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubPictures.1,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubPictures.1.Label)) + !stringcompare(Skin.String(SubPictures.1.Path),Hidden)">Skin.SetString(SubPictures.1.Label)</onclick>
+					</control>
+					<control type="button" id="358">
+						<width>750</width>
+						<height>40</height>
+						<label>$LOCALIZE[31130] - 2</label>
+						<label2>$INFO[Skin.String(SubPictures.2.Label)]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturenofocus>-</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubPictures.2,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubPictures.2.Label))">Skin.SetString(SubPictures.2.Label)</onclick>
+					</control>
+					<control type="button" id="359">
+						<width>750</width>
+						<height>40</height>
+						<label>$LOCALIZE[31130] - 3</label>
+						<label2>$INFO[Skin.String(SubPictures.3.Label)]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturenofocus>-</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubPictures.3,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubPictures.3.Label))">Skin.SetString(SubPictures.3.Label)</onclick>
+					</control>
+					<control type="button" id="360">
+						<width>750</width>
+						<height>40</height>
+						<label>$LOCALIZE[31130] - 4</label>
+						<label2>$INFO[Skin.String(SubPictures.4.Label)]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturenofocus>-</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubPictures.4,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubPictures.4.Label))">Skin.SetString(SubPictures.4.Label)</onclick>
+					</control>
+					<control type="button" id="361">
+						<width>750</width>
+						<height>40</height>
+						<label>$LOCALIZE[31130] - 5</label>
+						<label2>$INFO[Skin.String(SubPictures.5.Label)]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturenofocus>-</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubPictures.5,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubPictures.5.Label))">Skin.SetString(SubPictures.5.Label)</onclick>
+					</control>
+					<control type="button" id="362">
+						<width>750</width>
+						<height>40</height>
+						<label>$LOCALIZE[31130] - 6</label>
+						<label2>$INFO[Skin.String(SubPictures.6.Label)]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturenofocus>-</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubPictures.6,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubPictures.6.Label))">Skin.SetString(SubPictures.6.Label)</onclick>
+						<enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable>
+					</control>
 				</control>
 				<control type="scrollbar" id="61">
 					<posx>1060</posx>
@@ -2668,10 +2832,10 @@
 								<description>Startup Window</description>
 								<label>$LOCALIZE[31333]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/homescreen/Startup.jpg</icon>
+								<icon>special://skin/backgrounds/default_light.jpg</icon>
 								<thumb>$INFO[Skin.String(StartUpBackgroundPath)]</thumb>
 								<property name="HiLiteItem">StartUp</property>
-							</item>							
+							</item>
 						</content>
 					</control>
 					<control type="image">
@@ -4023,7 +4187,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<onclick>Skin.SetString(StartUpBackground,special://skin/backgrounds/homescreen/Startup.jpg)</onclick>
+								<onclick>Skin.SetString(StartUpBackgroundPath,special://skin/backgrounds/default_light.jpg)</onclick>
 								<onclick>Skin.Reset(HideStartUpBackground)</onclick>
 								<onleft>501</onleft>
 								<onright>500</onright>
@@ -4152,7 +4316,7 @@
 						<onclick>Skin.SetPath(FavouritesFanartDir)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(FavouritesFanartDir))">Skin.SetString(FavBtnBackground,$INFO[Skin.String(FavouritesFanartDir)])</onclick>
 						<texturenofocus>-</texturenofocus>
-					</control>					
+					</control>
 					<control type="button" id="608">
 						<description>User Weather FanArt Path</description>
 						<width>750</width>
@@ -4174,7 +4338,26 @@
 						<onclick>Addon.OpenSettings(script.artworkorganizer)</onclick>
 						<enable>System.HasAddon(script.artworkorganizer)</enable>
 					</control>
-					<control type="label" id="610">
+					<!--control type="label" id="610">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>10503</label>
+						<textcolor>heading2</textcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="button" id="611">
+						<width>750</width>
+						<height>40</height>
+						<label> - $LOCALIZE[31054]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturenofocus>-</texturenofocus>
+						<onclick>ActivateWindow(VideoLibrary,special://videoplaylists/,return)</onclick>
+						<onclick>ActivateWindow(smartplaylisteditor)</onclick>
+					</control-->
+					<control type="label" id="612">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -4183,7 +4366,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="button" id="611">
+					<control type="button" id="613">
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31132]</label>
@@ -4193,7 +4376,7 @@
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</onclick>
 					</control>
-					<control type="button" id="612">
+					<control type="button" id="614">
 						<width>750</width>
 						<height>40</height>
 						<label>- $LOCALIZE[24020]</label>
@@ -4203,7 +4386,7 @@
 						<enable>!IsEmpty(Skin.String(LyricScript_Path))</enable>
 						<onclick>Addon.OpenSettings($INFO[Skin.String(LyricScript_Path)])</onclick>
 					</control>
-					<control type="label" id="613">
+					<control type="label" id="615">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -4212,7 +4395,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="button" id="614">
+					<control type="button" id="616">
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31133]</label>
@@ -4222,7 +4405,7 @@
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.SetAddon(SubtitleScript_Path,xbmc.python.subtitles)</onclick>
 					</control>
-					<control type="button" id="615">
+					<control type="button" id="617">
 						<width>750</width>
 						<height>40</height>
 						<label>- $LOCALIZE[24020]</label>
@@ -4232,7 +4415,7 @@
 						<enable>!IsEmpty(Skin.String(SubtitleScript_Path))</enable>
 						<onclick>Addon.OpenSettings($INFO[Skin.String(SubtitleScript_Path)])</onclick>
 					</control>
-					<control type="label" id="616">
+					<control type="label" id="618">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -4241,7 +4424,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="button" id="617">
+					<control type="button" id="619">
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31081]</label>
@@ -4251,7 +4434,7 @@
 						<onclick>Addon.OpenSettings(service.skin.widgets)</onclick>
 						<enable>System.HasAddon(service.skin.widgets)</enable>
 					</control>
-					<control type="radiobutton" id="618">
+					<control type="radiobutton" id="620">
 						<description>Enable Script RandomAndLastItems</description>
 						<width>750</width>
 						<height>40</height>
@@ -4262,7 +4445,7 @@
 						<selected>!Skin.HasSetting(DisableScriptPlayList)</selected>
 						<texturenofocus>-</texturenofocus>
 					</control>
-					<control type="radiobutton" id="619">
+					<control type="radiobutton" id="621">
 						<description>randomandlastitems.script uses last not random</description>
 						<width>750</width>
 						<height>40</height>
@@ -4274,7 +4457,7 @@
 						<texturenofocus>-</texturenofocus>
 						<enable>System.HasAddon(script.randomandlastitems) + !Skin.HasSetting(DisableScriptPlayList)</enable>
 					</control>
-					<control type="radiobutton" id="620">
+					<control type="radiobutton" id="622">
 						<description>randomandlastitems.script only shows unwatched items</description>
 						<width>750</width>
 						<height>40</height>
@@ -4286,7 +4469,7 @@
 						<texturenofocus>-</texturenofocus>
 						<enable>System.HasAddon(script.randomandlastitems) + !Skin.HasSetting(DisableScriptPlayList)</enable>
 					</control>
-					<control type="label" id="621">
+					<control type="label" id="623">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -4295,7 +4478,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="622">
+					<control type="radiobutton" id="624">
 						<width>750</width>
 						<height>40</height>
 						<label>31361</label>
@@ -4306,7 +4489,7 @@
 						<selected>!Skin.HasSetting(HideArtworkDownloader)</selected>
 						<enable>System.HasAddon(script.artwork.downloader)</enable>
 					</control>
-					<control type="button" id="623">
+					<control type="button" id="625">
 						<width>750</width>
 						<height>40</height>
 						<label>- $LOCALIZE[31363]</label>
@@ -4317,7 +4500,7 @@
 						<enable>!Skin.HasSetting(HideArtworkDownloader)</enable>
 						<visible>System.HasAddon(script.artwork.downloader)</visible>
 					</control>
-					<control type="radiobutton" id="624">
+					<control type="radiobutton" id="626">
 						<width>750</width>
 						<height>40</height>
 						<label>31362</label>
@@ -4328,7 +4511,7 @@
 						<selected>!Skin.HasSetting(HideTvTunes)</selected>
 						<enable>System.HasAddon(script.tvtunes)</enable>
 					</control>
-					<control type="button" id="625">
+					<control type="button" id="627">
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31082]</label>
@@ -4339,7 +4522,7 @@
 						<enable>!Skin.HasSetting(HideTvTunes)</enable>
 						<visible>System.HasAddon(script.tvtunes)</visible>
 					</control>
-					<control type="radiobutton" id="626">
+					<control type="radiobutton" id="628">
 						<width>750</width>
 						<height>40</height>
 						<label>31369</label>
@@ -4350,7 +4533,7 @@
 						<selected>!Skin.HasSetting(DisableWatchItLater)</selected>
 						<enable>System.HasAddon(script.simpleplaylists)</enable>
 					</control>
-					<control type="button" id="627">
+					<control type="button" id="629">
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31370]</label>
@@ -4361,7 +4544,7 @@
 						<enable>!Skin.HasSetting(DisableWatchItLater)</enable>
 						<visible>System.HasAddon(script.simpleplaylists)</visible>
 					</control>
-					<control type="label" id="628">
+					<control type="label" id="630">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -4370,13 +4553,13 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="image" id="629">
+					<control type="image" id="631">
 						<width>750</width>
 						<height>120</height>
 						<aspectratio aligny="center" align="center">keep</aspectratio>
 						<texture>DefaultIconWarning.png</texture>
 					</control>
-					<control type="button" id="630">
+					<control type="button" id="632">
 						<description>Reset Skin Values</description>
 						<width>750</width>
 						<height>40</height>
