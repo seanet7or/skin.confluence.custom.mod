@@ -300,8 +300,8 @@ fi
 step
 
 printf "\nReformat code: "
-if grep -q -zo -P '<description>Sticky Menu \n1 Action</description>' 720p/SkinSettings.xml ; then 
-	perlregex 's|(\s*<description>[A-Za-z0-9 ]*)#([A-Za-z0-9 ]*</description>)|\1\2|g'
+if grep -q -zo -P '<visible>\n' 720p/ViewsLogoVertical.xml ; then 
+	sed 's/#/No\./g' -i 720p/SkinSettings.xml 
 	perlregex 's|(\s*<visible>)#\s*([^<]*)#\s*(</visible>)|\1\2\3|g'
 	printf "%sDONE!%s" $GREEN $RESET
 else
@@ -562,7 +562,7 @@ else
 fi
 step
 	
-printf "\nReplacing scroll bars: "
+printf "\nReplacing scroll bar textures: "
 if grep -q ScrollBarNib.png 720p/ViewsPictures.xml ; then
 	XMLS=$(2>/dev/null grep 'ScrollBar' -l 720p/*)
 	perlregex $XMLS 's|<texturesliderbar border="[0-9,]*">ScrollBarH_bar.png|<texturesliderbar>'$SCROLLBAR_HOR_BAR'|g'
@@ -586,6 +586,30 @@ else
 fi
 step
 	
+printf "\nReformating vertical scroll bar controls: "
+if grep -q -zo -P '<control type="scrollbar" id="60">\n\s*<posx>850</posx>\n\s*<posy>78</posy>\n\s*<width>25</width>' \
+	720p/ViewsMusicLibrary.xml ; then
+	XMLS=$(2>/dev/null grep '<control type="scrollbar"' -l 720p/*)
+	R='s|(<control type="scrollbar"[^#]*#(\s*<[a-z][^#]*#)*?\s*<width)>25<|\1>11<|g'
+	perlregex $XMLS "$R"
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nReformating horizontal scroll bar controls: "
+if grep -q -zo -P '<control type="scrollbar" id="60">\n\s*<posx>[0-9]*</posx>\n\s*<posy>[0-9]*</posy>\n\s*<width>[0-9]*</width>\n\s*<height>25</height>' \
+	720p/ViewsMusicLibrary.xml ; then
+	XMLS=$(2>/dev/null grep '<control type="scrollbar"' -l 720p/*)
+	R='s|(<control type="scrollbar"[^#]*#(\s*<[a-z][^#]*#)*?\s*<height)>25<|\1>11<|g'
+	perlregex $XMLS "$R"
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\nRemoving GlassOverlay.png: "
 if [ -f  media/GlassOverlay.png ] ; then
 	remove_control 'image' '<texture>GlassOverlay.png</texture>'
