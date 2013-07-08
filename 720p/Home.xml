@@ -440,7 +440,7 @@
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
 				<font>font12</font>
-				<textcolor>grey2</textcolor>
+				<textcolor>textnofocus</textcolor>
 				<focusedcolor>white</focusedcolor>
 				<texturefocus flipy="true" border="0,2,0,2">home/sub-fo_light.png</texturefocus>
 				<texturenofocus flipy="true" border="0,2,0,2">home/sub-nf_light.png</texturenofocus>
@@ -702,7 +702,7 @@
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
 				<font>font12</font>
-				<textcolor>grey2</textcolor>
+				<textcolor>textnofocus</textcolor>
 				<focusedcolor>white</focusedcolor>
 				<texturefocus flipy="true" border="0,2,0,2">home/sub-fo_light.png</texturefocus>
 				<texturenofocus flipy="true" border="0,2,0,2">home/sub-nf_light.png</texturenofocus>
@@ -922,10 +922,8 @@
 						<property name="AddOnSet">$INFO[Skin.String(HomeItem.1.Addon)]</property>
 						<property name="WidgetSet">$INFO[Skin.String(HomeItem.1.Widget)]</property>
 						<property name="PlayListType">$INFO[Window(home).Property(HomePlayListOne.Type)]</property>
-						<visible>
-							[!IsEmpty(Skin.String(HomeItem.1.Path)) + !Skin.HasSetting(StickyHomeMenuAction)]|
-							[IsEmpty(Skin.String(HomeItemLastAction)) + Skin.HasSetting(StickyHomeMenuAction)]
-						</visible>
+						<visible>[!IsEmpty(Skin.String(HomeItem.1.Path)) + !Skin.HasSetting(StickyHomeMenuAction)]|
+							[IsEmpty(Skin.String(HomeItemLastAction)) + Skin.HasSetting(StickyHomeMenuAction)]</visible>
 					</item>
 					<item id="1">
 						<description>Home Menu Item One</description>

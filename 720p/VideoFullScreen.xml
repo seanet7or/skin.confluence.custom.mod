@@ -15,7 +15,7 @@
 				<height>25</height>
 				<align>left</align>
 				<aligny>center</aligny>
-				<textcolor>grey</textcolor>
+				<textcolor>textnofocus</textcolor>
 				<label>$INFO[Player.ChapterName,[B]$LOCALIZE[21396]: [/B]]</label>
 				<visible>Player.ChapterCount + !VideoPlayer.Content(LiveTV) + [!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)]</visible>
 				<visible>!SubString(Player.ChapterName,$LOCALIZE[21396],left)</visible>
@@ -212,7 +212,7 @@
 					<align>left</align>
 					<font>font12</font>
 					<label>$INFO[VideoPlayer.Studio]</label>
-					<textcolor>grey2</textcolor>
+					<textcolor>textnofocus</textcolor>
 					<visible>VideoPlayer.Content(Movies)</visible>
 				</control>
 				<control type="label" id="1">
@@ -224,7 +224,7 @@
 					<align>left</align>
 					<font>font12</font>
 					<label>$INFO[VideoPlayer.TVShowTitle] ($INFO[VideoPlayer.Season]x$INFO[VideoPlayer.Episode])</label>
-					<textcolor>grey2</textcolor>
+					<textcolor>textnofocus</textcolor>
 					<visible>VideoPlayer.Content(Episodes)</visible>
 				</control>
 				<control type="label" id="1">
@@ -236,7 +236,7 @@
 					<align>left</align>
 					<font>font12</font>
 					<label>$INFO[VideoPlayer.Artist] $INFO[VideoPlayer.Album, - ]</label>
-					<textcolor>grey2</textcolor>
+					<textcolor>textnofocus</textcolor>
 					<visible>VideoPlayer.Content(MusicVideos)</visible>
 				</control>
 				<control type="label" id="1">
@@ -248,7 +248,7 @@
 					<align>left</align>
 					<font>font12</font>
 					<label>$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.ChannelNumber, - (,)]</label>
-					<textcolor>grey2</textcolor>
+					<textcolor>textnofocus</textcolor>
 					<visible>VideoPlayer.Content(LiveTV)</visible>
 				</control>
 				<control type="grouplist" id="1">
@@ -299,7 +299,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font12</font>
-					<textcolor>grey</textcolor>
+					<textcolor>textnofocus</textcolor>
 					<scroll>true</scroll>
 					<visible>!Window.IsVisible(VideoOSD) + !VideoPlayer.Content(LiveTV)</visible>
 					<animation effect="fade" time="200">VisibleChange</animation>
@@ -313,7 +313,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font12</font>
-					<textcolor>grey</textcolor>
+					<textcolor>textnofocus</textcolor>
 					<scroll>true</scroll>
 					<visible>!Window.IsVisible(VideoOSD) + VideoPlayer.Content(LiveTV)</visible>
 					<animation effect="fade" time="200">VisibleChange</animation>
@@ -473,7 +473,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>grey2</textcolor>
+				<textcolor>textnofocus</textcolor>
 			</control>
 			<control type="label">
 				<description>Backend value</description>
@@ -496,7 +496,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>grey2</textcolor>
+				<textcolor>textnofocus</textcolor>
 			</control>
 			<control type="label">
 				<description>Device value</description>
@@ -519,7 +519,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>grey2</textcolor>
+				<textcolor>textnofocus</textcolor>
 			</control>
 			<control type="label">
 				<description>Status value</description>
@@ -542,7 +542,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>grey2</textcolor>
+				<textcolor>textnofocus</textcolor>
 			</control>
 			<control type="progress">
 				<description>Progressbar</description>
@@ -573,7 +573,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>grey2</textcolor>
+				<textcolor>textnofocus</textcolor>
 			</control>
 			<control type="progress">
 				<description>Progressbar</description>
@@ -604,7 +604,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>grey2</textcolor>
+				<textcolor>textnofocus</textcolor>
 			</control>
 			<control type="label">
 				<description>BER value</description>
@@ -627,7 +627,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>grey2</textcolor>
+				<textcolor>textnofocus</textcolor>
 			</control>
 			<control type="label">
 				<description>UNC value</description>
@@ -650,7 +650,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>grey2</textcolor>
+				<textcolor>textnofocus</textcolor>
 			</control>
 			<control type="label">
 				<description>Encryption value</description>

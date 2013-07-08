@@ -88,8 +88,7 @@
 						<onclick>Dialog.Close(2118)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,PlayListVideo)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
-						<visible>
-							!IsEmpty(Skin.String(HomeItem.1.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.1) |
+						<visible>!IsEmpty(Skin.String(HomeItem.1.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.1) |
 							!IsEmpty(Skin.String(HomeItem.2.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.2) |
 							!IsEmpty(Skin.String(HomeItem.3.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.3) |
 							!IsEmpty(Skin.String(HomeItem.4.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.4) |
@@ -98,8 +97,7 @@
 							!IsEmpty(Skin.String(HomeItem.7.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.7) |
 							!IsEmpty(Skin.String(HomeItem.8.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.8) |
 							!IsEmpty(Skin.String(HomeItem.9.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.9) |
-							!IsEmpty(Skin.String(HomeItem.10.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.10)
-						</visible>
+							!IsEmpty(Skin.String(HomeItem.10.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.10)</visible>
 						<visible>!Skin.HasSetting(DisableScriptPlayList)</visible>
 					</item>
 					<item>

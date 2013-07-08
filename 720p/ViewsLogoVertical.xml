@@ -39,7 +39,7 @@
 						<height>89</height>
 						<align>left</align>
 						<font>font28_title</font>
-						<textcolor>grey2</textcolor>
+						<textcolor>textnofocus</textcolor>
 						<label>[B]$INFO[ListItem.Label][/B]</label>
 					</control>
 					<!--control type="group">
@@ -83,20 +83,18 @@
 						<height>89</height>
 						<align>left</align>
 						<font>font28_title</font>
-						<textcolor>grey2</textcolor>
+						<textcolor>textnofocus</textcolor>
 						<label>[B]$LOCALIZE[20359] $INFO[ListItem.Episode][/B]</label>
 					</control>
 					<control type="label">
-						<visible>
-						IsEmpty(ListItem.Title) | Container.Content(Seasons) | [IsEmpty(ListItem.Art(banner)) + !Container.Content(episodes)]
-						</visible>
+						<visible>IsEmpty(ListItem.Title) | Container.Content(Seasons) | [IsEmpty(ListItem.Art(banner)) + !Container.Content(episodes)]</visible>
 						<posx>50</posx>
 						<posy>30</posy>
 						<width>330</width>
 						<height>89</height>
 						<align>left</align>
 						<font>font28_title</font>
-						<textcolor>grey2</textcolor>
+						<textcolor>textnofocus</textcolor>
 						<label>[B]$INFO[ListItem.Label][/B]</label>
 					</control>
 					<!--control type="group">
@@ -196,9 +194,7 @@
 						</animation>
 					</control>
 					<control type="label">
-						<visible>
-						IsEmpty(ListItem.Title) | Container.Content(Seasons) | [IsEmpty(ListItem.Art(banner)) + !Container.Content(episodes)]
-						</visible>
+						<visible>IsEmpty(ListItem.Title) | Container.Content(Seasons) | [IsEmpty(ListItem.Art(banner)) + !Container.Content(episodes)]</visible>
 						<posx>70</posx>
 						<posy>30</posy>
 						<width>270</width>
@@ -206,7 +202,6 @@
 						<align>left</align>
 						<aligny>bottom</aligny>
 						<font>font28_title</font>
-						<textcolor>white</textcolor>
 						<label>[B]$INFO[ListItem.Label][/B]</label>
 						<animation type="Focus" reversible="false">
 							<effect type="zoom" center="auto" start="100" end="125" time="600" tween="back" easing="out" />
