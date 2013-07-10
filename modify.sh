@@ -590,7 +590,7 @@ printf "\nReformating vertical scroll bar controls: "
 if grep -q -zo -P '<control type="scrollbar" id="60">\n\s*<posx>850</posx>\n\s*<posy>78</posy>\n\s*<width>25</width>' \
 	720p/ViewsMusicLibrary.xml ; then
 	XMLS=$(2>/dev/null grep '<control type="scrollbar"' -l 720p/*)
-	R='s|(<control type="scrollbar"[^#]*#(\s*<[a-z][^#]*#)*?\s*<width)>25<|\1>11<|g'
+	R='s|(<control type="scrollbar"[^#]*#(\s*<[a-z][^#]*#)*?\s*<width)>25<|\1>14<|g'
 	perlregex $XMLS "$R"
 	printf "%sDONE!%s" $GREEN $RESET
 else
@@ -598,11 +598,36 @@ else
 fi
 step
 
+if false ; then
+printf "\nMoving vertical scroll bars to the right: "
+if grep -q -zo -P '<control type="scrollbar" id="60">\n\s*<posx>212</posx>' 720p/ViewsPictures.xml ; then
+	for FILE in 720p/* ; do
+		IFS=$'\n' ; for VSCROLLBAR in $( grep -zo -P -I '<control type="scrollbar" id="[0-9]*">\n\s*<posx>[0-9]*</posx>\n\s*<posy>[0-9]*</posy>\n\s*<width>14</width>' "$FILE" | tr -d '\n' )
+		do
+			XPOS=$(echo "$VSCROLLBAR" | grep -o '<posx>[0-9]*</posx>' | grep -o '[0-9]*')
+			XPOS=$(echo $XPOS | tr -d'\n' )
+			NEWX=$(( XPOS + 6 ))
+			echo "$VSCROLLBAR"
+			echo "'$XPOS' -> '$NEWX'"
+			R='s|(<control type="scrollbar" id="[0-9]*">#'
+			R+='\s*<posx)>'"$XPOS"'<(/posx>#\s*<posy>[0-9]*</posy>#'
+			R+='\s*<width>14</width>)'
+			R+='|\1>'"$NEWX"'<\2|g'
+			perlregex $FILE "$R"
+		done
+	done
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+fi
+
 printf "\nReformating horizontal scroll bar controls: "
 if grep -q -zo -P '<control type="scrollbar" id="60">\n\s*<posx>[0-9]*</posx>\n\s*<posy>[0-9]*</posy>\n\s*<width>[0-9]*</width>\n\s*<height>25</height>' \
 	720p/ViewsMusicLibrary.xml ; then
 	XMLS=$(2>/dev/null grep '<control type="scrollbar"' -l 720p/*)
-	R='s|(<control type="scrollbar"[^#]*#(\s*<[a-z][^#]*#)*?\s*<height)>25<|\1>11<|g'
+	R='s|(<control type="scrollbar"[^#]*#(\s*<[a-z][^#]*#)*?\s*<height)>25<|\1>14<|g'
 	perlregex $XMLS "$R"
 	printf "%sDONE!%s" $GREEN $RESET
 else
@@ -1602,7 +1627,7 @@ if grep -q 'blue' 720p/ViewsVideoLibrary.xml ; then
 	XMLS+="720p/CustomSubMenuType.xml 720p/CustomWidgetType.xml 720p/DialogPVRChannelManager.xml "
 	XMLS+="720p/DialogPVRGuideOSD.xml 720p/DialogPVRGuideSearch.xml 720p/DialogSlider.xml "
 	XMLS+="720p/MyMusicPlaylistEditor.xml 720p/script-globalsearch-main.xml 720p/SettingsSystemInfo.xml "
-	XMLS+=" "
+	XMLS+=" 720p/FileManager.xml "
 	XMLS+=" "
 	perlregex $XMLS "$R"
 
@@ -1610,7 +1635,7 @@ if grep -q 'blue' 720p/ViewsVideoLibrary.xml ; then
 	XMLS="720p/AddonBrowser.xml 720p/DialogAddonInfo.xml 720p/DialogAlbumInfo.xml 720p/DialogContentSettings.xml "
 	XMLS+="720p/DialogKaraokeSongSelector.xml 720p/DialogKaraokeSongSelectorLarge.xml 720p/DialogMediaSource.xml "
 	XMLS+="720p/DialogPVRGroupManager.xml 720p/DialogSeekBar.xml 720p/DialogSongInfo.xml 720p/DialogVideoInfo.xml "
-	XMLS+="720p/FileManager.xml 720p/includes.xml 720p/MusicKaraokeLyrics.xml 720p/MusicOSD.xml "
+	XMLS+=" 720p/includes.xml 720p/MusicKaraokeLyrics.xml 720p/MusicOSD.xml "
 	XMLS+="720p/MyMusicNav.xml 720p/MyMusicPlaylist.xml 720p/DialogPeripheralManager.xml "
 	XMLS+="720p/DialogPVRChannelsOSD.xml 720p/DialogPVRGuideInfo.xml 720p/DialogPVRRecordingInfo.xml "
 	XMLS+="720p/Home.xml 720p/MyPics.xml  720p/MyMusicSongs.xml 720p/MyPrograms.xml 720p/MyPVR.xml 720p/MyVideoNav.xml "

@@ -46,6 +46,12 @@ scroll-left.png;0
 scroll-right-focus.png;0
 scroll-right.png;0
 seekslider_light.png;0
+scrollbar/ScrollBarH_bar_focus_light.png;0
+scrollbar/ScrollBarH_bar_light.png;1,5,1,5
+scrollbar/ScrollBarH_light.png;1,5,1,5
+scrollbar/ScrollBarV_bar_focus_light.png;0
+scrollbar/ScrollBarV_bar_light.png;5,1,5,1
+scrollbar/ScrollBarV_light.png;5,1,5,1
 special://skin/backgrounds/default_light.jpg;0
 special://skin/backgrounds/settings.jpg;0
 \$VAR\[[a-zA-Z,\.\/]*\];0

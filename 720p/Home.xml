@@ -839,6 +839,13 @@
 					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Programs)</visible>
 					<include>HomeSubMenuProg</include>
 				</control>
+				<control type="grouplist" id="9024">
+					<include>HomeSubMenuCommonValues</include>
+					<onleft>9024</onleft>
+					<onright>9024</onright>
+					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),UserThree)</visible>
+					<include>HomeSubMenuUserThree</include>
+				</control>
 			</control>
 			<control type="image">
 				<posx>-100</posx>
