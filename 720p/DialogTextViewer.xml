@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol>61</defaultcontrol>
 	<controls>
 		<control type="group">
@@ -11,7 +10,24 @@
 				<posy>0</posy>
 				<width>1100</width>
 				<height>720</height>
-				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
+				<texture border="15,0,0,0" flipx="true">MediaBladeSub.png</texture>
+			</control>
+			<control type="button">
+				<description>Close Window button</description>
+				<posx>200</posx>
+				<posy>0</posy>
+				<width>64</width>
+				<height>32</height>
+				<label>-</label>
+				<font>-</font>
+				<onclick>PreviousMenu</onclick>
+				<texturefocus>DialogCloseButton-focus.png</texturefocus>
+				<texturenofocus>DialogCloseButton.png</texturenofocus>
+				<onleft>61</onleft>
+				<onright>61</onright>
+				<onup>61</onup>
+				<ondown>61</ondown>
+				<visible>system.getbool(input.enablemouse)</visible>
 			</control>
 			<control type="group">
 				<animation effect="fade" delay="400" start="0" end="100" time="200">WindowOpen</animation>
@@ -25,7 +41,8 @@
 					<font>font13_title</font>
 					<align>center</align>
 					<aligny>center</aligny>
-					<textcolor>itemselected</textcolor>
+					<textcolor>selected</textcolor>
+					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="textbox" id="5">
 					<description>textarea</description>
@@ -34,17 +51,22 @@
 					<width>1000</width>
 					<height>600</height>
 					<label>-</label>
+					<font>font13</font>
 					<align>justify</align>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<pagecontrol>61</pagecontrol>
 				</control>
 				<control type="scrollbar" id="61">
-					<posx>1226</posx>
+					<posx>1220</posx>
 					<posy>90</posy>
-					<width>14</width>
+					<width>25</width>
 					<height>600</height>
-					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+					<textureslidernib>ScrollBarNib.png</textureslidernib>
+					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 					<onleft>61</onleft>
 					<onright>61</onright>
 					<ondown>61</ondown>

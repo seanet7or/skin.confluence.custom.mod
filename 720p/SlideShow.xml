@@ -11,7 +11,9 @@
 				<posy>0</posy>
 				<width>120</width>
 				<height>35</height>
-				<texture>dialogs/dialog-back_light.png</texture>
+				<texture>black-back.png</texture>
+				<bordertexture border="3">NoCover_1.png</bordertexture>
+				<bordersize>5</bordersize>
 			</control>
 			<control type="label">
 				<description>paused label</description>
@@ -22,6 +24,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<font>font10</font>
+				<textcolor>white</textcolor>
 				<label>31043</label>
 			</control>
 		</control>
@@ -30,6 +33,7 @@
 			<posx>20</posx>
 			<posy>180r</posy>
 			<visible>Player.ShowInfo + Player.HasMedia</visible>
+			<include>VisibleFadeEffect</include>
 			<include>SmallMusicInfo</include>
 		</control>
 	</controls>

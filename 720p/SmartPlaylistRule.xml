@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">9001</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<coordinates>
@@ -16,7 +15,15 @@
 			<posy>0</posy>
 			<width>800</width>
 			<height>280</height>
-			<texture>dialogs/dialog-back_light.png</texture>
+			<texture border="40">DialogBack.png</texture>
+		</control>
+		<control type="image">
+			<description>Dialog Header image</description>
+			<posx>40</posx>
+			<posy>16</posy>
+			<width>720</width>
+			<height>40</height>
+			<texture>dialogheader.png</texture>
 		</control>
 		<control type="label">
 			<description>header label</description>
@@ -28,7 +35,25 @@
 			<label>$LOCALIZE[21421]</label>
 			<align>center</align>
 			<aligny>center</aligny>
-			<textcolor>itemselected</textcolor>
+			<textcolor>selected</textcolor>
+			<shadowcolor>black</shadowcolor>
+		</control>
+		<control type="button">
+			<description>Close Window button</description>
+			<posx>710</posx>
+			<posy>15</posy>
+			<width>64</width>
+			<height>32</height>
+			<label>-</label>
+			<font>-</font>
+			<onclick>PreviousMenu</onclick>
+			<texturefocus>DialogCloseButton-focus.png</texturefocus>
+			<texturenofocus>DialogCloseButton.png</texturenofocus>
+			<onleft>9001</onleft>
+			<onright>9001</onright>
+			<onup>9001</onup>
+			<ondown>9001</ondown>
+			<visible>system.getbool(input.enablemouse)</visible>
 		</control>
 		<control type="label">
 			<description>Rule match label</description>
@@ -39,7 +64,8 @@
 			<align>center</align>
 			<aligny>center</aligny>
 			<font>font12</font>
-			<textcolor>heading2</textcolor>
+			<textcolor>blue</textcolor>
+			<shadowcolor>black</shadowcolor>
 			<label>21422</label>
 		</control>
 		<control type="group" id="9001">
@@ -50,7 +76,8 @@
 				<width>365</width>
 				<height>40</height>
 				<font>-</font>
-				<texturenofocus>buttons/nf_light.png</texturenofocus>
+				<texturefocus border="3">button-focus2.png</texturefocus>
+				<texturenofocus border="3">button-nofocus.png</texturenofocus>
 				<onright>16</onright>
 				<onleft>16</onleft>
 				<onup>9000</onup>
@@ -62,9 +89,12 @@
 				<posy>100</posy>
 				<width>300</width>
 				<height>40</height>
+				<font>font13</font>
 				<label>$INFO[Control.GetLabel(15)]</label>
 				<align>left</align>
 				<aligny>center</aligny>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
 			</control>
 			<control type="spincontrolex" id="16">
 				<description>Rule operator</description>
@@ -73,7 +103,8 @@
 				<width>365</width>
 				<height>40</height>
 				<font>-</font>
-				<texturenofocus>buttons/nf_light.png</texturenofocus>
+				<texturefocus border="3">button-focus2.png</texturefocus>
+				<texturenofocus border="3">button-nofocus.png</texturenofocus>
 				<onright>15</onright>
 				<onleft>15</onleft>
 				<onup>9000</onup>
@@ -85,9 +116,12 @@
 				<posy>100</posy>
 				<width>300</width>
 				<height>40</height>
+				<font>font13</font>
 				<label>$INFO[Control.GetLabel(16)]</label>
 				<align>left</align>
 				<aligny>center</aligny>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
 			</control>
 		</control>
 		<control type="button" id="17">
@@ -96,6 +130,10 @@
 			<posy>145</posy>
 			<width>565</width>
 			<height>40</height>
+			<font>font13</font>
+			<aligny>center</aligny>
+			<texturefocus border="3">button-focus2.png</texturefocus>
+			<texturenofocus border="3">button-nofocus.png</texturenofocus>
 			<label>-</label>
 			<onup>9001</onup>
 			<onleft>20</onleft>
@@ -109,6 +147,9 @@
 			<width>170</width>
 			<height>40</height>
 			<align>center</align>
+			<aligny>center</aligny>
+			<texturefocus border="3">button-focus.png</texturefocus>
+			<texturenofocus border="3">button-nofocus.png</texturenofocus>
 			<label>1024</label>
 			<font>font12_title</font>
 			<onup>9001</onup>
@@ -124,6 +165,7 @@
 				<width>200</width>
 				<height>40</height>
 				<align>center</align>
+				<aligny>center</aligny>
 				<font>font12_title</font>
 				<label>186</label>
 				<onup>17</onup>
@@ -138,6 +180,7 @@
 				<width>200</width>
 				<height>40</height>
 				<align>center</align>
+				<aligny>center</aligny>
 				<font>font12_title</font>
 				<label>222</label>
 				<onup>17</onup>

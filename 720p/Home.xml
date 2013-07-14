@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<include condition="!Skin.HasSetting(InitialSetUpRun)">DefaultInitialSetup</include>
@@ -11,6 +10,8 @@
 	<onload condition="System.HasAddon(script.artistslideshow) + IsEmpty(Window.Property(ArtistSlideshowRunning)) + Skin.HasSetting(AllowSlideShowArt)">RunScript(script.artistslideshow, daemon=True)</onload>
 	<onload condition="!Skin.HasSetting(HideHomeSearch) + !System.HasAddon(script.globalsearch)">Skin.Setbool(HideHomeSearch)</onload>
 	<onload condition="!Skin.HasSetting(DisableScriptPlayList) + !System.HasAddon(script.randomandlastitems)">Skin.Setbool(DisableScriptPlayList)</onload>
+	<onload condition="IsEmpty(Skin.String(WeatherFanartDir))">Skin.SetString(WeatherFanartDir,special://skin/backgrounds/weather/)</onload>
+	<onload condition="IsEmpty(Skin.String(UsrGenreFanartDir))">Skin.SetString(UsrGenreFanartDir,special://skin/backgrounds/moviegenre/)</onload>
 	<onload condition="!Skin.HasSetting(DisableScriptPlayList) + Library.HasContent(Movies)">XBMC.RunScript(script.randomandlastitems,type=Movie,limit=10,method=Random,playlist=special://skin/extras/Playlists/UnwatchedMovies.xsp,menu=UnWatched)</onload>
 	<onload condition="!Skin.HasSetting(DisableScriptPlayList) + !IsEmpty(Skin.String(HomeItem.1.Playlist))">XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(HomeItem.1.Playlist)],method=$VAR[RandomOrLastAction],limit=10,unwatched=$VAR[RandomOrLastUnWatched],resume=False,property=HomePlayListOne)</onload>
 	<onload condition="!Skin.HasSetting(DisableScriptPlayList) + !IsEmpty(Skin.String(HomeItem.2.Playlist))">XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(HomeItem.2.Playlist)],method=$VAR[RandomOrLastAction],limit=10,unwatched=$VAR[RandomOrLastUnWatched],resume=False,property=HomePlayListTwo)</onload>
@@ -25,12 +26,34 @@
 	<controls>
 		<include>CommonBackground</include>
 		<include>BackgroundRainDropEffect</include>
+		<control type="image">
+			<posx>0</posx>
+			<posy>100r</posy>
+			<width>1280</width>
+			<height>100</height>
+			<texture>homefloor.png</texture>
+			<animation effect="fade" time="250" condition="Window.Previous(Home)">WindowOpen</animation>
+			<animation effect="fade" time="250" condition="Window.Next(Home)">WindowClose</animation>
+		</control>
+		<control type="image">
+			<description>LOGO</description>
+			<posx>0</posx>
+			<posy>5</posy>
+			<width>170</width>
+			<height>100</height>
+			<aspectratio aligny="top" align="left">keep</aspectratio>
+			<texture>xbmc-logo.png</texture>
+			<include>VisibleFadeEffect</include>
+			<include>Window_OpenClose_Animation</include>
+			<visible>!Skin.HasSetting(homepageWeatherinfo)</visible>
+		</control>
 		<!-- Music Info -->
 		<control type="group">
 			<posx>0</posx>
 			<posy>60</posy>
 			<animation effect="slide" start="0,0" end="0,175" time="0" condition="!Skin.HasSetting(RaiseMainMenuBar)">Conditional</animation>
 			<visible>Player.HasAudio + !Skin.HasSetting(homepageMusicinfo)</visible>
+			<include>VisibleFadeEffect</include>
 			<include>Window_OpenClose_Animation</include>
 			<control type="image">
 				<description>Cover image</description>
@@ -40,6 +63,8 @@
 				<height>295</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
 				<texture fallback="DefaultAlbumCover.png">$INFO[Player.Art(thumb)]</texture>
+				<bordertexture border="8">ThumbBorder.png</bordertexture>
+				<bordersize>5</bordersize>
 			</control>
 			<control type="image">
 				<posx>170</posx>
@@ -60,6 +85,8 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
 			</control>
 			<control type="label">
 				<description>Title label</description>
@@ -71,6 +98,8 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font13_title</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
 			</control>
 			<control type="label">
 				<description>Time Label</description>
@@ -78,10 +107,12 @@
 				<posy>310</posy>
 				<height>30</height>
 				<width>300</width>
-				<label>$INFO[Player.Time]$INFO[Player.Duration, / ]</label>
+				<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=blue] / [/COLOR]]</label>
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
 			</control>
 		</control>
 		<!-- LiveTV Info -->
@@ -90,11 +121,19 @@
 			<posy>70</posy>
 			<animation effect="slide" start="0,0" end="0,175" time="0" condition="!Skin.HasSetting(RaiseMainMenuBar)">Conditional</animation>
 			<visible>StringCompare(Container(9000).ListItem.Property(PanelType),LiveTV) + [PVR.IsRecording | PVR.HasNonRecordingTimer]</visible>
+			<include>VisibleFadeEffect</include>
 			<include>Window_OpenClose_Animation</include>
 			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsActive(Favourites)">conditional</animation>
 			<control type="group">
 				<animation effect="slide" start="0,0" end="0,100" time="0" condition="PVR.IsRecording">conditional</animation>
 				<visible>PVR.HasNonRecordingTimer</visible>
+				<control type="image">
+					<posx>0</posx>
+					<posy>-5</posy>
+					<width>490</width>
+					<height>90</height>
+					<texture>gradient.png</texture>
+				</control>
 				<control type="image">
 					<posx>400</posx>
 					<posy>0</posy>
@@ -102,6 +141,8 @@
 					<height>80</height>
 					<aspectratio>keep</aspectratio>
 					<texture background="true" fallback="DefaultVideoCover.png">$INFO[PVR.NextRecordingChannelIcon]</texture>
+					<bordertexture border="8">ThumbBorder.png</bordertexture>
+					<bordersize>4</bordersize>
 				</control>
 				<control type="image">
 					<posx>365</posx>
@@ -121,7 +162,8 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font12_title</font>
-					<textcolor>heading2</textcolor>
+					<textcolor>blue</textcolor>
+					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>NextRecordingDateTime</description>
@@ -134,6 +176,7 @@
 					<aligny>center</aligny>
 					<font>font12</font>
 					<scroll>true</scroll>
+					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>NextRecordingTitle Channel</description>
@@ -141,15 +184,23 @@
 					<posy>50</posy>
 					<height>25</height>
 					<width>800</width>
-					<label>$INFO[PVR.NextRecordingTitle]$INFO[PVR.NextRecordingChannel, - (,)]</label>
+					<label>$INFO[PVR.NextRecordingTitle][COLOR=grey]$INFO[PVR.NextRecordingChannel, - [COLOR=blue]([/COLOR],[COLOR=blue])[/COLOR]][/COLOR]</label>
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font12_title</font>
+					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 				</control>
 			</control>
 			<control type="group">
 				<visible>PVR.IsRecording</visible>
+				<control type="image">
+					<posx>0</posx>
+					<posy>-5</posy>
+					<width>490</width>
+					<height>90</height>
+					<texture>gradient.png</texture>
+				</control>
 				<control type="image">
 					<posx>400</posx>
 					<posy>0</posy>
@@ -157,6 +208,8 @@
 					<height>80</height>
 					<aspectratio>keep</aspectratio>
 					<texture background="true" fallback="DefaultVideoCover.png">$INFO[PVR.NowRecordingChannelIcon]</texture>
+					<bordertexture border="8">ThumbBorder.png</bordertexture>
+					<bordersize>4</bordersize>
 				</control>
 				<control type="image">
 					<posx>360</posx>
@@ -176,7 +229,8 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font12_title</font>
-					<textcolor>heading2</textcolor>
+					<textcolor>blue</textcolor>
+					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>NextRecordingDateTime</description>
@@ -189,6 +243,7 @@
 					<aligny>center</aligny>
 					<font>font12</font>
 					<scroll>true</scroll>
+					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>NextRecordingTitle Channel</description>
@@ -196,10 +251,11 @@
 					<posy>50</posy>
 					<height>30</height>
 					<width>800</width>
-					<label>$INFO[PVR.NowRecordingTitle]$INFO[PVR.NowRecordingChannel, - (,)]</label>
+					<label>$INFO[PVR.NowRecordingTitle][COLOR=grey]$INFO[PVR.NowRecordingChannel, - [COLOR=blue]([/COLOR],[COLOR=blue])[/COLOR]][/COLOR]</label>
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font12_title</font>
+					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 				</control>
 			</control>
@@ -210,6 +266,7 @@
 			<posy>50</posy>
 			<animation effect="slide" start="0,0" end="0,175" time="0" condition="!Skin.HasSetting(RaiseMainMenuBar)">Conditional</animation>
 			<visible>Player.HasVideo + !Skin.HasSetting(homepageVideoinfo)</visible>
+			<include>VisibleFadeEffect</include>
 			<include>Window_OpenClose_Animation</include>
 			<control type="group">
 				<visible>!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes) + !VideoPlayer.Content(LiveTV)</visible>
@@ -221,6 +278,8 @@
 					<height>300</height>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<texture fallback="DefaultVideoCover.png">$INFO[Player.Art(thumb)]</texture>
+					<bordertexture border="8">ThumbBorder.png</bordertexture>
+					<bordersize>5</bordersize>
 				</control>
 				<control type="label">
 					<description>Title label</description>
@@ -232,6 +291,8 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>Time Label</description>
@@ -239,10 +300,12 @@
 					<posy>310</posy>
 					<height>30</height>
 					<width>300</width>
-					<label>$INFO[Player.Time]$INFO[Player.Duration, / ]</label>
+					<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=blue] / [/COLOR]]</label>
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 				</control>
 			</control>
 			<control type="group">
@@ -255,6 +318,8 @@
 					<height>300</height>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<texture fallback="DefaultVideoCover.png">$INFO[Player.Art(thumb)]</texture>
+					<bordertexture border="8">ThumbBorder.png</bordertexture>
+					<bordersize>5</bordersize>
 				</control>
 				<control type="label">
 					<description>Channel label</description>
@@ -266,6 +331,8 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>Title label</description>
@@ -277,6 +344,8 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>Time Label</description>
@@ -284,10 +353,12 @@
 					<posy>310</posy>
 					<height>30</height>
 					<width>300</width>
-					<label>$INFO[Player.Time]$INFO[Player.Duration, / ]</label>
+					<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=blue] / [/COLOR]]</label>
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 				</control>
 			</control>
 			<control type="group">
@@ -300,6 +371,8 @@
 					<height>300</height>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<texture fallback="DefaultVideoCover.png">$INFO[Player.Art(thumb)]</texture>
+					<bordertexture border="8">ThumbBorder.png</bordertexture>
+					<bordersize>5</bordersize>
 				</control>
 				<control type="label">
 					<description>Studio label</description>
@@ -311,6 +384,8 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>Title label</description>
@@ -318,10 +393,12 @@
 					<posy>285</posy>
 					<height>30</height>
 					<width>1000</width>
-					<label>$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Year, (,)]</label>
+					<label>$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Year,[COLOR=grey] (,)[/COLOR]]</label>
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>Time Label</description>
@@ -329,10 +406,12 @@
 					<posy>310</posy>
 					<height>30</height>
 					<width>300</width>
-					<label>$INFO[Player.Time]$INFO[Player.Duration, / ]</label>
+					<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=blue] / [/COLOR]]</label>
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 				</control>
 			</control>
 			<control type="group">
@@ -345,6 +424,8 @@
 					<height>120</height>
 					<aspectratio>scale</aspectratio>
 					<texture fallback="DefaultVideoCover.png">$INFO[Player.Art(thumb)]</texture>
+					<bordertexture border="8">ThumbBorder.png</bordertexture>
+					<bordersize>5</bordersize>
 				</control>
 				<control type="label">
 					<description>TV Show Season Ep Label</description>
@@ -356,6 +437,8 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>Title label</description>
@@ -367,6 +450,8 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>Time Label</description>
@@ -374,10 +459,12 @@
 					<posy>310</posy>
 					<height>30</height>
 					<width>300</width>
-					<label>$INFO[Player.Time]$INFO[Player.Duration, / ]</label>
+					<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=blue] / [/COLOR]]</label>
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 				</control>
 			</control>
 		</control>
@@ -426,7 +513,7 @@
 				<width>35</width>
 				<height>35</height>
 				<colordiffuse>CCFFFFFF</colordiffuse>
-				<texture flipy="true" border="0,2,0,2" flipx="true">HomeSubEnd.png</texture>
+				<texture flipy="true" border="0,5,0,0" flipx="true">HomeSubEnd.png</texture>
 				<animation effect="slide" start="0,0" end="145,0" time="0" condition="Skin.HasSetting(HideHomeSearch)">Conditional</animation>
 			</control>
 			<control type="radiobutton" id="610">
@@ -439,11 +526,13 @@
 				<textwidth>150</textwidth>
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
+				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>textnofocus</textcolor>
+				<textcolor>grey2</textcolor>
 				<focusedcolor>white</focusedcolor>
-				<texturefocus flipy="true" border="0,2,0,2">home/sub-fo_light.png</texturefocus>
-				<texturenofocus flipy="true" border="0,2,0,2">home/sub-nf_light.png</texturenofocus>
+				<texturefocus flipy="true" border="5">HomeSubFO.png</texturefocus>
+				<texturenofocus flipy="true" border="5">HomeSubNF.png</texturenofocus>
+				<pulseonselect>false</pulseonselect>
 				<label>137</label>
 				<onclick>RunScript(script.globalsearch)</onclick>
 				<textureradiofocus>icon_search.png</textureradiofocus>
@@ -468,7 +557,7 @@
 					<posy>0</posy>
 					<width>205</width>
 					<height>35</height>
-					<texture flipy="true" border="0,2,0,2">home/sub-nf_light.png</texture>
+					<texture flipy="true" border="0,5,0,0">HomeSubNF.png</texture>
 					<colordiffuse>CCFFFFFF</colordiffuse>
 					<animation effect="zoom" start="0,0,205,35" end="0,0,465,35" delay="0" time="300" condition="!Player.HasMedia + !Skin.HasSetting(HideHomeStats)">conditional</animation>
 					<animation effect="zoom" start="0,0,205,35" end="0,0,265,35" delay="0" time="0" condition="System.HasAddon(plugin.audio.lastfm) + Player.HasAudio">conditional</animation>
@@ -512,6 +601,7 @@
 						<posy>2</posy>
 						<width>30</width>
 						<height>30</height>
+						<label>-</label>
 						<texturefocus>OSDPauseFO.png</texturefocus>
 						<texturenofocus>OSDPauseNF.png</texturenofocus>
 						<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
@@ -658,6 +748,7 @@
 						<posy>2</posy>
 						<width>30</width>
 						<height>30</height>
+						<label>-</label>
 						<texturefocus>OSDPauseFO.png</texturefocus>
 						<texturenofocus>OSDPauseNF.png</texturenofocus>
 						<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
@@ -701,11 +792,13 @@
 				<textwidth>150</textwidth>
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
+				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>textnofocus</textcolor>
+				<textcolor>grey2</textcolor>
 				<focusedcolor>white</focusedcolor>
-				<texturefocus flipy="true" border="0,2,0,2">home/sub-fo_light.png</texturefocus>
-				<texturenofocus flipy="true" border="0,2,0,2">home/sub-nf_light.png</texturenofocus>
+				<texturefocus flipy="true" border="5">HomeSubFO.png</texturefocus>
+				<texturenofocus flipy="true" border="5">HomeSubNF.png</texturenofocus>
+				<pulseonselect>false</pulseonselect>
 				<label>31008</label>
 				<onclick>fullscreen</onclick>
 				<textureradiofocus>GoFullscreen.png</textureradiofocus>
@@ -726,6 +819,8 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<font>font12_title</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
 				<visible>!Player.HasMedia + !Skin.HasSetting(HideHomeStats)</visible>
 			</control>
 		</control>
@@ -745,8 +840,6 @@
 				<posy>70</posy>
 				<onup>9000</onup>
 				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-				<!--ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown-->
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
 				<control type="grouplist" id="9010">
 					<include>HomeSubMenuCommonValues</include>
@@ -854,11 +947,18 @@
 				<height>75</height>
 				<texture border="0,6,0,6">HomeBack.png</texture>
 			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>5</posy>
+				<width>1280</width>
+				<height>6</height>
+				<texture>HomeOverlay1.png</texture>
+			</control>
 			<control type="fixedlist" id="9000">
 				<posx>-210</posx>
 				<posy>5</posy>
 				<width>1700</width>
-				<height>70</height>
+				<height>60</height>
 				<onleft>9000</onleft>
 				<onright>9000</onright>
 				<onup condition="!Skin.HasSetting(HideHomeSearch) + Player.HasMedia">609</onup>
@@ -868,39 +968,49 @@
 				<pagecontrol>-</pagecontrol>
 				<scrolltime>300</scrolltime>
 				<focusposition>2</focusposition>
+				<movement>1</movement>
 				<orientation>Horizontal</orientation>
 				<itemlayout height="60" width="340">
+					<control type="image">
+						<posx>0</posx>
+						<posy>4</posy>
+						<width>1</width>
+						<height>52</height>
+						<texture>HomeSeperator.png</texture>
+					</control>
+					<control type="image">
+						<posx>339</posx>
+						<posy>4</posy>
+						<width>1</width>
+						<height>52</height>
+						<texture>HomeSeperator.png</texture>
+					</control>
 					<control type="label">
 						<posx>170</posx>
 						<posy>0</posy>
 						<width>340</width>
 						<height>60</height>
 						<font>font_MainMenu</font>
-						<textcolor>buttonfocus</textcolor>
+						<textcolor>grey3</textcolor>
 						<align>center</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout height="60" width="340">
-					<control type="label">
-						<posx>170</posx>
-						<posy>0</posy>
-						<width>330</width>
-						<height>60</height>
-						<font>font_MainMenu</font>
-						<textcolor>buttonfocus</textcolor>
-						<align>center</align>
-						<aligny>center</aligny>
-						<label>$VAR[MainItemLabel]</label>
+					<control type="image">
+						<posx>0</posx>
+						<posy>4</posy>
+						<width>1</width>
+						<height>52</height>
+						<texture>HomeSeperator.png</texture>
 					</control>
 					<control type="image">
-						<posx>-50</posx>
-						<posy>0</posy>
-						<width>440</width>
-						<height>65</height>
-						<texture border="0,2,0,2">home/main-fo_light.png</texture>
-						<visible>Control.HasFocus(9000)</visible>
+						<posx>339</posx>
+						<posy>4</posy>
+						<width>1</width>
+						<height>52</height>
+						<texture>HomeSeperator.png</texture>
 					</control>
 					<control type="label">
 						<posx>170</posx>
@@ -908,11 +1018,23 @@
 						<width>330</width>
 						<height>60</height>
 						<font>font_MainMenu</font>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey3</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$VAR[MainItemLabel]</label>
+					</control>
+					<control type="label">
+						<posx>170</posx>
+						<posy>0</posy>
+						<width>330</width>
+						<height>60</height>
+						<font>font_MainMenu</font>
+						<textcolor>blue</textcolor>
 						<align>center</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>Control.HasFocus(9000)</visible>
+						<include>VisibleFadeEffect</include>
 					</control>
 				</focusedlayout>
 				<content>
@@ -922,15 +1044,17 @@
 						<onclick>SetProperty(MenuItemActive,ItemOne,Home)</onclick>
 						<onclick>SetProperty(MenuItemSelected,$INFO[Skin.String(HomeItem.1.Type)],Home)</onclick>
 						<onclick>$INFO[Skin.String(HomeItem.1.Path)]</onclick>
-						<icon>special://skin/backgrounds/default_light.jpg</icon>
+						<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 						<thumb>$INFO[Skin.String(HomeItem.1.FanArt)]</thumb>
 						<property name="SubMenu">$INFO[Skin.String(HomeItem.1.Sub)]</property>
 						<property name="HiLiteItem">$INFO[Skin.String(HomeItem.1.Type)]</property>
 						<property name="AddOnSet">$INFO[Skin.String(HomeItem.1.Addon)]</property>
 						<property name="WidgetSet">$INFO[Skin.String(HomeItem.1.Widget)]</property>
 						<property name="PlayListType">$INFO[Window(home).Property(HomePlayListOne.Type)]</property>
-						<visible>[!IsEmpty(Skin.String(HomeItem.1.Path)) + !Skin.HasSetting(StickyHomeMenuAction)]|
-							[IsEmpty(Skin.String(HomeItemLastAction)) + Skin.HasSetting(StickyHomeMenuAction)]</visible>
+						<visible>
+							[!IsEmpty(Skin.String(HomeItem.1.Path)) + !Skin.HasSetting(StickyHomeMenuAction)]|
+							[IsEmpty(Skin.String(HomeItemLastAction)) + Skin.HasSetting(StickyHomeMenuAction)]
+						</visible>
 					</item>
 					<item id="1">
 						<description>Home Menu Item One</description>
@@ -938,7 +1062,7 @@
 						<onclick>SetProperty(MenuItemActive,ItemOne,Home)</onclick>
 						<onclick>SetProperty(MenuItemSelected,$INFO[Skin.String(HomeItem.1.Type)],Home)</onclick>
 						<onclick>$INFO[Skin.String(HomeItemLastAction)]</onclick>
-						<icon>special://skin/backgrounds/default_light.jpg</icon>
+						<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 						<thumb>$INFO[Skin.String(HomeItem.1.FanArt)]</thumb>
 						<property name="SubMenu">$INFO[Skin.String(HomeItem.1.Sub)]</property>
 						<property name="HiLiteItem">$INFO[Skin.String(HomeItem.1.Type)]</property>
@@ -953,7 +1077,7 @@
 						<onclick>SetProperty(MenuItemActive,ItemTwo,Home)</onclick>
 						<onclick>SetProperty(MenuItemSelected,$INFO[Skin.String(HomeItem.2.Type)],Home)</onclick>
 						<onclick>$INFO[Skin.String(HomeItem.2.Path)]</onclick>
-						<icon>special://skin/backgrounds/default_light.jpg</icon>
+						<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 						<thumb>$INFO[Skin.String(HomeItem.2.FanArt)]</thumb>
 						<property name="SubMenu">$INFO[Skin.String(HomeItem.2.Sub)]</property>
 						<property name="HiLiteItem">$INFO[Skin.String(HomeItem.2.Type)]</property>
@@ -968,7 +1092,7 @@
 						<onclick>SetProperty(MenuItemActive,ItemThree,Home)</onclick>
 						<onclick>SetProperty(MenuItemSelected,$INFO[Skin.String(HomeItem.3.Type)],Home)</onclick>
 						<onclick>$INFO[Skin.String(HomeItem.3.Path)]</onclick>
-						<icon>special://skin/backgrounds/default_light.jpg</icon>
+						<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 						<thumb>$INFO[Skin.String(HomeItem.3.FanArt)]</thumb>
 						<property name="SubMenu">$INFO[Skin.String(HomeItem.3.Sub)]</property>
 						<property name="HiLiteItem">$INFO[Skin.String(HomeItem.3.Type)]</property>
@@ -983,7 +1107,7 @@
 						<onclick>SetProperty(MenuItemActive,ItemFour,Home)</onclick>
 						<onclick>SetProperty(MenuItemSelected,$INFO[Skin.String(HomeItem.4.Type)],Home)</onclick>
 						<onclick>$INFO[Skin.String(HomeItem.4.Path)]</onclick>
-						<icon>special://skin/backgrounds/default_light.jpg</icon>
+						<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 						<thumb>$INFO[Skin.String(HomeItem.4.FanArt)]</thumb>
 						<property name="SubMenu">$INFO[Skin.String(HomeItem.4.Sub)]</property>
 						<property name="HiLiteItem">$INFO[Skin.String(HomeItem.4.Type)]</property>
@@ -998,7 +1122,7 @@
 						<onclick>SetProperty(MenuItemActive,ItemFive,Home)</onclick>
 						<onclick>SetProperty(MenuItemSelected,$INFO[Skin.String(HomeItem.5.Type)],Home)</onclick>
 						<onclick>$INFO[Skin.String(HomeItem.5.Path)]</onclick>
-						<icon>special://skin/backgrounds/default_light.jpg</icon>
+						<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 						<thumb>$INFO[Skin.String(HomeItem.5.FanArt)]</thumb>
 						<property name="SubMenu">$INFO[Skin.String(HomeItem.5.Sub)]</property>
 						<property name="HiLiteItem">$INFO[Skin.String(HomeItem.5.Type)]</property>
@@ -1013,7 +1137,7 @@
 						<onclick>SetProperty(MenuItemActive,ItemSix,Home)</onclick>
 						<onclick>SetProperty(MenuItemSelected,$INFO[Skin.String(HomeItem.6.Type)],Home)</onclick>
 						<onclick>$INFO[Skin.String(HomeItem.6.Path)]</onclick>
-						<icon>special://skin/backgrounds/default_light.jpg</icon>
+						<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 						<thumb>$INFO[Skin.String(HomeItem.6.FanArt)]</thumb>
 						<property name="SubMenu">$INFO[Skin.String(HomeItem.6.Sub)]</property>
 						<property name="HiLiteItem">$INFO[Skin.String(HomeItem.6.Type)]</property>
@@ -1028,7 +1152,7 @@
 						<onclick>SetProperty(MenuItemActive,ItemSeven,Home)</onclick>
 						<onclick>SetProperty(MenuItemSelected,$INFO[Skin.String(HomeItem.7.Type)],Home)</onclick>
 						<onclick>$INFO[Skin.String(HomeItem.7.Path)]</onclick>
-						<icon>special://skin/backgrounds/default_light.jpg</icon>
+						<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 						<thumb>$INFO[Skin.String(HomeItem.7.FanArt)]</thumb>
 						<property name="SubMenu">$INFO[Skin.String(HomeItem.7.Sub)]</property>
 						<property name="HiLiteItem">$INFO[Skin.String(HomeItem.7.Type)]</property>
@@ -1043,7 +1167,7 @@
 						<onclick>SetProperty(MenuItemActive,ItemEight,Home)</onclick>
 						<onclick>SetProperty(MenuItemSelected,$INFO[Skin.String(HomeItem.8.Type)],Home)</onclick>
 						<onclick>$INFO[Skin.String(HomeItem.8.Path)]</onclick>
-						<icon>special://skin/backgrounds/default_light.jpg</icon>
+						<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 						<thumb>$INFO[Skin.String(HomeItem.8.FanArt)]</thumb>
 						<property name="SubMenu">$INFO[Skin.String(HomeItem.8.Sub)]</property>
 						<property name="HiLiteItem">$INFO[Skin.String(HomeItem.8.Type)]</property>
@@ -1058,7 +1182,7 @@
 						<onclick>SetProperty(MenuItemActive,ItemNine,Home)</onclick>
 						<onclick>SetProperty(MenuItemSelected,$INFO[Skin.String(HomeItem.9.Type)],Home)</onclick>
 						<onclick>$INFO[Skin.String(HomeItem.9.Path)]</onclick>
-						<icon>special://skin/backgrounds/default_light.jpg</icon>
+						<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 						<thumb>$INFO[Skin.String(HomeItem.9.FanArt)]</thumb>
 						<property name="SubMenu">$INFO[Skin.String(HomeItem.9.Sub)]</property>
 						<property name="HiLiteItem">$INFO[Skin.String(HomeItem.9.Type)]</property>
@@ -1073,7 +1197,7 @@
 						<onclick>SetProperty(MenuItemActive,ItemTen,Home)</onclick>
 						<onclick>SetProperty(MenuItemSelected,$INFO[Skin.String(HomeItem.10.Type)],Home)</onclick>
 						<onclick>$INFO[Skin.String(HomeItem.10.Path)]</onclick>
-						<icon>special://skin/backgrounds/default_light.jpg</icon>
+						<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 						<thumb>$INFO[Skin.String(HomeItem.10.FanArt)]</thumb>
 						<property name="SubMenu">$INFO[Skin.String(HomeItem.10.Sub)]</property>
 						<property name="HiLiteItem">$INFO[Skin.String(HomeItem.10.Type)]</property>
@@ -1088,7 +1212,7 @@
 						<onclick>SetProperty(MenuItemActive,PlayDisc,Home)</onclick>
 						<onclick>SetProperty(MenuItemSelected,PlayDisc,Home)</onclick>
 						<onclick>XBMC.PlayDVD()</onclick>
-						<icon>special://skin/backgrounds/default_light.jpg</icon>
+						<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 						<thumb>$INFO[Skin.String(HomeItem.11.FanArt)]</thumb>
 						<property name="SubMenu">PlayDisc</property>
 						<property name="HiLiteItem">PlayDisc</property>
@@ -1101,7 +1225,7 @@
 						<onclick>SetProperty(MenuItemActive,Settings,Home)</onclick>
 						<onclick>SetProperty(MenuItemSelected,Settings,Home)</onclick>
 						<onclick>ActivateWindow(Settings)</onclick>
-						<icon>special://skin/backgrounds/default_light.jpg</icon>
+						<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 						<thumb>$INFO[Skin.String(HomeItem.12.FanArt)]</thumb>
 						<property name="SubMenu">Settings</property>
 						<property name="HiLiteItem">Settings</property>
@@ -1111,12 +1235,24 @@
 					</item>
 				</content>
 			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>6</posy>
+				<width>128</width>
+				<height>50</height>
+				<texture>SideFade.png</texture>
+			</control>
+			<control type="image">
+				<posx>128r</posx>
+				<posy>6</posy>
+				<width>128</width>
+				<height>60</height>
+				<texture flipx="true">SideFade.png</texture>
+			</control>
 		</control>
 		<control type="group" id="9002">
 			<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
 			<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
-			<!--ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
-			<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown-->
 			<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
 			<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">609</ondown>
 			<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">610</ondown>
@@ -1128,8 +1264,6 @@
 				<onright>700</onright>
 				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
 				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
-				<!--ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
-				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown-->
 				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">609</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">610</ondown>
@@ -1146,8 +1280,6 @@
 				<onright>703</onright>
 				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
 				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
-				<!--ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
-				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown-->
 				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">609</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">610</ondown>
@@ -1164,8 +1296,6 @@
 				<onright>704</onright>
 				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
 				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
-				<!--ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
-				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown-->
 				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">609</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">610</ondown>
@@ -1182,8 +1312,6 @@
 				<onright>705</onright>
 				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
 				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
-				<!--ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
-				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown-->
 				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">609</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">610</ondown>
@@ -1196,12 +1324,10 @@
 			<control type="fixedlist" id="706">
 				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(706).NumItems,2) | StringCompare(Container(706).NumItems,4)">conditional</animation>
 				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetFive)</visible>
-				<onleft>705</onleft>
-				<onright>705</onright>
+				<onleft>706</onleft>
+				<onright>706</onright>
 				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
 				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
-				<!--ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
-				<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(AutoHidePowerBtn)">21</ondown-->
 				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">609</ondown>
 				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">610</ondown>
@@ -1209,6 +1335,86 @@
 				<include>HomeAddonsCommonLayout</include>
 				<content>
 					<include>HomeAddonSetFive</include>
+				</content>
+			</control>
+			<control type="fixedlist" id="707">
+				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(707).NumItems,2) | StringCompare(Container(707).NumItems,4)">conditional</animation>
+				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetSix)</visible>
+				<onleft>707</onleft>
+				<onright>707</onright>
+				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
+				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
+				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">609</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">610</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">609</ondown>
+				<include>HomeAddonsCommonLayout</include>
+				<content>
+					<include>HomeAddonSetSix</include>
+				</content>
+			</control>
+			<control type="fixedlist" id="708">
+				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(708).NumItems,2) | StringCompare(Container(708).NumItems,4)">conditional</animation>
+				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetSeven)</visible>
+				<onleft>708</onleft>
+				<onright>708</onright>
+				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
+				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
+				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">609</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">610</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">609</ondown>
+				<include>HomeAddonsCommonLayout</include>
+				<content>
+					<include>HomeAddonSetSeven</include>
+				</content>
+			</control>
+			<control type="fixedlist" id="709">
+				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(709).NumItems,2) | StringCompare(Container(709).NumItems,4)">conditional</animation>
+				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetEight)</visible>
+				<onleft>709</onleft>
+				<onright>709</onright>
+				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
+				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
+				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">609</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">610</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">609</ondown>
+				<include>HomeAddonsCommonLayout</include>
+				<content>
+					<include>HomeAddonSetEight</include>
+				</content>
+			</control>
+			<control type="fixedlist" id="710">
+				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(710).NumItems,2) | StringCompare(Container(710).NumItems,4)">conditional</animation>
+				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetNine)</visible>
+				<onleft>710</onleft>
+				<onright>710</onright>
+				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
+				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
+				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">609</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">610</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">609</ondown>
+				<include>HomeAddonsCommonLayout</include>
+				<content>
+					<include>HomeAddonSetNine</include>
+				</content>
+			</control>
+			<control type="fixedlist" id="711">
+				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(711).NumItems,2) | StringCompare(Container(711).NumItems,4)">conditional</animation>
+				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetTen)</visible>
+				<onleft>711</onleft>
+				<onright>711</onright>
+				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
+				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
+				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">609</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">610</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">609</ondown>
+				<include>HomeAddonsCommonLayout</include>
+				<content>
+					<include>HomeAddonSetTen</include>
 				</content>
 			</control>
 		</control>
@@ -1225,8 +1431,8 @@
 				<width>1145</width>
 				<font>font12</font>
 				<urlset>1</urlset>
-				<textcolor>textfocus</textcolor>
-				<titlecolor>heading2</titlecolor>
+				<textcolor>blue</textcolor>
+				<titlecolor>blue</titlecolor>
 				<headlinecolor>white</headlinecolor>
 				<visible>!Skin.HasSetting(AutoHidePowerBtn) + [!Player.HasAudio | IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(HideNextSongsInfo)]</visible>
 			</control>
@@ -1238,8 +1444,8 @@
 				<width>1200</width>
 				<font>font12</font>
 				<urlset>1</urlset>
-				<textcolor>textfocus</textcolor>
-				<titlecolor>heading2</titlecolor>
+				<textcolor>blue</textcolor>
+				<titlecolor>blue</titlecolor>
 				<headlinecolor>white</headlinecolor>
 				<visible>Skin.HasSetting(AutoHidePowerBtn) + [!Player.HasAudio | IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(HideNextSongsInfo)]</visible>
 			</control>
@@ -1254,6 +1460,8 @@
 				<pauseatend>200</pauseatend>
 				<label>$VAR[NextFiveSongScroller]</label>
 				<font>font12</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
 				<textoffsetx>20</textoffsetx>
 				<visible>!Skin.HasSetting(AutoHidePowerBtn) + Player.HasAudio + !IsEmpty(MusicPlayer.offset(1).Artist) + !Skin.HasSetting(HideNextSongsInfo)</visible>
 			</control>
@@ -1268,6 +1476,8 @@
 				<pauseatend>200</pauseatend>
 				<label>$VAR[NextFiveSongScroller]</label>
 				<font>font12</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
 				<textoffsetx>20</textoffsetx>
 				<visible>Skin.HasSetting(AutoHidePowerBtn) + Player.HasAudio + !IsEmpty(MusicPlayer.offset(1).Artist) + !Skin.HasSetting(HideNextSongsInfo)</visible>
 			</control>
@@ -1294,6 +1504,8 @@
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>ActivateWindow(ShutdownMenu)</onclick>
+				<texturefocus border="5">floor_buttonFO.png</texturefocus>
+				<texturenofocus border="5">floor_button.png</texturenofocus>
 				<onleft>21</onleft>
 				<onright>21</onright>
 				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9002</onup>
@@ -1321,6 +1533,8 @@
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>ActivateWindow(Favourites)</onclick>
+				<texturefocus border="5">floor_buttonFO.png</texturefocus>
+				<texturenofocus border="5">floor_button.png</texturenofocus>
 				<onleft condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onleft>
 				<onright condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onright>
 				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9002</onup>
@@ -1351,9 +1565,22 @@
 				<aspectratio>keep</aspectratio>
 				<texture>$INFO[Weather.Conditions]</texture>
 			</control>
+			<control type="label">
+				<description>Location label</description>
+				<posx>65</posx>
+				<posy>5</posy>
+				<width>500</width>
+				<height>15</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>font10</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<label>$INFO[Window(Weather).Property(Location)]</label>
+			</control>
 			<control type="grouplist">
 				<posx>65</posx>
-				<posy>15</posy>
+				<posy>20</posy>
 				<width>1000</width>
 				<height>30</height>
 				<orientation>horizontal</orientation>
@@ -1366,6 +1593,8 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font28_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<label>[B]$INFO[Window(Weather).Property(Current.Temperature)][/B]</label>
 				</control>
 				<control type="label">
@@ -1375,7 +1604,19 @@
 					<font>font10</font>
 					<aligny>center</aligny>
 					<label>$INFO[System.TemperatureUnits]</label>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<visible>!IsEmpty(Window(Weather).Property(Current.Temperature))</visible>
+				</control>
+				<control type="label">
+					<description>Conditions Label</description>
+					<width>500</width>
+					<height>22</height>
+					<font>font10</font>
+					<aligny>center</aligny>
+					<label>$INFO[Window(Weather).Property(Current.Condition),  ]</label>
+					<textcolor>grey2</textcolor>
+					<shadowcolor>black</shadowcolor>
 				</control>
 			</control>
 		</control>

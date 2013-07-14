@@ -22,26 +22,84 @@
 		<value>$INFO[ListItem.VideoResolution,flagging/lists/,.png]</value>
 	</variable>
 	<variable name="rating">
-		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,18)">de/fsk-18</value>
-		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,16)">de/fsk-16</value>
-		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,12)">de/fsk-12</value>
-		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,6)">de/fsk-6</value>
-		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,0)">de/fsk-0</value>
-		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,o)">de/fsk-0</value>
-
-		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,U)">bbfc_u</value>
-		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,PG)">bbfc_pg</value>
-		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,12A)">bbfc_12a</value>
-		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,12)">bbfc_12</value>
-		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,15)">bbfc_15</value>
-		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,R18)">bbfc_r18</value>
-		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,18)">bbfc_18</value>
-		<value condition="substring(listitem.mpaa,G) + !substring(listitem.mpaa,PG)">mpaa_general</value>
-		<value condition="substring(listitem.mpaa,PG) + !substring(listitem.mpaa,PG-13)">mpaa_pg</value>
-		<value condition="substring(listitem.mpaa,PG-13)">mpaa_pg13</value>
-		<value condition="substring(Listitem.mpaa,NC)">mpaa_nc17</value>
-		<value condition="substring(Listitem.mpaa,R) + !substring(listitem.mpaa,Rated)">mpaa_restricted</value>
-		<value condition="substring(Listitem.mpaa,Rated R)">mpaa_restricted</value>
+		<value condition="StringCompare(ListItem.Mpaa,UK:R18)">UK/bbfc_r18</value>	
+		<value condition="StringCompare(ListItem.Mpaa,UK:18)">UK/bbfc_18</value>
+		<value condition="StringCompare(ListItem.Mpaa,UK:15)">UK/bbfc_15</value>
+		<value condition="StringCompare(ListItem.Mpaa,UK:12A)">UK/bbfc_12a</value>
+		<value condition="StringCompare(ListItem.Mpaa,UK:12)">UK/bbfc_12</value>
+		<value condition="StringCompare(ListItem.Mpaa,UK:PG)">UK/bbfc_pg</value>
+		<value condition="StringCompare(ListItem.Mpaa,UK:U)">UK/bbfc_u</value>
+		<value condition="substring(ListItem.Mpaa,FSK18) | substring(ListItem.Mpaa,FSK 18) | substring(ListItem.Mpaa,ab 18)">DE/fsk_18</value>		
+		<value condition="substring(ListItem.Mpaa,FSK16) | substring(ListItem.Mpaa,FSK 16) | substring(ListItem.Mpaa,ab 16)">DE/fsk_16</value>
+		<value condition="substring(ListItem.Mpaa,FSK12) | substring(ListItem.Mpaa,FSK 12) | substring(ListItem.Mpaa,ab 12)">DE/fsk_12</value>		
+		<value condition="substring(ListItem.Mpaa,FSK6) | substring(ListItem.Mpaa,FSK 6) | substring(ListItem.Mpaa,ab 6)">DE/fsk_6</value>	
+		<value condition="substring(ListItem.Mpaa,FSK0) | substring(ListItem.Mpaa,FSK 0) | substring(ListItem.Mpaa,FSK o.A.)">DE/fsk_0</value>
+		<value condition="StringCompare(Listitem.mpaa,Australia:G)">Aus/oflcG</value>
+		<value condition="substring(Listitem.mpaa,Australia:MA)">Aus/oflcMA15+</value>
+		<value condition="StringCompare(Listitem.mpaa,Australia:M)">Aus/oflcM</value>
+		<value condition="StringCompare(Listitem.mpaa,Australia:PG)">Aus/oflcPG</value>
+		<value condition="StringCompare(Listitem.mpaa,Australia:R)">Aus/oflcR18+</value>
+		<value condition="StringCompare(Listitem.mpaa,Australia:X)">Aus/oflcX18+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,R18)">UK/bbfc_r18</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,18)">UK/bbfc_18</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,15)">UK/bbfc_15</value>	
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,12A)">UK/bbfc_12a</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,12)">UK/bbfc_12</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,PG)">UK/bbfc_pg</value>
+		<!--value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,Rated U)">UK/bbfc_u</value-->
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,U)">UK/bbfc_u</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,18)">DE/fsk_18</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,16)">DE/fsk_16</value>	
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,12)">DE/fsk_12</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,6)">DE/fsk_6</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,0)">DE/fsk_0</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(listitem.mpaa,PG)">Aus/oflcPG</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(listitem.mpaa,G)">Aus/oflcG</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(listitem.mpaa,MA)">Aus/oflcMA15+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(listitem.mpaa,M)">Aus/oflcM</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(listitem.mpaa,X)">Aus/oflcX18+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(listitem.mpaa,R)">Aus/oflcR18+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31704]) + substring(listitem.mpaa,G)">Jpn/jpn_g</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31704]) + substring(listitem.mpaa,12)">Jpn/jpn_pg12</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31704]) + substring(listitem.mpaa,15)">Jpn/jpn_15+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31704]) + substring(listitem.mpaa,18)">Jpn/jpn_18+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31705]) + substring(listitem.mpaa,III)">HK/hk_3</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31705]) + substring(listitem.mpaa,IIB)">HK/hk_2b</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31705]) + substring(listitem.mpaa,IIA)">HK/hk_2a</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31705]) + substring(listitem.mpaa,II)">HK/hk_2</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31705]) + substring(listitem.mpaa,I)">HK/hk_1</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(listitem.mpaa,blicos)">Bra/br_L</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(listitem.mpaa,GA)">Bra/br_L</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(listitem.mpaa,10)">Bra/br_10</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(listitem.mpaa,12)">Bra/br_12</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(listitem.mpaa,14)">Bra/br_14</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(listitem.mpaa,16)">Bra/br_16</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(listitem.mpaa,18)">Bra/br_18</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31707]) + substring(listitem.mpaa,A)">DK/dk_a</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31707]) + substring(listitem.mpaa,7)">DK/dk_7</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31707]) + substring(listitem.mpaa,11)">DK/dk_11</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31707]) + substring(listitem.mpaa,15)">DK/dk_15</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31707]) + substring(listitem.mpaa,F)">DK/dk_f</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + substring(listitem.mpaa,PG)">Can/cn_pg</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + substring(listitem.mpaa,G)">Can/cn_g</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + substring(listitem.mpaa,14)">Can/cn_14a</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + substring(listitem.mpaa,18)">Can/cn_18a</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + substring(listitem.mpaa,R)">Can/cn_r</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31709]) + substring(listitem.mpaa,G)">Ire/ie_12APG</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31709]) + substring(listitem.mpaa,12)">Ire/ie_12A</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31709]) + substring(listitem.mpaa,15)">Ire/ie_12A15A</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31709]) + substring(listitem.mpaa,16)">Ire/ie_12A16</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31709]) + substring(listitem.mpaa,18)">Ire/ie_12A18</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31710]) + substring(listitem.mpaa,A)">NL/nl_AL</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31710]) + substring(listitem.mpaa,6)">NL/nl_6</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31710]) + substring(listitem.mpaa,9)">NL/nl_9</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31710]) + substring(listitem.mpaa,12)">NL/nl_12</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31710]) + substring(listitem.mpaa,16)">NL/nl_16</value>
+		<value condition="substring(ListItem.Mpaa,Rated G) | substring(ListItem.Mpaa,Rated: G)">mpaa_general</value>
+		<value condition="[substring(ListItem.Mpaa,Rated PG) | substring(ListItem.Mpaa,Rated: PG)] + !substring(ListItem.Mpaa,Rated PG-13) + !substring(ListItem.Mpaa,Rated: PG-13)">mpaa_pg</value>
+		<value condition="substring(ListItem.Mpaa,Rated PG-13) | substring(ListItem.Mpaa,Rated: PG-13)">mpaa_pg13</value>
+		<value condition="substring(ListItem.Mpaa,Rated R) | substring(ListItem.Mpaa,Rated: R)">mpaa_restricted</value>
+		<value condition="substring(ListItem.Mpaa,Rated NC-17) | substring(ListItem.Mpaa,Rated: NC-17)">mpaa_nc17</value>
 	</variable>
 	<variable name="videocodec">
 		<value condition="[substring(ListItem.VideoCodec,div,left) | stringcompare(ListItem.VideoCodec,dx50)]">divx</value>
@@ -50,11 +108,11 @@
 	<variable name="HomeMenuItemBackground" type="text">
 		<!-- Home Screen Backgrounds -->
 		<value condition="Skin.HasSetting(GlobalBackground) + !IsEmpty(Skin.String(CustomBackgroundPath))">$INFO[Skin.String(CustomBackgroundPath)]</value>
-		<value condition="Skin.HasSetting(GlobalBackground) + IsEmpty(Skin.String(CustomBackgroundPath))">special://skin/backgrounds/default_light.jpg</value>
+		<value condition="Skin.HasSetting(GlobalBackground) + IsEmpty(Skin.String(CustomBackgroundPath))">$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
 		<value condition="Control.HasFocus(20) + !IsEmpty(Skin.String(PowerBtnBackground))">$INFO[Skin.String(PowerBtnBackground)]</value>
 		<value condition="Control.HasFocus(21) + !IsEmpty(Skin.String(FavBtnBackground))">$INFO[Skin.String(FavBtnBackground)]</value>
 		<value condition="Control.HasFocus(610) + !IsEmpty(Skin.String(SearchBtnBackground))">$INFO[Skin.String(SearchBtnBackground)]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(ShowWeatherFanart) + !IsEmpty(Skin.String(WeatherFanartDir))">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(ShowWeatherFanart)">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Movies) + Skin.HasSetting(ShowMovieDBFanart) + !IsEmpty(Skin.String(UsrMovieFanartDir))">$INFO[Skin.String(UsrMovieFanartDir)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Movies) + Skin.HasSetting(ShowMovieDBFanart) + !IsEmpty(Window(Home).Property(RandomMovie.1.Art(fanart)))">$INFO[Window(Home).Property(RandomMovie.1.Art(fanart))]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),TVShows) + Skin.HasSetting(ShowTVShowDBFanart) + !IsEmpty(Skin.String(UsrTVShowFanartDir))">$INFO[Skin.String(UsrTVShowFanartDir)]</value>
@@ -80,8 +138,8 @@
 	<variable name="CommonMenuItemBackground" type="text">
 		<!-- Not in Home Default Backgrounds -->
 		<value condition="Skin.HasSetting(GlobalBackground) + !IsEmpty(Skin.String(CustomBackgroundPath))">$INFO[Skin.String(CustomBackgroundPath)]</value>
-		<value condition="Skin.HasSetting(GlobalBackground) + IsEmpty(Skin.String(CustomBackgroundPath))">special://skin/backgrounds/default_light.jpg</value>
-		<value condition="StringCompare(Window(home).Property(MenuItemSelected),Weather) + Skin.HasSetting(ShowWeatherFanart) + !IsEmpty(Skin.String(WeatherFanartDir))">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
+		<value condition="Skin.HasSetting(GlobalBackground) + IsEmpty(Skin.String(CustomBackgroundPath))">$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
+		<value condition="StringCompare(Window(home).Property(MenuItemSelected),Weather) + Skin.HasSetting(ShowWeatherFanart)">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
 		<value condition="StringCompare(Window(home).Property(MenuItemActive),ItemOne) + !IsEmpty(Skin.String(HomeItem.1.FanArt))">$INFO[Skin.String(HomeItem.1.FanArt)]</value>
 		<value condition="StringCompare(Window(home).Property(MenuItemActive),ItemTwo) + !IsEmpty(Skin.String(HomeItem.2.FanArt))">$INFO[Skin.String(HomeItem.2.FanArt)]</value>
 		<value condition="StringCompare(Window(home).Property(MenuItemActive),ItemThree) + !IsEmpty(Skin.String(HomeItem.3.FanArt))">$INFO[Skin.String(HomeItem.3.FanArt)]</value>
@@ -95,12 +153,12 @@
 		<value condition="StringCompare(Window(home).Property(MenuItemActive),PlayDisc) + !IsEmpty(Skin.String(HomeItem.11.FanArt))">$INFO[Skin.String(HomeItem.11.FanArt)]</value>
 		<value condition="StringCompare(Window(home).Property(MenuItemActive),Settings) + !IsEmpty(Skin.String(HomeItem.12.FanArt))">$INFO[Skin.String(HomeItem.12.FanArt)]</value>
 		<value condition="!IsEmpty(Window(home).Property(SubMenuBackground))">$INFO[Window(home).Property(SubMenuBackground)]</value>
-		<value>special://skin/backgrounds/default_light.jpg</value>
+		<value>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
 	</variable>
 	<variable name="SubMenuItemBackground" type="text">
 		<value condition="Skin.HasSetting(GlobalBackground) + !IsEmpty(Skin.String(CustomBackgroundPath))">$INFO[Skin.String(CustomBackgroundPath)]</value>
-		<value condition="Skin.HasSetting(GlobalBackground) + IsEmpty(Skin.String(CustomBackgroundPath))">special://skin/backgrounds/default_light.jpg</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(ShowWeatherFanart) + !IsEmpty(Skin.String(WeatherFanartDir))">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
+		<value condition="Skin.HasSetting(GlobalBackground) + IsEmpty(Skin.String(CustomBackgroundPath))">$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(ShowWeatherFanart)">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
 		<value condition="Container(9000).Hasfocus(1) + !IsEmpty(Skin.String(HomeItem.1.FanArt))">$INFO[Skin.String(HomeItem.1.FanArt)]</value>
 		<value condition="Container(9000).Hasfocus(2) + !IsEmpty(Skin.String(HomeItem.2.FanArt))">$INFO[Skin.String(HomeItem.2.FanArt)]</value>
 		<value condition="Container(9000).Hasfocus(3) + !IsEmpty(Skin.String(HomeItem.3.FanArt))">$INFO[Skin.String(HomeItem.3.FanArt)]</value>
@@ -113,30 +171,30 @@
 		<value condition="Container(9000).Hasfocus(10) + !IsEmpty(Skin.String(HomeItem.10.FanArt))">$INFO[Skin.String(HomeItem.10.FanArt)]</value>
 		<value condition="Container(9000).Hasfocus(11) + !IsEmpty(Skin.String(HomeItem.11.FanArt))">$INFO[Skin.String(HomeItem.11.FanArt)]</value>
 		<value condition="Container(9000).Hasfocus(12) + !IsEmpty(Skin.String(HomeItem.12.FanArt))">$INFO[Skin.String(HomeItem.12.FanArt)]</value>
-		<value>special://skin/backgrounds/default_light.jpg</value>
+		<value>special://skin/backgrounds/SKINDEFAULT.jpg</value>
 	</variable>
 	<variable name="InfoBarStats" type="text">
-		<value condition="!Skin.HasSetting(DisableScriptPlayList) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + Container(9000).Hasfocus(1)">$INFO[Window(home).Property(HomePlayListOne.Count),[B]$LOCALIZE[31025]: [/B]]     $INFO[Window(home).Property(HomePlayListOne.Watched),[B]$LOCALIZE[16102]: [/B]]     $INFO[Window(home).Property(HomePlayListOne.Unwatched),[B]$LOCALIZE[16101]: [/B]]</value>
-		<value condition="!Skin.HasSetting(DisableScriptPlayList) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + Container(9000).Hasfocus(2)">$INFO[Window(home).Property(HomePlayListTwo.Count),[B]$LOCALIZE[31025]: [/B]]     $INFO[Window(home).Property(HomePlayListTwo.Watched),[B]$LOCALIZE[16102]: [/B]]     $INFO[Window(home).Property(HomePlayListTwo.Unwatched),[B]$LOCALIZE[16101]: [/B]]</value>
-		<value condition="!Skin.HasSetting(DisableScriptPlayList) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + Container(9000).Hasfocus(3)">$INFO[Window(home).Property(HomePlayListThree.Count),[B]$LOCALIZE[31025]: [/B]]     $INFO[Window(home).Property(HomePlayListThree.Watched),[B]$LOCALIZE[16102]: [/B]]     $INFO[Window(home).Property(HomePlayListThree.Unwatched),[B]$LOCALIZE[16101]: [/B]]</value>
-		<value condition="!Skin.HasSetting(DisableScriptPlayList) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + Container(9000).Hasfocus(4)">$INFO[Window(home).Property(HomePlayListFour.Count),[B]$LOCALIZE[31025]: [/B]]     $INFO[Window(home).Property(HomePlayListFour.Watched),[B]$LOCALIZE[16102]: [/B]]     $INFO[Window(home).Property(HomePlayListFour.Unwatched),[B]$LOCALIZE[16101]: [/B]]</value>
-		<value condition="!Skin.HasSetting(DisableScriptPlayList) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + Container(9000).Hasfocus(5)">$INFO[Window(home).Property(HomePlayListFive.Count),[B]$LOCALIZE[31025]: [/B]]     $INFO[Window(home).Property(HomePlayListFive.Watched),[B]$LOCALIZE[16102]: [/B]]     $INFO[Window(home).Property(HomePlayListFive.Unwatched),[B]$LOCALIZE[16101]: [/B]]</value>
-		<value condition="!Skin.HasSetting(DisableScriptPlayList) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + Container(9000).Hasfocus(6)">$INFO[Window(home).Property(HomePlayListSix.Count),[B]$LOCALIZE[31025]: [/B]]     $INFO[Window(home).Property(HomePlayListSix.Watched),[B]$LOCALIZE[16102]: [/B]]     $INFO[Window(home).Property(HomePlayListSix.Unwatched),[B]$LOCALIZE[16101]: [/B]]</value>
-		<value condition="!Skin.HasSetting(DisableScriptPlayList) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + Container(9000).Hasfocus(7)">$INFO[Window(home).Property(HomePlayListSeven.Count),[B]$LOCALIZE[31025]: [/B]]     $INFO[Window(home).Property(HomePlayListSeven.Watched),[B]$LOCALIZE[16102]: [/B]]     $INFO[Window(home).Property(HomePlayListSeven.Unwatched),[B]$LOCALIZE[16101]: [/B]]</value>
-		<value condition="!Skin.HasSetting(DisableScriptPlayList) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + Container(9000).Hasfocus(8)">$INFO[Window(home).Property(HomePlayListEight.Count),[B]$LOCALIZE[31025]: [/B]]     $INFO[Window(home).Property(HomePlayListEight.Watched),[B]$LOCALIZE[16102]: [/B]]     $INFO[Window(home).Property(HomePlayListEight.Unwatched),[B]$LOCALIZE[16101]: [/B]]</value>
-		<value condition="!Skin.HasSetting(DisableScriptPlayList) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + Container(9000).Hasfocus(9)">$INFO[Window(home).Property(HomePlayListNine.Count),[B]$LOCALIZE[31025]: [/B]]     $INFO[Window(home).Property(HomePlayListNine.Watched),[B]$LOCALIZE[16102]: [/B]]     $INFO[Window(home).Property(HomePlayListNine.Unwatched),[B]$LOCALIZE[16101]: [/B]]</value>
-		<value condition="!Skin.HasSetting(DisableScriptPlayList) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + Container(9000).Hasfocus(10)">$INFO[Window(home).Property(HomePlayListTen.Count),[B]$LOCALIZE[31025]: [/B]]     $INFO[Window(home).Property(HomePlayListTen.Watched),[B]$LOCALIZE[16102]: [/B]]     $INFO[Window(home).Property(HomePlayListTen.Unwatched),[B]$LOCALIZE[16101]: [/B]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Videos)">$INFO[Window.Property(Movies.Count),[B]$LOCALIZE[20342]: [/B]]     $INFO[Window.Property(TVShows.Count),[B]$LOCALIZE[20343]: [/B]]     $INFO[Window.Property(MusicVideos.Count),[B]$LOCALIZE[20389]: [/B]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Movies)">$INFO[Window.Property(Movies.Count),[B]$LOCALIZE[20342]: [/B]]     $INFO[Window.Property(Movies.Watched),[B]$LOCALIZE[16102]: [/B]]     $INFO[Window.Property(Movies.UnWatched),[B]$LOCALIZE[16101]: [/B]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),TVShows)">$INFO[Window.Property(TVShows.Count),[B]$LOCALIZE[20343]: [/B]]     $INFO[Window.Property(Episodes.Count),[B]$LOCALIZE[20360]: [/B]]     $INFO[Window.Property(Episodes.UnWatched),[B]$LOCALIZE[16101]: [/B]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Concerts)">$INFO[Window.Property(MusicVideos.Count),[B]$LOCALIZE[31121]: [/B]]     $INFO[Window.Property(MusicVideos.Watched),[B]$LOCALIZE[16102]: [/B]]     $INFO[Window.Property(MusicVideos.UnWatched),[B]$LOCALIZE[16101]: [/B]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Music)">$INFO[Window.Property(Music.AlbumsCount),[B]$LOCALIZE[132]: [/B]]     $INFO[Window.Property(Music.ArtistsCount),[B]$LOCALIZE[133]: [/B]]     $INFO[Window.Property(Music.SongsCount),[B]$LOCALIZE[134]: [/B]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayDisc) + System.HasMediaDVD">$INFO[System.DVDLabel,[B]$LOCALIZE[427]: [/B]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayDisc) + !System.HasMediaDVD">$LOCALIZE[31305,[B]$LOCALIZE[427]: [/B]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Weather) + Weather.IsFetched">[B]$LOCALIZE[143][/B] $INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits]  [B]$LOCALIZE[31302][/B] $INFO[Window(Weather).Property(Day0.Outlook)]</value>
-		<value condition="!substring(System.CPUTemperature,?) + !substring(System.GPUTemperature,?)">$INFO[Network.IPAddress,[B]IP: [/B]]     $INFO[System.CPUTemperature,[B]$LOCALIZE[401]: [/B]]     $INFO[System.GPUTemperature,[B]$LOCALIZE[141] [/B]]</value>
-		<value condition="!substring(System.CPUTemperature,?)">$INFO[Network.IPAddress,[B]IP: [/B]]     $INFO[System.CPUTemperature,[B]$LOCALIZE[401]: [/B]]     $INFO[System.UsedSpacePercent,[B]$LOCALIZE[155]: [/B]]</value>
-		<value>$INFO[Network.IPAddress,[B]IP: [/B]]     $INFO[system.memory(used.percent),[B]RAM: [/B]]     $INFO[System.UsedSpacePercent,[B]$LOCALIZE[155]: [/B]]</value>
+		<value condition="!Skin.HasSetting(DisableScriptPlayList) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + Container(9000).Hasfocus(1)">$INFO[Window(home).Property(HomePlayListOne.Count),[B][COLOR=blue]$LOCALIZE[31025]: [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListOne.Watched),[B][COLOR=blue]$LOCALIZE[16102]: [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListOne.Unwatched),[B][COLOR=blue]$LOCALIZE[16101]: [/COLOR][/B]]</value>
+		<value condition="!Skin.HasSetting(DisableScriptPlayList) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + Container(9000).Hasfocus(2)">$INFO[Window(home).Property(HomePlayListTwo.Count),[B][COLOR=blue]$LOCALIZE[31025]: [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListTwo.Watched),[B][COLOR=blue]$LOCALIZE[16102]: [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListTwo.Unwatched),[B][COLOR=blue]$LOCALIZE[16101]: [/COLOR][/B]]</value>
+		<value condition="!Skin.HasSetting(DisableScriptPlayList) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + Container(9000).Hasfocus(3)">$INFO[Window(home).Property(HomePlayListThree.Count),[B][COLOR=blue]$LOCALIZE[31025]: [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListThree.Watched),[B][COLOR=blue]$LOCALIZE[16102]: [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListThree.Unwatched),[B][COLOR=blue]$LOCALIZE[16101]: [/COLOR][/B]]</value>
+		<value condition="!Skin.HasSetting(DisableScriptPlayList) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + Container(9000).Hasfocus(4)">$INFO[Window(home).Property(HomePlayListFour.Count),[B][COLOR=blue]$LOCALIZE[31025]: [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListFour.Watched),[B][COLOR=blue]$LOCALIZE[16102]: [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListFour.Unwatched),[B][COLOR=blue]$LOCALIZE[16101]: [/COLOR][/B]]</value>
+		<value condition="!Skin.HasSetting(DisableScriptPlayList) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + Container(9000).Hasfocus(5)">$INFO[Window(home).Property(HomePlayListFive.Count),[B][COLOR=blue]$LOCALIZE[31025]: [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListFive.Watched),[B][COLOR=blue]$LOCALIZE[16102]: [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListFive.Unwatched),[B][COLOR=blue]$LOCALIZE[16101]: [/COLOR][/B]]</value>
+		<value condition="!Skin.HasSetting(DisableScriptPlayList) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + Container(9000).Hasfocus(6)">$INFO[Window(home).Property(HomePlayListSix.Count),[B][COLOR=blue]$LOCALIZE[31025]: [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListSix.Watched),[B][COLOR=blue]$LOCALIZE[16102]: [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListSix.Unwatched),[B][COLOR=blue]$LOCALIZE[16101]: [/COLOR][/B]]</value>
+		<value condition="!Skin.HasSetting(DisableScriptPlayList) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + Container(9000).Hasfocus(7)">$INFO[Window(home).Property(HomePlayListSeven.Count),[B][COLOR=blue]$LOCALIZE[31025]: [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListSeven.Watched),[B][COLOR=blue]$LOCALIZE[16102]: [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListSeven.Unwatched),[B][COLOR=blue]$LOCALIZE[16101]: [/COLOR][/B]]</value>
+		<value condition="!Skin.HasSetting(DisableScriptPlayList) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + Container(9000).Hasfocus(8)">$INFO[Window(home).Property(HomePlayListEight.Count),[B][COLOR=blue]$LOCALIZE[31025]: [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListEight.Watched),[B][COLOR=blue]$LOCALIZE[16102]: [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListEight.Unwatched),[B][COLOR=blue]$LOCALIZE[16101]: [/COLOR][/B]]</value>
+		<value condition="!Skin.HasSetting(DisableScriptPlayList) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + Container(9000).Hasfocus(9)">$INFO[Window(home).Property(HomePlayListNine.Count),[B][COLOR=blue]$LOCALIZE[31025]: [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListNine.Watched),[B][COLOR=blue]$LOCALIZE[16102]: [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListNine.Unwatched),[B][COLOR=blue]$LOCALIZE[16101]: [/COLOR][/B]]</value>
+		<value condition="!Skin.HasSetting(DisableScriptPlayList) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + Container(9000).Hasfocus(10)">$INFO[Window(home).Property(HomePlayListTen.Count),[B][COLOR=blue]$LOCALIZE[31025]: [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListTen.Watched),[B][COLOR=blue]$LOCALIZE[16102]: [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListTen.Unwatched),[B][COLOR=blue]$LOCALIZE[16101]: [/COLOR][/B]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Videos)">$INFO[Window.Property(Movies.Count),[B][COLOR=blue]$LOCALIZE[20342]: [/COLOR][/B]]     $INFO[Window.Property(TVShows.Count),[B][COLOR=blue]$LOCALIZE[20343]: [/COLOR][/B]]     $INFO[Window.Property(MusicVideos.Count),[B][COLOR=blue]$LOCALIZE[20389]: [/COLOR][/B]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Movies)">$INFO[Window.Property(Movies.Count),[B][COLOR=blue]$LOCALIZE[20342]: [/COLOR][/B]]     $INFO[Window.Property(Movies.Watched),[B][COLOR=blue]$LOCALIZE[16102]: [/COLOR][/B]]     $INFO[Window.Property(Movies.UnWatched),[B][COLOR=blue]$LOCALIZE[16101]: [/COLOR][/B]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),TVShows)">$INFO[Window.Property(TVShows.Count),[B][COLOR=blue]$LOCALIZE[20343]: [/COLOR][/B]]     $INFO[Window.Property(Episodes.Count),[B][COLOR=blue]$LOCALIZE[20360]: [/COLOR][/B]]     $INFO[Window.Property(Episodes.UnWatched),[B][COLOR=blue]$LOCALIZE[16101]: [/COLOR][/B]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Concerts)">$INFO[Window.Property(MusicVideos.Count),[B][COLOR=blue]$LOCALIZE[31121]: [/COLOR][/B]]     $INFO[Window.Property(MusicVideos.Watched),[B][COLOR=blue]$LOCALIZE[16102]: [/COLOR][/B]]     $INFO[Window.Property(MusicVideos.UnWatched),[B][COLOR=blue]$LOCALIZE[16101]: [/COLOR][/B]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Music)">$INFO[Window.Property(Music.AlbumsCount),[B][COLOR=blue]$LOCALIZE[132]: [/COLOR][/B]]     $INFO[Window.Property(Music.ArtistsCount),[B][COLOR=blue]$LOCALIZE[133]: [/COLOR][/B]]     $INFO[Window.Property(Music.SongsCount),[B][COLOR=blue]$LOCALIZE[134]: [/COLOR][/B]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayDisc) + System.HasMediaDVD">$INFO[System.DVDLabel,[B][COLOR=blue]$LOCALIZE[427]: [/COLOR][/B]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayDisc) + !System.HasMediaDVD">$LOCALIZE[31305,[B][COLOR=blue]$LOCALIZE[427]: [/COLOR][/B]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Weather) + Weather.IsFetched">[B][COLOR=blue]$LOCALIZE[143][/COLOR][/B] $INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits]  [B][COLOR=blue]$LOCALIZE[31302][/COLOR][/B] $INFO[Window(Weather).Property(Day0.Outlook)]</value>
+		<value condition="!substring(System.CPUTemperature,?) + !substring(System.GPUTemperature,?)">$INFO[Network.IPAddress,[B][COLOR=blue]IP: [/COLOR][/B]]     $INFO[System.CPUTemperature,[B][COLOR=blue]$LOCALIZE[401]: [/COLOR][/B]]     $INFO[System.GPUTemperature,[B][COLOR=blue]$LOCALIZE[141] [/COLOR][/B]]</value>
+		<value condition="!substring(System.CPUTemperature,?)">$INFO[Network.IPAddress,[B][COLOR=blue]IP: [/COLOR][/B]]     $INFO[System.CPUTemperature,[B][COLOR=blue]$LOCALIZE[401]: [/COLOR][/B]]     $INFO[System.UsedSpacePercent,[B][COLOR=blue]$LOCALIZE[155]: [/COLOR][/B]]</value>
+		<value>$INFO[Network.IPAddress,[B][COLOR=blue]IP: [/COLOR][/B]]     $INFO[system.memory(used.percent),[B][COLOR=blue]RAM: [/COLOR][/B]]     $INFO[System.UsedSpacePercent,[B][COLOR=blue]$LOCALIZE[155]: [/COLOR][/B]]</value>
 	</variable>
 	<variable name="MusicHeaderLabel">
 		<value condition="MusicPartyMode.Enabled">[B]($LOCALIZE[589])[/B]</value>
@@ -146,11 +204,11 @@
 		<value>$INFO[musicplayer.Playlistposition,$LOCALIZE[554]: ]$INFO[musicplayer.Playlistlength, / ]</value>
 	</variable>
 	<variable name="NextFiveSongScroller" type="text">
-		<value condition="!IsEmpty(MusicPlayer.offset(5).Artist) + Player.HasAudio">[B]$LOCALIZE[31088]   1:[/B]  $INFO[MusicPlayer.offset(1).Artist] - $INFO[MusicPlayer.offset(1).Title]    [B]2:[/B]  $INFO[MusicPlayer.offset(2).Artist] - $INFO[MusicPlayer.offset(2).Title]    [B]3:[/B]  $INFO[MusicPlayer.offset(3).Artist] - $INFO[MusicPlayer.offset(3).Title]    [B]4:[/B]  $INFO[MusicPlayer.offset(4).Artist] - $INFO[MusicPlayer.offset(4).Title]    [B]5:[/B]  $INFO[MusicPlayer.offset(5).Artist] - $INFO[MusicPlayer.offset(5).Title]</value>
-		<value condition="!IsEmpty(MusicPlayer.offset(4).Artist) + IsEmpty(MusicPlayer.offset(5).Artist) + Player.HasAudio">[B]$LOCALIZE[31088]   1:[/B]  $INFO[MusicPlayer.offset(1).Artist] - $INFO[MusicPlayer.offset(1).Title]    [B]2:[/B]  $INFO[MusicPlayer.offset(2).Artist] - $INFO[MusicPlayer.offset(2).Title]    [B]3:[/B]  $INFO[MusicPlayer.offset(3).Artist] - $INFO[MusicPlayer.offset(3).Title]    [B]4:[/B]  $INFO[MusicPlayer.offset(4).Artist] - $INFO[MusicPlayer.offset(4).Title]</value>
-		<value condition="!IsEmpty(MusicPlayer.offset(3).Artist) + IsEmpty(MusicPlayer.offset(4).Artist) + IsEmpty(MusicPlayer.offset(5).Artist) + Player.HasAudio">[B]$LOCALIZE[31088]   1:[/B]  $INFO[MusicPlayer.offset(1).Artist] - $INFO[MusicPlayer.offset(1).Title]    [B]2:[/B]  $INFO[MusicPlayer.offset(2).Artist] - $INFO[MusicPlayer.offset(2).Title]     [B]3:[/B]  $INFO[MusicPlayer.offset(3).Artist] - $INFO[MusicPlayer.offset(3).Title]</value>
-		<value condition="!IsEmpty(MusicPlayer.offset(2).Artist) + IsEmpty(MusicPlayer.offset(3).Artist) + IsEmpty(MusicPlayer.offset(4).Artist) + IsEmpty(MusicPlayer.offset(5).Artist) + Player.HasAudio">[B]$LOCALIZE[31088]   1:[/B]  $INFO[MusicPlayer.offset(1).Artist] - $INFO[MusicPlayer.offset(1).Title]    [B]2:[/B]  $INFO[MusicPlayer.offset(2).Artist] - $INFO[MusicPlayer.offset(2).Title]</value>
-		<value condition="!IsEmpty(MusicPlayer.offset(1).Artist) + IsEmpty(MusicPlayer.offset(2).Artist) + IsEmpty(MusicPlayer.offset(3).Artist) + IsEmpty(MusicPlayer.offset(4).Artist) + IsEmpty(MusicPlayer.offset(5).Artist) + Player.HasAudio">[B]$LOCALIZE[31088]   1:[/B]  $INFO[MusicPlayer.offset(1).Artist] - $INFO[MusicPlayer.offset(1).Title]</value>
+		<value condition="!IsEmpty(MusicPlayer.offset(5).Artist) + Player.HasAudio">[COLOR=blue][B]$LOCALIZE[31088]   1:[/B][/COLOR]  $INFO[MusicPlayer.offset(1).Artist] - $INFO[MusicPlayer.offset(1).Title]    [COLOR=blue][B]2:[/B][/COLOR]  $INFO[MusicPlayer.offset(2).Artist] - $INFO[MusicPlayer.offset(2).Title]    [COLOR=blue][B]3:[/B][/COLOR]  $INFO[MusicPlayer.offset(3).Artist] - $INFO[MusicPlayer.offset(3).Title]    [COLOR=blue][B]4:[/B][/COLOR]  $INFO[MusicPlayer.offset(4).Artist] - $INFO[MusicPlayer.offset(4).Title]    [COLOR=blue][B]5:[/B][/COLOR]  $INFO[MusicPlayer.offset(5).Artist] - $INFO[MusicPlayer.offset(5).Title]</value>
+		<value condition="!IsEmpty(MusicPlayer.offset(4).Artist) + IsEmpty(MusicPlayer.offset(5).Artist) + Player.HasAudio">[COLOR=blue][B]$LOCALIZE[31088]   1:[/B][/COLOR]  $INFO[MusicPlayer.offset(1).Artist] - $INFO[MusicPlayer.offset(1).Title]    [COLOR=blue][B]2:[/B][/COLOR]  $INFO[MusicPlayer.offset(2).Artist] - $INFO[MusicPlayer.offset(2).Title]    [COLOR=blue][B]3:[/B][/COLOR]  $INFO[MusicPlayer.offset(3).Artist] - $INFO[MusicPlayer.offset(3).Title]    [COLOR=blue][B]4:[/B][/COLOR]  $INFO[MusicPlayer.offset(4).Artist] - $INFO[MusicPlayer.offset(4).Title]</value>
+		<value condition="!IsEmpty(MusicPlayer.offset(3).Artist) + IsEmpty(MusicPlayer.offset(4).Artist) + IsEmpty(MusicPlayer.offset(5).Artist) + Player.HasAudio">[COLOR=blue][B]$LOCALIZE[31088]   1:[/B][/COLOR]  $INFO[MusicPlayer.offset(1).Artist] - $INFO[MusicPlayer.offset(1).Title]    [COLOR=blue][B]2:[/B][/COLOR]  $INFO[MusicPlayer.offset(2).Artist] - $INFO[MusicPlayer.offset(2).Title]     [COLOR=blue][B]3:[/B][/COLOR]  $INFO[MusicPlayer.offset(3).Artist] - $INFO[MusicPlayer.offset(3).Title]</value>
+		<value condition="!IsEmpty(MusicPlayer.offset(2).Artist) + IsEmpty(MusicPlayer.offset(3).Artist) + IsEmpty(MusicPlayer.offset(4).Artist) + IsEmpty(MusicPlayer.offset(5).Artist) + Player.HasAudio">[COLOR=blue][B]$LOCALIZE[31088]   1:[/B][/COLOR]  $INFO[MusicPlayer.offset(1).Artist] - $INFO[MusicPlayer.offset(1).Title]    [COLOR=blue][B]2:[/B][/COLOR]  $INFO[MusicPlayer.offset(2).Artist] - $INFO[MusicPlayer.offset(2).Title]</value>
+		<value condition="!IsEmpty(MusicPlayer.offset(1).Artist) + IsEmpty(MusicPlayer.offset(2).Artist) + IsEmpty(MusicPlayer.offset(3).Artist) + IsEmpty(MusicPlayer.offset(4).Artist) + IsEmpty(MusicPlayer.offset(5).Artist) + Player.HasAudio">[COLOR=blue][B]$LOCALIZE[31088]   1:[/B][/COLOR]  $INFO[MusicPlayer.offset(1).Artist] - $INFO[MusicPlayer.offset(1).Title]</value>
 	</variable>
 	<include name="CDArtSpinner">
 		<animation effect="slide" start="-70,0" end="0,0" time="900" delay="2000" condition="Player.HasMedia">conditional</animation>
@@ -194,6 +252,16 @@
 		<value condition="[Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)] + !substring(ListItem.Duration,min)">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</value>
 		<value condition="[Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)] + substring(ListItem.Duration,min)">$INFO[ListItem.Duration]</value>
 	</variable>
+	<variable name="VideoListCase">
+		<value condition="!Skin.HasSetting(UseDiscTypeCase) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">TVseries</value>
+		<value condition="!Skin.HasSetting(UseDiscTypeCase) + !IsEmpty(ListItem.FileExtension)">$INFO[ListItem.FileExtension]</value>
+		<value condition="Skin.HasSetting(UseDiscTypeCase) + [SubString(ListItem.FilenameAndPath,bluray) | SubString(ListItem.FilenameAndPath,bdrip) | SubString(ListItem.FilenameAndPath,bd25) | SubString(ListItem.FilenameAndPath,bd50)]">bd</value>
+		<value condition="Skin.HasSetting(UseDiscTypeCase) + [SubString(ListItem.FilenameAndPath,.3D.) | SubString(ListItem.FilenameAndPath,.3DBD.) | SubString(ListItem.FilenameAndPath,.SBS.)]">3DCase</value>
+		<value condition="Skin.HasSetting(UseDiscTypeCase) + SubString(ListItem.FilenameAndPath,hddvd)">hddvd</value>
+		<value condition="Skin.HasSetting(UseDiscTypeCase) + SubString(ListItem.FilenameAndPath,dvd)">dvd</value>
+		<value condition="Skin.HasSetting(UseDiscTypeCase) + [SubString(ListItem.FilenameAndPath,pdtv) | SubString(ListItem.FilenameAndPath,hdtv) | SubString(ListItem.FilenameAndPath,dsr)]">TVseries</value>
+		<value>dv</value>
+	</variable>
 	<variable name="GenreFlagPath">
 		<!--value condition="Skin.HasSetting(UsrGenreFanArt)">MovieGenre/</value-->
 		<value>DefaultGenre/</value>
@@ -207,15 +275,15 @@
 		<value>False</value>
 	</variable>
 	<variable name="MainItemLabel">
-		<value condition="StringCompare(ListItem.Label,..) + !Skin.HasSetting(ParentDirLabel)">[B]$LOCALIZE[31316][/B]</value>
+		<value condition="StringCompare(ListItem.Label,..) + !Skin.HasSetting(ParentDirLabel)">[B][COLOR=blue]$LOCALIZE[31316][/COLOR][/B]</value>
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
 	<variable name="DescriptiveLabel" type="text">
 		<value condition="StringCompare(ListItem.label,..)">$LOCALIZE[31316]</value>
-		<value condition="!IsEmpty(ListItem.Year) + Container.Content(Movies)">$INFO[ListItem.label] ($INFO[ListItem.Year])</value>
+		<value condition="!IsEmpty(ListItem.Year) + Container.Content(Movies)">$INFO[ListItem.label] ([COLOR=white]$INFO[ListItem.Year][/COLOR])</value>
 		<value condition="Container.Content(Seasons) | Container.Content(Episodes)">$INFO[ListItem.TVShowTitle] - $INFO[ListItem.label]</value>
-		<value condition="!IsEmpty(Window.Property(current.actor.agelong)) + [Container.Content(Actors) | Container.Content(Directors)]">$INFO[ListItem.label] ($INFO[Window.Property(current.actor.agelong)])</value>
-		<value condition="!IsEmpty(ListItem.Property(date))">$INFO[ListItem.label] ($INFO[ListItem.Property(date)])</value>
+		<value condition="!IsEmpty(Window.Property(current.actor.agelong)) + [Container.Content(Actors) | Container.Content(Directors)]">$INFO[ListItem.label] ([COLOR=white]$INFO[Window.Property(current.actor.agelong)][/COLOR])</value>
+		<value condition="!IsEmpty(ListItem.Property(date))">$INFO[ListItem.label] ([COLOR=white]$INFO[ListItem.Property(date)][/COLOR])</value>
 		<value>$INFO[ListItem.label]</value>
 	</variable>
 	<variable name="VideoNowPlaying">
@@ -260,7 +328,7 @@
 	<variable name="UsersSubPicturesName" type="text">
 		<value condition="!IsEmpty(Skin.String(UserPicturesSubMenu))">$INFO[Skin.String(UserPicturesSubMenu)]</value>
 		<value>$LOCALIZE[1213]</value>
-	</variable>	
+	</variable>
 	<variable name="UsersSubSelectOneName" type="text">
 		<value condition="!IsEmpty(Skin.String(UserSelectOneSubMenu))">$INFO[Skin.String(UserSelectOneSubMenu)]</value>
 		<value>$LOCALIZE[31135]</value>
@@ -404,7 +472,7 @@
 		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),UserOne)">$VAR[UsersSubSelectOneName]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),UserTwo)">$VAR[UsersSubSelectTwoName]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),UserThree)">$VAR[UsersSubSelectThreeName]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),Favourites)">$LOCALIZE[1036]</value>		
+		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),Favourites)">$LOCALIZE[1036]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),LiveTV)">$LOCALIZE[31502]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),Settings)">$LOCALIZE[10004]</value>
 		<value>$LOCALIZE[31093]</value>
@@ -545,145 +613,255 @@
 		<value>$LOCALIZE[31093]</value>
 	</variable>
 	<variable name="UsrDefItemOneAddOnLabel" type="text">
-		<value condition="stringcompare(Skin.String(HomeItem.1.Addon),AddonSetone) + !IsEmpty(Skin.String(UserSelectAddon.1.Label))">$INFO[Skin.String(UserSelectAddon.1.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Addon),AddonSetOne) + !IsEmpty(Skin.String(UserSelectAddon.1.Label))">$INFO[Skin.String(UserSelectAddon.1.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.1.Addon),AddonSetTwo) + !IsEmpty(Skin.String(UserSelectAddon.2.Label))">$INFO[Skin.String(UserSelectAddon.2.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.1.Addon),AddonSetThree) + !IsEmpty(Skin.String(UserSelectAddon.3.Label))">$INFO[Skin.String(UserSelectAddon.3.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.1.Addon),AddonSetFour) + !IsEmpty(Skin.String(UserSelectAddon.4.Label))">$INFO[Skin.String(UserSelectAddon.4.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.1.Addon),AddonSetFive) + !IsEmpty(Skin.String(UserSelectAddon.5.Label))">$INFO[Skin.String(UserSelectAddon.5.Label)]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.1.Addon),AddonSetone)">$LOCALIZE[31135]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Addon),AddonSetSix) + !IsEmpty(Skin.String(UserSelectAddon.6.Label))">$INFO[Skin.String(UserSelectAddon.6.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Addon),AddonSetSeven) + !IsEmpty(Skin.String(UserSelectAddon.7.Label))">$INFO[Skin.String(UserSelectAddon.7.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Addon),AddonSetEight) + !IsEmpty(Skin.String(UserSelectAddon.8.Label))">$INFO[Skin.String(UserSelectAddon.8.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Addon),AddonSetNine) + !IsEmpty(Skin.String(UserSelectAddon.9.Label))">$INFO[Skin.String(UserSelectAddon.9.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Addon),AddonSetTen) + !IsEmpty(Skin.String(UserSelectAddon.10.Label))">$INFO[Skin.String(UserSelectAddon.10.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Addon),AddonSetOne)">$LOCALIZE[31135]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.1.Addon),AddonSetTwo)">$LOCALIZE[31136]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.1.Addon),AddonSetThree)">$LOCALIZE[31190]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.1.Addon),AddonSetFour)">$LOCALIZE[31191]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.1.Addon),AddonSetFive)">$LOCALIZE[31196]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Addon),AddonSetSix)">$LOCALIZE[31197]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Addon),AddonSetSeven)">$LOCALIZE[31198]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Addon),AddonSetEight)">$LOCALIZE[31199]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Addon),AddonSetNine)">$LOCALIZE[31200]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Addon),AddonSetTen)">$LOCALIZE[31201]</value>
 		<value>$LOCALIZE[31093]</value>
 	</variable>
 	<variable name="UsrDefItemTwoAddOnLabel" type="text">
-		<value condition="stringcompare(Skin.String(HomeItem.2.Addon),AddonSetone) + !IsEmpty(Skin.String(UserSelectAddon.1.Label))">$INFO[Skin.String(UserSelectAddon.1.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Addon),AddonSetOne) + !IsEmpty(Skin.String(UserSelectAddon.1.Label))">$INFO[Skin.String(UserSelectAddon.1.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.2.Addon),AddonSetTwo) + !IsEmpty(Skin.String(UserSelectAddon.2.Label))">$INFO[Skin.String(UserSelectAddon.2.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.2.Addon),AddonSetThree) + !IsEmpty(Skin.String(UserSelectAddon.3.Label))">$INFO[Skin.String(UserSelectAddon.3.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.2.Addon),AddonSetFour) + !IsEmpty(Skin.String(UserSelectAddon.4.Label))">$INFO[Skin.String(UserSelectAddon.4.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.2.Addon),AddonSetFive) + !IsEmpty(Skin.String(UserSelectAddon.5.Label))">$INFO[Skin.String(UserSelectAddon.5.Label)]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.2.Addon),AddonSetone)">$LOCALIZE[31135]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Addon),AddonSetSix) + !IsEmpty(Skin.String(UserSelectAddon.6.Label))">$INFO[Skin.String(UserSelectAddon.6.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Addon),AddonSetSeven) + !IsEmpty(Skin.String(UserSelectAddon.7.Label))">$INFO[Skin.String(UserSelectAddon.7.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Addon),AddonSetEight) + !IsEmpty(Skin.String(UserSelectAddon.8.Label))">$INFO[Skin.String(UserSelectAddon.8.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Addon),AddonSetNine) + !IsEmpty(Skin.String(UserSelectAddon.9.Label))">$INFO[Skin.String(UserSelectAddon.9.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Addon),AddonSetTen) + !IsEmpty(Skin.String(UserSelectAddon.10.Label))">$INFO[Skin.String(UserSelectAddon.10.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Addon),AddonSetOne)">$LOCALIZE[31135]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.2.Addon),AddonSetTwo)">$LOCALIZE[31136]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.2.Addon),AddonSetThree)">$LOCALIZE[31190]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.2.Addon),AddonSetFour)">$LOCALIZE[31191]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.2.Addon),AddonSetFive)">$LOCALIZE[31196]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Addon),AddonSetSix)">$LOCALIZE[31197]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Addon),AddonSetSeven)">$LOCALIZE[31198]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Addon),AddonSetEight)">$LOCALIZE[31199]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Addon),AddonSetNine)">$LOCALIZE[31200]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Addon),AddonSetTen)">$LOCALIZE[31201]</value>
 		<value>$LOCALIZE[31093]</value>
 	</variable>
 	<variable name="UsrDefItemThreeAddOnLabel" type="text">
-		<value condition="stringcompare(Skin.String(HomeItem.3.Addon),AddonSetone) + !IsEmpty(Skin.String(UserSelectAddon.1.Label))">$INFO[Skin.String(UserSelectAddon.1.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Addon),AddonSetOne) + !IsEmpty(Skin.String(UserSelectAddon.1.Label))">$INFO[Skin.String(UserSelectAddon.1.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.3.Addon),AddonSetTwo) + !IsEmpty(Skin.String(UserSelectAddon.2.Label))">$INFO[Skin.String(UserSelectAddon.2.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.3.Addon),AddonSetThree) + !IsEmpty(Skin.String(UserSelectAddon.3.Label))">$INFO[Skin.String(UserSelectAddon.3.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.3.Addon),AddonSetFour) + !IsEmpty(Skin.String(UserSelectAddon.4.Label))">$INFO[Skin.String(UserSelectAddon.4.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.3.Addon),AddonSetFive) + !IsEmpty(Skin.String(UserSelectAddon.5.Label))">$INFO[Skin.String(UserSelectAddon.5.Label)]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.3.Addon),AddonSetone)">$LOCALIZE[31135]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Addon),AddonSetSix) + !IsEmpty(Skin.String(UserSelectAddon.6.Label))">$INFO[Skin.String(UserSelectAddon.6.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Addon),AddonSetSeven) + !IsEmpty(Skin.String(UserSelectAddon.7.Label))">$INFO[Skin.String(UserSelectAddon.7.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Addon),AddonSetEight) + !IsEmpty(Skin.String(UserSelectAddon.8.Label))">$INFO[Skin.String(UserSelectAddon.8.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Addon),AddonSetNine) + !IsEmpty(Skin.String(UserSelectAddon.9.Label))">$INFO[Skin.String(UserSelectAddon.9.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Addon),AddonSetTen) + !IsEmpty(Skin.String(UserSelectAddon.10.Label))">$INFO[Skin.String(UserSelectAddon.10.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Addon),AddonSetOne)">$LOCALIZE[31135]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.3.Addon),AddonSetTwo)">$LOCALIZE[31136]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.3.Addon),AddonSetThree)">$LOCALIZE[31190]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.3.Addon),AddonSetFour)">$LOCALIZE[31191]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.3.Addon),AddonSetFive)">$LOCALIZE[31196]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Addon),AddonSetSix)">$LOCALIZE[31197]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Addon),AddonSetSeven)">$LOCALIZE[31198]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Addon),AddonSetEight)">$LOCALIZE[31199]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Addon),AddonSetNine)">$LOCALIZE[31200]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Addon),AddonSetTen)">$LOCALIZE[31201]</value>
 		<value>$LOCALIZE[31093]</value>
 	</variable>
 	<variable name="UsrDefItemFourAddOnLabel" type="text">
-		<value condition="stringcompare(Skin.String(HomeItem.4.Addon),AddonSetone) + !IsEmpty(Skin.String(UserSelectAddon.1.Label))">$INFO[Skin.String(UserSelectAddon.1.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Addon),AddonSetOne) + !IsEmpty(Skin.String(UserSelectAddon.1.Label))">$INFO[Skin.String(UserSelectAddon.1.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.4.Addon),AddonSetTwo) + !IsEmpty(Skin.String(UserSelectAddon.2.Label))">$INFO[Skin.String(UserSelectAddon.2.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.4.Addon),AddonSetThree) + !IsEmpty(Skin.String(UserSelectAddon.3.Label))">$INFO[Skin.String(UserSelectAddon.3.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.4.Addon),AddonSetFour) + !IsEmpty(Skin.String(UserSelectAddon.4.Label))">$INFO[Skin.String(UserSelectAddon.4.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.4.Addon),AddonSetFive) + !IsEmpty(Skin.String(UserSelectAddon.5.Label))">$INFO[Skin.String(UserSelectAddon.5.Label)]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.4.Addon),AddonSetone)">$LOCALIZE[31135]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Addon),AddonSetSix) + !IsEmpty(Skin.String(UserSelectAddon.6.Label))">$INFO[Skin.String(UserSelectAddon.6.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Addon),AddonSetSeven) + !IsEmpty(Skin.String(UserSelectAddon.7.Label))">$INFO[Skin.String(UserSelectAddon.7.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Addon),AddonSetEight) + !IsEmpty(Skin.String(UserSelectAddon.8.Label))">$INFO[Skin.String(UserSelectAddon.8.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Addon),AddonSetNine) + !IsEmpty(Skin.String(UserSelectAddon.9.Label))">$INFO[Skin.String(UserSelectAddon.9.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Addon),AddonSetTen) + !IsEmpty(Skin.String(UserSelectAddon.10.Label))">$INFO[Skin.String(UserSelectAddon.10.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Addon),AddonSetOne)">$LOCALIZE[31135]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.4.Addon),AddonSetTwo)">$LOCALIZE[31136]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.4.Addon),AddonSetThree)">$LOCALIZE[31190]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.4.Addon),AddonSetFour)">$LOCALIZE[31191]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.4.Addon),AddonSetFive)">$LOCALIZE[31196]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Addon),AddonSetSix)">$LOCALIZE[31197]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Addon),AddonSetSeven)">$LOCALIZE[31198]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Addon),AddonSetEight)">$LOCALIZE[31199]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Addon),AddonSetNine)">$LOCALIZE[31200]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Addon),AddonSetTen)">$LOCALIZE[31201]</value>
 		<value>$LOCALIZE[31093]</value>
 	</variable>
 	<variable name="UsrDefItemFiveAddOnLabel" type="text">
-		<value condition="stringcompare(Skin.String(HomeItem.5.Addon),AddonSetone) + !IsEmpty(Skin.String(UserSelectAddon.1.Label))">$INFO[Skin.String(UserSelectAddon.1.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Addon),AddonSetOne) + !IsEmpty(Skin.String(UserSelectAddon.1.Label))">$INFO[Skin.String(UserSelectAddon.1.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.5.Addon),AddonSetTwo) + !IsEmpty(Skin.String(UserSelectAddon.2.Label))">$INFO[Skin.String(UserSelectAddon.2.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.5.Addon),AddonSetThree) + !IsEmpty(Skin.String(UserSelectAddon.3.Label))">$INFO[Skin.String(UserSelectAddon.3.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.5.Addon),AddonSetFour) + !IsEmpty(Skin.String(UserSelectAddon.4.Label))">$INFO[Skin.String(UserSelectAddon.4.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.5.Addon),AddonSetFive) + !IsEmpty(Skin.String(UserSelectAddon.5.Label))">$INFO[Skin.String(UserSelectAddon.5.Label)]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.5.Addon),AddonSetone)">$LOCALIZE[31135]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Addon),AddonSetSix) + !IsEmpty(Skin.String(UserSelectAddon.6.Label))">$INFO[Skin.String(UserSelectAddon.6.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Addon),AddonSetSeven) + !IsEmpty(Skin.String(UserSelectAddon.7.Label))">$INFO[Skin.String(UserSelectAddon.7.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Addon),AddonSetEight) + !IsEmpty(Skin.String(UserSelectAddon.8.Label))">$INFO[Skin.String(UserSelectAddon.8.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Addon),AddonSetNine) + !IsEmpty(Skin.String(UserSelectAddon.9.Label))">$INFO[Skin.String(UserSelectAddon.9.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Addon),AddonSetTen) + !IsEmpty(Skin.String(UserSelectAddon.10.Label))">$INFO[Skin.String(UserSelectAddon.10.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Addon),AddonSetOne)">$LOCALIZE[31135]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.5.Addon),AddonSetTwo)">$LOCALIZE[31136]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.5.Addon),AddonSetThree)">$LOCALIZE[31190]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.5.Addon),AddonSetFour)">$LOCALIZE[31191]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.5.Addon),AddonSetFive)">$LOCALIZE[31196]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Addon),AddonSetSix)">$LOCALIZE[31197]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Addon),AddonSetSeven)">$LOCALIZE[31198]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Addon),AddonSetEight)">$LOCALIZE[31199]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Addon),AddonSetNine)">$LOCALIZE[31200]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Addon),AddonSetTen)">$LOCALIZE[31201]</value>
 		<value>$LOCALIZE[31093]</value>
 	</variable>
 	<variable name="UsrDefItemSixAddOnLabel" type="text">
-		<value condition="stringcompare(Skin.String(HomeItem.6.Addon),AddonSetone) + !IsEmpty(Skin.String(UserSelectAddon.1.Label))">$INFO[Skin.String(UserSelectAddon.1.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Addon),AddonSetOne) + !IsEmpty(Skin.String(UserSelectAddon.1.Label))">$INFO[Skin.String(UserSelectAddon.1.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.6.Addon),AddonSetTwo) + !IsEmpty(Skin.String(UserSelectAddon.2.Label))">$INFO[Skin.String(UserSelectAddon.2.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.6.Addon),AddonSetThree) + !IsEmpty(Skin.String(UserSelectAddon.3.Label))">$INFO[Skin.String(UserSelectAddon.3.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.6.Addon),AddonSetFour) + !IsEmpty(Skin.String(UserSelectAddon.4.Label))">$INFO[Skin.String(UserSelectAddon.4.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.6.Addon),AddonSetFive) + !IsEmpty(Skin.String(UserSelectAddon.5.Label))">$INFO[Skin.String(UserSelectAddon.5.Label)]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.6.Addon),AddonSetone)">$LOCALIZE[31135]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Addon),AddonSetSix) + !IsEmpty(Skin.String(UserSelectAddon.6.Label))">$INFO[Skin.String(UserSelectAddon.6.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Addon),AddonSetSeven) + !IsEmpty(Skin.String(UserSelectAddon.7.Label))">$INFO[Skin.String(UserSelectAddon.7.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Addon),AddonSetEight) + !IsEmpty(Skin.String(UserSelectAddon.8.Label))">$INFO[Skin.String(UserSelectAddon.8.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Addon),AddonSetNine) + !IsEmpty(Skin.String(UserSelectAddon.9.Label))">$INFO[Skin.String(UserSelectAddon.9.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Addon),AddonSetTen) + !IsEmpty(Skin.String(UserSelectAddon.10.Label))">$INFO[Skin.String(UserSelectAddon.10.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Addon),AddonSetOne)">$LOCALIZE[31135]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.6.Addon),AddonSetTwo)">$LOCALIZE[31136]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.6.Addon),AddonSetThree)">$LOCALIZE[31190]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.6.Addon),AddonSetFour)">$LOCALIZE[31191]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.6.Addon),AddonSetFive)">$LOCALIZE[31196]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Addon),AddonSetSix)">$LOCALIZE[31197]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Addon),AddonSetSeven)">$LOCALIZE[31198]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Addon),AddonSetEight)">$LOCALIZE[31199]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Addon),AddonSetNine)">$LOCALIZE[31200]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Addon),AddonSetTen)">$LOCALIZE[31201]</value>
 		<value>$LOCALIZE[31093]</value>
 	</variable>
 	<variable name="UsrDefItemSevenAddOnLabel" type="text">
-		<value condition="stringcompare(Skin.String(HomeItem.7.Addon),AddonSetone) + !IsEmpty(Skin.String(UserSelectAddon.1.Label))">$INFO[Skin.String(UserSelectAddon.1.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Addon),AddonSetOne) + !IsEmpty(Skin.String(UserSelectAddon.1.Label))">$INFO[Skin.String(UserSelectAddon.1.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.7.Addon),AddonSetTwo) + !IsEmpty(Skin.String(UserSelectAddon.2.Label))">$INFO[Skin.String(UserSelectAddon.2.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.7.Addon),AddonSetThree) + !IsEmpty(Skin.String(UserSelectAddon.3.Label))">$INFO[Skin.String(UserSelectAddon.3.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.7.Addon),AddonSetFour) + !IsEmpty(Skin.String(UserSelectAddon.4.Label))">$INFO[Skin.String(UserSelectAddon.4.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.7.Addon),AddonSetFive) + !IsEmpty(Skin.String(UserSelectAddon.5.Label))">$INFO[Skin.String(UserSelectAddon.5.Label)]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.7.Addon),AddonSetone)">$LOCALIZE[31135]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Addon),AddonSetSix) + !IsEmpty(Skin.String(UserSelectAddon.6.Label))">$INFO[Skin.String(UserSelectAddon.6.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Addon),AddonSetSeven) + !IsEmpty(Skin.String(UserSelectAddon.7.Label))">$INFO[Skin.String(UserSelectAddon.7.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Addon),AddonSetEight) + !IsEmpty(Skin.String(UserSelectAddon.8.Label))">$INFO[Skin.String(UserSelectAddon.8.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Addon),AddonSetNine) + !IsEmpty(Skin.String(UserSelectAddon.9.Label))">$INFO[Skin.String(UserSelectAddon.9.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Addon),AddonSetTen) + !IsEmpty(Skin.String(UserSelectAddon.10.Label))">$INFO[Skin.String(UserSelectAddon.10.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Addon),AddonSetOne)">$LOCALIZE[31135]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.7.Addon),AddonSetTwo)">$LOCALIZE[31136]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.7.Addon),AddonSetThree)">$LOCALIZE[31190]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.7.Addon),AddonSetFour)">$LOCALIZE[31191]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.7.Addon),AddonSetFive)">$LOCALIZE[31196]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Addon),AddonSetSix)">$LOCALIZE[31197]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Addon),AddonSetSeven)">$LOCALIZE[31198]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Addon),AddonSetEight)">$LOCALIZE[31199]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Addon),AddonSetNine)">$LOCALIZE[31200]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Addon),AddonSetTen)">$LOCALIZE[31201]</value>
 		<value>$LOCALIZE[31093]</value>
 	</variable>
 	<variable name="UsrDefItemEightAddOnLabel" type="text">
-		<value condition="stringcompare(Skin.String(HomeItem.8.Addon),AddonSetone) + !IsEmpty(Skin.String(UserSelectAddon.1.Label))">$INFO[Skin.String(UserSelectAddon.1.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Addon),AddonSetOne) + !IsEmpty(Skin.String(UserSelectAddon.1.Label))">$INFO[Skin.String(UserSelectAddon.1.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.8.Addon),AddonSetTwo) + !IsEmpty(Skin.String(UserSelectAddon.2.Label))">$INFO[Skin.String(UserSelectAddon.2.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.8.Addon),AddonSetThree) + !IsEmpty(Skin.String(UserSelectAddon.3.Label))">$INFO[Skin.String(UserSelectAddon.3.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.8.Addon),AddonSetFour) + !IsEmpty(Skin.String(UserSelectAddon.4.Label))">$INFO[Skin.String(UserSelectAddon.4.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.8.Addon),AddonSetFive) + !IsEmpty(Skin.String(UserSelectAddon.5.Label))">$INFO[Skin.String(UserSelectAddon.5.Label)]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.8.Addon),AddonSetone)">$LOCALIZE[31135]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Addon),AddonSetSix) + !IsEmpty(Skin.String(UserSelectAddon.6.Label))">$INFO[Skin.String(UserSelectAddon.6.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Addon),AddonSetSeven) + !IsEmpty(Skin.String(UserSelectAddon.7.Label))">$INFO[Skin.String(UserSelectAddon.7.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Addon),AddonSetEight) + !IsEmpty(Skin.String(UserSelectAddon.8.Label))">$INFO[Skin.String(UserSelectAddon.8.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Addon),AddonSetNine) + !IsEmpty(Skin.String(UserSelectAddon.9.Label))">$INFO[Skin.String(UserSelectAddon.9.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Addon),AddonSetTen) + !IsEmpty(Skin.String(UserSelectAddon.10.Label))">$INFO[Skin.String(UserSelectAddon.10.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Addon),AddonSetOne)">$LOCALIZE[31135]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.8.Addon),AddonSetTwo)">$LOCALIZE[31136]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.8.Addon),AddonSetThree)">$LOCALIZE[31190]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.8.Addon),AddonSetFour)">$LOCALIZE[31191]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.8.Addon),AddonSetFive)">$LOCALIZE[31196]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Addon),AddonSetSix)">$LOCALIZE[31197]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Addon),AddonSetSeven)">$LOCALIZE[31198]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Addon),AddonSetEight)">$LOCALIZE[31199]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Addon),AddonSetNine)">$LOCALIZE[31200]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Addon),AddonSetTen)">$LOCALIZE[31201]</value>
 		<value>$LOCALIZE[31093]</value>
 	</variable>
 	<variable name="UsrDefItemNineAddOnLabel" type="text">
-		<value condition="stringcompare(Skin.String(HomeItem.9.Addon),AddonSetone) + !IsEmpty(Skin.String(UserSelectAddon.1.Label))">$INFO[Skin.String(UserSelectAddon.1.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Addon),AddonSetOne) + !IsEmpty(Skin.String(UserSelectAddon.1.Label))">$INFO[Skin.String(UserSelectAddon.1.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.9.Addon),AddonSetTwo) + !IsEmpty(Skin.String(UserSelectAddon.2.Label))">$INFO[Skin.String(UserSelectAddon.2.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.9.Addon),AddonSetThree) + !IsEmpty(Skin.String(UserSelectAddon.3.Label))">$INFO[Skin.String(UserSelectAddon.3.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.9.Addon),AddonSetFour) + !IsEmpty(Skin.String(UserSelectAddon.4.Label))">$INFO[Skin.String(UserSelectAddon.4.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.9.Addon),AddonSetFive) + !IsEmpty(Skin.String(UserSelectAddon.5.Label))">$INFO[Skin.String(UserSelectAddon.5.Label)]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.9.Addon),AddonSetone)">$LOCALIZE[31135]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Addon),AddonSetSix) + !IsEmpty(Skin.String(UserSelectAddon.6.Label))">$INFO[Skin.String(UserSelectAddon.6.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Addon),AddonSetSeven) + !IsEmpty(Skin.String(UserSelectAddon.7.Label))">$INFO[Skin.String(UserSelectAddon.7.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Addon),AddonSetEight) + !IsEmpty(Skin.String(UserSelectAddon.8.Label))">$INFO[Skin.String(UserSelectAddon.8.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Addon),AddonSetNine) + !IsEmpty(Skin.String(UserSelectAddon.9.Label))">$INFO[Skin.String(UserSelectAddon.9.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Addon),AddonSetTen) + !IsEmpty(Skin.String(UserSelectAddon.10.Label))">$INFO[Skin.String(UserSelectAddon.10.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Addon),AddonSetOne)">$LOCALIZE[31135]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.9.Addon),AddonSetTwo)">$LOCALIZE[31136]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.9.Addon),AddonSetThree)">$LOCALIZE[31190]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.9.Addon),AddonSetFour)">$LOCALIZE[31191]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.9.Addon),AddonSetFive)">$LOCALIZE[31196]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Addon),AddonSetSix)">$LOCALIZE[31197]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Addon),AddonSetSeven)">$LOCALIZE[31198]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Addon),AddonSetEight)">$LOCALIZE[31199]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Addon),AddonSetNine)">$LOCALIZE[31200]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Addon),AddonSetTen)">$LOCALIZE[31201]</value>
 		<value>$LOCALIZE[31093]</value>
 	</variable>
 	<variable name="UsrDefItemTenAddOnLabel" type="text">
-		<value condition="stringcompare(Skin.String(HomeItem.10.Addon),AddonSetone) + !IsEmpty(Skin.String(UserSelectAddon.1.Label))">$INFO[Skin.String(UserSelectAddon.1.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Addon),AddonSetOne) + !IsEmpty(Skin.String(UserSelectAddon.1.Label))">$INFO[Skin.String(UserSelectAddon.1.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.10.Addon),AddonSetTwo) + !IsEmpty(Skin.String(UserSelectAddon.2.Label))">$INFO[Skin.String(UserSelectAddon.2.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.10.Addon),AddonSetThree) + !IsEmpty(Skin.String(UserSelectAddon.3.Label))">$INFO[Skin.String(UserSelectAddon.3.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.10.Addon),AddonSetFour) + !IsEmpty(Skin.String(UserSelectAddon.4.Label))">$INFO[Skin.String(UserSelectAddon.4.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.10.Addon),AddonSetFive) + !IsEmpty(Skin.String(UserSelectAddon.5.Label))">$INFO[Skin.String(UserSelectAddon.5.Label)]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.10.Addon),AddonSetone)">$LOCALIZE[31135]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Addon),AddonSetSix) + !IsEmpty(Skin.String(UserSelectAddon.6.Label))">$INFO[Skin.String(UserSelectAddon.6.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Addon),AddonSetSeven) + !IsEmpty(Skin.String(UserSelectAddon.7.Label))">$INFO[Skin.String(UserSelectAddon.7.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Addon),AddonSetEight) + !IsEmpty(Skin.String(UserSelectAddon.8.Label))">$INFO[Skin.String(UserSelectAddon.8.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Addon),AddonSetNine) + !IsEmpty(Skin.String(UserSelectAddon.9.Label))">$INFO[Skin.String(UserSelectAddon.9.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Addon),AddonSetTen) + !IsEmpty(Skin.String(UserSelectAddon.10.Label))">$INFO[Skin.String(UserSelectAddon.10.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Addon),AddonSetOne)">$LOCALIZE[31135]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.10.Addon),AddonSetTwo)">$LOCALIZE[31136]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.10.Addon),AddonSetThree)">$LOCALIZE[31190]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.10.Addon),AddonSetFour)">$LOCALIZE[31191]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.10.Addon),AddonSetFive)">$LOCALIZE[31196]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Addon),AddonSetSix)">$LOCALIZE[31197]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Addon),AddonSetSeven)">$LOCALIZE[31198]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Addon),AddonSetEight)">$LOCALIZE[31199]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Addon),AddonSetNine)">$LOCALIZE[31200]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Addon),AddonSetTen)">$LOCALIZE[31201]</value>
 		<value>$LOCALIZE[31093]</value>
 	</variable>
 	<variable name="UsrDefItemTwelveAddOnLabel" type="text">
-		<value condition="stringcompare(Skin.String(HomeItem.12.Addon),AddonSetone) + !IsEmpty(Skin.String(UserSelectAddon.1.Label))">$INFO[Skin.String(UserSelectAddon.1.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.12.Addon),AddonSetOne) + !IsEmpty(Skin.String(UserSelectAddon.1.Label))">$INFO[Skin.String(UserSelectAddon.1.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.12.Addon),AddonSetTwo) + !IsEmpty(Skin.String(UserSelectAddon.2.Label))">$INFO[Skin.String(UserSelectAddon.2.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.12.Addon),AddonSetThree) + !IsEmpty(Skin.String(UserSelectAddon.3.Label))">$INFO[Skin.String(UserSelectAddon.3.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.12.Addon),AddonSetFour) + !IsEmpty(Skin.String(UserSelectAddon.4.Label))">$INFO[Skin.String(UserSelectAddon.4.Label)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.12.Addon),AddonSetFive) + !IsEmpty(Skin.String(UserSelectAddon.5.Label))">$INFO[Skin.String(UserSelectAddon.5.Label)]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.12.Addon),AddonSetone)">$LOCALIZE[31135]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.12.Addon),AddonSetSix) + !IsEmpty(Skin.String(UserSelectAddon.6.Label))">$INFO[Skin.String(UserSelectAddon.6.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.12.Addon),AddonSetSeven) + !IsEmpty(Skin.String(UserSelectAddon.7.Label))">$INFO[Skin.String(UserSelectAddon.7.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.12.Addon),AddonSetEight) + !IsEmpty(Skin.String(UserSelectAddon.8.Label))">$INFO[Skin.String(UserSelectAddon.8.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.12.Addon),AddonSetNine) + !IsEmpty(Skin.String(UserSelectAddon.9.Label))">$INFO[Skin.String(UserSelectAddon.9.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.12.Addon),AddonSetTen) + !IsEmpty(Skin.String(UserSelectAddon.10.Label))">$INFO[Skin.String(UserSelectAddon.10.Label)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.12.Addon),AddonSetOne)">$LOCALIZE[31135]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.12.Addon),AddonSetTwo)">$LOCALIZE[31136]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.12.Addon),AddonSetThree)">$LOCALIZE[31190]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.12.Addon),AddonSetFour)">$LOCALIZE[31191]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.12.Addon),AddonSetSix)">$LOCALIZE[31197]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.12.Addon),AddonSetSeven)">$LOCALIZE[31198]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.12.Addon),AddonSetEight)">$LOCALIZE[31199]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.12.Addon),AddonSetNine)">$LOCALIZE[31200]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.12.Addon),AddonSetTen)">$LOCALIZE[31201]</value>
 		<value>$LOCALIZE[31093]</value>
 	</variable>
 	<variable name="UsrDefItemOneWidgetLabel" type="text">
@@ -896,39 +1074,219 @@
 		<value>$LOCALIZE[31093]</value>
 	</variable>
 	<variable name="SetMenuOneBackground" type="text">
-		<value>special://skin/backgrounds/default_light.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Path),RunAddon(plugin.program.advanced.launcher))">special://skin/backgrounds/homescreen/launcher.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Path),RunScript(script.cinema.experience,movietitles))">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Path),RunScript(script.globalsearch))">special://skin/backgrounds/homescreen/search.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Type),Weather)">special://skin/backgrounds/homescreen/weather.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Type),Pictures)">special://skin/backgrounds/homescreen/pictures.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Type),Videos)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Type),Movies)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Type),TVShows)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Type),Concerts)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Type),LiveTV)">special://skin/backgrounds/homescreen/tv.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Type),Music)">special://skin/backgrounds/homescreen/music.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Type),Programs)">special://skin/backgrounds/homescreen/programs.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Type),AddOns)">special://skin/backgrounds/homescreen/addons.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Type),Streaming)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Type),Settings)">special://skin/backgrounds/homescreen/settings.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Type),Favourites)">special://skin/backgrounds/homescreen/favourite.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Type),PlayListVideo)">special://skin/backgrounds/homescreen/playlist.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Type),PlayListMusic)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
 	</variable>
 	<variable name="SetMenuTwoBackground" type="text">
-		<value>special://skin/backgrounds/default_light.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Path),RunAddon(plugin.program.advanced.launcher))">special://skin/backgrounds/homescreen/launcher.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Path),RunScript(script.cinema.experience,movietitles))">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Path),RunScript(script.globalsearch))">special://skin/backgrounds/homescreen/search.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Type),Weather)">special://skin/backgrounds/homescreen/weather.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Type),Pictures)">special://skin/backgrounds/homescreen/pictures.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Type),Videos)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Type),Movies)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Type),TVShows)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Type),Concerts)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Type),LiveTV)">special://skin/backgrounds/homescreen/tv.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Type),Music)">special://skin/backgrounds/homescreen/music.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Type),Programs)">special://skin/backgrounds/homescreen/programs.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Type),AddOns)">special://skin/backgrounds/homescreen/addons.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Type),Streaming)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Type),Settings)">special://skin/backgrounds/homescreen/settings.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Type),Favourites)">special://skin/backgrounds/homescreen/favourite.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Type),PlayListVideo)">special://skin/backgrounds/homescreen/playlist.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Type),PlayListMusic)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
 	</variable>
 	<variable name="SetMenuThreeBackground" type="text">
-		<value>special://skin/backgrounds/default_light.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Path),RunAddon(plugin.program.advanced.launcher))">special://skin/backgrounds/homescreen/launcher.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Path),RunScript(script.cinema.experience,movietitles))">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Path),RunScript(script.globalsearch))">special://skin/backgrounds/homescreen/search.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Type),Weather)">special://skin/backgrounds/homescreen/weather.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Type),Pictures)">special://skin/backgrounds/homescreen/pictures.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Type),Videos)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Type),Movies)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Type),TVShows)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Type),Concerts)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Type),LiveTV)">special://skin/backgrounds/homescreen/tv.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Type),Music)">special://skin/backgrounds/homescreen/music.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Type),Programs)">special://skin/backgrounds/homescreen/programs.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Type),AddOns)">special://skin/backgrounds/homescreen/addons.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Type),Streaming)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Type),Settings)">special://skin/backgrounds/homescreen/settings.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Type),Favourites)">special://skin/backgrounds/homescreen/favourite.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Type),PlayListVideo)">special://skin/backgrounds/homescreen/playlist.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Type),PlayListMusic)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
 	</variable>
 	<variable name="SetMenuFourBackground" type="text">
-		<value>special://skin/backgrounds/default_light.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Path),RunAddon(plugin.program.advanced.launcher))">special://skin/backgrounds/homescreen/launcher.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Path),RunScript(script.cinema.experience,movietitles))">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Path),RunScript(script.globalsearch))">special://skin/backgrounds/homescreen/search.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Type),Weather)">special://skin/backgrounds/homescreen/weather.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Type),Pictures)">special://skin/backgrounds/homescreen/pictures.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Type),Videos)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Type),Movies)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Type),TVShows)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Type),Concerts)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Type),LiveTV)">special://skin/backgrounds/homescreen/tv.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Type),Music)">special://skin/backgrounds/homescreen/music.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Type),Programs)">special://skin/backgrounds/homescreen/programs.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Type),AddOns)">special://skin/backgrounds/homescreen/addons.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Type),Streaming)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Type),Settings)">special://skin/backgrounds/homescreen/settings.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Type),Favourites)">special://skin/backgrounds/homescreen/favourite.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Type),PlayListVideo)">special://skin/backgrounds/homescreen/playlist.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Type),PlayListMusic)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
 	</variable>
 	<variable name="SetMenuFiveBackground" type="text">
-		<value>special://skin/backgrounds/default_light.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Path),RunAddon(plugin.program.advanced.launcher))">special://skin/backgrounds/homescreen/launcher.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Path),RunScript(script.cinema.experience,movietitles))">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Path),RunScript(script.globalsearch))">special://skin/backgrounds/homescreen/search.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Type),Weather)">special://skin/backgrounds/homescreen/weather.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Type),Pictures)">special://skin/backgrounds/homescreen/pictures.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Type),Videos)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Type),Movies)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Type),TVShows)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Type),Concerts)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Type),LiveTV)">special://skin/backgrounds/homescreen/tv.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Type),Music)">special://skin/backgrounds/homescreen/music.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Type),Programs)">special://skin/backgrounds/homescreen/programs.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Type),AddOns)">special://skin/backgrounds/homescreen/addons.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Type),Streaming)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Type),Settings)">special://skin/backgrounds/homescreen/settings.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Type),Favourites)">special://skin/backgrounds/homescreen/favourite.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Type),PlayListVideo)">special://skin/backgrounds/homescreen/playlist.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Type),PlayListMusic)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
 	</variable>
 	<variable name="SetMenuSixBackground" type="text">
-		<value>special://skin/backgrounds/default_light.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Path),RunAddon(plugin.program.advanced.launcher))">special://skin/backgrounds/homescreen/launcher.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Path),RunScript(script.cinema.experience,movietitles))">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Path),RunScript(script.globalsearch))">special://skin/backgrounds/homescreen/search.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Type),Weather)">special://skin/backgrounds/homescreen/weather.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Type),Pictures)">special://skin/backgrounds/homescreen/pictures.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Type),Videos)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Type),Movies)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Type),TVShows)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Type),Concerts)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Type),LiveTV)">special://skin/backgrounds/homescreen/tv.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Type),Music)">special://skin/backgrounds/homescreen/music.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Type),Programs)">special://skin/backgrounds/homescreen/programs.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Type),AddOns)">special://skin/backgrounds/homescreen/addons.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Type),Streaming)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Type),Settings)">special://skin/backgrounds/homescreen/settings.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Type),Favourites)">special://skin/backgrounds/homescreen/favourite.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Type),PlayListVideo)">special://skin/backgrounds/homescreen/playlist.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Type),PlayListMusic)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
 	</variable>
 	<variable name="SetMenuSevenBackground" type="text">
-		<value>special://skin/backgrounds/default_light.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Path),RunAddon(plugin.program.advanced.launcher))">special://skin/backgrounds/homescreen/launcher.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Path),RunScript(script.cinema.experience,movietitles))">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Path),RunScript(script.globalsearch))">special://skin/backgrounds/homescreen/search.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Type),Weather)">special://skin/backgrounds/homescreen/weather.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Type),Pictures)">special://skin/backgrounds/homescreen/pictures.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Type),Videos)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Type),Movies)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Type),TVShows)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Type),Concerts)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Type),LiveTV)">special://skin/backgrounds/homescreen/tv.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Type),Music)">special://skin/backgrounds/homescreen/music.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Type),Programs)">special://skin/backgrounds/homescreen/programs.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Type),AddOns)">special://skin/backgrounds/homescreen/addons.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Type),Streaming)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Type),Settings)">special://skin/backgrounds/homescreen/settings.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Type),Favourites)">special://skin/backgrounds/homescreen/favourite.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Type),PlayListVideo)">special://skin/backgrounds/homescreen/playlist.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Type),PlayListMusic)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
 	</variable>
 	<variable name="SetMenuEightBackground" type="text">
-		<value>special://skin/backgrounds/default_light.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Path),RunAddon(plugin.program.advanced.launcher))">special://skin/backgrounds/homescreen/launcher.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Path),RunScript(script.cinema.experience,movietitles))">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Path),RunScript(script.globalsearch))">special://skin/backgrounds/homescreen/search.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Type),Weather)">special://skin/backgrounds/homescreen/weather.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Type),Pictures)">special://skin/backgrounds/homescreen/pictures.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Type),Videos)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Type),Movies)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Type),TVShows)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Type),Concerts)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Type),LiveTV)">special://skin/backgrounds/homescreen/tv.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Type),Music)">special://skin/backgrounds/homescreen/music.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Type),Programs)">special://skin/backgrounds/homescreen/programs.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Type),AddOns)">special://skin/backgrounds/homescreen/addons.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Type),Streaming)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Type),Settings)">special://skin/backgrounds/homescreen/settings.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Type),Favourites)">special://skin/backgrounds/homescreen/favourite.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Type),PlayListVideo)">special://skin/backgrounds/homescreen/playlist.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Type),PlayListMusic)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
 	</variable>
 	<variable name="SetMenuNineBackground" type="text">
-		<value>special://skin/backgrounds/default_light.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Path),RunAddon(plugin.program.advanced.launcher))">special://skin/backgrounds/homescreen/launcher.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Path),RunScript(script.cinema.experience,movietitles))">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Path),RunScript(script.globalsearch))">special://skin/backgrounds/homescreen/search.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Type),Weather)">special://skin/backgrounds/homescreen/weather.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Type),Pictures)">special://skin/backgrounds/homescreen/pictures.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Type),Videos)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Type),Movies)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Type),TVShows)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Type),Concerts)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Type),LiveTV)">special://skin/backgrounds/homescreen/tv.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Type),Music)">special://skin/backgrounds/homescreen/music.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Type),Programs)">special://skin/backgrounds/homescreen/programs.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Type),AddOns)">special://skin/backgrounds/homescreen/addons.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Type),Streaming)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Type),Settings)">special://skin/backgrounds/homescreen/settings.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Type),Favourites)">special://skin/backgrounds/homescreen/favourite.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Type),PlayListVideo)">special://skin/backgrounds/homescreen/playlist.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Type),PlayListMusic)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
 	</variable>
 	<variable name="SetMenuTenBackground" type="text">
-		<value>special://skin/backgrounds/default_light.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Path),RunAddon(plugin.program.advanced.launcher))">special://skin/backgrounds/homescreen/launcher.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Path),RunScript(script.cinema.experience,movietitles))">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Path),RunScript(script.globalsearch))">special://skin/backgrounds/homescreen/search.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Type),Weather)">special://skin/backgrounds/homescreen/weather.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Type),Pictures)">special://skin/backgrounds/homescreen/pictures.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Type),Videos)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Type),Movies)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Type),TVShows)">special://skin/backgrounds/homescreen/videos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Type),Concerts)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Type),LiveTV)">special://skin/backgrounds/homescreen/tv.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Type),Music)">special://skin/backgrounds/homescreen/music.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Type),Programs)">special://skin/backgrounds/homescreen/programs.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Type),AddOns)">special://skin/backgrounds/homescreen/addons.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Type),Streaming)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Type),Settings)">special://skin/backgrounds/homescreen/settings.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Type),Favourites)">special://skin/backgrounds/homescreen/favourite.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Type),PlayListVideo)">special://skin/backgrounds/homescreen/playlist.jpg</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Type),PlayListMusic)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
+		<value>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
 	</variable>
 	<variable name="HomeBackgroundPreview" type="text">
 		<value condition="Skin.HasSetting(GlobalBackground) + Skin.HasSetting(GlobalWeatherFanart)">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
-		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(ShowWeatherFanart) + !IsEmpty(Skin.String(WeatherFanartDir))">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
-		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),StartUp) + Skin.HasSetting(HideStartUpBackground)">dialogs/overlay-background.png</value>
+		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(ShowWeatherFanart)">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
+		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),StartUp) + Skin.HasSetting(HideStartUpBackground)">black-back.png</value>
 		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),Movies) + Skin.HasSetting(ShowMovieDBFanart) + !IsEmpty(Skin.String(UsrMovieFanartDir))">$INFO[Skin.String(UsrMovieFanartDir)]</value>
 		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),Movies) + Skin.HasSetting(ShowMovieDBFanart) + !IsEmpty(Window(Home).Property(RandomMovie.1.Art(fanart)))">$INFO[Window(Home).Property(RandomMovie.1.Art(fanart))]</value>
 		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),TVShows) + Skin.HasSetting(ShowTVShowDBFanart) + !IsEmpty(Skin.String(UsrTVShowFanartDir))">$INFO[Skin.String(UsrTVShowFanartDir)]</value>
@@ -941,7 +1299,7 @@
 	</variable>
 	<variable name="HomeBackgroundLabel" type="text">
 		<value condition="Skin.HasSetting(GlobalBackground) + Skin.HasSetting(GlobalWeatherFanart)">$LOCALIZE[31906]</value>
-		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(ShowWeatherFanart) + !IsEmpty(Skin.String(WeatherFanartDir))">$LOCALIZE[31906]</value>
+		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(ShowWeatherFanart)">$LOCALIZE[31906]</value>
 		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),StartUp) + Skin.HasSetting(HideStartUpBackground)">$LOCALIZE[31170]</value>
 		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),Movies) + Skin.HasSetting(ShowMovieDBFanart)">$LOCALIZE[31907]</value>
 		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),TVShows) + Skin.HasSetting(ShowTVShowDBFanart)">$LOCALIZE[31907]</value>

@@ -8,8 +8,9 @@
 			<width>1160</width>
 			<height>460</height>
 			<onup>9000</onup>
-			<ondown>61</ondown>
+			<ondown>80</ondown>
 			<usecontrolcoords>true</usecontrolcoords>
+			<include>VisibleFadeEffect</include>
 			<control type="fixedlist" id="501">
 				<visible>Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows) | Container.Content(Sets) | Container.Content(MusicVideos)</visible>
 				<visible>!Container.Content(LiveTV)</visible>
@@ -34,6 +35,8 @@
 						<width>214</width>
 						<height>310</height>
 						<aspectratio>stretch</aspectratio>
+						<bordertexture border="5">button-nofocus.png</bordertexture>
+						<bordersize>4</bordersize>
 						<texture background="true">$VAR[PosterThumb]</texture>
 					</control>
 					<control type="group">
@@ -74,6 +77,8 @@
 						<width>222</width>
 						<height>318</height>
 						<aspectratio>stretch</aspectratio>
+						<bordertexture border="8">ThumbBorder.png</bordertexture>
+						<bordersize>8</bordersize>
 						<texture background="true">$VAR[PosterThumb]</texture>
 						<animation reversible="false" effect="zoom" start="-2,36,222,318" end="-28,0,284,390" time="200">focus</animation>
 						<animation reversible="false" effect="zoom" end="-2,36,222,318" start="-28,0,284,390" time="200">unfocus</animation>
@@ -115,6 +120,16 @@
 						</control>
 					</control>
 					<control type="image">
+						<posx>6</posx>
+						<posy>43</posy>
+						<width>170</width>
+						<height>180</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>GlassOverlay.png</texture>
+						<animation reversible="false" effect="zoom" start="6,44,170,180" end="-24,4,240,250" time="200">focus</animation>
+						<animation reversible="false" effect="zoom" end="6,44,170,180" start="-24,4,240,250" time="200">unfocus</animation>
+					</control>
+					<control type="image">
 						<posx>175</posx>
 						<posy>310</posy>
 						<width>50</width>
@@ -137,12 +152,15 @@
 				<posx>140</posx>
 				<posy>0</posy>
 				<width>880</width>
-				<height>14</height>
-				<texturesliderbackground border="1,5,1,5">scrollbar/ScrollBarH_light.png</texturesliderbackground>
-				<texturesliderbar border="1,5,1,5">scrollbar/ScrollBarH_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarH_bar_focus_light.png</texturesliderbarfocus>
+				<height>25</height>
+				<texturesliderbackground border="14,0,14,0">ScrollBarH.png</texturesliderbackground>
+				<texturesliderbar border="14,0,14,0">ScrollBarH_bar.png</texturesliderbar>
+				<texturesliderbarfocus border="14,0,14,0">ScrollBarH_bar_focus.png</texturesliderbarfocus>
+				<textureslidernib>ScrollBarNib.png</textureslidernib>
+				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 				<onup>501</onup>
-				<ondown>9000</ondown>
+				<ondown condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</ondown>
+				<ondown condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</ondown>
 				<showonepage>false</showonepage>
 				<orientation>horizontal</orientation>
 				<visible>Control.IsVisible(501)</visible>
@@ -150,6 +168,20 @@
 		</control>
 		<control type="group">
 			<visible>Control.IsVisible(501)</visible>
+			<control type="image">
+				<posx>56</posx>
+				<posy>120</posy>
+				<width>128</width>
+				<height>310</height>
+				<texture>SideFade.png</texture>
+			</control>
+			<control type="image">
+				<posx>1094</posx>
+				<posy>120</posy>
+				<width>128</width>
+				<height>310</height>
+				<texture flipx="true">SideFade.png</texture>
+			</control>
 		</control>
 		<control type="group">
 			<visible>Control.IsVisible(501) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(MusicVideos)]</visible>
@@ -159,7 +191,8 @@
 				<width>1220</width>
 				<height>35</height>
 				<font>font28_title</font>
-				<textcolor>heading2</textcolor>
+				<textcolor>blue</textcolor>
+				<shadowcolor>black</shadowcolor>
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -170,6 +203,9 @@
 				<posy>540</posy>
 				<width>1160</width>
 				<height>35</height>
+				<font>font13</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
 				<wrapmultiline>true</wrapmultiline>
 				<scroll>false</scroll>
 				<align>center</align>
@@ -205,6 +241,8 @@
 				<width>1280</width>
 				<height>20</height>
 				<font>font12</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -236,7 +274,7 @@
 				<width>1220</width>
 				<height>35</height>
 				<font>font28_title</font>
-				<textcolor>heading2</textcolor>
+				<textcolor>blue</textcolor>
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -248,6 +286,7 @@
 				<width>1280</width>
 				<height>35</height>
 				<font>font30</font>
+				<textcolor>white</textcolor>
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -258,6 +297,8 @@
 				<posy>575</posy>
 				<width>1280</width>
 				<height>35</height>
+				<font>font13</font>
+				<textcolor>white</textcolor>
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -269,6 +310,7 @@
 				<width>1280</width>
 				<height>35</height>
 				<font>font12</font>
+				<textcolor>white</textcolor>
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -283,7 +325,7 @@
 				<width>1220</width>
 				<height>35</height>
 				<font>font28_title</font>
-				<textcolor>heading2</textcolor>
+				<textcolor>blue</textcolor>
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -295,6 +337,7 @@
 				<width>1280</width>
 				<height>35</height>
 				<font>font30</font>
+				<textcolor>white</textcolor>
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -306,6 +349,8 @@
 				<posy>575</posy>
 				<width>1280</width>
 				<height>35</height>
+				<font>font13</font>
+				<textcolor>white</textcolor>
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -318,6 +363,7 @@
 				<width>1280</width>
 				<height>35</height>
 				<font>font12</font>
+				<textcolor>white</textcolor>
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -353,6 +399,7 @@
 			<posx>0</posx>
 			<posy>350</posy>
 			<visible>Control.IsVisible(508) + [[ListItem.IsFolder + Container.Content(Movies)] | Skin.HasSetting(View508HideInfo) | Container.Content(Sets)]</visible>
+			<include>VisibleFadeEffect</include>
 			<control type="image">
 				<posx>0</posx>
 				<posy>0</posy>
@@ -366,6 +413,8 @@
 				<width>1200</width>
 				<height>20</height>
 				<font>font24_title</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -375,6 +424,7 @@
 		</control>
 		<control type="group">
 			<visible>Control.IsVisible(508)</visible>
+			<include>VisibleFadeEffect</include>
 			<posx>0</posx>
 			<posy>460</posy>
 			<control type="fixedlist" id="508">
@@ -402,6 +452,8 @@
 						<width>120</width>
 						<height>160</height>
 						<aspectratio>stretch</aspectratio>
+						<bordertexture border="5">button-nofocus.png</bordertexture>
+						<bordersize>4</bordersize>
 						<fadetime>200</fadetime>
 						<texture background="true">$VAR[PosterThumb]</texture>
 					</control>
@@ -435,6 +487,26 @@
 							<visible>ListItem.IsResumable</visible>
 						</control>
 					</control>
+					<control type="image">
+						<posx>6</posx>
+						<posy>24</posy>
+						<width>112</width>
+						<height>152</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>black-back.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+					</control>
+					<control type="image">
+						<posx>2</posx>
+						<posy>180</posy>
+						<width>120</width>
+						<height>160</height>
+						<aspectratio>stretch</aspectratio>
+						<bordertexture border="5" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
+						<bordersize>4</bordersize>
+						<fadetime>200</fadetime>
+						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$VAR[PosterThumb]</texture>
+					</control>
 				</itemlayout>
 				<focusedlayout height="310" width="120">
 					<control type="image">
@@ -443,10 +515,23 @@
 						<width>128</width>
 						<height>168</height>
 						<aspectratio>stretch</aspectratio>
+						<bordertexture border="8">ThumbBorder.png</bordertexture>
+						<bordersize>8</bordersize>
 						<fadetime>200</fadetime>
 						<texture background="true">$VAR[PosterThumb]</texture>
 						<animation reversible="false" effect="zoom" start="-2,16,128,168" end="-12,-10,148,198" time="200">focus</animation>
 						<animation reversible="false" effect="zoom" end="-2,16,128,168" start="-12,-10,148,198" time="200">unfocus</animation>
+					</control>
+					<control type="image">
+						<posx>2</posx>
+						<posy>180</posy>
+						<width>120</width>
+						<height>160</height>
+						<aspectratio>stretch</aspectratio>
+						<bordertexture border="5" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
+						<bordersize>4</bordersize>
+						<fadetime>200</fadetime>
+						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$VAR[PosterThumb]</texture>
 					</control>
 					<control type="image">
 						<posx>75</posx>
@@ -501,18 +586,33 @@
 							<visible>ListItem.IsResumable</visible>
 						</control>
 					</control>
+					<control type="image">
+						<posx>6</posx>
+						<posy>24</posy>
+						<width>112</width>
+						<height>152</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>black-back.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<animation reversible="false" effect="fade" start="100" end="0" time="0">focus</animation>
+						<animation reversible="false" effect="zoom" start="6,24,112,152" end="-3,-1,130,180" time="200">focus</animation>
+						<animation reversible="false" effect="zoom" end="6,24,112,152" start="-3,-1,130,180" time="200">unfocus</animation>
+					</control>
 				</focusedlayout>
 			</control>
 			<control type="scrollbar" id="60">
 				<posx>310</posx>
 				<posy>185</posy>
 				<width>660</width>
-				<height>14</height>
-				<texturesliderbackground border="1,5,1,5">scrollbar/ScrollBarH_light.png</texturesliderbackground>
-				<texturesliderbar border="1,5,1,5">scrollbar/ScrollBarH_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarH_bar_focus_light.png</texturesliderbarfocus>
+				<height>25</height>
+				<texturesliderbackground border="14,0,14,0">ScrollBarH.png</texturesliderbackground>
+				<texturesliderbar border="14,0,14,0">ScrollBarH_bar.png</texturesliderbar>
+				<texturesliderbarfocus border="14,0,14,0">ScrollBarH_bar_focus.png</texturesliderbarfocus>
+				<textureslidernib>ScrollBarNib.png</textureslidernib>
+				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 				<onup>508</onup>
-				<ondown>2</ondown>
+				<ondown condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</ondown>
+				<ondown condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</ondown>
 				<showonepage>false</showonepage>
 				<orientation>horizontal</orientation>
 				<visible>Control.IsVisible(508)</visible>
@@ -537,6 +637,7 @@
 	<include name="MediaListView3">
 		<control type="group">
 			<visible>Control.IsVisible(503)</visible>
+			<include>VisibleFadeEffect</include>
 			<control type="list" id="503">
 				<posx>70</posx>
 				<posy>245</posy>
@@ -551,13 +652,21 @@
 				<scrolltime>200</scrolltime>
 				<visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Movies) | Container.Content(MusicVideos)</visible>
 				<itemlayout height="40" width="580">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>580</width>
+						<height>41</height>
+						<texture border="0,2,0,2">MenuItemNF.png</texture>
+					</control>
 					<control type="label">
 						<posx>10</posx>
 						<posy>0</posy>
 						<width>520</width>
 						<height>40</height>
-						<textcolor>textnofocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
@@ -568,8 +677,8 @@
 						<width>500</width>
 						<height>40</height>
 						<font>font12</font>
-						<textcolor>textnofocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
@@ -632,15 +741,35 @@
 						<posy>0</posy>
 						<width>580</width>
 						<height>41</height>
-						<texture>buttons/fo_light.png</texture>
+						<texture border="0,2,0,2">MenuItemNF.png</texture>
+						<visible>!Control.HasFocus(503)</visible>
+						<include>VisibleFadeEffect</include>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>580</width>
+						<height>41</height>
+						<texture border="0,2,0,2">MenuItemFO.png</texture>
 						<visible>Control.HasFocus(503)</visible>
+						<include>VisibleFadeEffect</include>
+					</control>
+					<control type="image">
+						<posx>380</posx>
+						<posy>4</posy>
+						<width>200</width>
+						<height>33</height>
+						<texture border="0,0,14,0">MediaItemDetailBG.png</texture>
+						<visible>Control.HasFocus(503) + !IsEmpty(ListItem.Label2)</visible>
 					</control>
 					<control type="label">
 						<posx>10</posx>
 						<posy>0</posy>
 						<width>520</width>
 						<height>40</height>
-						<selectedcolor>itemselected</selectedcolor>
+						<font>font13</font>
+						<textcolor>white</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
@@ -651,8 +780,8 @@
 						<width>500</width>
 						<height>40</height>
 						<font>font12</font>
-						<textcolor>textfocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
@@ -713,13 +842,16 @@
 			<control type="scrollbar" id="60">
 				<posx>650</posx>
 				<posy>245</posy>
-				<width>14</width>
+				<width>25</width>
 				<height>400</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+				<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+				<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+				<textureslidernib>ScrollBarNib.png</textureslidernib>
+				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 				<onleft>503</onleft>
-				<onright>2</onright>
+				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
+				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
 				<visible>Control.IsVisible(503)</visible>
@@ -736,6 +868,8 @@
 					<aspectratio>keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true">$VAR[BannerThumb]</texture>
+					<bordertexture border="8">ThumbShadow.png</bordertexture>
+					<bordersize>8</bordersize>
 					<visible>!Skin.HasSetting(View503CharacterArt) | IsEmpty(ListItem.Art(clearart))</visible>
 				</control>
 				<control type="image">
@@ -760,7 +894,7 @@
 						<align>right</align>
 						<aligny>center</aligny>
 						<font>font12</font>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 					</control>
 					<control type="label">
 						<description>Episodes Value</description>
@@ -768,7 +902,7 @@
 						<posy>120</posy>
 						<width>360</width>
 						<height>25</height>
-						<label fallback="416">$INFO[listitem.episode]  ($INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102]] - $INFO[ListItem.Property(UnWatchedEpisodes), , $LOCALIZE[16101]])</label>
+						<label fallback="416">$INFO[listitem.episode] [COLOR=grey] ($INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102]] - $INFO[ListItem.Property(UnWatchedEpisodes), , $LOCALIZE[16101]])[/COLOR]</label>
 						<align>left</align>
 						<aligny>center</aligny>
 						<font>font12</font>
@@ -784,7 +918,7 @@
 						<align>right</align>
 						<aligny>center</aligny>
 						<font>font12</font>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 					</control>
 					<control type="label">
 						<description>Aired Value</description>
@@ -808,7 +942,7 @@
 						<align>right</align>
 						<aligny>center</aligny>
 						<font>font12</font>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 					</control>
 					<control type="fadelabel">
 						<description>Genre Value</description>
@@ -824,6 +958,14 @@
 						<pauseatend>1000</pauseatend>
 					</control>
 				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>200</posy>
+					<width>530</width>
+					<height>4</height>
+					<texture>separator.png</texture>
+					<animation effect="slide" start="0,0" end="0,88" delay="0" time="0" condition="Skin.HasSetting(View503CharacterArt) + !IsEmpty(ListItem.Art(clearart))">conditional</animation>
+				</control>
 				<control type="textbox">
 					<description>Description Value for TVShows</description>
 					<posx>10</posx>
@@ -832,6 +974,7 @@
 					<height>180</height>
 					<font>font12</font>
 					<align>justify</align>
+					<textcolor>white</textcolor>
 					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 					<visible>!Skin.HasSetting(View503CharacterArt) | IsEmpty(ListItem.Art(clearart))</visible>
@@ -849,6 +992,8 @@
 					<aspectratio>keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true">$INFO[ListItem.Icon]</texture>
+					<bordertexture border="8">ThumbShadow.png</bordertexture>
+					<bordersize>8</bordersize>
 					<visible>!Skin.HasSetting(HideEpisodeThumb) | StringCompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="image">
@@ -859,6 +1004,8 @@
 					<aspectratio>keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Property(Fanart_Image)]</texture>
+					<bordertexture border="8">ThumbShadow.png</bordertexture>
+					<bordersize>8</bordersize>
 					<visible>Skin.HasSetting(HideEpisodeThumb) + !StringCompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="grouplist">
@@ -881,11 +1028,20 @@
 					<posy>245</posy>
 					<width>510</width>
 					<height>25</height>
-					<label>$INFO[ListItem.Season, $LOCALIZE[20373] : ] $INFO[ListItem.episode, $LOCALIZE[20359] : ] $INFO[ListItem.premiered, $LOCALIZE[31322] : ]</label>
+					<label>$INFO[ListItem.Season,[COLOR=blue] $LOCALIZE[20373] :[/COLOR] ] $INFO[ListItem.episode,[COLOR=blue] $LOCALIZE[20359] :[/COLOR] ] $INFO[ListItem.premiered,[COLOR=blue] $LOCALIZE[31322] :[/COLOR] ]</label>
 					<align>center</align>
 					<aligny>top</aligny>
 					<font>font12</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>275</posy>
+					<width>530</width>
+					<height>4</height>
+					<texture>separator.png</texture>
 				</control>
 				<control type="textbox">
 					<description>Description Value for TVShows</description>
@@ -895,6 +1051,7 @@
 					<height>120</height>
 					<font>font12</font>
 					<align>justify</align>
+					<textcolor>white</textcolor>
 					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
@@ -911,6 +1068,8 @@
 					<aspectratio>keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true">$INFO[ListItem.Icon]</texture>
+					<bordertexture border="8">ThumbShadow.png</bordertexture>
+					<bordersize>8</bordersize>
 				</control>
 				<control type="textbox">
 					<description>Description Value for Seasons</description>
@@ -920,6 +1079,7 @@
 					<height>355</height>
 					<font>font12</font>
 					<align>justify</align>
+					<textcolor>white</textcolor>
 					<label>$INFO[Container.ShowPlot]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 					<visible>Container.Content(Seasons)</visible>
@@ -930,11 +1090,12 @@
 					<posy>370</posy>
 					<width>510</width>
 					<height>25</height>
-					<label>$LOCALIZE[20360]: $INFO[ListItem.Property(WatchedEpisodes),(,) $LOCALIZE[16102]] $INFO[ListItem.Property(UnWatchedEpisodes),(,) $LOCALIZE[16101]]</label>
+					<label>[COLOR=white]$LOCALIZE[20360]:[/COLOR] $INFO[ListItem.Property(WatchedEpisodes),([COLOR=blue],[/COLOR]) $LOCALIZE[16102]] $INFO[ListItem.Property(UnWatchedEpisodes),([COLOR=blue],[/COLOR]) $LOCALIZE[16101]]</label>
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font12</font>
-					<textcolor>textnofocus</textcolor>
+					<textcolor>grey2</textcolor>
+					<shadowcolor>black</shadowcolor>
 				</control>
 			</control>
 			<control type="group">
@@ -949,6 +1110,8 @@
 					<aspectratio>keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true">$VAR[PosterThumb]</texture>
+					<bordertexture border="8">ThumbShadow.png</bordertexture>
+					<bordersize>8</bordersize>
 				</control>
 				<control type="grouplist">
 					<description>Media Codec Flagging Images</description>
@@ -973,6 +1136,7 @@
 					<height>355</height>
 					<font>font12</font>
 					<align>justify</align>
+					<textcolor>white</textcolor>
 					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
@@ -982,6 +1146,7 @@
 	<include name="MediaListView2">
 		<control type="group">
 			<visible>Control.IsVisible(504)</visible>
+			<include>VisibleFadeEffect</include>
 			<control type="list" id="504">
 				<posx>70</posx>
 				<posy>78</posy>
@@ -996,13 +1161,21 @@
 				<scrolltime>200</scrolltime>
 				<visible>Container.Content(TVShows) | Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)</visible>
 				<itemlayout height="40" width="580">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>580</width>
+						<height>41</height>
+						<texture border="0,2,0,2">MenuItemNF.png</texture>
+					</control>
 					<control type="label">
 						<posx>10</posx>
 						<posy>0</posy>
 						<width>520</width>
 						<height>40</height>
-						<textcolor>textnofocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
@@ -1013,8 +1186,8 @@
 						<width>500</width>
 						<height>40</height>
 						<font>font12</font>
-						<textcolor>textnofocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
@@ -1077,15 +1250,35 @@
 						<posy>0</posy>
 						<width>580</width>
 						<height>41</height>
-						<texture>buttons/fo_light.png</texture>
+						<texture border="0,2,0,2">MenuItemNF.png</texture>
+						<visible>!Control.HasFocus(504)</visible>
+						<include>VisibleFadeEffect</include>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>580</width>
+						<height>41</height>
+						<texture border="0,2,0,2">MenuItemFO.png</texture>
 						<visible>Control.HasFocus(504)</visible>
+						<include>VisibleFadeEffect</include>
+					</control>
+					<control type="image">
+						<posx>380</posx>
+						<posy>4</posy>
+						<width>200</width>
+						<height>33</height>
+						<texture border="0,0,14,0">MediaItemDetailBG.png</texture>
+						<visible>Control.HasFocus(504) + !IsEmpty(ListItem.Label2)</visible>
 					</control>
 					<control type="label">
 						<posx>10</posx>
 						<posy>0</posy>
 						<width>520</width>
 						<height>40</height>
-						<selectedcolor>itemselected</selectedcolor>
+						<font>font13</font>
+						<textcolor>white</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
@@ -1096,8 +1289,8 @@
 						<width>500</width>
 						<height>40</height>
 						<font>font12</font>
-						<textcolor>textfocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
@@ -1158,13 +1351,16 @@
 			<control type="scrollbar" id="60">
 				<posx>650</posx>
 				<posy>78</posy>
-				<width>14</width>
+				<width>25</width>
 				<height>560</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="10,14,10,14">ScrollBarV.png</texturesliderbackground>
+				<texturesliderbar border="10,14,10,14">ScrollBarV_bar.png</texturesliderbar>
+				<texturesliderbarfocus border="10,14,10,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+				<textureslidernib>ScrollBarNib.png</textureslidernib>
+				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 				<onleft>504</onleft>
-				<onright>2</onright>
+				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
+				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
 				<visible>Control.IsVisible(504)</visible>
@@ -1181,6 +1377,8 @@
 					<aspectratio>scale</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Art(fanart)]</texture>
+					<bordertexture background="true" border="8">ThumbShadow.png</bordertexture>
+					<bordersize>8</bordersize>
 				</control>
 				<control type="multiimage">
 					<posx>0</posx>
@@ -1192,6 +1390,8 @@
 					<imagepath background="true">$INFO[ListItem.Path,,extrafanart/]</imagepath>
 					<timeperimage>5000</timeperimage>
 					<randomize>true</randomize>
+					<bordertexture background="true" border="8">ThumbShadow.png</bordertexture>
+					<bordersize>8</bordersize>
 					<visible>!Skin.HasSetting(View504XtraFanArt) + !StringCompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="grouplist">
@@ -1209,6 +1409,13 @@
 					<include>AspectCodecFlaggingConditions</include>
 					<include>VideoTypeHackFlaggingConditions</include>
 				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>330</posy>
+					<width>510</width>
+					<height>4</height>
+					<texture>separator.png</texture>
+				</control>
 				<control type="label">
 					<description>Year txt</description>
 					<posx>150</posx>
@@ -1219,7 +1426,7 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
-					<textcolor>heading2</textcolor>
+					<textcolor>blue</textcolor>
 				</control>
 				<control type="label">
 					<description>Year Value</description>
@@ -1230,6 +1437,7 @@
 					<label fallback="416">$INFO[listitem.Year]</label>
 					<align>left</align>
 					<aligny>center</aligny>
+					<font>font13</font>
 					<scroll>true</scroll>
 				</control>
 				<control type="label">
@@ -1242,7 +1450,7 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
-					<textcolor>heading2</textcolor>
+					<textcolor>blue</textcolor>
 				</control>
 				<control type="fadelabel">
 					<description>Genre Value</description>
@@ -1253,8 +1461,16 @@
 					<label fallback="416">$INFO[listitem.Genre]</label>
 					<align>left</align>
 					<aligny>center</aligny>
+					<font>font13</font>
 					<scrollout>false</scrollout>
 					<pauseatend>1000</pauseatend>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>390</posy>
+					<width>510</width>
+					<height>4</height>
+					<texture>separator.png</texture>
 				</control>
 				<control type="textbox">
 					<description>Description Value for Video</description>
@@ -1264,6 +1480,7 @@
 					<height>170</height>
 					<font>font12</font>
 					<align>justify</align>
+					<textcolor>white</textcolor>
 					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
@@ -1280,6 +1497,8 @@
 					<aspectratio>scale</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true">$INFO[ListItem.Icon]</texture>
+					<bordertexture background="true" border="8">ThumbShadow.png</bordertexture>
+					<bordersize>8</bordersize>
 					<visible>StringCompare(ListItem.Label,..) | !Skin.HasSetting(HideEpisodeThumb)</visible>
 				</control>
 				<control type="image">
@@ -1290,6 +1509,8 @@
 					<aspectratio>scale</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Property(Fanart_Image)]</texture>
+					<bordertexture background="true" border="8">ThumbShadow.png</bordertexture>
+					<bordersize>8</bordersize>
 					<visible>!StringCompare(ListItem.Label,..) + Skin.HasSetting(HideEpisodeThumb)</visible>
 				</control>
 				<control type="grouplist">
@@ -1306,6 +1527,13 @@
 					<include>AspectCodecFlaggingConditions</include>
 					<include>VideoTypeHackFlaggingConditions</include>
 				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>330</posy>
+					<width>510</width>
+					<height>4</height>
+					<texture>separator.png</texture>
+				</control>
 				<control type="label">
 					<description>Aired txt</description>
 					<posx>150</posx>
@@ -1316,7 +1544,7 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
-					<textcolor>heading2</textcolor>
+					<textcolor>blue</textcolor>
 				</control>
 				<control type="label">
 					<description>Aired Value</description>
@@ -1327,6 +1555,7 @@
 					<label fallback="416">$INFO[listitem.Premiered]</label>
 					<align>left</align>
 					<aligny>center</aligny>
+					<font>font13</font>
 					<scroll>true</scroll>
 				</control>
 				<control type="label">
@@ -1339,7 +1568,7 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
-					<textcolor>heading2</textcolor>
+					<textcolor>blue</textcolor>
 				</control>
 				<control type="fadelabel">
 					<description>Episode Value</description>
@@ -1350,8 +1579,16 @@
 					<label fallback="416">$INFO[listitem.Season,,x]$INFO[listitem.Episode]</label>
 					<align>left</align>
 					<aligny>center</aligny>
+					<font>font13</font>
 					<scrollout>false</scrollout>
 					<pauseatend>1000</pauseatend>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>390</posy>
+					<width>510</width>
+					<height>4</height>
+					<texture>separator.png</texture>
 				</control>
 				<control type="textbox">
 					<description>Description Value for Video</description>
@@ -1361,6 +1598,7 @@
 					<height>170</height>
 					<font>font12</font>
 					<align>justify</align>
+					<textcolor>white</textcolor>
 					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
@@ -1370,6 +1608,7 @@
 	<include name="MediaListView4">
 		<control type="group">
 			<visible>Control.IsVisible(515)</visible>
+			<include>VisibleFadeEffect</include>
 			<control type="list" id="515">
 				<posx>70</posx>
 				<posy>78</posy>
@@ -1384,13 +1623,21 @@
 				<scrolltime>200</scrolltime>
 				<visible>Container.Content(TVShows) | Container.Content(Movies) | Container.Content(Episodes) | Container.Content(Seasons) | Container.Content(MusicVideos)</visible>
 				<itemlayout condition="!Container.Content(TVShows) | Skin.HasSetting(View515HideTVBanners)" height="40" width="345">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>345</width>
+						<height>41</height>
+						<texture border="0,2,0,2">MenuItemNF.png</texture>
+					</control>
 					<control type="label">
 						<posx>10</posx>
 						<posy>0</posy>
 						<width>310</width>
 						<height>40</height>
-						<textcolor>textnofocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
@@ -1401,8 +1648,9 @@
 						<posy>0</posy>
 						<width>335</width>
 						<height>40</height>
-						<textcolor>textnofocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
@@ -1442,15 +1690,27 @@
 						<posy>0</posy>
 						<width>345</width>
 						<height>41</height>
-						<texture>buttons/fo_light.png</texture>
+						<texture border="0,2,0,2">MenuItemNF.png</texture>
+						<visible>!Control.HasFocus(515)</visible>
+						<include>VisibleFadeEffect</include>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>345</width>
+						<height>41</height>
+						<texture border="0,2,0,2">MenuItemFO.png</texture>
 						<visible>Control.HasFocus(515)</visible>
+						<include>VisibleFadeEffect</include>
 					</control>
 					<control type="label">
 						<posx>10</posx>
 						<posy>0</posy>
 						<width>310</width>
 						<height>40</height>
-						<selectedcolor>itemselected</selectedcolor>
+						<font>font13</font>
+						<textcolor>white</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
@@ -1461,7 +1721,9 @@
 						<posy>0</posy>
 						<width>335</width>
 						<height>40</height>
-						<selectedcolor>itemselected</selectedcolor>
+						<font>font13</font>
+						<textcolor>white</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
@@ -1502,16 +1764,27 @@
 						<width>345</width>
 						<height>70</height>
 						<aspectratio align="left" aligny="bottom">keep</aspectratio>
+						<bordertexture border="5">button-nofocus.png</bordertexture>
+						<bordersize>5</bordersize>
 						<texture background="true">$INFO[ListItem.Art(banner)]</texture>
 						<visible>!IsEmpty(ListItem.Art(banner))</visible>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>345</width>
+						<height>71</height>
+						<texture border="0,2,0,2">MenuItemNF.png</texture>
+						<visible>IsEmpty(ListItem.Art(banner))</visible>
 					</control>
 					<control type="label">
 						<posx>10</posx>
 						<posy>0</posy>
 						<width>340</width>
 						<height>70</height>
-						<textcolor>textnofocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
@@ -1533,7 +1806,7 @@
 						<width>345</width>
 						<height>70</height>
 						<aspectratio align="left" aligny="bottom">keep</aspectratio>
-						<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
+						<bordertexture border="5">folder-focus.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$INFO[ListItem.Art(banner)]</texture>
 						<visible>!IsEmpty(ListItem.Art(banner))</visible>
@@ -1543,15 +1816,27 @@
 						<posy>0</posy>
 						<width>345</width>
 						<height>71</height>
-						<texture>buttons/fo_light.png</texture>
+						<texture border="0,2,0,2">MenuItemNF.png</texture>
+						<visible>!Control.HasFocus(515) + IsEmpty(ListItem.Art(banner))</visible>
+						<include>VisibleFadeEffect</include>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>345</width>
+						<height>71</height>
+						<texture border="0,2,0,2">MenuItemFO.png</texture>
 						<visible>Control.HasFocus(515) + IsEmpty(ListItem.Art(banner))</visible>
+						<include>VisibleFadeEffect</include>
 					</control>
 					<control type="label">
 						<posx>10</posx>
 						<posy>0</posy>
 						<width>340</width>
 						<height>70</height>
-						<selectedcolor>itemselected</selectedcolor>
+						<font>font13</font>
+						<textcolor>white</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
@@ -1570,13 +1855,16 @@
 			<control type="scrollbar" id="60">
 				<posx>415</posx>
 				<posy>78</posy>
-				<width>14</width>
+				<width>25</width>
 				<height>560</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="10,14,10,14">ScrollBarV.png</texturesliderbackground>
+				<texturesliderbar border="10,14,10,14">ScrollBarV_bar.png</texturesliderbar>
+				<texturesliderbarfocus border="10,14,10,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+				<textureslidernib>ScrollBarNib.png</textureslidernib>
+				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 				<onleft>515</onleft>
-				<onright>2</onright>
+				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
+				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
 				<visible>Control.IsVisible(515)</visible>
@@ -1610,6 +1898,8 @@
 					<width>540</width>
 					<height>30</height>
 					<font>font24_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>$VAR[MainItemLabel]</label>
@@ -1623,6 +1913,7 @@
 					<height>105</height>
 					<font>font12</font>
 					<align>justify</align>
+					<textcolor>white</textcolor>
 					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
@@ -1649,6 +1940,8 @@
 					<aspectratio align="left" aligny="bottom">keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true">$VAR[PosterThumb]</texture>
+					<bordertexture border="8">ThumbShadow.png</bordertexture>
+					<bordersize>8</bordersize>
 				</control>
 			</control>
 			<control type="group">
@@ -1680,6 +1973,8 @@
 					<width>540</width>
 					<height>30</height>
 					<font>font24_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>$VAR[MainItemLabel]</label>
@@ -1693,6 +1988,7 @@
 					<height>145</height>
 					<font>font12</font>
 					<align>justify</align>
+					<textcolor>white</textcolor>
 					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
@@ -1704,6 +2000,8 @@
 					<aspectratio align="left" aligny="bottom">keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true">$VAR[PosterThumb]</texture>
+					<bordertexture border="8">ThumbShadow.png</bordertexture>
+					<bordersize>8</bordersize>
 				</control>
 			</control>
 			<control type="group">
@@ -1746,6 +2044,8 @@
 					<width>730</width>
 					<height>30</height>
 					<font>font24_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>$VAR[MainItemLabel]</label>
@@ -1758,6 +2058,7 @@
 					<height>145</height>
 					<font>font12</font>
 					<align>justify</align>
+					<textcolor>white</textcolor>
 					<label>$INFO[Container.ShowPlot]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
@@ -1769,6 +2070,8 @@
 					<aspectratio align="left" aligny="bottom">keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true">$INFO[ListItem.Icon]</texture>
+					<bordertexture border="8">ThumbShadow.png</bordertexture>
+					<bordersize>8</bordersize>
 				</control>
 			</control>
 			<control type="group">
@@ -1811,6 +2114,8 @@
 					<width>400</width>
 					<height>30</height>
 					<font>font24_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>$VAR[MainItemLabel]</label>
@@ -1823,6 +2128,7 @@
 					<height>105</height>
 					<font>font12</font>
 					<align>justify</align>
+					<textcolor>white</textcolor>
 					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
@@ -1848,7 +2154,9 @@
 					<aspectratio align="left" aligny="bottom">keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true">$INFO[ListItem.Icon]</texture>
+					<bordertexture border="8">ThumbShadow.png</bordertexture>
 					<visible>!Skin.HasSetting(HideEpisodeThumb) | StringCompare(ListItem.Label,..)</visible>
+					<bordersize>8</bordersize>
 				</control>
 				<control type="image">
 					<posx>420</posx>
@@ -1858,6 +2166,8 @@
 					<aspectratio align="left" aligny="bottom">keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Property(Fanart_Image)]</texture>
+					<bordertexture border="8">ThumbShadow.png</bordertexture>
+					<bordersize>8</bordersize>
 					<visible>Skin.HasSetting(HideEpisodeThumb) + !StringCompare(ListItem.Label,..)</visible>
 				</control>
 			</control>
@@ -1868,12 +2178,13 @@
 			<posx>180</posx>
 			<posy>40</posy>
 			<visible>Control.IsVisible(508) + ![ListItem.IsFolder + Container.Content(Movies)] + !Skin.HasSetting(View508HideInfo) + !Container.Content(Sets)</visible>
+			<include>VisibleFadeEffect</include>
 			<control type="image">
 				<posx>0</posx>
 				<posy>0</posy>
 				<width>920</width>
 				<height>410</height>
-				<texture>dialogs/content-back_light.png</texture>
+				<texture border="20">ContentPanel.png</texture>
 			</control>
 			<control type="label">
 				<posx>40</posx>
@@ -1881,7 +2192,8 @@
 				<width>840</width>
 				<height>20</height>
 				<font>font24_title</font>
-				<textcolor>heading2</textcolor>
+				<textcolor>blue</textcolor>
+				<shadowcolor>black</shadowcolor>
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -1897,6 +2209,8 @@
 					<width>400</width>
 					<height>30</height>
 					<font>font13_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -1907,6 +2221,9 @@
 					<posy>30</posy>
 					<width>400</width>
 					<height>30</height>
+					<font>font13</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -1919,6 +2236,9 @@
 					<posy>55</posy>
 					<width>400</width>
 					<height>30</height>
+					<font>font13</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -1931,6 +2251,9 @@
 					<posy>80</posy>
 					<width>400</width>
 					<height>30</height>
+					<font>font13</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -1943,6 +2266,9 @@
 					<posy>105</posy>
 					<width>400</width>
 					<height>30</height>
+					<font>font13</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -1961,6 +2287,8 @@
 					<width>400</width>
 					<height>30</height>
 					<font>font13_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -1971,6 +2299,9 @@
 					<posy>30</posy>
 					<width>400</width>
 					<height>30</height>
+					<font>font13</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -1982,6 +2313,8 @@
 					<width>400</width>
 					<height>30</height>
 					<font>font13_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -1992,6 +2325,9 @@
 					<posy>105</posy>
 					<width>400</width>
 					<height>30</height>
+					<font>font13</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>top</aligny>
@@ -2008,6 +2344,8 @@
 					<width>400</width>
 					<height>30</height>
 					<font>font13_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -2018,6 +2356,9 @@
 					<posy>30</posy>
 					<width>400</width>
 					<height>30</height>
+					<font>font13</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -2030,6 +2371,9 @@
 					<posy>55</posy>
 					<width>400</width>
 					<height>30</height>
+					<font>font13</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -2042,6 +2386,9 @@
 					<posy>80</posy>
 					<width>400</width>
 					<height>30</height>
+					<font>font13</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -2060,6 +2407,8 @@
 					<width>400</width>
 					<height>30</height>
 					<font>font13_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -2070,6 +2419,9 @@
 					<posy>30</posy>
 					<width>400</width>
 					<height>30</height>
+					<font>font13</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -2080,6 +2432,9 @@
 					<posy>55</posy>
 					<width>400</width>
 					<height>30</height>
+					<font>font13</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -2090,6 +2445,9 @@
 					<posy>80</posy>
 					<width>400</width>
 					<height>30</height>
+					<font>font13</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -2105,6 +2463,8 @@
 					<width>400</width>
 					<height>30</height>
 					<font>font13_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -2118,6 +2478,7 @@
 					<height>120</height>
 					<font>font12</font>
 					<align>justify</align>
+					<textcolor>white</textcolor>
 					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
@@ -2151,6 +2512,10 @@
 	<include name="FullWallView">
 		<control type="group">
 			<visible>Control.IsVisible(732)</visible>
+			<control type="image">
+				<include>Dimensions_Fullscreen</include>
+				<texture background="true">black-back.png</texture>
+			</control>
 			<control type="panel" id="732">
 				<posx>29</posx>
 				<posy>55</posy>
@@ -2171,8 +2536,23 @@
 						<posy>0</posy>
 						<width>139</width>
 						<height>202</height>
+						<bordersize>5</bordersize>
+						<bordertexture border="5">button-nofocus.png</bordertexture>
 						<aspectratio scalediffuse="false">scale</aspectratio>
+						<include>VisibleFadeEffect</include>
 						<texture background="true">$VAR[PosterThumb]</texture>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>139</width>
+						<height>202</height>
+						<bordersize>5</bordersize>
+						<bordertexture border="5">button-nofocus.png</bordertexture>
+						<aspectratio>stretch</aspectratio>
+						<texture>black-back.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<visible>!StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="group">
 						<visible>Skin.HasSetting(ViewStatusBanner) + !IsEmpty(ListItem.Overlay)</visible>
@@ -2205,6 +2585,18 @@
 						</control>
 					</control>
 					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>139</width>
+						<height>202</height>
+						<bordersize>5</bordersize>
+						<bordertexture border="5">button-nofocus.png</bordertexture>
+						<aspectratio>stretch</aspectratio>
+						<texture>black-back.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<visible>!StringCompare(ListItem.Label,..)</visible>
+					</control>
+					<control type="image">
 						<posx>85</posx>
 						<posy>150</posy>
 						<width>50</width>
@@ -2230,7 +2622,10 @@
 							<width>142</width>
 							<height>205</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>
+							<include>VisibleFadeEffect</include>
+							<bordersize>8</bordersize>
 							<texture background="true">$VAR[PosterThumb]</texture>
+							<bordertexture border="8">ThumbBorder.png</bordertexture>
 						</control>
 						<control type="group">
 							<visible>Skin.HasSetting(ViewStatusBanner) + !IsEmpty(ListItem.Overlay)</visible>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window type="dialog">
-	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">3</defaultcontrol>
 	<zorder>1</zorder>
 	<coordinates>
@@ -16,7 +15,25 @@
 			<posy>0</posy>
 			<width>610</width>
 			<height>650</height>
-			<texture>dialogs/dialog-back_light.png</texture>
+			<texture border="40">DialogBack.png</texture>
+			<visible>![Window.IsVisible(FullscreenVideo) | Window.IsVisible(Visualisation)]</visible>
+		</control>
+		<control type="image">
+			<description>background image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>610</width>
+			<height>650</height>
+			<texture border="40">DialogBack2.png</texture>
+			<visible>Window.IsVisible(FullscreenVideo) | Window.IsVisible(Visualisation)</visible>
+		</control>
+		<control type="image">
+			<description>Dialog Header image</description>
+			<posx>40</posx>
+			<posy>16</posy>
+			<width>530</width>
+			<height>40</height>
+			<texture>dialogheader.png</texture>
 		</control>
 		<control type="label" id="1">
 			<description>header label</description>
@@ -28,7 +45,25 @@
 			<label>$LOCALIZE[13406]</label>
 			<align>center</align>
 			<aligny>center</aligny>
-			<textcolor>itemselected</textcolor>
+			<textcolor>selected</textcolor>
+			<shadowcolor>black</shadowcolor>
+		</control>
+		<control type="button">
+			<description>Close Window button</description>
+			<posx>520</posx>
+			<posy>15</posy>
+			<width>64</width>
+			<height>32</height>
+			<label>-</label>
+			<font>-</font>
+			<onclick>PreviousMenu</onclick>
+			<texturefocus>DialogCloseButton-focus.png</texturefocus>
+			<texturenofocus>DialogCloseButton.png</texturenofocus>
+			<onleft>10</onleft>
+			<onright>10</onright>
+			<onup>10</onup>
+			<ondown>10</ondown>
+			<visible>system.getbool(input.enablemouse)</visible>
 		</control>
 		<control type="list" id="3">
 			<posx>20</posx>
@@ -48,15 +83,16 @@
 					<posy>0</posy>
 					<width>550</width>
 					<height>40</height>
-					<texture>buttons/nf_light.png</texture>
+					<texture border="5">button-nofocus.png</texture>
 				</control>
 				<control type="label">
 					<posx>20</posx>
 					<posy>0</posy>
 					<width>510</width>
 					<height>40</height>
-					<textcolor>textnofocus</textcolor>
-					<selectedcolor>itemselected</selectedcolor>
+					<font>font13</font>
+					<textcolor>grey2</textcolor>
+					<selectedcolor>selected</selectedcolor>
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>$VAR[MainItemLabel]</label>
@@ -68,23 +104,27 @@
 					<posy>0</posy>
 					<width>550</width>
 					<height>40</height>
-					<texture>buttons/nf_light.png</texture>
+					<texture border="5">button-nofocus.png</texture>
 					<visible>!Control.HasFocus(3)</visible>
+					<include>VisibleFadeEffect</include>
 				</control>
 				<control type="image">
 					<posx>0</posx>
 					<posy>0</posy>
 					<width>550</width>
 					<height>40</height>
-					<texture>buttons/fo_light.png</texture>
+					<texture border="5">button-focus2.png</texture>
 					<visible>Control.HasFocus(3)</visible>
+					<include>VisibleFadeEffect</include>
 				</control>
 				<control type="label">
 					<posx>20</posx>
 					<posy>0</posy>
 					<width>510</width>
 					<height>40</height>
-					<selectedcolor>itemselected</selectedcolor>
+					<font>font13</font>
+					<textcolor>white</textcolor>
+					<selectedcolor>selected</selectedcolor>
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>$VAR[MainItemLabel]</label>
@@ -109,7 +149,7 @@
 					<posy>0</posy>
 					<width>550</width>
 					<height>80</height>
-					<texture>buttons/nf_light.png</texture>
+					<texture border="5">button-nofocus.png</texture>
 				</control>
 				<control type="image">
 					<posx>2</posx>
@@ -117,14 +157,17 @@
 					<width>80</width>
 					<height>76</height>
 					<texture>$INFO[Listitem.Icon]</texture>
+					<bordertexture border="3">black-back2.png</bordertexture>
+					<bordersize>2</bordersize>
 				</control>
 				<control type="label">
 					<posx>90</posx>
 					<posy>0</posy>
 					<width>450</width>
 					<height>30</height>
-					<textcolor>textnofocus</textcolor>
-					<selectedcolor>itemselected</selectedcolor>
+					<font>font13</font>
+					<textcolor>grey</textcolor>
+					<selectedcolor>selected</selectedcolor>
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>[B]$INFO[ListItem.Label][/B]</label>
@@ -135,8 +178,9 @@
 					<width>450</width>
 					<height>50</height>
 					<font>font12</font>
-					<textcolor>textnofocus</textcolor>
-					<selectedcolor>itemselected</selectedcolor>
+					<textcolor>grey</textcolor>
+					<selectedcolor>selected</selectedcolor>
+					<align>left</align>
 					<label>$INFO[ListItem.Property(Addon.Summary)]</label>
 				</control>
 			</itemlayout>
@@ -146,16 +190,18 @@
 					<posy>0</posy>
 					<width>550</width>
 					<height>80</height>
-					<texture>buttons/nf_light.png</texture>
+					<texture border="5">button-nofocus.png</texture>
 					<visible>!Control.HasFocus(6)</visible>
+					<include>VisibleFadeEffect</include>
 				</control>
 				<control type="image">
 					<posx>0</posx>
 					<posy>0</posy>
 					<width>550</width>
 					<height>80</height>
-					<texture>buttons/fo_light.png</texture>
+					<texture border="5">button-focus2.png</texture>
 					<visible>Control.HasFocus(6)</visible>
+					<include>VisibleFadeEffect</include>
 				</control>
 				<control type="image">
 					<posx>2</posx>
@@ -163,13 +209,17 @@
 					<width>80</width>
 					<height>76</height>
 					<texture>$INFO[Listitem.Icon]</texture>
+					<bordertexture border="3">black-back2.png</bordertexture>
+					<bordersize>2</bordersize>
 				</control>
 				<control type="label">
 					<posx>90</posx>
 					<posy>0</posy>
 					<width>450</width>
 					<height>30</height>
-					<selectedcolor>itemselected</selectedcolor>
+					<font>font13</font>
+					<textcolor>white</textcolor>
+					<selectedcolor>selected</selectedcolor>
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>[B]$INFO[ListItem.Label][/B]</label>
@@ -180,26 +230,59 @@
 					<width>450</width>
 					<height>50</height>
 					<font>font12</font>
-					<textcolor>textfocus</textcolor>
-					<selectedcolor>itemselected</selectedcolor>
+					<textcolor>grey</textcolor>
+					<selectedcolor>selected</selectedcolor>
+					<align>left</align>
 					<label>$INFO[ListItem.Property(Addon.Summary)]</label>
 				</control>
 			</focusedlayout>
 		</control>
 		<control type="scrollbar" id="61">
-			<posx>576</posx>
+			<posx>570</posx>
 			<posy>65</posy>
-			<width>14</width>
+			<width>25</width>
 			<height>510</height>
-			<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-			<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-			<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+			<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+			<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+			<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+			<textureslidernib>ScrollBarNib.png</textureslidernib>
+			<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 			<onleft>3</onleft>
 			<onright>3</onright>
 			<ondown>61</ondown>
 			<onup>61</onup>
 			<showonepage>false</showonepage>
 			<orientation>vertical</orientation>
+		</control>
+		<control type="label">
+			<description>number of files/pages in list text label</description>
+			<posx>580</posx>
+			<posy>585</posy>
+			<width>300</width>
+			<height>35</height>
+			<font>font12</font>
+			<align>right</align>
+			<aligny>center</aligny>
+			<scroll>true</scroll>
+			<textcolor>grey</textcolor>
+			<label>([COLOR=blue]$INFO[Container(3).NumItems][/COLOR]) $LOCALIZE[31025] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(3).CurrentPage]/$INFO[Container(3).NumPages][/COLOR])</label>
+			<visible>Control.IsVisible(3)</visible>
+			<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
+		</control>
+		<control type="label">
+			<description>number of files/pages in list text label</description>
+			<posx>580</posx>
+			<posy>587</posy>
+			<width>300</width>
+			<height>35</height>
+			<font>font12</font>
+			<align>right</align>
+			<aligny>center</aligny>
+			<scroll>true</scroll>
+			<textcolor>grey</textcolor>
+			<label>([COLOR=blue]$INFO[Container(6).NumItems][/COLOR]) $LOCALIZE[31025] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(6).CurrentPage]/$INFO[Container(6).NumPages][/COLOR])</label>
+			<visible>Control.IsVisible(6)</visible>
+			<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
 		</control>
 		<control type="button" id="5">
 			<description>Manual button</description>
@@ -209,6 +292,7 @@
 			<height>40</height>
 			<label>186</label>
 			<font>font12_title</font>
+			<textcolor>white</textcolor>
 			<focusedcolor>white</focusedcolor>
 			<align>center</align>
 			<onleft>61</onleft>

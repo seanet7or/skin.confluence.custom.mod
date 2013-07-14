@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
 	<controls>
 		<control type="karvisualisation" id="1">
 			<description>visualisation</description>
@@ -28,7 +27,7 @@
 				<posy>-10</posy>
 				<width>470</width>
 				<height>55</height>
-				<texture>dialogs/dialog-back_light.png</texture>
+				<texture flipy="true" border="20,20,20,2">InfoMessagePanel.png</texture>
 			</control>
 			<control type="label" id="402">
 				<description>Next Song Name</description>
@@ -37,8 +36,8 @@
 				<width>470</width>
 				<height>25</height>
 				<font>font13_title</font>
-				<textcolor>heading2</textcolor>
-				<label>$LOCALIZE[209] : $INFO[MusicPlayer.offset(1).Title]</label>
+				<textcolor>blue</textcolor>
+				<label>[COLOR=blue]$LOCALIZE[209] :[/COLOR] [COLOR=selected]$INFO[MusicPlayer.offset(1).Title][/COLOR]</label>
 				<align>center</align>
 				<aligny>center</aligny>
 			</control>

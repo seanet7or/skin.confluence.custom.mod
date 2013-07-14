@@ -118,11 +118,11 @@ remove_structure() {
 	fi
 	LINE=$(echo $LINE | sed 's|^<|\\s\*<|g')
 	LINE=$(echo $LINE | sed 's|>$|>\\s\*#|g')
-	local REGEX='s|\s*<'"$TYPE""$TAGS"'>\s*#'
+	local REGEX='s|\s*<(\|!--)'"$TYPE""$TAGS"'>\s*#'
 	REGEX+='(\s*<[a-z][^#]*#\|)*?' # matching lines beginning with any opening tag
 	REGEX+="$LINE"
 	REGEX+='(\s*<[a-z][^#]*#\|)*?' # matching lines beginning with any opening tag
-	REGEX+='\s*</'"$TYPE"'>\s*#'
+	REGEX+='\s*</'"$TYPE"'(\|--)>\s*#'
 	REGEX+='||g'
 	debug "Calling 'perlregex $FILES'."
 	perlregex "$REGEX" "$FILES"
@@ -598,22 +598,19 @@ else
 fi
 step
 
-if false ; then
 printf "\nMoving vertical scroll bars to the right: "
-if grep -q -zo -P '<control type="scrollbar" id="60">\n\s*<posx>212</posx>' 720p/ViewsPictures.xml ; then
+if false ; then #grep -q -zo -P '<control type="scrollbar" id="60">\n\s*<posx>212</posx>' 720p/ViewsPictures.xml ; then
 	for FILE in 720p/* ; do
-		IFS=$'\n' ; for VSCROLLBAR in $( grep -zo -P -I '<control type="scrollbar" id="[0-9]*">\n\s*<posx>[0-9]*</posx>\n\s*<posy>[0-9]*</posy>\n\s*<width>14</width>' "$FILE" | tr -d '\n' )
+		IFS=$'\n' ; for XPOS in $( grep -zo -P -I '<control type="scrollbar" id="[0-9]*">\n\s*<posx>[0-9]*</posx>\n\s*<posy>[0-9]*</posy>\n\s*<width>14</width>' "$FILE" \
+			| grep -o '<posx>[0-9]*</posx>' | grep -o '[0-9]*' )
 		do
-			XPOS=$(echo "$VSCROLLBAR" | grep -o '<posx>[0-9]*</posx>' | grep -o '[0-9]*')
-			XPOS=$(echo $XPOS | tr -d'\n' )
-			NEWX=$(( XPOS + 6 ))
-			echo "$VSCROLLBAR"
+			NEWX=$((XPOS+6))
 			echo "'$XPOS' -> '$NEWX'"
 			R='s|(<control type="scrollbar" id="[0-9]*">#'
 			R+='\s*<posx)>'"$XPOS"'<(/posx>#\s*<posy>[0-9]*</posy>#'
 			R+='\s*<width>14</width>)'
 			R+='|\1>'"$NEWX"'<\2|g'
-			perlregex $FILE "$R"
+			#perlregex $FILE "$R"
 		done
 	done
 	printf "%sDONE!%s" $GREEN $RESET
@@ -621,7 +618,6 @@ else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
-fi
 
 printf "\nReformating horizontal scroll bar controls: "
 if grep -q -zo -P '<control type="scrollbar" id="60">\n\s*<posx>[0-9]*</posx>\n\s*<posy>[0-9]*</posy>\n\s*<width>[0-9]*</width>\n\s*<height>25</height>' \
@@ -1529,7 +1525,7 @@ fi
 step
 
 printf "\nChanging font colors for original 'grey' strings: "
-if grep -q '>grey<' 720p/ViewsPVR.xml ; then
+if false ; then #grep -q '>grey<' 720p/ViewsPVR.xml ; then
 
 	R='s|(<description>header label</description>#'
 	R+='(\s*<[a-z][^#]*#)*?'
@@ -1579,7 +1575,7 @@ fi
 step
 
 printf "\nChanging font colors for original 'selected color' strings: "
-if grep -q '>selected<' 720p/VisualisationPresetList.xml ; then
+if false ; then #grep -q '>selected<' 720p/VisualisationPresetList.xml ; then
 	XMLS=$(2>/dev/null grep '>selected<' -l 720p/*)
 	perlregex $XMLS 's|<selectedcolor>selected</selectedcolor>|<selectedcolor>itemselected</selectedcolor>|g'	
 	XMLS=$(2>/dev/null grep '>selected<' -l 720p/*)
@@ -1599,7 +1595,7 @@ fi
 step
 
 printf "\nChanging font colors for original blue strings: "
-if grep -q 'blue' 720p/ViewsVideoLibrary.xml ; then
+if false ; then #grep -q 'blue' 720p/ViewsVideoLibrary.xml ; then
 
 	perlregex 720p/Home.xml 's|(<font>font_MainMenu</font>#\s*<textcolor)>blue<|\1>textnofocus<|g'
 	perlregex 720p/Home.xml 's|(<font>font_MainMenu</font>#\s*<textcolor)>grey3<|\1>buttonfocus<|g'
@@ -1668,7 +1664,7 @@ fi
 step
 
 printf "\nChanging font colors for original 'grey2' strings: "
-if grep -q '>grey2<' 720p/* ; then
+if false ; then #grep -q '>grey2<' 720p/* ; then
 
 	XMLS=$(2>/dev/null grep '<disabledcolor>grey2</disabledcolor>' -l 720p/*)
 	R='s|<disabledcolor>grey2</disabledcolor>|<disabledcolor>textdisabled</disabledcolor>|g'
@@ -1725,7 +1721,7 @@ fi
 step
 
 printf "\nChanging font colors for original 'grey3' strings: "
-if grep -q '>grey3<' 720p/SkinSettings.xml ; then
+if false ; then #grep -q '>grey3<' 720p/SkinSettings.xml ; then
 
 	XMLS=$(2>/dev/null grep '<disabledcolor>grey3</disabledcolor>' -l 720p/*)
 	R='s|<disabledcolor>grey3</disabledcolor>|<disabledcolor>textdisabled</disabledcolor>|g'
@@ -1750,7 +1746,7 @@ fi
 step
 
 printf "\nChanging font colors for original 'black' strings: "
-if grep -q '>black<' 720p/DialogKeyboard.xml ; then
+if false ; then #grep -q '>black<' 720p/DialogKeyboard.xml ; then
 
 	XMLS=$(2>/dev/null grep '<focusedcolor>black</focusedcolor>' -l 720p/*)
 	R='s|<focusedcolor>black</focusedcolor>|<focusedcolor>textfocus</focusedcolor>|g'

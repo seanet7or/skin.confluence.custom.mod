@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">10</defaultcontrol>
 	<coordinates>
 		<system>1</system>
@@ -15,7 +14,25 @@
 			<posy>0</posy>
 			<width>730</width>
 			<height>660</height>
-			<texture>dialogs/dialog-back_light.png</texture>
+			<texture border="40">DialogBack2.png</texture>
+			<visible>Window.IsVisible(FullscreenVideo) | Window.IsVisible(Visualisation)</visible>
+		</control>
+		<control type="image">
+			<description>background image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>730</width>
+			<height>660</height>
+			<texture border="40">DialogBack.png</texture>
+			<visible>![Window.IsVisible(FullscreenVideo) | Window.IsVisible(Visualisation)]</visible>
+		</control>
+		<control type="image">
+			<description>Dialog Header image</description>
+			<posx>40</posx>
+			<posy>16</posy>
+			<width>650</width>
+			<height>40</height>
+			<texture>dialogheader.png</texture>
 		</control>
 		<control type="label">
 			<description>header label</description>
@@ -27,7 +44,25 @@
 			<label>$LOCALIZE[19053]</label>
 			<align>center</align>
 			<aligny>center</aligny>
-			<textcolor>itemselected</textcolor>
+			<textcolor>selected</textcolor>
+			<shadowcolor>black</shadowcolor>
+		</control>
+		<control type="button">
+			<description>Close Window button</description>
+			<posx>640</posx>
+			<posy>15</posy>
+			<width>64</width>
+			<height>32</height>
+			<label>-</label>
+			<font>-</font>
+			<onclick>PreviousMenu</onclick>
+			<texturefocus>DialogCloseButton-focus.png</texturefocus>
+			<texturenofocus>DialogCloseButton.png</texturenofocus>
+			<onleft>10</onleft>
+			<onright>10</onright>
+			<onup>10</onup>
+			<ondown>10</ondown>
+			<visible>system.getbool(input.enablemouse)</visible>
 		</control>
 		<control type="label">
 			<description>Title label</description>
@@ -39,7 +74,8 @@
 			<label>$INFO[ListItem.Title]</label>
 			<align>center</align>
 			<aligny>center</aligny>
-			<textcolor>heading1</textcolor>
+			<textcolor>blue</textcolor>
+			<shadowcolor>black</shadowcolor>
 		</control>
 		<control type="group">
 			<posx>40</posx>
@@ -52,7 +88,8 @@
 				<height>25</height>
 				<align>right</align>
 				<aligny>center</aligny>
-				<textcolor>heading2</textcolor>
+				<font>font13</font>
+				<textcolor>blue</textcolor>
 				<label>$LOCALIZE[552]:</label>
 			</control>
 			<control type="label">
@@ -63,6 +100,8 @@
 				<height>25</height>
 				<align>left</align>
 				<aligny>center</aligny>
+				<font>font13</font>
+				<textcolor>white</textcolor>
 				<label>$INFO[ListItem.StartDate]</label>
 			</control>
 			<control type="label">
@@ -73,7 +112,8 @@
 				<height>25</height>
 				<align>right</align>
 				<aligny>center</aligny>
-				<textcolor>heading2</textcolor>
+				<font>font13</font>
+				<textcolor>blue</textcolor>
 				<label>$LOCALIZE[142]</label>
 			</control>
 			<control type="label">
@@ -84,6 +124,8 @@
 				<height>25</height>
 				<align>left</align>
 				<aligny>center</aligny>
+				<font>font13</font>
+				<textcolor>white</textcolor>
 				<label>$INFO[ListItem.StartTime]</label>
 			</control>
 			<control type="label">
@@ -94,7 +136,8 @@
 				<height>25</height>
 				<align>right</align>
 				<aligny>center</aligny>
-				<textcolor>heading2</textcolor>
+				<font>font13</font>
+				<textcolor>blue</textcolor>
 				<label>$LOCALIZE[19148]:</label>
 			</control>
 			<control type="fadelabel">
@@ -105,6 +148,8 @@
 				<height>25</height>
 				<align>left</align>
 				<aligny>center</aligny>
+				<font>font13</font>
+				<textcolor>white</textcolor>
 				<label>$INFO[ListItem.ChannelName]</label>
 			</control>
 			<control type="label">
@@ -115,7 +160,8 @@
 				<height>25</height>
 				<align>right</align>
 				<aligny>center</aligny>
-				<textcolor>heading2</textcolor>
+				<font>font13</font>
+				<textcolor>blue</textcolor>
 				<label>$LOCALIZE[180]:</label>
 			</control>
 			<control type="label">
@@ -125,6 +171,7 @@
 				<width>470</width>
 				<label>$INFO[ListItem.Duration]</label>
 				<align>left</align>
+				<font>font13</font>
 				<scroll>true</scroll>
 			</control>
 			<control type="label">
@@ -135,7 +182,8 @@
 				<height>25</height>
 				<align>right</align>
 				<aligny>center</aligny>
-				<textcolor>heading2</textcolor>
+				<font>font13</font>
+				<textcolor>blue</textcolor>
 				<label>$LOCALIZE[135]:</label>
 			</control>
 			<control type="label">
@@ -145,6 +193,7 @@
 				<width>470</width>
 				<label fallback="161">$INFO[ListItem.Genre]</label>
 				<align>left</align>
+				<font>font13</font>
 				<scroll>true</scroll>
 			</control>
 			<control type="label">
@@ -154,10 +203,24 @@
 				<width>650</width>
 				<label>$INFO[ListItem.PlotOutline]</label>
 				<align>center</align>
-				<textcolor>heading2</textcolor>
+				<font>font13</font>
+				<textcolor>blue</textcolor>
 				<scroll>true</scroll>
 				<visible>!IsEmpty(ListItem.PlotOutline)</visible>
 			</control>
+		</control>
+		<control type="label">
+			<posx>610</posx>
+			<posy>370</posy>
+			<width>400</width>
+			<height>30</height>
+			<font>font12</font>
+			<textcolor>grey</textcolor>
+			<shadowcolor>black</shadowcolor>
+			<scroll>true</scroll>
+			<align>right</align>
+			<aligny>center</aligny>
+			<label>[COLOR=blue]$LOCALIZE[207][/COLOR]$INFO[Container(400).CurrentPage, ( $LOCALIZE[31024] ]$INFO[Container(400).NumPages,/, )]</label>
 		</control>
 		<control type="spincontrol" id="60">
 			<description>Next page button</description>

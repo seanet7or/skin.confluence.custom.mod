@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
 	<onload>ClearProperty(TVGuide.MondayList,Home)</onload>
 	<onload>ClearProperty(TVGuide.TuesdayList,Home)</onload>
 	<onload>ClearProperty(TVGuide.WednesdayList,Home)</onload>
@@ -98,6 +97,41 @@
 				<animation effect="fade" time="600">Hidden</animation>
 			</control>
 		</control>
+		<control type="image">
+			<posx>0</posx>
+			<posy>100r</posy>
+			<width>1280</width>
+			<height>100</height>
+			<aspectratio>stretch</aspectratio>
+			<include>VisibleFadeEffect</include>
+			<texture>floor.png</texture>
+		</control>
+		<control type="image">
+			<description>Section header image</description>
+			<posx>20</posx>
+			<posy>3</posy>
+			<width>35</width>
+			<height>35</height>
+			<aspectratio>keep</aspectratio>
+			<texture>icon_video.png</texture>
+		</control>
+		<control type="grouplist">
+			<posx>65</posx>
+			<posy>5</posy>
+			<width>1000</width>
+			<height>30</height>
+			<orientation>horizontal</orientation>
+			<align>left</align>
+			<itemgap>5</itemgap>
+			<control type="label">
+				<include>WindowTitleCommons</include>
+				<label>$LOCALIZE[SCRIPT450]</label>
+			</control>
+			<control type="label">
+				<include>WindowTitleCommons</include>
+				<label>[COLOR=blue] - [/COLOR]$LOCALIZE[31208]</label>
+			</control>
+		</control>
 		<control type="grouplist" id="2000">
 			<include>Window_OpenClose_Animation</include>
 			<posx>40</posx>
@@ -117,7 +151,14 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>600</height>
-					<texture>dialogs/content-back_light.png</texture>
+					<texture border="15">ContentPanel.png</texture>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>592</posy>
+					<width>300</width>
+					<height>64</height>
+					<texture border="15">ContentPanelMirror.png</texture>
 				</control>
 				<control type="label">
 					<posx>20</posx>
@@ -128,6 +169,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
+					<textcolor>white</textcolor>
 				</control>
 				<control type="panel" id="200">
 					<posx>10</posx>
@@ -152,7 +194,14 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>600</height>
-					<texture>dialogs/content-back_light.png</texture>
+					<texture border="15">ContentPanel.png</texture>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>592</posy>
+					<width>300</width>
+					<height>64</height>
+					<texture border="15">ContentPanelMirror.png</texture>
 				</control>
 				<control type="label">
 					<posx>20</posx>
@@ -163,6 +212,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
+					<textcolor>white</textcolor>
 				</control>
 				<control type="panel" id="201">
 					<posx>10</posx>
@@ -187,7 +237,14 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>600</height>
-					<texture>dialogs/content-back_light.png</texture>
+					<texture border="15">ContentPanel.png</texture>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>592</posy>
+					<width>300</width>
+					<height>64</height>
+					<texture border="15">ContentPanelMirror.png</texture>
 				</control>
 				<control type="label">
 					<posx>20</posx>
@@ -198,6 +255,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
+					<textcolor>white</textcolor>
 				</control>
 				<control type="panel" id="202">
 					<posx>10</posx>
@@ -222,7 +280,14 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>600</height>
-					<texture>dialogs/content-back_light.png</texture>
+					<texture border="15">ContentPanel.png</texture>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>592</posy>
+					<width>300</width>
+					<height>64</height>
+					<texture border="15">ContentPanelMirror.png</texture>
 				</control>
 				<control type="label">
 					<posx>20</posx>
@@ -233,6 +298,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
+					<textcolor>white</textcolor>
 				</control>
 				<control type="panel" id="203">
 					<posx>10</posx>
@@ -257,7 +323,14 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>600</height>
-					<texture>dialogs/content-back_light.png</texture>
+					<texture border="15">ContentPanel.png</texture>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>592</posy>
+					<width>300</width>
+					<height>64</height>
+					<texture border="15">ContentPanelMirror.png</texture>
 				</control>
 				<control type="label">
 					<posx>20</posx>
@@ -268,6 +341,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
+					<textcolor>white</textcolor>
 				</control>
 				<control type="panel" id="204">
 					<posx>10</posx>
@@ -292,7 +366,14 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>600</height>
-					<texture>dialogs/content-back_light.png</texture>
+					<texture border="15">ContentPanel.png</texture>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>592</posy>
+					<width>300</width>
+					<height>64</height>
+					<texture border="15">ContentPanelMirror.png</texture>
 				</control>
 				<control type="label">
 					<posx>20</posx>
@@ -303,6 +384,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
+					<textcolor>white</textcolor>
 				</control>
 				<control type="panel" id="205">
 					<posx>10</posx>
@@ -327,7 +409,14 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>600</height>
-					<texture>dialogs/content-back_light.png</texture>
+					<texture border="15">ContentPanel.png</texture>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>592</posy>
+					<width>300</width>
+					<height>64</height>
+					<texture border="15">ContentPanelMirror.png</texture>
 				</control>
 				<control type="label">
 					<posx>20</posx>
@@ -338,6 +427,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
+					<textcolor>white</textcolor>
 				</control>
 				<control type="panel" id="206">
 					<posx>10</posx>
@@ -348,7 +438,7 @@
 					<onup>206</onup>
 					<ondown>206</ondown>
 					<onleft>205</onleft>
-					<onright>206</onright>
+					<onright>80</onright>
 					<include>TVNextAiredListCommonLayout</include>
 				</control>
 			</control>
@@ -361,8 +451,9 @@
 				<posy>120</posy>
 				<width>30</width>
 				<height>40</height>
-				<texture>buttons/spin-left-fo_light.png</texture>
+				<texture>arrow-big-left.png</texture>
 				<visible>Container(2000).HasPrevious</visible>
+				<include>VisibleFadeEffect</include>
 			</control>
 			<control type="image">
 				<description>left Arrow</description>
@@ -370,8 +461,9 @@
 				<posy>170r</posy>
 				<width>30</width>
 				<height>40</height>
-				<texture>buttons/spin-left-fo_light.png</texture>
+				<texture>arrow-big-left.png</texture>
 				<visible>Container(2000).HasPrevious</visible>
+				<include>VisibleFadeEffect</include>
 			</control>
 			<control type="image">
 				<description>right Arrow</description>
@@ -379,8 +471,9 @@
 				<posy>120</posy>
 				<width>30</width>
 				<height>40</height>
-				<texture>buttons/spin-right-fo_light.png</texture>
+				<texture>arrow-big-right.png</texture>
 				<visible>Container(2000).HasNext</visible>
+				<include>VisibleFadeEffect</include>
 			</control>
 			<control type="image">
 				<description>right Arrow</description>
@@ -388,12 +481,71 @@
 				<posy>170r</posy>
 				<width>30</width>
 				<height>40</height>
-				<texture>buttons/spin-right-fo_light.png</texture>
+				<texture>arrow-big-right.png</texture>
 				<visible>Container(2000).HasNext</visible>
+				<include>VisibleFadeEffect</include>
 			</control>
 		</control>
 		<include>CommonNowPlaying</include>
-		<include>MainWindowMouseButtons</include>
+		<control type="group">
+			<posx>120r</posx>
+			<posy>55r</posy>
+			<animation effect="fade" time="250" condition="Window.Previous(Home)">WindowOpen</animation>
+			<animation effect="fade" time="250" condition="Window.Next(Home)">WindowClose</animation>
+			<visible>!Skin.HasSetting(DisableHomeReturnButtons)</visible>
+			<control type="button" id="80">
+				<description>Back push button</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>1036</label>
+				<font>-</font>
+				<aligny>-</aligny>
+				<onclick>back</onclick>
+				<texturefocus border="5">floor_buttonFO.png</texturefocus>
+				<texturenofocus border="5">floor_button.png</texturenofocus>
+				<onleft>206</onleft>
+				<onright>81</onright>
+				<onup>200</onup>
+				<ondown>200</ondown>
+			</control>
+			<control type="image">
+				<description>Back Icon</description>
+				<posx>5</posx>
+				<posy>5</posy>
+				<width>35</width>
+				<height>35</height>
+				<aspectratio>keep</aspectratio>
+				<texture>icon_back.png</texture>
+			</control>
+			<control type="button" id="81">
+				<description>Home push button</description>
+				<posx>55</posx>
+				<posy>0</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>31003</label>
+				<font>-</font>
+				<aligny>-</aligny>
+				<onclick>ActivateWindow(home)</onclick>
+				<texturefocus border="5">floor_buttonFO.png</texturefocus>
+				<texturenofocus border="5">floor_button.png</texturenofocus>
+				<onleft>80</onleft>
+				<onright>9000</onright>
+				<onup>200</onup>
+				<ondown>200</ondown>
+			</control>
+			<control type="image">
+				<description>Home Icon</description>
+				<posx>60</posx>
+				<posy>5</posy>
+				<width>35</width>
+				<height>35</height>
+				<aspectratio>keep</aspectratio>
+				<texture>icon_home.png</texture>
+			</control>
+		</control>
 		<include>BehindDialogFadeOut</include>
 		<control type="group">
 			<posx>-250</posx>
@@ -403,7 +555,8 @@
 				<posy>110</posy>
 				<width>250</width>
 				<height>600</height>
-				<onleft>9000</onleft>
+				<onleft condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onleft>
+				<onleft condition="!Skin.HasSetting(DisableHomeReturnButtons)">81</onleft>
 				<onright>200</onright>
 				<onup>9000</onup>
 				<ondown>9000</ondown>
@@ -421,7 +574,7 @@
 					<height>35</height>
 					<font>font12</font>
 					<label>31006</label>
-					<textcolor>heading2</textcolor>
+					<textcolor>blue</textcolor>
 					<align>center</align>
 					<aligny>center</aligny>
 				</control>
@@ -432,7 +585,6 @@
 					<label>5</label>
 					<onright>200</onright>
 				</control>
-				<!-- include>CommonNowPlaying_Controls</include -->
 			</control>
 		</control>
 		<include>Clock</include>

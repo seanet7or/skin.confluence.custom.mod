@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
 	<animation effect="fade" start="0" end="100" time="200">WindowOpen</animation>
 	<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 	<coordinates>
@@ -15,7 +14,8 @@
 				<posy>0</posy>
 				<width>400</width>
 				<height>70</height>
-				<texture>dialogs/dialog-back_light.png</texture>
+				<colordiffuse>EEFFFFFF</colordiffuse>
+				<texture border="12">OverlayDialogBackground.png</texture>
 			</control>
 			<control type="image" id="400">
 				<description>avatar</description>
@@ -33,6 +33,7 @@
 				<width>310</width>
 				<height>18</height>
 				<font>font12_title</font>
+				<textcolor>white</textcolor>
 				<align>left</align>
 				<aligny>center</aligny>
 				<scrollout>false</scrollout>
@@ -45,7 +46,7 @@
 				<width>310</width>
 				<height>20</height>
 				<font>font12_title</font>
-				<textcolor>textnofocus</textcolor>
+				<textcolor>grey2</textcolor>
 				<align>left</align>
 				<aligny>center</aligny>
 				<scrollout>false</scrollout>

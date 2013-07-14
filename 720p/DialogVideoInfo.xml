@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">8</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<controls>
@@ -13,7 +12,24 @@
 				<posy>0</posy>
 				<width>1100</width>
 				<height>720</height>
-				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
+				<texture border="15,0,0,0" flipx="true">MediaBladeSub.png</texture>
+			</control>
+			<control type="button">
+				<description>Close Window button</description>
+				<posx>230</posx>
+				<posy>0</posy>
+				<width>64</width>
+				<height>32</height>
+				<label>-</label>
+				<font>-</font>
+				<onclick>PreviousMenu</onclick>
+				<texturefocus>DialogCloseButton-focus.png</texturefocus>
+				<texturenofocus>DialogCloseButton.png</texturenofocus>
+				<onleft>9000</onleft>
+				<onright>9000</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<visible>system.getbool(input.enablemouse)</visible>
 			</control>
 			<control type="group">
 				<animation effect="fade" delay="400" start="0" end="100" time="200">WindowOpen</animation>
@@ -28,6 +44,8 @@
 					<label>$INFO[Listitem.Title]</label>
 					<align>center</align>
 					<aligny>center</aligny>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="grouplist">
 					<description>Media Codec Flagging Images</description>
@@ -37,6 +55,7 @@
 					<align>left</align>
 					<itemgap>2</itemgap>
 					<orientation>horizontal</orientation>
+					<include>VisibleFadeEffect</include>
 					<visible>!Control.IsVisible(50) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 					<include>VideoCodecFlaggingConditions</include>
 					<include>AudioCodecFlaggingConditions</include>
@@ -48,6 +67,7 @@
 					<visible>Control.HasFocus(12)</visible>
 					<posy>90</posy>
 					<posx>387</posx>
+					<include>VisibleFadeEffect</include>
 					<control type="image">
 						<description>Current Fanart image</description>
 						<posx>0</posx>
@@ -55,6 +75,8 @@
 						<width>675</width>
 						<height>380</height>
 						<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+						<bordertexture border="5">button-nofocus.png</bordertexture>
+						<bordersize>4</bordersize>
 						<aspectratio>keep</aspectratio>
 						<visible>!IsEmpty(Listitem.Art(fanart))</visible>
 					</control>
@@ -67,6 +89,8 @@
 							<width>675</width>
 							<height>380</height>
 							<texture>Fanart_Fallback_Small.jpg</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>4</bordersize>
 							<aspectratio>stretch</aspectratio>
 							<colordiffuse>99FFFFFF</colordiffuse>
 						</control>
@@ -76,6 +100,8 @@
 							<width>675</width>
 							<height>380</height>
 							<font>font30_title</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
 							<align>center</align>
 							<aligny>center</aligny>
 							<label>31311</label>
@@ -86,13 +112,31 @@
 					<posy>90</posy>
 					<posx>387</posx>
 					<visible>Control.HasFocus(15)</visible>
+					<include>VisibleFadeEffect</include>
+					<control type="image">
+						<description>Border</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>675</width>
+						<height>380</height>
+						<texture border="5">button-nofocus.png</texture>
+					</control>
+					<control type="image">
+						<description>background</description>
+						<posx>5</posx>
+						<posy>5</posy>
+						<width>665</width>
+						<height>370</height>
+						<texture>black-back.png</texture>
+					</control>
 					<control type="label">
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>675</width>
 						<height>380</height>
 						<font>font30_title</font>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
+						<shadowcolor>black</shadowcolor>
 						<align>center</align>
 						<aligny>center</aligny>
 						<label>31330</label>
@@ -111,13 +155,25 @@
 					<visible>[!container.content(tvshows) + !container.content(episodes) + !container.content(musicvideos)] + ![Control.HasFocus(12) | Control.HasFocus(15)]</visible>
 					<posy>90</posy>
 					<posx>210</posx>
+					<include>VisibleFadeEffect</include>
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>270</width>
 						<height>380</height>
 						<aspectratio>stretch</aspectratio>
+						<bordertexture border="5">button-nofocus.png</bordertexture>
+						<bordersize>4</bordersize>
 						<texture background="true">$VAR[PosterThumb]</texture>
+					</control>
+					<control type="image">
+						<posx>4</posx>
+						<posy>4</posy>
+						<width>200</width>
+						<height>230</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>GlassOverlay.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
 					</control>
 					<control type="list" id="49">
 						<posx>290</posx>
@@ -136,10 +192,11 @@
 								<posy>0</posy>
 								<width>160</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>right</align>
 								<aligny>center</aligny>
-								<textcolor>heading2</textcolor>
-								<selectedcolor>itemselected</selectedcolor>
+								<textcolor>blue</textcolor>
+								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
@@ -147,8 +204,10 @@
 								<posy>0</posy>
 								<width>565</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>left</align>
 								<aligny>center</aligny>
+								<textcolor>white</textcolor>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -160,17 +219,19 @@
 								<width>740</width>
 								<height>30</height>
 								<visible>Control.HasFocus(49)</visible>
-								<texture>buttons/fo_light.png</texture>
+								<texture>MenuItemFO.png</texture>
+								<include>VisibleFadeEffect</include>
 							</control>
 							<control type="label">
 								<posx>165</posx>
 								<posy>0</posy>
 								<width>160</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>right</align>
 								<aligny>center</aligny>
-								<textcolor>heading2</textcolor>
-								<selectedcolor>itemselected</selectedcolor>
+								<textcolor>blue</textcolor>
+								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
@@ -178,8 +239,10 @@
 								<posy>0</posy>
 								<width>565</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>left</align>
 								<aligny>center</aligny>
+								<textcolor>white</textcolor>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -259,18 +322,38 @@
 							</item>
 						</content>
 					</control>
+					<control type="image">
+						<posx>290</posx>
+						<posy>370</posy>
+						<width>740</width>
+						<height>4</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>separator.png</texture>
+					</control>
 				</control>
 				<control type="group">
 					<visible>Container.Content(TVShows) + !Control.HasFocus(12)</visible>
 					<posy>90</posy>
 					<posx>210</posx>
+					<include>VisibleFadeEffect</include>
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>270</width>
 						<height>380</height>
 						<aspectratio>stretch</aspectratio>
+						<bordertexture border="5">button-nofocus.png</bordertexture>
+						<bordersize>4</bordersize>
 						<texture background="true">$VAR[PosterThumb]</texture>
+					</control>
+					<control type="image">
+						<posx>4</posx>
+						<posy>4</posy>
+						<width>200</width>
+						<height>230</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>GlassOverlay.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
 					</control>
 					<control type="list" id="49">
 						<posx>290</posx>
@@ -289,10 +372,11 @@
 								<posy>0</posy>
 								<width>160</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>right</align>
 								<aligny>center</aligny>
-								<textcolor>heading2</textcolor>
-								<selectedcolor>itemselected</selectedcolor>
+								<textcolor>blue</textcolor>
+								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
@@ -300,8 +384,10 @@
 								<posy>0</posy>
 								<width>565</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>left</align>
 								<aligny>center</aligny>
+								<textcolor>white</textcolor>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -313,17 +399,19 @@
 								<width>740</width>
 								<height>30</height>
 								<visible>Control.HasFocus(49)</visible>
-								<texture>buttons/fo_light.png</texture>
+								<texture>MenuItemFO.png</texture>
+								<include>VisibleFadeEffect</include>
 							</control>
 							<control type="label">
 								<posx>165</posx>
 								<posy>0</posy>
 								<width>160</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>right</align>
 								<aligny>center</aligny>
-								<textcolor>heading2</textcolor>
-								<selectedcolor>itemselected</selectedcolor>
+								<textcolor>blue</textcolor>
+								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
@@ -331,8 +419,10 @@
 								<posy>0</posy>
 								<width>565</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>left</align>
 								<aligny>center</aligny>
+								<textcolor>white</textcolor>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -340,7 +430,7 @@
 						<content>
 							<item>
 								<label>$LOCALIZE[20360]:</label>
-								<label2>$INFO[listitem.episode]  ($INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102]] - $INFO[ListItem.Property(UnWatchedEpisodes), , $LOCALIZE[16101]])</label2>
+								<label2>$INFO[listitem.episode] [COLOR=grey] ($INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102]] - $INFO[ListItem.Property(UnWatchedEpisodes), , $LOCALIZE[16101]])[/COLOR]</label2>
 								<onclick>noop</onclick>
 								<visible>!IsEmpty(ListItem.Episode)</visible>
 							</item>
@@ -376,18 +466,39 @@
 							</item>
 						</content>
 					</control>
+					<control type="image">
+						<posx>290</posx>
+						<posy>370</posy>
+						<width>740</width>
+						<height>4</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>separator.png</texture>
+					</control>
 				</control>
 				<control type="group">
 					<visible>container.content(episodes) + !Control.HasFocus(12)</visible>
 					<posy>90</posy>
 					<posx>210</posx>
+					<include>VisibleFadeEffect</include>
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>380</width>
 						<height>250</height>
 						<aspectratio aligny="bottom">keep</aspectratio>
+						<bordertexture border="5">button-nofocus.png</bordertexture>
+						<bordersize>4</bordersize>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>250</posy>
+						<width>380</width>
+						<height>250</height>
+						<aspectratio aligny="top">keep</aspectratio>
+						<bordertexture border="5" flipy="true" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
+						<bordersize>4</bordersize>
+						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[ListItem.Icon]</texture>
 					</control>
 					<control type="list" id="49">
 						<posx>390</posx>
@@ -406,10 +517,11 @@
 								<posy>0</posy>
 								<width>160</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>right</align>
 								<aligny>center</aligny>
-								<textcolor>heading2</textcolor>
-								<selectedcolor>itemselected</selectedcolor>
+								<textcolor>blue</textcolor>
+								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
@@ -417,8 +529,10 @@
 								<posy>0</posy>
 								<width>465</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>left</align>
 								<aligny>center</aligny>
+								<textcolor>white</textcolor>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -430,17 +544,19 @@
 								<width>640</width>
 								<height>30</height>
 								<visible>Control.HasFocus(49)</visible>
-								<texture>buttons/fo_light.png</texture>
+								<texture>MenuItemFO.png</texture>
+								<include>VisibleFadeEffect</include>
 							</control>
 							<control type="label">
 								<posx>165</posx>
 								<posy>0</posy>
 								<width>160</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>right</align>
 								<aligny>center</aligny>
-								<textcolor>heading2</textcolor>
-								<selectedcolor>itemselected</selectedcolor>
+								<textcolor>blue</textcolor>
+								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
@@ -448,8 +564,10 @@
 								<posy>0</posy>
 								<width>465</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>left</align>
 								<aligny>center</aligny>
+								<textcolor>white</textcolor>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -523,17 +641,28 @@
 							</item>
 						</content>
 					</control>
+					<control type="image">
+						<posx>290</posx>
+						<posy>370</posy>
+						<width>740</width>
+						<height>4</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>separator.png</texture>
+					</control>
 				</control>
 				<control type="group">
 					<visible>container.content(musicvideos) + !Control.HasFocus(12)</visible>
 					<posy>90</posy>
 					<posx>210</posx>
+					<include>VisibleFadeEffect</include>
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>380</width>
 						<height>360</height>
 						<aspectratio>keep</aspectratio>
+						<bordertexture border="5">button-nofocus.png</bordertexture>
+						<bordersize>4</bordersize>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
 					</control>
 					<control type="list" id="49">
@@ -553,10 +682,11 @@
 								<posy>0</posy>
 								<width>160</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>right</align>
 								<aligny>center</aligny>
-								<textcolor>heading2</textcolor>
-								<selectedcolor>itemselected</selectedcolor>
+								<textcolor>blue</textcolor>
+								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
@@ -564,8 +694,10 @@
 								<posy>0</posy>
 								<width>465</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>left</align>
 								<aligny>center</aligny>
+								<textcolor>white</textcolor>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -577,17 +709,19 @@
 								<width>640</width>
 								<height>30</height>
 								<visible>Control.HasFocus(49)</visible>
-								<texture>buttons/fo_light.png</texture>
+								<texture>MenuItemFO.png</texture>
+								<include>VisibleFadeEffect</include>
 							</control>
 							<control type="label">
 								<posx>165</posx>
 								<posy>0</posy>
 								<width>160</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>right</align>
 								<aligny>center</aligny>
-								<textcolor>heading2</textcolor>
-								<selectedcolor>itemselected</selectedcolor>
+								<textcolor>blue</textcolor>
+								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
@@ -595,8 +729,10 @@
 								<posy>0</posy>
 								<width>465</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>left</align>
 								<aligny>center</aligny>
+								<textcolor>white</textcolor>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -658,6 +794,42 @@
 							</item>
 						</content>
 					</control>
+					<control type="image">
+						<posx>390</posx>
+						<posy>370</posy>
+						<width>640</width>
+						<height>4</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>separator.png</texture>
+					</control>
+				</control>
+				<control type="label">
+					<posx>130r</posx>
+					<posy>480</posy>
+					<width>400</width>
+					<height>30</height>
+					<font>font13_title</font>
+					<textcolor>grey2</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<scroll>true</scroll>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>[COLOR=blue]$LOCALIZE[207][/COLOR]$INFO[Container(400).CurrentPage, ( $LOCALIZE[31024] ]$INFO[Container(400).NumPages,/, )]</label>
+					<visible>Control.IsVisible(400)</visible>
+				</control>
+				<control type="label">
+					<posx>130r</posx>
+					<posy>480</posy>
+					<width>400</width>
+					<height>30</height>
+					<font>font13_title</font>
+					<textcolor>grey2</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<scroll>true</scroll>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>[COLOR=blue]$LOCALIZE[206][/COLOR]$INFO[Container(50).CurrentPage, ( $LOCALIZE[31024] ]$INFO[Container(50).NumPages,/, )]</label>
+					<visible>Control.IsVisible(50)</visible>
 				</control>
 				<control type="spincontrol" id="61">
 					<description>Next page button</description>
@@ -680,6 +852,7 @@
 					<height>120</height>
 					<font>font12</font>
 					<align>justify</align>
+					<textcolor>white</textcolor>
 					<pagecontrol>61</pagecontrol>
 					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="3000" delay="4000" repeat="5000">!Control.HasFocus(61) + Skin.HasSetting(AutoScroll)</autoscroll>
@@ -714,7 +887,7 @@
 							<posy>0</posy>
 							<width>430</width>
 							<height>40</height>
-							<texture>buttons/nf_light.png</texture>
+							<texture border="5">button-nofocus.png</texture>
 						</control>
 						<control type="label">
 							<posx>10</posx>
@@ -735,7 +908,7 @@
 							<width>430</width>
 							<height>40</height>
 							<visible>!Control.HasFocus(50)</visible>
-							<texture>buttons/nf_light.png</texture>
+							<texture border="5">button-nofocus.png</texture>
 						</control>
 						<control type="image">
 							<posx>0</posx>
@@ -743,7 +916,7 @@
 							<width>430</width>
 							<height>40</height>
 							<visible>Control.HasFocus(50)</visible>
-							<texture>buttons/fo_light.png</texture>
+							<texture border="5">button-focus2.png</texture>
 						</control>
 						<control type="label">
 							<posx>10</posx>
@@ -774,8 +947,8 @@
 						<description>Play/browse to Show</description>
 						<include>ButtonInfoDialogsCommonValues</include>
 						<label>208</label>
-						<alttexturefocus>buttons/fo_light.png</alttexturefocus>
-						<alttexturenofocus>buttons/nf_light.png</alttexturenofocus>
+						<alttexturefocus border="2">button-focus.png</alttexturefocus>
+						<alttexturenofocus border="2">button-nofocus.png</alttexturenofocus>
 						<altlabel>1024</altlabel>
 						<usealttexture>Container.Content(TVShows)</usealttexture>
 					</control>

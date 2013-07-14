@@ -1,10 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol>20</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<controls>
 		<include>CommonBackground</include>
+		<control type="image">
+			<posx>0</posx>
+			<posy>100r</posy>
+			<width>1280</width>
+			<height>100</height>
+			<aspectratio>stretch</aspectratio>
+			<include>VisibleFadeEffect</include>
+			<texture>floor.png</texture>
+		</control>
+		<control type="image">
+			<description>Section header image</description>
+			<posx>20</posx>
+			<posy>3</posy>
+			<width>35</width>
+			<height>35</height>
+			<aspectratio>keep</aspectratio>
+			<texture>icon_system.png</texture>
+		</control>
+		<control type="grouplist">
+			<posx>65</posx>
+			<posy>5</posy>
+			<width>1000</width>
+			<height>30</height>
+			<orientation>horizontal</orientation>
+			<align>left</align>
+			<itemgap>5</itemgap>
+			<control type="label">
+				<include>WindowTitleCommons</include>
+				<label>$LOCALIZE[7]</label>
+			</control>
+		</control>
 		<control type="group">
 			<posx>30</posx>
 			<posy>40</posy>
@@ -21,7 +51,14 @@
 				<posy>0</posy>
 				<width>610</width>
 				<height>620</height>
-				<texture>dialogs/content-back_light.png</texture>
+				<texture border="20">ContentPanel.png</texture>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>612</posy>
+				<width>610</width>
+				<height>64</height>
+				<texture border="10">ContentPanelMirror.png</texture>
 			</control>
 			<control type="image">
 				<posx>510</posx>
@@ -30,6 +67,8 @@
 				<height>80</height>
 				<aspectratio>keep</aspectratio>
 				<info>Container(20).ListItem.Icon</info>
+				<bordertexture border="5">button-nofocus.png</bordertexture>
+				<bordersize>3</bordersize>
 			</control>
 			<control type="label">
 				<description>header label</description>
@@ -41,7 +80,8 @@
 				<label>A</label>
 				<align>left</align>
 				<aligny>center</aligny>
-				<textcolor>heading1</textcolor>
+				<textcolor>blue</textcolor>
+				<shadowcolor>black</shadowcolor>
 			</control>
 			<control type="label" id="101">
 				<description>current directory text label</description>
@@ -50,7 +90,8 @@
 				<width>470</width>
 				<height>30</height>
 				<font>font12_title</font>
-				<textcolor>itemselected</textcolor>
+				<textcolor>selected</textcolor>
+				<shadowcolor>black</shadowcolor>
 				<scroll>true</scroll>
 				<align>left</align>
 				<aligny>center</aligny>
@@ -58,11 +99,11 @@
 			<control type="scrollbar" id="30">
 				<posx>10</posx>
 				<posy>110</posy>
-				<width>14</width>
+				<width>25</width>
 				<height>490</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+				<texturesliderbar border="2,16,2,16">ScrollBarV_bar.png</texturesliderbar>
+				<texturesliderbarfocus border="2,16,2,16">ScrollBarV_bar_focus.png</texturesliderbarfocus>
 				<textureslidernib>-</textureslidernib>
 				<textureslidernibfocus>-</textureslidernibfocus>
 				<onleft>31</onleft>
@@ -84,14 +125,22 @@
 				<pagecontrol>30</pagecontrol>
 				<scrolltime>200</scrolltime>
 				<itemlayout height="35" width="540">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>540</width>
+						<height>36</height>
+						<texture border="0,2,0,2">MenuItemNF.png</texture>
+					</control>
 					<control type="label">
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>500</width>
 						<height>36</height>
+						<font>font13</font>
 						<aligny>center</aligny>
-						<selectedcolor>itemselected</selectedcolor>
-						<textcolor>textnofocus</textcolor>
+						<selectedcolor>selected</selectedcolor>
+						<textcolor>grey2</textcolor>
 						<align>left</align>
 						<info>ListItem.Label</info>
 					</control>
@@ -102,8 +151,8 @@
 						<height>24</height>
 						<font>font12</font>
 						<aligny>center</aligny>
-						<selectedcolor>itemselected</selectedcolor>
-						<textcolor>textnofocus</textcolor>
+						<selectedcolor>selected</selectedcolor>
+						<textcolor>grey</textcolor>
 						<align>right</align>
 						<info>ListItem.Label2</info>
 					</control>
@@ -114,16 +163,34 @@
 						<posy>0</posy>
 						<width>540</width>
 						<height>36</height>
+						<visible>!Control.HasFocus(20)</visible>
+						<texture border="0,2,0,2">MenuItemNF.png</texture>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>540</width>
+						<height>36</height>
 						<visible>Control.HasFocus(20)</visible>
-						<texture>buttons/fo_light.png</texture>
+						<texture border="0,2,0,2">MenuItemFO.png</texture>
+					</control>
+					<control type="image">
+						<posx>340</posx>
+						<posy>2</posy>
+						<width>200</width>
+						<height>31</height>
+						<texture border="0,0,14,0">MediaItemDetailBG.png</texture>
+						<visible>Control.HasFocus(20) + !IsEmpty(ListItem.Label2)</visible>
 					</control>
 					<control type="label">
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>500</width>
 						<height>36</height>
+						<font>font13</font>
 						<aligny>center</aligny>
-						<selectedcolor>itemselected</selectedcolor>
+						<selectedcolor>selected</selectedcolor>
+						<textcolor>white</textcolor>
 						<align>left</align>
 						<info>ListItem.Label</info>
 					</control>
@@ -134,8 +201,8 @@
 						<height>24</height>
 						<font>font12</font>
 						<aligny>center</aligny>
-						<selectedcolor>itemselected</selectedcolor>
-						<textcolor>textfocus</textcolor>
+						<selectedcolor>selected</selectedcolor>
+						<textcolor>grey</textcolor>
 						<align>right</align>
 						<info>ListItem.Label2</info>
 					</control>
@@ -158,7 +225,14 @@
 				<posy>0</posy>
 				<width>610</width>
 				<height>620</height>
-				<texture>dialogs/content-back_light.png</texture>
+				<texture border="20">ContentPanel.png</texture>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>612</posy>
+				<width>610</width>
+				<height>64</height>
+				<texture border="10">ContentPanelMirror.png</texture>
 			</control>
 			<control type="image">
 				<posx>20</posx>
@@ -167,6 +241,8 @@
 				<height>80</height>
 				<aspectratio>keep</aspectratio>
 				<info>Container(21).ListItem.Icon</info>
+				<bordertexture border="5">button-nofocus.png</bordertexture>
+				<bordersize>3</bordersize>
 			</control>
 			<control type="label">
 				<description>header label</description>
@@ -178,7 +254,8 @@
 				<label>B</label>
 				<align>right</align>
 				<aligny>center</aligny>
-				<textcolor>heading1</textcolor>
+				<textcolor>blue</textcolor>
+				<shadowcolor>black</shadowcolor>
 			</control>
 			<control type="label" id="102">
 				<description>current directory text label</description>
@@ -187,7 +264,8 @@
 				<width>470</width>
 				<height>30</height>
 				<font>font12_title</font>
-				<textcolor>itemselected</textcolor>
+				<textcolor>selected</textcolor>
+				<shadowcolor>black</shadowcolor>
 				<scroll>true</scroll>
 				<align>right</align>
 				<aligny>center</aligny>
@@ -195,11 +273,11 @@
 			<control type="scrollbar" id="31">
 				<posx>575</posx>
 				<posy>110</posy>
-				<width>14</width>
+				<width>25</width>
 				<height>490</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+				<texturesliderbar border="2,16,2,16">ScrollBarV_bar.png</texturesliderbar>
+				<texturesliderbarfocus border="2,16,2,16">ScrollBarV_bar_focus.png</texturesliderbarfocus>
 				<textureslidernib>-</textureslidernib>
 				<textureslidernibfocus>-</textureslidernibfocus>
 				<onleft>21</onleft>
@@ -221,14 +299,22 @@
 				<pagecontrol>31</pagecontrol>
 				<scrolltime>200</scrolltime>
 				<itemlayout height="35">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>540</width>
+						<height>36</height>
+						<texture border="0,2,0,2">MenuItemNF.png</texture>
+					</control>
 					<control type="label">
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>500</width>
 						<height>36</height>
+						<font>font13</font>
 						<aligny>center</aligny>
-						<selectedcolor>itemselected</selectedcolor>
-						<textcolor>textnofocus</textcolor>
+						<selectedcolor>selected</selectedcolor>
+						<textcolor>grey2</textcolor>
 						<align>left</align>
 						<info>ListItem.Label</info>
 					</control>
@@ -239,8 +325,8 @@
 						<height>24</height>
 						<font>font12</font>
 						<aligny>center</aligny>
-						<selectedcolor>itemselected</selectedcolor>
-						<textcolor>textnofocus</textcolor>
+						<selectedcolor>selected</selectedcolor>
+						<textcolor>grey</textcolor>
 						<align>right</align>
 						<info>ListItem.Label2</info>
 					</control>
@@ -251,16 +337,34 @@
 						<posy>0</posy>
 						<width>540</width>
 						<height>36</height>
+						<visible>!Control.HasFocus(21)</visible>
+						<texture border="0,2,0,2">MenuItemNF.png</texture>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>540</width>
+						<height>36</height>
 						<visible>Control.HasFocus(21)</visible>
-						<texture>buttons/fo_light.png</texture>
+						<texture border="0,2,0,2">MenuItemFO.png</texture>
+					</control>
+					<control type="image">
+						<posx>340</posx>
+						<posy>2</posy>
+						<width>200</width>
+						<height>31</height>
+						<texture border="0,0,14,0">MediaItemDetailBG.png</texture>
+						<visible>Control.HasFocus(21) + !IsEmpty(ListItem.Label2)</visible>
 					</control>
 					<control type="label">
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>500</width>
 						<height>36</height>
+						<font>font13</font>
 						<aligny>center</aligny>
-						<selectedcolor>itemselected</selectedcolor>
+						<selectedcolor>selected</selectedcolor>
+						<textcolor>white</textcolor>
 						<align>left</align>
 						<info>ListItem.Label</info>
 					</control>
@@ -271,13 +375,39 @@
 						<height>24</height>
 						<font>font12</font>
 						<aligny>center</aligny>
-						<selectedcolor>itemselected</selectedcolor>
-						<textcolor>textfocus</textcolor>
+						<selectedcolor>selected</selectedcolor>
+						<textcolor>grey</textcolor>
 						<align>right</align>
 						<info>ListItem.Label2</info>
 					</control>
 				</focusedlayout>
 			</control>
+		</control>
+		<control type="label">
+			<description>number of files/pages in left list text label</description>
+			<posx>40</posx>
+			<posy>53r</posy>
+			<width>570</width>
+			<font>font12</font>
+			<align>left</align>
+			<scroll>true</scroll>
+			<textcolor>grey</textcolor>
+			<shadowcolor>black</shadowcolor>
+			<label>([COLOR=blue]$INFO[Container(20).NumItems][/COLOR]) $LOCALIZE[31025] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(20).CurrentPage]/$INFO[Container(20).NumPages][/COLOR])</label>
+			<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
+		</control>
+		<control type="label">
+			<description>number of files/pages in left list text label</description>
+			<posx>40r</posx>
+			<posy>53r</posy>
+			<width>570</width>
+			<font>font12</font>
+			<align>right</align>
+			<scroll>true</scroll>
+			<textcolor>grey</textcolor>
+			<shadowcolor>black</shadowcolor>
+			<label>([COLOR=blue]$INFO[Container(21).NumItems][/COLOR]) $LOCALIZE[31025] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(21).CurrentPage]/$INFO[Container(21).NumPages][/COLOR])</label>
+			<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
 		</control>
 		<control type="group" id="10">
 			<posx>595</posx>
@@ -295,6 +425,8 @@
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>back</onclick>
+				<texturefocus border="5">floor_buttonFO.png</texturefocus>
+				<texturenofocus border="5">floor_button.png</texturenofocus>
 				<onleft>50</onleft>
 				<onright>50</onright>
 				<onup>50</onup>
@@ -319,6 +451,8 @@
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>ActivateWindow(home)</onclick>
+				<texturefocus border="5">floor_buttonFO.png</texturefocus>
+				<texturenofocus border="5">floor_button.png</texturenofocus>
 				<onleft>50</onleft>
 				<onright>50</onright>
 				<onup>50</onup>

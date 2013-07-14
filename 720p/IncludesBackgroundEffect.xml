@@ -3,6 +3,7 @@
 	<include name="BackgroundRainDropEffect">
 		<control type="group">
 			<visible>!Skin.HasSetting(HideRainDropEffect) + !Player.HasVideo</visible>
+			<include>VisibleFadeEffect</include>
 			<control type="image">
 				<description>Raindrop 5 animation</description>
 				<posx>200</posx>
