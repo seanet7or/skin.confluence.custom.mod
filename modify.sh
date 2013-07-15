@@ -2020,24 +2020,22 @@ else
 fi
 step
 
-exit
-
 #printf "\n############# APPLYING MODIFICATIONS TO VIDEO LIBRARY #########################"
 
 #printf "\n############# APPLYING MODIFICATIONS TO VIDEO OSD #############################"
 
 printf "\n############# APPLYING MODIFICATIONS TO SMALL DIALOGS #########################"
 
-printf "\nChanging busy dialog: "
-if [ -f media/busy.png ] ; then
-	remove_control 'image' '<texture>busy.png</texture>' 720p/DialogBusy.xml
-	perlregex 's|(<description>Busy label</description>#\s*<posx)>60|\1>40|' 720p/DialogBusy.xml
-	check_and_remove media/busy.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
+#printf "\nChanging busy dialog: "
+#if [ -f media/busy.png ] ; then
+#	remove_control 'image' '<texture>busy.png</texture>' 720p/DialogBusy.xml
+#	perlregex 's|(<description>Busy label</description>#\s*<posx)>60|\1>40|' 720p/DialogBusy.xml
+#	check_and_remove media/busy.png
+#	printf "%sDONE!%s" $GREEN $RESET
+#else
+#	printf "%sSKIPPED.%s" $CYAN $RESET
+#fi
+#step
 
 printf "\nChanging shutdown menu: "
 if [ -f media/DialogContextTop.png ] ; then
@@ -2070,19 +2068,21 @@ printf "\n############# CLEANING UP ############################################
 
 printf "\nRemoving buttons/nf_light.png where not nedded: "
 if grep -I -q 'buttons/nf_light.png' 720p/DialogPictureInfo.xml ; then
-	remove_control image '<texture>buttons/nf_light.png</texture>' 720p/CustomAddMenuItems.xml
-	remove_control image '<texture>buttons/nf_light.png</texture>' 720p/CustomAddonSelection.xml
-	remove_control image '<texture>buttons/nf_light.png</texture>' 720p/CustomAddonType.xml
-	remove_control image '<texture>buttons/nf_light.png</texture>' 720p/CustomAddSubMenuItems.xml
-	remove_control image '<texture>buttons/nf_light.png</texture>' 720p/CustomSubMenuType.xml
-	remove_control image '<texture>buttons/nf_light.png</texture>' 720p/CustomWidgetType.xml
-	remove_control image '<texture>buttons/nf_light.png</texture>' 720p/DialogFavourites.xml
-	remove_control image '<texture>buttons/nf_light.png</texture>' 720p/DialogPictureInfo.xml
+	remove_control image '<texture[^>]*>buttons/nf_light.png</texture>' 720p/CustomAddMenuItems.xml
+	remove_control image '<texture[^>]*>buttons/nf_light.png</texture>' 720p/CustomAddonSelection.xml
+	remove_control image '<texture[^>]*>buttons/nf_light.png</texture>' 720p/CustomAddonType.xml
+	remove_control image '<texture[^>]*>buttons/nf_light.png</texture>' 720p/CustomAddSubMenuItems.xml
+	remove_control image '<texture[^>]*>buttons/nf_light.png</texture>' 720p/CustomSubMenuType.xml
+	remove_control image '<texture[^>]*>buttons/nf_light.png</texture>' 720p/CustomWidgetType.xml
+	remove_control image '<texture[^>]*>buttons/nf_light.png</texture>' 720p/DialogFavourites.xml
+	remove_control image '<texture[^>]*>buttons/nf_light.png</texture>' 720p/DialogPictureInfo.xml
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
+
+exit
 
 printf "\nRemoving useless visible conditions: "
 if grep -I -q '<visible>!.Window.IsVisible.FullscreenVideo. . Window.IsVisible.Visualisation..</visible>' 720p/DialogAddonSettings.xml
