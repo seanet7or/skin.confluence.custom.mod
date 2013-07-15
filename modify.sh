@@ -875,35 +875,33 @@ else
 fi
 step
 
-exit
-
-printf "\nEnabling German movie ratings: "
-if ! grep -q 'fsk-18' '720p/IncludesVariables.xml' ; then
-	#uncommenting the "Germany" option from the settings window
-	R='s|<!--(item>\s*#'
-	R+='\s*<label>.LOCALIZE.31702.</label>\s*#'
-	R+='\s*<onclick>noop</onclick>\s*#'
-	R+='\s*<icon>.</icon>\s*#'
-	R+='\s*<thumb>.</thumb>\s*#'
-	R+='\s*</item>\s*#'
-	R+='\s*)<item>'
-	R+='|<\1<!--item>|'
-	perlregex "$R" 720p/SkinSettings.xml
-	#choose right flag depending on the FSK
-	R='s|(#\s*)(<variable name="rating">).*?#|\1\2'
-	R+='\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,18)">de/fsk-18</value>'
-	R+='\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,16)">de/fsk-16</value>'
-	R+='\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,12)">de/fsk-12</value>'
-	R+='\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,6)">de/fsk-6</value>'
-	R+='\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,0)">de/fsk-0</value>'
-	R+='\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,o)">de/fsk-0</value>'
-	R+='\n\n|' 
-	perlregex '720p/IncludesVariables.xml' "$R"
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
+#printf "\nEnabling German movie ratings: "
+#if ! grep -q 'fsk-18' '720p/IncludesVariables.xml' ; then
+#	#uncommenting the "Germany" option from the settings window
+#	R='s|<!--(item>\s*#'
+#	R+='\s*<label>.LOCALIZE.31702.</label>\s*#'
+#	R+='\s*<onclick>noop</onclick>\s*#'
+#	R+='\s*<icon>.</icon>\s*#'
+#	R+='\s*<thumb>.</thumb>\s*#'
+#	R+='\s*</item>\s*#'
+#	R+='\s*)<item>'
+#	R+='|<\1<!--item>|'
+#	perlregex "$R" 720p/SkinSettings.xml
+#	#choose right flag depending on the FSK
+#	R='s|(#\s*)(<variable name="rating">).*?#|\1\2'
+#	R+='\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,18)">de/fsk-18</value>'
+#	R+='\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,16)">de/fsk-16</value>'
+#	R+='\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,12)">de/fsk-12</value>'
+#	R+='\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,6)">de/fsk-6</value>'
+#	R+='\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,0)">de/fsk-0</value>'
+#	R+='\1\t<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,o)">de/fsk-0</value>'
+#	R+='\n\n|' 
+#	perlregex '720p/IncludesVariables.xml' "$R"
+#	printf "%sDONE!%s" $GREEN $RESET
+#else
+#	printf "%sSKIPPED.%s" $CYAN $RESET
+#fi
+#step
 
 printf "\nRemoving references to 'media/separator_vertical.png': "
 if [ -f media/separator_vertical.png ] ; then
