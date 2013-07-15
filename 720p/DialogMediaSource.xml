@@ -14,7 +14,7 @@
 			<posy>0</posy>
 			<width>800</width>
 			<height>500</height>
-			<texture border="40">dialogs/dialog-back_light.png</texture>
+			<texture border="40">DialogBack.png</texture>
 		</control>
 		<control type="image">
 			<description>Dialog Header image</description>
@@ -36,6 +36,23 @@
 			<aligny>center</aligny>
 			<textcolor>selected</textcolor>
 			<shadowcolor>black</shadowcolor>
+		</control>
+		<control type="button">
+			<description>Close Window button</description>
+			<posx>710</posx>
+			<posy>15</posy>
+			<width>64</width>
+			<height>32</height>
+			<label>-</label>
+			<font>-</font>
+			<onclick>PreviousMenu</onclick>
+			<texturefocus>DialogCloseButton-focus.png</texturefocus>
+			<texturenofocus>DialogCloseButton.png</texturenofocus>
+			<onleft>10</onleft>
+			<onright>10</onright>
+			<onup>10</onup>
+			<ondown>10</ondown>
+			<visible>system.getbool(input.enablemouse)</visible>
 		</control>
 		<control type="label">
 			<description>path label</description>
@@ -67,7 +84,7 @@
 					<posy>0</posy>
 					<width>525</width>
 					<height>40</height>
-					<texture border="5">buttons/nf_light.png</texture>
+					<texture border="5">button-nofocus.png</texture>
 				</control>
 				<control type="label">
 					<posx>10</posx>
@@ -89,7 +106,7 @@
 					<width>525</width>
 					<height>40</height>
 					<visible>!Control.HasFocus(10)</visible>
-					<texture border="5">buttons/nf_light.png</texture>
+					<texture border="5">button-nofocus.png</texture>
 				</control>
 				<control type="image">
 					<posx>0</posx>
@@ -115,11 +132,13 @@
 		<control type="scrollbar" id="60">
 			<posx>555</posx>
 			<posy>105</posy>
-			<width>14</width>
+			<width>25</width>
 			<height>225</height>
-			<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-			<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-			<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+			<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+			<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+			<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+			<textureslidernib>ScrollBarNib.png</textureslidernib>
+			<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 			<onleft>10</onleft>
 			<onright>9000</onright>
 			<showonepage>false</showonepage>
@@ -138,7 +157,7 @@
 				<font>font12_title</font>
 				<align>center</align>
 				<aligny>center</aligny>
-				<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+				<texturenofocus border="5">button-nofocus.png</texturenofocus>
 				<texturefocus border="5">button-focus.png</texturefocus>
 				<onup>18</onup>
 				<onleft>60</onleft>
@@ -155,7 +174,7 @@
 				<font>font12_title</font>
 				<align>center</align>
 				<aligny>center</aligny>
-				<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+				<texturenofocus border="5">button-nofocus.png</texturenofocus>
 				<texturefocus border="5">button-focus.png</texturefocus>
 				<onup>11</onup>
 				<onleft>60</onleft>
@@ -172,7 +191,7 @@
 				<font>font12_title</font>
 				<align>center</align>
 				<aligny>center</aligny>
-				<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+				<texturenofocus border="5">button-nofocus.png</texturenofocus>
 				<texturefocus border="5">button-focus.png</texturefocus>
 				<onup>13</onup>
 				<onleft>60</onleft>
@@ -204,7 +223,7 @@
 			<label>-</label>
 			<font>font13</font>
 			<texturefocus border="5">button-focus2.png</texturefocus>
-			<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+			<texturenofocus border="5">button-nofocus.png</texturenofocus>
 			<onup>10</onup>
 			<onleft>12</onleft>
 			<onright>19</onright>
@@ -221,7 +240,7 @@
 				<height>40</height>
 				<align>center</align>
 				<aligny>center</aligny>
-				<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+				<texturenofocus border="5">button-nofocus.png</texturenofocus>
 				<texturefocus border="5">button-focus.png</texturefocus>
 				<label>186</label>
 				<font>font12_title</font>
@@ -238,7 +257,7 @@
 				<height>40</height>
 				<align>center</align>
 				<aligny>center</aligny>
-				<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+				<texturenofocus border="5">button-nofocus.png</texturenofocus>
 				<texturefocus border="5">button-focus.png</texturefocus>
 				<label>222</label>
 				<font>font12_title</font>

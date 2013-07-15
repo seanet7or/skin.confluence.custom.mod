@@ -21,6 +21,15 @@
 	<controls>
 		<include>CommonBackground</include>
 		<control type="image">
+			<posx>0</posx>
+			<posy>100r</posy>
+			<width>1280</width>
+			<height>100</height>
+			<aspectratio>stretch</aspectratio>
+			<include>VisibleFadeEffect</include>
+			<texture>floor.png</texture>
+		</control>
+		<control type="image">
 			<description>Section header image</description>
 			<posx>20</posx>
 			<posy>3</posy>
@@ -63,7 +72,31 @@
 				<posy>5</posy>
 				<width>1090</width>
 				<height>630</height>
-				<texture border="15">dialogs/content-back_light.png</texture>
+				<texture border="15">ContentPanel.png</texture>
+			</control>
+			<control type="image">
+				<posx>5</posx>
+				<posy>625</posy>
+				<width>1090</width>
+				<height>64</height>
+				<texture border="15">ContentPanelMirror.png</texture>
+			</control>
+			<control type="button">
+				<description>Close Window button</description>
+				<posx>980</posx>
+				<posy>11</posy>
+				<width>64</width>
+				<height>32</height>
+				<label>-</label>
+				<font>-</font>
+				<onclick>PreviousMenu</onclick>
+				<texturefocus>DialogCloseButton-focus.png</texturefocus>
+				<texturenofocus>DialogCloseButton.png</texturenofocus>
+				<onleft>1</onleft>
+				<onright>1</onright>
+				<onup>1</onup>
+				<ondown>1</ondown>
+				<visible>system.getbool(input.enablemouse)</visible>
 			</control>
 			<control type="image">
 				<description>LOGO</description>
@@ -87,6 +120,13 @@
 				<pagecontrol>-</pagecontrol>
 				<scrolltime>300</scrolltime>
 				<itemlayout height="80" width="260">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>260</width>
+						<height>81</height>
+						<texture border="5">MenuItemNF.png</texture>
+					</control>
 					<control type="label">
 						<posx>250</posx>
 						<posy>15</posy>
@@ -234,7 +274,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(ABCKeyBoard)</onclick>
 						<selected>!Skin.HasSetting(ABCKeyBoard)</selected>
 					</control>
@@ -246,7 +286,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideSystemClock)</onclick>
 						<selected>!Skin.HasSetting(HideSystemClock)</selected>
 					</control>
@@ -258,7 +298,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(KioskMode)</onclick>
 						<selected>Skin.HasSetting(KioskMode)</selected>
 					</control>
@@ -270,7 +310,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideBusyAnimation)</onclick>
 						<selected>!Skin.HasSetting(HideBusyAnimation)</selected>
 					</control>
@@ -282,7 +322,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(DisableHomeReturnButtons)</onclick>
 						<selected>!Skin.HasSetting(DisableHomeReturnButtons)</selected>
 					</control>
@@ -294,7 +334,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(ParentDirLabel)</onclick>
 						<selected>!Skin.HasSetting(ParentDirLabel)</selected>
 					</control>
@@ -306,7 +346,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(MediaShortDescription)</onclick>
 						<selected>Skin.HasSetting(MediaShortDescription)</selected>
 					</control>
@@ -318,7 +358,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideNumItemsCount)</onclick>
 						<selected>Skin.HasSetting(HideNumItemsCount)</selected>
 					</control>
@@ -330,7 +370,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideBackGroundFanart)</onclick>
 						<selected>Skin.HasSetting(HideBackGroundFanart)</selected>
 					</control>
@@ -342,7 +382,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideEpisodeThumb)</onclick>
 						<selected>!Skin.HasSetting(HideEpisodeThumb)</selected>
 					</control>
@@ -354,7 +394,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(ShowBackgroundVis)</onclick>
 						<selected>!Skin.HasSetting(ShowBackgroundVis)</selected>
 					</control>
@@ -379,7 +419,7 @@
 						<onclick>Skin.ToggleSetting(homepageVideoinfo)</onclick>
 						<selected>!Skin.HasSetting(homepageVideoinfo)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
 					<control type="radiobutton" id="114">
 						<description>enable music info</description>
@@ -392,7 +432,7 @@
 						<onclick>Skin.ToggleSetting(homepageMusicinfo)</onclick>
 						<selected>!Skin.HasSetting(homepageMusicinfo)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
 					<control type="radiobutton" id="115">
 						<description>enable weather info</description>
@@ -405,7 +445,7 @@
 						<onclick>Skin.ToggleSetting(homepageWeatherinfo)</onclick>
 						<selected>Skin.HasSetting(homepageWeatherinfo)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<visible>!IsEmpty(Weather.Plugin)</visible>
 					</control>
 					<control type="radiobutton" id="116">
@@ -419,7 +459,7 @@
 						<onclick>Skin.ToggleSetting(HideHomeStats)</onclick>
 						<selected>!Skin.HasSetting(HideHomeStats)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
 					<control type="radiobutton" id="117">
 						<description>Raise Main Menu</description>
@@ -432,7 +472,7 @@
 						<onclick>Skin.ToggleSetting(RaiseMainMenuBar)</onclick>
 						<selected>!Skin.HasSetting(RaiseMainMenuBar)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
 					<control type="radiobutton" id="118">
 						<description>Show Global Search</description>
@@ -445,7 +485,7 @@
 						<onclick>Skin.ToggleSetting(HideHomeSearch)</onclick>
 						<selected>!Skin.HasSetting(HideHomeSearch)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>System.HasAddon(script.globalsearch)</enable>
 					</control>
 					<control type="button" id="119">
@@ -456,7 +496,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Addon.OpenSettings(script.globalsearch)</onclick>
 						<enable>!Skin.HasSetting(HideHomeSearch)</enable>
 						<visible>System.HasAddon(script.globalsearch)</visible>
@@ -469,7 +509,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(AutoHideSubMenu)</onclick>
 						<selected>!Skin.HasSetting(AutoHideSubMenu)</selected>
 					</control>
@@ -481,7 +521,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideHomeAddonName)</onclick>
 						<selected>!Skin.HasSetting(HideHomeAddonName)</selected>
 					</control>
@@ -493,7 +533,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(AutoHidePowerBtn)</onclick>
 						<selected>!Skin.HasSetting(AutoHidePowerBtn)</selected>
 					</control>
@@ -505,7 +545,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideWidgetFanArt)</onclick>
 						<selected>!Skin.HasSetting(HideWidgetFanArt)</selected>
 						<enable>!Skin.HasSetting(HideBackGroundFanart)</enable>
@@ -521,7 +561,7 @@
 						<onclick>Skin.ToggleSetting(HideRainDropEffect)</onclick>
 						<selected>Skin.HasSetting(HideRainDropEffect)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
 					<control type="label" id="125">
 						<width>750</width>
@@ -541,7 +581,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideVisualizationCDart)</onclick>
 						<selected>!Skin.HasSetting(HideVisualizationCDart)</selected>
 					</control>
@@ -553,7 +593,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideTraditionalCDart)</onclick>
 						<selected>!Skin.HasSetting(HideTraditionalCDart)</selected>
 						<enable>!Skin.HasSetting(HideVisualizationCDart)</enable>
@@ -566,7 +606,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(ShowBackgroundAlbumWall)</onclick>
 						<onclick>Skin.SetBool(HideVisualizationFanart)</onclick>
 						<selected>Skin.HasSetting(ShowBackgroundAlbumWall)</selected>
@@ -579,7 +619,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideVisualizationFanart)</onclick>
 						<onclick>Skin.Reset(ShowBackgroundAlbumWall)</onclick>
 						<selected>!Skin.HasSetting(HideVisualizationFanart)</selected>
@@ -592,7 +632,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(AnimateVizFanart)</onclick>
 						<selected>Skin.HasSetting(AnimateVizFanart)</selected>
 						<enable>!Skin.HasSetting(HideVisualizationFanart)</enable>
@@ -605,7 +645,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(AllowTransparentFanart)</onclick>
 						<selected>Skin.HasSetting(AllowTransparentFanart)</selected>
 						<enable>!Skin.HasSetting(HideVisualizationFanart)</enable>
@@ -618,7 +658,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(AllowVizExtraFanart)</onclick>
 						<onclick>Skin.Reset(AllowSlideShowArt)</onclick>
 						<selected>Skin.HasSetting(AllowVizExtraFanart)</selected>
@@ -632,7 +672,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(AllowSlideShowArt)</onclick>
 						<onclick>Skin.Reset(AllowVizExtraFanart)</onclick>
 						<selected>Skin.HasSetting(AllowSlideShowArt)</selected>
@@ -646,7 +686,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(AllowSlideShowBio)</onclick>
 						<selected>Skin.HasSetting(AllowSlideShowBio)</selected>
 						<enable>System.HasAddon(script.artistslideshow)</enable>
@@ -659,7 +699,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Addon.OpenSettings(script.artistslideshow)</onclick>
 						<enable>Skin.HasSetting(AllowSlideShowArt) | Skin.HasSetting(AllowSlideShowBio)</enable>
 						<visible>System.HasAddon(script.artistslideshow)</visible>
@@ -682,7 +722,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideInfoStartOSD)</onclick>
 						<selected>!Skin.HasSetting(HideInfoStartOSD)</selected>
 					</control>
@@ -694,7 +734,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(HidePauseInfo)</onclick>
 						<selected>!Skin.HasSetting(HidePauseInfo)</selected>
 					</control>
@@ -706,7 +746,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(OSDInfoLogo)</onclick>
 						<selected>Skin.HasSetting(OSDInfoLogo)</selected>
 					</control>
@@ -718,7 +758,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideSeekBarOSD)</onclick>
 						<selected>!Skin.HasSetting(HideSeekBarOSD)</selected>
 					</control>
@@ -740,7 +780,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideNextSongsInfo)</onclick>
 						<selected>!Skin.HasSetting(HideNextSongsInfo)</selected>
 					</control>
@@ -753,7 +793,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Control.Move(9009,1)</onclick>
 						<onclick condition="stringcompare(Container(9009).ListItem.Label,Default)">Skin.Reset(WatchStatusType)</onclick>
 						<onclick condition="!stringcompare(Container(9009).ListItem.Label,Default)">Skin.SetString(WatchStatusType,$INFO[Container(9009).ListItem.Label])</onclick>
@@ -766,7 +806,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(AutoScroll)</onclick>
 						<selected>Skin.HasSetting(AutoScroll)</selected>
 					</control>
@@ -778,7 +818,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(Show_SlideShow_Paused)</onclick>
 						<selected>!Skin.HasSetting(Show_SlideShow_Paused)</selected>
 					</control>
@@ -790,7 +830,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(WindowedTrailer)</onclick>
 						<selected>Skin.HasSetting(WindowedTrailer)</selected>
 					</control>
@@ -803,10 +843,363 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Control.Move(9008,1)</onclick>
 						<onclick>Skin.SetString(MPAACountryCert,$INFO[Container(9008).ListItem.Label])</onclick>
 					</control>
+					<!--control type="button" id="148">
+						<description>User Rating Prefix</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>31210</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(UsrRatingPrefix)][/COLOR]</label2>
+						<onclick>Skin.SetString(UsrRatingPrefix)</onclick>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control-->					
+					<control type="label" id="149">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>$LOCALIZE[31007]</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="group" id="150">
+						<width>750</width>
+						<height>40</height>
+						<control type="grouplist" id="151">
+							<orientation>horizontal</orientation>
+							<width>750</width>
+							<height>40</height>
+							<itemgap>0</itemgap>
+							<onup>147</onup>
+							<ondown>158</ondown>
+							<align>left</align>
+							<control type="radiobutton" id="152">
+								<description>Default</description>
+								<width>150</width>
+								<height>40</height>
+								<label> $LOCALIZE[571]</label>
+								<font>font10</font>
+								<align>left</align>
+								<texturefocus>MenuItemFO.png</texturefocus>
+								<texturenofocus>MenuItemNF.png</texturenofocus>
+								<onclick>Skin.Reset(MediaPanelTrans)</onclick>
+								<selected>IsEmpty(Skin.String(MediaPanelTrans))</selected>
+							</control>
+							<control type="radiobutton" id="153">
+								<description>Step 1</description>
+								<width>150</width>
+								<height>40</height>
+								<label> $LOCALIZE[31368] 1</label>
+								<font>font10</font>
+								<align>left</align>
+								<texturefocus>MenuItemFO.png</texturefocus>
+								<texturenofocus>MenuItemNF.png</texturenofocus>
+								<onclick>Skin.SetString(MediaPanelTrans,EEEEEEEE)</onclick>
+								<selected>stringcompare(Skin.String(MediaPanelTrans),EEEEEEEE)</selected>
+							</control>
+							<control type="radiobutton" id="154">
+								<description>Step 2</description>
+								<width>150</width>
+								<height>40</height>
+								<label> $LOCALIZE[31368] 2</label>
+								<font>font10</font>
+								<align>left</align>
+								<texturefocus>MenuItemFO.png</texturefocus>
+								<texturenofocus>MenuItemNF.png</texturenofocus>
+								<onclick>Skin.SetString(MediaPanelTrans,DDDDDDDD)</onclick>
+								<selected>stringcompare(Skin.String(MediaPanelTrans),DDDDDDDD)</selected>
+							</control>
+							<control type="radiobutton" id="155">
+								<description>Step 3</description>
+								<width>150</width>
+								<height>40</height>
+								<label> $LOCALIZE[31368] 3</label>
+								<font>font10</font>
+								<align>left</align>
+								<texturefocus>MenuItemFO.png</texturefocus>
+								<texturenofocus>MenuItemNF.png</texturenofocus>
+								<onclick>Skin.SetString(MediaPanelTrans,CCCCCCCC)</onclick>
+								<selected>stringcompare(Skin.String(MediaPanelTrans),CCCCCCCC)</selected>
+							</control>
+							<control type="radiobutton" id="156">
+								<description>Step 4</description>
+								<width>150</width>
+								<height>40</height>
+								<label> $LOCALIZE[31368] 4</label>
+								<font>font10</font>
+								<align>left</align>
+								<texturefocus>MenuItemFO.png</texturefocus>
+								<texturenofocus>MenuItemNF.png</texturenofocus>
+								<onclick>Skin.SetString(MediaPanelTrans,99999999)</onclick>
+								<selected>stringcompare(Skin.String(MediaPanelTrans),99999999)</selected>
+							</control>
+						</control>
+					</control>
+					<control type="label" id="157">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>512</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="radiobutton" id="158">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31084]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(HideXBMCIntro)</onclick>
+						<onclick>Skin.Reset(EnableStartupPlaylist)</onclick>
+						<selected>!Skin.HasSetting(HideXBMCIntro)</selected>
+					</control>
+					<control type="radiobutton" id="159">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>21398</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetBool(HideXBMCIntro)</onclick>
+						<onclick>Skin.ToggleSetting(Use_Startup_Playlist)</onclick>
+						<selected>Skin.HasSetting(Use_Startup_Playlist)</selected>
+					</control>
+					<control type="button" id="160">
+						<description>Startup Playlist Path</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>15311</label>
+						<label2>$INFO[Skin.String(Startup_Playlist_Path)]</label2>
+						<onclick>Skin.SetFile(Startup_Playlist_Path,,special://MusicPlaylists/)</onclick>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<enable>Skin.HasSetting(Use_Startup_Playlist)</enable>
+					</control>
+				</control>
+				<control type="scrollbar" id="60">
+					<posx>1060</posx>
+					<posy>60</posy>
+					<width>25</width>
+					<height>530</height>
+					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+					<textureslidernib>ScrollBarNib.png</textureslidernib>
+					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+					<onleft>9001</onleft>
+					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
+					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
+					<showonepage>false</showonepage>
+					<orientation>vertical</orientation>
+					<visible>Container(9000).Hasfocus(1)</visible>
+				</control>
+				<control type="list" id="9008">
+					<visible>Container(9000).Hasfocus(1)</visible>
+					<itemlayout height="1" width="750"></itemlayout>
+					<focusedlayout height="1" width="750"></focusedlayout>
+					<content>
+						<item>
+							<label>$LOCALIZE[31700]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31701]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31703]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31706]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31708]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31707]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31702]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31705]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31709]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31704]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31710]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>							
+					</content>
+				</control>
+				<control type="list" id="9009">
+					<visible>Container(9000).Hasfocus(1)</visible>
+					<itemlayout height="1" width="750"></itemlayout>
+					<focusedlayout height="1" width="750"></focusedlayout>
+					<content>
+						<item>
+							<label>Default</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>Hidden</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>Blue</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>Green</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>Yellow</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+					</content>
+				</control>
+				<control type="grouplist" id="9002">
+					<visible>Container(9000).Hasfocus(2)</visible>
+					<posx>290</posx>
+					<posy>60</posy>
+					<width>750</width>
+					<height>530</height>
+					<itemgap>-1</itemgap>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9000</onleft>
+					<onright>60</onright>
+					<onup>9002</onup>
+					<ondown>9002</ondown>
+					<control type="label" id="200">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>31105</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="radiobutton" id="201">
+						<description>Sticky Menu #1 Action</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31674]</label>
+						<onclick>Skin.SetString(HomeItemLastLabel,$INFO[Skin.String(HomeItem.1.Label)])</onclick>
+						<onclick>Skin.SetString(HomeItemLastAction,$INFO[Skin.String(HomeItem.1.Path)])</onclick>
+						<onclick>Skin.ToggleSetting(StickyHomeMenuAction)</onclick>
+						<selected>Skin.HasSetting(StickyHomeMenuAction)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<enable>!StringCompare(Skin.String(HomeItem.1.Sub),$LOCALIZE[31093]) + !IsEmpty(Skin.String(HomeItem.1.Path))</enable>
+					</control>
+					<control type="button" id="202">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>[B]$LOCALIZE[31143] - 1[/B]</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.1.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.Reset(StickyHomeMenuAction)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,HomeItem.1,home)</onclick>
+						<onclick>ActivateWindow(2114)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(HomeItem.1.Label))">Skin.SetString(HomeItem.1.Label)</onclick>
+					</control>
+					<control type="button" id="203">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label> - $LOCALIZE[31120]</label>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemOneSubLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.Reset(StickyHomeMenuAction)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,HomeItem.1,home)</onclick>
+						<onclick>ActivateWindow(2116)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItem.1.Label))</visible>
+					</control>
+					<control type="button" id="204">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label> - $LOCALIZE[31166]</label>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemOneAddOnLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<!--onclick>Skin.Reset(HomeItemLastLabel)</onclick-->
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.1,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.1.Label))</visible>
@@ -820,7 +1213,8 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<!--onclick>Skin.Reset(HomeItemLastLabel)</onclick-->
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.1,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.1.Label))</visible>
@@ -834,7 +1228,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.2,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.2.Label))">Skin.SetString(HomeItem.2.Label)</onclick>
@@ -848,7 +1242,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.2,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.2.Label))</visible>
@@ -862,7 +1256,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.2,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
@@ -877,7 +1271,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.2,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
@@ -892,7 +1286,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.3,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.3.Label))">Skin.SetString(HomeItem.3.Label)</onclick>
@@ -906,7 +1300,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.3,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.3.Label))</visible>
@@ -920,7 +1314,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.3,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
@@ -935,7 +1329,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.3,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
@@ -950,7 +1344,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.4,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.4.Label))">Skin.SetString(HomeItem.4.Label)</onclick>
@@ -964,7 +1358,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.4,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.4.Label))</visible>
@@ -978,7 +1372,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.4,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
@@ -993,7 +1387,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.4,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
@@ -1008,7 +1402,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.5,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.5.Label))">Skin.SetString(HomeItem.5.Label)</onclick>
@@ -1022,7 +1416,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.5,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.5.Label))</visible>
@@ -1036,7 +1430,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.5,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
@@ -1051,7 +1445,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.5,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
@@ -1066,7 +1460,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.6,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.6.Label))">Skin.SetString(HomeItem.6.Label)</onclick>
@@ -1080,7 +1474,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.6,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.6.Label))</visible>
@@ -1094,7 +1488,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.6,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
@@ -1109,7 +1503,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.6,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
@@ -1124,7 +1518,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.7,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.7.Label))">Skin.SetString(HomeItem.7.Label)</onclick>
@@ -1138,7 +1532,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.7,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.7.Label))</visible>
@@ -1152,7 +1546,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.7,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
@@ -1167,7 +1561,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.7,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
@@ -1182,7 +1576,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.8,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.8.Label))">Skin.SetString(HomeItem.8.Label)</onclick>
@@ -1196,7 +1590,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.8,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.8.Label))</visible>
@@ -1210,7 +1604,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.8,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
@@ -1225,7 +1619,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.8,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
@@ -1240,7 +1634,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.9,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.9.Label))">Skin.SetString(HomeItem.9.Label)</onclick>
@@ -1254,7 +1648,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.9,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.9.Label))</visible>
@@ -1268,7 +1662,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.9,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
@@ -1283,7 +1677,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.9,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
@@ -1298,7 +1692,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.10,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(HomeItem.10.Label))">Skin.SetString(HomeItem.10.Label)</onclick>
@@ -1312,7 +1706,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.10,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.10.Label))</visible>
@@ -1326,7 +1720,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.10,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
@@ -1341,7 +1735,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.10,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
@@ -1355,7 +1749,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideSytemMenuItem)</onclick>
 						<selected>!Skin.HasSetting(HideSytemMenuItem)</selected>
 					</control>
@@ -1368,7 +1762,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.12,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
@@ -1383,7 +1777,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.12,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
@@ -1393,11 +1787,13 @@
 				<control type="scrollbar" id="60">
 					<posx>1060</posx>
 					<posy>60</posy>
-					<width>14</width>
+					<width>25</width>
 					<height>530</height>
-					<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-					<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+					<textureslidernib>ScrollBarNib.png</textureslidernib>
+					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 					<onleft>9002</onleft>
 					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
@@ -1436,7 +1832,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.SetString(UserVideosSubMenu)</onclick>
 					</control>
 					<control type="button" id="302">
@@ -1448,7 +1844,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubVideos.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubVideos.1.Label)) + !stringcompare(Skin.String(SubVideos.1.Path),Hidden)">Skin.SetString(SubVideos.1.Label)</onclick>
@@ -1462,7 +1858,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubVideos.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubVideos.2.Label)) + !stringcompare(Skin.String(SubVideos.2.Path),Hidden)">Skin.SetString(SubVideos.2.Label)</onclick>
@@ -1476,7 +1872,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubVideos.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubVideos.3.Label)) + !stringcompare(Skin.String(SubVideos.3.Path),Hidden)">Skin.SetString(SubVideos.3.Label)</onclick>
@@ -1490,7 +1886,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubVideos.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubVideos.4.Label)) + !stringcompare(Skin.String(SubVideos.4.Path),Hidden)">Skin.SetString(SubVideos.4.Label)</onclick>
@@ -1504,7 +1900,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubVideos.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubVideos.5.Label)) + !stringcompare(Skin.String(SubVideos.5.Path),Hidden)">Skin.SetString(SubVideos.5.Label)</onclick>
@@ -1518,7 +1914,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubVideos.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubVideos.6.Label)) + !stringcompare(Skin.String(SubVideos.6.Path),Hidden)">Skin.SetString(SubVideos.6.Label)</onclick>
@@ -1543,7 +1939,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.SetString(UserMoviesSubMenu)</onclick>
 					</control>
 					<control type="button" id="310">
@@ -1555,7 +1951,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMovies.1.Label)) + !stringcompare(Skin.String(SubMovies.1.Path),Hidden)">Skin.SetString(SubMovies.1.Label)</onclick>
@@ -1569,7 +1965,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMovies.2.Label)) + !stringcompare(Skin.String(SubMovies.2.Path),Hidden)">Skin.SetString(SubMovies.2.Label)</onclick>
@@ -1583,7 +1979,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMovies.3.Label)) + !stringcompare(Skin.String(SubMovies.3.Path),Hidden)">Skin.SetString(SubMovies.3.Label)</onclick>
@@ -1597,7 +1993,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMovies.4.Label)) + !stringcompare(Skin.String(SubMovies.4.Path),Hidden)">Skin.SetString(SubMovies.4.Label)</onclick>
@@ -1611,7 +2007,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMovies.5.Label)) + !stringcompare(Skin.String(SubMovies.5.Path),Hidden)">Skin.SetString(SubMovies.5.Label)</onclick>
@@ -1625,7 +2021,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMovies.6.Label)) + !stringcompare(Skin.String(SubMovies.6.Path),Hidden)">Skin.SetString(SubMovies.6.Label)</onclick>
@@ -1650,7 +2046,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.SetString(UserTVShowsSubMenu)</onclick>
 					</control>
 					<control type="button" id="318">
@@ -1662,7 +2058,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubTVShows.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubTVShows.1.Label)) + !stringcompare(Skin.String(SubTVShows.1.Path),Hidden)">Skin.SetString(SubTVShows.1.Label)</onclick>
@@ -1676,7 +2072,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubTVShows.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubTVShows.2.Label)) + !stringcompare(Skin.String(SubTVShows.2.Path),Hidden)">Skin.SetString(SubTVShows.2.Label)</onclick>
@@ -1690,7 +2086,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubTVShows.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubTVShows.3.Label)) + !stringcompare(Skin.String(SubTVShows.3.Path),Hidden)">Skin.SetString(SubTVShows.3.Label)</onclick>
@@ -1704,7 +2100,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubTVShows.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubTVShows.4.Label)) + !stringcompare(Skin.String(SubTVShows.4.Path),Hidden)">Skin.SetString(SubTVShows.4.Label)</onclick>
@@ -1718,7 +2114,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubTVShows.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubTVShows.5.Label)) + !stringcompare(Skin.String(SubTVShows.5.Path),Hidden)">Skin.SetString(SubTVShows.5.Label)</onclick>
@@ -1732,7 +2128,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubTVShows.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubTVShows.6.Label)) + !stringcompare(Skin.String(SubTVShows.6.Path),Hidden)">Skin.SetString(SubTVShows.6.Label)</onclick>
@@ -1757,7 +2153,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.SetString(UserConcertsSubMenu)</onclick>
 					</control>
 					<control type="button" id="326">
@@ -1769,7 +2165,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubConcerts.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubConcerts.1.Label)) + !stringcompare(Skin.String(SubConcerts.1.Path),Hidden)">Skin.SetString(SubConcerts.1.Label)</onclick>
@@ -1783,7 +2179,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubConcerts.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubConcerts.2.Label)) + !stringcompare(Skin.String(SubConcerts.2.Path),Hidden)">Skin.SetString(SubConcerts.2.Label)</onclick>
@@ -1797,7 +2193,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubConcerts.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubConcerts.3.Label)) + !stringcompare(Skin.String(SubConcerts.3.Path),Hidden)">Skin.SetString(SubConcerts.3.Label)</onclick>
@@ -1811,7 +2207,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubConcerts.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubConcerts.4.Label)) + !stringcompare(Skin.String(SubConcerts.4.Path),Hidden)">Skin.SetString(SubConcerts.4.Label)</onclick>
@@ -1825,7 +2221,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubConcerts.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubConcerts.5.Label)) + !stringcompare(Skin.String(SubConcerts.5.Path),Hidden)">Skin.SetString(SubConcerts.5.Label)</onclick>
@@ -1839,7 +2235,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubConcerts.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubConcerts.6.Label)) + !stringcompare(Skin.String(SubConcerts.6.Path),Hidden)">Skin.SetString(SubConcerts.6.Label)</onclick>
@@ -1864,7 +2260,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.SetString(UserMusicSubMenu)</onclick>
 					</control>
 					<control type="button" id="334">
@@ -1876,7 +2272,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMusic.1.Label)) + !stringcompare(Skin.String(SubMusic.1.Path),Hidden)">Skin.SetString(SubMusic.1.Label)</onclick>
@@ -1890,7 +2286,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMusic.2.Label)) + !stringcompare(Skin.String(SubMusic.2.Path),Hidden)">Skin.SetString(SubMusic.2.Label)</onclick>
@@ -1904,7 +2300,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMusic.3.Label)) + !stringcompare(Skin.String(SubMusic.3.Path),Hidden)">Skin.SetString(SubMusic.3.Label)</onclick>
@@ -1918,7 +2314,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMusic.4.Label)) + !stringcompare(Skin.String(SubMusic.4.Path),Hidden)">Skin.SetString(SubMusic.4.Label)</onclick>
@@ -1932,7 +2328,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMusic.5.Label)) + !stringcompare(Skin.String(SubMusic.5.Path),Hidden)">Skin.SetString(SubMusic.5.Label)</onclick>
@@ -1946,7 +2342,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMusic.6.Label)) + !stringcompare(Skin.String(SubMusic.6.Path),Hidden)">Skin.SetString(SubMusic.6.Label)</onclick>
@@ -1971,7 +2367,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.SetString(UserProgsSubMenu)</onclick>
 					</control>
 					<control type="button" id="342">
@@ -1983,7 +2379,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubProg.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubProg.1.Label)) + !stringcompare(Skin.String(SubProg.1.Path),Hidden)">Skin.SetString(SubProg.1.Label)</onclick>
@@ -1997,7 +2393,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubProg.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubProg.2.Label)) + !stringcompare(Skin.String(SubProg.2.Path),Hidden)">Skin.SetString(SubProg.2.Label)</onclick>
@@ -2011,7 +2407,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubProg.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubProg.3.Label)) + !stringcompare(Skin.String(SubProg.3.Path),Hidden)">Skin.SetString(SubProg.3.Label)</onclick>
@@ -2025,7 +2421,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubProg.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubProg.4.Label)) + !stringcompare(Skin.String(SubProg.4.Path),Hidden)">Skin.SetString(SubProg.4.Label)</onclick>
@@ -2039,7 +2435,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubProg.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubProg.5.Label)) + !stringcompare(Skin.String(SubProg.5.Path),Hidden)">Skin.SetString(SubProg.5.Label)</onclick>
@@ -2053,7 +2449,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubProg.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubProg.6.Label)) + !stringcompare(Skin.String(SubProg.6.Path),Hidden)">Skin.SetString(SubProg.6.Label)</onclick>
@@ -2078,7 +2474,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.SetString(UserPicturesSubMenu)</onclick>
 					</control>
 					<control type="button" id="350">
@@ -2090,7 +2486,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubPictures.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubPictures.1.Label)) + !stringcompare(Skin.String(SubPictures.1.Path),Hidden)">Skin.SetString(SubPictures.1.Label)</onclick>
@@ -2104,7 +2500,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubPictures.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubPictures.2.Label))">Skin.SetString(SubPictures.2.Label)</onclick>
@@ -2118,7 +2514,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubPictures.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubPictures.3.Label))">Skin.SetString(SubPictures.3.Label)</onclick>
@@ -2132,7 +2528,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubPictures.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubPictures.4.Label))">Skin.SetString(SubPictures.4.Label)</onclick>
@@ -2146,7 +2542,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubPictures.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubPictures.5.Label))">Skin.SetString(SubPictures.5.Label)</onclick>
@@ -2160,7 +2556,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubPictures.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubPictures.6.Label))">Skin.SetString(SubPictures.6.Label)</onclick>
@@ -2185,7 +2581,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.SetString(UserSelectOneSubMenu)</onclick>
 					</control>
 					<control type="button" id="358">
@@ -2197,7 +2593,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubOne.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubOne.1.Label))">Skin.SetString(UserSubOne.1.Label)</onclick>
@@ -2211,7 +2607,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubOne.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubOne.2.Label))">Skin.SetString(UserSubOne.2.Label)</onclick>
@@ -2225,7 +2621,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubOne.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubOne.3.Label))">Skin.SetString(UserSubOne.3.Label)</onclick>
@@ -2239,7 +2635,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubOne.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubOne.4.Label))">Skin.SetString(UserSubOne.4.Label)</onclick>
@@ -2253,7 +2649,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubOne.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubOne.5.Label))">Skin.SetString(UserSubOne.5.Label)</onclick>
@@ -2267,7 +2663,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubOne.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubOne.6.Label))">Skin.SetString(UserSubOne.6.Label)</onclick>
@@ -2292,7 +2688,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.SetString(UserSelectTwoSubMenu)</onclick>
 					</control>
 					<control type="button" id="366">
@@ -2304,7 +2700,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubTwo.1.Label))">Skin.SetString(UserSubTwo.1.Label)</onclick>
@@ -2318,7 +2714,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubTwo.2.Label))">Skin.SetString(UserSubTwo.2.Label)</onclick>
@@ -2332,7 +2728,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubTwo.3.Label))">Skin.SetString(UserSubTwo.3.Label)</onclick>
@@ -2346,7 +2742,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubTwo.4.Label))">Skin.SetString(UserSubTwo.4.Label)</onclick>
@@ -2360,7 +2756,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubTwo.5.Label))">Skin.SetString(UserSubTwo.5.Label)</onclick>
@@ -2374,7 +2770,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubTwo.6.Label))">Skin.SetString(UserSubTwo.6.Label)</onclick>
@@ -2399,7 +2795,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.SetString(UserSelectThreeSubMenu)</onclick>
 					</control>
 					<control type="button" id="374">
@@ -2411,7 +2807,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubThree.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubThree.1.Label))">Skin.SetString(UserSubThree.1.Label)</onclick>
@@ -2425,7 +2821,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubThree.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubThree.2.Label))">Skin.SetString(UserSubThree.2.Label)</onclick>
@@ -2439,7 +2835,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubThree.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubThree.3.Label))">Skin.SetString(UserSubThree.3.Label)</onclick>
@@ -2453,7 +2849,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubThree.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubThree.4.Label))">Skin.SetString(UserSubThree.4.Label)</onclick>
@@ -2467,7 +2863,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubThree.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubThree.5.Label))">Skin.SetString(UserSubThree.5.Label)</onclick>
@@ -2481,7 +2877,7 @@
 						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubThree.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubThree.6.Label))">Skin.SetString(UserSubThree.6.Label)</onclick>
@@ -2491,11 +2887,13 @@
 				<control type="scrollbar" id="60">
 					<posx>1060</posx>
 					<posy>60</posy>
-					<width>14</width>
+					<width>25</width>
 					<height>530</height>
-					<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-					<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+					<textureslidernib>ScrollBarNib.png</textureslidernib>
+					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 					<onleft>9003</onleft>
 					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
@@ -2535,7 +2933,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>Skin.SetString(UserSelectAddon.1.Label)</onclick>
 						</control>
 						<control type="button" id="402">
@@ -2547,7 +2945,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetOne.1,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -2560,7 +2958,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetOne.2,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -2573,7 +2971,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetOne.3,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -2586,7 +2984,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetOne.4,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -2599,7 +2997,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetOne.5,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -2622,7 +3020,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>Skin.SetString(UserSelectAddon.2.Label)</onclick>
 						</control>
 						<control type="button" id="409">
@@ -2634,7 +3032,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetTwo.1,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -2647,7 +3045,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetTwo.2,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -2660,7 +3058,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetTwo.3,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -2673,7 +3071,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetTwo.4,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -2686,7 +3084,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetTwo.5,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -2709,7 +3107,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>Skin.SetString(UserSelectAddon.3.Label)</onclick>
 						</control>
 						<control type="button" id="416">
@@ -2721,7 +3119,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetThree.1,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -2734,7 +3132,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetThree.2,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -2747,7 +3145,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetThree.3,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -2760,7 +3158,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetThree.4,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -2773,7 +3171,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetThree.5,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -2796,7 +3194,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>Skin.SetString(UserSelectAddon.4.Label)</onclick>
 						</control>
 						<control type="button" id="423">
@@ -2808,7 +3206,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFour.1,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -2821,7 +3219,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFour.2,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -2834,7 +3232,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFour.3,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -2847,7 +3245,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFour.4,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -2860,7 +3258,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFour.5,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -2883,7 +3281,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>Skin.SetString(UserSelectAddon.5.Label)</onclick>
 						</control>
 						<control type="button" id="430">
@@ -2895,7 +3293,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFive.1,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -2908,7 +3306,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFive.2,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -2921,7 +3319,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFive.3,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -2934,7 +3332,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFive.4,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -2947,7 +3345,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFive.5,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -2970,7 +3368,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>Skin.SetString(UserSelectAddon.6.Label)</onclick>
 						</control>
 						<control type="button" id="437">
@@ -2982,7 +3380,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetSix.1,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -2995,7 +3393,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetSix.2,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -3008,7 +3406,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetSix.3,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -3021,7 +3419,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetSix.4,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -3034,7 +3432,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetSix.5,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -3057,7 +3455,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>Skin.SetString(UserSelectAddon.7.Label)</onclick>
 						</control>
 						<control type="button" id="444">
@@ -3069,7 +3467,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetSeven.1,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -3082,7 +3480,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetSeven.2,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -3095,7 +3493,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetSeven.3,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -3108,7 +3506,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetSeven.4,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -3121,7 +3519,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetSeven.5,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -3144,7 +3542,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>Skin.SetString(UserSelectAddon.8.Label)</onclick>
 						</control>
 						<control type="button" id="451">
@@ -3156,7 +3554,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetEight.1,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -3169,7 +3567,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetEight.2,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -3182,7 +3580,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetEight.3,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -3195,7 +3593,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetEight.4,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -3208,7 +3606,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetEight.5,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -3231,7 +3629,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>Skin.SetString(UserSelectAddon.9.Label)</onclick>
 						</control>
 						<control type="button" id="458">
@@ -3243,7 +3641,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetNine.1,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -3256,7 +3654,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetNine.2,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -3269,7 +3667,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetNine.3,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -3282,7 +3680,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetNine.4,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -3295,7 +3693,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetNine.5,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -3318,7 +3716,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>Skin.SetString(UserSelectAddon.10.Label)</onclick>
 						</control>
 						<control type="button" id="465">
@@ -3330,7 +3728,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetTen.1,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -3343,7 +3741,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetTen.2,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -3356,7 +3754,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetTen.3,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -3369,7 +3767,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetTen.4,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -3382,7 +3780,7 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetTen.5,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
@@ -3391,11 +3789,13 @@
 				<control type="scrollbar" id="60">
 					<posx>1060</posx>
 					<posy>60</posy>
-					<width>14</width>
+					<width>25</width>
 					<height>530</height>
-					<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-					<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+					<textureslidernib>ScrollBarNib.png</textureslidernib>
+					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 					<onleft>9004</onleft>
 					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
@@ -3417,7 +3817,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(GlobalBackground)</onclick>
 						<onleft>9000</onleft>
 						<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
@@ -3473,6 +3873,14 @@
 						<scrolltime>0</scrolltime>
 						<itemlayout height="1" width="750"></itemlayout>
 						<focusedlayout height="40" width="750">
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>750</width>
+								<height>40</height>
+								<texture>MenuItemNF.png</texture>
+								<visible>![Control.HasFocus(504) | Control.HasFocus(505)]</visible>
+							</control>
 							<control type="image">
 								<posx>0</posx>
 								<posy>0</posy>
@@ -3535,7 +3943,7 @@
 								<description>Global Home Menu</description>
 								<label>$LOCALIZE[31148]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(CustomBackgroundPath)]</thumb>
 								<property name="HiLiteItem">Global</property>
 								<visible>Skin.HasSetting(GlobalBackground)</visible>
@@ -3544,7 +3952,7 @@
 								<description>Home Menu Item One</description>
 								<label>$INFO[Skin.String(HomeItem.1.Label)]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.1.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.1.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.1.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
@@ -3553,7 +3961,7 @@
 								<description>Home Menu Item Two</description>
 								<label>$INFO[Skin.String(HomeItem.2.Label)]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.2.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.2.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.2.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
@@ -3562,7 +3970,7 @@
 								<description>Home Menu Item Three</description>
 								<label>$INFO[Skin.String(HomeItem.3.Label)]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.3.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.3.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.3.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
@@ -3571,7 +3979,7 @@
 								<description>Home Menu Item Four</description>
 								<label>$INFO[Skin.String(HomeItem.4.Label)]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.4.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.4.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.4.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
@@ -3580,7 +3988,7 @@
 								<description>Home Menu Item Five</description>
 								<label>$INFO[Skin.String(HomeItem.5.Label)]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.5.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.5.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.5.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
@@ -3589,7 +3997,7 @@
 								<description>Home Menu Item Six</description>
 								<label>$INFO[Skin.String(HomeItem.6.Label)]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.6.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.6.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.6.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
@@ -3598,7 +4006,7 @@
 								<description>Home Menu Item Seven</description>
 								<label>$INFO[Skin.String(HomeItem.7.Label)]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.7.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.7.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.7.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
@@ -3607,7 +4015,7 @@
 								<description>Home Menu Item Eight</description>
 								<label>$INFO[Skin.String(HomeItem.8.Label)]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.8.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.8.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.8.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
@@ -3616,7 +4024,7 @@
 								<description>Home Menu Item Nine</description>
 								<label>$INFO[Skin.String(HomeItem.9.Label)]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.9.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.9.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.9.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
@@ -3625,7 +4033,7 @@
 								<description>Home Menu Item Ten</description>
 								<label>$INFO[Skin.String(HomeItem.10.Label)]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.10.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.10.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.10.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
@@ -3634,7 +4042,7 @@
 								<description>DVD Tray</description>
 								<label>$LOCALIZE[341]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.11.FanArt)]</thumb>
 								<property name="HiLiteItem">PlayDisc</property>
 								<visible>!Skin.HasSetting(GlobalBackground)</visible>
@@ -3643,7 +4051,7 @@
 								<description>Home Menu Settings</description>
 								<label>$LOCALIZE[13000]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.12.FanArt)]</thumb>
 								<property name="HiLiteItem">Settings</property>
 								<visible>!Skin.HasSetting(HideHomeMenuSystem) + !Skin.HasSetting(GlobalBackground)</visible>
@@ -3652,7 +4060,7 @@
 								<description>Search Button</description>
 								<label>$LOCALIZE[137]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(SearchBtnBackground)]</thumb>
 								<property name="HiLiteItem">MenuButton</property>
 								<visible>!Skin.HasSetting(HideHomeSearch) + !Skin.HasSetting(GlobalBackground)</visible>
@@ -3661,7 +4069,7 @@
 								<description>Power Button</description>
 								<label>$LOCALIZE[13005]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(PowerBtnBackground)]</thumb>
 								<property name="HiLiteItem">MenuButton</property>
 								<visible>!Skin.HasSetting(AutoHidePowerBtn) + !Skin.HasSetting(GlobalBackground)</visible>
@@ -3670,7 +4078,7 @@
 								<description>Favourites Button</description>
 								<label>$LOCALIZE[1036]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(FavBtnBackground)]</thumb>
 								<property name="HiLiteItem">MenuButton</property>
 								<visible>!Skin.HasSetting(GlobalBackground)</visible>
@@ -3708,7 +4116,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick>Skin.Reset(GlobalWeatherFanart)</onclick>
 								<onclick>Skin.SetImage(CustomBackgroundPath)</onclick>
@@ -3728,7 +4136,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick>Skin.Reset(GlobalWeatherFanart)</onclick>
 								<onclick>Skin.SetPath(CustomBackgroundPath)</onclick>
@@ -3748,7 +4156,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick>Skin.SetBool(GlobalWeatherFanart)</onclick>
 								<onclick>Skin.Reset(CustomBackgroundPath)</onclick>
@@ -3768,7 +4176,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick>Skin.Reset(GlobalWeatherFanart)</onclick>
 								<onclick>Skin.Reset(CustomBackgroundPath)</onclick>
@@ -3791,7 +4199,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -3815,7 +4223,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -3839,7 +4247,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Movies)">Skin.SetBool(ShowMovieDBFanart)</onclick>
@@ -3863,7 +4271,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -3890,7 +4298,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -3914,7 +4322,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -3938,7 +4346,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Movies)">Skin.SetBool(ShowMovieDBFanart)</onclick>
@@ -3962,7 +4370,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -3989,7 +4397,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -4013,7 +4421,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -4037,7 +4445,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Movies)">Skin.SetBool(ShowMovieDBFanart)</onclick>
@@ -4061,7 +4469,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -4088,7 +4496,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -4112,7 +4520,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -4136,7 +4544,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Movies)">Skin.SetBool(ShowMovieDBFanart)</onclick>
@@ -4160,7 +4568,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -4187,7 +4595,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -4211,7 +4619,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -4235,7 +4643,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Movies)">Skin.SetBool(ShowMovieDBFanart)</onclick>
@@ -4259,7 +4667,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -4286,7 +4694,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -4310,7 +4718,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -4334,7 +4742,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Movies)">Skin.SetBool(ShowMovieDBFanart)</onclick>
@@ -4358,7 +4766,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -4385,7 +4793,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -4409,7 +4817,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -4433,7 +4841,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Movies)">Skin.SetBool(ShowMovieDBFanart)</onclick>
@@ -4457,7 +4865,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -4484,7 +4892,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -4508,7 +4916,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -4532,7 +4940,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Movies)">Skin.SetBool(ShowMovieDBFanart)</onclick>
@@ -4556,7 +4964,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -4583,7 +4991,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -4607,7 +5015,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -4631,7 +5039,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Movies)">Skin.SetBool(ShowMovieDBFanart)</onclick>
@@ -4655,7 +5063,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -4682,7 +5090,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -4706,7 +5114,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -4730,7 +5138,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Movies)">Skin.SetBool(ShowMovieDBFanart)</onclick>
@@ -4754,7 +5162,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -4781,7 +5189,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick>Skin.SetImage(HomeItem.11.FanArt)</onclick>
 								<onleft>503</onleft>
@@ -4800,7 +5208,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick>Skin.SetPath(HomeItem.11.FanArt)</onclick>
 								<onleft>500</onleft>
@@ -4819,7 +5227,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick>Skin.SetString(HomeItem.11.FanArt,special://skin/backgrounds/homescreen/playdisc.jpg)</onclick>
 								<onleft>501</onleft>
@@ -4838,7 +5246,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick>Skin.Reset(HomeItem.11.FanArt)</onclick>
 								<onleft>502</onleft>
@@ -4860,7 +5268,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick>Skin.SetImage(HomeItem.12.FanArt)</onclick>
 								<onleft>503</onleft>
@@ -4879,7 +5287,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick>Skin.SetPath(HomeItem.12.FanArt)</onclick>
 								<onleft>500</onleft>
@@ -4898,7 +5306,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick>Skin.SetString(HomeItem.12.FanArt,special://skin/backgrounds/homescreen/settings.jpg)</onclick>
 								<onleft>501</onleft>
@@ -4917,7 +5325,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick>Skin.Reset(HomeItem.12.FanArt)</onclick>
 								<onleft>502</onleft>
@@ -4939,7 +5347,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick>Skin.SetImage(SearchBtnBackground)</onclick>
 								<onleft>502</onleft>
@@ -4958,7 +5366,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick>Skin.Reset(SearchBtnBackground)</onclick>
 								<onleft>500</onleft>
@@ -4977,7 +5385,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick>Skin.SetString(SearchBtnBackground,special://skin/backgrounds/homescreen/search.jpg)</onclick>
 								<onleft>501</onleft>
@@ -4999,7 +5407,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick>Skin.SetImage(PowerBtnBackground)</onclick>
 								<onleft>502</onleft>
@@ -5018,7 +5426,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick>Skin.Reset(PowerBtnBackground)</onclick>
 								<onleft>500</onleft>
@@ -5037,7 +5445,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick>Skin.SetString(PowerBtnBackground,special://skin/backgrounds/homescreen/shutdown.jpg)</onclick>
 								<onleft>501</onleft>
@@ -5059,7 +5467,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick>Skin.SetImage(FavBtnBackground)</onclick>
 								<onleft>502</onleft>
@@ -5078,7 +5486,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick>Skin.Reset(FavBtnBackground)</onclick>
 								<onleft>500</onleft>
@@ -5097,7 +5505,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick condition="IsEmpty(Skin.String(FavouritesFanartDir))">Skin.SetString(FavBtnBackground,special://skin/backgrounds/homescreen/favourite.jpg)</onclick>
 								<onclick condition="!IsEmpty(Skin.String(FavouritesFanartDir))">Skin.SetString(FavBtnBackground,$INFO[Skin.String(FavouritesFanartDir)])</onclick>
@@ -5120,7 +5528,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick>Skin.SetImage(StartUpBackgroundPath)</onclick>
 								<onclick>Skin.Reset(HideStartUpBackground)</onclick>
@@ -5140,7 +5548,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick>Skin.Reset(StartUpBackgroundPath)</onclick>
 								<onclick>Skin.SetBool(HideStartUpBackground)</onclick>
@@ -5160,7 +5568,7 @@
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
 								<onclick>Skin.SetString(StartUpBackgroundPath,special://skin/backgrounds/homescreen/startup.jpg)</onclick>
 								<onclick>Skin.Reset(HideStartUpBackground)</onclick>
@@ -5227,7 +5635,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(UsrGenreFanartDir)][/COLOR]</label2>
 						<onclick>Skin.SetPath(UsrGenreFanartDir)</onclick>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
 					<control type="button" id="602">
 						<description>User Movie FanArt Path</description>
@@ -5240,7 +5648,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(UsrMovieFanartDir)][/COLOR]</label2>
 						<onclick>Skin.SetPath(UsrMovieFanartDir)</onclick>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
 					<control type="button" id="603">
 						<description>User TVShow FanArt Path</description>
@@ -5253,7 +5661,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(UsrTVShowFanartDir)][/COLOR]</label2>
 						<onclick>Skin.SetPath(UsrTVShowFanartDir)</onclick>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
 					<control type="button" id="604">
 						<description>User Concerts FanArt Path</description>
@@ -5266,7 +5674,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(UsrConcertsFanartDir)][/COLOR]</label2>
 						<onclick>Skin.SetPath(UsrConcertsFanartDir)</onclick>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
 					<control type="button" id="605">
 						<description>User Artists FanArt Path</description>
@@ -5279,7 +5687,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(UsrArtistsFanartDir)][/COLOR]</label2>
 						<onclick>Skin.SetPath(UsrArtistsFanartDir)</onclick>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
 					<control type="button" id="606">
 						<description>User Album Thumbnails Path</description>
@@ -5292,7 +5700,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(UsrAlbumThumbsDir)][/COLOR]</label2>
 						<onclick>Skin.SetPath(UsrAlbumThumbsDir)</onclick>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
 					<control type="button" id="607">
 						<description>User Favourites FanArt Path</description>
@@ -5306,7 +5714,7 @@
 						<onclick>Skin.SetPath(FavouritesFanartDir)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(FavouritesFanartDir))">Skin.SetString(FavBtnBackground,$INFO[Skin.String(FavouritesFanartDir)])</onclick>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
 					<control type="button" id="608">
 						<description>User Weather FanArt Path</description>
@@ -5319,7 +5727,7 @@
 						<label2>[COLOR=selected]$INFO[Skin.String(WeatherFanartDir)][/COLOR]</label2>
 						<onclick>Skin.SetPath(WeatherFanartDir)</onclick>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
 					<control type="button" id="609">
 						<width>750</width>
@@ -5329,10 +5737,32 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Addon.OpenSettings(script.artworkorganizer)</onclick>
 						<enable>System.HasAddon(script.artworkorganizer)</enable>
 					</control>
+					<!--control type="label" id="610">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>10503</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="button" id="611">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label> - $LOCALIZE[31054]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>ActivateWindow(VideoLibrary,special://videoplaylists/,return)</onclick>
+						<onclick>ActivateWindow(smartplaylisteditor)</onclick>
+					</control-->
 					<control type="label" id="612">
 						<width>750</width>
 						<height>45</height>
@@ -5352,7 +5782,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</onclick>
 					</control>
 					<control type="button" id="614">
@@ -5363,7 +5793,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>!IsEmpty(Skin.String(LyricScript_Path))</enable>
 						<onclick>Addon.OpenSettings($INFO[Skin.String(LyricScript_Path)])</onclick>
 					</control>
@@ -5386,7 +5816,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.SetAddon(SubtitleScript_Path,xbmc.python.subtitles)</onclick>
 					</control>
 					<control type="button" id="617">
@@ -5397,7 +5827,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>!IsEmpty(Skin.String(SubtitleScript_Path))</enable>
 						<onclick>Addon.OpenSettings($INFO[Skin.String(SubtitleScript_Path)])</onclick>
 					</control>
@@ -5419,7 +5849,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Addon.OpenSettings(service.skin.widgets)</onclick>
 						<enable>System.HasAddon(service.skin.widgets)</enable>
 					</control>
@@ -5434,7 +5864,7 @@
 						<onclick>Skin.ToggleSetting(DisableScriptPlayList)</onclick>
 						<selected>!Skin.HasSetting(DisableScriptPlayList)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
 					<control type="radiobutton" id="621">
 						<description>randomandlastitems.script uses last not random</description>
@@ -5447,7 +5877,7 @@
 						<onclick>Skin.ToggleSetting(EnableRandomPlaylist)</onclick>
 						<selected>Skin.HasSetting(EnableRandomPlaylist)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>System.HasAddon(script.randomandlastitems) + !Skin.HasSetting(DisableScriptPlayList)</enable>
 					</control>
 					<control type="radiobutton" id="622">
@@ -5461,7 +5891,7 @@
 						<onclick>Skin.ToggleSetting(EnableUnWatchedPlaylist)</onclick>
 						<selected>Skin.HasSetting(EnableUnWatchedPlaylist)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>System.HasAddon(script.randomandlastitems) + !Skin.HasSetting(DisableScriptPlayList)</enable>
 					</control>
 					<control type="label" id="623">
@@ -5482,7 +5912,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideArtworkDownloader)</onclick>
 						<selected>!Skin.HasSetting(HideArtworkDownloader)</selected>
 						<enable>System.HasAddon(script.artwork.downloader)</enable>
@@ -5495,7 +5925,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Addon.OpenSettings(script.artwork.downloader)</onclick>
 						<enable>!Skin.HasSetting(HideArtworkDownloader)</enable>
 						<visible>System.HasAddon(script.artwork.downloader)</visible>
@@ -5508,7 +5938,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideTvTunes)</onclick>
 						<selected>!Skin.HasSetting(HideTvTunes)</selected>
 						<enable>System.HasAddon(script.tvtunes)</enable>
@@ -5521,7 +5951,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Addon.OpenSettings(script.tvtunes)</onclick>
 						<enable>!Skin.HasSetting(HideTvTunes)</enable>
 						<visible>System.HasAddon(script.tvtunes)</visible>
@@ -5534,7 +5964,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(DisableWatchItLater)</onclick>
 						<selected>!Skin.HasSetting(DisableWatchItLater)</selected>
 						<enable>System.HasAddon(script.simpleplaylists)</enable>
@@ -5547,7 +5977,7 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Addon.OpenSettings(script.simpleplaylists)</onclick>
 						<enable>!Skin.HasSetting(DisableWatchItLater)</enable>
 						<visible>System.HasAddon(script.simpleplaylists)</visible>
@@ -5581,18 +6011,20 @@
 						<label>$LOCALIZE[31173]</label>
 						<onclick>ActivateWindow(2121)</onclick>
 						<texturefocus border="5">button-focus.png</texturefocus>
-						<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+						<texturenofocus border="5">button-nofocus.png</texturenofocus>
 						<pulseonselect>false</pulseonselect>
 					</control>
 				</control>
 				<control type="scrollbar" id="60">
 					<posx>1060</posx>
 					<posy>60</posy>
-					<width>14</width>
+					<width>25</width>
 					<height>530</height>
-					<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-					<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+					<textureslidernib>ScrollBarNib.png</textureslidernib>
+					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 					<onleft>9006</onleft>
 					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>

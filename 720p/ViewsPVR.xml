@@ -95,6 +95,14 @@
 				<pagecontrol>70</pagecontrol>
 				<scrolltime>200</scrolltime>
 				<itemlayout height="60" width="390">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>390</width>
+						<height>61</height>
+						<texture border="2">MenuItemNF.png</texture>
+						<include>VisibleFadeEffect</include>
+					</control>
 					<control type="label">
 						<posx>5</posx>
 						<posy>-4</posy>
@@ -172,6 +180,15 @@
 					</control>
 				</itemlayout>
 				<focusedlayout height="60" width="390">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>390</width>
+						<height>61</height>
+						<texture border="2">MenuItemNF.png</texture>
+						<visible>!Control.HasFocus(11)</visible>
+						<include>VisibleFadeEffect</include>
+					</control>
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
@@ -261,11 +278,13 @@
 			<control type="scrollbar" id="70">
 				<posx>465</posx>
 				<posy>85</posy>
-				<width>14</width>
+				<width>25</width>
 				<height>540</height>
-				<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+				<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+				<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+				<textureslidernib>ScrollBarNib.png</textureslidernib>
+				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 				<onleft>11</onleft>
 				<onright>32</onright>
 				<showonepage>false</showonepage>
@@ -384,6 +403,14 @@
 				<pagecontrol>71</pagecontrol>
 				<scrolltime>200</scrolltime>
 				<itemlayout height="60" width="390">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>390</width>
+						<height>61</height>
+						<texture border="2">MenuItemNF.png</texture>
+						<include>VisibleFadeEffect</include>
+					</control>
 					<control type="label">
 						<posx>5</posx>
 						<posy>-4</posy>
@@ -461,6 +488,15 @@
 					</control>
 				</itemlayout>
 				<focusedlayout height="60" width="390">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>390</width>
+						<height>61</height>
+						<texture border="2">MenuItemNF.png</texture>
+						<visible>!Control.HasFocus(12)</visible>
+						<include>VisibleFadeEffect</include>
+					</control>
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
@@ -550,11 +586,13 @@
 			<control type="scrollbar" id="71">
 				<posx>465</posx>
 				<posy>85</posy>
-				<width>14</width>
+				<width>25</width>
 				<height>540</height>
-				<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+				<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+				<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+				<textureslidernib>ScrollBarNib.png</textureslidernib>
+				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 				<onleft>12</onleft>
 				<onright>33</onright>
 				<showonepage>false</showonepage>
@@ -596,6 +634,14 @@
 				<pagecontrol>72</pagecontrol>
 				<scrolltime>200</scrolltime>
 				<itemlayout height="40" width="760">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>760</width>
+						<height>41</height>
+						<texture border="2">MenuItemNF.png</texture>
+						<include>VisibleFadeEffect</include>
+					</control>
 					<control type="image">
 						<posx>10</posx>
 						<posy>5</posy>
@@ -664,6 +710,15 @@
 						<texture border="2">MenuItemFO.png</texture>
 						<visible>Control.HasFocus(13)</visible>
 						<include>VisibleFadeEffect</include>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>760</width>
+						<height>41</height>
+						<texture border="2">MenuItemNF.png</texture>
+						<include>VisibleFadeEffect</include>
+						<visible>!Control.HasFocus(13)</visible>
 					</control>
 					<control type="image">
 						<posx>560</posx>
@@ -736,11 +791,13 @@
 			<control type="scrollbar" id="72">
 				<posx>850</posx>
 				<posy>78</posy>
-				<width>14</width>
+				<width>25</width>
 				<height>560</height>
-				<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+				<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+				<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+				<textureslidernib>ScrollBarNib.png</textureslidernib>
+				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 				<onleft>13</onleft>
 				<onright>34</onright>
 				<showonepage>false</showonepage>
@@ -830,7 +887,7 @@
 						<height>29</height>
 						<posx>0</posx>
 						<posy>0</posy>
-						<texture border="5">buttons/nf_light.png</texture>
+						<texture border="5">button-nofocus.png</texture>
 					</control>
 					<control type="label" id="2">
 						<posx>10</posx>
@@ -851,7 +908,7 @@
 						<posy>0</posy>
 						<width>270</width>
 						<height>52</height>
-						<texture border="5">buttons/nf_light.png</texture>
+						<texture border="5">button-nofocus.png</texture>
 					</control>
 					<control type="label">
 						<posx>5</posx>
@@ -1068,6 +1125,15 @@
 					<aligny>center</aligny>
 					<label>126</label>
 				</control>
+				<control type="image">
+					<description>separator image</description>
+					<posx>0</posx>
+					<posy>50</posy>
+					<width>1100</width>
+					<height>1</height>
+					<colordiffuse>88FFFFFF</colordiffuse>
+					<texture>separator2.png</texture>
+				</control>
 				<control type="list" id="14">
 					<posx>0</posx>
 					<posy>55</posy>
@@ -1080,6 +1146,13 @@
 					<pagecontrol>73</pagecontrol>
 					<scrolltime>200</scrolltime>
 					<itemlayout height="40">
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>1100</width>
+							<height>41</height>
+							<texture border="5">MenuItemNF.png</texture>
+						</control>
 						<control type="image">
 							<posx>220</posx>
 							<posy>0</posy>
@@ -1150,6 +1223,13 @@
 						</control>
 					</itemlayout>
 					<focusedlayout height="40">
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>1100</width>
+							<height>41</height>
+							<texture border="5">MenuItemNF.png</texture>
+						</control>
 						<control type="image">
 							<posx>220</posx>
 							<posy>0</posy>
@@ -1243,15 +1323,26 @@
 				<control type="scrollbar" id="73">
 					<posx>1105</posx>
 					<posy>50</posy>
-					<width>14</width>
+					<width>25</width>
 					<height>480</height>
-					<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-					<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+					<textureslidernib>ScrollBarNib.png</textureslidernib>
+					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 					<onleft>11</onleft>
 					<onright>35</onright>
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
+				</control>
+				<control type="image">
+					<description>separator image</description>
+					<posx>55</posx>
+					<posy>540</posy>
+					<width>1010</width>
+					<height>1</height>
+					<colordiffuse>88FFFFFF</colordiffuse>
+					<texture>separator2.png</texture>
 				</control>
 				<control type="label">
 					<description>Next timer date</description>
@@ -1346,6 +1437,15 @@
 					<aligny>center</aligny>
 					<label>126</label>
 				</control>
+				<control type="image">
+					<description>separator image</description>
+					<posx>0</posx>
+					<posy>50</posy>
+					<width>1100</width>
+					<height>1</height>
+					<colordiffuse>88FFFFFF</colordiffuse>
+					<texture>separator2.png</texture>
+				</control>
 				<control type="list" id="17">
 					<posx>0</posx>
 					<posy>55</posy>
@@ -1358,6 +1458,13 @@
 					<pagecontrol>77</pagecontrol>
 					<scrolltime>200</scrolltime>
 					<itemlayout height="40">
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>1100</width>
+							<height>41</height>
+							<texture border="5">MenuItemNF.png</texture>
+						</control>
 						<control type="image">
 							<posx>0</posx>
 							<posy>0</posy>
@@ -1461,6 +1568,13 @@
 						</control>
 					</itemlayout>
 					<focusedlayout height="40">
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>1100</width>
+							<height>41</height>
+							<texture border="5">MenuItemNF.png</texture>
+						</control>
 						<control type="image">
 							<posx>0</posx>
 							<posy>0</posy>
@@ -1587,11 +1701,13 @@
 				<control type="scrollbar" id="77">
 					<posx>1105</posx>
 					<posy>50</posy>
-					<width>14</width>
+					<width>25</width>
 					<height>520</height>
-					<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-					<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+					<textureslidernib>ScrollBarNib.png</textureslidernib>
+					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 					<onleft>16</onleft>
 					<onright>36</onright>
 					<showonepage>false</showonepage>
@@ -1662,6 +1778,15 @@
 					<aligny>center</aligny>
 					<label>126</label>
 				</control>
+				<control type="image">
+					<description>separator image</description>
+					<posx>0</posx>
+					<posy>50</posy>
+					<width>1100</width>
+					<height>1</height>
+					<colordiffuse>88FFFFFF</colordiffuse>
+					<texture>separator2.png</texture>
+				</control>
 				<control type="list" id="15">
 					<posx>0</posx>
 					<posy>60</posy>
@@ -1674,6 +1799,13 @@
 					<pagecontrol>75</pagecontrol>
 					<scrolltime>200</scrolltime>
 					<itemlayout height="40">
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>1100</width>
+							<height>41</height>
+							<texture border="5">MenuItemNF.png</texture>
+						</control>
 						<control type="image">
 							<posx>0</posx>
 							<posy>0</posy>
@@ -1765,6 +1897,13 @@
 							<height>98</height>
 							<colordiffuse>AAFFFFFF</colordiffuse>
 							<texture border="5">black-back2.png</texture>
+						</control>
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>1100</width>
+							<height>101</height>
+							<texture border="5">MenuItemNF.png</texture>
 						</control>
 						<control type="image">
 							<posx>0</posx>
@@ -1886,11 +2025,13 @@
 				<control type="scrollbar" id="75">
 					<posx>1105</posx>
 					<posy>60</posy>
-					<width>14</width>
+					<width>25</width>
 					<height>500</height>
-					<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-					<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+					<textureslidernib>ScrollBarNib.png</textureslidernib>
+					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 					<onleft>15</onleft>
 					<onright>31</onright>
 					<showonepage>false</showonepage>
@@ -1974,6 +2115,15 @@
 					<aligny>center</aligny>
 					<label>126</label>
 				</control>
+				<control type="image">
+					<description>separator image</description>
+					<posx>0</posx>
+					<posy>50</posy>
+					<width>1100</width>
+					<height>1</height>
+					<colordiffuse>88FFFFFF</colordiffuse>
+					<texture>separator2.png</texture>
+				</control>
 				<control type="list" id="16">
 					<posx>0</posx>
 					<posy>60</posy>
@@ -1986,6 +2136,13 @@
 					<pagecontrol>76</pagecontrol>
 					<scrolltime>200</scrolltime>
 					<itemlayout height="40">
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>1100</width>
+							<height>41</height>
+							<texture border="5">MenuItemNF.png</texture>
+						</control>
 						<control type="image">
 							<posx>100</posx>
 							<posy>0</posy>
@@ -2096,6 +2253,13 @@
 							<height>98</height>
 							<colordiffuse>AAFFFFFF</colordiffuse>
 							<texture border="5">black-back2.png</texture>
+						</control>
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>1100</width>
+							<height>100</height>
+							<texture border="5">MenuItemNF.png</texture>
 						</control>
 						<control type="image">
 							<posx>100</posx>
@@ -2236,11 +2400,13 @@
 				<control type="scrollbar" id="76">
 					<posx>1105</posx>
 					<posy>60</posy>
-					<width>14</width>
+					<width>25</width>
 					<height>500</height>
-					<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-					<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+					<textureslidernib>ScrollBarNib.png</textureslidernib>
+					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 					<onleft>16</onleft>
 					<onright>31</onright>
 					<showonepage>false</showonepage>

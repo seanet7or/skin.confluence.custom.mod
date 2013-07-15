@@ -300,17 +300,6 @@ OVERLAY_BG='dialogs/overlay-background.png'
 STEP=0
 printf "\n############# APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ########################"
 
-printf "\nCorrecting wrong translation: "
-if grep -q -zo -P 'msgctxt "#31153"\nmsgid "Home Menu"\nmsgstr "Gesehen Status Overlay benutzen"' \
-	language/German/strings.po 
-then
-	sed "s|Gesehen Status Overlay benutzen|Hauptmenü|" -i language/German/strings.po
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
 printf "\nReplacing '#'s in original xmls: "
 if grep -q '#' 720p/SkinSettings.xml ; then 
 	sed 's/#/No\./g' -i 720p/SkinSettings.xml 
@@ -321,9 +310,20 @@ fi
 step
 
 printf "\nRemoving all tags which are commented out: "
-if grep -q '<!--' 720p/IncludesBackgroundBuilding.xml ; then
-	R='s|\s*<!--(?!-->).*?-->#||g'
+if grep -q '<\!--' 720p/IncludesBackgroundBuilding.xml ; then
+	R='s|\s*<\!--(?!-->).*?-->#||g'
 	perlregex "$R"
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nCorrecting wrong translation: "
+if grep -q -zo -P 'msgctxt "#31153"\nmsgid "Home Menu"\nmsgstr "Gesehen Status Overlay benutzen"' \
+	language/German/strings.po 
+then
+	sed "s|Gesehen Status Overlay benutzen|Hauptmenü|" -i language/German/strings.po
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET

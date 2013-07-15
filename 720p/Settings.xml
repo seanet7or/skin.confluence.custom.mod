@@ -7,6 +7,15 @@
 	<onload>SetProperty(MenuItemActive,Settings,Home)</onload>
 	<controls>
 		<include>CommonBackground</include>
+		<control type="image">
+			<posx>0</posx>
+			<posy>100r</posy>
+			<width>1280</width>
+			<height>100</height>
+			<aspectratio>stretch</aspectratio>
+			<include>VisibleFadeEffect</include>
+			<texture>floor.png</texture>
+		</control>
 		<control type="group">
 			<posx>90</posx>
 			<posy>30</posy>
@@ -23,7 +32,31 @@
 				<posy>5</posy>
 				<width>1090</width>
 				<height>630</height>
-				<texture border="15">dialogs/content-back_light.png</texture>
+				<texture border="15">ContentPanel.png</texture>
+			</control>
+			<control type="image">
+				<posx>5</posx>
+				<posy>625</posy>
+				<width>1090</width>
+				<height>64</height>
+				<texture border="15">ContentPanelMirror.png</texture>
+			</control>
+			<control type="button">
+				<description>Close Window button</description>
+				<posx>980</posx>
+				<posy>11</posy>
+				<width>64</width>
+				<height>32</height>
+				<label>-</label>
+				<font>-</font>
+				<onclick>PreviousMenu</onclick>
+				<texturefocus>DialogCloseButton-focus.png</texturefocus>
+				<texturenofocus>DialogCloseButton.png</texturenofocus>
+				<onleft>1</onleft>
+				<onright>1</onright>
+				<onup>1</onup>
+				<ondown>1</ondown>
+				<visible>system.getbool(input.enablemouse)</visible>
 			</control>
 			<control type="image">
 				<description>LOGO</description>
@@ -48,6 +81,13 @@
 				<pagecontrol>-</pagecontrol>
 				<scrolltime>300</scrolltime>
 				<itemlayout height="54" width="260">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>260</width>
+						<height>55</height>
+						<texture border="5">MenuItemNF.png</texture>
+					</control>
 					<control type="label">
 						<posx>250</posx>
 						<posy>0</posy>
@@ -176,7 +216,7 @@
 				<posy>60</posy>
 				<width>800</width>
 				<height>450</height>
-				<texture border="5">buttons/nf_light.png</texture>
+				<texture border="5">button-nofocus.png</texture>
 			</control>
 			<control type="image">
 				<posx>272</posx>
@@ -186,6 +226,15 @@
 				<aspectratio>stretch</aspectratio>
 				<fadetime>600</fadetime>
 				<texture background="true">special://skin/backgrounds/homescreen/addons.jpg</texture>
+			</control>
+			<control type="image">
+				<posx>272</posx>
+				<posy>62</posy>
+				<width>600</width>
+				<height>340</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>GlassOverlay.png</texture>
+				<colordiffuse>AAFFFFFF</colordiffuse>
 			</control>
 			<control type="image">
 				<posx>268</posx>

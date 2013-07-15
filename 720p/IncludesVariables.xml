@@ -10,6 +10,7 @@
 		<value condition="IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Icon]</value>
 	</variable>
 	<variable name="typehackflagging">
+		<!--value condition="[SubString(ListItem.FilenameAndPath,3dbd) | SubString(ListItem.FilenameAndPath,.SBS.)]">3Dbluray</value-->
 		<value condition="[substring(ListItem.FilenameAndPath,bluray) | substring(ListItem.FilenameAndPath,bdrip) | substring(ListItem.FilenameAndPath,bd25) | substring(ListItem.FilenameAndPath,bd50)]">bluray</value>
 		<value condition="substring(ListItem.FilenameAndPath,hddvd)">hddvd</value>
 		<value condition="substring(ListItem.FilenameAndPath,dvd)">dvd</value>
@@ -45,6 +46,7 @@
 		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,12A)">UK/bbfc_12a</value>
 		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,12)">UK/bbfc_12</value>
 		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,PG)">UK/bbfc_pg</value>
+		<!--value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,Rated U)">UK/bbfc_u</value-->
 		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,U)">UK/bbfc_u</value>
 		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,18)">DE/fsk_18</value>
 		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,16)">DE/fsk_16</value>	
@@ -104,8 +106,9 @@
 		<value>$INFO[ListItem.VideoCodec]</value>
 	</variable>
 	<variable name="HomeMenuItemBackground" type="text">
+		<!-- Home Screen Backgrounds -->
 		<value condition="Skin.HasSetting(GlobalBackground) + !IsEmpty(Skin.String(CustomBackgroundPath))">$INFO[Skin.String(CustomBackgroundPath)]</value>
-		<value condition="Skin.HasSetting(GlobalBackground) + IsEmpty(Skin.String(CustomBackgroundPath))">special://skin/backgrounds/default_light.jpg</value>
+		<value condition="Skin.HasSetting(GlobalBackground) + IsEmpty(Skin.String(CustomBackgroundPath))">$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
 		<value condition="Control.HasFocus(20) + !IsEmpty(Skin.String(PowerBtnBackground))">$INFO[Skin.String(PowerBtnBackground)]</value>
 		<value condition="Control.HasFocus(21) + !IsEmpty(Skin.String(FavBtnBackground))">$INFO[Skin.String(FavBtnBackground)]</value>
 		<value condition="Control.HasFocus(610) + !IsEmpty(Skin.String(SearchBtnBackground))">$INFO[Skin.String(SearchBtnBackground)]</value>
@@ -133,8 +136,9 @@
 		<value>$INFO[Container(9000).ListItem.Icon]</value>
 	</variable>
 	<variable name="CommonMenuItemBackground" type="text">
+		<!-- Not in Home Default Backgrounds -->
 		<value condition="Skin.HasSetting(GlobalBackground) + !IsEmpty(Skin.String(CustomBackgroundPath))">$INFO[Skin.String(CustomBackgroundPath)]</value>
-		<value condition="Skin.HasSetting(GlobalBackground) + IsEmpty(Skin.String(CustomBackgroundPath))">special://skin/backgrounds/default_light.jpg</value>
+		<value condition="Skin.HasSetting(GlobalBackground) + IsEmpty(Skin.String(CustomBackgroundPath))">$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
 		<value condition="StringCompare(Window(home).Property(MenuItemSelected),Weather) + Skin.HasSetting(ShowWeatherFanart)">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
 		<value condition="StringCompare(Window(home).Property(MenuItemActive),ItemOne) + !IsEmpty(Skin.String(HomeItem.1.FanArt))">$INFO[Skin.String(HomeItem.1.FanArt)]</value>
 		<value condition="StringCompare(Window(home).Property(MenuItemActive),ItemTwo) + !IsEmpty(Skin.String(HomeItem.2.FanArt))">$INFO[Skin.String(HomeItem.2.FanArt)]</value>
@@ -149,11 +153,11 @@
 		<value condition="StringCompare(Window(home).Property(MenuItemActive),PlayDisc) + !IsEmpty(Skin.String(HomeItem.11.FanArt))">$INFO[Skin.String(HomeItem.11.FanArt)]</value>
 		<value condition="StringCompare(Window(home).Property(MenuItemActive),Settings) + !IsEmpty(Skin.String(HomeItem.12.FanArt))">$INFO[Skin.String(HomeItem.12.FanArt)]</value>
 		<value condition="!IsEmpty(Window(home).Property(SubMenuBackground))">$INFO[Window(home).Property(SubMenuBackground)]</value>
-		<value>special://skin/backgrounds/default_light.jpg</value>
+		<value>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
 	</variable>
 	<variable name="SubMenuItemBackground" type="text">
 		<value condition="Skin.HasSetting(GlobalBackground) + !IsEmpty(Skin.String(CustomBackgroundPath))">$INFO[Skin.String(CustomBackgroundPath)]</value>
-		<value condition="Skin.HasSetting(GlobalBackground) + IsEmpty(Skin.String(CustomBackgroundPath))">special://skin/backgrounds/default_light.jpg</value>
+		<value condition="Skin.HasSetting(GlobalBackground) + IsEmpty(Skin.String(CustomBackgroundPath))">$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(ShowWeatherFanart)">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
 		<value condition="Container(9000).Hasfocus(1) + !IsEmpty(Skin.String(HomeItem.1.FanArt))">$INFO[Skin.String(HomeItem.1.FanArt)]</value>
 		<value condition="Container(9000).Hasfocus(2) + !IsEmpty(Skin.String(HomeItem.2.FanArt))">$INFO[Skin.String(HomeItem.2.FanArt)]</value>
@@ -167,7 +171,7 @@
 		<value condition="Container(9000).Hasfocus(10) + !IsEmpty(Skin.String(HomeItem.10.FanArt))">$INFO[Skin.String(HomeItem.10.FanArt)]</value>
 		<value condition="Container(9000).Hasfocus(11) + !IsEmpty(Skin.String(HomeItem.11.FanArt))">$INFO[Skin.String(HomeItem.11.FanArt)]</value>
 		<value condition="Container(9000).Hasfocus(12) + !IsEmpty(Skin.String(HomeItem.12.FanArt))">$INFO[Skin.String(HomeItem.12.FanArt)]</value>
-		<value>special://skin/backgrounds/default_light.jpg</value>
+		<value>special://skin/backgrounds/SKINDEFAULT.jpg</value>
 	</variable>
 	<variable name="InfoBarStats" type="text">
 		<value condition="!Skin.HasSetting(DisableScriptPlayList) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + Container(9000).Hasfocus(1)">$INFO[Window(home).Property(HomePlayListOne.Count),[B][COLOR=blue]$LOCALIZE[31025]: [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListOne.Watched),[B][COLOR=blue]$LOCALIZE[16102]: [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListOne.Unwatched),[B][COLOR=blue]$LOCALIZE[16101]: [/COLOR][/B]]</value>
@@ -259,6 +263,7 @@
 		<value>dv</value>
 	</variable>
 	<variable name="GenreFlagPath">
+		<!--value condition="Skin.HasSetting(UsrGenreFanArt)">MovieGenre/</value-->
 		<value>DefaultGenre/</value>
 	</variable>
 	<variable name="RandomOrLastAction" type="text">
@@ -1087,7 +1092,7 @@
 		<value condition="stringcompare(Skin.String(HomeItem.1.Type),Favourites)">special://skin/backgrounds/homescreen/favourite.jpg</value>
 		<value condition="stringcompare(Skin.String(HomeItem.1.Type),PlayListVideo)">special://skin/backgrounds/homescreen/playlist.jpg</value>
 		<value condition="stringcompare(Skin.String(HomeItem.1.Type),PlayListMusic)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
-		<value>special://skin/backgrounds/default_light.jpg</value>
+		<value>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
 	</variable>
 	<variable name="SetMenuTwoBackground" type="text">
 		<value condition="stringcompare(Skin.String(HomeItem.2.Path),RunAddon(plugin.program.advanced.launcher))">special://skin/backgrounds/homescreen/launcher.jpg</value>
@@ -1108,7 +1113,7 @@
 		<value condition="stringcompare(Skin.String(HomeItem.2.Type),Favourites)">special://skin/backgrounds/homescreen/favourite.jpg</value>
 		<value condition="stringcompare(Skin.String(HomeItem.2.Type),PlayListVideo)">special://skin/backgrounds/homescreen/playlist.jpg</value>
 		<value condition="stringcompare(Skin.String(HomeItem.2.Type),PlayListMusic)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
-		<value>special://skin/backgrounds/default_light.jpg</value>
+		<value>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
 	</variable>
 	<variable name="SetMenuThreeBackground" type="text">
 		<value condition="stringcompare(Skin.String(HomeItem.3.Path),RunAddon(plugin.program.advanced.launcher))">special://skin/backgrounds/homescreen/launcher.jpg</value>
@@ -1129,7 +1134,7 @@
 		<value condition="stringcompare(Skin.String(HomeItem.3.Type),Favourites)">special://skin/backgrounds/homescreen/favourite.jpg</value>
 		<value condition="stringcompare(Skin.String(HomeItem.3.Type),PlayListVideo)">special://skin/backgrounds/homescreen/playlist.jpg</value>
 		<value condition="stringcompare(Skin.String(HomeItem.3.Type),PlayListMusic)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
-		<value>special://skin/backgrounds/default_light.jpg</value>
+		<value>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
 	</variable>
 	<variable name="SetMenuFourBackground" type="text">
 		<value condition="stringcompare(Skin.String(HomeItem.4.Path),RunAddon(plugin.program.advanced.launcher))">special://skin/backgrounds/homescreen/launcher.jpg</value>
@@ -1150,7 +1155,7 @@
 		<value condition="stringcompare(Skin.String(HomeItem.4.Type),Favourites)">special://skin/backgrounds/homescreen/favourite.jpg</value>
 		<value condition="stringcompare(Skin.String(HomeItem.4.Type),PlayListVideo)">special://skin/backgrounds/homescreen/playlist.jpg</value>
 		<value condition="stringcompare(Skin.String(HomeItem.4.Type),PlayListMusic)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
-		<value>special://skin/backgrounds/default_light.jpg</value>
+		<value>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
 	</variable>
 	<variable name="SetMenuFiveBackground" type="text">
 		<value condition="stringcompare(Skin.String(HomeItem.5.Path),RunAddon(plugin.program.advanced.launcher))">special://skin/backgrounds/homescreen/launcher.jpg</value>
@@ -1171,7 +1176,7 @@
 		<value condition="stringcompare(Skin.String(HomeItem.5.Type),Favourites)">special://skin/backgrounds/homescreen/favourite.jpg</value>
 		<value condition="stringcompare(Skin.String(HomeItem.5.Type),PlayListVideo)">special://skin/backgrounds/homescreen/playlist.jpg</value>
 		<value condition="stringcompare(Skin.String(HomeItem.5.Type),PlayListMusic)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
-		<value>special://skin/backgrounds/default_light.jpg</value>
+		<value>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
 	</variable>
 	<variable name="SetMenuSixBackground" type="text">
 		<value condition="stringcompare(Skin.String(HomeItem.6.Path),RunAddon(plugin.program.advanced.launcher))">special://skin/backgrounds/homescreen/launcher.jpg</value>
@@ -1192,7 +1197,7 @@
 		<value condition="stringcompare(Skin.String(HomeItem.6.Type),Favourites)">special://skin/backgrounds/homescreen/favourite.jpg</value>
 		<value condition="stringcompare(Skin.String(HomeItem.6.Type),PlayListVideo)">special://skin/backgrounds/homescreen/playlist.jpg</value>
 		<value condition="stringcompare(Skin.String(HomeItem.6.Type),PlayListMusic)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
-		<value>special://skin/backgrounds/default_light.jpg</value>
+		<value>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
 	</variable>
 	<variable name="SetMenuSevenBackground" type="text">
 		<value condition="stringcompare(Skin.String(HomeItem.7.Path),RunAddon(plugin.program.advanced.launcher))">special://skin/backgrounds/homescreen/launcher.jpg</value>
@@ -1213,7 +1218,7 @@
 		<value condition="stringcompare(Skin.String(HomeItem.7.Type),Favourites)">special://skin/backgrounds/homescreen/favourite.jpg</value>
 		<value condition="stringcompare(Skin.String(HomeItem.7.Type),PlayListVideo)">special://skin/backgrounds/homescreen/playlist.jpg</value>
 		<value condition="stringcompare(Skin.String(HomeItem.7.Type),PlayListMusic)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
-		<value>special://skin/backgrounds/default_light.jpg</value>
+		<value>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
 	</variable>
 	<variable name="SetMenuEightBackground" type="text">
 		<value condition="stringcompare(Skin.String(HomeItem.8.Path),RunAddon(plugin.program.advanced.launcher))">special://skin/backgrounds/homescreen/launcher.jpg</value>
@@ -1234,7 +1239,7 @@
 		<value condition="stringcompare(Skin.String(HomeItem.8.Type),Favourites)">special://skin/backgrounds/homescreen/favourite.jpg</value>
 		<value condition="stringcompare(Skin.String(HomeItem.8.Type),PlayListVideo)">special://skin/backgrounds/homescreen/playlist.jpg</value>
 		<value condition="stringcompare(Skin.String(HomeItem.8.Type),PlayListMusic)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
-		<value>special://skin/backgrounds/default_light.jpg</value>
+		<value>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
 	</variable>
 	<variable name="SetMenuNineBackground" type="text">
 		<value condition="stringcompare(Skin.String(HomeItem.9.Path),RunAddon(plugin.program.advanced.launcher))">special://skin/backgrounds/homescreen/launcher.jpg</value>
@@ -1255,7 +1260,7 @@
 		<value condition="stringcompare(Skin.String(HomeItem.9.Type),Favourites)">special://skin/backgrounds/homescreen/favourite.jpg</value>
 		<value condition="stringcompare(Skin.String(HomeItem.9.Type),PlayListVideo)">special://skin/backgrounds/homescreen/playlist.jpg</value>
 		<value condition="stringcompare(Skin.String(HomeItem.9.Type),PlayListMusic)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
-		<value>special://skin/backgrounds/default_light.jpg</value>
+		<value>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
 	</variable>
 	<variable name="SetMenuTenBackground" type="text">
 		<value condition="stringcompare(Skin.String(HomeItem.10.Path),RunAddon(plugin.program.advanced.launcher))">special://skin/backgrounds/homescreen/launcher.jpg</value>
@@ -1276,7 +1281,7 @@
 		<value condition="stringcompare(Skin.String(HomeItem.10.Type),Favourites)">special://skin/backgrounds/homescreen/favourite.jpg</value>
 		<value condition="stringcompare(Skin.String(HomeItem.10.Type),PlayListVideo)">special://skin/backgrounds/homescreen/playlist.jpg</value>
 		<value condition="stringcompare(Skin.String(HomeItem.10.Type),PlayListMusic)">special://skin/backgrounds/homescreen/musicvideos.jpg</value>
-		<value>special://skin/backgrounds/default_light.jpg</value>
+		<value>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
 	</variable>
 	<variable name="HomeBackgroundPreview" type="text">
 		<value condition="Skin.HasSetting(GlobalBackground) + Skin.HasSetting(GlobalWeatherFanart)">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
@@ -1320,10 +1325,12 @@
 		<value condition="substring(ListItem.Label,$LOCALIZE[31612]) | substring(ListItem.Label,History)">$INFO[Skin.String(UsrGenreFanartDir),,history.jpg]</value>
 		<value condition="substring(ListItem.Label,$LOCALIZE[31613]) | substring(ListItem.Label,Holiday) | substring(ListItem.Label,Christmas)">$INFO[Skin.String(UsrGenreFanartDir),,christmas.jpg]</value>
 		<value condition="substring(ListItem.Label,$LOCALIZE[31614]) | substring(ListItem.Label,Horror)">$INFO[Skin.String(UsrGenreFanartDir),,horror.jpg]</value>
+		<!--value condition="substring(ListItem.Label,$LOCALIZE[31615]) | substring(ListItem.Label,Indie)">$INFO[Skin.String(UsrGenreFanartDir),,indie.jpg]</value-->
 		<value condition="substring(ListItem.Label,$LOCALIZE[31616]) | substring(ListItem.Label,Music)">$INFO[Skin.String(UsrGenreFanartDir),,musical.jpg]</value>
 		<value condition="substring(ListItem.Label,$LOCALIZE[31617]) | substring(ListItem.Label,Mystery)">$INFO[Skin.String(UsrGenreFanartDir),,mystery.jpg]</value>
 		<value condition="substring(ListItem.Label,$LOCALIZE[31618]) | substring(ListItem.Label,Romance)">$INFO[Skin.String(UsrGenreFanartDir),,romance.jpg]</value>
 		<value condition="substring(ListItem.Label,$LOCALIZE[31619]) | substring(ListItem.Label,Sci)">$INFO[Skin.String(UsrGenreFanartDir),,sciencefiction.jpg]</value>
+		<!--value condition="substring(ListItem.Label,$LOCALIZE[31620]) | substring(ListItem.Label,Short)">$INFO[Skin.String(UsrGenreFanartDir),,short.jpg]</value-->
 		<value condition="substring(ListItem.Label,$LOCALIZE[31621]) | substring(ListItem.Label,Sport)">$INFO[Skin.String(UsrGenreFanartDir),,sports.jpg]</value>
 		<value condition="substring(ListItem.Label,$LOCALIZE[31622]) | substring(ListItem.Label,Suspense)">$INFO[Skin.String(UsrGenreFanartDir),,psychologicalthriller.jpg]</value>
 		<value condition="substring(ListItem.Label,$LOCALIZE[31623]) | substring(ListItem.Label,Thriller)">$INFO[Skin.String(UsrGenreFanartDir),,thriller.jpg]</value>

@@ -14,7 +14,7 @@
 			<posy>0</posy>
 			<width>800</width>
 			<height>420</height>
-			<texture border="40">dialogs/dialog-back_light.png</texture>
+			<texture border="40">DialogBack.png</texture>
 		</control>
 		<control type="image">
 			<description>Dialog Header image</description>
@@ -35,6 +35,23 @@
 			<aligny>center</aligny>
 			<textcolor>selected</textcolor>
 			<shadowcolor>black</shadowcolor>
+		</control>
+		<control type="button">
+			<description>Close Window button</description>
+			<posx>710</posx>
+			<posy>15</posy>
+			<width>64</width>
+			<height>32</height>
+			<label>-</label>
+			<font>-</font>
+			<onclick>PreviousMenu</onclick>
+			<texturefocus>DialogCloseButton-focus.png</texturefocus>
+			<texturenofocus>DialogCloseButton.png</texturenofocus>
+			<onleft>10</onleft>
+			<onright>10</onright>
+			<onup>10</onup>
+			<ondown>10</ondown>
+			<visible>system.getbool(input.enablemouse)</visible>
 		</control>
 		<control type="label" id="3">
 			<description>List label</description>
@@ -65,7 +82,7 @@
 					<posy>0</posy>
 					<width>520</width>
 					<height>40</height>
-					<texture border="5">buttons/nf_light.png</texture>
+					<texture border="5">button-nofocus.png</texture>
 				</control>
 				<control type="label">
 					<posx>10</posx>
@@ -87,7 +104,7 @@
 					<width>520</width>
 					<height>40</height>
 					<visible>!Control.HasFocus(10)</visible>
-					<texture border="5">buttons/nf_light.png</texture>
+					<texture border="5">button-nofocus.png</texture>
 				</control>
 				<control type="image">
 					<posx>0</posx>
@@ -113,11 +130,13 @@
 		<control type="scrollbar" id="60">
 			<posx>552</posx>
 			<posy>105</posy>
-			<width>14</width>
+			<width>25</width>
 			<height>225</height>
-			<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-			<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-			<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+			<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+			<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+			<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+			<textureslidernib>ScrollBarNib.png</textureslidernib>
+			<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 			<onleft>10</onleft>
 			<onright>9000</onright>
 			<showonepage>false</showonepage>

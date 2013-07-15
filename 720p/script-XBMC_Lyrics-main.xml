@@ -21,6 +21,23 @@
 				<colordiffuse>BBFFFFFF</colordiffuse>
 				<texture border="20,0,0,0" flipx="true">MediaBladeSub.png</texture>
 			</control>
+			<control type="button">
+				<description>Close Window button</description>
+				<posx>20</posx>
+				<posy>0</posy>
+				<width>64</width>
+				<height>32</height>
+				<label>-</label>
+				<font>-</font>
+				<onclick>PreviousMenu</onclick>
+				<texturefocus>DialogCloseButton-focus.png</texturefocus>
+				<texturenofocus>DialogCloseButton.png</texturenofocus>
+				<onleft>101</onleft>
+				<onright>101</onright>
+				<onup>101</onup>
+				<ondown>101</ondown>
+				<visible>system.getbool(input.enablemouse)</visible>
+			</control>
 			<control type="label">
 				<description>header label</description>
 				<posx>580</posx>
@@ -60,6 +77,14 @@
 				<textcolor>grey</textcolor>
 				<shadowcolor>black</shadowcolor>
 			</control>
+			<control type="image">
+				<posx>30</posx>
+				<posy>120</posy>
+				<width>550</width>
+				<height>4</height>
+				<texture>separator.png</texture>
+			</control>
+			<!-- ** Required ** Do not change <id> or <type> (Text box for lyrics) -->
 			<control type="textbox" id="100">
 				<description>textarea</description>
 				<posx>30</posx>
@@ -90,6 +115,7 @@
 				<showonepage>true</showonepage>
 				<visible>Control.IsVisible(100)</visible>
 			</control>
+			<!-- ** Required ** Do not change <id> or <type> (Smooth scrolling list for lyrics) -->
 			<control type="list" id="110">
 				<posx>30</posx>
 				<posy>130</posy>
@@ -174,6 +200,7 @@
 				<textcolor>white</textcolor>
 				<visible>Control.IsVisible(120) + ![Control.IsVisible(100) | Control.IsVisible(110)]</visible>
 			</control>
+			<!-- ** Required ** Do not change <id> or <type> (Song Chooser if it gets it wrong) -->
 			<control type="list" id="120">
 				<posx>30</posx>
 				<posy>170</posy>
@@ -187,6 +214,13 @@
 				<scrolltime>200</scrolltime>
 				<animation effect="slide" start="0,0" end="20,0" time="0" condition="!Control.IsVisible(121)">Conditional</animation>
 				<itemlayout height="40">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>550</width>
+						<height>41</height>
+						<texture border="5">MenuItemNF.png</texture>
+					</control>
 					<control type="label">
 						<posx>10</posx>
 						<posy>0</posy>
@@ -200,6 +234,14 @@
 					</control>
 				</itemlayout>
 				<focusedlayout height="40">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>550</width>
+						<height>41</height>
+						<visible>!Control.HasFocus(120)</visible>
+						<texture border="5">MenuItemNF.png</texture>
+					</control>
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
@@ -236,6 +278,13 @@
 				<showonepage>true</showonepage>
 				<visible>Control.IsVisible(120)</visible>
 			</control>
+			<control type="image">
+				<posx>30</posx>
+				<posy>640</posy>
+				<width>550</width>
+				<height>4</height>
+				<texture>separator.png</texture>
+			</control>
 			<control type="label">
 				<description>Scraper label</description>
 				<posx>580</posx>
@@ -254,5 +303,7 @@
 				<visible>false</visible>
 			</control>
 		</control>
+		<!-- ** Required ** Do not change <id> or <type> -->
+		<!-- ** Required ** Do not change <id> or <type> -->
 	</controls>
 </window>

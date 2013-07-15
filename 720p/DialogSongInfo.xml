@@ -17,7 +17,7 @@
 				<posy>0</posy>
 				<width>910</width>
 				<height>510</height>
-				<texture border="40">dialogs/dialog-back_light.png</texture>
+				<texture border="40">DialogBack.png</texture>
 			</control>
 			<control type="image">
 				<description>Dialog Header image</description>
@@ -40,6 +40,23 @@
 				<textcolor>selected</textcolor>
 				<shadowcolor>black</shadowcolor>
 			</control>
+			<control type="button">
+				<description>Close Window button</description>
+				<posx>820</posx>
+				<posy>14</posy>
+				<width>64</width>
+				<height>32</height>
+				<label>-</label>
+				<font>-</font>
+				<onclick>PreviousMenu</onclick>
+				<texturefocus>DialogCloseButton-focus.png</texturefocus>
+				<texturenofocus>DialogCloseButton.png</texturenofocus>
+				<onleft>3</onleft>
+				<onright>3</onright>
+				<onup>3</onup>
+				<ondown>3</ondown>
+				<visible>system.getbool(input.enablemouse)</visible>
+			</control>
 			<control type="label">
 				<description>Song Title value</description>
 				<posx>40</posx>
@@ -60,6 +77,14 @@
 				<height>200</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
 				<texture>$INFO[ListItem.Icon]</texture>
+			</control>
+			<control type="image">
+				<posx>40</posx>
+				<posy>320</posy>
+				<width>200</width>
+				<height>200</height>
+				<aspectratio aligny="top">keep</aspectratio>
+				<texture flipy="true" diffuse="diffuse_mirror2.png">$INFO[ListItem.Icon]</texture>
 			</control>
 			<control type="group">
 				<posx>250</posx>
