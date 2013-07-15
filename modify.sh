@@ -913,71 +913,93 @@ else
 fi
 step
 
-printf "\nReplacing focused texture for controls with default $BUTTON_NF texturenofocus: "
-if [ $(grep 'button-focus2.png' 720p/DialogAddonSettings.xml | wc -l) -gt 1 ] ; then
-	# Looking for all controls having $BUTTON_NF texturenofocus
-	DEFS=$(grep '<default type="' 720p/defaults.xml | sed 's|^\s*[^"]*"||g' | cut -f1 -d'"')
-	OLDIFS=$IFS ; 
-	CONTROLS+="$(SEP=''
-		IFS=$'\n'; for DEF in $DEFS ; do
-		DEFSTART=$(grep -n '<default type="'"$DEF"'">' 720p/defaults.xml | cut -f1 -d:)
-		DEFSTOP=$(tail -n+"$DEFSTART" 720p/defaults.xml | grep -n '</default>' | head -n 1 | cut -f1 -d:)
-		STRUCT=$(tail -n+"$DEFSTART" 720p/defaults.xml | head -n "$DEFSTOP")
-		if echo "$STRUCT" | grep -q "$BUTTON_NF</texturenofocus>" ; then
-			printf "$SEP$DEF"
-			SEP="\|"
-		fi
-	done)"
-	#printf "\n\n'$CONTROLS'"
-	R='s|(<control type="('"$CONTROLS"')"[^#]*#'
-	#opening tags, but not texturenofocus
-	R+='(\s*(?!<texturenofocus)<[a-z][^#]*#)*?' 		
-	#texturefocus with tex not matching the default one
-	R+='\s*)<texturefocus[^>]*>(?!button-focus.png)(?!HomeSubFO.png)(?!floor_buttonFO.png)(?!ShutdownButton)[^<]*(<[^#]*#'
-	R+='(\s*(?!<texturenofocus)<[a-z][^#]*#)*?'
-	R+='\s*</control>)|\1<texturefocus border="2">'$BUTTON_FO'\4|g'
-	perlregex "$R"
+printf "\nReplacing button-focus2.png: "
+if [ -f media/button-focus2.png ] ; then
+	XMLS=$(2>/dev/null grep '>button-focus2.png<' -l 720p/*)
+	perlregex $XMLS 's|>button-focus2.png<|>'$BUTTON_FO'<|g'
+	check_and_remove media/button-focus2.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
 
-printf "\nReplacing focused texture for all controls with custom '$BUTTON_NF' texturenofocus: "
-if grep -q 'button-focus2.png' 720p/DialogAddonSettings.xml ; then
-	R='s|(<texturenofocus[^>]*>'$BUTTON_NF'</texturenofocus>#' # $BUTTON_NF texturenofocus
-	R+='(\s*(?!<texturenofocus>)(?!<control)(?!<image)(?!<texturefocus>)<[a-z][^#]*#)*?' # match opening tags (0+)
-	# match bad texturefocus combination for $BUTTON_NF texturenofocus
-	R+='\s*)<texturefocus[^>]*>(?!button-focus.png)(?!HomeSubFO.png)(?!floor_buttonFO.png)(?!ShutdownButton)[^<]*<[^#]*#'
-	R+='|\1<texturefocus border="2">'$BUTTON_FO'</texturefocus>#|g'
-	perlregex "$R"
-	# match bad texturefocus combination for $BUTTON_NF texturenofocus
-	R='s|<texturefocus[^>]*>(?!button-focus.png)(?!HomeSubFO.png)(?!floor_buttonFO.png)(?!ShutdownButton)[^<]*<[^#]*#'
-	R+='((\s*(?!<texturenofocus>)(?!<control)(?!<image)(?!<texturefocus>)<[a-z][^#]*#)*?' # match opening tags (0+)
-	R+='\s*<texturenofocus[^>]*>'$BUTTON_NF'</texturenofocus>#)' # $BUTTON_NF texturenofocus
-	R+='|<texturefocus border="2">'$BUTTON_FO'</texturefocus>#\1|g'
-	perlregex "$R"
+printf "\nReplacing button-focus.png: "
+if [ -f media/button-focus.png ] ; then
+	XMLS=$(2>/dev/null grep '>button-focus.png<' -l 720p/*)
+	perlregex $XMLS 's|>button-focus.png<|>'$BUTTON_FO'<|g'
+	check_and_remove media/button-focus.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
 
-printf "\nReplacing focused texture for all items with custom '$BUTTON_NF' texturenofocus: "
-if grep -q 'button-focus2.png' 720p/DialogAlbumInfo.xml ; then
-	R='s|(<focusedlayout[^#]*#'
-	R+='(\s*<[a-z][^#]*#)*?' # match opening tags (0+)
-	R+='\s*<texture[^>]*>'$BUTTON_NF'</texture>#'
-	R+='(\s*(<[a-z][^#]*\|</control>)#)*?' # match opening or </control> tags (0+)
-	# match bad texture combination for black-back texture
-	R+='\s*)<texture[^>]*>(?!button-focus.png)(?!HomeSubFO.png)(?!floor_buttonFO.png)(?!ShutdownButton)[^>]*>'
-	R+='|\1<texture border="2">'$BUTTON_FO'</texture>|g'
-	perlregex "$R"
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
+#printf "\nReplacing focused texture for controls with default $BUTTON_NF texturenofocus: "
+#if [ $(grep 'button-focus2.png' 720p/DialogAddonSettings.xml | wc -l) -gt 1 ] ; then
+#	# Looking for all controls having $BUTTON_NF texturenofocus
+#	DEFS=$(grep '<default type="' 720p/defaults.xml | sed 's|^\s*[^"]*"||g' | cut -f1 -d'"')
+#	OLDIFS=$IFS ; 
+#	CONTROLS+="$(SEP=''
+#		IFS=$'\n'; for DEF in $DEFS ; do
+#		DEFSTART=$(grep -n '<default type="'"$DEF"'">' 720p/defaults.xml | cut -f1 -d:)
+#		DEFSTOP=$(tail -n+"$DEFSTART" 720p/defaults.xml | grep -n '</default>' | head -n 1 | cut -f1 -d:)
+#		STRUCT=$(tail -n+"$DEFSTART" 720p/defaults.xml | head -n "$DEFSTOP")
+#		if echo "$STRUCT" | grep -q "$BUTTON_NF</texturenofocus>" ; then
+#			printf "$SEP$DEF"
+#			SEP="\|"
+#		fi
+#	done)"
+#	#printf "\n\n'$CONTROLS'"
+#	R='s|(<control type="('"$CONTROLS"')"[^#]*#'
+#	#opening tags, but not texturenofocus
+#	R+='(\s*(?!<texturenofocus)<[a-z][^#]*#)*?' 		
+#	#texturefocus with tex not matching the default one
+#	R+='\s*)<texturefocus[^>]*>(?!button-focus.png)(?!HomeSubFO.png)(?!floor_buttonFO.png)(?!ShutdownButton)[^<]*(<[^#]*#'
+#	R+='(\s*(?!<texturenofocus)<[a-z][^#]*#)*?'
+#	R+='\s*</control>)|\1<texturefocus border="2">'$BUTTON_FO'\4|g'
+#	perlregex "$R"
+#	printf "%sDONE!%s" $GREEN $RESET
+#else
+#	printf "%sSKIPPED.%s" $CYAN $RESET
+#fi
+#step
+
+#printf "\nReplacing focused texture for all controls with custom '$BUTTON_NF' texturenofocus: "
+#if grep -q 'button-focus2.png' 720p/DialogAddonSettings.xml ; then
+#	R='s|(<texturenofocus[^>]*>'$BUTTON_NF'</texturenofocus>#' # $BUTTON_NF texturenofocus
+#	R+='(\s*(?!<texturenofocus>)(?!<control)(?!<image)(?!<texturefocus>)<[a-z][^#]*#)*?' # match opening tags (0+)
+#	# match bad texturefocus combination for $BUTTON_NF texturenofocus
+#	R+='\s*)<texturefocus[^>]*>(?!button-focus.png)(?!HomeSubFO.png)(?!floor_buttonFO.png)(?!ShutdownButton)[^<]*<[^#]*#'
+#	R+='|\1<texturefocus border="2">'$BUTTON_FO'</texturefocus>#|g'
+#	perlregex "$R"
+#	# match bad texturefocus combination for $BUTTON_NF texturenofocus
+#	R='s|<texturefocus[^>]*>(?!button-focus.png)(?!HomeSubFO.png)(?!floor_buttonFO.png)(?!ShutdownButton)[^<]*<[^#]*#'
+#	R+='((\s*(?!<texturenofocus>)(?!<control)(?!<image)(?!<texturefocus>)<[a-z][^#]*#)*?' # match opening tags (0+)
+#	R+='\s*<texturenofocus[^>]*>'$BUTTON_NF'</texturenofocus>#)' # $BUTTON_NF texturenofocus
+#	R+='|<texturefocus border="2">'$BUTTON_FO'</texturefocus>#\1|g'
+#	perlregex "$R"
+#	printf "%sDONE!%s" $GREEN $RESET
+#else
+#	printf "%sSKIPPED.%s" $CYAN $RESET
+#fi
+#step
+
+#printf "\nReplacing focused texture for all items with custom '$BUTTON_NF' texturenofocus: "
+#if grep -q 'button-focus2.png' 720p/DialogAlbumInfo.xml ; then
+#	R='s|(<focusedlayout[^#]*#'
+#	R+='(\s*<[a-z][^#]*#)*?' # match opening tags (0+)
+#	R+='\s*<texture[^>]*>'$BUTTON_NF'</texture>#'
+#	R+='(\s*(<[a-z][^#]*\|</control>)#)*?' # match opening or </control> tags (0+)
+#	# match bad texture combination for black-back texture
+#	R+='\s*)<texture[^>]*>(?!button-focus.png)(?!HomeSubFO.png)(?!floor_buttonFO.png)(?!ShutdownButton)[^>]*>'
+#	R+='|\1<texture border="2">'$BUTTON_FO'</texture>|g'
+#	perlregex "$R"
+#	printf "%sDONE!%s" $GREEN $RESET
+#else
+#	printf "%sSKIPPED.%s" $CYAN $RESET
+#fi
+#step
 
 printf "\nRemoving up and down arrows from several dialogs: "
 if [ -f media/arrow-big-up.png ] ; then
@@ -1275,27 +1297,6 @@ else
 fi
 step
 
-printf "\nReplacing button-focus2.png: "
-if [ -f media/button-focus2.png ] ; then
-	XMLS=$(2>/dev/null grep '>button-focus2.png<' -l 720p/*)
-	perlregex $XMLS 's|>button-focus2.png<|>'$BUTTON_FO'<|g'
-	check_and_remove media/button-focus2.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nReplacing button-focus.png: "
-if [ -f media/button-focus.png ] ; then
-	XMLS=$(2>/dev/null grep '>button-focus.png<' -l 720p/*)
-	perlregex $XMLS 's|>button-focus.png<|>'$BUTTON_FO'<|g'
-	check_and_remove media/button-focus.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
 
 printf "\nReplacing spin controls: "
 if [ -f media/scroll-down-2.png ] ; then

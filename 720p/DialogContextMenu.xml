@@ -33,7 +33,7 @@
 				<align>center</align>
 				<textcolor>grey2</textcolor>
 				<focusedcolor>white</focusedcolor>
-				<texturefocus border="5">button-focus.png</texturefocus>
+				<texturefocus border="5">buttons/fo_light.png</texturefocus>
 				<label>$LOCALIZE[31167]</label>
 				<onclick>RunPlugin(plugin://script.simpleplaylists/?mode=addCurrentUrl)</onclick>
 				<visible>System.HasAddon(script.simpleplaylists)+ !Skin.HasSetting(DisableWatchItLater) + [Container.Content(Episodes) | Container.Content(Movies) | Container.Content(Songs)]</visible>
@@ -49,7 +49,7 @@
 			<align>center</align>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
-			<texturefocus border="5">button-focus.png</texturefocus>
+			<texturefocus border="5">buttons/fo_light.png</texturefocus>
 		</control>
 	</controls>
 </window>
