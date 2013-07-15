@@ -14,19 +14,6 @@
 				<posy>50</posy>
 				<visible>Library.HasContent(Movies)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies)</visible>
-				<control type="label">
-					<description>Title label</description>
-					<posx>180</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>540</width>
-					<label>$LOCALIZE[31175]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<visible>IntegerGreaterThan(Container(8000).NumItems,0)</visible>
-				</control>
 				<control type="list" id="8000">
 					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8000).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8000).NumItems,3)">conditional</animation>
@@ -53,7 +40,7 @@
 							<posy>0</posy>
 							<width>180</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -84,7 +71,7 @@
 							<posy>0</posy>
 							<width>180</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -162,19 +149,6 @@
 				<posy>50</posy>
 				<visible>Library.HasContent(TVShows)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes)</visible>
-				<control type="label">
-					<description>Title label</description>
-					<posx>240</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>480</width>
-					<label>$LOCALIZE[31178]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<visible>IntegerGreaterThan(Container(8001).NumItems,0)</visible>
-				</control>
 				<control type="list" id="8001">
 					<animation effect="slide" start="0,0" end="120,0" time="0" condition="StringCompare(Container(8001).NumItems,3)">conditional</animation>
 					<animation effect="slide" start="0,0" end="240,0" time="0" condition="StringCompare(Container(8001).NumItems,2)">conditional</animation>
@@ -202,7 +176,7 @@
 							<posy>0</posy>
 							<width>240</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -267,7 +241,7 @@
 							<posy>0</posy>
 							<width>240</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -394,19 +368,6 @@
 				<posy>50</posy>
 				<visible>Library.HasContent(Music)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentAlbums)</visible>
-				<control type="label">
-					<description>Title label</description>
-					<posx>160</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>480</width>
-					<label>$LOCALIZE[31181]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<visible>IntegerGreaterThan(Container(8002).NumItems,0)</visible>
-				</control>
 				<control type="list" id="8002">
 					<animation effect="slide" start="0,0" end="100,0" time="0" condition="StringCompare(Container(8002).NumItems,3)">conditional</animation>
 					<animation effect="slide" start="0,0" end="200,0" time="0" condition="StringCompare(Container(8002).NumItems,2)">conditional</animation>
@@ -432,7 +393,7 @@
 							<posy>0</posy>
 							<width>200</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -476,7 +437,7 @@
 							<posy>0</posy>
 							<width>200</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -568,19 +529,6 @@
 				<posy>50</posy>
 				<visible>Library.HasContent(MusicVideos)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentConcerts)</visible>
-				<control type="label">
-					<description>Title label</description>
-					<posx>180</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>540</width>
-					<label>$LOCALIZE[31184]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<visible>IntegerGreaterThan(Container(8003).NumItems,0)</visible>
-				</control>
 				<control type="list" id="8003">
 					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8003).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8003).NumItems,3)">conditional</animation>
@@ -607,7 +555,7 @@
 							<posy>0</posy>
 							<width>180</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -638,7 +586,7 @@
 							<posy>0</posy>
 							<width>180</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -716,19 +664,6 @@
 				<posy>50</posy>
 				<visible>Library.HasContent(Movies)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies)</visible>
-				<control type="label">
-					<description>Title label</description>
-					<posx>180</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>540</width>
-					<label>$LOCALIZE[31176]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<visible>IntegerGreaterThan(Container(8004).NumItems,0)</visible>
-				</control>
 				<control type="list" id="8004">
 					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8004).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8004).NumItems,3)">conditional</animation>
@@ -755,7 +690,7 @@
 							<posy>0</posy>
 							<width>180</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -786,7 +721,7 @@
 							<posy>0</posy>
 							<width>180</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -864,19 +799,6 @@
 				<posy>50</posy>
 				<visible>Library.HasContent(TVShows)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes)</visible>
-				<control type="label">
-					<description>Title label</description>
-					<posx>240</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>480</width>
-					<label>$LOCALIZE[31179]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<visible>IntegerGreaterThan(Container(8005).NumItems,0)</visible>
-				</control>
 				<control type="list" id="8005">
 					<animation effect="slide" start="0,0" end="120,0" time="0" condition="StringCompare(Container(8005).NumItems,3)">conditional</animation>
 					<animation effect="slide" start="0,0" end="240,0" time="0" condition="StringCompare(Container(8005).NumItems,2)">conditional</animation>
@@ -904,7 +826,7 @@
 							<posy>0</posy>
 							<width>240</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -969,7 +891,7 @@
 							<posy>0</posy>
 							<width>240</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -1096,19 +1018,6 @@
 				<posy>50</posy>
 				<visible>Library.HasContent(Music)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomAlbums)</visible>
-				<control type="label">
-					<description>Title label</description>
-					<posx>160</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>480</width>
-					<label>$LOCALIZE[31182]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<visible>IntegerGreaterThan(Container(8006).NumItems,0)</visible>
-				</control>
 				<control type="list" id="8006">
 					<animation effect="slide" start="0,0" end="100,0" time="0" condition="StringCompare(Container(8006).NumItems,3)">conditional</animation>
 					<animation effect="slide" start="0,0" end="200,0" time="0" condition="StringCompare(Container(8006).NumItems,2)">conditional</animation>
@@ -1134,7 +1043,7 @@
 							<posy>0</posy>
 							<width>200</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -1178,7 +1087,7 @@
 							<posy>0</posy>
 							<width>200</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -1270,19 +1179,6 @@
 				<posy>50</posy>
 				<visible>Library.HasContent(MusicVideos)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomConcerts)</visible>
-				<control type="label">
-					<description>Title label</description>
-					<posx>180</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>540</width>
-					<label>$LOCALIZE[31185]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<visible>IntegerGreaterThan(Container(8007).NumItems,0)</visible>
-				</control>
 				<control type="list" id="8007">
 					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8007).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8007).NumItems,3)">conditional</animation>
@@ -1309,7 +1205,7 @@
 							<posy>0</posy>
 							<width>180</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -1340,7 +1236,7 @@
 							<posy>0</posy>
 							<width>180</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -1418,19 +1314,6 @@
 				<posy>50</posy>
 				<visible>Library.HasContent(Movies)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies)</visible>
-				<control type="label">
-					<description>Title label</description>
-					<posx>180</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>540</width>
-					<label>$LOCALIZE[31177]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<visible>IntegerGreaterThan(Container(8008).NumItems,0)</visible>
-				</control>
 				<control type="list" id="8008">
 					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8008).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8008).NumItems,3)">conditional</animation>
@@ -1457,7 +1340,7 @@
 							<posy>0</posy>
 							<width>180</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -1488,7 +1371,7 @@
 							<posy>0</posy>
 							<width>180</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -1566,19 +1449,6 @@
 				<posy>50</posy>
 				<visible>Library.HasContent(TVShows)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes)</visible>
-				<control type="label">
-					<description>Title label</description>
-					<posx>240</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>480</width>
-					<label>$LOCALIZE[31180]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<visible>IntegerGreaterThan(Container(8009).NumItems,0)</visible>
-				</control>
 				<control type="list" id="8009">
 					<animation effect="slide" start="0,0" end="120,0" time="0" condition="StringCompare(Container(8009).NumItems,3)">conditional</animation>
 					<animation effect="slide" start="0,0" end="240,0" time="0" condition="StringCompare(Container(8009).NumItems,2)">conditional</animation>
@@ -1606,7 +1476,7 @@
 							<posy>0</posy>
 							<width>240</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -1671,7 +1541,7 @@
 							<posy>0</posy>
 							<width>240</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -1798,19 +1668,6 @@
 				<posy>50</posy>
 				<visible>Library.HasContent(Music)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedAlbums)</visible>
-				<control type="label">
-					<description>Title label</description>
-					<posx>160</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>480</width>
-					<label>$LOCALIZE[31183]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<visible>IntegerGreaterThan(Container(8010).NumItems,0)</visible>
-				</control>
 				<control type="list" id="8010">
 					<animation effect="slide" start="0,0" end="100,0" time="0" condition="StringCompare(Container(8010).NumItems,3)">conditional</animation>
 					<animation effect="slide" start="0,0" end="200,0" time="0" condition="StringCompare(Container(8010).NumItems,2)">conditional</animation>
@@ -1836,7 +1693,7 @@
 							<posy>0</posy>
 							<width>200</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -1880,7 +1737,7 @@
 							<posy>0</posy>
 							<width>200</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -1972,19 +1829,6 @@
 				<posy>50</posy>
 				<visible>Library.HasContent(MusicVideos)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedConcerts)</visible>
-				<control type="label">
-					<description>Title label</description>
-					<posx>180</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>540</width>
-					<label>$LOCALIZE[31186]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<visible>IntegerGreaterThan(Container(8011).NumItems,0)</visible>
-				</control>
 				<control type="list" id="8011">
 					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8011).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8011).NumItems,3)">conditional</animation>
@@ -2011,7 +1855,7 @@
 							<posy>0</posy>
 							<width>180</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -2042,7 +1886,7 @@
 							<posy>0</posy>
 							<width>180</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -2120,33 +1964,6 @@
 				<posy>50</posy>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),PlayListVideo) + !Skin.HasSetting(DisableScriptPlayList)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(PlayListType),Movie)</visible>
-				<control type="label">
-					<description>Recent Title label</description>
-					<posx>180</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>540</width>
-					<label>$INFO[Container(9000).ListItem.Label] - $LOCALIZE[31175]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<visible>IntegerGreaterThan(Container(8012).NumItems,0)</visible>
-					<visible>Skin.HasSetting(EnableRandomPlaylist)</visible>
-				</control>
-				<control type="label">
-					<description>Random Title label</description>
-					<posx>180</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>540</width>
-					<label>$INFO[Container(9000).ListItem.Label] - $LOCALIZE[31176]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<visible>!Skin.HasSetting(EnableRandomPlaylist) + !IsEmpty(Container(8012).ListItem.Label)</visible>
-				</control>
 				<control type="list" id="8012">
 					<visible>Container(9000).HasFocus(1)</visible>
 					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8012).NumItems,4)">conditional</animation>
@@ -2405,33 +2222,6 @@
 				<posy>50</posy>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),PlayListVideo) + !Skin.HasSetting(DisableScriptPlayList)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(PlayListType),Episode)</visible>
-				<control type="label">
-					<description>Random Title label</description>
-					<posx>240</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>480</width>
-					<label>$INFO[Container(9000).ListItem.Label] - $LOCALIZE[31178]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<visible>IntegerGreaterThan(Container(8013).NumItems,0)</visible>
-					<visible>Skin.HasSetting(EnableRandomPlaylist)</visible>
-				</control>
-				<control type="label">
-					<description>Recent Title label</description>
-					<posx>240</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>480</width>
-					<label>$INFO[Container(9000).ListItem.Label] - $LOCALIZE[31179]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<visible>!Skin.HasSetting(EnableRandomPlaylist) + !IsEmpty(Container(8013).ListItem.Label)</visible>
-				</control>
 				<control type="list" id="8013">
 					<visible>Container(9000).HasFocus(1)</visible>
 					<animation effect="slide" start="0,0" end="120,0" time="0" condition="StringCompare(Container(8013).NumItems,3)">conditional</animation>
@@ -2700,19 +2490,6 @@
 				<posy>50</posy>
 				<visible>Library.HasContent(Movies) + !Skin.HasSetting(DisableScriptPlayList)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),UnWatched)</visible>
-				<control type="label">
-					<description>Random Title label</description>
-					<posx>180</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>540</width>
-					<label>$LOCALIZE[16101] $LOCALIZE[20342]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<visible>IntegerGreaterThan(Container(8014).NumItems,0)</visible>
-				</control>
 				<control type="list" id="8014">
 					<animation effect="slide" start="0,0" end="90,0" time="0" condition="StringCompare(Container(8014).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="180,0" time="0" condition="StringCompare(Container(8014).NumItems,3)">conditional</animation>
@@ -2739,7 +2516,7 @@
 							<posy>0</posy>
 							<width>180</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -2770,7 +2547,7 @@
 							<posy>0</posy>
 							<width>180</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -2848,19 +2625,6 @@
 				<posy>50</posy>
 				<visible>!IsEmpty(Weather.Plugin) + Weather.IsFetched</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),Weather)</visible>
-				<control type="label">
-					<description>Title label</description>
-					<posx>240</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>480</width>
-					<label>$INFO[Window(Weather).Property(Location)]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<visible>IntegerGreaterThan(Container(8015).NumItems,0)</visible>
-				</control>
 				<control type="list" id="8015">
 					<animation effect="slide" start="0,0" end="120,0" time="0" condition="StringCompare(Container(8015).NumItems,3)">conditional</animation>
 					<animation effect="slide" start="0,0" end="240,0" time="0" condition="StringCompare(Container(8015).NumItems,2)">conditional</animation>
@@ -2888,7 +2652,7 @@
 							<posy>0</posy>
 							<width>240</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -2944,7 +2708,7 @@
 							<posy>0</posy>
 							<width>240</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -3026,19 +2790,6 @@
 				<posy>50</posy>
 				<visible>IntegerGreaterThan(Window(Home).Property(favourite.count),0)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),Favourites)</visible>
-				<control type="label">
-					<description>Title label</description>
-					<posx>240</posx>
-					<posy>220</posy>
-					<height>20</height>
-					<width>480</width>
-					<label>$LOCALIZE[1036]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font12_title</font>
-					<textcolor>white</textcolor>
-					<visible>IntegerGreaterThan(Container(8016).NumItems,0)</visible>
-				</control>
 				<control type="list" id="8016">
 					<animation effect="slide" start="0,0" end="120,0" time="0" condition="StringCompare(Container(8016).NumItems,3)">conditional</animation>
 					<animation effect="slide" start="0,0" end="240,0" time="0" condition="StringCompare(Container(8016).NumItems,2)">conditional</animation>
@@ -3066,7 +2817,7 @@
 							<posy>0</posy>
 							<width>240</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -3098,7 +2849,7 @@
 							<posy>0</posy>
 							<width>240</width>
 							<height>220</height>
-							<texture border="15">RecentAddedBack.png</texture>
+							<texture border="15">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -3184,7 +2935,7 @@
 				<posy>0</posy>
 				<width>180</width>
 				<height>220</height>
-				<texture border="15">RecentAddedBack.png</texture>
+				<texture border="15">buttons/nf_light.png</texture>
 			</control>
 			<control type="image">
 				<posx>10</posx>
@@ -3215,7 +2966,7 @@
 				<posy>0</posy>
 				<width>180</width>
 				<height>220</height>
-				<texture border="15">RecentAddedBack.png</texture>
+				<texture border="15">buttons/nf_light.png</texture>
 			</control>
 			<control type="image">
 				<posx>10</posx>
@@ -3272,7 +3023,7 @@
 				<posy>0</posy>
 				<width>240</width>
 				<height>220</height>
-				<texture border="15">RecentAddedBack.png</texture>
+				<texture border="15">buttons/nf_light.png</texture>
 			</control>
 			<control type="image">
 				<posx>10</posx>
@@ -3328,7 +3079,7 @@
 				<posy>0</posy>
 				<width>240</width>
 				<height>220</height>
-				<texture border="15">RecentAddedBack.png</texture>
+				<texture border="15">buttons/nf_light.png</texture>
 			</control>
 			<control type="image">
 				<posx>10</posx>

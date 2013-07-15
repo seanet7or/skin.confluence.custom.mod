@@ -1908,8 +1908,6 @@ else
 fi
 step
 
-exit
-
 #printf "\nRemoving labels for addons on the main menu: "
 #if grep -q '<posx>91</posx>' 720p/includes.xml | head -n 1 ; then
 #	remove_control 'label' '<posx>91</posx>' 720p/includes.xml
@@ -1947,6 +1945,8 @@ else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
+
+exit
 
 printf "\n############# APPLYING MODIFICATIONS TO PICTURE LIBRARY #######################"
 

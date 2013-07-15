@@ -24,15 +24,6 @@
 	<controls>
 		<include>CommonBackground</include>
 		<include>BackgroundRainDropEffect</include>
-		<control type="image">
-			<posx>0</posx>
-			<posy>100r</posy>
-			<width>1280</width>
-			<height>100</height>
-			<texture>homefloor.png</texture>
-			<animation effect="fade" time="250" condition="Window.Previous(Home)">WindowOpen</animation>
-			<animation effect="fade" time="250" condition="Window.Next(Home)">WindowClose</animation>
-		</control>
 		<control type="group">
 			<posx>0</posx>
 			<posy>60</posy>
