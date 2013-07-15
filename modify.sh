@@ -140,8 +140,11 @@ remove_include() {
 	REGEX+='\s*</include>#'
 	REGEX+='||g'
 	perlregex "$REGEX" "$FILES"
+	if grep -I -q "$NAME" 720p/* ; then
+		printf "\n'Removed include $NAME' was found in the .xmls: \n"
+		grep "$NAME" 720p/*
+	fi
 }
-
 
 # removes <control type="?"> .... </control> structure from a xml file
 # this function removes only controls without an id!
@@ -512,6 +515,7 @@ step
 printf "\nRemoving studio logos: "
 if grep -q 'listitem.Studio,studios' 720p/ViewsLogoVertical.xml ; then
 	remove_control 'image' '<texture>.INFO.listitem.Studio,studios.,.png.</texture>'
+	remove_include 'MediaStudioFlagging' 720p/includes.xml
 	rm -rf media/studios
 	printf "%sDONE!%s" $GREEN $RESET
 else
