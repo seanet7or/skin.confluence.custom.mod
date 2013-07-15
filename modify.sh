@@ -297,6 +297,9 @@ MEDIA_BLADE='dialogs/bladesub_light.png'
 HOME_BLADE='dialogs/bladesub_light.png'
 OVERLAY_BG='dialogs/overlay-background.png'
 KEYBOARD_EDITAREA='KeyboardEditArea_light.png'
+PROGRESS_MIDLIGHT='progressbar/OSDProgressMidLight_light.png'
+PROGRESS_MID='progressbar/OSDProgressMid_light.png'
+PROGRESS_BACK='progressbar/OSDProgressBack_light.png'
 
 STEP=0
 printf "\n############# APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ########################"
@@ -1138,14 +1141,12 @@ else
 fi
 step
 
-exit
-
 printf "\nChanging progress bars: "
 if [ -f media/OSDProgressBack.png ] ; then
 	XMLS=$(2>/dev/null grep 'OSDProgress' -l 720p/*)
-	perlregex $XMLS 's|OSDProgressMidLight.png|progressbar/OSDProgressMidLight_light.png|g'
-	perlregex $XMLS 's|OSDProgressMid.png|progressbar/OSDProgressMid_light.png|g'
-	perlregex $XMLS 's|OSDProgressBack.png|progressbar/OSDProgressBack_light.png|g'
+	perlregex $XMLS 's|OSDProgressMidLight.png|'$PROGRESS_MIDLIGHT'|g'
+	perlregex $XMLS 's|OSDProgressMid.png|'$PROGRESS_MID'|g'
+	perlregex $XMLS 's|OSDProgressBack.png|'$PROGRESS_BACK'|g'
 	check_and_remove media/OSDProgressMidLight.png
 	check_and_remove media/OSDProgressMid.png
 	check_and_remove media/OSDProgressBack.png
