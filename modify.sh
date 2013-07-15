@@ -1335,7 +1335,6 @@ else
 fi
 step
 
-exit
 printf "\nReplacing toggle buttons: "
 if [ -f media/scroll-down.png ] ; then
 	XMLS=$(2>/dev/null grep '>scroll-' -l 720p/*)
@@ -1346,10 +1345,10 @@ if [ -f media/scroll-down.png ] ; then
 	R+='\s*<height)>20<'
 	R+='|\1>23<\2>13<|g'
 	perlregex 720p/defaults.xml "$R"
-	perlregex $XMLS 's|>scroll-down.png<|>buttons/spin-down-nf_light.png<|g'
-	perlregex $XMLS 's|>scroll-down-focus.png<|>buttons/spin-down-fo_light.png<|g'
-	perlregex $XMLS 's|>scroll-up.png<|>buttons/spin-up-nf_light.png<|g'
-	perlregex $XMLS 's|>scroll-up-focus.png<|>buttons/spin-up-fo_light.png<|g'
+	perlregex $XMLS 's|>scroll-down.png<|>'$SPINDOWN_NF'<|g'
+	perlregex $XMLS 's|>scroll-down-focus.png<|>'$SPINDOWN_FO'<|g'
+	perlregex $XMLS 's|>scroll-up.png<| flipy="true">'$SPINDOWN_NF'<|g'
+	perlregex $XMLS 's|>scroll-up-focus.png<| flipy="true">'$SPINDOWN_FO'<|g'
 	check_and_remove media/scroll-down.png
 	check_and_remove media/scroll-down-focus.png
 	check_and_remove media/scroll-up.png
