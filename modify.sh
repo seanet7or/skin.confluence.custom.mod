@@ -2154,14 +2154,14 @@ else
 fi
 step
 
-printf "\nRemoving unused include MediaStudioFlagging: "
-if grep -I -q 'MediaStudioFlagging' 720p/includes.xml ; then
-	remove_include 'MediaStudioFlagging' 720p/includes.xml	
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
+#printf "\nRemoving unused include MediaStudioFlagging: "
+#if grep -I -q 'MediaStudioFlagging' 720p/includes.xml ; then
+#	remove_include 'MediaStudioFlagging' 720p/includes.xml	
+#	printf "%sDONE!%s" $GREEN $RESET
+#else
+#	printf "%sSKIPPED.%s" $CYAN $RESET
+#fi
+#step
 
 source textures.sh
 OLDIFS=$IFS ; IFS=$'\n'
