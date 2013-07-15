@@ -1946,8 +1946,6 @@ else
 fi
 step
 
-exit
-
 printf "\n############# APPLYING MODIFICATIONS TO PICTURE LIBRARY #######################"
 
 printf "\nChanging picture views to use thumbnails for preview: "
@@ -2012,7 +2010,7 @@ if grep -I -q '<description>Date time txt</description>' 720p/ViewsPictures.xml 
 	R+='\s*</control>\s*#'
 	R+='\s*</focusedlayout>\s*#)'
 	R+='|\1<posx>8</posx>\2<posy>8</posy>\3<width>128</width>\4<height>128</height>\5'
-	R+='\6<bordersize>2</bordersize>#'
+	R+='\6<bordersize>5</bordersize>#'
 	R+='\6<bordertexture border="6">buttons/folder-focus_light.png</bordertexture>#'
 	R+='\6\7|'
 	perlregex 720p/ViewsPictures.xml "$R"
@@ -2021,6 +2019,8 @@ else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
+
+exit
 
 #printf "\n############# APPLYING MODIFICATIONS TO VIDEO LIBRARY #########################"
 

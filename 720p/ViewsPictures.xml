@@ -63,11 +63,12 @@
 	<include name="PictureThumbView">
 		<control type="group">
 			<visible>Control.IsVisible(514)</visible>
-			<control type="panel" id="514">
+			<control type="fixedlist" id="514">
 				<posx>60</posx>
-				<posy>75</posy>
-				<width>432</width>
-				<height>576</height>
+				<posy>-72</posy>
+				<width>144</width>
+				<height>864</height>
+				<focusposition>1</focusposition>
 				<onleft>2</onleft>
 				<onright>60</onright>
 				<onup>514</onup>
@@ -88,17 +89,19 @@
 				</itemlayout>
 				<focusedlayout height="144" width="144">
 					<control type="image">
-						<posx>10</posx>
-						<posy>10</posy>
-						<width>124</width>
-						<height>124</height>
+						<posx>8</posx>
+						<posy>8</posy>
+						<width>128</width>
+						<height>128</height>
 						<aspectratio>keep</aspectratio>
+						<bordersize>5</bordersize>
+						<bordertexture border="6">buttons/folder-focus_light.png</bordertexture>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
 					</control>
 				</focusedlayout>
 			</control>
 			<control type="scrollbar" id="60">
-				<posx>500</posx>
+				<posx>212</posx>
 				<posy>70</posy>
 				<width>14</width>
 				<height>576</height>
@@ -113,13 +116,13 @@
 				<visible>Control.IsVisible(514)</visible>
 			</control>
 			<control type="group">
-				<posx>570</posx>
+				<posx>282</posx>
 				<posy>80</posy>
 				<control type="label">
 					<description>Title txt</description>
 					<posx>0</posx>
 					<posy>0</posy>
-					<width>640</width>
+					<width>928</width>
 					<height>15</height>
 					<label>$VAR[MainItemLabel]</label>
 					<align>center</align>
@@ -130,35 +133,11 @@
 				<control type="image">
 					<posx>0</posx>
 					<posy>30</posy>
-					<width>640</width>
-					<height>470</height>
-					<texture background="true">$INFO[ListItem.FilenameAndPath]</texture>
+					<width>928</width>
+					<height>570</height>
+					<texture background="true">$INFO[ListItem.Icon]</texture>
 					<fadetime>600</fadetime>
 					<aspectratio>keep</aspectratio>
-				</control>
-				<control type="label">
-					<description>Date time txt</description>
-					<posx>0</posx>
-					<posy>510</posy>
-					<width>640</width>
-					<height>15</height>
-					<label>$INFO[ListItem.PictureDateTime,[COLOR=blue]$LOCALIZE[31326][/COLOR] - ]</label>
-					<align>left</align>
-					<aligny>center</aligny>
-					<font>font13</font>
-					<textcolor>white</textcolor>
-				</control>
-				<control type="label">
-					<description>Resolution txt</description>
-					<posx>0</posx>
-					<posy>535</posy>
-					<width>640</width>
-					<height>15</height>
-					<label>$INFO[ListItem.PictureResolution,[COLOR=blue]$LOCALIZE[31327][/COLOR] - ]</label>
-					<align>left</align>
-					<aligny>center</aligny>
-					<font>font13</font>
-					<textcolor>white</textcolor>
 				</control>
 			</control>
 		</control>
