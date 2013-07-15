@@ -540,9 +540,8 @@ if [ -f backgrounds/media-overlay.jpg ] || [ -f media/media-overlay.jpg ]  ; the
 	XMLS=$(2>/dev/null grep 'SKINDEFAULT.jpg' -l 720p/*)
 	perlregex $XMLS 's|special://skin/backgrounds/SKINDEFAULT.jpg|'$BACKGROUND_DEF'|g'
 	perlregex 's|.INFO.Skin.CurrentTheme,special://skin/backgrounds/,.jpg.|'$BACKGROUND_DEF'|g'
-	XMLS=$(2>/dev/null grep 'media-overlay.jpg' -l 720p/*)
-	#perlregex 's|<texture>special://skin/backgrounds/media-overlay.jpg</texture>|<texture>'$BACKGROUND_DEF'</texture>|g'
-	perlregex $XMLS 's|<texture>media-overlay.jpg</texture>|<texture>'$BACKGROUND_DEF'</texture>|g'
+	XMLS=$(2>/dev/null grep '>media-overlay.jpg<' -l 720p/*)
+	perlregex $XMLS 's|>media-overlay.jpg<|>'$BACKGROUND_DEF'<|g'
 	check_and_remove backgrounds/SKINDEFAULT.jpg
 	check_and_remove backgrounds/media-overlay.jpg
 	check_and_remove media/media-overlay.jpg

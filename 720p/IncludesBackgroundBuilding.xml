@@ -23,7 +23,7 @@
 				<include>Dimensions_Fullscreen</include>
 				<aspectratio>scale</aspectratio>
 				<include>VisibleFadeEffect</include>
-				<texture fallback="special://skin/backgrounds/SKINDEFAULT.jpg">$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</texture>
+				<texture fallback="special://skin/backgrounds/default_light.jpg">special://skin/backgrounds/default_light.jpg</texture>
 				<visible>[!Skin.HasSetting(GlobalWeatherFanart) + IsEmpty(Skin.String(CustomBackgroundPath))] | [Skin.HasSetting(GlobalWeatherFanart) + !Window.IsVisible(home)]</visible>
 			</control>
 			<control type="multiimage">
@@ -253,7 +253,7 @@
 		</control>
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
-			<texture>media-overlay.jpg</texture>
+			<texture>special://skin/backgrounds/default_light.jpg</texture>
 			<visible>Player.HasVideo + ![Window.IsVisible(PVR) + [Control.IsVisible(11) | Control.IsVisible(12)]]</visible>
 			<include>VisibleFadeEffect</include>
 		</control>
