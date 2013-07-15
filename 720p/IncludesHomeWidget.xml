@@ -7,7 +7,6 @@
 			<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 			<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 			<visible>!Window.IsVisible(Favourites)</visible>
-			<include>VisibleFadeEffect</include>
 			<animation effect="fade" time="300" delay="1000">WindowOpen</animation>
 			<animation effect="fade" time="200">WindowClose</animation>
 			<control type="group">
@@ -15,7 +14,6 @@
 				<posy>50</posy>
 				<visible>Library.HasContent(Movies)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies)</visible>
-				<include>VisibleFadeEffect</include>
 				<control type="label">
 					<description>Title label</description>
 					<posx>180</posx>
@@ -149,7 +147,6 @@
 					<texturenofocus>buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8000,-1)</onclick>
 					<visible>Control.HasFocus(8000) + Container(8000).HasPrevious</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 				<control type="button">
 					<description>right Arrow</description>
@@ -161,7 +158,6 @@
 					<texturenofocus flipx="true">buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8000,1)</onclick>
 					<visible>Control.HasFocus(8000) + Container(8000).HasNext</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 			</control>
 			<control type="group">
@@ -169,7 +165,6 @@
 				<posy>50</posy>
 				<visible>Library.HasContent(TVShows)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes)</visible>
-				<include>VisibleFadeEffect</include>
 				<control type="label">
 					<description>Title label</description>
 					<posx>240</posx>
@@ -389,7 +384,6 @@
 					<texturenofocus>buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8001,-1)</onclick>
 					<visible>Control.HasFocus(8001) + Container(8001).HasPrevious</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 				<control type="button">
 					<description>right Arrow</description>
@@ -401,7 +395,6 @@
 					<texturenofocus flipx="true">buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8001,1)</onclick>
 					<visible>Control.HasFocus(8001) + Container(8001).HasNext</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 			</control>
 			<control type="group">
@@ -409,7 +402,6 @@
 				<posy>50</posy>
 				<visible>Library.HasContent(Music)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentAlbums)</visible>
-				<include>VisibleFadeEffect</include>
 				<control type="label">
 					<description>Title label</description>
 					<posx>160</posx>
@@ -571,7 +563,6 @@
 					<texturenofocus>buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8002,-1)</onclick>
 					<visible>Control.HasFocus(8002) + Container(8002).HasPrevious</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 				<control type="button">
 					<description>right Arrow</description>
@@ -583,7 +574,6 @@
 					<texturenofocus flipx="true">buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8002,1)</onclick>
 					<visible>Control.HasFocus(8002) + Container(8002).HasNext</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 			</control>
 			<control type="group">
@@ -591,7 +581,6 @@
 				<posy>50</posy>
 				<visible>Library.HasContent(MusicVideos)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentConcerts)</visible>
-				<include>VisibleFadeEffect</include>
 				<control type="label">
 					<description>Title label</description>
 					<posx>180</posx>
@@ -725,7 +714,6 @@
 					<texturenofocus>buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8003,-1)</onclick>
 					<visible>Control.HasFocus(8003) + Container(8003).HasPrevious</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 				<control type="button">
 					<description>right Arrow</description>
@@ -737,7 +725,6 @@
 					<texturenofocus flipx="true">buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8003,1)</onclick>
 					<visible>Control.HasFocus(8003) + Container(8003).HasNext</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 			</control>
 			<control type="group">
@@ -745,7 +732,6 @@
 				<posy>50</posy>
 				<visible>Library.HasContent(Movies)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies)</visible>
-				<include>VisibleFadeEffect</include>
 				<control type="label">
 					<description>Title label</description>
 					<posx>180</posx>
@@ -879,7 +865,6 @@
 					<texturenofocus>buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8004,-1)</onclick>
 					<visible>Control.HasFocus(8004) + Container(8004).HasPrevious</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 				<control type="button">
 					<description>right Arrow</description>
@@ -891,7 +876,6 @@
 					<texturenofocus flipx="true">buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8004,1)</onclick>
 					<visible>Control.HasFocus(8004) + Container(8004).HasNext</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 			</control>
 			<control type="group">
@@ -899,7 +883,6 @@
 				<posy>50</posy>
 				<visible>Library.HasContent(TVShows)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes)</visible>
-				<include>VisibleFadeEffect</include>
 				<control type="label">
 					<description>Title label</description>
 					<posx>240</posx>
@@ -1119,7 +1102,6 @@
 					<texturenofocus>buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8005,-1)</onclick>
 					<visible>Control.HasFocus(8005) + Container(8005).HasPrevious</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 				<control type="button">
 					<description>right Arrow</description>
@@ -1131,7 +1113,6 @@
 					<texturenofocus flipx="true">buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8005,1)</onclick>
 					<visible>Control.HasFocus(8005) + Container(8005).HasNext</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 			</control>
 			<control type="group">
@@ -1139,7 +1120,6 @@
 				<posy>50</posy>
 				<visible>Library.HasContent(Music)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomAlbums)</visible>
-				<include>VisibleFadeEffect</include>
 				<control type="label">
 					<description>Title label</description>
 					<posx>160</posx>
@@ -1301,7 +1281,6 @@
 					<texturenofocus>buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8006,-1)</onclick>
 					<visible>Control.HasFocus(8006) + Container(8006).HasPrevious</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 				<control type="button">
 					<description>right Arrow</description>
@@ -1313,7 +1292,6 @@
 					<texturenofocus flipx="true">buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8006,1)</onclick>
 					<visible>Control.HasFocus(8006) + Container(8006).HasNext</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 			</control>
 			<control type="group">
@@ -1321,7 +1299,6 @@
 				<posy>50</posy>
 				<visible>Library.HasContent(MusicVideos)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomConcerts)</visible>
-				<include>VisibleFadeEffect</include>
 				<control type="label">
 					<description>Title label</description>
 					<posx>180</posx>
@@ -1455,7 +1432,6 @@
 					<texturenofocus>buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8007,-1)</onclick>
 					<visible>Control.HasFocus(8007) + Container(8007).HasPrevious</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 				<control type="button">
 					<description>right Arrow</description>
@@ -1467,7 +1443,6 @@
 					<texturenofocus flipx="true">buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8007,1)</onclick>
 					<visible>Control.HasFocus(8007) + Container(8007).HasNext</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 			</control>
 			<control type="group">
@@ -1475,7 +1450,6 @@
 				<posy>50</posy>
 				<visible>Library.HasContent(Movies)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies)</visible>
-				<include>VisibleFadeEffect</include>
 				<control type="label">
 					<description>Title label</description>
 					<posx>180</posx>
@@ -1609,7 +1583,6 @@
 					<texturenofocus>buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8008,-1)</onclick>
 					<visible>Control.HasFocus(8008) + Container(8008).HasPrevious</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 				<control type="button">
 					<description>right Arrow</description>
@@ -1621,7 +1594,6 @@
 					<texturenofocus flipx="true">buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8008,1)</onclick>
 					<visible>Control.HasFocus(8008) + Container(8008).HasNext</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 			</control>
 			<control type="group">
@@ -1629,7 +1601,6 @@
 				<posy>50</posy>
 				<visible>Library.HasContent(TVShows)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes)</visible>
-				<include>VisibleFadeEffect</include>
 				<control type="label">
 					<description>Title label</description>
 					<posx>240</posx>
@@ -1849,7 +1820,6 @@
 					<texturenofocus>buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8009,-1)</onclick>
 					<visible>Control.HasFocus(8009) + Container(8009).HasPrevious</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 				<control type="button">
 					<description>right Arrow</description>
@@ -1861,7 +1831,6 @@
 					<texturenofocus flipx="true">buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8009,1)</onclick>
 					<visible>Control.HasFocus(8009) + Container(8009).HasNext</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 			</control>
 			<control type="group">
@@ -1869,7 +1838,6 @@
 				<posy>50</posy>
 				<visible>Library.HasContent(Music)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedAlbums)</visible>
-				<include>VisibleFadeEffect</include>
 				<control type="label">
 					<description>Title label</description>
 					<posx>160</posx>
@@ -2031,7 +1999,6 @@
 					<texturenofocus>buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8010,-1)</onclick>
 					<visible>Control.HasFocus(8010) + Container(8010).HasPrevious</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 				<control type="button">
 					<description>right Arrow</description>
@@ -2043,7 +2010,6 @@
 					<texturenofocus flipx="true">buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8010,1)</onclick>
 					<visible>Control.HasFocus(8010) + Container(8010).HasNext</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 			</control>
 			<control type="group">
@@ -2051,7 +2017,6 @@
 				<posy>50</posy>
 				<visible>Library.HasContent(MusicVideos)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedConcerts)</visible>
-				<include>VisibleFadeEffect</include>
 				<control type="label">
 					<description>Title label</description>
 					<posx>180</posx>
@@ -2185,7 +2150,6 @@
 					<texturenofocus>buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8011,-1)</onclick>
 					<visible>Control.HasFocus(8011) + Container(8011).HasPrevious</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 				<control type="button">
 					<description>right Arrow</description>
@@ -2197,7 +2161,6 @@
 					<texturenofocus flipx="true">buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8011,1)</onclick>
 					<visible>Control.HasFocus(8011) + Container(8011).HasNext</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 			</control>
 			<control type="group">
@@ -2205,7 +2168,6 @@
 				<posy>50</posy>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),PlayListVideo) + !Skin.HasSetting(DisableScriptPlayList)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(PlayListType),Movie)</visible>
-				<include>VisibleFadeEffect</include>
 				<control type="label">
 					<description>Recent Title label</description>
 					<posx>180</posx>
@@ -2475,7 +2437,6 @@
 					<texturenofocus>buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8012,-1)</onclick>
 					<visible>Control.HasFocus(8012) + Container(8012).HasPrevious</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 				<control type="button">
 					<description>right Arrow</description>
@@ -2487,7 +2448,6 @@
 					<texturenofocus flipx="true">buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8012,1)</onclick>
 					<visible>Control.HasFocus(8012) + Container(8012).HasNext</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 			</control>
 			<control type="group">
@@ -2495,7 +2455,6 @@
 				<posy>50</posy>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),PlayListVideo) + !Skin.HasSetting(DisableScriptPlayList)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(PlayListType),Episode)</visible>
-				<include>VisibleFadeEffect</include>
 				<control type="label">
 					<description>Random Title label</description>
 					<posx>240</posx>
@@ -2775,7 +2734,6 @@
 					<texturenofocus>buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8013,-1)</onclick>
 					<visible>Control.HasFocus(8013) + Container(8013).HasPrevious</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 				<control type="button">
 					<description>right Arrow</description>
@@ -2787,7 +2745,6 @@
 					<texturenofocus flipx="true">buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8013,1)</onclick>
 					<visible>Control.HasFocus(8013) + Container(8013).HasNext</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 			</control>
 			<control type="group">
@@ -2795,7 +2752,6 @@
 				<posy>50</posy>
 				<visible>Library.HasContent(Movies) + !Skin.HasSetting(DisableScriptPlayList)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),UnWatched)</visible>
-				<include>VisibleFadeEffect</include>
 				<control type="label">
 					<description>Random Title label</description>
 					<posx>180</posx>
@@ -2929,7 +2885,6 @@
 					<texturenofocus>buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8014,-1)</onclick>
 					<visible>Control.HasFocus(8014) + Container(8014).HasPrevious</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 				<control type="button">
 					<description>right Arrow</description>
@@ -2941,7 +2896,6 @@
 					<texturenofocus flipx="true">buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8014,1)</onclick>
 					<visible>Control.HasFocus(8014) + Container(8014).HasNext</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 			</control>
 			<control type="group">
@@ -2949,7 +2903,6 @@
 				<posy>50</posy>
 				<visible>!IsEmpty(Weather.Plugin) + Weather.IsFetched</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),Weather)</visible>
-				<include>VisibleFadeEffect</include>
 				<control type="label">
 					<description>Title label</description>
 					<posx>240</posx>
@@ -3135,7 +3088,6 @@
 				<posy>50</posy>
 				<visible>IntegerGreaterThan(Window(Home).Property(favourite.count),0)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),Favourites)</visible>
-				<include>VisibleFadeEffect</include>
 				<control type="label">
 					<description>Title label</description>
 					<posx>240</posx>
@@ -3275,7 +3227,6 @@
 					<texturenofocus>buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8016,-1)</onclick>
 					<visible>Control.HasFocus(8016) + Container(8016).HasPrevious</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 				<control type="button">
 					<description>right Arrow</description>
@@ -3287,7 +3238,6 @@
 					<texturenofocus flipx="true">buttons/spin-left-fo_light.png</texturenofocus>
 					<onclick>Control.Move(8016,1)</onclick>
 					<visible>Control.HasFocus(8016) + Container(8016).HasNext</visible>
-					<include>VisibleFadeEffect</include>
 				</control>
 			</control>
 		</control>

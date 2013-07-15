@@ -3,7 +3,6 @@
 	<include name="CommonRootView">
 		<control type="group">
 			<visible>Control.IsVisible(50)</visible>
-			<include>VisibleFadeEffect</include>
 			<control type="list" id="50">
 				<posx>70</posx>
 				<posy>78</posy>
@@ -114,7 +113,6 @@
 						<height>41</height>
 						<texture border="0,2,0,2">buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(50)</visible>
-						<include>VisibleFadeEffect</include>
 					</control>
 					<control type="label">
 						<posx>10</posx>
@@ -254,7 +252,6 @@
 	<include name="ThumbnailView">
 		<control type="group">
 			<visible>Control.IsVisible(500)</visible>
-			<include>VisibleFadeEffect</include>
 			<control type="panel" id="500">
 				<posx>90</posx>
 				<posy>80</posy>
@@ -463,7 +460,6 @@
 	<include name="WideIconView">
 		<control type="group">
 			<visible>Control.IsVisible(505)</visible>
-			<include>VisibleFadeEffect</include>
 			<control type="panel" id="505">
 				<visible>Container.Content(TVShows) | Container.Content(Files)</visible>
 				<posx>95</posx>
@@ -539,7 +535,6 @@
 	<include name="FullWidthList">
 		<control type="group">
 			<visible>Control.IsVisible(51)</visible>
-			<include>VisibleFadeEffect</include>
 			<control type="list" id="51">
 				<posx>95</posx>
 				<posy>78</posy>
@@ -666,7 +661,6 @@
 						<height>41</height>
 						<texture border="0,2,0,2">buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(51)</visible>
-						<include>VisibleFadeEffect</include>
 					</control>
 					<control type="image">
 						<posx>10</posx>

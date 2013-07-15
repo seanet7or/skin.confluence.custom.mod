@@ -11,13 +11,11 @@
 		<control type="group" id="100">
 			<control type="group">
 				<visible>!Skin.HasSetting(HideBackGroundFanart) + !Skin.HasSetting(HideWidgetFanArt)</visible>
-				<include>VisibleFadeEffect</include>
 				<control type="image">
 					<include>Dimensions_Fullscreen</include>
 					<texture background="true">$INFO[Container(111).ListItem.Property(Fanart)]</texture>
 					<aspectratio>scale</aspectratio>
 					<fadetime>FanartCrossfadeTime</fadetime>
-					<include>VisibleFadeEffect</include>
 					<visible>Control.HasFocus(111)</visible>
 				</control>
 				<control type="image">
@@ -25,7 +23,6 @@
 					<texture background="true">$INFO[Container(121).ListItem.Property(Fanart)]</texture>
 					<aspectratio>scale</aspectratio>
 					<fadetime>FanartCrossfadeTime</fadetime>
-					<include>VisibleFadeEffect</include>
 					<visible>Control.HasFocus(121)</visible>
 				</control>
 				<control type="image">
@@ -33,7 +30,6 @@
 					<texture background="true">$INFO[Container(131).ListItem.Property(Fanart)]</texture>
 					<aspectratio>scale</aspectratio>
 					<fadetime>FanartCrossfadeTime</fadetime>
-					<include>VisibleFadeEffect</include>
 					<visible>Control.HasFocus(131)</visible>
 				</control>
 				<control type="image">
@@ -41,7 +37,6 @@
 					<texture background="true">$INFO[Container(141).ListItem.Property(Fanart)]</texture>
 					<aspectratio>scale</aspectratio>
 					<fadetime>FanartCrossfadeTime</fadetime>
-					<include>VisibleFadeEffect</include>
 					<visible>Control.HasFocus(141)</visible>
 				</control>
 				<control type="image">
@@ -49,7 +44,6 @@
 					<texture background="true">$INFO[Container(151).ListItem.Property(Fanart)]</texture>
 					<aspectratio>scale</aspectratio>
 					<fadetime>FanartCrossfadeTime</fadetime>
-					<include>VisibleFadeEffect</include>
 					<visible>Control.HasFocus(151)</visible>
 				</control>
 				<control type="image">
@@ -57,7 +51,6 @@
 					<texture background="true">$INFO[Container(161).ListItem.Property(Fanart)]</texture>
 					<aspectratio>scale</aspectratio>
 					<fadetime>FanartCrossfadeTime</fadetime>
-					<include>VisibleFadeEffect</include>
 					<visible>Control.HasFocus(161)</visible>
 				</control>
 				<control type="image">
@@ -65,7 +58,6 @@
 					<texture background="true">$INFO[Container(171).ListItem.Property(Fanart)]</texture>
 					<aspectratio>scale</aspectratio>
 					<fadetime>FanartCrossfadeTime</fadetime>
-					<include>VisibleFadeEffect</include>
 					<visible>Control.HasFocus(171)</visible>
 				</control>
 				<control type="image">
@@ -73,7 +65,6 @@
 					<texture background="true">$INFO[Container(181).ListItem.Property(Fanart)]</texture>
 					<aspectratio>scale</aspectratio>
 					<fadetime>FanartCrossfadeTime</fadetime>
-					<include>VisibleFadeEffect</include>
 					<visible>Control.HasFocus(181)</visible>
 				</control>
 			</control>
@@ -344,7 +335,6 @@
 						</control>
 						<control type="panel" id="111">
 							<visible>Container(9000).HasFocus(1)</visible>
-							<include>VisibleFadeEffect</include>
 							<posx>0</posx>
 							<posy>0</posy>
 							<width>750</width>
@@ -558,7 +548,6 @@
 						</control>
 						<control type="panel" id="121">
 							<visible>Container(9000).HasFocus(2)</visible>
-							<include>VisibleFadeEffect</include>
 							<posx>0</posx>
 							<posy>0</posy>
 							<width>750</width>
@@ -714,7 +703,6 @@
 						</control>
 						<control type="panel" id="131">
 							<visible>Container(9000).HasFocus(3)</visible>
-							<include>VisibleFadeEffect</include>
 							<posx>0</posx>
 							<posy>0</posy>
 							<width>750</width>
@@ -979,7 +967,6 @@
 						</control>
 						<control type="panel" id="151">
 							<visible>Container(9000).HasFocus(5)</visible>
-							<include>VisibleFadeEffect</include>
 							<posx>0</posx>
 							<posy>0</posy>
 							<width>750</width>
@@ -1151,7 +1138,6 @@
 						</control>
 						<control type="panel" id="161">
 							<visible>Container(9000).HasFocus(6)</visible>
-							<include>VisibleFadeEffect</include>
 							<posx>0</posx>
 							<posy>0</posy>
 							<width>750</width>
@@ -1287,7 +1273,6 @@
 						</control>
 						<control type="panel" id="171">
 							<visible>Container(9000).HasFocus(7)</visible>
-							<include>VisibleFadeEffect</include>
 							<posx>0</posx>
 							<posy>0</posy>
 							<width>750</width>
@@ -1423,7 +1408,6 @@
 						</control>
 						<control type="panel" id="181">
 							<visible>Container(9000).HasFocus(8)</visible>
-							<include>VisibleFadeEffect</include>
 							<posx>0</posx>
 							<posy>0</posy>
 							<width>750</width>

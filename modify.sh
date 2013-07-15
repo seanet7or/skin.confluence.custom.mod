@@ -1493,7 +1493,6 @@ else
 fi
 step
 
-
 printf "\nRemoving VisibleFadeEffect: "
 if grep -q 'VisibleFadeEffect' 720p/DialogAlbumInfo.xml ; then
 	XMLS=$(2>/dev/null grep 'VisibleFadeEffect' -l 720p/*)
