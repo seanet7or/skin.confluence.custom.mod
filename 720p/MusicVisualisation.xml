@@ -67,14 +67,6 @@
 					<aspectratio aligny="bottom">stretch</aspectratio>
 					<texture background="true" diffuse="livecdcase/cdmask.png" fallback="livecdcase/DefaultAlbumCover.png">$INFO[MusicPlayer.Cover]</texture>
 				</control>
-				<control type="image">
-					<posx>4</posx>
-					<posy>3</posy>
-					<width>229</width>
-					<height>207</height>
-					<bordertexture>livecdcase/cdshadow.png</bordertexture>
-					<texture background="true">livecdcase/cdglass.png</texture>
-				</control>
 				<visible>!Skin.HasSetting(HideVisualizationCDart) + !Skin.HasSetting(HideTraditionalCDart)</visible>
 			</control>
 			<control type="image">

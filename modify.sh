@@ -1094,7 +1094,6 @@ else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
-exit
 
 printf "\nReplacing MediaBladeSub: "
 if [ -f media/MediaBladeSub.png ] ; then
@@ -1138,6 +1137,8 @@ else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
+
+exit
 
 printf "\nChanging progress bars: "
 if [ -f media/OSDProgressBack.png ] ; then
