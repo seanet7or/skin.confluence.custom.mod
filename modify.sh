@@ -525,9 +525,8 @@ step
 	
 printf "\nReplacing content panel background: "
 if [ -f media/ContentPanel.png ] ; then	
-	XMLS=$(2>/dev/null grep 'ContentPanel.png' -l 720p/*)
-	R='s|(\s*)<texture[^>]*>ContentPanel.png</texture>'
-	R+='|\1<texture>'$CONTENT_BG'</texture>|g'
+	XMLS=$(2>/dev/null grep '>ContentPanel.png<' -l 720p/*)
+	R='s|>ContentPanel.png<|>'$CONTENT_BG'<|g'
 	perlregex $XMLS "$R"
 	check_and_remove media/ContentPanel.png
 	printf "%sDONE!%s" $GREEN $RESET
