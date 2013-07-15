@@ -300,7 +300,7 @@ KEYBOARD_EDITAREA='KeyboardEditArea_light.png'
 PROGRESS_MIDLIGHT='progressbar/OSDProgressMidLight_light.png'
 PROGRESS_MID='progressbar/OSDProgressMid_light.png'
 PROGRESS_BACK='progressbar/OSDProgressBack_light.png'
-SEEKSLIDER='seekslider_light.png'
+#SEEKSLIDER='seekslider_light.png'
 SPINDOWN_NF='buttons/spin-down-nf_light.png'
 SPINDOWN_FO='buttons/spin-down-fo_light.png'
 SPINLEFT_FO='buttons/spin-left-fo_light.png'
@@ -1273,8 +1273,8 @@ step
 printf "\nReplacing seeksliders: "
 if [ -f media/seekslider2.png ] ; then
 	XMLS=$(2>/dev/null grep 'seekslider' -l 720p/*)
-	perlregex $XMLS 's|seekslider2.png|'$SEEKSLIDER'|g'
-	perlregex $XMLS 's|seekslider.png|'$SEEKSLIDER'|g' --nocheck
+	perlregex $XMLS 's|seekslider2.png|-|g'
+	perlregex $XMLS 's|seekslider.png|-|g' --nocheck
 	check_and_remove media/seekslider.png
 	check_and_remove media/seekslider2.png
 	printf "%sDONE!%s" $GREEN $RESET
