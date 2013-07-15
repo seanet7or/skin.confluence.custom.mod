@@ -13,7 +13,7 @@
 				<posy>0</posy>
 				<width>1100</width>
 				<height>720</height>
-				<texture border="15,0,0,0" flipx="true">dialogs/bladesub_light.png</texture>
+				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
 			</control>
 			<control type="group">
 				<animation effect="fade" delay="400" start="0" end="100" time="200">WindowOpen</animation>
@@ -28,7 +28,6 @@
 					<label>$INFO[Listitem.Title]</label>
 					<align>center</align>
 					<aligny>center</aligny>
-					<textcolor>white</textcolor>
 				</control>
 				<control type="grouplist">
 					<description>Media Codec Flagging Images</description>
@@ -56,7 +55,7 @@
 						<width>675</width>
 						<height>380</height>
 						<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
-						<bordertexture border="5">buttons/nf_light.png</bordertexture>
+						<bordertexture>buttons/nf_light.png</bordertexture>
 						<bordersize>4</bordersize>
 						<aspectratio>keep</aspectratio>
 						<visible>!IsEmpty(Listitem.Art(fanart))</visible>
@@ -70,7 +69,7 @@
 							<width>675</width>
 							<height>380</height>
 							<texture>Fanart_Fallback_Small.jpg</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>4</bordersize>
 							<aspectratio>stretch</aspectratio>
 							<colordiffuse>99FFFFFF</colordiffuse>
@@ -81,7 +80,6 @@
 							<width>675</width>
 							<height>380</height>
 							<font>font30_title</font>
-							<textcolor>white</textcolor>
 							<align>center</align>
 							<aligny>center</aligny>
 							<label>31311</label>
@@ -98,7 +96,7 @@
 						<posy>0</posy>
 						<width>675</width>
 						<height>380</height>
-						<texture border="5">buttons/nf_light.png</texture>
+						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="label">
 						<posx>0</posx>
@@ -131,7 +129,7 @@
 						<width>270</width>
 						<height>380</height>
 						<aspectratio>stretch</aspectratio>
-						<bordertexture border="5">buttons/nf_light.png</bordertexture>
+						<bordertexture>buttons/nf_light.png</bordertexture>
 						<bordersize>4</bordersize>
 						<texture background="true">$VAR[PosterThumb]</texture>
 					</control>
@@ -152,7 +150,6 @@
 								<posy>0</posy>
 								<width>160</width>
 								<height>30</height>
-								<font>font13</font>
 								<align>right</align>
 								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
@@ -164,10 +161,8 @@
 								<posy>0</posy>
 								<width>565</width>
 								<height>30</height>
-								<font>font13</font>
 								<align>left</align>
 								<aligny>center</aligny>
-								<textcolor>white</textcolor>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -186,7 +181,6 @@
 								<posy>0</posy>
 								<width>160</width>
 								<height>30</height>
-								<font>font13</font>
 								<align>right</align>
 								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
@@ -198,10 +192,8 @@
 								<posy>0</posy>
 								<width>565</width>
 								<height>30</height>
-								<font>font13</font>
 								<align>left</align>
 								<aligny>center</aligny>
-								<textcolor>white</textcolor>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -292,7 +284,7 @@
 						<width>270</width>
 						<height>380</height>
 						<aspectratio>stretch</aspectratio>
-						<bordertexture border="5">buttons/nf_light.png</bordertexture>
+						<bordertexture>buttons/nf_light.png</bordertexture>
 						<bordersize>4</bordersize>
 						<texture background="true">$VAR[PosterThumb]</texture>
 					</control>
@@ -313,7 +305,6 @@
 								<posy>0</posy>
 								<width>160</width>
 								<height>30</height>
-								<font>font13</font>
 								<align>right</align>
 								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
@@ -325,10 +316,8 @@
 								<posy>0</posy>
 								<width>565</width>
 								<height>30</height>
-								<font>font13</font>
 								<align>left</align>
 								<aligny>center</aligny>
-								<textcolor>white</textcolor>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -347,7 +336,6 @@
 								<posy>0</posy>
 								<width>160</width>
 								<height>30</height>
-								<font>font13</font>
 								<align>right</align>
 								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
@@ -359,10 +347,8 @@
 								<posy>0</posy>
 								<width>565</width>
 								<height>30</height>
-								<font>font13</font>
 								<align>left</align>
 								<aligny>center</aligny>
-								<textcolor>white</textcolor>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -417,7 +403,7 @@
 						<width>380</width>
 						<height>250</height>
 						<aspectratio aligny="bottom">keep</aspectratio>
-						<bordertexture border="5">buttons/nf_light.png</bordertexture>
+						<bordertexture>buttons/nf_light.png</bordertexture>
 						<bordersize>4</bordersize>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
 					</control>
@@ -438,7 +424,6 @@
 								<posy>0</posy>
 								<width>160</width>
 								<height>30</height>
-								<font>font13</font>
 								<align>right</align>
 								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
@@ -450,10 +435,8 @@
 								<posy>0</posy>
 								<width>465</width>
 								<height>30</height>
-								<font>font13</font>
 								<align>left</align>
 								<aligny>center</aligny>
-								<textcolor>white</textcolor>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -472,7 +455,6 @@
 								<posy>0</posy>
 								<width>160</width>
 								<height>30</height>
-								<font>font13</font>
 								<align>right</align>
 								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
@@ -484,10 +466,8 @@
 								<posy>0</posy>
 								<width>465</width>
 								<height>30</height>
-								<font>font13</font>
 								<align>left</align>
 								<aligny>center</aligny>
-								<textcolor>white</textcolor>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -572,7 +552,7 @@
 						<width>380</width>
 						<height>360</height>
 						<aspectratio>keep</aspectratio>
-						<bordertexture border="5">buttons/nf_light.png</bordertexture>
+						<bordertexture>buttons/nf_light.png</bordertexture>
 						<bordersize>4</bordersize>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
 					</control>
@@ -593,7 +573,6 @@
 								<posy>0</posy>
 								<width>160</width>
 								<height>30</height>
-								<font>font13</font>
 								<align>right</align>
 								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
@@ -605,10 +584,8 @@
 								<posy>0</posy>
 								<width>465</width>
 								<height>30</height>
-								<font>font13</font>
 								<align>left</align>
 								<aligny>center</aligny>
-								<textcolor>white</textcolor>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -627,7 +604,6 @@
 								<posy>0</posy>
 								<width>160</width>
 								<height>30</height>
-								<font>font13</font>
 								<align>right</align>
 								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
@@ -639,10 +615,8 @@
 								<posy>0</posy>
 								<width>465</width>
 								<height>30</height>
-								<font>font13</font>
 								<align>left</align>
 								<aligny>center</aligny>
-								<textcolor>white</textcolor>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -726,7 +700,6 @@
 					<height>120</height>
 					<font>font12</font>
 					<align>justify</align>
-					<textcolor>white</textcolor>
 					<pagecontrol>61</pagecontrol>
 					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="3000" delay="4000" repeat="5000">!Control.HasFocus(61) + Skin.HasSetting(AutoScroll)</autoscroll>
@@ -761,7 +734,7 @@
 							<posy>0</posy>
 							<width>430</width>
 							<height>40</height>
-							<texture border="5">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="label">
 							<posx>10</posx>
@@ -782,7 +755,7 @@
 							<width>430</width>
 							<height>40</height>
 							<visible>!Control.HasFocus(50)</visible>
-							<texture border="5">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>0</posx>
@@ -790,7 +763,7 @@
 							<width>430</width>
 							<height>40</height>
 							<visible>Control.HasFocus(50)</visible>
-							<texture border="5">buttons/fo_light.png</texture>
+							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="label">
 							<posx>10</posx>
@@ -821,8 +794,8 @@
 						<description>Play/browse to Show</description>
 						<include>ButtonInfoDialogsCommonValues</include>
 						<label>208</label>
-						<alttexturefocus border="2">buttons/fo_light.png</alttexturefocus>
-						<alttexturenofocus border="2">buttons/nf_light.png</alttexturenofocus>
+						<alttexturefocus>buttons/fo_light.png</alttexturefocus>
+						<alttexturenofocus>buttons/nf_light.png</alttexturenofocus>
 						<altlabel>1024</altlabel>
 						<usealttexture>Container.Content(TVShows)</usealttexture>
 					</control>

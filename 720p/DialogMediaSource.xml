@@ -58,14 +58,13 @@
 					<posy>0</posy>
 					<width>525</width>
 					<height>40</height>
-					<texture border="5">buttons/nf_light.png</texture>
+					<texture>buttons/nf_light.png</texture>
 				</control>
 				<control type="label">
 					<posx>10</posx>
 					<posy>0</posy>
 					<width>490</width>
 					<height>40</height>
-					<font>font13</font>
 					<align>left</align>
 					<aligny>center</aligny>
 					<textcolor>grey2</textcolor>
@@ -80,7 +79,7 @@
 					<width>525</width>
 					<height>40</height>
 					<visible>!Control.HasFocus(10)</visible>
-					<texture border="5">buttons/nf_light.png</texture>
+					<texture>buttons/nf_light.png</texture>
 				</control>
 				<control type="image">
 					<posx>0</posx>
@@ -88,14 +87,13 @@
 					<width>525</width>
 					<height>41</height>
 					<visible>Control.HasFocus(10)</visible>
-					<texture border="5">buttons/fo_light.png</texture>
+					<texture>buttons/fo_light.png</texture>
 				</control>
 				<control type="label">
 					<posx>10</posx>
 					<posy>0</posy>
 					<width>490</width>
 					<height>40</height>
-					<font>font13</font>
 					<align>left</align>
 					<aligny>center</aligny>
 					<selectedcolor>selected</selectedcolor>
@@ -108,8 +106,8 @@
 			<posy>105</posy>
 			<width>14</width>
 			<height>225</height>
-			<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-			<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+			<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+			<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
 			<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 			<onleft>10</onleft>
 			<onright>9000</onright>
@@ -128,9 +126,6 @@
 				<label>1024</label>
 				<font>font12_title</font>
 				<align>center</align>
-				<aligny>center</aligny>
-				<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
-				<texturefocus border="5">buttons/fo_light.png</texturefocus>
 				<onup>18</onup>
 				<onleft>60</onleft>
 				<onright>10</onright>
@@ -145,9 +140,6 @@
 				<label>15019</label>
 				<font>font12_title</font>
 				<align>center</align>
-				<aligny>center</aligny>
-				<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
-				<texturefocus border="5">buttons/fo_light.png</texturefocus>
 				<onup>11</onup>
 				<onleft>60</onleft>
 				<onright>10</onright>
@@ -162,9 +154,6 @@
 				<label>1210</label>
 				<font>font12_title</font>
 				<align>center</align>
-				<aligny>center</aligny>
-				<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
-				<texturefocus border="5">buttons/fo_light.png</texturefocus>
 				<onup>13</onup>
 				<onleft>60</onleft>
 				<onright>10</onright>
@@ -190,11 +179,7 @@
 			<width>740</width>
 			<height>40</height>
 			<align>center</align>
-			<aligny>center</aligny>
 			<label>-</label>
-			<font>font13</font>
-			<texturefocus border="5">buttons/fo_light.png</texturefocus>
-			<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
 			<onup>10</onup>
 			<onleft>12</onleft>
 			<onright>19</onright>
@@ -210,9 +195,6 @@
 				<width>200</width>
 				<height>40</height>
 				<align>center</align>
-				<aligny>center</aligny>
-				<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
-				<texturefocus border="5">buttons/fo_light.png</texturefocus>
 				<label>186</label>
 				<font>font12_title</font>
 				<onup>12</onup>
@@ -227,9 +209,6 @@
 				<width>200</width>
 				<height>40</height>
 				<align>center</align>
-				<aligny>center</aligny>
-				<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
-				<texturefocus border="5">buttons/fo_light.png</texturefocus>
 				<label>222</label>
 				<font>font12_title</font>
 				<onup>12</onup>

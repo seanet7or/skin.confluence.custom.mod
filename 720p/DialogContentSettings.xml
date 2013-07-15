@@ -49,11 +49,9 @@
 				<posy>100</posy>
 				<width>320</width>
 				<height>40</height>
-				<texturefocus border="5">buttons/fo_light.png</texturefocus>
-				<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+				<texturenofocus>buttons/nf_light.png</texturenofocus>
 				<font>-</font>
 				<label>-</label>
-				<reverse>yes</reverse>
 				<onup>28</onup>
 				<ondown>5</ondown>
 				<onleft>60</onleft>
@@ -69,7 +67,6 @@
 				<label>$INFO[Control.GetLabel(3)]</label>
 				<align>left</align>
 				<aligny>center</aligny>
-				<textcolor>white</textcolor>
 			</control>
 			<control type="label">
 				<description>Used Scraper Header</description>
@@ -98,7 +95,6 @@
 				<posy>315</posy>
 				<width>320</width>
 				<height>30</height>
-				<font>font13</font>
 				<label>[B]$INFO[ListItem.Label][/B]</label>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -133,7 +129,7 @@
 						<posy>0</posy>
 						<width>360</width>
 						<height>40</height>
-						<texture border="5">buttons/nf_light.png</texture>
+						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="image">
 						<posx>5</posx>
@@ -147,7 +143,6 @@
 						<posy>0</posy>
 						<width>290</width>
 						<height>40</height>
-						<font>font13</font>
 						<align>left</align>
 						<aligny>center</aligny>
 						<textcolor>grey2</textcolor>
@@ -162,7 +157,7 @@
 						<width>360</width>
 						<height>40</height>
 						<visible>!Control.HasFocus(4)</visible>
-						<texture border="5">buttons/nf_light.png</texture>
+						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="image">
 						<posx>0</posx>
@@ -170,7 +165,7 @@
 						<width>360</width>
 						<height>40</height>
 						<visible>Control.HasFocus(4)</visible>
-						<texture border="5">buttons/fo_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 					</control>
 					<control type="image">
 						<posx>5</posx>
@@ -184,10 +179,8 @@
 						<posy>0</posy>
 						<width>290</width>
 						<height>40</height>
-						<font>font13</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<textcolor>white</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<info>ListItem.Label</info>
 					</control>
@@ -198,8 +191,8 @@
 				<posy>100</posy>
 				<width>14</width>
 				<height>240</height>
-				<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>4</onleft>
 				<onright>3</onright>
@@ -235,16 +228,12 @@
 				<posx>0</posx>
 				<posy>0</posy>
 				<height>40</height>
-				<font>font13</font>
-				<texturefocus border="5">buttons/fo_light.png</texturefocus>
 			</control>
 			<control type="radiobutton" id="8">
 				<description>Default RadioButton</description>
 				<posx>0</posx>
 				<posy>0</posy>
 				<height>40</height>
-				<font>font13</font>
-				<texturefocus border="5">buttons/fo_light.png</texturefocus>
 			</control>
 			<control type="group" id="9001">
 				<posy>615</posy>
@@ -255,7 +244,6 @@
 					<width>200</width>
 					<height>40</height>
 					<align>center</align>
-					<aligny>center</aligny>
 					<font>font12_title</font>
 					<label>186</label>
 					<onleft>6</onleft>
@@ -270,7 +258,6 @@
 					<width>200</width>
 					<height>40</height>
 					<align>center</align>
-					<aligny>center</aligny>
 					<font>font12_title</font>
 					<label>222</label>
 					<onleft>28</onleft>
@@ -285,7 +272,6 @@
 					<width>200</width>
 					<height>40</height>
 					<align>center</align>
-					<aligny>center</aligny>
 					<font>font12_title</font>
 					<label>5</label>
 					<onleft>29</onleft>

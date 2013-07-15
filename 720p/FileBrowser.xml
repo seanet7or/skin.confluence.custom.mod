@@ -20,7 +20,7 @@
 				<posy>0</posy>
 				<width>1100</width>
 				<height>720</height>
-				<texture border="15,0,0,0" flipx="true">dialogs/bladesub_light.png</texture>
+				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
 			</control>
 			<control type="group">
 				<animation effect="fade" delay="400" start="0" end="100" time="200">WindowOpen</animation>
@@ -43,11 +43,9 @@
 					<posy>70</posy>
 					<width>630</width>
 					<height>30</height>
-					<font>font13</font>
 					<haspath>true</haspath>
 					<align>right</align>
 					<aligny>center</aligny>
-					<textcolor>white</textcolor>
 				</control>
 				<control type="grouplist" id="9000">
 					<posx>20</posx>
@@ -94,7 +92,7 @@
 					<posy>460</posy>
 					<width>420</width>
 					<height>210</height>
-					<texture border="5">buttons/nf_light.png</texture>
+					<texture>buttons/nf_light.png</texture>
 				</control>
 				<control type="image">
 					<posx>250</posx>
@@ -138,7 +136,6 @@
 							<posy>0</posy>
 							<width>580</width>
 							<height>40</height>
-							<font>font13</font>
 							<align>left</align>
 							<aligny>center</aligny>
 							<selectedcolor>green</selectedcolor>
@@ -152,7 +149,7 @@
 							<width>640</width>
 							<height>41</height>
 							<visible>Control.HasFocus(450)</visible>
-							<texture border="5">buttons/fo_light.png</texture>
+							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -166,7 +163,6 @@
 							<posy>0</posy>
 							<width>580</width>
 							<height>40</height>
-							<font>font13</font>
 							<align>left</align>
 							<aligny>center</aligny>
 							<selectedcolor>green</selectedcolor>
@@ -198,7 +194,6 @@
 							<posy>0</posy>
 							<width>580</width>
 							<height>40</height>
-							<font>font13</font>
 							<align>left</align>
 							<aligny>center</aligny>
 							<selectedcolor>green</selectedcolor>
@@ -212,7 +207,7 @@
 							<width>640</width>
 							<height>41</height>
 							<visible>Control.HasFocus(451)</visible>
-							<texture border="5">buttons/fo_light.png</texture>
+							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -226,7 +221,6 @@
 							<posy>0</posy>
 							<width>580</width>
 							<height>40</height>
-							<font>font13</font>
 							<align>left</align>
 							<aligny>center</aligny>
 							<selectedcolor>green</selectedcolor>
@@ -239,8 +233,8 @@
 					<posy>120</posy>
 					<width>14</width>
 					<height>320</height>
-					<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-					<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
 					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 					<onleft>450</onleft>
 					<onright>450</onright>

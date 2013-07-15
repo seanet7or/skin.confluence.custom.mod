@@ -30,7 +30,6 @@
 				<posy>100</posy>
 				<width>690</width>
 				<height>40</height>
-				<font>font13</font>
 				<textcolor>grey2</textcolor>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -54,7 +53,7 @@
 						<posy>0</posy>
 						<width>690</width>
 						<height>95</height>
-						<texture border="5">buttons/nf_light.png</texture>
+						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="image">
 						<posx>10</posx>
@@ -80,7 +79,6 @@
 						<posy>50</posy>
 						<width>580</width>
 						<height>25</height>
-						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
@@ -94,7 +92,7 @@
 						<posy>0</posy>
 						<width>690</width>
 						<height>95</height>
-						<texture border="5">buttons/nf_light.png</texture>
+						<texture>buttons/nf_light.png</texture>
 						<visible>!Control.HasFocus(52)</visible>
 					</control>
 					<control type="image">
@@ -102,7 +100,7 @@
 						<posy>0</posy>
 						<width>690</width>
 						<height>95</height>
-						<texture border="5">buttons/fo_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(52)</visible>
 					</control>
 					<control type="image">
@@ -118,7 +116,6 @@
 						<width>580</width>
 						<height>40</height>
 						<font>font24_title</font>
-						<textcolor>white</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
@@ -129,7 +126,6 @@
 						<posy>50</posy>
 						<width>580</width>
 						<height>25</height>
-						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
@@ -162,8 +158,6 @@
 					<font>-</font>
 					<aligny>-</aligny>
 					<onclick>ActivateWindow(ShutdownMenu)</onclick>
-					<texturefocus border="5">buttons/fo_light.png</texturefocus>
-					<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
 					<onleft>52</onleft>
 					<onright>52</onright>
 					<onup>52</onup>

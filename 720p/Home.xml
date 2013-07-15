@@ -59,7 +59,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>white</textcolor>
 			</control>
 			<control type="label">
 				<description>Title label</description>
@@ -71,7 +70,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font13_title</font>
-				<textcolor>white</textcolor>
 			</control>
 			<control type="label">
 				<description>Time Label</description>
@@ -83,7 +81,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>white</textcolor>
 			</control>
 		</control>
 		<control type="group">
@@ -232,7 +229,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
-					<textcolor>white</textcolor>
 				</control>
 				<control type="label">
 					<description>Time Label</description>
@@ -244,7 +240,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
-					<textcolor>white</textcolor>
 				</control>
 			</control>
 			<control type="group">
@@ -268,7 +263,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
-					<textcolor>white</textcolor>
 				</control>
 				<control type="label">
 					<description>Title label</description>
@@ -280,7 +274,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
-					<textcolor>white</textcolor>
 				</control>
 				<control type="label">
 					<description>Time Label</description>
@@ -292,7 +285,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
-					<textcolor>white</textcolor>
 				</control>
 			</control>
 			<control type="group">
@@ -316,7 +308,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
-					<textcolor>white</textcolor>
 				</control>
 				<control type="label">
 					<description>Title label</description>
@@ -328,7 +319,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
-					<textcolor>white</textcolor>
 				</control>
 				<control type="label">
 					<description>Time Label</description>
@@ -340,7 +330,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
-					<textcolor>white</textcolor>
 				</control>
 			</control>
 			<control type="group">
@@ -364,7 +353,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
-					<textcolor>white</textcolor>
 				</control>
 				<control type="label">
 					<description>Title label</description>
@@ -376,7 +364,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
-					<textcolor>white</textcolor>
 				</control>
 				<control type="label">
 					<description>Time Label</description>
@@ -388,7 +375,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
-					<textcolor>white</textcolor>
 				</control>
 			</control>
 		</control>
@@ -435,7 +421,7 @@
 				<width>35</width>
 				<height>35</height>
 				<colordiffuse>CCFFFFFF</colordiffuse>
-				<texture flipy="true" border="0,5,0,0" flipx="true">HomeSubEnd.png</texture>
+				<texture flipy="true" border="0,2,0,2" flipx="true">HomeSubEnd.png</texture>
 				<animation effect="slide" start="0,0" end="145,0" time="0" condition="Skin.HasSetting(HideHomeSearch)">Conditional</animation>
 			</control>
 			<control type="radiobutton" id="610">
@@ -448,13 +434,11 @@
 				<textwidth>150</textwidth>
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
-				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey2</textcolor>
 				<focusedcolor>white</focusedcolor>
-				<texturefocus flipy="true" border="0,0,0,1">home/sub-fo_light.png</texturefocus>
-				<texturenofocus flipy="true" border="5">home/sub-nf_light.png</texturenofocus>
-				<pulseonselect>false</pulseonselect>
+				<texturefocus flipy="true" border="0,2,0,2">home/sub-fo_light.png</texturefocus>
+				<texturenofocus flipy="true" border="0,2,0,2">home/sub-nf_light.png</texturenofocus>
 				<label>137</label>
 				<onclick>RunScript(script.globalsearch)</onclick>
 				<textureradiofocus>icon_search.png</textureradiofocus>
@@ -479,7 +463,7 @@
 					<posy>0</posy>
 					<width>205</width>
 					<height>35</height>
-					<texture flipy="true" border="0,5,0,0">home/sub-nf_light.png</texture>
+					<texture flipy="true" border="0,2,0,2">home/sub-nf_light.png</texture>
 					<colordiffuse>CCFFFFFF</colordiffuse>
 					<animation effect="zoom" start="0,0,205,35" end="0,0,465,35" delay="0" time="300" condition="!Player.HasMedia + !Skin.HasSetting(HideHomeStats)">conditional</animation>
 					<animation effect="zoom" start="0,0,205,35" end="0,0,265,35" delay="0" time="0" condition="System.HasAddon(plugin.audio.lastfm) + Player.HasAudio">conditional</animation>
@@ -523,7 +507,6 @@
 						<posy>2</posy>
 						<width>30</width>
 						<height>30</height>
-						<label>-</label>
 						<texturefocus>OSDPauseFO.png</texturefocus>
 						<texturenofocus>OSDPauseNF.png</texturenofocus>
 						<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
@@ -670,7 +653,6 @@
 						<posy>2</posy>
 						<width>30</width>
 						<height>30</height>
-						<label>-</label>
 						<texturefocus>OSDPauseFO.png</texturefocus>
 						<texturenofocus>OSDPauseNF.png</texturenofocus>
 						<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
@@ -714,13 +696,11 @@
 				<textwidth>150</textwidth>
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
-				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey2</textcolor>
 				<focusedcolor>white</focusedcolor>
-				<texturefocus flipy="true" border="5">home/sub-fo_light.png</texturefocus>
-				<texturenofocus flipy="true" border="5">home/sub-nf_light.png</texturenofocus>
-				<pulseonselect>false</pulseonselect>
+				<texturefocus flipy="true" border="0,2,0,2">home/sub-fo_light.png</texturefocus>
+				<texturenofocus flipy="true" border="0,2,0,2">home/sub-nf_light.png</texturenofocus>
 				<label>31008</label>
 				<onclick>fullscreen</onclick>
 				<textureradiofocus>GoFullscreen.png</textureradiofocus>
@@ -741,7 +721,6 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<font>font12_title</font>
-				<textcolor>white</textcolor>
 				<visible>!Player.HasMedia + !Skin.HasSetting(HideHomeStats)</visible>
 			</control>
 		</control>
@@ -913,7 +892,7 @@
 						<posy>0</posy>
 						<width>440</width>
 						<height>65</height>
-						<texture>home/main-fo_light.png</texture>
+						<texture border="0,2,0,2">home/main-fo_light.png</texture>
 						<visible>Control.HasFocus(9000)</visible>
 					</control>
 					<control type="label">
@@ -1338,7 +1317,6 @@
 				<pauseatend>200</pauseatend>
 				<label>$VAR[NextFiveSongScroller]</label>
 				<font>font12</font>
-				<textcolor>white</textcolor>
 				<textoffsetx>20</textoffsetx>
 				<visible>!Skin.HasSetting(AutoHidePowerBtn) + Player.HasAudio + !IsEmpty(MusicPlayer.offset(1).Artist) + !Skin.HasSetting(HideNextSongsInfo)</visible>
 			</control>
@@ -1353,7 +1331,6 @@
 				<pauseatend>200</pauseatend>
 				<label>$VAR[NextFiveSongScroller]</label>
 				<font>font12</font>
-				<textcolor>white</textcolor>
 				<textoffsetx>20</textoffsetx>
 				<visible>Skin.HasSetting(AutoHidePowerBtn) + Player.HasAudio + !IsEmpty(MusicPlayer.offset(1).Artist) + !Skin.HasSetting(HideNextSongsInfo)</visible>
 			</control>
@@ -1380,8 +1357,6 @@
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>ActivateWindow(ShutdownMenu)</onclick>
-				<texturefocus border="5">buttons/fo_light.png</texturefocus>
-				<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
 				<onleft>21</onleft>
 				<onright>21</onright>
 				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9002</onup>
@@ -1409,8 +1384,6 @@
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>ActivateWindow(Favourites)</onclick>
-				<texturefocus border="5">buttons/fo_light.png</texturefocus>
-				<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
 				<onleft condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onleft>
 				<onright condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onright>
 				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9002</onup>
@@ -1456,7 +1429,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font28_title</font>
-					<textcolor>white</textcolor>
 					<label>[B]$INFO[Window(Weather).Property(Current.Temperature)][/B]</label>
 				</control>
 				<control type="label">
@@ -1466,7 +1438,6 @@
 					<font>font10</font>
 					<aligny>center</aligny>
 					<label>$INFO[System.TemperatureUnits]</label>
-					<textcolor>white</textcolor>
 					<visible>!IsEmpty(Window(Weather).Property(Current.Temperature))</visible>
 				</control>
 			</control>

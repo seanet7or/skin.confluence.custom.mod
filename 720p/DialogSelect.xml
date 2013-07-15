@@ -48,14 +48,13 @@
 					<posy>0</posy>
 					<width>550</width>
 					<height>40</height>
-					<texture border="5">buttons/nf_light.png</texture>
+					<texture>buttons/nf_light.png</texture>
 				</control>
 				<control type="label">
 					<posx>20</posx>
 					<posy>0</posy>
 					<width>510</width>
 					<height>40</height>
-					<font>font13</font>
 					<textcolor>grey2</textcolor>
 					<selectedcolor>selected</selectedcolor>
 					<align>left</align>
@@ -69,7 +68,7 @@
 					<posy>0</posy>
 					<width>550</width>
 					<height>40</height>
-					<texture border="5">buttons/nf_light.png</texture>
+					<texture>buttons/nf_light.png</texture>
 					<visible>!Control.HasFocus(3)</visible>
 				</control>
 				<control type="image">
@@ -77,7 +76,7 @@
 					<posy>0</posy>
 					<width>550</width>
 					<height>40</height>
-					<texture border="5">buttons/fo_light.png</texture>
+					<texture>buttons/fo_light.png</texture>
 					<visible>Control.HasFocus(3)</visible>
 				</control>
 				<control type="label">
@@ -85,8 +84,6 @@
 					<posy>0</posy>
 					<width>510</width>
 					<height>40</height>
-					<font>font13</font>
-					<textcolor>white</textcolor>
 					<selectedcolor>selected</selectedcolor>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -112,7 +109,7 @@
 					<posy>0</posy>
 					<width>550</width>
 					<height>80</height>
-					<texture border="5">buttons/nf_light.png</texture>
+					<texture>buttons/nf_light.png</texture>
 				</control>
 				<control type="image">
 					<posx>2</posx>
@@ -126,7 +123,6 @@
 					<posy>0</posy>
 					<width>450</width>
 					<height>30</height>
-					<font>font13</font>
 					<textcolor>grey</textcolor>
 					<selectedcolor>selected</selectedcolor>
 					<align>left</align>
@@ -141,7 +137,6 @@
 					<font>font12</font>
 					<textcolor>grey</textcolor>
 					<selectedcolor>selected</selectedcolor>
-					<align>left</align>
 					<label>$INFO[ListItem.Property(Addon.Summary)]</label>
 				</control>
 			</itemlayout>
@@ -151,7 +146,7 @@
 					<posy>0</posy>
 					<width>550</width>
 					<height>80</height>
-					<texture border="5">buttons/nf_light.png</texture>
+					<texture>buttons/nf_light.png</texture>
 					<visible>!Control.HasFocus(6)</visible>
 				</control>
 				<control type="image">
@@ -159,7 +154,7 @@
 					<posy>0</posy>
 					<width>550</width>
 					<height>80</height>
-					<texture border="5">buttons/fo_light.png</texture>
+					<texture>buttons/fo_light.png</texture>
 					<visible>Control.HasFocus(6)</visible>
 				</control>
 				<control type="image">
@@ -174,8 +169,6 @@
 					<posy>0</posy>
 					<width>450</width>
 					<height>30</height>
-					<font>font13</font>
-					<textcolor>white</textcolor>
 					<selectedcolor>selected</selectedcolor>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -189,7 +182,6 @@
 					<font>font12</font>
 					<textcolor>grey</textcolor>
 					<selectedcolor>selected</selectedcolor>
-					<align>left</align>
 					<label>$INFO[ListItem.Property(Addon.Summary)]</label>
 				</control>
 			</focusedlayout>
@@ -199,8 +191,8 @@
 			<posy>65</posy>
 			<width>14</width>
 			<height>510</height>
-			<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-			<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+			<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+			<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
 			<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 			<onleft>3</onleft>
 			<onright>3</onright>
@@ -217,7 +209,6 @@
 			<height>40</height>
 			<label>186</label>
 			<font>font12_title</font>
-			<textcolor>white</textcolor>
 			<focusedcolor>white</focusedcolor>
 			<align>center</align>
 			<onleft>61</onleft>

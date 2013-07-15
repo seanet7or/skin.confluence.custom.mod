@@ -30,7 +30,7 @@
 				<height>80</height>
 				<aspectratio>keep</aspectratio>
 				<info>Container(20).ListItem.Icon</info>
-				<bordertexture border="5">buttons/nf_light.png</bordertexture>
+				<bordertexture>buttons/nf_light.png</bordertexture>
 				<bordersize>3</bordersize>
 			</control>
 			<control type="label">
@@ -62,8 +62,8 @@
 				<posy>110</posy>
 				<width>14</width>
 				<height>490</height>
-				<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<textureslidernib>-</textureslidernib>
 				<textureslidernibfocus>-</textureslidernibfocus>
@@ -91,7 +91,6 @@
 						<posy>0</posy>
 						<width>500</width>
 						<height>36</height>
-						<font>font13</font>
 						<aligny>center</aligny>
 						<selectedcolor>selected</selectedcolor>
 						<textcolor>grey2</textcolor>
@@ -118,17 +117,15 @@
 						<width>540</width>
 						<height>36</height>
 						<visible>Control.HasFocus(20)</visible>
-						<texture border="0,2,0,2">buttons/fo_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 					</control>
 					<control type="label">
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>500</width>
 						<height>36</height>
-						<font>font13</font>
 						<aligny>center</aligny>
 						<selectedcolor>selected</selectedcolor>
-						<textcolor>white</textcolor>
 						<align>left</align>
 						<info>ListItem.Label</info>
 					</control>
@@ -172,7 +169,7 @@
 				<height>80</height>
 				<aspectratio>keep</aspectratio>
 				<info>Container(21).ListItem.Icon</info>
-				<bordertexture border="5">buttons/nf_light.png</bordertexture>
+				<bordertexture>buttons/nf_light.png</bordertexture>
 				<bordersize>3</bordersize>
 			</control>
 			<control type="label">
@@ -204,8 +201,8 @@
 				<posy>110</posy>
 				<width>14</width>
 				<height>490</height>
-				<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<textureslidernib>-</textureslidernib>
 				<textureslidernibfocus>-</textureslidernibfocus>
@@ -233,7 +230,6 @@
 						<posy>0</posy>
 						<width>500</width>
 						<height>36</height>
-						<font>font13</font>
 						<aligny>center</aligny>
 						<selectedcolor>selected</selectedcolor>
 						<textcolor>grey2</textcolor>
@@ -260,17 +256,15 @@
 						<width>540</width>
 						<height>36</height>
 						<visible>Control.HasFocus(21)</visible>
-						<texture border="0,2,0,2">buttons/fo_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 					</control>
 					<control type="label">
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>500</width>
 						<height>36</height>
-						<font>font13</font>
 						<aligny>center</aligny>
 						<selectedcolor>selected</selectedcolor>
-						<textcolor>white</textcolor>
 						<align>left</align>
 						<info>ListItem.Label</info>
 					</control>
@@ -305,8 +299,6 @@
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>back</onclick>
-				<texturefocus border="5">buttons/fo_light.png</texturefocus>
-				<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
 				<onleft>50</onleft>
 				<onright>50</onright>
 				<onup>50</onup>
@@ -331,8 +323,6 @@
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>ActivateWindow(home)</onclick>
-				<texturefocus border="5">buttons/fo_light.png</texturefocus>
-				<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
 				<onleft>50</onleft>
 				<onright>50</onright>
 				<onup>50</onup>

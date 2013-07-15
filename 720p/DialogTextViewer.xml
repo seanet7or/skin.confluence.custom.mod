@@ -11,7 +11,7 @@
 				<posy>0</posy>
 				<width>1100</width>
 				<height>720</height>
-				<texture border="15,0,0,0" flipx="true">dialogs/bladesub_light.png</texture>
+				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
 			</control>
 			<control type="group">
 				<animation effect="fade" delay="400" start="0" end="100" time="200">WindowOpen</animation>
@@ -34,9 +34,7 @@
 					<width>1000</width>
 					<height>600</height>
 					<label>-</label>
-					<font>font13</font>
 					<align>justify</align>
-					<textcolor>white</textcolor>
 					<pagecontrol>61</pagecontrol>
 				</control>
 				<control type="scrollbar" id="61">
@@ -44,8 +42,8 @@
 					<posy>90</posy>
 					<width>14</width>
 					<height>600</height>
-					<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-					<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
 					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 					<onleft>61</onleft>
 					<onright>61</onright>

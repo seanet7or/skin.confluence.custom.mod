@@ -58,7 +58,7 @@
 						<posy>0</posy>
 						<width>260</width>
 						<height>55</height>
-						<texture border="5">buttons/fo_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 					</control>
 					<control type="label">
 						<posx>250</posx>
@@ -66,7 +66,6 @@
 						<width>380</width>
 						<height>55</height>
 						<font>font24_title</font>
-						<textcolor>white</textcolor>
 						<align>right</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
@@ -152,14 +151,13 @@
 				<label>$LOCALIZE[31000] $LOCALIZE[5]</label>
 				<align>left</align>
 				<aligny>center</aligny>
-				<textcolor>white</textcolor>
 			</control>
 			<control type="image">
 				<posx>270</posx>
 				<posy>60</posy>
 				<width>800</width>
 				<height>450</height>
-				<texture border="5">buttons/nf_light.png</texture>
+				<texture>buttons/nf_light.png</texture>
 			</control>
 			<control type="image">
 				<posx>272</posx>
@@ -185,8 +183,6 @@
 				<height>100</height>
 				<font>font12</font>
 				<label>$INFO[Container(9000).ListItem.Label2]</label>
-				<align>left</align>
-				<textcolor>white</textcolor>
 			</control>
 		</control>
 		<include>CommonNowPlaying</include>
@@ -206,8 +202,6 @@
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>back</onclick>
-				<texturefocus border="5">buttons/fo_light.png</texturefocus>
-				<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
 				<onleft>9000</onleft>
 				<onright>81</onright>
 				<onup>9000</onup>
@@ -232,8 +226,6 @@
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>ActivateWindow(home)</onclick>
-				<texturefocus border="5">buttons/fo_light.png</texturefocus>
-				<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
 				<onleft>80</onleft>
 				<onright>9000</onright>
 				<onup>9000</onup>

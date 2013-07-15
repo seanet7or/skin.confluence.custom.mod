@@ -150,7 +150,7 @@
 		<textwidth>200</textwidth>
 		<aligny>center</aligny>
 		<font>font13</font>
-		<texturefocus border="5">buttons/fo_light.png</texturefocus>
+		<texturefocus>buttons/fo_light.png</texturefocus>
 		<texturenofocus>-</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</include>
@@ -161,8 +161,8 @@
 		<textwidth>195</textwidth>
 		<aligny>center</aligny>
 		<font>font12_title</font>
-		<texturefocus border="5">buttons/fo_light.png</texturefocus>
-		<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+		<texturefocus>buttons/fo_light.png</texturefocus>
+		<texturenofocus>buttons/nf_light.png</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</include>
 	<include name="ButtonHomeSubCommonValues">
@@ -174,8 +174,8 @@
 		<font>font12</font>
 		<textcolor>grey2</textcolor>
 		<focusedcolor>white</focusedcolor>
-		<texturefocus border="0,0,0,1">home/sub-fo_light.png</texturefocus>
-		<texturenofocus border="5">home/sub-nf_light.png</texturenofocus>
+		<texturefocus border="0,2,0,2">home/sub-fo_light.png</texturefocus>
+		<texturenofocus border="0,2,0,2">home/sub-nf_light.png</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</include>
 	<include name="HomeSubMenuCommonValues">
@@ -202,8 +202,8 @@
 		<align>center</align>
 		<aligny>center</aligny>
 		<font>font12_title</font>
-		<texturefocus border="5">buttons/fo_light.png</texturefocus>
-		<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+		<texturefocus>buttons/fo_light.png</texturefocus>
+		<texturenofocus>buttons/nf_light.png</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</include>
 	<include name="SideBladeLeft">
@@ -237,7 +237,7 @@
 			<posy>0</posy>
 			<width>260</width>
 			<height>720</height>
-			<texture border="0,0,10,0">dialogs/bladesub_light.png</texture>
+			<texture border="4,0,4,0">dialogs/bladesub_light.png</texture>
 		</control>
 	</include>
 	<include name="MainWindowMouseButtons">
@@ -257,8 +257,6 @@
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>back</onclick>
-				<texturefocus border="5">buttons/fo_light.png</texturefocus>
-				<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
 				<onleft>50</onleft>
 				<onright>81</onright>
 				<onup>50</onup>
@@ -283,8 +281,6 @@
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>ActivateWindow(home)</onclick>
-				<texturefocus border="5">buttons/fo_light.png</texturefocus>
-				<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
 				<onleft>80</onleft>
 				<onright>9000</onright>
 				<onup>50</onup>
@@ -316,8 +312,6 @@
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>ActivateWindow(PlayerControls)</onclick>
-				<texturefocus border="5">buttons/fo_light.png</texturefocus>
-				<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
 				<onleft>50</onleft>
 				<onright>50</onright>
 				<onup>50</onup>
@@ -445,7 +439,6 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font13_title</font>
-			<textcolor>white</textcolor>
 			<scrollout>false</scrollout>
 			<pauseatend>2000</pauseatend>
 		</control>
@@ -459,7 +452,6 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font12</font>
-			<textcolor>white</textcolor>
 		</control>
 		<control type="label">
 			<description>Time Label</description>
@@ -471,7 +463,6 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font12</font>
-			<textcolor>white</textcolor>
 		</control>
 		<control type="label">
 			<description>Next Label</description>
@@ -528,7 +519,6 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font12_title</font>
-			<textcolor>white</textcolor>
 			<visible>videoplayer.content(episodes)</visible>
 		</control>
 		<control type="fadelabel">
@@ -541,7 +531,6 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font12_title</font>
-			<textcolor>white</textcolor>
 			<visible>videoplayer.content(musicvideos)</visible>
 			<scrollout>false</scrollout>
 			<pauseatend>2000</pauseatend>
@@ -556,7 +545,6 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font13_title</font>
-			<textcolor>white</textcolor>
 			<scrollout>false</scrollout>
 			<pauseatend>2000</pauseatend>
 		</control>
@@ -570,7 +558,6 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font12</font>
-			<textcolor>white</textcolor>
 			<visible>!videoplayer.content(episodes) + !videoplayer.content(musicvideos)</visible>
 		</control>
 		<control type="label">
@@ -582,7 +569,6 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font12</font>
-			<textcolor>white</textcolor>
 			<visible>videoplayer.content(musicvideos)</visible>
 		</control>
 		<control type="label">
@@ -595,7 +581,6 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font12</font>
-			<textcolor>white</textcolor>
 			<visible>videoplayer.content(episodes)</visible>
 		</control>
 		<control type="label">
@@ -608,7 +593,6 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font12</font>
-			<textcolor>white</textcolor>
 		</control>
 	</include>
 	<include name="CommonNowPlaying_Controls">
@@ -678,7 +662,6 @@
 				<posy>2</posy>
 				<width>39</width>
 				<height>39</height>
-				<label>-</label>
 				<texturefocus>OSDPauseFO.png</texturefocus>
 				<texturenofocus>OSDPauseNF.png</texturenofocus>
 				<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
@@ -754,7 +737,6 @@
 					<posy>2</posy>
 					<width>39</width>
 					<height>39</height>
-					<label>-</label>
 					<texturefocus>OSDPauseFO.png</texturefocus>
 					<texturenofocus>OSDPauseNF.png</texturenofocus>
 					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
@@ -892,7 +874,6 @@
 					<posy>2</posy>
 					<width>39</width>
 					<height>39</height>
-					<label>-</label>
 					<texturefocus>OSDRandomOffFO.png</texturefocus>
 					<texturenofocus>OSDRandomOffNF.png</texturenofocus>
 					<usealttexture>Playlist.IsRandom</usealttexture>
@@ -939,7 +920,6 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.SortLetter]</label>
-				<textcolor>white</textcolor>
 				<font>font30_title</font>
 			</control>
 		</control>
@@ -954,7 +934,6 @@
 			<align>right</align>
 			<aligny>center</aligny>
 			<font>font35_title</font>
-			<textcolor>white</textcolor>
 			<label>$INFO[System.Time]</label>
 			<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
 			<visible>!Skin.HasSetting(HideSystemClock)</visible>
@@ -988,7 +967,7 @@
 				<width>180</width>
 				<height>120</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<bordertexture border="5">buttons/nf_light.png</bordertexture>
+				<bordertexture>buttons/nf_light.png</bordertexture>
 				<bordersize>3</bordersize>
 				<texture background="true">$INFO[ListItem.Icon]</texture>
 			</control>
@@ -1012,7 +991,7 @@
 				<width>180</width>
 				<height>120</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<bordertexture border="5">buttons/nf_light.png</bordertexture>
+				<bordertexture>buttons/nf_light.png</bordertexture>
 				<bordersize>3</bordersize>
 				<texture background="true">$INFO[ListItem.Icon]</texture>
 				<visible>!ControlGroup(9002).HasFocus</visible>
@@ -1023,7 +1002,7 @@
 				<width>180</width>
 				<height>120</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<bordertexture border="10">buttons/folder-focus_light.png</bordertexture>
+				<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 				<bordersize>6</bordersize>
 				<texture background="true">$INFO[ListItem.Icon]</texture>
 				<visible>ControlGroup(9002).HasFocus</visible>
@@ -1034,7 +1013,6 @@
 				<width>180</width>
 				<height>20</height>
 				<font>font12</font>
-				<textcolor>white</textcolor>
 				<align>center</align>
 				<aligny>center</aligny>
 				<label>$VAR[MainItemLabel]</label>
@@ -1063,7 +1041,7 @@
 				<posy>0</posy>
 				<width>280</width>
 				<height>145</height>
-				<texture border="10">buttons/nf_light.png</texture>
+				<texture>buttons/nf_light.png</texture>
 			</control>
 			<control type="image">
 				<description>Thumb</description>
@@ -1102,7 +1080,6 @@
 				<width>260</width>
 				<height>15</height>
 				<label>$INFO[ListItem.Property(NextNumber),$LOCALIZE[20359] [COLOR=blue]-[/COLOR] ]</label>
-				<textcolor>white</textcolor>
 				<font>font12</font>
 				<align>center</align>
 			</control>
@@ -1113,7 +1090,6 @@
 				<width>260</width>
 				<height>15</height>
 				<label>$INFO[ListItem.Property(NextTitle)]</label>
-				<textcolor>white</textcolor>
 				<font>font12</font>
 				<align>center</align>
 			</control>
@@ -1146,7 +1122,7 @@
 				<posy>0</posy>
 				<width>280</width>
 				<height>145</height>
-				<texture border="10">buttons/fo_light.png</texture>
+				<texture>buttons/fo_light.png</texture>
 			</control>
 			<control type="image">
 				<description>Thumb</description>
@@ -1207,7 +1183,6 @@
 				<width>260</width>
 				<height>15</height>
 				<label>$INFO[ListItem.Property(ShortTime)]$INFO[ListItem.Property(NextDate), [COLOR=blue]-[/COLOR] ]</label>
-				<textcolor>white</textcolor>
 				<font>font12</font>
 				<align>center</align>
 			</control>
@@ -1218,7 +1193,6 @@
 				<width>260</width>
 				<height>15</height>
 				<label>$INFO[ListItem.Property(Runtime),, $LOCALIZE[12391]]$INFO[ListItem.Property(Network), [COLOR=blue]-[/COLOR] (,)]</label>
-				<textcolor>white</textcolor>
 				<font>font12</font>
 				<align>center</align>
 			</control>

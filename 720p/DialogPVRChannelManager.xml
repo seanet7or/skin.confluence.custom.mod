@@ -51,8 +51,8 @@
 				<posy>5</posy>
 				<width>14</width>
 				<height>470</height>
-				<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>9002</onleft>
 				<onright>20</onright>
@@ -64,7 +64,7 @@
 				<posy>0</posy>
 				<width>430</width>
 				<height>475</height>
-				<texture border="5">buttons/nf_light.png</texture>
+				<texture>buttons/nf_light.png</texture>
 			</control>
 			<control type="list" id="20">
 				<posx>30</posx>
@@ -83,7 +83,7 @@
 						<posy>0</posy>
 						<width>420</width>
 						<height>40</height>
-						<texture border="5">buttons/nf_light.png</texture>
+						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="image">
 						<posx>5</posx>
@@ -110,7 +110,6 @@
 						<font>font12</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<textcolor>white</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<label>$INFO[ListItem.Property(Number),(,) - ]$INFO[ListItem.Property(Name)]</label>
 						<visible>ListItem.Property(ActiveChannel)</visible>
@@ -143,7 +142,7 @@
 						<posy>0</posy>
 						<width>420</width>
 						<height>60</height>
-						<texture border="5">buttons/fo_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 						<animation effect="fade" start="100" end="30" time="0" condition="!Control.HasFocus(20)">conditional</animation>
 					</control>
 					<control type="image">
@@ -171,7 +170,6 @@
 						<font>font12</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<textcolor>white</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<label>$INFO[ListItem.Property(Number),(,) - ]$INFO[ListItem.Property(Name)]</label>
 						<visible>ListItem.Property(ActiveChannel)</visible>
@@ -235,13 +233,8 @@
 					<width>380</width>
 					<height>35</height>
 					<font>font12</font>
-					<textcolor>white</textcolor>
 					<focusedcolor>white</focusedcolor>
 					<align>left</align>
-					<aligny>center</aligny>
-					<texturefocus border="5">buttons/fo_light.png</texturefocus>
-					<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
-					<pulseonselect>false</pulseonselect>
 					<label>19074</label>
 					<onleft>20</onleft>
 					<onright>60</onright>
@@ -255,10 +248,7 @@
 					<width>380</width>
 					<height>35</height>
 					<font>font12</font>
-					<textcolor>white</textcolor>
 					<focusedcolor>white</focusedcolor>
-					<texturefocus border="5">buttons/fo_light.png</texturefocus>
-					<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
 					<label>19201</label>
 					<onright>60</onright>
 					<onleft>20</onleft>
@@ -272,8 +262,6 @@
 					<width>380</width>
 					<height>35</height>
 					<font>font12</font>
-					<texturefocus border="5">buttons/fo_light.png</texturefocus>
-					<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
 					<label>19202</label>
 					<onleft>20</onleft>
 					<onright>60</onright>
@@ -296,13 +284,8 @@
 					<width>380</width>
 					<height>35</height>
 					<font>font12</font>
-					<textcolor>white</textcolor>
 					<focusedcolor>white</focusedcolor>
 					<align>left</align>
-					<aligny>center</aligny>
-					<texturefocus border="5">buttons/fo_light.png</texturefocus>
-					<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
-					<pulseonselect>false</pulseonselect>
 					<label>19206</label>
 					<onleft>20</onleft>
 					<onright>60</onright>
@@ -316,8 +299,7 @@
 					<width>380</width>
 					<height>35</height>
 					<font>font12</font>
-					<texturefocus border="5">buttons/fo_light.png</texturefocus>
-					<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+					<texturenofocus>buttons/nf_light.png</texturenofocus>
 					<label>19200</label>
 					<onright>60</onright>
 					<onleft>20</onleft>
@@ -331,13 +313,8 @@
 					<width>380</width>
 					<height>35</height>
 					<font>font12</font>
-					<textcolor>white</textcolor>
 					<focusedcolor>white</focusedcolor>
 					<align>left</align>
-					<aligny>center</aligny>
-					<texturefocus border="5">buttons/fo_light.png</texturefocus>
-					<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
-					<pulseonselect>false</pulseonselect>
 					<label>19267</label>
 					<onleft>20</onleft>
 					<onright>60</onright>
@@ -367,8 +344,6 @@
 					<width>190</width>
 					<height>35</height>
 					<font>font12</font>
-					<texturefocus border="5">buttons/fo_light.png</texturefocus>
-					<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
 					<align>center</align>
 					<label>19205</label>
 					<onleft>20</onleft>
@@ -384,8 +359,6 @@
 					<height>35</height>
 					<font>font12</font>
 					<visible>IsEmpty(Window.Property(IsRadio))</visible>
-					<texturefocus border="5">buttons/fo_light.png</texturefocus>
-					<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
 					<align>center</align>
 					<label>19024</label>
 					<onleft>30</onleft>
@@ -401,8 +374,6 @@
 					<height>35</height>
 					<font>font12</font>
 					<visible>!IsEmpty(Window.Property(IsRadio))</visible>
-					<texturefocus border="5">buttons/fo_light.png</texturefocus>
-					<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
 					<align>center</align>
 					<label>19023</label>
 					<onleft>30</onleft>
@@ -417,8 +388,6 @@
 					<width>380</width>
 					<height>35</height>
 					<font>font12</font>
-					<texturefocus border="5">buttons/fo_light.png</texturefocus>
-					<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
 					<align>center</align>
 					<label>19203</label>
 					<onleft>20</onleft>
@@ -433,8 +402,6 @@
 					<width>380</width>
 					<height>35</height>
 					<font>font12</font>
-					<texturefocus border="5">buttons/fo_light.png</texturefocus>
-					<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
 					<align>center</align>
 					<label>19211</label>
 					<onleft>20</onleft>
@@ -449,8 +416,6 @@
 					<width>380</width>
 					<height>35</height>
 					<font>font12</font>
-					<texturefocus border="5">buttons/fo_light.png</texturefocus>
-					<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
 					<align>center</align>
 					<label>19204</label>
 					<onleft>20</onleft>
@@ -472,7 +437,6 @@
 				<label>186</label>
 				<font>font12_title</font>
 				<align>center</align>
-				<aligny>center</aligny>
 				<onleft>6</onleft>
 				<onright>5</onright>
 				<onup>33</onup>
@@ -487,7 +451,6 @@
 				<label>14070</label>
 				<font>font12_title</font>
 				<align>center</align>
-				<aligny>center</aligny>
 				<onleft>4</onleft>
 				<onright>6</onright>
 				<onup>33</onup>
@@ -502,7 +465,6 @@
 				<label>222</label>
 				<font>font12_title</font>
 				<align>center</align>
-				<aligny>center</aligny>
 				<onleft>5</onleft>
 				<onright>4</onright>
 				<onup>33</onup>

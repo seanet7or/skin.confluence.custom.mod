@@ -14,7 +14,6 @@
 				<height>25</height>
 				<align>left</align>
 				<aligny>center</aligny>
-				<font>font13</font>
 				<textcolor>grey</textcolor>
 				<label>$INFO[Player.ChapterName,[B][COLOR=white]$LOCALIZE[21396]: [/COLOR][/B]]</label>
 				<visible>Player.ChapterCount + !VideoPlayer.Content(LiveTV) + [!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)]</visible>
@@ -28,8 +27,6 @@
 				<height>25</height>
 				<align>left</align>
 				<aligny>center</aligny>
-				<font>font13</font>
-				<textcolor>white</textcolor>
 				<label>[B]$INFO[Player.ChapterName][/B]</label>
 				<visible>Player.ChapterCount + !VideoPlayer.Content(LiveTV) + [!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)]</visible>
 				<visible>SubString(Player.ChapterName,$LOCALIZE[21396],left)</visible>
@@ -42,8 +39,6 @@
 				<height>25</height>
 				<align>left</align>
 				<aligny>center</aligny>
-				<font>font13</font>
-				<textcolor>white</textcolor>
 				<label>$INFO[VideoPlayer.ChannelGroup,$LOCALIZE[31509]: ]</label>
 				<visible>VideoPlayer.Content(LiveTV)</visible>
 			</control>
@@ -56,7 +51,6 @@
 				<align>right</align>
 				<aligny>center</aligny>
 				<font>font35_title</font>
-				<textcolor>white</textcolor>
 				<label>$INFO[System.Time]</label>
 				<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
 				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
@@ -82,8 +76,6 @@
 					<width>880</width>
 					<height>180</height>
 					<align>justify</align>
-					<textcolor>white</textcolor>
-					<font>font13</font>
 					<label>$INFO[VideoPlayer.Plot]</label>
 					<autoscroll time="4000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
@@ -187,9 +179,7 @@
 					<height>25</height>
 					<align>left</align>
 					<aligny>center</aligny>
-					<font>font13</font>
 					<label>$LOCALIZE[31040]</label>
-					<textcolor>white</textcolor>
 					<visible>![VideoPlayer.Content(LiveTV) + Player.Recording]</visible>
 					<animation effect="slide" start="0,0" end="0,25" time="0" condition="!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes) + !VideoPlayer.Content(MusicVideos) + !VideoPlayer.Content(LiveTV)">conditional</animation>
 				</control>
@@ -209,9 +199,7 @@
 					<height>25</height>
 					<align>left</align>
 					<aligny>center</aligny>
-					<font>font13</font>
 					<label>$LOCALIZE[19158]</label>
-					<textcolor>white</textcolor>
 					<visible>VideoPlayer.Content(LiveTV) + Player.Recording</visible>
 				</control>
 				<control type="label" id="1">
@@ -341,7 +329,6 @@
 					<posy>0</posy>
 					<width>100</width>
 					<height>40</height>
-					<font>font13</font>
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>$INFO[Player.Time(hh:mm:ss)]</label>
@@ -352,7 +339,6 @@
 					<posy>0</posy>
 					<width>100</width>
 					<height>40</height>
-					<font>font13</font>
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>$INFO[Player.StartTime(hh:mm)]</label>
@@ -364,7 +350,7 @@
 					<width>720</width>
 					<height>16</height>
 					<info>Player.ProgressCache</info>
-					<midtexture border="6,0,6,0">progressbar/OSDProgressMidLight_light.png</midtexture>
+					<midtexture>progressbar/OSDProgressMidLight_light.png</midtexture>
 				</control>
 				<control type="progress" id="1">
 					<description>Progressbar</description>
@@ -380,7 +366,6 @@
 					<posy>0</posy>
 					<width>100</width>
 					<height>40</height>
-					<font>font13</font>
 					<align>right</align>
 					<aligny>center</aligny>
 					<label>$INFO[Player.Duration(hh:mm:ss)]</label>
@@ -391,7 +376,6 @@
 					<posy>0</posy>
 					<width>100</width>
 					<height>40</height>
-					<font>font13</font>
 					<align>right</align>
 					<aligny>center</aligny>
 					<label>$INFO[Player.FinishTime(hh:mm)]</label>
@@ -419,7 +403,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<label>-</label>
 			</control>
 			<control type="label" id="11">
 				<description>row 2 label</description>
@@ -430,7 +413,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<label>-</label>
 			</control>
 			<control type="label" id="12">
 				<description>row 3 label</description>
@@ -441,7 +423,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<label>-</label>
 			</control>
 		</control>
 		<control type="selectbutton" id="503">
@@ -502,7 +483,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>white</textcolor>
 			</control>
 			<control type="label">
 				<description>Device</description>
@@ -526,7 +506,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>white</textcolor>
 			</control>
 			<control type="label">
 				<description>Status</description>
@@ -550,7 +529,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>white</textcolor>
 			</control>
 			<control type="label">
 				<description>Signal</description>
@@ -582,7 +560,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>white</textcolor>
 			</control>
 			<control type="label">
 				<description>SNR</description>
@@ -602,7 +579,6 @@
 				<posy>147</posy>
 				<width>910</width>
 				<height>14</height>
-				<overlaytexture>-</overlaytexture>
 				<info>PVR.ActStreamProgrSNR</info>
 			</control>
 			<control type="label">
@@ -615,7 +591,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>white</textcolor>
 			</control>
 			<control type="label">
 				<description>BER</description>
@@ -639,7 +614,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>white</textcolor>
 			</control>
 			<control type="label">
 				<description>UNC</description>
@@ -663,7 +637,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>white</textcolor>
 			</control>
 			<control type="label">
 				<description>Encryption</description>
@@ -687,7 +660,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>white</textcolor>
 			</control>
 		</control>
 	</controls>

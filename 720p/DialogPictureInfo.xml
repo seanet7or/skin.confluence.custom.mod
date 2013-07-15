@@ -35,8 +35,8 @@
 				<posy>70</posy>
 				<width>14</width>
 				<height>495</height>
-				<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>5</onleft>
 				<onright>5</onright>
@@ -61,9 +61,7 @@
 						<posy>0</posy>
 						<width>500</width>
 						<height>40</height>
-						<font>font13</font>
 						<aligny>center</aligny>
-						<textcolor>white</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<label>$VAR[MainItemLabel]</label>
@@ -73,7 +71,6 @@
 						<posy>0</posy>
 						<width>650</width>
 						<height>40</height>
-						<font>font13</font>
 						<aligny>center</aligny>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
@@ -87,7 +84,7 @@
 						<posy>0</posy>
 						<width>720</width>
 						<height>40</height>
-						<texture border="5">buttons/fo_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(5)</visible>
 					</control>
 					<control type="label">
@@ -95,9 +92,7 @@
 						<posy>0</posy>
 						<width>500</width>
 						<height>40</height>
-						<font>font13</font>
 						<aligny>center</aligny>
-						<textcolor>white</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<label>$VAR[MainItemLabel]</label>
@@ -107,7 +102,6 @@
 						<posy>0</posy>
 						<width>650</width>
 						<height>40</height>
-						<font>font13</font>
 						<aligny>center</aligny>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>

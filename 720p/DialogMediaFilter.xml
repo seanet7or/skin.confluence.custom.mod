@@ -47,8 +47,8 @@
 			<posy>70</posy>
 			<width>14</width>
 			<height>350</height>
-			<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-			<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+			<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+			<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
 			<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 			<onleft>5</onleft>
 			<onright>9001</onright>
@@ -60,35 +60,25 @@
 			<posx>0</posx>
 			<posy>0</posy>
 			<height>40</height>
-			<font>font13</font>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
-			<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
-			<texturefocus border="5">buttons/fo_light.png</texturefocus>
 		</control>
 		<control type="radiobutton" id="8">
 			<description>Default RadioButton</description>
 			<posx>0</posx>
 			<posy>0</posy>
 			<height>40</height>
-			<font>font13</font>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
-			<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
-			<texturefocus border="5">buttons/fo_light.png</texturefocus>
 		</control>
 		<control type="spincontrolex" id="9">
 			<description>Default SpinControlex</description>
 			<posx>0</posx>
 			<posy>0</posy>
 			<height>40</height>
-			<font>font13</font>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
-			<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
-			<texturefocus border="5">buttons/fo_light.png</texturefocus>
-			<aligny>center</aligny>
-			<reverse>yes</reverse>
+			<texturenofocus>buttons/nf_light.png</texturenofocus>
 		</control>
 		<control type="sliderex" id="10">
 			<description>Default Slider</description>
@@ -98,20 +88,14 @@
 			<font>font13</font>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
-			<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
-			<texturefocus border="5">buttons/fo_light.png</texturefocus>
-			<aligny>center</aligny>
 		</control>
 		<control type="edit" id="12">
 			<description>Default Edit</description>
 			<posx>0</posx>
 			<posy>0</posy>
 			<height>40</height>
-			<font>font13</font>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
-			<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
-			<texturefocus border="5">buttons/fo_light.png</texturefocus>
 		</control>
 		<control type="group" id="9001">
 			<posx>190</posx>
@@ -123,9 +107,6 @@
 				<width>200</width>
 				<height>40</height>
 				<align>center</align>
-				<aligny>center</aligny>
-				<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
-				<texturefocus border="5">buttons/fo_light.png</texturefocus>
 				<label>186</label>
 				<font>font12_title</font>
 				<onup>5</onup>
@@ -140,9 +121,6 @@
 				<width>200</width>
 				<height>40</height>
 				<align>center</align>
-				<aligny>center</aligny>
-				<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
-				<texturefocus border="5">buttons/fo_light.png</texturefocus>
 				<label>192</label>
 				<font>font12_title</font>
 				<onup>5</onup>

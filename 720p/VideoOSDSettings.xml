@@ -52,7 +52,6 @@
 				<width>760</width>
 				<align>center</align>
 				<label>13390</label>
-				<font>font13</font>
 			</control>
 			<control type="grouplist" id="5">
 				<description>control area</description>
@@ -72,8 +71,8 @@
 				<posy>65</posy>
 				<width>14</width>
 				<height>490</height>
-				<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>5</onleft>
 				<onright>5</onright>
@@ -86,8 +85,6 @@
 		<control type="sliderex" id="10">
 			<description>Default Slider</description>
 			<height>40</height>
-			<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
-			<texturefocus border="5">buttons/fo_light.png</texturefocus>
 			<font>font13</font>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
@@ -97,38 +94,29 @@
 			<posx>0</posx>
 			<posy>0</posy>
 			<height>40</height>
-			<font>font13</font>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
-			<texturefocus border="5">buttons/fo_light.png</texturefocus>
 		</control>
 		<control type="radiobutton" id="8">
 			<description>Default RadioButton</description>
 			<posx>0</posx>
 			<posy>0</posy>
 			<height>40</height>
-			<font>font13</font>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
-			<texturefocus border="5">buttons/fo_light.png</texturefocus>
 		</control>
 		<control type="spincontrolex" id="9">
 			<description>Default SpinControlex</description>
 			<posx>0</posx>
 			<posy>0</posy>
 			<height>40</height>
-			<font>font13</font>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
-			<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
-			<texturefocus border="5">buttons/fo_light.png</texturefocus>
-			<aligny>center</aligny>
-			<reverse>yes</reverse>
+			<texturenofocus>buttons/nf_light.png</texturenofocus>
 		</control>
 		<control type="image" id="11">
 			<description>separator image</description>
 			<height>2</height>
-			<texture>-</texture>
 		</control>
 	</controls>
 </window>

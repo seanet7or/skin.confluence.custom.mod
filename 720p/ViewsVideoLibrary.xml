@@ -34,7 +34,7 @@
 						<width>214</width>
 						<height>310</height>
 						<aspectratio>stretch</aspectratio>
-						<bordertexture border="5">buttons/nf_light.png</bordertexture>
+						<bordertexture>buttons/nf_light.png</bordertexture>
 						<bordersize>4</bordersize>
 						<texture background="true">$VAR[PosterThumb]</texture>
 					</control>
@@ -140,8 +140,8 @@
 				<posy>0</posy>
 				<width>880</width>
 				<height>14</height>
-				<texturesliderbackground>scrollbar/ScrollBarH_light.png</texturesliderbackground>
-				<texturesliderbar>scrollbar/ScrollBarH_bar_light.png</texturesliderbar>
+				<texturesliderbackground border="1,5,1,5">scrollbar/ScrollBarH_light.png</texturesliderbackground>
+				<texturesliderbar border="1,5,1,5">scrollbar/ScrollBarH_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus>scrollbar/ScrollBarH_bar_focus_light.png</texturesliderbarfocus>
 				<onup>501</onup>
 				<ondown condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</ondown>
@@ -173,8 +173,6 @@
 				<posy>540</posy>
 				<width>1160</width>
 				<height>35</height>
-				<font>font13</font>
-				<textcolor>white</textcolor>
 				<wrapmultiline>true</wrapmultiline>
 				<scroll>false</scroll>
 				<align>center</align>
@@ -210,7 +208,6 @@
 				<width>1280</width>
 				<height>20</height>
 				<font>font12</font>
-				<textcolor>white</textcolor>
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -254,7 +251,6 @@
 				<width>1280</width>
 				<height>35</height>
 				<font>font30</font>
-				<textcolor>white</textcolor>
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -265,8 +261,6 @@
 				<posy>575</posy>
 				<width>1280</width>
 				<height>35</height>
-				<font>font13</font>
-				<textcolor>white</textcolor>
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -278,7 +272,6 @@
 				<width>1280</width>
 				<height>35</height>
 				<font>font12</font>
-				<textcolor>white</textcolor>
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -305,7 +298,6 @@
 				<width>1280</width>
 				<height>35</height>
 				<font>font30</font>
-				<textcolor>white</textcolor>
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -317,8 +309,6 @@
 				<posy>575</posy>
 				<width>1280</width>
 				<height>35</height>
-				<font>font13</font>
-				<textcolor>white</textcolor>
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -331,7 +321,6 @@
 				<width>1280</width>
 				<height>35</height>
 				<font>font12</font>
-				<textcolor>white</textcolor>
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -380,7 +369,6 @@
 				<width>1200</width>
 				<height>20</height>
 				<font>font24_title</font>
-				<textcolor>white</textcolor>
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -417,7 +405,7 @@
 						<width>120</width>
 						<height>160</height>
 						<aspectratio>stretch</aspectratio>
-						<bordertexture border="5">buttons/nf_light.png</bordertexture>
+						<bordertexture>buttons/nf_light.png</bordertexture>
 						<bordersize>4</bordersize>
 						<fadetime>200</fadetime>
 						<texture background="true">$VAR[PosterThumb]</texture>
@@ -525,8 +513,8 @@
 				<posy>185</posy>
 				<width>660</width>
 				<height>14</height>
-				<texturesliderbackground>scrollbar/ScrollBarH_light.png</texturesliderbackground>
-				<texturesliderbar>scrollbar/ScrollBarH_bar_light.png</texturesliderbar>
+				<texturesliderbackground border="1,5,1,5">scrollbar/ScrollBarH_light.png</texturesliderbackground>
+				<texturesliderbar border="1,5,1,5">scrollbar/ScrollBarH_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus>scrollbar/ScrollBarH_bar_focus_light.png</texturesliderbarfocus>
 				<onup>508</onup>
 				<ondown condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</ondown>
@@ -574,7 +562,6 @@
 						<posy>0</posy>
 						<width>520</width>
 						<height>40</height>
-						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
@@ -651,7 +638,7 @@
 						<posy>0</posy>
 						<width>580</width>
 						<height>41</height>
-						<texture border="0,2,0,2">buttons/fo_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(503)</visible>
 					</control>
 					<control type="label">
@@ -659,8 +646,6 @@
 						<posy>0</posy>
 						<width>520</width>
 						<height>40</height>
-						<font>font13</font>
-						<textcolor>white</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
@@ -736,8 +721,8 @@
 				<posy>245</posy>
 				<width>14</width>
 				<height>400</height>
-				<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>503</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
@@ -854,7 +839,6 @@
 					<height>180</height>
 					<font>font12</font>
 					<align>justify</align>
-					<textcolor>white</textcolor>
 					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 					<visible>!Skin.HasSetting(View503CharacterArt) | IsEmpty(ListItem.Art(clearart))</visible>
@@ -908,7 +892,6 @@
 					<align>center</align>
 					<aligny>top</aligny>
 					<font>font12</font>
-					<textcolor>white</textcolor>
 					<wrapmultiline>true</wrapmultiline>
 				</control>
 				<control type="textbox">
@@ -919,7 +902,6 @@
 					<height>120</height>
 					<font>font12</font>
 					<align>justify</align>
-					<textcolor>white</textcolor>
 					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
@@ -945,7 +927,6 @@
 					<height>355</height>
 					<font>font12</font>
 					<align>justify</align>
-					<textcolor>white</textcolor>
 					<label>$INFO[Container.ShowPlot]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 					<visible>Container.Content(Seasons)</visible>
@@ -999,7 +980,6 @@
 					<height>355</height>
 					<font>font12</font>
 					<align>justify</align>
-					<textcolor>white</textcolor>
 					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
@@ -1028,7 +1008,6 @@
 						<posy>0</posy>
 						<width>520</width>
 						<height>40</height>
-						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
@@ -1105,7 +1084,7 @@
 						<posy>0</posy>
 						<width>580</width>
 						<height>41</height>
-						<texture border="0,2,0,2">buttons/fo_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(504)</visible>
 					</control>
 					<control type="label">
@@ -1113,8 +1092,6 @@
 						<posy>0</posy>
 						<width>520</width>
 						<height>40</height>
-						<font>font13</font>
-						<textcolor>white</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
@@ -1190,8 +1167,8 @@
 				<posy>78</posy>
 				<width>14</width>
 				<height>560</height>
-				<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>504</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
@@ -1261,7 +1238,6 @@
 					<label fallback="416">$INFO[listitem.Year]</label>
 					<align>left</align>
 					<aligny>center</aligny>
-					<font>font13</font>
 					<scroll>true</scroll>
 				</control>
 				<control type="label">
@@ -1285,7 +1261,6 @@
 					<label fallback="416">$INFO[listitem.Genre]</label>
 					<align>left</align>
 					<aligny>center</aligny>
-					<font>font13</font>
 					<scrollout>false</scrollout>
 					<pauseatend>1000</pauseatend>
 				</control>
@@ -1297,7 +1272,6 @@
 					<height>170</height>
 					<font>font12</font>
 					<align>justify</align>
-					<textcolor>white</textcolor>
 					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
@@ -1361,7 +1335,6 @@
 					<label fallback="416">$INFO[listitem.Premiered]</label>
 					<align>left</align>
 					<aligny>center</aligny>
-					<font>font13</font>
 					<scroll>true</scroll>
 				</control>
 				<control type="label">
@@ -1385,7 +1358,6 @@
 					<label fallback="416">$INFO[listitem.Season,,x]$INFO[listitem.Episode]</label>
 					<align>left</align>
 					<aligny>center</aligny>
-					<font>font13</font>
 					<scrollout>false</scrollout>
 					<pauseatend>1000</pauseatend>
 				</control>
@@ -1397,7 +1369,6 @@
 					<height>170</height>
 					<font>font12</font>
 					<align>justify</align>
-					<textcolor>white</textcolor>
 					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
@@ -1426,7 +1397,6 @@
 						<posy>0</posy>
 						<width>310</width>
 						<height>40</height>
-						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
@@ -1439,7 +1409,6 @@
 						<posy>0</posy>
 						<width>335</width>
 						<height>40</height>
-						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
@@ -1481,7 +1450,7 @@
 						<posy>0</posy>
 						<width>345</width>
 						<height>41</height>
-						<texture border="0,2,0,2">buttons/fo_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(515)</visible>
 					</control>
 					<control type="label">
@@ -1489,8 +1458,6 @@
 						<posy>0</posy>
 						<width>310</width>
 						<height>40</height>
-						<font>font13</font>
-						<textcolor>white</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
@@ -1502,8 +1469,6 @@
 						<posy>0</posy>
 						<width>335</width>
 						<height>40</height>
-						<font>font13</font>
-						<textcolor>white</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
@@ -1545,7 +1510,7 @@
 						<width>345</width>
 						<height>70</height>
 						<aspectratio align="left" aligny="bottom">keep</aspectratio>
-						<bordertexture border="5">buttons/nf_light.png</bordertexture>
+						<bordertexture>buttons/nf_light.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$INFO[ListItem.Art(banner)]</texture>
 						<visible>!IsEmpty(ListItem.Art(banner))</visible>
@@ -1555,7 +1520,6 @@
 						<posy>0</posy>
 						<width>340</width>
 						<height>70</height>
-						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
@@ -1579,7 +1543,7 @@
 						<width>345</width>
 						<height>70</height>
 						<aspectratio align="left" aligny="bottom">keep</aspectratio>
-						<bordertexture border="5">buttons/folder-focus_light.png</bordertexture>
+						<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$INFO[ListItem.Art(banner)]</texture>
 						<visible>!IsEmpty(ListItem.Art(banner))</visible>
@@ -1589,7 +1553,7 @@
 						<posy>0</posy>
 						<width>345</width>
 						<height>71</height>
-						<texture border="0,2,0,2">buttons/fo_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(515) + IsEmpty(ListItem.Art(banner))</visible>
 					</control>
 					<control type="label">
@@ -1597,8 +1561,6 @@
 						<posy>0</posy>
 						<width>340</width>
 						<height>70</height>
-						<font>font13</font>
-						<textcolor>white</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
@@ -1620,8 +1582,8 @@
 				<posy>78</posy>
 				<width>14</width>
 				<height>560</height>
-				<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>515</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
@@ -1659,7 +1621,6 @@
 					<width>540</width>
 					<height>30</height>
 					<font>font24_title</font>
-					<textcolor>white</textcolor>
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>$VAR[MainItemLabel]</label>
@@ -1673,7 +1634,6 @@
 					<height>105</height>
 					<font>font12</font>
 					<align>justify</align>
-					<textcolor>white</textcolor>
 					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
@@ -1731,7 +1691,6 @@
 					<width>540</width>
 					<height>30</height>
 					<font>font24_title</font>
-					<textcolor>white</textcolor>
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>$VAR[MainItemLabel]</label>
@@ -1745,7 +1704,6 @@
 					<height>145</height>
 					<font>font12</font>
 					<align>justify</align>
-					<textcolor>white</textcolor>
 					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
@@ -1799,7 +1757,6 @@
 					<width>730</width>
 					<height>30</height>
 					<font>font24_title</font>
-					<textcolor>white</textcolor>
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>$VAR[MainItemLabel]</label>
@@ -1812,7 +1769,6 @@
 					<height>145</height>
 					<font>font12</font>
 					<align>justify</align>
-					<textcolor>white</textcolor>
 					<label>$INFO[Container.ShowPlot]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
@@ -1866,7 +1822,6 @@
 					<width>400</width>
 					<height>30</height>
 					<font>font24_title</font>
-					<textcolor>white</textcolor>
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>$VAR[MainItemLabel]</label>
@@ -1879,7 +1834,6 @@
 					<height>105</height>
 					<font>font12</font>
 					<align>justify</align>
-					<textcolor>white</textcolor>
 					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
@@ -1954,7 +1908,6 @@
 					<width>400</width>
 					<height>30</height>
 					<font>font13_title</font>
-					<textcolor>white</textcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -1965,8 +1918,6 @@
 					<posy>30</posy>
 					<width>400</width>
 					<height>30</height>
-					<font>font13</font>
-					<textcolor>white</textcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -1979,8 +1930,6 @@
 					<posy>55</posy>
 					<width>400</width>
 					<height>30</height>
-					<font>font13</font>
-					<textcolor>white</textcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -1993,8 +1942,6 @@
 					<posy>80</posy>
 					<width>400</width>
 					<height>30</height>
-					<font>font13</font>
-					<textcolor>white</textcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -2007,8 +1954,6 @@
 					<posy>105</posy>
 					<width>400</width>
 					<height>30</height>
-					<font>font13</font>
-					<textcolor>white</textcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -2027,7 +1972,6 @@
 					<width>400</width>
 					<height>30</height>
 					<font>font13_title</font>
-					<textcolor>white</textcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -2038,8 +1982,6 @@
 					<posy>30</posy>
 					<width>400</width>
 					<height>30</height>
-					<font>font13</font>
-					<textcolor>white</textcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -2051,7 +1993,6 @@
 					<width>400</width>
 					<height>30</height>
 					<font>font13_title</font>
-					<textcolor>white</textcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -2062,8 +2003,6 @@
 					<posy>105</posy>
 					<width>400</width>
 					<height>30</height>
-					<font>font13</font>
-					<textcolor>white</textcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>top</aligny>
@@ -2080,7 +2019,6 @@
 					<width>400</width>
 					<height>30</height>
 					<font>font13_title</font>
-					<textcolor>white</textcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -2091,8 +2029,6 @@
 					<posy>30</posy>
 					<width>400</width>
 					<height>30</height>
-					<font>font13</font>
-					<textcolor>white</textcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -2105,8 +2041,6 @@
 					<posy>55</posy>
 					<width>400</width>
 					<height>30</height>
-					<font>font13</font>
-					<textcolor>white</textcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -2119,8 +2053,6 @@
 					<posy>80</posy>
 					<width>400</width>
 					<height>30</height>
-					<font>font13</font>
-					<textcolor>white</textcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -2139,7 +2071,6 @@
 					<width>400</width>
 					<height>30</height>
 					<font>font13_title</font>
-					<textcolor>white</textcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -2150,8 +2081,6 @@
 					<posy>30</posy>
 					<width>400</width>
 					<height>30</height>
-					<font>font13</font>
-					<textcolor>white</textcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -2162,8 +2091,6 @@
 					<posy>55</posy>
 					<width>400</width>
 					<height>30</height>
-					<font>font13</font>
-					<textcolor>white</textcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -2174,8 +2101,6 @@
 					<posy>80</posy>
 					<width>400</width>
 					<height>30</height>
-					<font>font13</font>
-					<textcolor>white</textcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -2191,7 +2116,6 @@
 					<width>400</width>
 					<height>30</height>
 					<font>font13_title</font>
-					<textcolor>white</textcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -2205,7 +2129,6 @@
 					<height>120</height>
 					<font>font12</font>
 					<align>justify</align>
-					<textcolor>white</textcolor>
 					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
@@ -2260,7 +2183,7 @@
 						<width>139</width>
 						<height>202</height>
 						<bordersize>5</bordersize>
-						<bordertexture border="5">buttons/nf_light.png</bordertexture>
+						<bordertexture>buttons/nf_light.png</bordertexture>
 						<aspectratio scalediffuse="false">scale</aspectratio>
 						<texture background="true">$VAR[PosterThumb]</texture>
 					</control>

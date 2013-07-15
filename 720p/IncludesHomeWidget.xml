@@ -40,7 +40,7 @@
 							<posy>0</posy>
 							<width>180</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -48,7 +48,7 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 						</control>
 						<control type="label">
@@ -57,7 +57,6 @@
 							<width>150</width>
 							<height>20</height>
 							<font>font12</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -71,7 +70,7 @@
 							<posy>0</posy>
 							<width>180</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -79,7 +78,7 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/folder-focus_light.png</bordertexture>
+							<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>Control.HasFocus(8000)</visible>
 						</control>
@@ -89,7 +88,7 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8000)</visible>
 						</control>
@@ -99,7 +98,6 @@
 							<width>150</width>
 							<height>20</height>
 							<font>font12</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -176,7 +174,7 @@
 							<posy>0</posy>
 							<width>240</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -185,7 +183,7 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
 						</control>
@@ -196,7 +194,7 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.Thumb]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
 						</control>
@@ -227,7 +225,6 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font12</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -241,7 +238,7 @@
 							<posy>0</posy>
 							<width>240</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -250,7 +247,7 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/folder-focus_light.png</bordertexture>
+							<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>Control.HasFocus(8001)</visible>
 							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
@@ -262,7 +259,7 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8001)</visible>
 							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
@@ -274,7 +271,7 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.Thumb]</texture>
-							<bordertexture border="5">buttons/folder-focus_light.png</bordertexture>
+							<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>Control.HasFocus(8001)</visible>
 							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
@@ -286,7 +283,7 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.Thumb]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8001)</visible>
 							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
@@ -318,7 +315,6 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font12</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -393,7 +389,7 @@
 							<posy>0</posy>
 							<width>200</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -402,7 +398,7 @@
 							<height>155</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 						</control>
 						<control type="label">
@@ -423,7 +419,6 @@
 							<width>180</width>
 							<height>20</height>
 							<font>font12</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -437,7 +432,7 @@
 							<posy>0</posy>
 							<width>200</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -446,7 +441,7 @@
 							<height>155</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/folder-focus_light.png</bordertexture>
+							<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>Control.HasFocus(8002)</visible>
 						</control>
@@ -457,7 +452,7 @@
 							<height>155</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8002)</visible>
 						</control>
@@ -479,7 +474,6 @@
 							<width>180</width>
 							<height>20</height>
 							<font>font12</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -555,7 +549,7 @@
 							<posy>0</posy>
 							<width>180</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -563,7 +557,7 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 						</control>
 						<control type="label">
@@ -572,7 +566,6 @@
 							<width>150</width>
 							<height>20</height>
 							<font>font12</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -586,7 +579,7 @@
 							<posy>0</posy>
 							<width>180</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -594,7 +587,7 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/folder-focus_light.png</bordertexture>
+							<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>Control.HasFocus(8003)</visible>
 						</control>
@@ -604,7 +597,7 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8003)</visible>
 						</control>
@@ -614,7 +607,6 @@
 							<width>150</width>
 							<height>20</height>
 							<font>font12</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -690,7 +682,7 @@
 							<posy>0</posy>
 							<width>180</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -698,7 +690,7 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 						</control>
 						<control type="label">
@@ -707,7 +699,6 @@
 							<width>150</width>
 							<height>20</height>
 							<font>font12</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -721,7 +712,7 @@
 							<posy>0</posy>
 							<width>180</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -729,7 +720,7 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/folder-focus_light.png</bordertexture>
+							<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>Control.HasFocus(8004)</visible>
 						</control>
@@ -739,7 +730,7 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8004)</visible>
 						</control>
@@ -749,7 +740,6 @@
 							<width>150</width>
 							<height>20</height>
 							<font>font12</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -826,7 +816,7 @@
 							<posy>0</posy>
 							<width>240</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -835,7 +825,7 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
 						</control>
@@ -846,7 +836,7 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.Thumb]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
 						</control>
@@ -877,7 +867,6 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font12</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -891,7 +880,7 @@
 							<posy>0</posy>
 							<width>240</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -900,7 +889,7 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/folder-focus_light.png</bordertexture>
+							<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>Control.HasFocus(8005)</visible>
 							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
@@ -912,7 +901,7 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8005)</visible>
 							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
@@ -924,7 +913,7 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.Thumb]</texture>
-							<bordertexture border="5">buttons/folder-focus_light.png</bordertexture>
+							<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>Control.HasFocus(8005)</visible>
 							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
@@ -936,7 +925,7 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.Thumb]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8005)</visible>
 							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
@@ -968,7 +957,6 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font12</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -1043,7 +1031,7 @@
 							<posy>0</posy>
 							<width>200</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -1052,7 +1040,7 @@
 							<height>155</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 						</control>
 						<control type="label">
@@ -1073,7 +1061,6 @@
 							<width>180</width>
 							<height>20</height>
 							<font>font12</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -1087,7 +1074,7 @@
 							<posy>0</posy>
 							<width>200</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -1096,7 +1083,7 @@
 							<height>155</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/folder-focus_light.png</bordertexture>
+							<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>Control.HasFocus(8006)</visible>
 						</control>
@@ -1107,7 +1094,7 @@
 							<height>155</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8006)</visible>
 						</control>
@@ -1129,7 +1116,6 @@
 							<width>180</width>
 							<height>20</height>
 							<font>font12</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -1205,7 +1191,7 @@
 							<posy>0</posy>
 							<width>180</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -1213,7 +1199,7 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 						</control>
 						<control type="label">
@@ -1222,7 +1208,6 @@
 							<width>150</width>
 							<height>20</height>
 							<font>font12</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -1236,7 +1221,7 @@
 							<posy>0</posy>
 							<width>180</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -1244,7 +1229,7 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/folder-focus_light.png</bordertexture>
+							<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>Control.HasFocus(8007)</visible>
 						</control>
@@ -1254,7 +1239,7 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8007)</visible>
 						</control>
@@ -1264,7 +1249,6 @@
 							<width>150</width>
 							<height>20</height>
 							<font>font12</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -1340,7 +1324,7 @@
 							<posy>0</posy>
 							<width>180</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -1348,7 +1332,7 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 						</control>
 						<control type="label">
@@ -1357,7 +1341,6 @@
 							<width>150</width>
 							<height>20</height>
 							<font>font12</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -1371,7 +1354,7 @@
 							<posy>0</posy>
 							<width>180</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -1379,7 +1362,7 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/folder-focus_light.png</bordertexture>
+							<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>Control.HasFocus(8008)</visible>
 						</control>
@@ -1389,7 +1372,7 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8008)</visible>
 						</control>
@@ -1399,7 +1382,6 @@
 							<width>150</width>
 							<height>20</height>
 							<font>font12</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -1476,7 +1458,7 @@
 							<posy>0</posy>
 							<width>240</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -1485,7 +1467,7 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
 						</control>
@@ -1496,7 +1478,7 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.Thumb]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
 						</control>
@@ -1527,7 +1509,6 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font12</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -1541,7 +1522,7 @@
 							<posy>0</posy>
 							<width>240</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -1550,7 +1531,7 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/folder-focus_light.png</bordertexture>
+							<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>Control.HasFocus(8009)</visible>
 							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
@@ -1562,7 +1543,7 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture>$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8009)</visible>
 							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
@@ -1574,7 +1555,7 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.Thumb]</texture>
-							<bordertexture border="5">buttons/folder-focus_light.png</bordertexture>
+							<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>Control.HasFocus(8009)</visible>
 							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
@@ -1586,7 +1567,7 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture>$INFO[ListItem.Thumb]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8009)</visible>
 							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
@@ -1618,7 +1599,6 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font12</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -1693,7 +1673,7 @@
 							<posy>0</posy>
 							<width>200</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -1702,7 +1682,7 @@
 							<height>155</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 						</control>
 						<control type="label">
@@ -1723,7 +1703,6 @@
 							<width>180</width>
 							<height>20</height>
 							<font>font12</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -1737,7 +1716,7 @@
 							<posy>0</posy>
 							<width>200</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -1746,7 +1725,7 @@
 							<height>155</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/folder-focus_light.png</bordertexture>
+							<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>Control.HasFocus(8010)</visible>
 						</control>
@@ -1757,7 +1736,7 @@
 							<height>155</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true" fallback="livecdcase/DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8010)</visible>
 						</control>
@@ -1779,7 +1758,6 @@
 							<width>180</width>
 							<height>20</height>
 							<font>font12</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -1855,7 +1833,7 @@
 							<posy>0</posy>
 							<width>180</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -1863,7 +1841,7 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 						</control>
 						<control type="label">
@@ -1872,7 +1850,6 @@
 							<width>150</width>
 							<height>20</height>
 							<font>font12</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -1886,7 +1863,7 @@
 							<posy>0</posy>
 							<width>180</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -1894,7 +1871,7 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/folder-focus_light.png</bordertexture>
+							<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>Control.HasFocus(8011)</visible>
 						</control>
@@ -1904,7 +1881,7 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8011)</visible>
 						</control>
@@ -1914,7 +1891,6 @@
 							<width>150</width>
 							<height>20</height>
 							<font>font12</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -2516,7 +2492,7 @@
 							<posy>0</posy>
 							<width>180</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -2524,7 +2500,7 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 						</control>
 						<control type="label">
@@ -2533,7 +2509,6 @@
 							<width>150</width>
 							<height>20</height>
 							<font>font12</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -2547,7 +2522,7 @@
 							<posy>0</posy>
 							<width>180</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -2555,7 +2530,7 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/folder-focus_light.png</bordertexture>
+							<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>Control.HasFocus(8014)</visible>
 						</control>
@@ -2565,7 +2540,7 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8014)</visible>
 						</control>
@@ -2575,7 +2550,6 @@
 							<width>150</width>
 							<height>20</height>
 							<font>font12</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -2652,7 +2626,7 @@
 							<posy>0</posy>
 							<width>240</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -2661,7 +2635,7 @@
 							<height>155</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 						</control>
 						<control type="label">
@@ -2682,7 +2656,6 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font10</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>top</aligny>
@@ -2694,7 +2667,6 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font10</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -2708,7 +2680,7 @@
 							<posy>0</posy>
 							<width>240</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -2717,7 +2689,7 @@
 							<height>155</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/folder-focus_light.png</bordertexture>
+							<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>Control.HasFocus(8015)</visible>
 						</control>
@@ -2728,7 +2700,7 @@
 							<height>155</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8015)</visible>
 						</control>
@@ -2750,7 +2722,6 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font10</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>top</aligny>
@@ -2762,7 +2733,6 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font10</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -2817,7 +2787,7 @@
 							<posy>0</posy>
 							<width>240</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -2826,7 +2796,7 @@
 							<height>155</height>
 							<aspectratio align="center" aligny="bottom">keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 						</control>
 						<control type="label">
@@ -2835,7 +2805,6 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font12</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -2849,7 +2818,7 @@
 							<posy>0</posy>
 							<width>240</width>
 							<height>220</height>
-							<texture border="15">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -2858,7 +2827,7 @@
 							<height>155</height>
 							<aspectratio align="center" aligny="bottom">keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<bordertexture border="5">buttons/folder-focus_light.png</bordertexture>
+							<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>Control.HasFocus(8016)</visible>
 						</control>
@@ -2869,7 +2838,7 @@
 							<height>155</height>
 							<aspectratio align="center" aligny="bottom">keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<bordertexture border="5">buttons/nf_light.png</bordertexture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8016)</visible>
 						</control>
@@ -2892,7 +2861,6 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font12</font>
-							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -2935,7 +2903,7 @@
 				<posy>0</posy>
 				<width>180</width>
 				<height>220</height>
-				<texture border="15">buttons/nf_light.png</texture>
+				<texture>buttons/nf_light.png</texture>
 			</control>
 			<control type="image">
 				<posx>10</posx>
@@ -2943,7 +2911,7 @@
 				<width>160</width>
 				<height>170</height>
 				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-				<bordertexture border="5">buttons/nf_light.png</bordertexture>
+				<bordertexture>buttons/nf_light.png</bordertexture>
 				<bordersize>5</bordersize>
 			</control>
 			<control type="label">
@@ -2952,7 +2920,6 @@
 				<width>150</width>
 				<height>20</height>
 				<font>font12</font>
-				<textcolor>white</textcolor>
 				<selectedcolor>selected</selectedcolor>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -2966,7 +2933,7 @@
 				<posy>0</posy>
 				<width>180</width>
 				<height>220</height>
-				<texture border="15">buttons/nf_light.png</texture>
+				<texture>buttons/nf_light.png</texture>
 			</control>
 			<control type="image">
 				<posx>10</posx>
@@ -2974,7 +2941,7 @@
 				<width>160</width>
 				<height>170</height>
 				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-				<bordertexture border="5">buttons/folder-focus_light.png</bordertexture>
+				<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 				<bordersize>5</bordersize>
 				<visible>Control.HasFocus(8012)</visible>
 			</control>
@@ -2984,7 +2951,7 @@
 				<width>160</width>
 				<height>170</height>
 				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-				<bordertexture border="5">buttons/nf_light.png</bordertexture>
+				<bordertexture>buttons/nf_light.png</bordertexture>
 				<bordersize>5</bordersize>
 				<visible>!Control.HasFocus(8012)</visible>
 			</control>
@@ -2994,7 +2961,6 @@
 				<width>150</width>
 				<height>20</height>
 				<font>font12</font>
-				<textcolor>white</textcolor>
 				<selectedcolor>selected</selectedcolor>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -3023,7 +2989,7 @@
 				<posy>0</posy>
 				<width>240</width>
 				<height>220</height>
-				<texture border="15">buttons/nf_light.png</texture>
+				<texture>buttons/nf_light.png</texture>
 			</control>
 			<control type="image">
 				<posx>10</posx>
@@ -3032,7 +2998,7 @@
 				<height>155</height>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-				<bordertexture border="5">buttons/nf_light.png</bordertexture>
+				<bordertexture>buttons/nf_light.png</bordertexture>
 				<bordersize>5</bordersize>
 				<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
 			</control>
@@ -3043,7 +3009,7 @@
 				<height>155</height>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[ListItem.Thumb]</texture>
-				<bordertexture border="5">buttons/nf_light.png</bordertexture>
+				<bordertexture>buttons/nf_light.png</bordertexture>
 				<bordersize>5</bordersize>
 				<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
 			</control>
@@ -3065,7 +3031,6 @@
 				<width>200</width>
 				<height>20</height>
 				<font>font12</font>
-				<textcolor>white</textcolor>
 				<selectedcolor>selected</selectedcolor>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -3079,7 +3044,7 @@
 				<posy>0</posy>
 				<width>240</width>
 				<height>220</height>
-				<texture border="15">buttons/nf_light.png</texture>
+				<texture>buttons/nf_light.png</texture>
 			</control>
 			<control type="image">
 				<posx>10</posx>
@@ -3088,7 +3053,7 @@
 				<height>155</height>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-				<bordertexture border="5">buttons/folder-focus_light.png</bordertexture>
+				<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 				<bordersize>5</bordersize>
 				<visible>Control.HasFocus(8013)</visible>
 				<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
@@ -3100,7 +3065,7 @@
 				<height>155</height>
 				<aspectratio>scale</aspectratio>
 				<texture>$INFO[ListItem.ActualIcon]</texture>
-				<bordertexture border="5">buttons/nf_light.png</bordertexture>
+				<bordertexture>buttons/nf_light.png</bordertexture>
 				<bordersize>5</bordersize>
 				<visible>!Control.HasFocus(8013)</visible>
 				<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
@@ -3112,7 +3077,7 @@
 				<height>155</height>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[ListItem.Thumb]</texture>
-				<bordertexture border="5">buttons/folder-focus_light.png</bordertexture>
+				<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 				<bordersize>5</bordersize>
 				<visible>Control.HasFocus(8013)</visible>
 				<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
@@ -3124,7 +3089,7 @@
 				<height>155</height>
 				<aspectratio>scale</aspectratio>
 				<texture>$INFO[ListItem.Thumb]</texture>
-				<bordertexture border="5">buttons/nf_light.png</bordertexture>
+				<bordertexture>buttons/nf_light.png</bordertexture>
 				<bordersize>5</bordersize>
 				<visible>!Control.HasFocus(8013)</visible>
 				<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
@@ -3147,7 +3112,6 @@
 				<width>200</width>
 				<height>20</height>
 				<font>font12</font>
-				<textcolor>white</textcolor>
 				<selectedcolor>selected</selectedcolor>
 				<align>center</align>
 				<aligny>center</aligny>

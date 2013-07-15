@@ -22,7 +22,6 @@
 						<posy>0</posy>
 						<width>730</width>
 						<height>40</height>
-						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
@@ -48,7 +47,7 @@
 						<posy>0</posy>
 						<width>780</width>
 						<height>41</height>
-						<texture border="0,2,0,2">buttons/fo_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(506)</visible>
 					</control>
 					<control type="label">
@@ -56,8 +55,6 @@
 						<posy>0</posy>
 						<width>730</width>
 						<height>40</height>
-						<font>font13</font>
-						<textcolor>white</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
@@ -82,8 +79,8 @@
 				<posy>78</posy>
 				<width>14</width>
 				<height>560</height>
-				<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>506</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
@@ -115,7 +112,6 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font24_title</font>
-					<textcolor>white</textcolor>
 				</control>
 				<control type="label">
 					<posx>10</posx>
@@ -126,7 +122,6 @@
 					<wrapmultiline>true</wrapmultiline>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>font13</font>
 					<textcolor>grey2</textcolor>
 				</control>
 				<control type="label">
@@ -139,7 +134,6 @@
 					<align>center</align>
 					<aligny>top</aligny>
 					<font>font13_title</font>
-					<textcolor>white</textcolor>
 					<wrapmultiline>true</wrapmultiline>
 					<visible>!Container.Content(Albums)</visible>
 				</control>
@@ -153,7 +147,6 @@
 					<align>center</align>
 					<aligny>top</aligny>
 					<font>font13_title</font>
-					<textcolor>white</textcolor>
 					<wrapmultiline>true</wrapmultiline>
 					<visible>Container.Content(Albums)</visible>
 				</control>
@@ -166,8 +159,6 @@
 					<label>$INFO[listitem.TrackNumber,[COLOR=blue]$LOCALIZE[31310]: [/COLOR]]</label>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>font13</font>
-					<textcolor>white</textcolor>
 					<visible>!Container.Content(Albums)</visible>
 				</control>
 				<control type="label">
@@ -179,8 +170,6 @@
 					<label>$INFO[listitem.Year,[COLOR=blue]$LOCALIZE[345]: [/COLOR]]</label>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>font13</font>
-					<textcolor>white</textcolor>
 				</control>
 				<control type="image">
 					<description>Rating value</description>
@@ -212,7 +201,6 @@
 				<width>1200</width>
 				<height>20</height>
 				<font>font24_title</font>
-				<textcolor>white</textcolor>
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -249,7 +237,7 @@
 						<width>160</width>
 						<height>160</height>
 						<aspectratio>stretch</aspectratio>
-						<bordertexture border="5">buttons/nf_light.png</bordertexture>
+						<bordertexture>buttons/nf_light.png</bordertexture>
 						<bordersize>4</bordersize>
 						<fadetime>200</fadetime>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
@@ -290,8 +278,8 @@
 				<posy>195</posy>
 				<width>660</width>
 				<height>14</height>
-				<texturesliderbackground>scrollbar/ScrollBarH_light.png</texturesliderbackground>
-				<texturesliderbar>scrollbar/ScrollBarH_bar_light.png</texturesliderbar>
+				<texturesliderbackground border="1,5,1,5">scrollbar/ScrollBarH_light.png</texturesliderbackground>
+				<texturesliderbar border="1,5,1,5">scrollbar/ScrollBarH_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus>scrollbar/ScrollBarH_bar_focus_light.png</texturesliderbarfocus>
 				<onup>509</onup>
 				<ondown condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</ondown>
@@ -317,8 +305,6 @@
 				<posy>20</posy>
 				<width>840</width>
 				<height>20</height>
-				<font>font13</font>
-				<textcolor>white</textcolor>
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -345,7 +331,6 @@
 					<width>400</width>
 					<height>30</height>
 					<font>font13_title</font>
-					<textcolor>white</textcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -356,8 +341,6 @@
 					<posy>35</posy>
 					<width>850</width>
 					<height>30</height>
-					<font>font13</font>
-					<textcolor>white</textcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -369,8 +352,6 @@
 					<posy>65</posy>
 					<width>850</width>
 					<height>30</height>
-					<font>font13</font>
-					<textcolor>white</textcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -382,8 +363,6 @@
 					<posy>95</posy>
 					<width>400</width>
 					<height>30</height>
-					<font>font13</font>
-					<textcolor>white</textcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -409,7 +388,6 @@
 					<font>font12</font>
 					<align>justify</align>
 					<pagecontrol>-</pagecontrol>
-					<textcolor>white</textcolor>
 					<label>$INFO[ListItem.Property(Album_Description)]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
@@ -438,7 +416,6 @@
 						<posy>0</posy>
 						<width>720</width>
 						<height>40</height>
-						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
@@ -471,7 +448,7 @@
 						<posy>0</posy>
 						<width>760</width>
 						<height>41</height>
-						<texture border="0,2,0,2">buttons/fo_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(511)</visible>
 					</control>
 					<control type="label">
@@ -479,8 +456,6 @@
 						<posy>0</posy>
 						<width>720</width>
 						<height>40</height>
-						<font>font13</font>
-						<textcolor>white</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
@@ -512,8 +487,8 @@
 				<posy>78</posy>
 				<width>14</width>
 				<height>560</height>
-				<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>511</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
@@ -555,7 +530,6 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font24_title</font>
-					<textcolor>white</textcolor>
 				</control>
 				<control type="label">
 					<posx>10</posx>
@@ -566,7 +540,6 @@
 					<wrapmultiline>true</wrapmultiline>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>font13</font>
 					<textcolor>grey2</textcolor>
 				</control>
 				<control type="label">
@@ -579,7 +552,6 @@
 					<align>center</align>
 					<aligny>top</aligny>
 					<font>font13_title</font>
-					<textcolor>white</textcolor>
 					<wrapmultiline>true</wrapmultiline>
 					<visible>!Container.Content(Albums)</visible>
 				</control>
@@ -592,7 +564,6 @@
 					<scroll>true</scroll>
 					<align>center</align>
 					<aligny>top</aligny>
-					<font>font13</font>
 					<textcolor>grey2</textcolor>
 					<wrapmultiline>true</wrapmultiline>
 				</control>
@@ -606,7 +577,6 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
-					<textcolor>white</textcolor>
 				</control>
 			</control>
 		</control>
@@ -633,7 +603,6 @@
 						<posy>0</posy>
 						<width>560</width>
 						<height>40</height>
-						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
@@ -647,7 +616,7 @@
 						<posy>0</posy>
 						<width>580</width>
 						<height>41</height>
-						<texture border="0,2,0,2">buttons/fo_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(512)</visible>
 					</control>
 					<control type="label">
@@ -655,8 +624,6 @@
 						<posy>0</posy>
 						<width>560</width>
 						<height>40</height>
-						<font>font13</font>
-						<textcolor>white</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
@@ -669,8 +636,8 @@
 				<posy>78</posy>
 				<width>14</width>
 				<height>560</height>
-				<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>512</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
@@ -715,7 +682,6 @@
 						<label>$INFO[ListItem.Property(Artist_Born)]</label>
 						<align>left</align>
 						<aligny>center</aligny>
-						<font>font13</font>
 						<scroll>true</scroll>
 						<visible>!IsEmpty(ListItem.Property(Artist_Born))</visible>
 					</control>
@@ -741,7 +707,6 @@
 						<label>$INFO[ListItem.Property(Artist_Formed)]</label>
 						<align>left</align>
 						<aligny>center</aligny>
-						<font>font13</font>
 						<scroll>true</scroll>
 						<visible>!IsEmpty(ListItem.Property(Artist_Formed))</visible>
 					</control>
@@ -766,7 +731,6 @@
 						<label fallback="416">$INFO[ListItem.Property(Artist_Genre)]</label>
 						<align>left</align>
 						<aligny>center</aligny>
-						<font>font13</font>
 						<scroll>true</scroll>
 					</control>
 					<control type="textbox">
@@ -777,7 +741,6 @@
 						<height>190</height>
 						<font>font12</font>
 						<align>justify</align>
-						<textcolor>white</textcolor>
 						<label>$INFO[ListItem.Property(Artist_Description)]</label>
 						<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 					</control>
@@ -807,7 +770,6 @@
 						<posy>0</posy>
 						<width>730</width>
 						<height>40</height>
-						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
@@ -833,7 +795,7 @@
 						<posy>0</posy>
 						<width>780</width>
 						<height>41</height>
-						<texture border="0,2,0,2">buttons/fo_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(513)</visible>
 					</control>
 					<control type="label">
@@ -841,8 +803,6 @@
 						<posy>0</posy>
 						<width>730</width>
 						<height>40</height>
-						<font>font13</font>
-						<textcolor>white</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
@@ -867,8 +827,8 @@
 				<posy>78</posy>
 				<width>14</width>
 				<height>560</height>
-				<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
 				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>513</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
@@ -910,7 +870,6 @@
 					<font>font12</font>
 					<align>justify</align>
 					<pagecontrol>-</pagecontrol>
-					<textcolor>white</textcolor>
 					<label>$INFO[ListItem.Property(Album_Description)]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>

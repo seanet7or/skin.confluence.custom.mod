@@ -36,7 +36,6 @@
 			<width>640</width>
 			<align>center</align>
 			<label>35004</label>
-			<font>font13</font>
 		</control>
 		<control type="grouplist" id="5">
 			<animation effect="slide" start="0,0" end="5,0" time="0" condition="!Control.IsVisible(60)">Conditional</animation>
@@ -57,8 +56,8 @@
 			<posy>70</posy>
 			<width>14</width>
 			<height>410</height>
-			<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
-			<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+			<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+			<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
 			<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 			<onleft>5</onleft>
 			<onright>5</onright>
@@ -72,39 +71,29 @@
 			<posx>0</posx>
 			<posy>0</posy>
 			<height>40</height>
-			<font>font13</font>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
-			<texturefocus border="5">buttons/fo_light.png</texturefocus>
 		</control>
 		<control type="radiobutton" id="8">
 			<description>Default RadioButton</description>
 			<posx>0</posx>
 			<posy>0</posy>
 			<height>40</height>
-			<font>font13</font>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
-			<texturefocus border="5">buttons/fo_light.png</texturefocus>
 		</control>
 		<control type="spincontrolex" id="9">
 			<description>Default SpinControlex</description>
 			<posx>0</posx>
 			<posy>0</posy>
 			<height>40</height>
-			<font>font13</font>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
-			<texturefocus border="5">buttons/fo_light.png</texturefocus>
-			<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
-			<aligny>center</aligny>
-			<reverse>yes</reverse>
+			<texturenofocus>buttons/nf_light.png</texturenofocus>
 		</control>
 		<control type="sliderex" id="10">
 			<description>Default Slider</description>
 			<height>40</height>
-			<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
-			<texturefocus border="5">buttons/fo_light.png</texturefocus>
 			<font>font13</font>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
@@ -112,7 +101,6 @@
 		<control type="image" id="11">
 			<description>separator image</description>
 			<height>2</height>
-			<texture>-</texture>
 		</control>
 		<control type="group" id="9000">
 			<posx>40</posx>
@@ -124,7 +112,6 @@
 				<width>200</width>
 				<height>40</height>
 				<align>center</align>
-				<aligny>center</aligny>
 				<font>font12_title</font>
 				<label>222</label>
 				<onleft>50</onleft>
@@ -139,7 +126,6 @@
 				<width>200</width>
 				<height>40</height>
 				<align>center</align>
-				<aligny>center</aligny>
 				<font>font12_title</font>
 				<label>186</label>
 				<onleft>29</onleft>
@@ -154,7 +140,6 @@
 				<width>200</width>
 				<height>40</height>
 				<align>center</align>
-				<aligny>center</aligny>
 				<font>font12_title</font>
 				<label>409</label>
 				<onleft>28</onleft>

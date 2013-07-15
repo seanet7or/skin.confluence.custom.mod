@@ -23,8 +23,6 @@
 				<height>25</height>
 				<align>left</align>
 				<aligny>center</aligny>
-				<font>font13</font>
-				<textcolor>white</textcolor>
 				<label>$VAR[MusicHeaderLabel]</label>
 			</control>
 			<include>Clock</include>
@@ -136,7 +134,7 @@
 							<width>110</width>
 							<height>35</height>
 							<aspectratio align="left">stretch</aspectratio>
-							<texture border="5">flagging/blank.png</texture>
+							<texture border="4">flagging/blank.png</texture>
 						</control>
 						<control type="image">
 							<description>Rating</description>
@@ -161,7 +159,6 @@
 					<pauseatend>400</pauseatend>
 					<label>$VAR[NextFiveSongScroller]</label>
 					<font>font12</font>
-					<textcolor>white</textcolor>
 					<visible>MusicPlayer.HasNext + !Skin.HasSetting(HideNextSongsInfo) + !Window.IsVisible(MusicOSD)</visible>
 					<animation effect="fade" time="200">VisibleChange</animation>
 				</control>
@@ -188,7 +185,6 @@
 					<posy>0</posy>
 					<width>100</width>
 					<height>40</height>
-					<font>font13</font>
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>$INFO[Player.Time(hh:mm:ss)]</label>
@@ -206,7 +202,6 @@
 					<posy>0</posy>
 					<width>100</width>
 					<height>40</height>
-					<font>font13</font>
 					<align>right</align>
 					<aligny>center</aligny>
 					<label>$INFO[Player.Duration(hh:mm:ss)]</label>
@@ -231,7 +226,6 @@
 				<description>row 1 label</description>
 				<posx>50</posx>
 				<posy>10</posy>
-				<label>-</label>
 				<align>left</align>
 				<label>$INFO[musicplayer.Codec,$LOCALIZE[21446]: ,]$INFO[musicplayer.Bitrate, · $LOCALIZE[623]: ,kbps]$INFO[musicplayer.bitspersample, · $LOCALIZE[612]: ,]$INFO[musicplayer.Samplerate, · $LOCALIZE[613]: ,kHz]$INFO[musicplayer.Channels, · $LOCALIZE[21444]: ]</label>
 				<font>font12</font>
@@ -240,7 +234,6 @@
 				<description>row 2 label</description>
 				<posx>50</posx>
 				<posy>40</posy>
-				<label>-</label>
 				<align>left</align>
 				<label>$INFO[Visualisation.Name,, [I][COLOR=orange]($LOCALIZE[20166])[/COLOR][/I] · ]fps: $INFO[System.FPS]</label>
 				<font>font12</font>
@@ -250,7 +243,6 @@
 				<description>Unlocked row 2 label</description>
 				<posx>50</posx>
 				<posy>40</posy>
-				<label>-</label>
 				<align>left</align>
 				<label>$INFO[Visualisation.Name,, · ]fps: $INFO[System.FPS]</label>
 				<font>font12</font>
@@ -260,7 +252,6 @@
 				<description>row 3 label</description>
 				<posx>50</posx>
 				<posy>70</posy>
-				<label>-</label>
 				<align>left</align>
 				<label>$INFO[Visualisation.Preset,$LOCALIZE[13388]: ]</label>
 				<font>font12</font>
