@@ -1445,9 +1445,9 @@ step
 printf "\nReplacing floor buttons: "
 if [ -f media/floor_buttonFO.png ] ; then
 	XMLS=$(2>/dev/null grep 'floor_button.png' -l 720p/*)
-	perlregex $XMLS 's|floor_button.png|buttons/nf_light.png|g'
+	perlregex $XMLS 's|floor_button.png|'$BUTTON_NF'|g'
 	XMLS=$(2>/dev/null grep 'floor_buttonFO.png' -l 720p/*)
-	perlregex $XMLS 's|floor_buttonFO.png|buttons/fo_light.png|g'
+	perlregex $XMLS 's|floor_buttonFO.png|'$BUTTON_FO'|g'
 	check_and_remove media/floor_button.png
 	check_and_remove media/floor_buttonFO.png
 	printf "%sDONE!%s" $GREEN $RESET
