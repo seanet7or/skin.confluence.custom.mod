@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
+	<backgroundcolor>0</backgroundcolor>
 	<onload condition="System.HasAddon(script.artistslideshow) + IsEmpty(Window.Property(ArtistSlideshowRunning)) + [Skin.HasSetting(AllowSlideShowArt) | Skin.HasSetting(AllowSlideShowBio)]">RunScript(script.artistslideshow)</onload>
 	<defaultcontrol>-</defaultcontrol>
 	<allowoverlay>no</allowoverlay>

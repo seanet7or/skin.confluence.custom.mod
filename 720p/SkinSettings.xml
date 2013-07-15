@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
+	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<include condition="!Skin.HasSetting(InitialSetUpRun)">DefaultInitialSetup</include>
 	<onload condition="System.HasAddon(script.favourites)">XBMC.RunScript(script.favourites)</onload>
