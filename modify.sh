@@ -611,26 +611,26 @@ else
 fi
 step
 
-printf "\nMoving vertical scroll bars to the right: "
-if false ; then #grep -q -zo -P '<control type="scrollbar" id="60">\n\s*<posx>212</posx>' 720p/ViewsPictures.xml ; then
-	for FILE in 720p/* ; do
-		IFS=$'\n' ; for XPOS in $( grep -zo -P -I '<control type="scrollbar" id="[0-9]*">\n\s*<posx>[0-9]*</posx>\n\s*<posy>[0-9]*</posy>\n\s*<width>14</width>' "$FILE" \
-			| grep -o '<posx>[0-9]*</posx>' | grep -o '[0-9]*' )
-		do
-			NEWX=$((XPOS+6))
-			echo "'$XPOS' -> '$NEWX'"
-			R='s|(<control type="scrollbar" id="[0-9]*">#'
-			R+='\s*<posx)>'"$XPOS"'<(/posx>#\s*<posy>[0-9]*</posy>#'
-			R+='\s*<width>14</width>)'
-			R+='|\1>'"$NEWX"'<\2|g'
-			#perlregex $FILE "$R"
-		done
-	done
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
+#printf "\nMoving vertical scroll bars to the right: "
+#if false ; then #grep -q -zo -P '<control type="scrollbar" id="60">\n\s*<posx>212</posx>' 720p/ViewsPictures.xml ; then
+#	for FILE in 720p/* ; do
+#		IFS=$'\n' ; for XPOS in $( grep -zo -P -I '<control type="scrollbar" id="[0-9]*">\n\s*<posx>[0-9]*</posx>\n\s*<posy>[0-9]*</posy>\n\s*<width>14</width>' "$FILE" \
+#			| grep -o '<posx>[0-9]*</posx>' | grep -o '[0-9]*' )
+#		do
+#			NEWX=$((XPOS+6))
+#			echo "'$XPOS' -> '$NEWX'"
+#			R='s|(<control type="scrollbar" id="[0-9]*">#'
+#			R+='\s*<posx)>'"$XPOS"'<(/posx>#\s*<posy>[0-9]*</posy>#'
+#			R+='\s*<width>14</width>)'
+#			R+='|\1>'"$NEWX"'<\2|g'
+#			#perlregex $FILE "$R"
+#		done
+#	done
+#	printf "%sDONE!%s" $GREEN $RESET
+#else
+#	printf "%sSKIPPED.%s" $CYAN $RESET
+#fi
+#step
 
 printf "\nReformating horizontal scroll bar controls: "
 if grep -q -zo -P '<control type="scrollbar" id="60">\n\s*<posx>[0-9]*</posx>\n\s*<posy>[0-9]*</posy>\n\s*<width>[0-9]*</width>\n\s*<height>25</height>' \
