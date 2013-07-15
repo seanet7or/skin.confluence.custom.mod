@@ -1561,246 +1561,246 @@ else
 fi
 step
 
-printf "\nChanging font colors for original 'grey' strings: "
-if false ; then #grep -q '>grey<' 720p/ViewsPVR.xml ; then
+#printf "\nChanging font colors for original 'grey' strings: "
+#if false ; then #grep -q '>grey<' 720p/ViewsPVR.xml ; then
+#
+#	R='s|(<description>header label</description>#'
+#	R+='(\s*<[a-z][^#]*#)*?'
+#	R+='\s*<textcolor)>grey<'
+#	R+='|\1>heading2<|g'
+#	perlregex 720p/DialogPVRChannelsOSD.xml "$R"
+#	
+#	XMLS="720p/DialogPVRChannelsOSD.xml 720p/DialogSelect.xml 720p/FileManager.xml 720p/ViewsPVR.xml"
+#	for (( i=0 ; i<10 ; i++)) ; do
+#		R='s|(<(item\|channel)layout height="[0-9]*"(\| width="[0-9]*")>#'
+#		R+='(\s*<control type="[labelimage]*"[^#]*#'
+#		R+='(\s*<[a-z][^#]*#)*?'
+#		R+='\s*</control>#\|\s*<animation[^#]*#)*?'
+#		R+='\s*<control type="(label\|textbox)">#'
+#		R+='(\s*<[a-z][^#]*#)*?'
+#		R+='\s*<(textcolor\|selectedcolor))>grey<'
+#		R+='|\1>textnofocus<|g'
+#		perlregex $XMLS "$R" --nocheck
+#		
+#		R='s|(<(focused\|focusedchannel)layout height="[0-9]*"(\| width="[0-9]*")>#'
+#		R+='(\s*<control type="[labelimage]*"[^#]*#'
+#		R+='(\s*<[a-z][^#]*#)*?'
+#		R+='\s*</control>#\|\s*<animation[^#]*#)*?'
+#		R+='\s*<control type="(label\|textbox)">#'
+#		R+='(\s*<[a-z][^#]*#)*?'
+#		R+='\s*<(textcolor\|selectedcolor))>grey<'
+#		R+='|\1>textfocus<|g'
+#		perlregex $XMLS "$R" --nocheck
+#	done
+#	
+#	R='s|<textcolor>grey</textcolor>|<textcolor>textnofocus</textcolor>|g'
+#	XMLS="720p/includes.xml 720p/MusicVisualisation.xml 720p/script-XBMC_Lyrics-main.xml 720p/SkinSettings.xml"
+#	XMLS+=" 720p/VideoFullScreen.xml 720p/VideoOSD.xml"
+#	perlregex $XMLS "$R"
+#	
+#	if grep -q '>grey<' 720p/* ; then
+#		printf "\nERROR: Grey color still used!"
+#		printf "\n"
+#		grep '>grey<' 720p/*
+#		exit 4
+#	fi
+#
+#	printf "%sDONE!%s" $GREEN $RESET
+#else
+#	printf "%sSKIPPED.%s" $CYAN $RESET
+#fi
+#step
 
-	R='s|(<description>header label</description>#'
-	R+='(\s*<[a-z][^#]*#)*?'
-	R+='\s*<textcolor)>grey<'
-	R+='|\1>heading2<|g'
-	perlregex 720p/DialogPVRChannelsOSD.xml "$R"
-	
-	XMLS="720p/DialogPVRChannelsOSD.xml 720p/DialogSelect.xml 720p/FileManager.xml 720p/ViewsPVR.xml"
-	for (( i=0 ; i<10 ; i++)) ; do
-		R='s|(<(item\|channel)layout height="[0-9]*"(\| width="[0-9]*")>#'
-		R+='(\s*<control type="[labelimage]*"[^#]*#'
-		R+='(\s*<[a-z][^#]*#)*?'
-		R+='\s*</control>#\|\s*<animation[^#]*#)*?'
-		R+='\s*<control type="(label\|textbox)">#'
-		R+='(\s*<[a-z][^#]*#)*?'
-		R+='\s*<(textcolor\|selectedcolor))>grey<'
-		R+='|\1>textnofocus<|g'
-		perlregex $XMLS "$R" --nocheck
-		
-		R='s|(<(focused\|focusedchannel)layout height="[0-9]*"(\| width="[0-9]*")>#'
-		R+='(\s*<control type="[labelimage]*"[^#]*#'
-		R+='(\s*<[a-z][^#]*#)*?'
-		R+='\s*</control>#\|\s*<animation[^#]*#)*?'
-		R+='\s*<control type="(label\|textbox)">#'
-		R+='(\s*<[a-z][^#]*#)*?'
-		R+='\s*<(textcolor\|selectedcolor))>grey<'
-		R+='|\1>textfocus<|g'
-		perlregex $XMLS "$R" --nocheck
-	done
-	
-	R='s|<textcolor>grey</textcolor>|<textcolor>textnofocus</textcolor>|g'
-	XMLS="720p/includes.xml 720p/MusicVisualisation.xml 720p/script-XBMC_Lyrics-main.xml 720p/SkinSettings.xml"
-	XMLS+=" 720p/VideoFullScreen.xml 720p/VideoOSD.xml"
-	perlregex $XMLS "$R"
-	
-	if grep -q '>grey<' 720p/* ; then
-		printf "\nERROR: Grey color still used!"
-		printf "\n"
-		grep '>grey<' 720p/*
-		exit 4
-	fi
+#printf "\nChanging font colors for original 'selected color' strings: "
+#if false ; then #grep -q '>selected<' 720p/VisualisationPresetList.xml ; then
+#	XMLS=$(2>/dev/null grep '>selected<' -l 720p/*)
+#	perlregex $XMLS 's|<selectedcolor>selected</selectedcolor>|<selectedcolor>itemselected</selectedcolor>|g'	
+#	XMLS=$(2>/dev/null grep '>selected<' -l 720p/*)
+#	perlregex $XMLS 's|<textcolor>selected</textcolor>|<textcolor>itemselected</textcolor>|g'
+#	
+#	if grep -q '>selected<' 720p/* ; then
+#		printf "\nERROR: Selected color still used!"
+#		printf "\n"
+#		grep '>selected<' 720p/*
+#		exit 4
+#	fi
+#	
+#	printf "%sDONE!%s" $GREEN $RESET
+#else
+#	printf "%sSKIPPED.%s" $CYAN $RESET
+#fi
+#step
 
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
+#printf "\nChanging font colors for original blue strings: "
+#if false ; then #grep -q 'blue' 720p/ViewsVideoLibrary.xml ; then
+#
+#	perlregex 720p/Home.xml 's|(<font>font_MainMenu</font>#\s*<textcolor)>blue<|\1>textnofocus<|g'
+#	perlregex 720p/Home.xml 's|(<font>font_MainMenu</font>#\s*<textcolor)>grey3<|\1>buttonfocus<|g'
+#	
+#	R='s|(<control type="label">#'
+#	R+='\s*<description>(header label\|Title label)</description>#'
+#	R+='(\s*<[a-z][^#]*#)*?'
+#	R+='\s*<textcolor)>blue</'
+#	R+='|\1>heading1</'
+#	R+='|g'
+#	XMLS="720p/DialogPVRChannelsOSD.xml 720p/DialogPVRGuideInfo.xml 720p/DialogPVRRecordingInfo.xml "
+#	perlregex $XMLS "$R"
+#	
+#	R='s|(<control type="rss">#'
+#	R+='\s*<description>RSS feed</description>#'
+#	R+='(\s*<[a-z][^#]*#)*?'
+#	R+='\s*<textcolor)>blue</'
+#	R+='|\1>textfocus</'
+#	R+='|g'
+#	XMLS="720p/Home.xml "
+#	perlregex $XMLS "$R"	
+#
+#	R='s|<textcolor>blue</textcolor>|<textcolor>heading1</textcolor>|g'
+#	XMLS="720p/CustomAddMenuItems.xml 720p/CustomAddonSelection.xml 720p/CustomAddonType.xml 720p/CustomAddSubMenuItems.xml "
+#	XMLS+="720p/CustomSubMenuType.xml 720p/CustomWidgetType.xml 720p/DialogPVRChannelManager.xml "
+#	XMLS+="720p/DialogPVRGuideOSD.xml 720p/DialogPVRGuideSearch.xml 720p/DialogSlider.xml "
+#	XMLS+="720p/MyMusicPlaylistEditor.xml 720p/script-globalsearch-main.xml 720p/SettingsSystemInfo.xml "
+#	XMLS+=" 720p/FileManager.xml "
+#	XMLS+=" "
+#	perlregex $XMLS "$R"
+#
+#	R='s|<textcolor>blue</textcolor>|<textcolor>heading2</textcolor>|g'
+#	XMLS="720p/AddonBrowser.xml 720p/DialogAddonInfo.xml 720p/DialogAlbumInfo.xml 720p/DialogContentSettings.xml "
+#	XMLS+="720p/DialogKaraokeSongSelector.xml 720p/DialogKaraokeSongSelectorLarge.xml 720p/DialogMediaSource.xml "
+#	XMLS+="720p/DialogPVRGroupManager.xml 720p/DialogSeekBar.xml 720p/DialogSongInfo.xml 720p/DialogVideoInfo.xml "
+#	XMLS+=" 720p/includes.xml 720p/MusicKaraokeLyrics.xml 720p/MusicOSD.xml "
+#	XMLS+="720p/MyMusicNav.xml 720p/MyMusicPlaylist.xml 720p/DialogPeripheralManager.xml "
+#	XMLS+="720p/DialogPVRChannelsOSD.xml 720p/DialogPVRGuideInfo.xml 720p/DialogPVRRecordingInfo.xml "
+#	XMLS+="720p/Home.xml 720p/MyPics.xml  720p/MyMusicSongs.xml 720p/MyPrograms.xml 720p/MyPVR.xml 720p/MyVideoNav.xml "
+#	XMLS+="720p/MyVideoPlaylist.xml 720p/MyWeather.xml 720p/ProfileSettings.xml 720p/script-NextAired-TVGuide.xml "
+#	XMLS+="720p/script-RSS_Editor-rssEditor.xml 720p/script-RSS_Editor-setEditor.xml 720p/script-XBMC_Lyrics-main.xml "
+#	XMLS+="720p/SettingsProfile.xml 720p/SkinSettings.xml 720p/SmartPlaylistEditor.xml 720p/SmartPlaylistRule.xml "
+#	XMLS+="720p/VideoFullScreen.xml 720p/ViewsAddonBrowser.xml 720p/ViewsLiveTV.xml 720p/ViewsMusicLibrary.xml "
+#	XMLS+="720p/ViewsPVR.xml 720p/ViewsVideoLibrary.xml "
+#	perlregex $XMLS "$R"
+#	
+#	R='s|<textcolor>blue</textcolor>|<textcolor>textfocus</textcolor>|g'
+#	XMLS="720p/DialogAddonSettings.xml 720p/IncludesHomeWidget.xml "
+#	XMLS+=" "
+#	perlregex $XMLS "$R"
+#	
+#	perlregex 's|\s*<selectedcolor>blue</selectedcolor>#||g' 720p/DialogPVRChannelsOSD.xml
+#	perlregex 's|<titlecolor>blue</titlecolor>|<titlecolor>heading2</titlecolor>|g' 720p/Home.xml
+#
+#	if grep -q '>blue<' 720p/* ; then
+#		printf "\nERROR: Blue color still used!"
+#		printf "\n"
+#		grep '>blue<' 720p/*
+#		exit 4
+#	fi
+#	
+#	printf "%sDONE!%s" $GREEN $RESET
+#else
+#	printf "%sSKIPPED.%s" $CYAN $RESET
+#fi
+#step
 
-printf "\nChanging font colors for original 'selected color' strings: "
-if false ; then #grep -q '>selected<' 720p/VisualisationPresetList.xml ; then
-	XMLS=$(2>/dev/null grep '>selected<' -l 720p/*)
-	perlregex $XMLS 's|<selectedcolor>selected</selectedcolor>|<selectedcolor>itemselected</selectedcolor>|g'	
-	XMLS=$(2>/dev/null grep '>selected<' -l 720p/*)
-	perlregex $XMLS 's|<textcolor>selected</textcolor>|<textcolor>itemselected</textcolor>|g'
-	
-	if grep -q '>selected<' 720p/* ; then
-		printf "\nERROR: Selected color still used!"
-		printf "\n"
-		grep '>selected<' 720p/*
-		exit 4
-	fi
-	
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
+#printf "\nChanging font colors for original 'grey2' strings: "
+#if false ; then #grep -q '>grey2<' 720p/* ; then
+#
+#	XMLS=$(2>/dev/null grep '<disabledcolor>grey2</disabledcolor>' -l 720p/*)
+#	R='s|<disabledcolor>grey2</disabledcolor>|<disabledcolor>textdisabled</disabledcolor>|g'
+#	perlregex $XMLS "$R"
+#
+#	XMLS=$(2>/dev/null grep '>grey2<' -l 720p/*)
+#	R='s|(<control type="(button\|radiobutton\|spincontrolex\|sliderex\|togglebutton\|edit\|textbox)"[^#]*#'
+#	R+='(\s*<[a-z][^#]*#)*?'
+#	R+='\s*<textcolor)>grey2<'
+#	R+='|\1>textnofocus<|g'
+#	perlregex $XMLS "$R"
+#	
+#	XMLS=$(2>/dev/null grep '>grey2<' -l 720p/*)
+#	for (( i=0 ; i<6 ; i++)) ; do
+#		R='s|(<(item\|channel)layout[^#]*#'
+#		R+='(\s*<control type="[a-z]*"[^#]*#'
+#		R+='(\s*<[a-z][^#]*#)*?'
+#		R+='\s*</control>#\|\s*<animation[^#]*#)*?'
+#		R+='\s*<control type="(label\|textbox)">#'
+#		R+='(\s*<[a-z][^#]*#)*?'
+#		R+='\s*<(textcolor\|selectedcolor))>grey2<'
+#		R+='|\1>textnofocus<|g'
+#		perlregex $XMLS "$R" --nocheck
+#		
+#		R='s|(<(focused\|focusedchannel)layout[^#]*#'
+#		R+='(\s*<control type="[a-z]*"[^#]*#'
+#		R+='(\s*<[a-z][^#]*#)*?'
+#		R+='\s*</control>#\|\s*<animation[^#]*#)*?'
+#		R+='\s*<control type="(label\|textbox)">#'
+#		R+='(\s*<[a-z][^#]*#)*?'
+#		R+='\s*<(textcolor\|selectedcolor))>grey2<'
+#		R+='|\1>textfocus<|g'
+#		perlregex $XMLS "$R" --nocheck
+#	done
+#	
+#	XMLS="720p/DialogFileStacking.xml 720p/DialogKaiToast.xml 720p/DialogPVRGuideOSD.xml"
+#	XMLS+=" 720p/DialogVideoInfo.xml 720p/includes.xml 720p/IncludesGenreFlagging.xml"
+#	XMLS+=" 720p/MusicVisualisation.xml 720p/MyPVR.xml 720p/MyWeather.xml 720p/LoginScreen.xml"
+#	XMLS+=" 720p/script-XBMC_Lyrics-main.xml 720p/SettingsProfile.xml 720p/VideoFullScreen.xml"
+#	XMLS+=" 720p/ViewsMusicLibrary.xml 720p/ViewsPVR.xml 720p/ViewsVideoLibrary.xml"
+#	perlregex $XMLS 's|<textcolor>grey2</textcolor>|<textcolor>textnofocus</textcolor>|g'
+#	
+#	if grep -q '>grey2<' 720p/* ; then
+#		printf "\nERROR: Grey2 color still used!"
+#		printf "\n"
+#		grep '>grey2<' 720p/* | head
+#		exit 4
+#	fi
+#	
+#	printf "%sDONE!%s" $GREEN $RESET
+#else
+#	printf "%sSKIPPED.%s" $CYAN $RESET
+#fi
+#step
 
-printf "\nChanging font colors for original blue strings: "
-if false ; then #grep -q 'blue' 720p/ViewsVideoLibrary.xml ; then
+#printf "\nChanging font colors for original 'grey3' strings: "
+#if false ; then #grep -q '>grey3<' 720p/SkinSettings.xml ; then
+#
+#	XMLS=$(2>/dev/null grep '<disabledcolor>grey3</disabledcolor>' -l 720p/*)
+#	R='s|<disabledcolor>grey3</disabledcolor>|<disabledcolor>textdisabled</disabledcolor>|g'
+#	perlregex $XMLS "$R"
+#	
+#	perlregex 's|<textcolor>grey3</textcolor>|<textcolor>textdisabled</textcolor>|g' 720p/DialogPVRChannelManager.xml
+#
+#	XMLS="720p/script-globalsearch-main.xml 720p/Settings.xml 720p/SkinSettings.xml"
+#	perlregex $XMLS 's|<textcolor>grey3</textcolor>|<textcolor>textnofocus</textcolor>|g'
+#
+#	if grep -q '>grey3<' 720p/* ; then
+#		printf "\nERROR: Grey3 color still used!"
+#		printf "\n"
+#		grep '>grey3<' 720p/* | head
+#		exit 4
+#	fi
+#	
+#	printf "%sDONE!%s" $GREEN $RESET
+#else
+#	printf "%sSKIPPED.%s" $CYAN $RESET
+#fi
+#step
 
-	perlregex 720p/Home.xml 's|(<font>font_MainMenu</font>#\s*<textcolor)>blue<|\1>textnofocus<|g'
-	perlregex 720p/Home.xml 's|(<font>font_MainMenu</font>#\s*<textcolor)>grey3<|\1>buttonfocus<|g'
-	
-	R='s|(<control type="label">#'
-	R+='\s*<description>(header label\|Title label)</description>#'
-	R+='(\s*<[a-z][^#]*#)*?'
-	R+='\s*<textcolor)>blue</'
-	R+='|\1>heading1</'
-	R+='|g'
-	XMLS="720p/DialogPVRChannelsOSD.xml 720p/DialogPVRGuideInfo.xml 720p/DialogPVRRecordingInfo.xml "
-	perlregex $XMLS "$R"
-	
-	R='s|(<control type="rss">#'
-	R+='\s*<description>RSS feed</description>#'
-	R+='(\s*<[a-z][^#]*#)*?'
-	R+='\s*<textcolor)>blue</'
-	R+='|\1>textfocus</'
-	R+='|g'
-	XMLS="720p/Home.xml "
-	perlregex $XMLS "$R"	
-
-	R='s|<textcolor>blue</textcolor>|<textcolor>heading1</textcolor>|g'
-	XMLS="720p/CustomAddMenuItems.xml 720p/CustomAddonSelection.xml 720p/CustomAddonType.xml 720p/CustomAddSubMenuItems.xml "
-	XMLS+="720p/CustomSubMenuType.xml 720p/CustomWidgetType.xml 720p/DialogPVRChannelManager.xml "
-	XMLS+="720p/DialogPVRGuideOSD.xml 720p/DialogPVRGuideSearch.xml 720p/DialogSlider.xml "
-	XMLS+="720p/MyMusicPlaylistEditor.xml 720p/script-globalsearch-main.xml 720p/SettingsSystemInfo.xml "
-	XMLS+=" 720p/FileManager.xml "
-	XMLS+=" "
-	perlregex $XMLS "$R"
-
-	R='s|<textcolor>blue</textcolor>|<textcolor>heading2</textcolor>|g'
-	XMLS="720p/AddonBrowser.xml 720p/DialogAddonInfo.xml 720p/DialogAlbumInfo.xml 720p/DialogContentSettings.xml "
-	XMLS+="720p/DialogKaraokeSongSelector.xml 720p/DialogKaraokeSongSelectorLarge.xml 720p/DialogMediaSource.xml "
-	XMLS+="720p/DialogPVRGroupManager.xml 720p/DialogSeekBar.xml 720p/DialogSongInfo.xml 720p/DialogVideoInfo.xml "
-	XMLS+=" 720p/includes.xml 720p/MusicKaraokeLyrics.xml 720p/MusicOSD.xml "
-	XMLS+="720p/MyMusicNav.xml 720p/MyMusicPlaylist.xml 720p/DialogPeripheralManager.xml "
-	XMLS+="720p/DialogPVRChannelsOSD.xml 720p/DialogPVRGuideInfo.xml 720p/DialogPVRRecordingInfo.xml "
-	XMLS+="720p/Home.xml 720p/MyPics.xml  720p/MyMusicSongs.xml 720p/MyPrograms.xml 720p/MyPVR.xml 720p/MyVideoNav.xml "
-	XMLS+="720p/MyVideoPlaylist.xml 720p/MyWeather.xml 720p/ProfileSettings.xml 720p/script-NextAired-TVGuide.xml "
-	XMLS+="720p/script-RSS_Editor-rssEditor.xml 720p/script-RSS_Editor-setEditor.xml 720p/script-XBMC_Lyrics-main.xml "
-	XMLS+="720p/SettingsProfile.xml 720p/SkinSettings.xml 720p/SmartPlaylistEditor.xml 720p/SmartPlaylistRule.xml "
-	XMLS+="720p/VideoFullScreen.xml 720p/ViewsAddonBrowser.xml 720p/ViewsLiveTV.xml 720p/ViewsMusicLibrary.xml "
-	XMLS+="720p/ViewsPVR.xml 720p/ViewsVideoLibrary.xml "
-	perlregex $XMLS "$R"
-	
-	R='s|<textcolor>blue</textcolor>|<textcolor>textfocus</textcolor>|g'
-	XMLS="720p/DialogAddonSettings.xml 720p/IncludesHomeWidget.xml "
-	XMLS+=" "
-	perlregex $XMLS "$R"
-	
-	perlregex 's|\s*<selectedcolor>blue</selectedcolor>#||g' 720p/DialogPVRChannelsOSD.xml
-	perlregex 's|<titlecolor>blue</titlecolor>|<titlecolor>heading2</titlecolor>|g' 720p/Home.xml
-
-	if grep -q '>blue<' 720p/* ; then
-		printf "\nERROR: Blue color still used!"
-		printf "\n"
-		grep '>blue<' 720p/*
-		exit 4
-	fi
-	
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nChanging font colors for original 'grey2' strings: "
-if false ; then #grep -q '>grey2<' 720p/* ; then
-
-	XMLS=$(2>/dev/null grep '<disabledcolor>grey2</disabledcolor>' -l 720p/*)
-	R='s|<disabledcolor>grey2</disabledcolor>|<disabledcolor>textdisabled</disabledcolor>|g'
-	perlregex $XMLS "$R"
-
-	XMLS=$(2>/dev/null grep '>grey2<' -l 720p/*)
-	R='s|(<control type="(button\|radiobutton\|spincontrolex\|sliderex\|togglebutton\|edit\|textbox)"[^#]*#'
-	R+='(\s*<[a-z][^#]*#)*?'
-	R+='\s*<textcolor)>grey2<'
-	R+='|\1>textnofocus<|g'
-	perlregex $XMLS "$R"
-	
-	XMLS=$(2>/dev/null grep '>grey2<' -l 720p/*)
-	for (( i=0 ; i<6 ; i++)) ; do
-		R='s|(<(item\|channel)layout[^#]*#'
-		R+='(\s*<control type="[a-z]*"[^#]*#'
-		R+='(\s*<[a-z][^#]*#)*?'
-		R+='\s*</control>#\|\s*<animation[^#]*#)*?'
-		R+='\s*<control type="(label\|textbox)">#'
-		R+='(\s*<[a-z][^#]*#)*?'
-		R+='\s*<(textcolor\|selectedcolor))>grey2<'
-		R+='|\1>textnofocus<|g'
-		perlregex $XMLS "$R" --nocheck
-		
-		R='s|(<(focused\|focusedchannel)layout[^#]*#'
-		R+='(\s*<control type="[a-z]*"[^#]*#'
-		R+='(\s*<[a-z][^#]*#)*?'
-		R+='\s*</control>#\|\s*<animation[^#]*#)*?'
-		R+='\s*<control type="(label\|textbox)">#'
-		R+='(\s*<[a-z][^#]*#)*?'
-		R+='\s*<(textcolor\|selectedcolor))>grey2<'
-		R+='|\1>textfocus<|g'
-		perlregex $XMLS "$R" --nocheck
-	done
-	
-	XMLS="720p/DialogFileStacking.xml 720p/DialogKaiToast.xml 720p/DialogPVRGuideOSD.xml"
-	XMLS+=" 720p/DialogVideoInfo.xml 720p/includes.xml 720p/IncludesGenreFlagging.xml"
-	XMLS+=" 720p/MusicVisualisation.xml 720p/MyPVR.xml 720p/MyWeather.xml 720p/LoginScreen.xml"
-	XMLS+=" 720p/script-XBMC_Lyrics-main.xml 720p/SettingsProfile.xml 720p/VideoFullScreen.xml"
-	XMLS+=" 720p/ViewsMusicLibrary.xml 720p/ViewsPVR.xml 720p/ViewsVideoLibrary.xml"
-	perlregex $XMLS 's|<textcolor>grey2</textcolor>|<textcolor>textnofocus</textcolor>|g'
-	
-	if grep -q '>grey2<' 720p/* ; then
-		printf "\nERROR: Grey2 color still used!"
-		printf "\n"
-		grep '>grey2<' 720p/* | head
-		exit 4
-	fi
-	
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nChanging font colors for original 'grey3' strings: "
-if false ; then #grep -q '>grey3<' 720p/SkinSettings.xml ; then
-
-	XMLS=$(2>/dev/null grep '<disabledcolor>grey3</disabledcolor>' -l 720p/*)
-	R='s|<disabledcolor>grey3</disabledcolor>|<disabledcolor>textdisabled</disabledcolor>|g'
-	perlregex $XMLS "$R"
-	
-	perlregex 's|<textcolor>grey3</textcolor>|<textcolor>textdisabled</textcolor>|g' 720p/DialogPVRChannelManager.xml
-
-	XMLS="720p/script-globalsearch-main.xml 720p/Settings.xml 720p/SkinSettings.xml"
-	perlregex $XMLS 's|<textcolor>grey3</textcolor>|<textcolor>textnofocus</textcolor>|g'
-
-	if grep -q '>grey3<' 720p/* ; then
-		printf "\nERROR: Grey3 color still used!"
-		printf "\n"
-		grep '>grey3<' 720p/* | head
-		exit 4
-	fi
-	
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nChanging font colors for original 'black' strings: "
-if false ; then #grep -q '>black<' 720p/DialogKeyboard.xml ; then
-
-	XMLS=$(2>/dev/null grep '<focusedcolor>black</focusedcolor>' -l 720p/*)
-	R='s|<focusedcolor>black</focusedcolor>|<focusedcolor>textfocus</focusedcolor>|g'
-	perlregex $XMLS "$R"
-	
-	if grep -q '>black<' 720p/* ; then
-		printf "\nERROR: Black color still used!"
-		printf "\n"
-		grep '>black<' 720p/* | head
-		exit 4
-	fi
-	
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
+#printf "\nChanging font colors for original 'black' strings: "
+#if false ; then #grep -q '>black<' 720p/DialogKeyboard.xml ; then
+#
+#	XMLS=$(2>/dev/null grep '<focusedcolor>black</focusedcolor>' -l 720p/*)
+#	R='s|<focusedcolor>black</focusedcolor>|<focusedcolor>textfocus</focusedcolor>|g'
+#	perlregex $XMLS "$R"
+#	
+#	if grep -q '>black<' 720p/* ; then
+#		printf "\nERROR: Black color still used!"
+#		printf "\n"
+#		grep '>black<' 720p/* | head
+#		exit 4
+#	fi
+#	
+#	printf "%sDONE!%s" $GREEN $RESET
+#else
+#	printf "%sSKIPPED.%s" $CYAN $RESET
+#fi
+#step
 
 printf "\nReplacing unknown-user.png: "
 if [ -f media/unknown-user.png ] ; then
