@@ -1471,7 +1471,7 @@ step
 printf "\nReplacing standard album cover: "
 if [ -f media/FallbackAlbumCover.png ] ; then
 	XMLS=$(2>/dev/null grep 'FallbackAlbumCover.png' -l 720p/*)
-	perlregex $XMLS 's|"FallbackAlbumCover.png"|"DefaultAlbumCover.png"|g'
+	perlregex $XMLS 's|FallbackAlbumCover.png|DefaultAlbumCover.png|g'
 	#XMLS=$(2>/dev/null grep 'FallbackAlbumCover.png' -l 720p/*)
 	#perlregex $XMLS 's|>FallbackAlbumCover.png<|>DefaultAlbumCover.png<|g'
 	rm media/DefaultAlbumCover.png
