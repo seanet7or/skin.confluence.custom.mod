@@ -304,6 +304,9 @@ SEEKSLIDER='seekslider_light.png'
 SPINDOWN_NF='buttons/spin-down-nf_light.png'
 SPINDOWN_FO='buttons/spin-down-fo_light.png'
 SPINLEFT_FO='buttons/spin-left-fo_light.png'
+CALIBRATE_TOPLEFT='buttons/calibrate/topleft_light.png'
+CALIBRATE_PIXELRATIO='buttons/calibrate/pixelratio_light.png'
+CALIBRATE_SUBTITLES='buttons/calibrate/subtitles_light.png'
 
 STEP=0
 printf "\n############# APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ########################"
@@ -1415,10 +1418,10 @@ step
 
 printf "\nReplacing calibration controls: "
 if [ -f media/CalibrateSubtitles.png ] ; then
-	perlregex 720p/SettingsScreenCalibration.xml 's|<texturefocus>CalibrateTopLeft.png</texturefocus>|<texturefocus border="6">buttons/calibrate/topleft_light.png</texturefocus>|g'
-	perlregex 720p/SettingsScreenCalibration.xml 's|<texturefocus>CalibrateBottomRight.png</texturefocus>|<texturefocus flipx="true" flipy="true" border="6">buttons/calibrate/topleft_light.png</texturefocus>|g'
-	perlregex 720p/SettingsScreenCalibration.xml 's|<texturefocus>CalibratePixelRatio.png</texturefocus>|<texturefocus>buttons/calibrate/pixelratio_light.png</texturefocus>|g'
-	perlregex 720p/SettingsScreenCalibration.xml 's|<texturefocus>CalibrateSubtitles.png</texturefocus>|<texturefocus>buttons/calibrate/subtitles_light.png</texturefocus>|g'
+	perlregex 720p/SettingsScreenCalibration.xml 's|<texturefocus>CalibrateTopLeft.png</texturefocus>|<texturefocus border="6">'$CALIBRATE_TOPLEFT'</texturefocus>|g'
+	perlregex 720p/SettingsScreenCalibration.xml 's|<texturefocus>CalibrateBottomRight.png</texturefocus>|<texturefocus flipx="true" flipy="true" border="6">'$CALIBRATE_TOPLEFT'</texturefocus>|g'
+	perlregex 720p/SettingsScreenCalibration.xml 's|<texturefocus>CalibratePixelRatio.png</texturefocus>|<texturefocus>'$CALIBRATE_PIXELRATIO'</texturefocus>|g'
+	perlregex 720p/SettingsScreenCalibration.xml 's|<texturefocus>CalibrateSubtitles.png</texturefocus>|<texturefocus>'$CALIBRATE_SUBTITLES'</texturefocus>|g'
 	check_and_remove media/CalibrateTopLeft.png
 	check_and_remove media/CalibrateBottomRight.png
 	check_and_remove media/CalibrateSubtitles.png
