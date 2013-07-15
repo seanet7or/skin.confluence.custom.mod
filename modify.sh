@@ -488,16 +488,8 @@ step
 
 printf "\nChanging dialog background overlay: "
 if [ -f media/OverlayDialogBackground.png ] ; then
-	XMLS=$(2>/dev/null grep 'OverlayDialogBackground.png' -l 720p/*)
-	R='s|<texturebg border="20">OverlayDialogBackground.png</texturebg>'
-	R+='|<texturebg>'$BUTTON_NF'</texturebg>|g'
-	perlregex $XMLS "$R"
-	R='s|\s*<colordiffuse>[A-Z0-9]*</colordiffuse>#'
-	R+='(\s*)<texture border="[0-9]*">OverlayDialogBackground.png</texture>'
-	R+='|\1<texture>'$DIALOG_BG'</texture>|g'
-	perlregex $XMLS "$R"
-	R='s|(\s*)<texture border="[0-9]*">OverlayDialogBackground.png</texture>'
-	R+='|\1<texture>'$DIALOG_BG'</texture>|g'
+	XMLS=$(2>/dev/null grep '>OverlayDialogBackground.png<' -l 720p/*)
+	R='s|>OverlayDialogBackground.png<|>'$DIALOG_BG'<|g'
 	perlregex $XMLS "$R"
 	check_and_remove media/OverlayDialogBackground.png
 	printf "%sDONE!%s" $GREEN $RESET
