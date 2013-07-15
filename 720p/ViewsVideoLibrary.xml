@@ -153,20 +153,6 @@
 		</control>
 		<control type="group">
 			<visible>Control.IsVisible(501)</visible>
-			<control type="image">
-				<posx>56</posx>
-				<posy>120</posy>
-				<width>128</width>
-				<height>310</height>
-				<texture>SideFade.png</texture>
-			</control>
-			<control type="image">
-				<posx>1094</posx>
-				<posy>120</posy>
-				<width>128</width>
-				<height>310</height>
-				<texture flipx="true">SideFade.png</texture>
-			</control>
 		</control>
 		<control type="group">
 			<visible>Control.IsVisible(501) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(MusicVideos)]</visible>

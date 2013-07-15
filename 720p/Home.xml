@@ -460,8 +460,8 @@
 				<font>font12</font>
 				<textcolor>grey2</textcolor>
 				<focusedcolor>white</focusedcolor>
-				<texturefocus flipy="true" border="5">HomeSubFO.png</texturefocus>
-				<texturenofocus flipy="true" border="5">HomeSubNF.png</texturenofocus>
+				<texturefocus flipy="true" border="0,0,0,1">home/sub-fo_light.png</texturefocus>
+				<texturenofocus flipy="true" border="5">home/sub-nf_light.png</texturenofocus>
 				<pulseonselect>false</pulseonselect>
 				<label>137</label>
 				<onclick>RunScript(script.globalsearch)</onclick>
@@ -487,7 +487,7 @@
 					<posy>0</posy>
 					<width>205</width>
 					<height>35</height>
-					<texture flipy="true" border="0,5,0,0">HomeSubNF.png</texture>
+					<texture flipy="true" border="0,5,0,0">home/sub-nf_light.png</texture>
 					<colordiffuse>CCFFFFFF</colordiffuse>
 					<animation effect="zoom" start="0,0,205,35" end="0,0,465,35" delay="0" time="300" condition="!Player.HasMedia + !Skin.HasSetting(HideHomeStats)">conditional</animation>
 					<animation effect="zoom" start="0,0,205,35" end="0,0,265,35" delay="0" time="0" condition="System.HasAddon(plugin.audio.lastfm) + Player.HasAudio">conditional</animation>
@@ -726,8 +726,8 @@
 				<font>font12</font>
 				<textcolor>grey2</textcolor>
 				<focusedcolor>white</focusedcolor>
-				<texturefocus flipy="true" border="5">HomeSubFO.png</texturefocus>
-				<texturenofocus flipy="true" border="5">HomeSubNF.png</texturenofocus>
+				<texturefocus flipy="true" border="5">home/sub-fo_light.png</texturefocus>
+				<texturenofocus flipy="true" border="5">home/sub-nf_light.png</texturenofocus>
 				<pulseonselect>false</pulseonselect>
 				<label>31008</label>
 				<onclick>fullscreen</onclick>
@@ -876,18 +876,11 @@
 				<height>75</height>
 				<texture border="0,6,0,6">HomeBack.png</texture>
 			</control>
-			<control type="image">
-				<posx>0</posx>
-				<posy>5</posy>
-				<width>1280</width>
-				<height>6</height>
-				<texture>HomeOverlay1.png</texture>
-			</control>
 			<control type="fixedlist" id="9000">
 				<posx>-210</posx>
 				<posy>5</posy>
 				<width>1700</width>
-				<height>60</height>
+				<height>70</height>
 				<onleft>9000</onleft>
 				<onright>9000</onright>
 				<onup condition="!Skin.HasSetting(HideHomeSearch) + Player.HasMedia">609</onup>
@@ -897,23 +890,8 @@
 				<pagecontrol>-</pagecontrol>
 				<scrolltime>300</scrolltime>
 				<focusposition>2</focusposition>
-				<movement>1</movement>
 				<orientation>Horizontal</orientation>
 				<itemlayout height="60" width="340">
-					<control type="image">
-						<posx>0</posx>
-						<posy>4</posy>
-						<width>1</width>
-						<height>52</height>
-						<texture>HomeSeperator.png</texture>
-					</control>
-					<control type="image">
-						<posx>339</posx>
-						<posy>4</posy>
-						<width>1</width>
-						<height>52</height>
-						<texture>HomeSeperator.png</texture>
-					</control>
 					<control type="label">
 						<posx>170</posx>
 						<posy>0</posy>
@@ -927,20 +905,6 @@
 					</control>
 				</itemlayout>
 				<focusedlayout height="60" width="340">
-					<control type="image">
-						<posx>0</posx>
-						<posy>4</posy>
-						<width>1</width>
-						<height>52</height>
-						<texture>HomeSeperator.png</texture>
-					</control>
-					<control type="image">
-						<posx>339</posx>
-						<posy>4</posy>
-						<width>1</width>
-						<height>52</height>
-						<texture>HomeSeperator.png</texture>
-					</control>
 					<control type="label">
 						<posx>170</posx>
 						<posy>0</posy>
@@ -951,6 +915,14 @@
 						<align>center</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
+					</control>
+					<control type="image">
+						<posx>-50</posx>
+						<posy>0</posy>
+						<width>440</width>
+						<height>65</height>
+						<texture>home/main-fo_light.png</texture>
+						<visible>Control.HasFocus(9000)</visible>
 					</control>
 					<control type="label">
 						<posx>170</posx>
@@ -1162,20 +1134,6 @@
 						<visible>!Skin.HasSetting(HideSytemMenuItem)</visible>
 					</item>
 				</content>
-			</control>
-			<control type="image">
-				<posx>0</posx>
-				<posy>6</posy>
-				<width>128</width>
-				<height>50</height>
-				<texture>SideFade.png</texture>
-			</control>
-			<control type="image">
-				<posx>128r</posx>
-				<posy>6</posy>
-				<width>128</width>
-				<height>60</height>
-				<texture flipx="true">SideFade.png</texture>
 			</control>
 		</control>
 		<control type="group" id="9002">

@@ -307,6 +307,9 @@ SPINLEFT_FO='buttons/spin-left-fo_light.png'
 CALIBRATE_TOPLEFT='buttons/calibrate/topleft_light.png'
 CALIBRATE_PIXELRATIO='buttons/calibrate/pixelratio_light.png'
 CALIBRATE_SUBTITLES='buttons/calibrate/subtitles_light.png'
+HOME_MAIN_FO='home/main-fo_light.png'
+HOME_SUB_NF='home/sub-nf_light.png'
+HOME_SUB_FO='home/sub-fo_light.png'
 
 STEP=0
 printf "\n############# APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ########################"
@@ -1850,7 +1853,7 @@ if grep -q '<movement>1</movement>' 720p/Home.xml ; then
 	R+='\3<posy>0</posy>#'
 	R+='\3<width>440</width>#'
 	R+='\3<height>65</height>#'
-	R+='\3<texture>home/main-fo_light.png</texture>#'
+	R+='\3<texture>'$HOME_MAIN_FO'</texture>#'
 	R+='\3<visible>Control.HasFocus\(9000\)</visible>#'
 	R+='\1</control>#'
 	R+='\1\2\3\4|'
@@ -1864,9 +1867,9 @@ step
 printf "\nReplacing submenu item textures: "
 if [ -f media/HomeSubFO.png ] ; then
 	XMLS=$(2>/dev/null grep 'HomeSubNF.png' -l 720p/*)
-	perlregex $XMLS 's|HomeSubNF.png|home/sub-nf_light.png|g'
+	perlregex $XMLS 's|HomeSubNF.png|'$HOME_SUB_NF'|g'
 	XMLS=$(2>/dev/null grep 'HomeSubFO.png' -l 720p/*)
-	perlregex $XMLS 's|HomeSubFO.png|home/sub-fo_light.png|g'
+	perlregex $XMLS 's|HomeSubFO.png|'$HOME_SUB_FO'|g'
 	check_and_remove media/HomeSubNF.png
 	check_and_remove media/HomeSubFO.png
 	printf "%sDONE!%s" $GREEN $RESET
@@ -1904,6 +1907,8 @@ else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
+
+exit
 
 #printf "\nRemoving labels for addons on the main menu: "
 #if grep -q '<posx>91</posx>' 720p/includes.xml | head -n 1 ; then
