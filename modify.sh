@@ -671,14 +671,9 @@ step
 
 printf "\nRemoving menu items separator 'MenuItemNF.png': "
 if [ -f media/MenuItemNF.png ] ; then
-	#remove all image controls using it as texture
 	remove_control 'image' '<texture[^>]*>MenuItemNF.png</texture>'
-	#remove when used as texture for controls without focus
-		#R='s|(<control type="[^#]*#'
-		#R+='(\s*(<[a-z]\|<!--)[^#]*#)*?' # matching lines beginning with any opening tag and comments
 	XMLS=$(2>/dev/null grep 'MenuItemNF.png' -l 720p/*)
-	R='s|(\s*<texturenofocus)(\| border="[0-9,]*")>MenuItemNF.png</texturenofocus>'
-	R+='|\1>-</texturenofocus>|g'
+	R='s|>MenuItemNF.png<|>-<|g'
 	perlregex $XMLS "$R"
 	check_and_remove media/MenuItemNF.png
 	printf "%sDONE!%s" $GREEN $RESET

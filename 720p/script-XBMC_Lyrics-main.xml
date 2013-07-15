@@ -190,13 +190,6 @@
 				<scrolltime>200</scrolltime>
 				<animation effect="slide" start="0,0" end="20,0" time="0" condition="!Control.IsVisible(121)">Conditional</animation>
 				<itemlayout height="40">
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>550</width>
-						<height>41</height>
-						<texture border="5">MenuItemNF.png</texture>
-					</control>
 					<control type="label">
 						<posx>10</posx>
 						<posy>0</posy>
@@ -210,14 +203,6 @@
 					</control>
 				</itemlayout>
 				<focusedlayout height="40">
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>550</width>
-						<height>41</height>
-						<visible>!Control.HasFocus(120)</visible>
-						<texture border="5">MenuItemNF.png</texture>
-					</control>
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>

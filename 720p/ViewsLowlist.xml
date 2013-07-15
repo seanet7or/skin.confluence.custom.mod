@@ -19,13 +19,6 @@
 				<visible>[Window.IsVisible(Videos) + !Container.Content(Episodes)] | SubString(Container.FolderPath,program.advanced.launcher)</visible>
 				<visible>!Container.Content(LiveTV)</visible>
 				<itemlayout height="40" width="480">
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>480</width>
-						<height>41</height>
-						<texture border="0,2,0,2">MenuItemNF.png</texture>
-					</control>
 					<control type="label">
 						<posx>10</posx>
 						<posy>0</posy>
@@ -80,15 +73,6 @@
 					</control>
 				</itemlayout>
 				<focusedlayout height="40" width="480">
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>480</width>
-						<height>41</height>
-						<texture border="0,2,0,2">MenuItemNF.png</texture>
-						<visible>!Control.HasFocus(724)</visible>
-						<include>VisibleFadeEffect</include>
-					</control>
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
