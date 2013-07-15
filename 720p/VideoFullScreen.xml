@@ -6,14 +6,6 @@
 			<visible>!StringCompare(VideoPlayer.Title,XBMC-Intro-Video.mkv)</visible>
 			<visible>[Player.ShowInfo | Window.IsActive(VideoOSD)] | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | [!Skin.HasSetting(HideInfoStartOSD) + !IntegerGreaterThan(Player.time,5)]</visible>
 			<visible>![Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
-			<control type="image" id="1">
-				<posx>0</posx>
-				<posy>-150</posy>
-				<width>1280</width>
-				<height>256</height>
-				<texture flipy="true">HomeNowPlayingBack.png</texture>
-				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
-			</control>
 			<control type="label" id="1">
 				<description>Chapter Count Header label</description>
 				<posx>30</posx>
