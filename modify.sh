@@ -2082,8 +2082,6 @@ else
 fi
 step
 
-exit
-
 printf "\nRemoving useless visible conditions: "
 if grep -I -q '<visible>!.Window.IsVisible.FullscreenVideo. . Window.IsVisible.Visualisation..</visible>' 720p/DialogAddonSettings.xml
 then
@@ -2093,7 +2091,7 @@ then
 	R+='\s*<posy>0</posy>#'
 	R+='\s*<width>[0-9]*</width>#'
 	R+='\s*<height>[0-9]*</height>#'
-	R+='\s*<texture>dialogs/dialog-back_light.png</texture>#)'
+	R+='\s*<texture[^>]*>dialogs/dialog-back_light.png</texture>#)'
 	R+='\s*<visible>[^<]*</visible>#'
 	R+='(\s*</control>#)'
 	R+='\s*<control type="image">#'
@@ -2102,7 +2100,7 @@ then
 	R+='\s*<posy>0</posy>#'
 	R+='\s*<width>[0-9]*</width>#'
 	R+='\s*<height>[0-9]*</height>#'
-	R+='\s*<texture>dialogs/dialog-back_light.png</texture>#'
+	R+='\s*<texture[^>]*>dialogs/dialog-back_light.png</texture>#'
 	R+='\s*<visible>[^<]*</visible>#'
 	R+='\s*</control>#'
 	R+='|\1\2|g'
@@ -2112,6 +2110,8 @@ else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
+
+exit
 
 printf "\nSetting pulseonselect to false for all controls: "
 if grep -I -q '<pulseonselect>no</pulseonselect>' 720p/defaults.xml ; then
