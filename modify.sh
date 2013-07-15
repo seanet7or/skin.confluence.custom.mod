@@ -303,6 +303,7 @@ PROGRESS_BACK='progressbar/OSDProgressBack_light.png'
 SEEKSLIDER='seekslider_light.png'
 SPINDOWN_NF='buttons/spin-down-nf_light.png'
 SPINDOWN_FO='buttons/spin-down-fo_light.png'
+SPINLEFT_FO='buttons/spin-left-fo_light.png'
 
 STEP=0
 printf "\n############# APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ########################"
@@ -1361,13 +1362,13 @@ step
 
 printf "\nReplacing left/right arrows: "
 if [ -f media/arrow-big-left.png ] ; then
-	perlregex 720p/IncludesHomeWidget.xml 's|<texturenofocus>arrow-big-left.png</texturenofocus>|<texturenofocus>buttons/spin-left-fo_light.png</texturenofocus>|g'
-	perlregex 720p/IncludesHomeWidget.xml 's|<texturenofocus>arrow-big-right.png</texturenofocus>|<texturenofocus>buttons/spin-right-fo_light.png</texturenofocus>|g'
+	perlregex 720p/IncludesHomeWidget.xml 's|<texturenofocus>arrow-big-left.png</texturenofocus>|<texturenofocus>'$SPINLEFT_FO'</texturenofocus>|g'
+	perlregex 720p/IncludesHomeWidget.xml 's|<texturenofocus>arrow-big-right.png</texturenofocus>|<texturenofocus flipx="true">'$SPINLEFT_FO'</texturenofocus>|g'
 	perlregex 720p/IncludesHomeWidget.xml 's|<texturefocus>arrow-big-left.png</texturefocus>|<colordiffuse>BBFFFFFF</colordiffuse>|g'
 	perlregex 720p/IncludesHomeWidget.xml 's|<texturefocus>arrow-big-right.png</texturefocus>|<colordiffuse>BBFFFFFF</colordiffuse>|g'
 	XMLS=$(2>/dev/null grep 'arrow-big-' -l 720p/*)
-	perlregex $XMLS 's|>arrow-big-left.png<|>buttons/spin-left-fo_light.png<|g'
-	perlregex $XMLS 's|>arrow-big-right.png<|>buttons/spin-right-fo_light.png<|g'
+	perlregex $XMLS 's|>arrow-big-left.png<|>'$SPINLEFT_FO'<|g'
+	perlregex $XMLS 's|>arrow-big-right.png<| flipx="true">'$SPINLEFT_FO'<|g'
 	check_and_remove media/arrow-big-left.png
 	check_and_remove media/arrow-big-right.png
 	printf "%sDONE!%s" $GREEN $RESET
@@ -1375,6 +1376,8 @@ else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
+
+exit
 
 printf "\nReplacing black-back.png: "
 if [ -f media/black-back.png ] ; then
