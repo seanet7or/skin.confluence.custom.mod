@@ -382,13 +382,6 @@
 					<label>$INFO[ListItem.Premiered,[B][COLOR=blue]$LOCALIZE[31322]: [/COLOR][/B]]</label>
 					<visible>IsEmpty(ListItem.Director) + !IsEmpty(ListItem.Premiered)</visible>
 				</control>
-				<control type="image">
-					<posx>0</posx>
-					<posy>480</posy>
-					<width>805</width>
-					<height>4</height>
-					<texture>separator.png</texture>
-				</control>
 				<control type="textbox">
 					<description>Description Value for Video</description>
 					<posx>0</posx>
