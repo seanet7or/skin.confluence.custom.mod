@@ -14,13 +14,6 @@
 		<control type="group">
 			<animation effect="fade" time="200">VisibleChange</animation>
 			<visible>[Player.ShowInfo | Window.IsActive(MusicOSD)] + ![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList)]</visible>
-			<control type="image">
-				<posx>0</posx>
-				<posy>-150</posy>
-				<width>1280</width>
-				<height>256</height>
-				<texture flipy="true">HomeNowPlayingBack.png</texture>
-			</control>
 			<control type="label">
 				<description>Header label</description>
 				<posx>30</posx>
@@ -104,7 +97,7 @@
 					<posy>-10</posy>
 					<width>200</width>
 					<height>78</height>
-					<texture fallback="xbmc-logo.png">$INFO[Player.FolderPath,,../logo.png]</texture>
+					<texture>$INFO[Player.FolderPath,,../logo.png]</texture>
 					<aspectratio aligny="bottom" align="left">keep</aspectratio>
 				</control>
 				<control type="label" id="1">

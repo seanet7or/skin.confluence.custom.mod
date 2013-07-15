@@ -21,23 +21,6 @@
 				<colordiffuse>BBFFFFFF</colordiffuse>
 				<texture border="20,0,0,0" flipx="true">MediaBladeSub.png</texture>
 			</control>
-			<control type="button">
-				<description>Close Window button</description>
-				<posx>20</posx>
-				<posy>0</posy>
-				<width>64</width>
-				<height>32</height>
-				<label>-</label>
-				<font>-</font>
-				<onclick>PreviousMenu</onclick>
-				<texturefocus>DialogCloseButton-focus.png</texturefocus>
-				<texturenofocus>DialogCloseButton.png</texturenofocus>
-				<onleft>101</onleft>
-				<onright>101</onright>
-				<onup>101</onup>
-				<ondown>101</ondown>
-				<visible>system.getbool(input.enablemouse)</visible>
-			</control>
 			<control type="label">
 				<description>header label</description>
 				<posx>580</posx>
@@ -76,13 +59,6 @@
 				<aligny>center</aligny>
 				<textcolor>grey</textcolor>
 				<shadowcolor>black</shadowcolor>
-			</control>
-			<control type="image">
-				<posx>30</posx>
-				<posy>120</posy>
-				<width>550</width>
-				<height>4</height>
-				<texture>separator.png</texture>
 			</control>
 			<control type="textbox" id="100">
 				<description>textarea</description>
@@ -211,13 +187,6 @@
 				<scrolltime>200</scrolltime>
 				<animation effect="slide" start="0,0" end="20,0" time="0" condition="!Control.IsVisible(121)">Conditional</animation>
 				<itemlayout height="40">
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>550</width>
-						<height>41</height>
-						<texture border="5">MenuItemNF.png</texture>
-					</control>
 					<control type="label">
 						<posx>10</posx>
 						<posy>0</posy>
@@ -231,14 +200,6 @@
 					</control>
 				</itemlayout>
 				<focusedlayout height="40">
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>550</width>
-						<height>41</height>
-						<visible>!Control.HasFocus(120)</visible>
-						<texture border="5">MenuItemNF.png</texture>
-					</control>
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
@@ -274,13 +235,6 @@
 				<textcolor>blue</textcolor>
 				<showonepage>true</showonepage>
 				<visible>Control.IsVisible(120)</visible>
-			</control>
-			<control type="image">
-				<posx>30</posx>
-				<posy>640</posy>
-				<width>550</width>
-				<height>4</height>
-				<texture>separator.png</texture>
 			</control>
 			<control type="label">
 				<description>Scraper label</description>

@@ -39,15 +39,6 @@
 				<label>$LOCALIZE[8]</label>
 			</control>
 		</control>
-		<control type="image">
-			<posx>0</posx>
-			<posy>100r</posy>
-			<width>1280</width>
-			<height>100</height>
-			<aspectratio>stretch</aspectratio>
-			<include>VisibleFadeEffect</include>
-			<texture>floor.png</texture>
-		</control>
 		<control type="group">
 			<animation type="WindowOpen" reversible="false">
 				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
@@ -66,15 +57,8 @@
 					<posy>0</posy>
 					<width>500</width>
 					<height>620</height>
-					<texture border="20">ContentPanel.png</texture>
+					<texture border="20">dialogs/content-back_light.png</texture>
 					<include condition="!IsEmpty(Skin.String(MediaPanelTrans))">TransparentEffect</include>
-				</control>
-				<control type="image">
-					<posx>0</posx>
-					<posy>612</posy>
-					<width>500</width>
-					<height>64</height>
-					<texture border="10">ContentPanelMirror.png</texture>
 				</control>
 				<control type="image">
 					<posx>20</posx>
@@ -184,13 +168,6 @@
 					<aligny>center</aligny>
 					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
-				</control>
-				<control type="image">
-					<posx>20</posx>
-					<posy>390</posy>
-					<width>460</width>
-					<height>4</height>
-					<texture>separator.png</texture>
 				</control>
 				<control type="label">
 					<description>current feels like label</description>
@@ -361,15 +338,8 @@
 					<posy>0</posy>
 					<width>650</width>
 					<height>620</height>
-					<texture border="20">ContentPanel.png</texture>
+					<texture border="20">dialogs/content-back_light.png</texture>
 					<include condition="!IsEmpty(Skin.String(MediaPanelTrans))">TransparentEffect</include>
-				</control>
-				<control type="image">
-					<posx>0</posx>
-					<posy>612</posy>
-					<width>650</width>
-					<height>64</height>
-					<texture border="10">ContentPanelMirror.png</texture>
 				</control>
 				<control type="image">
 					<posx>20</posx>
@@ -405,20 +375,6 @@
 					<pagecontrol>60</pagecontrol>
 					<scrolltime>200</scrolltime>
 					<itemlayout height="135" width="600">
-						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>600</width>
-							<height>136</height>
-							<texture border="0,5,0,5">MenuItemNF.png</texture>
-						</control>
-						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>600</width>
-							<height>136</height>
-							<texture border="0,5,0,5">MenuItemNF.png</texture>
-						</control>
 						<control type="label">
 							<posx>300</posx>
 							<posy>5</posy>
@@ -468,24 +424,6 @@
 						</control>
 					</itemlayout>
 					<focusedlayout height="135" width="600">
-						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>600</width>
-							<height>136</height>
-							<texture border="0,2,0,2">MenuItemNF.png</texture>
-							<visible>!Control.HasFocus(50)</visible>
-							<include>VisibleFadeEffect</include>
-						</control>
-						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>600</width>
-							<height>136</height>
-							<texture border="0,2,0,2">MenuItemNF.png</texture>
-							<visible>!Control.HasFocus(50)</visible>
-							<include>VisibleFadeEffect</include>
-						</control>
 						<control type="image">
 							<posx>0</posx>
 							<posy>0</posy>
@@ -655,13 +593,11 @@
 				<control type="scrollbar" id="60">
 					<posx>615</posx>
 					<posy>60</posy>
-					<width>25</width>
+					<width>14</width>
 					<height>540</height>
-					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-					<textureslidernib>ScrollBarNib.png</textureslidernib>
-					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+					<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
+					<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 					<onleft>50</onleft>
 					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">50</onright>
 					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
@@ -693,15 +629,8 @@
 					<posy>0</posy>
 					<width>650</width>
 					<height>620</height>
-					<texture border="20">ContentPanel.png</texture>
+					<texture border="20">dialogs/content-back_light.png</texture>
 					<include condition="!IsEmpty(Skin.String(MediaPanelTrans))">TransparentEffect</include>
-				</control>
-				<control type="image">
-					<posx>0</posx>
-					<posy>612</posy>
-					<width>650</width>
-					<height>64</height>
-					<texture border="10">ContentPanelMirror.png</texture>
 				</control>
 				<control type="image">
 					<posx>20</posx>
@@ -741,13 +670,6 @@
 							<pagecontrol>60</pagecontrol>
 							<scrolltime>200</scrolltime>
 							<itemlayout height="135" width="600">
-								<control type="image">
-									<posx>0</posx>
-									<posy>0</posy>
-									<width>600</width>
-									<height>136</height>
-									<texture border="0,5,0,5">MenuItemNF.png</texture>
-								</control>
 								<control type="label">
 									<posx>50</posx>
 									<posy>0</posy>
@@ -793,15 +715,6 @@
 								</control>
 							</itemlayout>
 							<focusedlayout height="135" width="600">
-								<control type="image">
-									<posx>0</posx>
-									<posy>0</posy>
-									<width>600</width>
-									<height>136</height>
-									<texture border="0,2,0,2">MenuItemNF.png</texture>
-									<visible>!Control.HasFocus(51)</visible>
-									<include>VisibleFadeEffect</include>
-								</control>
 								<control type="image">
 									<posx>0</posx>
 									<posy>0</posy>
@@ -946,13 +859,11 @@
 						<control type="scrollbar" id="60">
 							<posx>615</posx>
 							<posy>60</posy>
-							<width>25</width>
+							<width>14</width>
 							<height>540</height>
-							<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-							<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-							<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-							<textureslidernib>ScrollBarNib.png</textureslidernib>
-							<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+							<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
+							<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+							<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 							<onleft>51</onleft>
 							<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 							<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
@@ -1077,13 +988,6 @@
 									<align>center</align>
 									<label>$INFO[Window.Property(36hour.1.Forecast),[COLOR=grey2]$LOCALIZE[31905]: [/COLOR]]</label>
 								</control>
-								<control type="image">
-									<posx>0</posx>
-									<posy>180</posy>
-									<width>650</width>
-									<height>4</height>
-									<texture>separator.png</texture>
-								</control>
 							</control>
 							<control type="group">
 								<posx>0</posx>
@@ -1141,13 +1045,6 @@
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<label>$INFO[Window.Property(36hour.2.Forecast),[COLOR=grey2]$LOCALIZE[31905]: [/COLOR]]</label>
-								</control>
-								<control type="image">
-									<posx>0</posx>
-									<posy>180</posy>
-									<width>650</width>
-									<height>4</height>
-									<texture>separator.png</texture>
 								</control>
 							</control>
 							<control type="group">
@@ -1334,13 +1231,6 @@
 									<align>center</align>
 									<label>$INFO[Window.Property(Weekend.1.LongOutlookDay),[COLOR=grey2]$LOCALIZE[31905]: [/COLOR]][CR]</label>
 								</control>
-								<control type="image">
-									<posx>0</posx>
-									<posy>270</posy>
-									<width>650</width>
-									<height>4</height>
-									<texture>separator.png</texture>
-								</control>
 							</control>
 							<control type="group">
 								<posx>0</posx>
@@ -1453,13 +1343,6 @@
 							<pagecontrol>60</pagecontrol>
 							<scrolltime>200</scrolltime>
 							<itemlayout height="135" width="600">
-								<control type="image">
-									<posx>0</posx>
-									<posy>0</posy>
-									<width>600</width>
-									<height>136</height>
-									<texture border="0,5,0,5">MenuItemNF.png</texture>
-								</control>
 								<control type="label">
 									<posx>50</posx>
 									<posy>0</posy>
@@ -1505,15 +1388,6 @@
 								</control>
 							</itemlayout>
 							<focusedlayout height="135" width="600">
-								<control type="image">
-									<posx>0</posx>
-									<posy>0</posy>
-									<width>600</width>
-									<height>136</height>
-									<texture border="0,2,0,2">MenuItemNF.png</texture>
-									<visible>!Control.HasFocus(52)</visible>
-									<include>VisibleFadeEffect</include>
-								</control>
 								<control type="image">
 									<posx>0</posx>
 									<posy>0</posy>
@@ -1674,13 +1548,11 @@
 						<control type="scrollbar" id="60">
 							<posx>615</posx>
 							<posy>60</posy>
-							<width>25</width>
+							<width>14</width>
 							<height>540</height>
-							<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-							<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-							<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-							<textureslidernib>ScrollBarNib.png</textureslidernib>
-							<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+							<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
+							<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+							<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 							<onleft>52</onleft>
 							<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 							<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
@@ -1737,7 +1609,7 @@
 							<posy>75</posy>
 							<width>570</width>
 							<height>325</height>
-							<texture border="5">button-nofocus.png</texture>
+							<texture border="5">buttons/nf_light.png</texture>
 						</control>
 						<control type="multiimage">
 							<description>map multiimage</description>
@@ -1753,13 +1625,6 @@
 							<loop>yes</loop>
 							<aspectratio>keep</aspectratio>
 							<aligny>center</aligny>
-						</control>
-						<control type="image">
-							<posx>0</posx>
-							<posy>410</posy>
-							<width>650</width>
-							<height>4</height>
-							<texture>separator.png</texture>
 						</control>
 						<control type="label">
 							<posx>40</posx>

@@ -875,6 +875,8 @@ else
 fi
 step
 
+exit
+
 printf "\nEnabling German movie ratings: "
 if ! grep -q 'fsk-18' '720p/IncludesVariables.xml' ; then
 	#uncommenting the "Germany" option from the settings window

@@ -17,23 +17,6 @@
 				<height>720</height>
 				<texture border="15,0,0,0" flipx="true">HomeBladeSub.png</texture>
 			</control>
-			<control type="button">
-				<description>Close Window button</description>
-				<posx>380r</posx>
-				<posy>0</posy>
-				<width>64</width>
-				<height>32</height>
-				<label>-</label>
-				<font>-</font>
-				<onclick>PreviousMenu</onclick>
-				<texturefocus>DialogCloseButton-focus.png</texturefocus>
-				<texturenofocus>DialogCloseButton.png</texturenofocus>
-				<onleft>450</onleft>
-				<onright>450</onright>
-				<onup>450</onup>
-				<ondown>450</ondown>
-				<visible>system.getbool(input.enablemouse)</visible>
-			</control>
 			<control type="image">
 				<posx>370r</posx>
 				<posy>30</posy>
@@ -62,7 +45,7 @@
 						<posy>0</posy>
 						<width>370</width>
 						<height>40</height>
-						<texture border="5">button-nofocus.png</texture>
+						<texture border="5">buttons/nf_light.png</texture>
 					</control>
 					<control type="label">
 						<posx>10</posx>
@@ -83,7 +66,7 @@
 						<width>370</width>
 						<height>40</height>
 						<visible>!Control.HasFocus(450)</visible>
-						<texture border="3">button-nofocus.png</texture>
+						<texture border="3">buttons/nf_light.png</texture>
 					</control>
 					<control type="image">
 						<posx>0</posx>

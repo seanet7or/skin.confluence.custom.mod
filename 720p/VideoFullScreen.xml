@@ -6,14 +6,6 @@
 			<visible>!StringCompare(VideoPlayer.Title,XBMC-Intro-Video.mkv)</visible>
 			<visible>[Player.ShowInfo | Window.IsActive(VideoOSD)] | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | [!Skin.HasSetting(HideInfoStartOSD) + !IntegerGreaterThan(Player.time,5)]</visible>
 			<visible>![Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
-			<control type="image" id="1">
-				<posx>0</posx>
-				<posy>-150</posy>
-				<width>1280</width>
-				<height>256</height>
-				<texture flipy="true">HomeNowPlayingBack.png</texture>
-				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
-			</control>
 			<control type="label" id="1">
 				<description>Chapter Count Header label</description>
 				<posx>30</posx>
@@ -100,7 +92,7 @@
 					<posy>0</posy>
 					<width>920</width>
 					<height>200</height>
-					<texture border="20">ContentPanel.png</texture>
+					<texture border="20">dialogs/content-back_light.png</texture>
 					<colordiffuse>AAFFFFFF</colordiffuse>
 				</control>
 				<control type="textbox" id="1">
@@ -491,7 +483,7 @@
 			<height>100</height>
 			<font>font13caps</font>
 			<description>TV Channel Group Select Button</description>
-			<texturebg border="20">OverlayDialogBackground.png</texturebg>
+			<texturebg border="20">dialogs/dialog-back_light.png</texturebg>
 			<onleft>503</onleft>
 			<onright>503</onright>
 			<onup>500</onup>

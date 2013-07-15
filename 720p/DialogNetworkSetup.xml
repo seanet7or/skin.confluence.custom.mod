@@ -14,7 +14,7 @@
 			<posy>0</posy>
 			<width>800</width>
 			<height>440</height>
-			<texture border="40">DialogBack.png</texture>
+			<texture border="40">dialogs/dialog-back_light.png</texture>
 		</control>
 		<control type="image">
 			<description>Dialog Header image</description>
@@ -37,23 +37,6 @@
 			<textcolor>selected</textcolor>
 			<shadowcolor>black</shadowcolor>
 		</control>
-		<control type="button">
-			<description>Close Window button</description>
-			<posx>710</posx>
-			<posy>15</posy>
-			<width>64</width>
-			<height>32</height>
-			<label>-</label>
-			<font>-</font>
-			<onclick>PreviousMenu</onclick>
-			<texturefocus>DialogCloseButton-focus.png</texturefocus>
-			<texturenofocus>DialogCloseButton.png</texturenofocus>
-			<onleft>10</onleft>
-			<onright>10</onright>
-			<onup>10</onup>
-			<ondown>10</ondown>
-			<visible>system.getbool(input.enablemouse)</visible>
-		</control>
 		<control type="spincontrolex" id="10">
 			<description>Protocol SpinControl</description>
 			<posx>30</posx>
@@ -61,7 +44,7 @@
 			<height>40</height>
 			<width>740</width>
 			<texturefocus border="5">button-focus2.png</texturefocus>
-			<texturenofocus border="5">button-nofocus.png</texturenofocus>
+			<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
 			<textcolor>white</textcolor>
 			<disabledcolor>grey3</disabledcolor>
 			<textoffsetx>12</textoffsetx>

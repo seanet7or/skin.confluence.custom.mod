@@ -14,23 +14,6 @@
 				<height>720</height>
 				<texture border="15,0,0,0" flipx="true">MediaBladeSub.png</texture>
 			</control>
-			<control type="button">
-				<description>Close Window button</description>
-				<posx>230</posx>
-				<posy>0</posy>
-				<width>64</width>
-				<height>32</height>
-				<label>-</label>
-				<font>-</font>
-				<onclick>PreviousMenu</onclick>
-				<texturefocus>DialogCloseButton-focus.png</texturefocus>
-				<texturenofocus>DialogCloseButton.png</texturenofocus>
-				<onleft>9000</onleft>
-				<onright>9000</onright>
-				<onup>9000</onup>
-				<ondown>9000</ondown>
-				<visible>system.getbool(input.enablemouse)</visible>
-			</control>
 			<control type="group">
 				<animation effect="fade" delay="400" start="0" end="100" time="200">WindowOpen</animation>
 				<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
@@ -75,7 +58,7 @@
 						<width>675</width>
 						<height>380</height>
 						<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
-						<bordertexture border="5">button-nofocus.png</bordertexture>
+						<bordertexture border="5">buttons/nf_light.png</bordertexture>
 						<bordersize>4</bordersize>
 						<aspectratio>keep</aspectratio>
 						<visible>!IsEmpty(Listitem.Art(fanart))</visible>
@@ -89,7 +72,7 @@
 							<width>675</width>
 							<height>380</height>
 							<texture>Fanart_Fallback_Small.jpg</texture>
-							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordertexture border="5">buttons/nf_light.png</bordertexture>
 							<bordersize>4</bordersize>
 							<aspectratio>stretch</aspectratio>
 							<colordiffuse>99FFFFFF</colordiffuse>
@@ -119,7 +102,7 @@
 						<posy>0</posy>
 						<width>675</width>
 						<height>380</height>
-						<texture border="5">button-nofocus.png</texture>
+						<texture border="5">buttons/nf_light.png</texture>
 					</control>
 					<control type="image">
 						<description>background</description>
@@ -162,18 +145,9 @@
 						<width>270</width>
 						<height>380</height>
 						<aspectratio>stretch</aspectratio>
-						<bordertexture border="5">button-nofocus.png</bordertexture>
+						<bordertexture border="5">buttons/nf_light.png</bordertexture>
 						<bordersize>4</bordersize>
 						<texture background="true">$VAR[PosterThumb]</texture>
-					</control>
-					<control type="image">
-						<posx>4</posx>
-						<posy>4</posy>
-						<width>200</width>
-						<height>230</height>
-						<aspectratio>stretch</aspectratio>
-						<texture>GlassOverlay.png</texture>
-						<colordiffuse>AAFFFFFF</colordiffuse>
 					</control>
 					<control type="list" id="49">
 						<posx>290</posx>
@@ -322,14 +296,6 @@
 							</item>
 						</content>
 					</control>
-					<control type="image">
-						<posx>290</posx>
-						<posy>370</posy>
-						<width>740</width>
-						<height>4</height>
-						<aspectratio>stretch</aspectratio>
-						<texture>separator.png</texture>
-					</control>
 				</control>
 				<control type="group">
 					<visible>Container.Content(TVShows) + !Control.HasFocus(12)</visible>
@@ -342,18 +308,9 @@
 						<width>270</width>
 						<height>380</height>
 						<aspectratio>stretch</aspectratio>
-						<bordertexture border="5">button-nofocus.png</bordertexture>
+						<bordertexture border="5">buttons/nf_light.png</bordertexture>
 						<bordersize>4</bordersize>
 						<texture background="true">$VAR[PosterThumb]</texture>
-					</control>
-					<control type="image">
-						<posx>4</posx>
-						<posy>4</posy>
-						<width>200</width>
-						<height>230</height>
-						<aspectratio>stretch</aspectratio>
-						<texture>GlassOverlay.png</texture>
-						<colordiffuse>AAFFFFFF</colordiffuse>
 					</control>
 					<control type="list" id="49">
 						<posx>290</posx>
@@ -466,14 +423,6 @@
 							</item>
 						</content>
 					</control>
-					<control type="image">
-						<posx>290</posx>
-						<posy>370</posy>
-						<width>740</width>
-						<height>4</height>
-						<aspectratio>stretch</aspectratio>
-						<texture>separator.png</texture>
-					</control>
 				</control>
 				<control type="group">
 					<visible>container.content(episodes) + !Control.HasFocus(12)</visible>
@@ -486,19 +435,9 @@
 						<width>380</width>
 						<height>250</height>
 						<aspectratio aligny="bottom">keep</aspectratio>
-						<bordertexture border="5">button-nofocus.png</bordertexture>
+						<bordertexture border="5">buttons/nf_light.png</bordertexture>
 						<bordersize>4</bordersize>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
-					</control>
-					<control type="image">
-						<posx>0</posx>
-						<posy>250</posy>
-						<width>380</width>
-						<height>250</height>
-						<aspectratio aligny="top">keep</aspectratio>
-						<bordertexture border="5" flipy="true" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
-						<bordersize>4</bordersize>
-						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[ListItem.Icon]</texture>
 					</control>
 					<control type="list" id="49">
 						<posx>390</posx>
@@ -641,14 +580,6 @@
 							</item>
 						</content>
 					</control>
-					<control type="image">
-						<posx>290</posx>
-						<posy>370</posy>
-						<width>740</width>
-						<height>4</height>
-						<aspectratio>stretch</aspectratio>
-						<texture>separator.png</texture>
-					</control>
 				</control>
 				<control type="group">
 					<visible>container.content(musicvideos) + !Control.HasFocus(12)</visible>
@@ -661,7 +592,7 @@
 						<width>380</width>
 						<height>360</height>
 						<aspectratio>keep</aspectratio>
-						<bordertexture border="5">button-nofocus.png</bordertexture>
+						<bordertexture border="5">buttons/nf_light.png</bordertexture>
 						<bordersize>4</bordersize>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
 					</control>
@@ -794,14 +725,6 @@
 							</item>
 						</content>
 					</control>
-					<control type="image">
-						<posx>390</posx>
-						<posy>370</posy>
-						<width>640</width>
-						<height>4</height>
-						<aspectratio>stretch</aspectratio>
-						<texture>separator.png</texture>
-					</control>
 				</control>
 				<control type="label">
 					<posx>130r</posx>
@@ -887,7 +810,7 @@
 							<posy>0</posy>
 							<width>430</width>
 							<height>40</height>
-							<texture border="5">button-nofocus.png</texture>
+							<texture border="5">buttons/nf_light.png</texture>
 						</control>
 						<control type="label">
 							<posx>10</posx>
@@ -908,7 +831,7 @@
 							<width>430</width>
 							<height>40</height>
 							<visible>!Control.HasFocus(50)</visible>
-							<texture border="5">button-nofocus.png</texture>
+							<texture border="5">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>0</posx>
@@ -948,7 +871,7 @@
 						<include>ButtonInfoDialogsCommonValues</include>
 						<label>208</label>
 						<alttexturefocus border="2">button-focus.png</alttexturefocus>
-						<alttexturenofocus border="2">button-nofocus.png</alttexturenofocus>
+						<alttexturenofocus border="2">buttons/nf_light.png</alttexturenofocus>
 						<altlabel>1024</altlabel>
 						<usealttexture>Container.Content(TVShows)</usealttexture>
 					</control>

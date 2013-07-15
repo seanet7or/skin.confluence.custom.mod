@@ -162,13 +162,11 @@
 			<control type="scrollbar" id="60">
 				<posx>35r</posx>
 				<posy>85</posy>
-				<width>25</width>
+				<width>14</width>
 				<height>550</height>
-				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-				<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-				<textureslidernib>ScrollBarNib.png</textureslidernib>
-				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+				<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>730</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
@@ -209,15 +207,6 @@
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture diffuse="Fanart_Diffuse.png" background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Art(thumb)]</texture>
 					<visible>Container.Content(Episodes) + Skin.HasSetting(View730ShowThumb)</visible>
-				</control>
-				<control type="image">
-					<posx>640</posx>
-					<posy>335</posy>
-					<width>161</width>
-					<height>109</height>
-					<aspectratio align="right" aligny="bottom">keep</aspectratio>
-					<texture>$INFO[listitem.Studio,studios/,.png]</texture>
-					<visible>!Container.Content(Seasons) + !Container.Content(Episodes)</visible>
 				</control>
 				<control type="image">
 					<posx>625</posx>
@@ -314,13 +303,6 @@
 					<aligny>center</aligny>
 					<label>$INFO[ListItem.Premiered,[B][COLOR=blue]$LOCALIZE[31322]: [/COLOR][/B]]</label>
 					<visible>IsEmpty(ListItem.Director) + !IsEmpty(ListItem.Premiered)</visible>
-				</control>
-				<control type="image">
-					<posx>0</posx>
-					<posy>480</posy>
-					<width>805</width>
-					<height>4</height>
-					<texture>separator.png</texture>
 				</control>
 				<control type="textbox">
 					<description>Description Value for Video</description>

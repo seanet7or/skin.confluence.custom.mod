@@ -5,15 +5,6 @@
 	<controls>
 		<include>CommonBackground</include>
 		<control type="image">
-			<posx>0</posx>
-			<posy>100r</posy>
-			<width>1280</width>
-			<height>100</height>
-			<aspectratio>stretch</aspectratio>
-			<include>VisibleFadeEffect</include>
-			<texture>floor.png</texture>
-		</control>
-		<control type="image">
 			<description>Section header image</description>
 			<posx>20</posx>
 			<posy>3</posy>
@@ -51,14 +42,7 @@
 				<posy>0</posy>
 				<width>610</width>
 				<height>620</height>
-				<texture border="20">ContentPanel.png</texture>
-			</control>
-			<control type="image">
-				<posx>0</posx>
-				<posy>612</posy>
-				<width>610</width>
-				<height>64</height>
-				<texture border="10">ContentPanelMirror.png</texture>
+				<texture border="20">dialogs/content-back_light.png</texture>
 			</control>
 			<control type="image">
 				<posx>510</posx>
@@ -67,7 +51,7 @@
 				<height>80</height>
 				<aspectratio>keep</aspectratio>
 				<info>Container(20).ListItem.Icon</info>
-				<bordertexture border="5">button-nofocus.png</bordertexture>
+				<bordertexture border="5">buttons/nf_light.png</bordertexture>
 				<bordersize>3</bordersize>
 			</control>
 			<control type="label">
@@ -99,11 +83,11 @@
 			<control type="scrollbar" id="30">
 				<posx>10</posx>
 				<posy>110</posy>
-				<width>25</width>
+				<width>14</width>
 				<height>490</height>
-				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="2,16,2,16">ScrollBarV_bar.png</texturesliderbar>
-				<texturesliderbarfocus border="2,16,2,16">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+				<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<textureslidernib>-</textureslidernib>
 				<textureslidernibfocus>-</textureslidernibfocus>
 				<onleft>31</onleft>
@@ -125,13 +109,6 @@
 				<pagecontrol>30</pagecontrol>
 				<scrolltime>200</scrolltime>
 				<itemlayout height="35" width="540">
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>540</width>
-						<height>36</height>
-						<texture border="0,2,0,2">MenuItemNF.png</texture>
-					</control>
 					<control type="label">
 						<posx>0</posx>
 						<posy>0</posy>
@@ -158,14 +135,6 @@
 					</control>
 				</itemlayout>
 				<focusedlayout height="35" width="540">
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>540</width>
-						<height>36</height>
-						<visible>!Control.HasFocus(20)</visible>
-						<texture border="0,2,0,2">MenuItemNF.png</texture>
-					</control>
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
@@ -225,14 +194,7 @@
 				<posy>0</posy>
 				<width>610</width>
 				<height>620</height>
-				<texture border="20">ContentPanel.png</texture>
-			</control>
-			<control type="image">
-				<posx>0</posx>
-				<posy>612</posy>
-				<width>610</width>
-				<height>64</height>
-				<texture border="10">ContentPanelMirror.png</texture>
+				<texture border="20">dialogs/content-back_light.png</texture>
 			</control>
 			<control type="image">
 				<posx>20</posx>
@@ -241,7 +203,7 @@
 				<height>80</height>
 				<aspectratio>keep</aspectratio>
 				<info>Container(21).ListItem.Icon</info>
-				<bordertexture border="5">button-nofocus.png</bordertexture>
+				<bordertexture border="5">buttons/nf_light.png</bordertexture>
 				<bordersize>3</bordersize>
 			</control>
 			<control type="label">
@@ -273,11 +235,11 @@
 			<control type="scrollbar" id="31">
 				<posx>575</posx>
 				<posy>110</posy>
-				<width>25</width>
+				<width>14</width>
 				<height>490</height>
-				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="2,16,2,16">ScrollBarV_bar.png</texturesliderbar>
-				<texturesliderbarfocus border="2,16,2,16">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+				<texturesliderbackground>scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar>scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<textureslidernib>-</textureslidernib>
 				<textureslidernibfocus>-</textureslidernibfocus>
 				<onleft>21</onleft>
@@ -299,13 +261,6 @@
 				<pagecontrol>31</pagecontrol>
 				<scrolltime>200</scrolltime>
 				<itemlayout height="35">
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>540</width>
-						<height>36</height>
-						<texture border="0,2,0,2">MenuItemNF.png</texture>
-					</control>
 					<control type="label">
 						<posx>0</posx>
 						<posy>0</posy>
@@ -332,14 +287,6 @@
 					</control>
 				</itemlayout>
 				<focusedlayout height="35">
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>540</width>
-						<height>36</height>
-						<visible>!Control.HasFocus(21)</visible>
-						<texture border="0,2,0,2">MenuItemNF.png</texture>
-					</control>
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>

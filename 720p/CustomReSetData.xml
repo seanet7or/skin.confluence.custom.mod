@@ -13,7 +13,7 @@
 			<posy>0</posy>
 			<width>610</width>
 			<height>240</height>
-			<texture border="40">DialogBack.png</texture>
+			<texture border="40">dialogs/dialog-back_light.png</texture>
 		</control>
 		<control type="image">
 			<description>Dialog Header image</description>
@@ -35,23 +35,6 @@
 			<aligny>center</aligny>
 			<textcolor>selected</textcolor>
 			<shadowcolor>black</shadowcolor>
-		</control>
-		<control type="button">
-			<description>Close Window button</description>
-			<posx>520</posx>
-			<posy>15</posy>
-			<width>64</width>
-			<height>32</height>
-			<label>-</label>
-			<font>-</font>
-			<onclick>PreviousMenu</onclick>
-			<texturefocus>DialogCloseButton-focus.png</texturefocus>
-			<texturenofocus>DialogCloseButton.png</texturenofocus>
-			<onleft>10</onleft>
-			<onright>10</onright>
-			<onup>10</onup>
-			<ondown>10</ondown>
-			<visible>system.getbool(input.enablemouse)</visible>
 		</control>
 		<control type="label">
 			<posx>0</posx>
