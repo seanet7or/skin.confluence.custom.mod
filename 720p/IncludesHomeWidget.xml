@@ -2203,7 +2203,6 @@
 			<control type="group">
 				<posx>190</posx>
 				<posy>50</posy>
-				<!-- Movies Playlist-->
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),PlayListVideo) + !Skin.HasSetting(DisableScriptPlayList)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(PlayListType),Movie)</visible>
 				<include>VisibleFadeEffect</include>
@@ -2494,7 +2493,6 @@
 			<control type="group">
 				<posx>160</posx>
 				<posy>50</posy>
-				<!-- Episodes Playlist-->
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),PlayListVideo) + !Skin.HasSetting(DisableScriptPlayList)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(PlayListType),Episode)</visible>
 				<include>VisibleFadeEffect</include>
@@ -2795,7 +2793,6 @@
 			<control type="group">
 				<posx>190</posx>
 				<posy>50</posy>
-				<!-- UnWatched Movies Widget-->
 				<visible>Library.HasContent(Movies) + !Skin.HasSetting(DisableScriptPlayList)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),UnWatched)</visible>
 				<include>VisibleFadeEffect</include>

@@ -143,7 +143,6 @@
 					<onclick>PlayerControl(Next)</onclick>
 				</control>
 			</control>
-			<!-- LiveTV -->
 			<control type="group" id="100">
 				<posx>325</posx>
 				<posy>60r</posy>
@@ -262,7 +261,6 @@
 					<scroll>false</scroll>
 				</control>
 			</control>
-			<!-- !LiveTV -->
 			<control type="group">
 				<posx>500r</posx>
 				<posy>50r</posy>
@@ -354,7 +352,6 @@
 					<animation effect="fade" start="100" end="50" time="100" condition="!VideoPlayer.HasMenu">Conditional</animation>
 				</control>
 			</control>
-			<!-- LiveTV -->
 			<control type="group">
 				<posx>240r</posx>
 				<posy>60r</posy>
@@ -427,7 +424,6 @@
 					<enable>Player.CanRecord</enable>
 					<animation effect="fade" start="100" end="50" time="100" condition="!Player.CanRecord">Conditional</animation>
 				</control>
-				<!-- LiveTV -->
 			</control>
 		</control>
 	</controls>

@@ -11,7 +11,6 @@
 			<include>Dimensions_Fullscreen</include>
 		</control>
 		<include condition="!Skin.HasSetting(HideBackGroundFanart) + !Skin.HasSetting(ShowBackgroundAlbumWall)">MusicPlayingTop</include>
-		<!-- media infos -->
 		<control type="group">
 			<animation effect="fade" time="200">VisibleChange</animation>
 			<visible>[Player.ShowInfo | Window.IsActive(MusicOSD)] + ![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList)]</visible>
@@ -233,7 +232,6 @@
 				</control>
 			</control>
 		</control>
-		<!-- codec & viz infos -->
 		<control type="group" id="0">
 			<posx>0</posx>
 			<posy>50</posy>

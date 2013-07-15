@@ -311,7 +311,7 @@ step
 
 printf "\nRemoving all tags which are commented out: "
 if grep -q '<\!--' 720p/IncludesBackgroundBuilding.xml ; then
-	R='s|\s*<\!--(?!-->).*?-->#||g'
+	R='s|\s*<\!--(?!-->).*?-->[^#]*#||g'
 	perlregex "$R"
 	printf "%sDONE!%s" $GREEN $RESET
 else

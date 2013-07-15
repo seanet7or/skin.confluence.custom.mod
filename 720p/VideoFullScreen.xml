@@ -2,7 +2,6 @@
 <window>
 	<defaultcontrol>-</defaultcontrol>
 	<controls>
-		<!-- media infos -->
 		<control type="group" id="1">
 			<visible>!StringCompare(VideoPlayer.Title,XBMC-Intro-Video.mkv)</visible>
 			<visible>[Player.ShowInfo | Window.IsActive(VideoOSD)] | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | [!Skin.HasSetting(HideInfoStartOSD) + !IntegerGreaterThan(Player.time,5)]</visible>
@@ -439,7 +438,6 @@
 				</control>
 			</control>
 		</control>
-		<!-- codec info -->
 		<control type="group" id="0">
 			<posx>0</posx>
 			<posy>20</posy>

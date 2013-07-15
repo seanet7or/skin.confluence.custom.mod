@@ -847,19 +847,6 @@
 						<onclick>Control.Move(9008,1)</onclick>
 						<onclick>Skin.SetString(MPAACountryCert,$INFO[Container(9008).ListItem.Label])</onclick>
 					</control>
-					<!--control type="button" id="148">
-						<description>User Rating Prefix</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>31210</label>
-						<label2>[COLOR=selected]$INFO[Skin.String(UsrRatingPrefix)][/COLOR]</label2>
-						<onclick>Skin.SetString(UsrRatingPrefix)</onclick>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-					</control-->					
 					<control type="label" id="149">
 						<width>750</width>
 						<height>45</height>
@@ -1199,7 +1186,6 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<!--onclick>Skin.Reset(HomeItemLastLabel)</onclick-->
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.1,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.1.Label))</visible>
@@ -1214,7 +1200,6 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<!--onclick>Skin.Reset(HomeItemLastLabel)</onclick-->
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.1,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.1.Label))</visible>
@@ -5741,28 +5726,6 @@
 						<onclick>Addon.OpenSettings(script.artworkorganizer)</onclick>
 						<enable>System.HasAddon(script.artworkorganizer)</enable>
 					</control>
-					<!--control type="label" id="610">
-						<width>750</width>
-						<height>45</height>
-						<font>font13_title</font>
-						<label>10503</label>
-						<textcolor>blue</textcolor>
-						<shadowcolor>black</shadowcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-					</control>
-					<control type="button" id="611">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label> - $LOCALIZE[31054]</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>ActivateWindow(VideoLibrary,special://videoplaylists/,return)</onclick>
-						<onclick>ActivateWindow(smartplaylisteditor)</onclick>
-					</control-->
 					<control type="label" id="612">
 						<width>750</width>
 						<height>45</height>
