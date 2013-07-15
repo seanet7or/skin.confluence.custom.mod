@@ -75,7 +75,7 @@
 						<width>675</width>
 						<height>380</height>
 						<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
-						<bordertexture border="5">button-nofocus.png</bordertexture>
+						<bordertexture border="5">buttons/nf_light.png</bordertexture>
 						<bordersize>4</bordersize>
 						<aspectratio>keep</aspectratio>
 						<visible>!IsEmpty(Listitem.Art(fanart))</visible>
@@ -89,7 +89,7 @@
 							<width>675</width>
 							<height>380</height>
 							<texture>Fanart_Fallback_Small.jpg</texture>
-							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordertexture border="5">buttons/nf_light.png</bordertexture>
 							<bordersize>4</bordersize>
 							<aspectratio>stretch</aspectratio>
 							<colordiffuse>99FFFFFF</colordiffuse>
@@ -119,7 +119,7 @@
 						<posy>0</posy>
 						<width>675</width>
 						<height>380</height>
-						<texture border="5">button-nofocus.png</texture>
+						<texture border="5">buttons/nf_light.png</texture>
 					</control>
 					<control type="image">
 						<description>background</description>
@@ -162,7 +162,7 @@
 						<width>270</width>
 						<height>380</height>
 						<aspectratio>stretch</aspectratio>
-						<bordertexture border="5">button-nofocus.png</bordertexture>
+						<bordertexture border="5">buttons/nf_light.png</bordertexture>
 						<bordersize>4</bordersize>
 						<texture background="true">$VAR[PosterThumb]</texture>
 					</control>
@@ -342,7 +342,7 @@
 						<width>270</width>
 						<height>380</height>
 						<aspectratio>stretch</aspectratio>
-						<bordertexture border="5">button-nofocus.png</bordertexture>
+						<bordertexture border="5">buttons/nf_light.png</bordertexture>
 						<bordersize>4</bordersize>
 						<texture background="true">$VAR[PosterThumb]</texture>
 					</control>
@@ -486,7 +486,7 @@
 						<width>380</width>
 						<height>250</height>
 						<aspectratio aligny="bottom">keep</aspectratio>
-						<bordertexture border="5">button-nofocus.png</bordertexture>
+						<bordertexture border="5">buttons/nf_light.png</bordertexture>
 						<bordersize>4</bordersize>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
 					</control>
@@ -496,7 +496,7 @@
 						<width>380</width>
 						<height>250</height>
 						<aspectratio aligny="top">keep</aspectratio>
-						<bordertexture border="5" flipy="true" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
+						<bordertexture border="5" flipy="true" diffuse="diffuse_mirror2.png">buttons/nf_light.png</bordertexture>
 						<bordersize>4</bordersize>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[ListItem.Icon]</texture>
 					</control>
@@ -661,7 +661,7 @@
 						<width>380</width>
 						<height>360</height>
 						<aspectratio>keep</aspectratio>
-						<bordertexture border="5">button-nofocus.png</bordertexture>
+						<bordertexture border="5">buttons/nf_light.png</bordertexture>
 						<bordersize>4</bordersize>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
 					</control>
@@ -887,7 +887,7 @@
 							<posy>0</posy>
 							<width>430</width>
 							<height>40</height>
-							<texture border="5">button-nofocus.png</texture>
+							<texture border="5">buttons/nf_light.png</texture>
 						</control>
 						<control type="label">
 							<posx>10</posx>
@@ -908,7 +908,7 @@
 							<width>430</width>
 							<height>40</height>
 							<visible>!Control.HasFocus(50)</visible>
-							<texture border="5">button-nofocus.png</texture>
+							<texture border="5">buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>0</posx>
@@ -948,7 +948,7 @@
 						<include>ButtonInfoDialogsCommonValues</include>
 						<label>208</label>
 						<alttexturefocus border="2">button-focus.png</alttexturefocus>
-						<alttexturenofocus border="2">button-nofocus.png</alttexturenofocus>
+						<alttexturenofocus border="2">buttons/nf_light.png</alttexturenofocus>
 						<altlabel>1024</altlabel>
 						<usealttexture>Container.Content(TVShows)</usealttexture>
 					</control>
