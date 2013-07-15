@@ -1522,17 +1522,17 @@ else
 fi
 step
 
-printf "\nRemoving multi-color strings: "
-if grep -q 'COLOR=' 720p/SkinSettings.xml ; then
-	XMLS=$(2>/dev/null grep 'COLOR=' -l 720p/*)
-	perlregex $XMLS 's|\[COLOR\=[a-z0-9]*\]||g'	
-	XMLS=$(2>/dev/null grep 'COLOR' -l 720p/*)
-	perlregex $XMLS 's|\[/COLOR\]||g'	
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
+#printf "\nRemoving multi-color strings: "
+#if grep -q 'COLOR=' 720p/SkinSettings.xml ; then
+#	XMLS=$(2>/dev/null grep 'COLOR=' -l 720p/*)
+#	perlregex $XMLS 's|\[COLOR\=[a-z0-9]*\]||g'	
+#	XMLS=$(2>/dev/null grep 'COLOR' -l 720p/*)
+#	perlregex $XMLS 's|\[/COLOR\]||g'	
+#	printf "%sDONE!%s" $GREEN $RESET
+#else
+#	printf "%sSKIPPED.%s" $CYAN $RESET
+#fi
+#step
 
 printf "\nModifying weather info in the upper left corner: "
 if grep -I -q '<description>Location label</description>' '720p/Home.xml' ; then

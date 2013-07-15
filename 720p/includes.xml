@@ -150,7 +150,6 @@
 		<height>30</height>
 		<font>font14</font>
 		<textcolor>white</textcolor>
-		<shadowcolor>black</shadowcolor>
 		<scroll>false</scroll>
 		<align>left</align>
 		<aligny>center</aligny>
@@ -354,7 +353,6 @@
 				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey</textcolor>
-				<shadowcolor>black</shadowcolor>
 			</control>
 			<control type="label">
 				<posx>85</posx>
@@ -366,7 +364,6 @@
 				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey</textcolor>
-				<shadowcolor>black</shadowcolor>
 				<visible>Player.HasAudio</visible>
 			</control>
 			<control type="label">
@@ -379,7 +376,6 @@
 				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey</textcolor>
-				<shadowcolor>black</shadowcolor>
 				<visible>Player.HasVideo + VideoPlayer.Content(Movies)</visible>
 			</control>
 			<control type="label">
@@ -392,7 +388,6 @@
 				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey</textcolor>
-				<shadowcolor>black</shadowcolor>
 				<visible>Player.HasVideo + VideoPlayer.Content(Episodes)</visible>
 			</control>
 			<control type="label">
@@ -405,7 +400,6 @@
 				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey</textcolor>
-				<shadowcolor>black</shadowcolor>
 				<visible>Player.HasVideo + VideoPlayer.Content(MusicVideos)</visible>
 			</control>
 			<control type="label">
@@ -418,7 +412,6 @@
 				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey</textcolor>
-				<shadowcolor>black</shadowcolor>
 				<visible>Player.HasVideo + VideoPlayer.Content(LiveTV)</visible>
 			</control>
 		</control>
@@ -452,7 +445,6 @@
 			<aligny>center</aligny>
 			<font>font12_title</font>
 			<textcolor>grey2</textcolor>
-			<shadowcolor>black</shadowcolor>
 		</control>
 		<control type="fadelabel">
 			<description>Title label</description>
@@ -465,7 +457,6 @@
 			<aligny>center</aligny>
 			<font>font13_title</font>
 			<textcolor>white</textcolor>
-			<shadowcolor>black</shadowcolor>
 			<scrollout>false</scrollout>
 			<pauseatend>2000</pauseatend>
 		</control>
@@ -480,7 +471,6 @@
 			<aligny>center</aligny>
 			<font>font12</font>
 			<textcolor>white</textcolor>
-			<shadowcolor>black</shadowcolor>
 		</control>
 		<control type="label">
 			<description>Time Label</description>
@@ -493,7 +483,6 @@
 			<aligny>center</aligny>
 			<font>font12</font>
 			<textcolor>white</textcolor>
-			<shadowcolor>black</shadowcolor>
 		</control>
 		<control type="label">
 			<description>Next Label</description>
@@ -506,7 +495,6 @@
 			<aligny>center</aligny>
 			<font>font12</font>
 			<textcolor>grey</textcolor>
-			<shadowcolor>black</shadowcolor>
 		</control>
 	</include>
 	<include name="SmallVideoInfo">
@@ -539,7 +527,6 @@
 			<aligny>center</aligny>
 			<font>font12_title</font>
 			<textcolor>grey2</textcolor>
-			<shadowcolor>black</shadowcolor>
 			<visible>!videoplayer.content(episodes) + !videoplayer.content(musicvideos)</visible>
 		</control>
 		<control type="label">
@@ -553,7 +540,6 @@
 			<aligny>center</aligny>
 			<font>font12_title</font>
 			<textcolor>white</textcolor>
-			<shadowcolor>black</shadowcolor>
 			<visible>videoplayer.content(episodes)</visible>
 		</control>
 		<control type="fadelabel">
@@ -567,7 +553,6 @@
 			<aligny>center</aligny>
 			<font>font12_title</font>
 			<textcolor>white</textcolor>
-			<shadowcolor>black</shadowcolor>
 			<visible>videoplayer.content(musicvideos)</visible>
 			<scrollout>false</scrollout>
 			<pauseatend>2000</pauseatend>
@@ -583,7 +568,6 @@
 			<aligny>center</aligny>
 			<font>font13_title</font>
 			<textcolor>white</textcolor>
-			<shadowcolor>black</shadowcolor>
 			<scrollout>false</scrollout>
 			<pauseatend>2000</pauseatend>
 		</control>
@@ -598,7 +582,6 @@
 			<aligny>center</aligny>
 			<font>font12</font>
 			<textcolor>white</textcolor>
-			<shadowcolor>black</shadowcolor>
 			<visible>!videoplayer.content(episodes) + !videoplayer.content(musicvideos)</visible>
 		</control>
 		<control type="label">
@@ -611,7 +594,6 @@
 			<aligny>center</aligny>
 			<font>font12</font>
 			<textcolor>white</textcolor>
-			<shadowcolor>black</shadowcolor>
 			<visible>videoplayer.content(musicvideos)</visible>
 		</control>
 		<control type="label">
@@ -625,7 +607,6 @@
 			<aligny>center</aligny>
 			<font>font12</font>
 			<textcolor>white</textcolor>
-			<shadowcolor>black</shadowcolor>
 			<visible>videoplayer.content(episodes)</visible>
 		</control>
 		<control type="label">
@@ -639,7 +620,6 @@
 			<aligny>center</aligny>
 			<font>font12</font>
 			<textcolor>white</textcolor>
-			<shadowcolor>black</shadowcolor>
 		</control>
 	</include>
 	<include name="CommonNowPlaying_Controls">
@@ -986,7 +966,6 @@
 			<aligny>center</aligny>
 			<font>font35_title</font>
 			<textcolor>white</textcolor>
-			<shadowcolor>black</shadowcolor>
 			<label>$INFO[System.Time]</label>
 			<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
 			<visible>!Skin.HasSetting(HideSystemClock)</visible>

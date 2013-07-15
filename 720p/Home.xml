@@ -68,7 +68,6 @@
 				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>white</textcolor>
-				<shadowcolor>black</shadowcolor>
 			</control>
 			<control type="label">
 				<description>Title label</description>
@@ -81,7 +80,6 @@
 				<aligny>center</aligny>
 				<font>font13_title</font>
 				<textcolor>white</textcolor>
-				<shadowcolor>black</shadowcolor>
 			</control>
 			<control type="label">
 				<description>Time Label</description>
@@ -94,7 +92,6 @@
 				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>white</textcolor>
-				<shadowcolor>black</shadowcolor>
 			</control>
 		</control>
 		<control type="group">
@@ -134,7 +131,6 @@
 					<aligny>center</aligny>
 					<font>font12_title</font>
 					<textcolor>blue</textcolor>
-					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>NextRecordingDateTime</description>
@@ -147,7 +143,6 @@
 					<aligny>center</aligny>
 					<font>font12</font>
 					<scroll>true</scroll>
-					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>NextRecordingTitle Channel</description>
@@ -159,7 +154,6 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font12_title</font>
-					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 				</control>
 			</control>
@@ -192,7 +186,6 @@
 					<aligny>center</aligny>
 					<font>font12_title</font>
 					<textcolor>blue</textcolor>
-					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>NextRecordingDateTime</description>
@@ -205,7 +198,6 @@
 					<aligny>center</aligny>
 					<font>font12</font>
 					<scroll>true</scroll>
-					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>NextRecordingTitle Channel</description>
@@ -217,7 +209,6 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font12_title</font>
-					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 				</control>
 			</control>
@@ -250,7 +241,6 @@
 					<aligny>center</aligny>
 					<font>font13_title</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>Time Label</description>
@@ -263,7 +253,6 @@
 					<aligny>center</aligny>
 					<font>font12</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 				</control>
 			</control>
 			<control type="group">
@@ -288,7 +277,6 @@
 					<aligny>center</aligny>
 					<font>font12</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>Title label</description>
@@ -301,7 +289,6 @@
 					<aligny>center</aligny>
 					<font>font13_title</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>Time Label</description>
@@ -314,7 +301,6 @@
 					<aligny>center</aligny>
 					<font>font12</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 				</control>
 			</control>
 			<control type="group">
@@ -339,7 +325,6 @@
 					<aligny>center</aligny>
 					<font>font12</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>Title label</description>
@@ -352,7 +337,6 @@
 					<aligny>center</aligny>
 					<font>font13_title</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>Time Label</description>
@@ -365,7 +349,6 @@
 					<aligny>center</aligny>
 					<font>font12</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 				</control>
 			</control>
 			<control type="group">
@@ -390,7 +373,6 @@
 					<aligny>center</aligny>
 					<font>font12</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>Title label</description>
@@ -403,7 +385,6 @@
 					<aligny>center</aligny>
 					<font>font13_title</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="label">
 					<description>Time Label</description>
@@ -416,7 +397,6 @@
 					<aligny>center</aligny>
 					<font>font12</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 				</control>
 			</control>
 		</control>
@@ -770,7 +750,6 @@
 				<aligny>center</aligny>
 				<font>font12_title</font>
 				<textcolor>white</textcolor>
-				<shadowcolor>black</shadowcolor>
 				<visible>!Player.HasMedia + !Skin.HasSetting(HideHomeStats)</visible>
 			</control>
 		</control>
@@ -1410,7 +1389,6 @@
 				<label>$VAR[NextFiveSongScroller]</label>
 				<font>font12</font>
 				<textcolor>white</textcolor>
-				<shadowcolor>black</shadowcolor>
 				<textoffsetx>20</textoffsetx>
 				<visible>!Skin.HasSetting(AutoHidePowerBtn) + Player.HasAudio + !IsEmpty(MusicPlayer.offset(1).Artist) + !Skin.HasSetting(HideNextSongsInfo)</visible>
 			</control>
@@ -1426,7 +1404,6 @@
 				<label>$VAR[NextFiveSongScroller]</label>
 				<font>font12</font>
 				<textcolor>white</textcolor>
-				<shadowcolor>black</shadowcolor>
 				<textoffsetx>20</textoffsetx>
 				<visible>Skin.HasSetting(AutoHidePowerBtn) + Player.HasAudio + !IsEmpty(MusicPlayer.offset(1).Artist) + !Skin.HasSetting(HideNextSongsInfo)</visible>
 			</control>
@@ -1514,22 +1491,9 @@
 				<aspectratio>keep</aspectratio>
 				<texture>$INFO[Weather.Conditions]</texture>
 			</control>
-			<control type="label">
-				<description>Location label</description>
-				<posx>65</posx>
-				<posy>5</posy>
-				<width>500</width>
-				<height>15</height>
-				<align>left</align>
-				<aligny>center</aligny>
-				<font>font10</font>
-				<textcolor>white</textcolor>
-				<shadowcolor>black</shadowcolor>
-				<label>$INFO[Window(Weather).Property(Location)]</label>
-			</control>
 			<control type="grouplist">
 				<posx>65</posx>
-				<posy>20</posy>
+				<posy>15</posy>
 				<width>1000</width>
 				<height>30</height>
 				<orientation>horizontal</orientation>
@@ -1543,7 +1507,6 @@
 					<aligny>center</aligny>
 					<font>font28_title</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 					<label>[B]$INFO[Window(Weather).Property(Current.Temperature)][/B]</label>
 				</control>
 				<control type="label">
@@ -1554,18 +1517,7 @@
 					<aligny>center</aligny>
 					<label>$INFO[System.TemperatureUnits]</label>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 					<visible>!IsEmpty(Window(Weather).Property(Current.Temperature))</visible>
-				</control>
-				<control type="label">
-					<description>Conditions Label</description>
-					<width>500</width>
-					<height>22</height>
-					<font>font10</font>
-					<aligny>center</aligny>
-					<label>$INFO[Window(Weather).Property(Current.Condition),  ]</label>
-					<textcolor>grey2</textcolor>
-					<shadowcolor>black</shadowcolor>
 				</control>
 			</control>
 		</control>

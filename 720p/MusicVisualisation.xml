@@ -24,7 +24,6 @@
 				<aligny>center</aligny>
 				<font>font13</font>
 				<textcolor>white</textcolor>
-				<shadowcolor>black</shadowcolor>
 				<label>$VAR[MusicHeaderLabel]</label>
 			</control>
 			<include>Clock</include>
@@ -100,7 +99,6 @@
 					<font>font12</font>
 					<label>$INFO[MusicPlayer.Artist]$INFO[MusicPlayer.Album, - ]</label>
 					<textcolor>grey2</textcolor>
-					<shadowcolor>black</shadowcolor>
 				</control>
 				<control type="grouplist">
 					<posx>20</posx>
@@ -163,7 +161,6 @@
 					<label>$VAR[NextFiveSongScroller]</label>
 					<font>font12</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 					<visible>MusicPlayer.HasNext + !Skin.HasSetting(HideNextSongsInfo) + !Window.IsVisible(MusicOSD)</visible>
 					<animation effect="fade" time="200">VisibleChange</animation>
 				</control>
