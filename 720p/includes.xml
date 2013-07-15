@@ -70,7 +70,7 @@
 		<onload condition="System.GetBool(pvrmanager.enabled)">Skin.SetString(HomeItem.3.Addon,None)</onload>
 		<onload condition="System.GetBool(pvrmanager.enabled)">Skin.SetString(HomeItem.3.Widget,None)</onload>
 		<onload condition="System.GetBool(pvrmanager.enabled)">Skin.SetString(HomeItem.3.Type,LiveTV)</onload>
-		<onload condition="System.GetBool(pvrmanager.enabled)">Skin.SetString(HomeItem.3.Fanart,special://skin/backgrounds/homescreen/tv.jpg)</onload>
+		<onload condition="System.GetBool(pvrmanager.enabled)">Skin.SetString(HomeItem.3.Fanart,special://skin/backgrounds/default_light.jpg)</onload>
 		<onload>Skin.SetString(HomeItem.4.Label,$LOCALIZE[3])</onload>
 		<onload>Skin.SetString(HomeItem.4.Path,ActivateWindow(Videos,Files,return))</onload>
 		<onload>Skin.SetString(HomeItem.4.Sub,Videos)</onload>
@@ -250,15 +250,6 @@
 			<width>260</width>
 			<height>720</height>
 			<texture border="0,0,10,0">dialogs/bladesub_light.png</texture>
-		</control>
-		<control type="image">
-			<description>LOGO</description>
-			<posx>15</posx>
-			<posy>50</posy>
-			<width>220</width>
-			<height>80</height>
-			<aspectratio>keep</aspectratio>
-			<texture>Confluence_Logo.png</texture>
 		</control>
 	</include>
 	<include name="MainWindowMouseButtons">

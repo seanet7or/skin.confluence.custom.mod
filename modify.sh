@@ -1232,8 +1232,7 @@ step
 
 printf "\nChanging title bars: "
 if [ -f media/GlassTitleBar.png ] ; then
-	remove_control image '<texture>GlassTitleBar.png</texture>'
-	remove_control image '<texture flipy="true">GlassTitleBar.png</texture>'
+	remove_control image '<texture(\| flipy="true")>GlassTitleBar.png</texture>'
 	check_and_remove media/GlassTitleBar.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
@@ -1260,6 +1259,8 @@ else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
+
+exit
 
 printf "\nReplacing seeksliders: "
 if [ -f media/seekslider2.png ] ; then

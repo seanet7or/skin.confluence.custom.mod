@@ -110,13 +110,6 @@
 				<animation effect="slide" start="0,0" end="0,100" time="0" condition="PVR.IsRecording">conditional</animation>
 				<visible>PVR.HasNonRecordingTimer</visible>
 				<control type="image">
-					<posx>0</posx>
-					<posy>-5</posy>
-					<width>490</width>
-					<height>90</height>
-					<texture>gradient.png</texture>
-				</control>
-				<control type="image">
 					<posx>400</posx>
 					<posy>0</posy>
 					<width>80</width>
@@ -174,13 +167,6 @@
 			</control>
 			<control type="group">
 				<visible>PVR.IsRecording</visible>
-				<control type="image">
-					<posx>0</posx>
-					<posy>-5</posy>
-					<width>490</width>
-					<height>90</height>
-					<texture>gradient.png</texture>
-				</control>
 				<control type="image">
 					<posx>400</posx>
 					<posy>0</posy>
