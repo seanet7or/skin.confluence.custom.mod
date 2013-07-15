@@ -329,7 +329,7 @@
 						<posy>0</posy>
 						<width>214</width>
 						<height>160</height>
-						<bordertexture border="5">folder-focus.png</bordertexture>
+						<bordertexture border="5">buttons/folder-focus_light.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$INFO[Listitem.Icon]</texture>
 						<visible>!Container.Content(Episodes)</visible>
@@ -340,7 +340,7 @@
 						<width>214</width>
 						<height>160</height>
 						<aspectratio>scale</aspectratio>
-						<bordertexture border="5">folder-focus.png</bordertexture>
+						<bordertexture border="5">buttons/folder-focus_light.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$INFO[Listitem.Icon]</texture>
 						<visible>Container.Content(Episodes) + [StringCompare(ListItem.Label,..) | !Skin.HasSetting(HideEpisodeThumb)]</visible>
@@ -351,7 +351,7 @@
 						<width>214</width>
 						<height>160</height>
 						<aspectratio>scale</aspectratio>
-						<bordertexture border="5">folder-focus.png</bordertexture>
+						<bordertexture border="5">buttons/folder-focus_light.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
 						<visible>Container.Content(Episodes) + Skin.HasSetting(HideEpisodeThumb) + !StringCompare(ListItem.Label,..)</visible>
@@ -416,7 +416,7 @@
 						<posy>0</posy>
 						<width>214</width>
 						<height>240</height>
-						<bordertexture border="5">folder-focus.png</bordertexture>
+						<bordertexture border="5">buttons/folder-focus_light.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$VAR[PosterThumb]</texture>
 					</control>
@@ -504,7 +504,7 @@
 						<posy>0</posy>
 						<width>538</width>
 						<height>105</height>
-						<bordertexture border="5">folder-focus.png</bordertexture>
+						<bordertexture border="5">buttons/folder-focus_light.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$VAR[BannerThumb]</texture>
 					</control>
