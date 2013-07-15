@@ -43,26 +43,6 @@
 						<textcolor>grey2</textcolor>
 						<label>[B]$INFO[ListItem.Label][/B]</label>
 					</control>
-					<!--control type="group">
-						<visible>!IsEmpty(ListItem.Overlay)</visible>
-						<animation effect="fade" start="60" end="60" time="0" condition="true">conditional</animation>
-						<control type="image">
-							<posx>5</posx>
-							<posy>5</posy>
-							<width>30</width>
-							<height>30</height>
-							
-							<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,OverlayStatus/resumable/,.png]</texture>
-						</control>
-						<control type="image">
-							<posx>5</posx>
-							<posy>5</posy>
-							<width>30</width>
-							<height>30</height>
-							<texture diffuse="poster-diffuse.png">MediaStatus/OverlayUnwatched.png</texture>
-							<visible>ListItem.IsResumable</visible>
-						</control>
-					</control-->
 				</itemlayout>
 				<itemlayout condition="[Skin.HasSetting(View730HideLogo) + Container.Content(tvshows)]  | Container.Content(Episodes) | Container.Content(Seasons)  | SubString(Container.FolderPath,program.advanced.launcher)" width="380" height="86">
 					<control type="image">
@@ -100,24 +80,6 @@
 						<textcolor>grey2</textcolor>
 						<label>[B]$INFO[ListItem.Label][/B]</label>
 					</control>
-					<!--control type="group">
-						<visible>!IsEmpty(ListItem.Overlay)</visible>
-						<animation effect="fade" start="60" end="60" time="0" condition="true">conditional</animation>
-						<control type="image">
-							<posx>5</posx>
-							<posy>5</posy>
-							<width>30</width>
-							<height>30</height>
-							<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
-						</control>
-						<control type="image">
-							<posx>5</posx>
-							<posy>5</posy>
-							<width>30</width>
-							<height>30</height>
-							<texture diffuse="poster-diffuse.png">MediaStatus/OverlayUnwatched.png</texture>
-						</control>
-					</control-->
 				</itemlayout>
 				<focusedlayout condition="!Skin.HasSetting(View730HideLogo) | [Skin.HasSetting(View730HideLogo) + Container.Content(Movies)] + ![Container.Content(Episodes) | Container.Content(Seasons)  | SubString(Container.FolderPath,program.advanced.launcher)]" width="380" height="140">
 					<control type="image">
@@ -148,26 +110,6 @@
 							<effect type="zoom" center="auto" start="100" end="125" time="600" tween="back" easing="out" />
 						</animation>
 					</control>
-					<!--control type="group">
-						<visible>!IsEmpty(ListItem.Overlay)</visible>
-						<animation type="Focus" reversible="false">
-							<effect type="zoom" center="auto" start="51" end="100" time="600" tween="back" easing="out" />
-						</animation>
-						<control type="image">
-							<posx>5</posx>
-							<posy>12</posy>
-							<width>30</width>
-							<height>30</height>
-							<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
-						</control>
-						<control type="image">
-							<posx>5</posx>
-							<posy>12</posy>
-							<width>30</width>
-							<height>30</height>
-							<texture diffuse="poster-diffuse.png">MediaStatus/OverlayUnwatched.png</texture>
-						</control>
-					</control-->
 				</focusedlayout>
 				<focusedlayout condition="[Skin.HasSetting(View730HideLogo) + Container.Content(tvshows)] | Container.Content(Episodes) | Container.Content(Seasons) | SubString(Container.FolderPath,program.advanced.launcher)" width="380" height="100">
 					<control type="image">
@@ -215,26 +157,6 @@
 							<effect type="zoom" center="auto" start="100" end="125" time="600" tween="back" easing="out" />
 						</animation>
 					</control>
-					<!--control type="group">
-						<visible>!IsEmpty(ListItem.Overlay)</visible>
-						<animation type="Focus" reversible="false">
-							<effect type="zoom" center="auto" start="51" end="100" time="600" tween="back" easing="out" />
-						</animation>
-						<control type="image">
-							<posx>5</posx>
-							<posy>12</posy>
-							<width>30</width>
-							<height>30</height>
-							<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
-						</control>
-						<control type="image">
-							<posx>5</posx>
-							<posy>12</posy>
-							<width>30</width>
-							<height>30</height>
-							<texture diffuse="poster-diffuse.png">MediaStatus/OverlayUnwatched.png</texture>
-						</control>
-					</control-->
 				</focusedlayout>
 			</control>
 			<control type="scrollbar" id="60">

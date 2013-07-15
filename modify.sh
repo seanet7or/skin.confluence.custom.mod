@@ -118,14 +118,23 @@ remove_structure() {
 	fi
 	LINE=$(echo $LINE | sed 's|^<|\\s\*<|g')
 	LINE=$(echo $LINE | sed 's|>$|>\\s\*#|g')
-	local REGEX='s|\s*<(\|!--)'"$TYPE""$TAGS"'>\s*#'
+	local REGEX='s|\s*<'"$TYPE""$TAGS"'>\s*#'
 	REGEX+='(\s*<[a-z][^#]*#\|)*?' # matching lines beginning with any opening tag
 	REGEX+="$LINE"
 	REGEX+='(\s*<[a-z][^#]*#\|)*?' # matching lines beginning with any opening tag
-	REGEX+='\s*</'"$TYPE"'(\|--)>\s*#'
+	REGEX+='\s*</'"$TYPE"'>\s*#'
 	REGEX+='||g'
 	debug "Calling 'perlregex $FILES'."
 	perlregex "$REGEX" "$FILES"
+	#again for uncommented structures
+	#local REGEX='s|\s*<!--'"$TYPE""$TAGS"'>\s*#'
+	#REGEX+='(\s*<[a-z][^#]*#\|)*?' # matching lines beginning with any opening tag
+	#REGEX+="$LINE"
+	#REGEX+='(\s*<[a-z][^#]*#\|)*?' # matching lines beginning with any opening tag
+	#REGEX+='\s*</'"$TYPE"'-->\s*#'
+	#REGEX+='||g'
+	#debug "Calling 'perlregex $FILES'."
+	#perlregex "$REGEX" "$FILES"
 }
 
 
@@ -305,6 +314,16 @@ step
 printf "\nReplacing '#'s in original xmls: "
 if grep -q '#' 720p/SkinSettings.xml ; then 
 	sed 's/#/No\./g' -i 720p/SkinSettings.xml 
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nRemoving all tags which are commented out: "
+if grep -q '<!--' 720p/IncludesBackgroundBuilding.xml ; then
+	R='s|\s*<!--(?!-->).*?-->#||g'
+	perlregex "$R"
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET

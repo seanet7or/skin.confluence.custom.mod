@@ -35,7 +35,6 @@
 			<animation effect="fade" time="250" condition="Window.Previous(Home)">WindowOpen</animation>
 			<animation effect="fade" time="250" condition="Window.Next(Home)">WindowClose</animation>
 		</control>
-		<!-- Music Info -->
 		<control type="group">
 			<posx>0</posx>
 			<posy>60</posy>
@@ -103,7 +102,6 @@
 				<shadowcolor>black</shadowcolor>
 			</control>
 		</control>
-		<!-- LiveTV Info -->
 		<control type="group">
 			<posx>490r</posx>
 			<posy>70</posy>
@@ -248,7 +246,6 @@
 				</control>
 			</control>
 		</control>
-		<!-- Video Info -->
 		<control type="group">
 			<posx>0</posx>
 			<posy>50</posy>
@@ -469,8 +466,6 @@
 			<texturenofocus>-</texturenofocus>
 			<onleft>9000</onleft>
 			<onright>9000</onright>
-			<!--onup condition="!Skin.HasSetting(AutoHidePowerBtn)">20</onup>
-			<onup condition="Skin.HasSetting(AutoHidePowerBtn)">21</onup-->
 			<onup>21</onup>
 			<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">609</ondown>
 			<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">610</ondown>
