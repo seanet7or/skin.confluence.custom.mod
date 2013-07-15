@@ -9,6 +9,13 @@
 		<posy>0</posy>
 	</coordinates>
 	<controls>
+		<control type="image">
+			<description>Startup Background Image</description>
+			<include>Dimensions_Fullscreen</include>
+			<aspectratio>scale</aspectratio>
+			<texture fallback="special://skin/backgrounds/default_light.jpg">$INFO[Skin.String(StartUpBackgroundPath)]</texture>
+			<visible>!Skin.HasSetting(HideStartUpBackground)</visible>
+		</control>
 		<control type="group">
 			<include>Window_OpenClose_Animation</include>
 			<control type="image">
@@ -16,14 +23,14 @@
 				<posy>60</posy>
 				<width>750</width>
 				<height>600</height>
-				<texture>dialogs/content-back_light.png</texture>
+				<texture border="10">dialogs/content-back_light.png</texture>
 			</control>
 			<control type="label">
 				<posx>295</posx>
 				<posy>100</posy>
 				<width>690</width>
 				<height>40</height>
-				<textcolor>textnofocus</textcolor>
+				<textcolor>grey2</textcolor>
 				<align>center</align>
 				<aligny>center</aligny>
 				<label>$LOCALIZE[31421]</label>
@@ -46,14 +53,14 @@
 						<posy>0</posy>
 						<width>690</width>
 						<height>95</height>
-						<texture>buttons/nf_light.png</texture>
+						<texture border="0">buttons/nf_light.png</texture>
 					</control>
 					<control type="image">
 						<posx>10</posx>
 						<posy>10</posy>
 						<width>80</width>
 						<height>75</height>
-						<texture>$INFO[ListItem.Icon]</texture>
+						<texture border="0">$INFO[ListItem.Icon]</texture>
 					</control>
 					<control type="label">
 						<posx>110</posx>
@@ -61,22 +68,22 @@
 						<width>580</width>
 						<height>40</height>
 						<font>font24_title</font>
-						<textcolor>textnofocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$VAR[MainItemLabel]</label>
+						<label border="0">$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>110</posx>
 						<posy>50</posy>
 						<width>580</width>
 						<height>25</height>
-						<textcolor>textnofocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label2]</label>
+						<label border="0">$INFO[ListItem.Label2]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout height="100" width="580">
@@ -85,7 +92,7 @@
 						<posy>0</posy>
 						<width>690</width>
 						<height>95</height>
-						<texture>buttons/nf_light.png</texture>
+						<texture border="0">buttons/nf_light.png</texture>
 						<visible>!Control.HasFocus(52)</visible>
 					</control>
 					<control type="image">
@@ -93,7 +100,7 @@
 						<posy>0</posy>
 						<width>690</width>
 						<height>95</height>
-						<texture>buttons/fo_light.png</texture>
+						<texture border="0">buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(52)</visible>
 					</control>
 					<control type="image">
@@ -101,7 +108,7 @@
 						<posy>10</posy>
 						<width>80</width>
 						<height>75</height>
-						<texture>$INFO[ListItem.Icon]</texture>
+						<texture border="0">$INFO[ListItem.Icon]</texture>
 					</control>
 					<control type="label">
 						<posx>110</posx>
@@ -109,21 +116,21 @@
 						<width>580</width>
 						<height>40</height>
 						<font>font24_title</font>
-						<selectedcolor>itemselected</selectedcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$VAR[MainItemLabel]</label>
+						<label border="0">$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>110</posx>
 						<posy>50</posy>
 						<width>580</width>
 						<height>25</height>
-						<textcolor>textfocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label2]</label>
+						<label border="0">$INFO[ListItem.Label2]</label>
 					</control>
 				</focusedlayout>
 			</control>
@@ -136,7 +143,7 @@
 					<width>580</width>
 					<height>45</height>
 					<font>font12</font>
-					<textcolor>textnofocus</textcolor>
+					<textcolor>grey2</textcolor>
 					<align>right</align>
 					<aligny>center</aligny>
 					<label>$LOCALIZE[31003]</label>
@@ -164,7 +171,7 @@
 					<width>35</width>
 					<height>35</height>
 					<aspectratio>keep</aspectratio>
-					<texture>icon_power.png</texture>
+					<texture border="0">icon_power.png</texture>
 				</control>
 			</control>
 		</control>

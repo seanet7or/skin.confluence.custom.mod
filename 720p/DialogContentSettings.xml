@@ -17,7 +17,7 @@
 				<posy>0</posy>
 				<width>800</width>
 				<height>680</height>
-				<texture>dialogs/dialog-back_light.png</texture>
+				<texture border="40">dialogs/dialog-back_light.png</texture>
 			</control>
 			<control type="label" id="1">
 				<description>header label</description>
@@ -29,7 +29,7 @@
 				<label>$LOCALIZE[20333]</label>
 				<align>center</align>
 				<aligny>center</aligny>
-				<textcolor>itemselected</textcolor>
+				<textcolor>selected</textcolor>
 			</control>
 			<control type="label">
 				<description>Content Picker Header</description>
@@ -41,7 +41,7 @@
 				<label>$LOCALIZE[20344]</label>
 				<align>center</align>
 				<aligny>center</aligny>
-				<textcolor>heading2</textcolor>
+				<textcolor>blue</textcolor>
 			</control>
 			<control type="spincontrolex" id="3">
 				<description>Content Picker</description>
@@ -49,7 +49,7 @@
 				<posy>100</posy>
 				<width>320</width>
 				<height>40</height>
-				<texturenofocus>buttons/nf_light.png</texturenofocus>
+				<texturenofocus border="0">buttons/nf_light.png</texturenofocus>
 				<font>-</font>
 				<label>-</label>
 				<onup>28</onup>
@@ -64,7 +64,7 @@
 				<width>280</width>
 				<height>40</height>
 				<font>font13_title</font>
-				<label>$INFO[Control.GetLabel(3)]</label>
+				<label border="0">$INFO[Control.GetLabel(3)]</label>
 				<align>left</align>
 				<aligny>center</aligny>
 			</control>
@@ -78,7 +78,7 @@
 				<label>$LOCALIZE[31312]</label>
 				<align>center</align>
 				<aligny>center</aligny>
-				<textcolor>heading2</textcolor>
+				<textcolor>blue</textcolor>
 			</control>
 			<control type="image">
 				<description>Used Scraper Image</description>
@@ -87,7 +87,7 @@
 				<width>320</width>
 				<height>130</height>
 				<aspectratio>keep</aspectratio>
-				<texture>$INFO[ListItem.Icon]</texture>
+				<texture border="0">$INFO[ListItem.Icon]</texture>
 			</control>
 			<control type="label">
 				<description>Used Scaper Label</description>
@@ -98,7 +98,7 @@
 				<label>[B]$INFO[ListItem.Label][/B]</label>
 				<align>center</align>
 				<aligny>center</aligny>
-				<textcolor>itemselected</textcolor>
+				<textcolor>selected</textcolor>
 			</control>
 			<control type="label">
 				<description>Scraper List Header</description>
@@ -110,7 +110,7 @@
 				<label>$LOCALIZE[31313]</label>
 				<align>center</align>
 				<aligny>center</aligny>
-				<textcolor>heading2</textcolor>
+				<textcolor>blue</textcolor>
 			</control>
 			<control type="list" id="4">
 				<posx>400</posx>
@@ -129,14 +129,14 @@
 						<posy>0</posy>
 						<width>360</width>
 						<height>40</height>
-						<texture>buttons/nf_light.png</texture>
+						<texture border="0">buttons/nf_light.png</texture>
 					</control>
 					<control type="image">
 						<posx>5</posx>
 						<posy>5</posy>
 						<width>35</width>
 						<height>30</height>
-						<texture>$INFO[Listitem.Icon]</texture>
+						<texture border="0">$INFO[Listitem.Icon]</texture>
 					</control>
 					<control type="label">
 						<posx>50</posx>
@@ -145,8 +145,8 @@
 						<height>40</height>
 						<align>left</align>
 						<aligny>center</aligny>
-						<textcolor>textnofocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<info>ListItem.Label</info>
 					</control>
 				</itemlayout>
@@ -157,7 +157,7 @@
 						<width>360</width>
 						<height>40</height>
 						<visible>!Control.HasFocus(4)</visible>
-						<texture>buttons/nf_light.png</texture>
+						<texture border="0">buttons/nf_light.png</texture>
 					</control>
 					<control type="image">
 						<posx>0</posx>
@@ -165,14 +165,14 @@
 						<width>360</width>
 						<height>40</height>
 						<visible>Control.HasFocus(4)</visible>
-						<texture>buttons/fo_light.png</texture>
+						<texture border="0">buttons/fo_light.png</texture>
 					</control>
 					<control type="image">
 						<posx>5</posx>
 						<posy>5</posy>
 						<width>35</width>
 						<height>30</height>
-						<texture>$INFO[Listitem.Icon]</texture>
+						<texture border="0">$INFO[Listitem.Icon]</texture>
 					</control>
 					<control type="label">
 						<posx>50</posx>
@@ -181,19 +181,19 @@
 						<height>40</height>
 						<align>left</align>
 						<aligny>center</aligny>
-						<selectedcolor>itemselected</selectedcolor>
+						<selectedcolor>selected</selectedcolor>
 						<info>ListItem.Label</info>
 					</control>
 				</focusedlayout>
 			</control>
 			<control type="scrollbar" id="60">
-				<posx>772</posx>
+				<posx>760</posx>
 				<posy>100</posy>
 				<width>14</width>
 				<height>240</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>4</onleft>
 				<onright>3</onright>
 				<showonepage>true</showonepage>
@@ -209,7 +209,7 @@
 				<label>$LOCALIZE[31314]</label>
 				<align>center</align>
 				<aligny>center</aligny>
-				<textcolor>heading2</textcolor>
+				<textcolor>blue</textcolor>
 			</control>
 			<control type="grouplist" id="5">
 				<description>control area</description>

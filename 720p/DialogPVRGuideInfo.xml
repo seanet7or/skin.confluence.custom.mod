@@ -17,7 +17,7 @@
 				<posy>0</posy>
 				<width>730</width>
 				<height>660</height>
-				<texture>dialogs/dialog-back_light.png</texture>
+				<texture border="40">dialogs/dialog-back_light.png</texture>
 			</control>
 			<control type="label">
 				<description>header label</description>
@@ -29,7 +29,7 @@
 				<label>$LOCALIZE[19047]</label>
 				<align>center</align>
 				<aligny>center</aligny>
-				<textcolor>itemselected</textcolor>
+				<textcolor>selected</textcolor>
 			</control>
 			<control type="label">
 				<description>Title label</description>
@@ -38,10 +38,10 @@
 				<width>650</width>
 				<height>30</height>
 				<font>font13_title</font>
-				<label>$INFO[ListItem.Title]</label>
+				<label border="0">$INFO[ListItem.Title]</label>
 				<align>center</align>
 				<aligny>center</aligny>
-				<textcolor>heading1</textcolor>
+				<textcolor>blue</textcolor>
 			</control>
 			<control type="group">
 				<control type="group">
@@ -55,7 +55,7 @@
 						<height>25</height>
 						<align>right</align>
 						<aligny>center</aligny>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 						<label>$LOCALIZE[142]</label>
 					</control>
 					<control type="label">
@@ -76,7 +76,7 @@
 						<height>25</height>
 						<align>right</align>
 						<aligny>center</aligny>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 						<label>$LOCALIZE[180]:</label>
 					</control>
 					<control type="label">
@@ -87,7 +87,7 @@
 						<height>25</height>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Duration]</label>
+						<label border="0">$INFO[ListItem.Duration]</label>
 					</control>
 					<control type="label">
 						<description>Channel Name</description>
@@ -97,7 +97,7 @@
 						<height>25</height>
 						<align>right</align>
 						<aligny>center</aligny>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 						<label>$LOCALIZE[19148]:</label>
 					</control>
 					<control type="fadelabel">
@@ -108,7 +108,7 @@
 						<height>25</height>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.ChannelName]</label>
+						<label border="0">$INFO[ListItem.ChannelName]</label>
 					</control>
 					<control type="label">
 						<description>Genre</description>
@@ -118,7 +118,7 @@
 						<height>25</height>
 						<align>right</align>
 						<aligny>center</aligny>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 						<label>$LOCALIZE[135]:</label>
 					</control>
 					<control type="label">

@@ -6,8 +6,15 @@
 	<onload condition="System.HasAddon(script.favourites)">XBMC.RunScript(script.favourites)</onload>
 	<onload>SetProperty(MenuItemActive,Settings,Home)</onload>
 	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701])">Control.Move(9008,1)</onload>
-	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702])">Control.Move(9008,2)</onload>
-	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703])">Control.Move(9008,3)</onload>
+	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703])">Control.Move(9008,2)</onload>
+	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706])">Control.Move(9008,3)</onload>
+	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708])">Control.Move(9008,4)</onload>
+	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31707])">Control.Move(9008,5)</onload>
+	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702])">Control.Move(9008,6)</onload>
+	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31705])">Control.Move(9008,7)</onload>
+	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31709])">Control.Move(9008,8)</onload>
+	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31704])">Control.Move(9008,9)</onload>
+	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31710])">Control.Move(9008,10)</onload>
 	<onload condition="stringcompare(Container(9009).ListItem.Label,Default) + stringcompare(Skin.String(WatchStatusType),Hidden)">Control.Move(9009,1)</onload>
 	<onload condition="stringcompare(Container(9009).ListItem.Label,Default) + stringcompare(Skin.String(WatchStatusType),Blue)">Control.Move(9009,2)</onload>
 	<onload condition="stringcompare(Container(9009).ListItem.Label,Default) + stringcompare(Skin.String(WatchStatusType),Green)">Control.Move(9009,3)</onload>
@@ -30,14 +37,15 @@
 				<posy>5</posy>
 				<width>1090</width>
 				<height>630</height>
-				<texture>dialogs/content-back_light.png</texture>
+				<texture border="15">dialogs/content-back_light.png</texture>
 			</control>
 			<control type="list" id="9000">
 				<posx>10</posx>
 				<posy>90</posy>
 				<width>260</width>
 				<height>481</height>
-				<onleft>9010</onleft>
+				<onleft condition="Skin.HasSetting(DisableHomeReturnButtons)">9010</onleft>
+				<onleft condition="!Skin.HasSetting(DisableHomeReturnButtons)">81</onleft>
 				<onright>9010</onright>
 				<onup>9000</onup>
 				<ondown>9000</ondown>
@@ -50,20 +58,20 @@
 						<width>380</width>
 						<height>25</height>
 						<font>font24_title</font>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey3</textcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label>$VAR[MainItemLabel]</label>
+						<label border="0">$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>250</posx>
 						<posy>42</posy>
 						<width>870</width>
 						<height>25</height>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label2]</label>
+						<label border="0">$INFO[ListItem.Label2]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout height="80" width="260">
@@ -72,7 +80,7 @@
 						<posy>0</posy>
 						<width>260</width>
 						<height>81</height>
-						<texture>buttons/fo_light.png</texture>
+						<texture border="0">buttons/fo_light.png</texture>
 						<animation effect="fade" start="100" end="30" time="100" condition="!Control.HasFocus(9000)">Conditional</animation>
 					</control>
 					<control type="label">
@@ -83,17 +91,17 @@
 						<font>font24_title</font>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label>$VAR[MainItemLabel]</label>
+						<label border="0">$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>250</posx>
 						<posy>42</posy>
 						<width>870</width>
 						<height>25</height>
-						<textcolor>textfocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label2]</label>
+						<label border="0">$INFO[ListItem.Label2]</label>
 					</control>
 				</focusedlayout>
 				<content>
@@ -165,7 +173,7 @@
 						<height>45</height>
 						<font>font13_title</font>
 						<label>31068</label>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
@@ -173,7 +181,7 @@
 						<width>750</width>
 						<height>40</height>
 						<label>29801</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(ABCKeyBoard)</onclick>
@@ -183,7 +191,7 @@
 						<width>750</width>
 						<height>40</height>
 						<label>31366</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideSystemClock)</onclick>
@@ -193,7 +201,7 @@
 						<width>750</width>
 						<height>40</height>
 						<label>31152</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(KioskMode)</onclick>
@@ -203,98 +211,108 @@
 						<width>750</width>
 						<height>40</height>
 						<label>31124</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideBusyAnimation)</onclick>
 						<selected>!Skin.HasSetting(HideBusyAnimation)</selected>
-					</control>					
+					</control>
 					<control type="radiobutton" id="105">
 						<width>750</width>
 						<height>40</height>
+						<label>31671</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturenofocus>-</texturenofocus>
+						<onclick>Skin.ToggleSetting(DisableHomeReturnButtons)</onclick>
+						<selected>!Skin.HasSetting(DisableHomeReturnButtons)</selected>
+					</control>
+					<control type="radiobutton" id="106">
+						<width>750</width>
+						<height>40</height>
 						<label>$LOCALIZE[31359] "$LOCALIZE[31316]"</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(ParentDirLabel)</onclick>
 						<selected>!Skin.HasSetting(ParentDirLabel)</selected>
 					</control>
-					<control type="radiobutton" id="106">
+					<control type="radiobutton" id="107">
 						<width>750</width>
 						<height>40</height>
 						<label>31117</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(MediaShortDescription)</onclick>
 						<selected>Skin.HasSetting(MediaShortDescription)</selected>
 					</control>
-					<control type="radiobutton" id="108">
+					<control type="radiobutton" id="109">
 						<width>750</width>
 						<height>40</height>
 						<label>31119</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideBackGroundFanart)</onclick>
 						<selected>Skin.HasSetting(HideBackGroundFanart)</selected>
 					</control>
-					<control type="radiobutton" id="109">
+					<control type="radiobutton" id="110">
 						<width>750</width>
 						<height>40</height>
 						<label>31358</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideEpisodeThumb)</onclick>
 						<selected>!Skin.HasSetting(HideEpisodeThumb)</selected>
 					</control>
-					<control type="radiobutton" id="110">
+					<control type="radiobutton" id="111">
 						<width>750</width>
 						<height>40</height>
 						<label>31125</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(ShowBackgroundVis)</onclick>
 						<selected>!Skin.HasSetting(ShowBackgroundVis)</selected>
 					</control>
-					<control type="label" id="111">
+					<control type="label" id="112">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>31101</label>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="112">
+					<control type="radiobutton" id="113">
 						<description>enable video info</description>
 						<width>750</width>
 						<height>40</height>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label>31077</label>
 						<onclick>Skin.ToggleSetting(homepageVideoinfo)</onclick>
 						<selected>!Skin.HasSetting(homepageVideoinfo)</selected>
 						<texturenofocus>-</texturenofocus>
 					</control>
-					<control type="radiobutton" id="113">
+					<control type="radiobutton" id="114">
 						<description>enable music info</description>
 						<width>750</width>
 						<height>40</height>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label>31078</label>
 						<onclick>Skin.ToggleSetting(homepageMusicinfo)</onclick>
 						<selected>!Skin.HasSetting(homepageMusicinfo)</selected>
 						<texturenofocus>-</texturenofocus>
 					</control>
-					<control type="radiobutton" id="114">
+					<control type="radiobutton" id="115">
 						<description>enable weather info</description>
 						<width>750</width>
 						<height>40</height>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label>31079</label>
 						<onclick>Skin.ToggleSetting(homepageWeatherinfo)</onclick>
@@ -302,33 +320,33 @@
 						<texturenofocus>-</texturenofocus>
 						<visible>!IsEmpty(Weather.Plugin)</visible>
 					</control>
-					<control type="radiobutton" id="115">
+					<control type="radiobutton" id="116">
 						<description>Show System Stats</description>
 						<width>750</width>
 						<height>40</height>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label>31113</label>
 						<onclick>Skin.ToggleSetting(HideHomeStats)</onclick>
 						<selected>!Skin.HasSetting(HideHomeStats)</selected>
 						<texturenofocus>-</texturenofocus>
 					</control>
-					<control type="radiobutton" id="116">
+					<control type="radiobutton" id="117">
 						<description>Raise Main Menu</description>
 						<width>750</width>
 						<height>40</height>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label>31137</label>
 						<onclick>Skin.ToggleSetting(RaiseMainMenuBar)</onclick>
 						<selected>!Skin.HasSetting(RaiseMainMenuBar)</selected>
 						<texturenofocus>-</texturenofocus>
 					</control>
-					<control type="radiobutton" id="117">
+					<control type="radiobutton" id="118">
 						<description>Show Global Search</description>
 						<width>750</width>
 						<height>40</height>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label>31129</label>
 						<onclick>Skin.ToggleSetting(HideHomeSearch)</onclick>
@@ -336,138 +354,148 @@
 						<texturenofocus>-</texturenofocus>
 						<enable>System.HasAddon(script.globalsearch)</enable>
 					</control>
-					<control type="button" id="118">
+					<control type="button" id="119">
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31371]</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Addon.OpenSettings(script.globalsearch)</onclick>
 						<enable>!Skin.HasSetting(HideHomeSearch)</enable>
 						<visible>System.HasAddon(script.globalsearch)</visible>
 					</control>
-					<control type="radiobutton" id="119">
+					<control type="radiobutton" id="120">
 						<width>750</width>
 						<height>40</height>
 						<label>31108</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(AutoHideSubMenu)</onclick>
 						<selected>!Skin.HasSetting(AutoHideSubMenu)</selected>
 					</control>
-					<control type="radiobutton" id="120">
+					<control type="radiobutton" id="121">
+						<width>750</width>
+						<height>40</height>
+						<label>31209</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturenofocus>-</texturenofocus>
+						<onclick>Skin.ToggleSetting(HideHomeAddonName)</onclick>
+						<selected>!Skin.HasSetting(HideHomeAddonName)</selected>
+					</control>
+					<control type="radiobutton" id="122">
 						<width>750</width>
 						<height>40</height>
 						<label>31114</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(AutoHidePowerBtn)</onclick>
 						<selected>!Skin.HasSetting(AutoHidePowerBtn)</selected>
 					</control>
-					<control type="radiobutton" id="121">
+					<control type="radiobutton" id="123">
 						<width>750</width>
 						<height>40</height>
 						<label>31187</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideWidgetFanArt)</onclick>
 						<selected>!Skin.HasSetting(HideWidgetFanArt)</selected>
 						<enable>!Skin.HasSetting(HideBackGroundFanart)</enable>
 					</control>
-					<control type="radiobutton" id="122">
+					<control type="radiobutton" id="124">
 						<description>RainDrop Effect</description>
 						<width>750</width>
 						<height>40</height>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label>$LOCALIZE[31672]</label>
 						<onclick>Skin.ToggleSetting(HideRainDropEffect)</onclick>
 						<selected>Skin.HasSetting(HideRainDropEffect)</selected>
 						<texturenofocus>-</texturenofocus>
 					</control>
-					<control type="label" id="123">
+					<control type="label" id="125">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>31062</label>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="124">
+					<control type="radiobutton" id="126">
 						<width>750</width>
 						<height>40</height>
 						<label>31069</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideVisualizationCDart)</onclick>
 						<selected>!Skin.HasSetting(HideVisualizationCDart)</selected>
 					</control>
-					<control type="radiobutton" id="125">
+					<control type="radiobutton" id="127">
 						<width>750</width>
 						<height>40</height>
 						<label>31089</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideTraditionalCDart)</onclick>
 						<selected>!Skin.HasSetting(HideTraditionalCDart)</selected>
 						<enable>!Skin.HasSetting(HideVisualizationCDart)</enable>
 					</control>
-					<control type="radiobutton" id="126">
+					<control type="radiobutton" id="128">
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31673]</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(ShowBackgroundAlbumWall)</onclick>
 						<onclick>Skin.SetBool(HideVisualizationFanart)</onclick>
 						<selected>Skin.HasSetting(ShowBackgroundAlbumWall)</selected>
 					</control>
-					<control type="radiobutton" id="127">
+					<control type="radiobutton" id="129">
 						<width>750</width>
 						<height>40</height>
 						<label>31063</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideVisualizationFanart)</onclick>
 						<onclick>Skin.Reset(ShowBackgroundAlbumWall)</onclick>
 						<selected>!Skin.HasSetting(HideVisualizationFanart)</selected>
 					</control>
-					<control type="radiobutton" id="128">
+					<control type="radiobutton" id="130">
 						<width>750</width>
 						<height>40</height>
 						<label>31067</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(AnimateVizFanart)</onclick>
 						<selected>Skin.HasSetting(AnimateVizFanart)</selected>
 						<enable>!Skin.HasSetting(HideVisualizationFanart)</enable>
 					</control>
-					<control type="radiobutton" id="129">
+					<control type="radiobutton" id="131">
 						<width>750</width>
 						<height>40</height>
 						<label>31064</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(AllowTransparentFanart)</onclick>
 						<selected>Skin.HasSetting(AllowTransparentFanart)</selected>
 						<enable>!Skin.HasSetting(HideVisualizationFanart)</enable>
 					</control>
-					<control type="radiobutton" id="130">
+					<control type="radiobutton" id="132">
 						<width>750</width>
 						<height>40</height>
 						<label>31065</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(AllowVizExtraFanart)</onclick>
@@ -475,11 +503,11 @@
 						<selected>Skin.HasSetting(AllowVizExtraFanart)</selected>
 						<enable>!Skin.HasSetting(HideVisualizationFanart)</enable>
 					</control>
-					<control type="radiobutton" id="131">
+					<control type="radiobutton" id="133">
 						<width>750</width>
 						<height>40</height>
 						<label>31066</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(AllowSlideShowArt)</onclick>
@@ -487,170 +515,170 @@
 						<selected>Skin.HasSetting(AllowSlideShowArt)</selected>
 						<enable>System.HasAddon(script.artistslideshow) + !Skin.HasSetting(HideVisualizationFanart)</enable>
 					</control>
-					<control type="radiobutton" id="132">
+					<control type="radiobutton" id="134">
 						<width>750</width>
 						<height>40</height>
 						<label>31070</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(AllowSlideShowBio)</onclick>
 						<selected>Skin.HasSetting(AllowSlideShowBio)</selected>
 						<enable>System.HasAddon(script.artistslideshow)</enable>
 					</control>
-					<control type="button" id="133">
+					<control type="button" id="135">
 						<width>750</width>
 						<height>40</height>
 						<label>- $LOCALIZE[31364]</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Addon.OpenSettings(script.artistslideshow)</onclick>
 						<enable>Skin.HasSetting(AllowSlideShowArt) | Skin.HasSetting(AllowSlideShowBio)</enable>
 						<visible>System.HasAddon(script.artistslideshow)</visible>
 					</control>
-					<control type="label" id="134">
+					<control type="label" id="136">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>31072</label>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="135">
+					<control type="radiobutton" id="137">
 						<width>750</width>
 						<height>40</height>
 						<label>31071</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideInfoStartOSD)</onclick>
 						<selected>!Skin.HasSetting(HideInfoStartOSD)</selected>
 					</control>
-					<control type="radiobutton" id="136">
+					<control type="radiobutton" id="138">
 						<width>750</width>
 						<height>40</height>
 						<label>31073</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(HidePauseInfo)</onclick>
 						<selected>!Skin.HasSetting(HidePauseInfo)</selected>
 					</control>
-					<control type="radiobutton" id="137">
+					<control type="radiobutton" id="139">
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31126]</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(OSDInfoLogo)</onclick>
 						<selected>Skin.HasSetting(OSDInfoLogo)</selected>
 					</control>
-					<control type="radiobutton" id="138">
+					<control type="radiobutton" id="140">
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31083]</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideSeekBarOSD)</onclick>
 						<selected>!Skin.HasSetting(HideSeekBarOSD)</selected>
 					</control>
-					<control type="label" id="139">
+					<control type="label" id="141">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>31106</label>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="140">
+					<control type="radiobutton" id="142">
 						<width>750</width>
 						<height>40</height>
 						<label>31365</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideNextSongsInfo)</onclick>
 						<selected>!Skin.HasSetting(HideNextSongsInfo)</selected>
 					</control>
-					<control type="button" id="141">
+					<control type="button" id="143">
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31111]</label>
-						<label2>$VAR[WatchTypeName]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[WatchTypeName][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Control.Move(9009,1)</onclick>
 						<onclick condition="stringcompare(Container(9009).ListItem.Label,Default)">Skin.Reset(WatchStatusType)</onclick>
 						<onclick condition="!stringcompare(Container(9009).ListItem.Label,Default)">Skin.SetString(WatchStatusType,$INFO[Container(9009).ListItem.Label])</onclick>
 					</control>
-					<control type="radiobutton" id="142">
+					<control type="radiobutton" id="144">
 						<width>750</width>
 						<height>40</height>
 						<label>20189</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(AutoScroll)</onclick>
 						<selected>Skin.HasSetting(AutoScroll)</selected>
 					</control>
-					<control type="radiobutton" id="143">
+					<control type="radiobutton" id="145">
 						<width>750</width>
 						<height>40</height>
 						<label>31103</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(Show_SlideShow_Paused)</onclick>
 						<selected>!Skin.HasSetting(Show_SlideShow_Paused)</selected>
 					</control>
-					<control type="radiobutton" id="144">
+					<control type="radiobutton" id="146">
 						<width>750</width>
 						<height>40</height>
 						<label>31104</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(WindowedTrailer)</onclick>
 						<selected>Skin.HasSetting(WindowedTrailer)</selected>
 					</control>
-					<control type="button" id="145">
+					<control type="button" id="147">
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31698]</label>
-						<label2>$VAR[UsrMPAACountry]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[UsrMPAACountry][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Control.Move(9008,1)</onclick>
 						<onclick>Skin.SetString(MPAACountryCert,$INFO[Container(9008).ListItem.Label])</onclick>
 					</control>
-					<control type="label" id="146">
+					<control type="label" id="148">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>$LOCALIZE[31007]</label>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="group" id="147">
+					<control type="group" id="149">
 						<width>750</width>
 						<height>40</height>
-						<control type="grouplist" id="148">
+						<control type="grouplist" id="150">
 							<orientation>horizontal</orientation>
 							<width>750</width>
 							<height>40</height>
 							<itemgap>0</itemgap>
-							<onup>145</onup>
-							<ondown>155</ondown>
+							<onup>147</onup>
+							<ondown>158</ondown>
 							<align>left</align>
-							<control type="radiobutton" id="149">
+							<control type="radiobutton" id="151">
 								<description>Default</description>
 								<width>150</width>
 								<height>40</height>
@@ -661,7 +689,7 @@
 								<onclick>Skin.Reset(MediaPanelTrans)</onclick>
 								<selected>IsEmpty(Skin.String(MediaPanelTrans))</selected>
 							</control>
-							<control type="radiobutton" id="150">
+							<control type="radiobutton" id="152">
 								<description>Step 1</description>
 								<width>150</width>
 								<height>40</height>
@@ -672,7 +700,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,EEEEEEEE)</onclick>
 								<selected>stringcompare(Skin.String(MediaPanelTrans),EEEEEEEE)</selected>
 							</control>
-							<control type="radiobutton" id="151">
+							<control type="radiobutton" id="153">
 								<description>Step 2</description>
 								<width>150</width>
 								<height>40</height>
@@ -683,7 +711,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,DDDDDDDD)</onclick>
 								<selected>stringcompare(Skin.String(MediaPanelTrans),DDDDDDDD)</selected>
 							</control>
-							<control type="radiobutton" id="152">
+							<control type="radiobutton" id="154">
 								<description>Step 3</description>
 								<width>150</width>
 								<height>40</height>
@@ -694,7 +722,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,CCCCCCCC)</onclick>
 								<selected>stringcompare(Skin.String(MediaPanelTrans),CCCCCCCC)</selected>
 							</control>
-							<control type="radiobutton" id="153">
+							<control type="radiobutton" id="155">
 								<description>Step 4</description>
 								<width>150</width>
 								<height>40</height>
@@ -707,30 +735,30 @@
 							</control>
 						</control>
 					</control>
-					<control type="label" id="154">
+					<control type="label" id="156">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>512</label>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="156">
+					<control type="radiobutton" id="158">
 						<width>750</width>
 						<height>40</height>
 						<label>21398</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(Use_Startup_Playlist)</onclick>
 						<selected>Skin.HasSetting(Use_Startup_Playlist)</selected>
 					</control>
-					<control type="button" id="157">
+					<control type="button" id="159">
 						<description>Startup Playlist Path</description>
 						<width>750</width>
 						<height>40</height>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label>15311</label>
 						<label2>$INFO[Skin.String(Startup_Playlist_Path)]</label2>
@@ -744,11 +772,12 @@
 					<posy>60</posy>
 					<width>14</width>
 					<height>530</height>
-					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+					<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 					<onleft>9001</onleft>
-					<onright>9000</onright>
+					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
+					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 					<visible>Container(9000).Hasfocus(1)</visible>
@@ -771,17 +800,59 @@
 							<thumb>-</thumb>
 						</item>
 						<item>
+							<label>$LOCALIZE[31703]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31706]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31708]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31707]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
 							<label>$LOCALIZE[31702]</label>
 							<onclick>noop</onclick>
 							<icon>-</icon>
 							<thumb>-</thumb>
 						</item>
-						<!--item>
-							<label>$LOCALIZE[31703]</label>
+						<item>
+							<label>$LOCALIZE[31705]</label>
 							<onclick>noop</onclick>
 							<icon>-</icon>
 							<thumb>-</thumb>
-						</item-->
+						</item>
+						<item>
+							<label>$LOCALIZE[31709]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31704]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31710]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
 					</content>
 				</control>
 				<control type="list" id="9009">
@@ -838,7 +909,7 @@
 						<height>45</height>
 						<font>font13_title</font>
 						<label>31105</label>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
@@ -846,7 +917,7 @@
 						<description>Sticky Menu No.1 Action</description>
 						<width>750</width>
 						<height>40</height>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label>$LOCALIZE[31674]</label>
 						<onclick>Skin.SetString(HomeItemLastLabel,$INFO[Skin.String(HomeItem.1.Label)])</onclick>
@@ -860,8 +931,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>[B]$LOCALIZE[31143] - 1[/B]</label>
-						<label2>$INFO[Skin.String(HomeItem.1.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.1.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.Reset(StickyHomeMenuAction)</onclick>
@@ -873,8 +944,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31120]</label>
-						<label2>$VAR[UsrDefItemOneSubLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemOneSubLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.Reset(StickyHomeMenuAction)</onclick>
@@ -886,11 +957,10 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31166]</label>
-						<label2>$VAR[UsrDefItemOneAddOnLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemOneAddOnLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
-						<!--onclick>Skin.Reset(HomeItemLastLabel)</onclick-->
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.1,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.1.Label))</visible>
@@ -899,11 +969,10 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31174]</label>
-						<label2>$VAR[UsrDefItemOneWidgetLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemOneWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
-						<!--onclick>Skin.Reset(HomeItemLastLabel)</onclick-->
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.1,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.1.Label))</visible>
@@ -912,8 +981,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>[B]$LOCALIZE[31143] - 2[/B]</label>
-						<label2>$INFO[Skin.String(HomeItem.2.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.2.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.2,home)</onclick>
@@ -924,8 +993,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31120]</label>
-						<label2>$VAR[UsrDefItemTwoSubLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemTwoSubLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.2,home)</onclick>
@@ -936,8 +1005,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31166]</label>
-						<label2>$VAR[UsrDefItemTwoAddOnLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemTwoAddOnLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
@@ -949,8 +1018,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31174]</label>
-						<label2>$VAR[UsrDefItemTwoWidgetLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemTwoWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
@@ -962,8 +1031,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>[B]$LOCALIZE[31143] - 3[/B]</label>
-						<label2>$INFO[Skin.String(HomeItem.3.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.3.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.3,home)</onclick>
@@ -974,8 +1043,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31120]</label>
-						<label2>$VAR[UsrDefItemThreeSubLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemThreeSubLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.3,home)</onclick>
@@ -986,8 +1055,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31166]</label>
-						<label2>$VAR[UsrDefItemThreeAddOnLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemThreeAddOnLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
@@ -999,8 +1068,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31174]</label>
-						<label2>$VAR[UsrDefItemThreeWidgetLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemThreeWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
@@ -1012,8 +1081,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>[B]$LOCALIZE[31143] - 4[/B]</label>
-						<label2>$INFO[Skin.String(HomeItem.4.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.4.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.4,home)</onclick>
@@ -1024,8 +1093,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31120]</label>
-						<label2>$VAR[UsrDefItemFourSubLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemFourSubLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.4,home)</onclick>
@@ -1036,8 +1105,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31166]</label>
-						<label2>$VAR[UsrDefItemFourAddOnLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemFourAddOnLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
@@ -1049,8 +1118,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31174]</label>
-						<label2>$VAR[UsrDefItemFourWidgetLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemFourWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
@@ -1062,8 +1131,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>[B]$LOCALIZE[31143] - 5[/B]</label>
-						<label2>$INFO[Skin.String(HomeItem.5.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.5.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.5,home)</onclick>
@@ -1074,8 +1143,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31120]</label>
-						<label2>$VAR[UsrDefItemFiveSubLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemFiveSubLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.5,home)</onclick>
@@ -1086,8 +1155,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31166]</label>
-						<label2>$VAR[UsrDefItemFiveAddOnLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemFiveAddOnLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
@@ -1099,8 +1168,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31174]</label>
-						<label2>$VAR[UsrDefItemFiveWidgetLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemFiveWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
@@ -1112,8 +1181,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>[B]$LOCALIZE[31143] - 6[/B]</label>
-						<label2>$INFO[Skin.String(HomeItem.6.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.6.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.6,home)</onclick>
@@ -1124,8 +1193,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31120]</label>
-						<label2>$VAR[UsrDefItemSixSubLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemSixSubLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.6,home)</onclick>
@@ -1136,8 +1205,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31166]</label>
-						<label2>$VAR[UsrDefItemSixAddOnLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemSixAddOnLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
@@ -1149,8 +1218,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31174]</label>
-						<label2>$VAR[UsrDefItemSixWidgetLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemSixWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
@@ -1162,8 +1231,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>[B]$LOCALIZE[31143] - 7[/B]</label>
-						<label2>$INFO[Skin.String(HomeItem.7.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.7.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.7,home)</onclick>
@@ -1174,8 +1243,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31120]</label>
-						<label2>$VAR[UsrDefItemSevenSubLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemSevenSubLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.7,home)</onclick>
@@ -1186,8 +1255,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31166]</label>
-						<label2>$VAR[UsrDefItemSevenAddOnLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemSevenAddOnLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
@@ -1199,8 +1268,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31174]</label>
-						<label2>$VAR[UsrDefItemSevenWidgetLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemSevenWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
@@ -1212,8 +1281,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>[B]$LOCALIZE[31143] - 8[/B]</label>
-						<label2>$INFO[Skin.String(HomeItem.8.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.8.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.8,home)</onclick>
@@ -1224,8 +1293,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31120]</label>
-						<label2>$VAR[UsrDefItemEightSubLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemEightSubLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.8,home)</onclick>
@@ -1236,8 +1305,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31166]</label>
-						<label2>$VAR[UsrDefItemEightAddOnLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemEightAddOnLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
@@ -1249,8 +1318,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31174]</label>
-						<label2>$VAR[UsrDefItemEightWidgetLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemEightWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
@@ -1262,8 +1331,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>[B]$LOCALIZE[31143] - 9[/B]</label>
-						<label2>$INFO[Skin.String(HomeItem.9.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.9.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.9,home)</onclick>
@@ -1274,8 +1343,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31120]</label>
-						<label2>$VAR[UsrDefItemNineSubLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemNineSubLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.9,home)</onclick>
@@ -1286,8 +1355,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31166]</label>
-						<label2>$VAR[UsrDefItemNineAddOnLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemNineAddOnLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
@@ -1299,8 +1368,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31174]</label>
-						<label2>$VAR[UsrDefItemNineWidgetLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemNineWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
@@ -1312,8 +1381,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>[B]$LOCALIZE[31143] - 10[/B]</label>
-						<label2>$INFO[Skin.String(HomeItem.10.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.10.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.10,home)</onclick>
@@ -1324,8 +1393,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31120]</label>
-						<label2>$VAR[UsrDefItemTenSubLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemTenSubLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.10,home)</onclick>
@@ -1336,8 +1405,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31166]</label>
-						<label2>$VAR[UsrDefItemTenAddOnLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemTenAddOnLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
@@ -1349,8 +1418,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31174]</label>
-						<label2>$VAR[UsrDefItemTenWidgetLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemTenWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
@@ -1362,7 +1431,7 @@
 						<width>750</width>
 						<height>40</height>
 						<label>[B]$LOCALIZE[31367][/B]</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideSytemMenuItem)</onclick>
@@ -1372,8 +1441,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31166]</label>
-						<label2>$VAR[UsrDefItemTwelveAddOnLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemTwelveAddOnLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
@@ -1385,8 +1454,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31174]</label>
-						<label2>$VAR[UsrDefItemTwelveWidgetLabel]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemTwelveWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
@@ -1400,11 +1469,12 @@
 					<posy>60</posy>
 					<width>14</width>
 					<height>530</height>
-					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+					<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 					<onleft>9002</onleft>
-					<onright>9000</onright>
+					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
+					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 					<visible>Container(9000).Hasfocus(2)</visible>
@@ -1416,9 +1486,9 @@
 					<width>750</width>
 					<height>530</height>
 					<itemgap>-1</itemgap>
-					<pagecontrol>61</pagecontrol>
+					<pagecontrol>60</pagecontrol>
 					<onleft>9000</onleft>
-					<onright>61</onright>
+					<onright>60</onright>
 					<onup>9003</onup>
 					<ondown>9003</ondown>
 					<control type="label" id="300">
@@ -1426,7 +1496,7 @@
 						<height>45</height>
 						<font>font13_title</font>
 						<label>$VAR[UsersSubVideosName] $LOCALIZE[31120]</label>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
@@ -1434,8 +1504,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31192]</label>
-						<label2>$VAR[UsersSubVideosName]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=white]$VAR[UsersSubVideosName][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.SetString(UserVideosSubMenu)</onclick>
@@ -1444,8 +1514,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 1</label>
-						<label2>$VAR[SubMenuVideosOne]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuVideosOne][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubVideos.1,home)</onclick>
@@ -1456,8 +1526,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 2</label>
-						<label2>$VAR[SubMenuVideosTwo]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuVideosTwo][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubVideos.2,home)</onclick>
@@ -1468,8 +1538,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 3</label>
-						<label2>$VAR[SubMenuVideosThree]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuVideosThree][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubVideos.3,home)</onclick>
@@ -1480,8 +1550,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 4</label>
-						<label2>$VAR[SubMenuVideosFour]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuVideosFour][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubVideos.4,home)</onclick>
@@ -1492,8 +1562,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 5</label>
-						<label2>$VAR[SubMenuVideosFive]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuVideosFive][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubVideos.5,home)</onclick>
@@ -1504,8 +1574,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 6</label>
-						<label2>$VAR[SubMenuVideosSix]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuVideosSix][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubVideos.6,home)</onclick>
@@ -1518,7 +1588,7 @@
 						<height>45</height>
 						<font>font13_title</font>
 						<label>$VAR[UsersSubMoviesName] $LOCALIZE[31120]</label>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
@@ -1526,8 +1596,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31192]</label>
-						<label2>$VAR[UsersSubMoviesName]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=white]$VAR[UsersSubMoviesName][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.SetString(UserMoviesSubMenu)</onclick>
@@ -1536,8 +1606,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 1</label>
-						<label2>$VAR[SubMenuMoviesOne]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuMoviesOne][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.1,home)</onclick>
@@ -1548,8 +1618,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 2</label>
-						<label2>$VAR[SubMenuMoviesTwo]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuMoviesTwo][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.2,home)</onclick>
@@ -1560,8 +1630,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 3</label>
-						<label2>$VAR[SubMenuMoviesThree]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuMoviesThree][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.3,home)</onclick>
@@ -1572,8 +1642,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 4</label>
-						<label2>$VAR[SubMenuMoviesFour]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuMoviesFour][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.4,home)</onclick>
@@ -1584,8 +1654,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 5</label>
-						<label2>$VAR[SubMenuMoviesFive]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuMoviesFive][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.5,home)</onclick>
@@ -1596,8 +1666,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 6</label>
-						<label2>$VAR[SubMenuMoviesSix]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuMoviesSix][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.6,home)</onclick>
@@ -1610,7 +1680,7 @@
 						<height>45</height>
 						<font>font13_title</font>
 						<label>$VAR[UsersSubTVShowsName] $LOCALIZE[31120]</label>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
@@ -1618,8 +1688,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31192]</label>
-						<label2>$VAR[UsersSubTVShowsName]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=white]$VAR[UsersSubTVShowsName][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.SetString(UserTVShowsSubMenu)</onclick>
@@ -1628,8 +1698,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 1</label>
-						<label2>$VAR[SubMenuTVShowsOne]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuTVShowsOne][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubTVShows.1,home)</onclick>
@@ -1640,8 +1710,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 2</label>
-						<label2>$VAR[SubMenuTVShowsTwo]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuTVShowsTwo][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubTVShows.2,home)</onclick>
@@ -1652,8 +1722,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 3</label>
-						<label2>$VAR[SubMenuTVShowsThree]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuTVShowsThree][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubTVShows.3,home)</onclick>
@@ -1664,8 +1734,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 4</label>
-						<label2>$VAR[SubMenuTVShowsFour]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuTVShowsFour][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubTVShows.4,home)</onclick>
@@ -1676,8 +1746,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 5</label>
-						<label2>$VAR[SubMenuTVShowsFive]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuTVShowsFive][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubTVShows.5,home)</onclick>
@@ -1688,8 +1758,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 6</label>
-						<label2>$VAR[SubMenuTVShowsSix]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuTVShowsSix][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubTVShows.6,home)</onclick>
@@ -1702,7 +1772,7 @@
 						<height>45</height>
 						<font>font13_title</font>
 						<label>$VAR[UsersSubConcertsName] $LOCALIZE[31120]</label>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
@@ -1710,8 +1780,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31192]</label>
-						<label2>$VAR[UsersSubConcertsName]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=white]$VAR[UsersSubConcertsName][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.SetString(UserConcertsSubMenu)</onclick>
@@ -1720,8 +1790,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 1</label>
-						<label2>$VAR[SubMenuConcertsOne]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuConcertsOne][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubConcerts.1,home)</onclick>
@@ -1732,8 +1802,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 2</label>
-						<label2>$VAR[SubMenuConcertsTwo]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuConcertsTwo][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubConcerts.2,home)</onclick>
@@ -1744,8 +1814,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 3</label>
-						<label2>$VAR[SubMenuConcertsThree]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuConcertsThree][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubConcerts.3,home)</onclick>
@@ -1756,8 +1826,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 4</label>
-						<label2>$VAR[SubMenuConcertsFour]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuConcertsFour][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubConcerts.4,home)</onclick>
@@ -1768,8 +1838,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 5</label>
-						<label2>$VAR[SubMenuConcertsFive]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuConcertsFive][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubConcerts.5,home)</onclick>
@@ -1780,8 +1850,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 6</label>
-						<label2>$INFO[Skin.String(SubConcerts.6.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubConcerts.6.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubConcerts.6,home)</onclick>
@@ -1794,7 +1864,7 @@
 						<height>45</height>
 						<font>font13_title</font>
 						<label>$VAR[UsersSubMusicName] $LOCALIZE[31120]</label>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
@@ -1802,8 +1872,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31192]</label>
-						<label2>$VAR[UsersSubMusicName]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=white]$VAR[UsersSubMusicName][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.SetString(UserMusicSubMenu)</onclick>
@@ -1812,8 +1882,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 1</label>
-						<label2>$VAR[SubMenuMusicOne]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuMusicOne][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.1,home)</onclick>
@@ -1824,8 +1894,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 2</label>
-						<label2>$VAR[SubMenuMusicTwo]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuMusicTwo][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.2,home)</onclick>
@@ -1836,8 +1906,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 3</label>
-						<label2>$VAR[SubMenuMusicThree]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuMusicThree][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.3,home)</onclick>
@@ -1848,8 +1918,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 4</label>
-						<label2>$VAR[SubMenuMusicFour]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuMusicFour][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.4,home)</onclick>
@@ -1860,8 +1930,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 5</label>
-						<label2>$VAR[SubMenuMusicFive]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuMusicFive][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.5,home)</onclick>
@@ -1872,8 +1942,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 6</label>
-						<label2>$VAR[SubMenuMusicSix]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuMusicSix][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.6,home)</onclick>
@@ -1886,7 +1956,7 @@
 						<height>45</height>
 						<font>font13_title</font>
 						<label>$VAR[UsersSubProgsName] $LOCALIZE[31120]</label>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
@@ -1894,8 +1964,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31192]</label>
-						<label2>$VAR[UsersSubProgsName]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=white]$VAR[UsersSubProgsName][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.SetString(UserProgsSubMenu)</onclick>
@@ -1904,8 +1974,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 1</label>
-						<label2>$INFO[Skin.String(SubProg.1.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubProg.1.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubProg.1,home)</onclick>
@@ -1916,8 +1986,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 2</label>
-						<label2>$INFO[Skin.String(SubProg.2.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubProg.2.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubProg.2,home)</onclick>
@@ -1928,8 +1998,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 3</label>
-						<label2>$INFO[Skin.String(SubProg.3.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubProg.3.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubProg.3,home)</onclick>
@@ -1940,8 +2010,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 4</label>
-						<label2>$INFO[Skin.String(SubProg.4.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubProg.4.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubProg.4,home)</onclick>
@@ -1952,8 +2022,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 5</label>
-						<label2>$INFO[Skin.String(SubProg.5.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubProg.5.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubProg.5,home)</onclick>
@@ -1964,8 +2034,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 6</label>
-						<label2>$INFO[Skin.String(SubProg.6.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubProg.6.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubProg.6,home)</onclick>
@@ -1978,7 +2048,7 @@
 						<height>45</height>
 						<font>font13_title</font>
 						<label>$VAR[UsersSubPicturesName] $LOCALIZE[31120]</label>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
@@ -1986,8 +2056,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31192]</label>
-						<label2>$VAR[UsersSubPicturesName]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=white]$VAR[UsersSubPicturesName][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.SetString(UserPicturesSubMenu)</onclick>
@@ -1996,8 +2066,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 1</label>
-						<label2>$VAR[SubMenuPicturesOne]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$VAR[SubMenuPicturesOne][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubPictures.1,home)</onclick>
@@ -2008,8 +2078,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 2</label>
-						<label2>$INFO[Skin.String(SubPictures.2.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubPictures.2.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubPictures.2,home)</onclick>
@@ -2020,8 +2090,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 3</label>
-						<label2>$INFO[Skin.String(SubPictures.3.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubPictures.3.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubPictures.3,home)</onclick>
@@ -2032,8 +2102,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 4</label>
-						<label2>$INFO[Skin.String(SubPictures.4.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubPictures.4.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubPictures.4,home)</onclick>
@@ -2044,8 +2114,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 5</label>
-						<label2>$INFO[Skin.String(SubPictures.5.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubPictures.5.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubPictures.5,home)</onclick>
@@ -2056,8 +2126,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 6</label>
-						<label2>$INFO[Skin.String(SubPictures.6.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubPictures.6.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubPictures.6,home)</onclick>
@@ -2070,7 +2140,7 @@
 						<height>45</height>
 						<font>font13_title</font>
 						<label>$VAR[UsersSubSelectOneName] $LOCALIZE[31120]</label>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
@@ -2078,8 +2148,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31192]</label>
-						<label2>$VAR[UsersSubSelectOneName]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=white]$VAR[UsersSubSelectOneName][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.SetString(UserSelectOneSubMenu)</onclick>
@@ -2088,8 +2158,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 1</label>
-						<label2>$INFO[Skin.String(UserSubOne.1.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(UserSubOne.1.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubOne.1,home)</onclick>
@@ -2100,8 +2170,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 2</label>
-						<label2>$INFO[Skin.String(UserSubOne.2.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(UserSubOne.2.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubOne.2,home)</onclick>
@@ -2112,8 +2182,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 3</label>
-						<label2>$INFO[Skin.String(UserSubOne.3.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(UserSubOne.3.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubOne.3,home)</onclick>
@@ -2124,8 +2194,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 4</label>
-						<label2>$INFO[Skin.String(UserSubOne.4.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(UserSubOne.4.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubOne.4,home)</onclick>
@@ -2136,8 +2206,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 5</label>
-						<label2>$INFO[Skin.String(UserSubOne.5.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(UserSubOne.5.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubOne.5,home)</onclick>
@@ -2148,8 +2218,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 6</label>
-						<label2>$INFO[Skin.String(UserSubOne.6.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(UserSubOne.6.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubOne.6,home)</onclick>
@@ -2162,7 +2232,7 @@
 						<height>45</height>
 						<font>font13_title</font>
 						<label>$VAR[UsersSubSelectTwoName] $LOCALIZE[31120]</label>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
@@ -2170,8 +2240,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31192]</label>
-						<label2>$VAR[UsersSubSelectTwoName]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=white]$VAR[UsersSubSelectTwoName][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.SetString(UserSelectTwoSubMenu)</onclick>
@@ -2180,8 +2250,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 1</label>
-						<label2>$INFO[Skin.String(UserSubTwo.1.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(UserSubTwo.1.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.1,home)</onclick>
@@ -2192,8 +2262,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 2</label>
-						<label2>$INFO[Skin.String(UserSubTwo.2.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(UserSubTwo.2.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.2,home)</onclick>
@@ -2204,8 +2274,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 3</label>
-						<label2>$INFO[Skin.String(UserSubTwo.3.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(UserSubTwo.3.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.3,home)</onclick>
@@ -2216,8 +2286,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 4</label>
-						<label2>$INFO[Skin.String(UserSubTwo.4.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(UserSubTwo.4.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.4,home)</onclick>
@@ -2228,8 +2298,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 5</label>
-						<label2>$INFO[Skin.String(UserSubTwo.5.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(UserSubTwo.5.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.5,home)</onclick>
@@ -2240,21 +2310,21 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 6</label>
-						<label2>$INFO[Skin.String(UserSubTwo.6.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(UserSubTwo.6.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubTwo.6.Label))">Skin.SetString(UserSubTwo.6.Label)</onclick>
 						<enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable>
-					</control>				
+					</control>
 					<control type="label" id="372">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>$VAR[UsersSubSelectThreeName] $LOCALIZE[31120]</label>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
@@ -2262,8 +2332,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31192]</label>
-						<label2>$VAR[UsersSubSelectThreeName]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=white]$VAR[UsersSubSelectThreeName][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.SetString(UserSelectThreeSubMenu)</onclick>
@@ -2272,8 +2342,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 1</label>
-						<label2>$INFO[Skin.String(UserSubThree.1.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(UserSubThree.1.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubThree.1,home)</onclick>
@@ -2284,8 +2354,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 2</label>
-						<label2>$INFO[Skin.String(UserSubThree.2.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(UserSubThree.2.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubThree.2,home)</onclick>
@@ -2296,8 +2366,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 3</label>
-						<label2>$INFO[Skin.String(UserSubThree.3.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(UserSubThree.3.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubThree.3,home)</onclick>
@@ -2308,8 +2378,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 4</label>
-						<label2>$INFO[Skin.String(UserSubThree.4.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(UserSubThree.4.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubThree.4,home)</onclick>
@@ -2320,8 +2390,8 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 5</label>
-						<label2>$INFO[Skin.String(UserSubThree.5.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(UserSubThree.5.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubThree.5,home)</onclick>
@@ -2332,26 +2402,27 @@
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31130] - 6</label>
-						<label2>$INFO[Skin.String(UserSubThree.6.Label)]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[Skin.String(UserSubThree.6.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubThree.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubThree.6.Label))">Skin.SetString(UserSubThree.6.Label)</onclick>
 						<enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable>
-					</control>				
+					</control>
 				</control>
-				<control type="scrollbar" id="61">
+				<control type="scrollbar" id="60">
 					<posx>1060</posx>
 					<posy>60</posy>
 					<width>14</width>
 					<height>530</height>
-					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+					<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 					<onleft>9003</onleft>
-					<onright>9000</onright>
+					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
+					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 					<visible>Container(9000).Hasfocus(3)</visible>
@@ -2364,9 +2435,9 @@
 						<width>750</width>
 						<height>530</height>
 						<itemgap>-1</itemgap>
-						<pagecontrol>61</pagecontrol>
+						<pagecontrol>60</pagecontrol>
 						<onleft>9000</onleft>
-						<onright>61</onright>
+						<onright>60</onright>
 						<onup>9004</onup>
 						<ondown>9004</ondown>
 						<control type="label" id="400">
@@ -2374,7 +2445,7 @@
 							<height>45</height>
 							<font>font13_title</font>
 							<label>$LOCALIZE[31135] $LOCALIZE[31166]</label>
-							<textcolor>heading2</textcolor>
+							<textcolor>blue</textcolor>
 							<align>left</align>
 							<aligny>center</aligny>
 						</control>
@@ -2382,8 +2453,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[31192]</label>
-							<label2>$INFO[Skin.String(UserSelectAddon.1.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=white]$INFO[Skin.String(UserSelectAddon.1.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>Skin.SetString(UserSelectAddon.1.Label)</onclick>
@@ -2392,8 +2463,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[24000] [B]1[/B]</label>
-							<label2>$INFO[Skin.String(AddonSetOne.1.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetOne.1.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetOne.1,home)</onclick>
@@ -2403,8 +2474,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[24000] [B]2[/B]</label>
-							<label2>$INFO[Skin.String(AddonSetOne.2.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetOne.2.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetOne.2,home)</onclick>
@@ -2414,8 +2485,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[24000] [B]3[/B]</label>
-							<label2>$INFO[Skin.String(AddonSetOne.3.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetOne.3.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetOne.3,home)</onclick>
@@ -2425,8 +2496,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[24000] [B]4[/B]</label>
-							<label2>$INFO[Skin.String(AddonSetOne.4.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetOne.4.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetOne.4,home)</onclick>
@@ -2436,8 +2507,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[24000] [B]5[/B]</label>
-							<label2>$INFO[Skin.String(AddonSetOne.5.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetOne.5.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetOne.5,home)</onclick>
@@ -2448,7 +2519,7 @@
 							<height>45</height>
 							<font>font13_title</font>
 							<label>$LOCALIZE[31136] $LOCALIZE[31166]</label>
-							<textcolor>heading2</textcolor>
+							<textcolor>blue</textcolor>
 							<align>left</align>
 							<aligny>center</aligny>
 						</control>
@@ -2456,8 +2527,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[31192]</label>
-							<label2>$INFO[Skin.String(UserSelectAddon.2.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=white]$INFO[Skin.String(UserSelectAddon.2.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>Skin.SetString(UserSelectAddon.2.Label)</onclick>
@@ -2466,8 +2537,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[24000] [B]1[/B]</label>
-							<label2>$INFO[Skin.String(AddonSetTwo.1.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetTwo.1.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetTwo.1,home)</onclick>
@@ -2477,8 +2548,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[24000] [B]2[/B]</label>
-							<label2>$INFO[Skin.String(AddonSetTwo.2.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetTwo.2.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetTwo.2,home)</onclick>
@@ -2488,8 +2559,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[24000] [B]3[/B]</label>
-							<label2>$INFO[Skin.String(AddonSetTwo.3.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetTwo.3.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetTwo.3,home)</onclick>
@@ -2499,8 +2570,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[24000] [B]4[/B]</label>
-							<label2>$INFO[Skin.String(AddonSetTwo.4.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetTwo.4.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetTwo.4,home)</onclick>
@@ -2510,8 +2581,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[24000] [B]5[/B]</label>
-							<label2>$INFO[Skin.String(AddonSetTwo.5.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetTwo.5.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetTwo.5,home)</onclick>
@@ -2522,7 +2593,7 @@
 							<height>45</height>
 							<font>font13_title</font>
 							<label>$LOCALIZE[31190] $LOCALIZE[31166]</label>
-							<textcolor>heading2</textcolor>
+							<textcolor>blue</textcolor>
 							<align>left</align>
 							<aligny>center</aligny>
 						</control>
@@ -2530,8 +2601,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[31192]</label>
-							<label2>$INFO[Skin.String(UserSelectAddon.3.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=white]$INFO[Skin.String(UserSelectAddon.3.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>Skin.SetString(UserSelectAddon.3.Label)</onclick>
@@ -2540,8 +2611,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[24000] [B]1[/B]</label>
-							<label2>$INFO[Skin.String(AddonSetThree.1.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetThree.1.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetThree.1,home)</onclick>
@@ -2551,8 +2622,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[24000] [B]2[/B]</label>
-							<label2>$INFO[Skin.String(AddonSetThree.2.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetThree.2.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetThree.2,home)</onclick>
@@ -2562,8 +2633,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[24000] [B]3[/B]</label>
-							<label2>$INFO[Skin.String(AddonSetThree.3.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetThree.3.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetThree.3,home)</onclick>
@@ -2573,8 +2644,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[24000] [B]4[/B]</label>
-							<label2>$INFO[Skin.String(AddonSetThree.4.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetThree.4.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetThree.4,home)</onclick>
@@ -2584,8 +2655,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[24000] [B]5[/B]</label>
-							<label2>$INFO[Skin.String(AddonSetThree.5.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetThree.5.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetThree.5,home)</onclick>
@@ -2596,7 +2667,7 @@
 							<height>45</height>
 							<font>font13_title</font>
 							<label>$LOCALIZE[31191] $LOCALIZE[31166]</label>
-							<textcolor>heading2</textcolor>
+							<textcolor>blue</textcolor>
 							<align>left</align>
 							<aligny>center</aligny>
 						</control>
@@ -2604,8 +2675,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[31192]</label>
-							<label2>$INFO[Skin.String(UserSelectAddon.4.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=white]$INFO[Skin.String(UserSelectAddon.4.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>Skin.SetString(UserSelectAddon.4.Label)</onclick>
@@ -2614,8 +2685,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[24000] [B]1[/B]</label>
-							<label2>$INFO[Skin.String(AddonSetFour.1.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetFour.1.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFour.1,home)</onclick>
@@ -2625,8 +2696,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[24000] [B]2[/B]</label>
-							<label2>$INFO[Skin.String(AddonSetFour.2.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetFour.2.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFour.2,home)</onclick>
@@ -2636,8 +2707,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[24000] [B]3[/B]</label>
-							<label2>$INFO[Skin.String(AddonSetFour.3.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetFour.3.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFour.3,home)</onclick>
@@ -2647,8 +2718,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[24000] [B]4[/B]</label>
-							<label2>$INFO[Skin.String(AddonSetFour.4.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetFour.4.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFour.4,home)</onclick>
@@ -2658,8 +2729,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[24000] [B]5[/B]</label>
-							<label2>$INFO[Skin.String(AddonSetFour.5.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetFour.5.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFour.5,home)</onclick>
@@ -2670,7 +2741,7 @@
 							<height>45</height>
 							<font>font13_title</font>
 							<label>$LOCALIZE[31196] $LOCALIZE[31166]</label>
-							<textcolor>heading2</textcolor>
+							<textcolor>blue</textcolor>
 							<align>left</align>
 							<aligny>center</aligny>
 						</control>
@@ -2678,8 +2749,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[31192]</label>
-							<label2>$INFO[Skin.String(UserSelectAddon.5.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=white]$INFO[Skin.String(UserSelectAddon.5.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>Skin.SetString(UserSelectAddon.5.Label)</onclick>
@@ -2688,8 +2759,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[24000] [B]1[/B]</label>
-							<label2>$INFO[Skin.String(AddonSetFive.1.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetFive.1.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFive.1,home)</onclick>
@@ -2699,8 +2770,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[24000] [B]2[/B]</label>
-							<label2>$INFO[Skin.String(AddonSetFive.2.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetFive.2.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFive.2,home)</onclick>
@@ -2710,8 +2781,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[24000] [B]3[/B]</label>
-							<label2>$INFO[Skin.String(AddonSetFive.3.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetFive.3.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFive.3,home)</onclick>
@@ -2721,8 +2792,8 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[24000] [B]4[/B]</label>
-							<label2>$INFO[Skin.String(AddonSetFive.4.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetFive.4.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFive.4,home)</onclick>
@@ -2732,25 +2803,396 @@
 							<width>750</width>
 							<height>40</height>
 							<label>$LOCALIZE[24000] [B]5[/B]</label>
-							<label2>$INFO[Skin.String(AddonSetFive.5.Label)]</label2>
-							<textcolor>textnofocus</textcolor>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetFive.5.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFive.5,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
+						<control type="label" id="435">
+							<width>750</width>
+							<height>45</height>
+							<font>font13_title</font>
+							<label>$LOCALIZE[31197] $LOCALIZE[31166]</label>
+							<textcolor>blue</textcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+						</control>
+						<control type="button" id="436">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[31192]</label>
+							<label2>[COLOR=white]$INFO[Skin.String(UserSelectAddon.6.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>Skin.SetString(UserSelectAddon.6.Label)</onclick>
+						</control>
+						<control type="button" id="437">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[24000] [B]1[/B]</label>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetSix.1.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>SetProperty(UsrSelectBtn,AddonSetSix.1,home)</onclick>
+							<onclick>ActivateWindow(2119)</onclick>
+						</control>
+						<control type="button" id="438">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[24000] [B]2[/B]</label>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetSix.2.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>SetProperty(UsrSelectBtn,AddonSetSix.2,home)</onclick>
+							<onclick>ActivateWindow(2119)</onclick>
+						</control>
+						<control type="button" id="439">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[24000] [B]3[/B]</label>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetSix.3.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>SetProperty(UsrSelectBtn,AddonSetSix.3,home)</onclick>
+							<onclick>ActivateWindow(2119)</onclick>
+						</control>
+						<control type="button" id="440">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[24000] [B]4[/B]</label>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetSix.4.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>SetProperty(UsrSelectBtn,AddonSetSix.4,home)</onclick>
+							<onclick>ActivateWindow(2119)</onclick>
+						</control>
+						<control type="button" id="441">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[24000] [B]5[/B]</label>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetSix.5.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>SetProperty(UsrSelectBtn,AddonSetSix.5,home)</onclick>
+							<onclick>ActivateWindow(2119)</onclick>
+						</control>
+						<control type="label" id="442">
+							<width>750</width>
+							<height>45</height>
+							<font>font13_title</font>
+							<label>$LOCALIZE[31198] $LOCALIZE[31166]</label>
+							<textcolor>blue</textcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+						</control>
+						<control type="button" id="443">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[31192]</label>
+							<label2>[COLOR=white]$INFO[Skin.String(UserSelectAddon.7.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>Skin.SetString(UserSelectAddon.7.Label)</onclick>
+						</control>
+						<control type="button" id="444">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[24000] [B]1[/B]</label>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetSeven.1.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>SetProperty(UsrSelectBtn,AddonSetSeven.1,home)</onclick>
+							<onclick>ActivateWindow(2119)</onclick>
+						</control>
+						<control type="button" id="445">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[24000] [B]2[/B]</label>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetSeven.2.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>SetProperty(UsrSelectBtn,AddonSetSeven.2,home)</onclick>
+							<onclick>ActivateWindow(2119)</onclick>
+						</control>
+						<control type="button" id="446">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[24000] [B]3[/B]</label>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetSeven.3.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>SetProperty(UsrSelectBtn,AddonSetSeven.3,home)</onclick>
+							<onclick>ActivateWindow(2119)</onclick>
+						</control>
+						<control type="button" id="447">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[24000] [B]4[/B]</label>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetSeven.4.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>SetProperty(UsrSelectBtn,AddonSetSeven.4,home)</onclick>
+							<onclick>ActivateWindow(2119)</onclick>
+						</control>
+						<control type="button" id="448">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[24000] [B]5[/B]</label>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetSeven.5.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>SetProperty(UsrSelectBtn,AddonSetSeven.5,home)</onclick>
+							<onclick>ActivateWindow(2119)</onclick>
+						</control>
+						<control type="label" id="449">
+							<width>750</width>
+							<height>45</height>
+							<font>font13_title</font>
+							<label>$LOCALIZE[31199] $LOCALIZE[31166]</label>
+							<textcolor>blue</textcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+						</control>
+						<control type="button" id="450">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[31192]</label>
+							<label2>[COLOR=white]$INFO[Skin.String(UserSelectAddon.8.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>Skin.SetString(UserSelectAddon.8.Label)</onclick>
+						</control>
+						<control type="button" id="451">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[24000] [B]1[/B]</label>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetEight.1.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>SetProperty(UsrSelectBtn,AddonSetEight.1,home)</onclick>
+							<onclick>ActivateWindow(2119)</onclick>
+						</control>
+						<control type="button" id="452">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[24000] [B]2[/B]</label>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetEight.2.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>SetProperty(UsrSelectBtn,AddonSetEight.2,home)</onclick>
+							<onclick>ActivateWindow(2119)</onclick>
+						</control>
+						<control type="button" id="453">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[24000] [B]3[/B]</label>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetEight.3.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>SetProperty(UsrSelectBtn,AddonSetEight.3,home)</onclick>
+							<onclick>ActivateWindow(2119)</onclick>
+						</control>
+						<control type="button" id="454">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[24000] [B]4[/B]</label>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetEight.4.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>SetProperty(UsrSelectBtn,AddonSetEight.4,home)</onclick>
+							<onclick>ActivateWindow(2119)</onclick>
+						</control>
+						<control type="button" id="455">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[24000] [B]5[/B]</label>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetEight.5.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>SetProperty(UsrSelectBtn,AddonSetEight.5,home)</onclick>
+							<onclick>ActivateWindow(2119)</onclick>
+						</control>
+						<control type="label" id="456">
+							<width>750</width>
+							<height>45</height>
+							<font>font13_title</font>
+							<label>$LOCALIZE[31200] $LOCALIZE[31166]</label>
+							<textcolor>blue</textcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+						</control>
+						<control type="button" id="457">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[31192]</label>
+							<label2>[COLOR=white]$INFO[Skin.String(UserSelectAddon.9.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>Skin.SetString(UserSelectAddon.9.Label)</onclick>
+						</control>
+						<control type="button" id="458">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[24000] [B]1[/B]</label>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetNine.1.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>SetProperty(UsrSelectBtn,AddonSetNine.1,home)</onclick>
+							<onclick>ActivateWindow(2119)</onclick>
+						</control>
+						<control type="button" id="459">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[24000] [B]2[/B]</label>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetNine.2.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>SetProperty(UsrSelectBtn,AddonSetNine.2,home)</onclick>
+							<onclick>ActivateWindow(2119)</onclick>
+						</control>
+						<control type="button" id="460">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[24000] [B]3[/B]</label>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetNine.3.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>SetProperty(UsrSelectBtn,AddonSetNine.3,home)</onclick>
+							<onclick>ActivateWindow(2119)</onclick>
+						</control>
+						<control type="button" id="461">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[24000] [B]4[/B]</label>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetNine.4.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>SetProperty(UsrSelectBtn,AddonSetNine.4,home)</onclick>
+							<onclick>ActivateWindow(2119)</onclick>
+						</control>
+						<control type="button" id="462">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[24000] [B]5[/B]</label>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetNine.5.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>SetProperty(UsrSelectBtn,AddonSetNine.5,home)</onclick>
+							<onclick>ActivateWindow(2119)</onclick>
+						</control>
+						<control type="label" id="463">
+							<width>750</width>
+							<height>45</height>
+							<font>font13_title</font>
+							<label>$LOCALIZE[31201] $LOCALIZE[31166]</label>
+							<textcolor>blue</textcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+						</control>
+						<control type="button" id="464">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[31192]</label>
+							<label2>[COLOR=white]$INFO[Skin.String(UserSelectAddon.10.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>Skin.SetString(UserSelectAddon.10.Label)</onclick>
+						</control>
+						<control type="button" id="465">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[24000] [B]1[/B]</label>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetTen.1.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>SetProperty(UsrSelectBtn,AddonSetTen.1,home)</onclick>
+							<onclick>ActivateWindow(2119)</onclick>
+						</control>
+						<control type="button" id="466">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[24000] [B]2[/B]</label>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetTen.2.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>SetProperty(UsrSelectBtn,AddonSetTen.2,home)</onclick>
+							<onclick>ActivateWindow(2119)</onclick>
+						</control>
+						<control type="button" id="467">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[24000] [B]3[/B]</label>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetTen.3.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>SetProperty(UsrSelectBtn,AddonSetTen.3,home)</onclick>
+							<onclick>ActivateWindow(2119)</onclick>
+						</control>
+						<control type="button" id="468">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[24000] [B]4[/B]</label>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetTen.4.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>SetProperty(UsrSelectBtn,AddonSetTen.4,home)</onclick>
+							<onclick>ActivateWindow(2119)</onclick>
+						</control>
+						<control type="button" id="469">
+							<width>750</width>
+							<height>40</height>
+							<label>$LOCALIZE[24000] [B]5[/B]</label>
+							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetTen.5.Label)][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturenofocus>-</texturenofocus>
+							<onclick>SetProperty(UsrSelectBtn,AddonSetTen.5,home)</onclick>
+							<onclick>ActivateWindow(2119)</onclick>
+						</control>
 					</control>
 				</control>
-				<control type="scrollbar" id="61">
+				<control type="scrollbar" id="60">
 					<posx>1060</posx>
 					<posy>60</posy>
 					<width>14</width>
 					<height>530</height>
-					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+					<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 					<onleft>9004</onleft>
-					<onright>9000</onright>
+					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
+					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 					<visible>Container(9000).Hasfocus(4)</visible>
@@ -2765,12 +3207,13 @@
 						<width>750</width>
 						<height>40</height>
 						<label>31151</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(GlobalBackground)</onclick>
 						<onleft>9000</onleft>
-						<onright>9000</onright>
+						<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
+						<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
 						<onup>505</onup>
 						<ondown>504</ondown>
 						<selected>Skin.HasSetting(GlobalBackground)</selected>
@@ -2799,11 +3242,12 @@
 						<height>22</height>
 						<label>-</label>
 						<font>-</font>
-						<texturenofocus>buttons/spin-up-nf_light.png</texturenofocus>
-						<texturefocus>buttons/spin-up-fo_light.png</texturefocus>
+						<texturenofocus flipy="true">buttons/spin-down-nf_light.png</texturenofocus>
+						<texturefocus flipy="true">buttons/spin-down-fo_light.png</texturefocus>
 						<onclick>Control.Move(9005,-1)</onclick>
 						<onleft>504</onleft>
-						<onright>9000</onright>
+						<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
+						<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
 						<onup>506</onup>
 						<ondown>500</ondown>
 					</control>
@@ -2826,7 +3270,7 @@
 								<posy>0</posy>
 								<width>750</width>
 								<height>40</height>
-								<texture>buttons/fo_light.png</texture>
+								<texture border="0">buttons/fo_light.png</texture>
 								<visible>[Control.HasFocus(504) | Control.HasFocus(505)]</visible>
 							</control>
 							<control type="label">
@@ -2834,7 +3278,7 @@
 								<posy>0</posy>
 								<width>600</width>
 								<height>40</height>
-								<textcolor>textfocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<align>left</align>
 								<aligny>center</aligny>
 								<label>$LOCALIZE[31110]</label>
@@ -2855,10 +3299,10 @@
 								<posy>0</posy>
 								<width>640</width>
 								<height>40</height>
-								<textcolor>textfocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<align>right</align>
 								<aligny>center</aligny>
-								<label>$VAR[MainItemLabel]</label>
+								<label border="0">$VAR[MainItemLabel]</label>
 								<visible>![Control.HasFocus(504) | Control.HasFocus(505)]</visible>
 							</control>
 							<control type="label">
@@ -2868,7 +3312,7 @@
 								<height>40</height>
 								<align>right</align>
 								<aligny>center</aligny>
-								<label>$VAR[MainItemLabel]</label>
+								<label border="0">$VAR[MainItemLabel]</label>
 								<visible>[Control.HasFocus(504) | Control.HasFocus(505)]</visible>
 							</control>
 						</focusedlayout>
@@ -2877,98 +3321,98 @@
 								<description>Global Home Menu</description>
 								<label>$LOCALIZE[31148]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
-								<thumb>$INFO[Skin.String(CustomBackgroundPath)]</thumb>
+								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
+								<thumb border="0">$INFO[Skin.String(CustomBackgroundPath)]</thumb>
 								<property name="HiLiteItem">Global</property>
 								<visible>Skin.HasSetting(GlobalBackground)</visible>
 							</item>
 							<item id="2">
 								<description>Home Menu Item One</description>
-								<label>$INFO[Skin.String(HomeItem.1.Label)]</label>
+								<label border="0">$INFO[Skin.String(HomeItem.1.Label)]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
-								<thumb>$INFO[Skin.String(HomeItem.1.FanArt)]</thumb>
+								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
+								<thumb border="0">$INFO[Skin.String(HomeItem.1.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.1.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.1.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
 							</item>
 							<item id="3">
 								<description>Home Menu Item Two</description>
-								<label>$INFO[Skin.String(HomeItem.2.Label)]</label>
+								<label border="0">$INFO[Skin.String(HomeItem.2.Label)]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
-								<thumb>$INFO[Skin.String(HomeItem.2.FanArt)]</thumb>
+								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
+								<thumb border="0">$INFO[Skin.String(HomeItem.2.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.2.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.2.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
 							</item>
 							<item id="4">
 								<description>Home Menu Item Three</description>
-								<label>$INFO[Skin.String(HomeItem.3.Label)]</label>
+								<label border="0">$INFO[Skin.String(HomeItem.3.Label)]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
-								<thumb>$INFO[Skin.String(HomeItem.3.FanArt)]</thumb>
+								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
+								<thumb border="0">$INFO[Skin.String(HomeItem.3.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.3.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.3.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
 							</item>
 							<item id="5">
 								<description>Home Menu Item Four</description>
-								<label>$INFO[Skin.String(HomeItem.4.Label)]</label>
+								<label border="0">$INFO[Skin.String(HomeItem.4.Label)]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
-								<thumb>$INFO[Skin.String(HomeItem.4.FanArt)]</thumb>
+								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
+								<thumb border="0">$INFO[Skin.String(HomeItem.4.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.4.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.4.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
 							</item>
 							<item id="6">
 								<description>Home Menu Item Five</description>
-								<label>$INFO[Skin.String(HomeItem.5.Label)]</label>
+								<label border="0">$INFO[Skin.String(HomeItem.5.Label)]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
-								<thumb>$INFO[Skin.String(HomeItem.5.FanArt)]</thumb>
+								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
+								<thumb border="0">$INFO[Skin.String(HomeItem.5.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.5.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.5.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
 							</item>
 							<item id="7">
 								<description>Home Menu Item Six</description>
-								<label>$INFO[Skin.String(HomeItem.6.Label)]</label>
+								<label border="0">$INFO[Skin.String(HomeItem.6.Label)]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
-								<thumb>$INFO[Skin.String(HomeItem.6.FanArt)]</thumb>
+								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
+								<thumb border="0">$INFO[Skin.String(HomeItem.6.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.6.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.6.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
 							</item>
 							<item id="8">
 								<description>Home Menu Item Seven</description>
-								<label>$INFO[Skin.String(HomeItem.7.Label)]</label>
+								<label border="0">$INFO[Skin.String(HomeItem.7.Label)]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
-								<thumb>$INFO[Skin.String(HomeItem.7.FanArt)]</thumb>
+								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
+								<thumb border="0">$INFO[Skin.String(HomeItem.7.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.7.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.7.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
 							</item>
 							<item id="9">
 								<description>Home Menu Item Eight</description>
-								<label>$INFO[Skin.String(HomeItem.8.Label)]</label>
+								<label border="0">$INFO[Skin.String(HomeItem.8.Label)]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
-								<thumb>$INFO[Skin.String(HomeItem.8.FanArt)]</thumb>
+								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
+								<thumb border="0">$INFO[Skin.String(HomeItem.8.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.8.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.8.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
 							</item>
 							<item id="10">
 								<description>Home Menu Item Nine</description>
-								<label>$INFO[Skin.String(HomeItem.9.Label)]</label>
+								<label border="0">$INFO[Skin.String(HomeItem.9.Label)]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
-								<thumb>$INFO[Skin.String(HomeItem.9.FanArt)]</thumb>
+								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
+								<thumb border="0">$INFO[Skin.String(HomeItem.9.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.9.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.9.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
 							</item>
 							<item id="11">
 								<description>Home Menu Item Ten</description>
-								<label>$INFO[Skin.String(HomeItem.10.Label)]</label>
+								<label border="0">$INFO[Skin.String(HomeItem.10.Label)]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
-								<thumb>$INFO[Skin.String(HomeItem.10.FanArt)]</thumb>
+								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
+								<thumb border="0">$INFO[Skin.String(HomeItem.10.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.10.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.10.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
 							</item>
@@ -2976,8 +3420,8 @@
 								<description>DVD Tray</description>
 								<label>$LOCALIZE[341]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
-								<thumb>$INFO[Skin.String(HomeItem.11.FanArt)]</thumb>
+								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
+								<thumb border="0">$INFO[Skin.String(HomeItem.11.FanArt)]</thumb>
 								<property name="HiLiteItem">PlayDisc</property>
 								<visible>!Skin.HasSetting(GlobalBackground)</visible>
 							</item>
@@ -2985,8 +3429,8 @@
 								<description>Home Menu Settings</description>
 								<label>$LOCALIZE[13000]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
-								<thumb>$INFO[Skin.String(HomeItem.12.FanArt)]</thumb>
+								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
+								<thumb border="0">$INFO[Skin.String(HomeItem.12.FanArt)]</thumb>
 								<property name="HiLiteItem">Settings</property>
 								<visible>!Skin.HasSetting(HideHomeMenuSystem) + !Skin.HasSetting(GlobalBackground)</visible>
 							</item>
@@ -2994,8 +3438,8 @@
 								<description>Search Button</description>
 								<label>$LOCALIZE[137]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
-								<thumb>$INFO[Skin.String(SearchBtnBackground)]</thumb>
+								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
+								<thumb border="0">$INFO[Skin.String(SearchBtnBackground)]</thumb>
 								<property name="HiLiteItem">MenuButton</property>
 								<visible>!Skin.HasSetting(HideHomeSearch) + !Skin.HasSetting(GlobalBackground)</visible>
 							</item>
@@ -3003,8 +3447,8 @@
 								<description>Power Button</description>
 								<label>$LOCALIZE[13005]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
-								<thumb>$INFO[Skin.String(PowerBtnBackground)]</thumb>
+								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
+								<thumb border="0">$INFO[Skin.String(PowerBtnBackground)]</thumb>
 								<property name="HiLiteItem">MenuButton</property>
 								<visible>!Skin.HasSetting(AutoHidePowerBtn) + !Skin.HasSetting(GlobalBackground)</visible>
 							</item>
@@ -3012,8 +3456,8 @@
 								<description>Favourites Button</description>
 								<label>$LOCALIZE[1036]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/default_light.jpg</icon>
-								<thumb>$INFO[Skin.String(FavBtnBackground)]</thumb>
+								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
+								<thumb border="0">$INFO[Skin.String(FavBtnBackground)]</thumb>
 								<property name="HiLiteItem">MenuButton</property>
 								<visible>!Skin.HasSetting(GlobalBackground)</visible>
 							</item>
@@ -3021,8 +3465,8 @@
 								<description>Startup Window</description>
 								<label>$LOCALIZE[31333]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/homescreen/startup.jpg</icon>
-								<thumb>$INFO[Skin.String(StartUpBackgroundPath)]</thumb>
+								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
+								<thumb border="0">$INFO[Skin.String(StartUpBackgroundPath)]</thumb>
 								<property name="HiLiteItem">StartUp</property>
 							</item>
 						</content>
@@ -3032,7 +3476,7 @@
 						<posy>100</posy>
 						<width>740</width>
 						<height>435</height>
-						<texture>buttons/nf_light.png</texture>
+						<texture border="0">buttons/nf_light.png</texture>
 					</control>
 					<control type="group">
 						<posx>45</posx>
@@ -3047,7 +3491,7 @@
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.Reset(GlobalWeatherFanart)</onclick>
@@ -3065,7 +3509,7 @@
 								<height>40</height>
 								<label>31150</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.Reset(GlobalWeatherFanart)</onclick>
@@ -3083,7 +3527,7 @@
 								<height>40</height>
 								<label>24027</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.SetBool(GlobalWeatherFanart)</onclick>
@@ -3101,7 +3545,7 @@
 								<height>40</height>
 								<label>31189</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.Reset(GlobalWeatherFanart)</onclick>
@@ -3122,7 +3566,7 @@
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3144,7 +3588,7 @@
 								<height>40</height>
 								<label>31150</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3166,7 +3610,7 @@
 								<height>40</height>
 								<label>571</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
@@ -3188,7 +3632,7 @@
 								<height>40</height>
 								<label>31189</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3213,7 +3657,7 @@
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3235,7 +3679,7 @@
 								<height>40</height>
 								<label>31150</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3257,7 +3701,7 @@
 								<height>40</height>
 								<label>571</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
@@ -3279,7 +3723,7 @@
 								<height>40</height>
 								<label>31189</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3304,7 +3748,7 @@
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3326,7 +3770,7 @@
 								<height>40</height>
 								<label>31150</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3348,7 +3792,7 @@
 								<height>40</height>
 								<label>571</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
@@ -3370,7 +3814,7 @@
 								<height>40</height>
 								<label>31189</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3395,7 +3839,7 @@
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3417,7 +3861,7 @@
 								<height>40</height>
 								<label>31150</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3439,7 +3883,7 @@
 								<height>40</height>
 								<label>571</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
@@ -3461,7 +3905,7 @@
 								<height>40</height>
 								<label>31189</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3486,7 +3930,7 @@
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3508,7 +3952,7 @@
 								<height>40</height>
 								<label>31150</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3530,7 +3974,7 @@
 								<height>40</height>
 								<label>571</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
@@ -3552,7 +3996,7 @@
 								<height>40</height>
 								<label>31189</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3577,7 +4021,7 @@
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3599,7 +4043,7 @@
 								<height>40</height>
 								<label>31150</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3621,7 +4065,7 @@
 								<height>40</height>
 								<label>571</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
@@ -3643,7 +4087,7 @@
 								<height>40</height>
 								<label>31189</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3668,7 +4112,7 @@
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3690,7 +4134,7 @@
 								<height>40</height>
 								<label>31150</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3712,7 +4156,7 @@
 								<height>40</height>
 								<label>571</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
@@ -3734,7 +4178,7 @@
 								<height>40</height>
 								<label>31189</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3759,7 +4203,7 @@
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3781,7 +4225,7 @@
 								<height>40</height>
 								<label>31150</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3803,7 +4247,7 @@
 								<height>40</height>
 								<label>571</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
@@ -3825,7 +4269,7 @@
 								<height>40</height>
 								<label>31189</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3850,7 +4294,7 @@
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3872,7 +4316,7 @@
 								<height>40</height>
 								<label>31150</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3894,7 +4338,7 @@
 								<height>40</height>
 								<label>571</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
@@ -3916,7 +4360,7 @@
 								<height>40</height>
 								<label>31189</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3941,7 +4385,7 @@
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3963,7 +4407,7 @@
 								<height>40</height>
 								<label>31150</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -3985,7 +4429,7 @@
 								<height>40</height>
 								<label>571</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
@@ -4007,7 +4451,7 @@
 								<height>40</height>
 								<label>31189</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
@@ -4032,7 +4476,7 @@
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.SetImage(HomeItem.11.FanArt)</onclick>
@@ -4049,7 +4493,7 @@
 								<height>40</height>
 								<label>31150</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.SetPath(HomeItem.11.FanArt)</onclick>
@@ -4066,10 +4510,10 @@
 								<height>40</height>
 								<label>571</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<onclick>Skin.SetString(HomeItem.11.FanArt,special://skin/backgrounds/homescreen/playdisc.jpg)</onclick>
+								<onclick>Skin.SetString(HomeItem.11.FanArt,special://skin/backgrounds/default_light.jpg)</onclick>
 								<onleft>501</onleft>
 								<onright>503</onright>
 								<onup>504</onup>
@@ -4083,7 +4527,7 @@
 								<height>40</height>
 								<label>31189</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.Reset(HomeItem.11.FanArt)</onclick>
@@ -4103,7 +4547,7 @@
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.SetImage(HomeItem.12.FanArt)</onclick>
@@ -4120,7 +4564,7 @@
 								<height>40</height>
 								<label>31150</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.SetPath(HomeItem.12.FanArt)</onclick>
@@ -4137,10 +4581,10 @@
 								<height>40</height>
 								<label>571</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<onclick>Skin.SetString(HomeItem.12.FanArt,special://skin/backgrounds/homescreen/settings.jpg)</onclick>
+								<onclick>Skin.SetString(HomeItem.12.FanArt,special://skin/backgrounds/default_light.jpg)</onclick>
 								<onleft>501</onleft>
 								<onright>503</onright>
 								<onup>504</onup>
@@ -4154,7 +4598,7 @@
 								<height>40</height>
 								<label>31189</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.Reset(HomeItem.12.FanArt)</onclick>
@@ -4174,7 +4618,7 @@
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.SetImage(SearchBtnBackground)</onclick>
@@ -4191,7 +4635,7 @@
 								<height>40</height>
 								<label>31170</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.Reset(SearchBtnBackground)</onclick>
@@ -4208,10 +4652,10 @@
 								<height>40</height>
 								<label>571</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<onclick>Skin.SetString(SearchBtnBackground,special://skin/backgrounds/homescreen/search.jpg)</onclick>
+								<onclick>Skin.SetString(SearchBtnBackground,special://skin/backgrounds/default_light.jpg)</onclick>
 								<onleft>501</onleft>
 								<onright>500</onright>
 								<onup>504</onup>
@@ -4228,7 +4672,7 @@
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.SetImage(PowerBtnBackground)</onclick>
@@ -4245,7 +4689,7 @@
 								<height>40</height>
 								<label>31170</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.Reset(PowerBtnBackground)</onclick>
@@ -4262,10 +4706,10 @@
 								<height>40</height>
 								<label>571</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<onclick>Skin.SetString(PowerBtnBackground,special://skin/backgrounds/homescreen/shutdown.jpg)</onclick>
+								<onclick>Skin.SetString(PowerBtnBackground,special://skin/backgrounds/default_light.jpg)</onclick>
 								<onleft>501</onleft>
 								<onright>500</onright>
 								<onup>504</onup>
@@ -4282,7 +4726,7 @@
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.SetImage(FavBtnBackground)</onclick>
@@ -4299,7 +4743,7 @@
 								<height>40</height>
 								<label>31170</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.Reset(FavBtnBackground)</onclick>
@@ -4316,10 +4760,10 @@
 								<height>40</height>
 								<label>571</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<onclick condition="IsEmpty(Skin.String(FavouritesFanartDir))">Skin.SetString(FavBtnBackground,special://skin/backgrounds/homescreen/favourite.jpg)</onclick>
+								<onclick condition="IsEmpty(Skin.String(FavouritesFanartDir))">Skin.SetString(FavBtnBackground,special://skin/backgrounds/default_light.jpg)</onclick>
 								<onclick condition="!IsEmpty(Skin.String(FavouritesFanartDir))">Skin.SetString(FavBtnBackground,$INFO[Skin.String(FavouritesFanartDir)])</onclick>
 								<onleft>501</onleft>
 								<onright>500</onright>
@@ -4337,7 +4781,7 @@
 								<height>40</height>
 								<label>31149</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.SetImage(StartUpBackgroundPath)</onclick>
@@ -4355,7 +4799,7 @@
 								<height>40</height>
 								<label>31170</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.Reset(StartUpBackgroundPath)</onclick>
@@ -4373,10 +4817,10 @@
 								<height>40</height>
 								<label>571</label>
 								<font>font12_title</font>
-								<textcolor>textnofocus</textcolor>
+								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
 								<align>center</align>
-								<onclick>Skin.SetString(StartUpBackgroundPath,special://skin/backgrounds/homescreen/startup.jpg)</onclick>
+								<onclick>Skin.SetString(StartUpBackgroundPath,special://skin/backgrounds/default_light.jpg)</onclick>
 								<onclick>Skin.Reset(HideStartUpBackground)</onclick>
 								<onleft>501</onleft>
 								<onright>500</onright>
@@ -4404,7 +4848,7 @@
 						<aligny>center</aligny>
 						<font>font11</font>
 						<haspath>yes</haspath>
-						<label>$VAR[HomeBackgroundLabel]</label>
+						<label border="0">$VAR[HomeBackgroundLabel]</label>
 					</control>
 				</control>
 				<control type="grouplist" id="9006">
@@ -4414,9 +4858,9 @@
 					<width>750</width>
 					<height>530</height>
 					<itemgap>-1</itemgap>
-					<pagecontrol>61</pagecontrol>
+					<pagecontrol>60</pagecontrol>
 					<onleft>9000</onleft>
-					<onright>61</onright>
+					<onright>60</onright>
 					<onup>9006</onup>
 					<ondown>9006</ondown>
 					<control type="label" id="600">
@@ -4424,7 +4868,7 @@
 						<height>45</height>
 						<font>font13_title</font>
 						<label>31080</label>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
@@ -4432,10 +4876,10 @@
 						<description>User Genre FanArt Path</description>
 						<width>750</width>
 						<height>40</height>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label>31094</label>
-						<label2>$INFO[Skin.String(UsrGenreFanartDir)]</label2>
+						<label2>[COLOR=selected]$INFO[Skin.String(UsrGenreFanartDir)][/COLOR]</label2>
 						<onclick>Skin.SetPath(UsrGenreFanartDir)</onclick>
 						<texturenofocus>-</texturenofocus>
 					</control>
@@ -4443,10 +4887,10 @@
 						<description>User Movie FanArt Path</description>
 						<width>750</width>
 						<height>40</height>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label>31095</label>
-						<label2>$INFO[Skin.String(UsrMovieFanartDir)]</label2>
+						<label2>[COLOR=selected]$INFO[Skin.String(UsrMovieFanartDir)][/COLOR]</label2>
 						<onclick>Skin.SetPath(UsrMovieFanartDir)</onclick>
 						<texturenofocus>-</texturenofocus>
 					</control>
@@ -4454,10 +4898,10 @@
 						<description>User TVShow FanArt Path</description>
 						<width>750</width>
 						<height>40</height>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label>31096</label>
-						<label2>$INFO[Skin.String(UsrTVShowFanartDir)]</label2>
+						<label2>[COLOR=selected]$INFO[Skin.String(UsrTVShowFanartDir)][/COLOR]</label2>
 						<onclick>Skin.SetPath(UsrTVShowFanartDir)</onclick>
 						<texturenofocus>-</texturenofocus>
 					</control>
@@ -4465,10 +4909,10 @@
 						<description>User Concerts FanArt Path</description>
 						<width>750</width>
 						<height>40</height>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label>31097</label>
-						<label2>$INFO[Skin.String(UsrConcertsFanartDir)]</label2>
+						<label2>[COLOR=selected]$INFO[Skin.String(UsrConcertsFanartDir)][/COLOR]</label2>
 						<onclick>Skin.SetPath(UsrConcertsFanartDir)</onclick>
 						<texturenofocus>-</texturenofocus>
 					</control>
@@ -4476,10 +4920,10 @@
 						<description>User Artists FanArt Path</description>
 						<width>750</width>
 						<height>40</height>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label>31098</label>
-						<label2>$INFO[Skin.String(UsrArtistsFanartDir)]</label2>
+						<label2>[COLOR=selected]$INFO[Skin.String(UsrArtistsFanartDir)][/COLOR]</label2>
 						<onclick>Skin.SetPath(UsrArtistsFanartDir)</onclick>
 						<texturenofocus>-</texturenofocus>
 					</control>
@@ -4487,10 +4931,10 @@
 						<description>User Album Thumbnails Path</description>
 						<width>750</width>
 						<height>40</height>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label>31099</label>
-						<label2>$INFO[Skin.String(UsrAlbumThumbsDir)]</label2>
+						<label2>[COLOR=selected]$INFO[Skin.String(UsrAlbumThumbsDir)][/COLOR]</label2>
 						<onclick>Skin.SetPath(UsrAlbumThumbsDir)</onclick>
 						<texturenofocus>-</texturenofocus>
 					</control>
@@ -4498,10 +4942,10 @@
 						<description>User Favourites FanArt Path</description>
 						<width>750</width>
 						<height>40</height>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label>31107</label>
-						<label2>$INFO[Skin.String(FavouritesFanartDir)]</label2>
+						<label2>[COLOR=selected]$INFO[Skin.String(FavouritesFanartDir)][/COLOR]</label2>
 						<onclick>Skin.SetPath(FavouritesFanartDir)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(FavouritesFanartDir))">Skin.SetString(FavBtnBackground,$INFO[Skin.String(FavouritesFanartDir)])</onclick>
 						<texturenofocus>-</texturenofocus>
@@ -4510,10 +4954,10 @@
 						<description>User Weather FanArt Path</description>
 						<width>750</width>
 						<height>40</height>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label>31100</label>
-						<label2>$INFO[Skin.String(WeatherFanartDir)]</label2>
+						<label2>[COLOR=selected]$INFO[Skin.String(WeatherFanartDir)][/COLOR]</label2>
 						<onclick>Skin.SetPath(WeatherFanartDir)</onclick>
 						<texturenofocus>-</texturenofocus>
 					</control>
@@ -4521,124 +4965,105 @@
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31375]</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Addon.OpenSettings(script.artworkorganizer)</onclick>
 						<enable>System.HasAddon(script.artworkorganizer)</enable>
 					</control>
-					<!--control type="label" id="610">
+					<control type="label" id="610">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
-						<label>10503</label>
-						<textcolor>heading2</textcolor>
+						<label>31140</label>
+						<textcolor>blue</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
 					<control type="button" id="611">
 						<width>750</width>
 						<height>40</height>
-						<label> - $LOCALIZE[31054]</label>
-						<textcolor>textnofocus</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturenofocus>-</texturenofocus>
-						<onclick>ActivateWindow(VideoLibrary,special://videoplaylists/,return)</onclick>
-						<onclick>ActivateWindow(smartplaylisteditor)</onclick>
-					</control-->
-					<control type="label" id="612">
-						<width>750</width>
-						<height>45</height>
-						<font>font13_title</font>
-						<label>31140</label>
-						<textcolor>heading2</textcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-					</control>
-					<control type="button" id="613">
-						<width>750</width>
-						<height>40</height>
 						<label>$LOCALIZE[31132]</label>
-						<label2>$INFO[system.addontitle(Skin.String(LyricScript_Path))]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(LyricScript_Path))][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</onclick>
 					</control>
-					<control type="button" id="614">
+					<control type="button" id="612">
 						<width>750</width>
 						<height>40</height>
 						<label>- $LOCALIZE[24020]</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<enable>!IsEmpty(Skin.String(LyricScript_Path))</enable>
 						<onclick>Addon.OpenSettings($INFO[Skin.String(LyricScript_Path)])</onclick>
 					</control>
-					<control type="label" id="615">
+					<control type="label" id="613">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>31141</label>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="button" id="616">
+					<control type="button" id="614">
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31133]</label>
-						<label2>$INFO[system.addontitle(Skin.String(SubtitleScript_Path))]</label2>
-						<textcolor>textnofocus</textcolor>
+						<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(SubtitleScript_Path))][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.SetAddon(SubtitleScript_Path,xbmc.python.subtitles)</onclick>
 					</control>
-					<control type="button" id="617">
+					<control type="button" id="615">
 						<width>750</width>
 						<height>40</height>
 						<label>- $LOCALIZE[24020]</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<enable>!IsEmpty(Skin.String(SubtitleScript_Path))</enable>
 						<onclick>Addon.OpenSettings($INFO[Skin.String(SubtitleScript_Path)])</onclick>
 					</control>
-					<control type="label" id="618">
+					<control type="label" id="616">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>31188</label>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="button" id="619">
+					<control type="button" id="617">
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31081]</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Addon.OpenSettings(service.skin.widgets)</onclick>
 						<enable>System.HasAddon(service.skin.widgets)</enable>
 					</control>
-					<control type="radiobutton" id="620">
+					<control type="radiobutton" id="618">
 						<description>Enable Script RandomAndLastItems</description>
 						<width>750</width>
 						<height>40</height>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label>$LOCALIZE[31372]</label>
 						<onclick>Skin.ToggleSetting(DisableScriptPlayList)</onclick>
 						<selected>!Skin.HasSetting(DisableScriptPlayList)</selected>
 						<texturenofocus>-</texturenofocus>
 					</control>
-					<control type="radiobutton" id="621">
+					<control type="radiobutton" id="619">
 						<description>randomandlastitems.script uses last not random</description>
 						<width>750</width>
 						<height>40</height>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label> - $LOCALIZE[31373]</label>
 						<onclick>Skin.ToggleSetting(EnableRandomPlaylist)</onclick>
@@ -4646,11 +5071,11 @@
 						<texturenofocus>-</texturenofocus>
 						<enable>System.HasAddon(script.randomandlastitems) + !Skin.HasSetting(DisableScriptPlayList)</enable>
 					</control>
-					<control type="radiobutton" id="622">
+					<control type="radiobutton" id="620">
 						<description>randomandlastitems.script only shows unwatched items</description>
 						<width>750</width>
 						<height>40</height>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label> - $LOCALIZE[31374]</label>
 						<onclick>Skin.ToggleSetting(EnableUnWatchedPlaylist)</onclick>
@@ -4658,101 +5083,101 @@
 						<texturenofocus>-</texturenofocus>
 						<enable>System.HasAddon(script.randomandlastitems) + !Skin.HasSetting(DisableScriptPlayList)</enable>
 					</control>
-					<control type="label" id="623">
+					<control type="label" id="621">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>31360</label>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="624">
+					<control type="radiobutton" id="622">
 						<width>750</width>
 						<height>40</height>
 						<label>31361</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideArtworkDownloader)</onclick>
 						<selected>!Skin.HasSetting(HideArtworkDownloader)</selected>
 						<enable>System.HasAddon(script.artwork.downloader)</enable>
 					</control>
-					<control type="button" id="625">
+					<control type="button" id="623">
 						<width>750</width>
 						<height>40</height>
 						<label>- $LOCALIZE[31363]</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Addon.OpenSettings(script.artwork.downloader)</onclick>
 						<enable>!Skin.HasSetting(HideArtworkDownloader)</enable>
 						<visible>System.HasAddon(script.artwork.downloader)</visible>
 					</control>
-					<control type="radiobutton" id="626">
+					<control type="radiobutton" id="624">
 						<width>750</width>
 						<height>40</height>
 						<label>31362</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideTvTunes)</onclick>
 						<selected>!Skin.HasSetting(HideTvTunes)</selected>
 						<enable>System.HasAddon(script.tvtunes)</enable>
 					</control>
-					<control type="button" id="627">
+					<control type="button" id="625">
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31082]</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Addon.OpenSettings(script.tvtunes)</onclick>
 						<enable>!Skin.HasSetting(HideTvTunes)</enable>
 						<visible>System.HasAddon(script.tvtunes)</visible>
 					</control>
-					<control type="radiobutton" id="628">
+					<control type="radiobutton" id="626">
 						<width>750</width>
 						<height>40</height>
 						<label>31369</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Skin.ToggleSetting(DisableWatchItLater)</onclick>
 						<selected>!Skin.HasSetting(DisableWatchItLater)</selected>
 						<enable>System.HasAddon(script.simpleplaylists)</enable>
 					</control>
-					<control type="button" id="629">
+					<control type="button" id="627">
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31370]</label>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<onclick>Addon.OpenSettings(script.simpleplaylists)</onclick>
 						<enable>!Skin.HasSetting(DisableWatchItLater)</enable>
 						<visible>System.HasAddon(script.simpleplaylists)</visible>
 					</control>
-					<control type="label" id="630">
+					<control type="label" id="628">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>$LOCALIZE[31171] $LOCALIZE[31172]</label>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="image" id="631">
+					<control type="image" id="629">
 						<width>750</width>
 						<height>120</height>
 						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<texture>DefaultIconWarning.png</texture>
+						<texture border="0">DefaultIconWarning.png</texture>
 					</control>
-					<control type="button" id="632">
+					<control type="button" id="630">
 						<description>Reset Skin Values</description>
 						<width>750</width>
 						<height>40</height>
-						<textcolor>textnofocus</textcolor>
+						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<align>center</align>
 						<textoffsetx>20</textoffsetx>
@@ -4761,16 +5186,17 @@
 						<onclick>ActivateWindow(2121)</onclick>
 					</control>
 				</control>
-				<control type="scrollbar" id="61">
+				<control type="scrollbar" id="60">
 					<posx>1060</posx>
 					<posy>60</posy>
 					<width>14</width>
 					<height>530</height>
-					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+					<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 					<onleft>9006</onleft>
-					<onright>9000</onright>
+					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
+					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 					<visible>Container(9000).Hasfocus(6)</visible>
@@ -4778,7 +5204,61 @@
 			</control>
 		</control>
 		<include>CommonNowPlaying</include>
-		<include>MainWindowMouseButtons</include>
+		<control type="group">
+			<posx>120r</posx>
+			<posy>55r</posy>
+			<animation effect="fade" time="250" condition="Window.Previous(Home)">WindowOpen</animation>
+			<animation effect="fade" time="250" condition="Window.Next(Home)">WindowClose</animation>
+			<visible>!Skin.HasSetting(DisableHomeReturnButtons)</visible>
+			<control type="button" id="80">
+				<description>Back push button</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>1036</label>
+				<font>-</font>
+				<aligny>-</aligny>
+				<onclick>back</onclick>
+				<onleft>9010</onleft>
+				<onright>81</onright>
+				<onup>9010</onup>
+				<ondown>9010</ondown>
+			</control>
+			<control type="image">
+				<description>Back Icon</description>
+				<posx>5</posx>
+				<posy>5</posy>
+				<width>35</width>
+				<height>35</height>
+				<aspectratio>keep</aspectratio>
+				<texture border="0">icon_back.png</texture>
+			</control>
+			<control type="button" id="81">
+				<description>Home push button</description>
+				<posx>55</posx>
+				<posy>0</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>31003</label>
+				<font>-</font>
+				<aligny>-</aligny>
+				<onclick>ActivateWindow(home)</onclick>
+				<onleft>80</onleft>
+				<onright>9000</onright>
+				<onup>9010</onup>
+				<ondown>9010</ondown>
+			</control>
+			<control type="image">
+				<description>Home Icon</description>
+				<posx>60</posx>
+				<posy>5</posy>
+				<width>35</width>
+				<height>35</height>
+				<aspectratio>keep</aspectratio>
+				<texture border="0">icon_home.png</texture>
+			</control>
+		</control>
 		<include>BehindDialogFadeOut</include>
 		<include>Clock</include>
 	</controls>

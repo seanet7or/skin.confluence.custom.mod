@@ -117,7 +117,7 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>600</height>
-					<texture>dialogs/content-back_light.png</texture>
+					<texture border="15">dialogs/content-back_light.png</texture>
 				</control>
 				<control type="label">
 					<posx>20</posx>
@@ -152,7 +152,7 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>600</height>
-					<texture>dialogs/content-back_light.png</texture>
+					<texture border="15">dialogs/content-back_light.png</texture>
 				</control>
 				<control type="label">
 					<posx>20</posx>
@@ -187,7 +187,7 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>600</height>
-					<texture>dialogs/content-back_light.png</texture>
+					<texture border="15">dialogs/content-back_light.png</texture>
 				</control>
 				<control type="label">
 					<posx>20</posx>
@@ -222,7 +222,7 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>600</height>
-					<texture>dialogs/content-back_light.png</texture>
+					<texture border="15">dialogs/content-back_light.png</texture>
 				</control>
 				<control type="label">
 					<posx>20</posx>
@@ -257,7 +257,7 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>600</height>
-					<texture>dialogs/content-back_light.png</texture>
+					<texture border="15">dialogs/content-back_light.png</texture>
 				</control>
 				<control type="label">
 					<posx>20</posx>
@@ -292,7 +292,7 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>600</height>
-					<texture>dialogs/content-back_light.png</texture>
+					<texture border="15">dialogs/content-back_light.png</texture>
 				</control>
 				<control type="label">
 					<posx>20</posx>
@@ -327,7 +327,7 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>600</height>
-					<texture>dialogs/content-back_light.png</texture>
+					<texture border="15">dialogs/content-back_light.png</texture>
 				</control>
 				<control type="label">
 					<posx>20</posx>
@@ -348,7 +348,7 @@
 					<onup>206</onup>
 					<ondown>206</ondown>
 					<onleft>205</onleft>
-					<onright>206</onright>
+					<onright>80</onright>
 					<include>TVNextAiredListCommonLayout</include>
 				</control>
 			</control>
@@ -379,7 +379,7 @@
 				<posy>120</posy>
 				<width>30</width>
 				<height>40</height>
-				<texture>buttons/spin-right-fo_light.png</texture>
+				<texture flipx="true">buttons/spin-left-fo_light.png</texture>
 				<visible>Container(2000).HasNext</visible>
 			</control>
 			<control type="image">
@@ -388,12 +388,66 @@
 				<posy>170r</posy>
 				<width>30</width>
 				<height>40</height>
-				<texture>buttons/spin-right-fo_light.png</texture>
+				<texture flipx="true">buttons/spin-left-fo_light.png</texture>
 				<visible>Container(2000).HasNext</visible>
 			</control>
 		</control>
 		<include>CommonNowPlaying</include>
-		<include>MainWindowMouseButtons</include>
+		<control type="group">
+			<posx>120r</posx>
+			<posy>55r</posy>
+			<animation effect="fade" time="250" condition="Window.Previous(Home)">WindowOpen</animation>
+			<animation effect="fade" time="250" condition="Window.Next(Home)">WindowClose</animation>
+			<visible>!Skin.HasSetting(DisableHomeReturnButtons)</visible>
+			<control type="button" id="80">
+				<description>Back push button</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>1036</label>
+				<font>-</font>
+				<aligny>-</aligny>
+				<onclick>back</onclick>
+				<onleft>206</onleft>
+				<onright>81</onright>
+				<onup>200</onup>
+				<ondown>200</ondown>
+			</control>
+			<control type="image">
+				<description>Back Icon</description>
+				<posx>5</posx>
+				<posy>5</posy>
+				<width>35</width>
+				<height>35</height>
+				<aspectratio>keep</aspectratio>
+				<texture border="0">icon_back.png</texture>
+			</control>
+			<control type="button" id="81">
+				<description>Home push button</description>
+				<posx>55</posx>
+				<posy>0</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>31003</label>
+				<font>-</font>
+				<aligny>-</aligny>
+				<onclick>ActivateWindow(home)</onclick>
+				<onleft>80</onleft>
+				<onright>9000</onright>
+				<onup>200</onup>
+				<ondown>200</ondown>
+			</control>
+			<control type="image">
+				<description>Home Icon</description>
+				<posx>60</posx>
+				<posy>5</posy>
+				<width>35</width>
+				<height>35</height>
+				<aspectratio>keep</aspectratio>
+				<texture border="0">icon_home.png</texture>
+			</control>
+		</control>
 		<include>BehindDialogFadeOut</include>
 		<control type="group">
 			<posx>-250</posx>
@@ -403,7 +457,8 @@
 				<posy>110</posy>
 				<width>250</width>
 				<height>600</height>
-				<onleft>9000</onleft>
+				<onleft condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onleft>
+				<onleft condition="!Skin.HasSetting(DisableHomeReturnButtons)">81</onleft>
 				<onright>200</onright>
 				<onup>9000</onup>
 				<ondown>9000</ondown>
@@ -414,14 +469,14 @@
 					<width>250</width>
 					<height>150</height>
 					<aspectratio>keep</aspectratio>
-					<texture>$INFO[system.addonicon(script.tv.show.next.aired)]</texture>
+					<texture border="0">$INFO[system.addonicon(script.tv.show.next.aired)]</texture>
 				</control>
 				<control type="label" id="7">
 					<width>250</width>
 					<height>35</height>
 					<font>font12</font>
 					<label>31006</label>
-					<textcolor>heading2</textcolor>
+					<textcolor>blue</textcolor>
 					<align>center</align>
 					<aligny>center</aligny>
 				</control>
@@ -432,7 +487,6 @@
 					<label>5</label>
 					<onright>200</onright>
 				</control>
-				<!-- include>CommonNowPlaying_Controls</include -->
 			</control>
 		</control>
 		<include>Clock</include>

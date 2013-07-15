@@ -22,6 +22,13 @@
 			<visible>Control.IsVisible(11) | Control.IsVisible(12)</visible>
 			<include>Window_OpenClose_Animation</include>
 			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>690</width>
+				<height>400</height>
+				<texture border="0">buttons/nf_light.png</texture>
+			</control>
+			<control type="image">
 				<posx>5</posx>
 				<posy>5</posy>
 				<width>680</width>
@@ -42,7 +49,7 @@
 				<posy>1</posy>
 				<width>688</width>
 				<height>35</height>
-				<texture>dialogs/overlay-background.png</texture>
+				<texture>black-back.png</texture>
 				<colordiffuse>DDFFFFFF</colordiffuse>
 				<visible>Player.HasVideo</visible>
 			</control>
@@ -53,23 +60,17 @@
 				<width>650</width>
 				<height>35</height>
 				<font>font12</font>
-				<textcolor>textnofocus</textcolor>
+				<textcolor>grey2</textcolor>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label>$INFO[VideoPlayer.Title]</label>
+				<label border="0">$INFO[VideoPlayer.Title]</label>
 				<visible>Player.HasVideo</visible>
 			</control>
-			<!-- control type="visualisation">
-				<posx>85</posx>
-				<posy>85</posy>
-				<width>700</width>
-				<height>390</height>
-				<visible>Player.HasAudio</visible>
-			</control -->
 		</control>
 		<control type="group" id="50">
 			<include>Window_OpenClose_Animation</include>
-			<include>EPGTimelineView</include>--&gt; <!-- view id = 10 --><include>LiveTVChannelView</include><!-- view id = 11 --><include>LiveRadioChannelView</include><!-- view id = 12 --><include>LiveTVRecordingsView</include><!-- view id = 13 --><include>LiveTVTimersView</include><!-- view id = 14 --><include>LiveTVGuideChannelView</include><!-- view id = 15 --><include>LiveTVGuideNowNextView</include><!-- view id = 16 --><include>LiveTVSearchView</include><!-- view id = 17 --></control>
+			<include>EPGTimelineView</include>
+			<include>LiveTVChannelView</include>			<include>LiveRadioChannelView</include>			<include>LiveTVRecordingsView</include>			<include>LiveTVTimersView</include>			<include>LiveTVGuideChannelView</include>			<include>LiveTVGuideNowNextView</include>			<include>LiveTVSearchView</include>			</control>
 		<include>CommonNowPlaying</include>
 		<include>BehindDialogFadeOut</include>
 		<include>ScrollOffsetLabel</include>
@@ -78,7 +79,7 @@
 			<posy>0</posy>
 			<width>1280</width>
 			<height>720</height>
-			<texture>dialogs/overlay-background.png</texture>
+			<texture>black-back.png</texture>
 			<animation effect="fade" time="400">Visible</animation>
 			<animation effect="fade" time="200">Hidden</animation>
 			<visible>Window.IsActive(FileBrowser) | Window.IsActive(PVRGuideInfo) | Window.IsActive(PVRRecordingInfo) | Window.IsActive(PVRTimerSetting) | Window.IsActive(PVRGroupManager) | Window.IsActive(PVRGuideSearch)</visible>
@@ -91,7 +92,8 @@
 				<posy>110</posy>
 				<width>250</width>
 				<height>600</height>
-				<onleft>9000</onleft>
+				<onleft condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onleft>
+				<onleft condition="!Skin.HasSetting(DisableHomeReturnButtons)">81</onleft>
 				<onright>50</onright>
 				<onup>9000</onup>
 				<ondown>9000</ondown>
@@ -101,7 +103,7 @@
 					<height>35</height>
 					<font>font12caps</font>
 					<label>31006</label>
-					<textcolor>heading2</textcolor>
+					<textcolor>blue</textcolor>
 					<align>center</align>
 					<aligny>center</aligny>
 				</control>

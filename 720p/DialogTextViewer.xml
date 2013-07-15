@@ -11,7 +11,7 @@
 				<posy>0</posy>
 				<width>1100</width>
 				<height>720</height>
-				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
+				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
 			</control>
 			<control type="group">
 				<animation effect="fade" delay="400" start="0" end="100" time="200">WindowOpen</animation>
@@ -25,7 +25,7 @@
 					<font>font13_title</font>
 					<align>center</align>
 					<aligny>center</aligny>
-					<textcolor>itemselected</textcolor>
+					<textcolor>selected</textcolor>
 				</control>
 				<control type="textbox" id="5">
 					<description>textarea</description>
@@ -38,13 +38,13 @@
 					<pagecontrol>61</pagecontrol>
 				</control>
 				<control type="scrollbar" id="61">
-					<posx>1226</posx>
+					<posx>1220</posx>
 					<posy>90</posy>
 					<width>14</width>
 					<height>600</height>
-					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+					<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 					<onleft>61</onleft>
 					<onright>61</onright>
 					<ondown>61</ondown>

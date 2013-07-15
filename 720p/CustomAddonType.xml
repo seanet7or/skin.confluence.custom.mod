@@ -16,7 +16,7 @@
 				<posy>0</posy>
 				<width>400</width>
 				<height>720</height>
-				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
+				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
 			</control>
 			<control type="label">
 				<posx>380r</posx>
@@ -26,7 +26,7 @@
 				<font>font13_title</font>
 				<align>center</align>
 				<aligny>center</aligny>
-				<textcolor>heading1</textcolor>
+				<textcolor>blue</textcolor>
 				<label>$LOCALIZE[31118]</label>
 			</control>
 			<control type="list" id="450">
@@ -49,7 +49,7 @@
 						<font>font12_title</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<selectedcolor>itemselected</selectedcolor>
+						<selectedcolor>selected</selectedcolor>
 						<info>ListItem.Label</info>
 					</control>
 				</itemlayout>
@@ -60,7 +60,7 @@
 						<width>360</width>
 						<height>40</height>
 						<visible>Control.HasFocus(450)</visible>
-						<texture>buttons/fo_light.png</texture>
+						<texture border="0">buttons/fo_light.png</texture>
 					</control>
 					<control type="label">
 						<posx>10</posx>
@@ -70,63 +70,98 @@
 						<font>font12_title</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<selectedcolor>itemselected</selectedcolor>
+						<selectedcolor>selected</selectedcolor>
 						<info>ListItem.Label</info>
 					</control>
 				</focusedlayout>
 				<content>
-					<item id="1">
+					<item>
 						<description>Clear Setting</description>
 						<label>$LOCALIZE[31144]</label>
 						<onclick>Dialog.Close(2117)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Addon,None)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
-					<item id="2">
+					<item>
 						<description>User Addon Set 1</description>
 						<label fallback="31135">$INFO[Skin.String(UserSelectAddon.1.Label)]</label>
 						<onclick>Dialog.Close(2117)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Addon,AddonSetOne)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
-					<item id="3">
+					<item>
 						<description>User Addon Set 2</description>
 						<label fallback="31136">$INFO[Skin.String(UserSelectAddon.2.Label)]</label>
 						<onclick>Dialog.Close(2117)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Addon,AddonSetTwo)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
-					<item id="4">
+					<item>
 						<description>User Addon Set 3</description>
 						<label fallback="31190">$INFO[Skin.String(UserSelectAddon.3.Label)]</label>
 						<onclick>Dialog.Close(2117)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Addon,AddonSetThree)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
-					<item id="5">
+					<item>
 						<description>User Addon Set 4</description>
 						<label fallback="31191">$INFO[Skin.String(UserSelectAddon.4.Label)]</label>
 						<onclick>Dialog.Close(2117)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Addon,AddonSetFour)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
-					<item id="5">
+					<item>
 						<description>User Addon Set 5</description>
-						<label fallback="31191">$INFO[Skin.String(UserSelectAddon.5.Label)]</label>
+						<label fallback="31196">$INFO[Skin.String(UserSelectAddon.5.Label)]</label>
 						<onclick>Dialog.Close(2117)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Addon,AddonSetFive)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+					</item>
+					<item>
+						<description>User Addon Set 6</description>
+						<label fallback="31197">$INFO[Skin.String(UserSelectAddon.6.Label)]</label>
+						<onclick>Dialog.Close(2117)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Addon,AddonSetSix)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+					</item>
+					<item>
+						<description>User Addon Set 7</description>
+						<label fallback="31198">$INFO[Skin.String(UserSelectAddon.7.Label)]</label>
+						<onclick>Dialog.Close(2117)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Addon,AddonSetseven)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+					</item>
+					<item>
+						<description>User Addon Set 8</description>
+						<label fallback="31199">$INFO[Skin.String(UserSelectAddon.8.Label)]</label>
+						<onclick>Dialog.Close(2117)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Addon,AddonSetEight)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+					</item>
+					<item>
+						<description>User Addon Set 9</description>
+						<label fallback="31200">$INFO[Skin.String(UserSelectAddon.9.Label)]</label>
+						<onclick>Dialog.Close(2117)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Addon,AddonSetNine)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+					</item>
+					<item>
+						<description>User Addon Set 10</description>
+						<label fallback="31201">$INFO[Skin.String(UserSelectAddon.10.Label)]</label>
+						<onclick>Dialog.Close(2117)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Addon,AddonSetTen)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
 				</content>
 			</control>
 			<control type="scrollbar" id="60">
-				<posx>1292</posx>
+				<posx>1250</posx>
 				<posy>95</posy>
 				<width>14</width>
 				<height>550</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>450</onleft>
 				<onright>450</onright>
 				<showonepage>false</showonepage>

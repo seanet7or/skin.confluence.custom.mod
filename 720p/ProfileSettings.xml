@@ -15,7 +15,7 @@
 			<posy>0</posy>
 			<width>700</width>
 			<height>570</height>
-			<texture>dialogs/dialog-back_light.png</texture>
+			<texture border="40">dialogs/dialog-back_light.png</texture>
 		</control>
 		<control type="label">
 			<description>header label</description>
@@ -24,10 +24,10 @@
 			<width>620</width>
 			<height>30</height>
 			<font>font13_title</font>
-			<label>$INFO[Window.Property(heading)]</label>
+			<label border="0">$INFO[Window.Property(heading)]</label>
 			<align>center</align>
 			<aligny>center</aligny>
-			<textcolor>itemselected</textcolor>
+			<textcolor>selected</textcolor>
 		</control>
 		<control type="image" id="2">
 			<description>profile image</description>
@@ -37,7 +37,7 @@
 			<height>150</height>
 			<align>left</align>
 			<aspectratio>stretch</aspectratio>
-			<texture>DefaultActor.png</texture>
+			<texture border="0">DefaultActor.png</texture>
 		</control>
 		<control type="label">
 			<description>profile name label</description>
@@ -46,7 +46,7 @@
 			<width>460</width>
 			<align>left</align>
 			<font>font13_title</font>
-			<textcolor>heading2</textcolor>
+			<textcolor>blue</textcolor>
 			<label>$LOCALIZE[20093]</label>
 		</control>
 		<control type="label" id="1000">
@@ -64,7 +64,7 @@
 			<width>460</width>
 			<align>left</align>
 			<font>font13_title</font>
-			<textcolor>heading2</textcolor>
+			<textcolor>blue</textcolor>
 			<label>$LOCALIZE[20070]</label>
 		</control>
 		<control type="label" id="1001">
@@ -92,7 +92,7 @@
 			<posx>0</posx>
 			<posy>0</posy>
 			<height>40</height>
-			<textcolor>textnofocus</textcolor>
+			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
 		</control>
 		<control type="radiobutton" id="8">
@@ -100,7 +100,7 @@
 			<posx>0</posx>
 			<posy>0</posy>
 			<height>40</height>
-			<textcolor>textnofocus</textcolor>
+			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
 		</control>
 		<control type="spincontrolex" id="9">
@@ -108,9 +108,9 @@
 			<posx>0</posx>
 			<posy>0</posy>
 			<height>40</height>
-			<textcolor>textnofocus</textcolor>
+			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
-			<texturenofocus>buttons/nf_light.png</texturenofocus>
+			<texturenofocus border="0">buttons/nf_light.png</texturenofocus>
 		</control>
 		<control type="image" id="11">
 			<description>separator image</description>

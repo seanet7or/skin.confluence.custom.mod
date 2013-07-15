@@ -3,7 +3,6 @@
 	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol>-</defaultcontrol>
 	<controls>
-		<!-- media infos -->
 		<control type="group" id="1">
 			<visible>[Player.ShowInfo | Window.IsActive(VideoOSD)] | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | [!Skin.HasSetting(HideInfoStartOSD) + !IntegerGreaterThan(Player.time,5)]</visible>
 			<visible>![Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
@@ -15,8 +14,8 @@
 				<height>25</height>
 				<align>left</align>
 				<aligny>center</aligny>
-				<textcolor>textnofocus</textcolor>
-				<label>$INFO[Player.ChapterName,[B]$LOCALIZE[21396]: [/B]]</label>
+				<textcolor>grey</textcolor>
+				<label>$INFO[Player.ChapterName,[B][COLOR=white]$LOCALIZE[21396]: [/COLOR][/B]]</label>
 				<visible>Player.ChapterCount + !VideoPlayer.Content(LiveTV) + [!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)]</visible>
 				<visible>!SubString(Player.ChapterName,$LOCALIZE[21396],left)</visible>
 			</control>
@@ -52,7 +51,7 @@
 				<align>right</align>
 				<aligny>center</aligny>
 				<font>font35_title</font>
-				<label>$INFO[System.Time]</label>
+				<label border="0">$INFO[System.Time]</label>
 				<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
 				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
 				<visible>!Skin.HasSetting(HideSystemClock)</visible>
@@ -67,7 +66,7 @@
 					<posy>0</posy>
 					<width>920</width>
 					<height>200</height>
-					<texture>dialogs/content-back_light.png</texture>
+					<texture border="20">dialogs/content-back_light.png</texture>
 					<colordiffuse>AAFFFFFF</colordiffuse>
 				</control>
 				<control type="textbox" id="1">
@@ -77,7 +76,7 @@
 					<width>880</width>
 					<height>180</height>
 					<align>justify</align>
-					<label>$INFO[VideoPlayer.Plot]</label>
+					<label border="0">$INFO[VideoPlayer.Plot]</label>
 					<autoscroll time="4000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
 			</control>
@@ -86,7 +85,7 @@
 				<posy>230r</posy>
 				<width>1280</width>
 				<height>230</height>
-				<texture>HomeNowPlayingBack.png</texture>
+				<texture border="0">HomeNowPlayingBack.png</texture>
 				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
 			</control>
 			<control type="group" id="1">
@@ -96,7 +95,7 @@
 					<posy>260r</posy>
 					<width>300</width>
 					<height>230</height>
-					<texture>$INFO[Player.Art(clearart)]</texture>
+					<texture border="0">$INFO[Player.Art(clearart)]</texture>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<visible>!IsEmpty(Player.Art(clearart)) + !Skin.HasSetting(OSDInfoLogo)</visible>
 				</control>
@@ -106,7 +105,7 @@
 					<posy>260r</posy>
 					<width>300</width>
 					<height>230</height>
-					<texture>$INFO[Player.Art(clearlogo)]</texture>
+					<texture border="0">$INFO[Player.Art(clearlogo)]</texture>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<visible>!IsEmpty(Player.Art(clearlogo)) + [Skin.HasSetting(OSDInfoLogo) | IsEmpty(Player.Art(clearart))]</visible>
 				</control>
@@ -130,7 +129,7 @@
 					<posy>260r</posy>
 					<width>300</width>
 					<height>230</height>
-					<texture>$INFO[Player.Art(tvshow.clearart)]</texture>
+					<texture border="0">$INFO[Player.Art(tvshow.clearart)]</texture>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<visible>!IsEmpty(Player.Art(tvshow.clearart)) + !Skin.HasSetting(OSDInfoLogo)</visible>
 				</control>
@@ -140,7 +139,7 @@
 					<posy>260r</posy>
 					<width>300</width>
 					<height>230</height>
-					<texture>$INFO[Player.Art(tvshow.clearlogo)]</texture>
+					<texture border="0">$INFO[Player.Art(tvshow.clearlogo)]</texture>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<visible>!IsEmpty(Player.Art(tvshow.clearlogo)) + [Skin.HasSetting(OSDInfoLogo) | IsEmpty(Player.Art(tvshow.clearart))]</visible>
 				</control>
@@ -189,7 +188,7 @@
 					<width>50</width>
 					<height>25</height>
 					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<texture>PVR-IsRecording.png</texture>
+					<texture border="0">PVR-IsRecording.png</texture>
 					<visible>VideoPlayer.Content(LiveTV) + Player.Recording</visible>
 				</control>
 				<control type="label" id="1">
@@ -211,8 +210,8 @@
 					<height>25</height>
 					<align>left</align>
 					<font>font12</font>
-					<label>$INFO[VideoPlayer.Studio]</label>
-					<textcolor>textnofocus</textcolor>
+					<label border="0">$INFO[VideoPlayer.Studio]</label>
+					<textcolor>grey2</textcolor>
 					<visible>VideoPlayer.Content(Movies)</visible>
 				</control>
 				<control type="label" id="1">
@@ -224,7 +223,7 @@
 					<align>left</align>
 					<font>font12</font>
 					<label>$INFO[VideoPlayer.TVShowTitle] ($INFO[VideoPlayer.Season]x$INFO[VideoPlayer.Episode])</label>
-					<textcolor>textnofocus</textcolor>
+					<textcolor>grey2</textcolor>
 					<visible>VideoPlayer.Content(Episodes)</visible>
 				</control>
 				<control type="label" id="1">
@@ -236,7 +235,7 @@
 					<align>left</align>
 					<font>font12</font>
 					<label>$INFO[VideoPlayer.Artist] $INFO[VideoPlayer.Album, - ]</label>
-					<textcolor>textnofocus</textcolor>
+					<textcolor>grey2</textcolor>
 					<visible>VideoPlayer.Content(MusicVideos)</visible>
 				</control>
 				<control type="label" id="1">
@@ -247,8 +246,8 @@
 					<height>25</height>
 					<align>left</align>
 					<font>font12</font>
-					<label>$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.ChannelNumber, - (,)]</label>
-					<textcolor>textnofocus</textcolor>
+					<label>$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.ChannelNumber, - ([COLOR=blue],[/COLOR])]</label>
+					<textcolor>grey2</textcolor>
 					<visible>VideoPlayer.Content(LiveTV)</visible>
 				</control>
 				<control type="grouplist" id="1">
@@ -264,7 +263,7 @@
 						<font>font30</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$VAR[VideoNowPlaying]</label>
+						<label border="0">$VAR[VideoNowPlaying]</label>
 						<textcolor>orange</textcolor>
 						<scroll>true</scroll>
 					</control>
@@ -273,21 +272,21 @@
 						<width>50</width>
 						<height>35</height>
 						<aspectratio align="center">keep</aspectratio>
-						<texture>$INFO[VideoPlayer.VideoResolution,flagging/video/,.png]</texture>
+						<texture border="0">$INFO[VideoPlayer.VideoResolution,flagging/video/,.png]</texture>
 					</control>
 					<control type="image" id="1">
 						<description>Audio Codec Image</description>
 						<width>85</width>
 						<height>35</height>
 						<aspectratio align="center">keep</aspectratio>
-						<texture>$INFO[VideoPlayer.AudioCodec,flagging/audio/,.png]</texture>
+						<texture border="0">$INFO[VideoPlayer.AudioCodec,flagging/audio/,.png]</texture>
 					</control>
 					<control type="image" id="1">
 						<description>Audio Channels Image</description>
 						<width>50</width>
 						<height>35</height>
 						<aspectratio align="center">keep</aspectratio>
-						<texture>$INFO[VideoPlayer.AudioChannels,flagging/audio/,.png]</texture>
+						<texture border="0">$INFO[VideoPlayer.AudioChannels,flagging/audio/,.png]</texture>
 					</control>
 				</control>
 				<control type="label" id="1">
@@ -299,7 +298,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font12</font>
-					<textcolor>textnofocus</textcolor>
+					<textcolor>grey</textcolor>
 					<scroll>true</scroll>
 					<visible>!Window.IsVisible(VideoOSD) + !VideoPlayer.Content(LiveTV)</visible>
 					<animation effect="fade" time="200">VisibleChange</animation>
@@ -313,7 +312,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font12</font>
-					<textcolor>textnofocus</textcolor>
+					<textcolor>grey</textcolor>
 					<scroll>true</scroll>
 					<visible>!Window.IsVisible(VideoOSD) + VideoPlayer.Content(LiveTV)</visible>
 					<animation effect="fade" time="200">VisibleChange</animation>
@@ -351,7 +350,7 @@
 					<width>720</width>
 					<height>16</height>
 					<info>Player.ProgressCache</info>
-					<midtexture>progressbar/OSDProgressMidLight_light.png</midtexture>
+					<midtexture border="0">progressbar/OSDProgressMidLight_light.png</midtexture>
 				</control>
 				<control type="progress" id="1">
 					<description>Progressbar</description>
@@ -383,7 +382,6 @@
 				</control>
 			</control>
 		</control>
-		<!-- codec info -->
 		<control type="group" id="0">
 			<posx>0</posx>
 			<posy>20</posy>
@@ -394,7 +392,7 @@
 				<posy>0</posy>
 				<width>1280</width>
 				<height>140</height>
-				<texture>buttons/nf_light.png</texture>
+				<texture border="0">buttons/nf_light.png</texture>
 			</control>
 			<control type="label" id="10">
 				<description>row 1 label</description>
@@ -434,7 +432,7 @@
 			<height>100</height>
 			<font>font13caps</font>
 			<description>TV Channel Group Select Button</description>
-			<texturebg>buttons/nf_light.png</texturebg>
+			<texturebg border="20">dialogs/dialog-back_light.png</texturebg>
 			<onleft>503</onleft>
 			<onright>503</onright>
 			<onup>500</onup>
@@ -449,7 +447,7 @@
 				<posy>0</posy>
 				<width>1280</width>
 				<height>220</height>
-				<texture>buttons/nf_light.png</texture>
+				<texture border="0">buttons/nf_light.png</texture>
 			</control>
 			<control type="label">
 				<description>Header</description>
@@ -461,7 +459,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font13_title</font>
-				<textcolor>heading2</textcolor>
+				<textcolor>blue</textcolor>
 			</control>
 			<control type="label">
 				<description>Backend</description>
@@ -473,7 +471,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>textnofocus</textcolor>
+				<textcolor>grey2</textcolor>
 			</control>
 			<control type="label">
 				<description>Backend value</description>
@@ -481,7 +479,7 @@
 				<posy>40</posy>
 				<width>1000</width>
 				<height>25</height>
-				<label>$INFO[PVR.ActStreamClient]</label>
+				<label border="0">$INFO[PVR.ActStreamClient]</label>
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
@@ -496,7 +494,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>textnofocus</textcolor>
+				<textcolor>grey2</textcolor>
 			</control>
 			<control type="label">
 				<description>Device value</description>
@@ -504,7 +502,7 @@
 				<posy>65</posy>
 				<width>1000</width>
 				<height>25</height>
-				<label>$INFO[PVR.ActStreamDevice]</label>
+				<label border="0">$INFO[PVR.ActStreamDevice]</label>
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
@@ -519,7 +517,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>textnofocus</textcolor>
+				<textcolor>grey2</textcolor>
 			</control>
 			<control type="label">
 				<description>Status value</description>
@@ -527,7 +525,7 @@
 				<posy>90</posy>
 				<width>1000</width>
 				<height>25</height>
-				<label>$INFO[PVR.ActStreamStatus]</label>
+				<label border="0">$INFO[PVR.ActStreamStatus]</label>
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
@@ -542,7 +540,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>textnofocus</textcolor>
+				<textcolor>grey2</textcolor>
 			</control>
 			<control type="progress">
 				<description>Progressbar</description>
@@ -558,7 +556,7 @@
 				<posy>115</posy>
 				<width>180</width>
 				<height>25</height>
-				<label>$INFO[PVR.ActStreamSignal]</label>
+				<label border="0">$INFO[PVR.ActStreamSignal]</label>
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
@@ -573,7 +571,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>textnofocus</textcolor>
+				<textcolor>grey2</textcolor>
 			</control>
 			<control type="progress">
 				<description>Progressbar</description>
@@ -589,7 +587,7 @@
 				<posy>140</posy>
 				<width>180</width>
 				<height>25</height>
-				<label>$INFO[PVR.ActStreamSNR]</label>
+				<label border="0">$INFO[PVR.ActStreamSNR]</label>
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
@@ -604,7 +602,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>textnofocus</textcolor>
+				<textcolor>grey2</textcolor>
 			</control>
 			<control type="label">
 				<description>BER value</description>
@@ -612,7 +610,7 @@
 				<posy>165</posy>
 				<width>1000</width>
 				<height>25</height>
-				<label>$INFO[PVR.ActStreamBER]</label>
+				<label border="0">$INFO[PVR.ActStreamBER]</label>
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
@@ -627,7 +625,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>textnofocus</textcolor>
+				<textcolor>grey2</textcolor>
 			</control>
 			<control type="label">
 				<description>UNC value</description>
@@ -635,7 +633,7 @@
 				<posy>165</posy>
 				<width>1000</width>
 				<height>25</height>
-				<label>$INFO[PVR.ActStreamUNC]</label>
+				<label border="0">$INFO[PVR.ActStreamUNC]</label>
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
@@ -650,7 +648,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>textnofocus</textcolor>
+				<textcolor>grey2</textcolor>
 			</control>
 			<control type="label">
 				<description>Encryption value</description>
@@ -658,7 +656,7 @@
 				<posy>190</posy>
 				<width>1000</width>
 				<height>25</height>
-				<label>$INFO[PVR.ActStreamEncryptionName]</label>
+				<label border="0">$INFO[PVR.ActStreamEncryptionName]</label>
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>

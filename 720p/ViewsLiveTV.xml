@@ -22,11 +22,11 @@
 						<posy>0</posy>
 						<width>730</width>
 						<height>40</height>
-						<textcolor>textnofocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Plot]</label>
+						<label border="0">$INFO[ListItem.Plot]</label>
 					</control>
 					<control type="label">
 						<posx>750</posx>
@@ -34,11 +34,11 @@
 						<width>700</width>
 						<height>40</height>
 						<font>font12</font>
-						<textcolor>textnofocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label2]</label>
+						<label border="0">$INFO[ListItem.Label2]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout height="40" width="760">
@@ -47,7 +47,7 @@
 						<posy>0</posy>
 						<width>760</width>
 						<height>41</height>
-						<texture>buttons/fo_light.png</texture>
+						<texture border="0">buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(560)</visible>
 					</control>
 					<control type="label">
@@ -55,10 +55,10 @@
 						<posy>0</posy>
 						<width>730</width>
 						<height>40</height>
-						<selectedcolor>itemselected</selectedcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Plot]</label>
+						<label border="0">$INFO[ListItem.Plot]</label>
 					</control>
 					<control type="label">
 						<posx>750</posx>
@@ -66,11 +66,11 @@
 						<width>700</width>
 						<height>40</height>
 						<font>font12</font>
-						<textcolor>textfocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label2]</label>
+						<label border="0">$INFO[ListItem.Label2]</label>
 					</control>
 				</focusedlayout>
 			</control>
@@ -79,9 +79,9 @@
 				<posy>78</posy>
 				<width>14</width>
 				<height>560</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>560</onleft>
 				<onright>2</onright>
 				<showonepage>false</showonepage>
@@ -106,10 +106,10 @@
 					<posy>300</posy>
 					<width>290</width>
 					<height>25</height>
-					<label>$INFO[ListItem.Label2]</label>
+					<label border="0">$INFO[ListItem.Label2]</label>
 					<align>center</align>
 					<aligny>center</aligny>
-					<textcolor>heading2</textcolor>
+					<textcolor>blue</textcolor>
 					<scrollout>false</scrollout>
 					<pauseatend>1000</pauseatend>
 				</control>
@@ -121,7 +121,7 @@
 					<height>220</height>
 					<font>font12</font>
 					<align>justify</align>
-					<label>$VAR[VideoDescription]</label>
+					<label border="0">$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
 			</control>

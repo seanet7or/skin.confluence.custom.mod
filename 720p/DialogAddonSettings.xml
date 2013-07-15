@@ -15,7 +15,7 @@
 			<posy>0</posy>
 			<width>800</width>
 			<height>600</height>
-			<texture>dialogs/dialog-back_light.png</texture>
+			<texture border="40">dialogs/dialog-back_light.png</texture>
 		</control>
 		<control type="label" id="20">
 			<description>header label</description>
@@ -26,7 +26,7 @@
 			<font>font13_title</font>
 			<align>center</align>
 			<aligny>center</aligny>
-			<textcolor>itemselected</textcolor>
+			<textcolor>selected</textcolor>
 		</control>
 		<control type="grouplist" id="9">
 			<description>button area</description>
@@ -48,7 +48,7 @@
 			<posy>80</posy>
 			<width>20</width>
 			<height>20</height>
-			<texture>scroll-left-focus.png</texture>
+			<texture border="0">scroll-left-focus.png</texture>
 			<visible>Container(9).HasPrevious</visible>
 		</control>
 		<control type="image">
@@ -57,7 +57,7 @@
 			<posy>80</posy>
 			<width>20</width>
 			<height>20</height>
-			<texture>scroll-right-focus.png</texture>
+			<texture border="0">scroll-right-focus.png</texture>
 			<visible>Container(9).HasNext</visible>
 		</control>
 		<control type="grouplist" id="2">
@@ -74,13 +74,13 @@
 			<onright>30</onright>
 		</control>
 		<control type="scrollbar" id="30">
-			<posx>777</posx>
+			<posx>765</posx>
 			<posy>120</posy>
 			<width>14</width>
 			<height>380</height>
-			<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-			<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-			<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+			<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+			<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+			<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 			<onleft>2</onleft>
 			<onright>9</onright>
 			<showonepage>false</showonepage>
@@ -142,26 +142,26 @@
 		<control type="button" id="3">
 			<description>Default Button</description>
 			<height>40</height>
-			<textcolor>textnofocus</textcolor>
+			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
 		</control>
 		<control type="radiobutton" id="4">
 			<description>Default RadioButton</description>
 			<height>40</height>
-			<textcolor>textnofocus</textcolor>
+			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
 		</control>
 		<control type="spincontrolex" id="5">
 			<description>Default spincontrolex</description>
 			<height>40</height>
-			<textcolor>textnofocus</textcolor>
+			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
-			<texturenofocus>buttons/nf_light.png</texturenofocus>
+			<texturenofocus border="0">buttons/nf_light.png</texturenofocus>
 		</control>
 		<control type="label" id="7">
 			<height>35</height>
 			<font>font13_title</font>
-			<textcolor>textfocus</textcolor>
+			<textcolor>blue</textcolor>
 			<align>left</align>
 			<aligny>center</aligny>
 		</control>
@@ -173,7 +173,7 @@
 			<description>Default Slider</description>
 			<height>40</height>
 			<font>font13</font>
-			<textcolor>textnofocus</textcolor>
+			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
 		</control>
 	</controls>

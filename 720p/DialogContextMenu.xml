@@ -15,7 +15,7 @@
 			<posy>0</posy>
 			<width>340</width>
 			<height>720</height>
-			<texture>dialogs/dialog-back_light.png</texture>
+			<texture border="20">dialogs/dialog-back_light.png</texture>
 		</control>
 		<control type="grouplist" id="996">
 			<description>grouplist for context buttons</description>
@@ -32,7 +32,7 @@
 				<height>38</height>
 				<font>fontContextMenu</font>
 				<align>center</align>
-				<textcolor>textnofocus</textcolor>
+				<textcolor>grey2</textcolor>
 				<focusedcolor>white</focusedcolor>
 				<label>$LOCALIZE[31167]</label>
 				<onclick>RunPlugin(plugin://script.simpleplaylists/?mode=addCurrentUrl)</onclick>
@@ -47,7 +47,7 @@
 			<height>38</height>
 			<font>fontContextMenu</font>
 			<align>center</align>
-			<textcolor>textnofocus</textcolor>
+			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
 		</control>
 	</controls>

@@ -21,7 +21,7 @@
 				<posy>5</posy>
 				<width>1090</width>
 				<height>630</height>
-				<texture>dialogs/content-back_light.png</texture>
+				<texture border="15">dialogs/content-back_light.png</texture>
 			</control>
 			<control type="grouplist" id="9000">
 				<posx>10</posx>
@@ -31,6 +31,10 @@
 				<itemgap>-1</itemgap>
 				<onup>9000</onup>
 				<ondown>9000</ondown>
+				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
+				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
+				<onleft condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onleft>
+				<onleft condition="!Skin.HasSetting(DisableHomeReturnButtons)">81</onleft>
 				<control type="button" id="95">
 					<description>Button Summary Values</description>
 					<height>60</height>
@@ -38,9 +42,9 @@
 					<textoffsetx>0</textoffsetx>
 					<align>right</align>
 					<font>font13_title</font>
-					<textcolor>textnofocus</textcolor>
+					<textcolor>grey2</textcolor>
 					<focusedcolor>white</focusedcolor>
-					<texturenofocus>-</texturenofocus>
+					<texturenofocus border="5">-</texturenofocus>
 					<label>20037</label>
 				</control>
 				<control type="button" id="94">
@@ -50,9 +54,9 @@
 					<textoffsetx>0</textoffsetx>
 					<align>right</align>
 					<font>font13_title</font>
-					<textcolor>textnofocus</textcolor>
+					<textcolor>grey2</textcolor>
 					<focusedcolor>white</focusedcolor>
-					<texturenofocus>-</texturenofocus>
+					<texturenofocus border="5">-</texturenofocus>
 					<label>13277</label>
 				</control>
 				<control type="button" id="96">
@@ -62,9 +66,9 @@
 					<textoffsetx>0</textoffsetx>
 					<align>right</align>
 					<font>font13_title</font>
-					<textcolor>textnofocus</textcolor>
+					<textcolor>grey2</textcolor>
 					<focusedcolor>white</focusedcolor>
-					<texturenofocus>-</texturenofocus>
+					<texturenofocus border="5">-</texturenofocus>
 					<label>13279</label>
 				</control>
 				<control type="button" id="97">
@@ -74,9 +78,9 @@
 					<textoffsetx>0</textoffsetx>
 					<align>right</align>
 					<font>font13_title</font>
-					<textcolor>textnofocus</textcolor>
+					<textcolor>grey2</textcolor>
 					<focusedcolor>white</focusedcolor>
-					<texturenofocus>-</texturenofocus>
+					<texturenofocus border="5">-</texturenofocus>
 					<label>13280</label>
 				</control>
 				<control type="button" id="98">
@@ -86,9 +90,9 @@
 					<textoffsetx>0</textoffsetx>
 					<align>right</align>
 					<font>font13_title</font>
-					<textcolor>textnofocus</textcolor>
+					<textcolor>grey2</textcolor>
 					<focusedcolor>white</focusedcolor>
-					<texturenofocus>-</texturenofocus>
+					<texturenofocus border="5">-</texturenofocus>
 					<label>13281</label>
 				</control>
 				<control type="button" id="99">
@@ -98,9 +102,9 @@
 					<textoffsetx>0</textoffsetx>
 					<align>right</align>
 					<font>font13_title</font>
-					<textcolor>textnofocus</textcolor>
+					<textcolor>grey2</textcolor>
 					<focusedcolor>white</focusedcolor>
-					<texturenofocus>-</texturenofocus>
+					<texturenofocus border="5">-</texturenofocus>
 					<label>19191</label>
 				</control>
 			</control>
@@ -191,7 +195,7 @@
 					<width>730</width>
 					<label>144</label>
 					<align>right</align>
-					<textcolor>heading1</textcolor>
+					<textcolor>blue</textcolor>
 					<font>font13_title</font>
 				</control>
 				<control type="label">
@@ -235,7 +239,61 @@
 			</control>
 		</control>
 		<include>CommonNowPlaying</include>
-		<include>MainWindowMouseButtons</include>
+		<control type="group">
+			<posx>120r</posx>
+			<posy>55r</posy>
+			<animation effect="fade" time="250" condition="Window.Previous(Home)">WindowOpen</animation>
+			<animation effect="fade" time="250" condition="Window.Next(Home)">WindowClose</animation>
+			<visible>!Skin.HasSetting(DisableHomeReturnButtons)</visible>
+			<control type="button" id="80">
+				<description>Back push button</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>1036</label>
+				<font>-</font>
+				<aligny>-</aligny>
+				<onclick>back</onclick>
+				<onleft>9000</onleft>
+				<onright>81</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+			</control>
+			<control type="image">
+				<description>Back Icon</description>
+				<posx>5</posx>
+				<posy>5</posy>
+				<width>35</width>
+				<height>35</height>
+				<aspectratio>keep</aspectratio>
+				<texture border="0">icon_back.png</texture>
+			</control>
+			<control type="button" id="81">
+				<description>Home push button</description>
+				<posx>55</posx>
+				<posy>0</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>31003</label>
+				<font>-</font>
+				<aligny>-</aligny>
+				<onclick>ActivateWindow(home)</onclick>
+				<onleft>80</onleft>
+				<onright>9000</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+			</control>
+			<control type="image">
+				<description>Home Icon</description>
+				<posx>60</posx>
+				<posy>5</posy>
+				<width>35</width>
+				<height>35</height>
+				<aspectratio>keep</aspectratio>
+				<texture border="0">icon_home.png</texture>
+			</control>
+		</control>
 		<include>Clock</include>
 	</controls>
 </window>

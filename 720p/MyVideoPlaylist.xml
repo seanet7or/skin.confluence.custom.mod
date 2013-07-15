@@ -10,9 +10,7 @@
 		<control type="group">
 			<include>Window_OpenClose_Animation</include>
 			<include>CommonRootView</include>
-			<!-- view id = 50 -->
 			<include>FullWidthList</include>
-			<!-- view id = 51 -->
 		</control>
 		<include>CommonNowPlaying</include>
 		<include>MainWindowMouseButtons</include>
@@ -27,7 +25,8 @@
 				<posy>110</posy>
 				<width>250</width>
 				<height>600</height>
-				<onleft>9000</onleft>
+				<onleft condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onleft>
+				<onleft condition="!Skin.HasSetting(DisableHomeReturnButtons)">81</onleft>
 				<onright>50</onright>
 				<onback>50</onback>
 				<onup>9000</onup>
@@ -38,7 +37,7 @@
 					<height>35</height>
 					<font>font12</font>
 					<label>31006</label>
-					<textcolor>heading2</textcolor>
+					<textcolor>blue</textcolor>
 					<align>center</align>
 					<aligny>center</aligny>
 				</control>
@@ -53,7 +52,7 @@
 					<height>35</height>
 					<font>font12</font>
 					<label>31026</label>
-					<textcolor>heading2</textcolor>
+					<textcolor>blue</textcolor>
 					<align>center</align>
 					<aligny>center</aligny>
 				</control>

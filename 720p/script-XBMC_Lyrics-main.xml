@@ -20,7 +20,7 @@
 				<width>600</width>
 				<height>720</height>
 				<colordiffuse>BBFFFFFF</colordiffuse>
-				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
+				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
 			</control>
 			<control type="label">
 				<description>header label</description>
@@ -40,10 +40,10 @@
 				<width>550</width>
 				<height>30</height>
 				<font>font13_title</font>
-				<label>$INFO[MusicPlayer.Artist]</label>
+				<label border="0">$INFO[MusicPlayer.Artist]</label>
 				<align>right</align>
 				<aligny>center</aligny>
-				<textcolor>textnofocus</textcolor>
+				<textcolor>grey</textcolor>
 			</control>
 			<control type="label">
 				<description>Song label</description>
@@ -52,12 +52,11 @@
 				<width>550</width>
 				<height>30</height>
 				<font>font13_title</font>
-				<label>$INFO[MusicPlayer.Title]</label>
+				<label border="0">$INFO[MusicPlayer.Title]</label>
 				<align>right</align>
 				<aligny>center</aligny>
-				<textcolor>textnofocus</textcolor>
+				<textcolor>grey</textcolor>
 			</control>
-			<!-- ** Required ** Do not change <id> or <type> (Text box for lyrics) -->
 			<control type="textbox" id="100">
 				<description>textarea</description>
 				<posx>30</posx>
@@ -81,11 +80,10 @@
 				<onright>101</onright>
 				<ondown>101</ondown>
 				<onup>101</onup>
-				<textcolor>heading2</textcolor>
+				<textcolor>blue</textcolor>
 				<showonepage>true</showonepage>
 				<visible>Control.IsVisible(100)</visible>
 			</control>
-			<!-- ** Required ** Do not change <id> or <type> (Smooth scrolling list for lyrics) -->
 			<control type="list" id="110">
 				<posx>30</posx>
 				<posy>130</posy>
@@ -105,7 +103,7 @@
 						<height>25</height>
 						<aligny>center</aligny>
 						<align>center</align>
-						<selectedcolor>itemselected</selectedcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<info>ListItem.Label</info>
 					</control>
@@ -118,9 +116,9 @@
 						<height>25</height>
 						<aligny>center</aligny>
 						<align>center</align>
-						<selectedcolor>itemselected</selectedcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
-						<label>$VAR[MainItemLabel]</label>
+						<label border="0">$VAR[MainItemLabel]</label>
 						<visible>!Control.HasFocus(110)</visible>
 					</control>
 					<control type="label">
@@ -130,7 +128,7 @@
 						<height>25</height>
 						<aligny>center</aligny>
 						<align>center</align>
-						<textcolor>itemselected</textcolor>
+						<textcolor>selected</textcolor>
 						<align>left</align>
 						<label fallback="--">$INFO[ListItem.Label]</label>
 						<visible>Control.HasFocus(110)</visible>
@@ -147,7 +145,7 @@
 				<onright>110</onright>
 				<ondown>110</ondown>
 				<onup>110</onup>
-				<textcolor>heading2</textcolor>
+				<textcolor>blue</textcolor>
 				<showonepage>true</showonepage>
 				<visible>Control.IsVisible(110)</visible>
 			</control>
@@ -163,7 +161,6 @@
 				<label>31203</label>
 				<visible>Control.IsVisible(120) + ![Control.IsVisible(100) | Control.IsVisible(110)]</visible>
 			</control>
-			<!-- ** Required ** Do not change <id> or <type> (Song Chooser if it gets it wrong) -->
 			<control type="list" id="120">
 				<posx>30</posx>
 				<posy>170</posy>
@@ -184,7 +181,7 @@
 						<height>40</height>
 						<align>left</align>
 						<aligny>center</aligny>
-						<selectedcolor>itemselected</selectedcolor>
+						<selectedcolor>selected</selectedcolor>
 						<info>ListItem.Label</info>
 					</control>
 				</itemlayout>
@@ -195,7 +192,7 @@
 						<width>550</width>
 						<height>41</height>
 						<visible>Control.HasFocus(120)</visible>
-						<texture>buttons/fo_light.png</texture>
+						<texture border="0">buttons/fo_light.png</texture>
 					</control>
 					<control type="label">
 						<posx>10</posx>
@@ -204,7 +201,7 @@
 						<height>40</height>
 						<align>left</align>
 						<aligny>center</aligny>
-						<selectedcolor>itemselected</selectedcolor>
+						<selectedcolor>selected</selectedcolor>
 						<info>ListItem.Label</info>
 					</control>
 				</focusedlayout>
@@ -220,7 +217,7 @@
 				<onright>120</onright>
 				<ondown>120</ondown>
 				<onup>120</onup>
-				<textcolor>heading2</textcolor>
+				<textcolor>blue</textcolor>
 				<showonepage>true</showonepage>
 				<visible>Control.IsVisible(120)</visible>
 			</control>
@@ -234,14 +231,12 @@
 				<font>font12_title</font>
 				<align>right</align>
 				<aligny>center</aligny>
-				<textcolor>textnofocus</textcolor>
+				<textcolor>grey2</textcolor>
 			</control>
 			<control type="label" id="200">
 				<description>Scraper label</description>
 				<visible>false</visible>
 			</control>
 		</control>
-		<!-- ** Required ** Do not change <id> or <type> -->
-		<!-- ** Required ** Do not change <id> or <type> -->
 	</controls>
 </window>

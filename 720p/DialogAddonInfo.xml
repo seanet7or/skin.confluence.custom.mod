@@ -18,7 +18,7 @@
 				<posy>0</posy>
 				<width>920</width>
 				<height>600</height>
-				<texture>dialogs/dialog-back_light.png</texture>
+				<texture border="40">dialogs/dialog-back_light.png</texture>
 			</control>
 			<control type="label">
 				<description>header label</description>
@@ -30,7 +30,7 @@
 				<label>$LOCALIZE[24003]</label>
 				<align>center</align>
 				<aligny>center</aligny>
-				<textcolor>itemselected</textcolor>
+				<textcolor>selected</textcolor>
 			</control>
 			<control type="image">
 				<posx>30</posx>
@@ -38,7 +38,7 @@
 				<width>220</width>
 				<height>220</height>
 				<aspectratio>keep</aspectratio>
-				<texture>$INFO[ListItem.Icon]</texture>
+				<texture border="0">$INFO[ListItem.Icon]</texture>
 			</control>
 			<control type="label">
 				<description>Addon Title value</description>
@@ -63,7 +63,7 @@
 					<label>$LOCALIZE[146]</label>
 					<align>right</align>
 					<aligny>center</aligny>
-					<textcolor>heading2</textcolor>
+					<textcolor>blue</textcolor>
 				</control>
 				<control type="label">
 					<description>Type Value</description>
@@ -85,7 +85,7 @@
 					<label>$LOCALIZE[21863]:</label>
 					<align>right</align>
 					<aligny>center</aligny>
-					<textcolor>heading2</textcolor>
+					<textcolor>blue</textcolor>
 				</control>
 				<control type="label">
 					<description>Author Value</description>
@@ -107,7 +107,7 @@
 					<label>$LOCALIZE[24051]</label>
 					<align>right</align>
 					<aligny>center</aligny>
-					<textcolor>heading2</textcolor>
+					<textcolor>blue</textcolor>
 				</control>
 				<control type="label">
 					<description>Version Value</description>
@@ -129,7 +129,7 @@
 					<label>$LOCALIZE[563]:</label>
 					<align>right</align>
 					<aligny>center</aligny>
-					<textcolor>heading2</textcolor>
+					<textcolor>blue</textcolor>
 				</control>
 				<control type="image">
 					<description>Rating value</description>
@@ -149,7 +149,7 @@
 					<label>$LOCALIZE[20037]:</label>
 					<align>right</align>
 					<aligny>center</aligny>
-					<textcolor>heading2</textcolor>
+					<textcolor>blue</textcolor>
 				</control>
 				<control type="fadelabel">
 					<description>Summary Value</description>
@@ -172,7 +172,7 @@
 					<label>$LOCALIZE[21821]</label>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>heading2</textcolor>
+					<textcolor>blue</textcolor>
 				</control>
 				<control type="group">
 					<visible>!IsEmpty(ListItem.Property(Addon.Disclaimer))</visible>
@@ -184,7 +184,7 @@
 						<height>160</height>
 						<font>font12</font>
 						<align>justify</align>
-						<label>$INFO[ListItem.Property(Addon.Description)]</label>
+						<label border="0">$INFO[ListItem.Property(Addon.Description)]</label>
 						<pagecontrol>60</pagecontrol>
 					</control>
 					<control type="scrollbar" id="60">
@@ -192,9 +192,9 @@
 						<posy>190</posy>
 						<width>14</width>
 						<height>175</height>
-						<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-						<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-						<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+						<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+						<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+						<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 						<onleft>9000</onleft>
 						<onright>61</onright>
 						<showonepage>false</showonepage>
@@ -219,7 +219,7 @@
 						<height>40</height>
 						<font>font12</font>
 						<align>justify</align>
-						<label>$INFO[ListItem.Property(Addon.Disclaimer)]</label>
+						<label border="0">$INFO[ListItem.Property(Addon.Disclaimer)]</label>
 						<autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
 					</control>
 				</control>
@@ -233,7 +233,7 @@
 						<height>250</height>
 						<font>font12</font>
 						<align>justify</align>
-						<label>$INFO[ListItem.Property(Addon.Description)]</label>
+						<label border="0">$INFO[ListItem.Property(Addon.Description)]</label>
 						<pagecontrol>61</pagecontrol>
 					</control>
 					<control type="scrollbar" id="61">
@@ -241,9 +241,9 @@
 						<posy>190</posy>
 						<width>14</width>
 						<height>250</height>
-						<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-						<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-						<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+						<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+						<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+						<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 						<onleft>60</onleft>
 						<onright>9000</onright>
 						<showonepage>false</showonepage>
@@ -320,7 +320,7 @@
 					<posy>0</posy>
 					<width>920</width>
 					<height>100</height>
-					<texture>dialogs/dialog-back_light.png</texture>
+					<texture border="20">dialogs/dialog-back_light.png</texture>
 				</control>
 				<control type="image">
 					<description>Icon image</description>
@@ -328,7 +328,7 @@
 					<posy>20</posy>
 					<width>60</width>
 					<height>60</height>
-					<texture>DefaultIconError.png</texture>
+					<texture border="0">DefaultIconError.png</texture>
 				</control>
 				<control type="label">
 					<description>header label</description>
@@ -340,7 +340,7 @@
 					<label>24096</label>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>itemselected</textcolor>
+					<textcolor>selected</textcolor>
 				</control>
 				<control type="textbox">
 					<description>Reason label</description>
@@ -348,7 +348,7 @@
 					<posy>35</posy>
 					<width>800</width>
 					<height>50</height>
-					<label>$INFO[ListItem.Property(Addon.broken)]</label>
+					<label border="0">$INFO[ListItem.Property(Addon.broken)]</label>
 				</control>
 			</control>
 		</control>

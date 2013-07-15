@@ -19,9 +19,9 @@
 				<onup>702</onup>
 				<ondown>26</ondown>
 				<action>seek</action>
-				<texturesliderbar>seekslider_light.png</texturesliderbar>
-				<textureslidernib>osd_slider_nibNF.png</textureslidernib>
-				<textureslidernibfocus>osd_slider_nib.png</textureslidernibfocus>
+				<texturesliderbar border="0">seekslider_light.png</texturesliderbar>
+				<textureslidernib border="0">osd_slider_nibNF.png</textureslidernib>
+				<textureslidernibfocus border="0">osd_slider_nib.png</textureslidernibfocus>
 				<animation effect="fade" time="200">VisibleChange</animation>
 				<visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks) | VideoPlayer.Content(LiveTV)]</visible>
 			</control>
@@ -38,8 +38,8 @@
 					<height>45</height>
 					<label>210</label>
 					<font>-</font>
-					<texturefocus>OSDHomeBtnFO.png</texturefocus>
-					<texturenofocus>OSDHomeBtnNF.png</texturenofocus>
+					<texturefocus border="0">OSDHomeBtnFO.png</texturefocus>
+					<texturenofocus border="0">OSDHomeBtnNF.png</texturenofocus>
 					<onleft>705</onleft>
 					<onright>600</onright>
 					<onup>608</onup>
@@ -55,8 +55,8 @@
 					<height>45</height>
 					<label>210</label>
 					<font>-</font>
-					<texturefocus>OSDPrevTrackFO.png</texturefocus>
-					<texturenofocus>OSDPrevTrackNF.png</texturenofocus>
+					<texturefocus border="0">OSDPrevTrackFO.png</texturefocus>
+					<texturenofocus border="0">OSDPrevTrackNF.png</texturenofocus>
 					<onleft>608</onleft>
 					<onright>601</onright>
 					<onup>608</onup>
@@ -70,8 +70,8 @@
 					<height>45</height>
 					<label>31354</label>
 					<font>-</font>
-					<texturefocus>OSDRewindFO.png</texturefocus>
-					<texturenofocus>OSDRewindNF.png</texturenofocus>
+					<texturefocus border="0">OSDRewindFO.png</texturefocus>
+					<texturenofocus border="0">OSDRewindNF.png</texturenofocus>
 					<onleft>600</onleft>
 					<onright>602</onright>
 					<onup>608</onup>
@@ -86,11 +86,11 @@
 					<label>31351</label>
 					<altlabel>208</altlabel>
 					<font>-</font>
-					<texturefocus>OSDPauseFO.png</texturefocus>
-					<texturenofocus>OSDPauseNF.png</texturenofocus>
+					<texturefocus border="0">OSDPauseFO.png</texturefocus>
+					<texturenofocus border="0">OSDPauseNF.png</texturenofocus>
 					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-					<alttexturefocus>OSDPlayFO.png</alttexturefocus>
-					<alttexturenofocus>OSDPlayNF.png</alttexturenofocus>
+					<alttexturefocus border="0">OSDPlayFO.png</alttexturefocus>
+					<alttexturenofocus border="0">OSDPlayNF.png</alttexturenofocus>
 					<onleft>601</onleft>
 					<onright>603</onright>
 					<onup>608</onup>
@@ -104,8 +104,8 @@
 					<height>45</height>
 					<label>31352</label>
 					<font>-</font>
-					<texturefocus>OSDStopFO.png</texturefocus>
-					<texturenofocus>OSDStopNF.png</texturenofocus>
+					<texturefocus border="0">OSDStopFO.png</texturefocus>
+					<texturenofocus border="0">OSDStopNF.png</texturenofocus>
 					<onleft>602</onleft>
 					<onright>604</onright>
 					<onup>608</onup>
@@ -119,8 +119,8 @@
 					<height>45</height>
 					<label>31353</label>
 					<font>-</font>
-					<texturefocus>OSDForwardFO.png</texturefocus>
-					<texturenofocus>OSDForwardNF.png</texturenofocus>
+					<texturefocus border="0">OSDForwardFO.png</texturefocus>
+					<texturenofocus border="0">OSDForwardNF.png</texturenofocus>
 					<onleft>603</onleft>
 					<onright>605</onright>
 					<onup>608</onup>
@@ -134,8 +134,8 @@
 					<height>45</height>
 					<label>209</label>
 					<font>-</font>
-					<texturefocus>OSDNextTrackFO.png</texturefocus>
-					<texturenofocus>OSDNextTrackNF.png</texturenofocus>
+					<texturefocus border="0">OSDNextTrackFO.png</texturefocus>
+					<texturenofocus border="0">OSDNextTrackNF.png</texturenofocus>
 					<onleft>604</onleft>
 					<onright>701</onright>
 					<onup>608</onup>
@@ -143,7 +143,6 @@
 					<onclick>PlayerControl(Next)</onclick>
 				</control>
 			</control>
-			<!-- LiveTV -->
 			<control type="group" id="100">
 				<posx>325</posx>
 				<posy>60r</posy>
@@ -158,8 +157,8 @@
 					<height>55</height>
 					<label>210</label>
 					<font>-</font>
-					<texturefocus>OSDChannelUPFO.png</texturefocus>
-					<texturenofocus>OSDChannelUPNF.png</texturenofocus>
+					<texturefocus border="0">OSDChannelUPFO.png</texturefocus>
+					<texturenofocus border="0">OSDChannelUPNF.png</texturenofocus>
 					<onleft>704</onleft>
 					<onright>601</onright>
 					<onup>1000</onup>
@@ -173,8 +172,8 @@
 					<height>55</height>
 					<label>31354</label>
 					<font>-</font>
-					<texturefocus>OSDChannelDownFO.png</texturefocus>
-					<texturenofocus>OSDChannelDownNF.png</texturenofocus>
+					<texturefocus border="0">OSDChannelDownFO.png</texturefocus>
+					<texturenofocus border="0">OSDChannelDownNF.png</texturenofocus>
 					<onleft>600</onleft>
 					<onright>602</onright>
 					<onup>1000</onup>
@@ -189,11 +188,11 @@
 					<label>31351</label>
 					<altlabel>208</altlabel>
 					<font>-</font>
-					<texturefocus>OSDPauseFO.png</texturefocus>
-					<texturenofocus>OSDPauseNF.png</texturenofocus>
+					<texturefocus border="0">OSDPauseFO.png</texturefocus>
+					<texturenofocus border="0">OSDPauseNF.png</texturenofocus>
 					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-					<alttexturefocus>OSDPlayFO.png</alttexturefocus>
-					<alttexturenofocus>OSDPlayNF.png</alttexturenofocus>
+					<alttexturefocus border="0">OSDPlayFO.png</alttexturefocus>
+					<alttexturenofocus border="0">OSDPlayNF.png</alttexturenofocus>
 					<onleft>601</onleft>
 					<onright>603</onright>
 					<onup>1000</onup>
@@ -209,8 +208,8 @@
 					<label>31351</label>
 					<altlabel>208</altlabel>
 					<font>-</font>
-					<texturefocus>OSDStopFO.png</texturefocus>
-					<texturenofocus>OSDStopNF.png</texturenofocus>
+					<texturefocus border="0">OSDStopFO.png</texturefocus>
+					<texturenofocus border="0">OSDStopNF.png</texturenofocus>
 					<onleft>602</onleft>
 					<onright>604</onright>
 					<onup>1000</onup>
@@ -224,8 +223,8 @@
 					<height>55</height>
 					<label>19019</label>
 					<font>-</font>
-					<texturefocus>OSDChannelListFO.png</texturefocus>
-					<texturenofocus>OSDChannelListNF.png</texturenofocus>
+					<texturefocus border="0">OSDChannelListFO.png</texturefocus>
+					<texturenofocus border="0">OSDChannelListNF.png</texturenofocus>
 					<onleft>603</onleft>
 					<onright>605</onright>
 					<onup>1000</onup>
@@ -240,8 +239,8 @@
 					<height>55</height>
 					<label>$LOCALIZE[19029]$INFO[VideoPlayer.ChannelName, - ]</label>
 					<font>-</font>
-					<texturefocus>OSDepgFO.png</texturefocus>
-					<texturenofocus>OSDepgNF.png</texturenofocus>
+					<texturefocus border="0">OSDepgFO.png</texturefocus>
+					<texturenofocus border="0">OSDepgNF.png</texturenofocus>
 					<onleft>604</onleft>
 					<onright>701</onright>
 					<onup>1000</onup>
@@ -258,11 +257,10 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font12</font>
-					<textcolor>textnofocus</textcolor>
+					<textcolor>grey</textcolor>
 					<scroll>false</scroll>
 				</control>
 			</control>
-			<!-- !LiveTV -->
 			<control type="group">
 				<posx>500r</posx>
 				<posy>50r</posy>
@@ -276,10 +274,10 @@
 					<height>45</height>
 					<label>31356</label>
 					<font>-</font>
-					<texturefocus>OSDSubtitlesFO.png</texturefocus>
-					<texturenofocus>OSDSubtitlesNF.png</texturenofocus>
-					<alttexturefocus>OSDSubtitlesFO.png</alttexturefocus>
-					<alttexturenofocus>OSDSubtitlesNF.png</alttexturenofocus>
+					<texturefocus border="0">OSDSubtitlesFO.png</texturefocus>
+					<texturenofocus border="0">OSDSubtitlesNF.png</texturenofocus>
+					<alttexturefocus border="0">OSDSubtitlesFO.png</alttexturefocus>
+					<alttexturenofocus border="0">OSDSubtitlesNF.png</alttexturenofocus>
 					<onleft>605</onleft>
 					<onright>702</onright>
 					<onup>608</onup>
@@ -298,8 +296,8 @@
 					<height>45</height>
 					<label>13395</label>
 					<font>-</font>
-					<texturefocus>OSDVideoFO.png</texturefocus>
-					<texturenofocus>OSDVideoNF.png</texturenofocus>
+					<texturefocus border="0">OSDVideoFO.png</texturefocus>
+					<texturenofocus border="0">OSDVideoNF.png</texturenofocus>
 					<onleft>701</onleft>
 					<onright>703</onright>
 					<onup>608</onup>
@@ -313,8 +311,8 @@
 					<height>45</height>
 					<label>13396</label>
 					<font>-</font>
-					<texturefocus>OSDAudioFO.png</texturefocus>
-					<texturenofocus>OSDAudioNF.png</texturenofocus>
+					<texturefocus border="0">OSDAudioFO.png</texturefocus>
+					<texturenofocus border="0">OSDAudioNF.png</texturenofocus>
 					<onleft>702</onleft>
 					<onright>704</onright>
 					<onup>608</onup>
@@ -328,8 +326,8 @@
 					<height>45</height>
 					<label>31355</label>
 					<font>-</font>
-					<texturefocus>OSDBookmarksFO.png</texturefocus>
-					<texturenofocus>OSDBookmarksNF.png</texturenofocus>
+					<texturefocus border="0">OSDBookmarksFO.png</texturefocus>
+					<texturenofocus border="0">OSDBookmarksNF.png</texturenofocus>
 					<onleft>703</onleft>
 					<onright>705</onright>
 					<onup>608</onup>
@@ -343,8 +341,8 @@
 					<height>45</height>
 					<label>31355</label>
 					<font>-</font>
-					<texturefocus>OSDDvdFO.png</texturefocus>
-					<texturenofocus>OSDDvdNF.png</texturenofocus>
+					<texturefocus border="0">OSDDvdFO.png</texturefocus>
+					<texturenofocus border="0">OSDDvdNF.png</texturenofocus>
 					<onleft>704</onleft>
 					<onright>608</onright>
 					<onup>608</onup>
@@ -354,7 +352,6 @@
 					<animation effect="fade" start="100" end="50" time="100" condition="!VideoPlayer.HasMenu">Conditional</animation>
 				</control>
 			</control>
-			<!-- LiveTV -->
 			<control type="group">
 				<posx>240r</posx>
 				<posy>60r</posy>
@@ -368,8 +365,8 @@
 					<height>55</height>
 					<label>31356</label>
 					<font>-</font>
-					<texturefocus>OSDTeleTextFO.png</texturefocus>
-					<texturenofocus>OSDTeleTextNF.png</texturenofocus>
+					<texturefocus border="0">OSDTeleTextFO.png</texturefocus>
+					<texturenofocus border="0">OSDTeleTextNF.png</texturenofocus>
 					<onleft>605</onleft>
 					<onright>702</onright>
 					<onup>1000</onup>
@@ -383,8 +380,8 @@
 					<height>55</height>
 					<label>13395</label>
 					<font>-</font>
-					<texturefocus>OSDVideoFO.png</texturefocus>
-					<texturenofocus>OSDVideoNF.png</texturenofocus>
+					<texturefocus border="0">OSDVideoFO.png</texturefocus>
+					<texturenofocus border="0">OSDVideoNF.png</texturenofocus>
 					<onleft>701</onleft>
 					<onright>703</onright>
 					<onup>1000</onup>
@@ -398,8 +395,8 @@
 					<height>55</height>
 					<label>13396</label>
 					<font>-</font>
-					<texturefocus>OSDAudioFO.png</texturefocus>
-					<texturenofocus>OSDAudioNF.png</texturenofocus>
+					<texturefocus border="0">OSDAudioFO.png</texturefocus>
+					<texturenofocus border="0">OSDAudioNF.png</texturenofocus>
 					<onleft>702</onleft>
 					<onright>704</onright>
 					<onup>1000</onup>
@@ -414,11 +411,11 @@
 					<label>31351</label>
 					<altlabel>208</altlabel>
 					<font>-</font>
-					<texturefocus>OSDRecordOffFO.png</texturefocus>
-					<texturenofocus>OSDRecordOffNF.png</texturenofocus>
+					<texturefocus border="0">OSDRecordOffFO.png</texturefocus>
+					<texturenofocus border="0">OSDRecordOffNF.png</texturenofocus>
 					<usealttexture>Player.Recording</usealttexture>
-					<alttexturefocus>OSDRecordOnFO.png</alttexturefocus>
-					<alttexturenofocus>OSDRecordOnNF.png</alttexturenofocus>
+					<alttexturefocus border="0">OSDRecordOnFO.png</alttexturefocus>
+					<alttexturenofocus border="0">OSDRecordOnNF.png</alttexturenofocus>
 					<onleft>703</onleft>
 					<onright>600</onright>
 					<onup>1000</onup>
@@ -427,7 +424,6 @@
 					<enable>Player.CanRecord</enable>
 					<animation effect="fade" start="100" end="50" time="100" condition="!Player.CanRecord">Conditional</animation>
 				</control>
-				<!-- LiveTV -->
 			</control>
 		</control>
 	</controls>

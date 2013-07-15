@@ -12,7 +12,7 @@
 				<posy>0</posy>
 				<width>1150</width>
 				<height>720</height>
-				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
+				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
 			</control>
 			<control type="group">
 				<animation effect="fade" delay="400" start="0" end="100" time="200">WindowOpen</animation>
@@ -27,7 +27,7 @@
 					<label>19143</label>
 					<align>center</align>
 					<aligny>center</aligny>
-					<textcolor>itemselected</textcolor>
+					<textcolor>selected</textcolor>
 				</control>
 				<control type="group">
 					<description>Group list</description>
@@ -42,7 +42,14 @@
 						<label>31506</label>
 						<align>center</align>
 						<aligny>center</aligny>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>75</posy>
+						<width>340</width>
+						<height>460</height>
+						<texture border="0">buttons/nf_light.png</texture>
 					</control>
 					<control type="list" id="13">
 						<posx>5</posx>
@@ -61,7 +68,7 @@
 								<posy>0</posy>
 								<width>330</width>
 								<height>40</height>
-								<texture>buttons/nf_light.png</texture>
+								<texture border="0">buttons/nf_light.png</texture>
 							</control>
 							<control type="label">
 								<posx>10</posx>
@@ -71,8 +78,8 @@
 								<font>font12</font>
 								<align>left</align>
 								<aligny>center</aligny>
-								<textcolor>textnofocus</textcolor>
-								<selectedcolor>itemselected</selectedcolor>
+								<textcolor>grey2</textcolor>
+								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
 							</control>
 						</itemlayout>
@@ -82,7 +89,7 @@
 								<posy>0</posy>
 								<width>330</width>
 								<height>40</height>
-								<texture>buttons/nf_light.png</texture>
+								<texture border="0">buttons/nf_light.png</texture>
 								<visible>!Control.HasFocus(13)</visible>
 							</control>
 							<control type="image">
@@ -90,7 +97,7 @@
 								<posy>0</posy>
 								<width>330</width>
 								<height>40</height>
-								<texture>buttons/fo_light.png</texture>
+								<texture border="0">buttons/fo_light.png</texture>
 								<visible>Control.HasFocus(13)</visible>
 							</control>
 							<control type="label">
@@ -101,7 +108,7 @@
 								<font>font12</font>
 								<align>left</align>
 								<aligny>center</aligny>
-								<selectedcolor>itemselected</selectedcolor>
+								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
 							</control>
 						</focusedlayout>
@@ -111,9 +118,9 @@
 						<posy>75</posy>
 						<width>14</width>
 						<height>460</height>
-						<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-						<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-						<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+						<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+						<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+						<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 						<onleft>13</onleft>
 						<onright>11</onright>
 						<ondown>73</ondown>
@@ -134,7 +141,14 @@
 						<height>70</height>
 						<align>center</align>
 						<aligny>center</aligny>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>75</posy>
+						<width>340</width>
+						<height>460</height>
+						<texture border="0">buttons/nf_light.png</texture>
 					</control>
 					<control type="list" id="11">
 						<posx>5</posx>
@@ -153,14 +167,14 @@
 								<posy>0</posy>
 								<width>330</width>
 								<height>40</height>
-								<texture>buttons/nf_light.png</texture>
+								<texture border="0">buttons/nf_light.png</texture>
 							</control>
 							<control type="image">
 								<width>32</width>
 								<height>32</height>
 								<posx>5</posx>
 								<posy>4</posy>
-								<texture>$INFO[ListItem.Icon]</texture>
+								<texture border="0">$INFO[ListItem.Icon]</texture>
 							</control>
 							<control type="label">
 								<posx>40</posx>
@@ -170,8 +184,8 @@
 								<font>font12</font>
 								<align>left</align>
 								<aligny>center</aligny>
-								<textcolor>textnofocus</textcolor>
-								<selectedcolor>itemselected</selectedcolor>
+								<textcolor>grey2</textcolor>
+								<selectedcolor>selected</selectedcolor>
 								<label>$INFO[ListItem.ChannelNumber,(,) - ]$INFO[ListItem.ChannelName]</label>
 							</control>
 						</itemlayout>
@@ -181,7 +195,7 @@
 								<posy>0</posy>
 								<width>330</width>
 								<height>40</height>
-								<texture>buttons/nf_light.png</texture>
+								<texture border="0">buttons/nf_light.png</texture>
 								<visible>!Control.HasFocus(11)</visible>
 							</control>
 							<control type="image">
@@ -189,7 +203,7 @@
 								<posy>0</posy>
 								<width>330</width>
 								<height>40</height>
-								<texture>buttons/fo_light.png</texture>
+								<texture border="0">buttons/fo_light.png</texture>
 								<visible>Control.HasFocus(11)</visible>
 							</control>
 							<control type="image">
@@ -197,7 +211,7 @@
 								<height>32</height>
 								<posx>5</posx>
 								<posy>4</posy>
-								<texture>$INFO[ListItem.Icon]</texture>
+								<texture border="0">$INFO[ListItem.Icon]</texture>
 							</control>
 							<control type="label">
 								<posx>40</posx>
@@ -207,7 +221,7 @@
 								<font>font12</font>
 								<align>left</align>
 								<aligny>center</aligny>
-								<selectedcolor>itemselected</selectedcolor>
+								<selectedcolor>selected</selectedcolor>
 								<label>$INFO[ListItem.ChannelNumber,(,) - ]$INFO[ListItem.ChannelName]</label>
 							</control>
 						</focusedlayout>
@@ -217,9 +231,9 @@
 						<posy>75</posy>
 						<width>14</width>
 						<height>460</height>
-						<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-						<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-						<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+						<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+						<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+						<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 						<onleft>11</onleft>
 						<onright>12</onright>
 						<ondown>71</ondown>
@@ -240,7 +254,14 @@
 						<height>70</height>
 						<align>center</align>
 						<aligny>center</aligny>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>75</posy>
+						<width>340</width>
+						<height>460</height>
+						<texture border="0">buttons/nf_light.png</texture>
 					</control>
 					<control type="list" id="12">
 						<posx>5</posx>
@@ -259,14 +280,14 @@
 								<posy>0</posy>
 								<width>330</width>
 								<height>40</height>
-								<texture>buttons/nf_light.png</texture>
+								<texture border="0">buttons/nf_light.png</texture>
 							</control>
 							<control type="image">
 								<width>32</width>
 								<height>32</height>
 								<posx>5</posx>
 								<posy>4</posy>
-								<texture>$INFO[ListItem.Icon]</texture>
+								<texture border="0">$INFO[ListItem.Icon]</texture>
 							</control>
 							<control type="label">
 								<posx>40</posx>
@@ -276,8 +297,8 @@
 								<font>font12</font>
 								<align>left</align>
 								<aligny>center</aligny>
-								<textcolor>textnofocus</textcolor>
-								<selectedcolor>itemselected</selectedcolor>
+								<textcolor>grey2</textcolor>
+								<selectedcolor>selected</selectedcolor>
 								<label>$INFO[ListItem.ChannelNumber,(,) - ]$INFO[ListItem.ChannelName]</label>
 							</control>
 						</itemlayout>
@@ -287,7 +308,7 @@
 								<posy>0</posy>
 								<width>330</width>
 								<height>40</height>
-								<texture>buttons/nf_light.png</texture>
+								<texture border="0">buttons/nf_light.png</texture>
 								<visible>!Control.HasFocus(12)</visible>
 							</control>
 							<control type="image">
@@ -295,7 +316,7 @@
 								<posy>0</posy>
 								<width>330</width>
 								<height>40</height>
-								<texture>buttons/fo_light.png</texture>
+								<texture border="0">buttons/fo_light.png</texture>
 								<visible>Control.HasFocus(12)</visible>
 							</control>
 							<control type="image">
@@ -303,7 +324,7 @@
 								<height>32</height>
 								<posx>5</posx>
 								<posy>4</posy>
-								<texture>$INFO[ListItem.Icon]</texture>
+								<texture border="0">$INFO[ListItem.Icon]</texture>
 							</control>
 							<control type="label">
 								<posx>40</posx>
@@ -313,7 +334,7 @@
 								<font>font12</font>
 								<align>left</align>
 								<aligny>center</aligny>
-								<selectedcolor>itemselected</selectedcolor>
+								<selectedcolor>selected</selectedcolor>
 								<label>$INFO[ListItem.ChannelNumber,(,) - ]$INFO[ListItem.ChannelName]</label>
 							</control>
 						</focusedlayout>
@@ -323,9 +344,9 @@
 						<posy>75</posy>
 						<width>14</width>
 						<height>460</height>
-						<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-						<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-						<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+						<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+						<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+						<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 						<onleft>12</onleft>
 						<onright>26</onright>
 						<ondown>72</ondown>

@@ -21,7 +21,7 @@
 				<posy>5</posy>
 				<width>1090</width>
 				<height>630</height>
-				<texture>dialogs/content-back_light.png</texture>
+				<texture border="15">dialogs/content-back_light.png</texture>
 			</control>
 			<control type="button" id="4">
 				<description>Enable Login screen</description>
@@ -34,8 +34,9 @@
 				<font>font24_title</font>
 				<align>right</align>
 				<aligny>top</aligny>
-				<texturenofocus>-</texturenofocus>
-				<onleft>2</onleft>
+				<texturenofocus border="5">-</texturenofocus>
+				<onleft condition="Skin.HasSetting(DisableHomeReturnButtons)">2</onleft>
+				<onleft condition="!Skin.HasSetting(DisableHomeReturnButtons)">81</onleft>
 				<onright>2</onright>
 				<onup>4</onup>
 				<ondown>4</ondown>
@@ -46,7 +47,7 @@
 				<posy>135</posy>
 				<width>240</width>
 				<height>25</height>
-				<textcolor>textnofocus</textcolor>
+				<textcolor>grey2</textcolor>
 				<align>right</align>
 				<aligny>center</aligny>
 				<label>305</label>
@@ -57,7 +58,7 @@
 				<posy>135</posy>
 				<width>240</width>
 				<height>25</height>
-				<textcolor>textnofocus</textcolor>
+				<textcolor>grey2</textcolor>
 				<align>right</align>
 				<aligny>center</aligny>
 				<label>1223</label>
@@ -80,7 +81,7 @@
 					<width>240</width>
 					<height>20</height>
 					<font>font12_title</font>
-					<textcolor>heading2</textcolor>
+					<textcolor>blue</textcolor>
 					<align>center</align>
 					<aligny>center</aligny>
 					<label>$LOCALIZE[31319]</label>
@@ -92,7 +93,7 @@
 					<height>20</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<label>$INFO[Container(2).ListItem.Label]</label>
+					<label border="0">$INFO[Container(2).ListItem.Label]</label>
 				</control>
 				<control type="label">
 					<posx>0</posx>
@@ -100,7 +101,7 @@
 					<width>240</width>
 					<height>30</height>
 					<font>font12_title</font>
-					<textcolor>heading2</textcolor>
+					<textcolor>blue</textcolor>
 					<align>center</align>
 					<aligny>center</aligny>
 					<label>$LOCALIZE[31320]</label>
@@ -151,6 +152,8 @@
 						<posy>0</posy>
 						<width>188</width>
 						<height>145</height>
+						<bordertexture border="0">buttons/nf_light.png</bordertexture>
+						<bordersize>5</bordersize>
 						<texture fallback="DefaultActor.png">$INFO[Listitem.Icon]</texture>
 					</control>
 					<control type="label">
@@ -159,8 +162,8 @@
 						<width>178</width>
 						<height>25</height>
 						<font>font11</font>
-						<textcolor>textnofocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>center</align>
 						<aligny>center</aligny>
 						<info>ListItem.Label</info>
@@ -172,7 +175,7 @@
 						<posy>0</posy>
 						<width>188</width>
 						<height>145</height>
-						<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
+						<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture fallback="DefaultActor.png">$INFO[Listitem.Icon]</texture>
 					</control>
@@ -182,7 +185,7 @@
 						<width>178</width>
 						<height>25</height>
 						<font>font11</font>
-						<selectedcolor>itemselected</selectedcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>center</align>
 						<aligny>center</aligny>
 						<info>ListItem.Label</info>
@@ -194,17 +197,72 @@
 				<posy>60</posy>
 				<width>14</width>
 				<height>530</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>2</onleft>
-				<onright>4</onright>
+				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">4</onright>
+				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
 			</control>
 		</control>
 		<include>CommonNowPlaying</include>
-		<include>MainWindowMouseButtons</include>
+		<control type="group">
+			<posx>120r</posx>
+			<posy>55r</posy>
+			<animation effect="fade" time="250" condition="Window.Previous(Home)">WindowOpen</animation>
+			<animation effect="fade" time="250" condition="Window.Next(Home)">WindowClose</animation>
+			<visible>!Skin.HasSetting(DisableHomeReturnButtons)</visible>
+			<control type="button" id="80">
+				<description>Back push button</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>1036</label>
+				<font>-</font>
+				<aligny>-</aligny>
+				<onclick>back</onclick>
+				<onleft>2</onleft>
+				<onright>81</onright>
+				<onup>2</onup>
+				<ondown>2</ondown>
+			</control>
+			<control type="image">
+				<description>Back Icon</description>
+				<posx>5</posx>
+				<posy>5</posy>
+				<width>35</width>
+				<height>35</height>
+				<aspectratio>keep</aspectratio>
+				<texture border="0">icon_back.png</texture>
+			</control>
+			<control type="button" id="81">
+				<description>Home push button</description>
+				<posx>55</posx>
+				<posy>0</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>31003</label>
+				<font>-</font>
+				<aligny>-</aligny>
+				<onclick>ActivateWindow(home)</onclick>
+				<onleft>80</onleft>
+				<onright>4</onright>
+				<onup>2</onup>
+				<ondown>2</ondown>
+			</control>
+			<control type="image">
+				<description>Home Icon</description>
+				<posx>60</posx>
+				<posy>5</posy>
+				<width>35</width>
+				<height>35</height>
+				<aspectratio>keep</aspectratio>
+				<texture border="0">icon_home.png</texture>
+			</control>
+		</control>
 		<include>BehindDialogFadeOut</include>
 		<include>Clock</include>
 	</controls>

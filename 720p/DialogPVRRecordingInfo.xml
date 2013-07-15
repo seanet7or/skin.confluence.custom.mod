@@ -15,7 +15,7 @@
 			<posy>0</posy>
 			<width>730</width>
 			<height>660</height>
-			<texture>dialogs/dialog-back_light.png</texture>
+			<texture border="40">dialogs/dialog-back_light.png</texture>
 		</control>
 		<control type="label">
 			<description>header label</description>
@@ -27,7 +27,7 @@
 			<label>$LOCALIZE[19053]</label>
 			<align>center</align>
 			<aligny>center</aligny>
-			<textcolor>itemselected</textcolor>
+			<textcolor>selected</textcolor>
 		</control>
 		<control type="label">
 			<description>Title label</description>
@@ -36,10 +36,10 @@
 			<width>650</width>
 			<height>30</height>
 			<font>font13_title</font>
-			<label>$INFO[ListItem.Title]</label>
+			<label border="0">$INFO[ListItem.Title]</label>
 			<align>center</align>
 			<aligny>center</aligny>
-			<textcolor>heading1</textcolor>
+			<textcolor>blue</textcolor>
 		</control>
 		<control type="group">
 			<posx>40</posx>
@@ -52,7 +52,7 @@
 				<height>25</height>
 				<align>right</align>
 				<aligny>center</aligny>
-				<textcolor>heading2</textcolor>
+				<textcolor>blue</textcolor>
 				<label>$LOCALIZE[552]:</label>
 			</control>
 			<control type="label">
@@ -63,7 +63,7 @@
 				<height>25</height>
 				<align>left</align>
 				<aligny>center</aligny>
-				<label>$INFO[ListItem.StartDate]</label>
+				<label border="0">$INFO[ListItem.StartDate]</label>
 			</control>
 			<control type="label">
 				<description>Start time</description>
@@ -73,7 +73,7 @@
 				<height>25</height>
 				<align>right</align>
 				<aligny>center</aligny>
-				<textcolor>heading2</textcolor>
+				<textcolor>blue</textcolor>
 				<label>$LOCALIZE[142]</label>
 			</control>
 			<control type="label">
@@ -84,7 +84,7 @@
 				<height>25</height>
 				<align>left</align>
 				<aligny>center</aligny>
-				<label>$INFO[ListItem.StartTime]</label>
+				<label border="0">$INFO[ListItem.StartTime]</label>
 			</control>
 			<control type="label">
 				<description>Channel Name</description>
@@ -94,7 +94,7 @@
 				<height>25</height>
 				<align>right</align>
 				<aligny>center</aligny>
-				<textcolor>heading2</textcolor>
+				<textcolor>blue</textcolor>
 				<label>$LOCALIZE[19148]:</label>
 			</control>
 			<control type="fadelabel">
@@ -105,7 +105,7 @@
 				<height>25</height>
 				<align>left</align>
 				<aligny>center</aligny>
-				<label>$INFO[ListItem.ChannelName]</label>
+				<label border="0">$INFO[ListItem.ChannelName]</label>
 			</control>
 			<control type="label">
 				<description>Duration</description>
@@ -115,7 +115,7 @@
 				<height>25</height>
 				<align>right</align>
 				<aligny>center</aligny>
-				<textcolor>heading2</textcolor>
+				<textcolor>blue</textcolor>
 				<label>$LOCALIZE[180]:</label>
 			</control>
 			<control type="label">
@@ -123,7 +123,7 @@
 				<posx>180</posx>
 				<posy>105</posy>
 				<width>470</width>
-				<label>$INFO[ListItem.Duration]</label>
+				<label border="0">$INFO[ListItem.Duration]</label>
 				<align>left</align>
 				<scroll>true</scroll>
 			</control>
@@ -135,7 +135,7 @@
 				<height>25</height>
 				<align>right</align>
 				<aligny>center</aligny>
-				<textcolor>heading2</textcolor>
+				<textcolor>blue</textcolor>
 				<label>$LOCALIZE[135]:</label>
 			</control>
 			<control type="label">
@@ -152,9 +152,9 @@
 				<posx>40</posx>
 				<posy>185</posy>
 				<width>650</width>
-				<label>$INFO[ListItem.PlotOutline]</label>
+				<label border="0">$INFO[ListItem.PlotOutline]</label>
 				<align>center</align>
-				<textcolor>heading2</textcolor>
+				<textcolor>blue</textcolor>
 				<scroll>true</scroll>
 				<visible>!IsEmpty(ListItem.PlotOutline)</visible>
 			</control>

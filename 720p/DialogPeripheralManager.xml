@@ -17,7 +17,7 @@
 				<posy>0</posy>
 				<width>610</width>
 				<height>650</height>
-				<texture>dialogs/dialog-back_light.png</texture>
+				<texture border="40">dialogs/dialog-back_light.png</texture>
 			</control>
 			<control type="label" id="1">
 				<description>header label</description>
@@ -29,7 +29,7 @@
 				<label>$LOCALIZE[35000]</label>
 				<align>center</align>
 				<aligny>center</aligny>
-				<textcolor>itemselected</textcolor>
+				<textcolor>selected</textcolor>
 			</control>
 			<control type="list" id="20">
 				<posx>20</posx>
@@ -49,7 +49,7 @@
 						<posy>0</posy>
 						<width>550</width>
 						<height>80</height>
-						<texture>buttons/nf_light.png</texture>
+						<texture border="0">buttons/nf_light.png</texture>
 					</control>
 					<control type="label">
 						<description>Name</description>
@@ -57,7 +57,7 @@
 						<posy>5</posy>
 						<width>520</width>
 						<height>20</height>
-						<label>$VAR[MainItemLabel]</label>
+						<label border="0">$VAR[MainItemLabel]</label>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
@@ -67,11 +67,11 @@
 						<posy>30</posy>
 						<width>520</width>
 						<height>20</height>
-						<label>$LOCALIZE[35504]:  $INFO[ListItem.Property(Product)]    $LOCALIZE[35503]:  $INFO[ListItem.Property(Vendor)]</label>
+						<label>$LOCALIZE[35504]:  [COLOR=grey2]$INFO[ListItem.Property(Product)][/COLOR]    $LOCALIZE[35503]:  [COLOR=grey2]$INFO[ListItem.Property(Vendor)][/COLOR]</label>
 						<align>left</align>
 						<aligny>center</aligny>
 						<font>font12</font>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 					</control>
 					<control type="label">
 						<description>class</description>
@@ -79,11 +79,11 @@
 						<posy>50</posy>
 						<width>520</width>
 						<height>20</height>
-						<label>$LOCALIZE[35501]:  $INFO[ListItem.Property(Class)]     $LOCALIZE[19114]:  $INFO[ListItem.Property(Version)]</label>
+						<label>$LOCALIZE[35501]:  [COLOR=grey2]$INFO[ListItem.Property(Class)][/COLOR]     $LOCALIZE[19114]:  [COLOR=grey2]$INFO[ListItem.Property(Version)][/COLOR]</label>
 						<align>left</align>
 						<aligny>center</aligny>
 						<font>font12</font>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 					</control>
 				</itemlayout>
 				<focusedlayout height="85" width="550">
@@ -92,7 +92,7 @@
 						<posy>0</posy>
 						<width>550</width>
 						<height>80</height>
-						<texture>buttons/nf_light.png</texture>
+						<texture border="0">buttons/nf_light.png</texture>
 						<visible>!Control.HasFocus(20)</visible>
 					</control>
 					<control type="image">
@@ -100,7 +100,7 @@
 						<posy>0</posy>
 						<width>550</width>
 						<height>80</height>
-						<texture>buttons/fo_light.png</texture>
+						<texture border="0">buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(20)</visible>
 					</control>
 					<control type="label">
@@ -109,7 +109,7 @@
 						<posy>5</posy>
 						<width>520</width>
 						<height>20</height>
-						<label>$VAR[MainItemLabel]</label>
+						<label border="0">$VAR[MainItemLabel]</label>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
@@ -119,11 +119,11 @@
 						<posy>30</posy>
 						<width>520</width>
 						<height>20</height>
-						<label>$LOCALIZE[35504]:  $INFO[ListItem.Property(Product)]    $LOCALIZE[35503]:  $INFO[ListItem.Property(Vendor)]</label>
+						<label>$LOCALIZE[35504]:  [COLOR=grey2]$INFO[ListItem.Property(Product)][/COLOR]    $LOCALIZE[35503]:  [COLOR=grey2]$INFO[ListItem.Property(Vendor)][/COLOR]</label>
 						<align>left</align>
 						<aligny>center</aligny>
 						<font>font12</font>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 					</control>
 					<control type="label">
 						<description>class</description>
@@ -131,22 +131,22 @@
 						<posy>50</posy>
 						<width>520</width>
 						<height>20</height>
-						<label>$LOCALIZE[35501]:  $INFO[ListItem.Property(Class)]     $LOCALIZE[19114]:  $INFO[ListItem.Property(Version)]</label>
+						<label>$LOCALIZE[35501]:  [COLOR=grey2]$INFO[ListItem.Property(Class)][/COLOR]     $LOCALIZE[19114]:  [COLOR=grey2]$INFO[ListItem.Property(Version)][/COLOR]</label>
 						<align>left</align>
 						<aligny>center</aligny>
 						<font>font12</font>
-						<textcolor>heading2</textcolor>
+						<textcolor>blue</textcolor>
 					</control>
 				</focusedlayout>
 			</control>
 			<control type="scrollbar" id="61">
-				<posx>582</posx>
+				<posx>570</posx>
 				<posy>65</posy>
 				<width>14</width>
 				<height>510</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>20</onleft>
 				<onright>10</onright>
 				<ondown>61</ondown>

@@ -502,9 +502,11 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>[Player.HasAudio + IsEmpty(Skin.String(UsrAlbumThumbsDir)) + Skin.HasSetting(ShowBackgroundAlbumWall)] | 
+			<visible>
+				[Player.HasAudio + IsEmpty(Skin.String(UsrAlbumThumbsDir)) + Skin.HasSetting(ShowBackgroundAlbumWall)] | 
 				[Player.HasAudio + IsEmpty(MusicPlayer.Property(Fanart_Image)) + !Skin.HasSetting(ShowBackgroundAlbumWall)] |
-				[!Player.HasAudio + Skin.HasSetting(GlobalCDwallBackdrop)]</visible>
+				[!Player.HasAudio + Skin.HasSetting(GlobalCDwallBackdrop)]
+			</visible>
 			<posx>-35</posx>
 			<posy>-15</posy>
 			<control type="image">

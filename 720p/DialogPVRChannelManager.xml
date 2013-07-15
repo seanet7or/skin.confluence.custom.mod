@@ -15,7 +15,7 @@
 			<posy>0</posy>
 			<width>900</width>
 			<height>660</height>
-			<texture>dialogs/dialog-back_light.png</texture>
+			<texture border="40">dialogs/dialog-back_light.png</texture>
 		</control>
 		<control type="label">
 			<description>header label</description>
@@ -27,7 +27,7 @@
 			<label>$LOCALIZE[19199] - $LOCALIZE[19023]</label>
 			<align>center</align>
 			<aligny>center</aligny>
-			<textcolor>itemselected</textcolor>
+			<textcolor>selected</textcolor>
 			<visible>IsEmpty(Window.Property(IsRadio))</visible>
 		</control>
 		<control type="label">
@@ -40,24 +40,31 @@
 			<label>$LOCALIZE[19199] - $LOCALIZE[19024]</label>
 			<align>center</align>
 			<aligny>center</aligny>
-			<textcolor>itemselected</textcolor>
+			<textcolor>selected</textcolor>
 			<visible>!IsEmpty(Window.Property(IsRadio))</visible>
 		</control>
 		<control type="group">
 			<posx>20</posx>
 			<posy>70</posy>
 			<control type="scrollbar" id="60">
-				<posx>12</posx>
+				<posx>0</posx>
 				<posy>5</posy>
 				<width>14</width>
 				<height>470</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>9002</onleft>
 				<onright>20</onright>
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
+			</control>
+			<control type="image">
+				<posx>25</posx>
+				<posy>0</posy>
+				<width>430</width>
+				<height>475</height>
+				<texture border="0">buttons/nf_light.png</texture>
 			</control>
 			<control type="list" id="20">
 				<posx>30</posx>
@@ -76,14 +83,14 @@
 						<posy>0</posy>
 						<width>420</width>
 						<height>40</height>
-						<texture>buttons/nf_light.png</texture>
+						<texture border="0">buttons/nf_light.png</texture>
 					</control>
 					<control type="image">
 						<posx>5</posx>
 						<posy>5</posy>
 						<width>30</width>
 						<height>30</height>
-						<texture>$INFO[ListItem.Property(Icon)]</texture>
+						<texture border="0">$INFO[ListItem.Property(Icon)]</texture>
 						<visible>ListItem.Property(ActiveChannel)</visible>
 					</control>
 					<control type="image">
@@ -92,7 +99,7 @@
 						<width>30</width>
 						<height>30</height>
 						<colordiffuse>77FFFFFF</colordiffuse>
-						<texture>$INFO[ListItem.Property(Icon)]</texture>
+						<texture border="0">$INFO[ListItem.Property(Icon)]</texture>
 						<visible>!ListItem.Property(ActiveChannel)</visible>
 					</control>
 					<control type="label">
@@ -103,7 +110,7 @@
 						<font>font12</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<selectedcolor>itemselected</selectedcolor>
+						<selectedcolor>selected</selectedcolor>
 						<label>$INFO[ListItem.Property(Number),(,) - ]$INFO[ListItem.Property(Name)]</label>
 						<visible>ListItem.Property(ActiveChannel)</visible>
 					</control>
@@ -115,8 +122,8 @@
 						<font>font12</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<textcolor>textdisabled</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<textcolor>grey3</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<label>$INFO[ListItem.Property(Number),(,) - ]$INFO[ListItem.Property(Name)]</label>
 						<visible>!ListItem.Property(ActiveChannel)</visible>
 					</control>
@@ -125,7 +132,7 @@
 						<posy>10</posy>
 						<width>20</width>
 						<height>20</height>
-						<texture>OverlayWatched.png</texture>
+						<texture border="0">OverlayWatched.png</texture>
 						<visible>ListItem.Property(Changed)</visible>
 					</control>
 				</itemlayout>
@@ -135,7 +142,7 @@
 						<posy>0</posy>
 						<width>420</width>
 						<height>60</height>
-						<texture>buttons/fo_light.png</texture>
+						<texture border="0">buttons/fo_light.png</texture>
 						<animation effect="fade" start="100" end="30" time="0" condition="!Control.HasFocus(20)">conditional</animation>
 					</control>
 					<control type="image">
@@ -143,7 +150,7 @@
 						<posy>5</posy>
 						<width>30</width>
 						<height>30</height>
-						<texture>$INFO[ListItem.Property(Icon)]</texture>
+						<texture border="0">$INFO[ListItem.Property(Icon)]</texture>
 						<visible>ListItem.Property(ActiveChannel)</visible>
 					</control>
 					<control type="image">
@@ -152,7 +159,7 @@
 						<width>30</width>
 						<height>30</height>
 						<colordiffuse>77FFFFFF</colordiffuse>
-						<texture>$INFO[ListItem.Property(Icon)]</texture>
+						<texture border="0">$INFO[ListItem.Property(Icon)]</texture>
 						<visible>!ListItem.Property(ActiveChannel)</visible>
 					</control>
 					<control type="label">
@@ -163,7 +170,7 @@
 						<font>font12</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<selectedcolor>itemselected</selectedcolor>
+						<selectedcolor>selected</selectedcolor>
 						<label>$INFO[ListItem.Property(Number),(,) - ]$INFO[ListItem.Property(Name)]</label>
 						<visible>ListItem.Property(ActiveChannel)</visible>
 					</control>
@@ -175,8 +182,8 @@
 						<font>font12</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<textcolor>textdisabled</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<textcolor>grey3</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<label>$INFO[ListItem.Property(Number),(,) - ]$INFO[ListItem.Property(Name)]</label>
 						<visible>!ListItem.Property(ActiveChannel)</visible>
 					</control>
@@ -185,7 +192,7 @@
 						<posy>10</posy>
 						<width>20</width>
 						<height>20</height>
-						<texture>OverlayWatched.png</texture>
+						<texture border="0">OverlayWatched.png</texture>
 						<visible>ListItem.Property(Changed)</visible>
 					</control>
 					<control type="label">
@@ -196,8 +203,8 @@
 						<font>font12</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<textcolor>textfocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<label>$LOCALIZE[19210]: $INFO[ListItem.Property(ClientName)]</label>
 					</control>
 				</focusedlayout>
@@ -217,7 +224,7 @@
 					<label>$LOCALIZE[31511]</label>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>heading1</textcolor>
+					<textcolor>blue</textcolor>
 				</control>
 				<control type="radiobutton" id="7">
 					<description>Channel activated</description>
@@ -292,7 +299,7 @@
 					<width>380</width>
 					<height>35</height>
 					<font>font12</font>
-					<texturenofocus>buttons/nf_light.png</texturenofocus>
+					<texturenofocus border="0">buttons/nf_light.png</texturenofocus>
 					<label>19200</label>
 					<onright>60</onright>
 					<onleft>20</onleft>
@@ -328,7 +335,7 @@
 					<label>$LOCALIZE[31026]</label>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>heading1</textcolor>
+					<textcolor>blue</textcolor>
 				</control>
 				<control type="button" id="30">
 					<description>Group Manager Button</description>

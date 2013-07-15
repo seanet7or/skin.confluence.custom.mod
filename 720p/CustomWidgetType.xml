@@ -16,7 +16,7 @@
 				<posy>0</posy>
 				<width>400</width>
 				<height>720</height>
-				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
+				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
 			</control>
 			<control type="label">
 				<posx>380r</posx>
@@ -26,7 +26,7 @@
 				<font>font13_title</font>
 				<align>center</align>
 				<aligny>center</aligny>
-				<textcolor>heading1</textcolor>
+				<textcolor>blue</textcolor>
 				<label>$LOCALIZE[31122]</label>
 			</control>
 			<control type="list" id="450">
@@ -49,7 +49,7 @@
 						<font>font12_title</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<selectedcolor>itemselected</selectedcolor>
+						<selectedcolor>selected</selectedcolor>
 						<info>ListItem.Label</info>
 					</control>
 				</itemlayout>
@@ -60,7 +60,7 @@
 						<width>360</width>
 						<height>40</height>
 						<visible>Control.HasFocus(450)</visible>
-						<texture>buttons/fo_light.png</texture>
+						<texture border="0">buttons/fo_light.png</texture>
 					</control>
 					<control type="label">
 						<posx>10</posx>
@@ -70,7 +70,7 @@
 						<font>font12_title</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<selectedcolor>itemselected</selectedcolor>
+						<selectedcolor>selected</selectedcolor>
 						<info>ListItem.Label</info>
 					</control>
 				</focusedlayout>
@@ -88,7 +88,8 @@
 						<onclick>Dialog.Close(2118)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,PlayListVideo)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
-						<visible>!IsEmpty(Skin.String(HomeItem.1.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.1) |
+						<visible>
+							!IsEmpty(Skin.String(HomeItem.1.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.1) |
 							!IsEmpty(Skin.String(HomeItem.2.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.2) |
 							!IsEmpty(Skin.String(HomeItem.3.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.3) |
 							!IsEmpty(Skin.String(HomeItem.4.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.4) |
@@ -97,7 +98,8 @@
 							!IsEmpty(Skin.String(HomeItem.7.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.7) |
 							!IsEmpty(Skin.String(HomeItem.8.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.8) |
 							!IsEmpty(Skin.String(HomeItem.9.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.9) |
-							!IsEmpty(Skin.String(HomeItem.10.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.10)</visible>
+							!IsEmpty(Skin.String(HomeItem.10.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.10)
+						</visible>
 						<visible>!Skin.HasSetting(DisableScriptPlayList)</visible>
 					</item>
 					<item>
@@ -210,13 +212,13 @@
 				</content>
 			</control>
 			<control type="scrollbar" id="60">
-				<posx>1292</posx>
+				<posx>1250</posx>
 				<posy>95</posy>
 				<width>14</width>
 				<height>550</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>450</onleft>
 				<onright>450</onright>
 				<showonepage>false</showonepage>

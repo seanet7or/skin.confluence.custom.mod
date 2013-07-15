@@ -6,7 +6,7 @@
 			<width>55</width>
 			<height>35</height>
 			<aspectratio align="right">keep</aspectratio>
-			<texture>flagging/video/3D.png</texture>
+			<texture border="0">flagging/video/3D.png</texture>
 			<visible>SubString(ListItem.FilenameAndPath,3dbd) | SubString(ListItem.FilenameAndPath,.SBS.)</visible>
 		</control>
 		<control type="image">
@@ -14,7 +14,7 @@
 			<width>55</width>
 			<height>35</height>
 			<aspectratio align="right">keep</aspectratio>
-			<texture>$INFO[ListItem.VideoResolution,flagging/video/,.png]</texture>
+			<texture border="0">$INFO[ListItem.VideoResolution,flagging/video/,.png]</texture>
 			<visible>!SubString(ListItem.FilenameAndPath,3dbd) + !SubString(ListItem.FilenameAndPath,.SBS.)</visible>
 		</control>
 		<control type="image">
@@ -22,7 +22,7 @@
 			<width>80</width>
 			<height>35</height>
 			<aspectratio align="left">keep</aspectratio>
-			<texture>$VAR[videocodec,flagging/video/,.png]</texture>
+			<texture border="0">$VAR[videocodec,flagging/video/,.png]</texture>
 		</control>
 	</include>
 	<include name="VideoTypeHackFlaggingConditions">
@@ -31,7 +31,7 @@
 			<width>80</width>
 			<height>35</height>
 			<aspectratio align="left">keep</aspectratio>
-			<texture>$VAR[typehackflagging,flagging/video/,.png]</texture>
+			<texture border="0">$VAR[typehackflagging,flagging/video/,.png]</texture>
 		</control>
 	</include>
 	<include name="VideoMPAAFlaggingConditions">
@@ -40,7 +40,7 @@
 			<width>80</width>
 			<height>35</height>
 			<aspectratio>keep</aspectratio>
-			<texture>$VAR[rating,flagging/ratings/,.png]</texture>
+			<texture border="0">$VAR[rating,flagging/ratings/,.png]</texture>
 		</control>
 	</include>
 	<include name="AudioCodecFlaggingConditions">
@@ -49,7 +49,7 @@
 			<width>80</width>
 			<height>35</height>
 			<aspectratio align="right">keep</aspectratio>
-			<texture>$INFO[ListItem.AudioCodec,flagging/audio/,.png]</texture>
+			<texture border="0">$INFO[ListItem.AudioCodec,flagging/audio/,.png]</texture>
 		</control>
 	</include>
 	<include name="AudioChannelsFlaggingConditions">
@@ -58,7 +58,7 @@
 			<width>55</width>
 			<height>35</height>
 			<aspectratio align="left">keep</aspectratio>
-			<texture>$INFO[ListItem.AudioChannels,flagging/audio/,.png]</texture>
+			<texture border="0">$INFO[ListItem.AudioChannels,flagging/audio/,.png]</texture>
 		</control>
 	</include>
 	<include name="AspectCodecFlaggingConditions">
@@ -67,7 +67,7 @@
 			<width>55</width>
 			<height>35</height>
 			<aspectratio align="right">keep</aspectratio>
-			<texture>$INFO[ListItem.VideoAspect,flagging/aspectratio/,.png]</texture>
+			<texture border="0">$INFO[ListItem.VideoAspect,flagging/aspectratio/,.png]</texture>
 		</control>
 	</include>
 </includes>

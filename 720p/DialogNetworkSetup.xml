@@ -15,7 +15,7 @@
 			<posy>0</posy>
 			<width>800</width>
 			<height>440</height>
-			<texture>dialogs/dialog-back_light.png</texture>
+			<texture border="40">dialogs/dialog-back_light.png</texture>
 		</control>
 		<control type="label" id="2">
 			<description>header label</description>
@@ -27,7 +27,7 @@
 			<label>$LOCALIZE[1007]</label>
 			<align>center</align>
 			<aligny>center</aligny>
-			<textcolor>itemselected</textcolor>
+			<textcolor>selected</textcolor>
 		</control>
 		<control type="spincontrolex" id="10">
 			<description>Protocol SpinControl</description>
@@ -35,7 +35,7 @@
 			<posy>70</posy>
 			<height>40</height>
 			<width>740</width>
-			<texturenofocus>buttons/nf_light.png</texturenofocus>
+			<texturenofocus border="0">buttons/nf_light.png</texturenofocus>
 			<textoffsetx>12</textoffsetx>
 			<font>font132</font>
 			<label>1008</label>

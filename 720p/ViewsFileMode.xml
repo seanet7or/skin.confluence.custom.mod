@@ -21,11 +21,11 @@
 						<posy>0</posy>
 						<width>660</width>
 						<height>40</height>
-						<textcolor>textnofocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$VAR[MainItemLabel]</label>
+						<label border="0">$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>680</posx>
@@ -33,11 +33,11 @@
 						<width>400</width>
 						<height>40</height>
 						<font>font12</font>
-						<textcolor>textnofocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label2]</label>
+						<label border="0">$INFO[ListItem.Label2]</label>
 						<visible>!Window.IsVisible(Videos)</visible>
 					</control>
 					<control type="label">
@@ -46,11 +46,11 @@
 						<width>400</width>
 						<height>40</height>
 						<font>font12</font>
-						<textcolor>textnofocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label2]</label>
+						<label border="0">$INFO[ListItem.Label2]</label>
 						<visible>Window.IsVisible(Videos)</visible>
 						<animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]">conditional</animation>
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),Hidden)">conditional</animation>
@@ -61,7 +61,7 @@
 						<width>26</width>
 						<height>26</height>
 						<fadetime>IconCrossfadeTime</fadetime>
-						<texture>$INFO[ListItem.SubtitleLanguage,Language/,.png]</texture>
+						<texture border="0">$INFO[ListItem.SubtitleLanguage,Language/,.png]</texture>
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),Hidden)">conditional</animation>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<visible>Skin.HasSetting(ViewSubTitleFlag) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
@@ -71,7 +71,7 @@
 						<posy>8</posy>
 						<width>40</width>
 						<height>26</height>
-						<texture>$VAR[VideoResolutionFlag]</texture>
+						<texture border="0">$VAR[VideoResolutionFlag]</texture>
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),Hidden)">conditional</animation>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<visible>!Skin.HasSetting(ViewSubTitleFlag)</visible>
@@ -98,7 +98,7 @@
 							<posy>10</posy>
 							<width>25</width>
 							<height>21</height>
-							<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
+							<texture border="0">$VAR[WatchTypePath,OverlayStatus/]</texture>
 							<visible>!ListItem.IsResumable</visible>
 						</control>
 						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
@@ -110,7 +110,7 @@
 						<posy>0</posy>
 						<width>690</width>
 						<height>41</height>
-						<texture>buttons/fo_light.png</texture>
+						<texture border="0">buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(50)</visible>
 					</control>
 					<control type="label">
@@ -118,10 +118,10 @@
 						<posy>0</posy>
 						<width>660</width>
 						<height>40</height>
-						<selectedcolor>itemselected</selectedcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$VAR[MainItemLabel]</label>
+						<label border="0">$VAR[MainItemLabel]</label>
 						<visible>!stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
 					</control>
 					<control type="label">
@@ -129,10 +129,10 @@
 						<posy>0</posy>
 						<width>680</width>
 						<height>40</height>
-						<selectedcolor>itemselected</selectedcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$VAR[MainItemLabel]</label>
+						<label border="0">$VAR[MainItemLabel]</label>
 						<visible>Skin.HasSetting(HideWatchStatus)</visible>
 					</control>
 					<control type="label">
@@ -141,11 +141,11 @@
 						<width>400</width>
 						<height>40</height>
 						<font>font12</font>
-						<textcolor>textfocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label2]</label>
+						<label border="0">$INFO[ListItem.Label2]</label>
 						<visible>!Window.IsVisible(Videos)</visible>
 					</control>
 					<control type="label">
@@ -154,11 +154,11 @@
 						<width>400</width>
 						<height>40</height>
 						<font>font12</font>
-						<textcolor>textfocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label2]</label>
+						<label border="0">$INFO[ListItem.Label2]</label>
 						<visible>Window.IsVisible(Videos)</visible>
 						<animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]">conditional</animation>
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),Hidden)">conditional</animation>
@@ -168,7 +168,7 @@
 						<posy>8</posy>
 						<width>40</width>
 						<height>26</height>
-						<texture>$VAR[VideoResolutionFlag]</texture>
+						<texture border="0">$VAR[VideoResolutionFlag]</texture>
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),Hidden)">conditional</animation>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<visible>!Skin.HasSetting(ViewSubTitleFlag)</visible>
@@ -179,7 +179,7 @@
 						<width>26</width>
 						<height>26</height>
 						<fadetime>IconCrossfadeTime</fadetime>
-						<texture>$INFO[ListItem.SubtitleLanguage,Language/,.png]</texture>
+						<texture border="0">$INFO[ListItem.SubtitleLanguage,Language/,.png]</texture>
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),Hidden)">conditional</animation>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<visible>Skin.HasSetting(ViewSubTitleFlag) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
@@ -206,7 +206,7 @@
 							<posy>10</posy>
 							<width>25</width>
 							<height>21</height>
-							<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
+							<texture border="0">$VAR[WatchTypePath,OverlayStatus/]</texture>
 							<visible>!ListItem.IsResumable</visible>
 						</control>
 						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
@@ -218,11 +218,12 @@
 				<posy>85</posy>
 				<width>14</width>
 				<height>550</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>50</onleft>
-				<onright>2</onright>
+				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
+				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
 				<visible>Control.IsVisible(50)</visible>
@@ -265,6 +266,8 @@
 						<posy>0</posy>
 						<width>214</width>
 						<height>160</height>
+						<bordertexture border="0">buttons/nf_light.png</bordertexture>
+						<bordersize>5</bordersize>
 						<texture background="true">$INFO[Listitem.Icon]</texture>
 						<visible>!Container.Content(Episodes)</visible>
 					</control>
@@ -274,6 +277,8 @@
 						<width>214</width>
 						<height>160</height>
 						<aspectratio>scale</aspectratio>
+						<bordertexture border="0">buttons/nf_light.png</bordertexture>
+						<bordersize>5</bordersize>
 						<texture background="true">$INFO[Listitem.Icon]</texture>
 						<visible>Container.Content(Episodes) + [StringCompare(ListItem.Label,..) | !Skin.HasSetting(HideEpisodeThumb)]</visible>
 					</control>
@@ -283,6 +288,8 @@
 						<width>214</width>
 						<height>160</height>
 						<aspectratio>scale</aspectratio>
+						<bordertexture border="0">buttons/nf_light.png</bordertexture>
+						<bordersize>5</bordersize>
 						<texture background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
 						<visible>Container.Content(Episodes) + Skin.HasSetting(HideEpisodeThumb) + !StringCompare(ListItem.Label,..)</visible>
 					</control>
@@ -292,8 +299,8 @@
 						<width>200</width>
 						<height>25</height>
 						<font>font12</font>
-						<textcolor>textnofocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>center</align>
 						<aligny>center</aligny>
 						<info>ListItem.Label</info>
@@ -304,7 +311,7 @@
 						<width>30</width>
 						<height>30</height>
 						<aspectratio>keep</aspectratio>
-						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
+						<texture border="0">$VAR[WatchTypePath,OverlayStatus/]</texture>
 						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
 					</control>
 				</itemlayout>
@@ -314,7 +321,7 @@
 						<posy>0</posy>
 						<width>214</width>
 						<height>160</height>
-						<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
+						<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$INFO[Listitem.Icon]</texture>
 						<visible>!Container.Content(Episodes)</visible>
@@ -325,7 +332,7 @@
 						<width>214</width>
 						<height>160</height>
 						<aspectratio>scale</aspectratio>
-						<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
+						<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$INFO[Listitem.Icon]</texture>
 						<visible>Container.Content(Episodes) + [StringCompare(ListItem.Label,..) | !Skin.HasSetting(HideEpisodeThumb)]</visible>
@@ -336,7 +343,7 @@
 						<width>214</width>
 						<height>160</height>
 						<aspectratio>scale</aspectratio>
-						<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
+						<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
 						<visible>Container.Content(Episodes) + Skin.HasSetting(HideEpisodeThumb) + !StringCompare(ListItem.Label,..)</visible>
@@ -347,7 +354,7 @@
 						<width>200</width>
 						<height>25</height>
 						<font>font12</font>
-						<selectedcolor>itemselected</selectedcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>center</align>
 						<aligny>center</aligny>
 						<info>ListItem.Label</info>
@@ -358,7 +365,7 @@
 						<width>30</width>
 						<height>30</height>
 						<aspectratio>keep</aspectratio>
-						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
+						<texture border="0">$VAR[WatchTypePath,OverlayStatus/]</texture>
 						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
 					</control>
 				</focusedlayout>
@@ -368,37 +375,7 @@
 						<posy>0</posy>
 						<width>214</width>
 						<height>240</height>
-						<texture background="true">$VAR[PosterThumb]</texture>
-					</control>
-					<control type="label">
-						<posx>108</posx>
-						<posy>240</posy>
-						<width>200</width>
-						<height>25</height>
-						<font>font12</font>
-						<textcolor>textnofocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
-						<align>center</align>
-						<aligny>center</aligny>
-						<info>ListItem.Label</info>
-					</control>
-					<control type="image">
-						<posx>165</posx>
-						<posy>205</posy>
-						<width>40</width>
-						<height>40</height>
-						<aspectratio>keep</aspectratio>
-						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
-						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
-					</control>
-				</itemlayout>
-				<focusedlayout condition="Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows) | Container.Content(Sets)" height="276" width="216">
-					<control type="image">
-						<posx>1</posx>
-						<posy>0</posy>
-						<width>214</width>
-						<height>240</height>
-						<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
+						<bordertexture border="0">buttons/nf_light.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$VAR[PosterThumb]</texture>
 					</control>
@@ -408,7 +385,8 @@
 						<width>200</width>
 						<height>25</height>
 						<font>font12</font>
-						<selectedcolor>itemselected</selectedcolor>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>center</align>
 						<aligny>center</aligny>
 						<info>ListItem.Label</info>
@@ -419,7 +397,38 @@
 						<width>40</width>
 						<height>40</height>
 						<aspectratio>keep</aspectratio>
-						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
+						<texture border="0">$VAR[WatchTypePath,OverlayStatus/]</texture>
+						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
+					</control>
+				</itemlayout>
+				<focusedlayout condition="Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows) | Container.Content(Sets)" height="276" width="216">
+					<control type="image">
+						<posx>1</posx>
+						<posy>0</posy>
+						<width>214</width>
+						<height>240</height>
+						<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
+						<bordersize>5</bordersize>
+						<texture background="true">$VAR[PosterThumb]</texture>
+					</control>
+					<control type="label">
+						<posx>108</posx>
+						<posy>240</posy>
+						<width>200</width>
+						<height>25</height>
+						<font>font12</font>
+						<selectedcolor>selected</selectedcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<info>ListItem.Label</info>
+					</control>
+					<control type="image">
+						<posx>165</posx>
+						<posy>205</posy>
+						<width>40</width>
+						<height>40</height>
+						<aspectratio>keep</aspectratio>
+						<texture border="0">$VAR[WatchTypePath,OverlayStatus/]</texture>
 						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
 					</control>
 				</focusedlayout>
@@ -429,11 +438,12 @@
 				<posy>80</posy>
 				<width>14</width>
 				<height>550</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>500</onleft>
-				<onright>2</onright>
+				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
+				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
 				<visible>Control.IsVisible(500)</visible>
@@ -463,25 +473,7 @@
 						<posy>0</posy>
 						<width>538</width>
 						<height>105</height>
-						<texture background="true">$VAR[BannerThumb]</texture>
-					</control>
-					<control type="image">
-						<posx>495</posx>
-						<posy>65</posy>
-						<width>40</width>
-						<height>40</height>
-						<aspectratio>keep</aspectratio>
-						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
-						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
-					</control>
-				</itemlayout>
-				<focusedlayout height="110" width="540">
-					<control type="image">
-						<posx>1</posx>
-						<posy>0</posy>
-						<width>538</width>
-						<height>105</height>
-						<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
+						<bordertexture border="0">buttons/nf_light.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$VAR[BannerThumb]</texture>
 					</control>
@@ -491,7 +483,27 @@
 						<width>40</width>
 						<height>40</height>
 						<aspectratio>keep</aspectratio>
-						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
+						<texture border="0">$VAR[WatchTypePath,OverlayStatus/]</texture>
+						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
+					</control>
+				</itemlayout>
+				<focusedlayout height="110" width="540">
+					<control type="image">
+						<posx>1</posx>
+						<posy>0</posy>
+						<width>538</width>
+						<height>105</height>
+						<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
+						<bordersize>5</bordersize>
+						<texture background="true">$VAR[BannerThumb]</texture>
+					</control>
+					<control type="image">
+						<posx>495</posx>
+						<posy>65</posy>
+						<width>40</width>
+						<height>40</height>
+						<aspectratio>keep</aspectratio>
+						<texture border="0">$VAR[WatchTypePath,OverlayStatus/]</texture>
 						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
 					</control>
 				</focusedlayout>
@@ -501,11 +513,12 @@
 				<posy>80</posy>
 				<width>14</width>
 				<height>550</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>505</onleft>
-				<onright>2</onright>
+				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
+				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
 				<visible>Control.IsVisible(505)</visible>
@@ -549,11 +562,11 @@
 						<posy>0</posy>
 						<width>950</width>
 						<height>40</height>
-						<textcolor>textnofocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$VAR[MainItemLabel]</label>
+						<label border="0">$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>1060</posx>
@@ -561,11 +574,11 @@
 						<width>1000</width>
 						<height>40</height>
 						<font>font12</font>
-						<textcolor>textnofocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label2]</label>
+						<label border="0">$INFO[ListItem.Label2]</label>
 						<visible>!Window.IsVisible(Videos)</visible>
 					</control>
 					<control type="label">
@@ -574,11 +587,11 @@
 						<width>940</width>
 						<height>40</height>
 						<font>font12</font>
-						<textcolor>textnofocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label2]</label>
+						<label border="0">$INFO[ListItem.Label2]</label>
 						<visible>Window.IsVisible(Videos)</visible>
 						<animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]">conditional</animation>
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),Hidden)">conditional</animation>
@@ -588,7 +601,7 @@
 						<posy>8</posy>
 						<width>40</width>
 						<height>26</height>
-						<texture>$VAR[VideoResolutionFlag]</texture>
+						<texture border="0">$VAR[VideoResolutionFlag]</texture>
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),Hidden)">conditional</animation>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<visible>!Skin.HasSetting(ViewSubTitleFlag)</visible>
@@ -599,7 +612,7 @@
 						<width>26</width>
 						<height>26</height>
 						<fadetime>IconCrossfadeTime</fadetime>
-						<texture>$INFO[ListItem.SubtitleLanguage,Language/,.png]</texture>
+						<texture border="0">$INFO[ListItem.SubtitleLanguage,Language/,.png]</texture>
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),Hidden)">conditional</animation>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<visible>Skin.HasSetting(ViewSubTitleFlag) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
@@ -626,7 +639,7 @@
 							<posy>14</posy>
 							<width>25</width>
 							<height>21</height>
-							<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
+							<texture border="0">$VAR[WatchTypePath,OverlayStatus/]</texture>
 							<visible>!ListItem.IsResumable</visible>
 						</control>
 						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
@@ -638,7 +651,7 @@
 						<posy>0</posy>
 						<width>1080</width>
 						<height>41</height>
-						<texture>buttons/fo_light.png</texture>
+						<texture border="0">buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(51)</visible>
 					</control>
 					<control type="image">
@@ -662,10 +675,10 @@
 						<posy>0</posy>
 						<width>950</width>
 						<height>40</height>
-						<selectedcolor>itemselected</selectedcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$VAR[MainItemLabel]</label>
+						<label border="0">$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>1060</posx>
@@ -673,11 +686,11 @@
 						<width>1000</width>
 						<height>40</height>
 						<font>font12</font>
-						<textcolor>textfocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label2]</label>
+						<label border="0">$INFO[ListItem.Label2]</label>
 						<visible>!Window.IsVisible(Videos)</visible>
 					</control>
 					<control type="label">
@@ -686,11 +699,11 @@
 						<width>940</width>
 						<height>40</height>
 						<font>font12</font>
-						<textcolor>textfocus</textcolor>
-						<selectedcolor>itemselected</selectedcolor>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label2]</label>
+						<label border="0">$INFO[ListItem.Label2]</label>
 						<visible>Window.IsVisible(Videos)</visible>
 						<animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]">conditional</animation>
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),Hidden)">conditional</animation>
@@ -700,7 +713,7 @@
 						<posy>8</posy>
 						<width>40</width>
 						<height>26</height>
-						<texture>$VAR[VideoResolutionFlag]</texture>
+						<texture border="0">$VAR[VideoResolutionFlag]</texture>
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),Hidden)">conditional</animation>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<visible>!Skin.HasSetting(ViewSubTitleFlag)</visible>
@@ -711,7 +724,7 @@
 						<width>26</width>
 						<height>26</height>
 						<fadetime>IconCrossfadeTime</fadetime>
-						<texture>$INFO[ListItem.SubtitleLanguage,Language/,.png]</texture>
+						<texture border="0">$INFO[ListItem.SubtitleLanguage,Language/,.png]</texture>
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),Hidden)">conditional</animation>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<visible>Skin.HasSetting(ViewSubTitleFlag) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
@@ -738,7 +751,7 @@
 							<posy>14</posy>
 							<width>25</width>
 							<height>21</height>
-							<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
+							<texture border="0">$VAR[WatchTypePath,OverlayStatus/]</texture>
 							<visible>!ListItem.IsResumable</visible>
 						</control>
 						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
@@ -750,11 +763,12 @@
 				<posy>80</posy>
 				<width>14</width>
 				<height>550</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>50</onleft>
-				<onright>2</onright>
+				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
+				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
 				<visible>Control.IsVisible(51)</visible>

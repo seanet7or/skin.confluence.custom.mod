@@ -3,7 +3,7 @@
 	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">50</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<views>50,51,500,550,551,560,501,508,504,503,515,505,511,730,732</views>
+	<views>50,501,730,724,732,508,515,504,503,500,51,505,550,551,560,511</views>
 	<onload condition="!Skin.HasSetting(HideTvTunes) + System.HasAddon(script.tvtunes)">XBMC.RunScript(script.tvtunes,backend=True&amp;loop=False)</onload>
 	<controls>
 		<include>CommonBackground</include>
@@ -11,35 +11,21 @@
 		<control type="group">
 			<include>Window_OpenClose_Animation</include>
 			<include>CommonRootView</include>
-			<!-- view id = 50 -->
 			<include>FullWidthList</include>
-			<!-- view id = 51 -->
 			<include>ThumbnailView</include>
-			<!-- view id = 500 -->
 			<include>PosterWrapView</include>
-			<!-- view id = 501 -->
 			<include>PosterWrapView2_Fanart</include>
-			<!-- view id = 508 -->
 			<include>MediaListView3</include>
-			<!-- view id = 503 -->
 			<include>MediaListView2</include>
-			<!-- view id = 504 -->
 			<include>MediaListView4</include>
-			<!-- view id = 515 -->
 			<include>WideIconView</include>
-			<!-- view id = 505 -->
 			<include>MusicVideoInfoListView</include>
-			<!-- view id = 511 -->
 			<include>AddonInfoListView1</include>
-			<!-- view id = 550 -->
 			<include>AddonInfoThumbView1</include>
-			<!-- view id = 551 -->
 			<include>LiveTVView1</include>
-			<!-- view id = 560 -->
+			<include>Lowlist</include>
 			<include>LogoVertical</include>
-			<!-- view id = 730 -->
 			<include>FullWallView</include>
-			<!-- view id = 732 -->
 		</control>
 		<include>CommonNowPlaying</include>
 		<include>MainWindowMouseButtons</include>
@@ -54,7 +40,8 @@
 				<posy>110</posy>
 				<width>250</width>
 				<height>600</height>
-				<onleft>9000</onleft>
+				<onleft condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onleft>
+				<onleft condition="!Skin.HasSetting(DisableHomeReturnButtons)">81</onleft>
 				<onright>50</onright>
 				<onup>9000</onup>
 				<ondown>9000</ondown>
@@ -65,7 +52,7 @@
 					<height>35</height>
 					<font>font12</font>
 					<label>31006</label>
-					<textcolor>heading2</textcolor>
+					<textcolor>blue</textcolor>
 					<align>center</align>
 					<aligny>center</aligny>
 				</control>
@@ -83,7 +70,7 @@
 				<control type="togglebutton" id="4">
 					<description>Sort asc</description>
 					<include>ButtonCommonValues</include>
-					<alttexturefocus>buttons/fo_light.png</alttexturefocus>
+					<alttexturefocus border="0">buttons/fo_light.png</alttexturefocus>
 					<alttexturenofocus>-</alttexturenofocus>
 					<label>31051</label>
 					<altlabel>31050</altlabel>
@@ -110,7 +97,7 @@
 					<height>35</height>
 					<font>font12</font>
 					<label>31026</label>
-					<textcolor>heading2</textcolor>
+					<textcolor>blue</textcolor>
 					<align>center</align>
 					<aligny>center</aligny>
 				</control>
@@ -130,7 +117,7 @@
 					<include>ButtonCommonValues</include>
 					<label>31091</label>
 					<onclick>Skin.ToggleSetting(View501GenreIcons)</onclick>
-					<selected>Skin.HasSetting(View501GenreIcons)</selected>
+					<selected>!Skin.HasSetting(View501GenreIcons)</selected>
 					<visible>Control.IsVisible(501) + [Container.Content(TVShows) | Container.Content(Movies)]</visible>
 				</control>
 				<control type="radiobutton" id="93">
@@ -166,7 +153,7 @@
 					<include>ButtonCommonValues</include>
 					<label>31304</label>
 					<onclick>Skin.ToggleSetting(ViewStatusBanner)</onclick>
-					<selected>Skin.HasSetting(ViewStatusBanner)</selected>
+					<selected>!Skin.HasSetting(ViewStatusBanner)</selected>
 					<visible>Control.IsVisible(501) | Control.IsVisible(508) | Control.IsVisible(732)</visible>
 				</control>
 				<control type="radiobutton" id="97">
@@ -223,6 +210,25 @@
 					<onclick>Skin.ToggleSetting(View730ShowThumb)</onclick>
 					<selected>Skin.HasSetting(View730ShowThumb)</selected>
 					<visible>Control.IsVisible(730) + Container.Content(Episodes)</visible>
+				</control>
+				<control type="radiobutton" id="103">
+					<description>Show DVD Cases Toggle</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>31041</label>
+					<onclick>Skin.ToggleSetting(View724DisableCases)</onclick>
+					<selected>Skin.HasSetting(View724DisableCases)</selected>
+					<visible>Control.IsVisible(724)</visible>
+				</control>
+				<control type="radiobutton" id="104">
+					<description>Use Disk Type Case</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>31670</label>
+					<onclick>Skin.ToggleSetting(UseDiscTypeCase)</onclick>
+					<selected>Skin.HasSetting(UseDiscTypeCase)</selected>
+					<enable>!Skin.HasSetting(View724DisableCases)</enable>
+					<visible>Control.IsVisible(724)</visible>
 				</control>
 				<control type="radiobutton" id="14">
 					<description>Watched Toggle</description>

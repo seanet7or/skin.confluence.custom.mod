@@ -15,7 +15,7 @@
 			<posy>0</posy>
 			<width>730</width>
 			<height>660</height>
-			<texture>dialogs/dialog-back_light.png</texture>
+			<texture border="40">dialogs/dialog-back_light.png</texture>
 		</control>
 		<control type="label" id="2">
 			<description>header label</description>
@@ -26,7 +26,7 @@
 			<font>font13_title</font>
 			<align>center</align>
 			<aligny>center</aligny>
-			<textcolor>itemselected</textcolor>
+			<textcolor>selected</textcolor>
 		</control>
 		<control type="grouplist" id="5">
 			<description>control area</description>
@@ -75,27 +75,27 @@
 		<control type="button" id="7">
 			<description>Default Button</description>
 			<height>40</height>
-			<textcolor>textnofocus</textcolor>
+			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
 		</control>
 		<control type="radiobutton" id="8">
 			<description>Default RadioButton</description>
 			<height>40</height>
-			<textcolor>textnofocus</textcolor>
+			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
 		</control>
 		<control type="spincontrolex" id="9">
 			<description>Default spincontrolex</description>
 			<height>40</height>
-			<textcolor>textnofocus</textcolor>
+			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
-			<texturenofocus>buttons/nf_light.png</texturenofocus>
+			<texturenofocus border="0">buttons/nf_light.png</texturenofocus>
 		</control>
 		<control type="sliderex" id="10">
 			<description>Default Slider</description>
 			<height>40</height>
 			<font>font13</font>
-			<textcolor>textnofocus</textcolor>
+			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
 		</control>
 		<control type="image" id="11">
@@ -105,7 +105,7 @@
 		<control type="edit" id="12">
 			<description>Default Edit</description>
 			<height>40</height>
-			<textcolor>textnofocus</textcolor>
+			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
 		</control>
 	</controls>

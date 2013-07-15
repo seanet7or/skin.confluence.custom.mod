@@ -13,7 +13,7 @@
 		<label>-</label>
 		<font>font13</font>
 		<textcolor>white</textcolor>
-		<disabledcolor>textdisabled</disabledcolor>
+		<disabledcolor>grey3</disabledcolor>
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="fadelabel">
@@ -21,7 +21,7 @@
 		<posy>60</posy>
 		<font>font13</font>
 		<textcolor>white</textcolor>
-		<disabledcolor>textdisabled</disabledcolor>
+		<disabledcolor>grey3</disabledcolor>
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="button">
@@ -29,11 +29,11 @@
 		<posy>200</posy>
 		<width>300</width>
 		<height>42</height>
-		<texturefocus>buttons/fo_light.png</texturefocus>
-		<texturenofocus>buttons/nf_light.png</texturenofocus>
+		<texturefocus border="0">buttons/fo_light.png</texturefocus>
+		<texturenofocus border="0">buttons/nf_light.png</texturenofocus>
 		<font>font13</font>
 		<textcolor>white</textcolor>
-		<disabledcolor>textdisabled</disabledcolor>
+		<disabledcolor>grey3</disabledcolor>
 		<textoffsetx>7</textoffsetx>
 		<aligny>center</aligny>
 		<pulseonselect>false</pulseonselect>
@@ -43,14 +43,14 @@
 		<posy>167</posy>
 		<width>23</width>
 		<height>13</height>
-		<texturefocus>buttons/spin-up-fo_light.png</texturefocus>
-		<texturenofocus>buttons/spin-up-nf_light.png</texturenofocus>
+		<texturefocus flipy="true">buttons/spin-down-fo_light.png</texturefocus>
+		<texturenofocus flipy="true">buttons/spin-down-nf_light.png</texturenofocus>
 		<alttexturefocus>buttons/spin-down-fo_light.png</alttexturefocus>
 		<alttexturenofocus>buttons/spin-down-nf_light.png</alttexturenofocus>
 		<textcolor>white</textcolor>
 		<label>-</label>
 		<font>font13</font>
-		<disabledcolor>textdisabled</disabledcolor>
+		<disabledcolor>grey3</disabledcolor>
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="textbox">
@@ -66,9 +66,9 @@
 	<default type="progress">
 		<posx>100</posx>
 		<posy>325</posy>
-		<texturebg>progressbar/OSDProgressBack_light.png</texturebg>
+		<texturebg border="0">progressbar/OSDProgressBack_light.png</texturebg>
 		<lefttexture>-</lefttexture>
-		<midtexture>progressbar/OSDProgressMid_light.png</midtexture>
+		<midtexture border="0">progressbar/OSDProgressMid_light.png</midtexture>
 		<righttexture>-</righttexture>
 		<overlaytexture>-</overlaytexture>
 		<pulseonselect>false</pulseonselect>
@@ -76,9 +76,9 @@
 	<default type="spincontrol">
 		<posx>330</posx>
 		<posy>126</posy>
-		<textureup>buttons/spin-up-nf_light.png</textureup>
+		<textureup flipy="true">buttons/spin-down-nf_light.png</textureup>
 		<texturedown>buttons/spin-down-nf_light.png</texturedown>
-		<textureupfocus>buttons/spin-up-fo_light.png</textureupfocus>
+		<textureupfocus flipy="true">buttons/spin-down-fo_light.png</textureupfocus>
 		<texturedownfocus>buttons/spin-down-fo_light.png</texturedownfocus>
 		<align>right</align>
 		<width>23</width>
@@ -86,7 +86,7 @@
 		<font>font13</font>
 		<reverse>yes</reverse>
 		<textcolor>white</textcolor>
-		<disabledcolor>textdisabled</disabledcolor>
+		<disabledcolor>grey3</disabledcolor>
 		<subtype>text</subtype>
 		<textoffsetx>-5</textoffsetx>
 		<textoffsety>0</textoffsety>
@@ -100,15 +100,15 @@
 		<height>42</height>
 		<spinwidth>23</spinwidth>
 		<spinheight>13</spinheight>
-		<texturefocus>buttons/fo_light.png</texturefocus>
+		<texturefocus border="0">buttons/fo_light.png</texturefocus>
 		<texturenofocus>-</texturenofocus>
-		<textureup>buttons/spin-up-nf_light.png</textureup>
+		<textureup flipy="true">buttons/spin-down-nf_light.png</textureup>
 		<texturedown>buttons/spin-down-nf_light.png</texturedown>
-		<textureupfocus>buttons/spin-up-fo_light.png</textureupfocus>
+		<textureupfocus flipy="true">buttons/spin-down-fo_light.png</textureupfocus>
 		<texturedownfocus>buttons/spin-down-fo_light.png</texturedownfocus>
 		<font>font13</font>
 		<textcolor>white</textcolor>
-		<disabledcolor>textdisabled</disabledcolor>
+		<disabledcolor>grey3</disabledcolor>
 		<textoffsetx>7</textoffsetx>
 		<aligny>center</aligny>
 		<reverse>yes</reverse>
@@ -121,14 +121,14 @@
 		<height>42</height>
 		<radiowidth>24</radiowidth>
 		<radioheight>24</radioheight>
-		<textureradiofocus>radiobutton-focus.png</textureradiofocus>
-		<textureradionofocus>radiobutton-nofocus.png</textureradionofocus>
-		<texturefocus>buttons/fo_light.png</texturefocus>
-		<texturenofocus>buttons/nf_light.png</texturenofocus>
+		<textureradiofocus border="0">radiobutton-focus.png</textureradiofocus>
+		<textureradionofocus border="0">radiobutton-nofocus.png</textureradionofocus>
+		<texturefocus border="0">buttons/fo_light.png</texturefocus>
+		<texturenofocus border="0">buttons/nf_light.png</texturenofocus>
 		<label>215</label>
 		<font>font13</font>
 		<textcolor>white</textcolor>
-		<disabledcolor>textdisabled</disabledcolor>
+		<disabledcolor>grey3</disabledcolor>
 		<textoffsetx>7</textoffsetx>
 		<aligny>center</aligny>
 		<pulseonselect>false</pulseonselect>
@@ -142,14 +142,14 @@
 		<font>font12</font>
 		<texturefocus>-</texturefocus>
 		<texturenofocus>-</texturenofocus>
-		<texturebg>buttons/fo_light.png</texturebg>
-		<textureleft>scroll-left.png</textureleft>
-		<textureleftfocus>scroll-left-focus.png</textureleftfocus>
-		<textureright>scroll-right.png</textureright>
-		<texturerightfocus>scroll-right-focus.png</texturerightfocus>
+		<texturebg border="0">buttons/fo_light.png</texturebg>
+		<textureleft border="0">scroll-left.png</textureleft>
+		<textureleftfocus border="0">scroll-left-focus.png</textureleftfocus>
+		<textureright border="0">scroll-right.png</textureright>
+		<texturerightfocus border="0">scroll-right-focus.png</texturerightfocus>
 		<font>font13</font>
 		<textcolor>white</textcolor>
-		<disabledcolor>textdisabled</disabledcolor>
+		<disabledcolor>grey3</disabledcolor>
 		<aligny>center</aligny>
 		<pulseonselect>false</pulseonselect>
 	</default>
@@ -162,30 +162,30 @@
 		<height>35</height>
 		<textoffsetx>7</textoffsetx>
 		<aligny>center</aligny>
-		<texturefocus>buttons/fo_light.png</texturefocus>
-		<texturenofocus>buttons/nf_light.png</texturenofocus>
+		<texturefocus border="0">buttons/fo_light.png</texturefocus>
+		<texturenofocus border="0">buttons/nf_light.png</texturenofocus>
 		<sliderwidth>150</sliderwidth>
 		<sliderheight>20</sliderheight>
-		<texturesliderbar>osd_slider_bg_2.png</texturesliderbar>
-		<textureslidernib>osd_slider_nibNF.png</textureslidernib>
-		<textureslidernibfocus>osd_slider_nib.png</textureslidernibfocus>
+		<texturesliderbar border="0">osd_slider_bg_2.png</texturesliderbar>
+		<textureslidernib border="0">osd_slider_nibNF.png</textureslidernib>
+		<textureslidernibfocus border="0">osd_slider_nib.png</textureslidernibfocus>
 		<font>font12</font>
 		<textcolor>white</textcolor>
-		<disabledcolor>textdisabled</disabledcolor>
+		<disabledcolor>grey3</disabledcolor>
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="mover">
 		<posx>60</posx>
 		<posy>192</posy>
-		<texturefocus>buttons/fo_light.png</texturefocus>
-		<texturenofocus>buttons/nf_light.png</texturenofocus>
+		<texturefocus border="0">buttons/fo_light.png</texturefocus>
+		<texturenofocus border="0">buttons/nf_light.png</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="resize">
 		<posx>60</posx>
 		<posy>192</posy>
-		<texturefocus>buttons/fo_light.png</texturefocus>
-		<texturenofocus>buttons/nf_light.png</texturenofocus>
+		<texturefocus border="0">buttons/fo_light.png</texturefocus>
+		<texturenofocus border="0">buttons/nf_light.png</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="edit">
@@ -193,11 +193,11 @@
 		<posy>200</posy>
 		<width>300</width>
 		<height>42</height>
-		<texturefocus>buttons/fo_light.png</texturefocus>
-		<texturenofocus>buttons/nf_light.png</texturenofocus>
+		<texturefocus border="0">buttons/fo_light.png</texturefocus>
+		<texturenofocus border="0">buttons/nf_light.png</texturenofocus>
 		<font>font13</font>
 		<textcolor>white</textcolor>
-		<disabledcolor>textdisabled</disabledcolor>
+		<disabledcolor>grey3</disabledcolor>
 		<textoffsetx>7</textoffsetx>
 		<aligny>center</aligny>
 		<pulseonselect>false</pulseonselect>

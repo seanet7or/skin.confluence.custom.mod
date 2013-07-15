@@ -17,7 +17,7 @@
 				<posy>0</posy>
 				<width>800</width>
 				<height>600</height>
-				<texture>dialogs/dialog-back_light.png</texture>
+				<texture border="40">dialogs/dialog-back_light.png</texture>
 			</control>
 			<control type="label">
 				<description>header label</description>
@@ -29,7 +29,7 @@
 				<label>$LOCALIZE[3] - $LOCALIZE[5]</label>
 				<align>center</align>
 				<aligny>center</aligny>
-				<textcolor>itemselected</textcolor>
+				<textcolor>selected</textcolor>
 				<visible>Window.IsVisible(123)</visible>
 			</control>
 			<control type="label">
@@ -42,7 +42,7 @@
 				<label>$LOCALIZE[292] - $LOCALIZE[5]</label>
 				<align>center</align>
 				<aligny>center</aligny>
-				<textcolor>itemselected</textcolor>
+				<textcolor>selected</textcolor>
 				<visible>Window.IsVisible(124)</visible>
 			</control>
 			<control type="label" id="3">
@@ -71,9 +71,9 @@
 				<posy>65</posy>
 				<width>14</width>
 				<height>490</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>5</onleft>
 				<onright>5</onright>
 				<ondown>61</ondown>
@@ -86,7 +86,7 @@
 			<description>Default Slider</description>
 			<height>40</height>
 			<font>font13</font>
-			<textcolor>textnofocus</textcolor>
+			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
 		</control>
 		<control type="button" id="7">
@@ -94,7 +94,7 @@
 			<posx>0</posx>
 			<posy>0</posy>
 			<height>40</height>
-			<textcolor>textnofocus</textcolor>
+			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
 		</control>
 		<control type="radiobutton" id="8">
@@ -102,7 +102,7 @@
 			<posx>0</posx>
 			<posy>0</posy>
 			<height>40</height>
-			<textcolor>textnofocus</textcolor>
+			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
 		</control>
 		<control type="spincontrolex" id="9">
@@ -110,9 +110,9 @@
 			<posx>0</posx>
 			<posy>0</posy>
 			<height>40</height>
-			<textcolor>textnofocus</textcolor>
+			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
-			<texturenofocus>buttons/nf_light.png</texturenofocus>
+			<texturenofocus border="0">buttons/nf_light.png</texturenofocus>
 		</control>
 		<control type="image" id="11">
 			<description>separator image</description>
