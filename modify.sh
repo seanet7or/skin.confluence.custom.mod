@@ -299,16 +299,25 @@ else
 fi
 step
 
-printf "\nReformatting code: "
-if grep -q -zo -P '<visible>\n' 720p/ViewsLogoVertical.xml ; then 
+printf "\nReplacing '#'s in original xmls: "
+if grep -q '#' 720p/SkinSettings.xml ; then 
 	sed 's/#/No\./g' -i 720p/SkinSettings.xml 
-	perlregex 's|(\s*<visible>)#\s*([^<]*)#\s*(</visible>)|\1\2\3|g'
-	perlregex 's|(<visible>[^#<]*)#([^#<]*</visible)|\1\2|g'
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
+
+#printf "\nReformatting code: "
+#if grep -q -zo -P '<visible>\n' 720p/ViewsLogoVertical.xml ; then 
+#	sed 's/#/No\./g' -i 720p/SkinSettings.xml 
+#	perlregex 's|(\s*<visible>)#\s*([^<]*)#\s*(</visible>)|\1\2\3|g'
+#	perlregex 's|(<visible>[^#<]*)#([^#<]*</visible)|\1\2|g'
+#	printf "%sDONE!%s" $GREEN $RESET
+#else
+#	printf "%sSKIPPED.%s" $CYAN $RESET
+#fi
+#step
 
 printf "\nRemoving media files: "
 if [ -f media/OverlayWatching.png ] ; then
