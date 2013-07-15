@@ -787,7 +787,7 @@
 							<height>40</height>
 							<itemgap>0</itemgap>
 							<onup>147</onup>
-							<ondown>158</ondown>
+							<ondown>159</ondown>
 							<align>left</align>
 							<control type="radiobutton" id="152">
 								<description>Default</description>
@@ -861,19 +861,6 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="158">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>$LOCALIZE[31084]</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>buttons/fo_light.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
-						<onclick>Skin.ToggleSetting(HideXBMCIntro)</onclick>
-						<onclick>Skin.Reset(EnableStartupPlaylist)</onclick>
-						<selected>!Skin.HasSetting(HideXBMCIntro)</selected>
-					</control>
 					<control type="radiobutton" id="159">
 						<width>750</width>
 						<height>40</height>
@@ -883,7 +870,6 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>buttons/fo_light.png</texturefocus>
 						<texturenofocus>-</texturenofocus>
-						<onclick>Skin.SetBool(HideXBMCIntro)</onclick>
 						<onclick>Skin.ToggleSetting(Use_Startup_Playlist)</onclick>
 						<selected>Skin.HasSetting(Use_Startup_Playlist)</selected>
 					</control>

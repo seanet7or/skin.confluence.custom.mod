@@ -3,7 +3,6 @@
 	<defaultcontrol>-</defaultcontrol>
 	<controls>
 		<control type="group" id="1">
-			<visible>!StringCompare(VideoPlayer.Title,XBMC-Intro-Video.mkv)</visible>
 			<visible>[Player.ShowInfo | Window.IsActive(VideoOSD)] | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | [!Skin.HasSetting(HideInfoStartOSD) + !IntegerGreaterThan(Player.time,5)]</visible>
 			<visible>![Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
 			<control type="label" id="1">

@@ -1200,6 +1200,7 @@ if [ -f extras/Intro/XBMC-Intro-Video.mkv ] ; then
 	perlregex 720p/Startup.xml 's| . Skin.HasSetting.HideXBMCIntro.||'
 	remove_controlid button '<visible>!Skin.HasSetting.HideXBMCIntro.</visible>'
 	perlregex 720p/VideoFullScreen.xml 720p/VideoOSD.xml 's|\s*<visible>!StringCompare.VideoPlayer.Title,XBMC-Intro-Video.mkv.</visible>#||g'
+	perlregex 720p/SkinSettings.xml 's|<ondown>158</ondown>|<ondown>159</ondown>|g'
 	rm -rf extras/Intro
 	printf "%sDONE!%s" $GREEN $RESET
 else
