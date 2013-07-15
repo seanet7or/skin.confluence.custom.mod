@@ -1101,7 +1101,7 @@
 	<variable name="HomeBackgroundPreview" type="text">
 		<value condition="Skin.HasSetting(GlobalBackground) + Skin.HasSetting(GlobalWeatherFanart)">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
 		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(ShowWeatherFanart) + !IsEmpty(Skin.String(WeatherFanartDir))">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
-		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),StartUp) + Skin.HasSetting(HideStartUpBackground)">black-back.png</value>
+		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),StartUp) + Skin.HasSetting(HideStartUpBackground)">dialogs/overlay-background.png</value>
 		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),Movies) + Skin.HasSetting(ShowMovieDBFanart) + !IsEmpty(Skin.String(UsrMovieFanartDir))">$INFO[Skin.String(UsrMovieFanartDir)]</value>
 		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),Movies) + Skin.HasSetting(ShowMovieDBFanart) + !IsEmpty(Window(Home).Property(RandomMovie.1.Art(fanart)))">$INFO[Window(Home).Property(RandomMovie.1.Art(fanart))]</value>
 		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),TVShows) + Skin.HasSetting(ShowTVShowDBFanart) + !IsEmpty(Skin.String(UsrTVShowFanartDir))">$INFO[Skin.String(UsrTVShowFanartDir)]</value>

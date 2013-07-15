@@ -1377,8 +1377,6 @@ else
 fi
 step
 
-exit
-
 printf "\nReplacing black-back.png: "
 if [ -f media/black-back.png ] ; then
 	# remove where not needed
@@ -1390,7 +1388,7 @@ if [ -f media/black-back.png ] ; then
 	# replace with nf-background
 	perlregex 720p/SkinSettings.xml 720p/VideoFullScreen.xml 's|>black-back.png<|>'$BUTTON_NF'<|g'	
 	# replace where used as overlay background
-	XMLS=$(2>/dev/null grep 'black-back.png' -l 720p/*)
+	#XMLS=$(2>/dev/null grep 'black-back.png' -l 720p/*)
 	perlregex $XMLS 's|>black-back.png<|>'$OVERLAY_BG'<|g'	
 	check_and_remove media/black-back.png
 	printf "%sDONE!%s" $GREEN $RESET
