@@ -3701,8 +3701,8 @@
 						<height>22</height>
 						<label>-</label>
 						<font>-</font>
-						<texturenofocus>scroll-down-2.png</texturenofocus>
-						<texturefocus>scroll-down-focus-2.png</texturefocus>
+						<texturenofocus>buttons/spin-down-nf_light.png</texturenofocus>
+						<texturefocus>buttons/spin-down-fo_light.png</texturefocus>
 						<onclick>Control.Move(9005,1)</onclick>
 						<onleft>9000</onleft>
 						<onright>505</onright>
@@ -3717,8 +3717,8 @@
 						<height>22</height>
 						<label>-</label>
 						<font>-</font>
-						<texturenofocus>scroll-up-2.png</texturenofocus>
-						<texturefocus>scroll-up-focus-2.png</texturefocus>
+						<texturenofocus flipy="true">buttons/spin-down-nf_light.png</texturenofocus>
+						<texturefocus flipy="true">buttons/spin-down-fo_light.png</texturefocus>
 						<onclick>Control.Move(9005,-1)</onclick>
 						<onleft>504</onleft>
 						<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>

@@ -301,6 +301,8 @@ PROGRESS_MIDLIGHT='progressbar/OSDProgressMidLight_light.png'
 PROGRESS_MID='progressbar/OSDProgressMid_light.png'
 PROGRESS_BACK='progressbar/OSDProgressBack_light.png'
 SEEKSLIDER='seekslider_light.png'
+SPINDOWN_NF='buttons/spin-down-nf_light.png'
+SPINDOWN_FO='buttons/spin-down-fo_light.png'
 
 STEP=0
 printf "\n############# APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ########################"
@@ -1292,8 +1294,6 @@ else
 fi
 step
 
-exit
-
 printf "\nReplacing default sliderbar: "
 if [ -f media/osd_slider_bg.png ] ; then
 	perlregex  720p/defaults.xml 's|osd_slider_bg.png|osd_slider_bg_2.png|g'
@@ -1304,21 +1304,20 @@ else
 fi
 step
 
-
 printf "\nReplacing spin controls: "
 if [ -f media/scroll-down-2.png ] ; then
 	XMLS=$(2>/dev/null grep '>scroll-' -l 720p/*)
-	perlregex $XMLS 's|>scroll-down-2.png<|>buttons/spin-down-nf_light.png<|g'
-	perlregex $XMLS 's|>scroll-down-focus-2.png<|>buttons/spin-down-fo_light.png<|g'
-	perlregex $XMLS 's|>scroll-up-2.png<|>buttons/spin-up-nf_light.png<|g'
-	perlregex $XMLS 's|>scroll-up-focus-2.png<|>buttons/spin-up-fo_light.png<|g'
-	R='s|(<default type="spincontrol">#'
-	R+='\s*<posx>330</posx>#'
-	R+='\s*<posy>126</posy>#'
-	R+='\s*<textureup>[^<]*</textureup>#'
-	R+='\s*<texturedown>[^<]*</texturedown>#'
-	R+='\s*<textureupfocus>[^<]*</textureupfocus>#'
-	R+='\s*<texturedownfocus>[^<]*</texturedownfocus>#'
+	perlregex $XMLS 's|>scroll-down-2.png<|>'$SPINDOWN_NF'<|g'
+	perlregex $XMLS 's|>scroll-down-focus-2.png<|>'$SPINDOWN_FO'<|g'
+	perlregex $XMLS 's|>scroll-up-2.png<| flipy="true">'$SPINDOWN_NF'<|g'
+	perlregex $XMLS 's|>scroll-up-focus-2.png<| flipy="true">'$SPINDOWN_FO'<|g'
+	R='s|(<default type="spincontrol">\s*#'
+	R+='\s*<posx>330</posx>\s*#'
+	R+='\s*<posy>126</posy>\s*#'
+	R+='\s*<textureup[^<]*</textureup>\s*#'
+	R+='\s*<texturedown[^<]*</texturedown>#'
+	R+='\s*<textureupfocus[^<]*</textureupfocus>#'
+	R+='\s*<texturedownfocus[^<]*</texturedownfocus>#'
 	R+='\s*<align>right</align>#'
 	R+='\s*<width)>33<(/width>#'
 	R+='\s*<height)>22<'
@@ -1336,7 +1335,7 @@ else
 fi
 step
 
-
+exit
 printf "\nReplacing toggle buttons: "
 if [ -f media/scroll-down.png ] ; then
 	XMLS=$(2>/dev/null grep '>scroll-' -l 720p/*)
