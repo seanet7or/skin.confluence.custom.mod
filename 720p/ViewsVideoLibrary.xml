@@ -77,8 +77,6 @@
 						<width>222</width>
 						<height>318</height>
 						<aspectratio>stretch</aspectratio>
-						<bordertexture border="8">ThumbBorder.png</bordertexture>
-						<bordersize>8</bordersize>
 						<texture background="true">$VAR[PosterThumb]</texture>
 						<animation reversible="false" effect="zoom" start="-2,36,222,318" end="-28,0,284,390" time="200">focus</animation>
 						<animation reversible="false" effect="zoom" end="-2,36,222,318" start="-28,0,284,390" time="200">unfocus</animation>
@@ -492,8 +490,6 @@
 						<width>128</width>
 						<height>168</height>
 						<aspectratio>stretch</aspectratio>
-						<bordertexture border="8">ThumbBorder.png</bordertexture>
-						<bordersize>8</bordersize>
 						<fadetime>200</fadetime>
 						<texture background="true">$VAR[PosterThumb]</texture>
 						<animation reversible="false" effect="zoom" start="-2,16,128,168" end="-12,-10,148,198" time="200">focus</animation>
@@ -814,8 +810,6 @@
 					<aspectratio>keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true">$VAR[BannerThumb]</texture>
-					<bordertexture border="8">ThumbShadow.png</bordertexture>
-					<bordersize>8</bordersize>
 					<visible>!Skin.HasSetting(View503CharacterArt) | IsEmpty(ListItem.Art(clearart))</visible>
 				</control>
 				<control type="image">
@@ -930,8 +924,6 @@
 					<aspectratio>keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true">$INFO[ListItem.Icon]</texture>
-					<bordertexture border="8">ThumbShadow.png</bordertexture>
-					<bordersize>8</bordersize>
 					<visible>!Skin.HasSetting(HideEpisodeThumb) | StringCompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="image">
@@ -942,8 +934,6 @@
 					<aspectratio>keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Property(Fanart_Image)]</texture>
-					<bordertexture border="8">ThumbShadow.png</bordertexture>
-					<bordersize>8</bordersize>
 					<visible>Skin.HasSetting(HideEpisodeThumb) + !StringCompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="grouplist">
@@ -999,8 +989,6 @@
 					<aspectratio>keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true">$INFO[ListItem.Icon]</texture>
-					<bordertexture border="8">ThumbShadow.png</bordertexture>
-					<bordersize>8</bordersize>
 				</control>
 				<control type="textbox">
 					<description>Description Value for Seasons</description>
@@ -1041,8 +1029,6 @@
 					<aspectratio>keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true">$VAR[PosterThumb]</texture>
-					<bordertexture border="8">ThumbShadow.png</bordertexture>
-					<bordersize>8</bordersize>
 				</control>
 				<control type="grouplist">
 					<description>Media Codec Flagging Images</description>
@@ -1290,8 +1276,6 @@
 					<aspectratio>scale</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Art(fanart)]</texture>
-					<bordertexture background="true" border="8">ThumbShadow.png</bordertexture>
-					<bordersize>8</bordersize>
 				</control>
 				<control type="multiimage">
 					<posx>0</posx>
@@ -1303,8 +1287,6 @@
 					<imagepath background="true">$INFO[ListItem.Path,,extrafanart/]</imagepath>
 					<timeperimage>5000</timeperimage>
 					<randomize>true</randomize>
-					<bordertexture background="true" border="8">ThumbShadow.png</bordertexture>
-					<bordersize>8</bordersize>
 					<visible>!Skin.HasSetting(View504XtraFanArt) + !StringCompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="grouplist">
@@ -1396,8 +1378,6 @@
 					<aspectratio>scale</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true">$INFO[ListItem.Icon]</texture>
-					<bordertexture background="true" border="8">ThumbShadow.png</bordertexture>
-					<bordersize>8</bordersize>
 					<visible>StringCompare(ListItem.Label,..) | !Skin.HasSetting(HideEpisodeThumb)</visible>
 				</control>
 				<control type="image">
@@ -1408,8 +1388,6 @@
 					<aspectratio>scale</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Property(Fanart_Image)]</texture>
-					<bordertexture background="true" border="8">ThumbShadow.png</bordertexture>
-					<bordersize>8</bordersize>
 					<visible>!StringCompare(ListItem.Label,..) + Skin.HasSetting(HideEpisodeThumb)</visible>
 				</control>
 				<control type="grouplist">
@@ -1790,8 +1768,6 @@
 					<aspectratio align="left" aligny="bottom">keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true">$VAR[PosterThumb]</texture>
-					<bordertexture border="8">ThumbShadow.png</bordertexture>
-					<bordersize>8</bordersize>
 				</control>
 			</control>
 			<control type="group">
@@ -1850,8 +1826,6 @@
 					<aspectratio align="left" aligny="bottom">keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true">$VAR[PosterThumb]</texture>
-					<bordertexture border="8">ThumbShadow.png</bordertexture>
-					<bordersize>8</bordersize>
 				</control>
 			</control>
 			<control type="group">
@@ -1920,8 +1894,6 @@
 					<aspectratio align="left" aligny="bottom">keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true">$INFO[ListItem.Icon]</texture>
-					<bordertexture border="8">ThumbShadow.png</bordertexture>
-					<bordersize>8</bordersize>
 				</control>
 			</control>
 			<control type="group">
@@ -2004,9 +1976,7 @@
 					<aspectratio align="left" aligny="bottom">keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true">$INFO[ListItem.Icon]</texture>
-					<bordertexture border="8">ThumbShadow.png</bordertexture>
 					<visible>!Skin.HasSetting(HideEpisodeThumb) | StringCompare(ListItem.Label,..)</visible>
-					<bordersize>8</bordersize>
 				</control>
 				<control type="image">
 					<posx>420</posx>
@@ -2016,8 +1986,6 @@
 					<aspectratio align="left" aligny="bottom">keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Property(Fanart_Image)]</texture>
-					<bordertexture border="8">ThumbShadow.png</bordertexture>
-					<bordersize>8</bordersize>
 					<visible>Skin.HasSetting(HideEpisodeThumb) + !StringCompare(ListItem.Label,..)</visible>
 				</control>
 			</control>
@@ -2473,9 +2441,7 @@
 							<height>205</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<include>VisibleFadeEffect</include>
-							<bordersize>8</bordersize>
 							<texture background="true">$VAR[PosterThumb]</texture>
-							<bordertexture border="8">ThumbBorder.png</bordertexture>
 						</control>
 						<control type="group">
 							<visible>Skin.HasSetting(ViewStatusBanner) + !IsEmpty(ListItem.Overlay)</visible>

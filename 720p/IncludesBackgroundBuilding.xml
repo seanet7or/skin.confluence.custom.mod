@@ -248,7 +248,7 @@
 				<include>BackgroundFade</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<include>Window_OpenClose_Animation</include>
-				<visible>!StringCompare(ListItem.Label,..) + Container.Content(genres)</visible>
+				<visible>!IsEmpty(Skin.String(UsrGenreFanartDir)) + !StringCompare(ListItem.Label,..) + Container.Content(genres)</visible>
 			</control>
 		</control>
 		<control type="image">

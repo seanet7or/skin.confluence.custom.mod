@@ -271,22 +271,6 @@
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
 			</control>
-			<control type="label">
-				<animation effect="slide" start="0,0" end="-90,0" time="0" condition="!Skin.HasSetting(DisableHomeReturnButtons)">Conditional</animation>
-				<description>Page Count Label</description>
-				<posx>40r</posx>
-				<posy>53r</posy>
-				<width>500</width>
-				<height>20</height>
-				<font>font12</font>
-				<textcolor>grey</textcolor>
-				<scroll>false</scroll>
-				<align>right</align>
-				<aligny>center</aligny>
-				<label>([COLOR=blue]$INFO[Container(11).NumItems][/COLOR]) $LOCALIZE[19019] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(11).CurrentPage]/$INFO[Container(11).NumPages][/COLOR])</label>
-				<include>Window_OpenClose_Animation</include>
-				<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
-			</control>
 		</control>
 	</include>
 	<include name="LiveRadioChannelView">
@@ -560,22 +544,6 @@
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
 			</control>
-			<control type="label">
-				<animation effect="slide" start="0,0" end="-90,0" time="0" condition="!Skin.HasSetting(DisableHomeReturnButtons)">Conditional</animation>
-				<description>Page Count Label</description>
-				<posx>40r</posx>
-				<posy>53r</posy>
-				<width>500</width>
-				<height>20</height>
-				<font>font12</font>
-				<textcolor>grey</textcolor>
-				<scroll>false</scroll>
-				<align>right</align>
-				<aligny>center</aligny>
-				<label>([COLOR=blue]$INFO[Container(12).NumItems][/COLOR]) $LOCALIZE[19019] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(12).CurrentPage]/$INFO[Container(12).NumPages][/COLOR])</label>
-				<include>Window_OpenClose_Animation</include>
-				<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
-			</control>
 		</control>
 	</include>
 	<include name="LiveTVRecordingsView">
@@ -746,22 +714,6 @@
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
 			</control>
-			<control type="label">
-				<animation effect="slide" start="0,0" end="-90,0" time="0" condition="!Skin.HasSetting(DisableHomeReturnButtons)">Conditional</animation>
-				<description>Page Count Label</description>
-				<posx>40r</posx>
-				<posy>53r</posy>
-				<width>500</width>
-				<height>20</height>
-				<font>font12</font>
-				<textcolor>grey</textcolor>
-				<scroll>false</scroll>
-				<align>right</align>
-				<aligny>center</aligny>
-				<label>([COLOR=blue]$INFO[Container(13).NumItems][/COLOR]) $LOCALIZE[19163] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(13).CurrentPage]/$INFO[Container(13).NumPages][/COLOR])</label>
-				<include>Window_OpenClose_Animation</include>
-				<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
-			</control>
 			<control type="group">
 				<posx>910</posx>
 				<posy>80</posy>
@@ -773,8 +725,6 @@
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture fallback="DefaultVideoCover.png">$INFO[Container(13).ListItem.Icon]</texture>
-					<bordertexture border="8">ThumbShadow.png</bordertexture>
-					<bordersize>8</bordersize>
 				</control>
 				<control type="fadelabel">
 					<posx>10</posx>
@@ -1268,22 +1218,6 @@
 					<visible>PVR.HasTimer</visible>
 				</control>
 			</control>
-			<control type="label">
-				<animation effect="slide" start="0,0" end="-90,0" time="0" condition="!Skin.HasSetting(DisableHomeReturnButtons)">Conditional</animation>
-				<description>Page Count Label</description>
-				<posx>40r</posx>
-				<posy>53r</posy>
-				<width>500</width>
-				<height>20</height>
-				<font>font12</font>
-				<textcolor>grey</textcolor>
-				<scroll>false</scroll>
-				<align>right</align>
-				<aligny>center</aligny>
-				<label>([COLOR=blue]$INFO[Container(14).NumItems][/COLOR]) $LOCALIZE[19040] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(14).CurrentPage]/$INFO[Container(14).NumPages][/COLOR])</label>
-				<include>Window_OpenClose_Animation</include>
-				<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
-			</control>
 		</control>
 	</include>
 	<include name="LiveTVSearchView">
@@ -1598,21 +1532,6 @@
 					<orientation>vertical</orientation>
 				</control>
 			</control>
-			<control type="label">
-				<animation effect="slide" start="0,0" end="-90,0" time="0" condition="!Skin.HasSetting(DisableHomeReturnButtons)">Conditional</animation>
-				<description>Page Count Label</description>
-				<posx>40r</posx>
-				<posy>53r</posy>
-				<width>500</width>
-				<height>20</height>
-				<font>font12</font>
-				<textcolor>grey</textcolor>
-				<scroll>false</scroll>
-				<align>right</align>
-				<aligny>center</aligny>
-				<label>([COLOR=blue]$INFO[Container(17).NumItems][/COLOR]) $LOCALIZE[31025] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(17).CurrentPage]/$INFO[Container(17).NumPages][/COLOR])</label>
-				<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
-			</control>
 		</control>
 	</include>
 	<include name="LiveTVGuideChannelView">
@@ -1896,21 +1815,6 @@
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 				</control>
-			</control>
-			<control type="label">
-				<animation effect="slide" start="0,0" end="-90,0" time="0" condition="!Skin.HasSetting(DisableHomeReturnButtons)">Conditional</animation>
-				<description>Page Count Label</description>
-				<posx>40r</posx>
-				<posy>53r</posy>
-				<width>500</width>
-				<height>20</height>
-				<font>font12</font>
-				<textcolor>grey</textcolor>
-				<scroll>false</scroll>
-				<align>right</align>
-				<aligny>center</aligny>
-				<label>([COLOR=blue]$INFO[Container(15).NumItems][/COLOR]) $LOCALIZE[31025] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(15).CurrentPage]/$INFO[Container(15).NumPages][/COLOR])</label>
-				<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
 			</control>
 		</control>
 	</include>
@@ -2246,21 +2150,6 @@
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 				</control>
-			</control>
-			<control type="label">
-				<animation effect="slide" start="0,0" end="-90,0" time="0" condition="!Skin.HasSetting(DisableHomeReturnButtons)">Conditional</animation>
-				<description>Page Count Label</description>
-				<posx>40r</posx>
-				<posy>53r</posy>
-				<width>500</width>
-				<height>20</height>
-				<font>font12</font>
-				<textcolor>grey</textcolor>
-				<scroll>false</scroll>
-				<align>right</align>
-				<aligny>center</aligny>
-				<label>([COLOR=blue]$INFO[Container(16).NumItems][/COLOR]) $LOCALIZE[31025] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(16).CurrentPage]/$INFO[Container(16).NumPages][/COLOR])</label>
-				<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
 			</control>
 		</control>
 	</include>

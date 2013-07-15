@@ -109,7 +109,7 @@
 		<value condition="Control.HasFocus(20) + !IsEmpty(Skin.String(PowerBtnBackground))">$INFO[Skin.String(PowerBtnBackground)]</value>
 		<value condition="Control.HasFocus(21) + !IsEmpty(Skin.String(FavBtnBackground))">$INFO[Skin.String(FavBtnBackground)]</value>
 		<value condition="Control.HasFocus(610) + !IsEmpty(Skin.String(SearchBtnBackground))">$INFO[Skin.String(SearchBtnBackground)]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(ShowWeatherFanart)">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(ShowWeatherFanart) + !IsEmpty(Skin.String(WeatherFanartDir))">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Movies) + Skin.HasSetting(ShowMovieDBFanart) + !IsEmpty(Skin.String(UsrMovieFanartDir))">$INFO[Skin.String(UsrMovieFanartDir)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Movies) + Skin.HasSetting(ShowMovieDBFanart) + !IsEmpty(Window(Home).Property(RandomMovie.1.Art(fanart)))">$INFO[Window(Home).Property(RandomMovie.1.Art(fanart))]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),TVShows) + Skin.HasSetting(ShowTVShowDBFanart) + !IsEmpty(Skin.String(UsrTVShowFanartDir))">$INFO[Skin.String(UsrTVShowFanartDir)]</value>
@@ -135,7 +135,7 @@
 	<variable name="CommonMenuItemBackground" type="text">
 		<value condition="Skin.HasSetting(GlobalBackground) + !IsEmpty(Skin.String(CustomBackgroundPath))">$INFO[Skin.String(CustomBackgroundPath)]</value>
 		<value condition="Skin.HasSetting(GlobalBackground) + IsEmpty(Skin.String(CustomBackgroundPath))">special://skin/backgrounds/default_light.jpg</value>
-		<value condition="StringCompare(Window(home).Property(MenuItemSelected),Weather) + Skin.HasSetting(ShowWeatherFanart)">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
+		<value condition="StringCompare(Window(home).Property(MenuItemSelected),Weather) + Skin.HasSetting(ShowWeatherFanart) + !IsEmpty(Skin.String(WeatherFanartDir))">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
 		<value condition="StringCompare(Window(home).Property(MenuItemActive),ItemOne) + !IsEmpty(Skin.String(HomeItem.1.FanArt))">$INFO[Skin.String(HomeItem.1.FanArt)]</value>
 		<value condition="StringCompare(Window(home).Property(MenuItemActive),ItemTwo) + !IsEmpty(Skin.String(HomeItem.2.FanArt))">$INFO[Skin.String(HomeItem.2.FanArt)]</value>
 		<value condition="StringCompare(Window(home).Property(MenuItemActive),ItemThree) + !IsEmpty(Skin.String(HomeItem.3.FanArt))">$INFO[Skin.String(HomeItem.3.FanArt)]</value>
@@ -154,7 +154,7 @@
 	<variable name="SubMenuItemBackground" type="text">
 		<value condition="Skin.HasSetting(GlobalBackground) + !IsEmpty(Skin.String(CustomBackgroundPath))">$INFO[Skin.String(CustomBackgroundPath)]</value>
 		<value condition="Skin.HasSetting(GlobalBackground) + IsEmpty(Skin.String(CustomBackgroundPath))">special://skin/backgrounds/default_light.jpg</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(ShowWeatherFanart)">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(ShowWeatherFanart) + !IsEmpty(Skin.String(WeatherFanartDir))">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
 		<value condition="Container(9000).Hasfocus(1) + !IsEmpty(Skin.String(HomeItem.1.FanArt))">$INFO[Skin.String(HomeItem.1.FanArt)]</value>
 		<value condition="Container(9000).Hasfocus(2) + !IsEmpty(Skin.String(HomeItem.2.FanArt))">$INFO[Skin.String(HomeItem.2.FanArt)]</value>
 		<value condition="Container(9000).Hasfocus(3) + !IsEmpty(Skin.String(HomeItem.3.FanArt))">$INFO[Skin.String(HomeItem.3.FanArt)]</value>
@@ -1280,7 +1280,7 @@
 	</variable>
 	<variable name="HomeBackgroundPreview" type="text">
 		<value condition="Skin.HasSetting(GlobalBackground) + Skin.HasSetting(GlobalWeatherFanart)">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
-		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(ShowWeatherFanart)">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
+		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(ShowWeatherFanart) + !IsEmpty(Skin.String(WeatherFanartDir))">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
 		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),StartUp) + Skin.HasSetting(HideStartUpBackground)">black-back.png</value>
 		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),Movies) + Skin.HasSetting(ShowMovieDBFanart) + !IsEmpty(Skin.String(UsrMovieFanartDir))">$INFO[Skin.String(UsrMovieFanartDir)]</value>
 		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),Movies) + Skin.HasSetting(ShowMovieDBFanart) + !IsEmpty(Window(Home).Property(RandomMovie.1.Art(fanart)))">$INFO[Window(Home).Property(RandomMovie.1.Art(fanart))]</value>
@@ -1294,7 +1294,7 @@
 	</variable>
 	<variable name="HomeBackgroundLabel" type="text">
 		<value condition="Skin.HasSetting(GlobalBackground) + Skin.HasSetting(GlobalWeatherFanart)">$LOCALIZE[31906]</value>
-		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(ShowWeatherFanart)">$LOCALIZE[31906]</value>
+		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(ShowWeatherFanart) + !IsEmpty(Skin.String(WeatherFanartDir))">$LOCALIZE[31906]</value>
 		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),StartUp) + Skin.HasSetting(HideStartUpBackground)">$LOCALIZE[31170]</value>
 		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),Movies) + Skin.HasSetting(ShowMovieDBFanart)">$LOCALIZE[31907]</value>
 		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),TVShows) + Skin.HasSetting(ShowTVShowDBFanart)">$LOCALIZE[31907]</value>

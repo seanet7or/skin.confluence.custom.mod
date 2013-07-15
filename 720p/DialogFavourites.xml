@@ -25,8 +25,6 @@
 				<aspectratio align="center">keep</aspectratio>
 				<fadetime>IconCrossfadeTime</fadetime>
 				<texture>$INFO[ListItem.Icon]</texture>
-				<bordertexture border="8">ThumbShadow.png</bordertexture>
-				<bordersize>8</bordersize>
 			</control>
 			<control type="list" id="450">
 				<posx>390r</posx>
@@ -88,19 +86,6 @@
 						<info>ListItem.Label</info>
 					</control>
 				</focusedlayout>
-			</control>
-			<control type="label">
-				<description>Page label</description>
-				<posx>30r</posx>
-				<posy>670</posy>
-				<width>350</width>
-				<height>30</height>
-				<align>right</align>
-				<aligny>center</aligny>
-				<font>font12</font>
-				<textcolor>grey</textcolor>
-				<label>([COLOR=blue]$INFO[Container(450).NumItems][/COLOR]) $LOCALIZE[31025] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(450).CurrentPage]/$INFO[Container(450).NumPages][/COLOR])</label>
-				<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
 			</control>
 		</control>
 	</controls>

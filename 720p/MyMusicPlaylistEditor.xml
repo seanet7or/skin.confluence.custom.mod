@@ -140,19 +140,6 @@
 				<aligny>center</aligny>
 				<label>31058</label>
 			</control>
-			<control type="label">
-				<description>number of files/pages in left list text label</description>
-				<posx>30</posx>
-				<posy>38r</posy>
-				<width>410</width>
-				<font>font12</font>
-				<align>left</align>
-				<scroll>true</scroll>
-				<textcolor>blue</textcolor>
-				<shadowcolor>black</shadowcolor>
-				<label>($INFO[Container(50).NumItems]) $LOCALIZE[31025] - $LOCALIZE[31024] ($INFO[Container(50).CurrentPage]/$INFO[Container(50).NumPages])</label>
-				<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
-			</control>
 			<control type="scrollbar" id="30">
 				<posx>20</posx>
 				<posy>100</posy>
@@ -263,20 +250,6 @@
 				<align>right</align>
 				<aligny>center</aligny>
 				<label>31059</label>
-			</control>
-			<control type="label">
-				<description>Page Count Label</description>
-				<posx>440</posx>
-				<posy>38r</posy>
-				<width>300</width>
-				<height>20</height>
-				<font>font12</font>
-				<textcolor>blue</textcolor>
-				<scroll>false</scroll>
-				<align>right</align>
-				<aligny>center</aligny>
-				<label>($INFO[Container(100).NumItems]) $LOCALIZE[31025] - $LOCALIZE[31024] ($INFO[Container(100).CurrentPage]/$INFO[Container(100).NumPages])</label>
-				<visible>!Skin.HasSetting(HideNumItemsCount)</visible>
 			</control>
 			<control type="scrollbar" id="31">
 				<posx>430</posx>

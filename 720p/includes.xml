@@ -42,8 +42,8 @@
 	<include name="DefaultInitialSetup">
 		<onload condition="!System.HasAddon(script.globalsearch)">Skin.Setbool(HideHomeSearch)</onload>
 		<onload condition="!System.HasAddon(script.randomandlastitems)">Skin.Setbool(DisableScriptPlayList)</onload>
-		<onload>Skin.SetString(WeatherFanartDir,special://skin/backgrounds/weather/)</onload>
-		<onload>Skin.SetString(UsrGenreFanartDir,special://skin/backgrounds/moviegenre/)</onload>
+		<onload>Skin.SetString(WeatherFanartDir,)</onload>
+		<onload>Skin.SetString(UsrGenreFanartDir,)</onload>
 		<onload>Skin.SetBool(ShowWeatherFanart)</onload>
 		<onload>Skin.SetBool(ShowMovieDBFanart)</onload>
 		<onload>Skin.SetBool(ShowTVShowDBFanart)</onload>
@@ -430,39 +430,6 @@
 				<textcolor>grey</textcolor>
 				<shadowcolor>black</shadowcolor>
 				<visible>Player.HasVideo + VideoPlayer.Content(LiveTV)</visible>
-			</control>
-		</control>
-	</include>
-	<include name="CommonPageCount">
-		<control type="group">
-			<animation effect="slide" start="0,0" end="-90,0" time="0" condition="!Skin.HasSetting(DisableHomeReturnButtons)">Conditional</animation>
-			<control type="label">
-				<description>Page Count Label</description>
-				<posx>40r</posx>
-				<posy>53r</posy>
-				<width>500</width>
-				<height>20</height>
-				<font>font12</font>
-				<textcolor>grey</textcolor>
-				<scroll>false</scroll>
-				<align>right</align>
-				<aligny>center</aligny>
-				<label>$INFO[Container.NumItems,([COLOR=blue],[/COLOR]) $LOCALIZE[31025]]$INFO[Container.CurrentPage, - $LOCALIZE[31024] ([COLOR=blue]]$INFO[Container.NumPages,/,[/COLOR])]</label>
-				<include>Window_OpenClose_Animation</include>
-			</control>
-			<control type="label">
-				<description>Container Duration Label</description>
-				<posx>40r</posx>
-				<posy>32r</posy>
-				<width>500</width>
-				<height>20</height>
-				<font>font12</font>
-				<textcolor>grey</textcolor>
-				<scroll>false</scroll>
-				<align>right</align>
-				<aligny>center</aligny>
-				<label>$INFO[Container.TotalTime,$LOCALIZE[31009] ([COLOR=blue],[/COLOR])]</label>
-				<include>Window_OpenClose_Animation</include>
 			</control>
 		</control>
 	</include>
@@ -1023,24 +990,9 @@
 	</include>
 	<include name="Clock">
 		<control type="label">
-			<description>date label</description>
-			<posx>15r</posx>
-			<posy>5</posy>
-			<width>345</width>
-			<height>10</height>
-			<align>right</align>
-			<aligny>center</aligny>
-			<font>font10_title</font>
-			<textcolor>white</textcolor>
-			<shadowcolor>black</shadowcolor>
-			<info>System.Date</info>
-			<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
-			<visible>!Skin.HasSetting(HideSystemClock)</visible>
-		</control>
-		<control type="label">
 			<description>time label</description>
 			<posx>15r</posx>
-			<posy>20</posy>
+			<posy>5</posy>
 			<width>345</width>
 			<height>30</height>
 			<align>right</align>
