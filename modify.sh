@@ -1060,6 +1060,8 @@ else
 fi
 step
 
+exit
+
 printf "\nChanging keyboard: "
 if [ -f media/KeyboardEditArea.png ] ; then
 	XMLS="720p/DialogKeyboard.xml 720p/DialogNumeric.xml"
