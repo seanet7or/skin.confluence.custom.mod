@@ -197,7 +197,7 @@
 						<posy>0</posy>
 						<width>400</width>
 						<height>30</height>
-						<texture border="7">MenuItemFO.png</texture>
+						<texture border="7">buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(50)</visible>
 						<include>VisibleFadeEffect</include>
 					</control>
@@ -308,7 +308,7 @@
 						<posy>0</posy>
 						<width>400</width>
 						<height>30</height>
-						<texture border="7">MenuItemFO.png</texture>
+						<texture border="7">buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(100)</visible>
 						<include>VisibleFadeEffect</include>
 					</control>
@@ -337,33 +337,6 @@
 						<info>ListItem.Label2</info>
 					</control>
 				</focusedlayout>
-			</control>
-		</control>
-		<control type="image">
-			<description>Section header image</description>
-			<posx>20</posx>
-			<posy>3</posy>
-			<width>35</width>
-			<height>35</height>
-			<aspectratio>keep</aspectratio>
-			<texture>icon_music.png</texture>
-		</control>
-		<control type="grouplist">
-			<posx>65</posx>
-			<posy>5</posy>
-			<width>1000</width>
-			<height>30</height>
-			<orientation>horizontal</orientation>
-			<align>left</align>
-			<itemgap>5</itemgap>
-			<control type="label">
-				<include>WindowTitleCommons</include>
-				<label>$LOCALIZE[10503]</label>
-			</control>
-			<control type="label">
-				<include>WindowTitleCommons</include>
-				<label>[COLOR=blue] - [/COLOR]$INFO[Container.FolderName]</label>
-				<visible>!IsEmpty(Container.FolderName)</visible>
 			</control>
 		</control>
 		<include>Clock</include>

@@ -43,7 +43,7 @@
 				<align>right</align>
 				<aligny>top</aligny>
 				<texturenofocus border="5">-</texturenofocus>
-				<texturefocus border="5">MenuItemFO.png</texturefocus>
+				<texturefocus border="5">buttons/fo_light.png</texturefocus>
 				<onleft condition="Skin.HasSetting(DisableHomeReturnButtons)">2</onleft>
 				<onleft condition="!Skin.HasSetting(DisableHomeReturnButtons)">81</onleft>
 				<onright>2</onright>
@@ -294,28 +294,6 @@
 			</control>
 		</control>
 		<include>BehindDialogFadeOut</include>
-		<control type="image">
-			<description>Section header image</description>
-			<posx>20</posx>
-			<posy>3</posy>
-			<width>35</width>
-			<height>35</height>
-			<aspectratio>keep</aspectratio>
-			<texture>icon_system.png</texture>
-		</control>
-		<control type="grouplist">
-			<posx>65</posx>
-			<posy>5</posy>
-			<width>1000</width>
-			<height>30</height>
-			<orientation>horizontal</orientation>
-			<align>left</align>
-			<itemgap>5</itemgap>
-			<control type="label">
-				<include>WindowTitleCommons</include>
-				<label>$LOCALIZE[13200]</label>
-			</control>
-		</control>
 		<include>Clock</include>
 	</controls>
 </window>

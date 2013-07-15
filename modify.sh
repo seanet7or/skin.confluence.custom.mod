@@ -296,6 +296,7 @@ SCROLLBAR_VER_BAR_FO='scrollbar/ScrollBarV_bar_focus_light.png'
 MEDIA_BLADE='dialogs/bladesub_light.png'
 HOME_BLADE='dialogs/bladesub_light.png'
 OVERLAY_BG='dialogs/overlay-background.png'
+KEYBOARD_EDITAREA='KeyboardEditArea_light.png'
 
 STEP=0
 printf "\n############# APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ########################"
@@ -935,6 +936,17 @@ else
 fi
 step
 
+printf "\nReplacing MenuItemFO.png: "
+if [ -f media/MenuItemFO.png ] ; then
+	XMLS=$(2>/dev/null grep 'MenuItemFO.png' -l 720p/*)
+	perlregex $XMLS 's|>MenuItemFO.png|>'$BUTTON_FO'|g'
+	check_and_remove media/MenuItemFO.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 #printf "\nReplacing focused texture for controls with default $BUTTON_NF texturenofocus: "
 #if [ $(grep 'button-focus2.png' 720p/DialogAddonSettings.xml | wc -l) -gt 1 ] ; then
 #	# Looking for all controls having $BUTTON_NF texturenofocus
@@ -1060,8 +1072,6 @@ else
 fi
 step
 
-exit
-
 printf "\nChanging keyboard: "
 if [ -f media/KeyboardEditArea.png ] ; then
 	XMLS="720p/DialogKeyboard.xml 720p/DialogNumeric.xml"
@@ -1069,7 +1079,7 @@ if [ -f media/KeyboardEditArea.png ] ; then
 	perlregex $XMLS 's|>KeyboardCornerTop.png|>'$BUTTON_FO'|g'
 	perlregex $XMLS 's|>KeyboardCornerBottomNF.png|>'$BUTTON_NF'|g'
 	perlregex $XMLS 's|>KeyboardCornerBottom.png|>'$BUTTON_FO'|g'
-	perlregex $XMLS 's|>KeyboardEditArea.png|>KeyboardEditArea_light.png|g' 720p/DialogPVRGuideSearch.xml
+	perlregex $XMLS 's|>KeyboardEditArea.png|>'$KEYBOARD_EDITAREA'|g' 720p/DialogPVRGuideSearch.xml
 	perlregex $XMLS 's|>KeyboardKeyNF.png|>'$BUTTON_NF'|g'
 	perlregex $XMLS 's|>KeyboardKey.png|>'$BUTTON_FO'|g'
 	check_and_remove media/KeyboardCornerTopNF.png
@@ -1084,6 +1094,7 @@ else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
+exit
 
 printf "\nReplacing MediaBladeSub: "
 if [ -f media/MediaBladeSub.png ] ; then
@@ -1101,17 +1112,6 @@ if [ -f media/HomeBladeSub.png ] ; then
 	XMLS=$(2>/dev/null grep 'HomeBladeSub.png' -l 720p/*)
 	perlregex $XMLS 's|>HomeBladeSub.png|>'$HOME_BLADE'|g'
 	check_and_remove media/HomeBladeSub.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nReplacing MenuItemFO.png: "
-if [ -f media/MenuItemFO.png ] ; then
-	XMLS=$(2>/dev/null grep 'MenuItemFO.png' -l 720p/*)
-	perlregex $XMLS 's|>MenuItemFO.png|>'$BUTTON_FO'|g'
-	check_and_remove media/MenuItemFO.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET

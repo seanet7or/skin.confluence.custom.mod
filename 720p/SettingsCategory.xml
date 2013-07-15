@@ -114,7 +114,7 @@
 			<font>font13_title</font>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
-			<texturefocus border="5">MenuItemFO.png</texturefocus>
+			<texturefocus border="5">buttons/fo_light.png</texturefocus>
 			<texturenofocus border="5">-</texturenofocus>
 			<pulseonselect>false</pulseonselect>
 		</control>
@@ -126,7 +126,7 @@
 			<font>font13</font>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
-			<texturefocus border="0,2,0,2">MenuItemFO.png</texturefocus>
+			<texturefocus border="0,2,0,2">buttons/fo_light.png</texturefocus>
 			<texturenofocus border="0,2,0,2">-</texturenofocus>
 		</control>
 		<control type="radiobutton" id="8">
@@ -137,7 +137,7 @@
 			<font>font13</font>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
-			<texturefocus border="0,2,0,2">MenuItemFO.png</texturefocus>
+			<texturefocus border="0,2,0,2">buttons/fo_light.png</texturefocus>
 			<texturenofocus border="0,2,0,2">-</texturenofocus>
 		</control>
 		<control type="spincontrolex" id="9">
@@ -148,7 +148,7 @@
 			<font>font13</font>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
-			<texturefocus border="0,2,0,2">MenuItemFO.png</texturefocus>
+			<texturefocus border="0,2,0,2">buttons/fo_light.png</texturefocus>
 			<texturenofocus border="0,2,0,2">-</texturenofocus>
 			<aligny>center</aligny>
 			<reverse>yes</reverse>
@@ -225,32 +225,6 @@
 				<height>35</height>
 				<aspectratio>keep</aspectratio>
 				<texture>icon_home.png</texture>
-			</control>
-		</control>
-		<control type="image">
-			<description>Section header image</description>
-			<posx>20</posx>
-			<posy>3</posy>
-			<width>35</width>
-			<height>35</height>
-			<aspectratio>keep</aspectratio>
-			<texture>icon_system.png</texture>
-		</control>
-		<control type="grouplist">
-			<posx>65</posx>
-			<posy>5</posy>
-			<width>1000</width>
-			<height>30</height>
-			<orientation>horizontal</orientation>
-			<align>left</align>
-			<itemgap>5</itemgap>
-			<control type="label">
-				<include>WindowTitleCommons</include>
-				<label>$LOCALIZE[5]</label>
-			</control>
-			<control type="label">
-				<include>WindowTitleCommons</include>
-				<label>[COLOR=blue] - [/COLOR]$INFO[Control.GetLabel(2)]</label>
 			</control>
 		</control>
 		<include>Clock</include>
