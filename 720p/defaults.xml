@@ -5,6 +5,7 @@
 		<posy>0</posy>
 		<texture>-</texture>
 		<colorkey>0</colorkey>
+		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="label">
 		<posx>80</posx>
@@ -13,6 +14,7 @@
 		<font>font13</font>
 		<textcolor>white</textcolor>
 		<disabledcolor>grey3</disabledcolor>
+		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="fadelabel">
 		<posx>80</posx>
@@ -20,6 +22,7 @@
 		<font>font13</font>
 		<textcolor>white</textcolor>
 		<disabledcolor>grey3</disabledcolor>
+		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="button">
 		<posx>300</posx>
@@ -33,7 +36,7 @@
 		<disabledcolor>grey3</disabledcolor>
 		<textoffsetx>7</textoffsetx>
 		<aligny>center</aligny>
-		<pulseonselect>no</pulseonselect>
+		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="togglebutton">
 		<posx>140</posx>
@@ -48,7 +51,7 @@
 		<label>-</label>
 		<font>font13</font>
 		<disabledcolor>grey3</disabledcolor>
-		<pulseonselect>no</pulseonselect>
+		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="textbox">
 		<posx>220</posx>
@@ -58,6 +61,7 @@
 		<align>left</align>
 		<textcolor>white</textcolor>
 		<font>font13</font>
+		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="progress">
 		<posx>100</posx>
@@ -67,6 +71,7 @@
 		<midtexture border="6,0,6,0">progressbar/OSDProgressMid_light.png</midtexture>
 		<righttexture>-</righttexture>
 		<overlaytexture>-</overlaytexture>
+		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="spincontrol">
 		<posx>330</posx>
@@ -86,7 +91,7 @@
 		<textoffsetx>-5</textoffsetx>
 		<textoffsety>0</textoffsety>
 		<aligny>-</aligny>
-		<pulseonselect>no</pulseonselect>
+		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="spincontrolex">
 		<posx>530</posx>
@@ -107,7 +112,7 @@
 		<textoffsetx>7</textoffsetx>
 		<aligny>center</aligny>
 		<reverse>yes</reverse>
-		<pulseonselect>no</pulseonselect>
+		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="radiobutton">
 		<posx>300</posx>
@@ -126,7 +131,7 @@
 		<disabledcolor>grey3</disabledcolor>
 		<textoffsetx>7</textoffsetx>
 		<aligny>center</aligny>
-		<pulseonselect>no</pulseonselect>
+		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="selectbutton">
 		<posx>490</posx>
@@ -146,10 +151,12 @@
 		<textcolor>white</textcolor>
 		<disabledcolor>grey3</disabledcolor>
 		<aligny>center</aligny>
+		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="slider">
 		<controloffsetx>75</controloffsetx>
 		<controloffsety>0</controloffsety>
+		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="sliderex">
 		<height>35</height>
@@ -165,18 +172,21 @@
 		<font>font12</font>
 		<textcolor>white</textcolor>
 		<disabledcolor>grey3</disabledcolor>
+		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="mover">
 		<posx>60</posx>
 		<posy>192</posy>
 		<texturefocus border="5">buttons/fo_light.png</texturefocus>
 		<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="resize">
 		<posx>60</posx>
 		<posy>192</posy>
 		<texturefocus border="5">buttons/fo_light.png</texturefocus>
 		<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
+		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="edit">
 		<posx>300</posx>
@@ -190,6 +200,6 @@
 		<disabledcolor>grey3</disabledcolor>
 		<textoffsetx>7</textoffsetx>
 		<aligny>center</aligny>
-		<pulseonselect>no</pulseonselect>
+		<pulseonselect>false</pulseonselect>
 	</default>
 </includes>

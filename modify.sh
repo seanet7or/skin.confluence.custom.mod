@@ -2111,8 +2111,6 @@ else
 fi
 step
 
-exit
-
 printf "\nSetting pulseonselect to false for all controls: "
 if grep -I -q '<pulseonselect>no</pulseonselect>' 720p/defaults.xml ; then
 	XMLS=$(2>/dev/null grep '<pulseonselect>no</pulseonselect>' -l 720p/*)
