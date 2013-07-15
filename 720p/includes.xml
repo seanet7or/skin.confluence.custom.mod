@@ -1008,7 +1008,7 @@
 				<posy>0</posy>
 				<width>70</width>
 				<height>65</height>
-				<texture border="20,20,20,2">InfoMessagePanel.png</texture>
+				<texture border="20,20,20,2">dialogs/dialog-back_light.png</texture>
 			</control>
 			<control type="label">
 				<posx>5</posx>
@@ -1087,14 +1087,6 @@
 				<bordersize>3</bordersize>
 				<texture background="true">$INFO[ListItem.Icon]</texture>
 			</control>
-			<control type="image">
-				<posx>5</posx>
-				<posy>120</posy>
-				<width>170</width>
-				<height>110</height>
-				<aspectratio aligny="top">keep</aspectratio>
-				<texture diffuse="diffuse_mirror2.png" flipy="true" background="true">$INFO[ListItem.Icon]</texture>
-			</control>
 			<control type="label">
 				<posx>91</posx>
 				<posy>125</posy>
@@ -1130,14 +1122,6 @@
 				<bordersize>6</bordersize>
 				<texture background="true">$INFO[ListItem.Icon]</texture>
 				<visible>ControlGroup(9002).HasFocus</visible>
-			</control>
-			<control type="image">
-				<posx>5</posx>
-				<posy>120</posy>
-				<width>170</width>
-				<height>110</height>
-				<aspectratio aligny="top">keep</aspectratio>
-				<texture diffuse="diffuse_mirror2.png" flipy="true" background="true">$INFO[ListItem.Icon]</texture>
 			</control>
 			<control type="label">
 				<posx>91</posx>
