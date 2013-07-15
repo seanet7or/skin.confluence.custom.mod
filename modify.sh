@@ -300,6 +300,7 @@ KEYBOARD_EDITAREA='KeyboardEditArea_light.png'
 PROGRESS_MIDLIGHT='progressbar/OSDProgressMidLight_light.png'
 PROGRESS_MID='progressbar/OSDProgressMid_light.png'
 PROGRESS_BACK='progressbar/OSDProgressBack_light.png'
+SEEKSLIDER='seekslider_light.png'
 
 STEP=0
 printf "\n############# APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ########################"
@@ -1260,13 +1261,11 @@ else
 fi
 step
 
-exit
-
 printf "\nReplacing seeksliders: "
 if [ -f media/seekslider2.png ] ; then
 	XMLS=$(2>/dev/null grep 'seekslider' -l 720p/*)
-	perlregex $XMLS 's|seekslider2.png|seekslider_light.png|g'
-	perlregex $XMLS 's|seekslider.png|seekslider_light.png|g' --nocheck
+	perlregex $XMLS 's|seekslider2.png|'$SEEKSLIDER'|g'
+	perlregex $XMLS 's|seekslider.png|'$SEEKSLIDER'|g' --nocheck
 	check_and_remove media/seekslider.png
 	check_and_remove media/seekslider2.png
 	printf "%sDONE!%s" $GREEN $RESET
@@ -1292,6 +1291,8 @@ else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
+
+exit
 
 printf "\nReplacing default sliderbar: "
 if [ -f media/osd_slider_bg.png ] ; then
