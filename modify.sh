@@ -336,6 +336,21 @@ else
 fi
 step
 
+printf "\nReplacing texture for items without focus: "
+if [ -f media/button-nofocus.png ] ; then
+	XMLS=$(2>/dev/null grep '>button-nofocus.png<' -l 720p/*)
+	R='s|(<(item\|focused\|ruler\|channel)layout [^#]*#'
+	# matching lines beginning with any opening tag and </control>:
+	R+='(\s*<[a-z][^#]*#\|\s*</control>#)*?'				
+	R+='\s*<texture) border="[0-9]*">button-nofocus.png</texture>'
+	R+='|\1>'$BUTTON_NF'</texture>|g'
+	perlregex "$R" $XMLS
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\nChanging texture for items without focus: "
 if [ -f media/button-nofocus.png ] ; then
 	XMLS=$(2>/dev/null grep 'button-nofocus.png</texture>' -l 720p/*)
