@@ -356,7 +356,7 @@ step
 #step
 
 printf "\nRemoving media files: "
-if [ -f media/OverlayWatching.png ] ; then
+if [ -f media/OverlayWatching.png ] || [ -f media/poster_diffuse.png ] ; then
 	check_and_remove media/icon_volume.png
 	check_and_remove media/poster_diffuse.png
 	check_and_remove media/OSDFullScreenFO.png
@@ -1218,17 +1218,17 @@ else
 fi
 step
 
-printf "\nRemoving standard TV background: "
-if [ -f backgrounds/tv.jpg ] ; then
-	#XMLS=$(2>/dev/null grep 'tv.jpg' -l 720p/*)
-	#perlregex 720p/Settings.xml 's|\s*<icon>[^<]*</icon>||g'
-	#perlregex $XMLS 's|special://skin/backgrounds/homescreen/tv.jpg|'$BACKGROUND_DEF'|g'
-	check_and_remove backgrounds/tv.jpg
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
+#printf "\nRemoving standard TV background: "
+#if [ -f backgrounds/tv.jpg ] ; then
+#	#XMLS=$(2>/dev/null grep 'tv.jpg' -l 720p/*)
+#	#perlregex 720p/Settings.xml 's|\s*<icon>[^<]*</icon>||g'
+#	#perlregex $XMLS 's|special://skin/backgrounds/homescreen/tv.jpg|'$BACKGROUND_DEF'|g'
+#	check_and_remove backgrounds/tv.jpg
+#	printf "%sDONE!%s" $GREEN $RESET
+#else
+#	printf "%sSKIPPED.%s" $CYAN $RESET
+#fi
+#step
 
 printf "\nChanging dialog headers: "
 if [ -f media/dialogheader.png ] ; then
@@ -1394,7 +1394,7 @@ if [ -f media/black-back.png ] ; then
 	# replace with nf-background
 	perlregex 720p/SkinSettings.xml 720p/VideoFullScreen.xml 's|>black-back.png<|>'$BUTTON_NF'<|g'	
 	# replace where used as overlay background
-	#XMLS=$(2>/dev/null grep 'black-back.png' -l 720p/*)
+	XMLS=$(2>/dev/null grep 'black-back.png' -l 720p/*)
 	perlregex $XMLS 's|>black-back.png<|>'$OVERLAY_BG'<|g'	
 	check_and_remove media/black-back.png
 	printf "%sDONE!%s" $GREEN $RESET
@@ -1459,16 +1459,16 @@ else
 fi
 step
 
-printf "\nRemoving startup background: "
-if [ -f backgrounds/InitialStartup.jpg ] ; then
-	#XMLS=$(2>/dev/null grep 'startup.jpg' -l 720p/*)
-	#perlregex $XMLS 's|special://skin/backgrounds/homescreen/startup.jpg|'$BACKGROUND_DEF'|g'
-	check_and_remove backgrounds/InitialStartup.jpg
-	check_and_remove backgrounds/startup.jpg
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
+#printf "\nRemoving startup background: "
+#if [ -f backgrounds/InitialStartup.jpg ] ; then
+#	#XMLS=$(2>/dev/null grep 'startup.jpg' -l 720p/*)
+#	#perlregex $XMLS 's|special://skin/backgrounds/homescreen/startup.jpg|'$BACKGROUND_DEF'|g'
+#	check_and_remove backgrounds/InitialStartup.jpg
+#	check_and_remove backgrounds/startup.jpg
+#	printf "%sDONE!%s" $GREEN $RESET
+#else
+#	printf "%sSKIPPED.%s" $CYAN $RESET
+#fi
 step
 
 printf "\nReplacing standard album cover: "

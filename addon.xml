@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
-  id="skin.confluence.custom.mod"
-  version="1.1.10"
-  name="Confluence Customizable Mod"
-  provider-name="Mudislander">
+  id="skin.confluence.lightmod"
+  version="0.1.4"
+  name="Confluence Light Mod"
+  provider-name="seanet7or, Mudislander">
   <requires>
-	<import addon="xbmc.gui" version="4.0.0"/>
+    <import addon="xbmc.gui" version="4.0.0"/>
 	<import addon="service.skin.widgets" version="0.0.25"/>
 	<import addon="script.favourites" version="4.0.9"/>
 	<import addon="script.tvtunes" version="3.0.6"/>
@@ -17,41 +17,14 @@
   </requires>
   <extension
     point="xbmc.gui.skin"
-    defaultthemename="textures.xbt"
     debugging="false"
     effectslowdown="0.75">
     <res width="1280" height="720" aspect="16:9" default="true" folder="720p" />
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary lang="de">Eine modifizierte Version von  Jezz_X's Confluence Skin</summary>
-    <summary lang="el">Μια τροποποιημένη έκδοση του κελύφους Confluence του Jezz_X</summary>
     <summary lang="en">A modded version of Jezz_X's Confluence skin</summary>
-    <summary lang="es">Una versión modificada del skin Confluence de Jezz_X</summary>
-    <summary lang="gl">Unha versión modificada do tema Confluence de Jezz_X</summary>
-    <summary lang="hr">Moderni Izgled od Jezz_X's </summary>
-    <summary lang="hu">Módosított verzió , az eredeti Confluence felszín alapján</summary>
-    <summary lang="ko">Jezz_X의 Confluence 스킨을 수정한 버전</summary>
-    <summary lang="ru">Модифицированная версия обложки Confluence, созданной Jezz_X</summary>
-    <summary lang="th">รุ่นปรับแต่งของสกิน Confluence โดย Jezz_X</summary>
-    <summary lang="zh">一个Jezz_X的Confluence皮肤的修改版</summary>
-    <description lang="el">Μια τροποποίηση (mod) του προεπιλεγμένου κελύφους του XBMC, που ενσωματώνει πολλές αλλαγές, πρόσθετα και εφαρμογές.</description>
-    <description lang="en">A mod of XBMC's default skin, incorporating many of the now popular tweaks, addons and scripts.</description>
-    <description lang="es">Una modificación del skin por defecto de XBMC, que incorpora muchos de los cambios, complementos y scripts populares.</description>
-    <description lang="gl">Unha modificación do tema predefinido no XBMC, que incorpora moitos dos novos trocos, complementos e scripts.</description>
-    <description lang="hr">Confluence je prilagodljivi izgled koji ukljućuje mnoge popularne dodatke i skripte.</description>
-    <description lang="ko">XBMC 기본 스킨의 수정 버전으로 최신 인기 트윅, 추가기능, 스크립트를 포함하였습니다.</description>
-    <description lang="ru">Модификация Confluence, включающая в себя множество новых популярных настроек, дополнений и скриптов.</description>
-    <description lang="th">เป็นการปรับแต่งสกินเริ่มต้นของ XBMC, ที่รวมหลายอย่างที่นิยมในขณะนี้ การปรับแต่ง, ส่วนเสริม และ สคริปท์.</description>
-    <description lang="zh">XBMC默认皮肤的一个修改版，集成了许多现在流行的调整、插件和脚本。</description>
-    <disclaimer lang="de">Confluence Customizable Mod ist [B]NICHT[/B] das offizielle XBMC Standard-Skin von Jezz_X.</disclaimer>
-    <disclaimer lang="el">Η Τροποποίηση του Confluence [B]ΔΕΝ[/B] είναι το Επίσημο Προεπιλεγμένο Κέλυφος του XBMC από τον Jezz_X.</disclaimer>
+    <description lang="en">A mod of XBMC's default skin, incorporating many of the now popular tweaks, addons and scripts. The main focus lies on a simple and light user interface, that runs smoothly on low end devices such as the Raspberry Pi.</description>
     <disclaimer lang="en">Confluence Customizable Mod is [B]NOT[/B] the Official XBMC Default skin by Jezz_X.</disclaimer>
-    <disclaimer lang="es">Confluence Customizable Mod [B]NO[/B] es el skin Official por defecto de XBMC de Jezz_X.</disclaimer>
-    <disclaimer lang="gl">Confluence Customizable Mod [B]NON É[/B] o tema predefinido oficial do XBMC de Jezz_X.</disclaimer>
-    <disclaimer lang="ko">Confluence Customizable Mod는 Jezz_X의 공식 XBMC 기본 스킨이 [B]아닙니다.[/B]</disclaimer>
-    <disclaimer lang="ru">Данная модификация обложки Confluence это [B]НЕ[/B] официальная обложка XBMC авторства  Jezz_X.</disclaimer>
-    <disclaimer lang="th">Confluence Customizable Mod นี้ [B]ไม่ใช่[/B] สกินหลักอย่างเป็นทางการของ XBMC โดย Jezz_X.</disclaimer>
-    <disclaimer lang="zh">Confluence定制修改版[B]不是[/B]Jezz_X制作的XBMC官方默认皮肤。</disclaimer>
     <platform>all</platform>
   </extension>
 </addon>
