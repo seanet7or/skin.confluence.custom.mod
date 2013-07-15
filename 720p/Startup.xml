@@ -8,7 +8,7 @@
 			<include>Dimensions_Fullscreen</include>
 			<aspectratio>scale</aspectratio>
 			<include>VisibleFadeEffect</include>
-			<texture fallback="special://skin/backgrounds/homescreen/startup.jpg">$INFO[Skin.String(StartUpBackgroundPath)]</texture>
+			<texture fallback="special://skin/backgrounds/default_light.jpg">$INFO[Skin.String(StartUpBackgroundPath)]</texture>
 			<visible>!Skin.HasSetting(HideStartUpBackground)</visible>
 		</control>
 		<control type="button" id="10">

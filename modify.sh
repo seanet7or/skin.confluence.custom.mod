@@ -1458,9 +1458,10 @@ step
 
 printf "\nRemoving startup background: "
 if [ -f backgrounds/InitialStartup.jpg ] ; then
-	remove_control image '<description>Startup Background Image</description>' 720p/Startup.xml
-	remove_control image '<description>Startup Background Image</description>' 720p/LoginScreen.xml
+	XMLS=$(2>/dev/null grep 'startup.jpg' -l 720p/*)
+	perlregex $XMLS 's|special://skin/backgrounds/homescreen/startup.jpg|'$BACKGROUND_DEF'|g'
 	check_and_remove backgrounds/InitialStartup.jpg
+	check_and_remove backgrounds/startup.jpg
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET

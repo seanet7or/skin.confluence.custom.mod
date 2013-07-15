@@ -3946,7 +3946,7 @@
 								<description>Startup Window</description>
 								<label>$LOCALIZE[31333]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/backgrounds/homescreen/startup.jpg</icon>
+								<icon>special://skin/backgrounds/default_light.jpg</icon>
 								<thumb>$INFO[Skin.String(StartUpBackgroundPath)]</thumb>
 								<property name="HiLiteItem">StartUp</property>
 							</item>
@@ -5429,7 +5429,7 @@
 								<align>center</align>
 								<texturenofocus border="5">buttons/nf_light.png</texturenofocus>
 								<texturefocus border="5">buttons/fo_light.png</texturefocus>
-								<onclick>Skin.SetString(StartUpBackgroundPath,special://skin/backgrounds/homescreen/startup.jpg)</onclick>
+								<onclick>Skin.SetString(StartUpBackgroundPath,special://skin/backgrounds/default_light.jpg)</onclick>
 								<onclick>Skin.Reset(HideStartUpBackground)</onclick>
 								<onleft>501</onleft>
 								<onright>500</onright>
