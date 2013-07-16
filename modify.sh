@@ -526,7 +526,8 @@ step
 
 printf "\nRemoving reflections: "
 if [ -f media/diffuse_mirror3.png ] ; then
-	remove_control 'image' '<texture[^>]*diffuse="diffuse_mirror[23].png"[^>]*>[^<]*</texture>'
+	#XMLS=$(2>/dev/null grep 'diffuse_mirror[23].png' -l 720p/*)
+	remove_control 'image' '<texture[^>]*diffuse="diffuse_mirror[23].png"[^>]*>[^<]*</texture>' #$XMLS
 	check_and_remove media/diffuse_mirror2.png
 	check_and_remove media/diffuse_mirror3.png
 	printf "%sDONE!%s" $GREEN $RESET
@@ -577,7 +578,8 @@ step
 	
 printf "\nRemoving mouse close buttons: "
 if [ -f  media/DialogCloseButton-focus.png ] ; then
-	remove_controlid 'button' '<texturenofocus>DialogCloseButton.png</texturenofocus>'
+	#XMLS=$(2>/dev/null grep '>DialogCloseButton.png<' -l 720p/*)
+	remove_controlid 'button' '<texturenofocus>DialogCloseButton.png</texturenofocus>' #$XMLS
 	check_and_remove media/DialogCloseButton.png
 	check_and_remove media/DialogCloseButton-focus.png
 	printf "%sDONE!%s" $GREEN $RESET
@@ -588,7 +590,8 @@ step
 
 printf "\nRemoving studio logos: "
 if grep -q 'listitem.Studio,studios' 720p/ViewsLogoVertical.xml ; then
-	remove_control 'image' '<texture>.INFO.listitem.Studio,studios.,.png.</texture>'
+	#XMLS=$(2>/dev/null grep '>.INFO.listitem.Studio,studios.,.png.<' -l 720p/*)
+	remove_control 'image' '<texture>.INFO.listitem.Studio,studios.,.png.</texture>' #$XMLS
 	remove_include 'MediaStudioFlagging' 720p/includes.xml
 	rm -rf media/studios
 	printf "%sDONE!%s" $GREEN $RESET
@@ -638,7 +641,8 @@ step
 printf "\nRemoving xbmc logo: "
 if grep -I -q xbmc-logo.png 720p/* ; then
 	#remove logo from all screens
-	remove_control 'image' '<texture>xbmc-logo.png</texture>'
+	#XMLS=$(2>/dev/null grep '>xbmc-logo.png<' -l 720p/*)
+	remove_control 'image' '<texture>xbmc-logo.png</texture>' #$XMLS
 	#remove logo fallback from music visualisation
 	XMLS=$(2>/dev/null grep 'fallback="xbmc-logo.png"' -l 720p/*)
 	perlregex 's| fallback="xbmc-logo.png"||g' $XMLS
@@ -693,7 +697,7 @@ then
 			| grep -o '<posx>[0-9]*</posx>' | grep -o '[0-9]*' )
 		do
 			NEWX=$((XPOS+6))
-			echo "'$XPOS' -> '$NEWX'"
+			#echo "'$XPOS' -> '$NEWX'"
 			R='s|(<control type="scrollbar" id="[0-9]*">#'
 			R+='\s*<posx)>'"$XPOS"'<(/posx>#\s*<posy>[0-9]*</posy>#'
 			R+='\s*<width>14</width>)'
@@ -722,7 +726,8 @@ step
 
 printf "\nRemoving GlassOverlay.png: "
 if [ -f  media/GlassOverlay.png ] ; then
-	remove_control 'image' '<texture>GlassOverlay.png</texture>'
+	#XMLS=$(2>/dev/null grep '>GlassOverlay.png<' -l 720p/*)
+	remove_control 'image' '<texture>GlassOverlay.png</texture>' #$XMLS
 	check_and_remove media/GlassOverlay.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
@@ -732,8 +737,10 @@ step
 
 printf "\nRemoving separators: "
 if [ -f media/separator2.png ] ; then
-	remove_control 'image' '<texture>separator.png</texture>'
-	remove_control 'image' '<texture>separator2.png</texture>'
+	#XMLS=$(2>/dev/null grep '>separator.png<' -l 720p/*)
+	remove_control 'image' '<texture>separator.png</texture>' #$XMLS
+	#XMLS=$(2>/dev/null grep '>separator2.png<' -l 720p/*)
+	remove_control 'image' '<texture>separator2.png</texture>' #$XMLS
 	#not all controls can be removed, some have an id and are used for navigation
 	XMLS=$(2>/dev/null grep 'separator2.png' -l 720p/*)
 	perlregex $XMLS 's|separator2.png|-|g'
@@ -747,7 +754,8 @@ step
 
 printf "\nRemoving menu items separator 'MenuItemNF.png': "
 if [ -f media/MenuItemNF.png ] ; then
-	remove_control 'image' '<texture[^>]*>MenuItemNF.png</texture>'
+	#XMLS=$(2>/dev/null grep '>MenuItemNF<' -l 720p/*)
+	remove_control 'image' '<texture[^>]*>MenuItemNF.png</texture>' #$XMLS
 	XMLS=$(2>/dev/null grep 'MenuItemNF.png' -l 720p/*)
 	R='s|>MenuItemNF.png<|>-<|g'
 	perlregex $XMLS "$R"
@@ -760,7 +768,8 @@ step
 
 printf "\nRemoving content panel mirrors: "
 if [ -f media/ContentPanelMirror.png ] ; then
-	remove_control 'image' '<texture[^>]*>ContentPanelMirror.png</texture>'
+	#XMLS=$(2>/dev/null grep '>ContentPanelMirror<' -l 720p/*)
+	remove_control 'image' '<texture[^>]*>ContentPanelMirror.png</texture>' #$XMLS
 	check_and_remove 'media/ContentPanelMirror.png'
 	printf "%sDONE!%s" $GREEN $RESET
 else
@@ -770,7 +779,8 @@ step
 
 printf "\nRemoving floor image: "
 if [ -f media/floor.png ] ; then
-	remove_control 'image' '<texture[^>]*>floor.png</texture>'
+	#XMLS=$(2>/dev/null grep '>floor.png<' -l 720p/*)
+	remove_control 'image' '<texture[^>]*>floor.png</texture>' #$XMLS
 	check_and_remove 'media/floor.png'
 	printf "%sDONE!%s" $GREEN $RESET
 else
@@ -781,7 +791,8 @@ step
 printf "\nRemoving HomeNowPlayingBack.png: "
 if grep -q '<texture flipy="true">HomeNowPlayingBack.png</texture>' 720p/VideoFullScreen.xml ; then
 	# remove from top
-	remove_controlid 'image' '<texture flipy="true">HomeNowPlayingBack.png</texture>'
+	#XMLS=$(2>/dev/null grep '>HomeNowPlayingBack.png<' -l 720p/*)
+	remove_controlid 'image' '<texture flipy="true">HomeNowPlayingBack.png</texture>' #$XMLS
 	# remove on bottom for some windows
 	#remove_control 'image' '<texture[^>]*>HomeNowPlayingBack.png</texture>'
 	printf "%sDONE!%s" $GREEN $RESET
@@ -812,7 +823,8 @@ step
 
 printf "\nRemoving thumb background: "
 if [ -f media/ThumbBG.png ] ; then
-	remove_control 'image' '<texture border="2">ThumbBG.png</texture>'
+	#XMLS=$(2>/dev/null grep '>ThumbBG.png<' -l 720p/*)
+	remove_control 'image' '<texture border="2">ThumbBG.png</texture>' #$XMLS
 	check_and_remove 'media/ThumbBG.png'	
 	printf "%sDONE!%s" $GREEN $RESET
 else
@@ -1576,6 +1588,19 @@ else
 fi
 step
 
+printf "\nReplacing livecd DefaultAlbumCover.png: "
+if [ -f media/livecdcase/DefaultAlbumCover.png ] ; then
+	XMLS=$(2>/dev/null grep '"livecdcase/DefaultAlbumCover.png"' -l 720p/*)
+	perlregex $XMLS 's|"livecdcase/DefaultAlbumCover.png"|"DefaultAlbumCover.png"|g'
+	#XMLS=$(2>/dev/null grep 'FallbackAlbumCover.png' -l 720p/*)
+	#perlregex $XMLS 's|>FallbackAlbumCover.png<|>DefaultAlbumCover.png<|g'
+	rm media/livecdcase/DefaultAlbumCover.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\nReplacing warning sign: "
 if [ -f media/warning.png ] ; then
 	XMLS=$(2>/dev/null grep 'warning.png' -l 720p/*)
@@ -2086,7 +2111,7 @@ if grep -I -q '<description>Date time txt</description>' 720p/ViewsPictures.xml 
 	perlregex 720p/IncludesBackgroundBuilding.xml "$R"
 	#move the scrollbar of the selection panel left
 	R='s|(\s*<control type="scrollbar" id="60">\s*#)'
-	R+='(\s*)<posx>500</posx>|\1\2<posx>212</posx>|'
+	R+='(\s*)<posx>50[06]</posx>|\1\2<posx>212</posx>|'
 	perlregex 720p/ViewsPictures.xml "$R"
 	#resize and move the picture preview on the right
 	perlregex 720p/ViewsPictures.xml 's|<posx>570</posx>|<posx>282</posx>|'
