@@ -311,6 +311,8 @@ CALIBRATE_SUBTITLES='buttons/calibrate/subtitles_light.png'
 HOME_MAIN_FO='home/main-fo_light.png'
 HOME_SUB_NF='home/sub-nf_light.png'
 HOME_SUB_FO='home/sub-fo_light.png'
+RADIOBUTTON_FO='controls/radiobutton-fo_light.png'
+RADIOBUTTON_NF='controls/radiobutton-nf_light.png'
 
 STEP=0
 printf "\n############# APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ########################"
@@ -367,6 +369,22 @@ if [ -f media/OverlayWatching.png ] || [ -f media/poster_diffuse.png ] ; then
 	check_and_remove backgrounds/Kryptonite.jpg
 	check_and_remove media/OverlayWatching.png
 	check_and_remove media/Invisable.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nReplacing radiobutton textures: "
+if [ -f media/radiobutton-focus.png ] ; then
+	XMLS=$(2>/dev/null grep '>radiobutton-focus.png<' -l 720p/*)
+	R='s|>radiobutton-focus.png<|>'$RADIOBUTTON_FO'<|g'
+	perlregex "$R" $XMLS
+	XMLS=$(2>/dev/null grep '>radiobutton-nofocus.png<' -l 720p/*)
+	R='s|>radiobutton-nofocus.png<|>'$RADIOBUTTON_NF'<|g'
+	perlregex "$R" $XMLS
+	check_and_remove media/radiobutton-focus.png
+	check_and_remove media/radiobutton-nofocus.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
