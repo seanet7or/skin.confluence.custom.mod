@@ -698,8 +698,8 @@ then
 			R+='\s*<posx)>'"$XPOS"'<(/posx>#\s*<posy>[0-9]*</posy>#'
 			R+='\s*<width>14</width>)'
 			R+='|\1>'"$NEWX"'<\2|g'
-			echo "$R"
-			#perlregex $FILE "$R"
+			#echo "$R"
+			perlregex $FILE "$R" --nocheck
 		done
 	done
 	printf "%sDONE!%s" $GREEN $RESET
