@@ -1112,7 +1112,7 @@ step
 
 printf "\nChanging keyboard: "
 if [ -f media/KeyboardEditArea.png ] ; then
-	XMLS="720p/720p/DialogPVRGuideSearch.xml 720p/DialogKeyboard.xml 720p/DialogNumeric.xml"
+	XMLS="720p/DialogPVRGuideSearch.xml 720p/DialogKeyboard.xml 720p/DialogNumeric.xml"
 	perlregex $XMLS 's|>KeyboardCornerTopNF.png|>'$BUTTON_NF'|g'
 	perlregex $XMLS 's|>KeyboardCornerTop.png|>'$BUTTON_FO'|g'
 	perlregex $XMLS 's|>KeyboardCornerBottomNF.png|>'$BUTTON_NF'|g'
