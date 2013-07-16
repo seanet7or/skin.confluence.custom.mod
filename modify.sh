@@ -155,6 +155,24 @@ remove_include() {
 	fi
 }
 
+
+
+# removes <variable name="?"> .... </variable> structure from a xml file
+# $1 name of variable
+# $2 files where to search
+remove_variable() {
+	local NAME=$1
+	local FILES=$2
+	local REGEX='s|\s*<variable name="'$NAME'">#'
+	REGEX+='(\s*<[/a-z][^#]*#\|)*?'
+	REGEX+='\s*</variable>#'
+	REGEX+='||g'
+	perlregex "$REGEX" "$FILES"
+	if grep -I -q "$NAME" 720p/* ; then
+		printf "\n'Removed variable $NAME' was found in the .xmls: \n"
+		grep "$NAME" 720p/*
+	fi
+}
 # removes <control type="?"> .... </control> structure from a xml file
 # this function removes only controls without an id!
 # the controle structure to remove is identified by the characteristic line
@@ -1498,6 +1516,20 @@ printf "\nRemoving cdwall-grid.png: "
 if [ -f media/cdwall-grid.png ] ; then
 	remove_control image '<texture background="true">cdwall-grid.png</texture>'
 	check_and_remove media/cdwall-grid.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nRemoving ClearCases: "
+if [ -d media/ClearCase ] ; then
+	remove_control image '<visible>\!Skin.HasSetting\(View724DisableCases\)</visible>' 720p/ViewsLowlist.xml
+	perlregex 's|\s*<visible>Skin.HasSetting\(View724DisableCases\)</visible>\s*#||' 720p/ViewsLowlist.xml
+	remove_controlid radiobutton '<onclick>Skin.ToggleSetting\(View724DisableCases\)</onclick>' 720p/MyVideoNav.xml
+	remove_controlid radiobutton '<onclick>Skin.ToggleSetting\(UseDiscTypeCase\)</onclick>' 720p/MyVideoNav.xml
+	remove_variable 'VideoListCase' '720p/IncludesVariables.xml'
+	rm -rf media/ClearCase
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET

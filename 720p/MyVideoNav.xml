@@ -211,25 +211,6 @@
 					<selected>Skin.HasSetting(View730ShowThumb)</selected>
 					<visible>Control.IsVisible(730) + Container.Content(Episodes)</visible>
 				</control>
-				<control type="radiobutton" id="103">
-					<description>Show DVD Cases Toggle</description>
-					<textwidth>170</textwidth>
-					<include>ButtonCommonValues</include>
-					<label>31041</label>
-					<onclick>Skin.ToggleSetting(View724DisableCases)</onclick>
-					<selected>Skin.HasSetting(View724DisableCases)</selected>
-					<visible>Control.IsVisible(724)</visible>
-				</control>
-				<control type="radiobutton" id="104">
-					<description>Use Disk Type Case</description>
-					<textwidth>170</textwidth>
-					<include>ButtonCommonValues</include>
-					<label>31670</label>
-					<onclick>Skin.ToggleSetting(UseDiscTypeCase)</onclick>
-					<selected>Skin.HasSetting(UseDiscTypeCase)</selected>
-					<enable>!Skin.HasSetting(View724DisableCases)</enable>
-					<visible>Control.IsVisible(724)</visible>
-				</control>
 				<control type="radiobutton" id="14">
 					<description>Watched Toggle</description>
 					<textwidth>170</textwidth>

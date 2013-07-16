@@ -251,19 +251,6 @@
 		<value condition="[Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)] + !substring(ListItem.Duration,min)">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</value>
 		<value condition="[Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)] + substring(ListItem.Duration,min)">$INFO[ListItem.Duration]</value>
 	</variable>
-	<variable name="VideoListCase">
-		<value condition="!Skin.HasSetting(UseDiscTypeCase) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">TVseries</value>
-		<value condition="!Skin.HasSetting(UseDiscTypeCase) + !IsEmpty(ListItem.FileExtension)">$INFO[ListItem.FileExtension]</value>
-		<value condition="Skin.HasSetting(UseDiscTypeCase) + [SubString(ListItem.FilenameAndPath,bluray) | SubString(ListItem.FilenameAndPath,bdrip) | SubString(ListItem.FilenameAndPath,bd25) | SubString(ListItem.FilenameAndPath,bd50)]">bd</value>
-		<value condition="Skin.HasSetting(UseDiscTypeCase) + [SubString(ListItem.FilenameAndPath,.3D.) | SubString(ListItem.FilenameAndPath,.3Dbd.) | SubString(ListItem.FilenameAndPath,.SBS.)]">3DCase</value>
-		<value condition="Skin.HasSetting(UseDiscTypeCase) + SubString(ListItem.FilenameAndPath,hddvd)">hddvd</value>
-		<value condition="Skin.HasSetting(UseDiscTypeCase) + SubString(ListItem.FilenameAndPath,dvd)">dvd</value>
-		<value condition="Skin.HasSetting(UseDiscTypeCase) + [SubString(ListItem.FilenameAndPath,pdtv) | SubString(ListItem.FilenameAndPath,hdtv) | SubString(ListItem.FilenameAndPath,dsr)]">TVseries</value>
-		<value condition="Skin.HasSetting(UseDiscTypeCase) + SubString(ListItem.VideoResolution,1080)">bd</value>
-		<value condition="Skin.HasSetting(UseDiscTypeCase) + SubString(ListItem.VideoResolution,720)">hddvd</value>
-		<value condition="Skin.HasSetting(UseDiscTypeCase) + [SubString(ListItem.VideoResolution,576) | SubString(ListItem.VideoResolution,540) | SubString(ListItem.VideoResolution,480)]">dvd</value>
-		<value>dv</value>
-	</variable>
 	<variable name="GenreFlagPath">
 		<value>DefaultGenre/</value>
 	</variable>
