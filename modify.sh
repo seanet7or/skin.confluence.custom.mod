@@ -686,7 +686,7 @@ fi
 step
 
 printf "\nMoving vertical scroll bars to the right: "
-if false #grep -q -zo -P '<control type="scrollbar" id="60">\n\s*<posx>1250</posx>' 720p/CustomAddMenuItems.xml
+if grep -q -zo -P '<control type="scrollbar" id="60">\n\s*<posx>1250</posx>' 720p/CustomAddMenuItems.xml
 then
 	for FILE in 720p/* ; do
 		IFS=$'\n' ; for XPOS in $( grep -zo -P -I '<control type="scrollbar" id="[0-9]*">\n\s*<posx>[0-9]*</posx>\n\s*<posy>[0-9]*</posy>\n\s*<width>14</width>' "$FILE" \
