@@ -313,6 +313,10 @@ HOME_SUB_NF='home/sub-nf_light.png'
 HOME_SUB_FO='home/sub-fo_light.png'
 RADIOBUTTON_FO='controls/radiobutton-fo_light.png'
 RADIOBUTTON_NF='controls/radiobutton-nf_light.png'
+FOLDER_NF='controls/folder-nf_light.png'
+SLIDER_BG='controls/slider/bg_light.png'
+SLIDER_NIB_NF='controls/slider/nib-nf_light.png'
+SLIDER_NIB_FO='controls/slider/nib-fo_light.png'
 
 STEP=0
 printf "\n############# APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ########################"
@@ -663,26 +667,28 @@ else
 fi
 step
 
-#printf "\nMoving vertical scroll bars to the right: "
-#if false ; then #grep -q -zo -P '<control type="scrollbar" id="60">\n\s*<posx>212</posx>' 720p/ViewsPictures.xml ; then
-#	for FILE in 720p/* ; do
-#		IFS=$'\n' ; for XPOS in $( grep -zo -P -I '<control type="scrollbar" id="[0-9]*">\n\s*<posx>[0-9]*</posx>\n\s*<posy>[0-9]*</posy>\n\s*<width>14</width>' "$FILE" \
-#			| grep -o '<posx>[0-9]*</posx>' | grep -o '[0-9]*' )
-#		do
-#			NEWX=$((XPOS+6))
-#			echo "'$XPOS' -> '$NEWX'"
-#			R='s|(<control type="scrollbar" id="[0-9]*">#'
-#			R+='\s*<posx)>'"$XPOS"'<(/posx>#\s*<posy>[0-9]*</posy>#'
-#			R+='\s*<width>14</width>)'
-#			R+='|\1>'"$NEWX"'<\2|g'
-#			#perlregex $FILE "$R"
-#		done
-#	done
-#	printf "%sDONE!%s" $GREEN $RESET
-#else
-#	printf "%sSKIPPED.%s" $CYAN $RESET
-#fi
-#step
+printf "\nMoving vertical scroll bars to the right: "
+if false #grep -q -zo -P '<control type="scrollbar" id="60">\n\s*<posx>1250</posx>' 720p/CustomAddMenuItems.xml
+then
+	for FILE in 720p/* ; do
+		IFS=$'\n' ; for XPOS in $( grep -zo -P -I '<control type="scrollbar" id="[0-9]*">\n\s*<posx>[0-9]*</posx>\n\s*<posy>[0-9]*</posy>\n\s*<width>14</width>' "$FILE" \
+			| grep -o '<posx>[0-9]*</posx>' | grep -o '[0-9]*' )
+		do
+			NEWX=$((XPOS+6))
+			echo "'$XPOS' -> '$NEWX'"
+			R='s|(<control type="scrollbar" id="[0-9]*">#'
+			R+='\s*<posx)>'"$XPOS"'<(/posx>#\s*<posy>[0-9]*</posy>#'
+			R+='\s*<width>14</width>)'
+			R+='|\1>'"$NEWX"'<\2|g'
+			echo "$R"
+			#perlregex $FILE "$R"
+		done
+	done
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
 
 printf "\nReformating horizontal scroll bar controls: "
 if grep -q -zo -P '<control type="scrollbar" id="60">\n\s*<posx>[0-9]*</posx>\n\s*<posy>[0-9]*</posy>\n\s*<width>[0-9]*</width>\n\s*<height>25</height>' \
@@ -1106,12 +1112,12 @@ step
 
 printf "\nChanging keyboard: "
 if [ -f media/KeyboardEditArea.png ] ; then
-	XMLS="720p/DialogKeyboard.xml 720p/DialogNumeric.xml"
+	XMLS="720p/720p/DialogPVRGuideSearch.xml 720p/DialogKeyboard.xml 720p/DialogNumeric.xml"
 	perlregex $XMLS 's|>KeyboardCornerTopNF.png|>'$BUTTON_NF'|g'
 	perlregex $XMLS 's|>KeyboardCornerTop.png|>'$BUTTON_FO'|g'
 	perlregex $XMLS 's|>KeyboardCornerBottomNF.png|>'$BUTTON_NF'|g'
 	perlregex $XMLS 's|>KeyboardCornerBottom.png|>'$BUTTON_FO'|g'
-	perlregex $XMLS 's|>KeyboardEditArea.png|>'$KEYBOARD_EDITAREA'|g' 720p/DialogPVRGuideSearch.xml
+	perlregex $XMLS 's|>KeyboardEditArea.png|>'$KEYBOARD_EDITAREA'|g'
 	perlregex $XMLS 's|>KeyboardKeyNF.png|>'$BUTTON_NF'|g'
 	perlregex $XMLS 's|>KeyboardKey.png|>'$BUTTON_FO'|g'
 	check_and_remove media/KeyboardCornerTopNF.png
@@ -1344,9 +1350,19 @@ else
 fi
 step
 
-printf "\nReplacing default sliderbar: "
-if [ -f media/osd_slider_bg.png ] ; then
-	perlregex  720p/defaults.xml 's|osd_slider_bg.png|osd_slider_bg_2.png|g'
+printf "\nReplacing slider and sliderex textures: "
+if [ -f media/osd_slider_bg_2.png ] ; then
+	XMLS=$(2>/dev/null grep '>osd_slider_bg.png<' -l 720p/*)
+	perlregex $XMLS 's|>osd_slider_bg.png<|>'$SLIDER_BG'<|g'
+	XMLS=$(2>/dev/null grep '>osd_slider_bg_2.png<' -l 720p/*)
+	perlregex $XMLS 's|>osd_slider_bg_2.png<|>'$SLIDER_BG'<|g'
+	XMLS=$(2>/dev/null grep '>osd_slider_nibNF.png<' -l 720p/*)
+	perlregex $XMLS 's|>osd_slider_nibNF.png<|>'$SLIDER_NIB_NF'<|g'
+	XMLS=$(2>/dev/null grep '>osd_slider_nib.png<' -l 720p/*)
+	perlregex $XMLS 's|>osd_slider_nib.png<|>'$SLIDER_NIB_FO'<|g'
+	check_and_remove media/osd_slider_nibNF.png
+	check_and_remove media/osd_slider_nib.png
+	check_and_remove media/osd_slider_bg_2.png
 	check_and_remove media/osd_slider_bg.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
@@ -1562,6 +1578,16 @@ if ! grep -q 'buttonfocus' colors/defaults.xml ; then
 	R+='\2<color name="itemselected">ffeb9e17</color>#'
 	R+='\2|'
 	perlregex colors/defaults.xml "$R"
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nRemoving other color schemes: "
+if [ -f colors/Fire.xml ] ; then
+	rm colors/Fire.xml
+	rm colors/Kryptonite.xml
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -2043,6 +2069,25 @@ if grep -I -q '<description>Date time txt</description>' 720p/ViewsPictures.xml 
 	remove_control 'label' '<description>Date time txt</description>' 720p/ViewsPictures.xml
 	remove_control 'label' '<description>Resolution txt</description>' 720p/ViewsPictures.xml
 	#add border texture directly to the picture that is focused in the left selection panel
+	R='s|(\s*<control type="image">\s*#'
+	R+='\s*)<posx>10</posx>(\s*#'
+	R+='\s*)<posy>10</posy>(\s*#'
+	R+='\s*)<width>124</width>(\s*#'
+	R+='\s*)<height>124</height>(\s*#'
+	R+='\s*<aspectratio>keep</aspectratio>\s*#)'
+	R+='(\s*)(<texture background="true">.INFO.ListItem.Icon.</texture>\s*#)'
+	R+='(\s*</control>\s*#)'
+	R+='(\s*</focusedlayout>\s*#)'
+	R+='|\1<posx>8</posx>\2<posy>8</posy>\3<width>128</width>\4<height>128</height>\5'
+	R+='\6<bordersize>5</bordersize>#'
+	R+='\6<bordertexture border="6">buttons/folder-focus_light.png</bordertexture>#'
+	R+='\6<visible>Control\.HasFocus\(514\)</visible>#\6\7\8'
+	R+='\1<posx>8</posx>\2<posy>8</posy>\3<width>128</width>\4<height>128</height>\5'
+	R+='\6<bordersize>5</bordersize>#'
+	R+='\6<bordertexture border="6">'$FOLDER_NF'</bordertexture>#'
+	R+='\6<visible>\!Control\.HasFocus\(514\)</visible>#\6\7\8\9|'
+	perlregex 720p/ViewsPictures.xml "$R"
+	#add border texture directly to the picture that is not focused in the left selection panel
 	R='s|(<control type="image">\s*#'
 	R+='\s*)<posx>10</posx>(\s*#'
 	R+='\s*)<posy>10</posy>(\s*#'
@@ -2051,10 +2096,10 @@ if grep -I -q '<description>Date time txt</description>' 720p/ViewsPictures.xml 
 	R+='\s*<aspectratio>keep</aspectratio>\s*#)'
 	R+='(\s*)(<texture background="true">.INFO.ListItem.Icon.</texture>\s*#'
 	R+='\s*</control>\s*#'
-	R+='\s*</focusedlayout>\s*#)'
+	R+='\s*</itemlayout>\s*#)'
 	R+='|\1<posx>8</posx>\2<posy>8</posy>\3<width>128</width>\4<height>128</height>\5'
 	R+='\6<bordersize>5</bordersize>#'
-	R+='\6<bordertexture border="6">buttons/folder-focus_light.png</bordertexture>#'
+	R+='\6<bordertexture border="6">'$FOLDER_NF'</bordertexture>#'
 	R+='\6\7|'
 	perlregex 720p/ViewsPictures.xml "$R"
 	printf "%sDONE!%s" $GREEN $RESET

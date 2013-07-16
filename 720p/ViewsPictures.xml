@@ -79,11 +79,13 @@
 				<preloaditems>2</preloaditems>
 				<itemlayout height="144" width="144">
 					<control type="image">
-						<posx>10</posx>
-						<posy>10</posy>
-						<width>124</width>
-						<height>124</height>
+						<posx>8</posx>
+						<posy>8</posy>
+						<width>128</width>
+						<height>128</height>
 						<aspectratio>keep</aspectratio>
+						<bordersize>5</bordersize>
+						<bordertexture border="6">controls/folder-nf_light.png</bordertexture>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
 					</control>
 				</itemlayout>
@@ -95,7 +97,19 @@
 						<height>128</height>
 						<aspectratio>keep</aspectratio>
 						<bordersize>5</bordersize>
-						<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
+						<bordertexture border="6">buttons/folder-focus_light.png</bordertexture>
+						<visible>Control.HasFocus(514)</visible>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+					</control>
+					<control type="image">
+						<posx>8</posx>
+						<posy>8</posy>
+						<width>128</width>
+						<height>128</height>
+						<aspectratio>keep</aspectratio>
+						<bordersize>5</bordersize>
+						<bordertexture border="6">controls/folder-nf_light.png</bordertexture>
+						<visible>!Control.HasFocus(514)</visible>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
 					</control>
 				</focusedlayout>
