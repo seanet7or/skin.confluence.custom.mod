@@ -1601,6 +1601,19 @@ else
 fi
 step
 
+#printf "\nReplacing livecd cd art: "
+#if [ -f media/livecdcase/DefaultCDArt.png ] ; then
+#	XMLS=$(2>/dev/null grep '"livecdcase/DefaultAlbumCover.png"' -l 720p/*)
+#	perlregex $XMLS 's|"livecdcase/DefaultAlbumCover.png"|"DefaultAlbumCover.png"|g'
+#	#XMLS=$(2>/dev/null grep 'FallbackAlbumCover.png' -l 720p/*)
+#	#perlregex $XMLS 's|>FallbackAlbumCover.png<|>DefaultAlbumCover.png<|g'
+#	rm media/livecdcase/DefaultAlbumCover.png
+#	printf "%sDONE!%s" $GREEN $RESET
+#else
+#	printf "%sSKIPPED.%s" $CYAN $RESET
+#fi
+#step
+
 printf "\nReplacing warning sign: "
 if [ -f media/warning.png ] ; then
 	XMLS=$(2>/dev/null grep 'warning.png' -l 720p/*)
@@ -1626,7 +1639,8 @@ step
 printf "\nChanging color scheme: "
 if ! grep -q 'buttonfocus' colors/defaults.xml ; then
 	R='s|(\s*<colors>#)(\s*)'
-	R+='|\1\2<color name="buttonfocus">ff4b5e68</color>#'
+	R+='|\1\2<color name="buttonfocus">ffb15e1e</color>#'
+	R+='\2<color name="buttonnofocus">ff577490</color>#'
 	R+='\2<color name="heading1">ff0084ff</color>#'
 	R+='\2<color name="heading2">ff7fc1ff</color>#'
 	R+='\2<color name="textfocus">ffffffff</color>#'
@@ -1960,10 +1974,10 @@ step
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
 printf "\nChanging main menu layout: "
-if grep -q '<movement>1</movement>' 720p/Home.xml ; then
+if true ; then #grep -q '<movement>1</movement>' 720p/Home.xml ; then
 	#fixing list
-	perlregex 720p/Home.xml 's|\s*<movement>1</movement>#||'
-
+	#perlregex 720p/Home.xml 's|\s*<movement>1</movement>#||'
+	#changing height
 	R='s|>60<(/height>#\s*<onleft>9000</onleft>#\s*<onright>9000</onright>#)|>70<\1|'
 	perlregex 720p/Home.xml "$R"
 	#texture focusing selected item
@@ -1983,7 +1997,44 @@ if grep -q '<movement>1</movement>' 720p/Home.xml ; then
 	R+='\3<visible>Control.HasFocus\(9000\)</visible>#'
 	R+='\1</control>#'
 	R+='\1\2\3\4|'
+	#perlregex 720p/Home.xml "$R"
+	#font color for focused item
+	R='s|(<focusedlayout height="60" width="340">\s*#)'
+	R+='\s*<control type="label">\s*#'
+	R+='\s*<posx>170</posx>\s*#'
+	R+='\s*<posy>0</posy>\s*#'
+	R+='\s*<width>330</width>\s*#'
+	R+='\s*<height>60</height>\s*#'
+	R+='\s*<font>font_MainMenu</font>\s*#'
+	R+='\s*<textcolor>grey3<[^#]*#'
+	R+='(\s*<[a-z][^#]*#)*'
+	R+='\s*</control>\s*#'
+	R+='(\s*<control type="image">\s*#'
+	R+='(\s*<[a-z][^#]*#)*'
+	R+='\s*</control>\s*#'
+	R+='\s*<control type="label">\s*#'
+	R+='\s*<posx>170</posx>\s*#'
+	R+='\s*<posy>0</posy>\s*#'
+	R+='\s*<width>330</width>\s*#'
+	R+='\s*<height>60</height>\s*#'
+	R+='\s*<font>font_MainMenu</font>\s*#'
+	R+='\s*<textcolor)>[a-z0-9]*<(/textcolor>\s*#'
+	R+='\s*<align>center</align>\s*#'
+	R+='\s*<aligny>center</aligny>\s*#'
+	R+='\s*<label>\$VAR\[MainItemLabel\]</label>\s*#)'					
+	R+='\s*<visible>Control.HasFocus\(9000\)</visible>\s*#'
+	R+='|\1\3>buttonfocus<\5|'
 	perlregex 720p/Home.xml "$R"
+	R='s|(\s*<itemlayout height="60" width="340">\s*#'
+	R+='\s*<control type="label">\s*#'
+	R+='\s*<posx>170</posx>\s*#'
+	R+='\s*<posy>0</posy>\s*#'
+	R+='\s*<width>340</width>\s*#'
+	R+='\s*<height>60</height>\s*#'
+	R+='\s*<font>font_MainMenu</font>\s*#'
+	R+='\s*<textcolor)>[a-z0-9]*<'
+	R+='|\1>buttonnofocus<|'
+	perlregex 720p/Home.xml "$R"	
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
