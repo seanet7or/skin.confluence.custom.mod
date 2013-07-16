@@ -49,7 +49,7 @@
 						<posy>0</posy>
 						<width>550</width>
 						<height>80</height>
-						<texture border="0">buttons/nf_light.png</texture>
+						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="label">
 						<description>Name</description>
@@ -57,7 +57,7 @@
 						<posy>5</posy>
 						<width>520</width>
 						<height>20</height>
-						<label border="0">$VAR[MainItemLabel]</label>
+						<label>$VAR[MainItemLabel]</label>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
@@ -92,7 +92,7 @@
 						<posy>0</posy>
 						<width>550</width>
 						<height>80</height>
-						<texture border="0">buttons/nf_light.png</texture>
+						<texture>buttons/nf_light.png</texture>
 						<visible>!Control.HasFocus(20)</visible>
 					</control>
 					<control type="image">
@@ -100,7 +100,7 @@
 						<posy>0</posy>
 						<width>550</width>
 						<height>80</height>
-						<texture border="0">buttons/fo_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(20)</visible>
 					</control>
 					<control type="label">
@@ -109,7 +109,7 @@
 						<posy>5</posy>
 						<width>520</width>
 						<height>20</height>
-						<label border="0">$VAR[MainItemLabel]</label>
+						<label>$VAR[MainItemLabel]</label>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
@@ -144,9 +144,9 @@
 				<posy>65</posy>
 				<width>14</width>
 				<height>510</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>20</onleft>
 				<onright>10</onright>
 				<ondown>61</ondown>

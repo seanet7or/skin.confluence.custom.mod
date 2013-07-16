@@ -65,7 +65,7 @@
 							<posy>16</posy>
 							<width>30</width>
 							<height>26</height>
-							<texture border="0">$VAR[WatchTypePath,OverlayStatus/]</texture>
+							<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
 							<visible>!ListItem.IsResumable</visible>
 						</control>
 						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
@@ -128,7 +128,7 @@
 							<posy>16</posy>
 							<width>30</width>
 							<height>26</height>
-							<texture border="0">$VAR[WatchTypePath,OverlayStatus/]</texture>
+							<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
 							<visible>!ListItem.IsResumable</visible>
 						</control>
 						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
@@ -184,7 +184,7 @@
 							<posy>16</posy>
 							<width>35</width>
 							<height>31</height>
-							<texture border="0">$VAR[WatchTypePath,OverlayStatus/]</texture>
+							<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
 							<visible>!ListItem.IsResumable</visible>
 						</control>
 						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
@@ -257,7 +257,7 @@
 							<posy>16</posy>
 							<width>35</width>
 							<height>31</height>
-							<texture border="0">$VAR[WatchTypePath,OverlayStatus/]</texture>
+							<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
 							<visible>!ListItem.IsResumable</visible>
 						</control>
 						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
@@ -269,9 +269,9 @@
 				<posy>85</posy>
 				<width>14</width>
 				<height>550</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>730</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
@@ -401,7 +401,7 @@
 					<height>85</height>
 					<font>font12</font>
 					<align>justify</align>
-					<label border="0">$VAR[VideoDescription]</label>
+					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
 				<visible>Control.IsVisible(730)</visible>

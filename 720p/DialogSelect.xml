@@ -48,7 +48,7 @@
 					<posy>0</posy>
 					<width>550</width>
 					<height>40</height>
-					<texture border="0">buttons/nf_light.png</texture>
+					<texture>buttons/nf_light.png</texture>
 				</control>
 				<control type="label">
 					<posx>20</posx>
@@ -59,7 +59,7 @@
 					<selectedcolor>selected</selectedcolor>
 					<align>left</align>
 					<aligny>center</aligny>
-					<label border="0">$VAR[MainItemLabel]</label>
+					<label>$VAR[MainItemLabel]</label>
 				</control>
 			</itemlayout>
 			<focusedlayout height="46" width="550">
@@ -68,7 +68,7 @@
 					<posy>0</posy>
 					<width>550</width>
 					<height>40</height>
-					<texture border="0">buttons/nf_light.png</texture>
+					<texture>buttons/nf_light.png</texture>
 					<visible>!Control.HasFocus(3)</visible>
 				</control>
 				<control type="image">
@@ -76,7 +76,7 @@
 					<posy>0</posy>
 					<width>550</width>
 					<height>40</height>
-					<texture border="0">buttons/fo_light.png</texture>
+					<texture>buttons/fo_light.png</texture>
 					<visible>Control.HasFocus(3)</visible>
 				</control>
 				<control type="label">
@@ -87,7 +87,7 @@
 					<selectedcolor>selected</selectedcolor>
 					<align>left</align>
 					<aligny>center</aligny>
-					<label border="0">$VAR[MainItemLabel]</label>
+					<label>$VAR[MainItemLabel]</label>
 				</control>
 			</focusedlayout>
 		</control>
@@ -109,14 +109,14 @@
 					<posy>0</posy>
 					<width>550</width>
 					<height>80</height>
-					<texture border="0">buttons/nf_light.png</texture>
+					<texture>buttons/nf_light.png</texture>
 				</control>
 				<control type="image">
 					<posx>2</posx>
 					<posy>2</posy>
 					<width>80</width>
 					<height>76</height>
-					<texture border="0">$INFO[Listitem.Icon]</texture>
+					<texture>$INFO[Listitem.Icon]</texture>
 				</control>
 				<control type="label">
 					<posx>90</posx>
@@ -137,7 +137,7 @@
 					<font>font12</font>
 					<textcolor>grey</textcolor>
 					<selectedcolor>selected</selectedcolor>
-					<label border="0">$INFO[ListItem.Property(Addon.Summary)]</label>
+					<label>$INFO[ListItem.Property(Addon.Summary)]</label>
 				</control>
 			</itemlayout>
 			<focusedlayout height="85" width="550">
@@ -146,7 +146,7 @@
 					<posy>0</posy>
 					<width>550</width>
 					<height>80</height>
-					<texture border="0">buttons/nf_light.png</texture>
+					<texture>buttons/nf_light.png</texture>
 					<visible>!Control.HasFocus(6)</visible>
 				</control>
 				<control type="image">
@@ -154,7 +154,7 @@
 					<posy>0</posy>
 					<width>550</width>
 					<height>80</height>
-					<texture border="0">buttons/fo_light.png</texture>
+					<texture>buttons/fo_light.png</texture>
 					<visible>Control.HasFocus(6)</visible>
 				</control>
 				<control type="image">
@@ -162,7 +162,7 @@
 					<posy>2</posy>
 					<width>80</width>
 					<height>76</height>
-					<texture border="0">$INFO[Listitem.Icon]</texture>
+					<texture>$INFO[Listitem.Icon]</texture>
 				</control>
 				<control type="label">
 					<posx>90</posx>
@@ -182,7 +182,7 @@
 					<font>font12</font>
 					<textcolor>grey</textcolor>
 					<selectedcolor>selected</selectedcolor>
-					<label border="0">$INFO[ListItem.Property(Addon.Summary)]</label>
+					<label>$INFO[ListItem.Property(Addon.Summary)]</label>
 				</control>
 			</focusedlayout>
 		</control>
@@ -191,9 +191,9 @@
 			<posy>65</posy>
 			<width>14</width>
 			<height>510</height>
-			<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-			<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-			<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+			<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+			<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+			<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 			<onleft>3</onleft>
 			<onright>3</onright>
 			<ondown>61</ondown>

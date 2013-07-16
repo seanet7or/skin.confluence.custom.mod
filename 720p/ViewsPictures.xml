@@ -48,9 +48,9 @@
 				<posy>200</posy>
 				<width>660</width>
 				<height>14</height>
-				<texturesliderbackground border="1,5,1,5">scrollbar/ScrollBarH_light.png</texturesliderbackground>
-				<texturesliderbar border="1,5,1,5">scrollbar/ScrollBarH_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus border="0">scrollbar/ScrollBarH_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="1,5,1,5">scrollbar/ScrollBarH_light.png</texturesliderbackground>
+				<texturesliderbar border="1,5,1,5">scrollbar/ScrollBarH_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus>scrollbar/ScrollBarH_bar_focus_light.png</texturesliderbarfocus>
 				<onup>510</onup>
 				<ondown condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</ondown>
 				<ondown condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</ondown>
@@ -95,7 +95,7 @@
 						<height>128</height>
 						<aspectratio>keep</aspectratio>
 						<bordersize>5</bordersize>
-						<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
+						<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
 					</control>
 				</focusedlayout>
@@ -105,9 +105,9 @@
 				<posy>70</posy>
 				<width>14</width>
 				<height>576</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>514</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
@@ -124,7 +124,7 @@
 					<posy>0</posy>
 					<width>928</width>
 					<height>15</height>
-					<label border="0">$VAR[MainItemLabel]</label>
+					<label>$VAR[MainItemLabel]</label>
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font24_title</font>

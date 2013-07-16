@@ -26,7 +26,7 @@
 				<posy>0</posy>
 				<width>690</width>
 				<height>400</height>
-				<texture border="0">buttons/nf_light.png</texture>
+				<texture>buttons/nf_light.png</texture>
 			</control>
 			<control type="image">
 				<posx>5</posx>
@@ -49,7 +49,7 @@
 				<posy>1</posy>
 				<width>688</width>
 				<height>35</height>
-				<texture border="0">dialogs/overlay-background.png</texture>
+				<texture>dialogs/overlay-background.png</texture>
 				<colordiffuse>DDFFFFFF</colordiffuse>
 				<visible>Player.HasVideo</visible>
 			</control>
@@ -63,7 +63,7 @@
 				<textcolor>grey2</textcolor>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label border="0">$INFO[VideoPlayer.Title]</label>
+				<label>$INFO[VideoPlayer.Title]</label>
 				<visible>Player.HasVideo</visible>
 			</control>
 		</control>
@@ -79,7 +79,7 @@
 			<posy>0</posy>
 			<width>1280</width>
 			<height>720</height>
-			<texture border="0">dialogs/overlay-background.png</texture>
+			<texture>dialogs/overlay-background.png</texture>
 			<animation effect="fade" time="400">Visible</animation>
 			<animation effect="fade" time="200">Hidden</animation>
 			<visible>Window.IsActive(FileBrowser) | Window.IsActive(PVRGuideInfo) | Window.IsActive(PVRRecordingInfo) | Window.IsActive(PVRTimerSetting) | Window.IsActive(PVRGroupManager) | Window.IsActive(PVRGuideSearch)</visible>

@@ -27,7 +27,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label border="0">$VAR[MainItemLabel]</label>
+						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>430</posx>
@@ -39,7 +39,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label border="0">$INFO[ListItem.Label2]</label>
+						<label>$INFO[ListItem.Label2]</label>
 						<visible>!SubString(Container.FolderPath,program.advanced.launcher)</visible>
 					</control>
 					<control type="group">
@@ -64,7 +64,7 @@
 							<posy>16</posy>
 							<width>25</width>
 							<height>21</height>
-							<texture border="0">$VAR[WatchTypePath,OverlayStatus/]</texture>
+							<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
 							<visible>!ListItem.IsResumable</visible>
 						</control>
 						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
@@ -76,7 +76,7 @@
 						<posy>0</posy>
 						<width>460</width>
 						<height>41</height>
-						<texture border="0">buttons/fo_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(724)</visible>
 					</control>
 					<control type="label">
@@ -87,7 +87,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label border="0">$VAR[MainItemLabel]</label>
+						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>430</posx>
@@ -99,7 +99,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label border="0">$INFO[ListItem.Label2]</label>
+						<label>$INFO[ListItem.Label2]</label>
 						<visible>!SubString(Container.FolderPath,program.advanced.launcher)</visible>
 					</control>
 					<control type="group">
@@ -124,7 +124,7 @@
 							<posy>16</posy>
 							<width>25</width>
 							<height>21</height>
-							<texture border="0">$VAR[WatchTypePath,OverlayStatus/]</texture>
+							<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
 							<visible>!ListItem.IsResumable</visible>
 						</control>
 						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
@@ -136,9 +136,9 @@
 				<posy>440</posy>
 				<width>14</width>
 				<height>160</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>724</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
@@ -243,7 +243,7 @@
 					<width>150</width>
 					<height>55</height>
 					<aspectratio align="left">keep</aspectratio>
-					<texture border="0">LeftRating/$INFO[ListItem.StarRating]</texture>
+					<texture>LeftRating/$INFO[ListItem.StarRating]</texture>
 					<visible>!IsEmpty(ListItem.StarRating)</visible>
 				</control>
 				<control type="label">

@@ -13,7 +13,7 @@
 				<posy>0</posy>
 				<width>1100</width>
 				<height>720</height>
-				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
+				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
 			</control>
 			<control type="group">
 				<animation effect="fade" delay="400" start="0" end="100" time="200">WindowOpen</animation>
@@ -25,7 +25,7 @@
 					<width>1030</width>
 					<height>30</height>
 					<font>font24_title</font>
-					<label border="0">$INFO[Listitem.Title]</label>
+					<label>$INFO[Listitem.Title]</label>
 					<align>center</align>
 					<aligny>center</aligny>
 				</control>
@@ -55,7 +55,7 @@
 						<width>675</width>
 						<height>380</height>
 						<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
-						<bordertexture border="0">buttons/nf_light.png</bordertexture>
+						<bordertexture>buttons/nf_light.png</bordertexture>
 						<bordersize>4</bordersize>
 						<aspectratio>keep</aspectratio>
 						<visible>!IsEmpty(Listitem.Art(fanart))</visible>
@@ -68,8 +68,8 @@
 							<posy>0</posy>
 							<width>675</width>
 							<height>380</height>
-							<texture border="0">Fanart_Fallback_Small.jpg</texture>
-							<bordertexture border="0">buttons/nf_light.png</bordertexture>
+							<texture>Fanart_Fallback_Small.jpg</texture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>4</bordersize>
 							<aspectratio>stretch</aspectratio>
 							<colordiffuse>99FFFFFF</colordiffuse>
@@ -96,7 +96,7 @@
 						<posy>0</posy>
 						<width>675</width>
 						<height>380</height>
-						<texture border="0">buttons/nf_light.png</texture>
+						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="label">
 						<posx>0</posx>
@@ -129,7 +129,7 @@
 						<width>270</width>
 						<height>380</height>
 						<aspectratio>stretch</aspectratio>
-						<bordertexture border="0">buttons/nf_light.png</bordertexture>
+						<bordertexture>buttons/nf_light.png</bordertexture>
 						<bordersize>4</bordersize>
 						<texture background="true">$VAR[PosterThumb]</texture>
 					</control>
@@ -174,7 +174,7 @@
 								<width>740</width>
 								<height>30</height>
 								<visible>Control.HasFocus(49)</visible>
-								<texture border="0">buttons/fo_light.png</texture>
+								<texture>buttons/fo_light.png</texture>
 							</control>
 							<control type="label">
 								<posx>165</posx>
@@ -284,7 +284,7 @@
 						<width>270</width>
 						<height>380</height>
 						<aspectratio>stretch</aspectratio>
-						<bordertexture border="0">buttons/nf_light.png</bordertexture>
+						<bordertexture>buttons/nf_light.png</bordertexture>
 						<bordersize>4</bordersize>
 						<texture background="true">$VAR[PosterThumb]</texture>
 					</control>
@@ -329,7 +329,7 @@
 								<width>740</width>
 								<height>30</height>
 								<visible>Control.HasFocus(49)</visible>
-								<texture border="0">buttons/fo_light.png</texture>
+								<texture>buttons/fo_light.png</texture>
 							</control>
 							<control type="label">
 								<posx>165</posx>
@@ -403,7 +403,7 @@
 						<width>380</width>
 						<height>250</height>
 						<aspectratio aligny="bottom">keep</aspectratio>
-						<bordertexture border="0">buttons/nf_light.png</bordertexture>
+						<bordertexture>buttons/nf_light.png</bordertexture>
 						<bordersize>4</bordersize>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
 					</control>
@@ -448,7 +448,7 @@
 								<width>640</width>
 								<height>30</height>
 								<visible>Control.HasFocus(49)</visible>
-								<texture border="0">buttons/fo_light.png</texture>
+								<texture>buttons/fo_light.png</texture>
 							</control>
 							<control type="label">
 								<posx>165</posx>
@@ -552,7 +552,7 @@
 						<width>380</width>
 						<height>360</height>
 						<aspectratio>keep</aspectratio>
-						<bordertexture border="0">buttons/nf_light.png</bordertexture>
+						<bordertexture>buttons/nf_light.png</bordertexture>
 						<bordersize>4</bordersize>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
 					</control>
@@ -597,7 +597,7 @@
 								<width>640</width>
 								<height>30</height>
 								<visible>Control.HasFocus(49)</visible>
-								<texture border="0">buttons/fo_light.png</texture>
+								<texture>buttons/fo_light.png</texture>
 							</control>
 							<control type="label">
 								<posx>165</posx>
@@ -701,7 +701,7 @@
 					<font>font12</font>
 					<align>justify</align>
 					<pagecontrol>61</pagecontrol>
-					<label border="0">$VAR[VideoDescription]</label>
+					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="3000" delay="4000" repeat="5000">!Control.HasFocus(61) + Skin.HasSetting(AutoScroll)</autoscroll>
 					<visible>!Control.IsVisible(50)</visible>
 				</control>
@@ -711,7 +711,7 @@
 					<posy>480</posy>
 					<width>160</width>
 					<height>160</height>
-					<texture border="0">$INFO[Container(50).Listitem.Icon]</texture>
+					<texture>$INFO[Container(50).Listitem.Icon]</texture>
 					<aspectratio>keep</aspectratio>
 					<visible>Control.IsVisible(50)</visible>
 				</control>
@@ -734,7 +734,7 @@
 							<posy>0</posy>
 							<width>430</width>
 							<height>40</height>
-							<texture border="0">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="label">
 							<posx>10</posx>
@@ -755,7 +755,7 @@
 							<width>430</width>
 							<height>40</height>
 							<visible>!Control.HasFocus(50)</visible>
-							<texture border="0">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>0</posx>
@@ -763,7 +763,7 @@
 							<width>430</width>
 							<height>40</height>
 							<visible>Control.HasFocus(50)</visible>
-							<texture border="0">buttons/fo_light.png</texture>
+							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="label">
 							<posx>10</posx>
@@ -794,8 +794,8 @@
 						<description>Play/browse to Show</description>
 						<include>ButtonInfoDialogsCommonValues</include>
 						<label>208</label>
-						<alttexturefocus border="0">buttons/fo_light.png</alttexturefocus>
-						<alttexturenofocus border="0">buttons/nf_light.png</alttexturenofocus>
+						<alttexturefocus>buttons/fo_light.png</alttexturefocus>
+						<alttexturenofocus>buttons/nf_light.png</alttexturenofocus>
 						<altlabel>1024</altlabel>
 						<usealttexture>Container.Content(TVShows)</usealttexture>
 					</control>

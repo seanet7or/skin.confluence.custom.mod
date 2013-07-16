@@ -61,7 +61,7 @@
 						<textcolor>grey3</textcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label border="0">$VAR[MainItemLabel]</label>
+						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>250</posx>
@@ -71,7 +71,7 @@
 						<textcolor>grey2</textcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label border="0">$INFO[ListItem.Label2]</label>
+						<label>$INFO[ListItem.Label2]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout height="80" width="260">
@@ -80,7 +80,7 @@
 						<posy>0</posy>
 						<width>260</width>
 						<height>81</height>
-						<texture border="0">buttons/fo_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 						<animation effect="fade" start="100" end="30" time="100" condition="!Control.HasFocus(9000)">Conditional</animation>
 					</control>
 					<control type="label">
@@ -91,7 +91,7 @@
 						<font>font24_title</font>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label border="0">$VAR[MainItemLabel]</label>
+						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>250</posx>
@@ -101,7 +101,7 @@
 						<textcolor>grey2</textcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label border="0">$INFO[ListItem.Label2]</label>
+						<label>$INFO[ListItem.Label2]</label>
 					</control>
 				</focusedlayout>
 				<content>
@@ -772,9 +772,9 @@
 					<posy>60</posy>
 					<width>14</width>
 					<height>530</height>
-					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-					<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 					<onleft>9001</onleft>
 					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
@@ -1469,9 +1469,9 @@
 					<posy>60</posy>
 					<width>14</width>
 					<height>530</height>
-					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-					<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 					<onleft>9002</onleft>
 					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
@@ -2417,9 +2417,9 @@
 					<posy>60</posy>
 					<width>14</width>
 					<height>530</height>
-					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-					<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 					<onleft>9003</onleft>
 					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
@@ -3187,9 +3187,9 @@
 					<posy>60</posy>
 					<width>14</width>
 					<height>530</height>
-					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-					<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 					<onleft>9004</onleft>
 					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
@@ -3270,7 +3270,7 @@
 								<posy>0</posy>
 								<width>750</width>
 								<height>40</height>
-								<texture border="0">buttons/fo_light.png</texture>
+								<texture>buttons/fo_light.png</texture>
 								<visible>[Control.HasFocus(504) | Control.HasFocus(505)]</visible>
 							</control>
 							<control type="label">
@@ -3302,7 +3302,7 @@
 								<textcolor>grey2</textcolor>
 								<align>right</align>
 								<aligny>center</aligny>
-								<label border="0">$VAR[MainItemLabel]</label>
+								<label>$VAR[MainItemLabel]</label>
 								<visible>![Control.HasFocus(504) | Control.HasFocus(505)]</visible>
 							</control>
 							<control type="label">
@@ -3312,7 +3312,7 @@
 								<height>40</height>
 								<align>right</align>
 								<aligny>center</aligny>
-								<label border="0">$VAR[MainItemLabel]</label>
+								<label>$VAR[MainItemLabel]</label>
 								<visible>[Control.HasFocus(504) | Control.HasFocus(505)]</visible>
 							</control>
 						</focusedlayout>
@@ -3321,98 +3321,98 @@
 								<description>Global Home Menu</description>
 								<label>$LOCALIZE[31148]</label>
 								<onclick>noop</onclick>
-								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
-								<thumb border="0">$INFO[Skin.String(CustomBackgroundPath)]</thumb>
+								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<thumb>$INFO[Skin.String(CustomBackgroundPath)]</thumb>
 								<property name="HiLiteItem">Global</property>
 								<visible>Skin.HasSetting(GlobalBackground)</visible>
 							</item>
 							<item id="2">
 								<description>Home Menu Item One</description>
-								<label border="0">$INFO[Skin.String(HomeItem.1.Label)]</label>
+								<label>$INFO[Skin.String(HomeItem.1.Label)]</label>
 								<onclick>noop</onclick>
-								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
-								<thumb border="0">$INFO[Skin.String(HomeItem.1.FanArt)]</thumb>
+								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<thumb>$INFO[Skin.String(HomeItem.1.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.1.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.1.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
 							</item>
 							<item id="3">
 								<description>Home Menu Item Two</description>
-								<label border="0">$INFO[Skin.String(HomeItem.2.Label)]</label>
+								<label>$INFO[Skin.String(HomeItem.2.Label)]</label>
 								<onclick>noop</onclick>
-								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
-								<thumb border="0">$INFO[Skin.String(HomeItem.2.FanArt)]</thumb>
+								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<thumb>$INFO[Skin.String(HomeItem.2.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.2.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.2.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
 							</item>
 							<item id="4">
 								<description>Home Menu Item Three</description>
-								<label border="0">$INFO[Skin.String(HomeItem.3.Label)]</label>
+								<label>$INFO[Skin.String(HomeItem.3.Label)]</label>
 								<onclick>noop</onclick>
-								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
-								<thumb border="0">$INFO[Skin.String(HomeItem.3.FanArt)]</thumb>
+								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<thumb>$INFO[Skin.String(HomeItem.3.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.3.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.3.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
 							</item>
 							<item id="5">
 								<description>Home Menu Item Four</description>
-								<label border="0">$INFO[Skin.String(HomeItem.4.Label)]</label>
+								<label>$INFO[Skin.String(HomeItem.4.Label)]</label>
 								<onclick>noop</onclick>
-								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
-								<thumb border="0">$INFO[Skin.String(HomeItem.4.FanArt)]</thumb>
+								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<thumb>$INFO[Skin.String(HomeItem.4.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.4.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.4.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
 							</item>
 							<item id="6">
 								<description>Home Menu Item Five</description>
-								<label border="0">$INFO[Skin.String(HomeItem.5.Label)]</label>
+								<label>$INFO[Skin.String(HomeItem.5.Label)]</label>
 								<onclick>noop</onclick>
-								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
-								<thumb border="0">$INFO[Skin.String(HomeItem.5.FanArt)]</thumb>
+								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<thumb>$INFO[Skin.String(HomeItem.5.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.5.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.5.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
 							</item>
 							<item id="7">
 								<description>Home Menu Item Six</description>
-								<label border="0">$INFO[Skin.String(HomeItem.6.Label)]</label>
+								<label>$INFO[Skin.String(HomeItem.6.Label)]</label>
 								<onclick>noop</onclick>
-								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
-								<thumb border="0">$INFO[Skin.String(HomeItem.6.FanArt)]</thumb>
+								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<thumb>$INFO[Skin.String(HomeItem.6.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.6.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.6.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
 							</item>
 							<item id="8">
 								<description>Home Menu Item Seven</description>
-								<label border="0">$INFO[Skin.String(HomeItem.7.Label)]</label>
+								<label>$INFO[Skin.String(HomeItem.7.Label)]</label>
 								<onclick>noop</onclick>
-								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
-								<thumb border="0">$INFO[Skin.String(HomeItem.7.FanArt)]</thumb>
+								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<thumb>$INFO[Skin.String(HomeItem.7.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.7.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.7.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
 							</item>
 							<item id="9">
 								<description>Home Menu Item Eight</description>
-								<label border="0">$INFO[Skin.String(HomeItem.8.Label)]</label>
+								<label>$INFO[Skin.String(HomeItem.8.Label)]</label>
 								<onclick>noop</onclick>
-								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
-								<thumb border="0">$INFO[Skin.String(HomeItem.8.FanArt)]</thumb>
+								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<thumb>$INFO[Skin.String(HomeItem.8.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.8.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.8.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
 							</item>
 							<item id="10">
 								<description>Home Menu Item Nine</description>
-								<label border="0">$INFO[Skin.String(HomeItem.9.Label)]</label>
+								<label>$INFO[Skin.String(HomeItem.9.Label)]</label>
 								<onclick>noop</onclick>
-								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
-								<thumb border="0">$INFO[Skin.String(HomeItem.9.FanArt)]</thumb>
+								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<thumb>$INFO[Skin.String(HomeItem.9.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.9.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.9.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
 							</item>
 							<item id="11">
 								<description>Home Menu Item Ten</description>
-								<label border="0">$INFO[Skin.String(HomeItem.10.Label)]</label>
+								<label>$INFO[Skin.String(HomeItem.10.Label)]</label>
 								<onclick>noop</onclick>
-								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
-								<thumb border="0">$INFO[Skin.String(HomeItem.10.FanArt)]</thumb>
+								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<thumb>$INFO[Skin.String(HomeItem.10.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.10.Type)]</property>
 								<visible>!IsEmpty(Skin.String(HomeItem.10.Path)) + !Skin.HasSetting(GlobalBackground)</visible>
 							</item>
@@ -3420,8 +3420,8 @@
 								<description>DVD Tray</description>
 								<label>$LOCALIZE[341]</label>
 								<onclick>noop</onclick>
-								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
-								<thumb border="0">$INFO[Skin.String(HomeItem.11.FanArt)]</thumb>
+								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<thumb>$INFO[Skin.String(HomeItem.11.FanArt)]</thumb>
 								<property name="HiLiteItem">PlayDisc</property>
 								<visible>!Skin.HasSetting(GlobalBackground)</visible>
 							</item>
@@ -3429,8 +3429,8 @@
 								<description>Home Menu Settings</description>
 								<label>$LOCALIZE[13000]</label>
 								<onclick>noop</onclick>
-								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
-								<thumb border="0">$INFO[Skin.String(HomeItem.12.FanArt)]</thumb>
+								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<thumb>$INFO[Skin.String(HomeItem.12.FanArt)]</thumb>
 								<property name="HiLiteItem">Settings</property>
 								<visible>!Skin.HasSetting(HideHomeMenuSystem) + !Skin.HasSetting(GlobalBackground)</visible>
 							</item>
@@ -3438,8 +3438,8 @@
 								<description>Search Button</description>
 								<label>$LOCALIZE[137]</label>
 								<onclick>noop</onclick>
-								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
-								<thumb border="0">$INFO[Skin.String(SearchBtnBackground)]</thumb>
+								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<thumb>$INFO[Skin.String(SearchBtnBackground)]</thumb>
 								<property name="HiLiteItem">MenuButton</property>
 								<visible>!Skin.HasSetting(HideHomeSearch) + !Skin.HasSetting(GlobalBackground)</visible>
 							</item>
@@ -3447,8 +3447,8 @@
 								<description>Power Button</description>
 								<label>$LOCALIZE[13005]</label>
 								<onclick>noop</onclick>
-								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
-								<thumb border="0">$INFO[Skin.String(PowerBtnBackground)]</thumb>
+								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<thumb>$INFO[Skin.String(PowerBtnBackground)]</thumb>
 								<property name="HiLiteItem">MenuButton</property>
 								<visible>!Skin.HasSetting(AutoHidePowerBtn) + !Skin.HasSetting(GlobalBackground)</visible>
 							</item>
@@ -3456,8 +3456,8 @@
 								<description>Favourites Button</description>
 								<label>$LOCALIZE[1036]</label>
 								<onclick>noop</onclick>
-								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
-								<thumb border="0">$INFO[Skin.String(FavBtnBackground)]</thumb>
+								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<thumb>$INFO[Skin.String(FavBtnBackground)]</thumb>
 								<property name="HiLiteItem">MenuButton</property>
 								<visible>!Skin.HasSetting(GlobalBackground)</visible>
 							</item>
@@ -3465,8 +3465,8 @@
 								<description>Startup Window</description>
 								<label>$LOCALIZE[31333]</label>
 								<onclick>noop</onclick>
-								<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
-								<thumb border="0">$INFO[Skin.String(StartUpBackgroundPath)]</thumb>
+								<icon>special://skin/backgrounds/default_light.jpg</icon>
+								<thumb>$INFO[Skin.String(StartUpBackgroundPath)]</thumb>
 								<property name="HiLiteItem">StartUp</property>
 							</item>
 						</content>
@@ -3476,7 +3476,7 @@
 						<posy>100</posy>
 						<width>740</width>
 						<height>435</height>
-						<texture border="0">buttons/nf_light.png</texture>
+						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="group">
 						<posx>45</posx>
@@ -4848,7 +4848,7 @@
 						<aligny>center</aligny>
 						<font>font11</font>
 						<haspath>yes</haspath>
-						<label border="0">$VAR[HomeBackgroundLabel]</label>
+						<label>$VAR[HomeBackgroundLabel]</label>
 					</control>
 				</control>
 				<control type="grouplist" id="9006">
@@ -5171,7 +5171,7 @@
 						<width>750</width>
 						<height>120</height>
 						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<texture border="0">DefaultIconWarning.png</texture>
+						<texture>DefaultIconWarning.png</texture>
 					</control>
 					<control type="button" id="630">
 						<description>Reset Skin Values</description>
@@ -5191,9 +5191,9 @@
 					<posy>60</posy>
 					<width>14</width>
 					<height>530</height>
-					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-					<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 					<onleft>9006</onleft>
 					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
@@ -5232,7 +5232,7 @@
 				<width>35</width>
 				<height>35</height>
 				<aspectratio>keep</aspectratio>
-				<texture border="0">icon_back.png</texture>
+				<texture>icon_back.png</texture>
 			</control>
 			<control type="button" id="81">
 				<description>Home push button</description>
@@ -5256,7 +5256,7 @@
 				<width>35</width>
 				<height>35</height>
 				<aspectratio>keep</aspectratio>
-				<texture border="0">icon_home.png</texture>
+				<texture>icon_home.png</texture>
 			</control>
 		</control>
 		<include>BehindDialogFadeOut</include>

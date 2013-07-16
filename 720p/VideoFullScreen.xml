@@ -51,7 +51,7 @@
 				<align>right</align>
 				<aligny>center</aligny>
 				<font>font35_title</font>
-				<label border="0">$INFO[System.Time]</label>
+				<label>$INFO[System.Time]</label>
 				<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
 				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
 				<visible>!Skin.HasSetting(HideSystemClock)</visible>
@@ -76,7 +76,7 @@
 					<width>880</width>
 					<height>180</height>
 					<align>justify</align>
-					<label border="0">$INFO[VideoPlayer.Plot]</label>
+					<label>$INFO[VideoPlayer.Plot]</label>
 					<autoscroll time="4000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
 			</control>
@@ -85,7 +85,7 @@
 				<posy>230r</posy>
 				<width>1280</width>
 				<height>230</height>
-				<texture border="0">HomeNowPlayingBack.png</texture>
+				<texture>HomeNowPlayingBack.png</texture>
 				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
 			</control>
 			<control type="group" id="1">
@@ -95,7 +95,7 @@
 					<posy>260r</posy>
 					<width>300</width>
 					<height>230</height>
-					<texture border="0">$INFO[Player.Art(clearart)]</texture>
+					<texture>$INFO[Player.Art(clearart)]</texture>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<visible>!IsEmpty(Player.Art(clearart)) + !Skin.HasSetting(OSDInfoLogo)</visible>
 				</control>
@@ -105,7 +105,7 @@
 					<posy>260r</posy>
 					<width>300</width>
 					<height>230</height>
-					<texture border="0">$INFO[Player.Art(clearlogo)]</texture>
+					<texture>$INFO[Player.Art(clearlogo)]</texture>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<visible>!IsEmpty(Player.Art(clearlogo)) + [Skin.HasSetting(OSDInfoLogo) | IsEmpty(Player.Art(clearart))]</visible>
 				</control>
@@ -129,7 +129,7 @@
 					<posy>260r</posy>
 					<width>300</width>
 					<height>230</height>
-					<texture border="0">$INFO[Player.Art(tvshow.clearart)]</texture>
+					<texture>$INFO[Player.Art(tvshow.clearart)]</texture>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<visible>!IsEmpty(Player.Art(tvshow.clearart)) + !Skin.HasSetting(OSDInfoLogo)</visible>
 				</control>
@@ -139,7 +139,7 @@
 					<posy>260r</posy>
 					<width>300</width>
 					<height>230</height>
-					<texture border="0">$INFO[Player.Art(tvshow.clearlogo)]</texture>
+					<texture>$INFO[Player.Art(tvshow.clearlogo)]</texture>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<visible>!IsEmpty(Player.Art(tvshow.clearlogo)) + [Skin.HasSetting(OSDInfoLogo) | IsEmpty(Player.Art(tvshow.clearart))]</visible>
 				</control>
@@ -188,7 +188,7 @@
 					<width>50</width>
 					<height>25</height>
 					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<texture border="0">PVR-IsRecording.png</texture>
+					<texture>PVR-IsRecording.png</texture>
 					<visible>VideoPlayer.Content(LiveTV) + Player.Recording</visible>
 				</control>
 				<control type="label" id="1">
@@ -210,7 +210,7 @@
 					<height>25</height>
 					<align>left</align>
 					<font>font12</font>
-					<label border="0">$INFO[VideoPlayer.Studio]</label>
+					<label>$INFO[VideoPlayer.Studio]</label>
 					<textcolor>grey2</textcolor>
 					<visible>VideoPlayer.Content(Movies)</visible>
 				</control>
@@ -263,7 +263,7 @@
 						<font>font30</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label border="0">$VAR[VideoNowPlaying]</label>
+						<label>$VAR[VideoNowPlaying]</label>
 						<textcolor>orange</textcolor>
 						<scroll>true</scroll>
 					</control>
@@ -272,21 +272,21 @@
 						<width>50</width>
 						<height>35</height>
 						<aspectratio align="center">keep</aspectratio>
-						<texture border="0">$INFO[VideoPlayer.VideoResolution,flagging/video/,.png]</texture>
+						<texture>$INFO[VideoPlayer.VideoResolution,flagging/video/,.png]</texture>
 					</control>
 					<control type="image" id="1">
 						<description>Audio Codec Image</description>
 						<width>85</width>
 						<height>35</height>
 						<aspectratio align="center">keep</aspectratio>
-						<texture border="0">$INFO[VideoPlayer.AudioCodec,flagging/audio/,.png]</texture>
+						<texture>$INFO[VideoPlayer.AudioCodec,flagging/audio/,.png]</texture>
 					</control>
 					<control type="image" id="1">
 						<description>Audio Channels Image</description>
 						<width>50</width>
 						<height>35</height>
 						<aspectratio align="center">keep</aspectratio>
-						<texture border="0">$INFO[VideoPlayer.AudioChannels,flagging/audio/,.png]</texture>
+						<texture>$INFO[VideoPlayer.AudioChannels,flagging/audio/,.png]</texture>
 					</control>
 				</control>
 				<control type="label" id="1">
@@ -350,7 +350,7 @@
 					<width>720</width>
 					<height>16</height>
 					<info>Player.ProgressCache</info>
-					<midtexture border="0">progressbar/OSDProgressMidLight_light.png</midtexture>
+					<midtexture>progressbar/OSDProgressMidLight_light.png</midtexture>
 				</control>
 				<control type="progress" id="1">
 					<description>Progressbar</description>
@@ -392,7 +392,7 @@
 				<posy>0</posy>
 				<width>1280</width>
 				<height>140</height>
-				<texture border="0">buttons/nf_light.png</texture>
+				<texture>buttons/nf_light.png</texture>
 			</control>
 			<control type="label" id="10">
 				<description>row 1 label</description>
@@ -447,7 +447,7 @@
 				<posy>0</posy>
 				<width>1280</width>
 				<height>220</height>
-				<texture border="0">buttons/nf_light.png</texture>
+				<texture>buttons/nf_light.png</texture>
 			</control>
 			<control type="label">
 				<description>Header</description>
@@ -479,7 +479,7 @@
 				<posy>40</posy>
 				<width>1000</width>
 				<height>25</height>
-				<label border="0">$INFO[PVR.ActStreamClient]</label>
+				<label>$INFO[PVR.ActStreamClient]</label>
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
@@ -502,7 +502,7 @@
 				<posy>65</posy>
 				<width>1000</width>
 				<height>25</height>
-				<label border="0">$INFO[PVR.ActStreamDevice]</label>
+				<label>$INFO[PVR.ActStreamDevice]</label>
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
@@ -525,7 +525,7 @@
 				<posy>90</posy>
 				<width>1000</width>
 				<height>25</height>
-				<label border="0">$INFO[PVR.ActStreamStatus]</label>
+				<label>$INFO[PVR.ActStreamStatus]</label>
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
@@ -556,7 +556,7 @@
 				<posy>115</posy>
 				<width>180</width>
 				<height>25</height>
-				<label border="0">$INFO[PVR.ActStreamSignal]</label>
+				<label>$INFO[PVR.ActStreamSignal]</label>
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
@@ -587,7 +587,7 @@
 				<posy>140</posy>
 				<width>180</width>
 				<height>25</height>
-				<label border="0">$INFO[PVR.ActStreamSNR]</label>
+				<label>$INFO[PVR.ActStreamSNR]</label>
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
@@ -610,7 +610,7 @@
 				<posy>165</posy>
 				<width>1000</width>
 				<height>25</height>
-				<label border="0">$INFO[PVR.ActStreamBER]</label>
+				<label>$INFO[PVR.ActStreamBER]</label>
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
@@ -633,7 +633,7 @@
 				<posy>165</posy>
 				<width>1000</width>
 				<height>25</height>
-				<label border="0">$INFO[PVR.ActStreamUNC]</label>
+				<label>$INFO[PVR.ActStreamUNC]</label>
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
@@ -656,7 +656,7 @@
 				<posy>190</posy>
 				<width>1000</width>
 				<height>25</height>
-				<label border="0">$INFO[PVR.ActStreamEncryptionName]</label>
+				<label>$INFO[PVR.ActStreamEncryptionName]</label>
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>

@@ -23,7 +23,7 @@
 				<height>25</height>
 				<align>left</align>
 				<aligny>center</aligny>
-				<label border="0">$VAR[MusicHeaderLabel]</label>
+				<label>$VAR[MusicHeaderLabel]</label>
 			</control>
 			<include>Clock</include>
 			<control type="image">
@@ -31,7 +31,7 @@
 				<posy>230r</posy>
 				<width>1280</width>
 				<height>230</height>
-				<texture border="0">HomeNowPlayingBack.png</texture>
+				<texture>HomeNowPlayingBack.png</texture>
 			</control>
 			<control type="group">
 				<animation effect="slide" start="-275,275" end="0,0" time="1000" tween="cubic" easing="out" delay="1000">WindowOpen</animation>
@@ -85,7 +85,7 @@
 					<posy>-10</posy>
 					<width>200</width>
 					<height>78</height>
-					<texture border="0">$INFO[Player.FolderPath,,../logo.png]</texture>
+					<texture>$INFO[Player.FolderPath,,../logo.png]</texture>
 					<aspectratio aligny="bottom" align="left">keep</aspectratio>
 				</control>
 				<control type="label" id="1">
@@ -112,7 +112,7 @@
 						<font>font30</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label border="0">$INFO[MusicPlayer.Title]</label>
+						<label>$INFO[MusicPlayer.Title]</label>
 						<textcolor>orange</textcolor>
 						<scroll>true</scroll>
 					</control>
@@ -121,7 +121,7 @@
 						<width>80</width>
 						<height>35</height>
 						<aspectratio align="right">keep</aspectratio>
-						<texture border="0">$INFO[MusicPlayer.Codec,flagging/audio/,.png]</texture>
+						<texture>$INFO[MusicPlayer.Codec,flagging/audio/,.png]</texture>
 					</control>
 					<control type="group">
 						<description>Rating</description>
@@ -134,7 +134,7 @@
 							<width>110</width>
 							<height>35</height>
 							<aspectratio align="left">stretch</aspectratio>
-							<texture border="4">flagging/blank.png</texture>
+							<texture border="4">flagging/blank.png</texture>
 						</control>
 						<control type="image">
 							<description>Rating</description>
@@ -157,7 +157,7 @@
 					<scrollout>true</scrollout>
 					<scrollspeed>30</scrollspeed>
 					<pauseatend>400</pauseatend>
-					<label border="0">$VAR[NextFiveSongScroller]</label>
+					<label>$VAR[NextFiveSongScroller]</label>
 					<font>font12</font>
 					<visible>MusicPlayer.HasNext + !Skin.HasSetting(HideNextSongsInfo) + !Window.IsVisible(MusicOSD)</visible>
 					<animation effect="fade" time="200">VisibleChange</animation>

@@ -26,7 +26,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label border="0">$VAR[MainItemLabel]</label>
+						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>760</posx>
@@ -38,7 +38,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label border="0">$INFO[ListItem.Label2]</label>
+						<label>$INFO[ListItem.Label2]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout height="40" width="760">
@@ -47,7 +47,7 @@
 						<posy>0</posy>
 						<width>780</width>
 						<height>41</height>
-						<texture border="0">buttons/fo_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(506)</visible>
 					</control>
 					<control type="label">
@@ -58,7 +58,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label border="0">$VAR[MainItemLabel]</label>
+						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>760</posx>
@@ -70,7 +70,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label border="0">$INFO[ListItem.Label2]</label>
+						<label>$INFO[ListItem.Label2]</label>
 					</control>
 				</focusedlayout>
 			</control>
@@ -79,9 +79,9 @@
 				<posy>78</posy>
 				<width>14</width>
 				<height>560</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>506</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
@@ -107,7 +107,7 @@
 					<posy>300</posy>
 					<width>290</width>
 					<height>25</height>
-					<label border="0">$INFO[ListItem.Artist]</label>
+					<label>$INFO[ListItem.Artist]</label>
 					<scroll>true</scroll>
 					<align>center</align>
 					<aligny>center</aligny>
@@ -118,7 +118,7 @@
 					<posy>360</posy>
 					<width>290</width>
 					<height>25</height>
-					<label border="0">$INFO[ListItem.Album]</label>
+					<label>$INFO[ListItem.Album]</label>
 					<wrapmultiline>true</wrapmultiline>
 					<align>center</align>
 					<aligny>center</aligny>
@@ -129,7 +129,7 @@
 					<posy>420</posy>
 					<width>290</width>
 					<height>25</height>
-					<label border="0">$INFO[ListItem.Title]</label>
+					<label>$INFO[ListItem.Title]</label>
 					<scroll>true</scroll>
 					<align>center</align>
 					<aligny>top</aligny>
@@ -142,7 +142,7 @@
 					<posy>420</posy>
 					<width>290</width>
 					<height>25</height>
-					<label border="0">$INFO[ListItem.Genre]</label>
+					<label>$INFO[ListItem.Genre]</label>
 					<scroll>true</scroll>
 					<align>center</align>
 					<aligny>top</aligny>
@@ -178,7 +178,7 @@
 					<width>150</width>
 					<height>30</height>
 					<aspectratio>keep</aspectratio>
-					<texture border="0">$INFO[ListItem.StarRating,CenterRating/]</texture>
+					<texture>$INFO[ListItem.StarRating,CenterRating/]</texture>
 				</control>
 			</control>
 		</control>
@@ -193,7 +193,7 @@
 				<posy>0</posy>
 				<width>1280</width>
 				<height>270</height>
-				<texture border="0">HomeNowPlayingBack.png</texture>
+				<texture>HomeNowPlayingBack.png</texture>
 			</control>
 			<control type="label">
 				<posx>40</posx>
@@ -204,7 +204,7 @@
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label border="0">$VAR[MainItemLabel]</label>
+				<label>$VAR[MainItemLabel]</label>
 				<animation effect="slide" start="0,0" end="0,20" time="200" condition="!Control.HasFocus(509)">conditional</animation>
 			</control>
 		</control>
@@ -237,7 +237,7 @@
 						<width>160</width>
 						<height>160</height>
 						<aspectratio>stretch</aspectratio>
-						<bordertexture border="0">buttons/nf_light.png</bordertexture>
+						<bordertexture>buttons/nf_light.png</bordertexture>
 						<bordersize>4</bordersize>
 						<fadetime>200</fadetime>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
@@ -261,7 +261,7 @@
 						<width>35</width>
 						<height>35</height>
 						<aspectratio>keep</aspectratio>
-						<texture border="0">$INFO[ListItem.Overlay]</texture>
+						<texture>$INFO[ListItem.Overlay]</texture>
 						<animation type="focus">
 							<effect type="fade" start="0" end="100" time="200" />
 							<effect type="slide" start="0,0" end="40,40" time="200" />
@@ -278,9 +278,9 @@
 				<posy>195</posy>
 				<width>660</width>
 				<height>14</height>
-				<texturesliderbackground border="1,5,1,5">scrollbar/ScrollBarH_light.png</texturesliderbackground>
-				<texturesliderbar border="1,5,1,5">scrollbar/ScrollBarH_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus border="0">scrollbar/ScrollBarH_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="1,5,1,5">scrollbar/ScrollBarH_light.png</texturesliderbackground>
+				<texturesliderbar border="1,5,1,5">scrollbar/ScrollBarH_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus>scrollbar/ScrollBarH_bar_focus_light.png</texturesliderbarfocus>
 				<onup>509</onup>
 				<ondown condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</ondown>
 				<ondown condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</ondown>
@@ -308,7 +308,7 @@
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label border="0">$INFO[ListItem.Property(Album_Artist)]</label>
+				<label>$INFO[ListItem.Property(Album_Artist)]</label>
 			</control>
 			<control type="label">
 				<posx>40</posx>
@@ -320,7 +320,7 @@
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label border="0">$VAR[MainItemLabel]</label>
+				<label>$VAR[MainItemLabel]</label>
 			</control>
 			<control type="group">
 				<posx>40</posx>
@@ -377,7 +377,7 @@
 					<width>160</width>
 					<height>32</height>
 					<aspectratio>keep</aspectratio>
-					<texture border="0">$INFO[ListItem.StarRating,LeftRating/]</texture>
+					<texture>$INFO[ListItem.StarRating,LeftRating/]</texture>
 				</control>
 				<control type="textbox">
 					<description>Description Value for Album</description>
@@ -388,7 +388,7 @@
 					<font>font12</font>
 					<align>justify</align>
 					<pagecontrol>-</pagecontrol>
-					<label border="0">$INFO[ListItem.Property(Album_Description)]</label>
+					<label>$INFO[ListItem.Property(Album_Description)]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
 			</control>
@@ -420,7 +420,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label border="0">$VAR[MainItemLabel]</label>
+						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>730</posx>
@@ -432,14 +432,14 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label border="0">$INFO[ListItem.Label2]</label>
+						<label>$INFO[ListItem.Label2]</label>
 					</control>
 					<control type="image">
 						<posx>735</posx>
 						<posy>14</posy>
 						<width>20</width>
 						<height>16</height>
-						<texture border="0">$INFO[ListItem.Overlay]</texture>
+						<texture>$INFO[ListItem.Overlay]</texture>
 					</control>
 				</itemlayout>
 				<focusedlayout height="40" width="760">
@@ -448,7 +448,7 @@
 						<posy>0</posy>
 						<width>760</width>
 						<height>41</height>
-						<texture border="0">buttons/fo_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(511)</visible>
 					</control>
 					<control type="label">
@@ -459,7 +459,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label border="0">$VAR[MainItemLabel]</label>
+						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>730</posx>
@@ -471,14 +471,14 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label border="0">$INFO[ListItem.Label2]</label>
+						<label>$INFO[ListItem.Label2]</label>
 					</control>
 					<control type="image">
 						<posx>735</posx>
 						<posy>14</posy>
 						<width>20</width>
 						<height>16</height>
-						<texture border="0">$INFO[ListItem.Overlay]</texture>
+						<texture>$INFO[ListItem.Overlay]</texture>
 					</control>
 				</focusedlayout>
 			</control>
@@ -487,9 +487,9 @@
 				<posy>78</posy>
 				<width>14</width>
 				<height>560</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>511</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
@@ -525,7 +525,7 @@
 					<posy>290</posy>
 					<width>290</width>
 					<height>25</height>
-					<label border="0">$INFO[ListItem.Artist]</label>
+					<label>$INFO[ListItem.Artist]</label>
 					<scroll>true</scroll>
 					<align>center</align>
 					<aligny>center</aligny>
@@ -536,7 +536,7 @@
 					<posy>350</posy>
 					<width>290</width>
 					<height>25</height>
-					<label border="0">$INFO[ListItem.Album]</label>
+					<label>$INFO[ListItem.Album]</label>
 					<wrapmultiline>true</wrapmultiline>
 					<align>center</align>
 					<aligny>center</aligny>
@@ -547,7 +547,7 @@
 					<posy>410</posy>
 					<width>290</width>
 					<height>25</height>
-					<label border="0">$INFO[ListItem.Title]</label>
+					<label>$INFO[ListItem.Title]</label>
 					<scroll>true</scroll>
 					<align>center</align>
 					<aligny>top</aligny>
@@ -560,7 +560,7 @@
 					<posy>470</posy>
 					<width>290</width>
 					<height>25</height>
-					<label border="0">$INFO[ListItem.Studio]</label>
+					<label>$INFO[ListItem.Studio]</label>
 					<scroll>true</scroll>
 					<align>center</align>
 					<aligny>top</aligny>
@@ -607,7 +607,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label border="0">$VAR[MainItemLabel]</label>
+						<label>$VAR[MainItemLabel]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout height="40" width="580">
@@ -616,7 +616,7 @@
 						<posy>0</posy>
 						<width>580</width>
 						<height>41</height>
-						<texture border="0">buttons/fo_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(512)</visible>
 					</control>
 					<control type="label">
@@ -627,7 +627,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label border="0">$VAR[MainItemLabel]</label>
+						<label>$VAR[MainItemLabel]</label>
 					</control>
 				</focusedlayout>
 			</control>
@@ -636,9 +636,9 @@
 				<posy>78</posy>
 				<width>14</width>
 				<height>560</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>512</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
@@ -679,7 +679,7 @@
 						<posy>0</posy>
 						<width>350</width>
 						<height>25</height>
-						<label border="0">$INFO[ListItem.Property(Artist_Born)]</label>
+						<label>$INFO[ListItem.Property(Artist_Born)]</label>
 						<align>left</align>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
@@ -704,7 +704,7 @@
 						<posy>0</posy>
 						<width>350</width>
 						<height>25</height>
-						<label border="0">$INFO[ListItem.Property(Artist_Formed)]</label>
+						<label>$INFO[ListItem.Property(Artist_Formed)]</label>
 						<align>left</align>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
@@ -741,7 +741,7 @@
 						<height>190</height>
 						<font>font12</font>
 						<align>justify</align>
-						<label border="0">$INFO[ListItem.Property(Artist_Description)]</label>
+						<label>$INFO[ListItem.Property(Artist_Description)]</label>
 						<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 					</control>
 				</control>
@@ -774,7 +774,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label border="0">$VAR[MainItemLabel]</label>
+						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>760</posx>
@@ -786,7 +786,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label border="0">$INFO[ListItem.Label2]</label>
+						<label>$INFO[ListItem.Label2]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout height="40" width="780">
@@ -795,7 +795,7 @@
 						<posy>0</posy>
 						<width>780</width>
 						<height>41</height>
-						<texture border="0">buttons/fo_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(513)</visible>
 					</control>
 					<control type="label">
@@ -806,7 +806,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label border="0">$VAR[MainItemLabel]</label>
+						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>760</posx>
@@ -818,7 +818,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label border="0">$INFO[ListItem.Label2]</label>
+						<label>$INFO[ListItem.Label2]</label>
 					</control>
 				</focusedlayout>
 			</control>
@@ -827,9 +827,9 @@
 				<posy>78</posy>
 				<width>14</width>
 				<height>560</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>513</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
@@ -870,7 +870,7 @@
 					<font>font12</font>
 					<align>justify</align>
 					<pagecontrol>-</pagecontrol>
-					<label border="0">$INFO[ListItem.Property(Album_Description)]</label>
+					<label>$INFO[ListItem.Property(Album_Description)]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
 			</control>

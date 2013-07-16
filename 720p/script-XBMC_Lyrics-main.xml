@@ -20,7 +20,7 @@
 				<width>600</width>
 				<height>720</height>
 				<colordiffuse>BBFFFFFF</colordiffuse>
-				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
+				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
 			</control>
 			<control type="label">
 				<description>header label</description>
@@ -40,7 +40,7 @@
 				<width>550</width>
 				<height>30</height>
 				<font>font13_title</font>
-				<label border="0">$INFO[MusicPlayer.Artist]</label>
+				<label>$INFO[MusicPlayer.Artist]</label>
 				<align>right</align>
 				<aligny>center</aligny>
 				<textcolor>grey</textcolor>
@@ -52,7 +52,7 @@
 				<width>550</width>
 				<height>30</height>
 				<font>font13_title</font>
-				<label border="0">$INFO[MusicPlayer.Title]</label>
+				<label>$INFO[MusicPlayer.Title]</label>
 				<align>right</align>
 				<aligny>center</aligny>
 				<textcolor>grey</textcolor>
@@ -118,7 +118,7 @@
 						<align>center</align>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
-						<label border="0">$VAR[MainItemLabel]</label>
+						<label>$VAR[MainItemLabel]</label>
 						<visible>!Control.HasFocus(110)</visible>
 					</control>
 					<control type="label">
@@ -192,7 +192,7 @@
 						<width>550</width>
 						<height>41</height>
 						<visible>Control.HasFocus(120)</visible>
-						<texture border="0">buttons/fo_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 					</control>
 					<control type="label">
 						<posx>10</posx>

@@ -16,7 +16,7 @@
 				<posy>0</posy>
 				<width>400</width>
 				<height>720</height>
-				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
+				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
 			</control>
 			<control type="label">
 				<posx>380r</posx>
@@ -60,7 +60,7 @@
 						<width>360</width>
 						<height>40</height>
 						<visible>Control.HasFocus(450)</visible>
-						<texture border="0">buttons/fo_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 					</control>
 					<control type="label">
 						<posx>10</posx>
@@ -84,70 +84,70 @@
 					</item>
 					<item>
 						<description>Video</description>
-						<label border="0">$VAR[UsersSubVideosName]</label>
+						<label>$VAR[UsersSubVideosName]</label>
 						<onclick>Dialog.Close(2116)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Sub,Videos)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
 					<item>
 						<description>Movie</description>
-						<label border="0">$VAR[UsersSubMoviesName]</label>
+						<label>$VAR[UsersSubMoviesName]</label>
 						<onclick>Dialog.Close(2116)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Sub,Movies)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
 					<item>
 						<description>TVShows</description>
-						<label border="0">$VAR[UsersSubTVShowsName]</label>
+						<label>$VAR[UsersSubTVShowsName]</label>
 						<onclick>Dialog.Close(2116)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Sub,TVShows)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
 					<item>
 						<description>Concerts</description>
-						<label border="0">$VAR[UsersSubConcertsName]</label>
+						<label>$VAR[UsersSubConcertsName]</label>
 						<onclick>Dialog.Close(2116)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Sub,Concerts)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
 					<item>
 						<description>Music</description>
-						<label border="0">$VAR[UsersSubMusicName]</label>
+						<label>$VAR[UsersSubMusicName]</label>
 						<onclick>Dialog.Close(2116)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Sub,Music)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
 					<item>
 						<description>Programs</description>
-						<label border="0">$VAR[UsersSubProgsName]</label>
+						<label>$VAR[UsersSubProgsName]</label>
 						<onclick>Dialog.Close(2116)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Sub,Programs)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
 					<item>
 						<description>Pictures</description>
-						<label border="0">$VAR[UsersSubPicturesName]</label>
+						<label>$VAR[UsersSubPicturesName]</label>
 						<onclick>Dialog.Close(2116)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Sub,Pictures)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
 					<item>
 						<description>User Selection 1</description>
-						<label border="0">$VAR[UsersSubSelectOneName]</label>
+						<label>$VAR[UsersSubSelectOneName]</label>
 						<onclick>Dialog.Close(2116)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Sub,UserOne)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
 					<item>
 						<description>User Selection 2</description>
-						<label border="0">$VAR[UsersSubSelectTwoName]</label>
+						<label>$VAR[UsersSubSelectTwoName]</label>
 						<onclick>Dialog.Close(2116)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Sub,UserTwo)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
 					<item>
 						<description>User Selection 3</description>
-						<label border="0">$VAR[UsersSubSelectThreeName]</label>
+						<label>$VAR[UsersSubSelectThreeName]</label>
 						<onclick>Dialog.Close(2116)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Sub,UserThree)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
@@ -180,9 +180,9 @@
 				<posy>95</posy>
 				<width>14</width>
 				<height>550</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>450</onleft>
 				<onright>450</onright>
 				<showonepage>false</showonepage>

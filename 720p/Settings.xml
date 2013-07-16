@@ -49,7 +49,7 @@
 						<textcolor>grey3</textcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label border="0">$VAR[MainItemLabel]</label>
+						<label>$VAR[MainItemLabel]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout height="54" width="260">
@@ -58,7 +58,7 @@
 						<posy>0</posy>
 						<width>260</width>
 						<height>55</height>
-						<texture border="0">buttons/fo_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 					</control>
 					<control type="label">
 						<posx>250</posx>
@@ -68,7 +68,7 @@
 						<font>font24_title</font>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label border="0">$VAR[MainItemLabel]</label>
+						<label>$VAR[MainItemLabel]</label>
 					</control>
 				</focusedlayout>
 				<content>
@@ -88,7 +88,7 @@
 						<label>31502</label>
 						<label2>31409</label2>
 						<onclick>ActivateWindow(PVRSettings)</onclick>
-						<icon border="0">special://skin/backgrounds/default_light.jpg</icon>
+						<icon>special://skin/backgrounds/default_light.jpg</icon>
 					</item>
 					<item id="4">
 						<label>2</label>
@@ -157,7 +157,7 @@
 				<posy>60</posy>
 				<width>800</width>
 				<height>450</height>
-				<texture border="0">buttons/nf_light.png</texture>
+				<texture>buttons/nf_light.png</texture>
 			</control>
 			<control type="image">
 				<posx>272</posx>
@@ -182,7 +182,7 @@
 				<width>740</width>
 				<height>100</height>
 				<font>font12</font>
-				<label border="0">$INFO[Container(9000).ListItem.Label2]</label>
+				<label>$INFO[Container(9000).ListItem.Label2]</label>
 			</control>
 		</control>
 		<include>CommonNowPlaying</include>
@@ -214,7 +214,7 @@
 				<width>35</width>
 				<height>35</height>
 				<aspectratio>keep</aspectratio>
-				<texture border="0">icon_back.png</texture>
+				<texture>icon_back.png</texture>
 			</control>
 			<control type="button" id="81">
 				<description>Home push button</description>
@@ -238,7 +238,7 @@
 				<width>35</width>
 				<height>35</height>
 				<aspectratio>keep</aspectratio>
-				<texture border="0">icon_home.png</texture>
+				<texture>icon_home.png</texture>
 			</control>
 		</control>
 		<include>BehindDialogFadeOut</include>

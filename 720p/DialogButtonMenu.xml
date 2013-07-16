@@ -30,7 +30,7 @@
 			<posy>0</posy>
 			<width>1280</width>
 			<height>720</height>
-			<texture border="0">dialogs/overlay-background.png</texture>
+			<texture>dialogs/overlay-background.png</texture>
 		</control>
 		<control type="grouplist" id="9000">
 			<posx>470</posx>
@@ -157,11 +157,11 @@
 				<textwidth>290</textwidth>
 				<textcolor>grey2</textcolor>
 				<focusedcolor>white</focusedcolor>
-				<texturefocus border="0">buttons/fo_light.png</texturefocus>
-				<texturenofocus border="0">buttons/nf_light.png</texturenofocus>
+				<texturefocus>buttons/fo_light.png</texturefocus>
+				<texturenofocus>buttons/nf_light.png</texturenofocus>
 				<usealttexture>!System.IsMaster</usealttexture>
-				<alttexturefocus border="0">buttons/fo_light.png</alttexturefocus>
-				<alttexturenofocus border="0">buttons/nf_light.png</alttexturenofocus>
+				<alttexturefocus>buttons/fo_light.png</alttexturefocus>
+				<alttexturenofocus>buttons/nf_light.png</alttexturenofocus>
 				<onclick>xbmc.mastermode</onclick>
 				<visible>System.HasLocks</visible>
 			</control>

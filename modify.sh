@@ -304,6 +304,7 @@ PROGRESS_BACK='progressbar/OSDProgressBack_light.png'
 SPINDOWN_NF='buttons/spin-down-nf_light.png'
 SPINDOWN_FO='buttons/spin-down-fo_light.png'
 SPINLEFT_FO='buttons/spin-left-fo_light.png'
+SPINLEFT_NF='buttons/spin-left-nf_light.png'
 CALIBRATE_TOPLEFT='buttons/calibrate/topleft_light.png'
 CALIBRATE_PIXELRATIO='buttons/calibrate/pixelratio_light.png'
 CALIBRATE_SUBTITLES='buttons/calibrate/subtitles_light.png'
@@ -1295,6 +1296,30 @@ step
 printf "\nRemoving reference to non-existing file home-power-focus.gif: "
 if grep -q 'home-power-focus.gif' 720p/LoginScreen.xml ; then
 	remove_control 'image' '<texture>home-power-focus.gif</texture>'
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nReplacing left and right scrollers: "
+if [ -f media/scroll-left.png ] || [ -f media/scroll-right-focus.png ] ; then
+	XMLS=$(2>/dev/null grep '>scroll-left.png<' -l 720p/*)
+	R='s|>scroll-left.png<|>'$SPINLEFT_NF'<|g'
+	perlregex $XMLS "$R"
+	XMLS=$(2>/dev/null grep '>scroll-left-focus.png<' -l 720p/*)
+	R='s|>scroll-left-focus.png<|>'$SPINLEFT_FO'<|g'
+	perlregex $XMLS "$R"
+	XMLS=$(2>/dev/null grep '>scroll-right.png<' -l 720p/*)
+	R='s|>scroll-right.png<| flipx="true">'$SPINLEFT_NF'<|g'
+	perlregex $XMLS "$R"
+	XMLS=$(2>/dev/null grep '>scroll-right-focus.png<' -l 720p/*)
+	R='s|>scroll-right-focus.png<| flipx="true">'$SPINLEFT_FO'<|g'
+	perlregex $XMLS "$R"
+	check_and_remove media/scroll-left.png
+	check_and_remove media/scroll-left-focus.png
+	check_and_remove media/scroll-right.png
+	check_and_remove media/scroll-right-focus.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET

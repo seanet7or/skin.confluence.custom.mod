@@ -29,8 +29,8 @@
 		<posy>200</posy>
 		<width>300</width>
 		<height>42</height>
-		<texturefocus border="0">buttons/fo_light.png</texturefocus>
-		<texturenofocus border="0">buttons/nf_light.png</texturenofocus>
+		<texturefocus>buttons/fo_light.png</texturefocus>
+		<texturenofocus>buttons/nf_light.png</texturenofocus>
 		<font>font13</font>
 		<textcolor>white</textcolor>
 		<disabledcolor>grey3</disabledcolor>
@@ -66,9 +66,9 @@
 	<default type="progress">
 		<posx>100</posx>
 		<posy>325</posy>
-		<texturebg border="0">progressbar/OSDProgressBack_light.png</texturebg>
+		<texturebg>progressbar/OSDProgressBack_light.png</texturebg>
 		<lefttexture>-</lefttexture>
-		<midtexture border="0">progressbar/OSDProgressMid_light.png</midtexture>
+		<midtexture>progressbar/OSDProgressMid_light.png</midtexture>
 		<righttexture>-</righttexture>
 		<overlaytexture>-</overlaytexture>
 		<pulseonselect>false</pulseonselect>
@@ -100,7 +100,7 @@
 		<height>42</height>
 		<spinwidth>23</spinwidth>
 		<spinheight>13</spinheight>
-		<texturefocus border="0">buttons/fo_light.png</texturefocus>
+		<texturefocus>buttons/fo_light.png</texturefocus>
 		<texturenofocus>-</texturenofocus>
 		<textureup flipy="true">buttons/spin-down-nf_light.png</textureup>
 		<texturedown>buttons/spin-down-nf_light.png</texturedown>
@@ -121,10 +121,10 @@
 		<height>42</height>
 		<radiowidth>24</radiowidth>
 		<radioheight>24</radioheight>
-		<textureradiofocus border="0">radiobutton-focus.png</textureradiofocus>
-		<textureradionofocus border="0">radiobutton-nofocus.png</textureradionofocus>
-		<texturefocus border="0">buttons/fo_light.png</texturefocus>
-		<texturenofocus border="0">buttons/nf_light.png</texturenofocus>
+		<textureradiofocus>radiobutton-focus.png</textureradiofocus>
+		<textureradionofocus>radiobutton-nofocus.png</textureradionofocus>
+		<texturefocus>buttons/fo_light.png</texturefocus>
+		<texturenofocus>buttons/nf_light.png</texturenofocus>
 		<label>215</label>
 		<font>font13</font>
 		<textcolor>white</textcolor>
@@ -142,11 +142,11 @@
 		<font>font12</font>
 		<texturefocus>-</texturefocus>
 		<texturenofocus>-</texturenofocus>
-		<texturebg border="0">buttons/fo_light.png</texturebg>
-		<textureleft border="0">scroll-left.png</textureleft>
-		<textureleftfocus border="0">scroll-left-focus.png</textureleftfocus>
-		<textureright border="0">scroll-right.png</textureright>
-		<texturerightfocus border="0">scroll-right-focus.png</texturerightfocus>
+		<texturebg>buttons/fo_light.png</texturebg>
+		<textureleft>buttons/spin-left-nf_light.png</textureleft>
+		<textureleftfocus>buttons/spin-left-fo_light.png</textureleftfocus>
+		<textureright flipx="true">buttons/spin-left-nf_light.png</textureright>
+		<texturerightfocus flipx="true">buttons/spin-left-fo_light.png</texturerightfocus>
 		<font>font13</font>
 		<textcolor>white</textcolor>
 		<disabledcolor>grey3</disabledcolor>
@@ -162,13 +162,13 @@
 		<height>35</height>
 		<textoffsetx>7</textoffsetx>
 		<aligny>center</aligny>
-		<texturefocus border="0">buttons/fo_light.png</texturefocus>
-		<texturenofocus border="0">buttons/nf_light.png</texturenofocus>
+		<texturefocus>buttons/fo_light.png</texturefocus>
+		<texturenofocus>buttons/nf_light.png</texturenofocus>
 		<sliderwidth>150</sliderwidth>
 		<sliderheight>20</sliderheight>
-		<texturesliderbar border="0">osd_slider_bg_2.png</texturesliderbar>
-		<textureslidernib border="0">osd_slider_nibNF.png</textureslidernib>
-		<textureslidernibfocus border="0">osd_slider_nib.png</textureslidernibfocus>
+		<texturesliderbar>osd_slider_bg_2.png</texturesliderbar>
+		<textureslidernib>osd_slider_nibNF.png</textureslidernib>
+		<textureslidernibfocus>osd_slider_nib.png</textureslidernibfocus>
 		<font>font12</font>
 		<textcolor>white</textcolor>
 		<disabledcolor>grey3</disabledcolor>
@@ -177,15 +177,15 @@
 	<default type="mover">
 		<posx>60</posx>
 		<posy>192</posy>
-		<texturefocus border="0">buttons/fo_light.png</texturefocus>
-		<texturenofocus border="0">buttons/nf_light.png</texturenofocus>
+		<texturefocus>buttons/fo_light.png</texturefocus>
+		<texturenofocus>buttons/nf_light.png</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="resize">
 		<posx>60</posx>
 		<posy>192</posy>
-		<texturefocus border="0">buttons/fo_light.png</texturefocus>
-		<texturenofocus border="0">buttons/nf_light.png</texturenofocus>
+		<texturefocus>buttons/fo_light.png</texturefocus>
+		<texturenofocus>buttons/nf_light.png</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="edit">
@@ -193,8 +193,8 @@
 		<posy>200</posy>
 		<width>300</width>
 		<height>42</height>
-		<texturefocus border="0">buttons/fo_light.png</texturefocus>
-		<texturenofocus border="0">buttons/nf_light.png</texturenofocus>
+		<texturefocus>buttons/fo_light.png</texturefocus>
+		<texturenofocus>buttons/nf_light.png</texturenofocus>
 		<font>font13</font>
 		<textcolor>white</textcolor>
 		<disabledcolor>grey3</disabledcolor>

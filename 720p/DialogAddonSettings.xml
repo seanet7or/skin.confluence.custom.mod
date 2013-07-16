@@ -48,7 +48,7 @@
 			<posy>80</posy>
 			<width>20</width>
 			<height>20</height>
-			<texture border="0">scroll-left-focus.png</texture>
+			<texture>buttons/spin-left-fo_light.png</texture>
 			<visible>Container(9).HasPrevious</visible>
 		</control>
 		<control type="image">
@@ -57,7 +57,7 @@
 			<posy>80</posy>
 			<width>20</width>
 			<height>20</height>
-			<texture border="0">scroll-right-focus.png</texture>
+			<texture flipx="true">buttons/spin-left-fo_light.png</texture>
 			<visible>Container(9).HasNext</visible>
 		</control>
 		<control type="grouplist" id="2">
@@ -78,9 +78,9 @@
 			<posy>120</posy>
 			<width>14</width>
 			<height>380</height>
-			<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-			<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-			<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+			<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+			<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+			<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 			<onleft>2</onleft>
 			<onright>9</onright>
 			<showonepage>false</showonepage>
@@ -156,7 +156,7 @@
 			<height>40</height>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
-			<texturenofocus border="0">buttons/nf_light.png</texturenofocus>
+			<texturenofocus>buttons/nf_light.png</texturenofocus>
 		</control>
 		<control type="label" id="7">
 			<height>35</height>

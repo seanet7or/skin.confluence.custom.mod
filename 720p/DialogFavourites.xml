@@ -16,7 +16,7 @@
 				<posy>0</posy>
 				<width>400</width>
 				<height>720</height>
-				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
+				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
 			</control>
 			<control type="image">
 				<posx>370r</posx>
@@ -25,7 +25,7 @@
 				<height>200</height>
 				<aspectratio align="center">keep</aspectratio>
 				<fadetime>IconCrossfadeTime</fadetime>
-				<texture border="0">$INFO[ListItem.Icon]</texture>
+				<texture>$INFO[ListItem.Icon]</texture>
 			</control>
 			<control type="list" id="450">
 				<posx>390r</posx>
@@ -58,7 +58,7 @@
 						<width>370</width>
 						<height>40</height>
 						<visible>Control.HasFocus(450)</visible>
-						<texture border="0">buttons/fo_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 					</control>
 					<control type="label">
 						<posx>10</posx>

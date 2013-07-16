@@ -26,7 +26,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label border="0">$VAR[MainItemLabel]</label>
+						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>555</posx>
@@ -38,7 +38,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label border="0">$INFO[ListItem.Property(Addon.Status)]</label>
+						<label>$INFO[ListItem.Property(Addon.Status)]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout height="40" width="580">
@@ -47,7 +47,7 @@
 						<posy>0</posy>
 						<width>580</width>
 						<height>41</height>
-						<texture border="0">buttons/fo_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(550)</visible>
 					</control>
 					<control type="label">
@@ -58,7 +58,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label border="0">$VAR[MainItemLabel]</label>
+						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>555</posx>
@@ -70,7 +70,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label border="0">$INFO[ListItem.Property(Addon.Status)]</label>
+						<label>$INFO[ListItem.Property(Addon.Status)]</label>
 					</control>
 				</focusedlayout>
 			</control>
@@ -79,9 +79,9 @@
 				<posy>78</posy>
 				<width>14</width>
 				<height>560</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>550</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
@@ -99,7 +99,7 @@
 					<posy>0</posy>
 					<width>510</width>
 					<height>15</height>
-					<label border="0">$INFO[ListItem.Property(Addon.Name)]</label>
+					<label>$INFO[ListItem.Property(Addon.Name)]</label>
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
@@ -189,7 +189,7 @@
 						<height>180</height>
 						<font>font12</font>
 						<align>justify</align>
-						<label border="0">$INFO[ListItem.Property(Addon.Description)]</label>
+						<label>$INFO[ListItem.Property(Addon.Description)]</label>
 						<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 					</control>
 				</control>
@@ -218,7 +218,7 @@
 						<posy>0</posy>
 						<width>191</width>
 						<height>160</height>
-						<bordertexture border="0">buttons/nf_light.png</bordertexture>
+						<bordertexture>buttons/nf_light.png</bordertexture>
 						<bordersize>5</bordersize>
 						<fadetime>100</fadetime>
 						<texture background="true">$INFO[Listitem.Icon]</texture>
@@ -228,7 +228,7 @@
 						<posy>0</posy>
 						<width>191</width>
 						<height>160</height>
-						<bordertexture border="0">buttons/nf_light.png</bordertexture>
+						<bordertexture>buttons/nf_light.png</bordertexture>
 						<bordersize>5</bordersize>
 						<fadetime>100</fadetime>
 						<colordiffuse>ff333333</colordiffuse>
@@ -268,7 +268,7 @@
 						<posy>0</posy>
 						<width>191</width>
 						<height>160</height>
-						<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
+						<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 						<bordersize>5</bordersize>
 						<fadetime>100</fadetime>
 						<texture background="true">$INFO[Listitem.Icon]</texture>
@@ -278,7 +278,7 @@
 						<posy>0</posy>
 						<width>191</width>
 						<height>160</height>
-						<bordertexture border="0">buttons/nf_light.png</bordertexture>
+						<bordertexture>buttons/nf_light.png</bordertexture>
 						<bordersize>5</bordersize>
 						<fadetime>100</fadetime>
 						<colordiffuse>ff333333</colordiffuse>
@@ -317,9 +317,9 @@
 				<posy>78</posy>
 				<width>14</width>
 				<height>560</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>551</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
@@ -337,7 +337,7 @@
 					<posy>0</posy>
 					<width>290</width>
 					<height>15</height>
-					<label border="0">$INFO[ListItem.Property(Addon.Name)]</label>
+					<label>$INFO[ListItem.Property(Addon.Name)]</label>
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
@@ -418,7 +418,7 @@
 						<height>400</height>
 						<font>font12</font>
 						<align>justify</align>
-						<label border="0">$INFO[ListItem.Property(Addon.Description)]</label>
+						<label>$INFO[ListItem.Property(Addon.Description)]</label>
 						<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 					</control>
 				</control>

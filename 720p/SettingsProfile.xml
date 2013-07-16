@@ -93,7 +93,7 @@
 					<height>20</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<label border="0">$INFO[Container(2).ListItem.Label]</label>
+					<label>$INFO[Container(2).ListItem.Label]</label>
 				</control>
 				<control type="label">
 					<posx>0</posx>
@@ -152,7 +152,7 @@
 						<posy>0</posy>
 						<width>188</width>
 						<height>145</height>
-						<bordertexture border="0">buttons/nf_light.png</bordertexture>
+						<bordertexture>buttons/nf_light.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture fallback="DefaultActor.png">$INFO[Listitem.Icon]</texture>
 					</control>
@@ -175,7 +175,7 @@
 						<posy>0</posy>
 						<width>188</width>
 						<height>145</height>
-						<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
+						<bordertexture border="7">buttons/folder-focus_light.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture fallback="DefaultActor.png">$INFO[Listitem.Icon]</texture>
 					</control>
@@ -197,9 +197,9 @@
 				<posy>60</posy>
 				<width>14</width>
 				<height>530</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>2</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">4</onright>
 				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
@@ -236,7 +236,7 @@
 				<width>35</width>
 				<height>35</height>
 				<aspectratio>keep</aspectratio>
-				<texture border="0">icon_back.png</texture>
+				<texture>icon_back.png</texture>
 			</control>
 			<control type="button" id="81">
 				<description>Home push button</description>
@@ -260,7 +260,7 @@
 				<width>35</width>
 				<height>35</height>
 				<aspectratio>keep</aspectratio>
-				<texture border="0">icon_home.png</texture>
+				<texture>icon_home.png</texture>
 			</control>
 		</control>
 		<include>BehindDialogFadeOut</include>

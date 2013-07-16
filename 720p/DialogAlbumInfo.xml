@@ -13,7 +13,7 @@
 				<posy>0</posy>
 				<width>1100</width>
 				<height>720</height>
-				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
+				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
 			</control>
 			<control type="group">
 				<animation effect="fade" delay="400" start="0" end="100" time="200">WindowOpen</animation>
@@ -25,7 +25,7 @@
 					<width>1030</width>
 					<height>30</height>
 					<font>font24_title</font>
-					<label border="0">$INFO[Listitem.Album]</label>
+					<label>$INFO[Listitem.Album]</label>
 					<align>center</align>
 					<aligny>center</aligny>
 					<visible>container.content(Albums)</visible>
@@ -37,7 +37,7 @@
 					<width>1030</width>
 					<height>30</height>
 					<font>font24_title</font>
-					<label border="0">$INFO[Listitem.Artist]</label>
+					<label>$INFO[Listitem.Artist]</label>
 					<align>center</align>
 					<aligny>center</aligny>
 					<visible>container.content(Artists)</visible>
@@ -53,7 +53,7 @@
 						<width>675</width>
 						<height>380</height>
 						<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
-						<bordertexture border="0">buttons/nf_light.png</bordertexture>
+						<bordertexture>buttons/nf_light.png</bordertexture>
 						<bordersize>4</bordersize>
 						<aspectratio>keep</aspectratio>
 						<visible>!IsEmpty(Listitem.Property(Fanart_Image))</visible>
@@ -66,8 +66,8 @@
 							<posy>0</posy>
 							<width>675</width>
 							<height>380</height>
-							<texture border="0">Fanart_Fallback_Music_Small.jpg</texture>
-							<bordertexture border="0">buttons/nf_light.png</bordertexture>
+							<texture>Fanart_Fallback_Music_Small.jpg</texture>
+							<bordertexture>buttons/nf_light.png</bordertexture>
 							<bordersize>4</bordersize>
 							<aspectratio>stretch</aspectratio>
 							<colordiffuse>88FFFFFF</colordiffuse>
@@ -94,7 +94,7 @@
 						<width>380</width>
 						<height>360</height>
 						<aspectratio>keep</aspectratio>
-						<bordertexture border="0">buttons/nf_light.png</bordertexture>
+						<bordertexture>buttons/nf_light.png</bordertexture>
 						<bordersize>4</bordersize>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
 					</control>
@@ -139,7 +139,7 @@
 								<width>640</width>
 								<height>30</height>
 								<visible>Control.HasFocus(49)</visible>
-								<texture border="0">buttons/fo_light.png</texture>
+								<texture>buttons/fo_light.png</texture>
 							</control>
 							<control type="label">
 								<posx>140</posx>
@@ -231,7 +231,7 @@
 						<width>380</width>
 						<height>360</height>
 						<aspectratio>keep</aspectratio>
-						<bordertexture border="0">buttons/nf_light.png</bordertexture>
+						<bordertexture>buttons/nf_light.png</bordertexture>
 						<bordersize>4</bordersize>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
 					</control>
@@ -276,7 +276,7 @@
 								<width>640</width>
 								<height>30</height>
 								<visible>Control.HasFocus(49)</visible>
-								<texture border="0">buttons/fo_light.png</texture>
+								<texture>buttons/fo_light.png</texture>
 							</control>
 							<control type="label">
 								<posx>165</posx>
@@ -412,7 +412,7 @@
 							<posy>0</posy>
 							<width>430</width>
 							<height>40</height>
-							<texture border="0">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="label">
 							<posx>10</posx>
@@ -434,7 +434,7 @@
 							<align>right</align>
 							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
-							<label border="0">$INFO[ListItem.Duration]</label>
+							<label>$INFO[ListItem.Duration]</label>
 						</control>
 					</itemlayout>
 					<focusedlayout condition="Container.Content(Albums)" height="40" width="430">
@@ -444,7 +444,7 @@
 							<width>430</width>
 							<height>40</height>
 							<visible>!Control.HasFocus(50)</visible>
-							<texture border="0">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>0</posx>
@@ -452,7 +452,7 @@
 							<width>430</width>
 							<height>40</height>
 							<visible>Control.HasFocus(50)</visible>
-							<texture border="0">buttons/fo_light.png</texture>
+							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="label">
 							<posx>10</posx>
@@ -474,7 +474,7 @@
 							<align>right</align>
 							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
-							<label border="0">$INFO[ListItem.Duration]</label>
+							<label>$INFO[ListItem.Duration]</label>
 						</control>
 					</focusedlayout>
 					<itemlayout condition="Container.Content(Artists)" height="40" width="430">
@@ -483,7 +483,7 @@
 							<posy>0</posy>
 							<width>430</width>
 							<height>40</height>
-							<texture border="0">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="label">
 							<posx>10</posx>
@@ -494,7 +494,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
-							<label border="0">$VAR[MainItemLabel]</label>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 					</itemlayout>
 					<focusedlayout condition="Container.Content(Artists)" height="40" width="430">
@@ -504,7 +504,7 @@
 							<width>430</width>
 							<height>40</height>
 							<visible>!Control.HasFocus(50)</visible>
-							<texture border="0">buttons/nf_light.png</texture>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>0</posx>
@@ -512,7 +512,7 @@
 							<width>430</width>
 							<height>40</height>
 							<visible>Control.HasFocus(50)</visible>
-							<texture border="0">buttons/fo_light.png</texture>
+							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="label">
 							<posx>10</posx>
@@ -523,7 +523,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
-							<label border="0">$VAR[MainItemLabel]</label>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 					</focusedlayout>
 				</control>

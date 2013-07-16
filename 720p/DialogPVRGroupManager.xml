@@ -12,7 +12,7 @@
 				<posy>0</posy>
 				<width>1150</width>
 				<height>720</height>
-				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
+				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
 			</control>
 			<control type="group">
 				<animation effect="fade" delay="400" start="0" end="100" time="200">WindowOpen</animation>
@@ -49,7 +49,7 @@
 						<posy>75</posy>
 						<width>340</width>
 						<height>460</height>
-						<texture border="0">buttons/nf_light.png</texture>
+						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="list" id="13">
 						<posx>5</posx>
@@ -68,7 +68,7 @@
 								<posy>0</posy>
 								<width>330</width>
 								<height>40</height>
-								<texture border="0">buttons/nf_light.png</texture>
+								<texture>buttons/nf_light.png</texture>
 							</control>
 							<control type="label">
 								<posx>10</posx>
@@ -89,7 +89,7 @@
 								<posy>0</posy>
 								<width>330</width>
 								<height>40</height>
-								<texture border="0">buttons/nf_light.png</texture>
+								<texture>buttons/nf_light.png</texture>
 								<visible>!Control.HasFocus(13)</visible>
 							</control>
 							<control type="image">
@@ -97,7 +97,7 @@
 								<posy>0</posy>
 								<width>330</width>
 								<height>40</height>
-								<texture border="0">buttons/fo_light.png</texture>
+								<texture>buttons/fo_light.png</texture>
 								<visible>Control.HasFocus(13)</visible>
 							</control>
 							<control type="label">
@@ -118,9 +118,9 @@
 						<posy>75</posy>
 						<width>14</width>
 						<height>460</height>
-						<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-						<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-						<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+						<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+						<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+						<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 						<onleft>13</onleft>
 						<onright>11</onright>
 						<ondown>73</ondown>
@@ -148,7 +148,7 @@
 						<posy>75</posy>
 						<width>340</width>
 						<height>460</height>
-						<texture border="0">buttons/nf_light.png</texture>
+						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="list" id="11">
 						<posx>5</posx>
@@ -167,14 +167,14 @@
 								<posy>0</posy>
 								<width>330</width>
 								<height>40</height>
-								<texture border="0">buttons/nf_light.png</texture>
+								<texture>buttons/nf_light.png</texture>
 							</control>
 							<control type="image">
 								<width>32</width>
 								<height>32</height>
 								<posx>5</posx>
 								<posy>4</posy>
-								<texture border="0">$INFO[ListItem.Icon]</texture>
+								<texture>$INFO[ListItem.Icon]</texture>
 							</control>
 							<control type="label">
 								<posx>40</posx>
@@ -195,7 +195,7 @@
 								<posy>0</posy>
 								<width>330</width>
 								<height>40</height>
-								<texture border="0">buttons/nf_light.png</texture>
+								<texture>buttons/nf_light.png</texture>
 								<visible>!Control.HasFocus(11)</visible>
 							</control>
 							<control type="image">
@@ -203,7 +203,7 @@
 								<posy>0</posy>
 								<width>330</width>
 								<height>40</height>
-								<texture border="0">buttons/fo_light.png</texture>
+								<texture>buttons/fo_light.png</texture>
 								<visible>Control.HasFocus(11)</visible>
 							</control>
 							<control type="image">
@@ -211,7 +211,7 @@
 								<height>32</height>
 								<posx>5</posx>
 								<posy>4</posy>
-								<texture border="0">$INFO[ListItem.Icon]</texture>
+								<texture>$INFO[ListItem.Icon]</texture>
 							</control>
 							<control type="label">
 								<posx>40</posx>
@@ -231,9 +231,9 @@
 						<posy>75</posy>
 						<width>14</width>
 						<height>460</height>
-						<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-						<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-						<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+						<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+						<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+						<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 						<onleft>11</onleft>
 						<onright>12</onright>
 						<ondown>71</ondown>
@@ -261,7 +261,7 @@
 						<posy>75</posy>
 						<width>340</width>
 						<height>460</height>
-						<texture border="0">buttons/nf_light.png</texture>
+						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="list" id="12">
 						<posx>5</posx>
@@ -280,14 +280,14 @@
 								<posy>0</posy>
 								<width>330</width>
 								<height>40</height>
-								<texture border="0">buttons/nf_light.png</texture>
+								<texture>buttons/nf_light.png</texture>
 							</control>
 							<control type="image">
 								<width>32</width>
 								<height>32</height>
 								<posx>5</posx>
 								<posy>4</posy>
-								<texture border="0">$INFO[ListItem.Icon]</texture>
+								<texture>$INFO[ListItem.Icon]</texture>
 							</control>
 							<control type="label">
 								<posx>40</posx>
@@ -308,7 +308,7 @@
 								<posy>0</posy>
 								<width>330</width>
 								<height>40</height>
-								<texture border="0">buttons/nf_light.png</texture>
+								<texture>buttons/nf_light.png</texture>
 								<visible>!Control.HasFocus(12)</visible>
 							</control>
 							<control type="image">
@@ -316,7 +316,7 @@
 								<posy>0</posy>
 								<width>330</width>
 								<height>40</height>
-								<texture border="0">buttons/fo_light.png</texture>
+								<texture>buttons/fo_light.png</texture>
 								<visible>Control.HasFocus(12)</visible>
 							</control>
 							<control type="image">
@@ -324,7 +324,7 @@
 								<height>32</height>
 								<posx>5</posx>
 								<posy>4</posy>
-								<texture border="0">$INFO[ListItem.Icon]</texture>
+								<texture>$INFO[ListItem.Icon]</texture>
 							</control>
 							<control type="label">
 								<posx>40</posx>
@@ -344,9 +344,9 @@
 						<posy>75</posy>
 						<width>14</width>
 						<height>460</height>
-						<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-						<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-						<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+						<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+						<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+						<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 						<onleft>12</onleft>
 						<onright>26</onright>
 						<ondown>72</ondown>

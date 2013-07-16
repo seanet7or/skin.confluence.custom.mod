@@ -71,7 +71,7 @@
 			</control>
 			<control type="image">
 				<include>Dimensions_Fullscreen</include>
-				<texture border="0">dialogs/overlay-background.png</texture>
+				<texture>dialogs/overlay-background.png</texture>
 				<animation effect="fade" time="400">WindowOpen</animation>
 				<animation effect="fade" time="200">WindowClose</animation>
 			</control>
@@ -123,7 +123,7 @@
 							<textcolor>grey3</textcolor>
 							<align>right</align>
 							<aligny>center</aligny>
-							<label border="0">$VAR[MainItemLabel]</label>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 						<control type="label">
 							<posx>250</posx>
@@ -133,7 +133,7 @@
 							<textcolor>grey2</textcolor>
 							<align>right</align>
 							<aligny>center</aligny>
-							<label border="0">$INFO[ListItem.Label2]</label>
+							<label>$INFO[ListItem.Label2]</label>
 						</control>
 					</itemlayout>
 					<focusedlayout height="60" width="260">
@@ -142,7 +142,7 @@
 							<posy>0</posy>
 							<width>260</width>
 							<height>61</height>
-							<texture border="0">buttons/fo_light.png</texture>
+							<texture>buttons/fo_light.png</texture>
 							<animation effect="fade" start="100" end="50" time="100" condition="!Control.HasFocus(9000)">Conditional</animation>
 						</control>
 						<control type="label">
@@ -153,7 +153,7 @@
 							<font>font24_title</font>
 							<align>right</align>
 							<aligny>center</aligny>
-							<label border="0">$VAR[MainItemLabel]</label>
+							<label>$VAR[MainItemLabel]</label>
 						</control>
 						<control type="label">
 							<posx>250</posx>
@@ -163,7 +163,7 @@
 							<textcolor>grey2</textcolor>
 							<align>right</align>
 							<aligny>center</aligny>
-							<label border="0">$INFO[ListItem.Label2]</label>
+							<label>$INFO[ListItem.Label2]</label>
 						</control>
 					</focusedlayout>
 					<content>
@@ -238,7 +238,7 @@
 					<width>740</width>
 					<height>30</height>
 					<font>font16</font>
-					<label border="0">$INFO[Container(9000).ListItem.Label]</label>
+					<label>$INFO[Container(9000).ListItem.Label]</label>
 					<align>left</align>
 					<aligny>center</aligny>
 					<visible>Control.IsVisible(198)</visible>
@@ -341,7 +341,7 @@
 									<posy>0</posy>
 									<width>370</width>
 									<height>125</height>
-									<texture border="0">buttons/nf_light.png</texture>
+									<texture>buttons/nf_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -355,7 +355,7 @@
 									<posy>70</posy>
 									<width>30</width>
 									<height>30</height>
-									<texture border="0">OverlayWatched.png</texture>
+									<texture>OverlayWatched.png</texture>
 									<visible>IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
 								</control>
 								<control type="label">
@@ -394,7 +394,7 @@
 									<posy>45</posy>
 									<width>265</width>
 									<height>75</height>
-									<label border="0">$INFO[ListItem.Property(Tagline)]</label>
+									<label>$INFO[ListItem.Property(Tagline)]</label>
 									<font>font10</font>
 								</control>
 								<control type="textbox">
@@ -402,7 +402,7 @@
 									<posy>45</posy>
 									<width>265</width>
 									<height>75</height>
-									<label border="0">$INFO[ListItem.Property(PlotOutline)]</label>
+									<label>$INFO[ListItem.Property(PlotOutline)]</label>
 									<font>font10</font>
 									<visible>IsEmpty(ListItem.Property(TagLine))</visible>
 								</control>
@@ -411,7 +411,7 @@
 									<posy>45</posy>
 									<width>265</width>
 									<height>75</height>
-									<label border="0">$INFO[ListItem.Property(Plot)]</label>
+									<label>$INFO[ListItem.Property(Plot)]</label>
 									<font>font10</font>
 									<visible>IsEmpty(ListItem.Property(TagLine)) + IsEmpty(ListItem.Property(PlotOutline))</visible>
 								</control>
@@ -422,7 +422,7 @@
 									<posy>0</posy>
 									<width>370</width>
 									<height>125</height>
-									<texture border="0">buttons/fo_light.png</texture>
+									<texture>buttons/fo_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -436,7 +436,7 @@
 									<posy>70</posy>
 									<width>30</width>
 									<height>30</height>
-									<texture border="0">OverlayWatched.png</texture>
+									<texture>OverlayWatched.png</texture>
 									<visible>IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
 								</control>
 								<control type="label">
@@ -475,7 +475,7 @@
 									<posy>45</posy>
 									<width>265</width>
 									<height>75</height>
-									<label border="0">$INFO[ListItem.Property(Tagline)]</label>
+									<label>$INFO[ListItem.Property(Tagline)]</label>
 									<font>font10</font>
 								</control>
 								<control type="textbox">
@@ -483,7 +483,7 @@
 									<posy>45</posy>
 									<width>265</width>
 									<height>75</height>
-									<label border="0">$INFO[ListItem.Property(PlotOutline)]</label>
+									<label>$INFO[ListItem.Property(PlotOutline)]</label>
 									<font>font10</font>
 									<visible>IsEmpty(ListItem.Property(TagLine))</visible>
 								</control>
@@ -492,7 +492,7 @@
 									<posy>45</posy>
 									<width>265</width>
 									<height>75</height>
-									<label border="0">$INFO[ListItem.Property(Plot)]</label>
+									<label>$INFO[ListItem.Property(Plot)]</label>
 									<font>font10</font>
 									<visible>IsEmpty(ListItem.Property(TagLine)) + IsEmpty(ListItem.Property(PlotOutline))</visible>
 								</control>
@@ -503,9 +503,9 @@
 							<posy>0</posy>
 							<width>14</width>
 							<height>530</height>
-							<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-							<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-							<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+							<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+							<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+							<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 							<onleft>111</onleft>
 							<onright>9000</onright>
 							<showonepage>false</showonepage>
@@ -545,7 +545,7 @@
 									<posy>0</posy>
 									<width>370</width>
 									<height>170</height>
-									<texture border="0">buttons/nf_light.png</texture>
+									<texture>buttons/nf_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -559,7 +559,7 @@
 									<posy>70</posy>
 									<width>30</width>
 									<height>30</height>
-									<texture border="0">OverlayWatched.png</texture>
+									<texture>OverlayWatched.png</texture>
 									<visible>IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
 								</control>
 								<control type="label">
@@ -577,7 +577,7 @@
 									<posy>95</posy>
 									<width>360</width>
 									<height>15</height>
-									<label border="0">$INFO[ListItem.Property(Premiered)]</label>
+									<label>$INFO[ListItem.Property(Premiered)]</label>
 									<font>font12</font>
 									<textcolor>grey2</textcolor>
 									<align>center</align>
@@ -588,7 +588,7 @@
 									<posy>110</posy>
 									<width>360</width>
 									<height>55</height>
-									<label border="0">$INFO[ListItem.Property(Plot)]</label>
+									<label>$INFO[ListItem.Property(Plot)]</label>
 									<font>font10</font>
 									<align>justify</align>
 								</control>
@@ -599,7 +599,7 @@
 									<posy>0</posy>
 									<width>370</width>
 									<height>170</height>
-									<texture border="0">buttons/fo_light.png</texture>
+									<texture>buttons/fo_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -613,7 +613,7 @@
 									<posy>70</posy>
 									<width>30</width>
 									<height>30</height>
-									<texture border="0">OverlayWatched.png</texture>
+									<texture>OverlayWatched.png</texture>
 									<visible>IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
 								</control>
 								<control type="label">
@@ -631,7 +631,7 @@
 									<posy>95</posy>
 									<width>360</width>
 									<height>15</height>
-									<label border="0">$INFO[ListItem.Property(Premiered)]</label>
+									<label>$INFO[ListItem.Property(Premiered)]</label>
 									<font>font12</font>
 									<textcolor>grey2</textcolor>
 									<align>center</align>
@@ -642,7 +642,7 @@
 									<posy>110</posy>
 									<width>360</width>
 									<height>55</height>
-									<label border="0">$INFO[ListItem.Property(Plot)]</label>
+									<label>$INFO[ListItem.Property(Plot)]</label>
 									<font>font10</font>
 									<align>justify</align>
 								</control>
@@ -653,9 +653,9 @@
 							<posy>0</posy>
 							<width>14</width>
 							<height>530</height>
-							<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-							<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-							<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+							<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+							<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+							<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 							<onleft>121</onleft>
 							<onright>9000</onright>
 							<showonepage>false</showonepage>
@@ -695,7 +695,7 @@
 									<posy>0</posy>
 									<width>370</width>
 									<height>125</height>
-									<texture border="0">buttons/nf_light.png</texture>
+									<texture>buttons/nf_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -709,7 +709,7 @@
 									<posy>10</posy>
 									<width>260</width>
 									<height>15</height>
-									<label border="0">$VAR[MainItemLabel]</label>
+									<label>$VAR[MainItemLabel]</label>
 									<font>font12_title</font>
 									<aligny>center</aligny>
 								</control>
@@ -718,7 +718,7 @@
 									<posy>30</posy>
 									<width>260</width>
 									<height>120</height>
-									<label border="0">$INFO[ListItem.Property(TvShowTitle)]</label>
+									<label>$INFO[ListItem.Property(TvShowTitle)]</label>
 									<font>font12</font>
 									<textcolor>grey2</textcolor>
 								</control>
@@ -729,7 +729,7 @@
 									<posy>0</posy>
 									<width>370</width>
 									<height>125</height>
-									<texture border="0">buttons/fo_light.png</texture>
+									<texture>buttons/fo_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -743,7 +743,7 @@
 									<posy>10</posy>
 									<width>260</width>
 									<height>15</height>
-									<label border="0">$VAR[MainItemLabel]</label>
+									<label>$VAR[MainItemLabel]</label>
 									<font>font12_title</font>
 									<aligny>center</aligny>
 								</control>
@@ -752,7 +752,7 @@
 									<posy>30</posy>
 									<width>260</width>
 									<height>120</height>
-									<label border="0">$INFO[ListItem.Property(TvShowTitle)]</label>
+									<label>$INFO[ListItem.Property(TvShowTitle)]</label>
 									<font>font12</font>
 									<textcolor>grey2</textcolor>
 								</control>
@@ -763,9 +763,9 @@
 							<posy>0</posy>
 							<width>14</width>
 							<height>530</height>
-							<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-							<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-							<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+							<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+							<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+							<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 							<onleft>131</onleft>
 							<onright>9000</onright>
 							<showonepage>false</showonepage>
@@ -805,7 +805,7 @@
 									<posy>0</posy>
 									<width>750</width>
 									<height>101</height>
-									<texture border="0">buttons/nf_light.png</texture>
+									<texture>buttons/nf_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -820,7 +820,7 @@
 									<posy>70</posy>
 									<width>30</width>
 									<height>30</height>
-									<texture border="0">OverlayWatched.png</texture>
+									<texture>OverlayWatched.png</texture>
 									<visible>IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
 								</control>
 								<control type="label">
@@ -837,7 +837,7 @@
 									<posy>30</posy>
 									<width>585</width>
 									<height>15</height>
-									<label border="0">$INFO[ListItem.Property(TvShowTitle)]</label>
+									<label>$INFO[ListItem.Property(TvShowTitle)]</label>
 									<font>font12</font>
 									<textcolor>grey2</textcolor>
 									<aligny>center</aligny>
@@ -847,7 +847,7 @@
 									<posy>50</posy>
 									<width>585</width>
 									<height>45</height>
-									<label border="0">$INFO[ListItem.Property(Plot)]</label>
+									<label>$INFO[ListItem.Property(Plot)]</label>
 									<font>font10</font>
 								</control>
 							</itemlayout>
@@ -857,7 +857,7 @@
 									<posy>0</posy>
 									<width>750</width>
 									<height>101</height>
-									<texture border="0">buttons/fo_light.png</texture>
+									<texture>buttons/fo_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -872,7 +872,7 @@
 									<posy>70</posy>
 									<width>30</width>
 									<height>30</height>
-									<texture border="0">OverlayWatched.png</texture>
+									<texture>OverlayWatched.png</texture>
 									<visible>IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
 								</control>
 								<control type="label">
@@ -889,7 +889,7 @@
 									<posy>30</posy>
 									<width>585</width>
 									<height>15</height>
-									<label border="0">$INFO[ListItem.Property(TvShowTitle)]</label>
+									<label>$INFO[ListItem.Property(TvShowTitle)]</label>
 									<font>font12</font>
 									<textcolor>grey2</textcolor>
 									<aligny>center</aligny>
@@ -899,7 +899,7 @@
 									<posy>50</posy>
 									<width>585</width>
 									<height>45</height>
-									<label border="0">$INFO[ListItem.Property(Plot)]</label>
+									<label>$INFO[ListItem.Property(Plot)]</label>
 									<font>font10</font>
 								</control>
 							</focusedlayout>
@@ -909,9 +909,9 @@
 							<posy>0</posy>
 							<width>14</width>
 							<height>530</height>
-							<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-							<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-							<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+							<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+							<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+							<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 							<onleft>141</onleft>
 							<onright>9000</onright>
 							<showonepage>false</showonepage>
@@ -951,7 +951,7 @@
 									<posy>0</posy>
 									<width>370</width>
 									<height>101</height>
-									<texture border="0">buttons/nf_light.png</texture>
+									<texture>buttons/nf_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -965,7 +965,7 @@
 									<posy>65</posy>
 									<width>30</width>
 									<height>30</height>
-									<texture border="0">OverlayWatched.png</texture>
+									<texture>OverlayWatched.png</texture>
 									<visible>IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
 								</control>
 								<control type="label">
@@ -982,7 +982,7 @@
 									<posy>30</posy>
 									<width>230</width>
 									<height>15</height>
-									<label border="0">$INFO[ListItem.Property(Artist)]</label>
+									<label>$INFO[ListItem.Property(Artist)]</label>
 									<font>font12</font>
 									<aligny>center</aligny>
 								</control>
@@ -991,7 +991,7 @@
 									<posy>55</posy>
 									<width>230</width>
 									<height>15</height>
-									<label border="0">$INFO[ListItem.Property(Year)]</label>
+									<label>$INFO[ListItem.Property(Year)]</label>
 									<font>font12</font>
 									<textcolor>grey2</textcolor>
 									<aligny>center</aligny>
@@ -1001,7 +1001,7 @@
 									<posy>75</posy>
 									<width>230</width>
 									<height>15</height>
-									<label border="0">$INFO[ListItem.Property(Duration)]</label>
+									<label>$INFO[ListItem.Property(Duration)]</label>
 									<font>font12</font>
 									<textcolor>grey2</textcolor>
 									<aligny>center</aligny>
@@ -1013,7 +1013,7 @@
 									<posy>0</posy>
 									<width>370</width>
 									<height>101</height>
-									<texture border="0">buttons/fo_light.png</texture>
+									<texture>buttons/fo_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -1027,7 +1027,7 @@
 									<posy>65</posy>
 									<width>30</width>
 									<height>30</height>
-									<texture border="0">OverlayWatched.png</texture>
+									<texture>OverlayWatched.png</texture>
 									<visible>IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
 								</control>
 								<control type="label">
@@ -1044,7 +1044,7 @@
 									<posy>30</posy>
 									<width>230</width>
 									<height>15</height>
-									<label border="0">$INFO[ListItem.Property(Artist)]</label>
+									<label>$INFO[ListItem.Property(Artist)]</label>
 									<font>font12</font>
 									<aligny>center</aligny>
 								</control>
@@ -1053,7 +1053,7 @@
 									<posy>55</posy>
 									<width>230</width>
 									<height>15</height>
-									<label border="0">$INFO[ListItem.Property(Year)]</label>
+									<label>$INFO[ListItem.Property(Year)]</label>
 									<font>font12</font>
 									<textcolor>grey2</textcolor>
 									<aligny>center</aligny>
@@ -1063,7 +1063,7 @@
 									<posy>75</posy>
 									<width>230</width>
 									<height>15</height>
-									<label border="0">$INFO[ListItem.Property(Duration)]</label>
+									<label>$INFO[ListItem.Property(Duration)]</label>
 									<font>font12</font>
 									<textcolor>grey2</textcolor>
 									<aligny>center</aligny>
@@ -1075,9 +1075,9 @@
 							<posy>0</posy>
 							<width>14</width>
 							<height>530</height>
-							<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-							<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-							<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+							<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+							<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+							<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 							<onleft>151</onleft>
 							<onright>9000</onright>
 							<showonepage>false</showonepage>
@@ -1117,7 +1117,7 @@
 									<posy>0</posy>
 									<width>750</width>
 									<height>101</height>
-									<texture border="0">buttons/nf_light.png</texture>
+									<texture>buttons/nf_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -1141,7 +1141,7 @@
 									<posy>30</posy>
 									<width>585</width>
 									<height>15</height>
-									<label border="0">$INFO[ListItem.Property(Artist_Genre)]</label>
+									<label>$INFO[ListItem.Property(Artist_Genre)]</label>
 									<font>font12</font>
 									<textcolor>grey2</textcolor>
 									<aligny>center</aligny>
@@ -1151,7 +1151,7 @@
 									<posy>50</posy>
 									<width>585</width>
 									<height>45</height>
-									<label border="0">$INFO[ListItem.Property(Artist_Description)]</label>
+									<label>$INFO[ListItem.Property(Artist_Description)]</label>
 									<font>font10</font>
 								</control>
 							</itemlayout>
@@ -1161,7 +1161,7 @@
 									<posy>0</posy>
 									<width>750</width>
 									<height>101</height>
-									<texture border="0">buttons/fo_light.png</texture>
+									<texture>buttons/fo_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -1185,7 +1185,7 @@
 									<posy>30</posy>
 									<width>585</width>
 									<height>15</height>
-									<label border="0">$INFO[ListItem.Property(Artist_Genre)]</label>
+									<label>$INFO[ListItem.Property(Artist_Genre)]</label>
 									<font>font12</font>
 									<textcolor>grey2</textcolor>
 									<aligny>center</aligny>
@@ -1195,7 +1195,7 @@
 									<posy>50</posy>
 									<width>585</width>
 									<height>45</height>
-									<label border="0">$INFO[ListItem.Property(Artist_Description)]</label>
+									<label>$INFO[ListItem.Property(Artist_Description)]</label>
 									<font>font10</font>
 								</control>
 							</focusedlayout>
@@ -1205,9 +1205,9 @@
 							<posy>0</posy>
 							<width>14</width>
 							<height>530</height>
-							<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-							<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-							<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+							<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+							<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+							<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 							<onleft>161</onleft>
 							<onright>9000</onright>
 							<showonepage>false</showonepage>
@@ -1247,7 +1247,7 @@
 									<posy>0</posy>
 									<width>750</width>
 									<height>101</height>
-									<texture border="0">buttons/nf_light.png</texture>
+									<texture>buttons/nf_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -1271,7 +1271,7 @@
 									<posy>30</posy>
 									<width>630</width>
 									<height>15</height>
-									<label border="0">$INFO[ListItem.Property(Artist)]</label>
+									<label>$INFO[ListItem.Property(Artist)]</label>
 									<font>font12</font>
 									<textcolor>grey2</textcolor>
 									<aligny>center</aligny>
@@ -1281,7 +1281,7 @@
 									<posy>50</posy>
 									<width>630</width>
 									<height>45</height>
-									<label border="0">$INFO[ListItem.Property(Album_Description)]</label>
+									<label>$INFO[ListItem.Property(Album_Description)]</label>
 									<font>font10</font>
 								</control>
 							</itemlayout>
@@ -1291,7 +1291,7 @@
 									<posy>0</posy>
 									<width>750</width>
 									<height>101</height>
-									<texture border="0">buttons/fo_light.png</texture>
+									<texture>buttons/fo_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -1315,7 +1315,7 @@
 									<posy>30</posy>
 									<width>630</width>
 									<height>15</height>
-									<label border="0">$INFO[ListItem.Property(Artist)]</label>
+									<label>$INFO[ListItem.Property(Artist)]</label>
 									<font>font12</font>
 									<textcolor>grey2</textcolor>
 									<aligny>center</aligny>
@@ -1325,7 +1325,7 @@
 									<posy>50</posy>
 									<width>630</width>
 									<height>45</height>
-									<label border="0">$INFO[ListItem.Property(Album_Description)]</label>
+									<label>$INFO[ListItem.Property(Album_Description)]</label>
 									<font>font10</font>
 								</control>
 							</focusedlayout>
@@ -1335,9 +1335,9 @@
 							<posy>0</posy>
 							<width>14</width>
 							<height>530</height>
-							<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-							<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-							<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+							<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+							<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+							<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 							<onleft>171</onleft>
 							<onright>9000</onright>
 							<showonepage>false</showonepage>
@@ -1377,7 +1377,7 @@
 									<posy>0</posy>
 									<width>370</width>
 									<height>101</height>
-									<texture border="0">buttons/nf_light.png</texture>
+									<texture>buttons/nf_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -1400,7 +1400,7 @@
 									<posy>30</posy>
 									<width>255</width>
 									<height>15</height>
-									<label border="0">$INFO[ListItem.Property(Artist)]</label>
+									<label>$INFO[ListItem.Property(Artist)]</label>
 									<font>font12</font>
 									<aligny>center</aligny>
 								</control>
@@ -1409,7 +1409,7 @@
 									<posy>50</posy>
 									<width>255</width>
 									<height>15</height>
-									<label border="0">$INFO[ListItem.Property(Genre)]</label>
+									<label>$INFO[ListItem.Property(Genre)]</label>
 									<font>font12</font>
 									<textcolor>grey2</textcolor>
 									<aligny>center</aligny>
@@ -1419,7 +1419,7 @@
 									<posy>75</posy>
 									<width>255</width>
 									<height>15</height>
-									<label border="0">$INFO[ListItem.Property(Duration)]</label>
+									<label>$INFO[ListItem.Property(Duration)]</label>
 									<font>font12</font>
 									<aligny>center</aligny>
 								</control>
@@ -1430,7 +1430,7 @@
 									<posy>0</posy>
 									<width>370</width>
 									<height>101</height>
-									<texture border="0">buttons/fo_light.png</texture>
+									<texture>buttons/fo_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -1453,7 +1453,7 @@
 									<posy>30</posy>
 									<width>255</width>
 									<height>15</height>
-									<label border="0">$INFO[ListItem.Property(Artist)]</label>
+									<label>$INFO[ListItem.Property(Artist)]</label>
 									<font>font12</font>
 									<aligny>center</aligny>
 								</control>
@@ -1462,7 +1462,7 @@
 									<posy>50</posy>
 									<width>255</width>
 									<height>15</height>
-									<label border="0">$INFO[ListItem.Property(Genre)]</label>
+									<label>$INFO[ListItem.Property(Genre)]</label>
 									<font>font12</font>
 									<textcolor>grey2</textcolor>
 									<aligny>center</aligny>
@@ -1472,7 +1472,7 @@
 									<posy>75</posy>
 									<width>255</width>
 									<height>15</height>
-									<label border="0">$INFO[ListItem.Property(Duration)]</label>
+									<label>$INFO[ListItem.Property(Duration)]</label>
 									<font>font12</font>
 									<aligny>center</aligny>
 								</control>
@@ -1483,9 +1483,9 @@
 							<posy>0</posy>
 							<width>14</width>
 							<height>530</height>
-							<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-							<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-							<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+							<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+							<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+							<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 							<onleft>181</onleft>
 							<onright>9000</onright>
 							<showonepage>false</showonepage>

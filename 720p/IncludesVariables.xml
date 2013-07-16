@@ -18,7 +18,7 @@
 	</variable>
 	<variable name="VideoResolutionFlag">
 		<value condition="SubString(ListItem.FilenameAndPath,3dbd) | SubString(ListItem.FilenameAndPath,.SBS.)">flagging/lists/3D.png</value>
-		<value border="0">$INFO[ListItem.VideoResolution,flagging/lists/,.png]</value>
+		<value>$INFO[ListItem.VideoResolution,flagging/lists/,.png]</value>
 	</variable>
 	<variable name="rating">
 		<value condition="StringCompare(ListItem.Mpaa,UK:R18)">UK/bbfc_r18</value>
@@ -104,7 +104,7 @@
 	</variable>
 	<variable name="videocodec">
 		<value condition="[substring(ListItem.VideoCodec,div,left) | stringcompare(ListItem.VideoCodec,dx50)]">divx</value>
-		<value border="0">$INFO[ListItem.VideoCodec]</value>
+		<value>$INFO[ListItem.VideoCodec]</value>
 	</variable>
 	<variable name="HomeMenuItemBackground" type="text">
 		<value condition="Skin.HasSetting(GlobalBackground) + !IsEmpty(Skin.String(CustomBackgroundPath))">$INFO[Skin.String(CustomBackgroundPath)]</value>
@@ -133,7 +133,7 @@
 		<value condition="Container(9000).Hasfocus(10) + !IsEmpty(Skin.String(HomeItem.10.FanArt))">$INFO[Skin.String(HomeItem.10.FanArt)]</value>
 		<value condition="Container(9000).Hasfocus(11) + !IsEmpty(Skin.String(HomeItem.11.FanArt))">$INFO[Skin.String(HomeItem.11.FanArt)]</value>
 		<value condition="Container(9000).Hasfocus(12) + !IsEmpty(Skin.String(HomeItem.12.FanArt))">$INFO[Skin.String(HomeItem.12.FanArt)]</value>
-		<value border="0">$INFO[Container(9000).ListItem.Icon]</value>
+		<value>$INFO[Container(9000).ListItem.Icon]</value>
 	</variable>
 	<variable name="CommonMenuItemBackground" type="text">
 		<value condition="Skin.HasSetting(GlobalBackground) + !IsEmpty(Skin.String(CustomBackgroundPath))">$INFO[Skin.String(CustomBackgroundPath)]</value>
@@ -152,7 +152,7 @@
 		<value condition="StringCompare(Window(home).Property(MenuItemActive),PlayDisc) + !IsEmpty(Skin.String(HomeItem.11.FanArt))">$INFO[Skin.String(HomeItem.11.FanArt)]</value>
 		<value condition="StringCompare(Window(home).Property(MenuItemActive),Settings) + !IsEmpty(Skin.String(HomeItem.12.FanArt))">$INFO[Skin.String(HomeItem.12.FanArt)]</value>
 		<value condition="!IsEmpty(Window(home).Property(SubMenuBackground))">$INFO[Window(home).Property(SubMenuBackground)]</value>
-		<value border="0">special://skin/backgrounds/default_light.jpg</value>
+		<value>special://skin/backgrounds/default_light.jpg</value>
 	</variable>
 	<variable name="SubMenuItemBackground" type="text">
 		<value condition="Skin.HasSetting(GlobalBackground) + !IsEmpty(Skin.String(CustomBackgroundPath))">$INFO[Skin.String(CustomBackgroundPath)]</value>
@@ -170,7 +170,7 @@
 		<value condition="Container(9000).Hasfocus(10) + !IsEmpty(Skin.String(HomeItem.10.FanArt))">$INFO[Skin.String(HomeItem.10.FanArt)]</value>
 		<value condition="Container(9000).Hasfocus(11) + !IsEmpty(Skin.String(HomeItem.11.FanArt))">$INFO[Skin.String(HomeItem.11.FanArt)]</value>
 		<value condition="Container(9000).Hasfocus(12) + !IsEmpty(Skin.String(HomeItem.12.FanArt))">$INFO[Skin.String(HomeItem.12.FanArt)]</value>
-		<value border="0">special://skin/backgrounds/default_light.jpg</value>
+		<value>special://skin/backgrounds/default_light.jpg</value>
 	</variable>
 	<variable name="InfoBarStats" type="text">
 		<value condition="!Skin.HasSetting(DisableScriptPlayList) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + Container(9000).Hasfocus(1)">$INFO[Window(home).Property(HomePlayListOne.Count),[B][COLOR=blue]$LOCALIZE[31025]: [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListOne.Watched),[B][COLOR=blue]$LOCALIZE[16102]: [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListOne.Unwatched),[B][COLOR=blue]$LOCALIZE[16101]: [/COLOR][/B]]</value>
@@ -277,7 +277,7 @@
 	</variable>
 	<variable name="MainItemLabel">
 		<value condition="StringCompare(ListItem.Label,..) + !Skin.HasSetting(ParentDirLabel)">[B][COLOR=blue]$LOCALIZE[31316][/COLOR][/B]</value>
-		<value border="0">$INFO[ListItem.Label]</value>
+		<value>$INFO[ListItem.Label]</value>
 	</variable>
 	<variable name="DescriptiveLabel" type="text">
 		<value condition="StringCompare(ListItem.label,..)">$LOCALIZE[31316]</value>
@@ -285,11 +285,11 @@
 		<value condition="Container.Content(Seasons) | Container.Content(Episodes)">$INFO[ListItem.TVShowTitle] - $INFO[ListItem.label]</value>
 		<value condition="!IsEmpty(Window.Property(current.actor.agelong)) + [Container.Content(Actors) | Container.Content(Directors)]">$INFO[ListItem.label] ([COLOR=white]$INFO[Window.Property(current.actor.agelong)][/COLOR])</value>
 		<value condition="!IsEmpty(ListItem.Property(date))">$INFO[ListItem.label] ([COLOR=white]$INFO[ListItem.Property(date)][/COLOR])</value>
-		<value border="0">$INFO[ListItem.label]</value>
+		<value>$INFO[ListItem.label]</value>
 	</variable>
 	<variable name="VideoNowPlaying">
 		<value condition="VideoPlayer.Content(Movies) + !IsEmpty(VideoPlayer.Year)">$INFO[VideoPlayer.Title] ($INFO[VideoPlayer.Year])</value>
-		<value border="0">$INFO[VideoPlayer.Title]</value>
+		<value>$INFO[VideoPlayer.Title]</value>
 	</variable>
 	<variable name="VideoDescription" type="text">
 		<value condition="Container.Content(Seasons)">$INFO[Container.ShowPlot]</value>
@@ -1075,34 +1075,34 @@
 		<value>$LOCALIZE[31093]</value>
 	</variable>
 	<variable name="SetMenuOneBackground" type="text">
-		<value border="0">special://skin/backgrounds/default_light.jpg</value>
+		<value>special://skin/backgrounds/default_light.jpg</value>
 	</variable>
 	<variable name="SetMenuTwoBackground" type="text">
-		<value border="0">special://skin/backgrounds/default_light.jpg</value>
+		<value>special://skin/backgrounds/default_light.jpg</value>
 	</variable>
 	<variable name="SetMenuThreeBackground" type="text">
-		<value border="0">special://skin/backgrounds/default_light.jpg</value>
+		<value>special://skin/backgrounds/default_light.jpg</value>
 	</variable>
 	<variable name="SetMenuFourBackground" type="text">
-		<value border="0">special://skin/backgrounds/default_light.jpg</value>
+		<value>special://skin/backgrounds/default_light.jpg</value>
 	</variable>
 	<variable name="SetMenuFiveBackground" type="text">
-		<value border="0">special://skin/backgrounds/default_light.jpg</value>
+		<value>special://skin/backgrounds/default_light.jpg</value>
 	</variable>
 	<variable name="SetMenuSixBackground" type="text">
-		<value border="0">special://skin/backgrounds/default_light.jpg</value>
+		<value>special://skin/backgrounds/default_light.jpg</value>
 	</variable>
 	<variable name="SetMenuSevenBackground" type="text">
-		<value border="0">special://skin/backgrounds/default_light.jpg</value>
+		<value>special://skin/backgrounds/default_light.jpg</value>
 	</variable>
 	<variable name="SetMenuEightBackground" type="text">
-		<value border="0">special://skin/backgrounds/default_light.jpg</value>
+		<value>special://skin/backgrounds/default_light.jpg</value>
 	</variable>
 	<variable name="SetMenuNineBackground" type="text">
-		<value border="0">special://skin/backgrounds/default_light.jpg</value>
+		<value>special://skin/backgrounds/default_light.jpg</value>
 	</variable>
 	<variable name="SetMenuTenBackground" type="text">
-		<value border="0">special://skin/backgrounds/default_light.jpg</value>
+		<value>special://skin/backgrounds/default_light.jpg</value>
 	</variable>
 	<variable name="HomeBackgroundPreview" type="text">
 		<value condition="Skin.HasSetting(GlobalBackground) + Skin.HasSetting(GlobalWeatherFanart)">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
@@ -1116,7 +1116,7 @@
 		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),Music) + Skin.HasSetting(ShowMusicDBFanart) + !IsEmpty(Window(Home).Property(RandomAlbum.1.Fanart))">$INFO[Window(Home).Property(RandomAlbum.1.Fanart)]</value>
 		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),Concerts) + Skin.HasSetting(ShowConcertDBFanart) + !IsEmpty(Skin.String(UsrConcertsFanartDir))">$INFO[Skin.String(UsrConcertsFanartDir)]</value>
 		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),Concerts) + Skin.HasSetting(ShowConcertDBFanart) + !IsEmpty(Window(Home).Property(RandomMusicVideo.1.Fanart))">$INFO[Window(Home).Property(RandomMusicVideo.1.Fanart)]</value>
-		<value border="0">$INFO[Container(9005).ListItem.Icon]</value>
+		<value>$INFO[Container(9005).ListItem.Icon]</value>
 	</variable>
 	<variable name="HomeBackgroundLabel" type="text">
 		<value condition="Skin.HasSetting(GlobalBackground) + Skin.HasSetting(GlobalWeatherFanart)">$LOCALIZE[31906]</value>

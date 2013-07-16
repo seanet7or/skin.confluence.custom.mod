@@ -38,7 +38,7 @@
 				<height>30</height>
 				<font>font11</font>
 				<textcolor>grey2</textcolor>
-				<label border="0">$INFO[Container(11).ListItem.StartDate]</label>
+				<label>$INFO[Container(11).ListItem.StartDate]</label>
 				<align>center</align>
 				<aligny>center</aligny>
 			</control>
@@ -60,7 +60,7 @@
 						<posy>0</posy>
 						<width>410</width>
 						<height>30</height>
-						<texture border="0">buttons/nf_light.png</texture>
+						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="label">
 						<posx>10</posx>
@@ -71,14 +71,14 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label border="0">$INFO[ListItem.StartTime]</label>
+						<label>$INFO[ListItem.StartTime]</label>
 					</control>
 					<control type="image">
 						<posx>120</posx>
 						<posy>5</posy>
 						<width>30</width>
 						<height>20</height>
-						<texture border="0">PVR-IsRecording.png</texture>
+						<texture>PVR-IsRecording.png</texture>
 						<visible>ListItem.IsRecording</visible>
 					</control>
 					<control type="image">
@@ -86,7 +86,7 @@
 						<posy>5</posy>
 						<width>20</width>
 						<height>20</height>
-						<texture border="0">PVR-HasTimer.png</texture>
+						<texture>PVR-HasTimer.png</texture>
 						<visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
 					</control>
 					<control type="label">
@@ -99,7 +99,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label border="0">$VAR[MainItemLabel]</label>
+						<label>$VAR[MainItemLabel]</label>
 						<visible>![ListItem.IsRecording | ListItem.HasTimer]</visible>
 					</control>
 					<control type="label">
@@ -112,7 +112,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label border="0">$VAR[MainItemLabel]</label>
+						<label>$VAR[MainItemLabel]</label>
 						<visible>ListItem.IsRecording | ListItem.HasTimer</visible>
 					</control>
 				</itemlayout>
@@ -122,7 +122,7 @@
 						<posy>0</posy>
 						<width>410</width>
 						<height>30</height>
-						<texture border="0">buttons/nf_light.png</texture>
+						<texture>buttons/nf_light.png</texture>
 						<visible>!Control.HasFocus(11)</visible>
 					</control>
 					<control type="image">
@@ -130,7 +130,7 @@
 						<posy>0</posy>
 						<width>410</width>
 						<height>30</height>
-						<texture border="0">buttons/fo_light.png</texture>
+						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(11)</visible>
 					</control>
 					<control type="label">
@@ -142,14 +142,14 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label border="0">$INFO[ListItem.StartTime]</label>
+						<label>$INFO[ListItem.StartTime]</label>
 					</control>
 					<control type="image">
 						<posx>120</posx>
 						<posy>5</posy>
 						<width>30</width>
 						<height>20</height>
-						<texture border="0">PVR-IsRecording.png</texture>
+						<texture>PVR-IsRecording.png</texture>
 						<visible>ListItem.IsRecording</visible>
 					</control>
 					<control type="image">
@@ -157,7 +157,7 @@
 						<posy>5</posy>
 						<width>20</width>
 						<height>20</height>
-						<texture border="0">PVR-HasTimer.png</texture>
+						<texture>PVR-HasTimer.png</texture>
 						<visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
 					</control>
 					<control type="label">
@@ -170,7 +170,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label border="0">$VAR[MainItemLabel]</label>
+						<label>$VAR[MainItemLabel]</label>
 						<visible>![ListItem.IsRecording | ListItem.HasTimer]</visible>
 					</control>
 					<control type="label">
@@ -183,7 +183,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label border="0">$VAR[MainItemLabel]</label>
+						<label>$VAR[MainItemLabel]</label>
 						<visible>ListItem.IsRecording | ListItem.HasTimer</visible>
 					</control>
 				</focusedlayout>
@@ -193,9 +193,9 @@
 				<posy>100</posy>
 				<width>14</width>
 				<height>490</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus border="0">scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
+				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
+				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>11</onleft>
 				<onright>11</onright>
 				<ondown>61</ondown>
