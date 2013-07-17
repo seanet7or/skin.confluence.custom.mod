@@ -58,14 +58,9 @@
 			<description>Seek Slider</description>
 			<posx>430</posx>
 			<posy>82r</posy>
-			<width>720</width>
-			<height>16</height>
 			<onup>702</onup>
 			<ondown>26</ondown>
 			<action>seek</action>
-			<texturesliderbar>-</texturesliderbar>
-			<textureslidernib>controls/slider/nib-nf_light.png</textureslidernib>
-			<textureslidernibfocus>controls/slider/nib-fo_light.png</textureslidernibfocus>
 			<animation effect="fade" time="200">VisibleChange</animation>
 			<visible>![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList)]</visible>
 		</control>

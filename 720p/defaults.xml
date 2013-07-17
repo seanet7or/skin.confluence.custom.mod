@@ -13,6 +13,8 @@
 		<align>left</align>
 		<aligny>center</aligny>
 		<scroll>false</scroll>
+		<width>200</width>
+		<height>40</height>
 		<posx>80</posx>
 		<posy>60</posy>
 		<label>-</label>
@@ -71,6 +73,8 @@
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="progress">
+		<height>16</height>
+		<width>280</width>
 		<posx>100</posx>
 		<posy>325</posy>
 		<texturebg>progressbar/OSDProgressBack_light.png</texturebg>
@@ -122,6 +126,8 @@
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="radiobutton">
+		<focusedcolor>white</focusedcolor>
+		<align>left</align>
 		<posx>300</posx>
 		<posy>200</posy>
 		<width>300</width>
@@ -161,11 +167,17 @@
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="slider">
+		<texturesliderbar>-</texturesliderbar>
+		<textureslidernib>controls/slider/nib-nf_light.png</textureslidernib>
+		<textureslidernibfocus>controls/slider/nib-fo_light.png</textureslidernibfocus>
+		<width>720</width>
+		<height>16</height>
 		<controloffsetx>75</controloffsetx>
 		<controloffsety>0</controloffsety>
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="sliderex">
+		<focusedcolor>white</focusedcolor>
 		<height>35</height>
 		<textoffsetx>7</textoffsetx>
 		<aligny>center</aligny>
@@ -182,6 +194,8 @@
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="mover">
+		<width>128</width>
+		<height>128</height>
 		<posx>60</posx>
 		<posy>192</posy>
 		<texturefocus>buttons/fo_light.png</texturefocus>

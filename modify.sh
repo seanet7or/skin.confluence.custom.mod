@@ -2289,6 +2289,35 @@ if ! grep -q -z -P '<default type="image">\n\s*<width>150</width>' 720p/defaults
 	R+='|\1\2<align>left</align>#'
 	R+='\2<aligny>center</aligny>#'
 	R+='\2<scroll>false</scroll>#'
+	R+='\2<width>200</width>#'
+	R+='\2<height>40</height>#'
+	R+='\2|'
+	perlregex 720p/defaults.xml "$R"
+	R='s|(<default type="progress">\s*#)(\s*)'
+	R+='|\1\2<height>16</height>#'
+	R+='|\2<width>280</width>#'
+	R+='\2|'
+	perlregex 720p/defaults.xml "$R"
+	R='s|(<default type="radiobutton">\s*#)(\s*)'
+	R+='|\1\2<focusedcolor>white</focusedcolor>#'
+	R+='|\2<align>left</align>#'
+	R+='\2|'
+	perlregex 720p/defaults.xml "$R"
+	R='s|(<default type="slider">\s*#)(\s*)'
+	R+='|\1\2<texturesliderbar>-</texturesliderbar>#'
+	R+='\2<textureslidernib>controls/slider/nib-nf_light.png</textureslidernib>#'
+	R+='\2<textureslidernibfocus>controls/slider/nib-fo_light.png</textureslidernibfocus>#'
+	R+='\2<width>720</width>#'
+	R+='\2<height>16</height>#'
+	R+='\2|'
+	perlregex 720p/defaults.xml "$R"
+	R='s|(<default type="sliderex">\s*#)(\s*)'
+	R+='|\1\2<focusedcolor>white</focusedcolor>#'
+	R+='\2|'
+	perlregex 720p/defaults.xml "$R"
+	R='s|(<default type="mover">\s*#)(\s*)'
+	R+='|\1\2<width>128</width>#'
+	R+='\2<height>128</height>#'
 	R+='\2|'
 	perlregex 720p/defaults.xml "$R"
 	printf "%sDONE!%s" $GREEN $RESET
