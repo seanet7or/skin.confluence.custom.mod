@@ -77,6 +77,209 @@
 						<height>318</height>
 						<aspectratio>stretch</aspectratio>
 						<texture background="true">$VAR[PosterThumb]</texture>
+						<animation reversible="false" effect="zoom" start="-2,36,222,318" end="-28,0,284,390" time="200">focus</animation>
+						<animation reversible="false" effect="zoom" end="-2,36,222,318" start="-28,0,284,390" time="200">unfocus</animation>
+					</control>
+					<control type="group">
+						<visible>!Skin.HasSetting(ViewStatusBanner) + !IsEmpty(ListItem.Overlay)</visible>
+						<control type="image">
+							<posx>108</posx>
+							<posy>43</posy>
+							<width>105</width>
+							<height>105</height>
+							<fadetime>IconCrossfadeTime</fadetime>
+							<texture background="true" fallback="banner/DefaultWatched.png">banner/$LOCALIZE[16102].png</texture>
+							<animation reversible="false" effect="zoom" start="108,43,105,105" end="129,9,118,118" time="200">focus</animation>
+							<animation reversible="false" effect="zoom" end="108,43,105,105" start="129,9,118,118" time="200">unfocus</animation>
+							<visible>StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
+						</control>
+						<control type="image">
+							<posx>108</posx>
+							<posy>43</posy>
+							<width>105</width>
+							<height>105</height>
+							<fadetime>IconCrossfadeTime</fadetime>
+							<texture background="true" fallback="banner/DefaultUnwatched.png">banner/$LOCALIZE[16101].png</texture>
+							<animation reversible="false" effect="zoom" start="108,43,105,105" end="129,9,118,118" time="200">focus</animation>
+							<animation reversible="false" effect="zoom" end="108,43,105,105" start="129,9,118,118" time="200">unfocus</animation>
+							<visible>!StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
+						</control>
+						<control type="image">
+							<posx>108</posx>
+							<posy>43</posy>
+							<width>105</width>
+							<height>105</height>
+							<fadetime>IconCrossfadeTime</fadetime>
+							<texture background="true" fallback="banner/DefaultInProgress.png">banner/$LOCALIZE[31357].png</texture>
+							<animation reversible="false" effect="zoom" start="108,43,105,105" end="129,9,118,118" time="200">focus</animation>
+							<animation reversible="false" effect="zoom" end="108,43,105,105" start="129,9,118,118" time="200">unfocus</animation>
+							<visible>ListItem.IsResumable</visible>
+						</control>
+					</control>
+					<control type="image">
+						<posx>175</posx>
+						<posy>310</posy>
+						<width>50</width>
+						<height>50</height>
+						<aspectratio>keep</aspectratio>
+						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
+						<animation type="focus">
+							<effect type="fade" start="0" end="100" time="200" />
+							<effect type="slide" start="0,0" end="40,40" time="200" />
+						</animation>
+						<animation type="unfocus">
+							<effect type="fade" start="100" end="0" time="200" />
+							<effect type="slide" end="0,0" start="40,40" time="200" />
+						</animation>
+						<visible>Skin.HasSetting(ViewStatusBanner) + !IsEmpty(ListItem.Overlay) + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="scrollbar" id="60">
+				<posx>140</posx>
+				<posy>0</posy>
+				<width>880</width>
+				<height>14</height>
+				<texturesliderbackground border="1,5,1,5">scrollbar/ScrollBarH_light.png</texturesliderbackground>
+				<texturesliderbar border="1,5,1,5">scrollbar/ScrollBarH_bar_light.png</texturesliderbar>
+				<texturesliderbarfocus>scrollbar/ScrollBarH_bar_focus_light.png</texturesliderbarfocus>
+				<onup>501</onup>
+				<ondown condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</ondown>
+				<ondown condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</ondown>
+				<showonepage>false</showonepage>
+				<orientation>horizontal</orientation>
+				<visible>Control.IsVisible(501)</visible>
+			</control>
+		</control>
+		<control type="group">
+			<visible>Control.IsVisible(501)</visible>
+		</control>
+		<control type="group">
+			<visible>Control.IsVisible(501) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(MusicVideos)]</visible>
+			<control type="label">
+				<posx>30</posx>
+				<posy>500</posy>
+				<width>1220</width>
+				<height>35</height>
+				<font>font28_title</font>
+				<textcolor>blue</textcolor>
+				<scroll>true</scroll>
+				<align>center</align>
+				<label>$VAR[DescriptiveLabel]</label>
+			</control>
+			<control type="label">
+				<posx>60</posx>
+				<posy>540</posy>
+				<width>1160</width>
+				<height>35</height>
+				<wrapmultiline>true</wrapmultiline>
+				<align>center</align>
+				<label>$INFO[ListItem.Tagline]</label>
+				<visible>!IsEmpty(ListItem.Tagline) + Container.Content(Movies)</visible>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>580</posy>
+				<width>1280</width>
+				<height>20</height>
+				<font>font12</font>
+				<scroll>true</scroll>
+				<align>center</align>
+				<label>$INFO[ListItem.Duration,$LOCALIZE[2050] , $LOCALIZE[12391]]</label>
+				<visible>Skin.HasSetting(View501GenreIcons)</visible>
+			</control>
+			<control type="grouplist">
+				<description>Media Codec Flagging Images</description>
+				<posx>0</posx>
+				<posy>610</posy>
+				<width>1280</width>
+				<align>center</align>
+				<itemgap>2</itemgap>
+				<orientation>horizontal</orientation>
+				<include>VideoMPAAFlaggingConditions</include>
+				<include>VideoCodecFlaggingConditions</include>
+				<include>AudioCodecFlaggingConditions</include>
+				<include>AudioChannelsFlaggingConditions</include>
+				<include>AspectCodecFlaggingConditions</include>
+				<include>VideoTypeHackFlaggingConditions</include>
+				<visible>Skin.HasSetting(View501GenreIcons)</visible>
+			</control>
+		</control>
+		<control type="group">
+			<visible>Control.IsVisible(501) + Container.Content(Seasons)</visible>
+			<control type="label">
+				<posx>30</posx>
+				<posy>500</posy>
+				<width>1220</width>
+				<height>35</height>
+				<font>font28_title</font>
+				<textcolor>blue</textcolor>
+				<scroll>true</scroll>
+				<align>center</align>
+				<label>$VAR[MainItemLabel]</label>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>540</posy>
+				<width>1280</width>
+				<height>35</height>
+				<font>font30</font>
+				<scroll>true</scroll>
+				<align>center</align>
+				<label>$INFO[ListItem.TVShowTitle]</label>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>575</posy>
+				<width>1280</width>
+				<height>35</height>
+				<scroll>true</scroll>
+				<align>center</align>
+				<label>$INFO[ListItem.Episode,, $LOCALIZE[20453]]</label>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>605</posy>
+				<width>1280</width>
+				<height>35</height>
+				<font>font12</font>
+				<scroll>true</scroll>
+				<align>center</align>
+				<label>($INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102]] - $INFO[ListItem.Property(UnWatchedEpisodes), , $LOCALIZE[16101]])</label>
+			</control>
+		</control>
+		<control type="group">
+			<visible>Control.IsVisible(501) + Container.Content(TVShows)</visible>
+			<control type="label">
+				<posx>30</posx>
+				<posy>500</posy>
+				<width>1220</width>
+				<height>35</height>
+				<font>font28_title</font>
+				<textcolor>blue</textcolor>
+				<scroll>true</scroll>
+				<align>center</align>
+				<label>$VAR[MainItemLabel]</label>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>540</posy>
+				<width>1280</width>
+				<height>35</height>
+				<font>font30</font>
+				<scroll>true</scroll>
+				<align>center</align>
+				<label>$INFO[ListItem.Genre]</label>
+				<visible>Skin.HasSetting(View501GenreIcons)</visible>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>575</posy>
+				<width>1280</width>
+				<height>35</height>
+				<scroll>true</scroll>
+				<align>center</align>
+				<label>$INFO[ListItem.Episode,, $LOCALIZE[20453]]</label>
 			</control>
 			<control type="label">
 				<posx>0</posx>

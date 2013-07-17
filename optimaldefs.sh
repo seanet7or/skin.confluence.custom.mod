@@ -51,9 +51,9 @@ label;font
 label;textcolor
 label;shadowcolor;done
 label;wrapmultiline;done
-label;scrollspeed
-label;scrollsuffix
-label;description
+label;scrollspeed;done
+label;scrollsuffix;done
+label;description;done
 label;type
 label;id
 label;posx

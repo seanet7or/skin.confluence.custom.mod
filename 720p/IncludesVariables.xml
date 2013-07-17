@@ -251,9 +251,6 @@
 		<value condition="[Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)] + !substring(ListItem.Duration,min)">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</value>
 		<value condition="[Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)] + substring(ListItem.Duration,min)">$INFO[ListItem.Duration]</value>
 	</variable>
-	<variable name="GenreFlagPath">
-		<value>DefaultGenre/</value>
-	</variable>
 	<variable name="RandomOrLastAction" type="text">
 		<value condition="Skin.HasSetting(EnableRandomPlaylist)">Last</value>
 		<value>Random</value>

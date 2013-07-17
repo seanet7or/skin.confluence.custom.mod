@@ -1794,7 +1794,7 @@ if [ -d media/DefaultGenre ] ; then
 	XMLS=$(2>/dev/null grep '<onclick>Skin.ToggleSetting.View501GenreIcons.</onclick>' -l 720p/*)
 	remove_controlid 'radiobutton' '<onclick>Skin.ToggleSetting.View501GenreIcons.</onclick>' "$XMLS"
 	XMLS=$(2>/dev/null grep 'condition=".Skin.HasSetting.View501GenreIcons.' -l 720p/*)
-	perlregex $XMLS 's|\s*<anima.*?condition=".Skin.HasSetting.View501GenreIcons.[^#]*#||g'
+	perlregex $XMLS 's|\s*<anima[^#]*?condition=".Skin.HasSetting.View501GenreIcons.[^#]*#||g'
 	#XMLS=$(2>/dev/null grep '<visible>Skin.HasSetting.View501GenreIcons.</visible>' -l 720p/*)
 	#perlregex $XMLS 's|\s*<visible>Skin.HasSetting.View501GenreIcons.</visible>\s*#||g'
 	rm -rf media/DefaultGenre
@@ -2227,7 +2227,7 @@ step
 source textures.sh
 OLDIFS=$IFS ; IFS=$'\n'
 for T in $TEXLIST ; do
-	if true ; then #[ -z "$T" ] ; then
+	if [ -z "$T" ] ; then
 		continue
 	fi
 	TEXTURE=$(echo "$T" | cut -f1 -d';')
@@ -2260,7 +2260,7 @@ done ; IFS=$OLDIFS
 step
 
 printf "\nSetting some default values per control: "
-if true ; then
+if ! grep  -q -z -P '<default type="image">\n\s*<width>150</width>' 720p/defaults.xml ; then
 	R='s|(<control type="label"[^#]*#)(\s*)'
 	R+='((\s*(?!<aligny)<[a-z][^#]*#)*'
 	R+='\s*</control>#)'
