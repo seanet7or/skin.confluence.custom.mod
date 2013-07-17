@@ -2090,6 +2090,16 @@ else
 fi
 step
 
+printf "\nUnifying bordersizes: "
+if grep -I -q '<bordersize>[^5]' 720p/* ; then
+	XMLS=$(2>/dev/null grep '<bordersize>[^5]' -l 720p/*)
+	perlregex $XMLS 's|<bordersize>[^5]<|<bordersize>5<|g'
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\nRemoving useless visible conditions: "
 if grep -I -q '<visible>!.Window.IsVisible.FullscreenVideo. . Window.IsVisible.Visualisation..</visible>' 720p/DialogAddonSettings.xml
 then
