@@ -25,7 +25,6 @@
 				<font>font12_title</font>
 				<label>$LOCALIZE[19023] - $INFO[VideoPlayer.ChannelGroup]</label>
 				<align>center</align>
-				<aligny>center</aligny>
 				<textcolor>blue</textcolor>
 				<visible>!pvr.IsPlayingRadio</visible>
 			</control>
@@ -38,7 +37,6 @@
 				<font>font12_title</font>
 				<label>$LOCALIZE[19024] - $INFO[MusicPlayer.ChannelGroup]</label>
 				<align>center</align>
-				<aligny>center</aligny>
 				<textcolor>blue</textcolor>
 				<visible>pvr.IsPlayingRadio</visible>
 			</control>
@@ -51,7 +49,6 @@
 				<font>font10_title</font>
 				<label>$INFO[System.Date(DDD)], $INFO[System.Date(d)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)] • $INFO[System.Time]</label>
 				<align>center</align>
-				<aligny>center</aligny>
 				<textcolor>grey</textcolor>
 			</control>
 			<control type="list" id="11">
@@ -78,7 +75,6 @@
 						<width>40</width>
 						<height>30</height>
 						<font>font12</font>
-						<aligny>center</aligny>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
 						<info>ListItem.ChannelNumber</info>
@@ -97,7 +93,6 @@
 						<width>350</width>
 						<height>25</height>
 						<selectedcolor>selected</selectedcolor>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
@@ -108,7 +103,6 @@
 						<font>font12</font>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>IsEmpty(Listitem.Icon)</visible>
 					</control>
@@ -120,7 +114,6 @@
 						<font>font12</font>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>!IsEmpty(Listitem.Icon)</visible>
 					</control>
@@ -132,7 +125,6 @@
 						<font>font10_title</font>
 						<textcolor>blue</textcolor>
 						<selectedcolor>blue</selectedcolor>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.StartTime]</label>
 						<visible>ListItem.HasEpg</visible>
 					</control>
@@ -154,7 +146,6 @@
 						<font>font10_title</font>
 						<textcolor>blue</textcolor>
 						<selectedcolor>blue</selectedcolor>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.EndTime]</label>
 						<visible>ListItem.HasEpg</visible>
 					</control>
@@ -184,7 +175,6 @@
 						<width>40</width>
 						<height>30</height>
 						<font>font12</font>
-						<aligny>center</aligny>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
 						<info>ListItem.ChannelNumber</info>
@@ -203,7 +193,6 @@
 						<width>350</width>
 						<height>25</height>
 						<selectedcolor>selected</selectedcolor>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
@@ -214,7 +203,6 @@
 						<font>font12</font>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>IsEmpty(Listitem.Icon)</visible>
 					</control>
@@ -226,7 +214,6 @@
 						<font>font12</font>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>!IsEmpty(Listitem.Icon)</visible>
 					</control>
@@ -238,7 +225,6 @@
 						<font>font10_title</font>
 						<textcolor>blue</textcolor>
 						<selectedcolor>blue</selectedcolor>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.StartTime]</label>
 						<visible>ListItem.HasEpg</visible>
 					</control>
@@ -260,7 +246,6 @@
 						<font>font10_title</font>
 						<textcolor>blue</textcolor>
 						<selectedcolor>blue</selectedcolor>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.EndTime]</label>
 						<visible>ListItem.HasEpg</visible>
 					</control>

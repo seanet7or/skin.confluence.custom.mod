@@ -15,6 +15,7 @@
 			<texture>dialogs/dialog-back_light.png</texture>
 		</control>
 		<control type="label" id="1">
+			<aligny>top</aligny>
 			<description>fake heading label</description>
 			<posx>0</posx>
 			<posy>0</posy>
@@ -32,7 +33,6 @@
 			<font>font13_title</font>
 			<label>$INFO[Control.GetLabel(1)] $INFO[System.Progressbar,- ,%]</label>
 			<align>center</align>
-			<aligny>center</aligny>
 			<textcolor>selected</textcolor>
 		</control>
 		<control type="label" id="2">
@@ -40,7 +40,6 @@
 			<posx>30</posx>
 			<width>550</width>
 			<height>30</height>
-			<aligny>center</aligny>
 			<haspath>true</haspath>
 		</control>
 		<control type="label" id="3">
@@ -49,7 +48,6 @@
 			<posy>85</posy>
 			<width>550</width>
 			<height>30</height>
-			<aligny>center</aligny>
 			<haspath>true</haspath>
 		</control>
 		<control type="label" id="4">
@@ -58,7 +56,6 @@
 			<posy>110</posy>
 			<width>550</width>
 			<height>30</height>
-			<aligny>center</aligny>
 			<haspath>true</haspath>
 		</control>
 		<control type="progress">

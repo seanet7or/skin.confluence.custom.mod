@@ -24,7 +24,6 @@
 			<font>font13_title</font>
 			<label>$LOCALIZE[19053]</label>
 			<align>center</align>
-			<aligny>center</aligny>
 			<textcolor>selected</textcolor>
 		</control>
 		<control type="label">
@@ -36,7 +35,6 @@
 			<font>font13_title</font>
 			<label>$INFO[ListItem.Title]</label>
 			<align>center</align>
-			<aligny>center</aligny>
 			<textcolor>blue</textcolor>
 		</control>
 		<control type="group">
@@ -49,7 +47,6 @@
 				<width>160</width>
 				<height>25</height>
 				<align>right</align>
-				<aligny>center</aligny>
 				<textcolor>blue</textcolor>
 				<label>$LOCALIZE[552]:</label>
 			</control>
@@ -59,7 +56,6 @@
 				<posy>0</posy>
 				<width>470</width>
 				<height>25</height>
-				<aligny>center</aligny>
 				<label>$INFO[ListItem.StartDate]</label>
 			</control>
 			<control type="label">
@@ -69,7 +65,6 @@
 				<width>160</width>
 				<height>25</height>
 				<align>right</align>
-				<aligny>center</aligny>
 				<textcolor>blue</textcolor>
 				<label>$LOCALIZE[142]</label>
 			</control>
@@ -79,7 +74,6 @@
 				<posy>35</posy>
 				<width>470</width>
 				<height>25</height>
-				<aligny>center</aligny>
 				<label>$INFO[ListItem.StartTime]</label>
 			</control>
 			<control type="label">
@@ -89,7 +83,6 @@
 				<width>160</width>
 				<height>25</height>
 				<align>right</align>
-				<aligny>center</aligny>
 				<textcolor>blue</textcolor>
 				<label>$LOCALIZE[19148]:</label>
 			</control>
@@ -109,11 +102,11 @@
 				<width>160</width>
 				<height>25</height>
 				<align>right</align>
-				<aligny>center</aligny>
 				<textcolor>blue</textcolor>
 				<label>$LOCALIZE[180]:</label>
 			</control>
 			<control type="label">
+				<aligny>top</aligny>
 				<description>Duration value</description>
 				<posx>180</posx>
 				<posy>105</posy>
@@ -128,11 +121,11 @@
 				<width>160</width>
 				<height>25</height>
 				<align>right</align>
-				<aligny>center</aligny>
 				<textcolor>blue</textcolor>
 				<label>$LOCALIZE[135]:</label>
 			</control>
 			<control type="label">
+				<aligny>top</aligny>
 				<description>Genre value</description>
 				<posx>180</posx>
 				<posy>140</posy>
@@ -141,6 +134,7 @@
 				<scroll>true</scroll>
 			</control>
 			<control type="label">
+				<aligny>top</aligny>
 				<description>Subtitle value</description>
 				<posx>40</posx>
 				<posy>185</posy>

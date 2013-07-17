@@ -25,7 +25,6 @@
 					<font>font24_title</font>
 					<label>19143</label>
 					<align>center</align>
-					<aligny>center</aligny>
 					<textcolor>selected</textcolor>
 				</control>
 				<control type="group">
@@ -40,7 +39,6 @@
 						<height>70</height>
 						<label>31506</label>
 						<align>center</align>
-						<aligny>center</aligny>
 						<textcolor>blue</textcolor>
 					</control>
 					<control type="image">
@@ -71,7 +69,6 @@
 								<width>310</width>
 								<height>40</height>
 								<font>font12</font>
-								<aligny>center</aligny>
 								<textcolor>grey2</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
@@ -94,7 +91,6 @@
 								<width>310</width>
 								<height>40</height>
 								<font>font12</font>
-								<aligny>center</aligny>
 								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
 							</control>
@@ -127,7 +123,6 @@
 						<width>340</width>
 						<height>70</height>
 						<align>center</align>
-						<aligny>center</aligny>
 						<textcolor>blue</textcolor>
 					</control>
 					<control type="image">
@@ -165,7 +160,6 @@
 								<width>280</width>
 								<height>40</height>
 								<font>font12</font>
-								<aligny>center</aligny>
 								<textcolor>grey2</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<label>$INFO[ListItem.ChannelNumber,(,) - ]$INFO[ListItem.ChannelName]</label>
@@ -195,7 +189,6 @@
 								<width>280</width>
 								<height>40</height>
 								<font>font12</font>
-								<aligny>center</aligny>
 								<selectedcolor>selected</selectedcolor>
 								<label>$INFO[ListItem.ChannelNumber,(,) - ]$INFO[ListItem.ChannelName]</label>
 							</control>
@@ -228,7 +221,6 @@
 						<width>340</width>
 						<height>70</height>
 						<align>center</align>
-						<aligny>center</aligny>
 						<textcolor>blue</textcolor>
 					</control>
 					<control type="image">
@@ -266,7 +258,6 @@
 								<width>280</width>
 								<height>40</height>
 								<font>font12</font>
-								<aligny>center</aligny>
 								<textcolor>grey2</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<label>$INFO[ListItem.ChannelNumber,(,) - ]$INFO[ListItem.ChannelName]</label>
@@ -296,7 +287,6 @@
 								<width>280</width>
 								<height>40</height>
 								<font>font12</font>
-								<aligny>center</aligny>
 								<selectedcolor>selected</selectedcolor>
 								<label>$INFO[ListItem.ChannelNumber,(,) - ]$INFO[ListItem.ChannelName]</label>
 							</control>
@@ -359,6 +349,7 @@
 		</control>
 		<include>Clock</include>
 		<control type="label" id="20">
+			<aligny>top</aligny>
 			<description>Fake Label used to pass on name label</description>
 			<visible>false</visible>
 		</control>

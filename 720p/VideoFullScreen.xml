@@ -12,7 +12,6 @@
 				<posy>5</posy>
 				<width>1000</width>
 				<height>25</height>
-				<aligny>center</aligny>
 				<textcolor>grey</textcolor>
 				<label>$INFO[Player.ChapterName,[B][COLOR=white]$LOCALIZE[21396]: [/COLOR][/B]]</label>
 				<visible>Player.ChapterCount + !VideoPlayer.Content(LiveTV) + [!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)]</visible>
@@ -24,7 +23,6 @@
 				<posy>5</posy>
 				<width>1000</width>
 				<height>25</height>
-				<aligny>center</aligny>
 				<label>[B]$INFO[Player.ChapterName][/B]</label>
 				<visible>Player.ChapterCount + !VideoPlayer.Content(LiveTV) + [!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)]</visible>
 				<visible>SubString(Player.ChapterName,$LOCALIZE[21396],left)</visible>
@@ -35,7 +33,6 @@
 				<posy>5</posy>
 				<width>1000</width>
 				<height>25</height>
-				<aligny>center</aligny>
 				<label>$INFO[VideoPlayer.ChannelGroup,$LOCALIZE[31509]: ]</label>
 				<visible>VideoPlayer.Content(LiveTV)</visible>
 			</control>
@@ -46,7 +43,6 @@
 				<width>345</width>
 				<height>30</height>
 				<align>right</align>
-				<aligny>center</aligny>
 				<font>font35_title</font>
 				<label>$INFO[System.Time]</label>
 				<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
@@ -171,7 +167,6 @@
 					<posy>0</posy>
 					<width>910</width>
 					<height>25</height>
-					<aligny>center</aligny>
 					<label>$LOCALIZE[31040]</label>
 					<visible>![VideoPlayer.Content(LiveTV) + Player.Recording]</visible>
 					<animation effect="slide" start="0,0" end="0,25" time="0" condition="!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes) + !VideoPlayer.Content(MusicVideos) + !VideoPlayer.Content(LiveTV)">conditional</animation>
@@ -189,11 +184,11 @@
 					<posy>0</posy>
 					<width>860</width>
 					<height>25</height>
-					<aligny>center</aligny>
 					<label>$LOCALIZE[19158]</label>
 					<visible>VideoPlayer.Content(LiveTV) + Player.Recording</visible>
 				</control>
 				<control type="label" id="1">
+					<aligny>top</aligny>
 					<description>Studio label</description>
 					<posx>20</posx>
 					<posy>30</posy>
@@ -205,6 +200,7 @@
 					<visible>VideoPlayer.Content(Movies)</visible>
 				</control>
 				<control type="label" id="1">
+					<aligny>top</aligny>
 					<description>TV Show label</description>
 					<posx>20</posx>
 					<posy>30</posy>
@@ -216,6 +212,7 @@
 					<visible>VideoPlayer.Content(Episodes)</visible>
 				</control>
 				<control type="label" id="1">
+					<aligny>top</aligny>
 					<description>Music Info label</description>
 					<posx>20</posx>
 					<posy>30</posy>
@@ -227,6 +224,7 @@
 					<visible>VideoPlayer.Content(MusicVideos)</visible>
 				</control>
 				<control type="label" id="1">
+					<aligny>top</aligny>
 					<description>LiveTV Info label</description>
 					<posx>20</posx>
 					<posy>30</posy>
@@ -248,7 +246,6 @@
 						<width min="10" max="710">auto</width>
 						<height>30</height>
 						<font>font30</font>
-						<aligny>center</aligny>
 						<label>$VAR[VideoNowPlaying]</label>
 						<textcolor>orange</textcolor>
 						<scroll>true</scroll>
@@ -282,7 +279,6 @@
 					<height>25</height>
 					<label>$LOCALIZE[31049] $INFO[Player.FinishTime]</label>
 					<align>center</align>
-					<aligny>center</aligny>
 					<font>font12</font>
 					<textcolor>grey</textcolor>
 					<scroll>true</scroll>
@@ -296,7 +292,6 @@
 					<height>25</height>
 					<label>$INFO[VideoPlayer.NextTitle,$LOCALIZE[209]: ]</label>
 					<align>center</align>
-					<aligny>center</aligny>
 					<font>font12</font>
 					<textcolor>grey</textcolor>
 					<scroll>true</scroll>
@@ -315,7 +310,6 @@
 					<posy>0</posy>
 					<width>100</width>
 					<height>40</height>
-					<aligny>center</aligny>
 					<label>$INFO[Player.Time(hh:mm:ss)]</label>
 				</control>
 				<control type="label" id="1">
@@ -324,7 +318,6 @@
 					<posy>0</posy>
 					<width>100</width>
 					<height>40</height>
-					<aligny>center</aligny>
 					<label>$INFO[Player.StartTime(hh:mm)]</label>
 				</control>
 				<control type="progress" id="1">
@@ -349,7 +342,6 @@
 					<width>100</width>
 					<height>40</height>
 					<align>right</align>
-					<aligny>center</aligny>
 					<label>$INFO[Player.Duration(hh:mm:ss)]</label>
 				</control>
 				<control type="label" id="1">
@@ -359,7 +351,6 @@
 					<width>100</width>
 					<height>40</height>
 					<align>right</align>
-					<aligny>center</aligny>
 					<label>$INFO[Player.FinishTime(hh:mm)]</label>
 				</control>
 			</control>
@@ -380,7 +371,6 @@
 				<posy>10</posy>
 				<width>1180</width>
 				<height>30</height>
-				<aligny>center</aligny>
 				<font>font12</font>
 			</control>
 			<control type="label" id="11">
@@ -389,7 +379,6 @@
 				<posy>40</posy>
 				<width>1180</width>
 				<height>30</height>
-				<aligny>center</aligny>
 				<font>font12</font>
 			</control>
 			<control type="label" id="12">
@@ -398,7 +387,6 @@
 				<posy>85</posy>
 				<width>1180</width>
 				<height>30</height>
-				<aligny>center</aligny>
 				<font>font12</font>
 			</control>
 		</control>
@@ -431,7 +419,6 @@
 				<width>1200</width>
 				<height>25</height>
 				<label>$LOCALIZE[19005]</label>
-				<aligny>center</aligny>
 				<font>font13_title</font>
 				<textcolor>blue</textcolor>
 			</control>
@@ -442,7 +429,6 @@
 				<width>165</width>
 				<height>25</height>
 				<label>$LOCALIZE[19012]:</label>
-				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey2</textcolor>
 			</control>
@@ -453,7 +439,6 @@
 				<width>1000</width>
 				<height>25</height>
 				<label>$INFO[PVR.ActStreamClient]</label>
-				<aligny>center</aligny>
 				<font>font12</font>
 			</control>
 			<control type="label">
@@ -463,7 +448,6 @@
 				<width>165</width>
 				<height>25</height>
 				<label>$LOCALIZE[19006]:</label>
-				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey2</textcolor>
 			</control>
@@ -474,7 +458,6 @@
 				<width>1000</width>
 				<height>25</height>
 				<label>$INFO[PVR.ActStreamDevice]</label>
-				<aligny>center</aligny>
 				<font>font12</font>
 			</control>
 			<control type="label">
@@ -484,7 +467,6 @@
 				<width>165</width>
 				<height>25</height>
 				<label>$LOCALIZE[19007]:</label>
-				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey2</textcolor>
 			</control>
@@ -495,7 +477,6 @@
 				<width>1000</width>
 				<height>25</height>
 				<label>$INFO[PVR.ActStreamStatus]</label>
-				<aligny>center</aligny>
 				<font>font12</font>
 			</control>
 			<control type="label">
@@ -505,7 +486,6 @@
 				<width>165</width>
 				<height>25</height>
 				<label>$LOCALIZE[19008]:</label>
-				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey2</textcolor>
 			</control>
@@ -524,7 +504,6 @@
 				<width>180</width>
 				<height>25</height>
 				<label>$INFO[PVR.ActStreamSignal]</label>
-				<aligny>center</aligny>
 				<font>font12</font>
 			</control>
 			<control type="label">
@@ -534,7 +513,6 @@
 				<width>165</width>
 				<height>25</height>
 				<label>$LOCALIZE[19009]:</label>
-				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey2</textcolor>
 			</control>
@@ -553,7 +531,6 @@
 				<width>180</width>
 				<height>25</height>
 				<label>$INFO[PVR.ActStreamSNR]</label>
-				<aligny>center</aligny>
 				<font>font12</font>
 			</control>
 			<control type="label">
@@ -563,7 +540,6 @@
 				<width>165</width>
 				<height>25</height>
 				<label>$LOCALIZE[19010]:</label>
-				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey2</textcolor>
 			</control>
@@ -574,7 +550,6 @@
 				<width>1000</width>
 				<height>25</height>
 				<label>$INFO[PVR.ActStreamBER]</label>
-				<aligny>center</aligny>
 				<font>font12</font>
 			</control>
 			<control type="label">
@@ -584,7 +559,6 @@
 				<width>165</width>
 				<height>25</height>
 				<label>$LOCALIZE[19011]:</label>
-				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey2</textcolor>
 			</control>
@@ -595,7 +569,6 @@
 				<width>1000</width>
 				<height>25</height>
 				<label>$INFO[PVR.ActStreamUNC]</label>
-				<aligny>center</aligny>
 				<font>font12</font>
 			</control>
 			<control type="label">
@@ -605,7 +578,6 @@
 				<width>165</width>
 				<height>25</height>
 				<label>$LOCALIZE[19015]:</label>
-				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey2</textcolor>
 			</control>
@@ -616,7 +588,6 @@
 				<width>1000</width>
 				<height>25</height>
 				<label>$INFO[PVR.ActStreamEncryptionName]</label>
-				<aligny>center</aligny>
 				<font>font12</font>
 			</control>
 		</control>

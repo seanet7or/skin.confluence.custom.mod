@@ -1,4 +1,5 @@
 TAGS='
+label;aligny
 fadelabel;label;done
 fadelabel;info;done
 fadelabel;font
@@ -6,8 +7,8 @@ fadelabel;textcolor
 fadelabel;textoffsetx;done
 fadelabel;shadowcolor;done
 fadelabel;angle;done
-fadelabel;scrollout
-fadelabel;pauseatend
+fadelabel;scrollout;done;check
+fadelabel;pauseatend;done;check
 fadelabel;resetonlabelchange;done
 fadelabel;scrollspeed;done
 fadelabel;description;done
@@ -39,17 +40,17 @@ image;animation;done
 image;camera;done
 image;colordiffuse;done
 label;align;done;<align>left</align>
-label;aligny
-label;scroll
+label;aligny;done;<aligny>center</aligny>
+label;scroll;done;<scroll>false</scroll>
 label;label
-label;info
-label;number
-label;angle
-label;haspath
+label;info;done
+label;number;done
+label;angle;done
+label;haspath;done
 label;font
 label;textcolor
-label;shadowcolor
-label;wrapmultiline
+label;shadowcolor;done
+label;wrapmultiline;done
 label;scrollspeed
 label;scrollsuffix
 label;description
@@ -156,7 +157,7 @@ IFS=$'\n' ; for T in $TAGS ; do
 			CONTROLSTOP=$(tail -n+"$CONTROLSTART" "$F" | grep -n '</control>' | head -n 1 | cut -f1 -d:)
 			STRUCT=$(tail -n+"$CONTROLSTART" "$F" | head -n "$CONTROLSTOP" )
 			STAG=$(echo "$STRUCT" | grep "<$TAG[ >]" | sed 's|^\s*||' )
-			if echo "$STRUCT" | grep -q "<include>" ; then
+			if false ; then #echo "$STRUCT" | grep -q "<include>" ; then
 				let INCS=INCS+1
 			else
 				if [ -z "$STAG" ] ; then
@@ -168,7 +169,7 @@ IFS=$'\n' ; for T in $TAGS ; do
 		done
 	done
 	printf "\n$COUNT '$CONTROL' controls."
-	printf "\n%d controls with <include> tags." $INCS
+	#printf "\n%d controls with <include> tags." $INCS
 	printf "\n%d controls with missing tags.\n" $EMPTY
 	#printf "\nMost frequent tags:\n"
 	2>/dev/null more tags.tmp | sort --batch-size=1021 | uniq -c | sed 's|^\s*||' | sort -r -n | head -n 5

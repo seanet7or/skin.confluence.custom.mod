@@ -25,7 +25,6 @@
 						<height>40</height>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
@@ -37,7 +36,6 @@
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
 						<visible>!SubString(Container.FolderPath,program.advanced.launcher)</visible>
 					</control>
@@ -82,7 +80,6 @@
 						<width>460</width>
 						<height>40</height>
 						<selectedcolor>selected</selectedcolor>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
@@ -94,7 +91,6 @@
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
 						<visible>!SubString(Container.FolderPath,program.advanced.launcher)</visible>
 					</control>
@@ -223,7 +219,6 @@
 					<width>270</width>
 					<height>30</height>
 					<font>font12</font>
-					<scroll>false</scroll>
 					<align>right</align>
 					<aligny>top</aligny>
 					<label>$VAR[MediaRuntime,[B][COLOR=blue]$LOCALIZE[2050]: [/COLOR][/B]]</label>
@@ -234,7 +229,6 @@
 					<posy>615</posy>
 					<width>430</width>
 					<height>30</height>
-					<scroll>false</scroll>
 					<align>right</align>
 					<aligny>top</aligny>
 					<label>$INFO[ListItem.genre,[B][COLOR=blue]$LOCALIZE[515]: [/COLOR][/B]]</label>

@@ -2227,7 +2227,7 @@ step
 source textures.sh
 OLDIFS=$IFS ; IFS=$'\n'
 for T in $TEXLIST ; do
-	if [ -z "$T" ] ; then
+	if true ; then #[ -z "$T" ] ; then
 		continue
 	fi
 	TEXTURE=$(echo "$T" | cut -f1 -d';')
@@ -2259,6 +2259,20 @@ for T in $TEXLIST ; do
 done ; IFS=$OLDIFS
 step
 
+printf "\nSetting some default values per control: "
+if true ; then
+	R='s|(<control type="label"[^#]*#)(\s*)'
+	R+='((\s*(?!<aligny)<[a-z][^#]*#)*'
+	R+='\s*</control>#)'
+	R+='|\1\2<aligny>top</aligny>#\2\3|g'
+	XMLS=$(2>/dev/null grep '<control type="label"' -l 720p/*)
+	perlregex $XMLS "$R"
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\nSetting default values: "
 if ! grep -q -z -P '<default type="image">\n\s*<width>150</width>' 720p/defaults.xml ; then
 	R='s|(<default type="image">\s*#)(\s*)'
@@ -2273,6 +2287,8 @@ if ! grep -q -z -P '<default type="image">\n\s*<width>150</width>' 720p/defaults
 	perlregex 720p/defaults.xml "$R"
 	R='s|(<default type="label">\s*#)(\s*)'
 	R+='|\1\2<align>left</align>#'
+	R+='\2<aligny>center</aligny>#'
+	R+='\2<scroll>false</scroll>#'
 	R+='\2|'
 	perlregex 720p/defaults.xml "$R"
 	printf "%sDONE!%s" $GREEN $RESET

@@ -24,7 +24,6 @@
 						<height>40</height>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
@@ -36,7 +35,6 @@
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.Property(Addon.Status)]</label>
 					</control>
 				</itemlayout>
@@ -53,7 +51,6 @@
 						<width>520</width>
 						<height>40</height>
 						<selectedcolor>selected</selectedcolor>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
@@ -65,7 +62,6 @@
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.Property(Addon.Status)]</label>
 					</control>
 				</focusedlayout>
@@ -97,7 +93,6 @@
 					<height>15</height>
 					<label>$INFO[ListItem.Property(Addon.Name)]</label>
 					<align>center</align>
-					<aligny>center</aligny>
 					<font>font13_title</font>
 					<wrapmultiline>true</wrapmultiline>
 				</control>
@@ -120,7 +115,6 @@
 						<height>25</height>
 						<label>$LOCALIZE[21863]:</label>
 						<align>right</align>
-						<aligny>center</aligny>
 						<textcolor>blue</textcolor>
 					</control>
 					<control type="fadelabel">
@@ -142,7 +136,6 @@
 						<height>25</height>
 						<label>$LOCALIZE[24051]</label>
 						<align>right</align>
-						<aligny>center</aligny>
 						<textcolor>blue</textcolor>
 					</control>
 					<control type="label">
@@ -152,7 +145,6 @@
 						<width>350</width>
 						<height>25</height>
 						<label fallback="416">$INFO[ListItem.Property(Addon.Version)]</label>
-						<aligny>center</aligny>
 						<scroll>true</scroll>
 					</control>
 					<control type="label">
@@ -162,7 +154,6 @@
 						<height>25</height>
 						<label>$LOCALIZE[563]:</label>
 						<align>right</align>
-						<aligny>center</aligny>
 						<textcolor>blue</textcolor>
 					</control>
 					<control type="image">
@@ -235,7 +226,6 @@
 						<textcolor>ffaa0000</textcolor>
 						<selectedcolor>red</selectedcolor>
 						<align>center</align>
-						<aligny>center</aligny>
 						<angle>45</angle>
 						<label>24098</label>
 						<visible>!IsEmpty(ListItem.Property(Addon.broken))</visible>
@@ -249,7 +239,6 @@
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>center</align>
-						<aligny>center</aligny>
 						<info>ListItem.Label</info>
 					</control>
 				</itemlayout>
@@ -283,7 +272,6 @@
 						<textcolor>ffaa0000</textcolor>
 						<selectedcolor>red</selectedcolor>
 						<align>center</align>
-						<aligny>center</aligny>
 						<angle>45</angle>
 						<label>24098</label>
 						<visible>!IsEmpty(ListItem.Property(Addon.broken))</visible>
@@ -296,7 +284,6 @@
 						<font>font12</font>
 						<selectedcolor>selected</selectedcolor>
 						<align>center</align>
-						<aligny>center</aligny>
 						<info>ListItem.Label</info>
 					</control>
 				</focusedlayout>
@@ -328,7 +315,6 @@
 					<height>15</height>
 					<label>$INFO[ListItem.Property(Addon.Name)]</label>
 					<align>center</align>
-					<aligny>center</aligny>
 					<font>font13_title</font>
 					<wrapmultiline>true</wrapmultiline>
 				</control>
@@ -342,7 +328,6 @@
 						<height>25</height>
 						<label>$LOCALIZE[21863]:</label>
 						<align>right</align>
-						<aligny>center</aligny>
 						<textcolor>blue</textcolor>
 					</control>
 					<control type="fadelabel">
@@ -364,7 +349,6 @@
 						<height>25</height>
 						<label>$LOCALIZE[24051]</label>
 						<align>right</align>
-						<aligny>center</aligny>
 						<textcolor>blue</textcolor>
 					</control>
 					<control type="label">
@@ -374,7 +358,6 @@
 						<width>155</width>
 						<height>25</height>
 						<label fallback="416">$INFO[ListItem.Property(Addon.Version)]</label>
-						<aligny>center</aligny>
 						<scroll>true</scroll>
 					</control>
 					<control type="label">
@@ -384,7 +367,6 @@
 						<height>25</height>
 						<label>$LOCALIZE[563]:</label>
 						<align>right</align>
-						<aligny>center</aligny>
 						<textcolor>blue</textcolor>
 					</control>
 					<control type="image">

@@ -8,10 +8,12 @@
 		<include>ContentPanelBackgroundsPVR</include>
 		<include>MainWindowMouseButtons</include>
 		<control type="label" id="29">
+			<aligny>top</aligny>
 			<description>Empty so we can pass the values up one level</description>
 			<visible>False</visible>
 		</control>
 		<control type="label" id="30">
+			<aligny>top</aligny>
 			<description>Empty so we can pass the values up one level</description>
 			<visible>False</visible>
 		</control>
@@ -60,7 +62,6 @@
 				<font>font12</font>
 				<textcolor>grey2</textcolor>
 				<align>center</align>
-				<aligny>center</aligny>
 				<label>$INFO[VideoPlayer.Title]</label>
 				<visible>Player.HasVideo</visible>
 			</control>
@@ -101,7 +102,6 @@
 					<label>31006</label>
 					<textcolor>blue</textcolor>
 					<align>center</align>
-					<aligny>center</aligny>
 				</control>
 				<control type="button" id="32">
 					<description>TV Channels</description>

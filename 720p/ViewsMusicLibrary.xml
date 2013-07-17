@@ -24,7 +24,6 @@
 						<height>40</height>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
@@ -36,7 +35,6 @@
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
 					</control>
 				</itemlayout>
@@ -53,7 +51,6 @@
 						<width>730</width>
 						<height>40</height>
 						<selectedcolor>selected</selectedcolor>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
@@ -65,7 +62,6 @@
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
 					</control>
 				</focusedlayout>
@@ -105,7 +101,6 @@
 					<label>$INFO[ListItem.Artist]</label>
 					<scroll>true</scroll>
 					<align>center</align>
-					<aligny>center</aligny>
 					<font>font24_title</font>
 				</control>
 				<control type="label">
@@ -116,7 +111,6 @@
 					<label>$INFO[ListItem.Album]</label>
 					<wrapmultiline>true</wrapmultiline>
 					<align>center</align>
-					<aligny>center</aligny>
 					<textcolor>grey2</textcolor>
 				</control>
 				<control type="label">
@@ -153,7 +147,6 @@
 					<height>25</height>
 					<label>$INFO[listitem.TrackNumber,[COLOR=blue]$LOCALIZE[31310]: [/COLOR]]</label>
 					<align>center</align>
-					<aligny>center</aligny>
 					<visible>!Container.Content(Albums)</visible>
 				</control>
 				<control type="label">
@@ -164,7 +157,6 @@
 					<height>25</height>
 					<label>$INFO[listitem.Year,[COLOR=blue]$LOCALIZE[345]: [/COLOR]]</label>
 					<align>center</align>
-					<aligny>center</aligny>
 				</control>
 				<control type="image">
 					<description>Rating value</description>
@@ -195,7 +187,6 @@
 				<font>font24_title</font>
 				<scroll>true</scroll>
 				<align>center</align>
-				<aligny>center</aligny>
 				<label>$VAR[MainItemLabel]</label>
 				<animation effect="slide" start="0,0" end="0,20" time="200" condition="!Control.HasFocus(509)">conditional</animation>
 			</control>
@@ -297,7 +288,6 @@
 				<height>20</height>
 				<scroll>true</scroll>
 				<align>center</align>
-				<aligny>center</aligny>
 				<label>$INFO[ListItem.Property(Album_Artist)]</label>
 			</control>
 			<control type="label">
@@ -309,7 +299,6 @@
 				<textcolor>blue</textcolor>
 				<scroll>true</scroll>
 				<align>center</align>
-				<aligny>center</aligny>
 				<label>$VAR[MainItemLabel]</label>
 			</control>
 			<control type="group">
@@ -322,7 +311,6 @@
 					<height>30</height>
 					<font>font13_title</font>
 					<scroll>true</scroll>
-					<aligny>center</aligny>
 					<label>31331</label>
 				</control>
 				<control type="label">
@@ -331,9 +319,7 @@
 					<width>850</width>
 					<height>30</height>
 					<scroll>true</scroll>
-					<aligny>center</aligny>
 					<label>$LOCALIZE[515]: $INFO[ListItem.Genre]</label>
-					<scroll>false</scroll>
 				</control>
 				<control type="label">
 					<posx>0</posx>
@@ -341,9 +327,7 @@
 					<width>850</width>
 					<height>30</height>
 					<scroll>true</scroll>
-					<aligny>center</aligny>
 					<label>$LOCALIZE[562]: $INFO[ListItem.Year]</label>
-					<scroll>false</scroll>
 				</control>
 				<control type="fadelabel">
 					<posx>0</posx>
@@ -404,7 +388,6 @@
 						<height>40</height>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
@@ -416,7 +399,6 @@
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
 					</control>
 					<control type="image">
@@ -440,7 +422,6 @@
 						<width>720</width>
 						<height>40</height>
 						<selectedcolor>selected</selectedcolor>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
@@ -452,7 +433,6 @@
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
 					</control>
 					<control type="image">
@@ -509,7 +489,6 @@
 					<label>$INFO[ListItem.Artist]</label>
 					<scroll>true</scroll>
 					<align>center</align>
-					<aligny>center</aligny>
 					<font>font24_title</font>
 				</control>
 				<control type="label">
@@ -520,7 +499,6 @@
 					<label>$INFO[ListItem.Album]</label>
 					<wrapmultiline>true</wrapmultiline>
 					<align>center</align>
-					<aligny>center</aligny>
 					<textcolor>grey2</textcolor>
 				</control>
 				<control type="label">
@@ -556,7 +534,6 @@
 					<height>25</height>
 					<label>$INFO[listitem.Year,[COLOR=blue]$LOCALIZE[345]: [/COLOR]]</label>
 					<align>center</align>
-					<aligny>center</aligny>
 					<font>font13_title</font>
 				</control>
 			</control>
@@ -586,7 +563,6 @@
 						<height>40</height>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 				</itemlayout>
@@ -603,7 +579,6 @@
 						<width>560</width>
 						<height>40</height>
 						<selectedcolor>selected</selectedcolor>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 				</focusedlayout>
@@ -643,7 +618,6 @@
 						<height>25</height>
 						<label>$LOCALIZE[21893]:</label>
 						<align>right</align>
-						<aligny>center</aligny>
 						<font>font13_title</font>
 						<textcolor>blue</textcolor>
 						<visible>!IsEmpty(ListItem.Property(Artist_Born))</visible>
@@ -655,7 +629,6 @@
 						<width>350</width>
 						<height>25</height>
 						<label>$INFO[ListItem.Property(Artist_Born)]</label>
-						<aligny>center</aligny>
 						<scroll>true</scroll>
 						<visible>!IsEmpty(ListItem.Property(Artist_Born))</visible>
 					</control>
@@ -667,7 +640,6 @@
 						<height>25</height>
 						<label>$LOCALIZE[21894]:</label>
 						<align>right</align>
-						<aligny>center</aligny>
 						<font>font13_title</font>
 						<textcolor>blue</textcolor>
 						<visible>!IsEmpty(ListItem.Property(Artist_Formed))</visible>
@@ -679,7 +651,6 @@
 						<width>350</width>
 						<height>25</height>
 						<label>$INFO[ListItem.Property(Artist_Formed)]</label>
-						<aligny>center</aligny>
 						<scroll>true</scroll>
 						<visible>!IsEmpty(ListItem.Property(Artist_Formed))</visible>
 					</control>
@@ -691,7 +662,6 @@
 						<height>25</height>
 						<label>$LOCALIZE[515]:</label>
 						<align>right</align>
-						<aligny>center</aligny>
 						<font>font13_title</font>
 						<textcolor>blue</textcolor>
 					</control>
@@ -702,7 +672,6 @@
 						<width>350</width>
 						<height>25</height>
 						<label fallback="416">$INFO[ListItem.Property(Artist_Genre)]</label>
-						<aligny>center</aligny>
 						<scroll>true</scroll>
 					</control>
 					<control type="textbox">
@@ -744,7 +713,6 @@
 						<height>40</height>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
@@ -756,7 +724,6 @@
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
 					</control>
 				</itemlayout>
@@ -773,7 +740,6 @@
 						<width>730</width>
 						<height>40</height>
 						<selectedcolor>selected</selectedcolor>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
@@ -785,7 +751,6 @@
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
 					</control>
 				</focusedlayout>
@@ -824,7 +789,6 @@
 					<height>25</height>
 					<label>21821</label>
 					<align>center</align>
-					<aligny>center</aligny>
 					<font>font12_title</font>
 					<textcolor>blue</textcolor>
 				</control>

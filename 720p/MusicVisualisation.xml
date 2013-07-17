@@ -21,7 +21,6 @@
 				<posy>5</posy>
 				<width>800</width>
 				<height>25</height>
-				<aligny>center</aligny>
 				<label>$VAR[MusicHeaderLabel]</label>
 			</control>
 			<include>Clock</include>
@@ -86,6 +85,7 @@
 					<aspectratio aligny="bottom" align="left">keep</aspectratio>
 				</control>
 				<control type="label" id="1">
+					<aligny>top</aligny>
 					<description>Artist label</description>
 					<posx>20</posx>
 					<posy>75</posy>
@@ -106,7 +106,6 @@
 						<width min="10" max="700">auto</width>
 						<height>30</height>
 						<font>font30</font>
-						<aligny>center</aligny>
 						<label>$INFO[MusicPlayer.Title]</label>
 						<textcolor>orange</textcolor>
 						<scroll>true</scroll>
@@ -160,7 +159,6 @@
 					<height>25</height>
 					<label>$LOCALIZE[209]: $INFO[MusicPlayer.offset(1).Artist,, - ]$INFO[MusicPlayer.offset(1).Title]</label>
 					<align>center</align>
-					<aligny>center</aligny>
 					<font>font12</font>
 					<textcolor>grey</textcolor>
 					<scroll>true</scroll>
@@ -176,7 +174,6 @@
 					<posy>0</posy>
 					<width>100</width>
 					<height>40</height>
-					<aligny>center</aligny>
 					<label>$INFO[Player.Time(hh:mm:ss)]</label>
 				</control>
 				<control type="progress">
@@ -192,7 +189,6 @@
 					<width>100</width>
 					<height>40</height>
 					<align>right</align>
-					<aligny>center</aligny>
 					<label>$INFO[Player.Duration(hh:mm:ss)]</label>
 				</control>
 			</control>
@@ -210,6 +206,7 @@
 				<texture>dialogs/dialog-back_light.png</texture>
 			</control>
 			<control type="label">
+				<aligny>top</aligny>
 				<description>row 1 label</description>
 				<posx>50</posx>
 				<posy>10</posy>
@@ -217,6 +214,7 @@
 				<font>font12</font>
 			</control>
 			<control type="label">
+				<aligny>top</aligny>
 				<description>row 2 label</description>
 				<posx>50</posx>
 				<posy>40</posy>
@@ -225,6 +223,7 @@
 				<visible>Visualisation.Locked</visible>
 			</control>
 			<control type="label">
+				<aligny>top</aligny>
 				<description>Unlocked row 2 label</description>
 				<posx>50</posx>
 				<posy>40</posy>
@@ -233,6 +232,7 @@
 				<visible>!Visualisation.Locked</visible>
 			</control>
 			<control type="label">
+				<aligny>top</aligny>
 				<description>row 3 label</description>
 				<posx>50</posx>
 				<posy>70</posy>
