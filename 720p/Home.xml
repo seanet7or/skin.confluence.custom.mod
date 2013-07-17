@@ -56,7 +56,6 @@
 				<height>25</height>
 				<width>1000</width>
 				<label>$INFO[MusicPlayer.Artist,, - ]$INFO[MusicPlayer.Album]$INFO[musicplayer.discnumber, - $LOCALIZE[427]:]</label>
-				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
 			</control>
@@ -67,7 +66,6 @@
 				<height>30</height>
 				<width>1000</width>
 				<label>$INFO[MusicPlayer.Title]</label>
-				<align>left</align>
 				<aligny>center</aligny>
 				<font>font13_title</font>
 			</control>
@@ -78,7 +76,6 @@
 				<height>30</height>
 				<width>300</width>
 				<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=blue] / [/COLOR]]</label>
-				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
 			</control>
@@ -95,7 +92,6 @@
 				<visible>PVR.HasNonRecordingTimer</visible>
 				<control type="image">
 					<posx>400</posx>
-					<posy>0</posy>
 					<width>80</width>
 					<height>80</height>
 					<aspectratio>keep</aspectratio>
@@ -150,7 +146,6 @@
 				<visible>PVR.IsRecording</visible>
 				<control type="image">
 					<posx>400</posx>
-					<posy>0</posy>
 					<width>80</width>
 					<height>80</height>
 					<aspectratio>keep</aspectratio>
@@ -214,7 +209,6 @@
 					<description>Cover image</description>
 					<posx>20</posx>
 					<posy>45</posy>
-					<width>150</width>
 					<height>300</height>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<texture fallback="DefaultVideoCover.png">$INFO[Player.Art(thumb)]</texture>
@@ -226,7 +220,6 @@
 					<height>30</height>
 					<width>1000</width>
 					<label>$INFO[VideoPlayer.Title]</label>
-					<align>left</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
 				</control>
@@ -237,7 +230,6 @@
 					<height>30</height>
 					<width>300</width>
 					<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=blue] / [/COLOR]]</label>
-					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
 				</control>
@@ -260,7 +252,6 @@
 					<height>25</height>
 					<width>660</width>
 					<label>$INFO[VideoPlayer.ChannelName]</label>
-					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
 				</control>
@@ -271,7 +262,6 @@
 					<height>30</height>
 					<width>1000</width>
 					<label>$INFO[VideoPlayer.Title]</label>
-					<align>left</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
 				</control>
@@ -282,7 +272,6 @@
 					<height>30</height>
 					<width>300</width>
 					<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=blue] / [/COLOR]]</label>
-					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
 				</control>
@@ -305,7 +294,6 @@
 					<height>25</height>
 					<width>1000</width>
 					<label>$INFO[VideoPlayer.Studio]</label>
-					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
 				</control>
@@ -316,7 +304,6 @@
 					<height>30</height>
 					<width>1000</width>
 					<label>$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Year,[COLOR=grey] (,)[/COLOR]]</label>
-					<align>left</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
 				</control>
@@ -327,7 +314,6 @@
 					<height>30</height>
 					<width>300</width>
 					<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=blue] / [/COLOR]]</label>
-					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
 				</control>
@@ -350,7 +336,6 @@
 					<height>25</height>
 					<width>1000</width>
 					<label>$INFO[VideoPlayer.TVShowTitle] ($LOCALIZE[20373] $INFO[VideoPlayer.Season] - $LOCALIZE[20359] $INFO[VideoPlayer.episode])</label>
-					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
 				</control>
@@ -361,7 +346,6 @@
 					<height>30</height>
 					<width>1000</width>
 					<label>$INFO[VideoPlayer.Title]</label>
-					<align>left</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
 				</control>
@@ -372,7 +356,6 @@
 					<height>30</height>
 					<width>300</width>
 					<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=blue] / [/COLOR]]</label>
-					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
 				</control>
@@ -416,8 +399,6 @@
 			</animation>
 			<control type="image">
 				<description>Background End image</description>
-				<posx>0</posx>
-				<posy>0</posy>
 				<width>35</width>
 				<height>35</height>
 				<colordiffuse>CCFFFFFF</colordiffuse>
@@ -459,8 +440,6 @@
 				<enable>Player.HasMedia</enable>
 				<control type="image">
 					<description>Background image</description>
-					<posx>0</posx>
-					<posy>0</posy>
 					<width>205</width>
 					<height>35</height>
 					<texture flipy="true" border="0,2,0,2">home/sub-nf_light.png</texture>
@@ -841,7 +820,6 @@
 			</control>
 			<control type="image">
 				<posx>-100</posx>
-				<posy>0</posy>
 				<width>1480</width>
 				<height>75</height>
 				<texture border="0,6,0,6">HomeBack.png</texture>
@@ -878,7 +856,6 @@
 				<focusedlayout height="60" width="340">
 					<control type="image">
 						<posx>-50</posx>
-						<posy>0</posy>
 						<width>440</width>
 						<height>65</height>
 						<texture border="0,2,0,2">home/main-fo_light.png</texture>
@@ -1322,14 +1299,6 @@
 				<textoffsetx>20</textoffsetx>
 				<visible>Skin.HasSetting(AutoHidePowerBtn) + Player.HasAudio + !IsEmpty(MusicPlayer.offset(1).Artist) + !Skin.HasSetting(HideNextSongsInfo)</visible>
 			</control>
-			<control type="image">
-				<description>RSS background</description>
-				<posx>1250</posx>
-				<posy>2</posy>
-				<width>24</width>
-				<height>24</height>
-				<texture>icon-rss.png</texture>
-			</control>
 		</control>
 		<control type="group" id="10">
 			<posx>20</posx>
@@ -1395,8 +1364,6 @@
 			<include>Window_OpenClose_Animation</include>
 			<control type="image">
 				<description>Weather image</description>
-				<posx>0</posx>
-				<posy>0</posy>
 				<width>60</width>
 				<height>60</height>
 				<aspectratio>keep</aspectratio>
@@ -1414,7 +1381,6 @@
 					<description>Temp label</description>
 					<width min="0" max="300">auto</width>
 					<height>30</height>
-					<align>left</align>
 					<aligny>center</aligny>
 					<font>font28_title</font>
 					<label>[B]$INFO[Window(Weather).Property(Current.Temperature)][/B]</label>

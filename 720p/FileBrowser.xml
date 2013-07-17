@@ -16,8 +16,6 @@
 			<animation effect="slide" start="0,0" end="700,0" time="400" tween="quadratic" easing="out" condition="![Window.IsVisible(MovieInformation) | Window.IsVisible(MusicInformation)]">WindowClose</animation>
 			<animation effect="slide" start="0,0" end="-400,0" time="400" tween="quadratic" easing="out" condition="[Window.IsVisible(MovieInformation) | Window.IsVisible(MusicInformation)]">WindowClose</animation>
 			<control type="image">
-				<posx>0</posx>
-				<posy>0</posy>
 				<width>1100</width>
 				<height>720</height>
 				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
@@ -136,7 +134,6 @@
 							<posy>0</posy>
 							<width>580</width>
 							<height>40</height>
-							<align>left</align>
 							<aligny>center</aligny>
 							<selectedcolor>green</selectedcolor>
 							<info>ListItem.Label</info>
@@ -144,8 +141,6 @@
 					</itemlayout>
 					<focusedlayout height="40" width="640">
 						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
 							<width>640</width>
 							<height>41</height>
 							<visible>Control.HasFocus(450)</visible>
@@ -163,7 +158,6 @@
 							<posy>0</posy>
 							<width>580</width>
 							<height>40</height>
-							<align>left</align>
 							<aligny>center</aligny>
 							<selectedcolor>green</selectedcolor>
 							<info>ListItem.Label</info>
@@ -194,7 +188,6 @@
 							<posy>0</posy>
 							<width>580</width>
 							<height>40</height>
-							<align>left</align>
 							<aligny>center</aligny>
 							<selectedcolor>green</selectedcolor>
 							<info>ListItem.Label</info>
@@ -202,8 +195,6 @@
 					</itemlayout>
 					<focusedlayout height="40" width="640">
 						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
 							<width>640</width>
 							<height>41</height>
 							<visible>Control.HasFocus(451)</visible>
@@ -221,7 +212,6 @@
 							<posy>0</posy>
 							<width>580</width>
 							<height>40</height>
-							<align>left</align>
 							<aligny>center</aligny>
 							<selectedcolor>green</selectedcolor>
 							<info>ListItem.Label</info>

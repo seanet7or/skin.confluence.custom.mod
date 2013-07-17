@@ -14,8 +14,6 @@
 			<visible>!Window.IsVisible(smartplaylistrule)</visible>
 			<control type="image">
 				<description>background image</description>
-				<posx>0</posx>
-				<posy>0</posy>
 				<width>800</width>
 				<height>630</height>
 				<texture>dialogs/dialog-back_light.png</texture>
@@ -74,7 +72,6 @@
 				<posx>30</posx>
 				<posy>200</posy>
 				<width>740</width>
-				<align>left</align>
 				<label>21434</label>
 				<font>font12</font>
 				<textcolor>blue</textcolor>
@@ -91,10 +88,7 @@
 				<ondown>16</ondown>
 				<itemlayout width="560" height="45">
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>550</width>
-						<height>40</height>
 						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="label">
@@ -109,18 +103,12 @@
 				</itemlayout>
 				<focusedlayout width="560" height="45">
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>550</width>
-						<height>40</height>
 						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(10)</visible>
 					</control>
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>550</width>
-						<height>40</height>
 						<texture>buttons/nf_light.png</texture>
 						<visible>!Control.HasFocus(10)</visible>
 					</control>

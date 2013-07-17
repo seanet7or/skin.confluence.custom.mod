@@ -11,8 +11,6 @@
 	<controls>
 		<control type="image">
 			<description>background image</description>
-			<posx>0</posx>
-			<posy>0</posy>
 			<width>610</width>
 			<height>650</height>
 			<texture>dialogs/dialog-back_light.png</texture>
@@ -43,10 +41,7 @@
 			<animation effect="slide" start="0,0" end="10,0" time="0" condition="!Control.IsVisible(61)">Conditional</animation>
 			<itemlayout height="46" width="550">
 				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
 					<width>550</width>
-					<height>40</height>
 					<texture>buttons/nf_light.png</texture>
 				</control>
 				<control type="label">
@@ -56,25 +51,18 @@
 					<height>40</height>
 					<textcolor>grey2</textcolor>
 					<selectedcolor>selected</selectedcolor>
-					<align>left</align>
 					<aligny>center</aligny>
 					<label>$VAR[MainItemLabel]</label>
 				</control>
 			</itemlayout>
 			<focusedlayout height="46" width="550">
 				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
 					<width>550</width>
-					<height>40</height>
 					<texture>buttons/nf_light.png</texture>
 					<visible>!Control.HasFocus(3)</visible>
 				</control>
 				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
 					<width>550</width>
-					<height>40</height>
 					<texture>buttons/fo_light.png</texture>
 					<visible>Control.HasFocus(3)</visible>
 				</control>
@@ -84,7 +72,6 @@
 					<width>510</width>
 					<height>40</height>
 					<selectedcolor>selected</selectedcolor>
-					<align>left</align>
 					<aligny>center</aligny>
 					<label>$VAR[MainItemLabel]</label>
 				</control>
@@ -104,8 +91,6 @@
 			<animation effect="slide" start="0,0" end="10,0" time="0" condition="!Control.IsVisible(61)">Conditional</animation>
 			<itemlayout height="85" width="550">
 				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
 					<width>550</width>
 					<height>80</height>
 					<texture>buttons/nf_light.png</texture>
@@ -124,7 +109,6 @@
 					<height>30</height>
 					<textcolor>grey</textcolor>
 					<selectedcolor>selected</selectedcolor>
-					<align>left</align>
 					<aligny>center</aligny>
 					<label>[B]$INFO[ListItem.Label][/B]</label>
 				</control>
@@ -141,16 +125,12 @@
 			</itemlayout>
 			<focusedlayout height="85" width="550">
 				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
 					<width>550</width>
 					<height>80</height>
 					<texture>buttons/nf_light.png</texture>
 					<visible>!Control.HasFocus(6)</visible>
 				</control>
 				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
 					<width>550</width>
 					<height>80</height>
 					<texture>buttons/fo_light.png</texture>
@@ -169,7 +149,6 @@
 					<width>450</width>
 					<height>30</height>
 					<selectedcolor>selected</selectedcolor>
-					<align>left</align>
 					<aligny>center</aligny>
 					<label>[B]$INFO[ListItem.Label][/B]</label>
 				</control>

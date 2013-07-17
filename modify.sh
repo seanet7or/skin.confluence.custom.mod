@@ -1789,6 +1789,8 @@ if [ -d media/DefaultGenre ] ; then
 	XMLS=$(2>/dev/null grep '<visible>.Skin.HasSetting.View501GenreIcons.<.visible>' -l 720p/*)
 	remove_control 'grouplist' '<visible>\!Skin.HasSetting\(View501GenreIcons\)</visible>' "$XMLS"
 	remove_include 'MultiVideoGenreFlagging' 720p/IncludesGenreFlagging.xml
+	remove_include 'MultiGenreFlag' 720p/IncludesGenreFlagging.xml
+	remove_variable 'GenreFlagPath' 720p/IncludesVariables.xml
 	XMLS=$(2>/dev/null grep '<onclick>Skin.ToggleSetting.View501GenreIcons.</onclick>' -l 720p/*)
 	remove_controlid 'radiobutton' '<onclick>Skin.ToggleSetting.View501GenreIcons.</onclick>' "$XMLS"
 	XMLS=$(2>/dev/null grep 'condition=".Skin.HasSetting.View501GenreIcons.' -l 720p/*)
@@ -1796,6 +1798,17 @@ if [ -d media/DefaultGenre ] ; then
 	#XMLS=$(2>/dev/null grep '<visible>Skin.HasSetting.View501GenreIcons.</visible>' -l 720p/*)
 	#perlregex $XMLS 's|\s*<visible>Skin.HasSetting.View501GenreIcons.</visible>\s*#||g'
 	rm -rf media/DefaultGenre
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nRemoving RSS icon: "
+if [ -f media/icon-rss.png ] ; then
+	XMLS=$(2>/dev/null grep 'icon-rss.png' -l 720p/*)
+	remove_control 'image' '<texture>icon-rss.png</texture>' "$XMLS"
+	check_and_remove media/icon-rss.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -2246,6 +2259,28 @@ for T in $TEXLIST ; do
 done ; IFS=$OLDIFS
 step
 
+printf "\nSetting default values: "
+if ! grep -q -z -P '<default type="image">\n\s*<width>150</width>' 720p/defaults.xml ; then
+	R='s|(<default type="image">\s*#)(\s*)'
+	R+='|\1\2<width>150</width>#'
+	R+='\2<height>40</height>#'
+	R+='\2|'
+	perlregex 720p/defaults.xml "$R"
+	R='s|(<default type="fadelabel">\s*#)(\s*)'
+	R+='|\1\2<width>400</width>#'
+	R+='\2<height>25</height>#'
+	R+='\2|'
+	perlregex 720p/defaults.xml "$R"
+	R='s|(<default type="label">\s*#)(\s*)'
+	R+='|\1\2<align>left</align>#'
+	R+='\2|'
+	perlregex 720p/defaults.xml "$R"
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\nScanning defaults.xml for default values: "
 DEFS=$(grep '<default type="' 720p/defaults.xml | sed 's|^\s*[^"]*"||g' | cut -f1 -d'"')
 printf "%sDONE!%s" $GREEN $RESET
@@ -2261,17 +2296,22 @@ for DEF in $DEFS ; do
 	debug "DEFSTART is '$DEFSTART'."
 	if [ ! -z "$DEFSTART" ] ; then
 		DEFSTOP=$(tail -n+"$DEFSTART" 720p/defaults.xml | grep -n '</default>' | head -n 1 | cut -f1 -d:)
-		STRUCT=$(tail -n+"$DEFSTART" 720p/defaults.xml | head -n "$DEFSTOP" | grep -v '<[/]*default' | \
-			egrep -v '<posx|<posy|<width|<height')
+		STRUCT=$(tail -n+"$DEFSTART" 720p/defaults.xml | head -n "$DEFSTOP" | grep -v '<[/]*default' )
 		for L in $STRUCT ; do
 			if [ ! -z "$L" ] ; then
 				L=$(echo "$L" | sed 's|^\s*<|<|')
 				R='s|'
 				R+='(<control type="'"$DEF"'"[^#]*#(\s*<[a-z][^#]*#)*)\s*'"$L"'#'
 				R+='|\1|g'
+				XMLS2=""
 				XMLS=$(2>/dev/null grep "$L" -l 720p/*)
-				if [ ! -z "$XMLS" ] ; then
-					perlregex "$R" --nocheck $XMLS
+				for X in $XMLS ; do
+					if grep -q '<control type="'"$DEF"'"' "$X" ; then
+						XMLS2="$XMLS2"$'\n'"$X"
+					fi
+				done
+				if [ ! -z "$XMLS2" ] ; then
+					perlregex "$R" --nocheck $XMLS2
 				fi
 			fi
 		done

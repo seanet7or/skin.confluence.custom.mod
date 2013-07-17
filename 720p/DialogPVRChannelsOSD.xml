@@ -12,8 +12,6 @@
 		<control type="group">
 			<control type="image">
 				<description>background image</description>
-				<posx>0</posx>
-				<posy>0</posy>
 				<width>480</width>
 				<height>660</height>
 				<texture>dialogs/dialog-back_light.png</texture>
@@ -70,8 +68,6 @@
 				<scrolltime>200</scrolltime>
 				<itemlayout height="70" width="410">
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>410</width>
 						<height>65</height>
 						<texture>buttons/nf_light.png</texture>
@@ -82,7 +78,6 @@
 						<width>40</width>
 						<height>30</height>
 						<font>font12</font>
-						<align>left</align>
 						<aligny>center</aligny>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
@@ -102,7 +97,6 @@
 						<width>350</width>
 						<height>25</height>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
@@ -114,7 +108,6 @@
 						<font>font12</font>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>IsEmpty(Listitem.Icon)</visible>
@@ -127,7 +120,6 @@
 						<font>font12</font>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>!IsEmpty(Listitem.Icon)</visible>
@@ -170,22 +162,17 @@
 						<posx>360</posx>
 						<posy>4</posy>
 						<width>40</width>
-						<height>40</height>
 						<texture>$INFO[ListItem.Icon]</texture>
 					</control>
 				</itemlayout>
 				<focusedlayout height="70" width="410">
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>410</width>
 						<height>65</height>
 						<texture>buttons/nf_light.png</texture>
 						<visible>!Control.HasFocus(11)</visible>
 					</control>
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>410</width>
 						<height>65</height>
 						<texture>buttons/fo_light.png</texture>
@@ -197,7 +184,6 @@
 						<width>40</width>
 						<height>30</height>
 						<font>font12</font>
-						<align>left</align>
 						<aligny>center</aligny>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
@@ -217,7 +203,6 @@
 						<width>350</width>
 						<height>25</height>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
@@ -229,7 +214,6 @@
 						<font>font12</font>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>IsEmpty(Listitem.Icon)</visible>
@@ -242,7 +226,6 @@
 						<font>font12</font>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>!IsEmpty(Listitem.Icon)</visible>
@@ -285,7 +268,6 @@
 						<posx>360</posx>
 						<posy>4</posy>
 						<width>40</width>
-						<height>40</height>
 						<texture>$INFO[ListItem.Icon]</texture>
 					</control>
 				</focusedlayout>

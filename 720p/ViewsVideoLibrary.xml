@@ -97,8 +97,6 @@
 			<posy>350</posy>
 			<visible>Control.IsVisible(508) + [[ListItem.IsFolder + Container.Content(Movies)] | Skin.HasSetting(View508HideInfo) | Container.Content(Sets)]</visible>
 			<control type="image">
-				<posx>0</posx>
-				<posy>0</posy>
 				<width>1280</width>
 				<height>270</height>
 				<texture>HomeNowPlayingBack.png</texture>
@@ -304,7 +302,6 @@
 						<height>40</height>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
@@ -374,8 +371,6 @@
 				</itemlayout>
 				<focusedlayout height="40" width="580">
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>580</width>
 						<height>41</height>
 						<texture>buttons/fo_light.png</texture>
@@ -387,7 +382,6 @@
 						<width>520</width>
 						<height>40</height>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
@@ -476,8 +470,6 @@
 				<posy>245</posy>
 				<visible>Container.Content(TVShows)</visible>
 				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
 					<width>530</width>
 					<height>110</height>
 					<aspectratio>keep</aspectratio>
@@ -487,7 +479,6 @@
 				</control>
 				<control type="image">
 					<posx>15</posx>
-					<posy>0</posy>
 					<width>500</width>
 					<height>281</height>
 					<aspectratio>keep</aspectratio>
@@ -516,7 +507,6 @@
 						<width>360</width>
 						<height>25</height>
 						<label fallback="416">$INFO[listitem.episode] [COLOR=grey] ($INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102]] - $INFO[ListItem.Property(UnWatchedEpisodes), , $LOCALIZE[16101]])[/COLOR]</label>
-						<align>left</align>
 						<aligny>center</aligny>
 						<font>font12</font>
 						<scroll>true</scroll>
@@ -540,7 +530,6 @@
 						<width>360</width>
 						<height>25</height>
 						<label fallback="416">$INFO[listitem.premiered]</label>
-						<align>left</align>
 						<aligny>center</aligny>
 						<font>font12</font>
 						<scroll>true</scroll>
@@ -562,7 +551,6 @@
 						<posx>160</posx>
 						<posy>170</posy>
 						<width>360</width>
-						<height>25</height>
 						<label fallback="416">$INFO[listitem.Genre]</label>
 						<align>left</align>
 						<aligny>center</aligny>
@@ -589,8 +577,6 @@
 				<posy>245</posy>
 				<visible>Container.Content(Episodes)</visible>
 				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
 					<width>530</width>
 					<height>210</height>
 					<aspectratio>keep</aspectratio>
@@ -599,8 +585,6 @@
 					<visible>!Skin.HasSetting(HideEpisodeThumb) | StringCompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
 					<width>530</width>
 					<height>210</height>
 					<aspectratio>keep</aspectratio>
@@ -651,8 +635,6 @@
 				<posy>245</posy>
 				<visible>Container.Content(Seasons)</visible>
 				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
 					<width>260</width>
 					<height>355</height>
 					<aspectratio>keep</aspectratio>
@@ -689,8 +671,6 @@
 				<posy>245</posy>
 				<visible>Container.Content(Movies) | Container.Content(MusicVideos)</visible>
 				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
 					<width>260</width>
 					<height>355</height>
 					<aspectratio>keep</aspectratio>
@@ -750,7 +730,6 @@
 						<height>40</height>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
@@ -820,8 +799,6 @@
 				</itemlayout>
 				<focusedlayout height="40" width="580">
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>580</width>
 						<height>41</height>
 						<texture>buttons/fo_light.png</texture>
@@ -833,7 +810,6 @@
 						<width>520</width>
 						<height>40</height>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
@@ -922,8 +898,6 @@
 				<posy>70</posy>
 				<visible>Control.IsVisible(504) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(MusicVideos)]</visible>
 				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
 					<width>510</width>
 					<height>286</height>
 					<aspectratio>scale</aspectratio>
@@ -976,7 +950,6 @@
 					<width>340</width>
 					<height>25</height>
 					<label fallback="416">$INFO[listitem.Year]</label>
-					<align>left</align>
 					<aligny>center</aligny>
 					<scroll>true</scroll>
 				</control>
@@ -997,7 +970,6 @@
 					<posx>160</posx>
 					<posy>360</posy>
 					<width>340</width>
-					<height>25</height>
 					<label fallback="416">$INFO[listitem.Genre]</label>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -1021,8 +993,6 @@
 				<posy>70</posy>
 				<visible>Control.IsVisible(504) + Container.Content(Episodes)</visible>
 				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
 					<width>510</width>
 					<height>286</height>
 					<aspectratio>scale</aspectratio>
@@ -1031,8 +1001,6 @@
 					<visible>StringCompare(ListItem.Label,..) | !Skin.HasSetting(HideEpisodeThumb)</visible>
 				</control>
 				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
 					<width>510</width>
 					<height>286</height>
 					<aspectratio>scale</aspectratio>
@@ -1073,7 +1041,6 @@
 					<width>340</width>
 					<height>25</height>
 					<label fallback="416">$INFO[listitem.Premiered]</label>
-					<align>left</align>
 					<aligny>center</aligny>
 					<scroll>true</scroll>
 				</control>
@@ -1094,7 +1061,6 @@
 					<posx>160</posx>
 					<posy>360</posy>
 					<width>340</width>
-					<height>25</height>
 					<label fallback="416">$INFO[listitem.Season,,x]$INFO[listitem.Episode]</label>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -1139,7 +1105,6 @@
 						<height>40</height>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>!stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
@@ -1151,7 +1116,6 @@
 						<height>40</height>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>Skin.HasSetting(HideWatchStatus)</visible>
@@ -1186,8 +1150,6 @@
 				</itemlayout>
 				<focusedlayout condition="!Container.Content(TVShows) | Skin.HasSetting(View515HideTVBanners)" height="40" width="345">
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>345</width>
 						<height>41</height>
 						<texture>buttons/fo_light.png</texture>
@@ -1199,7 +1161,6 @@
 						<width>310</width>
 						<height>40</height>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>!stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
@@ -1210,7 +1171,6 @@
 						<width>335</width>
 						<height>40</height>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>Skin.HasSetting(HideWatchStatus)</visible>
@@ -1245,8 +1205,6 @@
 				</focusedlayout>
 				<itemlayout condition="Container.Content(TVShows) + !Skin.HasSetting(View515HideTVBanners)" height="70" width="345">
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>345</width>
 						<height>70</height>
 						<aspectratio align="left" aligny="bottom">keep</aspectratio>
@@ -1262,7 +1220,6 @@
 						<height>70</height>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>IsEmpty(ListItem.Art(banner))</visible>
@@ -1278,8 +1235,6 @@
 				</itemlayout>
 				<focusedlayout condition="Container.Content(TVShows) + !Skin.HasSetting(View515HideTVBanners)" height="70" width="345">
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>345</width>
 						<height>70</height>
 						<aspectratio align="left" aligny="bottom">keep</aspectratio>
@@ -1289,8 +1244,6 @@
 						<visible>!IsEmpty(ListItem.Art(banner))</visible>
 					</control>
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>345</width>
 						<height>71</height>
 						<texture>buttons/fo_light.png</texture>
@@ -1302,7 +1255,6 @@
 						<width>340</width>
 						<height>70</height>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>IsEmpty(ListItem.Art(banner))</visible>
@@ -1337,8 +1289,6 @@
 				<posy>70</posy>
 				<visible>Control.IsVisible(515) + [Container.Content(Movies)  | Container.Content(MusicVideos)]</visible>
 				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
 					<width>750</width>
 					<height>420</height>
 					<aspectratio scalediffuse="false">scale</aspectratio>
@@ -1361,7 +1311,6 @@
 					<width>540</width>
 					<height>30</height>
 					<font>font24_title</font>
-					<align>left</align>
 					<aligny>center</aligny>
 					<label>$VAR[MainItemLabel]</label>
 					<visible>Skin.HasSetting(View515Hidelogo) | IsEmpty(ListItem.Title) | IsEmpty(ListItem.Art(clearlogo))</visible>
@@ -1407,8 +1356,6 @@
 				<posy>70</posy>
 				<visible>Control.IsVisible(515) + Container.Content(TVShows)</visible>
 				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
 					<width>750</width>
 					<height>420</height>
 					<aspectratio scalediffuse="false">scale</aspectratio>
@@ -1431,7 +1378,6 @@
 					<width>540</width>
 					<height>30</height>
 					<font>font24_title</font>
-					<align>left</align>
 					<aligny>center</aligny>
 					<label>$VAR[MainItemLabel]</label>
 					<visible>Skin.HasSetting(View515Hidelogo) | IsEmpty(ListItem.Title) | IsEmpty(ListItem.Art(clearlogo))</visible>
@@ -1462,8 +1408,6 @@
 				<posy>70</posy>
 				<visible>Control.IsVisible(515) + Container.Content(Seasons)</visible>
 				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
 					<width>750</width>
 					<height>420</height>
 					<aspectratio scalediffuse="false">scale</aspectratio>
@@ -1472,8 +1416,6 @@
 					<visible>!StringCompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
 					<width>750</width>
 					<height>420</height>
 					<aspectratio scalediffuse="false">scale</aspectratio>
@@ -1482,8 +1424,6 @@
 					<visible>StringCompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
 					<width>750</width>
 					<height>420</height>
 					<aspectratio scalediffuse="false">scale</aspectratio>
@@ -1497,7 +1437,6 @@
 					<width>730</width>
 					<height>30</height>
 					<font>font24_title</font>
-					<align>left</align>
 					<aligny>center</aligny>
 					<label>$VAR[MainItemLabel]</label>
 				</control>
@@ -1527,8 +1466,6 @@
 				<posy>70</posy>
 				<visible>Control.IsVisible(515) + Container.Content(Episodes)</visible>
 				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
 					<width>750</width>
 					<height>420</height>
 					<aspectratio scalediffuse="false">scale</aspectratio>
@@ -1537,8 +1474,6 @@
 					<visible>!StringCompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
 					<width>750</width>
 					<height>420</height>
 					<aspectratio scalediffuse="false">scale</aspectratio>
@@ -1547,8 +1482,6 @@
 					<visible>StringCompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
 					<width>750</width>
 					<height>420</height>
 					<aspectratio scalediffuse="false">scale</aspectratio>
@@ -1562,7 +1495,6 @@
 					<width>400</width>
 					<height>30</height>
 					<font>font24_title</font>
-					<align>left</align>
 					<aligny>center</aligny>
 					<label>$VAR[MainItemLabel]</label>
 				</control>
@@ -1620,8 +1552,6 @@
 			<posy>40</posy>
 			<visible>Control.IsVisible(508) + ![ListItem.IsFolder + Container.Content(Movies)] + !Skin.HasSetting(View508HideInfo) + !Container.Content(Sets)</visible>
 			<control type="image">
-				<posx>0</posx>
-				<posy>0</posy>
 				<width>920</width>
 				<height>410</height>
 				<texture>dialogs/content-back_light.png</texture>
@@ -1649,14 +1579,12 @@
 					<height>30</height>
 					<font>font13_title</font>
 					<scroll>true</scroll>
-					<align>left</align>
 					<aligny>center</aligny>
 					<label>31308</label>
 				</control>
 				<control type="fadelabel">
 					<posx>0</posx>
 					<posy>30</posy>
-					<width>400</width>
 					<height>30</height>
 					<scroll>true</scroll>
 					<align>left</align>
@@ -1668,7 +1596,6 @@
 				<control type="fadelabel">
 					<posx>0</posx>
 					<posy>55</posy>
-					<width>400</width>
 					<height>30</height>
 					<scroll>true</scroll>
 					<align>left</align>
@@ -1680,7 +1607,6 @@
 				<control type="fadelabel">
 					<posx>0</posx>
 					<posy>80</posy>
-					<width>400</width>
 					<height>30</height>
 					<scroll>true</scroll>
 					<align>left</align>
@@ -1692,7 +1618,6 @@
 				<control type="fadelabel">
 					<posx>0</posx>
 					<posy>105</posy>
-					<width>400</width>
 					<height>30</height>
 					<scroll>true</scroll>
 					<align>left</align>
@@ -1713,7 +1638,6 @@
 					<height>30</height>
 					<font>font13_title</font>
 					<scroll>true</scroll>
-					<align>left</align>
 					<aligny>center</aligny>
 					<label>20339</label>
 				</control>
@@ -1723,7 +1647,6 @@
 					<width>400</width>
 					<height>30</height>
 					<scroll>true</scroll>
-					<align>left</align>
 					<aligny>center</aligny>
 					<label>$INFO[ListItem.Director]</label>
 				</control>
@@ -1734,7 +1657,6 @@
 					<height>30</height>
 					<font>font13_title</font>
 					<scroll>true</scroll>
-					<align>left</align>
 					<aligny>center</aligny>
 					<label>20417</label>
 				</control>
@@ -1744,7 +1666,6 @@
 					<width>400</width>
 					<height>30</height>
 					<scroll>true</scroll>
-					<align>left</align>
 					<aligny>top</aligny>
 					<label>$INFO[ListItem.Writer]</label>
 				</control>
@@ -1760,14 +1681,12 @@
 					<height>30</height>
 					<font>font13_title</font>
 					<scroll>true</scroll>
-					<align>left</align>
 					<aligny>center</aligny>
 					<label>20351</label>
 				</control>
 				<control type="fadelabel">
 					<posx>0</posx>
 					<posy>30</posy>
-					<width>400</width>
 					<height>30</height>
 					<scroll>true</scroll>
 					<align>left</align>
@@ -1779,7 +1698,6 @@
 				<control type="fadelabel">
 					<posx>0</posx>
 					<posy>55</posy>
-					<width>400</width>
 					<height>30</height>
 					<scroll>true</scroll>
 					<align>left</align>
@@ -1791,7 +1709,6 @@
 				<control type="fadelabel">
 					<posx>0</posx>
 					<posy>80</posy>
-					<width>400</width>
 					<height>30</height>
 					<scroll>true</scroll>
 					<align>left</align>
@@ -1812,7 +1729,6 @@
 					<height>30</height>
 					<font>font13_title</font>
 					<scroll>true</scroll>
-					<align>left</align>
 					<aligny>center</aligny>
 					<label>20360</label>
 				</control>
@@ -1822,7 +1738,6 @@
 					<width>400</width>
 					<height>30</height>
 					<scroll>true</scroll>
-					<align>left</align>
 					<aligny>center</aligny>
 					<label>$LOCALIZE[20161] : $INFO[ListItem.Episode]</label>
 				</control>
@@ -1832,7 +1747,6 @@
 					<width>400</width>
 					<height>30</height>
 					<scroll>true</scroll>
-					<align>left</align>
 					<aligny>center</aligny>
 					<label>$LOCALIZE[16102] : $INFO[ListItem.Property(WatchedEpisodes)]</label>
 				</control>
@@ -1842,7 +1756,6 @@
 					<width>400</width>
 					<height>30</height>
 					<scroll>true</scroll>
-					<align>left</align>
 					<aligny>center</aligny>
 					<label>$LOCALIZE[16101] : $INFO[ListItem.Property(UnWatchedEpisodes)]</label>
 				</control>
@@ -1857,7 +1770,6 @@
 					<height>30</height>
 					<font>font13_title</font>
 					<scroll>true</scroll>
-					<align>left</align>
 					<aligny>center</aligny>
 					<label>207</label>
 				</control>
@@ -1918,8 +1830,6 @@
 				<visible>Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Sets) | Container.Content(MusicVideos)</visible>
 				<itemlayout height="202" width="139">
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>139</width>
 						<height>202</height>
 						<bordersize>5</bordersize>
@@ -1978,8 +1888,6 @@
 						<animation reversible="false" effect="zoom" end="-27,-33,185,267" time="100">focus</animation>
 						<animation reversible="false" effect="zoom" start="-27,-33,185,267" time="100">unfocus</animation>
 						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
 							<width>142</width>
 							<height>205</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>

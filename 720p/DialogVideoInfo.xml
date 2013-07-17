@@ -10,7 +10,6 @@
 			<animation effect="slide" start="0,0" end="1100,0" time="400" tween="quadratic" easing="out">WindowClose</animation>
 			<control type="image">
 				<posx>180</posx>
-				<posy>0</posy>
 				<width>1100</width>
 				<height>720</height>
 				<texture border="4,0,4,0" flipx="true">dialogs/bladesub_light.png</texture>
@@ -50,8 +49,6 @@
 					<posx>387</posx>
 					<control type="image">
 						<description>Current Fanart image</description>
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>675</width>
 						<height>380</height>
 						<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
@@ -62,8 +59,6 @@
 						<visible>IsEmpty(Listitem.Art(fanart))</visible>
 						<control type="image">
 							<description>No Fanart Back</description>
-							<posx>0</posx>
-							<posy>0</posy>
 							<width>675</width>
 							<height>380</height>
 							<texture>Fanart_Fallback_Small.jpg</texture>
@@ -88,8 +83,6 @@
 					<visible>Control.HasFocus(15)</visible>
 					<control type="image">
 						<description>Border</description>
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>675</width>
 						<height>380</height>
 						<texture>buttons/nf_light.png</texture>
@@ -120,8 +113,6 @@
 					<posy>90</posy>
 					<posx>210</posx>
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>270</width>
 						<height>380</height>
 						<aspectratio>stretch</aspectratio>
@@ -155,7 +146,6 @@
 								<posy>0</posy>
 								<width>565</width>
 								<height>30</height>
-								<align>left</align>
 								<aligny>center</aligny>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
@@ -163,8 +153,6 @@
 						</itemlayout>
 						<focusedlayout height="30">
 							<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
 								<width>740</width>
 								<height>30</height>
 								<visible>Control.HasFocus(49)</visible>
@@ -186,7 +174,6 @@
 								<posy>0</posy>
 								<width>565</width>
 								<height>30</height>
-								<align>left</align>
 								<aligny>center</aligny>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
@@ -273,8 +260,6 @@
 					<posy>90</posy>
 					<posx>210</posx>
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>270</width>
 						<height>380</height>
 						<aspectratio>stretch</aspectratio>
@@ -308,7 +293,6 @@
 								<posy>0</posy>
 								<width>565</width>
 								<height>30</height>
-								<align>left</align>
 								<aligny>center</aligny>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
@@ -316,8 +300,6 @@
 						</itemlayout>
 						<focusedlayout height="30">
 							<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
 								<width>740</width>
 								<height>30</height>
 								<visible>Control.HasFocus(49)</visible>
@@ -339,7 +321,6 @@
 								<posy>0</posy>
 								<width>565</width>
 								<height>30</height>
-								<align>left</align>
 								<aligny>center</aligny>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
@@ -390,8 +371,6 @@
 					<posy>90</posy>
 					<posx>210</posx>
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>380</width>
 						<height>250</height>
 						<aspectratio aligny="bottom">keep</aspectratio>
@@ -425,7 +404,6 @@
 								<posy>0</posy>
 								<width>465</width>
 								<height>30</height>
-								<align>left</align>
 								<aligny>center</aligny>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
@@ -433,8 +411,6 @@
 						</itemlayout>
 						<focusedlayout height="30">
 							<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
 								<width>640</width>
 								<height>30</height>
 								<visible>Control.HasFocus(49)</visible>
@@ -456,7 +432,6 @@
 								<posy>0</posy>
 								<width>465</width>
 								<height>30</height>
-								<align>left</align>
 								<aligny>center</aligny>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
@@ -537,8 +512,6 @@
 					<posy>90</posy>
 					<posx>210</posx>
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>380</width>
 						<height>360</height>
 						<aspectratio>keep</aspectratio>
@@ -572,7 +545,6 @@
 								<posy>0</posy>
 								<width>465</width>
 								<height>30</height>
-								<align>left</align>
 								<aligny>center</aligny>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
@@ -580,8 +552,6 @@
 						</itemlayout>
 						<focusedlayout height="30">
 							<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
 								<width>640</width>
 								<height>30</height>
 								<visible>Control.HasFocus(49)</visible>
@@ -603,7 +573,6 @@
 								<posy>0</posy>
 								<width>465</width>
 								<height>30</height>
-								<align>left</align>
 								<aligny>center</aligny>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
@@ -718,10 +687,7 @@
 					<orientation>vertical</orientation>
 					<itemlayout height="40" width="430">
 						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
 							<width>430</width>
-							<height>40</height>
 							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="label">
@@ -730,7 +696,6 @@
 							<width>410</width>
 							<height>40</height>
 							<font>font12</font>
-							<align>left</align>
 							<aligny>center</aligny>
 							<selectedcolor>white</selectedcolor>
 							<info>ListItem.Label</info>
@@ -738,18 +703,12 @@
 					</itemlayout>
 					<focusedlayout height="40" width="430">
 						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
 							<width>430</width>
-							<height>40</height>
 							<visible>!Control.HasFocus(50)</visible>
 							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
 							<width>430</width>
-							<height>40</height>
 							<visible>Control.HasFocus(50)</visible>
 							<texture>buttons/fo_light.png</texture>
 						</control>
@@ -759,7 +718,6 @@
 							<width>410</width>
 							<height>40</height>
 							<font>font12</font>
-							<align>left</align>
 							<aligny>center</aligny>
 							<selectedcolor>white</selectedcolor>
 							<info>ListItem.Label</info>

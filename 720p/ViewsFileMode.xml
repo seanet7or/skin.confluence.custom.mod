@@ -23,7 +23,6 @@
 						<height>40</height>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
@@ -106,8 +105,6 @@
 				</itemlayout>
 				<focusedlayout height="40" width="580">
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>690</width>
 						<height>41</height>
 						<texture>buttons/fo_light.png</texture>
@@ -119,7 +116,6 @@
 						<width>660</width>
 						<height>40</height>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>!stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
@@ -130,7 +126,6 @@
 						<width>680</width>
 						<height>40</height>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>Skin.HasSetting(HideWatchStatus)</visible>
@@ -233,8 +228,6 @@
 				<posy>100</posy>
 				<visible>Control.IsVisible(50)</visible>
 				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
 					<width>360</width>
 					<height>540</height>
 					<aspectratio aligny="bottom">keep</aspectratio>
@@ -263,7 +256,6 @@
 				<itemlayout condition="!Container.Content(Movies) + !Container.Content(Seasons) + !Container.Content(TVShows) + !Container.Content(Sets)" height="186" width="216">
 					<control type="image">
 						<posx>1</posx>
-						<posy>0</posy>
 						<width>214</width>
 						<height>160</height>
 						<bordertexture border="6">controls/folder-nf_light.png</bordertexture>
@@ -273,7 +265,6 @@
 					</control>
 					<control type="image">
 						<posx>1</posx>
-						<posy>0</posy>
 						<width>214</width>
 						<height>160</height>
 						<aspectratio>scale</aspectratio>
@@ -284,7 +275,6 @@
 					</control>
 					<control type="image">
 						<posx>1</posx>
-						<posy>0</posy>
 						<width>214</width>
 						<height>160</height>
 						<aspectratio>scale</aspectratio>
@@ -318,7 +308,6 @@
 				<focusedlayout condition="!Container.Content(Movies) + !Container.Content(Seasons) + !Container.Content(TVShows) + !Container.Content(Sets)" height="186" width="216">
 					<control type="image">
 						<posx>1</posx>
-						<posy>0</posy>
 						<width>214</width>
 						<height>160</height>
 						<bordertexture border="6">buttons/folder-focus_light.png</bordertexture>
@@ -328,7 +317,6 @@
 					</control>
 					<control type="image">
 						<posx>1</posx>
-						<posy>0</posy>
 						<width>214</width>
 						<height>160</height>
 						<aspectratio>scale</aspectratio>
@@ -339,7 +327,6 @@
 					</control>
 					<control type="image">
 						<posx>1</posx>
-						<posy>0</posy>
 						<width>214</width>
 						<height>160</height>
 						<aspectratio>scale</aspectratio>
@@ -372,7 +359,6 @@
 				<itemlayout condition="Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows) | Container.Content(Sets)" height="279" width="216">
 					<control type="image">
 						<posx>1</posx>
-						<posy>0</posy>
 						<width>214</width>
 						<height>240</height>
 						<bordertexture border="6">controls/folder-nf_light.png</bordertexture>
@@ -395,7 +381,6 @@
 						<posx>165</posx>
 						<posy>205</posy>
 						<width>40</width>
-						<height>40</height>
 						<aspectratio>keep</aspectratio>
 						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
 						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
@@ -404,7 +389,6 @@
 				<focusedlayout condition="Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows) | Container.Content(Sets)" height="276" width="216">
 					<control type="image">
 						<posx>1</posx>
-						<posy>0</posy>
 						<width>214</width>
 						<height>240</height>
 						<bordertexture border="6">buttons/folder-focus_light.png</bordertexture>
@@ -426,7 +410,6 @@
 						<posx>165</posx>
 						<posy>205</posy>
 						<width>40</width>
-						<height>40</height>
 						<aspectratio>keep</aspectratio>
 						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
 						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
@@ -470,7 +453,6 @@
 				<itemlayout height="110" width="540">
 					<control type="image">
 						<posx>1</posx>
-						<posy>0</posy>
 						<width>538</width>
 						<height>105</height>
 						<bordertexture border="6">controls/folder-nf_light.png</bordertexture>
@@ -481,7 +463,6 @@
 						<posx>495</posx>
 						<posy>65</posy>
 						<width>40</width>
-						<height>40</height>
 						<aspectratio>keep</aspectratio>
 						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
 						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
@@ -490,7 +471,6 @@
 				<focusedlayout height="110" width="540">
 					<control type="image">
 						<posx>1</posx>
-						<posy>0</posy>
 						<width>538</width>
 						<height>105</height>
 						<bordertexture border="6">buttons/folder-focus_light.png</bordertexture>
@@ -501,7 +481,6 @@
 						<posx>495</posx>
 						<posy>65</posy>
 						<width>40</width>
-						<height>40</height>
 						<aspectratio>keep</aspectratio>
 						<texture>$VAR[WatchTypePath,OverlayStatus/]</texture>
 						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !ListItem.IsResumable + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
@@ -564,7 +543,6 @@
 						<height>40</height>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
@@ -647,8 +625,6 @@
 				</itemlayout>
 				<focusedlayout height="40" width="1080">
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>1080</width>
 						<height>41</height>
 						<texture>buttons/fo_light.png</texture>
@@ -676,7 +652,6 @@
 						<width>950</width>
 						<height>40</height>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>

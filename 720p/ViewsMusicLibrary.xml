@@ -24,7 +24,6 @@
 						<height>40</height>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
@@ -43,8 +42,6 @@
 				</itemlayout>
 				<focusedlayout height="40" width="760">
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>780</width>
 						<height>41</height>
 						<texture>buttons/fo_light.png</texture>
@@ -56,7 +53,6 @@
 						<width>730</width>
 						<height>40</height>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
@@ -95,7 +91,6 @@
 				<posy>80</posy>
 				<control type="image">
 					<posx>10</posx>
-					<posy>0</posy>
 					<width>290</width>
 					<height>290</height>
 					<aspectratio aligny="bottom">keep</aspectratio>
@@ -175,7 +170,6 @@
 					<description>Rating value</description>
 					<posx>80</posx>
 					<posy>535</posy>
-					<width>150</width>
 					<height>30</height>
 					<aspectratio>keep</aspectratio>
 					<texture>$INFO[ListItem.StarRating,CenterRating/]</texture>
@@ -189,8 +183,6 @@
 			<posy>350</posy>
 			<visible>Control.IsVisible(509) + Skin.HasSetting(View509HideInfo)</visible>
 			<control type="image">
-				<posx>0</posx>
-				<posy>0</posy>
 				<width>1280</width>
 				<height>270</height>
 				<texture>HomeNowPlayingBack.png</texture>
@@ -294,8 +286,6 @@
 			<posy>40</posy>
 			<visible>Control.IsVisible(509) + !Skin.HasSetting(View509HideInfo)</visible>
 			<control type="image">
-				<posx>0</posx>
-				<posy>0</posy>
 				<width>920</width>
 				<height>410</height>
 				<texture>dialogs/content-back_light.png</texture>
@@ -332,7 +322,6 @@
 					<height>30</height>
 					<font>font13_title</font>
 					<scroll>true</scroll>
-					<align>left</align>
 					<aligny>center</aligny>
 					<label>31331</label>
 				</control>
@@ -342,7 +331,6 @@
 					<width>850</width>
 					<height>30</height>
 					<scroll>true</scroll>
-					<align>left</align>
 					<aligny>center</aligny>
 					<label>$LOCALIZE[515]: $INFO[ListItem.Genre]</label>
 					<scroll>false</scroll>
@@ -353,7 +341,6 @@
 					<width>850</width>
 					<height>30</height>
 					<scroll>true</scroll>
-					<align>left</align>
 					<aligny>center</aligny>
 					<label>$LOCALIZE[562]: $INFO[ListItem.Year]</label>
 					<scroll>false</scroll>
@@ -361,7 +348,6 @@
 				<control type="fadelabel">
 					<posx>0</posx>
 					<posy>95</posy>
-					<width>400</width>
 					<height>30</height>
 					<scroll>true</scroll>
 					<align>left</align>
@@ -418,7 +404,6 @@
 						<height>40</height>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
@@ -444,8 +429,6 @@
 				</itemlayout>
 				<focusedlayout height="40" width="760">
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>760</width>
 						<height>41</height>
 						<texture>buttons/fo_light.png</texture>
@@ -457,7 +440,6 @@
 						<width>720</width>
 						<height>40</height>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
@@ -502,7 +484,6 @@
 				<posy>80</posy>
 				<control type="image">
 					<posx>10</posx>
-					<posy>0</posy>
 					<width>290</width>
 					<height>230</height>
 					<aspectratio>keep</aspectratio>
@@ -605,15 +586,12 @@
 						<height>40</height>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout height="40" width="580">
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>580</width>
 						<height>41</height>
 						<texture>buttons/fo_light.png</texture>
@@ -625,7 +603,6 @@
 						<width>560</width>
 						<height>40</height>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
@@ -650,8 +627,6 @@
 				<posx>710</posx>
 				<posy>70</posy>
 				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
 					<width>510</width>
 					<height>300</height>
 					<aspectratio>keep</aspectratio>
@@ -680,7 +655,6 @@
 						<width>350</width>
 						<height>25</height>
 						<label>$INFO[ListItem.Property(Artist_Born)]</label>
-						<align>left</align>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
 						<visible>!IsEmpty(ListItem.Property(Artist_Born))</visible>
@@ -705,7 +679,6 @@
 						<width>350</width>
 						<height>25</height>
 						<label>$INFO[ListItem.Property(Artist_Formed)]</label>
-						<align>left</align>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
 						<visible>!IsEmpty(ListItem.Property(Artist_Formed))</visible>
@@ -729,7 +702,6 @@
 						<width>350</width>
 						<height>25</height>
 						<label fallback="416">$INFO[ListItem.Property(Artist_Genre)]</label>
-						<align>left</align>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
 					</control>
@@ -772,7 +744,6 @@
 						<height>40</height>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
@@ -791,8 +762,6 @@
 				</itemlayout>
 				<focusedlayout height="40" width="780">
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>780</width>
 						<height>41</height>
 						<texture>buttons/fo_light.png</texture>
@@ -804,7 +773,6 @@
 						<width>730</width>
 						<height>40</height>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
@@ -842,7 +810,6 @@
 				<posy>70</posy>
 				<control type="image">
 					<posx>10</posx>
-					<posy>0</posy>
 					<width>290</width>
 					<height>240</height>
 					<aspectratio aligny="bottom">keep</aspectratio>

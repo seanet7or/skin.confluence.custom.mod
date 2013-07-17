@@ -23,7 +23,6 @@
 					<control type="image">
 						<visible>!IsEmpty(ListItem.Title) + !IsEmpty(ListItem.Art(clearlogo))</visible>
 						<posx>110</posx>
-						<posy>0</posy>
 						<width>200</width>
 						<height>75</height>
 						<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
@@ -37,7 +36,6 @@
 						<posy>30</posy>
 						<width>330</width>
 						<height>89</height>
-						<align>left</align>
 						<font>font28_title</font>
 						<textcolor>grey2</textcolor>
 						<label>[B]$INFO[ListItem.Label][/B]</label>
@@ -74,8 +72,6 @@
 				<itemlayout condition="Skin.HasSetting(View730HideLogo) | Container.Content(Episodes) | Container.Content(Seasons)  | SubString(Container.FolderPath,program.advanced.launcher)" width="380" height="86">
 					<control type="image">
 						<visible>[Container.Content(Movies) | Container.Content(tvshows) | Container.Content(MusicVideos)] + !IsEmpty(ListItem.Title) + !IsEmpty(ListItem.Art(banner))</visible>
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>380</width>
 						<height>85</height>
 						<texture background="true">$INFO[ListItem.Art(banner)]</texture>
@@ -89,7 +85,6 @@
 						<posy>30</posy>
 						<width>330</width>
 						<height>89</height>
-						<align>left</align>
 						<font>font28_title</font>
 						<textcolor>grey2</textcolor>
 						<label>[B]$LOCALIZE[20359] $INFO[ListItem.Episode][/B]</label>
@@ -100,7 +95,6 @@
 						<posy>30</posy>
 						<width>330</width>
 						<height>89</height>
-						<align>left</align>
 						<font>font28_title</font>
 						<textcolor>grey2</textcolor>
 						<label>[B]$INFO[ListItem.Label][/B]</label>
@@ -154,7 +148,6 @@
 						<posy>30</posy>
 						<width>270</width>
 						<height>89</height>
-						<align>left</align>
 						<aligny>bottom</aligny>
 						<font>font28_title</font>
 						<label>[B]$INFO[ListItem.Label][/B]</label>
@@ -193,7 +186,6 @@
 				<focusedlayout condition="Skin.HasSetting(View730HideLogo) | Container.Content(Episodes) | Container.Content(Seasons)  | SubString(Container.FolderPath,program.advanced.launcher)" width="380" height="100">
 					<control type="image">
 						<visible>[Container.Content(Movies) | Container.Content(tvshows) | Container.Content(MusicVideos)] + !IsEmpty(ListItem.Title) + !IsEmpty(ListItem.Art(banner))</visible>
-						<posx>0</posx>
 						<posy>7</posy>
 						<width>380</width>
 						<height>85</height>
@@ -210,7 +202,6 @@
 						<posy>30</posy>
 						<width>270</width>
 						<height>89</height>
-						<align>left</align>
 						<aligny>bottom</aligny>
 						<font>font28_title</font>
 						<label>[B]$LOCALIZE[20359] $INFO[ListItem.Episode][/B]</label>
@@ -283,8 +274,6 @@
 				<posx>45</posx>
 				<posy>70</posy>
 				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
 					<width>805</width>
 					<height>451</height>
 					<aspectratio scalediffuse="false">scale</aspectratio>
@@ -294,8 +283,6 @@
 					<visible>![Container.Content(Seasons) + !IsEmpty(ListItem.Art(season.fanart))]</visible>
 				</control>
 				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
 					<width>805</width>
 					<height>451</height>
 					<aspectratio scalediffuse="false">scale</aspectratio>
@@ -304,8 +291,6 @@
 					<visible>Container.Content(Seasons) + !IsEmpty(ListItem.Art(season.fanart))</visible>
 				</control>
 				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
 					<width>805</width>
 					<height>451</height>
 					<aspectratio scalediffuse="false">scale</aspectratio>
@@ -355,7 +340,6 @@
 					<width>290</width>
 					<height>25</height>
 					<scroll>false</scroll>
-					<align>left</align>
 					<aligny>center</aligny>
 					<label>$VAR[MediaRuntime,[B][COLOR=blue]$LOCALIZE[2050]: [/COLOR][/B]]</label>
 					<visible>!Container.Content(TVShows) + !IsEmpty(ListItem.Duration)</visible>
@@ -366,7 +350,6 @@
 					<width>290</width>
 					<height>25</height>
 					<scroll>false</scroll>
-					<align>left</align>
 					<aligny>center</aligny>
 					<label>$INFO[listitem.episode,[B][COLOR=blue]$LOCALIZE[20360]: [/COLOR][/B]]</label>
 					<visible>[Container.Content(TVShows) | Container.Content(Seasons)] + !IsEmpty(ListItem.episode)</visible>

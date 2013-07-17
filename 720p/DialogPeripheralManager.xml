@@ -13,8 +13,6 @@
 			<visible>!Window.IsVisible(PeripheralSettings)</visible>
 			<control type="image">
 				<description>background image</description>
-				<posx>0</posx>
-				<posy>0</posy>
 				<width>610</width>
 				<height>650</height>
 				<texture>dialogs/dialog-back_light.png</texture>
@@ -45,8 +43,6 @@
 				<animation effect="slide" start="0,0" end="10,0" time="0" condition="!Control.IsVisible(61)">Conditional</animation>
 				<itemlayout height="85" width="550">
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>550</width>
 						<height>80</height>
 						<texture>buttons/nf_light.png</texture>
@@ -58,7 +54,6 @@
 						<width>520</width>
 						<height>20</height>
 						<label>$VAR[MainItemLabel]</label>
-						<align>left</align>
 						<aligny>center</aligny>
 					</control>
 					<control type="label">
@@ -68,7 +63,6 @@
 						<width>520</width>
 						<height>20</height>
 						<label>$LOCALIZE[35504]:  [COLOR=grey2]$INFO[ListItem.Property(Product)][/COLOR]    $LOCALIZE[35503]:  [COLOR=grey2]$INFO[ListItem.Property(Vendor)][/COLOR]</label>
-						<align>left</align>
 						<aligny>center</aligny>
 						<font>font12</font>
 						<textcolor>blue</textcolor>
@@ -80,7 +74,6 @@
 						<width>520</width>
 						<height>20</height>
 						<label>$LOCALIZE[35501]:  [COLOR=grey2]$INFO[ListItem.Property(Class)][/COLOR]     $LOCALIZE[19114]:  [COLOR=grey2]$INFO[ListItem.Property(Version)][/COLOR]</label>
-						<align>left</align>
 						<aligny>center</aligny>
 						<font>font12</font>
 						<textcolor>blue</textcolor>
@@ -88,16 +81,12 @@
 				</itemlayout>
 				<focusedlayout height="85" width="550">
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>550</width>
 						<height>80</height>
 						<texture>buttons/nf_light.png</texture>
 						<visible>!Control.HasFocus(20)</visible>
 					</control>
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>550</width>
 						<height>80</height>
 						<texture>buttons/fo_light.png</texture>
@@ -110,7 +99,6 @@
 						<width>520</width>
 						<height>20</height>
 						<label>$VAR[MainItemLabel]</label>
-						<align>left</align>
 						<aligny>center</aligny>
 					</control>
 					<control type="label">
@@ -120,7 +108,6 @@
 						<width>520</width>
 						<height>20</height>
 						<label>$LOCALIZE[35504]:  [COLOR=grey2]$INFO[ListItem.Property(Product)][/COLOR]    $LOCALIZE[35503]:  [COLOR=grey2]$INFO[ListItem.Property(Vendor)][/COLOR]</label>
-						<align>left</align>
 						<aligny>center</aligny>
 						<font>font12</font>
 						<textcolor>blue</textcolor>
@@ -132,7 +119,6 @@
 						<width>520</width>
 						<height>20</height>
 						<label>$LOCALIZE[35501]:  [COLOR=grey2]$INFO[ListItem.Property(Class)][/COLOR]     $LOCALIZE[19114]:  [COLOR=grey2]$INFO[ListItem.Property(Version)][/COLOR]</label>
-						<align>left</align>
 						<aligny>center</aligny>
 						<font>font12</font>
 						<textcolor>blue</textcolor>

@@ -24,7 +24,6 @@
 						<height>40</height>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
@@ -43,8 +42,6 @@
 				</itemlayout>
 				<focusedlayout height="40" width="580">
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>580</width>
 						<height>41</height>
 						<texture>buttons/fo_light.png</texture>
@@ -56,7 +53,6 @@
 						<width>520</width>
 						<height>40</height>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
@@ -132,7 +128,6 @@
 						<posx>160</posx>
 						<posy>0</posy>
 						<width>350</width>
-						<height>25</height>
 						<label fallback="416">$INFO[ListItem.Property(Addon.Creator)]</label>
 						<align>left</align>
 						<aligny>center</aligny>
@@ -157,14 +152,12 @@
 						<width>350</width>
 						<height>25</height>
 						<label fallback="416">$INFO[ListItem.Property(Addon.Version)]</label>
-						<align>left</align>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
 					</control>
 					<control type="label">
 						<description>Rating txt</description>
 						<posx>150</posx>
-						<posy>60</posy>
 						<width>140</width>
 						<height>25</height>
 						<label>$LOCALIZE[563]:</label>
@@ -215,7 +208,6 @@
 				<itemlayout height="186" width="193">
 					<control type="image">
 						<posx>1</posx>
-						<posy>0</posy>
 						<width>191</width>
 						<height>160</height>
 						<bordertexture border="6">controls/folder-nf_light.png</bordertexture>
@@ -225,7 +217,6 @@
 					</control>
 					<control type="image">
 						<posx>1</posx>
-						<posy>0</posy>
 						<width>191</width>
 						<height>160</height>
 						<bordertexture border="6">controls/folder-nf_light.png</bordertexture>
@@ -265,7 +256,6 @@
 				<focusedlayout height="186" width="193">
 					<control type="image">
 						<posx>1</posx>
-						<posy>0</posy>
 						<width>191</width>
 						<height>160</height>
 						<bordertexture border="6">buttons/folder-focus_light.png</bordertexture>
@@ -275,7 +265,6 @@
 					</control>
 					<control type="image">
 						<posx>1</posx>
-						<posy>0</posy>
 						<width>191</width>
 						<height>160</height>
 						<bordertexture border="6">controls/folder-nf_light.png</bordertexture>
@@ -361,7 +350,6 @@
 						<posx>140</posx>
 						<posy>0</posy>
 						<width>155</width>
-						<height>25</height>
 						<label fallback="416">$INFO[ListItem.Property(Addon.Creator)]</label>
 						<align>left</align>
 						<aligny>center</aligny>
@@ -386,14 +374,12 @@
 						<width>155</width>
 						<height>25</height>
 						<label fallback="416">$INFO[ListItem.Property(Addon.Version)]</label>
-						<align>left</align>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
 					</control>
 					<control type="label">
 						<description>Rating txt</description>
 						<posx>130</posx>
-						<posy>60</posy>
 						<width>120</width>
 						<height>25</height>
 						<label>$LOCALIZE[563]:</label>
@@ -405,7 +391,6 @@
 						<description>Rating value</description>
 						<posx>135</posx>
 						<posy>60</posy>
-						<width>150</width>
 						<height>30</height>
 						<aspectratio align="left">keep</aspectratio>
 						<texture fallback="LeftRating/rating0.png">$INFO[ListItem.Property(Addon.StarRating),LeftRating/]</texture>

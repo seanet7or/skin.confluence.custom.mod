@@ -15,8 +15,6 @@
 			<animation effect="slide" start="0,0" end="600,0" time="200" tween="quadratic" easing="out">WindowClose</animation>
 			<control type="image">
 				<description>media info background image</description>
-				<posx>0</posx>
-				<posy>0</posy>
 				<width>600</width>
 				<height>720</height>
 				<colordiffuse>BBFFFFFF</colordiffuse>
@@ -36,7 +34,6 @@
 			<control type="label">
 				<description>Artist label</description>
 				<posx>580</posx>
-				<posy>60</posy>
 				<width>550</width>
 				<height>30</height>
 				<font>font13_title</font>
@@ -104,7 +101,6 @@
 						<aligny>center</aligny>
 						<align>center</align>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<info>ListItem.Label</info>
 					</control>
 				</itemlayout>
@@ -117,7 +113,6 @@
 						<aligny>center</aligny>
 						<align>center</align>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>!Control.HasFocus(110)</visible>
 					</control>
@@ -129,7 +124,6 @@
 						<aligny>center</aligny>
 						<align>center</align>
 						<textcolor>selected</textcolor>
-						<align>left</align>
 						<label fallback="--">$INFO[ListItem.Label]</label>
 						<visible>Control.HasFocus(110)</visible>
 					</control>
@@ -179,7 +173,6 @@
 						<posy>0</posy>
 						<width>530</width>
 						<height>40</height>
-						<align>left</align>
 						<aligny>center</aligny>
 						<selectedcolor>selected</selectedcolor>
 						<info>ListItem.Label</info>
@@ -187,8 +180,6 @@
 				</itemlayout>
 				<focusedlayout height="40">
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
 						<width>550</width>
 						<height>41</height>
 						<visible>Control.HasFocus(120)</visible>
@@ -199,7 +190,6 @@
 						<posy>0</posy>
 						<width>530</width>
 						<height>40</height>
-						<align>left</align>
 						<aligny>center</aligny>
 						<selectedcolor>selected</selectedcolor>
 						<info>ListItem.Label</info>
