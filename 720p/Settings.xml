@@ -32,9 +32,9 @@
 				<width>260</width>
 				<height>541</height>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
-				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
+				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
 				<onleft condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onleft>
-				<onleft condition="!Skin.HasSetting(DisableHomeReturnButtons)">81</onleft>
+				<onleft condition="!Skin.HasSetting(DisableHomeReturnButtons)">83</onleft>
 				<onup>9000</onup>
 				<ondown>9000</ondown>
 				<pagecontrol>-</pagecontrol>
@@ -187,13 +187,13 @@
 		</control>
 		<include>CommonNowPlaying</include>
 		<control type="group">
-			<posx>120r</posx>
+			<posx>240r</posx>
 			<posy>55r</posy>
 			<animation effect="fade" time="250" condition="Window.Previous(Home)">WindowOpen</animation>
 			<animation effect="fade" time="250" condition="Window.Next(Home)">WindowClose</animation>
 			<visible>!Skin.HasSetting(DisableHomeReturnButtons)</visible>
 			<control type="button" id="80">
-				<description>Back push button</description>
+				<description>Volume Up button</description>
 				<posx>0</posx>
 				<posy>0</posy>
 				<width>45</width>
@@ -201,24 +201,81 @@
 				<label>1036</label>
 				<font>-</font>
 				<aligny>-</aligny>
-				<onclick>back</onclick>
-				<onleft>9000</onleft>
+				<onclick>$VAR[VolumeStepUp]</onclick>
+				<onleft condition="Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)">84</onleft>
+				<onleft condition="!Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)">9000</onleft>
 				<onright>81</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<visible>!Skin.HasSetting(DisableFloorVolumeButtons)</visible>
+				<visible>Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)</visible>
+			</control>
+			<control type="image">
+				<description>volume Icon</description>
+				<posx>5</posx>
+				<posy>5</posy>
+				<width>35</width>
+				<height>35</height>
+				<aspectratio>keep</aspectratio>
+				<texture>icon_volplus.png</texture>
+				<visible>!Skin.HasSetting(DisableFloorVolumeButtons)</visible>
+				<visible>Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)</visible>
+			</control>
+			<control type="button" id="81">
+				<description>Volume Down button</description>
+				<posx>55</posx>
+				<posy>0</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>1036</label>
+				<font>-</font>
+				<aligny>-</aligny>
+				<onclick>$VAR[VolumeStepDown]</onclick>
+				<onleft>80</onleft>
+				<onright>82</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<visible>!Skin.HasSetting(DisableFloorVolumeButtons)</visible>
+				<visible>Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)</visible>
+			</control>
+			<control type="image">
+				<description>Volume Icon</description>
+				<posx>60</posx>
+				<posy>5</posy>
+				<width>35</width>
+				<height>35</height>
+				<aspectratio>keep</aspectratio>
+				<texture>icon_volminus.png</texture>
+				<visible>!Skin.HasSetting(DisableFloorVolumeButtons)</visible>
+				<visible>Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)</visible>
+			</control>
+			<control type="button" id="82">
+				<description>Back push button</description>
+				<posx>110</posx>
+				<posy>0</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>1036</label>
+				<font>-</font>
+				<aligny>-</aligny>
+				<onclick>back</onclick>
+				<onleft>81</onleft>
+				<onright>83</onright>
 				<onup>9000</onup>
 				<ondown>9000</ondown>
 			</control>
 			<control type="image">
 				<description>Back Icon</description>
-				<posx>5</posx>
+				<posx>115</posx>
 				<posy>5</posy>
 				<width>35</width>
 				<height>35</height>
 				<aspectratio>keep</aspectratio>
 				<texture>icon_back.png</texture>
 			</control>
-			<control type="button" id="81">
+			<control type="button" id="83">
 				<description>Home push button</description>
-				<posx>55</posx>
+				<posx>165</posx>
 				<posy>0</posy>
 				<width>45</width>
 				<height>45</height>
@@ -226,14 +283,14 @@
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>ActivateWindow(home)</onclick>
-				<onleft>80</onleft>
+				<onleft>82</onleft>
 				<onright>9000</onright>
 				<onup>9000</onup>
 				<ondown>9000</ondown>
 			</control>
 			<control type="image">
 				<description>Home Icon</description>
-				<posx>60</posx>
+				<posx>170</posx>
 				<posy>5</posy>
 				<width>35</width>
 				<height>35</height>

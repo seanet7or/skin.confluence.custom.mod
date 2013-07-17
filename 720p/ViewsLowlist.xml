@@ -15,7 +15,7 @@
 				<viewtype label="$LOCALIZE[31035]">list</viewtype>
 				<pagecontrol>60</pagecontrol>
 				<scrolltime>200</scrolltime>
-				<visible>[Window.IsVisible(Videos) + !Container.Content(Episodes)] | SubString(Container.FolderPath,program.advanced.launcher)</visible>
+				<visible>Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows) | Container.Content(MusicVideos)</visible>
 				<visible>!Container.Content(LiveTV)</visible>
 				<itemlayout height="40" width="480">
 					<control type="label">
@@ -141,7 +141,7 @@
 				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>724</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
-				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
+				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
 			</control>

@@ -19,6 +19,7 @@
 	<include file="IncludesCDWall.xml" />
 	<include file="ViewsLogoVertical.xml" />
 	<include file="ViewsLowlist.xml" />
+	<include file="ViewsCoverFlow.xml" />
 	<constant name="FanartCrossfadeTime">500</constant>
 	<constant name="IconCrossfadeTime">400</constant>
 	<include name="ClearButtonChoice">
@@ -242,13 +243,13 @@
 	</include>
 	<include name="MainWindowMouseButtons">
 		<control type="group">
-			<posx>120r</posx>
+			<posx>240r</posx>
 			<posy>55r</posy>
 			<animation effect="fade" time="250" condition="Window.Previous(Home)">WindowOpen</animation>
 			<animation effect="fade" time="250" condition="Window.Next(Home)">WindowClose</animation>
 			<visible>!Skin.HasSetting(DisableHomeReturnButtons)</visible>
 			<control type="button" id="80">
-				<description>Back push button</description>
+				<description>Volume Up button</description>
 				<posx>0</posx>
 				<posy>0</posy>
 				<width>45</width>
@@ -256,24 +257,81 @@
 				<label>1036</label>
 				<font>-</font>
 				<aligny>-</aligny>
-				<onclick>back</onclick>
-				<onleft>50</onleft>
+				<onclick>$VAR[VolumeStepUp]</onclick>
+				<onleft condition="Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)">84</onleft>
+				<onleft condition="!Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)">50</onleft>
 				<onright>81</onright>
+				<onup>50</onup>
+				<ondown>50</ondown>
+				<visible>!Skin.HasSetting(DisableFloorVolumeButtons)</visible>
+				<visible>Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)</visible>
+			</control>
+			<control type="image">
+				<description>volume Icon</description>
+				<posx>5</posx>
+				<posy>5</posy>
+				<width>35</width>
+				<height>35</height>
+				<aspectratio>keep</aspectratio>
+				<texture>icon_volplus.png</texture>
+				<visible>!Skin.HasSetting(DisableFloorVolumeButtons)</visible>
+				<visible>Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)</visible>
+			</control>
+			<control type="button" id="81">
+				<description>Volume Down button</description>
+				<posx>55</posx>
+				<posy>0</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>1036</label>
+				<font>-</font>
+				<aligny>-</aligny>
+				<onclick>$VAR[VolumeStepDown]</onclick>
+				<onleft>80</onleft>
+				<onright>82</onright>
+				<onup>50</onup>
+				<ondown>50</ondown>
+				<visible>!Skin.HasSetting(DisableFloorVolumeButtons)</visible>
+				<visible>Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)</visible>
+			</control>
+			<control type="image">
+				<description>Volume Icon</description>
+				<posx>60</posx>
+				<posy>5</posy>
+				<width>35</width>
+				<height>35</height>
+				<aspectratio>keep</aspectratio>
+				<texture>icon_volminus.png</texture>
+				<visible>!Skin.HasSetting(DisableFloorVolumeButtons)</visible>
+				<visible>Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)</visible>
+			</control>
+			<control type="button" id="82">
+				<description>Back push button</description>
+				<posx>110</posx>
+				<posy>0</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>1036</label>
+				<font>-</font>
+				<aligny>-</aligny>
+				<onclick>back</onclick>
+				<onleft>81</onleft>
+				<onright>83</onright>
 				<onup>50</onup>
 				<ondown>50</ondown>
 			</control>
 			<control type="image">
 				<description>Back Icon</description>
-				<posx>5</posx>
+				<posx>115</posx>
 				<posy>5</posy>
 				<width>35</width>
 				<height>35</height>
 				<aspectratio>keep</aspectratio>
 				<texture>icon_back.png</texture>
 			</control>
-			<control type="button" id="81">
+			<control type="button" id="83">
 				<description>Home push button</description>
-				<posx>55</posx>
+				<posx>165</posx>
 				<posy>0</posy>
 				<width>45</width>
 				<height>45</height>
@@ -281,14 +339,14 @@
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>ActivateWindow(home)</onclick>
-				<onleft>80</onleft>
-				<onright>9000</onright>
+				<onleft>82</onleft>
+				<onright>50</onright>
 				<onup>50</onup>
 				<ondown>50</ondown>
 			</control>
 			<control type="image">
 				<description>Home Icon</description>
-				<posx>60</posx>
+				<posx>170</posx>
 				<posy>5</posy>
 				<width>35</width>
 				<height>35</height>
@@ -299,13 +357,17 @@
 	</include>
 	<include name="CommonNowPlaying">
 		<control type="group">
+			<posx>85r</posx>
+			<posy>55r</posy>		
 			<visible>Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)</visible>
+			<animation effect="slide" start="0,0" end="-110,0" time="0" condition="!Skin.HasSetting(DisableHomeReturnButtons)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="-110,0" time="0" condition="!Skin.HasSetting(DisableFloorVolumeButtons) + !Skin.HasSetting(DisableHomeReturnButtons)">Conditional</animation>
 			<animation effect="fade" time="250" condition="Window.Previous(Home)">WindowOpen</animation>
 			<animation effect="fade" time="250" condition="Window.Next(Home)">WindowClose</animation>
-			<control type="button">
+			<control type="button" id="84">
 				<description>push button</description>
-				<posx>30</posx>
-				<posy>55r</posy>
+				<posx>10</posx>
+				<posy>0</posy>
 				<width>45</width>
 				<height>45</height>
 				<label>31003</label>
@@ -313,85 +375,86 @@
 				<aligny>-</aligny>
 				<onclick>ActivateWindow(PlayerControls)</onclick>
 				<onleft>50</onleft>
-				<onright>50</onright>
+				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">50</onright>
+				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
 				<onup>50</onup>
 				<ondown>50</ondown>
 			</control>
 			<control type="image">
 				<description>Player Icon</description>
-				<posx>35</posx>
-				<posy>50r</posy>
+				<posx>15</posx>
+				<posy>5</posy>
 				<width>35</width>
 				<height>35</height>
 				<aspectratio>keep</aspectratio>
 				<texture>icon_player.png</texture>
 			</control>
 			<control type="label">
-				<posx>85</posx>
-				<posy>53r</posy>
+				<posx>0</posx>
+				<posy>2</posy>
 				<width>700</width>
 				<height>20</height>
 				<label>$INFO[MusicPlayer.Title]$INFO[VideoPlayer.Title] - ([COLOR=blue]$INFO[Player.Time] / $INFO[Player.Duration,][/COLOR])</label>
-				<align>left</align>
+				<align>right</align>
 				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey</textcolor>
 			</control>
 			<control type="label">
-				<posx>85</posx>
-				<posy>32r</posy>
+				<posx>0</posx>
+				<posy>23</posy>
 				<width>700</width>
 				<height>20</height>
 				<label>$INFO[MusicPlayer.Artist]$INFO[MusicPlayer.Album, - ]</label>
-				<align>left</align>
+				<align>right</align>
 				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey</textcolor>
 				<visible>Player.HasAudio</visible>
 			</control>
 			<control type="label">
-				<posx>85</posx>
-				<posy>30r</posy>
+				<posx>0</posx>
+				<posy>25</posy>
 				<width>700</width>
 				<height>20</height>
 				<label>$INFO[VideoPlayer.Studio]</label>
-				<align>left</align>
+				<align>right</align>
 				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey</textcolor>
 				<visible>Player.HasVideo + VideoPlayer.Content(Movies)</visible>
 			</control>
 			<control type="label">
-				<posx>85</posx>
-				<posy>30r</posy>
+				<posx>0</posx>
+				<posy>25</posy>
 				<width>700</width>
 				<height>20</height>
 				<label>$INFO[VideoPlayer.TVShowTitle]</label>
-				<align>left</align>
+				<align>right</align>
 				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey</textcolor>
 				<visible>Player.HasVideo + VideoPlayer.Content(Episodes)</visible>
 			</control>
 			<control type="label">
-				<posx>85</posx>
-				<posy>30r</posy>
+				<posx>0</posx>
+				<posy>25</posy>
 				<width>700</width>
 				<height>20</height>
 				<label>$INFO[VideoPlayer.Artist]</label>
-				<align>left</align>
+				<align>right</align>
 				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey</textcolor>
 				<visible>Player.HasVideo + VideoPlayer.Content(MusicVideos)</visible>
 			</control>
 			<control type="label">
-				<posx>85</posx>
-				<posy>30r</posy>
+				<posx>0</posx>
+				<posy>25</posy>
 				<width>700</width>
 				<height>20</height>
 				<label>$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.ChannelNumber, - ([COLOR=blue],[/COLOR])]</label>
-				<align>left</align>
+				<align>right</align>
 				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey</textcolor>
@@ -899,30 +962,6 @@
 		</control>
 	</include>
 	<include name="ScrollOffsetLabel">
-		<control type="group">
-			<visible>Container.Scrolling + [StringCompare(Container.SortMethod,$LOCALIZE[551]) | StringCompare(Container.SortMethod,$LOCALIZE[561]) | StringCompare(Container.SortMethod,$LOCALIZE[558]) | StringCompare(Container.SortMethod,$LOCALIZE[557]) | StringCompare(Container.SortMethod,$LOCALIZE[556])]</visible>
-			<animation effect="slide" start="0,0" end="0,-60" time="100">Visible</animation>
-			<animation effect="slide" start="0,-60" end="0,0" delay="400" time="100">Hidden</animation>
-			<posx>300r</posx>
-			<posy>720</posy>
-			<control type="image">
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>70</width>
-				<height>65</height>
-				<texture>dialogs/dialog-back_light.png</texture>
-			</control>
-			<control type="label">
-				<posx>5</posx>
-				<posy>0</posy>
-				<width>65</width>
-				<height>60</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label>$INFO[ListItem.SortLetter]</label>
-				<font>font30_title</font>
-			</control>
-		</control>
 	</include>
 	<include name="Clock">
 		<control type="label">

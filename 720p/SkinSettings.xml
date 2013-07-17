@@ -45,7 +45,7 @@
 				<width>260</width>
 				<height>481</height>
 				<onleft condition="Skin.HasSetting(DisableHomeReturnButtons)">9010</onleft>
-				<onleft condition="!Skin.HasSetting(DisableHomeReturnButtons)">81</onleft>
+				<onleft condition="!Skin.HasSetting(DisableHomeReturnButtons)">83</onleft>
 				<onright>9010</onright>
 				<onup>9000</onup>
 				<ondown>9000</ondown>
@@ -230,6 +230,27 @@
 					<control type="radiobutton" id="106">
 						<width>750</width>
 						<height>40</height>
+						<label>31675</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturenofocus>-</texturenofocus>
+						<onclick>Skin.ToggleSetting(DisableFloorVolumeButtons)</onclick>
+						<selected>!Skin.HasSetting(DisableFloorVolumeButtons)</selected>
+					</control>					
+					<control type="radiobutton" id="107">
+						<width>750</width>
+						<height>40</height>
+						<label>31677</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturenofocus>-</texturenofocus>
+						<onclick>Skin.ToggleSetting(SmallVolumeJump)</onclick>
+						<selected>!Skin.HasSetting(SmallVolumeJump)</selected>
+						<enable>!Skin.HasSetting(DisableFloorVolumeButtons)</enable>
+					</control>							
+					<control type="radiobutton" id="108">
+						<width>750</width>
+						<height>40</height>
 						<label>$LOCALIZE[31359] "$LOCALIZE[31316]"</label>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
@@ -237,7 +258,7 @@
 						<onclick>Skin.ToggleSetting(ParentDirLabel)</onclick>
 						<selected>!Skin.HasSetting(ParentDirLabel)</selected>
 					</control>
-					<control type="radiobutton" id="107">
+					<control type="radiobutton" id="109">
 						<width>750</width>
 						<height>40</height>
 						<label>31117</label>
@@ -247,7 +268,7 @@
 						<onclick>Skin.ToggleSetting(MediaShortDescription)</onclick>
 						<selected>Skin.HasSetting(MediaShortDescription)</selected>
 					</control>
-					<control type="radiobutton" id="109">
+					<control type="radiobutton" id="111">
 						<width>750</width>
 						<height>40</height>
 						<label>31119</label>
@@ -257,7 +278,7 @@
 						<onclick>Skin.ToggleSetting(HideBackGroundFanart)</onclick>
 						<selected>Skin.HasSetting(HideBackGroundFanart)</selected>
 					</control>
-					<control type="radiobutton" id="110">
+					<control type="radiobutton" id="112">
 						<width>750</width>
 						<height>40</height>
 						<label>31358</label>
@@ -267,7 +288,7 @@
 						<onclick>Skin.ToggleSetting(HideEpisodeThumb)</onclick>
 						<selected>!Skin.HasSetting(HideEpisodeThumb)</selected>
 					</control>
-					<control type="radiobutton" id="111">
+					<control type="radiobutton" id="113">
 						<width>750</width>
 						<height>40</height>
 						<label>31125</label>
@@ -277,7 +298,7 @@
 						<onclick>Skin.ToggleSetting(ShowBackgroundVis)</onclick>
 						<selected>!Skin.HasSetting(ShowBackgroundVis)</selected>
 					</control>
-					<control type="label" id="112">
+					<control type="label" id="114">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -286,7 +307,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="113">
+					<control type="radiobutton" id="115">
 						<description>enable video info</description>
 						<width>750</width>
 						<height>40</height>
@@ -297,7 +318,7 @@
 						<selected>!Skin.HasSetting(homepageVideoinfo)</selected>
 						<texturenofocus>-</texturenofocus>
 					</control>
-					<control type="radiobutton" id="114">
+					<control type="radiobutton" id="116">
 						<description>enable music info</description>
 						<width>750</width>
 						<height>40</height>
@@ -308,7 +329,7 @@
 						<selected>!Skin.HasSetting(homepageMusicinfo)</selected>
 						<texturenofocus>-</texturenofocus>
 					</control>
-					<control type="radiobutton" id="115">
+					<control type="radiobutton" id="117">
 						<description>enable weather info</description>
 						<width>750</width>
 						<height>40</height>
@@ -320,7 +341,7 @@
 						<texturenofocus>-</texturenofocus>
 						<visible>!IsEmpty(Weather.Plugin)</visible>
 					</control>
-					<control type="radiobutton" id="116">
+					<control type="radiobutton" id="118">
 						<description>Show System Stats</description>
 						<width>750</width>
 						<height>40</height>
@@ -331,7 +352,7 @@
 						<selected>!Skin.HasSetting(HideHomeStats)</selected>
 						<texturenofocus>-</texturenofocus>
 					</control>
-					<control type="radiobutton" id="117">
+					<control type="radiobutton" id="119">
 						<description>Raise Main Menu</description>
 						<width>750</width>
 						<height>40</height>
@@ -342,7 +363,7 @@
 						<selected>!Skin.HasSetting(RaiseMainMenuBar)</selected>
 						<texturenofocus>-</texturenofocus>
 					</control>
-					<control type="radiobutton" id="118">
+					<control type="radiobutton" id="120">
 						<description>Show Global Search</description>
 						<width>750</width>
 						<height>40</height>
@@ -354,7 +375,7 @@
 						<texturenofocus>-</texturenofocus>
 						<enable>System.HasAddon(script.globalsearch)</enable>
 					</control>
-					<control type="button" id="119">
+					<control type="button" id="121">
 						<width>750</width>
 						<height>40</height>
 						<label> - $LOCALIZE[31371]</label>
@@ -365,7 +386,7 @@
 						<enable>!Skin.HasSetting(HideHomeSearch)</enable>
 						<visible>System.HasAddon(script.globalsearch)</visible>
 					</control>
-					<control type="radiobutton" id="120">
+					<control type="radiobutton" id="122">
 						<width>750</width>
 						<height>40</height>
 						<label>31108</label>
@@ -375,7 +396,7 @@
 						<onclick>Skin.ToggleSetting(AutoHideSubMenu)</onclick>
 						<selected>!Skin.HasSetting(AutoHideSubMenu)</selected>
 					</control>
-					<control type="radiobutton" id="121">
+					<control type="radiobutton" id="123">
 						<width>750</width>
 						<height>40</height>
 						<label>31209</label>
@@ -385,7 +406,7 @@
 						<onclick>Skin.ToggleSetting(HideHomeAddonName)</onclick>
 						<selected>!Skin.HasSetting(HideHomeAddonName)</selected>
 					</control>
-					<control type="radiobutton" id="122">
+					<control type="radiobutton" id="124">
 						<width>750</width>
 						<height>40</height>
 						<label>31114</label>
@@ -395,7 +416,7 @@
 						<onclick>Skin.ToggleSetting(AutoHidePowerBtn)</onclick>
 						<selected>!Skin.HasSetting(AutoHidePowerBtn)</selected>
 					</control>
-					<control type="radiobutton" id="123">
+					<control type="radiobutton" id="125">
 						<width>750</width>
 						<height>40</height>
 						<label>31187</label>
@@ -406,7 +427,7 @@
 						<selected>!Skin.HasSetting(HideWidgetFanArt)</selected>
 						<enable>!Skin.HasSetting(HideBackGroundFanart)</enable>
 					</control>
-					<control type="radiobutton" id="124">
+					<control type="radiobutton" id="126">
 						<description>RainDrop Effect</description>
 						<width>750</width>
 						<height>40</height>
@@ -417,7 +438,7 @@
 						<selected>Skin.HasSetting(HideRainDropEffect)</selected>
 						<texturenofocus>-</texturenofocus>
 					</control>
-					<control type="label" id="125">
+					<control type="label" id="127">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -426,7 +447,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="126">
+					<control type="radiobutton" id="128">
 						<width>750</width>
 						<height>40</height>
 						<label>31069</label>
@@ -436,7 +457,7 @@
 						<onclick>Skin.ToggleSetting(HideVisualizationCDart)</onclick>
 						<selected>!Skin.HasSetting(HideVisualizationCDart)</selected>
 					</control>
-					<control type="radiobutton" id="127">
+					<control type="radiobutton" id="129">
 						<width>750</width>
 						<height>40</height>
 						<label>31089</label>
@@ -447,7 +468,7 @@
 						<selected>!Skin.HasSetting(HideTraditionalCDart)</selected>
 						<enable>!Skin.HasSetting(HideVisualizationCDart)</enable>
 					</control>
-					<control type="radiobutton" id="128">
+					<control type="radiobutton" id="130">
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31673]</label>
@@ -458,7 +479,7 @@
 						<onclick>Skin.SetBool(HideVisualizationFanart)</onclick>
 						<selected>Skin.HasSetting(ShowBackgroundAlbumWall)</selected>
 					</control>
-					<control type="radiobutton" id="129">
+					<control type="radiobutton" id="131">
 						<width>750</width>
 						<height>40</height>
 						<label>31063</label>
@@ -469,7 +490,7 @@
 						<onclick>Skin.Reset(ShowBackgroundAlbumWall)</onclick>
 						<selected>!Skin.HasSetting(HideVisualizationFanart)</selected>
 					</control>
-					<control type="radiobutton" id="130">
+					<control type="radiobutton" id="132">
 						<width>750</width>
 						<height>40</height>
 						<label>31067</label>
@@ -480,7 +501,7 @@
 						<selected>Skin.HasSetting(AnimateVizFanart)</selected>
 						<enable>!Skin.HasSetting(HideVisualizationFanart)</enable>
 					</control>
-					<control type="radiobutton" id="131">
+					<control type="radiobutton" id="133">
 						<width>750</width>
 						<height>40</height>
 						<label>31064</label>
@@ -491,7 +512,7 @@
 						<selected>Skin.HasSetting(AllowTransparentFanart)</selected>
 						<enable>!Skin.HasSetting(HideVisualizationFanart)</enable>
 					</control>
-					<control type="radiobutton" id="132">
+					<control type="radiobutton" id="134">
 						<width>750</width>
 						<height>40</height>
 						<label>31065</label>
@@ -503,7 +524,7 @@
 						<selected>Skin.HasSetting(AllowVizExtraFanart)</selected>
 						<enable>!Skin.HasSetting(HideVisualizationFanart)</enable>
 					</control>
-					<control type="radiobutton" id="133">
+					<control type="radiobutton" id="135">
 						<width>750</width>
 						<height>40</height>
 						<label>31066</label>
@@ -515,7 +536,7 @@
 						<selected>Skin.HasSetting(AllowSlideShowArt)</selected>
 						<enable>System.HasAddon(script.artistslideshow) + !Skin.HasSetting(HideVisualizationFanart)</enable>
 					</control>
-					<control type="radiobutton" id="134">
+					<control type="radiobutton" id="136">
 						<width>750</width>
 						<height>40</height>
 						<label>31070</label>
@@ -526,7 +547,7 @@
 						<selected>Skin.HasSetting(AllowSlideShowBio)</selected>
 						<enable>System.HasAddon(script.artistslideshow)</enable>
 					</control>
-					<control type="button" id="135">
+					<control type="button" id="137">
 						<width>750</width>
 						<height>40</height>
 						<label>- $LOCALIZE[31364]</label>
@@ -537,7 +558,7 @@
 						<enable>Skin.HasSetting(AllowSlideShowArt) | Skin.HasSetting(AllowSlideShowBio)</enable>
 						<visible>System.HasAddon(script.artistslideshow)</visible>
 					</control>
-					<control type="label" id="136">
+					<control type="label" id="138">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -546,7 +567,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="137">
+					<control type="radiobutton" id="139">
 						<width>750</width>
 						<height>40</height>
 						<label>31071</label>
@@ -556,7 +577,7 @@
 						<onclick>Skin.ToggleSetting(HideInfoStartOSD)</onclick>
 						<selected>!Skin.HasSetting(HideInfoStartOSD)</selected>
 					</control>
-					<control type="radiobutton" id="138">
+					<control type="radiobutton" id="140">
 						<width>750</width>
 						<height>40</height>
 						<label>31073</label>
@@ -566,7 +587,7 @@
 						<onclick>Skin.ToggleSetting(HidePauseInfo)</onclick>
 						<selected>!Skin.HasSetting(HidePauseInfo)</selected>
 					</control>
-					<control type="radiobutton" id="139">
+					<control type="radiobutton" id="141">
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31126]</label>
@@ -576,7 +597,7 @@
 						<onclick>Skin.ToggleSetting(OSDInfoLogo)</onclick>
 						<selected>Skin.HasSetting(OSDInfoLogo)</selected>
 					</control>
-					<control type="radiobutton" id="140">
+					<control type="radiobutton" id="142">
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31083]</label>
@@ -586,7 +607,7 @@
 						<onclick>Skin.ToggleSetting(HideSeekBarOSD)</onclick>
 						<selected>!Skin.HasSetting(HideSeekBarOSD)</selected>
 					</control>
-					<control type="label" id="141">
+					<control type="label" id="143">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -595,7 +616,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="142">
+					<control type="radiobutton" id="144">
 						<width>750</width>
 						<height>40</height>
 						<label>31365</label>
@@ -605,7 +626,7 @@
 						<onclick>Skin.ToggleSetting(HideNextSongsInfo)</onclick>
 						<selected>!Skin.HasSetting(HideNextSongsInfo)</selected>
 					</control>
-					<control type="button" id="143">
+					<control type="button" id="145">
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31111]</label>
@@ -617,7 +638,7 @@
 						<onclick condition="stringcompare(Container(9009).ListItem.Label,Default)">Skin.Reset(WatchStatusType)</onclick>
 						<onclick condition="!stringcompare(Container(9009).ListItem.Label,Default)">Skin.SetString(WatchStatusType,$INFO[Container(9009).ListItem.Label])</onclick>
 					</control>
-					<control type="radiobutton" id="144">
+					<control type="radiobutton" id="146">
 						<width>750</width>
 						<height>40</height>
 						<label>20189</label>
@@ -627,7 +648,7 @@
 						<onclick>Skin.ToggleSetting(AutoScroll)</onclick>
 						<selected>Skin.HasSetting(AutoScroll)</selected>
 					</control>
-					<control type="radiobutton" id="145">
+					<control type="radiobutton" id="147">
 						<width>750</width>
 						<height>40</height>
 						<label>31103</label>
@@ -637,7 +658,7 @@
 						<onclick>Skin.ToggleSetting(Show_SlideShow_Paused)</onclick>
 						<selected>!Skin.HasSetting(Show_SlideShow_Paused)</selected>
 					</control>
-					<control type="radiobutton" id="146">
+					<control type="radiobutton" id="148">
 						<width>750</width>
 						<height>40</height>
 						<label>31104</label>
@@ -647,7 +668,7 @@
 						<onclick>Skin.ToggleSetting(WindowedTrailer)</onclick>
 						<selected>Skin.HasSetting(WindowedTrailer)</selected>
 					</control>
-					<control type="button" id="147">
+					<control type="button" id="149">
 						<width>750</width>
 						<height>40</height>
 						<label>$LOCALIZE[31698]</label>
@@ -658,7 +679,7 @@
 						<onclick>Control.Move(9008,1)</onclick>
 						<onclick>Skin.SetString(MPAACountryCert,$INFO[Container(9008).ListItem.Label])</onclick>
 					</control>
-					<control type="label" id="148">
+					<control type="label" id="150">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -667,18 +688,18 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="group" id="149">
+					<control type="group" id="151">
 						<width>750</width>
 						<height>40</height>
-						<control type="grouplist" id="150">
+						<control type="grouplist" id="152">
 							<orientation>horizontal</orientation>
 							<width>750</width>
 							<height>40</height>
 							<itemgap>0</itemgap>
-							<onup>147</onup>
-							<ondown>158</ondown>
+							<onup>149</onup>
+							<ondown>160</ondown>
 							<align>left</align>
-							<control type="radiobutton" id="151">
+							<control type="radiobutton" id="153">
 								<description>Default</description>
 								<width>150</width>
 								<height>40</height>
@@ -689,7 +710,7 @@
 								<onclick>Skin.Reset(MediaPanelTrans)</onclick>
 								<selected>IsEmpty(Skin.String(MediaPanelTrans))</selected>
 							</control>
-							<control type="radiobutton" id="152">
+							<control type="radiobutton" id="154">
 								<description>Step 1</description>
 								<width>150</width>
 								<height>40</height>
@@ -700,7 +721,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,EEEEEEEE)</onclick>
 								<selected>stringcompare(Skin.String(MediaPanelTrans),EEEEEEEE)</selected>
 							</control>
-							<control type="radiobutton" id="153">
+							<control type="radiobutton" id="155">
 								<description>Step 2</description>
 								<width>150</width>
 								<height>40</height>
@@ -711,7 +732,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,DDDDDDDD)</onclick>
 								<selected>stringcompare(Skin.String(MediaPanelTrans),DDDDDDDD)</selected>
 							</control>
-							<control type="radiobutton" id="154">
+							<control type="radiobutton" id="156">
 								<description>Step 3</description>
 								<width>150</width>
 								<height>40</height>
@@ -722,7 +743,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,CCCCCCCC)</onclick>
 								<selected>stringcompare(Skin.String(MediaPanelTrans),CCCCCCCC)</selected>
 							</control>
-							<control type="radiobutton" id="155">
+							<control type="radiobutton" id="157">
 								<description>Step 4</description>
 								<width>150</width>
 								<height>40</height>
@@ -735,7 +756,7 @@
 							</control>
 						</control>
 					</control>
-					<control type="label" id="156">
+					<control type="label" id="158">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -744,7 +765,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="158">
+					<control type="radiobutton" id="160">
 						<width>750</width>
 						<height>40</height>
 						<label>21398</label>
@@ -754,7 +775,7 @@
 						<onclick>Skin.ToggleSetting(Use_Startup_Playlist)</onclick>
 						<selected>Skin.HasSetting(Use_Startup_Playlist)</selected>
 					</control>
-					<control type="button" id="159">
+					<control type="button" id="161">
 						<description>Startup Playlist Path</description>
 						<width>750</width>
 						<height>40</height>
@@ -777,7 +798,7 @@
 					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 					<onleft>9001</onleft>
 					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
-					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
+					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 					<visible>Container(9000).Hasfocus(1)</visible>
@@ -1474,7 +1495,7 @@
 					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 					<onleft>9002</onleft>
 					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
-					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
+					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 					<visible>Container(9000).Hasfocus(2)</visible>
@@ -2422,7 +2443,7 @@
 					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 					<onleft>9003</onleft>
 					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
-					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
+					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 					<visible>Container(9000).Hasfocus(3)</visible>
@@ -3192,7 +3213,7 @@
 					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 					<onleft>9004</onleft>
 					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
-					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
+					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 					<visible>Container(9000).Hasfocus(4)</visible>
@@ -3213,7 +3234,7 @@
 						<onclick>Skin.ToggleSetting(GlobalBackground)</onclick>
 						<onleft>9000</onleft>
 						<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
-						<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
+						<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
 						<onup>505</onup>
 						<ondown>504</ondown>
 						<selected>Skin.HasSetting(GlobalBackground)</selected>
@@ -3247,7 +3268,7 @@
 						<onclick>Control.Move(9005,-1)</onclick>
 						<onleft>504</onleft>
 						<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
-						<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
+						<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
 						<onup>506</onup>
 						<ondown>500</ondown>
 					</control>
@@ -5196,7 +5217,7 @@
 					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 					<onleft>9006</onleft>
 					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
-					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">80</onright>
+					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 					<visible>Container(9000).Hasfocus(6)</visible>
@@ -5205,13 +5226,13 @@
 		</control>
 		<include>CommonNowPlaying</include>
 		<control type="group">
-			<posx>120r</posx>
+			<posx>240r</posx>
 			<posy>55r</posy>
 			<animation effect="fade" time="250" condition="Window.Previous(Home)">WindowOpen</animation>
 			<animation effect="fade" time="250" condition="Window.Next(Home)">WindowClose</animation>
 			<visible>!Skin.HasSetting(DisableHomeReturnButtons)</visible>
 			<control type="button" id="80">
-				<description>Back push button</description>
+				<description>Volume Up button</description>
 				<posx>0</posx>
 				<posy>0</posy>
 				<width>45</width>
@@ -5219,24 +5240,81 @@
 				<label>1036</label>
 				<font>-</font>
 				<aligny>-</aligny>
-				<onclick>back</onclick>
-				<onleft>9010</onleft>
+				<onclick>$VAR[VolumeStepUp]</onclick>
+				<onleft condition="Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)">84</onleft>
+				<onleft condition="!Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)">9010</onleft>
 				<onright>81</onright>
+				<onup>9010</onup>
+				<ondown>9010</ondown>
+				<visible>!Skin.HasSetting(DisableFloorVolumeButtons)</visible>
+				<visible>Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)</visible>
+			</control>
+			<control type="image">
+				<description>volume Icon</description>
+				<posx>5</posx>
+				<posy>5</posy>
+				<width>35</width>
+				<height>35</height>
+				<aspectratio>keep</aspectratio>
+				<texture>icon_volplus.png</texture>
+				<visible>!Skin.HasSetting(DisableFloorVolumeButtons)</visible>
+				<visible>Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)</visible>
+			</control>
+			<control type="button" id="81">
+				<description>Volume Down button</description>
+				<posx>55</posx>
+				<posy>0</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>1036</label>
+				<font>-</font>
+				<aligny>-</aligny>
+				<onclick>$VAR[VolumeStepDown]</onclick>
+				<onleft>80</onleft>
+				<onright>82</onright>
+				<onup>9010</onup>
+				<ondown>9010</ondown>
+				<visible>!Skin.HasSetting(DisableFloorVolumeButtons)</visible>
+				<visible>Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)</visible>
+			</control>
+			<control type="image">
+				<description>Volume Icon</description>
+				<posx>60</posx>
+				<posy>5</posy>
+				<width>35</width>
+				<height>35</height>
+				<aspectratio>keep</aspectratio>
+				<texture>icon_volminus.png</texture>
+				<visible>!Skin.HasSetting(DisableFloorVolumeButtons)</visible>
+				<visible>Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)</visible>
+			</control>
+			<control type="button" id="82">
+				<description>Back push button</description>
+				<posx>110</posx>
+				<posy>0</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>1036</label>
+				<font>-</font>
+				<aligny>-</aligny>
+				<onclick>back</onclick>
+				<onleft>81</onleft>
+				<onright>83</onright>
 				<onup>9010</onup>
 				<ondown>9010</ondown>
 			</control>
 			<control type="image">
 				<description>Back Icon</description>
-				<posx>5</posx>
+				<posx>115</posx>
 				<posy>5</posy>
 				<width>35</width>
 				<height>35</height>
 				<aspectratio>keep</aspectratio>
 				<texture>icon_back.png</texture>
 			</control>
-			<control type="button" id="81">
+			<control type="button" id="83">
 				<description>Home push button</description>
-				<posx>55</posx>
+				<posx>165</posx>
 				<posy>0</posy>
 				<width>45</width>
 				<height>45</height>
@@ -5244,14 +5322,14 @@
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>ActivateWindow(home)</onclick>
-				<onleft>80</onleft>
+				<onleft>82</onleft>
 				<onright>9000</onright>
 				<onup>9010</onup>
 				<ondown>9010</ondown>
 			</control>
 			<control type="image">
 				<description>Home Icon</description>
-				<posx>60</posx>
+				<posx>170</posx>
 				<posy>5</posy>
 				<width>35</width>
 				<height>35</height>

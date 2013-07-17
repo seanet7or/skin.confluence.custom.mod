@@ -781,7 +781,10 @@ printf "\nRemoving more page count info: "
 if grep -q 'HideNumItemsCount' 720p/* ; then		
 	XMLS=$(2>/dev/null grep 'HideNumItemsCount' -l 720p/*)
 	remove_control label '<visible>.Skin.HasSetting.HideNumItemsCount.</visible>' "$XMLS"
-	remove_controlid radiobutton '<selected>Skin.HasSetting.HideNumItemsCount.</selected>' "$XMLS"
+	XMLS=$(2>/dev/null grep '<selected>Skin.HasSetting.HideNumItemsCount.</selected>' -l 720p/*)
+	if ! [ -z "$XMLS" ] ; then 
+		remove_controlid radiobutton '<selected>Skin.HasSetting.HideNumItemsCount.</selected>' "$XMLS"
+	fi
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -1087,7 +1090,13 @@ if [ -f extras/Intro/XBMC-Intro-Video.mkv ] ; then
 	XMLS=$(2>/dev/null grep 'Skin.HasSetting.HideXBMCIntro.' -l 720p/*)
 	remove_controlid button '<visible>!Skin.HasSetting.HideXBMCIntro.</visible>' "$XMLS"
 	perlregex 720p/VideoFullScreen.xml 720p/VideoOSD.xml 's|\s*<visible>!StringCompare.VideoPlayer.Title,XBMC-Intro-Video.mkv.</visible>#||g'
-	perlregex 720p/SkinSettings.xml 's|<ondown>157</ondown>|<ondown>158</ondown>|g'
+	if grep -q '<ondown>157</ondown>' 720p/SkinSettings.xml ; then
+		perlregex 720p/SkinSettings.xml 's|<ondown>157</ondown>|<ondown>158</ondown>|g'
+	elif grep -q '<ondown>159</ondown>' 720p/SkinSettings.xml ; then
+		perlregex 720p/SkinSettings.xml 's|<ondown>159</ondown>|<ondown>160</ondown>|g'
+	elif grep -q '<ondown>158</ondown>' 720p/SkinSettings.xml ; then
+		perlregex 720p/SkinSettings.xml 's|<ondown>158</ondown>|<ondown>159</ondown>|g'
+	fi
 	rm -rf extras/Intro
 	printf "%sDONE!%s" $GREEN $RESET
 else
@@ -1769,6 +1778,15 @@ if [ -f media/StackNF.png ] ; then
 	perlregex $XMLS 's|>StackFO.png<|>'$BUTTON_FO'<|g'
 	check_and_remove media/StackNF.png
 	check_and_remove media/StackFO.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nReplacing some bordertextures: "
+if grep -q '>buttons/nf_light.png</bordertexture>' 720p/DialogAlbumInfo.xml ; then
+	R='s|<bordertexture[^>]*>buttons/nf_light.png</bordertexture>|<bordertexture>'$FOLDER_NF'</bordertexture>|g'
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET

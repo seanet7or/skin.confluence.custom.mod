@@ -23,7 +23,7 @@ HomeNowPlayingBack.png;0
 HomeSubEnd.png;0,2,0,2
 home/main-fo_light.png;0,2,0,2
 home/sub-[nfo]*_light.png;0,2,0,2
-icon[a-z-_]*.png;0
+icon[^\.]*.png;0
 \$INFO\[[A-Za-z0-9\.,/\(\)_]*\];0
 KeyboardEditArea_light.png;0
 lastfm/[a-z-]*.png;0

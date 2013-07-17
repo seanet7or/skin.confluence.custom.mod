@@ -3,7 +3,7 @@
 	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">50</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<views>50,501,730,724,732,508,515,504,503,500,51,505,550,551,560,511</views>
+	<views>50,501,730,724,555,732,508,515,504,503,500,51,505,550,551,560,511</views>
 	<onload condition="!Skin.HasSetting(HideTvTunes) + System.HasAddon(script.tvtunes)">XBMC.RunScript(script.tvtunes,backend=True&amp;loop=False)</onload>
 	<controls>
 		<include>CommonBackground</include>
@@ -26,6 +26,7 @@
 			<include>Lowlist</include>
 			<include>LogoVertical</include>
 			<include>FullWallView</include>
+			<include>Coverflowview</include>
 		</control>
 		<include>CommonNowPlaying</include>
 		<include>MainWindowMouseButtons</include>
@@ -41,7 +42,7 @@
 				<width>250</width>
 				<height>600</height>
 				<onleft condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onleft>
-				<onleft condition="!Skin.HasSetting(DisableHomeReturnButtons)">81</onleft>
+				<onleft condition="!Skin.HasSetting(DisableHomeReturnButtons)">83</onleft>
 				<onright>50</onright>
 				<onup>9000</onup>
 				<ondown>9000</ondown>
