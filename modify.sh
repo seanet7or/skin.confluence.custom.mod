@@ -1787,6 +1787,13 @@ step
 printf "\nReplacing some bordertextures: "
 if grep -q '>buttons/nf_light.png</bordertexture>' 720p/DialogAlbumInfo.xml ; then
 	R='s|<bordertexture[^>]*>buttons/nf_light.png</bordertexture>|<bordertexture>'$FOLDER_NF'</bordertexture>|g'
+	perlregex 720p/SettingsProfile.xml 720p/ViewsFileMode.xml 720p/ViewsVideoLibrary.xml 720p/ViewsMusicLibrary.xml 720p/ViewsAddonBrowser.xml "$R"
+	R='s|<bordertexture[^>]*>buttons/nf_light.png</bordertexture>|<bordertexture>-</bordertexture>|g'
+	perlregex 720p/IncludesHomeWidget.xml "$R"
+	R='s|\s*<bordertexture[^>]*>buttons/nf_light.png</bordertexture>\s*#'
+	R+='\s*<bordersize>[0-9]*</bordersize>\s*#'
+	R+='||g'
+	perlregex 720p/FileManager.xml 720p/DialogVideoInfo.xml 720p/DialogAlbumInfo.xml "$R"
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
