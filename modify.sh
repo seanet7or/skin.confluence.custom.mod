@@ -601,7 +601,7 @@ then
 		IFS=$'\n' ; for XPOS in $( grep -zo -P -I '<control type="scrollbar" id="[0-9]*">\n\s*<posx>[0-9]*</posx>\n\s*<posy>[0-9]*</posy>\n\s*<width>14</width>' "$FILE" \
 			| grep -o '<posx>[0-9]*</posx>' | grep -o '[0-9]*' )
 		do
-			NEWX=$((XPOS+6))
+			NEWX=$((XPOS+12))
 			#echo "'$XPOS' -> '$NEWX'"
 			R='s|(<control type="scrollbar" id="[0-9]*">#'
 			R+='\s*<posx)>'"$XPOS"'<(/posx>#\s*<posy>[0-9]*</posy>#'
@@ -1784,6 +1784,36 @@ else
 fi
 step
 
+printf "\nRemoving GenreFlagging: "
+if [ -d media/DefaultGenre ] ; then
+	XMLS=$(2>/dev/null grep '<visible>.Skin.HasSetting.View501GenreIcons.<.visible>' -l 720p/*)
+	remove_control 'grouplist' '<visible>\!Skin.HasSetting\(View501GenreIcons\)</visible>' "$XMLS"
+	remove_include 'MultiVideoGenreFlagging' 720p/IncludesGenreFlagging.xml
+	XMLS=$(2>/dev/null grep '<onclick>Skin.ToggleSetting.View501GenreIcons.</onclick>' -l 720p/*)
+	remove_controlid 'radiobutton' '<onclick>Skin.ToggleSetting.View501GenreIcons.</onclick>' "$XMLS"
+	XMLS=$(2>/dev/null grep 'condition=".Skin.HasSetting.View501GenreIcons.' -l 720p/*)
+	perlregex $XMLS 's|\s*<anima.*?condition=".Skin.HasSetting.View501GenreIcons.[^#]*#||g'
+	#XMLS=$(2>/dev/null grep '<visible>Skin.HasSetting.View501GenreIcons.</visible>' -l 720p/*)
+	#perlregex $XMLS 's|\s*<visible>Skin.HasSetting.View501GenreIcons.</visible>\s*#||g'
+	rm -rf media/DefaultGenre
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nReplacing DefaultCDArt: "
+if [ -f media/livecdcase/DefaultCDArt.png ] ; then
+	XMLS=$(2>/dev/null grep 'DefaultCDArt.png' -l 720p/*)
+	perlregex $XMLS 's|(fallback="livecdcase/DefaultCDAr)t.png"( diffuse="livecdcase/cddiffuse.png")|\1t\.jpg"\2|g'
+	perlregex $XMLS 's|(<width>170</width><height>175</height><include>CDArtSpinner</include><texture fallback="livecdcase/DefaultCDAr)t.png"|\1t_small.png"|g'
+	check_and_remove media/livecdcase/DefaultCDArt.png
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\nReplacing some bordertextures: "
 if grep -q '>buttons/nf_light.png</bordertexture>' 720p/DialogAlbumInfo.xml ; then
 	R='s|<bordertexture[^>]*>buttons/nf_light.png</bordertexture>|<bordertexture>'$FOLDER_NF'</bordertexture>|g'
@@ -1974,7 +2004,7 @@ if grep -I -q '<description>Date time txt</description>' 720p/ViewsPictures.xml 
 	perlregex 720p/IncludesBackgroundBuilding.xml "$R"
 	#move the scrollbar of the selection panel left
 	R='s|(\s*<control type="scrollbar" id="60">\s*#)'
-	R+='(\s*)<posx>50[06]</posx>|\1\2<posx>212</posx>|'
+	R+='(\s*)<posx>5[01][026]</posx>|\1\2<posx>212</posx>|'
 	perlregex 720p/ViewsPictures.xml "$R"
 	#resize and move the picture preview on the right
 	perlregex 720p/ViewsPictures.xml 's|<posx>570</posx>|<posx>282</posx>|'
