@@ -1577,6 +1577,27 @@ else
 fi
 step
 
+printf "\nChanging font colors for original 'grey3' strings: "
+if grep -q 'grey3' 720p/* ; then
+	XMLS=$(2>/dev/null grep 'disabledcolor>grey3<' -l 720p/*)
+	R="s|disabledcolor>grey3<|disabledcolor>textdisabled<|g"
+	perlregex $XMLS "$R"
+	XMLS=$(2>/dev/null grep 'textcolor>grey3<' -l 720p/*)
+	R="s|textcolor>grey3<|textcolor>textdisabled<|g"
+	perlregex $XMLS "$R"
+
+	if grep -q 'grey3' 720p/* ; then
+		printf "\nERROR: Grey3 color still used!"
+		printf "\n"
+		grep 'grey3' 720p/*
+		exit 4
+	fi
+	perlregex colors/defaults.xml "s|\s*<color name=\"grey3\"[^#]*#||g"
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
 #printf "\nChanging font colors for original 'selected color' strings: "
 #if false ; then #grep -q '>selected<' 720p/VisualisationPresetList.xml ; then
 #	XMLS=$(2>/dev/null grep '>selected<' -l 720p/*)
