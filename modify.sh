@@ -1517,6 +1517,41 @@ else
 fi
 step
 
+printf "\nChanging font colors for original 'grey' strings: "
+if grep -q '>grey<' 720p/* ; then
+	XMLS=$(2>/dev/null grep 'COLOR=grey\]' -l 720p/*)
+	perlregex $XMLS "s|COLOR=grey\]|COLOR=textnofocus\]|g"
+	CONTROLS='button
+label
+textbox'
+	XMLS=$(2>/dev/null grep 'textcolor>grey<' -l 720p/*)
+	for CONTROL in $CONTROLS ; do
+		R="s|( type=\"$CONTROL\"[^#]*#"				#1
+		R+="(\s*(?!<textcolor)<[a-z][^#]*#)*"
+		R+="\s*<textcolor)>grey<"
+		R+="|\1>textnofocus<|g"
+		perlregex $XMLS "$R" --nocheck
+	done
+	XMLS=$(2>/dev/null grep 'selectedcolor>grey<' -l 720p/*)
+	for CONTROL in $CONTROLS ; do
+		R="s|( type=\"$CONTROL\"[^#]*#"				#1
+		R+="(\s*(?!<selectedcolor)<[a-z][^#]*#)*"
+		R+="\s*<selectedcolor)>grey<"
+		R+="|\1>itemselected<|g"
+		perlregex $XMLS "$R" --nocheck
+	done
+	if grep -q 'grey[^0-9]' 720p/* ; then
+		printf "\nERROR: Grey color still used!"
+		printf "\n"
+		grep 'grey[^0-9]' 720p/*
+		exit 4
+	fi
+	perlregex colors/defaults.xml "s|\s*<color name=\"grey\"[^#]*#||g"
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
 #printf "\nChanging font colors for original 'grey' strings: "
 #if false ; then #grep -q '>grey<' 720p/ViewsPVR.xml ; then
 #
