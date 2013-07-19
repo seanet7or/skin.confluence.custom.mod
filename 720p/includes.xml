@@ -171,7 +171,7 @@
 		<align>center</align>
 		<aligny>center</aligny>
 		<font>font12</font>
-		<textcolor>grey2</textcolor>
+		<textcolor>textnofocus</textcolor>
 		<focusedcolor>white</focusedcolor>
 		<texturefocus border="0,2,0,2">home/sub-fo_light.png</texturefocus>
 		<texturenofocus border="0,2,0,2">home/sub-nf_light.png</texturenofocus>
@@ -484,7 +484,7 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font12_title</font>
-			<textcolor>grey2</textcolor>
+			<textcolor>textnofocus</textcolor>
 		</control>
 		<control type="fadelabel">
 			<description>Title label</description>
@@ -560,7 +560,7 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font12_title</font>
-			<textcolor>grey2</textcolor>
+			<textcolor>textnofocus</textcolor>
 			<visible>!videoplayer.content(episodes) + !videoplayer.content(musicvideos)</visible>
 		</control>
 		<control type="label">
@@ -1001,7 +1001,7 @@
 				<width>180</width>
 				<height>20</height>
 				<font>font12</font>
-				<textcolor>grey2</textcolor>
+				<textcolor>textnofocus</textcolor>
 				<align>center</align>
 				<aligny>center</aligny>
 				<label>$VAR[MainItemLabel]</label>
@@ -1045,7 +1045,7 @@
 				<width>180</width>
 				<height>20</height>
 				<font>font12</font>
-				<textcolor>grey2</textcolor>
+				<textcolor>textnofocus</textcolor>
 				<align>center</align>
 				<aligny>center</aligny>
 				<label>$VAR[MainItemLabel]</label>
@@ -1117,7 +1117,7 @@
 				<width>260</width>
 				<height>15</height>
 				<label>$INFO[ListItem.Property(ShortTime)]$INFO[ListItem.Property(NextDate), [COLOR=blue]-[/COLOR] ]</label>
-				<textcolor>grey2</textcolor>
+				<textcolor>textnofocus</textcolor>
 				<font>font12</font>
 				<align>center</align>
 			</control>
@@ -1128,7 +1128,7 @@
 				<width>260</width>
 				<height>15</height>
 				<label>$INFO[ListItem.Property(Runtime),, $LOCALIZE[12391]]$INFO[ListItem.Property(Network), [COLOR=blue]-[/COLOR] (,)]</label>
-				<textcolor>grey2</textcolor>
+				<textcolor>textnofocus</textcolor>
 				<font>font12</font>
 				<align>center</align>
 			</control>

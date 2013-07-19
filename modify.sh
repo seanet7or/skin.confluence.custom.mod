@@ -1552,55 +1552,30 @@ else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
-#printf "\nChanging font colors for original 'grey' strings: "
-#if false ; then #grep -q '>grey<' 720p/ViewsPVR.xml ; then
-#
-#	R='s|(<description>header label</description>#'
-#	R+='(\s*<[a-z][^#]*#)*?'
-#	R+='\s*<textcolor)>grey<'
-#	R+='|\1>heading2<|g'
-#	perlregex 720p/DialogPVRChannelsOSD.xml "$R"
-#	
-#	XMLS="720p/DialogPVRChannelsOSD.xml 720p/DialogSelect.xml 720p/FileManager.xml 720p/ViewsPVR.xml"
-#	for (( i=0 ; i<10 ; i++)) ; do
-#		R='s|(<(item\|channel)layout height="[0-9]*"(\| width="[0-9]*")>#'
-#		R+='(\s*<control type="[labelimage]*"[^#]*#'
-#		R+='(\s*<[a-z][^#]*#)*?'
-#		R+='\s*</control>#\|\s*<animation[^#]*#)*?'
-#		R+='\s*<control type="(label\|textbox)">#'
-#		R+='(\s*<[a-z][^#]*#)*?'
-#		R+='\s*<(textcolor\|selectedcolor))>grey<'
-#		R+='|\1>textnofocus<|g'
-#		perlregex $XMLS "$R" --nocheck
-#		
-#		R='s|(<(focused\|focusedchannel)layout height="[0-9]*"(\| width="[0-9]*")>#'
-#		R+='(\s*<control type="[labelimage]*"[^#]*#'
-#		R+='(\s*<[a-z][^#]*#)*?'
-#		R+='\s*</control>#\|\s*<animation[^#]*#)*?'
-#		R+='\s*<control type="(label\|textbox)">#'
-#		R+='(\s*<[a-z][^#]*#)*?'
-#		R+='\s*<(textcolor\|selectedcolor))>grey<'
-#		R+='|\1>textfocus<|g'
-#		perlregex $XMLS "$R" --nocheck
-#	done
-#	
-#	R='s|<textcolor>grey</textcolor>|<textcolor>textnofocus</textcolor>|g'
-#	XMLS="720p/includes.xml 720p/MusicVisualisation.xml 720p/script-XBMC_Lyrics-main.xml 720p/SkinSettings.xml"
-#	XMLS+=" 720p/VideoFullScreen.xml 720p/VideoOSD.xml"
-#	perlregex $XMLS "$R"
-#	
-#	if grep -q '>grey<' 720p/* ; then
-#		printf "\nERROR: Grey color still used!"
-#		printf "\n"
-#		grep '>grey<' 720p/*
-#		exit 4
-#	fi
-#
-#	printf "%sDONE!%s" $GREEN $RESET
-#else
-#	printf "%sSKIPPED.%s" $CYAN $RESET
-#fi
-#step
+
+printf "\nChanging font colors for original 'grey2' strings: "
+if grep -q 'grey2' 720p/* ; then
+	XMLS=$(2>/dev/null grep 'disabledcolor>grey2<' -l 720p/*)
+	R="s|disabledcolor>grey2<|disabledcolor>textdisabled<|g"
+	perlregex $XMLS "$R"
+	XMLS=$(2>/dev/null grep 'textcolor>grey2<' -l 720p/*)
+	R="s|textcolor>grey2<|textcolor>textnofocus<|g"
+	perlregex $XMLS "$R"
+	XMLS=$(2>/dev/null grep 'COLOR=grey2\]' -l 720p/*)
+	perlregex $XMLS "s|COLOR=grey2\]|COLOR=textnofocus\]|g"
+
+	if grep -q 'grey2' 720p/* ; then
+		printf "\nERROR: Grey2 color still used!"
+		printf "\n"
+		grep 'grey2' 720p/*
+		exit 4
+	fi
+	perlregex colors/defaults.xml "s|\s*<color name=\"grey2\"[^#]*#||g"
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
 
 #printf "\nChanging font colors for original 'selected color' strings: "
 #if false ; then #grep -q '>selected<' 720p/VisualisationPresetList.xml ; then

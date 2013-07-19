@@ -204,7 +204,7 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font10</font>
-							<textcolor>grey2</textcolor>
+							<textcolor>textnofocus</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -291,7 +291,7 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font10</font>
-							<textcolor>grey2</textcolor>
+							<textcolor>textnofocus</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -392,7 +392,7 @@
 							<width>180</width>
 							<height>20</height>
 							<font>font10</font>
-							<textcolor>grey2</textcolor>
+							<textcolor>textnofocus</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -444,7 +444,7 @@
 							<width>180</width>
 							<height>20</height>
 							<font>font10</font>
-							<textcolor>grey2</textcolor>
+							<textcolor>textnofocus</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -822,7 +822,7 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font10</font>
-							<textcolor>grey2</textcolor>
+							<textcolor>textnofocus</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -909,7 +909,7 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font10</font>
-							<textcolor>grey2</textcolor>
+							<textcolor>textnofocus</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -1010,7 +1010,7 @@
 							<width>180</width>
 							<height>20</height>
 							<font>font10</font>
-							<textcolor>grey2</textcolor>
+							<textcolor>textnofocus</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -1062,7 +1062,7 @@
 							<width>180</width>
 							<height>20</height>
 							<font>font10</font>
-							<textcolor>grey2</textcolor>
+							<textcolor>textnofocus</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -1440,7 +1440,7 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font10</font>
-							<textcolor>grey2</textcolor>
+							<textcolor>textnofocus</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -1527,7 +1527,7 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font10</font>
-							<textcolor>grey2</textcolor>
+							<textcolor>textnofocus</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -1628,7 +1628,7 @@
 							<width>180</width>
 							<height>20</height>
 							<font>font10</font>
-							<textcolor>grey2</textcolor>
+							<textcolor>textnofocus</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -1680,7 +1680,7 @@
 							<width>180</width>
 							<height>20</height>
 							<font>font10</font>
-							<textcolor>grey2</textcolor>
+							<textcolor>textnofocus</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -2920,7 +2920,7 @@
 				<width>200</width>
 				<height>20</height>
 				<font>font10</font>
-				<textcolor>grey2</textcolor>
+				<textcolor>textnofocus</textcolor>
 				<selectedcolor>selected</selectedcolor>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -2998,7 +2998,7 @@
 				<width>200</width>
 				<height>20</height>
 				<font>font10</font>
-				<textcolor>grey2</textcolor>
+				<textcolor>textnofocus</textcolor>
 				<selectedcolor>selected</selectedcolor>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -6320,7 +6320,7 @@
 				<onclick>ActivateWindow(Weather)</onclick>
 				<icon>$INFO[Window(Weather).Property(Current.ConditionIcon)]</icon>
 				<thumb>$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</thumb>
-				<property name="Temperatures">[COLOR=grey2]$LOCALIZE[419] : [/COLOR]$INFO[Window(Weather).Property(Day0.HighTemp)]$INFO[System.TemperatureUnits]     [COLOR=grey2]$LOCALIZE[418] : [/COLOR]$INFO[Window(Weather).Property(Day0.LowTemp)]$INFO[System.TemperatureUnits]</property>
+				<property name="Temperatures">[COLOR=textnofocus]$LOCALIZE[419] : [/COLOR]$INFO[Window(Weather).Property(Day0.HighTemp)]$INFO[System.TemperatureUnits]     [COLOR=textnofocus]$LOCALIZE[418] : [/COLOR]$INFO[Window(Weather).Property(Day0.LowTemp)]$INFO[System.TemperatureUnits]</property>
 				<visible>!Skin.HasSetting(homepageWeatherinfo)</visible>
 			</item>
 			<item>
@@ -6329,7 +6329,7 @@
 				<onclick>ActivateWindow(Weather)</onclick>
 				<icon>$INFO[Window(Weather).Property(Day1.OutlookIcon)]</icon>
 				<thumb>$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Day1.FanartCode)]</thumb>
-				<property name="Temperatures">[COLOR=grey2]$LOCALIZE[419] : [/COLOR]$INFO[Window(Weather).Property(Day1.HighTemp)]$INFO[System.TemperatureUnits]     [COLOR=grey2]$LOCALIZE[418] : [/COLOR]$INFO[Window(Weather).Property(Day1.LowTemp)]$INFO[System.TemperatureUnits]</property>
+				<property name="Temperatures">[COLOR=textnofocus]$LOCALIZE[419] : [/COLOR]$INFO[Window(Weather).Property(Day1.HighTemp)]$INFO[System.TemperatureUnits]     [COLOR=textnofocus]$LOCALIZE[418] : [/COLOR]$INFO[Window(Weather).Property(Day1.LowTemp)]$INFO[System.TemperatureUnits]</property>
 			</item>
 			<item>
 				<label>$INFO[Window(Weather).Property(Day2.Title)]</label>
@@ -6337,7 +6337,7 @@
 				<onclick>ActivateWindow(Weather)</onclick>
 				<icon>$INFO[Window(Weather).Property(Day2.OutlookIcon)]</icon>
 				<thumb>$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Day2.FanartCode)]</thumb>
-				<property name="Temperatures">[COLOR=grey2]$LOCALIZE[419] : [/COLOR]$INFO[Window(Weather).Property(Day2.HighTemp)]$INFO[System.TemperatureUnits]     [COLOR=grey2]$LOCALIZE[418] : [/COLOR]$INFO[Window(Weather).Property(Day2.LowTemp)]$INFO[System.TemperatureUnits]</property>
+				<property name="Temperatures">[COLOR=textnofocus]$LOCALIZE[419] : [/COLOR]$INFO[Window(Weather).Property(Day2.HighTemp)]$INFO[System.TemperatureUnits]     [COLOR=textnofocus]$LOCALIZE[418] : [/COLOR]$INFO[Window(Weather).Property(Day2.LowTemp)]$INFO[System.TemperatureUnits]</property>
 			</item>
 			<item>
 				<label>$INFO[Window(Weather).Property(Day3.Title)]</label>
@@ -6345,7 +6345,7 @@
 				<onclick>ActivateWindow(Weather)</onclick>
 				<icon>$INFO[Window(Weather).Property(Day3.OutlookIcon)]</icon>
 				<thumb>$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Day3.FanartCode)]</thumb>
-				<property name="Temperatures">[COLOR=grey2]$LOCALIZE[419] : [/COLOR]$INFO[Window(Weather).Property(Day3.HighTemp)]$INFO[System.TemperatureUnits]     [COLOR=grey2]$LOCALIZE[418] : [/COLOR]$INFO[Window(Weather).Property(Day3.LowTemp)]$INFO[System.TemperatureUnits]</property>
+				<property name="Temperatures">[COLOR=textnofocus]$LOCALIZE[419] : [/COLOR]$INFO[Window(Weather).Property(Day3.HighTemp)]$INFO[System.TemperatureUnits]     [COLOR=textnofocus]$LOCALIZE[418] : [/COLOR]$INFO[Window(Weather).Property(Day3.LowTemp)]$INFO[System.TemperatureUnits]</property>
 			</item>
 			<item>
 				<label>$INFO[Window(Weather).Property(Day4.Title)]</label>
@@ -6353,7 +6353,7 @@
 				<onclick>ActivateWindow(Weather)</onclick>
 				<icon>$INFO[Window(Weather).Property(Day4.OutlookIcon)]</icon>
 				<thumb>$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Day4.FanartCode)]</thumb>
-				<property name="Temperatures">[COLOR=grey2]$LOCALIZE[419] : [/COLOR]$INFO[Window(Weather).Property(Day4.HighTemp)]$INFO[System.TemperatureUnits]     [COLOR=grey2]$LOCALIZE[418] : [/COLOR]$INFO[Window(Weather).Property(Day4.LowTemp)]$INFO[System.TemperatureUnits]</property>
+				<property name="Temperatures">[COLOR=textnofocus]$LOCALIZE[419] : [/COLOR]$INFO[Window(Weather).Property(Day4.HighTemp)]$INFO[System.TemperatureUnits]     [COLOR=textnofocus]$LOCALIZE[418] : [/COLOR]$INFO[Window(Weather).Property(Day4.LowTemp)]$INFO[System.TemperatureUnits]</property>
 				<visible>Skin.HasSetting(homepageWeatherinfo)</visible>
 			</item>
 		</content>
