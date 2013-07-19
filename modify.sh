@@ -1598,6 +1598,25 @@ else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
+
+printf "\nChanging font colors for original 'black' strings: "
+if grep -q 'black' 720p/* ; then
+	XMLS=$(2>/dev/null grep '<focusedcolor>black</focusedcolor>' -l 720p/*)
+	R="s|<focusedcolor>black</focusedcolor>|<focusedcolor>textfocus</focusedcolor>|g"
+	perlregex $XMLS "$R"
+
+	if grep -q 'black' 720p/* ; then
+		printf "\nERROR: Black color still used!"
+		printf "\n"
+		grep 'black' 720p/*
+		exit 4
+	fi
+	perlregex colors/defaults.xml "s|\s*<color name=\"black\"[^#]*#||g"
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
 #printf "\nChanging font colors for original 'selected color' strings: "
 #if false ; then #grep -q '>selected<' 720p/VisualisationPresetList.xml ; then
 #	XMLS=$(2>/dev/null grep '>selected<' -l 720p/*)
