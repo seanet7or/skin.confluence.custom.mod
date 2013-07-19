@@ -56,6 +56,8 @@
 				<height>25</height>
 				<width>1000</width>
 				<label>$INFO[MusicPlayer.Artist,, - ]$INFO[MusicPlayer.Album]$INFO[musicplayer.discnumber, - $LOCALIZE[427]:]</label>
+				<align>left</align>
+				<aligny>center</aligny>
 				<font>font12</font>
 			</control>
 			<control type="label">
@@ -65,6 +67,8 @@
 				<height>30</height>
 				<width>1000</width>
 				<label>$INFO[MusicPlayer.Title]</label>
+				<align>left</align>
+				<aligny>center</aligny>
 				<font>font13_title</font>
 			</control>
 			<control type="label">
@@ -74,6 +78,8 @@
 				<height>30</height>
 				<width>300</width>
 				<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=blue] / [/COLOR]]</label>
+				<align>left</align>
+				<aligny>center</aligny>
 				<font>font12</font>
 			</control>
 		</control>
@@ -110,6 +116,7 @@
 					<width>400</width>
 					<label>$LOCALIZE[19157]</label>
 					<align>right</align>
+					<aligny>center</aligny>
 					<font>font12_title</font>
 					<textcolor>blue</textcolor>
 				</control>
@@ -121,6 +128,7 @@
 					<width>400</width>
 					<label>$INFO[PVR.NextRecordingDateTime,$LOCALIZE[19126] - ]</label>
 					<align>right</align>
+					<aligny>center</aligny>
 					<font>font12</font>
 					<scroll>true</scroll>
 				</control>
@@ -132,6 +140,7 @@
 					<width>800</width>
 					<label>$INFO[PVR.NextRecordingTitle][COLOR=grey]$INFO[PVR.NextRecordingChannel, - [COLOR=blue]([/COLOR],[COLOR=blue])[/COLOR]][/COLOR]</label>
 					<align>right</align>
+					<aligny>center</aligny>
 					<font>font12_title</font>
 					<scroll>true</scroll>
 				</control>
@@ -161,6 +170,7 @@
 					<width>400</width>
 					<label>$LOCALIZE[19158]</label>
 					<align>right</align>
+					<aligny>center</aligny>
 					<font>font12_title</font>
 					<textcolor>blue</textcolor>
 				</control>
@@ -172,6 +182,7 @@
 					<width>400</width>
 					<label>$INFO[PVR.NowRecordingDateTime,$LOCALIZE[19126] - ]</label>
 					<align>right</align>
+					<aligny>center</aligny>
 					<font>font12</font>
 					<scroll>true</scroll>
 				</control>
@@ -183,6 +194,7 @@
 					<width>800</width>
 					<label>$INFO[PVR.NowRecordingTitle][COLOR=grey]$INFO[PVR.NowRecordingChannel, - [COLOR=blue]([/COLOR],[COLOR=blue])[/COLOR]][/COLOR]</label>
 					<align>right</align>
+					<aligny>center</aligny>
 					<font>font12_title</font>
 					<scroll>true</scroll>
 				</control>
@@ -200,6 +212,7 @@
 					<description>Cover image</description>
 					<posx>20</posx>
 					<posy>45</posy>
+					<width>150</width>
 					<height>300</height>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<texture fallback="DefaultVideoCover.png">$INFO[Player.Art(thumb)]</texture>
@@ -211,6 +224,8 @@
 					<height>30</height>
 					<width>1000</width>
 					<label>$INFO[VideoPlayer.Title]</label>
+					<align>left</align>
+					<aligny>center</aligny>
 					<font>font13_title</font>
 				</control>
 				<control type="label">
@@ -220,6 +235,8 @@
 					<height>30</height>
 					<width>300</width>
 					<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=blue] / [/COLOR]]</label>
+					<align>left</align>
+					<aligny>center</aligny>
 					<font>font12</font>
 				</control>
 			</control>
@@ -241,6 +258,8 @@
 					<height>25</height>
 					<width>660</width>
 					<label>$INFO[VideoPlayer.ChannelName]</label>
+					<align>left</align>
+					<aligny>center</aligny>
 					<font>font12</font>
 				</control>
 				<control type="label">
@@ -250,6 +269,8 @@
 					<height>30</height>
 					<width>1000</width>
 					<label>$INFO[VideoPlayer.Title]</label>
+					<align>left</align>
+					<aligny>center</aligny>
 					<font>font13_title</font>
 				</control>
 				<control type="label">
@@ -259,6 +280,8 @@
 					<height>30</height>
 					<width>300</width>
 					<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=blue] / [/COLOR]]</label>
+					<align>left</align>
+					<aligny>center</aligny>
 					<font>font12</font>
 				</control>
 			</control>
@@ -280,6 +303,8 @@
 					<height>25</height>
 					<width>1000</width>
 					<label>$INFO[VideoPlayer.Studio]</label>
+					<align>left</align>
+					<aligny>center</aligny>
 					<font>font12</font>
 				</control>
 				<control type="label">
@@ -289,6 +314,8 @@
 					<height>30</height>
 					<width>1000</width>
 					<label>$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Year,[COLOR=grey] (,)[/COLOR]]</label>
+					<align>left</align>
+					<aligny>center</aligny>
 					<font>font13_title</font>
 				</control>
 				<control type="label">
@@ -298,6 +325,8 @@
 					<height>30</height>
 					<width>300</width>
 					<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=blue] / [/COLOR]]</label>
+					<align>left</align>
+					<aligny>center</aligny>
 					<font>font12</font>
 				</control>
 			</control>
@@ -319,6 +348,8 @@
 					<height>25</height>
 					<width>1000</width>
 					<label>$INFO[VideoPlayer.TVShowTitle] ($LOCALIZE[20373] $INFO[VideoPlayer.Season] - $LOCALIZE[20359] $INFO[VideoPlayer.episode])</label>
+					<align>left</align>
+					<aligny>center</aligny>
 					<font>font12</font>
 				</control>
 				<control type="label">
@@ -328,6 +359,8 @@
 					<height>30</height>
 					<width>1000</width>
 					<label>$INFO[VideoPlayer.Title]</label>
+					<align>left</align>
+					<aligny>center</aligny>
 					<font>font13_title</font>
 				</control>
 				<control type="label">
@@ -337,6 +370,8 @@
 					<height>30</height>
 					<width>300</width>
 					<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=blue] / [/COLOR]]</label>
+					<align>left</align>
+					<aligny>center</aligny>
 					<font>font12</font>
 				</control>
 			</control>
@@ -394,8 +429,9 @@
 				<width>145</width>
 				<textwidth>150</textwidth>
 				<textoffsetx>10</textoffsetx>
+				<align>left</align>
 				<font>font12</font>
-				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
 				<texturefocus flipy="true" border="0,2,0,2">home/sub-fo_light.png</texturefocus>
 				<texturenofocus flipy="true" border="0,2,0,2">home/sub-nf_light.png</texturenofocus>
 				<label>137</label>
@@ -467,8 +503,6 @@
 						<texturefocus>OSDPauseFO.png</texturefocus>
 						<texturenofocus>OSDPauseNF.png</texturenofocus>
 						<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-						<alttexturefocus>OSDPlayFO.png</alttexturefocus>
-						<alttexturenofocus>OSDPlayNF.png</alttexturenofocus>
 						<onleft>602</onleft>
 						<onright>604</onright>
 						<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
@@ -612,8 +646,6 @@
 						<texturefocus>OSDPauseFO.png</texturefocus>
 						<texturenofocus>OSDPauseNF.png</texturenofocus>
 						<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-						<alttexturefocus>OSDPlayFO.png</alttexturefocus>
-						<alttexturenofocus>OSDPlayNF.png</alttexturenofocus>
 						<onleft>603</onleft>
 						<onright>608</onright>
 						<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
@@ -651,8 +683,9 @@
 				<width>160</width>
 				<textwidth>150</textwidth>
 				<textoffsetx>10</textoffsetx>
+				<align>left</align>
 				<font>font12</font>
-				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
 				<texturefocus flipy="true" border="0,2,0,2">home/sub-fo_light.png</texturefocus>
 				<texturenofocus flipy="true" border="0,2,0,2">home/sub-nf_light.png</texturenofocus>
 				<label>31008</label>
@@ -673,6 +706,7 @@
 				<width>450</width>
 				<label>$VAR[InfoBarStats]</label>
 				<align>center</align>
+				<aligny>center</aligny>
 				<font>font12_title</font>
 				<visible>!Player.HasMedia + !Skin.HasSetting(HideHomeStats)</visible>
 			</control>
@@ -818,12 +852,12 @@
 				<itemlayout height="60" width="340">
 					<control type="label">
 						<posx>170</posx>
-						<posy>0</posy>
 						<width>340</width>
 						<height>60</height>
 						<font>font_MainMenu</font>
 						<textcolor>buttonnofocus</textcolor>
 						<align>center</align>
+						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 				</itemlayout>
@@ -837,12 +871,12 @@
 					</control>
 					<control type="label">
 						<posx>170</posx>
-						<posy>0</posy>
 						<width>330</width>
 						<height>60</height>
 						<font>font_MainMenu</font>
 						<textcolor>buttonfocus</textcolor>
 						<align>center</align>
+						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 				</focusedlayout>
@@ -1221,33 +1255,16 @@
 			<control type="rss">
 				<description>RSS feed</description>
 				<posx>100</posx>
-				<posy>0</posy>
-				<height>30</height>
 				<width>1145</width>
-				<font>font12</font>
-				<urlset>1</urlset>
-				<textcolor>blue</textcolor>
-				<titlecolor>blue</titlecolor>
-				<headlinecolor>white</headlinecolor>
 				<visible>!Skin.HasSetting(AutoHidePowerBtn) + [!Player.HasAudio | IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(HideNextSongsInfo)]</visible>
 			</control>
 			<control type="rss">
 				<description>RSS feed</description>
-				<posx>45</posx>
-				<posy>0</posy>
-				<height>30</height>
-				<width>1200</width>
-				<font>font12</font>
-				<urlset>1</urlset>
-				<textcolor>blue</textcolor>
-				<titlecolor>blue</titlecolor>
-				<headlinecolor>white</headlinecolor>
 				<visible>Skin.HasSetting(AutoHidePowerBtn) + [!Player.HasAudio | IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(HideNextSongsInfo)]</visible>
 			</control>
 			<control type="fadelabel" id="1">
 				<description>Next Five Songs</description>
 				<posx>100</posx>
-				<posy>0</posy>
 				<height>30</height>
 				<width>1145</width>
 				<scroll>true</scroll>
@@ -1261,7 +1278,6 @@
 			<control type="fadelabel" id="1">
 				<description>Next Five Songs</description>
 				<posx>45</posx>
-				<posy>0</posy>
 				<height>30</height>
 				<width>1200</width>
 				<scroll>true</scroll>
@@ -1351,17 +1367,24 @@
 				<align>left</align>
 				<itemgap>0</itemgap>
 				<control type="label">
+					<posy>60</posy>
+					<posx>80</posx>
 					<description>Temp label</description>
 					<width min="0" max="300">auto</width>
 					<height>30</height>
+					<align>left</align>
+					<aligny>center</aligny>
 					<font>font28_title</font>
 					<label>[B]$INFO[Window(Weather).Property(Current.Temperature)][/B]</label>
 				</control>
 				<control type="label">
+					<posy>60</posy>
+					<posx>80</posx>
 					<description>Temp Units</description>
 					<width min="0" max="100">auto</width>
 					<height>22</height>
 					<font>font10</font>
+					<aligny>center</aligny>
 					<label>$INFO[System.TemperatureUnits]</label>
 					<visible>!IsEmpty(Window(Weather).Property(Current.Temperature))</visible>
 				</control>

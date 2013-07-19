@@ -20,8 +20,10 @@
 				<posx>380r</posx>
 				<posy>35</posy>
 				<width>360</width>
+				<height>40</height>
 				<font>font13_title</font>
 				<align>center</align>
+				<aligny>center</aligny>
 				<textcolor>blue</textcolor>
 				<label>$LOCALIZE[31130]</label>
 			</control>
@@ -38,10 +40,11 @@
 				<scrolltime>200</scrolltime>
 				<itemlayout height="40">
 					<control type="label">
-						<posx>10</posx>
-						<posy>0</posy>
 						<width>340</width>
+						<height>40</height>
 						<font>font12_title</font>
+						<align>left</align>
+						<aligny>center</aligny>
 						<selectedcolor>selected</selectedcolor>
 						<info>ListItem.Label</info>
 					</control>
@@ -49,14 +52,16 @@
 				<focusedlayout height="40">
 					<control type="image">
 						<width>360</width>
+						<height>40</height>
 						<visible>Control.HasFocus(450)</visible>
 						<texture>buttons/fo_light.png</texture>
 					</control>
 					<control type="label">
-						<posx>10</posx>
-						<posy>0</posy>
 						<width>340</width>
+						<height>40</height>
 						<font>font12_title</font>
+						<align>left</align>
+						<aligny>center</aligny>
 						<selectedcolor>selected</selectedcolor>
 						<info>ListItem.Label</info>
 					</control>
@@ -66,15 +71,9 @@
 			<control type="scrollbar" id="60">
 				<posx>1262</posx>
 				<posy>95</posy>
-				<width>14</width>
 				<height>550</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>450</onleft>
 				<onright>450</onright>
-				<showonepage>false</showonepage>
-				<orientation>vertical</orientation>
 				<visible>Control.IsVisible(450)</visible>
 			</control>
 		</control>

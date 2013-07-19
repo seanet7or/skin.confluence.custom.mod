@@ -648,7 +648,7 @@ if [ -f media/separator2.png ] ; then
 	remove_control 'image' '<texture>separator2.png</texture>' "$XMLS"
 	#not all controls can be removed, some have an id and are used for navigation
 	XMLS=$(2>/dev/null grep 'separator2.png' -l 720p/*)
-	perlregex $XMLS 's|separator2.png|-|g'
+	perlregex $XMLS 's|separator2.png|'$BUTTON_NF'|g'
 	check_and_remove media/separator.png
 	check_and_remove media/separator2.png
 	printf "%sDONE!%s" $GREEN $RESET
@@ -1457,7 +1457,7 @@ if ! grep -q 'buttonfocus' colors/defaults.xml ; then
 	R+='\2<color name="heading1">ff0084ff</color>#'
 	R+='\2<color name="heading2">ff7fc1ff</color>#'
 	R+='\2<color name="textfocus">ffffffff</color>#'
-	R+='\2<color name="textnofocus">ffffb4b4b4</color>#'
+	R+='\2<color name="textnofocus">ffb4b4b4</color>#'
 	R+='\2<color name="textdisabled">ff505050</color>#'
 	R+='\2<color name="itemselected">ffeb9e17</color>#'
 	R+='\2|'
@@ -2215,14 +2215,6 @@ else
 fi
 step
 
-#printf "\nRemoving unused include MediaStudioFlagging: "
-#if grep -I -q 'MediaStudioFlagging' 720p/includes.xml ; then
-#	remove_include 'MediaStudioFlagging' 720p/includes.xml	
-#	printf "%sDONE!%s" $GREEN $RESET
-#else
-#	printf "%sSKIPPED.%s" $CYAN $RESET
-#fi
-#step
 
 source textures.sh
 OLDIFS=$IFS ; IFS=$'\n'
@@ -2259,115 +2251,243 @@ for T in $TEXLIST ; do
 done ; IFS=$OLDIFS
 step
 
-printf "\nSetting some default values per control: "
-if ! grep  -q -z -P '<default type="image">\n\s*<width>150</width>' 720p/defaults.xml ; then
-	R='s|(<control type="label"[^#]*#)(\s*)'
-	R+='((\s*(?!<aligny)<[a-z][^#]*#)*'
-	R+='\s*</control>#)'
-	R+='|\1\2<aligny>top</aligny>#\2\3|g'
-	XMLS=$(2>/dev/null grep '<control type="label"' -l 720p/*)
-	perlregex $XMLS "$R"
+#printf "\nRemoving unused include MediaStudioFlagging: "
+#if grep -I -q 'MediaStudioFlagging' 720p/includes.xml ; then
+#	remove_include 'MediaStudioFlagging' 720p/includes.xml	
+#	printf "%sDONE!%s" $GREEN $RESET
+#else
+#	printf "%sSKIPPED.%s" $CYAN $RESET
+#fi
+#step
+
+INVALID='button;altlabel
+textbox;scroll
+textbox;wrapmultiline'
+
+printf "\nRemoving invalid tags: "
+if grep -I -q '<wrapmultiline>true</wrapmultiline>' 720p/MusicOSD.xml ; then
+	IFS=$'\n' ; for T in $INVALID ; do
+		CONTROL=$(echo "$T" | cut -f1 -d';')
+		TAG=$(echo "$T" | cut -f2 -d';')
+		R="s|(<control type=\"$CONTROL\"[^#]*#"
+		R+="(\s*<(?!$TAG)[a-z][^#]*#)*)"
+		R+="\s*<$TAG[^#]*#"
+		R+="((\s*<(?!$TAG)[a-z][^#]*#)*"
+		R+="\s*</control>)"
+		R+="|\1\3|g"
+		XMLS=$(2>/dev/null grep "$TAG" -l 720p/*)
+		perlregex $XMLS "$R"
+	done
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
 
-printf "\nSetting default values: "
-if ! grep -q -z -P '<default type="image">\n\s*<width>150</width>' 720p/defaults.xml ; then
-	R='s|(<default type="image">\s*#)(\s*)'
-	R+='|\1\2<width>150</width>#'
-	R+='\2<height>40</height>#'
-	R+='\2|'
-	perlregex 720p/defaults.xml "$R"
-	R='s|(<default type="fadelabel">\s*#)(\s*)'
-	R+='|\1\2<width>400</width>#'
-	R+='\2<height>25</height>#'
-	R+='\2|'
-	perlregex 720p/defaults.xml "$R"
-	R='s|(<default type="label">\s*#)(\s*)'
-	R+='|\1\2<align>left</align>#'
-	R+='\2<aligny>center</aligny>#'
-	R+='\2<scroll>false</scroll>#'
-	R+='\2<width>200</width>#'
-	R+='\2<height>40</height>#'
-	R+='\2|'
-	perlregex 720p/defaults.xml "$R"
-	R='s|(<default type="progress">\s*#)(\s*)'
-	R+='|\1\2<height>16</height>#'
-	R+='|\2<width>280</width>#'
-	R+='\2|'
-	perlregex 720p/defaults.xml "$R"
-	R='s|(<default type="radiobutton">\s*#)(\s*)'
-	R+='|\1\2<focusedcolor>white</focusedcolor>#'
-	R+='|\2<align>left</align>#'
-	R+='\2|'
-	perlregex 720p/defaults.xml "$R"
-	R='s|(<default type="slider">\s*#)(\s*)'
-	R+='|\1\2<texturesliderbar>-</texturesliderbar>#'
-	R+='\2<textureslidernib>controls/slider/nib-nf_light.png</textureslidernib>#'
-	R+='\2<textureslidernibfocus>controls/slider/nib-fo_light.png</textureslidernibfocus>#'
-	R+='\2<width>720</width>#'
-	R+='\2<height>16</height>#'
-	R+='\2|'
-	perlregex 720p/defaults.xml "$R"
-	R='s|(<default type="sliderex">\s*#)(\s*)'
-	R+='|\1\2<focusedcolor>white</focusedcolor>#'
-	R+='\2|'
-	perlregex 720p/defaults.xml "$R"
-	R='s|(<default type="mover">\s*#)(\s*)'
-	R+='|\1\2<width>128</width>#'
-	R+='\2<height>128</height>#'
-	R+='\2|'
-	perlregex 720p/defaults.xml "$R"
+printf "\nRemoving double tags from defaults.xml: "
+TAGCOUNT=$(grep -a -z -Po "<default type=\"selectbutton\".*\n(\s*<[a-z].*\n)*\s*</default>" 720p/defaults.xml | grep "<font[ >]" | wc -l )
+if [ $TAGCOUNT -gt 1 ] ; then
+	DEFCONS=$(grep -o 'default type="[a-z]*"' 720p/defaults.xml | grep -o '"[a-z]*"' | tr -d '"' )
+	IFS=$'\n' ; for CONTROL in $DEFCONS ; do
+		for TAG in $(grep -a -z -Po "<default type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</default>" 720p/defaults.xml | grep -o "<[a-z]*[ >]" | grep -v "default" | sed 's|^\s*<||' | sed 's|[ >]$||g' ) ; do
+			TAGCOUNT=$(grep -a -z -Po "<default type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</default>" 720p/defaults.xml | grep "<$TAG[ >]" | wc -l )
+			while [ $TAGCOUNT -gt 1 ] ; do
+				R="s|(default type=\"$CONTROL\"[^#]*#"
+				R+="(\s*<(?!$TAG[ >])[a-z][^#]*#)*)"
+				R+="\s*<$TAG[ >][^#]*#"
+				R+="|\1|"
+				perlregex "$R" 720p/defaults.xml
+				CHANGED=true
+				TAGCOUNT=$(grep -a -z -Po "<default type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</default>" 720p/defaults.xml | grep "<$TAG[ >]" | wc -l )
+			done
+		done
+	done
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
 
-printf "\nScanning defaults.xml for default values: "
-DEFS=$(grep '<default type="' 720p/defaults.xml | sed 's|^\s*[^"]*"||g' | cut -f1 -d'"')
-printf "%sDONE!%s" $GREEN $RESET
-
-OLDIFS=$IFS ; IFS=$'\n'
-for DEF in $DEFS ; do
-	printf "\nRemoving default tags for control type '$DEF': "
-	if [ -z "$DEF" ] ; then 
-		printf "\nERROR: Found empty type."
-		exit 3
+CONTROLS=$(grep -o '<control type="[a-z]*"' 720p/* | grep -o '"[a-z]*"' | tr -d '"' | sort -u -r | egrep -v 'list|group|panel|epggrid|karvisualisation')
+for CONTROL in $CONTROLS ; do
+	printf "\nAdding '$CONTROL' to defaults.xml: "
+	if ! grep -q "<default type=\"$CONTROL\"" 720p/defaults.xml ; then
+		R='s|(<includes>#)(\s*)|\1\2<default type="'$CONTROL'">#\2<\/default>#\2|g'
+		perlregex 720p/defaults.xml "$R"					
+		printf "%sDONE!%s" $GREEN $RESET
+	else
+		printf "%sSKIPPED.%s" $CYAN $RESET
 	fi
-	DEFSTART=$(grep -n '<default type="'"$DEF"'">' 720p/defaults.xml | cut -f1 -d:)
-	debug "DEFSTART is '$DEFSTART'."
-	if [ ! -z "$DEFSTART" ] ; then
-		DEFSTOP=$(tail -n+"$DEFSTART" 720p/defaults.xml | grep -n '</default>' | head -n 1 | cut -f1 -d:)
-		STRUCT=$(tail -n+"$DEFSTART" 720p/defaults.xml | head -n "$DEFSTOP" | grep -v '<[/]*default' )
-		for L in $STRUCT ; do
-			if [ ! -z "$L" ] ; then
-				L=$(echo "$L" | sed 's|^\s*<|<|')
-				R='s|'
-				R+='(<control type="'"$DEF"'"[^#]*#(\s*<[a-z][^#]*#)*)\s*'"$L"'#'
-				R+='|\1|g'
-				XMLS2=""
-				XMLS=$(2>/dev/null grep "$L" -l 720p/*)
-				for X in $XMLS ; do
-					if grep -q '<control type="'"$DEF"'"' "$X" ; then
-						XMLS2="$XMLS2"$'\n'"$X"
-					fi
-				done
-				if [ ! -z "$XMLS2" ] ; then
-					perlregex "$R" --nocheck $XMLS2
+done
+step
+
+printf "\nScanning for tags to optimize: "
+OPTTAGS=""
+for CONTROL in $CONTROLS ; do
+	TAGS=$(grep -a -z -Po "<control type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</control>" 720p/* | grep -o "<[a-z]*[ >]" | grep -v "<control" | tr -d '<> ' | sort -u )
+	INCLUDES=$(grep -a -z -Po "<control type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</control>" 720p/* | grep "<include>" | sed 's|<[/]*include>||g' | sed 's|^\s*||' | sort -u )
+	INCLUDETAGS=""
+	for INCLUDE in $INCLUDES ; do
+		INCLUDETAGS="$INCLUDETAGS"$'\n'$(grep -a -z -Po "<include name=\"$INCLUDE\".*\n(\s*<[a-z].*\n)*\s*</include>" 720p/* | grep -o "<[a-z]*[ >]" | grep -v "<include" | tr -d '<>' | sort -u)
+	done
+	INCLUDETAGS=$(echo "$INCLUDETAGS" | sort -u)
+	for TAG in $TAGS ; do
+		if ! [[ *$INCLUDETAGS* = *$TAG* ]] ; then
+			OPTTAGS="$OPTTAGS"$'\n'"$CONTROL;$TAG"
+		fi
+	done
+done
+OPTTAGS=$(echo "$OPTTAGS" | egrep -v 'description|include|onup|ondown|onleft|onright|onclick')
+printf "%sDONE!%s" $GREEN $RESET
+step
+
+#printf "\nAdding xbmc defaults to defaults.xml: "
+#if false; then #! grep -q '<loop>yes</loop>' 720p/defaults.xml ; then
+#	XBMCDEFS='
+#;visible;<visible>true</visible>
+#;colordiffuse;<colordiffuse>FFFFFFFF</colordiffuse>
+#;enable;<enable>true</true>
+#;pulseonselect;<pulseonselect>true</pulseonselect>
+#edit;aligny;<aligny>top</aligny>
+#fadelabel;resetonlabelchange;<resetonlabelchange>true</resetonlabelchange>
+#fadelabel;scrollspeed;<scrollspeed>60</scrollspeed>
+#label;align;<align>left</align>
+#label;aligny;<aligny>top</aligny>
+#label;scroll;<scroll>false</scroll>
+#label;scrollspeed;<scrollspeed>60</scrollspeed>
+#label;scrollsuffix;<scrollsuffix>|</scrollsuffix>
+#multiimage;loop;<loop>yes</loop>
+#radiobutton;align;<align>left</align>
+#radiobutton;aligny;<aligny>top</aligny>
+#scrollbar;orientation;<orientation>vertical</orientation>
+#scrollbar;showonepage;<showonepage>true</showonepage>
+#selectbutton;align;<align>left</align>
+#selectbutton;aligny;<aligny>top</aligny>
+#'
+#	for CONTROL in $CONTROLS ; do
+#		for TAG in $(echo "$OPTTAGS" | grep "^$CONTROL;") ; do
+#			TAG=$(echo "$TAG" | cut -f2 -d';')
+#			DEFTAG=$(grep -a -z -Po "<default type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</default>" 720p/defaults.xml | grep "<$TAG[ >]" | sed 's|^\s*||')
+#			NUMMISSING=$(grep -a -z -Po "<control type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</control>" 720p/* | tr -d $'\n' | sed 's|</control>|\n|g' | grep -v "<$TAG[ >]" | wc -l)
+#			if [ -z "$DEFTAG" ] && [ $NUMMISSING -gt 0 ] ; then
+#				XBMCDEF=$(echo "$XBMCDEFS" | grep "^;$TAG;" | head -1 )
+#				if [ -z "$XBMCDEF" ] ; then
+#					XBMCDEF=$(echo "$XBMCDEFS" | grep "^$CONTROL;$TAG;" | head -1 )
+#				fi
+#				if ! [ -z "$XBMCDEF" ] ; then
+#					NEWDEFAULT=$(echo "$XBMCDEF" | cut -f3 -d';')
+#					R="s|(\s*)(<default type=\"$CONTROL\"[^#]*#)"		#1#2
+#					R+="|\1\2\1\1$NEWDEFAULT#|g"
+#					perlregex "$R" 720p/defaults.xml
+#				fi
+#			fi
+#		done
+#	done
+#	printf "%sDONE!%s" $GREEN $RESET
+#else
+#	printf "%sSKIPPED.%s" $CYAN $RESET
+#fi
+#step
+
+printf "\nOptimizing tags with existing default values: "
+for CONTROL in $CONTROLS ; do
+	printf "\nOptimizing '$CONTROL' control: "
+	CHANGED=false
+	for TAG in $(echo "$OPTTAGS" | grep "^$CONTROL;") ; do
+		TAG=$(echo "$TAG" | cut -f2 -d';')
+		DEFTAG=$(grep -a -z -Po "<default type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</default>" 720p/defaults.xml | grep "<$TAG[ >]" | sed 's|^\s*||')
+		if ! [ -z "$DEFTAG" ] ; then
+			NUMMISSING=$(grep -a -z -Po "<control type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</control>" 720p/* | tr -d $'\n' | sed 's|</control>|\n|g' | grep -v "<$TAG[ >]" | wc -l)
+			MOST=$(grep -a -z -Po "<control type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</control>" 720p/* | grep "<$TAG[ >]" | sed 's|^\s*||' | sort --batch-size=1021 | uniq -c | sort -n -r | head -1 | sed 's|^\s*||')
+			NUMMOST=$(echo "$MOST" | cut -f1 -d' ')
+			MOST=$(echo "$MOST" | sed 's|^[0-9]*\s*||')
+			if [ "$MOST" != "$DEFTAG" ] && [ $NUMMOST -gt $NUMMISSING ] ; then
+				if [ $NUMMISSING -gt 0 ] ; then
+					R="s|(<control type=\"$CONTROL\"[^#]*#)(\s*)"
+					R+="((\s*(?!<$TAG[ >])<[a-z][^#]*#)*"
+					R+="\s*</control>\s*#)"
+					R+="|\1\2$DEFTAG#\2\3|g"
+					XMLS=$(2>/dev/null grep "<control type=\"$CONTROL\"" -l 720p/*)
+					perlregex $XMLS "$R"
 				fi
+				NUMMISSING=$(grep -a -z -Po "<control type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</control>" 720p/* | tr -d $'\n' | sed 's|</control>|\n|g' | grep -v "<$TAG[ >]" | wc -l)
+				if [ $NUMMISSING -gt 0 ] ; then
+					echo "There should be no more controls with missing tag, but we found some!"
+					exit
+				fi
+				MOST=$(echo "$MOST" | sed 's/|/\\|/g')
+				R="s|(<default type=\"$CONTROL\"[^#]*#"		#1
+				R+="(\s*<[a-z][^#]*#)*?"					#2
+				R+="\s*)$DEFTAG(#"							#3
+				R+="(\s*<[a-z][^#]*#)*?"					#4
+				R+="\s*</default>#)"
+				R+="|\1$MOST\3|g"
+				perlregex 720p/defaults.xml "$R"
+				CHANGED=true
+			fi
+		fi
+	done
+	if $CHANGED ; then
+		printf "%sDONE!%s" $GREEN $RESET
+	else
+		printf "%sSKIPPED.%s" $CYAN $RESET
+	fi
+done
+step
+
+printf "\nOptimizing tags with missing default values: "
+for CONTROL in $CONTROLS ; do
+	printf "\nOptimizing '$CONTROL' control: "
+	CHANGED=false
+	for TAG in $(echo "$OPTTAGS" | grep "^$CONTROL;") ; do
+		TAG=$(echo "$TAG" | cut -f2 -d';')
+		DEFTAG=$(grep -a -z -Po "<default type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</default>" 720p/defaults.xml | grep "<$TAG[ >]" | sed 's|^\s*||')
+		if [ -z "$DEFTAG" ] ; then
+			NUMMISSING=$(grep -a -z -Po "<control type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</control>" 720p/* | tr -d $'\n' | sed 's|</control>|\n|g' | grep -v "<$TAG[ >]" | wc -l)
+			if [ $NUMMISSING == 0 ] ; then
+				MOST=$(grep -a -z -Po "<control type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</control>" 720p/* | grep "<$TAG[ >]" | sed 's|^\s*||' | sort --batch-size=1021 | uniq -c | sort -n -r | head -1 | sed 's|^\s*||')
+				NUMMOST=$(echo "$MOST" | cut -f1 -d' ')
+				MOST=$(echo "$MOST" | sed 's|^[0-9]*\s*||')
+				MOST=$(echo "$MOST" | sed 's/|/\\|/g')
+				R="s|(\s*)(<default type=\"$CONTROL\"[^#]*#)"		#1#2
+				R+="|\1\2\1\1$MOST#|g"
+				perlregex "$R" 720p/defaults.xml	
+				CHANGED=true
+			fi
+		fi
+	done
+	if $CHANGED ; then
+		printf "%sDONE!%s" $GREEN $RESET
+	else
+		printf "%sSKIPPED.%s" $CYAN $RESET
+	fi
+done
+step
+
+LINES=$(more 720p/* | wc -l)
+printf "\n$LINES lines in xmls."
+DEFCONS=$(grep -o 'default type="[a-z]*"' 720p/defaults.xml | grep -o '"[a-z]*"' | tr -d '"' )
+IFS=$'\n' ; for CONTROL in $DEFCONS ; do
+	printf "\nRemoving default tags for control type '$CONTROL': "
+	for TAG in $(grep -a -z -Po "<default type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</default>" 720p/defaults.xml | grep "<[a-z]*[ >]" | grep -v "default" | sed 's|^\s*||' | sed 's|\s*$||' ) ; do
+		#echo "'$CONTROL', '$TAG'"
+		R="s|(<control type=\"$CONTROL\"[^#]*#(\s*<[a-z][^#]*#)*)\s*$TAG#|\1|g"
+		XMLS2=""
+		XMLS=$(2>/dev/null grep "$TAG" -l 720p/*)
+		for X in $XMLS ; do
+			if grep -q "<control type=\"$CONTROL\"" "$X" ; then
+				XMLS2="$XMLS2"$'\n'"$X"
 			fi
 		done
-	else
-		printf "\nERROR: Unable to find start default structure for type '$DEF'."
-		exit 3		
-	fi
+		if [ ! -z "$XMLS2" ] ; then
+			perlregex "$R" $XMLS2 --nocheck
+		fi
+	done
 	printf "%sDONE!%s" $GREEN $RESET
 done
-IFS=$OLDIFS
 step
+LINES=$(more 720p/* | wc -l)
+printf "\n$LINES lines in xmls."
 
 printf "%s\nAll modifications are completed.\n%s" $GREEN $RESET
 

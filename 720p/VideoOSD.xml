@@ -12,7 +12,6 @@
 		<control type="group">
 			<control type="slider" id="87">
 				<description>Seek Slider</description>
-				<posx>430</posx>
 				<posy>81r</posy>
 				<onup>702</onup>
 				<ondown>26</ondown>
@@ -75,7 +74,6 @@
 				</control>
 				<control type="togglebutton" id="602">
 					<posx>135</posx>
-					<posy>0</posy>
 					<width>45</width>
 					<height>45</height>
 					<label>31351</label>
@@ -84,8 +82,6 @@
 					<texturefocus>OSDPauseFO.png</texturefocus>
 					<texturenofocus>OSDPauseNF.png</texturenofocus>
 					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-					<alttexturefocus>OSDPlayFO.png</alttexturefocus>
-					<alttexturenofocus>OSDPlayNF.png</alttexturenofocus>
 					<onleft>601</onleft>
 					<onright>603</onright>
 					<onup>608</onup>
@@ -177,7 +173,6 @@
 				</control>
 				<control type="togglebutton" id="602">
 					<posx>110</posx>
-					<posy>0</posy>
 					<width>55</width>
 					<height>55</height>
 					<label>31351</label>
@@ -186,8 +181,6 @@
 					<texturefocus>OSDPauseFO.png</texturefocus>
 					<texturenofocus>OSDPauseNF.png</texturenofocus>
 					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-					<alttexturefocus>OSDPlayFO.png</alttexturefocus>
-					<alttexturenofocus>OSDPlayNF.png</alttexturenofocus>
 					<onleft>601</onleft>
 					<onright>603</onright>
 					<onup>1000</onup>
@@ -201,7 +194,6 @@
 					<width>55</width>
 					<height>55</height>
 					<label>31351</label>
-					<altlabel>208</altlabel>
 					<font>-</font>
 					<texturefocus>OSDStopFO.png</texturefocus>
 					<texturenofocus>OSDStopNF.png</texturenofocus>
@@ -245,13 +237,14 @@
 				</control>
 				<control type="label" id="606">
 					<posx>330</posx>
-					<posy>0</posy>
 					<width>385</width>
 					<height>55</height>
 					<label>$INFO[VideoPlayer.NextTitle,$LOCALIZE[209]: ]</label>
 					<align>center</align>
+					<aligny>center</aligny>
 					<font>font12</font>
 					<textcolor>grey</textcolor>
+					<scroll>false</scroll>
 				</control>
 			</control>
 			<control type="group">
@@ -262,7 +255,6 @@
 				<visible>!VideoPlayer.Content(LiveTV)</visible>
 				<control type="togglebutton" id="701">
 					<posx>0</posx>
-					<posy>0</posy>
 					<width>45</width>
 					<height>45</height>
 					<label>31356</label>
@@ -398,7 +390,6 @@
 				</control>
 				<control type="togglebutton" id="704">
 					<posx>165</posx>
-					<posy>0</posy>
 					<width>55</width>
 					<height>55</height>
 					<label>31351</label>

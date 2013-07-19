@@ -4,8 +4,6 @@
 		<control type="multiimage">
 			<include>Dimensions_Fullscreen</include>
 			<imagepath background="true">$VAR[HomeMenuItemBackground]</imagepath>
-			<timeperimage>8000</timeperimage>
-			<randomize>true</randomize>
 			<fadetime>1000</fadetime>
 			<visible>Window.IsVisible(home) + !Skin.HasSetting(GlobalBackground)</visible>
 		</control>
@@ -13,8 +11,6 @@
 			<control type="multiimage">
 				<include>Dimensions_Fullscreen</include>
 				<imagepath background="true">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
-				<timeperimage>8000</timeperimage>
-				<randomize>true</randomize>
 				<fadetime>1000</fadetime>
 				<visible>Skin.HasSetting(GlobalWeatherFanart) + Window.IsVisible(home)</visible>
 			</control>
@@ -29,8 +25,6 @@
 				<description>User Set Global Background Image</description>
 				<include>Dimensions_Fullscreen</include>
 				<imagepath background="true">$INFO[Skin.String(CustomBackgroundPath)]</imagepath>
-				<timeperimage>8000</timeperimage>
-				<randomize>true</randomize>
 				<fadetime>1000</fadetime>
 				<visible>Window.IsVisible(home)</visible>
 				<visible>!Skin.HasSetting(GlobalWeatherFanart) + !IsEmpty(Skin.String(CustomBackgroundPath))</visible>
@@ -194,8 +188,6 @@
 				<include>Dimensions_Fullscreen</include>
 				<aspectratio>scale</aspectratio>
 				<imagepath background="true">$INFO[Container(8015).ListItem.Thumb]</imagepath>
-				<timeperimage>8000</timeperimage>
-				<randomize>true</randomize>
 				<fadetime>1000</fadetime>
 				<visible>Control.HasFocus(8015)</visible>
 			</control>
@@ -225,8 +217,6 @@
 		<control type="multiimage">
 			<include>Dimensions_Fullscreen</include>
 			<imagepath background="true">$VAR[CommonMenuItemBackground]</imagepath>
-			<timeperimage>8000</timeperimage>
-			<randomize>true</randomize>
 			<fadetime>1000</fadetime>
 			<visible>!Window.IsVisible(home)</visible>
 		</control>

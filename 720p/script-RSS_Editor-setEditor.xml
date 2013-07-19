@@ -23,6 +23,7 @@
 			<height>30</height>
 			<font>font13_title</font>
 			<align>center</align>
+			<aligny>center</aligny>
 			<textcolor>selected</textcolor>
 		</control>
 		<control type="label" id="3">
@@ -32,6 +33,7 @@
 			<width>760</width>
 			<height>30</height>
 			<align>center</align>
+			<aligny>center</aligny>
 			<font>font12</font>
 			<textcolor>blue</textcolor>
 		</control>
@@ -49,12 +51,13 @@
 			<itemlayout height="45">
 				<control type="image">
 					<width>520</width>
-					<texture>buttons/nf_light.png</texture>
+					<height>40</height>
 				</control>
 				<control type="label">
-					<posx>10</posx>
-					<posy>0</posy>
 					<width>500</width>
+					<height>40</height>
+					<align>left</align>
+					<aligny>center</aligny>
 					<textcolor>grey2</textcolor>
 					<selectedcolor>selected</selectedcolor>
 					<info>ListItem.Label</info>
@@ -63,18 +66,20 @@
 			<focusedlayout height="45">
 				<control type="image">
 					<width>520</width>
+					<height>40</height>
 					<visible>!Control.HasFocus(10)</visible>
-					<texture>buttons/nf_light.png</texture>
 				</control>
 				<control type="image">
 					<width>520</width>
+					<height>40</height>
 					<visible>Control.hasfocus(14) | Control.HasFocus(10)</visible>
 					<texture>buttons/fo_light.png</texture>
 				</control>
 				<control type="label">
-					<posx>10</posx>
-					<posy>0</posy>
 					<width>500</width>
+					<height>40</height>
+					<align>left</align>
+					<aligny>center</aligny>
 					<selectedcolor>selected</selectedcolor>
 					<info>ListItem.Label</info>
 				</control>
@@ -83,15 +88,9 @@
 		<control type="scrollbar" id="60">
 			<posx>564</posx>
 			<posy>105</posy>
-			<width>14</width>
 			<height>225</height>
-			<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-			<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-			<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 			<onleft>10</onleft>
 			<onright>9000</onright>
-			<showonepage>false</showonepage>
-			<orientation>vertical</orientation>
 		</control>
 		<control type="group" id="9000">
 			<posx>580</posx>

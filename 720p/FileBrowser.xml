@@ -32,6 +32,7 @@
 					<font>font13_title</font>
 					<label>1023</label>
 					<align>right</align>
+					<aligny>center</aligny>
 					<textcolor>selected</textcolor>
 				</control>
 				<control type="label" id="412">
@@ -42,6 +43,7 @@
 					<height>30</height>
 					<haspath>true</haspath>
 					<align>right</align>
+					<aligny>center</aligny>
 				</control>
 				<control type="grouplist" id="9000">
 					<posx>20</posx>
@@ -76,6 +78,7 @@
 						<label>119</label>
 					</control>
 					<control type="radiobutton" id="416">
+						<textcolor>white</textcolor>
 						<description>Flip Image button</description>
 						<height>48</height>
 						<align>center</align>
@@ -88,7 +91,6 @@
 					<posy>460</posy>
 					<width>420</width>
 					<height>210</height>
-					<texture>buttons/nf_light.png</texture>
 				</control>
 				<control type="image">
 					<posx>250</posx>
@@ -129,8 +131,10 @@
 						</control>
 						<control type="label">
 							<posx>55</posx>
-							<posy>0</posy>
 							<width>580</width>
+							<height>40</height>
+							<align>left</align>
+							<aligny>center</aligny>
 							<selectedcolor>green</selectedcolor>
 							<info>ListItem.Label</info>
 						</control>
@@ -151,8 +155,10 @@
 						</control>
 						<control type="label">
 							<posx>55</posx>
-							<posy>0</posy>
 							<width>580</width>
+							<height>40</height>
+							<align>left</align>
+							<aligny>center</aligny>
 							<selectedcolor>green</selectedcolor>
 							<info>ListItem.Label</info>
 						</control>
@@ -179,8 +185,10 @@
 						</control>
 						<control type="label">
 							<posx>55</posx>
-							<posy>0</posy>
 							<width>580</width>
+							<height>40</height>
+							<align>left</align>
+							<aligny>center</aligny>
 							<selectedcolor>green</selectedcolor>
 							<info>ListItem.Label</info>
 						</control>
@@ -201,8 +209,10 @@
 						</control>
 						<control type="label">
 							<posx>55</posx>
-							<posy>0</posy>
 							<width>580</width>
+							<height>40</height>
+							<align>left</align>
+							<aligny>center</aligny>
 							<selectedcolor>green</selectedcolor>
 							<info>ListItem.Label</info>
 						</control>
@@ -211,15 +221,9 @@
 				<control type="scrollbar" id="60">
 					<posx>662</posx>
 					<posy>120</posy>
-					<width>14</width>
 					<height>320</height>
-					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 					<onleft>450</onleft>
 					<onright>450</onright>
-					<showonepage>false</showonepage>
-					<orientation>vertical</orientation>
 				</control>
 			</control>
 		</control>

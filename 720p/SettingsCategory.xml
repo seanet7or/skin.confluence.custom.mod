@@ -54,6 +54,8 @@
 				<height>30</height>
 				<font>font16</font>
 				<label>$INFO[Control.GetLabel(2)] - $LOCALIZE[5]</label>
+				<align>left</align>
+				<aligny>center</aligny>
 			</control>
 			<control type="grouplist" id="5">
 				<description>control area</description>
@@ -70,17 +72,9 @@
 			</control>
 			<control type="scrollbar" id="60">
 				<posx>1072</posx>
-				<posy>60</posy>
-				<width>14</width>
-				<height>530</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>5</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">3</onright>
 				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
-				<showonepage>false</showonepage>
-				<orientation>vertical</orientation>
 			</control>
 		</control>
 		<include>BehindDialogFadeOut</include>
@@ -109,13 +103,11 @@
 			<posx>0</posx>
 			<posy>0</posy>
 			<height>40</height>
-			<textcolor>grey2</textcolor>
+			<focusedcolor>white</focusedcolor>
 			<texturenofocus border="0,2,0,2">-</texturenofocus>
 		</control>
 		<control type="spincontrolex" id="9">
 			<description>Default SpinControlex</description>
-			<posx>0</posx>
-			<posy>0</posy>
 			<height>40</height>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>
@@ -126,10 +118,8 @@
 			<height>2</height>
 		</control>
 		<control type="label" id="2">
-			<aligny>top</aligny>
 			<description>Fake Label so we can pass it value down to the one below</description>
 			<posx>0</posx>
-			<posy>0</posy>
 			<width>0</width>
 			<height>0</height>
 			<font>-</font>

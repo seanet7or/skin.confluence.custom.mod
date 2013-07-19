@@ -24,6 +24,7 @@
 			<font>font13_title</font>
 			<label>$LOCALIZE[13406]</label>
 			<align>center</align>
+			<aligny>center</aligny>
 			<textcolor>selected</textcolor>
 		</control>
 		<control type="list" id="3">
@@ -41,33 +42,38 @@
 			<itemlayout height="46" width="550">
 				<control type="image">
 					<width>550</width>
-					<texture>buttons/nf_light.png</texture>
+					<height>40</height>
 				</control>
 				<control type="label">
 					<posx>20</posx>
-					<posy>0</posy>
 					<width>510</width>
+					<height>40</height>
 					<textcolor>grey2</textcolor>
 					<selectedcolor>selected</selectedcolor>
+					<align>left</align>
+					<aligny>center</aligny>
 					<label>$VAR[MainItemLabel]</label>
 				</control>
 			</itemlayout>
 			<focusedlayout height="46" width="550">
 				<control type="image">
 					<width>550</width>
-					<texture>buttons/nf_light.png</texture>
+					<height>40</height>
 					<visible>!Control.HasFocus(3)</visible>
 				</control>
 				<control type="image">
 					<width>550</width>
+					<height>40</height>
 					<texture>buttons/fo_light.png</texture>
 					<visible>Control.HasFocus(3)</visible>
 				</control>
 				<control type="label">
 					<posx>20</posx>
-					<posy>0</posy>
 					<width>510</width>
+					<height>40</height>
 					<selectedcolor>selected</selectedcolor>
+					<align>left</align>
+					<aligny>center</aligny>
 					<label>$VAR[MainItemLabel]</label>
 				</control>
 			</focusedlayout>
@@ -88,7 +94,6 @@
 				<control type="image">
 					<width>550</width>
 					<height>80</height>
-					<texture>buttons/nf_light.png</texture>
 				</control>
 				<control type="image">
 					<posx>2</posx>
@@ -99,21 +104,21 @@
 				</control>
 				<control type="label">
 					<posx>90</posx>
-					<posy>0</posy>
 					<width>450</width>
 					<height>30</height>
 					<textcolor>grey</textcolor>
 					<selectedcolor>selected</selectedcolor>
+					<align>left</align>
+					<aligny>center</aligny>
 					<label>[B]$INFO[ListItem.Label][/B]</label>
 				</control>
 				<control type="textbox">
 					<posx>90</posx>
 					<posy>30</posy>
 					<width>450</width>
-					<height>50</height>
-					<font>font12</font>
 					<textcolor>grey</textcolor>
 					<selectedcolor>selected</selectedcolor>
+					<align>left</align>
 					<label>$INFO[ListItem.Property(Addon.Summary)]</label>
 				</control>
 			</itemlayout>
@@ -121,7 +126,6 @@
 				<control type="image">
 					<width>550</width>
 					<height>80</height>
-					<texture>buttons/nf_light.png</texture>
 					<visible>!Control.HasFocus(6)</visible>
 				</control>
 				<control type="image">
@@ -139,20 +143,20 @@
 				</control>
 				<control type="label">
 					<posx>90</posx>
-					<posy>0</posy>
 					<width>450</width>
 					<height>30</height>
 					<selectedcolor>selected</selectedcolor>
+					<align>left</align>
+					<aligny>center</aligny>
 					<label>[B]$INFO[ListItem.Label][/B]</label>
 				</control>
 				<control type="textbox">
 					<posx>90</posx>
 					<posy>30</posy>
 					<width>450</width>
-					<height>50</height>
-					<font>font12</font>
 					<textcolor>grey</textcolor>
 					<selectedcolor>selected</selectedcolor>
+					<align>left</align>
 					<label>$INFO[ListItem.Property(Addon.Summary)]</label>
 				</control>
 			</focusedlayout>
@@ -160,17 +164,11 @@
 		<control type="scrollbar" id="61">
 			<posx>582</posx>
 			<posy>65</posy>
-			<width>14</width>
 			<height>510</height>
-			<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-			<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-			<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 			<onleft>3</onleft>
 			<onright>3</onright>
 			<ondown>61</ondown>
 			<onup>61</onup>
-			<showonepage>false</showonepage>
-			<orientation>vertical</orientation>
 		</control>
 		<control type="button" id="5">
 			<description>Manual button</description>

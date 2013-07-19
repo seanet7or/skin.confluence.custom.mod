@@ -21,9 +21,11 @@
 				<posx>40</posx>
 				<posy>16</posy>
 				<width>430</width>
+				<height>40</height>
 				<font>font12_title</font>
 				<label>$LOCALIZE[19023] - $INFO[VideoPlayer.ChannelGroup]</label>
 				<align>center</align>
+				<aligny>center</aligny>
 				<textcolor>blue</textcolor>
 				<visible>!pvr.IsPlayingRadio</visible>
 			</control>
@@ -32,9 +34,11 @@
 				<posx>40</posx>
 				<posy>16</posy>
 				<width>430</width>
+				<height>40</height>
 				<font>font12_title</font>
 				<label>$LOCALIZE[19024] - $INFO[MusicPlayer.ChannelGroup]</label>
 				<align>center</align>
+				<aligny>center</aligny>
 				<textcolor>blue</textcolor>
 				<visible>pvr.IsPlayingRadio</visible>
 			</control>
@@ -47,6 +51,7 @@
 				<font>font10_title</font>
 				<label>$INFO[System.Date(DDD)], $INFO[System.Date(d)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)] • $INFO[System.Time]</label>
 				<align>center</align>
+				<aligny>center</aligny>
 				<textcolor>grey</textcolor>
 			</control>
 			<control type="list" id="11">
@@ -65,14 +70,14 @@
 					<control type="image">
 						<width>410</width>
 						<height>65</height>
-						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="label">
 						<posx>5</posx>
-						<posy>0</posy>
 						<width>40</width>
 						<height>30</height>
 						<font>font12</font>
+						<align>left</align>
+						<aligny>center</aligny>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
 						<info>ListItem.ChannelNumber</info>
@@ -87,10 +92,11 @@
 					</control>
 					<control type="label">
 						<posx>50</posx>
-						<posy>0</posy>
 						<width>350</width>
 						<height>25</height>
 						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
@@ -101,6 +107,8 @@
 						<font>font12</font>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>IsEmpty(Listitem.Icon)</visible>
 					</control>
@@ -112,6 +120,8 @@
 						<font>font12</font>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>!IsEmpty(Listitem.Icon)</visible>
 					</control>
@@ -123,6 +133,7 @@
 						<font>font10_title</font>
 						<textcolor>blue</textcolor>
 						<selectedcolor>blue</selectedcolor>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.StartTime]</label>
 						<visible>ListItem.HasEpg</visible>
 					</control>
@@ -131,7 +142,6 @@
 						<posx>110</posx>
 						<posy>53</posy>
 						<width>230</width>
-						<height>6</height>
 						<colordiffuse>88FFFFFF</colordiffuse>
 						<info>ListItem.Progress</info>
 						<visible>ListItem.HasEpg</visible>
@@ -144,6 +154,7 @@
 						<font>font10_title</font>
 						<textcolor>blue</textcolor>
 						<selectedcolor>blue</selectedcolor>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.EndTime]</label>
 						<visible>ListItem.HasEpg</visible>
 					</control>
@@ -151,6 +162,7 @@
 						<posx>360</posx>
 						<posy>4</posy>
 						<width>40</width>
+						<height>40</height>
 						<texture>$INFO[ListItem.Icon]</texture>
 					</control>
 				</itemlayout>
@@ -158,7 +170,6 @@
 					<control type="image">
 						<width>410</width>
 						<height>65</height>
-						<texture>buttons/nf_light.png</texture>
 						<visible>!Control.HasFocus(11)</visible>
 					</control>
 					<control type="image">
@@ -169,10 +180,11 @@
 					</control>
 					<control type="label">
 						<posx>5</posx>
-						<posy>0</posy>
 						<width>40</width>
 						<height>30</height>
 						<font>font12</font>
+						<align>left</align>
+						<aligny>center</aligny>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
 						<info>ListItem.ChannelNumber</info>
@@ -187,10 +199,11 @@
 					</control>
 					<control type="label">
 						<posx>50</posx>
-						<posy>0</posy>
 						<width>350</width>
 						<height>25</height>
 						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
@@ -201,6 +214,8 @@
 						<font>font12</font>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>IsEmpty(Listitem.Icon)</visible>
 					</control>
@@ -212,6 +227,8 @@
 						<font>font12</font>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>!IsEmpty(Listitem.Icon)</visible>
 					</control>
@@ -223,6 +240,7 @@
 						<font>font10_title</font>
 						<textcolor>blue</textcolor>
 						<selectedcolor>blue</selectedcolor>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.StartTime]</label>
 						<visible>ListItem.HasEpg</visible>
 					</control>
@@ -231,7 +249,6 @@
 						<posx>110</posx>
 						<posy>53</posy>
 						<width>230</width>
-						<height>6</height>
 						<colordiffuse>88FFFFFF</colordiffuse>
 						<info>ListItem.Progress</info>
 						<visible>ListItem.HasEpg</visible>
@@ -244,6 +261,7 @@
 						<font>font10_title</font>
 						<textcolor>blue</textcolor>
 						<selectedcolor>blue</selectedcolor>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.EndTime]</label>
 						<visible>ListItem.HasEpg</visible>
 					</control>
@@ -251,6 +269,7 @@
 						<posx>360</posx>
 						<posy>4</posy>
 						<width>40</width>
+						<height>40</height>
 						<texture>$INFO[ListItem.Icon]</texture>
 					</control>
 				</focusedlayout>
@@ -258,17 +277,11 @@
 			<control type="scrollbar" id="60">
 				<posx>440</posx>
 				<posy>70</posy>
-				<width>14</width>
 				<height>520</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>11</onleft>
 				<onright>11</onright>
 				<ondown>61</ondown>
 				<onup>61</onup>
-				<showonepage>false</showonepage>
-				<orientation>vertical</orientation>
 			</control>
 		</control>
 	</controls>

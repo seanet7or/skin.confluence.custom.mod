@@ -23,6 +23,7 @@
 			<height>30</height>
 			<font>font13_title</font>
 			<align>center</align>
+			<aligny>center</aligny>
 			<textcolor>selected</textcolor>
 		</control>
 		<control type="grouplist" id="9">
@@ -73,15 +74,9 @@
 		<control type="scrollbar" id="30">
 			<posx>777</posx>
 			<posy>120</posy>
-			<width>14</width>
 			<height>380</height>
-			<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-			<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-			<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 			<onleft>2</onleft>
 			<onright>9</onright>
-			<showonepage>false</showonepage>
-			<orientation>vertical</orientation>
 		</control>
 		<control type="group" id="9001">
 			<posy>535</posy>
@@ -145,9 +140,11 @@
 		<control type="radiobutton" id="4">
 			<description>Default RadioButton</description>
 			<height>40</height>
-			<textcolor>grey2</textcolor>
+			<focusedcolor>white</focusedcolor>
 		</control>
 		<control type="spincontrolex" id="5">
+			<posy>160</posy>
+			<posx>530</posx>
 			<description>Default spincontrolex</description>
 			<height>40</height>
 			<textcolor>grey2</textcolor>
@@ -155,9 +152,13 @@
 			<texturenofocus>buttons/nf_light.png</texturenofocus>
 		</control>
 		<control type="label" id="7">
+			<posy>60</posy>
+			<posx>80</posx>
 			<height>35</height>
 			<font>font13_title</font>
 			<textcolor>blue</textcolor>
+			<align>left</align>
+			<aligny>center</aligny>
 		</control>
 		<control type="image" id="6">
 			<description>Default Seperator</description>
@@ -165,9 +166,6 @@
 		</control>
 		<control type="sliderex" id="8">
 			<description>Default Slider</description>
-			<height>40</height>
-			<font>font13</font>
-			<textcolor>grey2</textcolor>
 		</control>
 	</controls>
 </window>

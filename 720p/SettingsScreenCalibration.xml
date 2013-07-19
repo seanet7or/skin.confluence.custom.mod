@@ -8,7 +8,6 @@
 			<posy>0</posy>
 			<width>1280</width>
 			<height>720</height>
-			<visible>Player.HasVideo</visible>
 		</control>
 		<control type="group">
 			<visible>!Player.HasVideo</visible>
@@ -26,37 +25,23 @@
 			<posx>0</posx>
 			<posy>0</posy>
 			<texturefocus>buttons/calibrate/topleft_light.png</texturefocus>
-			<texturenofocus>-</texturenofocus>
 		</control>
 		<control type="mover" id="9">
 			<description>right bottom mover</description>
-			<posx>700</posx>
-			<posy>500</posy>
-			<texturefocus flipx="true" flipy="true">buttons/calibrate/topleft_light.png</texturefocus>
-			<texturenofocus>-</texturenofocus>
 		</control>
 		<control type="mover" id="10">
 			<description>subtitle position mover</description>
 			<posx>200</posx>
-			<posy>500</posy>
 			<width>512</width>
 			<texturefocus>buttons/calibrate/subtitles_light.png</texturefocus>
-			<texturenofocus>-</texturenofocus>
 		</control>
 		<control type="resize" id="11">
 			<description>pixel aspect ratio box</description>
-			<posx>0</posx>
-			<posy>232</posy>
-			<width>256</width>
-			<height>256</height>
-			<texturefocus>buttons/calibrate/pixelratio_light.png</texturefocus>
-			<texturenofocus>-</texturenofocus>
 		</control>
 		<control type="group">
 			<posx>20</posx>
 			<posy>80</posy>
 			<control type="label" id="2">
-				<aligny>top</aligny>
 				<description>coordinates label</description>
 				<posx>0</posx>
 				<posy>10</posy>
@@ -64,7 +49,6 @@
 				<align>center</align>
 			</control>
 			<control type="label" id="3">
-				<aligny>top</aligny>
 				<description>help information</description>
 				<posx>0</posx>
 				<posy>40</posy>

@@ -110,6 +110,7 @@
 					<height>20</height>
 					<label>$LOCALIZE[11]</label>
 					<align>center</align>
+					<aligny>center</aligny>
 					<font>font13_title</font>
 				</control>
 				<control type="panel" id="200">
@@ -142,6 +143,7 @@
 					<height>20</height>
 					<label>$LOCALIZE[12]</label>
 					<align>center</align>
+					<aligny>center</aligny>
 					<font>font13_title</font>
 				</control>
 				<control type="panel" id="201">
@@ -174,6 +176,7 @@
 					<height>20</height>
 					<label>$LOCALIZE[13]</label>
 					<align>center</align>
+					<aligny>center</aligny>
 					<font>font13_title</font>
 				</control>
 				<control type="panel" id="202">
@@ -206,6 +209,7 @@
 					<height>20</height>
 					<label>$LOCALIZE[14]</label>
 					<align>center</align>
+					<aligny>center</aligny>
 					<font>font13_title</font>
 				</control>
 				<control type="panel" id="203">
@@ -238,6 +242,7 @@
 					<height>20</height>
 					<label>$LOCALIZE[15]</label>
 					<align>center</align>
+					<aligny>center</aligny>
 					<font>font13_title</font>
 				</control>
 				<control type="panel" id="204">
@@ -270,6 +275,7 @@
 					<height>20</height>
 					<label>$LOCALIZE[16]</label>
 					<align>center</align>
+					<aligny>center</aligny>
 					<font>font13_title</font>
 				</control>
 				<control type="panel" id="205">
@@ -302,6 +308,7 @@
 					<height>20</height>
 					<label>$LOCALIZE[17]</label>
 					<align>center</align>
+					<aligny>center</aligny>
 					<font>font13_title</font>
 				</control>
 				<control type="panel" id="206">
@@ -325,6 +332,7 @@
 				<posx>10</posx>
 				<posy>120</posy>
 				<width>30</width>
+				<height>40</height>
 				<texture>buttons/spin-left-fo_light.png</texture>
 				<visible>Container(2000).HasPrevious</visible>
 			</control>
@@ -333,6 +341,7 @@
 				<posx>10</posx>
 				<posy>170r</posy>
 				<width>30</width>
+				<height>40</height>
 				<texture>buttons/spin-left-fo_light.png</texture>
 				<visible>Container(2000).HasPrevious</visible>
 			</control>
@@ -341,6 +350,7 @@
 				<posx>1240</posx>
 				<posy>120</posy>
 				<width>30</width>
+				<height>40</height>
 				<texture flipx="true">buttons/spin-left-fo_light.png</texture>
 				<visible>Container(2000).HasNext</visible>
 			</control>
@@ -349,6 +359,7 @@
 				<posx>1240</posx>
 				<posy>170r</posy>
 				<width>30</width>
+				<height>40</height>
 				<texture flipx="true">buttons/spin-left-fo_light.png</texture>
 				<visible>Container(2000).HasNext</visible>
 			</control>
@@ -490,12 +501,15 @@
 					<texture>$INFO[system.addonicon(script.tv.show.next.aired)]</texture>
 				</control>
 				<control type="label" id="7">
+					<posy>60</posy>
+					<posx>80</posx>
 					<width>250</width>
 					<height>35</height>
 					<font>font12</font>
 					<label>31006</label>
 					<textcolor>blue</textcolor>
 					<align>center</align>
+					<aligny>center</aligny>
 				</control>
 				<control type="button" id="8">
 					<description>Settings</description>

@@ -122,82 +122,72 @@
 				<width>740</width>
 				<height>30</height>
 				<font>font16</font>
+				<align>left</align>
+				<aligny>center</aligny>
 			</control>
 			<control type="group">
 				<posx>290</posx>
 				<posy>100</posy>
 				<control type="label" id="2">
-					<aligny>top</aligny>
 					<description>Label 2</description>
 					<posx>0</posx>
-					<posy>0</posy>
 					<width>750</width>
 				</control>
 				<control type="label" id="3">
-					<aligny>top</aligny>
 					<description>Label 3</description>
 					<posx>0</posx>
 					<posy>35</posy>
 					<width>750</width>
 				</control>
 				<control type="label" id="4">
-					<aligny>top</aligny>
 					<description>Label 4</description>
 					<posx>0</posx>
 					<posy>70</posy>
 					<width>750</width>
 				</control>
 				<control type="label" id="5">
-					<aligny>top</aligny>
 					<description>Label 5</description>
 					<posx>0</posx>
 					<posy>105</posy>
 					<width>750</width>
 				</control>
 				<control type="label" id="6">
-					<aligny>top</aligny>
 					<description>Label 6</description>
 					<posx>0</posx>
 					<posy>140</posy>
 					<width>750</width>
 				</control>
 				<control type="label" id="7">
-					<aligny>top</aligny>
 					<description>Label 7</description>
 					<posx>0</posx>
 					<posy>175</posy>
 					<width>750</width>
 				</control>
 				<control type="label" id="8">
-					<aligny>top</aligny>
 					<description>Label 8</description>
 					<posx>0</posx>
 					<posy>210</posy>
 					<width>750</width>
 				</control>
 				<control type="label" id="9">
-					<aligny>top</aligny>
 					<description>Label 9</description>
 					<posx>0</posx>
 					<posy>245</posy>
 					<width>750</width>
 				</control>
 				<control type="label" id="10">
-					<aligny>top</aligny>
 					<description>Label 10</description>
 					<posx>0</posx>
 					<posy>280</posy>
 					<width>750</width>
 				</control>
 				<control type="label" id="11">
-					<aligny>top</aligny>
 					<description>Label 11</description>
 					<posx>0</posx>
 					<posy>315</posy>
 					<width>750</width>
 				</control>
 				<control type="label" id="52">
-					<aligny>top</aligny>
 					<description>XBMC BUILD Version</description>
 					<posx>750</posx>
 					<posy>400</posy>
@@ -215,6 +205,7 @@
 					<height>25</height>
 					<label>$LOCALIZE[13271] $INFO[System.CPUUsage]</label>
 					<align>right</align>
+					<aligny>center</aligny>
 					<font>font12_title</font>
 				</control>
 				<control type="progress">
@@ -222,6 +213,7 @@
 					<posx>430</posx>
 					<posy>455</posy>
 					<width>320</width>
+					<height>16</height>
 					<info>System.CPUUsage</info>
 				</control>
 				<control type="label">
@@ -232,6 +224,7 @@
 					<height>25</height>
 					<label>$LOCALIZE[31309] $INFO[system.memory(used.percent)]</label>
 					<align>right</align>
+					<aligny>center</aligny>
 					<font>font12_title</font>
 				</control>
 				<control type="progress">
@@ -239,6 +232,7 @@
 					<posx>430</posx>
 					<posy>485</posy>
 					<width>320</width>
+					<height>16</height>
 					<info>system.memory(used)</info>
 				</control>
 			</control>

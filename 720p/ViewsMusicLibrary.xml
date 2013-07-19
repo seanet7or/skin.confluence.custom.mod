@@ -18,21 +18,23 @@
 				<visible>Window.IsVisible(MusicFiles) | Window.IsVisible(MusicPlaylist) |  Container.Content(Songs) | Container.Content(Albums)</visible>
 				<itemlayout height="40" width="780">
 					<control type="label">
-						<posx>10</posx>
-						<posy>0</posy>
 						<width>730</width>
+						<height>40</height>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>760</posx>
-						<posy>0</posy>
 						<width>700</width>
+						<height>40</height>
 						<font>font12</font>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
 					</control>
 				</itemlayout>
@@ -44,20 +46,22 @@
 						<visible>Control.HasFocus(506)</visible>
 					</control>
 					<control type="label">
-						<posx>10</posx>
-						<posy>0</posy>
 						<width>730</width>
+						<height>40</height>
 						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>760</posx>
-						<posy>0</posy>
 						<width>700</width>
+						<height>40</height>
 						<font>font12</font>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
 					</control>
 				</focusedlayout>
@@ -65,16 +69,10 @@
 			<control type="scrollbar" id="60">
 				<posx>862</posx>
 				<posy>78</posy>
-				<width>14</width>
 				<height>560</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>506</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
-				<showonepage>false</showonepage>
-				<orientation>vertical</orientation>
 				<visible>Control.IsVisible(506)</visible>
 			</control>
 			<control type="group">
@@ -90,27 +88,26 @@
 					<texture background="true">$INFO[ListItem.Icon]</texture>
 				</control>
 				<control type="label">
-					<posx>10</posx>
 					<posy>300</posy>
 					<width>290</width>
 					<height>25</height>
 					<label>$INFO[ListItem.Artist]</label>
 					<scroll>true</scroll>
 					<align>center</align>
+					<aligny>center</aligny>
 					<font>font24_title</font>
 				</control>
 				<control type="label">
-					<posx>10</posx>
 					<posy>360</posy>
 					<width>290</width>
 					<height>25</height>
 					<label>$INFO[ListItem.Album]</label>
 					<wrapmultiline>true</wrapmultiline>
 					<align>center</align>
+					<aligny>center</aligny>
 					<textcolor>grey2</textcolor>
 				</control>
 				<control type="label">
-					<posx>10</posx>
 					<posy>420</posy>
 					<width>290</width>
 					<height>25</height>
@@ -123,7 +120,6 @@
 					<visible>!Container.Content(Albums)</visible>
 				</control>
 				<control type="label">
-					<posx>10</posx>
 					<posy>420</posy>
 					<width>290</width>
 					<height>25</height>
@@ -137,27 +133,28 @@
 				</control>
 				<control type="label">
 					<description>Trackno txt</description>
-					<posx>10</posx>
 					<posy>480</posy>
 					<width>290</width>
 					<height>25</height>
 					<label>$INFO[listitem.TrackNumber,[COLOR=blue]$LOCALIZE[31310]: [/COLOR]]</label>
 					<align>center</align>
+					<aligny>center</aligny>
 					<visible>!Container.Content(Albums)</visible>
 				</control>
 				<control type="label">
 					<description>Year txt</description>
-					<posx>10</posx>
 					<posy>505</posy>
 					<width>290</width>
 					<height>25</height>
 					<label>$INFO[listitem.Year,[COLOR=blue]$LOCALIZE[345]: [/COLOR]]</label>
 					<align>center</align>
+					<aligny>center</aligny>
 				</control>
 				<control type="image">
 					<description>Rating value</description>
 					<posx>80</posx>
 					<posy>535</posy>
+					<width>150</width>
 					<height>30</height>
 					<aspectratio>keep</aspectratio>
 					<texture>$INFO[ListItem.StarRating,CenterRating/]</texture>
@@ -183,6 +180,7 @@
 				<font>font24_title</font>
 				<scroll>true</scroll>
 				<align>center</align>
+				<aligny>center</aligny>
 				<label>$VAR[MainItemLabel]</label>
 				<animation effect="slide" start="0,0" end="0,20" time="200" condition="!Control.HasFocus(509)">conditional</animation>
 			</control>
@@ -263,7 +261,6 @@
 				<onup>509</onup>
 				<ondown condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</ondown>
 				<ondown condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</ondown>
-				<showonepage>false</showonepage>
 				<orientation>horizontal</orientation>
 				<visible>Control.IsVisible(509)</visible>
 			</control>
@@ -284,6 +281,7 @@
 				<height>20</height>
 				<scroll>true</scroll>
 				<align>center</align>
+				<aligny>center</aligny>
 				<label>$INFO[ListItem.Property(Album_Artist)]</label>
 			</control>
 			<control type="label">
@@ -295,6 +293,7 @@
 				<textcolor>blue</textcolor>
 				<scroll>true</scroll>
 				<align>center</align>
+				<aligny>center</aligny>
 				<label>$VAR[MainItemLabel]</label>
 			</control>
 			<control type="group">
@@ -302,11 +301,12 @@
 				<posy>80</posy>
 				<control type="label">
 					<posx>0</posx>
-					<posy>0</posy>
 					<width>400</width>
 					<height>30</height>
 					<font>font13_title</font>
 					<scroll>true</scroll>
+					<align>left</align>
+					<aligny>center</aligny>
 					<label>31331</label>
 				</control>
 				<control type="label">
@@ -315,7 +315,10 @@
 					<width>850</width>
 					<height>30</height>
 					<scroll>true</scroll>
+					<align>left</align>
+					<aligny>center</aligny>
 					<label>$LOCALIZE[515]: $INFO[ListItem.Genre]</label>
+					<scroll>false</scroll>
 				</control>
 				<control type="label">
 					<posx>0</posx>
@@ -323,7 +326,10 @@
 					<width>850</width>
 					<height>30</height>
 					<scroll>true</scroll>
+					<align>left</align>
+					<aligny>center</aligny>
 					<label>$LOCALIZE[562]: $INFO[ListItem.Year]</label>
+					<scroll>false</scroll>
 				</control>
 				<control type="fadelabel">
 					<posx>0</posx>
@@ -351,8 +357,6 @@
 					<posy>150</posy>
 					<width>850</width>
 					<height>140</height>
-					<font>font12</font>
-					<align>justify</align>
 					<pagecontrol>-</pagecontrol>
 					<label>$INFO[ListItem.Property(Album_Description)]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
@@ -378,21 +382,23 @@
 				<visible>Container.Content(MusicVideos)</visible>
 				<itemlayout height="40" width="760">
 					<control type="label">
-						<posx>10</posx>
-						<posy>0</posy>
 						<width>720</width>
+						<height>40</height>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>730</posx>
-						<posy>0</posy>
 						<width>700</width>
+						<height>40</height>
 						<font>font12</font>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
 					</control>
 					<control type="image">
@@ -411,20 +417,22 @@
 						<visible>Control.HasFocus(511)</visible>
 					</control>
 					<control type="label">
-						<posx>10</posx>
-						<posy>0</posy>
 						<width>720</width>
+						<height>40</height>
 						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>730</posx>
-						<posy>0</posy>
 						<width>700</width>
+						<height>40</height>
 						<font>font12</font>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
 					</control>
 					<control type="image">
@@ -439,16 +447,10 @@
 			<control type="scrollbar" id="60">
 				<posx>862</posx>
 				<posy>78</posy>
-				<width>14</width>
 				<height>560</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>511</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
-				<showonepage>false</showonepage>
-				<orientation>vertical</orientation>
 				<visible>Control.IsVisible(511)</visible>
 			</control>
 			<control type="group">
@@ -474,27 +476,26 @@
 					<include>AudioCodecFlaggingConditions</include>
 				</control>
 				<control type="label">
-					<posx>10</posx>
 					<posy>290</posy>
 					<width>290</width>
 					<height>25</height>
 					<label>$INFO[ListItem.Artist]</label>
 					<scroll>true</scroll>
 					<align>center</align>
+					<aligny>center</aligny>
 					<font>font24_title</font>
 				</control>
 				<control type="label">
-					<posx>10</posx>
 					<posy>350</posy>
 					<width>290</width>
 					<height>25</height>
 					<label>$INFO[ListItem.Album]</label>
 					<wrapmultiline>true</wrapmultiline>
 					<align>center</align>
+					<aligny>center</aligny>
 					<textcolor>grey2</textcolor>
 				</control>
 				<control type="label">
-					<posx>10</posx>
 					<posy>410</posy>
 					<width>290</width>
 					<height>25</height>
@@ -507,7 +508,6 @@
 					<visible>!Container.Content(Albums)</visible>
 				</control>
 				<control type="label">
-					<posx>10</posx>
 					<posy>470</posy>
 					<width>290</width>
 					<height>25</height>
@@ -520,12 +520,12 @@
 				</control>
 				<control type="label">
 					<description>Year txt</description>
-					<posx>10</posx>
 					<posy>530</posy>
 					<width>290</width>
 					<height>25</height>
 					<label>$INFO[listitem.Year,[COLOR=blue]$LOCALIZE[345]: [/COLOR]]</label>
 					<align>center</align>
+					<aligny>center</aligny>
 					<font>font13_title</font>
 				</control>
 			</control>
@@ -549,11 +549,12 @@
 				<visible>Container.Content(Artists)</visible>
 				<itemlayout height="40" width="580">
 					<control type="label">
-						<posx>10</posx>
-						<posy>0</posy>
 						<width>560</width>
+						<height>40</height>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 				</itemlayout>
@@ -565,10 +566,11 @@
 						<visible>Control.HasFocus(512)</visible>
 					</control>
 					<control type="label">
-						<posx>10</posx>
-						<posy>0</posy>
 						<width>560</width>
+						<height>40</height>
 						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 				</focusedlayout>
@@ -576,16 +578,10 @@
 			<control type="scrollbar" id="60">
 				<posx>662</posx>
 				<posy>78</posy>
-				<width>14</width>
 				<height>560</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>512</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
-				<showonepage>false</showonepage>
-				<orientation>vertical</orientation>
 				<visible>Control.IsVisible(512)</visible>
 			</control>
 			<control type="group">
@@ -603,11 +599,11 @@
 					<control type="label">
 						<description>Born txt</description>
 						<posx>140</posx>
-						<posy>0</posy>
 						<width>140</width>
 						<height>25</height>
 						<label>$LOCALIZE[21893]:</label>
 						<align>right</align>
+						<aligny>center</aligny>
 						<font>font13_title</font>
 						<textcolor>blue</textcolor>
 						<visible>!IsEmpty(ListItem.Property(Artist_Born))</visible>
@@ -615,21 +611,22 @@
 					<control type="label">
 						<description>Born Value</description>
 						<posx>150</posx>
-						<posy>0</posy>
 						<width>350</width>
 						<height>25</height>
 						<label>$INFO[ListItem.Property(Artist_Born)]</label>
+						<align>left</align>
+						<aligny>center</aligny>
 						<scroll>true</scroll>
 						<visible>!IsEmpty(ListItem.Property(Artist_Born))</visible>
 					</control>
 					<control type="label">
 						<description>Formed txt</description>
 						<posx>140</posx>
-						<posy>0</posy>
 						<width>140</width>
 						<height>25</height>
 						<label>$LOCALIZE[21894]:</label>
 						<align>right</align>
+						<aligny>center</aligny>
 						<font>font13_title</font>
 						<textcolor>blue</textcolor>
 						<visible>!IsEmpty(ListItem.Property(Artist_Formed))</visible>
@@ -637,10 +634,11 @@
 					<control type="label">
 						<description>Formed Value</description>
 						<posx>150</posx>
-						<posy>0</posy>
 						<width>350</width>
 						<height>25</height>
 						<label>$INFO[ListItem.Property(Artist_Formed)]</label>
+						<align>left</align>
+						<aligny>center</aligny>
 						<scroll>true</scroll>
 						<visible>!IsEmpty(ListItem.Property(Artist_Formed))</visible>
 					</control>
@@ -652,6 +650,7 @@
 						<height>25</height>
 						<label>$LOCALIZE[515]:</label>
 						<align>right</align>
+						<aligny>center</aligny>
 						<font>font13_title</font>
 						<textcolor>blue</textcolor>
 					</control>
@@ -662,16 +661,15 @@
 						<width>350</width>
 						<height>25</height>
 						<label fallback="416">$INFO[ListItem.Property(Artist_Genre)]</label>
+						<align>left</align>
+						<aligny>center</aligny>
 						<scroll>true</scroll>
 					</control>
 					<control type="textbox">
 						<description>Description Value for Artist</description>
-						<posx>10</posx>
 						<posy>65</posy>
 						<width>490</width>
 						<height>190</height>
-						<font>font12</font>
-						<align>justify</align>
 						<label>$INFO[ListItem.Property(Artist_Description)]</label>
 						<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 					</control>
@@ -697,21 +695,23 @@
 				<visible>Container.Content(Albums)</visible>
 				<itemlayout height="40" width="780">
 					<control type="label">
-						<posx>10</posx>
-						<posy>0</posy>
 						<width>730</width>
+						<height>40</height>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>760</posx>
-						<posy>0</posy>
 						<width>700</width>
+						<height>40</height>
 						<font>font12</font>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
 					</control>
 				</itemlayout>
@@ -723,20 +723,22 @@
 						<visible>Control.HasFocus(513)</visible>
 					</control>
 					<control type="label">
-						<posx>10</posx>
-						<posy>0</posy>
 						<width>730</width>
+						<height>40</height>
 						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>760</posx>
-						<posy>0</posy>
 						<width>700</width>
+						<height>40</height>
 						<font>font12</font>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
 					</control>
 				</focusedlayout>
@@ -744,16 +746,10 @@
 			<control type="scrollbar" id="51360">
 				<posx>862</posx>
 				<posy>78</posy>
-				<width>14</width>
 				<height>560</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>513</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
-				<showonepage>false</showonepage>
-				<orientation>vertical</orientation>
 				<visible>Control.IsVisible(513)</visible>
 			</control>
 			<control type="group">
@@ -769,23 +765,20 @@
 				</control>
 				<control type="label">
 					<description>Description Header txt</description>
-					<posx>10</posx>
 					<posy>240</posy>
 					<width>290</width>
 					<height>25</height>
 					<label>21821</label>
 					<align>center</align>
+					<aligny>center</aligny>
 					<font>font12_title</font>
 					<textcolor>blue</textcolor>
 				</control>
 				<control type="textbox">
 					<description>Description Value for Album</description>
-					<posx>10</posx>
 					<posy>270</posy>
 					<width>290</width>
 					<height>300</height>
-					<font>font12</font>
-					<align>justify</align>
 					<pagecontrol>-</pagecontrol>
 					<label>$INFO[ListItem.Property(Album_Description)]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>

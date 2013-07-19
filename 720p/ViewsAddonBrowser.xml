@@ -18,21 +18,23 @@
 				<scrolltime>200</scrolltime>
 				<itemlayout height="40" width="580">
 					<control type="label">
-						<posx>10</posx>
-						<posy>0</posy>
 						<width>520</width>
+						<height>40</height>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>555</posx>
-						<posy>0</posy>
 						<width>500</width>
+						<height>40</height>
 						<font>font12</font>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Property(Addon.Status)]</label>
 					</control>
 				</itemlayout>
@@ -44,20 +46,22 @@
 						<visible>Control.HasFocus(550)</visible>
 					</control>
 					<control type="label">
-						<posx>10</posx>
-						<posy>0</posy>
 						<width>520</width>
+						<height>40</height>
 						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>555</posx>
-						<posy>0</posy>
 						<width>500</width>
+						<height>40</height>
 						<font>font12</font>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Property(Addon.Status)]</label>
 					</control>
 				</focusedlayout>
@@ -65,16 +69,10 @@
 			<control type="scrollbar" id="60">
 				<posx>662</posx>
 				<posy>78</posy>
-				<width>14</width>
 				<height>560</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>550</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
-				<showonepage>false</showonepage>
-				<orientation>vertical</orientation>
 				<visible>Control.IsVisible(550)</visible>
 			</control>
 			<control type="group">
@@ -84,11 +82,11 @@
 				<control type="label">
 					<description>Show Title txt</description>
 					<posx>0</posx>
-					<posy>0</posy>
 					<width>510</width>
 					<height>15</height>
 					<label>$INFO[ListItem.Property(Addon.Name)]</label>
 					<align>center</align>
+					<aligny>center</aligny>
 					<font>font13_title</font>
 					<wrapmultiline>true</wrapmultiline>
 				</control>
@@ -106,17 +104,15 @@
 					<control type="label">
 						<description>Author txt</description>
 						<posx>150</posx>
-						<posy>0</posy>
 						<width>140</width>
 						<height>25</height>
 						<label>$LOCALIZE[21863]:</label>
 						<align>right</align>
+						<aligny>center</aligny>
 						<textcolor>blue</textcolor>
 					</control>
 					<control type="fadelabel">
 						<description>Author Value</description>
-						<posx>160</posx>
-						<posy>0</posy>
 						<width>350</width>
 						<label fallback="416">$INFO[ListItem.Property(Addon.Creator)]</label>
 						<align>left</align>
@@ -132,6 +128,7 @@
 						<height>25</height>
 						<label>$LOCALIZE[24051]</label>
 						<align>right</align>
+						<aligny>center</aligny>
 						<textcolor>blue</textcolor>
 					</control>
 					<control type="label">
@@ -141,15 +138,19 @@
 						<width>350</width>
 						<height>25</height>
 						<label fallback="416">$INFO[ListItem.Property(Addon.Version)]</label>
+						<align>left</align>
+						<aligny>center</aligny>
 						<scroll>true</scroll>
 					</control>
 					<control type="label">
 						<description>Rating txt</description>
 						<posx>150</posx>
+						<posy>60</posy>
 						<width>140</width>
 						<height>25</height>
 						<label>$LOCALIZE[563]:</label>
 						<align>right</align>
+						<aligny>center</aligny>
 						<textcolor>blue</textcolor>
 					</control>
 					<control type="image">
@@ -163,12 +164,9 @@
 					</control>
 					<control type="textbox">
 						<description>Description</description>
-						<posx>10</posx>
 						<posy>100</posy>
 						<width>490</width>
 						<height>180</height>
-						<font>font12</font>
-						<align>justify</align>
 						<label>$INFO[ListItem.Property(Addon.Description)]</label>
 						<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 					</control>
@@ -222,6 +220,7 @@
 						<textcolor>ffaa0000</textcolor>
 						<selectedcolor>red</selectedcolor>
 						<align>center</align>
+						<aligny>center</aligny>
 						<angle>45</angle>
 						<label>24098</label>
 						<visible>!IsEmpty(ListItem.Property(Addon.broken))</visible>
@@ -235,6 +234,7 @@
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>center</align>
+						<aligny>center</aligny>
 						<info>ListItem.Label</info>
 					</control>
 				</itemlayout>
@@ -268,6 +268,7 @@
 						<textcolor>ffaa0000</textcolor>
 						<selectedcolor>red</selectedcolor>
 						<align>center</align>
+						<aligny>center</aligny>
 						<angle>45</angle>
 						<label>24098</label>
 						<visible>!IsEmpty(ListItem.Property(Addon.broken))</visible>
@@ -280,6 +281,7 @@
 						<font>font12</font>
 						<selectedcolor>selected</selectedcolor>
 						<align>center</align>
+						<aligny>center</aligny>
 						<info>ListItem.Label</info>
 					</control>
 				</focusedlayout>
@@ -287,16 +289,11 @@
 			<control type="scrollbar" id="60">
 				<posx>862</posx>
 				<posy>78</posy>
-				<width>14</width>
 				<height>560</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>551</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
 				<showonepage>true</showonepage>
-				<orientation>vertical</orientation>
 				<visible>Control.IsVisible(551)</visible>
 			</control>
 			<control type="group">
@@ -305,12 +302,11 @@
 				<visible>Control.IsVisible(551)</visible>
 				<control type="label">
 					<description>Show Title txt</description>
-					<posx>10</posx>
-					<posy>0</posy>
 					<width>290</width>
 					<height>15</height>
 					<label>$INFO[ListItem.Property(Addon.Name)]</label>
 					<align>center</align>
+					<aligny>center</aligny>
 					<font>font13_title</font>
 					<wrapmultiline>true</wrapmultiline>
 				</control>
@@ -319,17 +315,16 @@
 					<control type="label">
 						<description>Author txt</description>
 						<posx>130</posx>
-						<posy>0</posy>
 						<width>120</width>
 						<height>25</height>
 						<label>$LOCALIZE[21863]:</label>
 						<align>right</align>
+						<aligny>center</aligny>
 						<textcolor>blue</textcolor>
 					</control>
 					<control type="fadelabel">
 						<description>Author Value</description>
 						<posx>140</posx>
-						<posy>0</posy>
 						<width>155</width>
 						<label fallback="416">$INFO[ListItem.Property(Addon.Creator)]</label>
 						<align>left</align>
@@ -345,6 +340,7 @@
 						<height>25</height>
 						<label>$LOCALIZE[24051]</label>
 						<align>right</align>
+						<aligny>center</aligny>
 						<textcolor>blue</textcolor>
 					</control>
 					<control type="label">
@@ -354,33 +350,35 @@
 						<width>155</width>
 						<height>25</height>
 						<label fallback="416">$INFO[ListItem.Property(Addon.Version)]</label>
+						<align>left</align>
+						<aligny>center</aligny>
 						<scroll>true</scroll>
 					</control>
 					<control type="label">
 						<description>Rating txt</description>
 						<posx>130</posx>
+						<posy>60</posy>
 						<width>120</width>
 						<height>25</height>
 						<label>$LOCALIZE[563]:</label>
 						<align>right</align>
+						<aligny>center</aligny>
 						<textcolor>blue</textcolor>
 					</control>
 					<control type="image">
 						<description>Rating value</description>
 						<posx>135</posx>
 						<posy>60</posy>
+						<width>150</width>
 						<height>30</height>
 						<aspectratio align="left">keep</aspectratio>
 						<texture fallback="LeftRating/rating0.png">$INFO[ListItem.Property(Addon.StarRating),LeftRating/]</texture>
 					</control>
 					<control type="textbox">
 						<description>Description</description>
-						<posx>10</posx>
 						<posy>110</posy>
 						<width>290</width>
 						<height>400</height>
-						<font>font12</font>
-						<align>justify</align>
 						<label>$INFO[ListItem.Property(Addon.Description)]</label>
 						<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 					</control>

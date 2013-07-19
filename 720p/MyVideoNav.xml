@@ -49,12 +49,15 @@
 				<onback>50</onback>
 				<itemgap>0</itemgap>
 				<control type="label" id="200">
+					<posy>60</posy>
+					<posx>80</posx>
 					<width>250</width>
 					<height>35</height>
 					<font>font12</font>
 					<label>31006</label>
 					<textcolor>blue</textcolor>
 					<align>center</align>
+					<aligny>center</aligny>
 				</control>
 				<control type="button" id="2">
 					<description>View As button</description>
@@ -68,6 +71,7 @@
 					<label>103</label>
 				</control>
 				<control type="togglebutton" id="4">
+					<posy>167</posy>
 					<description>Sort asc</description>
 					<include>ButtonCommonValues</include>
 					<alttexturefocus>buttons/fo_light.png</alttexturefocus>
@@ -84,6 +88,7 @@
 					<label>587</label>
 				</control>
 				<control type="radiobutton" id="20">
+					<textcolor>white</textcolor>
 					<visible>Container.CanFilterAdvanced</visible>
 					<description>Filter</description>
 					<include>ButtonCommonValues</include>
@@ -93,14 +98,18 @@
 					<onclick>Filter</onclick>
 				</control>
 				<control type="label" id="201">
+					<posy>60</posy>
+					<posx>80</posx>
 					<width>250</width>
 					<height>35</height>
 					<font>font12</font>
 					<label>31026</label>
 					<textcolor>blue</textcolor>
 					<align>center</align>
+					<aligny>center</aligny>
 				</control>
 				<control type="radiobutton" id="91">
+					<textcolor>white</textcolor>
 					<description>Subtitle Flags</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
@@ -111,6 +120,7 @@
 					<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 				</control>
 				<control type="radiobutton" id="93">
+					<textcolor>white</textcolor>
 					<description>TVShow Banners Banners</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
@@ -120,6 +130,7 @@
 					<visible>Control.IsVisible(515) + Container.Content(TVShows)</visible>
 				</control>
 				<control type="radiobutton" id="94">
+					<textcolor>white</textcolor>
 					<description>TVShow Character Art</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
@@ -129,6 +140,7 @@
 					<visible>Control.IsVisible(503) + Container.Content(TVShows)</visible>
 				</control>
 				<control type="radiobutton" id="95">
+					<textcolor>white</textcolor>
 					<description>Show Season FanArt</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
@@ -138,6 +150,7 @@
 					<visible>Control.IsVisible(515) + [Container.Content(Seasons) | Container.Content(Episodes)]</visible>
 				</control>
 				<control type="radiobutton" id="96">
+					<textcolor>white</textcolor>
 					<description>Show Watched Banners</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
@@ -147,6 +160,7 @@
 					<visible>Control.IsVisible(501) | Control.IsVisible(508) | Control.IsVisible(732)</visible>
 				</control>
 				<control type="radiobutton" id="97">
+					<textcolor>white</textcolor>
 					<description>Show ExtraFanArt Toggle</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
@@ -156,6 +170,7 @@
 					<visible>Control.IsVisible(504)</visible>
 				</control>
 				<control type="radiobutton" id="98">
+					<textcolor>white</textcolor>
 					<description>Show Logo Toggle</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
@@ -165,6 +180,7 @@
 					<visible>Control.IsVisible(515) + !Container.Content(Seasons) + !Container.Content(Episodes)</visible>
 				</control>
 				<control type="radiobutton" id="99">
+					<textcolor>white</textcolor>
 					<description>Show Info Toggle</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
@@ -174,6 +190,7 @@
 					<visible>Control.IsVisible(508)</visible>
 				</control>
 				<control type="radiobutton" id="100">
+					<textcolor>white</textcolor>
 					<description>Disable Show Info Toggle 508 Delay</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
@@ -184,6 +201,7 @@
 					<visible>Control.IsVisible(508)</visible>
 				</control>
 				<control type="radiobutton" id="101">
+					<textcolor>white</textcolor>
 					<description>Show Logo Toggle</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
@@ -193,6 +211,7 @@
 					<visible>Control.IsVisible(730) + !Container.Content(Seasons) + !Container.Content(Episodes)</visible>
 				</control>
 				<control type="radiobutton" id="102">
+					<textcolor>white</textcolor>
 					<description>Show Episode Thumbnail Toggle</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
@@ -202,6 +221,7 @@
 					<visible>Control.IsVisible(730) + Container.Content(Episodes)</visible>
 				</control>
 				<control type="radiobutton" id="14">
+					<textcolor>white</textcolor>
 					<description>Watched Toggle</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
@@ -213,24 +233,28 @@
 					<label>137</label>
 				</control>
 				<control type="radiobutton" id="7">
+					<textcolor>white</textcolor>
 					<description>Stack Toggle</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
 					<label>346</label>
 				</control>
 				<control type="radiobutton" id="17">
+					<textcolor>white</textcolor>
 					<description>Flatten</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
 					<label>20411</label>
 				</control>
 				<control type="radiobutton" id="16">
+					<textcolor>white</textcolor>
 					<description>PartyMode</description>
 					<label>589</label>
 					<include>ButtonCommonValues</include>
 					<visible>Container.Content(MusicVideos)</visible>
 				</control>
 				<control type="radiobutton" id="11">
+					<textcolor>white</textcolor>
 					<description>Unlock Shares</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>

@@ -38,10 +38,11 @@
 				<scrolltime>200</scrolltime>
 				<itemlayout height="40">
 					<control type="label">
-						<posx>10</posx>
-						<posy>0</posy>
 						<width>350</width>
+						<height>40</height>
 						<font>font12_title</font>
+						<align>left</align>
+						<aligny>center</aligny>
 						<selectedcolor>selected</selectedcolor>
 						<info>ListItem.Label</info>
 					</control>
@@ -49,14 +50,16 @@
 				<focusedlayout height="40">
 					<control type="image">
 						<width>370</width>
+						<height>40</height>
 						<visible>Control.HasFocus(450)</visible>
 						<texture>buttons/fo_light.png</texture>
 					</control>
 					<control type="label">
-						<posx>10</posx>
-						<posy>0</posy>
 						<width>350</width>
+						<height>40</height>
 						<font>font12_title</font>
+						<align>left</align>
+						<aligny>center</aligny>
 						<selectedcolor>selected</selectedcolor>
 						<info>ListItem.Label</info>
 					</control>

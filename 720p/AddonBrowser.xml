@@ -35,12 +35,15 @@
 				<onback>50</onback>
 				<itemgap>0</itemgap>
 				<control type="label" id="200">
+					<posy>60</posy>
+					<posx>80</posx>
 					<width>250</width>
 					<height>35</height>
 					<font>font12</font>
 					<label>31006</label>
 					<textcolor>blue</textcolor>
 					<align>center</align>
+					<aligny>center</aligny>
 				</control>
 				<control type="button" id="2">
 					<description>View As button</description>
@@ -54,6 +57,7 @@
 					<label>103</label>
 				</control>
 				<control type="togglebutton" id="4">
+					<posy>167</posy>
 					<description>Sort asc</description>
 					<include>ButtonCommonValues</include>
 					<alttexturefocus>buttons/fo_light.png</alttexturefocus>
@@ -63,14 +67,18 @@
 					<usealttexture>Container.SortDirection(Ascending)</usealttexture>
 				</control>
 				<control type="label" id="201">
+					<posy>60</posy>
+					<posx>80</posx>
 					<width>250</width>
 					<height>35</height>
 					<font>font12</font>
 					<label>31026</label>
 					<textcolor>blue</textcolor>
 					<align>center</align>
+					<aligny>center</aligny>
 				</control>
 				<control type="radiobutton" id="5">
+					<textcolor>white</textcolor>
 					<description>Enable auto-updates</description>
 					<posx>0</posx>
 					<posy>130</posy>
@@ -78,6 +86,7 @@
 					<label>24063</label>
 				</control>
 				<control type="radiobutton" id="6">
+					<textcolor>white</textcolor>
 					<description>No notifications</description>
 					<posx>0</posx>
 					<posy>170</posy>
@@ -85,6 +94,7 @@
 					<label>25000</label>
 				</control>
 				<control type="radiobutton" id="7">
+					<textcolor>white</textcolor>
 					<description>Hide foreign</description>
 					<posx>0</posx>
 					<posy>210</posy>

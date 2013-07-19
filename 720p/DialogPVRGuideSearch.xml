@@ -24,15 +24,20 @@
 			<font>font13_title</font>
 			<label>$LOCALIZE[19142]</label>
 			<align>center</align>
+			<aligny>center</aligny>
 			<textcolor>selected</textcolor>
 			<visible>!pvr.IsPlayingRadio</visible>
 		</control>
 		<control type="label">
 			<description>Search string</description>
 			<posx>30</posx>
+			<posy>60</posy>
 			<width>320</width>
+			<height>40</height>
 			<font>font12caps</font>
 			<label>$LOCALIZE[19133]</label>
+			<align>left</align>
+			<aligny>center</aligny>
 			<textcolor>blue</textcolor>
 		</control>
 		<control type="image">
@@ -63,7 +68,7 @@
 			<posy>155</posy>
 			<width>800</width>
 			<height>70</height>
-			<font>font12</font>
+			<align>left</align>
 			<textcolor>grey2</textcolor>
 			<label>$LOCALIZE[19001] $LOCALIZE[19002]</label>
 		</control>
@@ -77,6 +82,9 @@
 				<height>35</height>
 				<width>400</width>
 				<font>font12</font>
+				<textcolor>white</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<align>left</align>
 				<label>19134</label>
 				<onleft>12</onleft>
 				<onright>12</onright>
@@ -90,6 +98,9 @@
 				<height>35</height>
 				<width>400</width>
 				<font>font12</font>
+				<textcolor>white</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<align>left</align>
 				<label>19135</label>
 				<onleft>13</onleft>
 				<onright>13</onright>
@@ -126,7 +137,6 @@
 			</control>
 			<control type="spincontrolex" id="18">
 				<description>Genre</description>
-				<posx>0</posx>
 				<posy>140</posy>
 				<width>400</width>
 				<height>35</height>
@@ -145,6 +155,9 @@
 				<height>35</height>
 				<width>400</width>
 				<font>font12</font>
+				<textcolor>white</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<align>left</align>
 				<label>19132</label>
 				<onleft>21</onleft>
 				<onright>21</onright>
@@ -158,6 +171,9 @@
 				<height>35</height>
 				<width>400</width>
 				<font>font12</font>
+				<textcolor>white</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<align>left</align>
 				<label>19123</label>
 				<onleft>23</onleft>
 				<onright>23</onright>
@@ -171,6 +187,9 @@
 				<height>35</height>
 				<width>400</width>
 				<font>font12</font>
+				<textcolor>white</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<align>left</align>
 				<label>19124</label>
 				<onleft>27</onleft>
 				<onright>27</onright>
@@ -183,8 +202,6 @@
 			<posy>230</posy>
 			<control type="spincontrolex" id="12">
 				<description>Min Duration</description>
-				<posx>0</posx>
-				<posy>0</posy>
 				<width>400</width>
 				<height>35</height>
 				<font>font12</font>
@@ -197,7 +214,6 @@
 			</control>
 			<control type="spincontrolex" id="13">
 				<description>Max Duration</description>
-				<posx>0</posx>
 				<posy>35</posy>
 				<width>400</width>
 				<height>35</height>
@@ -244,6 +260,9 @@
 				<width>400</width>
 				<height>35</height>
 				<font>font12</font>
+				<textcolor>white</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<align>left</align>
 				<label>19121</label>
 				<onright>18</onright>
 				<onleft>18</onleft>
@@ -252,7 +271,6 @@
 			</control>
 			<control type="spincontrolex" id="21">
 				<description>Groups</description>
-				<posx>0</posx>
 				<posy>175</posy>
 				<width>400</width>
 				<height>35</height>
@@ -266,7 +284,6 @@
 			</control>
 			<control type="spincontrolex" id="23">
 				<description>Channels</description>
-				<posx>0</posx>
 				<posy>210</posy>
 				<width>400</width>
 				<height>35</height>
@@ -285,6 +302,9 @@
 				<height>35</height>
 				<width>400</width>
 				<font>font12</font>
+				<textcolor>white</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<align>left</align>
 				<label>19125</label>
 				<onleft>24</onleft>
 				<onright>24</onright>

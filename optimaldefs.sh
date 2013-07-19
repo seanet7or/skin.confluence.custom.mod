@@ -387,11 +387,11 @@ IFS=$'\n' ; for T in $TAGS ; do
 		DEFTAG=""
 	fi
 	
-	if ! [ -z "$DEFTAG" ] ; then
-		continue
-	fi
+	#if ! [ -z "$DEFTAG" ] ; then
+	#	continue
+	#fi
 	printf "\nControl is '$CONTROL', tag is '$TAG'."
-	printf "\nThere is no default tag."
+	#printf "\nThere is no default tag."
 	
 	2>/dev/null rm tags.tmp
 	EMPTY=0
@@ -404,7 +404,7 @@ IFS=$'\n' ; for T in $TAGS ; do
 			CONTROLSTOP=$(tail -n+"$CONTROLSTART" "$F" | grep -n '</control>' | head -n 1 | cut -f1 -d:)
 			STRUCT=$(tail -n+"$CONTROLSTART" "$F" | head -n "$CONTROLSTOP" )
 			STAG=$(echo "$STRUCT" | grep "<$TAG[ >]" | sed 's|^\s*||' )
-			if false ; then #echo "$STRUCT" | grep -q "<include>" ; then
+			if echo "$STRUCT" | grep "<include>" ; then
 				let INCS=INCS+1
 			else
 				if [ -z "$STAG" ] ; then

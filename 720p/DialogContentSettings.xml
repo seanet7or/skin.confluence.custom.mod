@@ -26,15 +26,19 @@
 				<font>font13_title</font>
 				<label>$LOCALIZE[20333]</label>
 				<align>center</align>
+				<aligny>center</aligny>
 				<textcolor>selected</textcolor>
 			</control>
 			<control type="label">
 				<description>Content Picker Header</description>
 				<posx>30</posx>
+				<posy>60</posy>
 				<width>320</width>
+				<height>40</height>
 				<font>font12</font>
 				<label>$LOCALIZE[20344]</label>
 				<align>center</align>
+				<aligny>center</aligny>
 				<textcolor>blue</textcolor>
 			</control>
 			<control type="spincontrolex" id="3">
@@ -56,8 +60,11 @@
 				<posx>35</posx>
 				<posy>100</posy>
 				<width>280</width>
+				<height>40</height>
 				<font>font13_title</font>
 				<label>$INFO[Control.GetLabel(3)]</label>
+				<align>left</align>
+				<aligny>center</aligny>
 			</control>
 			<control type="label">
 				<description>Used Scraper Header</description>
@@ -68,6 +75,7 @@
 				<font>font12</font>
 				<label>$LOCALIZE[31312]</label>
 				<align>center</align>
+				<aligny>center</aligny>
 				<textcolor>blue</textcolor>
 			</control>
 			<control type="image">
@@ -87,15 +95,19 @@
 				<height>30</height>
 				<label>[B]$INFO[ListItem.Label][/B]</label>
 				<align>center</align>
+				<aligny>center</aligny>
 				<textcolor>selected</textcolor>
 			</control>
 			<control type="label">
 				<description>Scraper List Header</description>
 				<posx>400</posx>
+				<posy>60</posy>
 				<width>360</width>
+				<height>40</height>
 				<font>font12</font>
 				<label>$LOCALIZE[31313]</label>
 				<align>center</align>
+				<aligny>center</aligny>
 				<textcolor>blue</textcolor>
 			</control>
 			<control type="list" id="4">
@@ -112,7 +124,7 @@
 				<itemlayout height="45">
 					<control type="image">
 						<width>360</width>
-						<texture>buttons/nf_light.png</texture>
+						<height>40</height>
 					</control>
 					<control type="image">
 						<posx>5</posx>
@@ -123,8 +135,10 @@
 					</control>
 					<control type="label">
 						<posx>50</posx>
-						<posy>0</posy>
 						<width>290</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<info>ListItem.Label</info>
@@ -133,11 +147,12 @@
 				<focusedlayout height="45">
 					<control type="image">
 						<width>360</width>
+						<height>40</height>
 						<visible>!Control.HasFocus(4)</visible>
-						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="image">
 						<width>360</width>
+						<height>40</height>
 						<visible>Control.HasFocus(4)</visible>
 						<texture>buttons/fo_light.png</texture>
 					</control>
@@ -150,8 +165,10 @@
 					</control>
 					<control type="label">
 						<posx>50</posx>
-						<posy>0</posy>
 						<width>290</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
 						<selectedcolor>selected</selectedcolor>
 						<info>ListItem.Label</info>
 					</control>
@@ -160,15 +177,10 @@
 			<control type="scrollbar" id="60">
 				<posx>772</posx>
 				<posy>100</posy>
-				<width>14</width>
 				<height>240</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>4</onleft>
 				<onright>3</onright>
 				<showonepage>true</showonepage>
-				<orientation>vertical</orientation>
 			</control>
 			<control type="label">
 				<description>Scanning Options Header</description>
@@ -179,6 +191,7 @@
 				<font>font12</font>
 				<label>$LOCALIZE[31314]</label>
 				<align>center</align>
+				<aligny>center</aligny>
 				<textcolor>blue</textcolor>
 			</control>
 			<control type="grouplist" id="5">
@@ -200,6 +213,7 @@
 				<height>40</height>
 			</control>
 			<control type="radiobutton" id="8">
+				<textcolor>white</textcolor>
 				<description>Default RadioButton</description>
 				<posx>0</posx>
 				<posy>0</posy>

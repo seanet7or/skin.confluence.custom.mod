@@ -26,6 +26,7 @@
 				<font>font13_title</font>
 				<label>$LOCALIZE[35000]</label>
 				<align>center</align>
+				<aligny>center</aligny>
 				<textcolor>selected</textcolor>
 			</control>
 			<control type="list" id="20">
@@ -44,33 +45,35 @@
 					<control type="image">
 						<width>550</width>
 						<height>80</height>
-						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="label">
 						<description>Name</description>
-						<posx>10</posx>
 						<posy>5</posy>
 						<width>520</width>
 						<height>20</height>
 						<label>$VAR[MainItemLabel]</label>
+						<align>left</align>
+						<aligny>center</aligny>
 					</control>
 					<control type="label">
 						<description>Product ID Vendor ID</description>
-						<posx>10</posx>
 						<posy>30</posy>
 						<width>520</width>
 						<height>20</height>
 						<label>$LOCALIZE[35504]:  [COLOR=grey2]$INFO[ListItem.Property(Product)][/COLOR]    $LOCALIZE[35503]:  [COLOR=grey2]$INFO[ListItem.Property(Vendor)][/COLOR]</label>
+						<align>left</align>
+						<aligny>center</aligny>
 						<font>font12</font>
 						<textcolor>blue</textcolor>
 					</control>
 					<control type="label">
 						<description>class</description>
-						<posx>10</posx>
 						<posy>50</posy>
 						<width>520</width>
 						<height>20</height>
 						<label>$LOCALIZE[35501]:  [COLOR=grey2]$INFO[ListItem.Property(Class)][/COLOR]     $LOCALIZE[19114]:  [COLOR=grey2]$INFO[ListItem.Property(Version)][/COLOR]</label>
+						<align>left</align>
+						<aligny>center</aligny>
 						<font>font12</font>
 						<textcolor>blue</textcolor>
 					</control>
@@ -79,7 +82,6 @@
 					<control type="image">
 						<width>550</width>
 						<height>80</height>
-						<texture>buttons/nf_light.png</texture>
 						<visible>!Control.HasFocus(20)</visible>
 					</control>
 					<control type="image">
@@ -90,29 +92,32 @@
 					</control>
 					<control type="label">
 						<description>Name</description>
-						<posx>10</posx>
 						<posy>5</posy>
 						<width>520</width>
 						<height>20</height>
 						<label>$VAR[MainItemLabel]</label>
+						<align>left</align>
+						<aligny>center</aligny>
 					</control>
 					<control type="label">
 						<description>Product ID Vendor ID</description>
-						<posx>10</posx>
 						<posy>30</posy>
 						<width>520</width>
 						<height>20</height>
 						<label>$LOCALIZE[35504]:  [COLOR=grey2]$INFO[ListItem.Property(Product)][/COLOR]    $LOCALIZE[35503]:  [COLOR=grey2]$INFO[ListItem.Property(Vendor)][/COLOR]</label>
+						<align>left</align>
+						<aligny>center</aligny>
 						<font>font12</font>
 						<textcolor>blue</textcolor>
 					</control>
 					<control type="label">
 						<description>class</description>
-						<posx>10</posx>
 						<posy>50</posy>
 						<width>520</width>
 						<height>20</height>
 						<label>$LOCALIZE[35501]:  [COLOR=grey2]$INFO[ListItem.Property(Class)][/COLOR]     $LOCALIZE[19114]:  [COLOR=grey2]$INFO[ListItem.Property(Version)][/COLOR]</label>
+						<align>left</align>
+						<aligny>center</aligny>
 						<font>font12</font>
 						<textcolor>blue</textcolor>
 					</control>
@@ -121,17 +126,11 @@
 			<control type="scrollbar" id="61">
 				<posx>582</posx>
 				<posy>65</posy>
-				<width>14</width>
 				<height>510</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>20</onleft>
 				<onright>10</onright>
 				<ondown>61</ondown>
 				<onup>61</onup>
-				<showonepage>false</showonepage>
-				<orientation>vertical</orientation>
 			</control>
 			<control type="button" id="10">
 				<description>OK button</description>

@@ -392,6 +392,7 @@
 				<height>20</height>
 				<label>$INFO[MusicPlayer.Title]$INFO[VideoPlayer.Title] - ([COLOR=blue]$INFO[Player.Time] / $INFO[Player.Duration,][/COLOR])</label>
 				<align>right</align>
+				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey</textcolor>
 			</control>
@@ -402,6 +403,7 @@
 				<height>20</height>
 				<label>$INFO[MusicPlayer.Artist]$INFO[MusicPlayer.Album, - ]</label>
 				<align>right</align>
+				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey</textcolor>
 				<visible>Player.HasAudio</visible>
@@ -413,6 +415,7 @@
 				<height>20</height>
 				<label>$INFO[VideoPlayer.Studio]</label>
 				<align>right</align>
+				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey</textcolor>
 				<visible>Player.HasVideo + VideoPlayer.Content(Movies)</visible>
@@ -424,6 +427,7 @@
 				<height>20</height>
 				<label>$INFO[VideoPlayer.TVShowTitle]</label>
 				<align>right</align>
+				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey</textcolor>
 				<visible>Player.HasVideo + VideoPlayer.Content(Episodes)</visible>
@@ -435,6 +439,7 @@
 				<height>20</height>
 				<label>$INFO[VideoPlayer.Artist]</label>
 				<align>right</align>
+				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey</textcolor>
 				<visible>Player.HasVideo + VideoPlayer.Content(MusicVideos)</visible>
@@ -446,6 +451,7 @@
 				<height>20</height>
 				<label>$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.ChannelNumber, - ([COLOR=blue],[/COLOR])]</label>
 				<align>right</align>
+				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey</textcolor>
 				<visible>Player.HasVideo + VideoPlayer.Content(LiveTV)</visible>
@@ -475,12 +481,13 @@
 			<height>30</height>
 			<width>325</width>
 			<label>$INFO[MusicPlayer.Artist]</label>
+			<align>left</align>
+			<aligny>center</aligny>
 			<font>font12_title</font>
 			<textcolor>grey2</textcolor>
 		</control>
 		<control type="fadelabel">
 			<description>Title label</description>
-			<posx>160</posx>
 			<posy>43</posy>
 			<height>30</height>
 			<width>325</width>
@@ -498,6 +505,8 @@
 			<height>30</height>
 			<width>325</width>
 			<label>$INFO[MusicPlayer.Album]$INFO[musicplayer.discnumber, - $LOCALIZE[427]:]</label>
+			<align>left</align>
+			<aligny>center</aligny>
 			<font>font12</font>
 		</control>
 		<control type="label">
@@ -507,6 +516,8 @@
 			<height>30</height>
 			<width>325</width>
 			<label>$INFO[MusicPlayer.Time]$INFO[MusicPlayer.Duration, / ]</label>
+			<align>left</align>
+			<aligny>center</aligny>
 			<font>font12</font>
 		</control>
 		<control type="label">
@@ -517,6 +528,7 @@
 			<width>325</width>
 			<label>[COLOR=blue]$LOCALIZE[209] :[/COLOR] $INFO[MusicPlayer.offset(1).Title]</label>
 			<align>right</align>
+			<aligny>center</aligny>
 			<font>font12</font>
 			<textcolor>grey</textcolor>
 		</control>
@@ -545,6 +557,8 @@
 			<height>30</height>
 			<width>325</width>
 			<label>$INFO[VideoPlayer.Studio]</label>
+			<align>left</align>
+			<aligny>center</aligny>
 			<font>font12_title</font>
 			<textcolor>grey2</textcolor>
 			<visible>!videoplayer.content(episodes) + !videoplayer.content(musicvideos)</visible>
@@ -556,12 +570,13 @@
 			<height>30</height>
 			<width>325</width>
 			<label>$INFO[VideoPlayer.tvshowtitle]</label>
+			<align>left</align>
+			<aligny>center</aligny>
 			<font>font12_title</font>
 			<visible>videoplayer.content(episodes)</visible>
 		</control>
 		<control type="fadelabel">
 			<description>Music Video Artist label</description>
-			<posx>160</posx>
 			<posy>20</posy>
 			<height>30</height>
 			<width>325</width>
@@ -575,7 +590,6 @@
 		</control>
 		<control type="fadelabel">
 			<description>Title label</description>
-			<posx>160</posx>
 			<posy>43</posy>
 			<height>30</height>
 			<width>325</width>
@@ -593,6 +607,8 @@
 			<height>30</height>
 			<width>325</width>
 			<label>$INFO[VideoPlayer.Genre]</label>
+			<align>left</align>
+			<aligny>center</aligny>
 			<font>font12</font>
 			<visible>!videoplayer.content(episodes) + !videoplayer.content(musicvideos)</visible>
 		</control>
@@ -602,6 +618,8 @@
 			<height>30</height>
 			<width>325</width>
 			<label>$INFO[VideoPlayer.Album]</label>
+			<align>left</align>
+			<aligny>center</aligny>
 			<font>font12</font>
 			<visible>videoplayer.content(musicvideos)</visible>
 		</control>
@@ -612,6 +630,8 @@
 			<height>30</height>
 			<width>325</width>
 			<label>$LOCALIZE[20373] $INFO[VideoPlayer.Season] - $LOCALIZE[20359] $INFO[VideoPlayer.episode]</label>
+			<align>left</align>
+			<aligny>center</aligny>
 			<font>font12</font>
 			<visible>videoplayer.content(episodes)</visible>
 		</control>
@@ -622,17 +642,22 @@
 			<height>30</height>
 			<width>325</width>
 			<label>$INFO[VideoPlayer.Time]$INFO[VideoPlayer.Duration, / ]</label>
+			<align>left</align>
+			<aligny>center</aligny>
 			<font>font12</font>
 		</control>
 	</include>
 	<include name="CommonNowPlaying_Controls">
 		<control type="label" id="202">
+			<posy>60</posy>
+			<posx>80</posx>
 			<width>250</width>
 			<height>35</height>
 			<font>font12</font>
 			<label>31023</label>
 			<textcolor>blue</textcolor>
 			<align>center</align>
+			<aligny>center</aligny>
 			<visible>[Player.HasAudio | Player.HasVideo]</visible>
 		</control>
 		<control type="button" id="610">
@@ -693,8 +718,6 @@
 				<texturefocus>OSDPauseFO.png</texturefocus>
 				<texturenofocus>OSDPauseNF.png</texturenofocus>
 				<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-				<alttexturefocus>OSDPlayFO.png</alttexturefocus>
-				<alttexturenofocus>OSDPlayNF.png</alttexturenofocus>
 				<onleft>603</onleft>
 				<onright>605</onright>
 				<onup>610</onup>
@@ -768,8 +791,6 @@
 					<texturefocus>OSDPauseFO.png</texturefocus>
 					<texturenofocus>OSDPauseNF.png</texturenofocus>
 					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-					<alttexturefocus>OSDPlayFO.png</alttexturefocus>
-					<alttexturenofocus>OSDPlayNF.png</alttexturenofocus>
 					<onleft>606</onleft>
 					<onright>601</onright>
 					<onup>610</onup>
@@ -917,6 +938,7 @@
 			</control>
 		</control>
 		<control type="radiobutton" id="611">
+			<textcolor>white</textcolor>
 			<description>Go to fullscreen Playback</description>
 			<include>ButtonCommonValues</include>
 			<label>31008</label>
@@ -936,6 +958,7 @@
 			<width>345</width>
 			<height>30</height>
 			<align>right</align>
+			<aligny>center</aligny>
 			<font>font35_title</font>
 			<label>$INFO[System.Time]</label>
 			<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
@@ -980,6 +1003,7 @@
 				<font>font12</font>
 				<textcolor>grey2</textcolor>
 				<align>center</align>
+				<aligny>center</aligny>
 				<label>$VAR[MainItemLabel]</label>
 				<visible>!Skin.HasSetting(HideHomeAddonName)</visible>
 			</control>
@@ -1010,6 +1034,7 @@
 				<height>20</height>
 				<font>font12</font>
 				<align>center</align>
+				<aligny>center</aligny>
 				<label>$VAR[MainItemLabel]</label>
 				<visible>Control.HasFocus(9002)</visible>
 				<visible>!Skin.HasSetting(HideHomeAddonName)</visible>
@@ -1022,6 +1047,7 @@
 				<font>font12</font>
 				<textcolor>grey2</textcolor>
 				<align>center</align>
+				<aligny>center</aligny>
 				<label>$VAR[MainItemLabel]</label>
 				<visible>!Control.HasFocus(9002)</visible>
 				<visible>!Skin.HasSetting(HideHomeAddonName)</visible>
@@ -1033,7 +1059,6 @@
 			<control type="image">
 				<width>280</width>
 				<height>145</height>
-				<texture>buttons/nf_light.png</texture>
 			</control>
 			<control type="image">
 				<description>Thumb</description>
@@ -1066,9 +1091,9 @@
 				<visible>StringCompare(Window(Home).Property(TVGuide.ThumbType),2)</visible>
 			</control>
 			<control type="label">
-				<aligny>top</aligny>
 				<description>Episode Number</description>
 				<posx>140</posx>
+				<posy>60</posy>
 				<width>260</width>
 				<height>15</height>
 				<label>$INFO[ListItem.Property(NextNumber),$LOCALIZE[20359] [COLOR=blue]-[/COLOR] ]</label>
@@ -1076,7 +1101,6 @@
 				<align>center</align>
 			</control>
 			<control type="label">
-				<aligny>top</aligny>
 				<description>Episode Name</description>
 				<posx>140</posx>
 				<posy>80</posy>
@@ -1087,7 +1111,6 @@
 				<align>center</align>
 			</control>
 			<control type="label">
-				<aligny>top</aligny>
 				<description>Next air date/time</description>
 				<posx>140</posx>
 				<posy>100</posy>
@@ -1099,7 +1122,6 @@
 				<align>center</align>
 			</control>
 			<control type="label">
-				<aligny>top</aligny>
 				<description>Duration</description>
 				<posx>140</posx>
 				<posy>120</posy>
@@ -1148,9 +1170,9 @@
 				<visible>StringCompare(Window(Home).Property(TVGuide.ThumbType),2)</visible>
 			</control>
 			<control type="label">
-				<aligny>top</aligny>
 				<description>Episode Number</description>
 				<posx>140</posx>
+				<posy>60</posy>
 				<width>260</width>
 				<height>15</height>
 				<label>$INFO[ListItem.Property(NextNumber),$LOCALIZE[20359] [COLOR=blue]-[/COLOR] ]</label>
@@ -1159,7 +1181,6 @@
 				<align>center</align>
 			</control>
 			<control type="label">
-				<aligny>top</aligny>
 				<description>Episode Name</description>
 				<posx>140</posx>
 				<posy>80</posy>
@@ -1171,7 +1192,6 @@
 				<align>center</align>
 			</control>
 			<control type="label">
-				<aligny>top</aligny>
 				<description>Next air date/time</description>
 				<posx>140</posx>
 				<posy>100</posy>
@@ -1182,7 +1202,6 @@
 				<align>center</align>
 			</control>
 			<control type="label">
-				<aligny>top</aligny>
 				<description>Duration</description>
 				<posx>140</posx>
 				<posy>120</posy>
@@ -1393,7 +1412,6 @@
 				<include condition="Skin.HasSetting(AnimateVizFanart)">KBurnsAnimateFanart</include>
 				<imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
 				<aspectratio>keep</aspectratio>
-				<randomize>true</randomize>
 				<fadetime>4000</fadetime>
 				<timeperimage>9000</timeperimage>
 				<animation effect="fade" start="0" end="100" time="300">Visible</animation>
@@ -1416,7 +1434,6 @@
 				<include condition="Skin.HasSetting(AnimateVizFanart)">KBurnsAnimateFanart</include>
 				<imagepath background="true">$INFO[Player.FolderPath,,../extrafanart/]</imagepath>
 				<aspectratio>keep</aspectratio>
-				<randomize>true</randomize>
 				<fadetime>4000</fadetime>
 				<timeperimage>9000</timeperimage>
 				<animation effect="fade" start="0" end="100" time="300">Visible</animation>
@@ -1436,7 +1453,6 @@
 				<imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
 				<colordiffuse>AAFFFFFF</colordiffuse>
 				<aspectratio>keep</aspectratio>
-				<randomize>true</randomize>
 				<fadetime>4000</fadetime>
 				<timeperimage>9000</timeperimage>
 				<animation effect="fade" start="0" end="100" time="300">Visible</animation>
@@ -1461,7 +1477,6 @@
 				<imagepath background="true">$INFO[Player.FolderPath,,../extrafanart/]</imagepath>
 				<colordiffuse>AAFFFFFF</colordiffuse>
 				<aspectratio>keep</aspectratio>
-				<randomize>true</randomize>
 				<fadetime>4000</fadetime>
 				<timeperimage>9000</timeperimage>
 				<animation effect="fade" start="0" end="100" time="300">Visible</animation>

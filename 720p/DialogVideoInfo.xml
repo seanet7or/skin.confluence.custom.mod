@@ -26,6 +26,7 @@
 					<font>font24_title</font>
 					<label>$INFO[Listitem.Title]</label>
 					<align>center</align>
+					<aligny>center</aligny>
 				</control>
 				<control type="grouplist">
 					<description>Media Codec Flagging Images</description>
@@ -66,11 +67,11 @@
 						</control>
 						<control type="label">
 							<posx>0</posx>
-							<posy>0</posy>
 							<width>675</width>
 							<height>380</height>
 							<font>font30_title</font>
 							<align>center</align>
+							<aligny>center</aligny>
 							<label>31311</label>
 						</control>
 					</control>
@@ -83,16 +84,15 @@
 						<description>Border</description>
 						<width>675</width>
 						<height>380</height>
-						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="label">
 						<posx>0</posx>
-						<posy>0</posy>
 						<width>675</width>
 						<height>380</height>
 						<font>font30_title</font>
 						<textcolor>grey2</textcolor>
 						<align>center</align>
+						<aligny>center</aligny>
 						<label>31330</label>
 						<visible>!Player.HasVideo</visible>
 					</control>
@@ -102,7 +102,6 @@
 						<posy>5</posy>
 						<width>665</width>
 						<height>370</height>
-						<visible>Player.HasVideo</visible>
 					</control>
 				</control>
 				<control type="group">
@@ -129,19 +128,20 @@
 						<itemlayout height="30">
 							<control type="label">
 								<posx>165</posx>
-								<posy>0</posy>
 								<width>160</width>
 								<height>30</height>
 								<align>right</align>
+								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
 								<posx>175</posx>
-								<posy>0</posy>
 								<width>565</width>
 								<height>30</height>
+								<align>left</align>
+								<aligny>center</aligny>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -155,19 +155,20 @@
 							</control>
 							<control type="label">
 								<posx>165</posx>
-								<posy>0</posy>
 								<width>160</width>
 								<height>30</height>
 								<align>right</align>
+								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
 								<posx>175</posx>
-								<posy>0</posy>
 								<width>565</width>
 								<height>30</height>
+								<align>left</align>
+								<aligny>center</aligny>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -272,19 +273,20 @@
 						<itemlayout height="30">
 							<control type="label">
 								<posx>165</posx>
-								<posy>0</posy>
 								<width>160</width>
 								<height>30</height>
 								<align>right</align>
+								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
 								<posx>175</posx>
-								<posy>0</posy>
 								<width>565</width>
 								<height>30</height>
+								<align>left</align>
+								<aligny>center</aligny>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -298,19 +300,20 @@
 							</control>
 							<control type="label">
 								<posx>165</posx>
-								<posy>0</posy>
 								<width>160</width>
 								<height>30</height>
 								<align>right</align>
+								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
 								<posx>175</posx>
-								<posy>0</posy>
 								<width>565</width>
 								<height>30</height>
+								<align>left</align>
+								<aligny>center</aligny>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -379,19 +382,20 @@
 						<itemlayout height="30">
 							<control type="label">
 								<posx>165</posx>
-								<posy>0</posy>
 								<width>160</width>
 								<height>30</height>
 								<align>right</align>
+								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
 								<posx>175</posx>
-								<posy>0</posy>
 								<width>465</width>
 								<height>30</height>
+								<align>left</align>
+								<aligny>center</aligny>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -405,19 +409,20 @@
 							</control>
 							<control type="label">
 								<posx>165</posx>
-								<posy>0</posy>
 								<width>160</width>
 								<height>30</height>
 								<align>right</align>
+								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
 								<posx>175</posx>
-								<posy>0</posy>
 								<width>465</width>
 								<height>30</height>
+								<align>left</align>
+								<aligny>center</aligny>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -516,19 +521,20 @@
 						<itemlayout height="30">
 							<control type="label">
 								<posx>165</posx>
-								<posy>0</posy>
 								<width>160</width>
 								<height>30</height>
 								<align>right</align>
+								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
 								<posx>175</posx>
-								<posy>0</posy>
 								<width>465</width>
 								<height>30</height>
+								<align>left</align>
+								<aligny>center</aligny>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -542,19 +548,20 @@
 							</control>
 							<control type="label">
 								<posx>165</posx>
-								<posy>0</posy>
 								<width>160</width>
 								<height>30</height>
 								<align>right</align>
+								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
 								<posx>175</posx>
-								<posy>0</posy>
 								<width>465</width>
 								<height>30</height>
+								<align>left</align>
+								<aligny>center</aligny>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -621,14 +628,11 @@
 					<description>Next page button</description>
 					<posx>120r</posx>
 					<posy>485</posy>
-					<subtype>page</subtype>
 					<font>-</font>
 					<onleft>61</onleft>
 					<onright>61</onright>
 					<ondown>9000</ondown>
 					<onup>49</onup>
-					<textcolor>-</textcolor>
-					<showonepage>true</showonepage>
 				</control>
 				<control type="textbox" id="400">
 					<description>Description Value for Movies</description>
@@ -636,8 +640,6 @@
 					<posy>515</posy>
 					<width>1030</width>
 					<height>120</height>
-					<font>font12</font>
-					<align>justify</align>
 					<pagecontrol>61</pagecontrol>
 					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="3000" delay="4000" repeat="5000">!Control.HasFocus(61) + Skin.HasSetting(AutoScroll)</autoscroll>
@@ -669,13 +671,14 @@
 					<itemlayout height="40" width="430">
 						<control type="image">
 							<width>430</width>
-							<texture>buttons/nf_light.png</texture>
+							<height>40</height>
 						</control>
 						<control type="label">
-							<posx>10</posx>
-							<posy>0</posy>
 							<width>410</width>
+							<height>40</height>
 							<font>font12</font>
+							<align>left</align>
+							<aligny>center</aligny>
 							<selectedcolor>white</selectedcolor>
 							<info>ListItem.Label</info>
 						</control>
@@ -683,19 +686,21 @@
 					<focusedlayout height="40" width="430">
 						<control type="image">
 							<width>430</width>
+							<height>40</height>
 							<visible>!Control.HasFocus(50)</visible>
-							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<width>430</width>
+							<height>40</height>
 							<visible>Control.HasFocus(50)</visible>
 							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="label">
-							<posx>10</posx>
-							<posy>0</posy>
 							<width>410</width>
+							<height>40</height>
 							<font>font12</font>
+							<align>left</align>
+							<aligny>center</aligny>
 							<selectedcolor>white</selectedcolor>
 							<info>ListItem.Label</info>
 						</control>
@@ -714,6 +719,7 @@
 					<onup>50</onup>
 					<ondown>49</ondown>
 					<control type="togglebutton" id="8">
+						<posy>167</posy>
 						<description>Play/browse to Show</description>
 						<include>ButtonInfoDialogsCommonValues</include>
 						<label>208</label>

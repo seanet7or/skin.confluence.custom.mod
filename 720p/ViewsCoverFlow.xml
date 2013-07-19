@@ -772,12 +772,14 @@
 			<visible>Control.IsVisible(555)</visible>
 			<control type="label">
 				<posx>20</posx>
+				<posy>60</posy>
 				<width>1240</width>
 				<height>35</height>
 				<font>font28_title</font>
 				<textcolor>blue</textcolor>
 				<scroll>true</scroll>
 				<align>center</align>
+				<aligny>center</aligny>
 				<label>$VAR[DescriptiveLabel]</label>
 			</control>
 			<control type="label">
@@ -786,7 +788,9 @@
 				<width>1200</width>
 				<height>35</height>
 				<wrapmultiline>true</wrapmultiline>
+				<scroll>false</scroll>
 				<align>center</align>
+				<aligny>center</aligny>
 				<label>$INFO[ListItem.Tagline]</label>
 				<visible>!IsEmpty(ListItem.Tagline)</visible>
 			</control>

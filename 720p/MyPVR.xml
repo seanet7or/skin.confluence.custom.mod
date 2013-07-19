@@ -8,12 +8,14 @@
 		<include>ContentPanelBackgroundsPVR</include>
 		<include>MainWindowMouseButtons</include>
 		<control type="label" id="29">
-			<aligny>top</aligny>
+			<posy>60</posy>
+			<posx>80</posx>
 			<description>Empty so we can pass the values up one level</description>
 			<visible>False</visible>
 		</control>
 		<control type="label" id="30">
-			<aligny>top</aligny>
+			<posy>60</posy>
+			<posx>80</posx>
 			<description>Empty so we can pass the values up one level</description>
 			<visible>False</visible>
 		</control>
@@ -26,7 +28,6 @@
 			<control type="image">
 				<width>690</width>
 				<height>400</height>
-				<texture>buttons/nf_light.png</texture>
 			</control>
 			<control type="image">
 				<posx>5</posx>
@@ -41,7 +42,6 @@
 				<posy>5</posy>
 				<width>680</width>
 				<height>390</height>
-				<visible>Player.HasVideo</visible>
 				<animation effect="slide" start="0,0" end="-2000,0" time="0">WindowClose</animation>
 			</control>
 			<control type="image">
@@ -62,6 +62,7 @@
 				<font>font12</font>
 				<textcolor>grey2</textcolor>
 				<align>center</align>
+				<aligny>center</aligny>
 				<label>$INFO[VideoPlayer.Title]</label>
 				<visible>Player.HasVideo</visible>
 			</control>
@@ -96,12 +97,15 @@
 				<ondown>9000</ondown>
 				<itemgap>0</itemgap>
 				<control type="label" id="200">
+					<posy>60</posy>
+					<posx>80</posx>
 					<width>250</width>
 					<height>35</height>
 					<font>font12caps</font>
 					<label>31006</label>
 					<textcolor>blue</textcolor>
 					<align>center</align>
+					<aligny>center</aligny>
 				</control>
 				<control type="button" id="32">
 					<description>TV Channels</description>

@@ -54,7 +54,6 @@
 				<onup>510</onup>
 				<ondown condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</ondown>
 				<ondown condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</ondown>
-				<showonepage>false</showonepage>
 				<orientation>horizontal</orientation>
 				<visible>Control.IsVisible(510)</visible>
 			</control>
@@ -117,16 +116,10 @@
 			<control type="scrollbar" id="60">
 				<posx>212</posx>
 				<posy>70</posy>
-				<width>14</width>
 				<height>576</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>514</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
-				<showonepage>false</showonepage>
-				<orientation>vertical</orientation>
 				<visible>Control.IsVisible(514)</visible>
 			</control>
 			<control type="group">
@@ -135,11 +128,11 @@
 				<control type="label">
 					<description>Title txt</description>
 					<posx>0</posx>
-					<posy>0</posy>
 					<width>928</width>
 					<height>15</height>
 					<label>$VAR[MainItemLabel]</label>
 					<align>center</align>
+					<aligny>center</aligny>
 					<font>font24_title</font>
 				</control>
 				<control type="image">

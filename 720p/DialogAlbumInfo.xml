@@ -26,6 +26,7 @@
 					<font>font24_title</font>
 					<label>$INFO[Listitem.Album]</label>
 					<align>center</align>
+					<aligny>center</aligny>
 					<visible>container.content(Albums)</visible>
 				</control>
 				<control type="label">
@@ -37,6 +38,7 @@
 					<font>font24_title</font>
 					<label>$INFO[Listitem.Artist]</label>
 					<align>center</align>
+					<aligny>center</aligny>
 					<visible>container.content(Artists)</visible>
 				</control>
 				<control type="group">
@@ -63,11 +65,11 @@
 						</control>
 						<control type="label">
 							<posx>0</posx>
-							<posy>0</posy>
 							<width>675</width>
 							<height>380</height>
 							<font>font30_title</font>
 							<align>center</align>
+							<aligny>center</aligny>
 							<label>31311</label>
 						</control>
 					</control>
@@ -96,19 +98,20 @@
 						<itemlayout height="30">
 							<control type="label">
 								<posx>140</posx>
-								<posy>0</posy>
 								<width>160</width>
 								<height>30</height>
 								<align>right</align>
+								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
 								<posx>150</posx>
-								<posy>0</posy>
 								<width>500</width>
 								<height>30</height>
+								<align>left</align>
+								<aligny>center</aligny>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -122,19 +125,20 @@
 							</control>
 							<control type="label">
 								<posx>140</posx>
-								<posy>0</posy>
 								<width>160</width>
 								<height>30</height>
 								<align>right</align>
+								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
 								<posx>150</posx>
-								<posy>0</posy>
 								<width>500</width>
 								<height>30</height>
+								<align>left</align>
+								<aligny>center</aligny>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -221,19 +225,20 @@
 						<itemlayout height="30">
 							<control type="label">
 								<posx>165</posx>
-								<posy>0</posy>
 								<width>160</width>
 								<height>30</height>
 								<align>right</align>
+								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
 								<posx>175</posx>
-								<posy>0</posy>
 								<width>465</width>
 								<height>30</height>
+								<align>left</align>
+								<aligny>center</aligny>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -247,19 +252,20 @@
 							</control>
 							<control type="label">
 								<posx>165</posx>
-								<posy>0</posy>
 								<width>160</width>
 								<height>30</height>
 								<align>right</align>
+								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
 								<posx>175</posx>
-								<posy>0</posy>
 								<width>465</width>
 								<height>30</height>
+								<align>left</align>
+								<aligny>center</aligny>
 								<selectedcolor>white</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -326,14 +332,11 @@
 					<description>Next page button</description>
 					<posx>120r</posx>
 					<posy>485</posy>
-					<subtype>page</subtype>
 					<font>-</font>
 					<onleft>61</onleft>
 					<onright>61</onright>
 					<ondown>9000</ondown>
 					<onup>49</onup>
-					<textcolor>-</textcolor>
-					<showonepage>true</showonepage>
 				</control>
 				<control type="textbox" id="4">
 					<description>Description</description>
@@ -341,8 +344,6 @@
 					<posy>515</posy>
 					<width>1030</width>
 					<height>120</height>
-					<font>font12</font>
-					<align>justify</align>
 					<pagecontrol>61</pagecontrol>
 					<autoscroll time="3000" delay="4000" repeat="5000">!Control.HasFocus(61) + Skin.HasSetting(AutoScroll)</autoscroll>
 					<visible>!Control.IsVisible(50)</visible>
@@ -373,21 +374,24 @@
 					<itemlayout condition="Container.Content(Albums)" height="40" width="430">
 						<control type="image">
 							<width>430</width>
-							<texture>buttons/nf_light.png</texture>
+							<height>40</height>
 						</control>
 						<control type="label">
-							<posx>10</posx>
-							<posy>0</posy>
 							<width>410</width>
+							<height>40</height>
 							<font>font12</font>
+							<align>left</align>
+							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
 							<label>([COLOR=selected][B]$INFO[ListItem.TrackNumber][/B][/COLOR]) - $INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
 							<posx>420</posx>
-							<posy>0</posy>
+							<width>200</width>
+							<height>40</height>
 							<font>font12</font>
 							<align>right</align>
+							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
 							<label>$INFO[ListItem.Duration]</label>
 						</control>
@@ -395,27 +399,31 @@
 					<focusedlayout condition="Container.Content(Albums)" height="40" width="430">
 						<control type="image">
 							<width>430</width>
+							<height>40</height>
 							<visible>!Control.HasFocus(50)</visible>
-							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<width>430</width>
+							<height>40</height>
 							<visible>Control.HasFocus(50)</visible>
 							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="label">
-							<posx>10</posx>
-							<posy>0</posy>
 							<width>410</width>
+							<height>40</height>
 							<font>font12</font>
+							<align>left</align>
+							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
 							<label>([COLOR=selected][B]$INFO[ListItem.TrackNumber][/B][/COLOR]) - $INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
 							<posx>420</posx>
-							<posy>0</posy>
+							<width>200</width>
+							<height>40</height>
 							<font>font12</font>
 							<align>right</align>
+							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
 							<label>$INFO[ListItem.Duration]</label>
 						</control>
@@ -423,13 +431,14 @@
 					<itemlayout condition="Container.Content(Artists)" height="40" width="430">
 						<control type="image">
 							<width>430</width>
-							<texture>buttons/nf_light.png</texture>
+							<height>40</height>
 						</control>
 						<control type="label">
-							<posx>10</posx>
-							<posy>0</posy>
 							<width>410</width>
+							<height>40</height>
 							<font>font12</font>
+							<align>left</align>
+							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
 							<label>$VAR[MainItemLabel]</label>
 						</control>
@@ -437,19 +446,21 @@
 					<focusedlayout condition="Container.Content(Artists)" height="40" width="430">
 						<control type="image">
 							<width>430</width>
+							<height>40</height>
 							<visible>!Control.HasFocus(50)</visible>
-							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<width>430</width>
+							<height>40</height>
 							<visible>Control.HasFocus(50)</visible>
 							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="label">
-							<posx>10</posx>
-							<posy>0</posy>
 							<width>410</width>
+							<height>40</height>
 							<font>font12</font>
+							<align>left</align>
+							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
 							<label>$VAR[MainItemLabel]</label>
 						</control>

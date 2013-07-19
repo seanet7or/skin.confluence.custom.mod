@@ -9,18 +9,20 @@
 				<posy>490</posy>
 				<control type="label">
 					<posx>0</posx>
-					<posy>0</posy>
 					<width>690</width>
 					<height>20</height>
 					<scroll>true</scroll>
 					<align>center</align>
+					<aligny>center</aligny>
 					<label>[B]$INFO[Container(11).ListItem.Title][/B]</label>
 				</control>
 				<control type="label">
+					<posx>80</posx>
 					<posy>22</posy>
 					<width>80</width>
 					<height>20</height>
 					<align>right</align>
+					<aligny>center</aligny>
 					<font>font10_title</font>
 					<textcolor>blue</textcolor>
 					<visible>Container(11).ListItem.HasEpg</visible>
@@ -40,6 +42,8 @@
 					<posy>22</posy>
 					<width>80</width>
 					<height>20</height>
+					<align>left</align>
+					<aligny>center</aligny>
 					<font>font10_title</font>
 					<textcolor>blue</textcolor>
 					<visible>Container(11).ListItem.HasEpg</visible>
@@ -51,8 +55,6 @@
 					<posy>43</posy>
 					<width>690</width>
 					<height>80</height>
-					<font>font12</font>
-					<align>justify</align>
 					<pagecontrol>-</pagecontrol>
 					<label>$INFO[Container(11).ListItem.Plot]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
@@ -65,6 +67,8 @@
 					<font>font12</font>
 					<textcolor>grey2</textcolor>
 					<align>right</align>
+					<aligny>center</aligny>
+					<scroll>false</scroll>
 					<visible>!IsEmpty(Container(11).ListItem.NextTitle)</visible>
 					<label>$LOCALIZE[19031]: $INFO[Container(11).ListItem.NextTitle]</label>
 				</control>
@@ -88,16 +92,19 @@
 						<width>40</width>
 						<height>35</height>
 						<font>font12</font>
+						<align>left</align>
+						<aligny>center</aligny>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
 						<info>ListItem.ChannelNumber</info>
 					</control>
 					<control type="label">
 						<posx>50</posx>
-						<posy>0</posy>
 						<width>270</width>
 						<height>25</height>
 						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Plot]</label>
 					</control>
 					<control type="label">
@@ -108,6 +115,8 @@
 						<font>font12</font>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>IsEmpty(Listitem.Icon)</visible>
 					</control>
@@ -119,14 +128,13 @@
 						<font>font12</font>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>!IsEmpty(Listitem.Icon)</visible>
 					</control>
 					<control type="progress">
 						<description>Progressbar</description>
-						<posx>50</posx>
-						<posy>48</posy>
-						<height>6</height>
 						<colordiffuse>88FFFFFF</colordiffuse>
 						<visible>ListItem.HasEpg</visible>
 						<info>ListItem.Progress</info>
@@ -160,16 +168,19 @@
 						<width>40</width>
 						<height>35</height>
 						<font>font12</font>
+						<align>left</align>
+						<aligny>center</aligny>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
 						<info>ListItem.ChannelNumber</info>
 					</control>
 					<control type="label">
 						<posx>50</posx>
-						<posy>0</posy>
 						<width>270</width>
 						<height>25</height>
 						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Plot]</label>
 					</control>
 					<control type="label">
@@ -180,6 +191,8 @@
 						<font>font12</font>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>IsEmpty(Listitem.Icon)</visible>
 					</control>
@@ -191,14 +204,13 @@
 						<font>font12</font>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>!IsEmpty(Listitem.Icon)</visible>
 					</control>
 					<control type="progress">
 						<description>Progressbar</description>
-						<posx>50</posx>
-						<posy>48</posy>
-						<height>6</height>
 						<colordiffuse>88FFFFFF</colordiffuse>
 						<visible>ListItem.HasEpg</visible>
 						<info>ListItem.Progress</info>
@@ -223,15 +235,9 @@
 			<control type="scrollbar" id="70">
 				<posx>477</posx>
 				<posy>85</posy>
-				<width>14</width>
 				<height>540</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>11</onleft>
 				<onright>32</onright>
-				<showonepage>false</showonepage>
-				<orientation>vertical</orientation>
 			</control>
 		</control>
 	</include>
@@ -244,18 +250,20 @@
 				<posy>490</posy>
 				<control type="label">
 					<posx>0</posx>
-					<posy>0</posy>
 					<width>690</width>
 					<height>20</height>
 					<scroll>true</scroll>
 					<align>center</align>
+					<aligny>center</aligny>
 					<label>[B]$INFO[Container(12).ListItem.Title][/B]</label>
 				</control>
 				<control type="label">
+					<posx>80</posx>
 					<posy>22</posy>
 					<width>80</width>
 					<height>20</height>
 					<align>right</align>
+					<aligny>center</aligny>
 					<font>font10_title</font>
 					<textcolor>blue</textcolor>
 					<visible>Container(12).ListItem.HasEpg</visible>
@@ -275,6 +283,8 @@
 					<posy>22</posy>
 					<width>80</width>
 					<height>20</height>
+					<align>left</align>
+					<aligny>center</aligny>
 					<font>font10_title</font>
 					<textcolor>blue</textcolor>
 					<visible>Container(12).ListItem.HasEpg</visible>
@@ -286,8 +296,6 @@
 					<posy>43</posy>
 					<width>690</width>
 					<height>80</height>
-					<font>font12</font>
-					<align>justify</align>
 					<pagecontrol>-</pagecontrol>
 					<label>$INFO[Container(12).ListItem.Plot]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
@@ -300,6 +308,8 @@
 					<font>font12</font>
 					<textcolor>grey2</textcolor>
 					<align>right</align>
+					<aligny>center</aligny>
+					<scroll>false</scroll>
 					<visible>!IsEmpty(Container(12).ListItem.NextTitle)</visible>
 					<label>$LOCALIZE[19031]: $INFO[Container(12).ListItem.NextTitle]</label>
 				</control>
@@ -323,16 +333,19 @@
 						<width>40</width>
 						<height>35</height>
 						<font>font12</font>
+						<align>left</align>
+						<aligny>center</aligny>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
 						<info>ListItem.ChannelNumber</info>
 					</control>
 					<control type="label">
 						<posx>50</posx>
-						<posy>0</posy>
 						<width>270</width>
 						<height>25</height>
 						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Plot]</label>
 					</control>
 					<control type="label">
@@ -343,6 +356,8 @@
 						<font>font12</font>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>IsEmpty(Listitem.Icon)</visible>
 					</control>
@@ -354,14 +369,13 @@
 						<font>font12</font>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>!IsEmpty(Listitem.Icon)</visible>
 					</control>
 					<control type="progress">
 						<description>Progressbar</description>
-						<posx>50</posx>
-						<posy>48</posy>
-						<height>6</height>
 						<colordiffuse>88FFFFFF</colordiffuse>
 						<info>ListItem.Progress</info>
 						<visible>ListItem.HasEpg</visible>
@@ -395,16 +409,19 @@
 						<width>40</width>
 						<height>35</height>
 						<font>font12</font>
+						<align>left</align>
+						<aligny>center</aligny>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
 						<info>ListItem.ChannelNumber</info>
 					</control>
 					<control type="label">
 						<posx>50</posx>
-						<posy>0</posy>
 						<width>270</width>
 						<height>25</height>
 						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Plot]</label>
 					</control>
 					<control type="label">
@@ -415,6 +432,8 @@
 						<font>font12</font>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>IsEmpty(Listitem.Icon)</visible>
 					</control>
@@ -426,14 +445,13 @@
 						<font>font12</font>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>!IsEmpty(Listitem.Icon)</visible>
 					</control>
 					<control type="progress">
 						<description>Progressbar</description>
-						<posx>50</posx>
-						<posy>48</posy>
-						<height>6</height>
 						<colordiffuse>88FFFFFF</colordiffuse>
 						<info>ListItem.Progress</info>
 						<visible>ListItem.HasEpg</visible>
@@ -458,15 +476,9 @@
 			<control type="scrollbar" id="71">
 				<posx>477</posx>
 				<posy>85</posy>
-				<width>14</width>
 				<height>540</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>12</onleft>
 				<onright>33</onright>
-				<showonepage>false</showonepage>
-				<orientation>vertical</orientation>
 			</control>
 		</control>
 	</include>
@@ -496,20 +508,23 @@
 					</control>
 					<control type="label">
 						<posx>50</posx>
-						<posy>0</posy>
 						<width>605</width>
+						<height>40</height>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Plot]</label>
 					</control>
 					<control type="label">
 						<posx>725</posx>
-						<posy>0</posy>
 						<width>500</width>
+						<height>40</height>
 						<font>font12</font>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Date]</label>
 					</control>
 					<control type="group">
@@ -554,19 +569,22 @@
 					</control>
 					<control type="label">
 						<posx>50</posx>
-						<posy>0</posy>
 						<width>630</width>
+						<height>40</height>
 						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Plot]</label>
 					</control>
 					<control type="label">
 						<posx>725</posx>
-						<posy>0</posy>
 						<width>500</width>
+						<height>40</height>
 						<font>font12</font>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Date]</label>
 					</control>
 					<control type="group">
@@ -599,15 +617,9 @@
 			<control type="scrollbar" id="72">
 				<posx>862</posx>
 				<posy>78</posy>
-				<width>14</width>
 				<height>560</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>13</onleft>
 				<onright>34</onright>
-				<showonepage>false</showonepage>
-				<orientation>vertical</orientation>
 			</control>
 			<control type="group">
 				<posx>910</posx>
@@ -633,12 +645,9 @@
 				</control>
 				<control type="textbox">
 					<description>Description Value for TV Show</description>
-					<posx>10</posx>
 					<posy>270</posy>
 					<width>290</width>
 					<height>280</height>
-					<font>font12</font>
-					<align>justify</align>
 					<label>$INFO[Container(13).ListItem.Plot]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
@@ -667,15 +676,14 @@
 					<control type="image" id="1">
 						<width>40</width>
 						<height>29</height>
-						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="label" id="2">
-						<posx>10</posx>
-						<posy>0</posy>
 						<width>34</width>
 						<height>29</height>
 						<font>font12</font>
+						<aligny>center</aligny>
 						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
 						<label>$INFO[ListItem.Plot]</label>
 					</control>
 				</rulerlayout>
@@ -684,7 +692,6 @@
 					<control type="image" id="1">
 						<width>270</width>
 						<height>52</height>
-						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="label">
 						<posx>5</posx>
@@ -692,6 +699,8 @@
 						<width>40</width>
 						<height>35</height>
 						<font>font12</font>
+						<align>left</align>
+						<aligny>center</aligny>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
 						<info>ListItem.ChannelNumber</info>
@@ -705,11 +714,12 @@
 					</control>
 					<control type="label" id="1">
 						<posx>94</posx>
-						<posy>0</posy>
 						<width>160</width>
 						<height>52</height>
 						<font>special12</font>
+						<aligny>center</aligny>
 						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
 						<label>$INFO[ListItem.ChannelName]</label>
 					</control>
 				</channellayout>
@@ -726,6 +736,8 @@
 						<width>40</width>
 						<height>35</height>
 						<font>font12</font>
+						<align>left</align>
+						<aligny>center</aligny>
 						<textcolor>grey</textcolor>
 						<selectedcolor>grey</selectedcolor>
 						<info>ListItem.ChannelNumber</info>
@@ -739,11 +751,12 @@
 					</control>
 					<control type="label" id="1">
 						<posx>94</posx>
-						<posy>0</posy>
 						<width>160</width>
 						<height>52</height>
 						<font>special12</font>
+						<aligny>center</aligny>
 						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
 						<label>$INFO[ListItem.ChannelName]</label>
 					</control>
 				</focusedchannellayout>
@@ -760,7 +773,9 @@
 						<width>30</width>
 						<height>25</height>
 						<font>font12</font>
+						<aligny>center</aligny>
 						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
 						<info>ListItem.Label</info>
 					</control>
 					<control type="image">
@@ -798,7 +813,9 @@
 						<width>30</width>
 						<height>25</height>
 						<font>font12</font>
+						<aligny>center</aligny>
 						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
 						<info>ListItem.Label</info>
 					</control>
 					<control type="image">
@@ -836,6 +853,7 @@
 					<height>20</height>
 					<font>font13_title</font>
 					<align>center</align>
+					<aligny>center</aligny>
 					<label>19029</label>
 				</control>
 				<control type="label">
@@ -846,6 +864,7 @@
 					<height>20</height>
 					<font>font13_title</font>
 					<align>center</align>
+					<aligny>center</aligny>
 					<label>369</label>
 				</control>
 				<control type="label">
@@ -856,6 +875,7 @@
 					<height>20</height>
 					<font>font13_title</font>
 					<align>center</align>
+					<aligny>center</aligny>
 					<label>31501</label>
 				</control>
 				<control type="label">
@@ -866,6 +886,7 @@
 					<height>20</height>
 					<font>font13_title</font>
 					<align>center</align>
+					<aligny>center</aligny>
 					<label>126</label>
 				</control>
 				<control type="list" id="14">
@@ -883,12 +904,14 @@
 						<control type="image">
 							<posx>220</posx>
 							<width>300</width>
+							<height>40</height>
 							<colordiffuse>33FFFFFF</colordiffuse>
 							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>940</posx>
 							<width>155</width>
+							<height>40</height>
 							<colordiffuse>33FFFFFF</colordiffuse>
 							<texture>buttons/fo_light.png</texture>
 						</control>
@@ -901,36 +924,41 @@
 						</control>
 						<control type="label">
 							<posx>50</posx>
-							<posy>0</posy>
 							<width>150</width>
+							<height>40</height>
 							<font>font12</font>
+							<align>left</align>
+							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.ChannelName</info>
 						</control>
 						<control type="label">
 							<posx>370</posx>
-							<posy>0</posy>
 							<width>290</width>
+							<height>40</height>
 							<font>font12</font>
 							<align>center</align>
+							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Label</info>
 						</control>
 						<control type="label">
 							<posx>730</posx>
-							<posy>0</posy>
 							<width>400</width>
+							<height>40</height>
 							<font>font12</font>
 							<align>center</align>
+							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Date</info>
 						</control>
 						<control type="label">
 							<posx>1018</posx>
-							<posy>0</posy>
 							<width>170</width>
+							<height>40</height>
 							<font>font12</font>
 							<align>center</align>
+							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Comment</info>
 						</control>
@@ -939,6 +967,7 @@
 						<control type="image">
 							<posx>220</posx>
 							<width>300</width>
+							<height>40</height>
 							<colordiffuse>33FFFFFF</colordiffuse>
 							<texture>buttons/fo_light.png</texture>
 							<visible>!Control.HasFocus(14)</visible>
@@ -946,6 +975,7 @@
 						<control type="image">
 							<posx>940</posx>
 							<width>155</width>
+							<height>40</height>
 							<colordiffuse>33FFFFFF</colordiffuse>
 							<texture>buttons/fo_light.png</texture>
 							<visible>!Control.HasFocus(14)</visible>
@@ -953,6 +983,7 @@
 						<control type="image">
 							<posx>220</posx>
 							<width>300</width>
+							<height>40</height>
 							<colordiffuse>88FFFFFF</colordiffuse>
 							<texture>buttons/fo_light.png</texture>
 							<visible>Control.HasFocus(14)</visible>
@@ -960,6 +991,7 @@
 						<control type="image">
 							<posx>940</posx>
 							<width>155</width>
+							<height>40</height>
 							<colordiffuse>88FFFFFF</colordiffuse>
 							<texture>buttons/fo_light.png</texture>
 							<visible>Control.HasFocus(14)</visible>
@@ -973,36 +1005,41 @@
 						</control>
 						<control type="label">
 							<posx>50</posx>
-							<posy>0</posy>
 							<width>150</width>
+							<height>40</height>
 							<font>font12</font>
+							<align>left</align>
+							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.ChannelName</info>
 						</control>
 						<control type="label">
 							<posx>370</posx>
-							<posy>0</posy>
 							<width>290</width>
+							<height>40</height>
 							<font>font12</font>
 							<align>center</align>
+							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Label</info>
 						</control>
 						<control type="label">
 							<posx>730</posx>
-							<posy>0</posy>
 							<width>400</width>
+							<height>40</height>
 							<font>font12</font>
 							<align>center</align>
+							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Date</info>
 						</control>
 						<control type="label">
 							<posx>1018</posx>
-							<posy>0</posy>
 							<width>150</width>
+							<height>40</height>
 							<font>font12</font>
 							<align>center</align>
+							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Comment</info>
 						</control>
@@ -1011,15 +1048,9 @@
 				<control type="scrollbar" id="73">
 					<posx>1117</posx>
 					<posy>50</posy>
-					<width>14</width>
 					<height>480</height>
-					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 					<onleft>11</onleft>
 					<onright>35</onright>
-					<showonepage>false</showonepage>
-					<orientation>vertical</orientation>
 				</control>
 				<control type="label">
 					<description>Next timer date</description>
@@ -1028,6 +1059,7 @@
 					<width>1010</width>
 					<height>30</height>
 					<align>center</align>
+					<aligny>center</aligny>
 					<scroll>true</scroll>
 					<label>$INFO[PVR.NextTimer]</label>
 					<visible>PVR.HasTimer</visible>
@@ -1050,6 +1082,7 @@
 					<height>20</height>
 					<font>font13_title</font>
 					<align>center</align>
+					<aligny>center</aligny>
 					<label>19148</label>
 				</control>
 				<control type="label">
@@ -1059,6 +1092,8 @@
 					<width>350</width>
 					<height>20</height>
 					<font>font13_title</font>
+					<align>left</align>
+					<aligny>center</aligny>
 					<label>369</label>
 				</control>
 				<control type="label">
@@ -1069,6 +1104,7 @@
 					<height>20</height>
 					<font>font13_title</font>
 					<align>right</align>
+					<aligny>center</aligny>
 					<label>21820</label>
 				</control>
 				<control type="label">
@@ -1079,6 +1115,7 @@
 					<height>20</height>
 					<font>font13_title</font>
 					<align>center</align>
+					<aligny>center</aligny>
 					<label>126</label>
 				</control>
 				<control type="list" id="17">
@@ -1095,16 +1132,19 @@
 					<itemlayout height="40">
 						<control type="image">
 							<width>250</width>
+							<height>40</height>
 							<colordiffuse>33FFFFFF</colordiffuse>
 							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>960</posx>
 							<width>140</width>
+							<height>40</height>
 							<colordiffuse>33FFFFFF</colordiffuse>
 							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="image">
+							<texture>-</texture>
 							<posx>10</posx>
 							<posy>5</posy>
 							<width>30</width>
@@ -1113,29 +1153,32 @@
 						</control>
 						<control type="label">
 							<posx>50</posx>
-							<posy>0</posy>
 							<width>190</width>
 							<height>35</height>
 							<font>font12</font>
+							<align>left</align>
+							<aligny>center</aligny>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.ChannelName</info>
 						</control>
 						<control type="label">
 							<posx>260</posx>
-							<posy>0</posy>
 							<width>650</width>
 							<height>35</height>
+							<align>left</align>
+							<aligny>center</aligny>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Label</info>
 						</control>
 						<control type="label">
 							<posx>950</posx>
-							<posy>0</posy>
 							<width>500</width>
+							<height>40</height>
 							<font>font12</font>
 							<align>right</align>
+							<aligny>center</aligny>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Date</info>
@@ -1150,9 +1193,11 @@
 						</control>
 						<control type="label">
 							<posx>1005</posx>
-							<posy>0</posy>
 							<width>80</width>
+							<height>40</height>
 							<font>font10</font>
+							<align>left</align>
+							<aligny>center</aligny>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<label>19043</label>
@@ -1168,9 +1213,11 @@
 						</control>
 						<control type="label">
 							<posx>1000</posx>
-							<posy>0</posy>
 							<width>80</width>
+							<height>40</height>
 							<font>font10</font>
+							<align>left</align>
+							<aligny>center</aligny>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<label>31510</label>
@@ -1180,6 +1227,7 @@
 					<focusedlayout height="40">
 						<control type="image">
 							<width>250</width>
+							<height>40</height>
 							<colordiffuse>33FFFFFF</colordiffuse>
 							<texture>buttons/fo_light.png</texture>
 							<visible>!Control.HasFocus(17)</visible>
@@ -1187,12 +1235,14 @@
 						<control type="image">
 							<posx>960</posx>
 							<width>140</width>
+							<height>40</height>
 							<colordiffuse>33FFFFFF</colordiffuse>
 							<texture>buttons/fo_light.png</texture>
 							<visible>!Control.HasFocus(17)</visible>
 						</control>
 						<control type="image">
 							<width>250</width>
+							<height>40</height>
 							<colordiffuse>88FFFFFF</colordiffuse>
 							<texture>buttons/fo_light.png</texture>
 							<visible>Control.HasFocus(17)</visible>
@@ -1200,11 +1250,13 @@
 						<control type="image">
 							<posx>960</posx>
 							<width>140</width>
+							<height>40</height>
 							<colordiffuse>88FFFFFF</colordiffuse>
 							<texture>buttons/fo_light.png</texture>
 							<visible>Control.HasFocus(17)</visible>
 						</control>
 						<control type="image">
+							<texture>-</texture>
 							<posx>10</posx>
 							<posy>5</posy>
 							<width>30</width>
@@ -1213,28 +1265,31 @@
 						</control>
 						<control type="label">
 							<posx>50</posx>
-							<posy>0</posy>
 							<width>190</width>
 							<height>35</height>
 							<font>font12</font>
+							<align>left</align>
+							<aligny>center</aligny>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.ChannelName</info>
 						</control>
 						<control type="label">
 							<posx>260</posx>
-							<posy>0</posy>
 							<width>650</width>
 							<height>35</height>
+							<align>left</align>
+							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Label</info>
 						</control>
 						<control type="label">
 							<posx>950</posx>
-							<posy>0</posy>
 							<width>500</width>
+							<height>40</height>
 							<font>font12</font>
 							<align>right</align>
+							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Date</info>
 						</control>
@@ -1248,9 +1303,11 @@
 						</control>
 						<control type="label">
 							<posx>1005</posx>
-							<posy>0</posy>
 							<width>80</width>
+							<height>40</height>
 							<font>font10</font>
+							<align>left</align>
+							<aligny>center</aligny>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<label>19043</label>
@@ -1266,9 +1323,11 @@
 						</control>
 						<control type="label">
 							<posx>1000</posx>
-							<posy>0</posy>
 							<width>80</width>
+							<height>40</height>
 							<font>font10</font>
+							<align>left</align>
+							<aligny>center</aligny>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<label>31510</label>
@@ -1279,15 +1338,9 @@
 				<control type="scrollbar" id="77">
 					<posx>1117</posx>
 					<posy>50</posy>
-					<width>14</width>
 					<height>520</height>
-					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 					<onleft>16</onleft>
 					<onright>36</onright>
-					<showonepage>false</showonepage>
-					<orientation>vertical</orientation>
 				</control>
 			</control>
 		</control>
@@ -1307,6 +1360,7 @@
 					<height>20</height>
 					<font>font13_title</font>
 					<align>center</align>
+					<aligny>center</aligny>
 					<label>21820</label>
 				</control>
 				<control type="label">
@@ -1317,6 +1371,7 @@
 					<height>20</height>
 					<font>font13_title</font>
 					<align>center</align>
+					<aligny>center</aligny>
 					<label>369</label>
 				</control>
 				<control type="label">
@@ -1327,6 +1382,7 @@
 					<height>20</height>
 					<font>font13_title</font>
 					<align>center</align>
+					<aligny>center</aligny>
 					<label>126</label>
 				</control>
 				<control type="list" id="15">
@@ -1343,29 +1399,34 @@
 					<itemlayout height="40">
 						<control type="image">
 							<width>300</width>
+							<height>40</height>
 							<colordiffuse>33FFFFFF</colordiffuse>
 							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>960</posx>
 							<width>140</width>
+							<height>40</height>
 							<colordiffuse>33FFFFFF</colordiffuse>
 							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="label">
 							<posx>150</posx>
-							<posy>0</posy>
 							<width>280</width>
+							<height>40</height>
 							<font>font12</font>
 							<align>center</align>
+							<aligny>center</aligny>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Date</info>
 						</control>
 						<control type="label">
 							<posx>310</posx>
-							<posy>0</posy>
 							<width>640</width>
+							<height>40</height>
+							<align>left</align>
+							<aligny>center</aligny>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Label</info>
@@ -1380,9 +1441,11 @@
 						</control>
 						<control type="label">
 							<posx>1005</posx>
-							<posy>0</posy>
 							<width>80</width>
+							<height>40</height>
 							<font>font10</font>
+							<align>left</align>
+							<aligny>center</aligny>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<label>19043</label>
@@ -1398,9 +1461,11 @@
 						</control>
 						<control type="label">
 							<posx>1000</posx>
-							<posy>0</posy>
 							<width>80</width>
+							<height>40</height>
 							<font>font10</font>
+							<align>left</align>
+							<aligny>center</aligny>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<label>31510</label>
@@ -1417,6 +1482,7 @@
 						</control>
 						<control type="image">
 							<width>300</width>
+							<height>40</height>
 							<colordiffuse>AAFFFFFF</colordiffuse>
 							<texture>buttons/fo_light.png</texture>
 							<visible>!Control.HasFocus(15)</visible>
@@ -1424,12 +1490,14 @@
 						<control type="image">
 							<posx>960</posx>
 							<width>140</width>
+							<height>40</height>
 							<colordiffuse>AAFFFFFF</colordiffuse>
 							<texture>buttons/fo_light.png</texture>
 							<visible>!Control.HasFocus(15)</visible>
 						</control>
 						<control type="image">
 							<width>300</width>
+							<height>40</height>
 							<colordiffuse>88FFFFFF</colordiffuse>
 							<texture>buttons/fo_light.png</texture>
 							<visible>Control.HasFocus(15)</visible>
@@ -1437,23 +1505,27 @@
 						<control type="image">
 							<posx>960</posx>
 							<width>140</width>
+							<height>40</height>
 							<colordiffuse>88FFFFFF</colordiffuse>
 							<texture>buttons/fo_light.png</texture>
 							<visible>Control.HasFocus(15)</visible>
 						</control>
 						<control type="label">
 							<posx>150</posx>
-							<posy>0</posy>
 							<width>280</width>
+							<height>40</height>
 							<font>font12</font>
 							<align>center</align>
+							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Date</info>
 						</control>
 						<control type="label">
 							<posx>310</posx>
-							<posy>0</posy>
 							<width>640</width>
+							<height>40</height>
+							<align>left</align>
+							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Label</info>
 						</control>
@@ -1463,8 +1535,6 @@
 							<posy>40</posy>
 							<width>1000</width>
 							<height>60</height>
-							<font>font12</font>
-							<align>justify</align>
 							<textcolor>grey2</textcolor>
 							<pagecontrol>-</pagecontrol>
 							<label>$VAR[VideoDescription]</label>
@@ -1479,9 +1549,11 @@
 						</control>
 						<control type="label">
 							<posx>1005</posx>
-							<posy>0</posy>
 							<width>80</width>
+							<height>40</height>
 							<font>font10</font>
+							<align>left</align>
+							<aligny>center</aligny>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<label>19043</label>
@@ -1497,9 +1569,11 @@
 						</control>
 						<control type="label">
 							<posx>1000</posx>
-							<posy>0</posy>
 							<width>80</width>
+							<height>40</height>
 							<font>font10</font>
+							<align>left</align>
+							<aligny>center</aligny>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<label>31510</label>
@@ -1509,16 +1583,9 @@
 				</control>
 				<control type="scrollbar" id="75">
 					<posx>1117</posx>
-					<posy>60</posy>
-					<width>14</width>
 					<height>500</height>
-					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 					<onleft>15</onleft>
 					<onright>31</onright>
-					<showonepage>false</showonepage>
-					<orientation>vertical</orientation>
 				</control>
 			</control>
 		</control>
@@ -1538,6 +1605,7 @@
 					<height>20</height>
 					<font>font13_title</font>
 					<align>center</align>
+					<aligny>center</aligny>
 					<label>555</label>
 				</control>
 				<control type="label">
@@ -1548,6 +1616,7 @@
 					<height>20</height>
 					<font>font13_title</font>
 					<align>center</align>
+					<aligny>center</aligny>
 					<label>19148</label>
 				</control>
 				<control type="label">
@@ -1558,6 +1627,7 @@
 					<height>20</height>
 					<font>font13_title</font>
 					<align>center</align>
+					<aligny>center</aligny>
 					<label>369</label>
 				</control>
 				<control type="label">
@@ -1568,6 +1638,7 @@
 					<height>20</height>
 					<font>font13_title</font>
 					<align>center</align>
+					<aligny>center</aligny>
 					<label>126</label>
 				</control>
 				<control type="list" id="16">
@@ -1585,26 +1656,30 @@
 						<control type="image">
 							<posx>100</posx>
 							<width>250</width>
+							<height>40</height>
 							<colordiffuse>33FFFFFF</colordiffuse>
 							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>960</posx>
 							<width>140</width>
+							<height>40</height>
 							<colordiffuse>33FFFFFF</colordiffuse>
 							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="label">
 							<posx>50</posx>
-							<posy>0</posy>
 							<width>100</width>
+							<height>40</height>
 							<font>font12</font>
 							<align>center</align>
+							<aligny>center</aligny>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.StartTime</info>
 						</control>
 						<control type="image">
+							<texture>-</texture>
 							<posx>110</posx>
 							<posy>5</posy>
 							<width>30</width>
@@ -1613,19 +1688,21 @@
 						</control>
 						<control type="label">
 							<posx>150</posx>
-							<posy>0</posy>
 							<width>190</width>
 							<height>35</height>
 							<font>font12</font>
+							<align>left</align>
+							<aligny>center</aligny>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.ChannelName</info>
 						</control>
 						<control type="label">
 							<posx>360</posx>
-							<posy>0</posy>
 							<width>590</width>
 							<height>35</height>
+							<align>left</align>
+							<aligny>center</aligny>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Label</info>
@@ -1640,9 +1717,11 @@
 						</control>
 						<control type="label">
 							<posx>1005</posx>
-							<posy>0</posy>
 							<width>80</width>
+							<height>40</height>
 							<font>font10</font>
+							<align>left</align>
+							<aligny>center</aligny>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<label>19043</label>
@@ -1658,9 +1737,11 @@
 						</control>
 						<control type="label">
 							<posx>1000</posx>
-							<posy>0</posy>
 							<width>80</width>
+							<height>40</height>
 							<font>font10</font>
+							<align>left</align>
+							<aligny>center</aligny>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<label>31510</label>
@@ -1678,6 +1759,7 @@
 						<control type="image">
 							<posx>100</posx>
 							<width>250</width>
+							<height>40</height>
 							<colordiffuse>AAFFFFFF</colordiffuse>
 							<texture>buttons/fo_light.png</texture>
 							<visible>!Control.HasFocus(16)</visible>
@@ -1685,6 +1767,7 @@
 						<control type="image">
 							<posx>960</posx>
 							<width>140</width>
+							<height>40</height>
 							<colordiffuse>AAFFFFFF</colordiffuse>
 							<texture>buttons/fo_light.png</texture>
 							<visible>!Control.HasFocus(16)</visible>
@@ -1692,6 +1775,7 @@
 						<control type="image">
 							<posx>100</posx>
 							<width>250</width>
+							<height>40</height>
 							<colordiffuse>88FFFFFF</colordiffuse>
 							<texture>buttons/fo_light.png</texture>
 							<visible>Control.HasFocus(16)</visible>
@@ -1699,20 +1783,23 @@
 						<control type="image">
 							<posx>960</posx>
 							<width>140</width>
+							<height>40</height>
 							<colordiffuse>88FFFFFF</colordiffuse>
 							<texture>buttons/fo_light.png</texture>
 							<visible>Control.HasFocus(16)</visible>
 						</control>
 						<control type="label">
 							<posx>50</posx>
-							<posy>0</posy>
 							<width>100</width>
+							<height>40</height>
 							<font>font12</font>
 							<align>center</align>
+							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.StartTime</info>
 						</control>
 						<control type="image">
+							<texture>-</texture>
 							<posx>110</posx>
 							<posy>5</posy>
 							<width>30</width>
@@ -1721,18 +1808,20 @@
 						</control>
 						<control type="label">
 							<posx>150</posx>
-							<posy>0</posy>
 							<width>190</width>
 							<height>35</height>
 							<font>font12</font>
+							<align>left</align>
+							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.ChannelName</info>
 						</control>
 						<control type="label">
 							<posx>360</posx>
-							<posy>0</posy>
 							<width>590</width>
 							<height>35</height>
+							<align>left</align>
+							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Label</info>
 						</control>
@@ -1742,8 +1831,6 @@
 							<posy>35</posy>
 							<width>1000</width>
 							<height>60</height>
-							<font>font12</font>
-							<align>justify</align>
 							<textcolor>grey2</textcolor>
 							<pagecontrol>-</pagecontrol>
 							<label>$VAR[VideoDescription]</label>
@@ -1758,9 +1845,11 @@
 						</control>
 						<control type="label">
 							<posx>1005</posx>
-							<posy>0</posy>
 							<width>80</width>
+							<height>40</height>
 							<font>font10</font>
+							<align>left</align>
+							<aligny>center</aligny>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<label>19043</label>
@@ -1776,9 +1865,11 @@
 						</control>
 						<control type="label">
 							<posx>1000</posx>
-							<posy>0</posy>
 							<width>80</width>
+							<height>40</height>
 							<font>font10</font>
+							<align>left</align>
+							<aligny>center</aligny>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<label>31510</label>
@@ -1788,16 +1879,9 @@
 				</control>
 				<control type="scrollbar" id="76">
 					<posx>1117</posx>
-					<posy>60</posy>
-					<width>14</width>
 					<height>500</height>
-					<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-					<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-					<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 					<onleft>16</onleft>
 					<onright>31</onright>
-					<showonepage>false</showonepage>
-					<orientation>vertical</orientation>
 				</control>
 			</control>
 		</control>

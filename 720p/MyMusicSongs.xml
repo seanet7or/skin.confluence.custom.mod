@@ -37,12 +37,15 @@
 				<onback>50</onback>
 				<itemgap>0</itemgap>
 				<control type="label" id="200">
+					<posy>60</posy>
+					<posx>80</posx>
 					<width>250</width>
 					<height>35</height>
 					<font>font12</font>
 					<label>31006</label>
 					<textcolor>blue</textcolor>
 					<align>center</align>
+					<aligny>center</aligny>
 				</control>
 				<control type="button" id="2">
 					<description>View As button</description>
@@ -56,6 +59,7 @@
 					<label>103</label>
 				</control>
 				<control type="togglebutton" id="4">
+					<posy>167</posy>
 					<description>Sort asc</description>
 					<include>ButtonCommonValues</include>
 					<alttexturefocus>buttons/fo_light.png</alttexturefocus>
@@ -65,6 +69,7 @@
 					<usealttexture>Container.SortDirection(Ascending)</usealttexture>
 				</control>
 				<control type="radiobutton" id="99">
+					<textcolor>white</textcolor>
 					<description>Library button</description>
 					<label>$LOCALIZE[29800]</label>
 					<onclick>ReplaceWindow(MusicLibrary)</onclick>
@@ -80,6 +85,7 @@
 					<label>587</label>
 				</control>
 				<control type="radiobutton" id="20">
+					<textcolor>white</textcolor>
 					<visible>Container.CanFilterAdvanced</visible>
 					<description>Filter</description>
 					<include>ButtonCommonValues</include>

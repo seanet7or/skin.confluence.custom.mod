@@ -25,20 +25,15 @@
 				<font>font13_title</font>
 				<label>$LOCALIZE[13406]</label>
 				<align>center</align>
+				<aligny>center</aligny>
 				<textcolor>selected</textcolor>
 			</control>
 			<control type="scrollbar" id="60">
 				<posx>767</posx>
 				<posy>70</posy>
-				<width>14</width>
 				<height>495</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>5</onleft>
 				<onright>5</onright>
-				<showonepage>false</showonepage>
-				<orientation>vertical</orientation>
 			</control>
 			<control type="list" id="5">
 				<animation effect="slide" start="0,0" end="10,0" time="0" condition="!Control.IsVisible(60)">Conditional</animation>
@@ -54,16 +49,18 @@
 				<scrolltime>200</scrolltime>
 				<itemlayout height="45">
 					<control type="label">
-						<posx>10</posx>
-						<posy>0</posy>
 						<width>500</width>
+						<height>40</height>
+						<aligny>center</aligny>
 						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>710</posx>
-						<posy>0</posy>
 						<width>650</width>
+						<height>40</height>
+						<aligny>center</aligny>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
@@ -73,20 +70,23 @@
 				<focusedlayout height="45">
 					<control type="image">
 						<width>720</width>
+						<height>40</height>
 						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(5)</visible>
 					</control>
 					<control type="label">
-						<posx>10</posx>
-						<posy>0</posy>
 						<width>500</width>
+						<height>40</height>
+						<aligny>center</aligny>
 						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>710</posx>
-						<posy>0</posy>
 						<width>650</width>
+						<height>40</height>
+						<aligny>center</aligny>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>

@@ -31,12 +31,12 @@
 						<animation effect="fade" start="60" end="60" time="0" condition="true">conditional</animation>
 					</control>
 					<control type="label">
-						<aligny>top</aligny>
 						<visible>IsEmpty(ListItem.Title) | IsEmpty(ListItem.Art(clearlogo))</visible>
 						<posx>50</posx>
 						<posy>30</posy>
 						<width>330</width>
 						<height>89</height>
+						<align>left</align>
 						<font>font28_title</font>
 						<textcolor>grey2</textcolor>
 						<label>[B]$INFO[ListItem.Label][/B]</label>
@@ -81,23 +81,23 @@
 						<animation effect="fade" start="60" end="60" time="0" condition="true">conditional</animation>
 					</control>
 					<control type="label">
-						<aligny>top</aligny>
 						<visible>Container.Content(episodes) + !IsEmpty(ListItem.Title)</visible>
 						<posx>50</posx>
 						<posy>30</posy>
 						<width>330</width>
 						<height>89</height>
+						<align>left</align>
 						<font>font28_title</font>
 						<textcolor>grey2</textcolor>
 						<label>[B]$LOCALIZE[20359] $INFO[ListItem.Episode][/B]</label>
 					</control>
 					<control type="label">
-						<aligny>top</aligny>
 						<visible>IsEmpty(ListItem.Title) | Container.Content(Seasons) | [IsEmpty(ListItem.Art(banner)) + !Container.Content(episodes)]</visible>
 						<posx>50</posx>
 						<posy>30</posy>
 						<width>330</width>
 						<height>89</height>
+						<align>left</align>
 						<font>font28_title</font>
 						<textcolor>grey2</textcolor>
 						<label>[B]$INFO[ListItem.Label][/B]</label>
@@ -151,6 +151,7 @@
 						<posy>30</posy>
 						<width>270</width>
 						<height>89</height>
+						<align>left</align>
 						<aligny>bottom</aligny>
 						<font>font28_title</font>
 						<label>[B]$INFO[ListItem.Label][/B]</label>
@@ -205,6 +206,7 @@
 						<posy>30</posy>
 						<width>270</width>
 						<height>89</height>
+						<align>left</align>
 						<aligny>bottom</aligny>
 						<font>font28_title</font>
 						<label>[B]$LOCALIZE[20359] $INFO[ListItem.Episode][/B]</label>
@@ -261,16 +263,11 @@
 			<control type="scrollbar" id="60">
 				<posx>35r</posx>
 				<posy>85</posy>
-				<width>14</width>
 				<height>550</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>730</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
 				<showonepage>true</showonepage>
-				<orientation>vertical</orientation>
 				<visible>Control.IsVisible(730)</visible>
 			</control>
 			<control type="group">
@@ -338,18 +335,22 @@
 					<visible>Container.Content(Movies)</visible>
 				</control>
 				<control type="label">
-					<posx>10</posx>
 					<posy>450</posy>
 					<width>290</width>
 					<height>25</height>
+					<scroll>false</scroll>
+					<align>left</align>
+					<aligny>center</aligny>
 					<label>$VAR[MediaRuntime,[B][COLOR=blue]$LOCALIZE[2050]: [/COLOR][/B]]</label>
 					<visible>!Container.Content(TVShows) + !IsEmpty(ListItem.Duration)</visible>
 				</control>
 				<control type="label">
-					<posx>10</posx>
 					<posy>450</posy>
 					<width>290</width>
 					<height>25</height>
+					<scroll>false</scroll>
+					<align>left</align>
+					<aligny>center</aligny>
 					<label>$INFO[listitem.episode,[B][COLOR=blue]$LOCALIZE[20360]: [/COLOR][/B]]</label>
 					<visible>[Container.Content(TVShows) | Container.Content(Seasons)] + !IsEmpty(ListItem.episode)</visible>
 				</control>
@@ -358,7 +359,9 @@
 					<posy>450</posy>
 					<width>490</width>
 					<height>30</height>
+					<scroll>false</scroll>
 					<align>right</align>
+					<aligny>center</aligny>
 					<label>$INFO[ListItem.Director,[B][COLOR=blue]$LOCALIZE[20339]: [/COLOR][/B]]</label>
 					<visible>!IsEmpty(ListItem.Director)</visible>
 				</control>
@@ -367,7 +370,9 @@
 					<posy>450</posy>
 					<width>490</width>
 					<height>30</height>
+					<scroll>false</scroll>
 					<align>right</align>
+					<aligny>center</aligny>
 					<label>$INFO[ListItem.Premiered,[B][COLOR=blue]$LOCALIZE[31322]: [/COLOR][/B]]</label>
 					<visible>IsEmpty(ListItem.Director) + !IsEmpty(ListItem.Premiered)</visible>
 				</control>
@@ -377,8 +382,6 @@
 					<posy>490</posy>
 					<width>805</width>
 					<height>85</height>
-					<font>font12</font>
-					<align>justify</align>
 					<label>$VAR[VideoDescription]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>

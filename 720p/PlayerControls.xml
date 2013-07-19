@@ -53,14 +53,11 @@
 			</control>
 			<control type="togglebutton" id="603">
 				<posx>80</posx>
-				<posy>0</posy>
 				<width>40</width>
 				<height>40</height>
 				<texturefocus>OSDPauseFO.png</texturefocus>
 				<texturenofocus>OSDPauseNF.png</texturenofocus>
 				<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-				<alttexturefocus>OSDPlayFO.png</alttexturefocus>
-				<alttexturenofocus>OSDPlayNF.png</alttexturenofocus>
 				<onleft>601</onleft>
 				<onright>602</onright>
 				<onup>300</onup>
@@ -151,6 +148,7 @@
 				<control type="image">
 					<posx>325</posx>
 					<width>40</width>
+					<height>40</height>
 					<texture>OSDRepeatNF.png</texture>
 					<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
 					<visible>!Control.HasFocus(607)</visible>
@@ -159,6 +157,7 @@
 				<control type="image">
 					<posx>325</posx>
 					<width>40</width>
+					<height>40</height>
 					<texture>OSDRepeatFO.png</texture>
 					<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
 					<visible>Control.HasFocus(607)</visible>
@@ -167,6 +166,7 @@
 				<control type="image">
 					<posx>325</posx>
 					<width>40</width>
+					<height>40</height>
 					<texture>OSDRepeatOneNF.png</texture>
 					<visible>Playlist.IsRepeatOne</visible>
 					<visible>!Control.HasFocus(607)</visible>
@@ -175,6 +175,7 @@
 				<control type="image">
 					<posx>325</posx>
 					<width>40</width>
+					<height>40</height>
 					<texture>OSDRepeatOneFO.png</texture>
 					<visible>Playlist.IsRepeatOne</visible>
 					<visible>Control.HasFocus(607)</visible>
@@ -183,6 +184,7 @@
 				<control type="image">
 					<posx>325</posx>
 					<width>40</width>
+					<height>40</height>
 					<texture>OSDRepeatAllNF.png</texture>
 					<visible>Playlist.IsRepeat</visible>
 					<visible>!Control.HasFocus(607)</visible>
@@ -191,6 +193,7 @@
 				<control type="image">
 					<posx>325</posx>
 					<width>40</width>
+					<height>40</height>
 					<texture>OSDRepeatAllFO.png</texture>
 					<visible>Playlist.IsRepeat</visible>
 					<visible>Control.HasFocus(607)</visible>
@@ -198,7 +201,6 @@
 				</control>
 				<control type="togglebutton" id="608">
 					<posx>365</posx>
-					<posy>0</posy>
 					<width>40</width>
 					<height>40</height>
 					<texturefocus>OSDRandomOffFO.png</texturefocus>
@@ -215,7 +217,6 @@
 				</control>
 				<control type="togglebutton" id="609">
 					<posx>405</posx>
-					<posy>0</posy>
 					<width>40</width>
 					<height>40</height>
 					<label>31128</label>
@@ -279,14 +280,11 @@
 			</control>
 			<control type="togglebutton" id="703">
 				<posx>80</posx>
-				<posy>0</posy>
 				<width>40</width>
 				<height>40</height>
 				<texturefocus>OSDPauseFO.png</texturefocus>
 				<texturenofocus>OSDPauseNF.png</texturenofocus>
 				<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-				<alttexturefocus>OSDPlayFO.png</alttexturefocus>
-				<alttexturenofocus>OSDPlayNF.png</alttexturenofocus>
 				<onleft>702</onleft>
 				<onright>704</onright>
 				<onup>300</onup>

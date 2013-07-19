@@ -26,6 +26,7 @@
 				<font>font13_title</font>
 				<label>$LOCALIZE[3] - $LOCALIZE[5]</label>
 				<align>center</align>
+				<aligny>center</aligny>
 				<textcolor>selected</textcolor>
 				<visible>Window.IsVisible(123)</visible>
 			</control>
@@ -38,11 +39,11 @@
 				<font>font13_title</font>
 				<label>$LOCALIZE[292] - $LOCALIZE[5]</label>
 				<align>center</align>
+				<aligny>center</aligny>
 				<textcolor>selected</textcolor>
 				<visible>Window.IsVisible(124)</visible>
 			</control>
 			<control type="label" id="3">
-				<aligny>top</aligny>
 				<description>No Settings Label</description>
 				<posx>20</posx>
 				<posy>180</posy>
@@ -66,24 +67,15 @@
 			<control type="scrollbar" id="60">
 				<posx>772</posx>
 				<posy>65</posy>
-				<width>14</width>
 				<height>490</height>
-				<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-				<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-				<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 				<onleft>5</onleft>
 				<onright>5</onright>
 				<ondown>61</ondown>
 				<onup>61</onup>
-				<showonepage>false</showonepage>
-				<orientation>vertical</orientation>
 			</control>
 		</control>
 		<control type="sliderex" id="10">
 			<description>Default Slider</description>
-			<height>40</height>
-			<font>font13</font>
-			<textcolor>grey2</textcolor>
 		</control>
 		<control type="button" id="7">
 			<description>Default Button</description>
@@ -98,12 +90,10 @@
 			<posx>0</posx>
 			<posy>0</posy>
 			<height>40</height>
-			<textcolor>grey2</textcolor>
+			<focusedcolor>white</focusedcolor>
 		</control>
 		<control type="spincontrolex" id="9">
 			<description>Default SpinControlex</description>
-			<posx>0</posx>
-			<posy>0</posy>
 			<height>40</height>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>white</focusedcolor>

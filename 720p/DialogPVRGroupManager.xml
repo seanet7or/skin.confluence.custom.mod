@@ -25,6 +25,7 @@
 					<font>font24_title</font>
 					<label>19143</label>
 					<align>center</align>
+					<aligny>center</aligny>
 					<textcolor>selected</textcolor>
 				</control>
 				<control type="group">
@@ -34,18 +35,17 @@
 					<control type="label">
 						<description>name label</description>
 						<posx>0</posx>
-						<posy>0</posy>
 						<width>340</width>
 						<height>70</height>
 						<label>31506</label>
 						<align>center</align>
+						<aligny>center</aligny>
 						<textcolor>blue</textcolor>
 					</control>
 					<control type="image">
 						<posy>75</posy>
 						<width>340</width>
 						<height>460</height>
-						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="list" id="13">
 						<posx>5</posx>
@@ -61,13 +61,14 @@
 						<itemlayout height="45">
 							<control type="image">
 								<width>330</width>
-								<texture>buttons/nf_light.png</texture>
+								<height>40</height>
 							</control>
 							<control type="label">
-								<posx>10</posx>
-								<posy>0</posy>
 								<width>310</width>
+								<height>40</height>
 								<font>font12</font>
+								<align>left</align>
+								<aligny>center</aligny>
 								<textcolor>grey2</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
@@ -76,19 +77,21 @@
 						<focusedlayout height="45">
 							<control type="image">
 								<width>330</width>
-								<texture>buttons/nf_light.png</texture>
+								<height>40</height>
 								<visible>!Control.HasFocus(13)</visible>
 							</control>
 							<control type="image">
 								<width>330</width>
+								<height>40</height>
 								<texture>buttons/fo_light.png</texture>
 								<visible>Control.HasFocus(13)</visible>
 							</control>
 							<control type="label">
-								<posx>10</posx>
-								<posy>0</posy>
 								<width>310</width>
+								<height>40</height>
 								<font>font12</font>
+								<align>left</align>
+								<aligny>center</aligny>
 								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
 							</control>
@@ -97,17 +100,11 @@
 					<control type="scrollbar" id="73">
 						<posx>352</posx>
 						<posy>75</posy>
-						<width>14</width>
 						<height>460</height>
-						<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-						<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-						<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 						<onleft>13</onleft>
 						<onright>11</onright>
 						<ondown>73</ondown>
 						<onup>73</onup>
-						<showonepage>false</showonepage>
-						<orientation>vertical</orientation>
 					</control>
 				</control>
 				<control type="group">
@@ -117,17 +114,16 @@
 					<control type="label" id="21">
 						<description>name label</description>
 						<posx>0</posx>
-						<posy>0</posy>
 						<width>340</width>
 						<height>70</height>
 						<align>center</align>
+						<aligny>center</aligny>
 						<textcolor>blue</textcolor>
 					</control>
 					<control type="image">
 						<posy>75</posy>
 						<width>340</width>
 						<height>460</height>
-						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="list" id="11">
 						<posx>5</posx>
@@ -143,7 +139,7 @@
 						<itemlayout height="45">
 							<control type="image">
 								<width>330</width>
-								<texture>buttons/nf_light.png</texture>
+								<height>40</height>
 							</control>
 							<control type="image">
 								<width>32</width>
@@ -154,9 +150,11 @@
 							</control>
 							<control type="label">
 								<posx>40</posx>
-								<posy>0</posy>
 								<width>280</width>
+								<height>40</height>
 								<font>font12</font>
+								<align>left</align>
+								<aligny>center</aligny>
 								<textcolor>grey2</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<label>$INFO[ListItem.ChannelNumber,(,) - ]$INFO[ListItem.ChannelName]</label>
@@ -165,11 +163,12 @@
 						<focusedlayout height="45">
 							<control type="image">
 								<width>330</width>
-								<texture>buttons/nf_light.png</texture>
+								<height>40</height>
 								<visible>!Control.HasFocus(11)</visible>
 							</control>
 							<control type="image">
 								<width>330</width>
+								<height>40</height>
 								<texture>buttons/fo_light.png</texture>
 								<visible>Control.HasFocus(11)</visible>
 							</control>
@@ -182,9 +181,11 @@
 							</control>
 							<control type="label">
 								<posx>40</posx>
-								<posy>0</posy>
 								<width>280</width>
+								<height>40</height>
 								<font>font12</font>
+								<align>left</align>
+								<aligny>center</aligny>
 								<selectedcolor>selected</selectedcolor>
 								<label>$INFO[ListItem.ChannelNumber,(,) - ]$INFO[ListItem.ChannelName]</label>
 							</control>
@@ -193,17 +194,11 @@
 					<control type="scrollbar" id="71">
 						<posx>352</posx>
 						<posy>75</posy>
-						<width>14</width>
 						<height>460</height>
-						<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-						<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-						<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 						<onleft>11</onleft>
 						<onright>12</onright>
 						<ondown>71</ondown>
 						<onup>71</onup>
-						<showonepage>false</showonepage>
-						<orientation>vertical</orientation>
 					</control>
 				</control>
 				<control type="group">
@@ -213,17 +208,16 @@
 					<control type="label" id="22">
 						<description>name label</description>
 						<posx>0</posx>
-						<posy>0</posy>
 						<width>340</width>
 						<height>70</height>
 						<align>center</align>
+						<aligny>center</aligny>
 						<textcolor>blue</textcolor>
 					</control>
 					<control type="image">
 						<posy>75</posy>
 						<width>340</width>
 						<height>460</height>
-						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="list" id="12">
 						<posx>5</posx>
@@ -239,7 +233,7 @@
 						<itemlayout height="45">
 							<control type="image">
 								<width>330</width>
-								<texture>buttons/nf_light.png</texture>
+								<height>40</height>
 							</control>
 							<control type="image">
 								<width>32</width>
@@ -250,9 +244,11 @@
 							</control>
 							<control type="label">
 								<posx>40</posx>
-								<posy>0</posy>
 								<width>280</width>
+								<height>40</height>
 								<font>font12</font>
+								<align>left</align>
+								<aligny>center</aligny>
 								<textcolor>grey2</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<label>$INFO[ListItem.ChannelNumber,(,) - ]$INFO[ListItem.ChannelName]</label>
@@ -261,11 +257,12 @@
 						<focusedlayout height="45">
 							<control type="image">
 								<width>330</width>
-								<texture>buttons/nf_light.png</texture>
+								<height>40</height>
 								<visible>!Control.HasFocus(12)</visible>
 							</control>
 							<control type="image">
 								<width>330</width>
+								<height>40</height>
 								<texture>buttons/fo_light.png</texture>
 								<visible>Control.HasFocus(12)</visible>
 							</control>
@@ -278,9 +275,11 @@
 							</control>
 							<control type="label">
 								<posx>40</posx>
-								<posy>0</posy>
 								<width>280</width>
+								<height>40</height>
 								<font>font12</font>
+								<align>left</align>
+								<aligny>center</aligny>
 								<selectedcolor>selected</selectedcolor>
 								<label>$INFO[ListItem.ChannelNumber,(,) - ]$INFO[ListItem.ChannelName]</label>
 							</control>
@@ -289,17 +288,11 @@
 					<control type="scrollbar" id="72">
 						<posx>352</posx>
 						<posy>75</posy>
-						<width>14</width>
 						<height>460</height>
-						<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
-						<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
-						<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 						<onleft>12</onleft>
 						<onright>26</onright>
 						<ondown>72</ondown>
 						<onup>72</onup>
-						<showonepage>false</showonepage>
-						<orientation>vertical</orientation>
 					</control>
 				</control>
 				<control type="grouplist" id="9000">
@@ -343,7 +336,8 @@
 		</control>
 		<include>Clock</include>
 		<control type="label" id="20">
-			<aligny>top</aligny>
+			<posy>60</posy>
+			<posx>80</posx>
 			<description>Fake Label used to pass on name label</description>
 			<visible>false</visible>
 		</control>
