@@ -56,6 +56,7 @@
 				<label>$INFO[Control.GetLabel(2)] - $LOCALIZE[5]</label>
 				<align>left</align>
 				<aligny>center</aligny>
+				<textcolor>textnofocus</textcolor>
 			</control>
 			<control type="grouplist" id="5">
 				<description>control area</description>
@@ -85,32 +86,26 @@
 			<textoffsetx>20</textoffsetx>
 			<align>right</align>
 			<font>font13_title</font>
-			<textcolor>textnofocus</textcolor>
-			<focusedcolor>white</focusedcolor>
+			<focusedcolor>textfocus</focusedcolor>
 			<texturenofocus border="5">-</texturenofocus>
 		</control>
 		<control type="button" id="7">
 			<description>Default Button</description>
 			<posx>0</posx>
 			<posy>0</posy>
-			<height>40</height>
-			<textcolor>textnofocus</textcolor>
-			<focusedcolor>white</focusedcolor>
+			<focusedcolor>textfocus</focusedcolor>
 			<texturenofocus border="0,2,0,2">-</texturenofocus>
 		</control>
 		<control type="radiobutton" id="8">
 			<description>Default RadioButton</description>
 			<posx>0</posx>
 			<posy>0</posy>
-			<height>40</height>
-			<focusedcolor>white</focusedcolor>
+			<focusedcolor>textfocus</focusedcolor>
 			<texturenofocus border="0,2,0,2">-</texturenofocus>
 		</control>
 		<control type="spincontrolex" id="9">
 			<description>Default SpinControlex</description>
-			<height>40</height>
-			<textcolor>textnofocus</textcolor>
-			<focusedcolor>white</focusedcolor>
+			<focusedcolor>textfocus</focusedcolor>
 			<texturenofocus border="0,2,0,2">-</texturenofocus>
 		</control>
 		<control type="image" id="11">
@@ -118,6 +113,7 @@
 			<height>2</height>
 		</control>
 		<control type="label" id="2">
+			<textcolor>textnofocus</textcolor>
 			<description>Fake Label so we can pass it value down to the one below</description>
 			<posx>0</posx>
 			<width>0</width>

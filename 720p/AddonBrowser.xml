@@ -49,17 +49,21 @@
 					<description>View As button</description>
 					<textwidth>235</textwidth>
 					<include>ButtonCommonValues</include>
+					<texturenofocus>-</texturenofocus>
 					<label>-</label>
 				</control>
 				<control type="button" id="3">
 					<description>Sort by button</description>
 					<include>ButtonCommonValues</include>
+					<texturenofocus>-</texturenofocus>
 					<label>103</label>
 				</control>
 				<control type="togglebutton" id="4">
 					<posy>167</posy>
 					<description>Sort asc</description>
 					<include>ButtonCommonValues</include>
+					<texturenofocus>-</texturenofocus>
+					<texturefocus>buttons/fo_light.png</texturefocus>
 					<alttexturefocus>buttons/fo_light.png</alttexturefocus>
 					<alttexturenofocus>-</alttexturenofocus>
 					<label>31051</label>
@@ -78,7 +82,6 @@
 					<aligny>center</aligny>
 				</control>
 				<control type="radiobutton" id="5">
-					<textcolor>white</textcolor>
 					<description>Enable auto-updates</description>
 					<posx>0</posx>
 					<posy>130</posy>
@@ -86,7 +89,6 @@
 					<label>24063</label>
 				</control>
 				<control type="radiobutton" id="6">
-					<textcolor>white</textcolor>
 					<description>No notifications</description>
 					<posx>0</posx>
 					<posy>170</posy>
@@ -94,7 +96,6 @@
 					<label>25000</label>
 				</control>
 				<control type="radiobutton" id="7">
-					<textcolor>white</textcolor>
 					<description>Hide foreign</description>
 					<posx>0</posx>
 					<posy>210</posy>

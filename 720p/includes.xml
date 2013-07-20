@@ -143,39 +143,27 @@
 		</control>
 	</include>
 	<include name="ButtonCommonValues">
-		<height>40</height>
 		<width>250</width>
 		<textoffsetx>10</textoffsetx>
 		<textwidth>200</textwidth>
 		<aligny>center</aligny>
 		<font>font13</font>
-		<texturefocus>buttons/fo_light.png</texturefocus>
-		<texturenofocus>-</texturenofocus>
-		<pulseonselect>false</pulseonselect>
 	</include>
 	<include name="ButtonMediaSubCommonValues">
-		<height>40</height>
 		<width>221</width>
 		<textoffsetx>20</textoffsetx>
 		<textwidth>195</textwidth>
 		<aligny>center</aligny>
 		<font>font12_title</font>
-		<texturefocus>buttons/fo_light.png</texturefocus>
-		<texturenofocus>buttons/nf_light.png</texturenofocus>
-		<pulseonselect>false</pulseonselect>
 	</include>
 	<include name="ButtonHomeSubCommonValues">
-		<height>35</height>
 		<width>180</width>
 		<textwidth>195</textwidth>
 		<align>center</align>
 		<aligny>center</aligny>
 		<font>font12</font>
 		<textcolor>textnofocus</textcolor>
-		<focusedcolor>white</focusedcolor>
-		<texturefocus border="0,2,0,2">home/sub-fo_light.png</texturefocus>
-		<texturenofocus border="0,2,0,2">home/sub-nf_light.png</texturenofocus>
-		<pulseonselect>false</pulseonselect>
+		<focusedcolor>textfocus</focusedcolor>
 	</include>
 	<include name="HomeSubMenuCommonValues">
 		<posx>0</posx>
@@ -195,15 +183,11 @@
 		<animation effect="fade" start="100" end="0" time="0" condition="ControlGroup(9001).HasFocus + Skin.HasSetting(AutoHideSubMenu)">WindowClose</animation>
 	</include>
 	<include name="ButtonInfoDialogsCommonValues">
-		<height>40</height>
 		<width>170</width>
 		<textoffsetx>20</textoffsetx>
 		<align>center</align>
 		<aligny>center</aligny>
 		<font>font12_title</font>
-		<texturefocus>buttons/fo_light.png</texturefocus>
-		<texturenofocus>buttons/nf_light.png</texturenofocus>
-		<pulseonselect>false</pulseonselect>
 	</include>
 	<include name="SideBladeLeft">
 		<animation effect="slide" start="0,0" end="250,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | Control.HasFocus(9001) | Control.HasFocus(8999)">Conditional</animation>
@@ -508,6 +492,7 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font12</font>
+			<textcolor>textnofocus</textcolor>
 		</control>
 		<control type="label">
 			<description>Time Label</description>
@@ -519,6 +504,7 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font12</font>
+			<textcolor>textnofocus</textcolor>
 		</control>
 		<control type="label">
 			<description>Next Label</description>
@@ -573,6 +559,7 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font12_title</font>
+			<textcolor>textnofocus</textcolor>
 			<visible>videoplayer.content(episodes)</visible>
 		</control>
 		<control type="fadelabel">
@@ -610,6 +597,7 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font12</font>
+			<textcolor>textnofocus</textcolor>
 			<visible>!videoplayer.content(episodes) + !videoplayer.content(musicvideos)</visible>
 		</control>
 		<control type="label">
@@ -621,6 +609,7 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font12</font>
+			<textcolor>textnofocus</textcolor>
 			<visible>videoplayer.content(musicvideos)</visible>
 		</control>
 		<control type="label">
@@ -633,6 +622,7 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font12</font>
+			<textcolor>textnofocus</textcolor>
 			<visible>videoplayer.content(episodes)</visible>
 		</control>
 		<control type="label">
@@ -645,6 +635,7 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font12</font>
+			<textcolor>textnofocus</textcolor>
 		</control>
 	</include>
 	<include name="CommonNowPlaying_Controls">
@@ -661,6 +652,7 @@
 			<visible>[Player.HasAudio | Player.HasVideo]</visible>
 		</control>
 		<control type="button" id="610">
+			<height>42</height>
 			<description>Fake Button to fix Player Controls Navigation</description>
 			<visible>false</visible>
 		</control>
@@ -715,8 +707,6 @@
 				<posy>2</posy>
 				<width>39</width>
 				<height>39</height>
-				<texturefocus>OSDPauseFO.png</texturefocus>
-				<texturenofocus>OSDPauseNF.png</texturenofocus>
 				<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
 				<onleft>603</onleft>
 				<onright>605</onright>
@@ -788,8 +778,6 @@
 					<posy>2</posy>
 					<width>39</width>
 					<height>39</height>
-					<texturefocus>OSDPauseFO.png</texturefocus>
-					<texturenofocus>OSDPauseNF.png</texturenofocus>
 					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
 					<onleft>606</onleft>
 					<onright>601</onright>
@@ -938,7 +926,6 @@
 			</control>
 		</control>
 		<control type="radiobutton" id="611">
-			<textcolor>white</textcolor>
 			<description>Go to fullscreen Playback</description>
 			<include>ButtonCommonValues</include>
 			<label>31008</label>
@@ -960,6 +947,7 @@
 			<align>right</align>
 			<aligny>center</aligny>
 			<font>font35_title</font>
+			<textcolor>textnofocus</textcolor>
 			<label>$INFO[System.Time]</label>
 			<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
 			<visible>!Skin.HasSetting(HideSystemClock)</visible>
@@ -1033,6 +1021,7 @@
 				<width>180</width>
 				<height>20</height>
 				<font>font12</font>
+				<textcolor>textfocus</textcolor>
 				<align>center</align>
 				<aligny>center</aligny>
 				<label>$VAR[MainItemLabel]</label>
@@ -1097,6 +1086,7 @@
 				<width>260</width>
 				<height>15</height>
 				<label>$INFO[ListItem.Property(NextNumber),$LOCALIZE[20359] [COLOR=blue]-[/COLOR] ]</label>
+				<textcolor>textnofocus</textcolor>
 				<font>font12</font>
 				<align>center</align>
 			</control>
@@ -1107,6 +1097,7 @@
 				<width>260</width>
 				<height>15</height>
 				<label>$INFO[ListItem.Property(NextTitle)]</label>
+				<textcolor>textnofocus</textcolor>
 				<font>font12</font>
 				<align>center</align>
 			</control>
@@ -1198,6 +1189,7 @@
 				<width>260</width>
 				<height>15</height>
 				<label>$INFO[ListItem.Property(ShortTime)]$INFO[ListItem.Property(NextDate), [COLOR=blue]-[/COLOR] ]</label>
+				<textcolor>textfocus</textcolor>
 				<font>font12</font>
 				<align>center</align>
 			</control>
@@ -1208,6 +1200,7 @@
 				<width>260</width>
 				<height>15</height>
 				<label>$INFO[ListItem.Property(Runtime),, $LOCALIZE[12391]]$INFO[ListItem.Property(Network), [COLOR=blue]-[/COLOR] (,)]</label>
+				<textcolor>textfocus</textcolor>
 				<font>font12</font>
 				<align>center</align>
 			</control>

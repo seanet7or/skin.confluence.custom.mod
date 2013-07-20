@@ -15,7 +15,7 @@
 		<posy>0</posy>
 		<posx>45</posx>
 		<height>30</height>
-		<headlinecolor>white</headlinecolor>
+		<headlinecolor>heading2</headlinecolor>
 		<font>font12</font>
 	</default>
 	<default type="scrollbar">
@@ -46,7 +46,6 @@
 		<posy>0</posy>
 		<label>-</label>
 		<font>font13</font>
-		<textcolor>white</textcolor>
 		<disabledcolor>textdisabled</disabledcolor>
 		<pulseonselect>false</pulseonselect>
 	</default>
@@ -56,7 +55,7 @@
 		<posx>160</posx>
 		<posy>0</posy>
 		<font>font13</font>
-		<textcolor>white</textcolor>
+		<textcolor>textnofocus</textcolor>
 		<disabledcolor>textdisabled</disabledcolor>
 		<pulseonselect>false</pulseonselect>
 	</default>
@@ -64,11 +63,11 @@
 		<posx>300</posx>
 		<posy>200</posy>
 		<width>300</width>
-		<height>42</height>
+		<height>40</height>
 		<texturefocus>buttons/fo_light.png</texturefocus>
 		<texturenofocus>buttons/nf_light.png</texturenofocus>
 		<font>font13</font>
-		<textcolor>white</textcolor>
+		<textcolor>textnofocus</textcolor>
 		<disabledcolor>textdisabled</disabledcolor>
 		<textoffsetx>7</textoffsetx>
 		<aligny>center</aligny>
@@ -78,12 +77,12 @@
 		<posx>140</posx>
 		<posy>0</posy>
 		<width>23</width>
-		<height>13</height>
-		<texturefocus flipy="true">buttons/spin-down-fo_light.png</texturefocus>
-		<texturenofocus flipy="true">buttons/spin-down-nf_light.png</texturenofocus>
+		<height>40</height>
+		<texturefocus>OSDPauseFO.png</texturefocus>
+		<texturenofocus>OSDPauseNF.png</texturenofocus>
 		<alttexturefocus>OSDPlayFO.png</alttexturefocus>
 		<alttexturenofocus>OSDPlayNF.png</alttexturenofocus>
-		<textcolor>white</textcolor>
+		<textcolor>textnofocus</textcolor>
 		<label>-</label>
 		<font>font13</font>
 		<disabledcolor>textdisabled</disabledcolor>
@@ -95,7 +94,7 @@
 		<width>590</width>
 		<height>50</height>
 		<align>justify</align>
-		<textcolor>white</textcolor>
+		<textcolor>textnofocus</textcolor>
 		<font>font12</font>
 		<pulseonselect>false</pulseonselect>
 	</default>
@@ -136,17 +135,17 @@
 		<posx>0</posx>
 		<posy>0</posy>
 		<width>300</width>
-		<height>42</height>
+		<height>40</height>
 		<spinwidth>23</spinwidth>
 		<spinheight>13</spinheight>
 		<texturefocus>buttons/fo_light.png</texturefocus>
-		<texturenofocus>-</texturenofocus>
+		<texturenofocus>buttons/nf_light.png</texturenofocus>
 		<textureup flipy="true">buttons/spin-down-nf_light.png</textureup>
 		<texturedown>buttons/spin-down-nf_light.png</texturedown>
 		<textureupfocus flipy="true">buttons/spin-down-fo_light.png</textureupfocus>
 		<texturedownfocus>buttons/spin-down-fo_light.png</texturedownfocus>
 		<font>font13</font>
-		<textcolor>white</textcolor>
+		<textcolor>textnofocus</textcolor>
 		<disabledcolor>textdisabled</disabledcolor>
 		<textoffsetx>7</textoffsetx>
 		<aligny>center</aligny>
@@ -157,13 +156,13 @@
 		<posx>300</posx>
 		<posy>200</posy>
 		<width>300</width>
-		<height>42</height>
+		<height>40</height>
 		<radiowidth>24</radiowidth>
 		<radioheight>24</radioheight>
 		<textureradiofocus>controls/radiobutton-fo_light.png</textureradiofocus>
 		<textureradionofocus>controls/radiobutton-nf_light.png</textureradionofocus>
 		<texturefocus>buttons/fo_light.png</texturefocus>
-		<texturenofocus>buttons/nf_light.png</texturenofocus>
+		<texturenofocus>-</texturenofocus>
 		<label>215</label>
 		<font>font13</font>
 		<textcolor>textnofocus</textcolor>
@@ -186,7 +185,7 @@
 		<textureright flipx="true">buttons/spin-left-nf_light.png</textureright>
 		<texturerightfocus flipx="true">buttons/spin-left-fo_light.png</texturerightfocus>
 		<font>font13caps</font>
-		<textcolor>white</textcolor>
+		<textcolor>textnofocus</textcolor>
 		<disabledcolor>textdisabled</disabledcolor>
 		<aligny>center</aligny>
 		<pulseonselect>false</pulseonselect>
@@ -204,7 +203,7 @@
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="sliderex">
-		<focusedcolor>white</focusedcolor>
+		<focusedcolor>textfocus</focusedcolor>
 		<height>40</height>
 		<textoffsetx>7</textoffsetx>
 		<aligny>center</aligny>
@@ -242,11 +241,11 @@
 		<posx>300</posx>
 		<posy>200</posy>
 		<width>300</width>
-		<height>42</height>
+		<height>40</height>
 		<texturefocus>buttons/fo_light.png</texturefocus>
 		<texturenofocus>buttons/nf_light.png</texturenofocus>
 		<font>font13</font>
-		<textcolor>white</textcolor>
+		<textcolor>textnofocus</textcolor>
 		<disabledcolor>textdisabled</disabledcolor>
 		<textoffsetx>7</textoffsetx>
 		<aligny>center</aligny>

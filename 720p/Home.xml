@@ -59,6 +59,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
+				<textcolor>textnofocus</textcolor>
 			</control>
 			<control type="label">
 				<description>Title label</description>
@@ -70,6 +71,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font13_title</font>
+				<textcolor>textnofocus</textcolor>
 			</control>
 			<control type="label">
 				<description>Time Label</description>
@@ -81,6 +83,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
+				<textcolor>textnofocus</textcolor>
 			</control>
 		</control>
 		<control type="group">
@@ -121,6 +124,7 @@
 					<textcolor>blue</textcolor>
 				</control>
 				<control type="label">
+					<textcolor>textnofocus</textcolor>
 					<description>NextRecordingDateTime</description>
 					<posx>390</posx>
 					<posy>30</posy>
@@ -133,6 +137,7 @@
 					<scroll>true</scroll>
 				</control>
 				<control type="label">
+					<textcolor>textnofocus</textcolor>
 					<description>NextRecordingTitle Channel</description>
 					<posx>390</posx>
 					<posy>50</posy>
@@ -175,6 +180,7 @@
 					<textcolor>blue</textcolor>
 				</control>
 				<control type="label">
+					<textcolor>textnofocus</textcolor>
 					<description>NextRecordingDateTime</description>
 					<posx>390</posx>
 					<posy>30</posy>
@@ -187,6 +193,7 @@
 					<scroll>true</scroll>
 				</control>
 				<control type="label">
+					<textcolor>textnofocus</textcolor>
 					<description>NextRecordingTitle Channel</description>
 					<posx>390</posx>
 					<posy>50</posy>
@@ -227,6 +234,7 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
+					<textcolor>textnofocus</textcolor>
 				</control>
 				<control type="label">
 					<description>Time Label</description>
@@ -238,6 +246,7 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
+					<textcolor>textnofocus</textcolor>
 				</control>
 			</control>
 			<control type="group">
@@ -261,6 +270,7 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
+					<textcolor>textnofocus</textcolor>
 				</control>
 				<control type="label">
 					<description>Title label</description>
@@ -272,6 +282,7 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
+					<textcolor>textnofocus</textcolor>
 				</control>
 				<control type="label">
 					<description>Time Label</description>
@@ -283,6 +294,7 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
+					<textcolor>textnofocus</textcolor>
 				</control>
 			</control>
 			<control type="group">
@@ -306,6 +318,7 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
+					<textcolor>textnofocus</textcolor>
 				</control>
 				<control type="label">
 					<description>Title label</description>
@@ -317,6 +330,7 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
+					<textcolor>textnofocus</textcolor>
 				</control>
 				<control type="label">
 					<description>Time Label</description>
@@ -328,6 +342,7 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
+					<textcolor>textnofocus</textcolor>
 				</control>
 			</control>
 			<control type="group">
@@ -351,6 +366,7 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
+					<textcolor>textnofocus</textcolor>
 				</control>
 				<control type="label">
 					<description>Title label</description>
@@ -362,6 +378,7 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font13_title</font>
+					<textcolor>textnofocus</textcolor>
 				</control>
 				<control type="label">
 					<description>Time Label</description>
@@ -373,6 +390,7 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12</font>
+					<textcolor>textnofocus</textcolor>
 				</control>
 			</control>
 		</control>
@@ -431,7 +449,7 @@
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
 				<font>font12</font>
-				<focusedcolor>white</focusedcolor>
+				<focusedcolor>textfocus</focusedcolor>
 				<texturefocus flipy="true" border="0,2,0,2">home/sub-fo_light.png</texturefocus>
 				<texturenofocus flipy="true" border="0,2,0,2">home/sub-nf_light.png</texturenofocus>
 				<label>137</label>
@@ -500,8 +518,6 @@
 						<posy>2</posy>
 						<width>30</width>
 						<height>30</height>
-						<texturefocus>OSDPauseFO.png</texturefocus>
-						<texturenofocus>OSDPauseNF.png</texturenofocus>
 						<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
 						<onleft>602</onleft>
 						<onright>604</onright>
@@ -643,8 +659,6 @@
 						<posy>2</posy>
 						<width>30</width>
 						<height>30</height>
-						<texturefocus>OSDPauseFO.png</texturefocus>
-						<texturenofocus>OSDPauseNF.png</texturenofocus>
 						<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
 						<onleft>603</onleft>
 						<onright>608</onright>
@@ -685,7 +699,7 @@
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
 				<font>font12</font>
-				<focusedcolor>white</focusedcolor>
+				<focusedcolor>textfocus</focusedcolor>
 				<texturefocus flipy="true" border="0,2,0,2">home/sub-fo_light.png</texturefocus>
 				<texturenofocus flipy="true" border="0,2,0,2">home/sub-nf_light.png</texturenofocus>
 				<label>31008</label>
@@ -708,6 +722,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<font>font12_title</font>
+				<textcolor>textnofocus</textcolor>
 				<visible>!Player.HasMedia + !Skin.HasSetting(HideHomeStats)</visible>
 			</control>
 		</control>
@@ -1375,6 +1390,7 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font28_title</font>
+					<textcolor>textnofocus</textcolor>
 					<label>[B]$INFO[Window(Weather).Property(Current.Temperature)][/B]</label>
 				</control>
 				<control type="label">
@@ -1386,6 +1402,7 @@
 					<font>font10</font>
 					<aligny>center</aligny>
 					<label>$INFO[System.TemperatureUnits]</label>
+					<textcolor>textnofocus</textcolor>
 					<visible>!IsEmpty(Window(Weather).Property(Current.Temperature))</visible>
 				</control>
 			</control>

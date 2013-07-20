@@ -27,6 +27,7 @@
 					<label>$INFO[Listitem.Title]</label>
 					<align>center</align>
 					<aligny>center</aligny>
+					<textcolor>textnofocus</textcolor>
 				</control>
 				<control type="grouplist">
 					<description>Media Codec Flagging Images</description>
@@ -70,6 +71,7 @@
 							<width>675</width>
 							<height>380</height>
 							<font>font30_title</font>
+							<textcolor>textnofocus</textcolor>
 							<align>center</align>
 							<aligny>center</aligny>
 							<label>31311</label>
@@ -142,7 +144,8 @@
 								<height>30</height>
 								<align>left</align>
 								<aligny>center</aligny>
-								<selectedcolor>white</selectedcolor>
+								<textcolor>textnofocus</textcolor>
+								<selectedcolor>itemselected</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
 						</itemlayout>
@@ -169,7 +172,8 @@
 								<height>30</height>
 								<align>left</align>
 								<aligny>center</aligny>
-								<selectedcolor>white</selectedcolor>
+								<textcolor>textfocus</textcolor>
+								<selectedcolor>itemselected</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
 						</focusedlayout>
@@ -287,7 +291,8 @@
 								<height>30</height>
 								<align>left</align>
 								<aligny>center</aligny>
-								<selectedcolor>white</selectedcolor>
+								<textcolor>textnofocus</textcolor>
+								<selectedcolor>itemselected</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
 						</itemlayout>
@@ -314,7 +319,8 @@
 								<height>30</height>
 								<align>left</align>
 								<aligny>center</aligny>
-								<selectedcolor>white</selectedcolor>
+								<textcolor>textfocus</textcolor>
+								<selectedcolor>itemselected</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
 						</focusedlayout>
@@ -396,7 +402,8 @@
 								<height>30</height>
 								<align>left</align>
 								<aligny>center</aligny>
-								<selectedcolor>white</selectedcolor>
+								<textcolor>textnofocus</textcolor>
+								<selectedcolor>itemselected</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
 						</itemlayout>
@@ -423,7 +430,8 @@
 								<height>30</height>
 								<align>left</align>
 								<aligny>center</aligny>
-								<selectedcolor>white</selectedcolor>
+								<textcolor>textfocus</textcolor>
+								<selectedcolor>itemselected</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
 						</focusedlayout>
@@ -535,7 +543,8 @@
 								<height>30</height>
 								<align>left</align>
 								<aligny>center</aligny>
-								<selectedcolor>white</selectedcolor>
+								<textcolor>textnofocus</textcolor>
+								<selectedcolor>itemselected</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
 						</itemlayout>
@@ -562,7 +571,8 @@
 								<height>30</height>
 								<align>left</align>
 								<aligny>center</aligny>
-								<selectedcolor>white</selectedcolor>
+								<textcolor>textfocus</textcolor>
+								<selectedcolor>itemselected</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
 						</focusedlayout>
@@ -674,12 +684,13 @@
 							<height>40</height>
 						</control>
 						<control type="label">
+							<textcolor>textnofocus</textcolor>
 							<width>410</width>
 							<height>40</height>
 							<font>font12</font>
 							<align>left</align>
 							<aligny>center</aligny>
-							<selectedcolor>white</selectedcolor>
+							<selectedcolor>itemselected</selectedcolor>
 							<info>ListItem.Label</info>
 						</control>
 					</itemlayout>
@@ -696,12 +707,13 @@
 							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="label">
+							<textcolor>textfocus</textcolor>
 							<width>410</width>
 							<height>40</height>
 							<font>font12</font>
 							<align>left</align>
 							<aligny>center</aligny>
-							<selectedcolor>white</selectedcolor>
+							<selectedcolor>itemselected</selectedcolor>
 							<info>ListItem.Label</info>
 						</control>
 					</focusedlayout>
@@ -722,6 +734,8 @@
 						<posy>167</posy>
 						<description>Play/browse to Show</description>
 						<include>ButtonInfoDialogsCommonValues</include>
+						<texturenofocus>buttons/nf_light.png</texturenofocus>
+						<texturefocus>buttons/fo_light.png</texturefocus>
 						<label>208</label>
 						<alttexturefocus>buttons/fo_light.png</alttexturefocus>
 						<alttexturenofocus>buttons/nf_light.png</alttexturenofocus>

@@ -46,8 +46,6 @@
 				<posx>30</posx>
 				<posy>100</posy>
 				<width>320</width>
-				<height>40</height>
-				<texturenofocus>buttons/nf_light.png</texturenofocus>
 				<font>-</font>
 				<label>-</label>
 				<onup>28</onup>
@@ -65,6 +63,7 @@
 				<label>$INFO[Control.GetLabel(3)]</label>
 				<align>left</align>
 				<aligny>center</aligny>
+				<textcolor>textnofocus</textcolor>
 			</control>
 			<control type="label">
 				<description>Used Scraper Header</description>
@@ -169,6 +168,7 @@
 						<height>40</height>
 						<align>left</align>
 						<aligny>center</aligny>
+						<textcolor>textfocus</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<info>ListItem.Label</info>
 					</control>
@@ -210,14 +210,12 @@
 				<description>Default Button</description>
 				<posx>0</posx>
 				<posy>0</posy>
-				<height>40</height>
 			</control>
 			<control type="radiobutton" id="8">
-				<textcolor>white</textcolor>
+				<texturenofocus>buttons/nf_light.png</texturenofocus>
 				<description>Default RadioButton</description>
 				<posx>0</posx>
 				<posy>0</posy>
-				<height>40</height>
 			</control>
 			<control type="group" id="9001">
 				<posy>615</posy>
@@ -225,7 +223,6 @@
 					<description>OK Button</description>
 					<posy>0</posy>
 					<width>200</width>
-					<height>40</height>
 					<align>center</align>
 					<font>font12_title</font>
 					<label>186</label>
@@ -239,7 +236,6 @@
 					<posx>510</posx>
 					<posy>0</posy>
 					<width>200</width>
-					<height>40</height>
 					<align>center</align>
 					<font>font12_title</font>
 					<label>222</label>
@@ -253,7 +249,6 @@
 					<posx>90</posx>
 					<posy>0</posy>
 					<width>200</width>
-					<height>40</height>
 					<align>center</align>
 					<font>font12_title</font>
 					<label>5</label>

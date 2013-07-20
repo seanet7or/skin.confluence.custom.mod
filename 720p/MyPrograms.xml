@@ -50,17 +50,21 @@
 					<description>View As button</description>
 					<textwidth>235</textwidth>
 					<include>ButtonCommonValues</include>
+					<texturenofocus>-</texturenofocus>
 					<label>-</label>
 				</control>
 				<control type="button" id="3">
 					<description>Sort by button</description>
 					<include>ButtonCommonValues</include>
+					<texturenofocus>-</texturenofocus>
 					<label>103</label>
 				</control>
 				<control type="togglebutton" id="4">
 					<posy>167</posy>
 					<description>Sort asc</description>
 					<include>ButtonCommonValues</include>
+					<texturenofocus>-</texturenofocus>
+					<texturefocus>buttons/fo_light.png</texturefocus>
 					<alttexturefocus>buttons/fo_light.png</alttexturefocus>
 					<alttexturenofocus>-</alttexturenofocus>
 					<label>31051</label>
@@ -72,10 +76,10 @@
 					<description>Filter</description>
 					<textwidth>230</textwidth>
 					<include>ButtonCommonValues</include>
+					<texturenofocus>-</texturenofocus>
 					<label>587</label>
 				</control>
 				<control type="radiobutton" id="20">
-					<textcolor>white</textcolor>
 					<visible>Container.CanFilterAdvanced</visible>
 					<description>Filter</description>
 					<include>ButtonCommonValues</include>

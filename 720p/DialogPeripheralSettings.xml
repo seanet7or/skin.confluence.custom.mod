@@ -28,6 +28,7 @@
 			<textcolor>selected</textcolor>
 		</control>
 		<control type="label" id="3">
+			<textcolor>textnofocus</textcolor>
 			<description>No Settings Label</description>
 			<posx>20</posx>
 			<posy>180</posy>
@@ -62,23 +63,18 @@
 			<description>Default Button</description>
 			<posx>0</posx>
 			<posy>0</posy>
-			<height>40</height>
-			<textcolor>textnofocus</textcolor>
-			<focusedcolor>white</focusedcolor>
+			<focusedcolor>textfocus</focusedcolor>
 		</control>
 		<control type="radiobutton" id="8">
+			<texturenofocus>buttons/nf_light.png</texturenofocus>
 			<description>Default RadioButton</description>
 			<posx>0</posx>
 			<posy>0</posy>
-			<height>40</height>
-			<focusedcolor>white</focusedcolor>
+			<focusedcolor>textfocus</focusedcolor>
 		</control>
 		<control type="spincontrolex" id="9">
 			<description>Default SpinControlex</description>
-			<height>40</height>
-			<textcolor>textnofocus</textcolor>
-			<focusedcolor>white</focusedcolor>
-			<texturenofocus>buttons/nf_light.png</texturenofocus>
+			<focusedcolor>textfocus</focusedcolor>
 		</control>
 		<control type="sliderex" id="10">
 			<description>Default Slider</description>
@@ -95,7 +91,6 @@
 				<posy>0</posy>
 				<posx>0</posx>
 				<width>200</width>
-				<height>40</height>
 				<align>center</align>
 				<font>font12_title</font>
 				<label>222</label>
@@ -109,7 +104,6 @@
 				<posy>0</posy>
 				<posx>210</posx>
 				<width>200</width>
-				<height>40</height>
 				<align>center</align>
 				<font>font12_title</font>
 				<label>186</label>
@@ -123,7 +117,6 @@
 				<posy>0</posy>
 				<posx>420</posx>
 				<width>200</width>
-				<height>40</height>
 				<align>center</align>
 				<font>font12_title</font>
 				<label>409</label>

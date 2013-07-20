@@ -30,6 +30,7 @@
 				<label>$LOCALIZE[SCRIPT0]</label>
 				<align>right</align>
 				<aligny>center</aligny>
+				<textcolor>textnofocus</textcolor>
 			</control>
 			<control type="label">
 				<description>Artist label</description>
@@ -91,6 +92,7 @@
 				<scrolltime>200</scrolltime>
 				<itemlayout height="25">
 					<control type="label">
+						<textcolor>textnofocus</textcolor>
 						<posx>275</posx>
 						<width>550</width>
 						<height>25</height>
@@ -108,6 +110,7 @@
 						<height>25</height>
 						<aligny>center</aligny>
 						<align>center</align>
+						<textcolor>textfocus</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<label>$VAR[MainItemLabel]</label>
@@ -145,6 +148,7 @@
 				<aligny>center</aligny>
 				<font>font13_title</font>
 				<label>31203</label>
+				<textcolor>textnofocus</textcolor>
 				<visible>Control.IsVisible(120) + ![Control.IsVisible(100) | Control.IsVisible(110)]</visible>
 			</control>
 			<control type="list" id="120">
@@ -161,6 +165,7 @@
 				<animation effect="slide" start="0,0" end="20,0" time="0" condition="!Control.IsVisible(121)">Conditional</animation>
 				<itemlayout height="40">
 					<control type="label">
+						<textcolor>textnofocus</textcolor>
 						<width>530</width>
 						<height>40</height>
 						<align>left</align>
@@ -177,6 +182,7 @@
 						<texture>buttons/fo_light.png</texture>
 					</control>
 					<control type="label">
+						<textcolor>textfocus</textcolor>
 						<width>530</width>
 						<height>40</height>
 						<align>left</align>
@@ -211,6 +217,7 @@
 			<control type="label" id="200">
 				<posy>60</posy>
 				<posx>80</posx>
+				<textcolor>textnofocus</textcolor>
 				<description>Scraper label</description>
 				<visible>false</visible>
 			</control>

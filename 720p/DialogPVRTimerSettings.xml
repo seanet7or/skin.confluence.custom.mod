@@ -46,7 +46,6 @@
 				<posx>0</posx>
 				<posy>0</posy>
 				<width>200</width>
-				<height>40</height>
 				<align>center</align>
 				<font>font12_title</font>
 				<label>186</label>
@@ -60,7 +59,6 @@
 				<posx>210</posx>
 				<posy>0</posy>
 				<width>200</width>
-				<height>40</height>
 				<align>center</align>
 				<font>font12_title</font>
 				<label>222</label>
@@ -72,23 +70,18 @@
 		</control>
 		<control type="button" id="7">
 			<description>Default Button</description>
-			<height>40</height>
-			<textcolor>textnofocus</textcolor>
-			<focusedcolor>white</focusedcolor>
+			<focusedcolor>textfocus</focusedcolor>
 		</control>
 		<control type="radiobutton" id="8">
 			<description>Default RadioButton</description>
-			<height>40</height>
-			<focusedcolor>white</focusedcolor>
+			<focusedcolor>textfocus</focusedcolor>
+			<texturenofocus>buttons/nf_light.png</texturenofocus>
 		</control>
 		<control type="spincontrolex" id="9">
 			<posy>160</posy>
 			<posx>530</posx>
 			<description>Default spincontrolex</description>
-			<height>40</height>
-			<textcolor>textnofocus</textcolor>
-			<focusedcolor>white</focusedcolor>
-			<texturenofocus>buttons/nf_light.png</texturenofocus>
+			<focusedcolor>textfocus</focusedcolor>
 		</control>
 		<control type="sliderex" id="10">
 			<description>Default Slider</description>
@@ -99,9 +92,7 @@
 		</control>
 		<control type="edit" id="12">
 			<description>Default Edit</description>
-			<height>40</height>
-			<textcolor>textnofocus</textcolor>
-			<focusedcolor>white</focusedcolor>
+			<focusedcolor>textfocus</focusedcolor>
 		</control>
 	</controls>
 </window>

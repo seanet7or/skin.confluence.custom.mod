@@ -27,6 +27,7 @@
 					<label>$INFO[Listitem.Album]</label>
 					<align>center</align>
 					<aligny>center</aligny>
+					<textcolor>textnofocus</textcolor>
 					<visible>container.content(Albums)</visible>
 				</control>
 				<control type="label">
@@ -39,6 +40,7 @@
 					<label>$INFO[Listitem.Artist]</label>
 					<align>center</align>
 					<aligny>center</aligny>
+					<textcolor>textnofocus</textcolor>
 					<visible>container.content(Artists)</visible>
 				</control>
 				<control type="group">
@@ -68,6 +70,7 @@
 							<width>675</width>
 							<height>380</height>
 							<font>font30_title</font>
+							<textcolor>textnofocus</textcolor>
 							<align>center</align>
 							<aligny>center</aligny>
 							<label>31311</label>
@@ -112,7 +115,8 @@
 								<height>30</height>
 								<align>left</align>
 								<aligny>center</aligny>
-								<selectedcolor>white</selectedcolor>
+								<textcolor>textnofocus</textcolor>
+								<selectedcolor>itemselected</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
 						</itemlayout>
@@ -139,7 +143,8 @@
 								<height>30</height>
 								<align>left</align>
 								<aligny>center</aligny>
-								<selectedcolor>white</selectedcolor>
+								<textcolor>textfocus</textcolor>
+								<selectedcolor>itemselected</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
 						</focusedlayout>
@@ -239,7 +244,8 @@
 								<height>30</height>
 								<align>left</align>
 								<aligny>center</aligny>
-								<selectedcolor>white</selectedcolor>
+								<textcolor>textnofocus</textcolor>
+								<selectedcolor>itemselected</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
 						</itemlayout>
@@ -266,7 +272,8 @@
 								<height>30</height>
 								<align>left</align>
 								<aligny>center</aligny>
-								<selectedcolor>white</selectedcolor>
+								<textcolor>textfocus</textcolor>
+								<selectedcolor>itemselected</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
 						</focusedlayout>
@@ -377,6 +384,7 @@
 							<height>40</height>
 						</control>
 						<control type="label">
+							<textcolor>textnofocus</textcolor>
 							<width>410</width>
 							<height>40</height>
 							<font>font12</font>
@@ -386,6 +394,7 @@
 							<label>([COLOR=selected][B]$INFO[ListItem.TrackNumber][/B][/COLOR]) - $INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
+							<textcolor>textnofocus</textcolor>
 							<posx>420</posx>
 							<width>200</width>
 							<height>40</height>
@@ -409,6 +418,7 @@
 							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="label">
+							<textcolor>textfocus</textcolor>
 							<width>410</width>
 							<height>40</height>
 							<font>font12</font>
@@ -418,6 +428,7 @@
 							<label>([COLOR=selected][B]$INFO[ListItem.TrackNumber][/B][/COLOR]) - $INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
+							<textcolor>textfocus</textcolor>
 							<posx>420</posx>
 							<width>200</width>
 							<height>40</height>
@@ -434,6 +445,7 @@
 							<height>40</height>
 						</control>
 						<control type="label">
+							<textcolor>textnofocus</textcolor>
 							<width>410</width>
 							<height>40</height>
 							<font>font12</font>
@@ -456,6 +468,7 @@
 							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="label">
+							<textcolor>textfocus</textcolor>
 							<width>410</width>
 							<height>40</height>
 							<font>font12</font>

@@ -149,6 +149,7 @@
 							<width>380</width>
 							<height>25</height>
 							<font>font24_title</font>
+							<textcolor>textfocus</textcolor>
 							<align>right</align>
 							<aligny>center</aligny>
 							<label>$VAR[MainItemLabel]</label>
@@ -239,6 +240,7 @@
 					<label>$INFO[Container(9000).ListItem.Label]</label>
 					<align>left</align>
 					<aligny>center</aligny>
+					<textcolor>textnofocus</textcolor>
 					<visible>Control.IsVisible(198)</visible>
 				</control>
 				<control type="label">
@@ -263,6 +265,7 @@
 					<textcolor>-</textcolor>
 				</control>
 				<control type="label" id="191">
+					<textcolor>textnofocus</textcolor>
 					<posx>2000</posx>
 					<posy>2000</posy>
 					<width>100</width>
@@ -360,6 +363,7 @@
 									<height>12</height>
 									<label>[B]$INFO[ListItem.Label][/B]</label>
 									<font>font12</font>
+									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="label">
@@ -442,6 +446,7 @@
 									<height>12</height>
 									<label>[B]$INFO[ListItem.Label][/B]</label>
 									<font>font12</font>
+									<textcolor>textfocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="label">
@@ -474,6 +479,7 @@
 									<height>75</height>
 									<label>$INFO[ListItem.Property(Tagline)]</label>
 									<font>font10</font>
+									<textcolor>textfocus</textcolor>
 								</control>
 								<control type="textbox">
 									<align>left</align>
@@ -483,6 +489,7 @@
 									<height>75</height>
 									<label>$INFO[ListItem.Property(PlotOutline)]</label>
 									<font>font10</font>
+									<textcolor>textfocus</textcolor>
 									<visible>IsEmpty(ListItem.Property(TagLine))</visible>
 								</control>
 								<control type="textbox">
@@ -493,6 +500,7 @@
 									<height>75</height>
 									<label>$INFO[ListItem.Property(Plot)]</label>
 									<font>font10</font>
+									<textcolor>textfocus</textcolor>
 									<visible>IsEmpty(ListItem.Property(TagLine)) + IsEmpty(ListItem.Property(PlotOutline))</visible>
 								</control>
 							</focusedlayout>
@@ -557,6 +565,7 @@
 									<height>15</height>
 									<label>[B]$INFO[ListItem.Label][/B]</label>
 									<font>font12</font>
+									<textcolor>textnofocus</textcolor>
 									<align>center</align>
 									<aligny>center</aligny>
 								</control>
@@ -608,6 +617,7 @@
 									<height>15</height>
 									<label>[B]$INFO[ListItem.Label][/B]</label>
 									<font>font12</font>
+									<textcolor>textfocus</textcolor>
 									<align>center</align>
 									<aligny>center</aligny>
 								</control>
@@ -629,6 +639,7 @@
 									<height>55</height>
 									<label>$INFO[ListItem.Property(Plot)]</label>
 									<font>font10</font>
+									<textcolor>textfocus</textcolor>
 								</control>
 							</focusedlayout>
 						</control>
@@ -684,6 +695,7 @@
 									<height>15</height>
 									<label>$VAR[MainItemLabel]</label>
 									<font>font12_title</font>
+									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="textbox">
@@ -693,7 +705,6 @@
 									<width>260</width>
 									<height>120</height>
 									<label>$INFO[ListItem.Property(TvShowTitle)]</label>
-									<textcolor>textnofocus</textcolor>
 								</control>
 							</itemlayout>
 							<focusedlayout width="375" height="130">
@@ -716,6 +727,7 @@
 									<height>15</height>
 									<label>$VAR[MainItemLabel]</label>
 									<font>font12_title</font>
+									<textcolor>textfocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="textbox">
@@ -725,7 +737,6 @@
 									<width>260</width>
 									<height>120</height>
 									<label>$INFO[ListItem.Property(TvShowTitle)]</label>
-									<textcolor>textnofocus</textcolor>
 								</control>
 							</focusedlayout>
 						</control>
@@ -790,6 +801,7 @@
 									<height>15</height>
 									<label>[B]$INFO[ListItem.Label][/B]</label>
 									<font>font12</font>
+									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="label">
@@ -840,6 +852,7 @@
 									<height>15</height>
 									<label>[B]$INFO[ListItem.Label][/B]</label>
 									<font>font12</font>
+									<textcolor>textfocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="label">
@@ -859,6 +872,7 @@
 									<height>45</height>
 									<label>$INFO[ListItem.Property(Plot)]</label>
 									<font>font10</font>
+									<textcolor>textfocus</textcolor>
 								</control>
 							</focusedlayout>
 						</control>
@@ -922,6 +936,7 @@
 									<height>15</height>
 									<label>[B]$INFO[ListItem.Label][/B]</label>
 									<font>font12</font>
+									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="label">
@@ -931,6 +946,7 @@
 									<height>15</height>
 									<label>$INFO[ListItem.Property(Artist)]</label>
 									<font>font12</font>
+									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="label">
@@ -982,6 +998,7 @@
 									<height>15</height>
 									<label>[B]$INFO[ListItem.Label][/B]</label>
 									<font>font12</font>
+									<textcolor>textfocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="label">
@@ -991,6 +1008,7 @@
 									<height>15</height>
 									<label>$INFO[ListItem.Property(Artist)]</label>
 									<font>font12</font>
+									<textcolor>textfocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="label">
@@ -1068,6 +1086,7 @@
 									<height>15</height>
 									<label>[B]$INFO[ListItem.Label][/B]</label>
 									<font>font12</font>
+									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="label">
@@ -1110,6 +1129,7 @@
 									<height>15</height>
 									<label>[B]$INFO[ListItem.Label][/B]</label>
 									<font>font12</font>
+									<textcolor>textfocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="label">
@@ -1129,6 +1149,7 @@
 									<height>45</height>
 									<label>$INFO[ListItem.Property(Artist_Description)]</label>
 									<font>font10</font>
+									<textcolor>textfocus</textcolor>
 								</control>
 							</focusedlayout>
 						</control>
@@ -1185,6 +1206,7 @@
 									<height>15</height>
 									<label>[B]$INFO[ListItem.Label][/B]</label>
 									<font>font12</font>
+									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="label">
@@ -1227,6 +1249,7 @@
 									<height>15</height>
 									<label>[B]$INFO[ListItem.Label][/B]</label>
 									<font>font12</font>
+									<textcolor>textfocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="label">
@@ -1246,6 +1269,7 @@
 									<height>45</height>
 									<label>$INFO[ListItem.Property(Album_Description)]</label>
 									<font>font10</font>
+									<textcolor>textfocus</textcolor>
 								</control>
 							</focusedlayout>
 						</control>
@@ -1301,6 +1325,7 @@
 									<height>15</height>
 									<label>[B]$INFO[ListItem.Label][/B]</label>
 									<font>font12</font>
+									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="label">
@@ -1310,6 +1335,7 @@
 									<height>15</height>
 									<label>$INFO[ListItem.Property(Artist)]</label>
 									<font>font12</font>
+									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="label">
@@ -1329,6 +1355,7 @@
 									<height>15</height>
 									<label>$INFO[ListItem.Property(Duration)]</label>
 									<font>font12</font>
+									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 							</itemlayout>
@@ -1352,6 +1379,7 @@
 									<height>15</height>
 									<label>[B]$INFO[ListItem.Label][/B]</label>
 									<font>font12</font>
+									<textcolor>textfocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="label">
@@ -1361,6 +1389,7 @@
 									<height>15</height>
 									<label>$INFO[ListItem.Property(Artist)]</label>
 									<font>font12</font>
+									<textcolor>textfocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="label">
@@ -1380,6 +1409,7 @@
 									<height>15</height>
 									<label>$INFO[ListItem.Property(Duration)]</label>
 									<font>font12</font>
+									<textcolor>textfocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 							</focusedlayout>

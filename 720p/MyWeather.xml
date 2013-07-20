@@ -44,6 +44,7 @@
 					<label>31300</label>
 					<align>center</align>
 					<aligny>center</aligny>
+					<textcolor>textnofocus</textcolor>
 				</control>
 				<control type="label">
 					<description>Provider Text</description>
@@ -52,6 +53,7 @@
 					<width>460</width>
 					<height>35</height>
 					<font>font12</font>
+					<textcolor>textnofocus</textcolor>
 					<scroll>true</scroll>
 					<align>center</align>
 					<aligny>center</aligny>
@@ -65,6 +67,7 @@
 					<width>460</width>
 					<height>30</height>
 					<font>font13_title</font>
+					<textcolor>textnofocus</textcolor>
 					<scroll>false</scroll>
 					<align>center</align>
 					<aligny>center</aligny>
@@ -92,6 +95,7 @@
 					<align>right</align>
 					<aligny>top</aligny>
 					<label>$INFO[Window.Property(Current.Temperature)]</label>
+					<textcolor>textnofocus</textcolor>
 				</control>
 				<control type="label">
 					<description>current temp Value Units</description>
@@ -103,6 +107,7 @@
 					<align>left</align>
 					<aligny>top</aligny>
 					<label>$INFO[System.TemperatureUnits]</label>
+					<textcolor>textnofocus</textcolor>
 				</control>
 				<control type="image">
 					<texture>-</texture>
@@ -124,6 +129,7 @@
 					<wrapmultiline>true</wrapmultiline>
 					<align>center</align>
 					<aligny>center</aligny>
+					<textcolor>textnofocus</textcolor>
 				</control>
 				<control type="label">
 					<description>current feels like label</description>
@@ -189,6 +195,7 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>$INFO[Window.Property(Current.FeelsLike)]$INFO[System.TemperatureUnits]</label>
+					<textcolor>textnofocus</textcolor>
 				</control>
 				<control type="label">
 					<description>current dew Value</description>
@@ -199,6 +206,7 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>$INFO[Window.Property(Current.DewPoint)]$INFO[System.TemperatureUnits]</label>
+					<textcolor>textnofocus</textcolor>
 				</control>
 				<control type="label">
 					<description>current humidity Value</description>
@@ -209,6 +217,7 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<info>Window.Property(Current.Humidity)</info>
+					<textcolor>textnofocus</textcolor>
 				</control>
 				<control type="label">
 					<description>current UV Index Value</description>
@@ -219,6 +228,7 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<info>Window.Property(Current.UVIndex)</info>
+					<textcolor>textnofocus</textcolor>
 				</control>
 				<control type="label">
 					<description>current Wind Value</description>
@@ -229,6 +239,7 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<info>Window.Property(Current.Wind)</info>
+					<textcolor>textnofocus</textcolor>
 				</control>
 				<control type="group">
 					<visible>StringCompare(Weather.Plugin,weather.wunderground) + !IsEmpty(Window.Property(36Hour.IsFetched))</visible>
@@ -240,7 +251,7 @@
 						<height>35</height>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$LOCALIZE[33027] : [COLOR=white]$INFO[Window.Property(Today.Sunrise)][/COLOR]</label>
+						<label>$LOCALIZE[33027] : [COLOR=textnofocus]$INFO[Window.Property(Today.Sunrise)][/COLOR]</label>
 						<textcolor>textnofocus</textcolor>
 					</control>
 					<control type="label">
@@ -251,7 +262,7 @@
 						<height>35</height>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label>$LOCALIZE[33028] : [COLOR=white]$INFO[Window.Property(Today.Sunset)][/COLOR]</label>
+						<label>$LOCALIZE[33028] : [COLOR=textnofocus]$INFO[Window.Property(Today.Sunset)][/COLOR]</label>
 						<textcolor>textnofocus</textcolor>
 					</control>
 				</control>
@@ -276,6 +287,7 @@
 					<label>10508</label>
 					<align>center</align>
 					<aligny>center</aligny>
+					<textcolor>textnofocus</textcolor>
 				</control>
 				<control type="list" id="50">
 					<posx>15</posx>
@@ -296,6 +308,7 @@
 							<width>300</width>
 							<height>25</height>
 							<font>font13_title</font>
+							<textcolor>textnofocus</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -313,6 +326,7 @@
 							<posy>35</posy>
 							<width>390</width>
 							<height>30</height>
+							<textcolor>textnofocus</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
 							<aligny>center</aligny>
@@ -342,6 +356,7 @@
 							<width>300</width>
 							<height>25</height>
 							<font>font13_title</font>
+							<textcolor>textfocus</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
@@ -359,6 +374,7 @@
 							<posy>35</posy>
 							<width>390</width>
 							<height>30</height>
+							<textcolor>textfocus</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
 							<aligny>center</aligny>
@@ -370,6 +386,7 @@
 							<posy>70</posy>
 							<width>400</width>
 							<font>font13</font>
+							<textcolor>textfocus</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
 							<label>$INFO[ListItem.Property(Outlook)]</label>
@@ -517,6 +534,7 @@
 							<label>31904</label>
 							<align>center</align>
 							<aligny>center</aligny>
+							<textcolor>textnofocus</textcolor>
 						</control>
 						<control type="list" id="51">
 							<posx>15</posx>
@@ -536,6 +554,7 @@
 									<width>100</width>
 									<height>120</height>
 									<font>font12</font>
+									<textcolor>textnofocus</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<aligny>center</aligny>
@@ -554,6 +573,7 @@
 									<width>390</width>
 									<height>70</height>
 									<font>font12</font>
+									<textcolor>textnofocus</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>right</align>
 									<aligny>center</aligny>
@@ -579,6 +599,7 @@
 									<width>100</width>
 									<height>120</height>
 									<font>font12</font>
+									<textcolor>textfocus</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<aligny>center</aligny>
@@ -597,6 +618,7 @@
 									<width>390</width>
 									<height>70</height>
 									<font>font12</font>
+									<textcolor>textfocus</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>right</align>
 									<aligny>center</aligny>
@@ -605,6 +627,7 @@
 								<control type="textbox">
 									<posx>0</posx>
 									<posy>80</posy>
+									<textcolor>textfocus</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<label>$INFO[ListItem.ActualIcon]</label>
@@ -732,12 +755,14 @@
 							<label>31901</label>
 							<align>center</align>
 							<aligny>center</aligny>
+							<textcolor>textnofocus</textcolor>
 						</control>
 						<control type="label">
 							<posx>0</posx>
 							<posy>200</posy>
 							<width>600</width>
 							<height>30</height>
+							<textcolor>textnofocus</textcolor>
 							<align>center</align>
 							<aligny>center</aligny>
 							<label>$LOCALIZE[31909]</label>
@@ -774,6 +799,7 @@
 									<width>100</width>
 									<height>40</height>
 									<font>font13_title</font>
+									<textcolor>textnofocus</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<aligny>center</aligny>
@@ -785,6 +811,7 @@
 									<width>390</width>
 									<height>20</height>
 									<font>font12</font>
+									<textcolor>textnofocus</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>right</align>
 									<aligny>center</aligny>
@@ -826,6 +853,7 @@
 									<width>100</width>
 									<height>40</height>
 									<font>font13_title</font>
+									<textcolor>textnofocus</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<aligny>center</aligny>
@@ -837,6 +865,7 @@
 									<width>390</width>
 									<height>20</height>
 									<font>font12</font>
+									<textcolor>textnofocus</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>right</align>
 									<aligny>center</aligny>
@@ -878,6 +907,7 @@
 									<width>100</width>
 									<height>40</height>
 									<font>font13_title</font>
+									<textcolor>textnofocus</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<aligny>center</aligny>
@@ -889,6 +919,7 @@
 									<width>390</width>
 									<height>20</height>
 									<font>font12</font>
+									<textcolor>textnofocus</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>right</align>
 									<aligny>center</aligny>
@@ -929,12 +960,14 @@
 							<label>31903</label>
 							<align>center</align>
 							<aligny>center</aligny>
+							<textcolor>textnofocus</textcolor>
 						</control>
 						<control type="label">
 							<posx>0</posx>
 							<posy>200</posy>
 							<width>600</width>
 							<height>30</height>
+							<textcolor>textnofocus</textcolor>
 							<align>center</align>
 							<aligny>center</aligny>
 							<label>$LOCALIZE[31909]</label>
@@ -972,6 +1005,7 @@
 									<width>100</width>
 									<height>50</height>
 									<font>font13_title</font>
+									<textcolor>textnofocus</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<aligny>center</aligny>
@@ -983,6 +1017,7 @@
 									<width>100</width>
 									<height>50</height>
 									<font>font13_title</font>
+									<textcolor>textnofocus</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<aligny>center</aligny>
@@ -1002,6 +1037,7 @@
 									<width>590</width>
 									<height>20</height>
 									<font>font12</font>
+									<textcolor>textnofocus</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<aligny>center</aligny>
@@ -1044,6 +1080,7 @@
 									<width>100</width>
 									<height>50</height>
 									<font>font13_title</font>
+									<textcolor>textnofocus</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<aligny>center</aligny>
@@ -1055,6 +1092,7 @@
 									<width>100</width>
 									<height>50</height>
 									<font>font13_title</font>
+									<textcolor>textnofocus</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<aligny>center</aligny>
@@ -1074,6 +1112,7 @@
 									<width>590</width>
 									<height>20</height>
 									<font>font12</font>
+									<textcolor>textnofocus</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<aligny>center</aligny>
@@ -1102,6 +1141,7 @@
 							<label>31902</label>
 							<align>center</align>
 							<aligny>center</aligny>
+							<textcolor>textnofocus</textcolor>
 						</control>
 						<control type="list" id="52">
 							<posx>15</posx>
@@ -1121,6 +1161,7 @@
 									<width>100</width>
 									<height>120</height>
 									<font>font12</font>
+									<textcolor>textnofocus</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<aligny>center</aligny>
@@ -1140,6 +1181,7 @@
 									<width>390</width>
 									<height>70</height>
 									<font>font12</font>
+									<textcolor>textnofocus</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>right</align>
 									<aligny>center</aligny>
@@ -1165,6 +1207,7 @@
 									<width>100</width>
 									<height>120</height>
 									<font>font12</font>
+									<textcolor>textfocus</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<aligny>center</aligny>
@@ -1184,6 +1227,7 @@
 									<width>390</width>
 									<height>70</height>
 									<font>font12</font>
+									<textcolor>textfocus</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>right</align>
 									<aligny>center</aligny>
@@ -1192,6 +1236,7 @@
 								<control type="textbox">
 									<posx>0</posx>
 									<posy>80</posy>
+									<textcolor>textfocus</textcolor>
 									<selectedcolor>selected</selectedcolor>
 									<align>center</align>
 									<label>$INFO[ListItem.ActualIcon]</label>
@@ -1335,6 +1380,7 @@
 							<label>31910</label>
 							<align>center</align>
 							<aligny>center</aligny>
+							<textcolor>textnofocus</textcolor>
 						</control>
 						<control type="image">
 							<description>Background image</description>
@@ -1388,6 +1434,7 @@
 							<width>570</width>
 							<height>30</height>
 							<font>font13_title</font>
+							<textcolor>textnofocus</textcolor>
 							<align>center</align>
 							<aligny>center</aligny>
 							<label>$LOCALIZE[19055]</label>
@@ -1544,6 +1591,7 @@
 						<description>change location button</description>
 						<font>-</font>
 						<include>ButtonCommonValues</include>
+						<texturenofocus>-</texturenofocus>
 						<onleft condition="Skin.HasSetting(DisableHomeReturnButtons)">50</onleft>
 						<onleft condition="!Skin.HasSetting(DisableHomeReturnButtons)">83</onleft>
 						<onright>50</onright>
@@ -1555,6 +1603,7 @@
 						<width>200</width>
 						<height>40</height>
 						<label>31027</label>
+						<textcolor>textnofocus</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
@@ -1563,6 +1612,7 @@
 					<description>10 day forcast button</description>
 					<textwidth>235</textwidth>
 					<include>ButtonCommonValues</include>
+					<texturenofocus>-</texturenofocus>
 					<label>31904</label>
 					<onfocus>ClearProperty(Weather.CurrentView)</onfocus>
 					<visible>StringCompare(Weather.Plugin,weather.wunderground)</visible>
@@ -1571,6 +1621,7 @@
 					<description>36 hour forcast button</description>
 					<textwidth>235</textwidth>
 					<include>ButtonCommonValues</include>
+					<texturenofocus>-</texturenofocus>
 					<label>31901</label>
 					<onfocus>SetProperty(Weather.CurrentView,36hour)</onfocus>
 					<visible>StringCompare(Weather.Plugin,weather.wunderground)</visible>
@@ -1579,6 +1630,7 @@
 					<description>Weekend forcast button</description>
 					<textwidth>235</textwidth>
 					<include>ButtonCommonValues</include>
+					<texturenofocus>-</texturenofocus>
 					<label>31903</label>
 					<onfocus>SetProperty(Weather.CurrentView,weekend)</onfocus>
 					<visible>StringCompare(Weather.Plugin,weather.wunderground)</visible>
@@ -1587,6 +1639,7 @@
 					<description>Hourly forcast button</description>
 					<textwidth>235</textwidth>
 					<include>ButtonCommonValues</include>
+					<texturenofocus>-</texturenofocus>
 					<label>31902</label>
 					<onfocus>SetProperty(Weather.CurrentView,hourly)</onfocus>
 					<visible>StringCompare(Weather.Plugin,weather.wunderground)</visible>
@@ -1595,6 +1648,7 @@
 					<description>Hourly forcast button</description>
 					<textwidth>235</textwidth>
 					<include>ButtonCommonValues</include>
+					<texturenofocus>-</texturenofocus>
 					<label>31910</label>
 					<onfocus>SetProperty(Weather.CurrentView,map)</onfocus>
 					<visible>StringCompare(Weather.Plugin,weather.wunderground)</visible>
@@ -1614,6 +1668,7 @@
 					<description>Refresh button</description>
 					<textwidth>235</textwidth>
 					<include>ButtonCommonValues</include>
+					<texturenofocus>-</texturenofocus>
 					<label>103</label>
 				</control>
 				<control type="button" id="5">
@@ -1624,6 +1679,7 @@
 					<onclick>SetFocus(50)</onclick>
 					<textwidth>235</textwidth>
 					<include>ButtonCommonValues</include>
+					<texturenofocus>-</texturenofocus>
 					<visible>Skin.HasSetting(WeatherScript_Enable) + !IsEmpty(Skin.String(WeatherScript_Label))</visible>
 				</control>
 				<control type="button" id="4">
@@ -1632,6 +1688,7 @@
 					<onclick>ActivateWindow(MyWeatherSettings)</onclick>
 					<textwidth>235</textwidth>
 					<include>ButtonCommonValues</include>
+					<texturenofocus>-</texturenofocus>
 				</control>
 				<control type="label" id="250">
 					<posy>60</posy>
@@ -1646,6 +1703,7 @@
 				</control>
 				<control type="button" id="251">
 					<include>ButtonCommonValues</include>
+					<texturenofocus>-</texturenofocus>
 					<label>31317</label>
 					<onclick>Skin.SetPath(WeatherFanartDir)</onclick>
 					<enable>Skin.HasSetting(ShowWeatherFanart) + !IsEmpty(Skin.String(WeatherFanartDir))</enable>

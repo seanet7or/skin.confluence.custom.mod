@@ -29,8 +29,7 @@
 				<height>38</height>
 				<font>fontContextMenu</font>
 				<align>center</align>
-				<textcolor>textnofocus</textcolor>
-				<focusedcolor>white</focusedcolor>
+				<focusedcolor>textfocus</focusedcolor>
 				<label>$LOCALIZE[31167]</label>
 				<onclick>RunPlugin(plugin://script.simpleplaylists/?mode=addCurrentUrl)</onclick>
 				<visible>System.HasAddon(script.simpleplaylists)+ !Skin.HasSetting(DisableWatchItLater) + [Container.Content(Episodes) | Container.Content(Movies) | Container.Content(Songs)]</visible>
@@ -43,8 +42,7 @@
 			<height>38</height>
 			<font>fontContextMenu</font>
 			<align>center</align>
-			<textcolor>textnofocus</textcolor>
-			<focusedcolor>white</focusedcolor>
+			<focusedcolor>textfocus</focusedcolor>
 		</control>
 	</controls>
 </window>

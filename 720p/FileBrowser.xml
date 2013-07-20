@@ -44,6 +44,7 @@
 					<haspath>true</haspath>
 					<align>right</align>
 					<aligny>center</aligny>
+					<textcolor>textnofocus</textcolor>
 				</control>
 				<control type="grouplist" id="9000">
 					<posx>20</posx>
@@ -78,11 +79,11 @@
 						<label>119</label>
 					</control>
 					<control type="radiobutton" id="416">
-						<textcolor>white</textcolor>
 						<description>Flip Image button</description>
 						<height>48</height>
 						<align>center</align>
 						<include>ButtonMediaSubCommonValues</include>
+						<texturenofocus>buttons/nf_light.png</texturenofocus>
 						<label>749</label>
 					</control>
 				</control>
@@ -130,6 +131,7 @@
 							<texture>$INFO[ListItem.Icon]</texture>
 						</control>
 						<control type="label">
+							<textcolor>textnofocus</textcolor>
 							<posx>55</posx>
 							<width>580</width>
 							<height>40</height>
@@ -154,6 +156,7 @@
 							<texture>$INFO[ListItem.Icon]</texture>
 						</control>
 						<control type="label">
+							<textcolor>textfocus</textcolor>
 							<posx>55</posx>
 							<width>580</width>
 							<height>40</height>
@@ -184,6 +187,7 @@
 							<texture>$INFO[ListItem.Icon]</texture>
 						</control>
 						<control type="label">
+							<textcolor>textnofocus</textcolor>
 							<posx>55</posx>
 							<width>580</width>
 							<height>40</height>
@@ -208,6 +212,7 @@
 							<texture>$INFO[ListItem.Icon]</texture>
 						</control>
 						<control type="label">
+							<textcolor>textfocus</textcolor>
 							<posx>55</posx>
 							<width>580</width>
 							<height>40</height>

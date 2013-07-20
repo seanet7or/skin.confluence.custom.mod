@@ -61,7 +61,7 @@ perlregex() {
 		printf "\nperlregex(): Called with empty file list."
 		printf "\n"
 		printf "\nRegex is: '$REGEX'."
-		exit 4
+		#exit 4
 	fi
 	#debug "Files are '$LIST'."
 	debug "Regex is '$REGEX'."
@@ -399,6 +399,7 @@ else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
+
 
 printf "\nReplacing radiobutton textures: "
 if [ -f media/radiobutton-focus.png ] ; then
@@ -1517,6 +1518,100 @@ else
 fi
 step
 
+printf "\nMoving tags out of button includes: "
+if grep -a -q -z -Po '<include name="ButtonCommonValues">\n\s*<height>40</height>' 720p/includes.xml ; then 
+	BUTTONINCS=$(grep -z -Po '<control type="button".*\n(\s*<[a-z].*\n)*' 720p/* | grep '<include>' | sed 's|^\s*<include>||'  | sed 's|</include>\s*||'| sort -u)
+	TAGS=$(echo "height" ; echo "texturefocus" ; echo "pulseonselect" ; echo "texturenofocus" )
+	for TAG in $TAGS; do
+		for INC in $BUTTONINCS ; do
+			INCTAG=$(grep -z -Po "<include name=\"$INC\".*\n(\s*<[a-z].*\n)*" 720p/* | grep "<$TAG[ >]" | sed 's|^\s*||' | sed 's|\s*$||' )
+			if ! [ -z "$INCTAG" ] ; then
+				perlregex 720p/includes.xml "s|(<include name=\"$INC\"[^#]*#(\s*<(?!$TAG)[a-z][^#]*#)*)\s*<$TAG[ >][^#]*#|\1|"
+				R="s|(\s*)(<include>$INC</include>\s*#)|\1\2\1$INCTAG#|g"
+				XMLS=$(2>/dev/null grep "<include>$INC</include>" -l 720p/*)
+				perlregex "$R" $XMLS
+			fi
+		done
+	done
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nRemoving unused include WindowTitleCommons: "
+if grep -I -q 'WindowTitleCommons' 720p/includes.xml ; then
+	remove_structure include ' name="WindowTitleCommons"' '' 720p/includes.xml	
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nChanging font colors for original 'white' strings: "
+if grep -q 'white' 720p/* ; then
+
+	CONTROL='label'
+	TAG='textcolor'
+	DEFTAG=$(grep -a -z -Po "<default type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</default>" 720p/defaults.xml | grep "<$TAG[ >]" | sed 's|^\s*||')
+	R="s|(<control type=\"$CONTROL\"[^#]*#)(\s*)"
+	R+="((\s*(?!<$TAG[ >])<[a-z][^#]*#)*"
+	R+="\s*</control>\s*#)"
+	R+="|\1\2$DEFTAG#\2\3|g"
+	XMLS=$(2>/dev/null grep "<control type=\"$CONTROL\"" -l 720p/*)
+	perlregex $XMLS "$R"
+	
+	R="s|(<default type=\"$CONTROL\">#"
+	R+="(\s*<[a-z][^#]*#)*?)"
+	R+="\s*$DEFTAG#"
+	R+="|\1|g"
+	perlregex "$R" 720p/defaults.xml
+
+	XMLS=$(2>/dev/null grep 'headlinecolor>white' -l 720p/*)
+	perlregex $XMLS 's|<headlinecolor>white</headlinecolor>|<headlinecolor>heading2</headlinecolor>|g'
+
+	XMLS=$(2>/dev/null grep 'selectedcolor>white' -l 720p/*)
+	perlregex $XMLS 's|<selectedcolor>white</selectedcolor>|<selectedcolor>itemselected</selectedcolor>|g'
+
+	XMLS=$(2>/dev/null grep 'focusedcolor>white' -l 720p/*)
+	perlregex $XMLS 's|<focusedcolor>white</focusedcolor>|<focusedcolor>textfocus</focusedcolor>|g'
+
+	XMLS=$(2>/dev/null grep 'textcolor>white' -l 720p/*)
+	perlregex $XMLS "s|<textcolor>white|<textcolor>textnofocus|g"
+	
+	R="s|COLOR=white|COLOR=textnofocus|g"
+	perlregex "$R" 720p/ViewsVideoLibrary.xml 720p/VideoFullScreen.xml 720p/IncludesVariables.xml 720p/MyWeather.xml
+
+	R="s|COLOR=white|COLOR=heading2|g"
+	perlregex "$R" 720p/SkinSettings.xml
+
+	if grep -q 'white' 720p/* ; then
+		printf "\nERROR: White color still used!"
+		printf "\n"
+		grep 'white' 720p/*
+		exit 4
+	fi
+	perlregex colors/defaults.xml "s|\s*<color name=\"white\"[^#]*#||g"
+
+	NTEXTNF=100
+	TEXTNF=$(grep -z -Po '<focusedlayout.*\n(\s*(<[a-z]|</[vac]|[!a-zA-Z\[]).*\n)*\s*</focused' 720p/* | grep '<textcolor' | grep 'textnofocus' | wc -l)
+	while ! [ $TEXTNF -eq $NTEXTNF ] ; do
+		TEXTNF=$(grep -z -Po '<focusedlayout.*\n(\s*(<[a-z]|</[vac]|[!a-zA-Z\[]).*\n)*\s*</focused' 720p/* | grep '<textcolor' | grep 'textnofocus' | wc -l)
+		XMLS=$(2>/dev/null grep 'focusedlayout' -l 720p/* | egrep -v '720p/IncludesHomeWidget.xml')
+		R="s|(<focusedlayout[^#]*#"
+		R+="(\s*(<[a-z]\|</[vac]\|[a-zA-Z\[\!])[^#]*#)*"
+		R+="\s*<textcolor)>textnofocus<"
+		R+="|\1>textfocus<|g"
+		perlregex $XMLS "$R" --nocheck
+		NTEXTNF=$(grep -z -Po '<focusedlayout.*\n(\s*(<[a-z]|</[vac]|[!a-zA-Z\[]).*\n)*\s*</focused' 720p/* | grep '<textcolor' | grep 'textnofocus' | wc -l)
+	done
+
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\nChanging font colors for original 'grey' strings: "
 if grep -q '>grey<' 720p/* ; then
 	XMLS=$(2>/dev/null grep 'COLOR=grey\]' -l 720p/*)
@@ -1617,7 +1712,8 @@ else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
-#printf "\nChanging font colors for original 'selected color' strings: "
+
+
 #if false ; then #grep -q '>selected<' 720p/VisualisationPresetList.xml ; then
 #	XMLS=$(2>/dev/null grep '>selected<' -l 720p/*)
 #	perlregex $XMLS 's|<selectedcolor>selected</selectedcolor>|<selectedcolor>itemselected</selectedcolor>|g'	
@@ -2250,15 +2346,6 @@ if ! grep -I -q '<backgroundcolor>0</backgroundcolor>' 720p/AddonBrowser.xml ; t
 	#not for dialogs without background
 	R='s|\s*<backgroundcolor>0</backgroundcolor>#||g'
 	perlregex 720p/SettingsScreenCalibration.xml 720p/SlideShow.xml "$R"
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nRemoving unused include WindowTitleCommons: "
-if grep -I -q 'WindowTitleCommons' 720p/includes.xml ; then
-	remove_structure include ' name="WindowTitleCommons"' '' 720p/includes.xml	
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
