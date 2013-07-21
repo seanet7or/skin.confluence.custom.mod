@@ -14,7 +14,7 @@
 		<include condition="!Skin.HasSetting(HideBackGroundFanart) + !Skin.HasSetting(ShowBackgroundAlbumWall)">MusicPlayingTop</include>
 		<control type="group">
 			<animation effect="fade" time="200">VisibleChange</animation>
-			<visible>[Player.ShowInfo | Window.IsActive(MusicOSD)] + ![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList)]</visible>
+			<visible>[Player.ShowInfo | Window.IsActive(MusicOSD) | Window.IsVisible(infodialog)] + ![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList)]</visible>
 			<control type="label">
 				<description>Header label</description>
 				<posx>30</posx>
@@ -25,8 +25,13 @@
 				<aligny>center</aligny>
 				<textcolor>textnofocus</textcolor>
 				<label>$VAR[MusicHeaderLabel]</label>
+				<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(infodialog)">Conditional</animation>
 			</control>
-			<include>Clock</include>
+			<include>UserLocalInfo</include>
+		</control>
+		<control type="group">
+			<animation effect="fade" time="200">VisibleChange</animation>
+			<visible>[Player.ShowInfo | Window.IsActive(MusicOSD)] + ![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList)]</visible>
 			<control type="image">
 				<posy>230r</posy>
 				<width>1280</width>

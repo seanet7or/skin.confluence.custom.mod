@@ -194,6 +194,7 @@
 			</control>
 			<control type="scrollbar" id="60">
 				<posx>1072</posx>
+				<height>530</height>
 				<onleft>2</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">4</onright>
 				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
@@ -216,11 +217,12 @@
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>$VAR[VolumeStepUp]</onclick>
+				<onclick>VolumeUp</onclick>
 				<onleft condition="Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)">84</onleft>
 				<onleft condition="!Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)">2</onleft>
 				<onright>81</onright>
 				<onup>2</onup>
-				<ondown>2</ondown>				
+				<ondown>2</ondown>
 				<visible>!Skin.HasSetting(DisableFloorVolumeButtons)</visible>
 				<visible>Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)</visible>
 			</control>
@@ -245,6 +247,7 @@
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>$VAR[VolumeStepDown]</onclick>
+				<onclick>VolumeDown</onclick>
 				<onleft>80</onleft>
 				<onright>82</onright>
 				<onup>2</onup>
@@ -313,6 +316,6 @@
 			</control>
 		</control>
 		<include>BehindDialogFadeOut</include>
-		<include>Clock</include>
+		<include>UserLocalInfo</include>
 	</controls>
 </window>

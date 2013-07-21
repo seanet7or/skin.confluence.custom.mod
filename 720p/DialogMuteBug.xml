@@ -16,6 +16,8 @@
 			<height>45</height>
 			<aspectratio>keep</aspectratio>
 			<texture>icon-mute.png</texture>
+			<animation effect="slide" start="0,0" end="0,-50" time="100" condition="Window.IsVisible(busydialog)">conditional</animation>
+			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(CustomAddMenuItems.xml) | Window.IsVisible(CustomAddonSelection.xml) | Window.IsVisible(CustomAddonType.xml) | Window.IsVisible(CustomAddSubMenuItems.xml) | Window.IsVisible(CustomSubMenuType.xml) | Window.IsVisible(CustomWidgetType.xml) | Window.IsVisible(Favourites)">Conditional</animation>
 		</control>
 	</controls>
 </window>

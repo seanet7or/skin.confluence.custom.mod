@@ -26,7 +26,7 @@ debug() {
 # the regex will be applied to all files in the 720p subfolder
 # parameters: 
 #	--nocheck doesn't check if any changes were applied if given
-perlregex() {
+perlregex() {(
 	debug "perlregex() entered."
 	#parse parameters
 	local LIST=''
@@ -91,7 +91,7 @@ perlregex() {
 			printf "\nFile is: '$FILE'."
 			printf "\nRegex is: '$REGEX'."
 	fi
-}
+)}
 
 
 # removes <$STRUCTURE$TAGS> .... </$STRUCTURE> structure from a xml file
@@ -193,10 +193,12 @@ remove_variable() {
 # $2 characteristic line
 # $3 files where to search
 remove_control() {
+	(
 	local TYPE=$1
 	local LINE="$2"
 	local FILES="$3"
 	remove_structure "control" " type=\"$TYPE\"" "$LINE" "$FILES"
+)
 }
 
 
@@ -208,10 +210,12 @@ remove_control() {
 # $2 characteristic line
 # $3 files where to search
 remove_controlid() {
+	(
 	local TYPE=$1
 	local LINE="$2"
 	local FILES="$3"
 	remove_structure "control" " type=\"$TYPE\"[^>]*" "$LINE" "$FILES"
+)
 }
 
 
@@ -230,11 +234,11 @@ check_and_remove() {
 		
 		local BASE=$(echo "$FILENAME" | sed 's|\.[a-zA-Z]*||g')
 
-		if ! grep -I -q "[^a-z_\.\(]$BASE[^a-zA-Z0-9 _\.=/]" 720p/* ; then
+		if ! grep -I "[^a-z_\.\(]$BASE[^a-zA-Z0-9 _\.=/]" 720p/* | grep -v -q '<description>' ; then
 			rm "$FILE" # 2>/dev/null
 		else
 			printf "\n'$BASE' ('$FILE') was found in the .xmls (deleting anyway): \n"
-			grep "[^a-z_\.\(]$BASE[^a-zA-Z0-9 _\.=/]" 720p/*
+			grep "[^a-z_\.\(]$BASE[^a-zA-Z0-9 _\.=/]" 720p/*  | grep -v -q '<description>'
 			#exit 3
 			rm "$FILE" # 2>/dev/null
 		fi
@@ -350,7 +354,8 @@ SLIDER_NIB_NF='controls/slider/nib-nf_light.png'
 SLIDER_NIB_FO='controls/slider/nib-fo_light.png'
 
 STEP=0
-printf "\n############# APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ########################"
+
+printf "\n############# PREPARING MODIFICATIONS #########################################"
 
 printf "\nReplacing '#'s in original xmls: "
 if grep -q '#' 720p/SkinSettings.xml ; then 
@@ -372,286 +377,111 @@ else
 fi
 step
 
-printf "\nCorrecting wrong translation: "
-if grep -q -zo -P 'msgctxt "#31153"\nmsgid "Home Menu"\nmsgstr "Gesehen Status Overlay benutzen"' \
-	language/German/strings.po 
-then
-	sed "s|Gesehen Status Overlay benutzen|Hauptmenü|" -i language/German/strings.po
+printf "\n############# REMOVING MEDIA FILES ############################################"
+
+printf "\nRemoving xbmc logo fallback from music visualisation: "
+if grep -I -q 'fallback="xbmc-logo.png"' 720p/* ; then
+	#remove logo fallback from music visualisation
+	XMLS=$(2>/dev/null grep 'fallback="xbmc-logo.png"' -l 720p/*)
+	perlregex 's| fallback="xbmc-logo.png"||g' $XMLS
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
+
+REMOVE='
+media/GlassOverlay.png;
+media/icon_volume.png;
+media/poster_diffuse.png;
+media/defaultDVDFull.png;
+backgrounds/Fire.jpg;
+backgrounds/Kryptonite.jpg;
+media/OverlayWatching.png;
+media/Invisable.png;
+media/diffuse_mirror2.png;
+media/diffuse_mirror3.png;
+media/DialogCloseButton.png;id
+media/DialogCloseButton-focus.png;id
+media/ContentPanelMirror.png;
+media/floor.png;
+media/ThumbBG.png;
+media/arrow-big-up.png;
+media/arrow-big-down.png;
+media/icon-rss.png;
+media/separator_vertical.png;
+media/separator.png;
+media/xbmc-logo.png;
+media/DialogContextBottom.png;id
+media/DialogContextMiddle.png;
+media/DialogContextTop.png;
+media/icon_addons.png;
+media/icon_system.png;
+media/icon_music.png;
+media/icon_video.png;
+media/icon_weather.png;
+media/icon-video.png;
+media/icon-weather.png;
+media/icon_pictures.png;
+media/MediaItemDetailBG.png;
+media/livecdcase/cdglass.png;
+media/livecdcase/cdshadow.png;
+media/dialogheader.png;
+media/GlassTitleBar.png;
+media/gradient.png;
+media/Confluence_Logo.png;
+media/cdwall-grid.png;
+media/HomeSeperator.png;
+media/homefloor.png;
+media/SideFade.png;
+media/HomeOverlay1.png;
+'
 
 printf "\nRemoving media files: "
-if [ -f media/OverlayWatching.png ] || [ -f media/poster_diffuse.png ] ; then
-	check_and_remove media/icon_volume.png
-	check_and_remove media/poster_diffuse.png
-	check_and_remove media/OSDFullScreenFO.png
-	check_and_remove media/OSDFullScreenNF.png
-	check_and_remove media/defaultDVDFull.png
-	check_and_remove backgrounds/Fire.jpg
-	check_and_remove backgrounds/Kryptonite.jpg
-	check_and_remove media/OverlayWatching.png
-	check_and_remove media/Invisable.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-
-printf "\nReplacing radiobutton textures: "
-if [ -f media/radiobutton-focus.png ] ; then
-	XMLS=$(2>/dev/null grep '>radiobutton-focus.png<' -l 720p/*)
-	R='s|>radiobutton-focus.png<|>'$RADIOBUTTON_FO'<|g'
-	perlregex "$R" $XMLS
-	XMLS=$(2>/dev/null grep '>radiobutton-nofocus.png<' -l 720p/*)
-	R='s|>radiobutton-nofocus.png<|>'$RADIOBUTTON_NF'<|g'
-	perlregex "$R" $XMLS
-	check_and_remove media/radiobutton-focus.png
-	check_and_remove media/radiobutton-nofocus.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nReplacing texture for items without focus: "
-if [ -f media/button-nofocus.png ] ; then
-	XMLS=$(2>/dev/null grep '>button-nofocus.png<' -l 720p/*)
-	R='s|>button-nofocus.png<|>'$BUTTON_NF'<|g'
-	perlregex "$R" $XMLS
-	check_and_remove media/button-nofocus.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nRemoving reflections: "
-if [ -f media/diffuse_mirror3.png ] ; then
-	XMLS=$(2>/dev/null grep 'diffuse_mirror[23].png' -l 720p/*)
-	remove_control 'image' '<texture[^>]*diffuse="diffuse_mirror[23].png"[^>]*>[^<]*</texture>' "$XMLS"
-	check_and_remove media/diffuse_mirror2.png
-	check_and_remove media/diffuse_mirror3.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nChanging dialog background: "
-if [ -f media/DialogBack2.png ] ; then
-	XMLS=$(2>/dev/null grep '>DialogBack.png<' -l 720p/*)
-	R='s|>DialogBack.png<|>'$DIALOG_BG'<|g'
-	perlregex $XMLS "$R"
-	XMLS=$(2>/dev/null grep 'DialogBack2.png</texture>' -l 720p/*)
-	R='s|>DialogBack2.png<|>'$DIALOG_BG'<|g'
-	perlregex $XMLS "$R"
-	check_and_remove media/DialogBack.png
-	check_and_remove media/DialogBack2.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-	
-printf "\nChanging info message dialog background: "
-if [ -f media/InfoMessagePanel.png ] ; then
-	XMLS=$(2>/dev/null grep '>InfoMessagePanel.png<' -l 720p/*)
-	R='s|>InfoMessagePanel.png<|>'$DIALOG_BG'<|g'
-	perlregex $XMLS "$R"
-	check_and_remove media/InfoMessagePanel.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nChanging dialog background overlay: "
-if [ -f media/OverlayDialogBackground.png ] ; then
-	XMLS=$(2>/dev/null grep '>OverlayDialogBackground.png<' -l 720p/*)
-	R='s|>OverlayDialogBackground.png<|>'$DIALOG_BG'<|g'
-	perlregex $XMLS "$R"
-	check_and_remove media/OverlayDialogBackground.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-	
-printf "\nRemoving mouse close buttons: "
-if [ -f  media/DialogCloseButton-focus.png ] ; then
-	XMLS=$(2>/dev/null grep '>DialogCloseButton.png<' -l 720p/*)
-	remove_controlid 'button' '<texturenofocus>DialogCloseButton.png</texturenofocus>' "$XMLS"
-	check_and_remove media/DialogCloseButton.png
-	check_and_remove media/DialogCloseButton-focus.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
+for R in $REMOVE ; do
+	if [ -z "$R" ] ; then continue ; fi
+	FILE=$(echo "$R" | cut -f1 -d';')
+	NAME=$(echo "$FILE" | sed 's|^media/||')
+	if [ -f "$FILE" ] ; then
+		printf "\nRemoving '$FILE'."
+		XMLS=$(2>/dev/null grep "$NAME" -l 720p/*)
+		if ! [ -z "$XMLS" ] ; then
+			CMD=remove_control$(echo "$R" | cut -f2 -d';')
+			>/dev/null $CMD "(label\|button\|image)" "<texture[^>]*>$NAME</texture[^>]*>" "$XMLS"
+			>/dev/null $CMD "(label\|button\|image)" "<texture(\| flipy=\"true\"\| background=\"true\")* diffuse=\"$NAME\"[^<]*</texture>" "$XMLS"
+		else
+			printf " ('$NAME' does not occur in the XMLs.)"
+		fi
+		check_and_remove "$FILE"
+	else 
+		printf "\n'$FILE' doesn't exist."
+	fi
+done
+printf "\n%sDONE!%s" $GREEN $RESET
 step
 
 printf "\nRemoving studio logos: "
 if grep -q 'listitem.Studio,studios' 720p/ViewsLogoVertical.xml ; then
 	XMLS=$(2>/dev/null grep '>.INFO.listitem.Studio,studios.,.png.<' -l 720p/*)
 	remove_control 'image' '<texture>.INFO.listitem.Studio,studios.,.png.</texture>' "$XMLS"
-	remove_include 'MediaStudioFlagging' 720p/includes.xml
+	if grep 'MediaStudioFlagging' 720p/includes.xml ; then
+		remove_include 'MediaStudioFlagging' 720p/includes.xml
+	fi
 	rm -rf media/studios
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
-	
-printf "\nReplacing content panel background: "
-if [ -f media/ContentPanel.png ] ; then	
-	XMLS=$(2>/dev/null grep '>ContentPanel.png<' -l 720p/*)
-	R='s|>ContentPanel.png<|>'$CONTENT_BG'<|g'
-	perlregex $XMLS "$R"
-	check_and_remove media/ContentPanel.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-	
-printf "\nReplacing some backgrounds: "
-if [ -f backgrounds/media-overlay.jpg ] || [ -f media/media-overlay.jpg ]  ; then
-	XMLS=$(2>/dev/null grep 'SKINDEFAULT.jpg' -l 720p/*)
-	perlregex $XMLS 's|special://skin/backgrounds/SKINDEFAULT.jpg|'$BACKGROUND_DEF'|g'
-	XMLS=$(2>/dev/null grep 'INFO.Skin.CurrentTheme' -l 720p/*)
-	perlregex $XMLS 's|.INFO.Skin.CurrentTheme,special://skin/backgrounds/,.jpg.|'$BACKGROUND_DEF'|g'
-	XMLS=$(2>/dev/null grep '>media-overlay.jpg<' -l 720p/*)
-	perlregex $XMLS 's|>media-overlay.jpg<|>'$BACKGROUND_DEF'<|g'
-	check_and_remove backgrounds/SKINDEFAULT.jpg
-	check_and_remove backgrounds/media-overlay.jpg
-	check_and_remove media/media-overlay.jpg
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-	
-printf "\nRemoving hidden panel arrow: "	
-if [ -f media/HasSub.png ] ; then
-	perlregex 720p/includes.xml 's|HasSub.png|-|g'
-	check_and_remove media/HasSub.png	
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
 
-printf "\nRemoving xbmc logo: "
-if grep -I -q xbmc-logo.png 720p/* ; then
-	#remove logo from all screens
-	XMLS=$(2>/dev/null grep '>xbmc-logo.png<' -l 720p/*)
-	remove_control 'image' '<texture>xbmc-logo.png</texture>' "$XMLS"
-	#remove logo fallback from music visualisation
-	XMLS=$(2>/dev/null grep 'fallback="xbmc-logo.png"' -l 720p/*)
-	perlregex 's| fallback="xbmc-logo.png"||g' $XMLS
-	check_and_remove media/xbmc-logo.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-	
-printf "\nReplacing scroll bar textures: "
-if grep -q ScrollBarNib.png 720p/ViewsPictures.xml ; then
-	XMLS=$(2>/dev/null grep 'ScrollBar' -l 720p/*)
-	perlregex $XMLS 's|<texturesliderbar border="[0-9,]*">ScrollBarH_bar.png|<texturesliderbar>'$SCROLLBAR_HOR_BAR'|g'
-	perlregex $XMLS 's|<texturesliderbar border="[0-9,]*">ScrollBarV_bar.png|<texturesliderbar>'$SCROLLBAR_VER_BAR'|g'
-	perlregex $XMLS 's|<texturesliderbackground border="[0-9,]*">ScrollBarH.png|<texturesliderbackground>'$SCROLLBAR_HOR'|g'
-	perlregex $XMLS 's|<texturesliderbackground border="[0-9,]*">ScrollBarV.png|<texturesliderbackground>'$SCROLLBAR_VER'|g'
-	perlregex $XMLS 's|<texturesliderbarfocus border="[0-9,]*">ScrollBarH_bar_focus.png|<texturesliderbarfocus>'$SCROLLBAR_HOR_BAR_FO'|g'
-	perlregex $XMLS 's|<texturesliderbarfocus border="[0-9,]*">ScrollBarV_bar_focus.png|<texturesliderbarfocus>'$SCROLLBAR_VER_BAR_FO'|g'
-	perlregex $XMLS 's|\s*<textureslidernib>ScrollBarNib.png</textureslidernib>#||g'
-	perlregex $XMLS 's|\s*<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>#||g'	
-	check_and_remove 'media/ScrollBarH_bar.png'
-	check_and_remove 'media/ScrollBarV_bar.png'
-	check_and_remove 'media/ScrollBarH.png'
-	check_and_remove 'media/ScrollBarV.png'
-	check_and_remove 'media/ScrollBarH_bar_focus.png'
-	check_and_remove 'media/ScrollBarV_bar_focus.png'
-	check_and_remove 'media/ScrollBarNib.png'
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-	
-printf "\nReformating vertical scroll bar controls: "
-if grep -q -zo -P '<control type="scrollbar" id="60">\n\s*<posx>850</posx>\n\s*<posy>78</posy>\n\s*<width>25</width>' \
-	720p/ViewsMusicLibrary.xml ; then
-	XMLS=$(2>/dev/null grep '<control type="scrollbar"' -l 720p/*)
-	R='s|(<control type="scrollbar"[^#]*#(\s*<[a-z][^#]*#)*?\s*<width)>25<|\1>14<|g'
-	perlregex $XMLS "$R"
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nMoving vertical scroll bars to the right: "
-if grep -q -zo -P '<control type="scrollbar" id="60">\n\s*<posx>1250</posx>' 720p/CustomAddMenuItems.xml
-then
-	for FILE in 720p/* ; do
-		IFS=$'\n' ; for XPOS in $( grep -zo -P -I '<control type="scrollbar" id="[0-9]*">\n\s*<posx>[0-9]*</posx>\n\s*<posy>[0-9]*</posy>\n\s*<width>14</width>' "$FILE" \
-			| grep -o '<posx>[0-9]*</posx>' | grep -o '[0-9]*' )
-		do
-			NEWX=$((XPOS+12))
-			#echo "'$XPOS' -> '$NEWX'"
-			R='s|(<control type="scrollbar" id="[0-9]*">#'
-			R+='\s*<posx)>'"$XPOS"'<(/posx>#\s*<posy>[0-9]*</posy>#'
-			R+='\s*<width>14</width>)'
-			R+='|\1>'"$NEWX"'<\2|g'
-			#echo "$R"
-			perlregex $FILE "$R" --nocheck
-		done
-	done
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nReformating horizontal scroll bar controls: "
-if grep -q -zo -P '<control type="scrollbar" id="60">\n\s*<posx>[0-9]*</posx>\n\s*<posy>[0-9]*</posy>\n\s*<width>[0-9]*</width>\n\s*<height>25</height>' \
-	720p/ViewsMusicLibrary.xml ; then
-	XMLS=$(2>/dev/null grep '<control type="scrollbar"' -l 720p/*)
-	R='s|(<control type="scrollbar"[^#]*#(\s*<[a-z][^#]*#)*?\s*<height)>25<|\1>14<|g'
-	perlregex $XMLS "$R"
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nRemoving GlassOverlay.png: "
-if [ -f  media/GlassOverlay.png ] ; then
-	XMLS=$(2>/dev/null grep '>GlassOverlay.png<' -l 720p/*)
-	remove_control 'image' '<texture>GlassOverlay.png</texture>' "$XMLS"
-	check_and_remove media/GlassOverlay.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nRemoving separators: "
-if [ -f media/separator2.png ] ; then
-	XMLS=$(2>/dev/null grep '>separator.png<' -l 720p/*)
-	remove_control 'image' '<texture>separator.png</texture>' "$XMLS"
-	XMLS=$(2>/dev/null grep '>separator2.png<' -l 720p/*)
-	remove_control 'image' '<texture>separator2.png</texture>' "$XMLS"
-	#not all controls can be removed, some have an id and are used for navigation
-	XMLS=$(2>/dev/null grep 'separator2.png' -l 720p/*)
-	perlregex $XMLS 's|separator2.png|'$BUTTON_NF'|g'
-	check_and_remove media/separator.png
-	check_and_remove media/separator2.png
+printf "\nRemoving ClearCases: "
+if [ -d media/ClearCase ] ; then
+	remove_control image '<visible>\!Skin.HasSetting\(View724DisableCases\)</visible>' 720p/ViewsLowlist.xml
+	perlregex 's|\s*<visible>Skin.HasSetting\(View724DisableCases\)</visible>\s*#||' 720p/ViewsLowlist.xml
+	remove_controlid radiobutton '<onclick>Skin.ToggleSetting\(View724DisableCases\)</onclick>' 720p/MyVideoNav.xml
+	remove_controlid radiobutton '<onclick>Skin.ToggleSetting\(UseDiscTypeCase\)</onclick>' 720p/MyVideoNav.xml
+	remove_variable 'VideoListCase' '720p/IncludesVariables.xml'
+	rm -rf media/ClearCase
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -666,28 +496,6 @@ if [ -f media/MenuItemNF.png ] ; then
 	R='s|>MenuItemNF.png<|>-<|g'
 	perlregex $XMLS "$R"
 	check_and_remove media/MenuItemNF.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nRemoving content panel mirrors: "
-if [ -f media/ContentPanelMirror.png ] ; then
-	XMLS=$(2>/dev/null grep '>ContentPanelMirror.png<' -l 720p/*)
-	remove_control 'image' '<texture[^>]*>ContentPanelMirror.png</texture>' "$XMLS"
-	check_and_remove 'media/ContentPanelMirror.png'
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nRemoving floor image: "
-if [ -f media/floor.png ] ; then
-	XMLS=$(2>/dev/null grep '>floor.png<' -l 720p/*)
-	remove_control 'image' '<texture[^>]*>floor.png</texture>' "$XMLS"
-	check_and_remove 'media/floor.png'
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -727,17 +535,6 @@ else
 fi
 step
 
-printf "\nRemoving thumb background: "
-if [ -f media/ThumbBG.png ] ; then
-	XMLS=$(2>/dev/null grep '>ThumbBG.png<' -l 720p/*)
-	remove_control 'image' '<texture border="2">ThumbBG.png</texture>' "$XMLS"
-	check_and_remove 'media/ThumbBG.png'	
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
 printf "\nRemoving thumb border: "
 if [ -f media/ThumbBorder.png ] ; then
 	XMLS=$(2>/dev/null grep 'ThumbBorder.png' -l 720p/*)
@@ -758,293 +555,6 @@ else
 fi
 step
 
-printf "\nRemoving page count info info: "
-if grep -q 'CommonPageCount' 720p/includes.xml ; then		
-	#includes
-	XMLS=$(2>/dev/null grep 'CommonPageCount' -l 720p/*)
-	perlregex $XMLS 's|\s*<include[^>]*>CommonPageCount</include>\s*#||g'
-	#CommonPageCount definition
-	R='s|\s*<include name="CommonPageCount">\s*#'
-	R+='(\s*(<[a-z][^#]*\|</control>)#)*?'
-	R+='\s*</include>\s*#||'
-	perlregex "$R" 720p/includes.xml
-	if grep -I -q 'CommonPageCount' 720p/* ; then
-		printf "\nError: CommonPageCount could not be removed totally."
-		exit 3
-	fi
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nRemoving more page count info: "
-if grep -q 'HideNumItemsCount' 720p/* ; then		
-	XMLS=$(2>/dev/null grep 'HideNumItemsCount' -l 720p/*)
-	remove_control label '<visible>.Skin.HasSetting.HideNumItemsCount.</visible>' "$XMLS"
-	XMLS=$(2>/dev/null grep '<selected>Skin.HasSetting.HideNumItemsCount.</selected>' -l 720p/*)
-	if ! [ -z "$XMLS" ] ; then 
-		remove_controlid radiobutton '<selected>Skin.HasSetting.HideNumItemsCount.</selected>' "$XMLS"
-	fi
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nRemoving even more PageCounts: "
-if grep -q '>Description Page Count<' 720p/DialogAddonInfo.xml ; then
-	remove_control label '<posx>130r</posx>' 720p/DialogAlbumInfo.xml
-	R='s|\s*<control type="label">#(\s*<[a-z]*[^#]*#)*?\s*<label>.LOCALIZE.207.[^#]*#\s*</control>||g'
-	#perlregex 720p/DialogPVRRecordingInfo.xml "$R"
-	remove_control label '<label>(\|.COLOR=blue.).LOCALIZE.207.[^#]*#' 720p/DialogPVRRecordingInfo.xml
-	remove_control label '<label>(\|.COLOR=blue.).LOCALIZE.20[67].[^#]*#' 720p/DialogVideoInfo.xml
-	remove_control label '<description>Description Page Count</description>' 720p/DialogAddonInfo.xml
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nChanging genre background settings: "
-if grep -q 'Skin.SetString.UsrGenreFanartDir,special://skin/backgrounds/moviegenre/.' 720p/Home.xml ; then		
-	perlregex 720p/Home.xml 's|\s*<onload condition="IsEmpty.Skin.String.UsrGenreFanartDir..">Skin.SetString.UsrGenreFanartDir,special://skin/backgrounds/moviegenre/.</onload>#||g'
-	perlregex 720p/includes.xml 's|special://skin/backgrounds/moviegenre/||g'
-	R='s|<visible>(!StringCompare.ListItem.Label,... . Container.Content.genres.</visible>)'
-	R+='|<visible>!IsEmpty\(Skin\.String\(UsrGenreFanartDir\)\) \+ \1|g'
-	perlregex 720p/IncludesBackgroundBuilding.xml "$R"
-	rm -rf backgrounds/moviegenre
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nChanging weather fanart: "
-if [ -d backgrounds/weather ] ; then
-	perlregex 720p/Home.xml 's|\s*<onload condition="IsEmpty.Skin.String.WeatherFanartDir..">Skin.SetString.WeatherFanartDir,special://skin/backgrounds/weather/.</onload>#||g'
-	perlregex 720p/includes.xml 's|special://skin/backgrounds/weather/||g'	
-	R='s|(Skin.HasSetting.ShowWeatherFanart.)">'
-	R+='|\1 \+ \!IsEmpty\(Skin.String\(WeatherFanartDir\)\)">|g'
-	perlregex 720p/IncludesVariables.xml "$R"
-	R='s|(Skin.HasSetting.ShowWeatherFanart.)<'
-	R+='|\1 \+ \!IsEmpty\(Skin.String\(WeatherFanartDir\)\)<|g'
-	perlregex 720p/MyWeather.xml "$R"
-	rm -rf backgrounds/weather
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nChanging time display: "
-if grep -q '<description>date label</description>' 720p/includes.xml ; then
-	#remove date label - in 720p/includes.xml and 720p/VideoFullScreen.xml
-	XMLS=$(2>/dev/null grep '<description>date label</description>' -l 720p/*)
-	remove_controlid 'label' '<description>date label</description>' "$XMLS"
-	#move time label up
-	XMLS=$(2>/dev/null grep '<description>time label</description>' -l 720p/*)
-	R='s|(<control type="label"[^>]*>\s*#'
-	R+='\s*<description>time label</description>\s*#'
-	R+='\s*<posx>15r</posx>\s*#'
-	R+='\s*<posy)>20<|\1>5<|'
-	perlregex $XMLS "$R"
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nRemoving references to 'media/separator_vertical.png': "
-if [ -f media/separator_vertical.png ] ; then
-	XMLS=$(2>/dev/null grep '>separator_vertical.png<' -l 720p/*)
-	remove_control 'image' '<texture>separator_vertical.png</texture>' "$XMLS"
-	check_and_remove media/separator_vertical.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nReplacing button-focus2.png: "
-if [ -f media/button-focus2.png ] ; then
-	XMLS=$(2>/dev/null grep '>button-focus2.png<' -l 720p/*)
-	perlregex $XMLS 's|>button-focus2.png<|>'$BUTTON_FO'<|g'
-	check_and_remove media/button-focus2.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nReplacing button-focus.png: "
-if [ -f media/button-focus.png ] ; then
-	XMLS=$(2>/dev/null grep '>button-focus.png<' -l 720p/*)
-	perlregex $XMLS 's|>button-focus.png<|>'$BUTTON_FO'<|g'
-	check_and_remove media/button-focus.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nReplacing MenuItemFO.png: "
-if [ -f media/MenuItemFO.png ] ; then
-	XMLS=$(2>/dev/null grep 'MenuItemFO.png' -l 720p/*)
-	perlregex $XMLS 's|>MenuItemFO.png|>'$BUTTON_FO'|g'
-	check_and_remove media/MenuItemFO.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nRemoving up and down arrows from several dialogs: "
-if [ -f media/arrow-big-up.png ] ; then
-	XMLS=$(2>/dev/null grep '>arrow-big-' -l 720p/*)
-	remove_control 'button' '<texturefocus>arrow-big-up.png</texturefocus>' "$XMLS"
-	remove_control 'button' '<texturefocus>arrow-big-down.png</texturefocus>' "$XMLS"
-	check_and_remove media/arrow-big-up.png
-	check_and_remove media/arrow-big-down.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nRemoving section header images: "
-if [ -f media/icon-weather.png ] ; then
-	#section icon
-	XMLS=$(2>/dev/null grep '<description>Section header image</description>' -l 720p/*)
-	remove_control 'image' '<description>Section header image</description>' "$XMLS"
-	check_and_remove media/icon_addons.png
-	check_and_remove media/icon_system.png
-	check_and_remove media/icon_music.png
-	check_and_remove media/icon_video.png
-	check_and_remove media/icon_weather.png
-	check_and_remove media/icon-video.png
-	check_and_remove media/icon-weather.png
-	check_and_remove media/icon_pictures.png	
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nRemoving location headers: "
-if grep -I -q '<include>WindowTitleCommons</include>' 720p/FileManager.xml
-then
-	#remove location labels
-	XMLS=$(2>/dev/null grep '<include>WindowTitleCommons</include>' -l 720p/*)
-	remove_control 'label' '<include>WindowTitleCommons</include>' "$XMLS"
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nRemoving location grouplists: "
-if grep -I -q '<posx>65</posx>' 720p/AddonBrowser.xml
-then
-	XMLS=$(2>/dev/null grep '<control type="grouplist">' -l 720p/*)
-	#remove location grouplists
-	R='s|\s*<control type="grouplist">\s*#'
-	R+='\s*<posx>65</posx>\s*#'
-	R+='\s*<posy>5</posy>\s*#'
-	R+='\s*<width>1000</width>\s*#'
-	R+='\s*<height>30</height>\s*#'
-	R+='(\s*<[a-z][^>]*>[^>]*>\s*?#)*'
-	R+='\s*</control>\s*#||'
-	perlregex "$R" $XMLS
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nChanging keyboard: "
-if [ -f media/KeyboardEditArea.png ] ; then
-	XMLS=$(2>/dev/null grep '>Keyboard' -l 720p/*)
-	perlregex $XMLS 's|>KeyboardCornerTopNF.png|>'$BUTTON_NF'|g'
-	perlregex $XMLS 's|>KeyboardCornerTop.png|>'$BUTTON_FO'|g'
-	perlregex $XMLS 's|>KeyboardCornerBottomNF.png|>'$BUTTON_NF'|g'
-	perlregex $XMLS 's|>KeyboardCornerBottom.png|>'$BUTTON_FO'|g'
-	perlregex $XMLS 's|>KeyboardEditArea.png|>'$KEYBOARD_EDITAREA'|g'
-	perlregex $XMLS 's|>KeyboardKeyNF.png|>'$BUTTON_NF'|g'
-	perlregex $XMLS 's|>KeyboardKey.png|>'$BUTTON_FO'|g'
-	check_and_remove media/KeyboardCornerTopNF.png
-	check_and_remove media/KeyboardCornerTop.png
-	check_and_remove media/KeyboardCornerBottomNF.png
-	check_and_remove media/KeyboardCornerBottom.png
-	check_and_remove media/KeyboardEditArea.png
-	check_and_remove media/KeyboardKeyNF.png
-	check_and_remove media/KeyboardKey.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nReplacing MediaBladeSub: "
-if [ -f media/MediaBladeSub.png ] ; then
-	XMLS=$(2>/dev/null grep 'MediaBladeSub.png' -l 720p/*)
-	perlregex $XMLS 's|>MediaBladeSub.png|>'$MEDIA_BLADE'|g'
-	check_and_remove media/MediaBladeSub.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nReplacing HomeBladeSub: "
-if [ -f media/HomeBladeSub.png ] ; then
-	XMLS=$(2>/dev/null grep 'HomeBladeSub.png' -l 720p/*)
-	perlregex $XMLS 's|>HomeBladeSub.png|>'$HOME_BLADE'|g'
-	check_and_remove media/HomeBladeSub.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nRemoving MediaItemDetailBG.png: "
-if [ -f media/MediaItemDetailBG.png ] ; then
-	XMLS=$(2>/dev/null grep '>MediaItemDetailBG.png<' -l 720p/*)
-	remove_control 'image' '<texture border="[0-9,]*">MediaItemDetailBG.png</texture>' "$XMLS"
-	check_and_remove media/MediaItemDetailBG.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nRemoving CD shadows: "
-if [ -f media/livecdcase/cdglass.png ] ; then
-	XMLS=$(2>/dev/null grep '>livecdcase/cdglass.png<' -l 720p/*)	
-	remove_control 'image' '<texture background="true">livecdcase/cdglass.png</texture>' "$XMLS"
-	check_and_remove media/livecdcase/cdglass.png
-	check_and_remove media/livecdcase/cdshadow.png	
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nChanging progress bars: "
-if [ -f media/OSDProgressBack.png ] ; then
-	XMLS=$(2>/dev/null grep 'OSDProgress' -l 720p/*)
-	perlregex $XMLS 's|OSDProgressMidLight.png|'$PROGRESS_MIDLIGHT'|g'
-	perlregex $XMLS 's|OSDProgressMid.png|'$PROGRESS_MID'|g'
-	perlregex $XMLS 's|OSDProgressBack.png|'$PROGRESS_BACK'|g'
-	check_and_remove media/OSDProgressMidLight.png
-	check_and_remove media/OSDProgressMid.png
-	check_and_remove media/OSDProgressBack.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
 printf "\nRemoving NoCover border: "
 if grep -q '<bordertexture border="3">NoCover_1.png</bordertexture>' 720p/SlideShow.xml ; then
 	R='s|\s*<bordertexture border="3">NoCover_1.png</bordertexture>#'
@@ -1057,168 +567,125 @@ else
 fi
 step
 
-printf "\nReplacing folder-focus.png: "
-if [ -f media/folder-focus.png ] ; then
-	XMLS=$(2>/dev/null grep 'folder-focus.png' -l 720p/*)
-	perlregex $XMLS 's|folder-focus.png|buttons/folder-focus_light.png|g'
-	check_and_remove media/folder-focus.png
+printf "\nRemoving GenreFlagging: "
+if [ -d media/DefaultGenre ] ; then
+	XMLS=$(2>/dev/null grep '<visible>.Skin.HasSetting.View501GenreIcons.<.visible>' -l 720p/*)
+	remove_control 'grouplist' '<visible>\!Skin.HasSetting\(View501GenreIcons\)</visible>' "$XMLS"
+	remove_include 'MultiVideoGenreFlagging' 720p/IncludesGenreFlagging.xml
+	remove_include 'MultiGenreFlag' 720p/IncludesGenreFlagging.xml
+	remove_variable 'GenreFlagPath' 720p/IncludesVariables.xml
+	XMLS=$(2>/dev/null grep '<onclick>Skin.ToggleSetting.View501GenreIcons.</onclick>' -l 720p/*)
+	remove_controlid 'radiobutton' '<onclick>Skin.ToggleSetting.View501GenreIcons.</onclick>' "$XMLS"
+	XMLS=$(2>/dev/null grep 'condition=".Skin.HasSetting.View501GenreIcons.' -l 720p/*)
+	perlregex $XMLS 's|\s*<anima[^#]*?condition=".Skin.HasSetting.View501GenreIcons.[^#]*#||g'
+	#XMLS=$(2>/dev/null grep '<visible>Skin.HasSetting.View501GenreIcons.</visible>' -l 720p/*)
+	#perlregex $XMLS 's|\s*<visible>Skin.HasSetting.View501GenreIcons.</visible>\s*#||g'
+	rm -rf media/DefaultGenre
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
 
-printf "\nReplacing backgrounds: "
-if [ -f backgrounds/homescreen/weather.jpg ] ; then
-	R='s|\s*<value condition="stringcompare[^>]*>special://skin/backgrounds/homescreen/[a-z]*.jpg</value>#||g'
-	perlregex 720p/IncludesVariables.xml "$R"
-	XMLS=$(2>/dev/null grep 'backgrounds/homescreen/' -l 720p/*)
-	R='s|skin/backgrounds/homescreen/[a-z]*.jpg|skin/backgrounds/default_light.jpg|g' 
-	perlregex $XMLS "$R"
-	rm -rf backgrounds/homescreen
+printf "\n############# REPLACING MEDIA FILES ###########################################"
+
+printf "\nReplacing some backgrounds: "
+if  grep -q 'INFO.Skin.CurrentTheme' 720p/* ; then
+	XMLS=$(2>/dev/null grep 'INFO.Skin.CurrentTheme' -l 720p/*)
+	perlregex $XMLS 's|.INFO.Skin.CurrentTheme,special://skin/backgrounds/,.jpg.|'$BACKGROUND_DEF'|g'
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
 
-printf "\nRemoving standard intro: "
-if [ -f extras/Intro/XBMC-Intro-Video.mkv ] ; then
-	XMLS=$(2>/dev/null grep '<onclick>Skin.ToggleSetting.HideXBMCIntro.</onclick>' -l 720p/*)
-	remove_controlid radiobutton '<onclick>Skin.ToggleSetting.HideXBMCIntro.</onclick>' "$XMLS"
-	perlregex 720p/SkinSettings.xml 's|\s*<onclick>Skin.SetBool.HideXBMCIntro.</onclick>#||g'
-	perlregex 720p/Startup.xml 's| . Skin.HasSetting.HideXBMCIntro.||'
-	XMLS=$(2>/dev/null grep 'Skin.HasSetting.HideXBMCIntro.' -l 720p/*)
-	remove_controlid button '<visible>!Skin.HasSetting.HideXBMCIntro.</visible>' "$XMLS"
-	perlregex 720p/VideoFullScreen.xml 720p/VideoOSD.xml 's|\s*<visible>!StringCompare.VideoPlayer.Title,XBMC-Intro-Video.mkv.</visible>#||g'
-	if grep -q '<ondown>157</ondown>' 720p/SkinSettings.xml ; then
-		perlregex 720p/SkinSettings.xml 's|<ondown>157</ondown>|<ondown>158</ondown>|g'
-	elif grep -q '<ondown>159</ondown>' 720p/SkinSettings.xml ; then
-		perlregex 720p/SkinSettings.xml 's|<ondown>159</ondown>|<ondown>160</ondown>|g'
-	elif grep -q '<ondown>158</ondown>' 720p/SkinSettings.xml ; then
-		perlregex 720p/SkinSettings.xml 's|<ondown>158</ondown>|<ondown>159</ondown>|g'
+REPLACE="
+media/HasSub.png;-
+media/unknown-user.png;DefaultActor.png
+media/StackNF.png;$BUTTON_NF
+media/StackFO.png;$BUTTON_FO
+media/ShutdownButtonFocus.png;$BUTTON_FO
+media/ShutdownButtonNoFocus.png;$BUTTON_NF
+media/radiobutton-focus.png;$RADIOBUTTON_FO
+media/radiobutton-nofocus.png;$RADIOBUTTON_NF
+media/button-nofocus.png;$BUTTON_NF
+media/DialogBack.png;$DIALOG_BG
+media/DialogBack2.png;$DIALOG_BG
+media/InfoMessagePanel.png;$DIALOG_BG
+media/OverlayDialogBackground.png;$DIALOG_BG
+media/ContentPanel.png;$CONTENT_BG
+media/media-overlay.jpg;$BACKGROUND_DEF
+backgrounds/SKINDEFAULT.jpg;$BACKGROUND_DEF
+media/ScrollBarH_bar.png;$SCROLLBAR_HOR_BAR
+media/ScrollBarV_bar.png;$SCROLLBAR_VER_BAR
+media/ScrollBarH.png;$SCROLLBAR_HOR
+media/ScrollBarV.png;$SCROLLBAR_VER
+media/ScrollBarH_bar_focus.png;$SCROLLBAR_HOR_BAR_FO
+media/ScrollBarV_bar_focus.png;$SCROLLBAR_VER_BAR_FO
+media/ScrollBarNib.png;-
+media/warning.png;DefaultIconWarning.png
+media/button-focus2.png;$BUTTON_FO
+media/button-focus.png;$BUTTON_FO
+media/MenuItemFO.png;$BUTTON_FO
+media/KeyboardCornerTopNF.png;$BUTTON_NF
+media/KeyboardCornerTop.png;$BUTTON_FO
+media/KeyboardCornerBottomNF.png;$BUTTON_NF
+media/KeyboardCornerBottom.png;$BUTTON_FO
+media/KeyboardEditArea.png;$KEYBOARD_EDITAREA
+media/KeyboardKeyNF.png;$BUTTON_NF
+media/KeyboardKey.png;$BUTTON_FO
+media/MediaBladeSub.png;$MEDIA_BLADE
+media/HomeBladeSub.png;$HOME_BLADE
+media/OSDProgressMidLight.png;$PROGRESS_MIDLIGHT
+media/OSDProgressMid.png;$PROGRESS_MID
+media/OSDProgressBack.png;$PROGRESS_BACK
+media/folder-focus.png;buttons/folder-focus_light.png
+media/seekslider.png;-
+media/seekslider2.png;-
+media/osd_slider_bg.png;$SLIDER_BG
+media/osd_slider_bg_2.png;$SLIDER_BG
+media/osd_slider_nibNF.png;$SLIDER_NIB_NF
+media/osd_slider_nib.png;$SLIDER_NIB_FO
+media/floor_button.png;$BUTTON_NF
+media/floor_buttonFO.png;$BUTTON_FO
+media/HomeSubNF.png;$HOME_SUB_NF
+media/HomeSubFO.png;$HOME_SUB_FO
+media/RecentAddedBack.png;$BUTTON_NF
+"
+
+printf "\nReplacing media files: "
+for R in $REPLACE ; do
+	if [ -z "$R" ] ; then continue ; fi
+	FILE=$(echo "$R" | cut -f1 -d';')
+	NAME=$(echo "$FILE" | sed 's|^media/||')
+	WITH=$(echo "$R" | cut -f2 -d';')
+	if [ -f "$FILE" ] ; then
+		printf "\nReplacing '$FILE'."
+		XMLS=$(2>/dev/null grep "$NAME" -l 720p/*)
+		if ! [ -z "$XMLS" ] ; then
+			perlregex $XMLS "s|([/>\"])$NAME([<\"])|\1$WITH\2|g"
+		else
+			printf " ('$NAME' does not occur in the XMLs.)"
+		fi
+		check_and_remove "$FILE"
+	else 
+		printf "\n'$FILE' doesn't exist."
 	fi
-	rm -rf extras/Intro
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
+done
+printf "\n%sDONE!%s" $GREEN $RESET
 step
 
-printf "\nChanging dialog headers: "
-if [ -f media/dialogheader.png ] ; then
-	XMLS=$(2>/dev/null grep 'e>dialogheader.png<' -l 720p/*)
-	remove_control image '<texture>dialogheader.png</texture>' "$XMLS"
-	check_and_remove media/dialogheader.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nChanging title bars: "
-if [ -f media/GlassTitleBar.png ] ; then
-	XMLS=$(2>/dev/null grep '>GlassTitleBar.png<' -l 720p/*)
-	remove_control image '<texture(\| flipy="true")>GlassTitleBar.png</texture>' "$XMLS"
-	check_and_remove media/GlassTitleBar.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nRemoving gradient.png: "
-if [ -f media/gradient.png ] ; then
-	XMLS=$(2>/dev/null grep '>gradient.png<' -l 720p/*)
-	remove_control image '<texture>gradient.png</texture>' "$XMLS"
-	>/dev/null check_and_remove media/gradient.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nRemoving Confluence_Logo.png: "
-if [ -f media/Confluence_Logo.png ] ; then
-	XMLS=$(2>/dev/null grep '>Confluence_Logo.png<' -l 720p/*)
-	remove_control image '<texture>Confluence_Logo.png</texture>' "$XMLS"
-	>/dev/null check_and_remove media/Confluence_Logo.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nReplacing seeksliders: "
-if [ -f media/seekslider2.png ] ; then
-	XMLS=$(2>/dev/null grep 'seekslider' -l 720p/*)
-	perlregex $XMLS 's|seekslider2.png|-|g'
-	perlregex $XMLS 's|seekslider.png|-|g' --nocheck
-	check_and_remove media/seekslider.png
-	check_and_remove media/seekslider2.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nCorrecting filenames: "
-if grep -q 'OSD_' 720p/VideoOSD.xml ; then
-	perlregex 720p/VideoOSD.xml 's|OSD_|osd_|g'
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nRemoving reference to non-existing file home-power-focus.gif: "
-if grep -q 'home-power-focus.gif' 720p/LoginScreen.xml ; then
-	XMLS=$(2>/dev/null grep '>home-power-focus.gif<' -l 720p/*)
-	remove_control 'image' '<texture>home-power-focus.gif</texture>' "$XMLS"
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nReplacing left and right scrollers: "
-if [ -f media/scroll-left.png ] || [ -f media/scroll-right-focus.png ] ; then
-	XMLS=$(2>/dev/null grep '>scroll-left.png<' -l 720p/*)
-	R='s|>scroll-left.png<|>'$SPINLEFT_NF'<|g'
-	perlregex $XMLS "$R"
-	XMLS=$(2>/dev/null grep '>scroll-left-focus.png<' -l 720p/*)
-	R='s|>scroll-left-focus.png<|>'$SPINLEFT_FO'<|g'
-	perlregex $XMLS "$R"
-	XMLS=$(2>/dev/null grep '>scroll-right.png<' -l 720p/*)
-	R='s|>scroll-right.png<| flipx="true">'$SPINLEFT_NF'<|g'
-	perlregex $XMLS "$R"
-	XMLS=$(2>/dev/null grep '>scroll-right-focus.png<' -l 720p/*)
-	R='s|>scroll-right-focus.png<| flipx="true">'$SPINLEFT_FO'<|g'
-	perlregex $XMLS "$R"
-	check_and_remove media/scroll-left.png
-	check_and_remove media/scroll-left-focus.png
-	check_and_remove media/scroll-right.png
-	check_and_remove media/scroll-right-focus.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nReplacing slider and sliderex textures: "
-if [ -f media/osd_slider_bg_2.png ] ; then
-	XMLS=$(2>/dev/null grep '>osd_slider_bg.png<' -l 720p/*)
-	perlregex $XMLS 's|>osd_slider_bg.png<|>'$SLIDER_BG'<|g'
-	XMLS=$(2>/dev/null grep '>osd_slider_bg_2.png<' -l 720p/*)
-	perlregex $XMLS 's|>osd_slider_bg_2.png<|>'$SLIDER_BG'<|g'
-	XMLS=$(2>/dev/null grep '>osd_slider_nibNF.png<' -l 720p/*)
-	perlregex $XMLS 's|>osd_slider_nibNF.png<|>'$SLIDER_NIB_NF'<|g'
-	XMLS=$(2>/dev/null grep '>osd_slider_nib.png<' -l 720p/*)
-	perlregex $XMLS 's|>osd_slider_nib.png<|>'$SLIDER_NIB_FO'<|g'
-	check_and_remove media/osd_slider_nibNF.png
-	check_and_remove media/osd_slider_nib.png
-	check_and_remove media/osd_slider_bg_2.png
-	check_and_remove media/osd_slider_bg.png
+printf "\nReplacing standard album cover: "
+if [ -f media/FallbackAlbumCover.png ] ; then
+	XMLS=$(2>/dev/null grep 'FallbackAlbumCover.png' -l 720p/*)
+	perlregex $XMLS 's|FallbackAlbumCover.png|DefaultAlbumCover.png|g'
+	XMLS=$(2>/dev/null grep 'livecdcase/DefaultAlbumCover.png' -l 720p/*)
+	perlregex $XMLS 's|livecdcase/DefaultAlbumCover.png|DefaultAlbumCover.png|g'
+	#XMLS=$(2>/dev/null grep 'FallbackAlbumCover.png' -l 720p/*)
+	#perlregex $XMLS 's|>FallbackAlbumCover.png<|>DefaultAlbumCover.png<|g'
+	rm media/livecdcase/DefaultAlbumCover.png
+	rm media/DefaultAlbumCover.png
+	mv media/FallbackAlbumCover.png media/DefaultAlbumCover.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -1349,90 +816,279 @@ else
 fi
 step
 
-printf "\nRemoving cdwall-grid.png: "
-if [ -f media/cdwall-grid.png ] ; then
-	XMLS=$(2>/dev/null grep '>cdwall-grid.png<' -l 720p/*)
-	remove_control image '<texture background="true">cdwall-grid.png</texture>' "$XMLS"
-	check_and_remove media/cdwall-grid.png
+printf "\nReplacing left and right scrollers: "
+if [ -f media/scroll-left.png ] || [ -f media/scroll-right-focus.png ] ; then
+	XMLS=$(2>/dev/null grep '>scroll-left.png<' -l 720p/*)
+	R='s|>scroll-left.png<|>'$SPINLEFT_NF'<|g'
+	perlregex $XMLS "$R"
+	XMLS=$(2>/dev/null grep '>scroll-left-focus.png<' -l 720p/*)
+	R='s|>scroll-left-focus.png<|>'$SPINLEFT_FO'<|g'
+	perlregex $XMLS "$R"
+	XMLS=$(2>/dev/null grep '>scroll-right.png<' -l 720p/*)
+	R='s|>scroll-right.png<| flipx="true">'$SPINLEFT_NF'<|g'
+	perlregex $XMLS "$R"
+	XMLS=$(2>/dev/null grep '>scroll-right-focus.png<' -l 720p/*)
+	R='s|>scroll-right-focus.png<| flipx="true">'$SPINLEFT_FO'<|g'
+	perlregex $XMLS "$R"
+	check_and_remove media/scroll-left.png
+	check_and_remove media/scroll-left-focus.png
+	check_and_remove media/scroll-right.png
+	check_and_remove media/scroll-right-focus.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
 
-printf "\nRemoving ClearCases: "
-if [ -d media/ClearCase ] ; then
-	remove_control image '<visible>\!Skin.HasSetting\(View724DisableCases\)</visible>' 720p/ViewsLowlist.xml
-	perlregex 's|\s*<visible>Skin.HasSetting\(View724DisableCases\)</visible>\s*#||' 720p/ViewsLowlist.xml
-	remove_controlid radiobutton '<onclick>Skin.ToggleSetting\(View724DisableCases\)</onclick>' 720p/MyVideoNav.xml
-	remove_controlid radiobutton '<onclick>Skin.ToggleSetting\(UseDiscTypeCase\)</onclick>' 720p/MyVideoNav.xml
-	remove_variable 'VideoListCase' '720p/IncludesVariables.xml'
-	rm -rf media/ClearCase
+printf "\nReplacing DefaultCDArt: "
+if [ -f media/livecdcase/DefaultCDArt.png ] ; then
+	XMLS=$(2>/dev/null grep 'DefaultCDArt.png' -l 720p/*)
+	perlregex $XMLS 's|(fallback="livecdcase/DefaultCDAr)t.png"( diffuse="livecdcase/cddiffuse.png")|\1t\.jpg"\2|g'
+	perlregex $XMLS 's|(<width>170</width><height>175</height><include>CDArtSpinner</include><texture fallback="livecdcase/DefaultCDAr)t.png"|\1t_small.png"|g'
+	check_and_remove media/livecdcase/DefaultCDArt.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
 
-printf "\nReplacing floor buttons: "
-if [ -f media/floor_buttonFO.png ] ; then
-	XMLS=$(2>/dev/null grep 'floor_button.png' -l 720p/*)
-	perlregex $XMLS 's|floor_button.png|'$BUTTON_NF'|g'
-	XMLS=$(2>/dev/null grep 'floor_buttonFO.png' -l 720p/*)
-	perlregex $XMLS 's|floor_buttonFO.png|'$BUTTON_FO'|g'
-	check_and_remove media/floor_button.png
-	check_and_remove media/floor_buttonFO.png
+printf "\nReplacing separators: "
+if [ -f media/separator2.png ] ; then
+	XMLS=$(2>/dev/null grep '>separator2.png<' -l 720p/*)
+	remove_control 'image' '<texture>separator2.png</texture>' "$XMLS"
+	#not all controls can be removed, some have an id and are used for navigation
+	XMLS=$(2>/dev/null grep 'separator2.png' -l 720p/*)
+	perlregex $XMLS 's|separator2.png|'$BUTTON_NF'|g'
+	check_and_remove media/separator2.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
 
-printf "\nReplacing standard album cover: "
-if [ -f media/FallbackAlbumCover.png ] ; then
-	XMLS=$(2>/dev/null grep 'FallbackAlbumCover.png' -l 720p/*)
-	perlregex $XMLS 's|FallbackAlbumCover.png|DefaultAlbumCover.png|g'
-	#XMLS=$(2>/dev/null grep 'FallbackAlbumCover.png' -l 720p/*)
-	#perlregex $XMLS 's|>FallbackAlbumCover.png<|>DefaultAlbumCover.png<|g'
-	rm media/DefaultAlbumCover.png
-	mv media/FallbackAlbumCover.png media/DefaultAlbumCover.png
+printf "\nReplacing some bordertextures: "
+if grep -q '>buttons/nf_light.png</bordertexture>' 720p/DialogAlbumInfo.xml ; then
+	R='s|<bordertexture[^>]*>buttons/nf_light.png</bordertexture>|<bordertexture>'$FOLDER_NF'</bordertexture>|g'
+	perlregex 720p/SettingsProfile.xml 720p/ViewsFileMode.xml 720p/ViewsVideoLibrary.xml 720p/ViewsMusicLibrary.xml 720p/ViewsAddonBrowser.xml "$R"
+	R='s|<bordertexture[^>]*>buttons/nf_light.png</bordertexture>|<bordertexture>-</bordertexture>|g'
+	perlregex 720p/IncludesHomeWidget.xml "$R"
+	R='s|\s*<bordertexture[^>]*>buttons/nf_light.png</bordertexture>\s*#'
+	R+='\s*<bordersize>[0-9]*</bordersize>\s*#'
+	R+='||g'
+	perlregex 720p/FileManager.xml 720p/DialogVideoInfo.xml 720p/DialogAlbumInfo.xml "$R"
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
 
-printf "\nReplacing livecd DefaultAlbumCover.png: "
-if [ -f media/livecdcase/DefaultAlbumCover.png ] ; then
-	XMLS=$(2>/dev/null grep '"livecdcase/DefaultAlbumCover.png"' -l 720p/*)
-	perlregex $XMLS 's|"livecdcase/DefaultAlbumCover.png"|"DefaultAlbumCover.png"|g'
-	#XMLS=$(2>/dev/null grep 'FallbackAlbumCover.png' -l 720p/*)
-	#perlregex $XMLS 's|>FallbackAlbumCover.png<|>DefaultAlbumCover.png<|g'
-	rm media/livecdcase/DefaultAlbumCover.png
+printf "\nReplacing backgrounds: "
+if [ -f backgrounds/homescreen/weather.jpg ] ; then
+	R='s|\s*<value condition="stringcompare[^>]*>special://skin/backgrounds/homescreen/[a-z]*.jpg</value>#||g'
+	perlregex 720p/IncludesVariables.xml "$R"
+	XMLS=$(2>/dev/null grep 'backgrounds/homescreen/' -l 720p/*)
+	R='s|skin/backgrounds/homescreen/[a-z]*.jpg|skin/backgrounds/default_light.jpg|g' 
+	perlregex $XMLS "$R"
+	rm -rf backgrounds/homescreen
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
 
-#printf "\nReplacing livecd cd art: "
-#if [ -f media/livecdcase/DefaultCDArt.png ] ; then
-#	XMLS=$(2>/dev/null grep '"livecdcase/DefaultAlbumCover.png"' -l 720p/*)
-#	perlregex $XMLS 's|"livecdcase/DefaultAlbumCover.png"|"DefaultAlbumCover.png"|g'
-#	#XMLS=$(2>/dev/null grep 'FallbackAlbumCover.png' -l 720p/*)
-#	#perlregex $XMLS 's|>FallbackAlbumCover.png<|>DefaultAlbumCover.png<|g'
-#	rm media/livecdcase/DefaultAlbumCover.png
-#	printf "%sDONE!%s" $GREEN $RESET
-#else
-#	printf "%sSKIPPED.%s" $CYAN $RESET
-#fi
-#step
+printf "\n############# APPLYING GENERIC/SKIN-WIDE MODIFICATIONS ########################"
 
-printf "\nReplacing warning sign: "
-if [ -f media/warning.png ] ; then
-	XMLS=$(2>/dev/null grep 'warning.png' -l 720p/*)
-	perlregex $XMLS 's|>warning.png<|>DefaultIconWarning.png<|g'
-	check_and_remove media/warning.png
+printf "\nRemoving standard intro: "
+if [ -f extras/Intro/XBMC-Intro-Video.mkv ] ; then
+	XMLS=$(2>/dev/null grep '<onclick>Skin.ToggleSetting.HideXBMCIntro.</onclick>' -l 720p/*)
+	remove_controlid radiobutton '<onclick>Skin.ToggleSetting.HideXBMCIntro.</onclick>' "$XMLS"
+	perlregex 720p/SkinSettings.xml 's|\s*<onclick>Skin.SetBool.HideXBMCIntro.</onclick>#||g'
+	perlregex 720p/Startup.xml 's| . Skin.HasSetting.HideXBMCIntro.||'
+	XMLS=$(2>/dev/null grep 'Skin.HasSetting.HideXBMCIntro.' -l 720p/*)
+	remove_controlid button '<visible>!Skin.HasSetting.HideXBMCIntro.</visible>' "$XMLS"
+	perlregex 720p/VideoFullScreen.xml 720p/VideoOSD.xml 's|\s*<visible>!StringCompare.VideoPlayer.Title,XBMC-Intro-Video.mkv.</visible>#||g'
+	if grep -q '<ondown>157</ondown>' 720p/SkinSettings.xml ; then
+		perlregex 720p/SkinSettings.xml 's|<ondown>157</ondown>|<ondown>158</ondown>|g'
+	elif grep -q '<ondown>159</ondown>' 720p/SkinSettings.xml ; then
+		perlregex 720p/SkinSettings.xml 's|<ondown>159</ondown>|<ondown>160</ondown>|g'
+	elif grep -q '<ondown>158</ondown>' 720p/SkinSettings.xml ; then
+		perlregex 720p/SkinSettings.xml 's|<ondown>158</ondown>|<ondown>159</ondown>|g'
+	fi
+	rm -rf extras/Intro
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nRemoving other color schemes: "
+if [ -f colors/Fire.xml ] ; then
+	rm colors/Fire.xml
+	rm colors/Kryptonite.xml
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nCorrecting wrong translation: "
+if grep -q -zo -P 'msgctxt "#31153"\nmsgid "Home Menu"\nmsgstr "Gesehen Status Overlay benutzen"' \
+	language/German/strings.po 
+then
+	sed "s|Gesehen Status Overlay benutzen|Hauptmenü|" -i language/German/strings.po
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nReformating vertical scroll bar controls: "
+if grep -q -zo -P '<control type="scrollbar" id="60">\n\s*<posx>850</posx>\n\s*<posy>78</posy>\n\s*<width>25</width>' \
+	720p/ViewsMusicLibrary.xml ; then
+	XMLS=$(2>/dev/null grep '<control type="scrollbar"' -l 720p/*)
+	R='s|(<control type="scrollbar"[^#]*#(\s*<[a-z][^#]*#)*?\s*<width)>25<|\1>14<|g'
+	perlregex $XMLS "$R"
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nMoving vertical scroll bars to the right: "
+if grep -q -zo -P '<control type="scrollbar" id="60">\n\s*<posx>1250</posx>' 720p/CustomAddMenuItems.xml
+then
+	for FILE in 720p/* ; do
+		IFS=$'\n' ; for XPOS in $( grep -zo -P -I '<control type="scrollbar" id="[0-9]*">\n\s*<posx>[0-9]*</posx>\n\s*<posy>[0-9]*</posy>\n\s*<width>14</width>' "$FILE" \
+			| grep -o '<posx>[0-9]*</posx>' | grep -o '[0-9]*' )
+		do
+			NEWX=$((XPOS+12))
+			#echo "'$XPOS' -> '$NEWX'"
+			R='s|(<control type="scrollbar" id="[0-9]*">#'
+			R+='\s*<posx)>'"$XPOS"'<(/posx>#\s*<posy>[0-9]*</posy>#'
+			R+='\s*<width>14</width>)'
+			R+='|\1>'"$NEWX"'<\2|g'
+			#echo "$R"
+			perlregex $FILE "$R" --nocheck
+		done
+	done
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nReformating horizontal scroll bar controls: "
+if grep -q -zo -P '<control type="scrollbar" id="60">\n\s*<posx>[0-9]*</posx>\n\s*<posy>[0-9]*</posy>\n\s*<width>[0-9]*</width>\n\s*<height>25</height>' \
+	720p/ViewsMusicLibrary.xml ; then
+	XMLS=$(2>/dev/null grep '<control type="scrollbar"' -l 720p/*)
+	R='s|(<control type="scrollbar"[^#]*#(\s*<[a-z][^#]*#)*?\s*<height)>25<|\1>14<|g'
+	perlregex $XMLS "$R"
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nRemoving page count info: "
+if grep -q 'nclude name="CommonPageCount"' 720p/* ; then		
+	#includes
+	XMLS=$(2>/dev/null grep 'CommonPageCount' -l 720p/*)
+	perlregex $XMLS 's|\s*<include[^>]*>CommonPageCount</include>\s*#||g'
+	#CommonPageCount definition
+	XMLS=$(2>/dev/null grep 'CommonPageCount' -l 720p/*)
+	remove_include 'CommonPageCount' $XMLS
+	if grep -I -q 'CommonPageCount' 720p/* ; then
+		printf "\nError: CommonPageCount could not be removed totally."
+		exit 3
+	fi
+	
+	XMLS=$(2>/dev/null grep 'HideNumItemsCount' -l 720p/*)
+	remove_control label '<visible>.Skin.HasSetting.HideNumItemsCount.</visible>' "$XMLS"
+	XMLS=$(2>/dev/null grep '<selected>Skin.HasSetting.HideNumItemsCount.</selected>' -l 720p/*)
+	if ! [ -z "$XMLS" ] ; then 
+		remove_controlid radiobutton '<selected>Skin.HasSetting.HideNumItemsCount.</selected>' "$XMLS"
+	fi
+	remove_control label '<posx>130r</posx>' 720p/DialogAlbumInfo.xml
+	R='s|\s*<control type="label">#(\s*<[a-z]*[^#]*#)*?\s*<label>.LOCALIZE.207.[^#]*#\s*</control>||g'
+	#perlregex 720p/DialogPVRRecordingInfo.xml "$R"
+	remove_control label '<label>(\|.COLOR=blue.).LOCALIZE.207.[^#]*#' 720p/DialogPVRRecordingInfo.xml
+	remove_control label '<label>(\|.COLOR=blue.).LOCALIZE.20[67].[^#]*#' 720p/DialogVideoInfo.xml
+	remove_control label '<description>Description Page Count</description>' 720p/DialogAddonInfo.xml
+	XMLS=$(grep -l 'CommonScrollLetter' 720p/*)
+	remove_include 'CommonScrollLetter' $XMLS
+	XMLS=$(grep -l 'CommonItemCount' 720p/*)
+	remove_include 'CommonItemCount' $XMLS
+	XMLS=$(grep -l 'CommonCountIcons' 720p/*)
+	remove_variable 'CommonCountIcons' $XMLS
+	rm -rf media/CommonCount/
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nChanging genre background settings: "
+if grep -q 'Skin.SetString.UsrGenreFanartDir,special://skin/backgrounds/moviegenre/.' 720p/Home.xml ; then		
+	perlregex 720p/Home.xml 's|\s*<onload condition="IsEmpty.Skin.String.UsrGenreFanartDir..">Skin.SetString.UsrGenreFanartDir,special://skin/backgrounds/moviegenre/.</onload>#||g'
+	perlregex 720p/includes.xml 's|special://skin/backgrounds/moviegenre/||g'
+	R='s|<visible>(!StringCompare.ListItem.Label,... . Container.Content.genres.</visible>)'
+	R+='|<visible>!IsEmpty\(Skin\.String\(UsrGenreFanartDir\)\) \+ \1|g'
+	perlregex 720p/IncludesBackgroundBuilding.xml "$R"
+	rm -rf backgrounds/moviegenre
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nChanging weather fanart: "
+if [ -d backgrounds/weather ] ; then
+	perlregex 720p/Home.xml 's|\s*<onload condition="IsEmpty.Skin.String.WeatherFanartDir..">Skin.SetString.WeatherFanartDir,special://skin/backgrounds/weather/.</onload>#||g'
+	perlregex 720p/includes.xml 's|special://skin/backgrounds/weather/||g'	
+	R='s|(Skin.HasSetting.ShowWeatherFanart.)">'
+	R+='|\1 \+ \!IsEmpty\(Skin.String\(WeatherFanartDir\)\)">|g'
+	perlregex 720p/IncludesVariables.xml "$R"
+	R='s|(Skin.HasSetting.ShowWeatherFanart.)<'
+	R+='|\1 \+ \!IsEmpty\(Skin.String\(WeatherFanartDir\)\)<|g'
+	perlregex 720p/MyWeather.xml "$R"
+	rm -rf backgrounds/weather
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nChanging time display: "
+if grep -q '<description>date label</description>' 720p/includes.xml ; then
+	#remove date label - in 720p/includes.xml and 720p/VideoFullScreen.xml
+	XMLS=$(2>/dev/null grep '<description>date label</description>' -l 720p/*)
+	remove_controlid 'label' '<description>date label</description>' "$XMLS"
+	#move time label up
+	XMLS=$(2>/dev/null grep '<description>time label</description>' -l 720p/*)
+	R='s|(<control type="label"[^>]*>\s*#'
+	R+='\s*<description>time label</description>\s*#'
+	R+='\s*<posx>15r</posx>\s*#'
+	R+='\s*<posy)>20<|\1>5<|'
+	perlregex $XMLS "$R"
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nCorrecting filenames: "
+if grep -q 'OSD_' 720p/VideoOSD.xml ; then
+	perlregex 720p/VideoOSD.xml 's|OSD_|osd_|g'
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nRemoving reference to non-existing file home-power-focus.gif: "
+if grep -q 'home-power-focus.gif' 720p/LoginScreen.xml ; then
+	XMLS=$(2>/dev/null grep '>home-power-focus.gif<' -l 720p/*)
+	remove_control 'image' '<texture>home-power-focus.gif</texture>' "$XMLS"
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -1450,58 +1106,18 @@ else
 fi
 step
 
-printf "\nChanging color scheme: "
-if ! grep -q 'buttonfocus' colors/defaults.xml ; then
-	R='s|(\s*<colors>#)(\s*)'
-	R+='|\1\2<color name="buttonfocus">ffb15e1e</color>#'
-	R+='\2<color name="buttonnofocus">ff577490</color>#'
-	R+='\2<color name="heading1">ff0084ff</color>#'
-	R+='\2<color name="heading2">ff7fc1ff</color>#'
-	R+='\2<color name="textfocus">ffffffff</color>#'
-	R+='\2<color name="textnofocus">ffb4b4b4</color>#'
-	R+='\2<color name="textdisabled">ff505050</color>#'
-	R+='\2<color name="itemselected">ffeb9e17</color>#'
-	R+='\2|'
-	perlregex colors/defaults.xml "$R"
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nRemoving other color schemes: "
-if [ -f colors/Fire.xml ] ; then
-	rm colors/Fire.xml
-	rm colors/Kryptonite.xml
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-#printf "\nRemoving multi-color strings: "
-#if grep -q 'COLOR=' 720p/SkinSettings.xml ; then
-#	XMLS=$(2>/dev/null grep 'COLOR=' -l 720p/*)
-#	perlregex $XMLS 's|\[COLOR\=[a-z0-9]*\]||g'	
-#	XMLS=$(2>/dev/null grep 'COLOR' -l 720p/*)
-#	perlregex $XMLS 's|\[/COLOR\]||g'	
-#	printf "%sDONE!%s" $GREEN $RESET
-#else
-#	printf "%sSKIPPED.%s" $CYAN $RESET
-#fi
-#step
-
 printf "\nModifying weather info in the upper left corner: "
-if grep -I -q '<description>Location label</description>' '720p/Home.xml' ; then
+if grep -I -q '<description>Location label</description>' 720p/* ; then
+	XML=$(2>/dev/null grep '<description>Location label</description>' -l 720p/* )
 	#remove weather location
-	remove_control 'label' '<description>Location label</description>' 720p/Home.xml
+	remove_control 'label' '<description>Location label</description>' $XML
 	#center temp label
 	R='s|(<posx>65</posx>\s*#'
 	R+='\s*<posy)>20</posy>'
 	R+='|\1>15</posy>|'
-	perlregex 720p/Home.xml "$R"
+	perlregex $XML "$R"
 	#remove weather condition
-	remove_control 'label' '<description>Conditions Label</description>' 720p/Home.xml
+	remove_control 'label' '<description>Conditions Label</description>' $XML
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -1539,9 +1155,20 @@ else
 fi
 step
 
-printf "\nRemoving unused include WindowTitleCommons: "
-if grep -I -q 'WindowTitleCommons' 720p/includes.xml ; then
-	remove_structure include ' name="WindowTitleCommons"' '' 720p/includes.xml	
+printf "\nChanging color scheme: "
+if ! grep -q 'buttonfocus' colors/defaults.xml ; then
+	R='s|(\s*<colors>#)(\s*)'
+	R+='|\1\2<color name="buttonfocus">ffb15e1e</color>#'
+	R+='\2<color name="buttonnofocus">ff577490</color>#'
+	R+='\2<color name="heading1">ffeb9e17</color>#'
+	R+='\2<color name="heading2">ff0084ff</color>#'
+	R+='\2<color name="heading3">ffffffff</color>#'
+	R+='\2<color name="textfocus">ffffffff</color>#'
+	R+='\2<color name="textnofocus">ffb4b4b4</color>#'
+	R+='\2<color name="textdisabled">ff505050</color>#'
+	R+='\2<color name="itemselected">ffeb9e17</color>#'
+	R+='\2|'
+	perlregex colors/defaults.xml "$R"
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -1658,6 +1285,9 @@ if grep -q 'grey2' 720p/* ; then
 	perlregex $XMLS "$R"
 	XMLS=$(2>/dev/null grep 'COLOR=grey2\]' -l 720p/*)
 	perlregex $XMLS "s|COLOR=grey2\]|COLOR=textnofocus\]|g"
+	#XMLS=$(2>/dev/null grep 'COLOR=grey2' -l -r language/*)
+	#R="s|COLOR=grey2|COLOR=textnofocus|g"
+	#perlregex $XMLS "$R"
 
 	if grep -q 'grey2' 720p/* ; then
 		printf "\nERROR: Grey2 color still used!"
@@ -1680,7 +1310,10 @@ if grep -q 'grey3' 720p/* ; then
 	XMLS=$(2>/dev/null grep 'textcolor>grey3<' -l 720p/*)
 	R="s|textcolor>grey3<|textcolor>textdisabled<|g"
 	perlregex $XMLS "$R"
-
+	#XMLS=$(2>/dev/null grep 'COLOR=grey3' -l -r language/*)
+	#R="s|COLOR=grey3|COLOR=textnofocus|g"
+	#perlregex $XMLS "$R"
+	
 	if grep -q 'grey3' 720p/* ; then
 		printf "\nERROR: Grey3 color still used!"
 		printf "\n"
@@ -1712,26 +1345,6 @@ else
 	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
 step
-
-
-#if false ; then #grep -q '>selected<' 720p/VisualisationPresetList.xml ; then
-#	XMLS=$(2>/dev/null grep '>selected<' -l 720p/*)
-#	perlregex $XMLS 's|<selectedcolor>selected</selectedcolor>|<selectedcolor>itemselected</selectedcolor>|g'	
-#	XMLS=$(2>/dev/null grep '>selected<' -l 720p/*)
-#	perlregex $XMLS 's|<textcolor>selected</textcolor>|<textcolor>itemselected</textcolor>|g'
-#	
-#	if grep -q '>selected<' 720p/* ; then
-#		printf "\nERROR: Selected color still used!"
-#		printf "\n"
-#		grep '>selected<' 720p/*
-#		exit 4
-#	fi
-#	
-#	printf "%sDONE!%s" $GREEN $RESET
-#else
-#	printf "%sSKIPPED.%s" $CYAN $RESET
-#fi
-#step
 
 #printf "\nChanging font colors for original blue strings: "
 #if false ; then #grep -q 'blue' 720p/ViewsVideoLibrary.xml ; then
@@ -1802,204 +1415,7 @@ step
 #fi
 #step
 
-#printf "\nChanging font colors for original 'grey2' strings: "
-#if false ; then #grep -q '>grey2<' 720p/* ; then
-#
-#	XMLS=$(2>/dev/null grep '<disabledcolor>grey2</disabledcolor>' -l 720p/*)
-#	R='s|<disabledcolor>grey2</disabledcolor>|<disabledcolor>textdisabled</disabledcolor>|g'
-#	perlregex $XMLS "$R"
-#
-#	XMLS=$(2>/dev/null grep '>grey2<' -l 720p/*)
-#	R='s|(<control type="(button\|radiobutton\|spincontrolex\|sliderex\|togglebutton\|edit\|textbox)"[^#]*#'
-#	R+='(\s*<[a-z][^#]*#)*?'
-#	R+='\s*<textcolor)>grey2<'
-#	R+='|\1>textnofocus<|g'
-#	perlregex $XMLS "$R"
-#	
-#	XMLS=$(2>/dev/null grep '>grey2<' -l 720p/*)
-#	for (( i=0 ; i<6 ; i++)) ; do
-#		R='s|(<(item\|channel)layout[^#]*#'
-#		R+='(\s*<control type="[a-z]*"[^#]*#'
-#		R+='(\s*<[a-z][^#]*#)*?'
-#		R+='\s*</control>#\|\s*<animation[^#]*#)*?'
-#		R+='\s*<control type="(label\|textbox)">#'
-#		R+='(\s*<[a-z][^#]*#)*?'
-#		R+='\s*<(textcolor\|selectedcolor))>grey2<'
-#		R+='|\1>textnofocus<|g'
-#		perlregex $XMLS "$R" --nocheck
-#		
-#		R='s|(<(focused\|focusedchannel)layout[^#]*#'
-#		R+='(\s*<control type="[a-z]*"[^#]*#'
-#		R+='(\s*<[a-z][^#]*#)*?'
-#		R+='\s*</control>#\|\s*<animation[^#]*#)*?'
-#		R+='\s*<control type="(label\|textbox)">#'
-#		R+='(\s*<[a-z][^#]*#)*?'
-#		R+='\s*<(textcolor\|selectedcolor))>grey2<'
-#		R+='|\1>textfocus<|g'
-#		perlregex $XMLS "$R" --nocheck
-#	done
-#	
-#	XMLS="720p/DialogFileStacking.xml 720p/DialogKaiToast.xml 720p/DialogPVRGuideOSD.xml"
-#	XMLS+=" 720p/DialogVideoInfo.xml 720p/includes.xml 720p/IncludesGenreFlagging.xml"
-#	XMLS+=" 720p/MusicVisualisation.xml 720p/MyPVR.xml 720p/MyWeather.xml 720p/LoginScreen.xml"
-#	XMLS+=" 720p/script-XBMC_Lyrics-main.xml 720p/SettingsProfile.xml 720p/VideoFullScreen.xml"
-#	XMLS+=" 720p/ViewsMusicLibrary.xml 720p/ViewsPVR.xml 720p/ViewsVideoLibrary.xml"
-#	perlregex $XMLS 's|<textcolor>grey2</textcolor>|<textcolor>textnofocus</textcolor>|g'
-#	
-#	if grep -q '>grey2<' 720p/* ; then
-#		printf "\nERROR: Grey2 color still used!"
-#		printf "\n"
-#		grep '>grey2<' 720p/* | head
-#		exit 4
-#	fi
-#	
-#	printf "%sDONE!%s" $GREEN $RESET
-#else
-#	printf "%sSKIPPED.%s" $CYAN $RESET
-#fi
-#step
-
-#printf "\nChanging font colors for original 'grey3' strings: "
-#if false ; then #grep -q '>grey3<' 720p/SkinSettings.xml ; then
-#
-#	XMLS=$(2>/dev/null grep '<disabledcolor>grey3</disabledcolor>' -l 720p/*)
-#	R='s|<disabledcolor>grey3</disabledcolor>|<disabledcolor>textdisabled</disabledcolor>|g'
-#	perlregex $XMLS "$R"
-#	
-#	perlregex 's|<textcolor>grey3</textcolor>|<textcolor>textdisabled</textcolor>|g' 720p/DialogPVRChannelManager.xml
-#
-#	XMLS="720p/script-globalsearch-main.xml 720p/Settings.xml 720p/SkinSettings.xml"
-#	perlregex $XMLS 's|<textcolor>grey3</textcolor>|<textcolor>textnofocus</textcolor>|g'
-#
-#	if grep -q '>grey3<' 720p/* ; then
-#		printf "\nERROR: Grey3 color still used!"
-#		printf "\n"
-#		grep '>grey3<' 720p/* | head
-#		exit 4
-#	fi
-#	
-#	printf "%sDONE!%s" $GREEN $RESET
-#else
-#	printf "%sSKIPPED.%s" $CYAN $RESET
-#fi
-#step
-
-#printf "\nChanging font colors for original 'black' strings: "
-#if false ; then #grep -q '>black<' 720p/DialogKeyboard.xml ; then
-#
-#	XMLS=$(2>/dev/null grep '<focusedcolor>black</focusedcolor>' -l 720p/*)
-#	R='s|<focusedcolor>black</focusedcolor>|<focusedcolor>textfocus</focusedcolor>|g'
-#	perlregex $XMLS "$R"
-#	
-#	if grep -q '>black<' 720p/* ; then
-#		printf "\nERROR: Black color still used!"
-#		printf "\n"
-#		grep '>black<' 720p/* | head
-#		exit 4
-#	fi
-#	
-#	printf "%sDONE!%s" $GREEN $RESET
-#else
-#	printf "%sSKIPPED.%s" $CYAN $RESET
-#fi
-#step
-
-printf "\nReplacing unknown-user.png: "
-if [ -f media/unknown-user.png ] ; then
-	XMLS=$(2>/dev/null grep 'unknown-user.png' -l 720p/*)
-	perlregex $XMLS 's|>unknown-user.png<|>DefaultActor.png<|g' >/dev/null
-	perlregex $XMLS 's|"unknown-user.png"|"DefaultActor.png"|g'
-	check_and_remove media/unknown-user.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nReplacing stack buttons: "
-if [ -f media/StackNF.png ] ; then
-	XMLS=$(2>/dev/null grep 'StackNF.png' -l 720p/*)
-	perlregex $XMLS 's|>StackNF.png<|>'$BUTTON_NF'<|g'
-	XMLS=$(2>/dev/null grep 'StackFO.png' -l 720p/*)
-	perlregex $XMLS 's|>StackFO.png<|>'$BUTTON_FO'<|g'
-	check_and_remove media/StackNF.png
-	check_and_remove media/StackFO.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nRemoving GenreFlagging: "
-if [ -d media/DefaultGenre ] ; then
-	XMLS=$(2>/dev/null grep '<visible>.Skin.HasSetting.View501GenreIcons.<.visible>' -l 720p/*)
-	remove_control 'grouplist' '<visible>\!Skin.HasSetting\(View501GenreIcons\)</visible>' "$XMLS"
-	remove_include 'MultiVideoGenreFlagging' 720p/IncludesGenreFlagging.xml
-	remove_include 'MultiGenreFlag' 720p/IncludesGenreFlagging.xml
-	remove_variable 'GenreFlagPath' 720p/IncludesVariables.xml
-	XMLS=$(2>/dev/null grep '<onclick>Skin.ToggleSetting.View501GenreIcons.</onclick>' -l 720p/*)
-	remove_controlid 'radiobutton' '<onclick>Skin.ToggleSetting.View501GenreIcons.</onclick>' "$XMLS"
-	XMLS=$(2>/dev/null grep 'condition=".Skin.HasSetting.View501GenreIcons.' -l 720p/*)
-	perlregex $XMLS 's|\s*<anima[^#]*?condition=".Skin.HasSetting.View501GenreIcons.[^#]*#||g'
-	#XMLS=$(2>/dev/null grep '<visible>Skin.HasSetting.View501GenreIcons.</visible>' -l 720p/*)
-	#perlregex $XMLS 's|\s*<visible>Skin.HasSetting.View501GenreIcons.</visible>\s*#||g'
-	rm -rf media/DefaultGenre
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nRemoving RSS icon: "
-if [ -f media/icon-rss.png ] ; then
-	XMLS=$(2>/dev/null grep 'icon-rss.png' -l 720p/*)
-	remove_control 'image' '<texture>icon-rss.png</texture>' "$XMLS"
-	check_and_remove media/icon-rss.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nReplacing DefaultCDArt: "
-if [ -f media/livecdcase/DefaultCDArt.png ] ; then
-	XMLS=$(2>/dev/null grep 'DefaultCDArt.png' -l 720p/*)
-	perlregex $XMLS 's|(fallback="livecdcase/DefaultCDAr)t.png"( diffuse="livecdcase/cddiffuse.png")|\1t\.jpg"\2|g'
-	perlregex $XMLS 's|(<width>170</width><height>175</height><include>CDArtSpinner</include><texture fallback="livecdcase/DefaultCDAr)t.png"|\1t_small.png"|g'
-	check_and_remove media/livecdcase/DefaultCDArt.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nReplacing some bordertextures: "
-if grep -q '>buttons/nf_light.png</bordertexture>' 720p/DialogAlbumInfo.xml ; then
-	R='s|<bordertexture[^>]*>buttons/nf_light.png</bordertexture>|<bordertexture>'$FOLDER_NF'</bordertexture>|g'
-	perlregex 720p/SettingsProfile.xml 720p/ViewsFileMode.xml 720p/ViewsVideoLibrary.xml 720p/ViewsMusicLibrary.xml 720p/ViewsAddonBrowser.xml "$R"
-	R='s|<bordertexture[^>]*>buttons/nf_light.png</bordertexture>|<bordertexture>-</bordertexture>|g'
-	perlregex 720p/IncludesHomeWidget.xml "$R"
-	R='s|\s*<bordertexture[^>]*>buttons/nf_light.png</bordertexture>\s*#'
-	R+='\s*<bordersize>[0-9]*</bordersize>\s*#'
-	R+='||g'
-	perlregex 720p/FileManager.xml 720p/DialogVideoInfo.xml 720p/DialogAlbumInfo.xml "$R"
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
-
-printf "\nRemoving main menu items separator: "
-if grep -I -q 'HomeSeperator' '720p/Home.xml' ; then
-	remove_control 'image' '<texture>HomeSeperator.png</texture>' 720p/Home.xml
-	check_and_remove 'media/HomeSeperator.png'
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
 
 printf "\nChanging main menu layout: "
 if grep -q -zPo '<font>font_MainMenu</font>\s*\n\s*<textcolor>blue</textcolor>' 720p/Home.xml ; then
@@ -2049,57 +1465,8 @@ else
 fi
 step
 
-printf "\nReplacing submenu item textures: "
-if [ -f media/HomeSubFO.png ] ; then
-	XMLS=$(2>/dev/null grep 'HomeSubNF.png' -l 720p/*)
-	perlregex $XMLS 's|HomeSubNF.png|'$HOME_SUB_NF'|g'
-	XMLS=$(2>/dev/null grep 'HomeSubFO.png' -l 720p/*)
-	perlregex $XMLS 's|HomeSubFO.png|'$HOME_SUB_FO'|g'
-	check_and_remove media/HomeSubNF.png
-	check_and_remove media/HomeSubFO.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nRemoving main menu side fade effect: "
-if [ -f media/SideFade.png ] ; then
-	XMLS=$(2>/dev/null grep '>SideFade.png<' -l 720p/*)
-	remove_control 'image' '<texture[^>]*>SideFade.png</texture>' "$XMLS"
-	check_and_remove media/SideFade.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nRemoving main menu overlay: "
-if grep -I -q 'HomeOverlay1.png' '720p/Home.xml' ; then
-	XMLS=$(2>/dev/null grep '>HomeOverlay1.png<' -l 720p/*)
-	remove_control 'image' '<texture>HomeOverlay1.png</texture>' "$XMLS"
-	check_and_remove 'media/HomeOverlay1.png'
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-#printf "\nRemoving labels for addons on the main menu: "
-#if grep -q '<posx>91</posx>' 720p/includes.xml | head -n 1 ; then
-#	remove_control 'label' '<posx>91</posx>' 720p/includes.xml
-#	printf "%sDONE!%s" $GREEN $RESET
-#else
-#	printf "%sSKIPPED.%s" $CYAN $RESET
-#fi
-#step
-
 printf "\nChanging widgets on the home screen: "
-if [ -f media/RecentAddedBack.png ] ; then
-	#changing widgets background
-	XMLS=$(2>/dev/null grep '>RecentAddedBack.png<' -l 720p/*)
-	perlregex 's|>RecentAddedBack.png<|>'$BUTTON_NF'<|g' $XMLS
-	#remove_control 'image' '<texture[^>]*>RecentAddedBack.png</texture>'
+if  grep -q '<description>Title label</description>' '720p/IncludesHomeWidget.xml' ; then
 	#widget group title label
 	remove_control 'label' '<description>Title label</description>' '720p/IncludesHomeWidget.xml'
 	remove_control 'label' '<description>Random Title label</description>' '720p/IncludesHomeWidget.xml'
@@ -2107,17 +1474,6 @@ if [ -f media/RecentAddedBack.png ] ; then
 	#label for widgets without focus
 	#remove_control 'label' '<textcolor>white</textcolor>' '720p/IncludesHomeWidget.xml'
 	#remove_control 'label' '<textcolor>grey2</textcolor>' '720p/IncludesHomeWidget.xml'
-	check_and_remove 'media/RecentAddedBack.png'
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-printf "\nRemoving home floor: "
-if [ -f media/homefloor.png ] ; then
-	remove_control 'image' '<texture>homefloor.png</texture>' 720p/Home.xml
-	check_and_remove media/homefloor.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -2217,50 +1573,6 @@ else
 fi
 step
 
-#printf "\n############# APPLYING MODIFICATIONS TO VIDEO LIBRARY #########################"
-
-#printf "\n############# APPLYING MODIFICATIONS TO VIDEO OSD #############################"
-
-printf "\n############# APPLYING MODIFICATIONS TO SMALL DIALOGS #########################"
-
-#printf "\nChanging busy dialog: "
-#if [ -f media/busy.png ] ; then
-#	remove_control 'image' '<texture>busy.png</texture>' 720p/DialogBusy.xml
-#	perlregex 's|(<description>Busy label</description>#\s*<posx)>60|\1>40|' 720p/DialogBusy.xml
-#	check_and_remove media/busy.png
-#	printf "%sDONE!%s" $GREEN $RESET
-#else
-#	printf "%sSKIPPED.%s" $CYAN $RESET
-#fi
-#step
-
-printf "\nChanging shutdown menu: "
-if [ -f media/DialogContextTop.png ] ; then
-	remove_controlid 'image' '<description>background top image</description>' 720p/DialogButtonMenu.xml
-	remove_controlid 'image' '<description>background bottom image</description>' 720p/DialogButtonMenu.xml
-	perlregex '720p/DialogButtonMenu.xml' 's|texturenofocus border="25,5,25,5">ShutdownButtonNoFocus.png|texturenofocus>'$BUTTON_NF'|g'
-	perlregex '720p/DialogButtonMenu.xml' 's|ShutdownButtonFocus.png|'$BUTTON_FO'|g'
-	check_and_remove media/ShutdownButtonFocus.png
-	check_and_remove media/ShutdownButtonNoFocus.png
-	check_and_remove media/DialogContextBottom.png
-	check_and_remove media/DialogContextMiddle.png
-	check_and_remove media/DialogContextTop.png
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
-
-#printf "\nChanging context menu: "
-#if grep -I -q '<itemgap>2</itemgap>' 720p/DialogContextMenu.xml ; then
-	#remove itemgap
-	#perlregex '720p/DialogContextMenu.xml' 's|<itemgap>2</itemgap>|<itemgap>0</itemgap>|g'
-	#printf "%sDONE!%s" $GREEN $RESET
-#else
-	#printf "%sSKIPPED.%s" $CYAN $RESET
-#fi
-#step
-
 printf "\n############# CLEANING UP #####################################################"
 
 printf "\nRemoving buttons/nf_light.png where not nedded: "
@@ -2352,7 +1664,6 @@ else
 fi
 step
 
-
 source textures.sh
 OLDIFS=$IFS ; IFS=$'\n'
 for T in $TEXLIST ; do
@@ -2387,15 +1698,6 @@ for T in $TEXLIST ; do
 	fi
 done ; IFS=$OLDIFS
 step
-
-#printf "\nRemoving unused include MediaStudioFlagging: "
-#if grep -I -q 'MediaStudioFlagging' 720p/includes.xml ; then
-#	remove_include 'MediaStudioFlagging' 720p/includes.xml	
-#	printf "%sDONE!%s" $GREEN $RESET
-#else
-#	printf "%sSKIPPED.%s" $CYAN $RESET
-#fi
-#step
 
 INVALID='button;altlabel
 textbox;scroll

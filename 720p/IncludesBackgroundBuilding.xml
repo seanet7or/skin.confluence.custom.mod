@@ -18,7 +18,7 @@
 				<description>Default Global Background Image</description>
 				<include>Dimensions_Fullscreen</include>
 				<aspectratio>scale</aspectratio>
-				<texture fallback="special://skin/backgrounds/default_light.jpg">special://skin/backgrounds/default_light.jpg</texture>
+				<texture fallback="special://skin/special://skin/backgrounds/default_light.jpg">special://skin/backgrounds/default_light.jpg</texture>
 				<visible>[!Skin.HasSetting(GlobalWeatherFanart) + IsEmpty(Skin.String(CustomBackgroundPath))] | [Skin.HasSetting(GlobalWeatherFanart) + !Window.IsVisible(home)]</visible>
 			</control>
 			<control type="multiimage">

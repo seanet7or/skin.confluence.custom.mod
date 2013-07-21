@@ -19,7 +19,7 @@
 				<focusposition>2</focusposition>
 				<preloaditems>2</preloaditems>
 				<visible>Container.Content(TVShows) | Container.Content(Movies) | Container.Content(Episodes) | Container.Content(Seasons) | Container.Content(MusicVideos) | SubString(Container.FolderPath,program.advanced.launcher)</visible>
-				<itemlayout condition="!Skin.HasSetting(View730HideLogo) + !Container.Content(Episodes) + !Container.Content(Seasons)  + !SubString(Container.FolderPath,program.advanced.launcher)]" width="380" height="140">
+				<itemlayout condition="!Skin.HasSetting(View730HideLogo) + !Container.Content(Episodes) + !Container.Content(Seasons)  + !SubString(Container.FolderPath,program.advanced.launcher)" width="380" height="140">
 					<control type="image">
 						<visible>!IsEmpty(ListItem.Title) + !IsEmpty(ListItem.Art(clearlogo))</visible>
 						<posx>110</posx>
@@ -131,7 +131,7 @@
 						<visible>Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay) + !stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
 					</control>
 				</itemlayout>
-				<focusedlayout condition="!Skin.HasSetting(View730HideLogo) + !Container.Content(Episodes) + !Container.Content(Seasons)  + !SubString(Container.FolderPath,program.advanced.launcher)]" width="380" height="140">
+				<focusedlayout condition="!Skin.HasSetting(View730HideLogo) + !Container.Content(Episodes) + !Container.Content(Seasons)  + !SubString(Container.FolderPath,program.advanced.launcher)" width="380" height="140">
 					<control type="image">
 						<visible>!IsEmpty(ListItem.Title) + !IsEmpty(ListItem.Art(clearlogo))</visible>
 						<posx>85</posx>
@@ -265,7 +265,6 @@
 			<control type="scrollbar" id="60">
 				<posx>35r</posx>
 				<posy>85</posy>
-				<height>550</height>
 				<onleft>730</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>

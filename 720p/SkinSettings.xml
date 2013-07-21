@@ -195,76 +195,84 @@
 					</control>
 					<control type="radiobutton" id="103">
 						<width>750</width>
+						<focusedcolor>textfocus</focusedcolor>
+						<label>31376</label>
+						<onclick>Skin.ToggleSetting(HideSystemWeather)</onclick>
+						<selected>Skin.HasSetting(HideSystemWeather)</selected>
+						<visible>!IsEmpty(Weather.Plugin)</visible>
+					</control>
+					<control type="radiobutton" id="104">
+						<width>750</width>
 						<label>31152</label>
 						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(KioskMode)</onclick>
 						<selected>Skin.HasSetting(KioskMode)</selected>
 					</control>
-					<control type="radiobutton" id="104">
+					<control type="radiobutton" id="105">
 						<width>750</width>
 						<label>31124</label>
 						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(HideBusyAnimation)</onclick>
 						<selected>!Skin.HasSetting(HideBusyAnimation)</selected>
 					</control>
-					<control type="radiobutton" id="105">
+					<control type="radiobutton" id="106">
 						<width>750</width>
 						<label>31671</label>
 						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(DisableHomeReturnButtons)</onclick>
 						<selected>!Skin.HasSetting(DisableHomeReturnButtons)</selected>
 					</control>
-					<control type="radiobutton" id="106">
+					<control type="radiobutton" id="107">
 						<width>750</width>
 						<label>31675</label>
 						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(DisableFloorVolumeButtons)</onclick>
 						<selected>!Skin.HasSetting(DisableFloorVolumeButtons)</selected>
-					</control>					
-					<control type="radiobutton" id="107">
+					</control>
+					<control type="radiobutton" id="108">
 						<width>750</width>
 						<label>31677</label>
 						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(SmallVolumeJump)</onclick>
 						<selected>!Skin.HasSetting(SmallVolumeJump)</selected>
 						<enable>!Skin.HasSetting(DisableFloorVolumeButtons)</enable>
-					</control>							
-					<control type="radiobutton" id="108">
+					</control>
+					<control type="radiobutton" id="109">
 						<width>750</width>
 						<label>$LOCALIZE[31359] "$LOCALIZE[31316]"</label>
 						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(ParentDirLabel)</onclick>
 						<selected>!Skin.HasSetting(ParentDirLabel)</selected>
 					</control>
-					<control type="radiobutton" id="109">
+					<control type="radiobutton" id="110">
 						<width>750</width>
 						<label>31117</label>
 						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(MediaShortDescription)</onclick>
 						<selected>Skin.HasSetting(MediaShortDescription)</selected>
 					</control>
-					<control type="radiobutton" id="111">
+					<control type="radiobutton" id="112">
 						<width>750</width>
 						<label>31119</label>
 						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(HideBackGroundFanart)</onclick>
 						<selected>Skin.HasSetting(HideBackGroundFanart)</selected>
 					</control>
-					<control type="radiobutton" id="112">
+					<control type="radiobutton" id="113">
 						<width>750</width>
 						<label>31358</label>
 						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(HideEpisodeThumb)</onclick>
 						<selected>!Skin.HasSetting(HideEpisodeThumb)</selected>
 					</control>
-					<control type="radiobutton" id="113">
+					<control type="radiobutton" id="114">
 						<width>750</width>
 						<label>31125</label>
 						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(ShowBackgroundVis)</onclick>
 						<selected>!Skin.HasSetting(ShowBackgroundVis)</selected>
 					</control>
-					<control type="label" id="114">
+					<control type="label" id="115">
 						<posy>60</posy>
 						<posx>80</posx>
 						<width>750</width>
@@ -275,30 +283,13 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="115">
-						<description>enable video info</description>
-						<width>750</width>
-						<focusedcolor>textfocus</focusedcolor>
-						<label>31077</label>
-						<onclick>Skin.ToggleSetting(homepageVideoinfo)</onclick>
-						<selected>!Skin.HasSetting(homepageVideoinfo)</selected>
-					</control>
 					<control type="radiobutton" id="116">
-						<description>enable music info</description>
+						<description>enable Now Playing Info</description>
 						<width>750</width>
 						<focusedcolor>textfocus</focusedcolor>
-						<label>31078</label>
-						<onclick>Skin.ToggleSetting(homepageMusicinfo)</onclick>
-						<selected>!Skin.HasSetting(homepageMusicinfo)</selected>
-					</control>
-					<control type="radiobutton" id="117">
-						<description>enable weather info</description>
-						<width>750</width>
-						<focusedcolor>textfocus</focusedcolor>
-						<label>31079</label>
-						<onclick>Skin.ToggleSetting(homepageWeatherinfo)</onclick>
-						<selected>Skin.HasSetting(homepageWeatherinfo)</selected>
-						<visible>!IsEmpty(Weather.Plugin)</visible>
+						<label>31075</label>
+						<onclick>Skin.ToggleSetting(HideNowPlayingInfo)</onclick>
+						<selected>!Skin.HasSetting(HideNowPlayingInfo)</selected>
 					</control>
 					<control type="radiobutton" id="118">
 						<description>Show System Stats</description>
@@ -661,6 +652,7 @@
 				</control>
 				<control type="scrollbar" id="60">
 					<posx>1072</posx>
+					<height>530</height>
 					<onleft>9001</onleft>
 					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
@@ -1262,6 +1254,7 @@
 				</control>
 				<control type="scrollbar" id="60">
 					<posx>1072</posx>
+					<height>530</height>
 					<onleft>9002</onleft>
 					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
@@ -2082,6 +2075,7 @@
 				</control>
 				<control type="scrollbar" id="60">
 					<posx>1072</posx>
+					<height>530</height>
 					<onleft>9003</onleft>
 					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
@@ -2744,6 +2738,7 @@
 				</control>
 				<control type="scrollbar" id="60">
 					<posx>1072</posx>
+					<height>530</height>
 					<onleft>9004</onleft>
 					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
@@ -4558,6 +4553,7 @@
 				</control>
 				<control type="scrollbar" id="60">
 					<posx>1072</posx>
+					<height>530</height>
 					<onleft>9006</onleft>
 					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
@@ -4582,6 +4578,7 @@
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>$VAR[VolumeStepUp]</onclick>
+				<onclick>VolumeUp</onclick>
 				<onleft condition="Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)">84</onleft>
 				<onleft condition="!Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)">9010</onleft>
 				<onright>81</onright>
@@ -4611,6 +4608,7 @@
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>$VAR[VolumeStepDown]</onclick>
+				<onclick>VolumeDown</onclick>
 				<onleft>80</onleft>
 				<onright>82</onright>
 				<onup>9010</onup>
@@ -4679,6 +4677,6 @@
 			</control>
 		</control>
 		<include>BehindDialogFadeOut</include>
-		<include>Clock</include>
+		<include>UserLocalInfo</include>
 	</controls>
 </window>

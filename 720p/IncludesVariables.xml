@@ -170,7 +170,7 @@
 		<value condition="Container(9000).Hasfocus(10) + !IsEmpty(Skin.String(HomeItem.10.FanArt))">$INFO[Skin.String(HomeItem.10.FanArt)]</value>
 		<value condition="Container(9000).Hasfocus(11) + !IsEmpty(Skin.String(HomeItem.11.FanArt))">$INFO[Skin.String(HomeItem.11.FanArt)]</value>
 		<value condition="Container(9000).Hasfocus(12) + !IsEmpty(Skin.String(HomeItem.12.FanArt))">$INFO[Skin.String(HomeItem.12.FanArt)]</value>
-		<value>special://skin/backgrounds/default_light.jpg</value>
+		<value>special://skin/special://skin/backgrounds/default_light.jpg</value>
 	</variable>
 	<variable name="InfoBarStats" type="text">
 		<value condition="!Skin.HasSetting(DisableScriptPlayList) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + Container(9000).Hasfocus(1)">$INFO[Window(home).Property(HomePlayListOne.Count),[B][COLOR=blue]$LOCALIZE[31025]: [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListOne.Watched),[B][COLOR=blue]$LOCALIZE[16102]: [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListOne.Unwatched),[B][COLOR=blue]$LOCALIZE[16101]: [/COLOR][/B]]</value>
@@ -1142,29 +1142,73 @@
 		<value>$INFO[Skin.String(UsrGenreFanartDir)]$INFO[ListItem.Label,,.jpg]</value>
 	</variable>
 	<variable name="VolumeStepDown" type="text">
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,90)">SetVolume(90)</value> 
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,80)">SetVolume(80)</value> 
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,70)">SetVolume(70)</value> 
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,60)">SetVolume(60)</value> 
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,50)">SetVolume(50)</value> 
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,40)">SetVolume(40)</value> 
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,30)">SetVolume(30)</value> 
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,20)">SetVolume(20)</value> 
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,10)">SetVolume(10)</value> 
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,1)">SetVolume(1)</value> 
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,90)">SetVolume(90)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,80)">SetVolume(80)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,70)">SetVolume(70)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,60)">SetVolume(60)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,50)">SetVolume(50)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,40)">SetVolume(40)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,30)">SetVolume(30)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,20)">SetVolume(20)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,10)">SetVolume(10)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,1)">SetVolume(1)</value>
 		<value>VolumeDown</value>
 	</variable>
 	<variable name="VolumeStepUp" type="text">
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,10)">SetVolume(11)</value> 
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,20)">SetVolume(21)</value> 
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,30)">SetVolume(31)</value> 
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,40)">SetVolume(41)</value> 
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,50)">SetVolume(51)</value> 
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,60)">SetVolume(61)</value> 
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,70)">SetVolume(71)</value> 
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,80)">SetVolume(81)</value> 
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,90)">SetVolume(91)</value> 
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,99)">SetVolume(100)</value> 
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,10)">SetVolume(11)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,20)">SetVolume(21)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,30)">SetVolume(31)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,40)">SetVolume(41)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,50)">SetVolume(51)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,60)">SetVolume(61)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,70)">SetVolume(71)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,80)">SetVolume(81)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,90)">SetVolume(91)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,99)">SetVolume(100)</value>
 		<value>VolumeUp</value>
+	</variable>
+	<variable name="GlobalSearchResults">
+		<value condition="Container(9000).Hasfocus(1)">$LOCALIZE[31010] [COLOR=blue]$INFO[Container(111).NumItems][/COLOR] $VAR[CommonCountItems] $INFO[Container(111).CurrentPage, - $LOCALIZE[31024] ([COLOR=blue]]$INFO[Container(111).NumPages,/,[/COLOR])]</value>
+		<value condition="Container(9000).Hasfocus(2)">$LOCALIZE[31010] [COLOR=blue]$INFO[Container(121).NumItems][/COLOR] $VAR[CommonCountItems] $INFO[Container(121).CurrentPage, - $LOCALIZE[31024] ([COLOR=blue]]$INFO[Container(121).NumPages,/,[/COLOR])]</value>
+		<value condition="Container(9000).Hasfocus(3)">$LOCALIZE[31010] [COLOR=blue]$INFO[Container(131).NumItems][/COLOR] $VAR[CommonCountItems] $INFO[Container(131).CurrentPage, - $LOCALIZE[31024] ([COLOR=blue]]$INFO[Container(131).NumPages,/,[/COLOR])]</value>
+		<value condition="Container(9000).Hasfocus(4)">$LOCALIZE[31010] [COLOR=blue]$INFO[Container(141).NumItems][/COLOR] $VAR[CommonCountItems] $INFO[Container(141).CurrentPage, - $LOCALIZE[31024] ([COLOR=blue]]$INFO[Container(141).NumPages,/,[/COLOR])]</value>
+		<value condition="Container(9000).Hasfocus(5)">$LOCALIZE[31010] [COLOR=blue]$INFO[Container(151).NumItems][/COLOR] $VAR[CommonCountItems] $INFO[Container(151).CurrentPage, - $LOCALIZE[31024] ([COLOR=blue]]$INFO[Container(151).NumPages,/,[/COLOR])]</value>
+		<value condition="Container(9000).Hasfocus(6)">$LOCALIZE[31010] [COLOR=blue]$INFO[Container(161).NumItems][/COLOR] $VAR[CommonCountItems] $INFO[Container(161).CurrentPage, - $LOCALIZE[31024] ([COLOR=blue]]$INFO[Container(161).NumPages,/,[/COLOR])]</value>
+		<value condition="Container(9000).Hasfocus(7)">$LOCALIZE[31010] [COLOR=blue]$INFO[Container(171).NumItems][/COLOR] $VAR[CommonCountItems] $INFO[Container(171).CurrentPage, - $LOCALIZE[31024] ([COLOR=blue]]$INFO[Container(171).NumPages,/,[/COLOR])]</value>
+		<value condition="Container(9000).Hasfocus(8)">$LOCALIZE[31010] [COLOR=blue]$INFO[Container(181).NumItems][/COLOR] $VAR[CommonCountItems] $INFO[Container(181).CurrentPage, - $LOCALIZE[31024] ([COLOR=blue]]$INFO[Container(181).NumPages,/,[/COLOR])]</value>
+	</variable>
+	<variable name="CommonCountItems">
+		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(1)">$LOCALIZE[342]</value>
+		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(2)">$LOCALIZE[31021]</value>
+		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(4)">$LOCALIZE[20360]</value>
+		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(5)">$LOCALIZE[31121]</value>
+		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(6)">$LOCALIZE[133]</value>
+		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(7)">$LOCALIZE[132]</value>
+		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(8)">$LOCALIZE[134]</value>
+		<value condition="SubString(Container.FolderPath,program.advanced.launcher)">$LOCALIZE[31142]</value>
+		<value condition="SubString(Container.FolderPath,plugin://plugin.video.live.streams)">$LOCALIZE[31020]</value>
+		<value condition="stringcompare(Container.FolderPath,plugin://plugin.video.apple.movie.trailers.lite/)">$LOCALIZE[31019]</value>
+		<value condition="stringcompare(Container.FolderPath,videodb://1/7/)">$LOCALIZE[31018]</value>
+		<value condition="stringcompare(Container.FolderPath,special://skin/extras/Playlists/HDMovies.xsp)">$LOCALIZE[31017]</value>
+		<value condition="stringcompare(Container.FolderPath,special://skin/extras/Playlists/GenreFamily.xsp)">$LOCALIZE[31610] $LOCALIZE[20342]</value>
+		<value condition="stringcompare(Container.FolderPath,special://skin/extras/Playlists/GenreChildren.xsp)">$LOCALIZE[31604] $LOCALIZE[31016]</value>
+		<value condition="stringcompare(Container.FolderPath,special://skin/extras/Playlists/MoviesInProgress.xsp)">$LOCALIZE[31160]</value>
+		<value condition="Container.Content(movies)">$LOCALIZE[342]</value>
+		<value condition="Container.Content(TVShows)">$LOCALIZE[31021]</value>
+		<value condition="Container.Content(Seasons)">$LOCALIZE[33054]</value>
+		<value condition="Container.Content(Episodes)">$LOCALIZE[20360]</value>
+		<value condition="Container.Content(actors)">$LOCALIZE[344]</value>
+		<value condition="stringcompare(Container.FolderPath,musicdb://6/)">$INFO[Container.FolderName]</value>
+		<value condition="stringcompare(Container.FolderPath,musicdb://7/)">$INFO[Container.FolderName]</value>
+		<value condition="stringcompare(Container.FolderPath,musicdb://8/)">$INFO[Container.FolderName]</value>
+		<value condition="Container.Content(Albums)">$LOCALIZE[132]</value>
+		<value condition="Container.Content(Artists)">$LOCALIZE[133]</value>
+		<value condition="Container.Content(Songs)">$LOCALIZE[134]</value>
+		<value condition="Window.IsVisible(musicplaylist)">$INFO[ListItem.Album]</value>
+		<value condition="Container.Content(Genres)">$LOCALIZE[135]</value>
+		<value condition="Window.IsVisible(MyPVR) + Control.HasFocus(13)">$LOCALIZE[19163]</value>
+		<value condition="Window.IsVisible(MyPVR)">$LOCALIZE[19019]</value>
+		<value condition="StringCompare(ListItem.Label,..)">$LOCALIZE[31025]</value>
+		<value>$LOCALIZE[31025]</value>
 	</variable>
 </includes>

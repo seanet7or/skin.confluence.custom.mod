@@ -240,7 +240,8 @@
 				<posy>85</posy>
 				<height>540</height>
 				<onleft>11</onleft>
-				<onright>32</onright>
+				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">32</onright>
+				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
 			</control>
 		</control>
 	</include>
@@ -484,7 +485,8 @@
 				<posy>85</posy>
 				<height>540</height>
 				<onleft>12</onleft>
-				<onright>33</onright>
+				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">33</onright>
+				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
 			</control>
 		</control>
 	</include>
@@ -626,7 +628,8 @@
 				<posy>78</posy>
 				<height>560</height>
 				<onleft>13</onleft>
-				<onright>34</onright>
+				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">34</onright>
+				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
 			</control>
 			<control type="group">
 				<posx>910</posx>
@@ -1074,7 +1077,8 @@
 					<posy>50</posy>
 					<height>480</height>
 					<onleft>11</onleft>
-					<onright>35</onright>
+					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">35</onright>
+					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
 				</control>
 				<control type="label">
 					<description>Next timer date</description>
@@ -1371,7 +1375,8 @@
 					<posy>50</posy>
 					<height>520</height>
 					<onleft>16</onleft>
-					<onright>36</onright>
+					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">36</onright>
+					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
 				</control>
 			</control>
 		</control>
@@ -1620,7 +1625,8 @@
 					<posx>1117</posx>
 					<height>500</height>
 					<onleft>15</onleft>
-					<onright>31</onright>
+					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">31</onright>
+					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
 				</control>
 			</control>
 		</control>
@@ -1922,7 +1928,8 @@
 					<posx>1117</posx>
 					<height>500</height>
 					<onleft>16</onleft>
-					<onright>31</onright>
+					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">31</onright>
+					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
 				</control>
 			</control>
 		</control>

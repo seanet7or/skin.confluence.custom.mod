@@ -5,7 +5,7 @@
 			<include>Dimensions_Fullscreen</include>
 			<texture background="true">dialogs/overlay-background.png</texture>
 			<visible>Control.IsVisible(555)</visible>
-		</control>			
+		</control>
 		<control type="group" id="7001">
 			<include>Window_OpenClose_Animation</include>
 			<posy>150</posy>
@@ -26,6 +26,15 @@
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
 					<control type="image">
+						<posx>38</posx>
+						<posy>15</posy>
+						<width>248</width>
+						<height>410</height>
+						<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">dialogs/overlay-background.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<aspectratio aligny="bottom">stretch</aspectratio>
+					</control>
+					<control type="image">
 						<width>300</width>
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
@@ -38,6 +47,14 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(-4).Icon]</texture>
+					<visible>IsEmpty(Container(555).ListItem(-4).Art(poster))</visible>
+				</control>
+				<control type="image">
+					<width>300</width>
+					<height>440</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>dialogs/overlay-background.png</texture>
+					<colordiffuse>AAFFFFFF</colordiffuse>
 					<visible>IsEmpty(Container(555).ListItem(-4).Art(poster))</visible>
 				</control>
 			</control>
@@ -54,6 +71,15 @@
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
 					<control type="image">
+						<posx>38</posx>
+						<posy>15</posy>
+						<width>248</width>
+						<height>410</height>
+						<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">dialogs/overlay-background.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<aspectratio aligny="bottom">stretch</aspectratio>
+					</control>
+					<control type="image">
 						<width>300</width>
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
@@ -66,7 +92,15 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(-3).Icon]</texture>
-					<visible>IsEmpty(Container(555).ListItem(-2).Art(poster))</visible>
+					<visible>IsEmpty(Container(555).ListItem(-3).Art(poster))</visible>
+				</control>
+				<control type="image">
+					<width>300</width>
+					<height>440</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>dialogs/overlay-background.png</texture>
+					<colordiffuse>AAFFFFFF</colordiffuse>
+					<visible>IsEmpty(Container(555).ListItem(-3).Art(poster))</visible>
 				</control>
 			</control>
 			<control type="group">
@@ -82,6 +116,15 @@
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
 					<control type="image">
+						<posx>38</posx>
+						<posy>15</posy>
+						<width>248</width>
+						<height>410</height>
+						<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">dialogs/overlay-background.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<aspectratio aligny="bottom">stretch</aspectratio>
+					</control>
+					<control type="image">
 						<width>300</width>
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
@@ -94,6 +137,14 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(-2).Icon]</texture>
+					<visible>IsEmpty(Container(555).ListItem(-2).Art(poster))</visible>
+				</control>
+				<control type="image">
+					<width>300</width>
+					<height>440</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>dialogs/overlay-background.png</texture>
+					<colordiffuse>AAFFFFFF</colordiffuse>
 					<visible>IsEmpty(Container(555).ListItem(-2).Art(poster))</visible>
 				</control>
 			</control>
@@ -112,6 +163,15 @@
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
 					<control type="image">
+						<posx>38</posx>
+						<posy>15</posy>
+						<width>248</width>
+						<height>410</height>
+						<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">dialogs/overlay-background.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<aspectratio aligny="bottom">stretch</aspectratio>
+					</control>
+					<control type="image">
 						<width>300</width>
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
@@ -126,6 +186,14 @@
 					<texture>$INFO[Container(555).ListItem(3).Icon]</texture>
 					<visible>IsEmpty(Container(555).ListItem(3).Art(poster))</visible>
 				</control>
+				<control type="image">
+					<width>300</width>
+					<height>440</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>dialogs/overlay-background.png</texture>
+					<colordiffuse>AAFFFFFF</colordiffuse>
+					<visible>IsEmpty(Container(555).ListItem(3).Art(poster))</visible>
+				</control>
 			</control>
 			<control type="group">
 				<posx>900</posx>
@@ -137,6 +205,15 @@
 						<width>248</width>
 						<height>410</height>
 						<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">$INFO[Container(555).ListItem(2).Art(poster)]</texture>
+						<aspectratio aligny="bottom">stretch</aspectratio>
+					</control>
+					<control type="image">
+						<posx>38</posx>
+						<posy>15</posy>
+						<width>248</width>
+						<height>410</height>
+						<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">dialogs/overlay-background.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
 					<control type="image">
@@ -154,6 +231,14 @@
 					<texture>$INFO[Container(555).ListItem(2).Icon]</texture>
 					<visible>IsEmpty(Container(555).ListItem(2).Art(poster))</visible>
 				</control>
+				<control type="image">
+					<width>300</width>
+					<height>440</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>dialogs/overlay-background.png</texture>
+					<colordiffuse>AAFFFFFF</colordiffuse>
+					<visible>IsEmpty(Container(555).ListItem(2).Art(poster))</visible>
+				</control>
 			</control>
 			<control type="group">
 				<posx>800</posx>
@@ -165,6 +250,15 @@
 						<width>248</width>
 						<height>410</height>
 						<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">$INFO[Container(555).ListItem(1).Art(poster)]</texture>
+						<aspectratio aligny="bottom">stretch</aspectratio>
+					</control>
+					<control type="image">
+						<posx>38</posx>
+						<posy>15</posy>
+						<width>248</width>
+						<height>410</height>
+						<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">dialogs/overlay-background.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
 					<control type="image">
@@ -180,6 +274,14 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(1).Icon]</texture>
+					<visible>IsEmpty(Container(555).ListItem(1).Art(poster))</visible>
+				</control>
+				<control type="image">
+					<width>300</width>
+					<height>440</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>dialogs/overlay-background.png</texture>
+					<colordiffuse>AAFFFFFF</colordiffuse>
 					<visible>IsEmpty(Container(555).ListItem(1).Art(poster))</visible>
 				</control>
 			</control>
@@ -201,6 +303,15 @@
 							<aspectratio aligny="bottom">stretch</aspectratio>
 						</control>
 						<control type="image">
+							<posx>38</posx>
+							<posy>15</posy>
+							<width>248</width>
+							<height>410</height>
+							<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">dialogs/overlay-background.png</texture>
+							<colordiffuse>AAFFFFFF</colordiffuse>
+							<aspectratio aligny="bottom">stretch</aspectratio>
+						</control>
+						<control type="image">
 							<width>300</width>
 							<height>440</height>
 							<aspectratio>stretch</aspectratio>
@@ -209,12 +320,20 @@
 						<visible>!IsEmpty(Container(555).ListItem(0).Art(poster))</visible>
 					</control>
 					<control type="image">
-					<width>300</width>
-					<height>440</height>
-					<aspectratio>stretch</aspectratio>
-					<texture>$INFO[Container(555).ListItem(0).Icon]</texture>
-					<visible>IsEmpty(Container(555).ListItem(0).Art(poster))</visible>
-				</control>
+						<width>300</width>
+						<height>440</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>$INFO[Container(555).ListItem(0).Icon]</texture>
+						<visible>IsEmpty(Container(555).ListItem(0).Art(poster))</visible>
+					</control>
+					<control type="image">
+						<width>300</width>
+						<height>440</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>dialogs/overlay-background.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<visible>IsEmpty(Container(555).ListItem(0).Art(poster))</visible>
+					</control>
 				</control>
 				<control type="group">
 					<posx>490</posx>
@@ -230,6 +349,15 @@
 							<aspectratio aligny="bottom">stretch</aspectratio>
 						</control>
 						<control type="image">
+							<posx>38</posx>
+							<posy>15</posy>
+							<width>248</width>
+							<height>410</height>
+							<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">dialogs/overlay-background.png</texture>
+							<colordiffuse>AAFFFFFF</colordiffuse>
+							<aspectratio aligny="bottom">stretch</aspectratio>
+						</control>
+						<control type="image">
 							<width>300</width>
 							<height>440</height>
 							<aspectratio>stretch</aspectratio>
@@ -238,12 +366,20 @@
 						<visible>!IsEmpty(Container(555).ListItem(-1).Art(poster))</visible>
 					</control>
 					<control type="image">
-					<width>300</width>
-					<height>440</height>
-					<aspectratio>stretch</aspectratio>
-					<texture>$INFO[Container(555).ListItem(-1).Icon]</texture>
-					<visible>IsEmpty(Container(555).ListItem(-1).Art(poster))</visible>
-				</control>
+						<width>300</width>
+						<height>440</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>$INFO[Container(555).ListItem(-1).Icon]</texture>
+						<visible>IsEmpty(Container(555).ListItem(-1).Art(poster))</visible>
+					</control>
+					<control type="image">
+						<width>300</width>
+						<height>440</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>dialogs/overlay-background.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<visible>IsEmpty(Container(555).ListItem(-1).Art(poster))</visible>
+					</control>
 				</control>
 			</control>
 		</control>
@@ -267,6 +403,15 @@
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
 					<control type="image">
+						<posx>38</posx>
+						<posy>15</posy>
+						<width>248</width>
+						<height>410</height>
+						<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">dialogs/overlay-background.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<aspectratio aligny="bottom">stretch</aspectratio>
+					</control>
+					<control type="image">
 						<width>300</width>
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
@@ -274,11 +419,19 @@
 					</control>
 					<visible>!IsEmpty(Container(555).ListItem(4).Art(poster))</visible>
 				</control>
-								<control type="image">
+				<control type="image">
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(4).Icon]</texture>
+					<visible>IsEmpty(Container(555).ListItem(4).Art(poster))</visible>
+				</control>
+				<control type="image">
+					<width>300</width>
+					<height>440</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>dialogs/overlay-background.png</texture>
+					<colordiffuse>AAFFFFFF</colordiffuse>
 					<visible>IsEmpty(Container(555).ListItem(4).Art(poster))</visible>
 				</control>
 			</control>
@@ -295,6 +448,15 @@
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
 					<control type="image">
+						<posx>38</posx>
+						<posy>15</posy>
+						<width>248</width>
+						<height>410</height>
+						<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">dialogs/overlay-background.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<aspectratio aligny="bottom">stretch</aspectratio>
+					</control>
+					<control type="image">
 						<width>300</width>
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
@@ -302,11 +464,19 @@
 					</control>
 					<visible>!IsEmpty(Container(555).ListItem(3).Art(poster))</visible>
 				</control>
-								<control type="image">
+				<control type="image">
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(3).Icon]</texture>
+					<visible>IsEmpty(Container(555).ListItem(3).Art(poster))</visible>
+				</control>
+				<control type="image">
+					<width>300</width>
+					<height>440</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>dialogs/overlay-background.png</texture>
+					<colordiffuse>AAFFFFFF</colordiffuse>
 					<visible>IsEmpty(Container(555).ListItem(3).Art(poster))</visible>
 				</control>
 			</control>
@@ -323,6 +493,15 @@
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
 					<control type="image">
+						<posx>38</posx>
+						<posy>15</posy>
+						<width>248</width>
+						<height>410</height>
+						<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">dialogs/overlay-background.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<aspectratio aligny="bottom">stretch</aspectratio>
+					</control>
+					<control type="image">
 						<width>300</width>
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
@@ -330,11 +509,19 @@
 					</control>
 					<visible>!IsEmpty(Container(555).ListItem(2).Art(poster))</visible>
 				</control>
-								<control type="image">
+				<control type="image">
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(2).Icon]</texture>
+					<visible>IsEmpty(Container(555).ListItem(2).Art(poster))</visible>
+				</control>
+				<control type="image">
+					<width>300</width>
+					<height>440</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>dialogs/overlay-background.png</texture>
+					<colordiffuse>AAFFFFFF</colordiffuse>
 					<visible>IsEmpty(Container(555).ListItem(2).Art(poster))</visible>
 				</control>
 			</control>
@@ -353,6 +540,15 @@
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
 					<control type="image">
+						<posx>38</posx>
+						<posy>15</posy>
+						<width>248</width>
+						<height>410</height>
+						<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">dialogs/overlay-background.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<aspectratio aligny="bottom">stretch</aspectratio>
+					</control>
+					<control type="image">
 						<width>300</width>
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
@@ -360,11 +556,19 @@
 					</control>
 					<visible>!IsEmpty(Container(555).ListItem(-3).Art(poster))</visible>
 				</control>
-								<control type="image">
+				<control type="image">
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(-3).Icon]</texture>
+					<visible>IsEmpty(Container(555).ListItem(-3).Art(poster))</visible>
+				</control>
+				<control type="image">
+					<width>300</width>
+					<height>440</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>dialogs/overlay-background.png</texture>
+					<colordiffuse>AAFFFFFF</colordiffuse>
 					<visible>IsEmpty(Container(555).ListItem(-3).Art(poster))</visible>
 				</control>
 			</control>
@@ -381,6 +585,15 @@
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
 					<control type="image">
+						<posx>38</posx>
+						<posy>15</posy>
+						<width>248</width>
+						<height>410</height>
+						<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">dialogs/overlay-background.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<aspectratio aligny="bottom">stretch</aspectratio>
+					</control>
+					<control type="image">
 						<width>300</width>
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
@@ -388,14 +601,21 @@
 					</control>
 					<visible>!IsEmpty(Container(555).ListItem(-2).Art(poster))</visible>
 				</control>
-								<control type="image">
+				<control type="image">
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(-2).Icon]</texture>
 					<visible>IsEmpty(Container(555).ListItem(-2).Art(poster))</visible>
 				</control>
-
+				<control type="image">
+					<width>300</width>
+					<height>440</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>dialogs/overlay-background.png</texture>
+					<colordiffuse>AAFFFFFF</colordiffuse>
+					<visible>IsEmpty(Container(555).ListItem(-2).Art(poster))</visible>
+				</control>
 			</control>
 			<control type="group">
 				<posx>180</posx>
@@ -410,6 +630,15 @@
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
 					<control type="image">
+						<posx>38</posx>
+						<posy>15</posy>
+						<width>248</width>
+						<height>410</height>
+						<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">dialogs/overlay-background.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<aspectratio aligny="bottom">stretch</aspectratio>
+					</control>
+					<control type="image">
 						<width>300</width>
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
@@ -417,11 +646,19 @@
 					</control>
 					<visible>!IsEmpty(Container(555).ListItem(-1).Art(poster))</visible>
 				</control>
-								<control type="image">
+				<control type="image">
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(-1).Icon]</texture>
+					<visible>IsEmpty(Container(555).ListItem(-1).Art(poster))</visible>
+				</control>
+				<control type="image">
+					<width>300</width>
+					<height>440</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>dialogs/overlay-background.png</texture>
+					<colordiffuse>AAFFFFFF</colordiffuse>
 					<visible>IsEmpty(Container(555).ListItem(-1).Art(poster))</visible>
 				</control>
 			</control>
@@ -443,6 +680,15 @@
 							<aspectratio aligny="bottom">stretch</aspectratio>
 						</control>
 						<control type="image">
+							<posx>38</posx>
+							<posy>15</posy>
+							<width>248</width>
+							<height>410</height>
+							<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">dialogs/overlay-background.png</texture>
+							<colordiffuse>AAFFFFFF</colordiffuse>
+							<aspectratio aligny="bottom">stretch</aspectratio>
+						</control>
+						<control type="image">
 							<width>300</width>
 							<height>440</height>
 							<aspectratio>stretch</aspectratio>
@@ -450,13 +696,21 @@
 						</control>
 						<visible>!IsEmpty(Container(555).ListItem(0).Art(poster))</visible>
 					</control>
-									<control type="image">
-					<width>300</width>
-					<height>440</height>
-					<aspectratio>stretch</aspectratio>
-					<texture>$INFO[Container(555).ListItem(0).Icon]</texture>
-					<visible>IsEmpty(Container(555).ListItem(0).Art(poster))</visible>
-				</control>
+					<control type="image">
+						<width>300</width>
+						<height>440</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>$INFO[Container(555).ListItem(0).Icon]</texture>
+						<visible>IsEmpty(Container(555).ListItem(0).Art(poster))</visible>
+					</control>
+					<control type="image">
+						<width>300</width>
+						<height>440</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>dialogs/overlay-background.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<visible>IsEmpty(Container(555).ListItem(0).Art(poster))</visible>
+					</control>
 				</control>
 				<control type="group">
 					<posx>490</posx>
@@ -472,6 +726,15 @@
 							<aspectratio aligny="bottom">stretch</aspectratio>
 						</control>
 						<control type="image">
+							<posx>38</posx>
+							<posy>15</posy>
+							<width>248</width>
+							<height>410</height>
+							<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">dialogs/overlay-background.png</texture>
+							<colordiffuse>AAFFFFFF</colordiffuse>
+							<aspectratio aligny="bottom">stretch</aspectratio>
+						</control>
+						<control type="image">
 							<width>300</width>
 							<height>440</height>
 							<aspectratio>stretch</aspectratio>
@@ -479,13 +742,21 @@
 						</control>
 						<visible>!IsEmpty(Container(555).ListItem(1).Art(poster))</visible>
 					</control>
-									<control type="image">
-					<width>300</width>
-					<height>440</height>
-					<aspectratio>stretch</aspectratio>
-					<texture>$INFO[Container(555).ListItem(1).Icon]</texture>
-					<visible>IsEmpty(Container(555).ListItem(1).Art(poster))</visible>
-				</control>
+					<control type="image">
+						<width>300</width>
+						<height>440</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>$INFO[Container(555).ListItem(1).Icon]</texture>
+						<visible>IsEmpty(Container(555).ListItem(1).Art(poster))</visible>
+					</control>
+					<control type="image">
+						<width>300</width>
+						<height>440</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>dialogs/overlay-background.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<visible>IsEmpty(Container(555).ListItem(1).Art(poster))</visible>
+					</control>
 				</control>
 			</control>
 		</control>
@@ -506,6 +777,15 @@
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
 					<control type="image">
+						<posx>38</posx>
+						<posy>15</posy>
+						<width>248</width>
+						<height>410</height>
+						<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">dialogs/overlay-background.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<aspectratio aligny="bottom">stretch</aspectratio>
+					</control>
+					<control type="image">
 						<width>300</width>
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
@@ -513,11 +793,19 @@
 					</control>
 					<visible>!IsEmpty(Container(555).ListItem(-3).Art(poster))</visible>
 				</control>
-								<control type="image">
+				<control type="image">
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(-3).Icon]</texture>
+					<visible>IsEmpty(Container(555).ListItem(-3).Art(poster))</visible>
+				</control>
+				<control type="image">
+					<width>300</width>
+					<height>440</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>dialogs/overlay-background.png</texture>
+					<colordiffuse>AAFFFFFF</colordiffuse>
 					<visible>IsEmpty(Container(555).ListItem(-3).Art(poster))</visible>
 				</control>
 			</control>
@@ -534,6 +822,15 @@
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
 					<control type="image">
+						<posx>38</posx>
+						<posy>15</posy>
+						<width>248</width>
+						<height>410</height>
+						<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">dialogs/overlay-background.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<aspectratio aligny="bottom">stretch</aspectratio>
+					</control>
+					<control type="image">
 						<width>300</width>
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
@@ -541,11 +838,19 @@
 					</control>
 					<visible>!IsEmpty(Container(555).ListItem(-2).Art(poster))</visible>
 				</control>
-								<control type="image">
+				<control type="image">
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(-2).Icon]</texture>
+					<visible>IsEmpty(Container(555).ListItem(-2).Art(poster))</visible>
+				</control>
+				<control type="image">
+					<width>300</width>
+					<height>440</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>dialogs/overlay-background.png</texture>
+					<colordiffuse>AAFFFFFF</colordiffuse>
 					<visible>IsEmpty(Container(555).ListItem(-2).Art(poster))</visible>
 				</control>
 			</control>
@@ -562,6 +867,15 @@
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
 					<control type="image">
+						<posx>38</posx>
+						<posy>15</posy>
+						<width>248</width>
+						<height>410</height>
+						<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">dialogs/overlay-background.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<aspectratio aligny="bottom">stretch</aspectratio>
+					</control>
+					<control type="image">
 						<width>300</width>
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
@@ -569,11 +883,19 @@
 					</control>
 					<visible>!IsEmpty(Container(555).ListItem(-1).Art(poster))</visible>
 				</control>
-								<control type="image">
+				<control type="image">
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(-1).Icon]</texture>
+					<visible>IsEmpty(Container(555).ListItem(-1).Art(poster))</visible>
+				</control>
+				<control type="image">
+					<width>300</width>
+					<height>440</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>dialogs/overlay-background.png</texture>
+					<colordiffuse>AAFFFFFF</colordiffuse>
 					<visible>IsEmpty(Container(555).ListItem(-1).Art(poster))</visible>
 				</control>
 			</control>
@@ -590,6 +912,15 @@
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
 					<control type="image">
+						<posx>38</posx>
+						<posy>15</posy>
+						<width>248</width>
+						<height>410</height>
+						<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">dialogs/overlay-background.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<aspectratio aligny="bottom">stretch</aspectratio>
+					</control>
+					<control type="image">
 						<width>300</width>
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
@@ -597,11 +928,19 @@
 					</control>
 					<visible>!IsEmpty(Container(555).ListItem(3).Art(poster))</visible>
 				</control>
-								<control type="image">
+				<control type="image">
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(3).Icon]</texture>
+					<visible>IsEmpty(Container(555).ListItem(3).Art(poster))</visible>
+				</control>
+				<control type="image">
+					<width>300</width>
+					<height>440</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>dialogs/overlay-background.png</texture>
+					<colordiffuse>AAFFFFFF</colordiffuse>
 					<visible>IsEmpty(Container(555).ListItem(3).Art(poster))</visible>
 				</control>
 			</control>
@@ -618,6 +957,15 @@
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
 					<control type="image">
+						<posx>38</posx>
+						<posy>15</posy>
+						<width>248</width>
+						<height>410</height>
+						<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">dialogs/overlay-background.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<aspectratio aligny="bottom">stretch</aspectratio>
+					</control>
+					<control type="image">
 						<width>300</width>
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
@@ -625,11 +973,19 @@
 					</control>
 					<visible>!IsEmpty(Container(555).ListItem(2).Art(poster))</visible>
 				</control>
-								<control type="image">
+				<control type="image">
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(2).Icon]</texture>
+					<visible>IsEmpty(Container(555).ListItem(2).Art(poster))</visible>
+				</control>
+				<control type="image">
+					<width>300</width>
+					<height>440</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>dialogs/overlay-background.png</texture>
+					<colordiffuse>AAFFFFFF</colordiffuse>
 					<visible>IsEmpty(Container(555).ListItem(2).Art(poster))</visible>
 				</control>
 			</control>
@@ -646,6 +1002,15 @@
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
 					<control type="image">
+						<posx>38</posx>
+						<posy>15</posy>
+						<width>248</width>
+						<height>410</height>
+						<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">dialogs/overlay-background.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<aspectratio aligny="bottom">stretch</aspectratio>
+					</control>
+					<control type="image">
 						<width>300</width>
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
@@ -653,11 +1018,19 @@
 					</control>
 					<visible>!IsEmpty(Container(555).ListItem(1).Art(poster))</visible>
 				</control>
-								<control type="image">
+				<control type="image">
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(1).Icon]</texture>
+					<visible>IsEmpty(Container(555).ListItem(1).Art(poster))</visible>
+				</control>
+				<control type="image">
+					<width>300</width>
+					<height>440</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>dialogs/overlay-background.png</texture>
+					<colordiffuse>AAFFFFFF</colordiffuse>
 					<visible>IsEmpty(Container(555).ListItem(1).Art(poster))</visible>
 				</control>
 			</control>
@@ -675,6 +1048,15 @@
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
 					<control type="image">
+						<posx>38</posx>
+						<posy>15</posy>
+						<width>248</width>
+						<height>410</height>
+						<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">dialogs/overlay-background.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<aspectratio aligny="bottom">stretch</aspectratio>
+					</control>
+					<control type="image">
 						<width>300</width>
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
@@ -686,6 +1068,15 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(0).Icon]</texture>
+					<visible>Control.HasFocus(555)</visible>
+					<visible>IsEmpty(Container(555).ListItem(0).Art(poster))</visible>
+				</control>
+				<control type="image">
+					<width>300</width>
+					<height>440</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>dialogs/overlay-background.png</texture>
+					<colordiffuse>AAFFFFFF</colordiffuse>
 					<visible>Control.HasFocus(555)</visible>
 					<visible>IsEmpty(Container(555).ListItem(0).Art(poster))</visible>
 				</control>
@@ -704,17 +1095,35 @@
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
 					<control type="image">
+						<posx>38</posx>
+						<posy>15</posy>
+						<width>248</width>
+						<height>410</height>
+						<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">dialogs/overlay-background.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<aspectratio aligny="bottom">stretch</aspectratio>
+					</control>
+					<control type="image">
 						<width>300</width>
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
 						<texture fallback="ClearCase/dv.png">$INFO[Container(555).ListItem(0).FileExtension,ClearCase/,.png]</texture>
 					</control>
 				</control>
-								<control type="image">
+				<control type="image">
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(0).Icon]</texture>
+					<visible>!Control.HasFocus(555)</visible>
+					<visible>IsEmpty(Container(555).ListItem(0).Art(poster))</visible>
+				</control>
+				<control type="image">
+					<width>300</width>
+					<height>440</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>dialogs/overlay-background.png</texture>
+					<colordiffuse>AAFFFFFF</colordiffuse>
 					<visible>!Control.HasFocus(555)</visible>
 					<visible>IsEmpty(Container(555).ListItem(0).Art(poster))</visible>
 				</control>
@@ -751,6 +1160,16 @@
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
 					<control type="image">
+						<posx>38</posx>
+						<posy>15</posy>
+						<width>248</width>
+						<height>410</height>
+						<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">dialogs/overlay-background.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<aspectratio aligny="bottom">stretch</aspectratio>
+						<visible>!Control.HasFocus(555)</visible>
+					</control>
+					<control type="image">
 						<width>300</width>
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
@@ -764,6 +1183,16 @@
 					<texture>$INFO[ListItem.Icon]</texture>
 					<visible>!Control.IsVisible(7001) + !Control.IsVisible(7002)</visible>
 					<visible>IsEmpty(ListItem.Art(poster))</visible>
+				</control>
+				<control type="image">
+					<width>300</width>
+					<height>440</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>dialogs/overlay-background.png</texture>
+					<colordiffuse>AAFFFFFF</colordiffuse>
+					<visible>!Control.IsVisible(7001) + !Control.IsVisible(7002)</visible>
+					<visible>IsEmpty(ListItem.Art(poster))</visible>
+					<visible>!Control.HasFocus(555)</visible>
 				</control>
 			</focusedlayout>
 		</control>
@@ -813,21 +1242,21 @@
 		<control type="group">
 			<include>Window_OpenClose_Animation</include>
 			<visible>Control.IsVisible(555)</visible>
-				<control type="grouplist">
-					<description>Media Codec Flagging Images</description>
-					<posx>0</posx>
+			<control type="grouplist">
+				<description>Media Codec Flagging Images</description>
+				<posx>0</posx>
 				<posy>595</posy>
 				<width>1280</width>
-					<align>center</align>
-					<itemgap>2</itemgap>
-					<orientation>horizontal</orientation>
-					<include>VideoMPAAFlaggingConditions</include>
-					<include>VideoCodecFlaggingConditions</include>
-					<include>AudioCodecFlaggingConditions</include>
-					<include>AudioChannelsFlaggingConditions</include>
-					<include>AspectCodecFlaggingConditions</include>
-					<include>VideoTypeHackFlaggingConditions</include>
-				</control>			
+				<align>center</align>
+				<itemgap>2</itemgap>
+				<orientation>horizontal</orientation>
+				<include>VideoMPAAFlaggingConditions</include>
+				<include>VideoCodecFlaggingConditions</include>
+				<include>AudioCodecFlaggingConditions</include>
+				<include>AudioChannelsFlaggingConditions</include>
+				<include>AspectCodecFlaggingConditions</include>
+				<include>VideoTypeHackFlaggingConditions</include>
+			</control>
 		</control>
 	</include>
 </includes>

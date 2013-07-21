@@ -2,24 +2,21 @@
 <window>
 	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol></defaultcontrol>
-	<animation effect="slide" start="0,-70" end="0,0" time="100">WindowOpen</animation>
+	<animation effect="slide" start="0,-70" end="0,0" time="200">WindowOpen</animation>
 	<animation effect="slide" start="0,0" end="0,-70" delay="400" time="100">WindowClose</animation>
 	<controls>
 		<control type="group">
-			<posx>720</posx>
+			<posx>910</posx>
 			<posy>0</posy>
+			<animation effect="slide" start="0,0" end="-40,0" time="200" condition="Window.IsVisible(Mutebug)">conditional</animation>
+			<animation effect="slide" start="0,0" end="-170,0" time="200" condition="Window.IsVisible(busydialog)">conditional</animation>
+			<animation effect="slide" start="0,0" end="-345,0" time="200" condition="Window.IsVisible(volumebar)">conditional</animation>
 			<animation effect="slide" end="0,-80" time="200" condition="Window.IsVisible(FullscreenVideo) | Window.IsVisible(Visualisation)">conditional</animation>
-			<control type="image">
-				<posy>-10</posy>
-				<width>400</width>
-				<height>70</height>
-				<texture flipy="true">dialogs/dialog-back_light.png</texture>
-			</control>
 			<control type="label" id="30">
 				<description>Header Label</description>
-				<posx>15</posx>
+				<posx>0</posx>
 				<posy>4</posy>
-				<width>370</width>
+				<width>360</width>
 				<height>18</height>
 				<font>font10_title</font>
 				<textcolor>selected</textcolor>
@@ -29,9 +26,9 @@
 			<control type="label" id="31">
 				<textcolor>textnofocus</textcolor>
 				<description>Title Label</description>
-				<posx>15</posx>
+				<posx>0</posx>
 				<posy>20</posy>
-				<width>370</width>
+				<width>360</width>
 				<height>20</height>
 				<font>font10</font>
 				<align>left</align>
@@ -39,9 +36,9 @@
 			</control>
 			<control type="progress" id="32">
 				<description>progress control</description>
-				<posx>15</posx>
+				<posx>0</posx>
 				<posy>42</posy>
-				<width>370</width>
+				<width>360</width>
 				<height>8</height>
 			</control>
 		</control>

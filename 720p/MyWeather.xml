@@ -1461,6 +1461,7 @@
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>$VAR[VolumeStepUp]</onclick>
+				<onclick>VolumeUp</onclick>
 				<onleft condition="Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)">84</onleft>
 				<onleft condition="!Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)">50</onleft>
 				<onright>81</onright>
@@ -1490,6 +1491,7 @@
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>$VAR[VolumeStepDown]</onclick>
+				<onclick>VolumeDown</onclick>
 				<onleft>80</onleft>
 				<onright>82</onright>
 				<onup>50</onup>
@@ -1711,6 +1713,6 @@
 				<include>CommonNowPlaying_Controls</include>
 			</control>
 		</control>
-		<include>Clock</include>
+		<include>UserLocalInfo</include>
 	</controls>
 </window>

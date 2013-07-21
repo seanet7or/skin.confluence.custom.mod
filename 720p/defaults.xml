@@ -7,7 +7,7 @@
 		<fadetime>500</fadetime>
 	</default>
 	<default type="rss">
-		<width>1200</width>
+		<width>1100</width>
 		<visible>!Skin.HasSetting(AutoHidePowerBtn) + [!Player.HasAudio | IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(HideNextSongsInfo)]</visible>
 		<urlset>1</urlset>
 		<titlecolor>blue</titlecolor>
@@ -20,6 +20,8 @@
 	</default>
 	<default type="scrollbar">
 		<width>14</width>
+		<textureslidernibfocus>-</textureslidernibfocus>
+		<textureslidernib>-</textureslidernib>
 		<texturesliderbarfocus>scrollbar/ScrollBarV_bar_focus_light.png</texturesliderbarfocus>
 		<texturesliderbar border="5,1,5,1">scrollbar/ScrollBarV_bar_light.png</texturesliderbar>
 		<texturesliderbackground border="5,1,5,1">scrollbar/ScrollBarV_light.png</texturesliderbackground>
@@ -27,7 +29,7 @@
 		<posy>60</posy>
 		<posx>782</posx>
 		<orientation>vertical</orientation>
-		<height>530</height>
+		<height>550</height>
 	</default>
 	<default type="videowindow">
 		<visible>Player.HasVideo</visible>
@@ -195,7 +197,7 @@
 		<textureslidernibfocus>controls/slider/nib-fo_light.png</textureslidernibfocus>
 		<textureslidernib>controls/slider/nib-nf_light.png</textureslidernib>
 		<texturesliderbar>-</texturesliderbar>
-		<posy>82r</posy>
+		<posy>86r</posy>
 		<posx>430</posx>
 		<height>16</height>
 		<controloffsetx>75</controloffsetx>

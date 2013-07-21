@@ -2,6 +2,8 @@
 <includes>
 	<include file="defaults.xml" />
 	<include file="IncludesVariables.xml" />
+	<include file="IncludesListItemCount.xml" />
+	<include file="IncludesHomeNowPlaying.xml" />
 	<include file="ViewsVideoLibrary.xml" />
 	<include file="ViewsMusicLibrary.xml" />
 	<include file="ViewsFileMode.xml" />
@@ -238,13 +240,13 @@
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>$VAR[VolumeStepUp]</onclick>
+				<onclick>VolumeUp</onclick>
 				<onleft condition="Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)">84</onleft>
 				<onleft condition="!Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)">50</onleft>
 				<onright>81</onright>
 				<onup>50</onup>
 				<ondown>50</ondown>
-				<visible>!Skin.HasSetting(DisableFloorVolumeButtons)</visible>
-				<visible>Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)</visible>
+				<visible>!Skin.HasSetting(DisableFloorVolumeButtons) + Player.HasMedia</visible>
 			</control>
 			<control type="image">
 				<description>volume Icon</description>
@@ -254,8 +256,7 @@
 				<height>35</height>
 				<aspectratio>keep</aspectratio>
 				<texture>icon_volplus.png</texture>
-				<visible>!Skin.HasSetting(DisableFloorVolumeButtons)</visible>
-				<visible>Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)</visible>
+				<visible>!Skin.HasSetting(DisableFloorVolumeButtons) + Player.HasMedia</visible>
 			</control>
 			<control type="button" id="81">
 				<description>Volume Down button</description>
@@ -267,12 +268,12 @@
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>$VAR[VolumeStepDown]</onclick>
+				<onclick>VolumeDown</onclick>
 				<onleft>80</onleft>
 				<onright>82</onright>
 				<onup>50</onup>
 				<ondown>50</ondown>
-				<visible>!Skin.HasSetting(DisableFloorVolumeButtons)</visible>
-				<visible>Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)</visible>
+				<visible>!Skin.HasSetting(DisableFloorVolumeButtons) + Player.HasMedia</visible>
 			</control>
 			<control type="image">
 				<description>Volume Icon</description>
@@ -282,8 +283,7 @@
 				<height>35</height>
 				<aspectratio>keep</aspectratio>
 				<texture>icon_volminus.png</texture>
-				<visible>!Skin.HasSetting(DisableFloorVolumeButtons)</visible>
-				<visible>Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)</visible>
+				<visible>!Skin.HasSetting(DisableFloorVolumeButtons) + Player.HasMedia</visible>
 			</control>
 			<control type="button" id="82">
 				<description>Back push button</description>
@@ -338,7 +338,7 @@
 	<include name="CommonNowPlaying">
 		<control type="group">
 			<posx>85r</posx>
-			<posy>55r</posy>		
+			<posy>55r</posy>
 			<visible>Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)</visible>
 			<animation effect="slide" start="0,0" end="-110,0" time="0" condition="!Skin.HasSetting(DisableHomeReturnButtons)">Conditional</animation>
 			<animation effect="slide" start="0,0" end="-110,0" time="0" condition="!Skin.HasSetting(DisableFloorVolumeButtons) + !Skin.HasSetting(DisableHomeReturnButtons)">Conditional</animation>
@@ -372,9 +372,9 @@
 			<control type="label">
 				<posx>0</posx>
 				<posy>2</posy>
-				<width>700</width>
+				<width>450</width>
 				<height>20</height>
-				<label>$INFO[MusicPlayer.Title]$INFO[VideoPlayer.Title] - ([COLOR=blue]$INFO[Player.Time] / $INFO[Player.Duration,][/COLOR])</label>
+				<label>[B]$INFO[MusicPlayer.Title]$INFO[VideoPlayer.Title][/B] - ([COLOR=blue]$INFO[Player.Time] / $INFO[Player.Duration,][/COLOR])</label>
 				<align>right</align>
 				<aligny>center</aligny>
 				<font>font12</font>
@@ -383,55 +383,55 @@
 			<control type="label">
 				<posx>0</posx>
 				<posy>23</posy>
-				<width>700</width>
+				<width>450</width>
 				<height>20</height>
 				<label>$INFO[MusicPlayer.Artist]$INFO[MusicPlayer.Album, - ]</label>
 				<align>right</align>
 				<aligny>center</aligny>
-				<font>font12</font>
+				<font>font10</font>
 				<textcolor>textnofocus</textcolor>
 				<visible>Player.HasAudio</visible>
 			</control>
 			<control type="label">
 				<posx>0</posx>
 				<posy>25</posy>
-				<width>700</width>
+				<width>450</width>
 				<height>20</height>
 				<label>$INFO[VideoPlayer.Studio]</label>
 				<align>right</align>
 				<aligny>center</aligny>
-				<font>font12</font>
+				<font>font10</font>
 				<textcolor>textnofocus</textcolor>
 				<visible>Player.HasVideo + VideoPlayer.Content(Movies)</visible>
 			</control>
 			<control type="label">
 				<posx>0</posx>
 				<posy>25</posy>
-				<width>700</width>
+				<width>450</width>
 				<height>20</height>
 				<label>$INFO[VideoPlayer.TVShowTitle]</label>
 				<align>right</align>
 				<aligny>center</aligny>
-				<font>font12</font>
+				<font>font10</font>
 				<textcolor>textnofocus</textcolor>
 				<visible>Player.HasVideo + VideoPlayer.Content(Episodes)</visible>
 			</control>
 			<control type="label">
 				<posx>0</posx>
 				<posy>25</posy>
-				<width>700</width>
+				<width>450</width>
 				<height>20</height>
 				<label>$INFO[VideoPlayer.Artist]</label>
 				<align>right</align>
 				<aligny>center</aligny>
-				<font>font12</font>
+				<font>font10</font>
 				<textcolor>textnofocus</textcolor>
 				<visible>Player.HasVideo + VideoPlayer.Content(MusicVideos)</visible>
 			</control>
 			<control type="label">
 				<posx>0</posx>
 				<posy>25</posy>
-				<width>700</width>
+				<width>450</width>
 				<height>20</height>
 				<label>$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.ChannelNumber, - ([COLOR=blue],[/COLOR])]</label>
 				<align>right</align>
@@ -670,7 +670,7 @@
 				<texturenofocus>OSDChannelUPNF.png</texturenofocus>
 				<onleft>50</onleft>
 				<onright>601</onright>
-				<onup>610</onup>
+				<onup>612</onup>
 				<ondown>611</ondown>
 				<onclick>XBMC.PlayerControl(Previous)</onclick>
 			</control>
@@ -684,7 +684,7 @@
 				<texturenofocus>OSDChannelDownNF.png</texturenofocus>
 				<onleft>600</onleft>
 				<onright>603</onright>
-				<onup>610</onup>
+				<onup>612</onup>
 				<ondown>611</ondown>
 				<onclick>XBMC.PlayerControl(Next)</onclick>
 			</control>
@@ -698,7 +698,7 @@
 				<texturenofocus>OSDStopNF.png</texturenofocus>
 				<onleft>601</onleft>
 				<onright>604</onright>
-				<onup>610</onup>
+				<onup>612</onup>
 				<ondown>611</ondown>
 				<onclick>down</onclick>
 				<onclick>XBMC.PlayerControl(Stop)</onclick>
@@ -710,7 +710,7 @@
 				<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
 				<onleft>603</onleft>
 				<onright>605</onright>
-				<onup>610</onup>
+				<onup>612</onup>
 				<ondown>606</ondown>
 				<onback>50</onback>
 				<onclick>XBMC.PlayerControl(Play)</onclick>
@@ -727,7 +727,7 @@
 				<texturenofocus>OSDRecordOffNF.png</texturenofocus>
 				<onleft>604</onleft>
 				<onright>50</onright>
-				<onup>610</onup>
+				<onup>612</onup>
 				<ondown>611</ondown>
 				<onclick>XBMC.PlayerControl(record)</onclick>
 				<enable>Player.CanRecord</enable>
@@ -750,7 +750,7 @@
 				<texturenofocus>OSDPrevTrackNF.png</texturenofocus>
 				<onleft>50</onleft>
 				<onright>606</onright>
-				<onup>610</onup>
+				<onup>612</onup>
 				<ondown>611</ondown>
 				<onback>50</onback>
 				<onclick>XBMC.PlayerControl(Previous)</onclick>
@@ -765,7 +765,7 @@
 				<texturenofocus>OSDRewindNF.png</texturenofocus>
 				<onleft>600</onleft>
 				<onright>603</onright>
-				<onup>610</onup>
+				<onup>612</onup>
 				<ondown>611</ondown>
 				<onback>50</onback>
 				<onclick>XBMC.PlayerControl(Rewind)</onclick>
@@ -781,7 +781,7 @@
 					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
 					<onleft>606</onleft>
 					<onright>601</onright>
-					<onup>610</onup>
+					<onup>612</onup>
 					<ondown>611</ondown>
 					<onback>50</onback>
 					<onclick>XBMC.PlayerControl(Play)</onclick>
@@ -796,7 +796,7 @@
 					<texturenofocus>OSDStopNF.png</texturenofocus>
 					<onleft>603</onleft>
 					<onright>607</onright>
-					<onup>610</onup>
+					<onup>612</onup>
 					<ondown>611</ondown>
 					<onback>50</onback>
 					<onclick>down</onclick>
@@ -812,7 +812,7 @@
 					<texturenofocus>OSDForwardNF.png</texturenofocus>
 					<onleft>601</onleft>
 					<onright>602</onright>
-					<onup>610</onup>
+					<onup>612</onup>
 					<ondown>611</ondown>
 					<onback>50</onback>
 					<onclick>XBMC.PlayerControl(Forward)</onclick>
@@ -828,7 +828,7 @@
 					<texturenofocus>OSDNextTrackNF.png</texturenofocus>
 					<onleft>607</onleft>
 					<onright>604</onright>
-					<onup>610</onup>
+					<onup>612</onup>
 					<ondown>611</ondown>
 					<onback>50</onback>
 					<onclick>XBMC.PlayerControl(Next)</onclick>
@@ -848,7 +848,7 @@
 					<onclick>XBMC.PlayerControl(Repeat)</onclick>
 					<onleft>602</onleft>
 					<onright>605</onright>
-					<onup>610</onup>
+					<onup>612</onup>
 					<ondown>611</ondown>
 					<onback>50</onback>
 				</control>
@@ -919,7 +919,7 @@
 					<onclick>XBMC.PlayerControl(Random)</onclick>
 					<onleft>604</onleft>
 					<onright>50</onright>
-					<onup>610</onup>
+					<onup>612</onup>
 					<ondown>611</ondown>
 					<onback>50</onback>
 				</control>
@@ -935,9 +935,55 @@
 			<visible>Player.HasMedia</visible>
 		</control>
 	</include>
-	<include name="ScrollOffsetLabel">
-	</include>
-	<include name="Clock">
+	<include name="UserLocalInfo">
+		<control type="group">
+			<posx>20</posx>
+			<posy>0</posy>
+			<visible>!IsEmpty(Weather.Conditions) + Weather.IsFetched + !IsEmpty(Weather.Plugin) + Skin.HasSetting(HideSystemWeather)</visible>
+			<visible>![Window.IsVisible(FullscreenVideo) | Window.IsVisible(Visualisation)]</visible>
+			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(infodialog)">Conditional</animation>
+			<include>Window_OpenClose_Animation</include>
+			<control type="image">
+				<description>Weather image</description>
+				<width>60</width>
+				<height>60</height>
+				<aspectratio>keep</aspectratio>
+				<texture>$INFO[Weather.Conditions]</texture>
+			</control>
+			<control type="grouplist">
+				<posx>65</posx>
+				<posy>15</posy>
+				<width>1000</width>
+				<height>30</height>
+				<orientation>horizontal</orientation>
+				<align>left</align>
+				<itemgap>0</itemgap>
+				<control type="label">
+					<posy>60</posy>
+					<posx>80</posx>
+					<description>Temp label</description>
+					<width min="0" max="300">auto</width>
+					<height>30</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>font28_title</font>
+					<textcolor>textnofocus</textcolor>
+					<label>[B]$INFO[Window(Weather).Property(Current.Temperature)][/B]</label>
+				</control>
+				<control type="label">
+					<posy>60</posy>
+					<posx>80</posx>
+					<description>Temp Units</description>
+					<width min="0" max="100">auto</width>
+					<height>22</height>
+					<font>font10</font>
+					<aligny>center</aligny>
+					<label>$INFO[System.TemperatureUnits]</label>
+					<textcolor>textnofocus</textcolor>
+					<visible>!IsEmpty(Window(Weather).Property(Current.Temperature))</visible>
+				</control>
+			</control>
+		</control>
 		<control type="label">
 			<description>time label</description>
 			<posx>15r</posx>
@@ -950,6 +996,10 @@
 			<textcolor>textnofocus</textcolor>
 			<label>$INFO[System.Time]</label>
 			<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-50" time="100" condition="Window.IsVisible(busydialog)">conditional</animation>
+			<animation effect="slide" start="0,0" end="350,0" time="200" condition="Window.IsVisible(extendedprogressdialog)">conditional</animation>
+			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(volumebar)">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(CustomAddMenuItems.xml) | Window.IsVisible(CustomAddonSelection.xml) | Window.IsVisible(CustomAddonType.xml) | Window.IsVisible(CustomAddSubMenuItems.xml) | Window.IsVisible(CustomSubMenuType.xml) | Window.IsVisible(CustomWidgetType.xml) | Window.IsVisible(Favourites)">Conditional</animation>
 			<visible>!Skin.HasSetting(HideSystemClock)</visible>
 		</control>
 	</include>

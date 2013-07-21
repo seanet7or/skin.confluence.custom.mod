@@ -6,7 +6,6 @@
 	<controls>
 		<include>CommonBackground</include>
 		<include>ContentPanelBackgroundsPVR</include>
-		<include>MainWindowMouseButtons</include>
 		<control type="label" id="29">
 			<posy>60</posy>
 			<posx>80</posx>
@@ -72,10 +71,17 @@
 		<control type="group" id="50">
 			<include>Window_OpenClose_Animation</include>
 			<include>EPGTimelineView</include>
-			<include>LiveTVChannelView</include>			<include>LiveRadioChannelView</include>			<include>LiveTVRecordingsView</include>			<include>LiveTVTimersView</include>			<include>LiveTVGuideChannelView</include>			<include>LiveTVGuideNowNextView</include>			<include>LiveTVSearchView</include>			</control>
+			<include>LiveTVChannelView</include>
+			<include>LiveRadioChannelView</include>
+			<include>LiveTVRecordingsView</include>
+			<include>LiveTVTimersView</include>
+			<include>LiveTVGuideChannelView</include>
+			<include>LiveTVGuideNowNextView</include>
+			<include>LiveTVSearchView</include>
+		</control>
 		<include>CommonNowPlaying</include>
+		<include>MainWindowMouseButtons</include>
 		<include>BehindDialogFadeOut</include>
-		<include>ScrollOffsetLabel</include>
 		<control type="image">
 			<width>1280</width>
 			<height>720</height>
@@ -167,6 +173,6 @@
 				<include>CommonNowPlaying_Controls</include>
 			</control>
 		</control>
-		<include>Clock</include>
+		<include>UserLocalInfo</include>
 	</controls>
 </window>

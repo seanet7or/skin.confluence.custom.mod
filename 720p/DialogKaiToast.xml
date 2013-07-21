@@ -4,20 +4,11 @@
 	<animation effect="fade" start="0" end="100" time="200">WindowOpen</animation>
 	<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 	<coordinates>
-		<posx>0</posx>
-		<posy>650</posy>
+		<posx>-5</posx>
+		<posy>-5</posy>
 	</coordinates>
 	<controls>
 		<control type="group">
-			<animation effect="slide" start="0,0" end="0,-142" time="0" condition="Window.IsActive(home) + !Skin.HasSetting(RaiseMainMenuBar)">Conditional</animation>
-			<animation effect="slide" start="0,0" end="0,-317" time="0" condition="Window.IsActive(home) + Skin.HasSetting(RaiseMainMenuBar)">Conditional</animation>
-			<control type="image">
-				<width>400</width>
-				<height>70</height>
-				<include condition="!IsEmpty(Skin.String(MediaPanelTrans))">TransparentEffect</include>
-				<texture>dialogs/content-back_light.png</texture>
-				<visible>Window.IsActive(home)</visible>
-			</control>
 			<control type="image" id="400">
 				<description>avatar</description>
 				<posx>20</posx>

@@ -206,7 +206,6 @@
 			<control type="scrollbar" id="60">
 				<posx>772</posx>
 				<posy>85</posy>
-				<height>550</height>
 				<onleft>50</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
@@ -250,6 +249,7 @@
 						<bordertexture border="6">controls/folder-nf_light.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$INFO[Listitem.Icon]</texture>
+						<animation effect="fade" start="60" end="80" time="0" condition="true">conditional</animation>
 						<visible>!Container.Content(Episodes)</visible>
 					</control>
 					<control type="image">
@@ -260,6 +260,7 @@
 						<bordertexture border="6">controls/folder-nf_light.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$INFO[Listitem.Icon]</texture>
+						<animation effect="fade" start="60" end="80" time="0" condition="true">conditional</animation>
 						<visible>Container.Content(Episodes) + [StringCompare(ListItem.Label,..) | !Skin.HasSetting(HideEpisodeThumb)]</visible>
 					</control>
 					<control type="image">
@@ -270,6 +271,7 @@
 						<bordertexture border="6">controls/folder-nf_light.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
+						<animation effect="fade" start="60" end="80" time="0" condition="true">conditional</animation>
 						<visible>Container.Content(Episodes) + Skin.HasSetting(HideEpisodeThumb) + !StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="label">
@@ -354,6 +356,7 @@
 						<bordertexture border="6">controls/folder-nf_light.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$VAR[PosterThumb]</texture>
+						<animation effect="fade" start="60" end="80" time="0" condition="true">conditional</animation>
 					</control>
 					<control type="label">
 						<posx>108</posx>
@@ -412,7 +415,6 @@
 			<control type="scrollbar" id="60">
 				<posx>1182</posx>
 				<posy>80</posy>
-				<height>550</height>
 				<onleft>500</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
@@ -479,7 +481,6 @@
 			<control type="scrollbar" id="60">
 				<posx>1182</posx>
 				<posy>80</posy>
-				<height>550</height>
 				<onleft>505</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
@@ -716,7 +717,6 @@
 			<control type="scrollbar" id="60">
 				<posx>1182</posx>
 				<posy>80</posy>
-				<height>550</height>
 				<onleft>50</onleft>
 				<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
 				<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
