@@ -51,7 +51,6 @@
 			<itemlayout height="45">
 				<control type="image">
 					<width>520</width>
-					<height>40</height>
 				</control>
 				<control type="label">
 					<width>500</width>
@@ -65,12 +64,10 @@
 			<focusedlayout height="45">
 				<control type="image">
 					<width>520</width>
-					<height>40</height>
 					<visible>!Control.HasFocus(10)</visible>
 				</control>
 				<control type="image">
 					<width>520</width>
-					<height>40</height>
 					<visible>Control.hasfocus(14) | Control.HasFocus(10)</visible>
 					<texture>buttons/fo_light.png</texture>
 				</control>

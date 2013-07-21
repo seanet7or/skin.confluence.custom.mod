@@ -6,7 +6,8 @@
 	<controls>
 		<control type="image">
 			<description>Startup Background Image</description>
-			<include>Dimensions_Fullscreen</include>
+			<height>720</height>
+			<width>1280</width>
 			<aspectratio>scale</aspectratio>
 			<texture fallback="special://skin/backgrounds/default_light.jpg">$INFO[Skin.String(StartUpBackgroundPath)]</texture>
 			<visible>!Skin.HasSetting(HideStartUpBackground)</visible>

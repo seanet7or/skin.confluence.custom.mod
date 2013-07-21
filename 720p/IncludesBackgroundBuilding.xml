@@ -2,28 +2,32 @@
 <includes>
 	<include name="CommonBackground">
 		<control type="multiimage">
-			<include>Dimensions_Fullscreen</include>
+			<height>720</height>
+			<width>1280</width>
 			<imagepath background="true">$VAR[HomeMenuItemBackground]</imagepath>
 			<fadetime>1000</fadetime>
 			<visible>Window.IsVisible(home) + !Skin.HasSetting(GlobalBackground)</visible>
 		</control>
 		<control type="group">
 			<control type="multiimage">
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<imagepath background="true">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
 				<fadetime>1000</fadetime>
 				<visible>Skin.HasSetting(GlobalWeatherFanart) + Window.IsVisible(home)</visible>
 			</control>
 			<control type="image">
 				<description>Default Global Background Image</description>
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<aspectratio>scale</aspectratio>
 				<texture fallback="special://skin/special://skin/backgrounds/default_light.jpg">special://skin/backgrounds/default_light.jpg</texture>
 				<visible>[!Skin.HasSetting(GlobalWeatherFanart) + IsEmpty(Skin.String(CustomBackgroundPath))] | [Skin.HasSetting(GlobalWeatherFanart) + !Window.IsVisible(home)]</visible>
 			</control>
 			<control type="multiimage">
 				<description>User Set Global Background Image</description>
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<imagepath background="true">$INFO[Skin.String(CustomBackgroundPath)]</imagepath>
 				<fadetime>1000</fadetime>
 				<visible>Window.IsVisible(home)</visible>
@@ -35,7 +39,8 @@
 			<visible>!Skin.HasSetting(HideBackGroundFanart) + !Skin.HasSetting(HideWidgetFanArt)</visible>
 			<control type="image">
 				<description>Recently Added Movies Background Image</description>
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[Container(8000).ListItem.Thumb]</texture>
 				<include>BackgroundFade</include>
@@ -45,7 +50,8 @@
 			</control>
 			<control type="image">
 				<description>Recently Added TVShows Background Image</description>
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[Container(8001).ListItem.Thumb]</texture>
 				<include>BackgroundFade</include>
@@ -55,7 +61,8 @@
 			</control>
 			<control type="image">
 				<description>Recently Added Albums Background Image</description>
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[Container(8002).ListItem.Thumb]</texture>
 				<include>BackgroundFade</include>
@@ -65,7 +72,8 @@
 			</control>
 			<control type="image">
 				<description>Recently Added Concerts Background Image</description>
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[Container(8003).ListItem.Thumb]</texture>
 				<include>BackgroundFade</include>
@@ -75,7 +83,8 @@
 			</control>
 			<control type="image">
 				<description>Random Movies Background Image</description>
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[Container(8004).ListItem.Thumb]</texture>
 				<include>BackgroundFade</include>
@@ -85,7 +94,8 @@
 			</control>
 			<control type="image">
 				<description>Random TVShows Background Image</description>
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[Container(8005).ListItem.Thumb]</texture>
 				<include>BackgroundFade</include>
@@ -95,7 +105,8 @@
 			</control>
 			<control type="image">
 				<description>Random Albums Background Image</description>
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[Container(8006).ListItem.Thumb]</texture>
 				<include>BackgroundFade</include>
@@ -105,7 +116,8 @@
 			</control>
 			<control type="image">
 				<description>Random Concerts Background Image</description>
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[Container(8007).ListItem.Thumb]</texture>
 				<include>BackgroundFade</include>
@@ -115,7 +127,8 @@
 			</control>
 			<control type="image">
 				<description>Suggested Movies Background Image</description>
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[Container(8008).ListItem.Thumb]</texture>
 				<include>BackgroundFade</include>
@@ -125,7 +138,8 @@
 			</control>
 			<control type="image">
 				<description>Suggested TVShows Background Image</description>
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[Container(8009).ListItem.Thumb]</texture>
 				<include>BackgroundFade</include>
@@ -135,7 +149,8 @@
 			</control>
 			<control type="image">
 				<description>Suggested Albums Background Image</description>
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[Container(8010).ListItem.Thumb]</texture>
 				<include>BackgroundFade</include>
@@ -145,7 +160,8 @@
 			</control>
 			<control type="image">
 				<description>Suggested Concerts Background Image</description>
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[Container(8011).ListItem.Thumb]</texture>
 				<include>BackgroundFade</include>
@@ -155,7 +171,8 @@
 			</control>
 			<control type="image">
 				<description>Playlist Movies Background Image</description>
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[Container(8012).ListItem.Thumb]</texture>
 				<include>BackgroundFade</include>
@@ -165,7 +182,8 @@
 			</control>
 			<control type="image">
 				<description>Playlist Episodes Background Image</description>
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[Container(8013).ListItem.Thumb]</texture>
 				<include>BackgroundFade</include>
@@ -175,7 +193,8 @@
 			</control>
 			<control type="image">
 				<description>Playlist Movies Background Image</description>
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[Container(8014).ListItem.Thumb]</texture>
 				<include>BackgroundFade</include>
@@ -185,7 +204,8 @@
 			</control>
 			<control type="multiimage">
 				<description>Weather Widget Background Image</description>
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<aspectratio>scale</aspectratio>
 				<imagepath background="true">$INFO[Container(8015).ListItem.Thumb]</imagepath>
 				<fadetime>1000</fadetime>
@@ -193,7 +213,8 @@
 			</control>
 			<control type="image">
 				<description>User Favourites Widget Background Image</description>
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<aspectratio>scale</aspectratio>
 				<texture background="true" fallback="special://skin/backgrounds/default_light.jpg">$INFO[Skin.String(FavouritesFanartDir)]$INFO[Container(8016).ListItem.Label].jpg</texture>
 				<include>BackgroundFade</include>
@@ -204,7 +225,8 @@
 			</control>
 			<control type="image">
 				<description>Default Favourites Widget Background Image</description>
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[Container(8016).ListItem.ActualIcon]</texture>
 				<include>BackgroundFade</include>
@@ -215,7 +237,8 @@
 			</control>
 		</control>
 		<control type="multiimage">
-			<include>Dimensions_Fullscreen</include>
+			<height>720</height>
+			<width>1280</width>
 			<imagepath background="true">$VAR[CommonMenuItemBackground]</imagepath>
 			<fadetime>1000</fadetime>
 			<visible>!Window.IsVisible(home)</visible>
@@ -223,7 +246,8 @@
 		<control type="group">
 			<visible>!Skin.HasSetting(HideBackGroundFanart) + !Player.HasVideo</visible>
 			<control type="image">
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
 				<include>BackgroundFade</include>
@@ -232,7 +256,8 @@
 				<visible>!IsEmpty(ListItem.Property(Fanart_Image))</visible>
 			</control>
 			<control type="image">
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<texture background="true">$VAR[GenreBackgroundImage]</texture>
 				<include>BackgroundFade</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
@@ -241,21 +266,22 @@
 			</control>
 		</control>
 		<control type="image">
-			<include>Dimensions_Fullscreen</include>
+			<height>720</height>
+			<width>1280</width>
 			<texture>special://skin/backgrounds/default_light.jpg</texture>
 			<visible>Player.HasVideo + ![Window.IsVisible(PVR) + [Control.IsVisible(11) | Control.IsVisible(12)]]</visible>
 		</control>
 		<control type="group">
 			<include condition="!Skin.HasSetting(HideBackGroundFanart)">MusicPlayingBottom</include>
 			<control type="visualisation">
-				<include>Dimensions_Fullscreen</include>
 			</control>
 			<include condition="!Skin.HasSetting(HideBackGroundFanart)">MusicPlayingTop</include>
 			<visible>Player.HasAudio + !Skin.HasSetting(ShowBackgroundVis) + ![Window.IsVisible(PVR) + [Control.IsVisible(11) | Control.IsVisible(12)]]</visible>
 			<visible>!SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
 		</control>
 		<control type="videowindow">
-			<include>Dimensions_Fullscreen</include>
+			<posy>0</posy>
+			<posx>0</posx>
 			<visible>Player.HasVideo + ![Window.IsVisible(PVR) + [Control.IsVisible(11) | Control.IsVisible(12)]]</visible>
 		</control>
 	</include>

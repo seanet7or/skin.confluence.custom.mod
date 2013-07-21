@@ -1250,12 +1250,6 @@
 		<animation effect="fade" time="250">WindowOpen</animation>
 		<animation effect="fade" time="250">WindowClose</animation>
 	</include>
-	<include name="Dimensions_Fullscreen">
-		<posx>0</posx>
-		<posy>0</posy>
-		<width>1280</width>
-		<height>720</height>
-	</include>
 	<include name="LiveCDCasesbackground">
 		<control type="group">
 			<animation effect="fade" time="600">VisibleChange</animation>
@@ -1420,13 +1414,15 @@
 		<control type="group">
 			<control type="image">
 				<description>Fanart Image for Artist</description>
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<texture background="true">dialogs/overlay-background.png</texture>
 			</control>
 			<include>LiveCDCasesbackground</include>
 			<control type="multiimage">
 				<description>Artist Slideshow Image for Artist</description>
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<include condition="Skin.HasSetting(AnimateVizFanart)">KBurnsAnimateFanart</include>
 				<imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
 				<aspectratio>keep</aspectratio>
@@ -1438,7 +1434,8 @@
 			</control>
 			<control type="image">
 				<description>Fanart Image for Artist</description>
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<include condition="Skin.HasSetting(AnimateVizFanart)">KBurnsAnimateFanart</include>
 				<texture background="true">$INFO[Player.Art(fanart)]</texture>
 				<fadetime>600</fadetime>
@@ -1448,7 +1445,8 @@
 			</control>
 			<control type="multiimage">
 				<description>Artist ExtraFanArt Multi-image Background</description>
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<include condition="Skin.HasSetting(AnimateVizFanart)">KBurnsAnimateFanart</include>
 				<imagepath background="true">$INFO[Player.FolderPath,,../extrafanart/]</imagepath>
 				<aspectratio>keep</aspectratio>
@@ -1466,7 +1464,8 @@
 		<control type="group">
 			<control type="multiimage">
 				<description>Artist Slideshow Image for Artist</description>
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<include condition="Skin.HasSetting(AnimateVizFanart)">KBurnsAnimateFanart</include>
 				<imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
 				<colordiffuse>AAFFFFFF</colordiffuse>
@@ -1479,7 +1478,8 @@
 			</control>
 			<control type="image">
 				<description>Fanart Image for Artist</description>
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<include condition="Skin.HasSetting(AnimateVizFanart)">KBurnsAnimateFanart</include>
 				<texture background="true">$INFO[Player.Art(fanart)]</texture>
 				<colordiffuse>AAFFFFFF</colordiffuse>
@@ -1490,7 +1490,8 @@
 			</control>
 			<control type="multiimage">
 				<description>Artist ExtraFanArt Multi-image Background</description>
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<include condition="Skin.HasSetting(AnimateVizFanart)">KBurnsAnimateFanart</include>
 				<imagepath background="true">$INFO[Player.FolderPath,,../extrafanart/]</imagepath>
 				<colordiffuse>AAFFFFFF</colordiffuse>

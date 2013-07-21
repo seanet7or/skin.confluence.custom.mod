@@ -13,63 +13,72 @@
 			<control type="group">
 				<visible>!Skin.HasSetting(HideBackGroundFanart) + !Skin.HasSetting(HideWidgetFanArt)</visible>
 				<control type="image">
-					<include>Dimensions_Fullscreen</include>
+					<height>720</height>
+					<width>1280</width>
 					<texture background="true">$INFO[Skin.String(SearchBtnBackground)]</texture>
 					<aspectratio>scale</aspectratio>
 					<fadetime>FanartCrossfadeTime</fadetime>
 					<visible>!IsEmpty(Skin.String(SearchBtnBackground))</visible>
 				</control>
 				<control type="image">
-					<include>Dimensions_Fullscreen</include>
+					<height>720</height>
+					<width>1280</width>
 					<texture background="true">$INFO[Container(111).ListItem.Property(Fanart)]</texture>
 					<aspectratio>scale</aspectratio>
 					<fadetime>FanartCrossfadeTime</fadetime>
 					<visible>Control.HasFocus(111)</visible>
 				</control>
 				<control type="image">
-					<include>Dimensions_Fullscreen</include>
+					<height>720</height>
+					<width>1280</width>
 					<texture background="true">$INFO[Container(121).ListItem.Property(Fanart)]</texture>
 					<aspectratio>scale</aspectratio>
 					<fadetime>FanartCrossfadeTime</fadetime>
 					<visible>Control.HasFocus(121)</visible>
 				</control>
 				<control type="image">
-					<include>Dimensions_Fullscreen</include>
+					<height>720</height>
+					<width>1280</width>
 					<texture background="true">$INFO[Container(131).ListItem.Property(Fanart)]</texture>
 					<aspectratio>scale</aspectratio>
 					<fadetime>FanartCrossfadeTime</fadetime>
 					<visible>Control.HasFocus(131)</visible>
 				</control>
 				<control type="image">
-					<include>Dimensions_Fullscreen</include>
+					<height>720</height>
+					<width>1280</width>
 					<texture background="true">$INFO[Container(141).ListItem.Property(Fanart)]</texture>
 					<aspectratio>scale</aspectratio>
 					<fadetime>FanartCrossfadeTime</fadetime>
 					<visible>Control.HasFocus(141)</visible>
 				</control>
 				<control type="image">
-					<include>Dimensions_Fullscreen</include>
+					<height>720</height>
+					<width>1280</width>
 					<texture background="true">$INFO[Container(151).ListItem.Property(Fanart)]</texture>
 					<aspectratio>scale</aspectratio>
 					<fadetime>FanartCrossfadeTime</fadetime>
 					<visible>Control.HasFocus(151)</visible>
 				</control>
 				<control type="image">
-					<include>Dimensions_Fullscreen</include>
+					<height>720</height>
+					<width>1280</width>
 					<texture background="true">$INFO[Container(161).ListItem.Property(Fanart)]</texture>
 					<aspectratio>scale</aspectratio>
 					<fadetime>FanartCrossfadeTime</fadetime>
 					<visible>Control.HasFocus(161)</visible>
 				</control>
 				<control type="image">
-					<include>Dimensions_Fullscreen</include>
+					<height>720</height>
+					<width>1280</width>
 					<texture background="true">$INFO[Container(171).ListItem.Property(Fanart)]</texture>
 					<aspectratio>scale</aspectratio>
 					<fadetime>FanartCrossfadeTime</fadetime>
 					<visible>Control.HasFocus(171)</visible>
 				</control>
 				<control type="image">
-					<include>Dimensions_Fullscreen</include>
+					<height>720</height>
+					<width>1280</width>
 					<texture background="true">$INFO[Container(181).ListItem.Property(Fanart)]</texture>
 					<aspectratio>scale</aspectratio>
 					<fadetime>FanartCrossfadeTime</fadetime>
@@ -77,7 +86,8 @@
 				</control>
 			</control>
 			<control type="image">
-				<include>Dimensions_Fullscreen</include>
+				<height>720</height>
+				<width>1280</width>
 				<texture>dialogs/overlay-background.png</texture>
 				<include condition="!IsEmpty(Skin.String(MediaPanelTrans))">TransparentEffect</include>
 				<animation effect="fade" time="400">WindowOpen</animation>

@@ -97,8 +97,6 @@
 					</control>
 					<control type="videowindow">
 						<description>No Fanart Back</description>
-						<posx>5</posx>
-						<posy>5</posy>
 						<width>665</width>
 						<height>370</height>
 					</control>
@@ -674,7 +672,6 @@
 					<itemlayout height="40" width="430">
 						<control type="image">
 							<width>430</width>
-							<height>40</height>
 						</control>
 						<control type="label">
 							<width>410</width>
@@ -689,12 +686,10 @@
 					<focusedlayout height="40" width="430">
 						<control type="image">
 							<width>430</width>
-							<height>40</height>
 							<visible>!Control.HasFocus(50)</visible>
 						</control>
 						<control type="image">
 							<width>430</width>
-							<height>40</height>
 							<visible>Control.HasFocus(50)</visible>
 							<texture>buttons/fo_light.png</texture>
 						</control>

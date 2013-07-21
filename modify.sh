@@ -1136,7 +1136,8 @@ step
 
 printf "\nMoving tags out of includes: "
 TOMOVE='button;height,texturefocus,pulseonselect,texturenofocus
-label;textcolor'
+label;textcolor
+image;posx,posy,width,height'
 IFS=$'\n'; for MOVE in $TOMOVE ; do
 	CONTROL=$(echo "$MOVE" | cut -f1 -d';')
 	TAGS=$(echo "$MOVE" | cut -f2 -d';' | tr ',' '\n')
@@ -1354,7 +1355,14 @@ fi
 step
 
 printf "\nChanging font colors for special strings: "
-if true ; then
+if false ; then
+	R="s|(control type=\"label\"[^#]*#"
+	R+="(\s*<(?!textcolor)(?!font)[a-z][^#]*#)*"
+	R+="\s*<font>font35_title</font>#"
+	R+="(\s*<(?!textcolor)(?!font)[a-z][^#]*#)*"
+	R+="\s*<textcolor)>[a-z]*<"
+	R+="|\1>heading1<|g"
+	perlregex "$R" 720p/FileManager.xml
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -1589,6 +1597,18 @@ fi
 step
 
 printf "\n############# CLEANING UP #####################################################"
+
+printf "\nRemoving unused includes: "
+if grep -I -q 'Dimensions_Fullscreen' 720p/* ; then
+	XMLS=$(2>/dev/null grep -a -l 'Dimensions_Fullscreen' 720p/*)
+	perlregex $XMLS "s|\s*<include>Dimensions_Fullscreen</include>\s*#||g"
+	XMLS=$(2>/dev/null grep -a -l 'Dimensions_Fullscreen' 720p/*)
+	remove_include "Dimensions_Fullscreen" "$XMLS"
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
 
 printf "\nRemoving buttons/nf_light.png where not nedded: "
 if grep -I -q 'buttons/nf_light.png' 720p/DialogPictureInfo.xml ; then
