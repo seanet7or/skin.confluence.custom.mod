@@ -52,6 +52,7 @@
 						<height>25</height>
 						<align>right</align>
 						<aligny>center</aligny>
+						<font>font13</font>
 						<textcolor>blue</textcolor>
 						<label>$LOCALIZE[142]</label>
 					</control>
@@ -62,6 +63,7 @@
 						<height>25</height>
 						<align>left</align>
 						<aligny>center</aligny>
+						<font>font13</font>
 						<label>$INFO[ListItem.StartTime] - $INFO[ListItem.EndTime] ($INFO[ListItem.StartDate])</label>
 					</control>
 					<control type="label">
@@ -72,6 +74,7 @@
 						<height>25</height>
 						<align>right</align>
 						<aligny>center</aligny>
+						<font>font13</font>
 						<textcolor>blue</textcolor>
 						<label>$LOCALIZE[180]:</label>
 					</control>
@@ -83,6 +86,7 @@
 						<height>25</height>
 						<align>left</align>
 						<aligny>center</aligny>
+						<font>font13</font>
 						<label>$INFO[ListItem.Duration]</label>
 					</control>
 					<control type="label">
@@ -93,6 +97,7 @@
 						<height>25</height>
 						<align>right</align>
 						<aligny>center</aligny>
+						<font>font13</font>
 						<textcolor>blue</textcolor>
 						<label>$LOCALIZE[19148]:</label>
 					</control>
@@ -113,6 +118,7 @@
 						<height>25</height>
 						<align>right</align>
 						<aligny>center</aligny>
+						<font>font13</font>
 						<textcolor>blue</textcolor>
 						<label>$LOCALIZE[135]:</label>
 					</control>
@@ -123,6 +129,7 @@
 						<width>470</width>
 						<label fallback="161">$INFO[ListItem.Genre]</label>
 						<align>left</align>
+						<font>font13</font>
 						<scroll>true</scroll>
 					</control>
 				</control>
@@ -151,16 +158,25 @@
 					<control type="button" id="5">
 						<description>Switch to Channel</description>
 						<include>ButtonInfoDialogsCommonValues</include>
+						<font>font12_title</font>
+						<align>center</align>
+						<width>170</width>
 						<label>19165</label>
 					</control>
 					<control type="button" id="6">
 						<description>Record</description>
 						<include>ButtonInfoDialogsCommonValues</include>
+						<font>font12_title</font>
+						<align>center</align>
+						<width>170</width>
 						<label>-</label>
 					</control>
 					<control type="button" id="7">
 						<description>OK</description>
 						<include>ButtonInfoDialogsCommonValues</include>
+						<font>font12_title</font>
+						<align>center</align>
+						<width>170</width>
 						<label>186</label>
 					</control>
 				</control>

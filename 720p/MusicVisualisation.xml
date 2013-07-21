@@ -22,6 +22,7 @@
 				<height>25</height>
 				<align>left</align>
 				<aligny>center</aligny>
+				<font>font13</font>
 				<label>$VAR[MusicHeaderLabel]</label>
 				<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(infodialog)">Conditional</animation>
 			</control>
@@ -58,7 +59,12 @@
 					<description>Cd overlay</description>
 					<posx>120</posx>
 					<posy>15</posy>&gt;
-					<width>170</width><height>175</height><include>CDArtSpinner</include><texture fallback="livecdcase/DefaultCDArt_small.png" background="true">$INFO[Player.FolderPath,,cdart.png]</texture><aspectratio align="center">keep</aspectratio></control>
+					<width>170</width>
+<height>175</height>
+<include>CDArtSpinner</include>
+<texture fallback="livecdcase/DefaultCDArt_small.png" background="true">$INFO[Player.FolderPath,,cdart.png]</texture>
+<aspectratio align="center">keep</aspectratio>
+</control>
 				<control type="image">
 					<description>Cover Image</description>
 					<posx>40</posx>
@@ -97,7 +103,6 @@
 					<width>910</width>
 					<height>25</height>
 					<align>left</align>
-					<font>font12</font>
 					<label>$INFO[MusicPlayer.Artist]$INFO[MusicPlayer.Album, - ]</label>
 				</control>
 				<control type="grouplist">
@@ -169,7 +174,6 @@
 					<label>$LOCALIZE[209]: $INFO[MusicPlayer.offset(1).Artist,, - ]$INFO[MusicPlayer.offset(1).Title]</label>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>font12</font>
 					<scroll>true</scroll>
 					<visible>MusicPlayer.HasNext  + Skin.HasSetting(HideNextSongsInfo) + !Window.IsVisible(MusicOSD)</visible>
 					<animation effect="fade" time="200">VisibleChange</animation>
@@ -182,6 +186,7 @@
 					<posx>0</posx>
 					<width>100</width>
 					<height>40</height>
+					<font>font13</font>
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>$INFO[Player.Time(hh:mm:ss)]</label>
@@ -198,6 +203,7 @@
 					<posx>920</posx>
 					<width>100</width>
 					<height>40</height>
+					<font>font13</font>
 					<align>right</align>
 					<aligny>center</aligny>
 					<label>$INFO[Player.Duration(hh:mm:ss)]</label>
@@ -222,7 +228,6 @@
 				<posy>10</posy>
 				<align>left</align>
 				<label>$INFO[musicplayer.Codec,$LOCALIZE[21446]: ,]$INFO[musicplayer.Bitrate, · $LOCALIZE[623]: ,kbps]$INFO[musicplayer.bitspersample, · $LOCALIZE[612]: ,]$INFO[musicplayer.Samplerate, · $LOCALIZE[613]: ,kHz]$INFO[musicplayer.Channels, · $LOCALIZE[21444]: ]</label>
-				<font>font12</font>
 			</control>
 			<control type="label">
 				<description>row 2 label</description>
@@ -230,7 +235,6 @@
 				<posy>40</posy>
 				<align>left</align>
 				<label>$INFO[Visualisation.Name,, [I][COLOR=orange]($LOCALIZE[20166])[/COLOR][/I] · ]fps: $INFO[System.FPS]</label>
-				<font>font12</font>
 				<visible>Visualisation.Locked</visible>
 			</control>
 			<control type="label">
@@ -239,7 +243,6 @@
 				<posy>40</posy>
 				<align>left</align>
 				<label>$INFO[Visualisation.Name,, · ]fps: $INFO[System.FPS]</label>
-				<font>font12</font>
 				<visible>!Visualisation.Locked</visible>
 			</control>
 			<control type="label">
@@ -248,7 +251,6 @@
 				<posy>70</posy>
 				<align>left</align>
 				<label>$INFO[Visualisation.Preset,$LOCALIZE[13388]: ]</label>
-				<font>font12</font>
 			</control>
 		</control>
 	</controls>

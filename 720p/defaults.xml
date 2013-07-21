@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
 	<default type="multiimage">
+		<focusedcolor>textfocus</focusedcolor>
 		<width>150</width>
-		<posy>0</posy>
-		<posx>0</posx>
-		<height>150</height>
 		<timeperimage>8000</timeperimage>
 		<randomize>true</randomize>
+		<posy>0</posy>
+		<posx>0</posx>
 		<imagepath background="true">$INFO[Skin.String(UsrAlbumThumbsDir)]</imagepath>
+		<height>150</height>
 		<fadetime>500</fadetime>
 	</default>
 	<default type="rss">
+		<focusedcolor>textfocus</focusedcolor>
 		<width>1100</width>
 		<visible>!Skin.HasSetting(AutoHidePowerBtn) + [!Player.HasAudio | IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(HideNextSongsInfo)]</visible>
 		<urlset>1</urlset>
@@ -23,6 +25,7 @@
 		<font>font12</font>
 	</default>
 	<default type="scrollbar">
+		<focusedcolor>textfocus</focusedcolor>
 		<width>14</width>
 		<textureslidernibfocus>-</textureslidernibfocus>
 		<textureslidernib>-</textureslidernib>
@@ -36,13 +39,15 @@
 		<height>550</height>
 	</default>
 	<default type="videowindow">
+		<focusedcolor>textfocus</focusedcolor>
 		<width>1280</width>
+		<visible>Player.HasVideo</visible>
 		<posy>5</posy>
 		<posx>5</posx>
 		<height>720</height>
-		<visible>Player.HasVideo</visible>
 	</default>
 	<default type="visualisation">
+		<focusedcolor>textfocus</focusedcolor>
 		<width>1280</width>
 		<posy>0</posy>
 		<posx>0</posx>
@@ -50,6 +55,7 @@
 	</default>
 	<default type="image">
 		<height>40</height>
+		<focusedcolor>textfocus</focusedcolor>
 		<posx>0</posx>
 		<posy>0</posy>
 		<texture>buttons/nf_light.png</texture>
@@ -58,16 +64,18 @@
 	</default>
 	<default type="label">
 		<textcolor>textnofocus</textcolor>
+		<focusedcolor>textfocus</focusedcolor>
 		<posx>10</posx>
 		<posy>0</posy>
 		<label>-</label>
-		<font>font13</font>
+		<font>font12</font>
 		<disabledcolor>textdisabled</disabledcolor>
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="fadelabel">
 		<width>400</width>
 		<height>25</height>
+		<focusedcolor>textfocus</focusedcolor>
 		<posx>160</posx>
 		<posy>0</posy>
 		<font>font13</font>
@@ -76,6 +84,7 @@
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="button">
+		<focusedcolor>textfocus</focusedcolor>
 		<posx>300</posx>
 		<posy>200</posy>
 		<width>300</width>
@@ -85,11 +94,12 @@
 		<font>font13</font>
 		<textcolor>textnofocus</textcolor>
 		<disabledcolor>textdisabled</disabledcolor>
-		<textoffsetx>7</textoffsetx>
+		<textoffsetx>10</textoffsetx>
 		<aligny>center</aligny>
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="togglebutton">
+		<focusedcolor>textfocus</focusedcolor>
 		<posx>140</posx>
 		<posy>0</posy>
 		<width>23</width>
@@ -105,6 +115,7 @@
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="textbox">
+		<focusedcolor>textfocus</focusedcolor>
 		<posx>10</posx>
 		<posy>50</posy>
 		<width>590</width>
@@ -117,6 +128,7 @@
 	<default type="progress">
 		<width>280</width>
 		<height>6</height>
+		<focusedcolor>textfocus</focusedcolor>
 		<posx>50</posx>
 		<posy>48</posy>
 		<texturebg>progressbar/OSDProgressBack_light.png</texturebg>
@@ -128,6 +140,7 @@
 	</default>
 	<default type="spincontrol">
 		<showonepage>true</showonepage>
+		<focusedcolor>textfocus</focusedcolor>
 		<posx>520</posx>
 		<posy>650</posy>
 		<textureup flipy="true">buttons/spin-down-nf_light.png</textureup>
@@ -148,6 +161,7 @@
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="spincontrolex">
+		<focusedcolor>textfocus</focusedcolor>
 		<posx>0</posx>
 		<posy>0</posy>
 		<width>300</width>
@@ -163,12 +177,13 @@
 		<font>font13</font>
 		<textcolor>textnofocus</textcolor>
 		<disabledcolor>textdisabled</disabledcolor>
-		<textoffsetx>7</textoffsetx>
+		<textoffsetx>10</textoffsetx>
 		<aligny>center</aligny>
 		<reverse>yes</reverse>
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="radiobutton">
+		<focusedcolor>textfocus</focusedcolor>
 		<posx>300</posx>
 		<posy>200</posy>
 		<width>300</width>
@@ -183,11 +198,12 @@
 		<font>font13</font>
 		<textcolor>textnofocus</textcolor>
 		<disabledcolor>textdisabled</disabledcolor>
-		<textoffsetx>7</textoffsetx>
+		<textoffsetx>10</textoffsetx>
 		<aligny>center</aligny>
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="selectbutton">
+		<focusedcolor>textfocus</focusedcolor>
 		<posx>440</posx>
 		<posy>100</posy>
 		<width>400</width>
@@ -214,6 +230,7 @@
 		<posy>86r</posy>
 		<posx>430</posx>
 		<height>16</height>
+		<focusedcolor>textfocus</focusedcolor>
 		<controloffsetx>75</controloffsetx>
 		<controloffsety>0</controloffsety>
 		<pulseonselect>false</pulseonselect>
@@ -221,7 +238,7 @@
 	<default type="sliderex">
 		<focusedcolor>textfocus</focusedcolor>
 		<height>40</height>
-		<textoffsetx>7</textoffsetx>
+		<textoffsetx>10</textoffsetx>
 		<aligny>center</aligny>
 		<texturefocus>buttons/fo_light.png</texturefocus>
 		<texturenofocus>buttons/nf_light.png</texturenofocus>
@@ -238,6 +255,7 @@
 	<default type="mover">
 		<width>128</width>
 		<height>128</height>
+		<focusedcolor>textfocus</focusedcolor>
 		<posx>700</posx>
 		<posy>500</posy>
 		<texturefocus flipx="true" flipy="true">buttons/calibrate/topleft_light.png</texturefocus>
@@ -247,6 +265,7 @@
 	<default type="resize">
 		<width>256</width>
 		<height>256</height>
+		<focusedcolor>textfocus</focusedcolor>
 		<posx>0</posx>
 		<posy>232</posy>
 		<texturefocus>buttons/calibrate/pixelratio_light.png</texturefocus>
@@ -254,6 +273,7 @@
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="edit">
+		<focusedcolor>textfocus</focusedcolor>
 		<posx>300</posx>
 		<posy>200</posy>
 		<width>300</width>
@@ -263,7 +283,7 @@
 		<font>font13</font>
 		<textcolor>textnofocus</textcolor>
 		<disabledcolor>textdisabled</disabledcolor>
-		<textoffsetx>7</textoffsetx>
+		<textoffsetx>10</textoffsetx>
 		<aligny>center</aligny>
 		<pulseonselect>false</pulseonselect>
 	</default>

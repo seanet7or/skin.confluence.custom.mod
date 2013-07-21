@@ -377,6 +377,22 @@ else
 fi
 step
 
+printf "\nAdding missing newlines: "
+if grep -q '><[^/]' 720p/* || grep -q '></control>' 720p/* ; then
+	XMLS=$(2>/dev/null grep '><[^/]' -l 720p/*)
+	if ! [ -z "$XMLS" ] ; then
+		perlregex "s|>(<[^/])|>#\1|g" $XMLS
+	fi
+	XMLS=$(2>/dev/null grep '></control>' -l 720p/*)
+	if ! [ -z "$XMLS" ] ; then
+		perlregex "s|>(</control>)|>#\1|g" $XMLS
+	fi
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\n############# REMOVING MEDIA FILES ############################################"
 
 printf "\nRemoving xbmc logo fallback from music visualisation: "
@@ -844,7 +860,7 @@ printf "\nReplacing DefaultCDArt: "
 if [ -f media/livecdcase/DefaultCDArt.png ] ; then
 	XMLS=$(2>/dev/null grep 'DefaultCDArt.png' -l 720p/*)
 	perlregex $XMLS 's|(fallback="livecdcase/DefaultCDAr)t.png"( diffuse="livecdcase/cddiffuse.png")|\1t\.jpg"\2|g'
-	perlregex $XMLS 's|(<width>170</width><height>175</height><include>CDArtSpinner</include><texture fallback="livecdcase/DefaultCDAr)t.png"|\1t_small.png"|g'
+	perlregex $XMLS 's|(<width>170</width>#\s*<height>175</height>#\s*<include>CDArtSpinner</include>#\s*<texture fallback="livecdcase/DefaultCDAr)t.png"|\1t_small.png"|g'
 	check_and_remove media/livecdcase/DefaultCDArt.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
@@ -1135,9 +1151,10 @@ fi
 step
 
 printf "\nMoving tags out of includes: "
-TOMOVE='button;height,texturefocus,pulseonselect,texturenofocus
-label;textcolor
-image;posx,posy,width,height'
+TOMOVE='button;textwidth,font,height,texturefocus,pulseonselect,texturenofocus,focusedcolor,textcolor,posx,posy,width,height,align,aligny,textoffsetx
+label;textcolor,width,height,font,posx,posy
+image;posx,posy,width,height
+togglebutton;font'
 IFS=$'\n'; for MOVE in $TOMOVE ; do
 	CONTROL=$(echo "$MOVE" | cut -f1 -d';')
 	TAGS=$(echo "$MOVE" | cut -f2 -d';' | tr ',' '\n')
@@ -1369,6 +1386,24 @@ else
 fi
 step
 
+printf "\nSetting default focusedcolors: "
+DEFCONS=$(grep -o 'default type="[a-z]*"' 720p/defaults.xml | grep -o '"[a-z]*"' | tr -d '"' )
+CHANGED=false
+for CONTROL in $DEFCONS ; do
+	if ! grep -a -z -Po "<default type=\"$CONTROL\">\n(\s*<[a-z].*\n)*\s*</default>" 720p/defaults.xml | grep -q '<focusedcolor>'
+	then
+		CHANGED=true
+		R="s|(\s*)(<default type=\"$CONTROL\"[^#]*#)"		#1#2
+		R+="|\1\2\1\1<focusedcolor>textfocus</focusedcolor>#|g"
+		perlregex "$R" 720p/defaults.xml
+	fi
+done
+if $CHANGED ; then
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+
 #printf "\nChanging font colors for original blue strings: "
 #if false ; then #grep -q 'blue' 720p/ViewsVideoLibrary.xml ; then
 #
@@ -1598,16 +1633,24 @@ step
 
 printf "\n############# CLEANING UP #####################################################"
 
-printf "\nRemoving unused includes: "
-if grep -I -q 'Dimensions_Fullscreen' 720p/* ; then
-	XMLS=$(2>/dev/null grep -a -l 'Dimensions_Fullscreen' 720p/*)
-	perlregex $XMLS "s|\s*<include>Dimensions_Fullscreen</include>\s*#||g"
-	XMLS=$(2>/dev/null grep -a -l 'Dimensions_Fullscreen' 720p/*)
-	remove_include "Dimensions_Fullscreen" "$XMLS"
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
+UNUSEDINCS="
+Dimensions_Fullscreen
+GenreTextPlace
+ButtonInfoDialogsCommonValues
+"
+for INC in $UNUSEDINCS ; do
+	if [ -z "$INC" ] ; then continue ; fi
+	printf "\nRemoving unused include '$INC': "
+	if grep -I -q "$INC" 720p/* ; then
+		XMLS=$(2>/dev/null grep -a -l "$INC" 720p/*)
+		perlregex $XMLS "s|\s*<include>$INC</include>\s*#||g"
+		XMLS=$(2>/dev/null grep -a -l "$INC" 720p/*)
+		remove_include "$INC" "$XMLS"
+		printf "%sDONE!%s" $GREEN $RESET
+	else
+		printf "%sSKIPPED.%s" $CYAN $RESET
+	fi
+done
 step
 
 printf "\nRemoving buttons/nf_light.png where not nedded: "
@@ -1795,6 +1838,16 @@ for CONTROL in $CONTROLS ; do
 done
 step
 
+printf "\nUnifying textoffsetx tags: "
+if grep -q '<textoffsetx>0</textoffsetx>' 720p/* ; then
+	printf "\nUnifying textoffsetx tags: "
+	XMLS=$(2>/dev/null grep -l '<textoffsetx>' 720p/*)
+	perlregex $XMLS 's|<textoffsetx>[0-9]*<|<textoffsetx>10<|g'
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+
 printf "\nScanning for tags to optimize: "
 OPTTAGS=""
 for CONTROL in $CONTROLS ; do
@@ -1814,54 +1867,6 @@ done
 OPTTAGS=$(echo "$OPTTAGS" | egrep -v 'description|include|onup|ondown|onleft|onright|onclick')
 printf "%sDONE!%s" $GREEN $RESET
 step
-
-#printf "\nAdding xbmc defaults to defaults.xml: "
-#if false; then #! grep -q '<loop>yes</loop>' 720p/defaults.xml ; then
-#	XBMCDEFS='
-#;visible;<visible>true</visible>
-#;colordiffuse;<colordiffuse>FFFFFFFF</colordiffuse>
-#;enable;<enable>true</true>
-#;pulseonselect;<pulseonselect>true</pulseonselect>
-#edit;aligny;<aligny>top</aligny>
-#fadelabel;resetonlabelchange;<resetonlabelchange>true</resetonlabelchange>
-#fadelabel;scrollspeed;<scrollspeed>60</scrollspeed>
-#label;align;<align>left</align>
-#label;aligny;<aligny>top</aligny>
-#label;scroll;<scroll>false</scroll>
-#label;scrollspeed;<scrollspeed>60</scrollspeed>
-#label;scrollsuffix;<scrollsuffix>|</scrollsuffix>
-#multiimage;loop;<loop>yes</loop>
-#radiobutton;align;<align>left</align>
-#radiobutton;aligny;<aligny>top</aligny>
-#scrollbar;orientation;<orientation>vertical</orientation>
-#scrollbar;showonepage;<showonepage>true</showonepage>
-#selectbutton;align;<align>left</align>
-#selectbutton;aligny;<aligny>top</aligny>
-#'
-#	for CONTROL in $CONTROLS ; do
-#		for TAG in $(echo "$OPTTAGS" | grep "^$CONTROL;") ; do
-#			TAG=$(echo "$TAG" | cut -f2 -d';')
-#			DEFTAG=$(grep -a -z -Po "<default type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</default>" 720p/defaults.xml | grep "<$TAG[ >]" | sed 's|^\s*||')
-#			NUMMISSING=$(grep -a -z -Po "<control type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</control>" 720p/* | tr -d $'\n' | sed 's|</control>|\n|g' | grep -v "<$TAG[ >]" | wc -l)
-#			if [ -z "$DEFTAG" ] && [ $NUMMISSING -gt 0 ] ; then
-#				XBMCDEF=$(echo "$XBMCDEFS" | grep "^;$TAG;" | head -1 )
-#				if [ -z "$XBMCDEF" ] ; then
-#					XBMCDEF=$(echo "$XBMCDEFS" | grep "^$CONTROL;$TAG;" | head -1 )
-#				fi
-#				if ! [ -z "$XBMCDEF" ] ; then
-#					NEWDEFAULT=$(echo "$XBMCDEF" | cut -f3 -d';')
-#					R="s|(\s*)(<default type=\"$CONTROL\"[^#]*#)"		#1#2
-#					R+="|\1\2\1\1$NEWDEFAULT#|g"
-#					perlregex "$R" 720p/defaults.xml
-#				fi
-#			fi
-#		done
-#	done
-#	printf "%sDONE!%s" $GREEN $RESET
-#else
-#	printf "%sSKIPPED.%s" $CYAN $RESET
-#fi
-#step
 
 printf "\nOptimizing tags with existing default values: "
 for CONTROL in $CONTROLS ; do
@@ -1936,6 +1941,57 @@ for CONTROL in $CONTROLS ; do
 		printf "%sSKIPPED.%s" $CYAN $RESET
 	fi
 done
+step
+
+printf "\nAdding xbmc defaults to defaults.xml: "
+if false; then #! grep -q '<loop>yes</loop>' 720p/defaults.xml ; then
+	XBMCDEFS='
+;visible;<visible>true</visible>
+;enable;<enable>true</true>
+;pulseonselect;<pulseonselect>false</pulseonselect>
+edit;textoffsetx;<textoffsetx>10</textoffsetx>
+button;textoffsetx;<textoffsetx>10</textoffsetx>
+fadelabel;textoffsetx;<textoffsetx>10</textoffsetx>
+label;textoffsetx;<textoffsetx>10</textoffsetx>
+'
+#fadelabel;resetonlabelchange;<resetonlabelchange>true</resetonlabelchange>
+#fadelabel;scrollspeed;<scrollspeed>60</scrollspeed>
+#label;align;<align>left</align>
+#label;aligny;<aligny>top</aligny>
+#label;scroll;<scroll>false</scroll>
+#label;scrollspeed;<scrollspeed>60</scrollspeed>
+#label;scrollsuffix;<scrollsuffix>|</scrollsuffix>
+#multiimage;loop;<loop>yes</loop>
+#radiobutton;align;<align>left</align>
+#radiobutton;aligny;<aligny>top</aligny>
+#scrollbar;orientation;<orientation>vertical</orientation>
+#scrollbar;showonepage;<showonepage>true</showonepage>
+#selectbutton;align;<align>left</align>
+#selectbutton;aligny;<aligny>top</aligny>
+#'
+for CONTROL in $CONTROLS ; do
+	for TAG in $(echo "$OPTTAGS" | grep "^$CONTROL;") ; do
+		TAG=$(echo "$TAG" | cut -f2 -d';')
+		DEFTAG=$(grep -a -z -Po "<default type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</default>" 720p/defaults.xml | grep "<$TAG[ >]" | sed 's|^\s*||')
+		NUMMISSING=$(grep -a -z -Po "<control type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</control>" 720p/* | tr -d $'\n' | sed 's|</control>|\n|g' | grep -v "<$TAG[ >]" | wc -l)
+		if [ -z "$DEFTAG" ] && [ $NUMMISSING -gt 0 ] ; then
+			XBMCDEF=$(echo "$XBMCDEFS" | grep "^;$TAG;" | head -1 )
+			if [ -z "$XBMCDEF" ] ; then
+				XBMCDEF=$(echo "$XBMCDEFS" | grep "^$CONTROL;$TAG;" | head -1 )
+			fi
+			if ! [ -z "$XBMCDEF" ] ; then
+				NEWDEFAULT=$(echo "$XBMCDEF" | cut -f3 -d';')
+				R="s|(\s*)(<default type=\"$CONTROL\"[^#]*#)"		#1#2
+				R+="|\1\2\1\1$NEWDEFAULT#|g"
+				perlregex "$R" 720p/defaults.xml
+			fi
+		fi
+	done
+done
+printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
 step
 
 LINES=$(more 720p/* | wc -l)

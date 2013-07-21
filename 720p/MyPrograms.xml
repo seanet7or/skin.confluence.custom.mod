@@ -39,7 +39,6 @@
 					<posx>80</posx>
 					<width>250</width>
 					<height>35</height>
-					<font>font12</font>
 					<label>31006</label>
 					<textcolor>blue</textcolor>
 					<align>center</align>
@@ -49,12 +48,14 @@
 					<description>View As button</description>
 					<textwidth>235</textwidth>
 					<include>ButtonCommonValues</include>
+					<width>250</width>
 					<texturenofocus>-</texturenofocus>
 					<label>-</label>
 				</control>
 				<control type="button" id="3">
 					<description>Sort by button</description>
 					<include>ButtonCommonValues</include>
+					<width>250</width>
 					<texturenofocus>-</texturenofocus>
 					<label>103</label>
 				</control>
@@ -62,6 +63,9 @@
 					<posy>167</posy>
 					<description>Sort asc</description>
 					<include>ButtonCommonValues</include>
+					<textoffsetx>10</textoffsetx>
+					<aligny>center</aligny>
+					<width>250</width>
 					<texturenofocus>-</texturenofocus>
 					<texturefocus>buttons/fo_light.png</texturefocus>
 					<alttexturefocus>buttons/fo_light.png</alttexturefocus>
@@ -75,6 +79,7 @@
 					<description>Filter</description>
 					<textwidth>230</textwidth>
 					<include>ButtonCommonValues</include>
+					<width>250</width>
 					<texturenofocus>-</texturenofocus>
 					<label>587</label>
 				</control>
@@ -82,6 +87,7 @@
 					<visible>Container.CanFilterAdvanced</visible>
 					<description>Filter</description>
 					<include>ButtonCommonValues</include>
+					<width>250</width>
 					<label>587</label>
 					<onclick>right</onclick>
 					<onclick>Filter</onclick>

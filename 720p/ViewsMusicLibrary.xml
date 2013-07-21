@@ -20,6 +20,7 @@
 					<control type="label">
 						<width>730</width>
 						<height>40</height>
+						<font>font13</font>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
@@ -29,7 +30,6 @@
 						<posx>760</posx>
 						<width>700</width>
 						<height>40</height>
-						<font>font12</font>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
@@ -46,6 +46,7 @@
 					<control type="label">
 						<width>730</width>
 						<height>40</height>
+						<font>font13</font>
 						<textcolor>textfocus</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
@@ -56,7 +57,6 @@
 						<posx>760</posx>
 						<width>700</width>
 						<height>40</height>
-						<font>font12</font>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
@@ -103,6 +103,7 @@
 					<wrapmultiline>true</wrapmultiline>
 					<align>center</align>
 					<aligny>center</aligny>
+					<font>font13</font>
 				</control>
 				<control type="label">
 					<posy>420</posy>
@@ -136,6 +137,7 @@
 					<label>$INFO[listitem.TrackNumber,[COLOR=blue]$LOCALIZE[31310]: [/COLOR]]</label>
 					<align>center</align>
 					<aligny>center</aligny>
+					<font>font13</font>
 					<visible>!Container.Content(Albums)</visible>
 				</control>
 				<control type="label">
@@ -146,6 +148,7 @@
 					<label>$INFO[listitem.Year,[COLOR=blue]$LOCALIZE[345]: [/COLOR]]</label>
 					<align>center</align>
 					<aligny>center</aligny>
+					<font>font13</font>
 				</control>
 				<control type="image">
 					<description>Rating value</description>
@@ -276,6 +279,7 @@
 				<posy>20</posy>
 				<width>840</width>
 				<height>20</height>
+				<font>font13</font>
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -311,6 +315,7 @@
 					<posy>35</posy>
 					<width>850</width>
 					<height>30</height>
+					<font>font13</font>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -322,6 +327,7 @@
 					<posy>65</posy>
 					<width>850</width>
 					<height>30</height>
+					<font>font13</font>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -381,6 +387,7 @@
 					<control type="label">
 						<width>720</width>
 						<height>40</height>
+						<font>font13</font>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
@@ -390,7 +397,6 @@
 						<posx>730</posx>
 						<width>700</width>
 						<height>40</height>
-						<font>font12</font>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
@@ -414,6 +420,7 @@
 					<control type="label">
 						<width>720</width>
 						<height>40</height>
+						<font>font13</font>
 						<textcolor>textfocus</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
@@ -424,7 +431,6 @@
 						<posx>730</posx>
 						<width>700</width>
 						<height>40</height>
-						<font>font12</font>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
@@ -488,6 +494,7 @@
 					<wrapmultiline>true</wrapmultiline>
 					<align>center</align>
 					<aligny>center</aligny>
+					<font>font13</font>
 				</control>
 				<control type="label">
 					<posy>410</posy>
@@ -509,6 +516,7 @@
 					<scroll>true</scroll>
 					<align>center</align>
 					<aligny>top</aligny>
+					<font>font13</font>
 					<wrapmultiline>true</wrapmultiline>
 				</control>
 				<control type="label">
@@ -544,6 +552,7 @@
 					<control type="label">
 						<width>560</width>
 						<height>40</height>
+						<font>font13</font>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
@@ -560,6 +569,7 @@
 					<control type="label">
 						<width>560</width>
 						<height>40</height>
+						<font>font13</font>
 						<textcolor>textfocus</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
@@ -609,6 +619,7 @@
 						<label>$INFO[ListItem.Property(Artist_Born)]</label>
 						<align>left</align>
 						<aligny>center</aligny>
+						<font>font13</font>
 						<scroll>true</scroll>
 						<visible>!IsEmpty(ListItem.Property(Artist_Born))</visible>
 					</control>
@@ -632,6 +643,7 @@
 						<label>$INFO[ListItem.Property(Artist_Formed)]</label>
 						<align>left</align>
 						<aligny>center</aligny>
+						<font>font13</font>
 						<scroll>true</scroll>
 						<visible>!IsEmpty(ListItem.Property(Artist_Formed))</visible>
 					</control>
@@ -656,6 +668,7 @@
 						<label fallback="416">$INFO[ListItem.Property(Artist_Genre)]</label>
 						<align>left</align>
 						<aligny>center</aligny>
+						<font>font13</font>
 						<scroll>true</scroll>
 					</control>
 					<control type="textbox">
@@ -690,6 +703,7 @@
 					<control type="label">
 						<width>730</width>
 						<height>40</height>
+						<font>font13</font>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
@@ -699,7 +713,6 @@
 						<posx>760</posx>
 						<width>700</width>
 						<height>40</height>
-						<font>font12</font>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
@@ -716,6 +729,7 @@
 					<control type="label">
 						<width>730</width>
 						<height>40</height>
+						<font>font13</font>
 						<textcolor>textfocus</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
@@ -726,7 +740,6 @@
 						<posx>760</posx>
 						<width>700</width>
 						<height>40</height>
-						<font>font12</font>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>

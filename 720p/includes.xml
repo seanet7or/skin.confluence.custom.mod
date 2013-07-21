@@ -145,27 +145,13 @@
 		</control>
 	</include>
 	<include name="ButtonCommonValues">
-		<width>250</width>
-		<textoffsetx>10</textoffsetx>
 		<textwidth>200</textwidth>
-		<aligny>center</aligny>
-		<font>font13</font>
 	</include>
 	<include name="ButtonMediaSubCommonValues">
-		<width>221</width>
-		<textoffsetx>20</textoffsetx>
 		<textwidth>195</textwidth>
-		<aligny>center</aligny>
-		<font>font12_title</font>
 	</include>
 	<include name="ButtonHomeSubCommonValues">
-		<width>180</width>
 		<textwidth>195</textwidth>
-		<align>center</align>
-		<aligny>center</aligny>
-		<font>font12</font>
-		<textcolor>textnofocus</textcolor>
-		<focusedcolor>textfocus</focusedcolor>
 	</include>
 	<include name="HomeSubMenuCommonValues">
 		<posx>0</posx>
@@ -185,11 +171,6 @@
 		<animation effect="fade" start="100" end="0" time="0" condition="ControlGroup(9001).HasFocus + Skin.HasSetting(AutoHideSubMenu)">WindowClose</animation>
 	</include>
 	<include name="ButtonInfoDialogsCommonValues">
-		<width>170</width>
-		<textoffsetx>20</textoffsetx>
-		<align>center</align>
-		<aligny>center</aligny>
-		<font>font12_title</font>
 	</include>
 	<include name="SideBladeLeft">
 		<animation effect="slide" start="0,0" end="250,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | Control.HasFocus(9001) | Control.HasFocus(8999)">Conditional</animation>
@@ -377,7 +358,6 @@
 				<label>[B]$INFO[MusicPlayer.Title]$INFO[VideoPlayer.Title][/B] - ([COLOR=blue]$INFO[Player.Time] / $INFO[Player.Duration,][/COLOR])</label>
 				<align>right</align>
 				<aligny>center</aligny>
-				<font>font12</font>
 			</control>
 			<control type="label">
 				<posx>0</posx>
@@ -431,7 +411,6 @@
 				<label>$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.ChannelNumber, - ([COLOR=blue],[/COLOR])]</label>
 				<align>right</align>
 				<aligny>center</aligny>
-				<font>font12</font>
 				<visible>Player.HasVideo + VideoPlayer.Content(LiveTV)</visible>
 			</control>
 		</control>
@@ -484,7 +463,6 @@
 			<label>$INFO[MusicPlayer.Album]$INFO[musicplayer.discnumber, - $LOCALIZE[427]:]</label>
 			<align>left</align>
 			<aligny>center</aligny>
-			<font>font12</font>
 		</control>
 		<control type="label">
 			<description>Time Label</description>
@@ -495,7 +473,6 @@
 			<label>$INFO[MusicPlayer.Time]$INFO[MusicPlayer.Duration, / ]</label>
 			<align>left</align>
 			<aligny>center</aligny>
-			<font>font12</font>
 		</control>
 		<control type="label">
 			<description>Next Label</description>
@@ -506,7 +483,6 @@
 			<label>[COLOR=blue]$LOCALIZE[209] :[/COLOR] $INFO[MusicPlayer.offset(1).Title]</label>
 			<align>right</align>
 			<aligny>center</aligny>
-			<font>font12</font>
 		</control>
 	</include>
 	<include name="SmallVideoInfo">
@@ -584,7 +560,6 @@
 			<label>$INFO[VideoPlayer.Genre]</label>
 			<align>left</align>
 			<aligny>center</aligny>
-			<font>font12</font>
 			<visible>!videoplayer.content(episodes) + !videoplayer.content(musicvideos)</visible>
 		</control>
 		<control type="label">
@@ -595,7 +570,6 @@
 			<label>$INFO[VideoPlayer.Album]</label>
 			<align>left</align>
 			<aligny>center</aligny>
-			<font>font12</font>
 			<visible>videoplayer.content(musicvideos)</visible>
 		</control>
 		<control type="label">
@@ -607,7 +581,6 @@
 			<label>$LOCALIZE[20373] $INFO[VideoPlayer.Season] - $LOCALIZE[20359] $INFO[VideoPlayer.episode]</label>
 			<align>left</align>
 			<aligny>center</aligny>
-			<font>font12</font>
 			<visible>videoplayer.content(episodes)</visible>
 		</control>
 		<control type="label">
@@ -619,7 +592,6 @@
 			<label>$INFO[VideoPlayer.Time]$INFO[VideoPlayer.Duration, / ]</label>
 			<align>left</align>
 			<aligny>center</aligny>
-			<font>font12</font>
 		</control>
 	</include>
 	<include name="CommonNowPlaying_Controls">
@@ -628,7 +600,6 @@
 			<posx>80</posx>
 			<width>250</width>
 			<height>35</height>
-			<font>font12</font>
 			<label>31023</label>
 			<textcolor>blue</textcolor>
 			<align>center</align>
@@ -912,6 +883,7 @@
 		<control type="radiobutton" id="611">
 			<description>Go to fullscreen Playback</description>
 			<include>ButtonCommonValues</include>
+			<width>250</width>
 			<label>31008</label>
 			<onclick>fullscreen</onclick>
 			<textureradiofocus>GoFullscreen.png</textureradiofocus>
@@ -1019,7 +991,6 @@
 				<posy>125</posy>
 				<width>180</width>
 				<height>20</height>
-				<font>font12</font>
 				<align>center</align>
 				<aligny>center</aligny>
 				<label>$VAR[MainItemLabel]</label>
@@ -1050,7 +1021,6 @@
 				<posy>125</posy>
 				<width>180</width>
 				<height>20</height>
-				<font>font12</font>
 				<textcolor>textfocus</textcolor>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -1063,7 +1033,6 @@
 				<posy>125</posy>
 				<width>180</width>
 				<height>20</height>
-				<font>font12</font>
 				<align>center</align>
 				<aligny>center</aligny>
 				<label>$VAR[MainItemLabel]</label>
@@ -1115,7 +1084,6 @@
 				<width>260</width>
 				<height>15</height>
 				<label>$INFO[ListItem.Property(NextNumber),$LOCALIZE[20359] [COLOR=blue]-[/COLOR] ]</label>
-				<font>font12</font>
 				<align>center</align>
 			</control>
 			<control type="label">
@@ -1125,7 +1093,6 @@
 				<width>260</width>
 				<height>15</height>
 				<label>$INFO[ListItem.Property(NextTitle)]</label>
-				<font>font12</font>
 				<align>center</align>
 			</control>
 			<control type="label">
@@ -1135,7 +1102,6 @@
 				<width>260</width>
 				<height>15</height>
 				<label>$INFO[ListItem.Property(ShortTime)]$INFO[ListItem.Property(NextDate), [COLOR=blue]-[/COLOR] ]</label>
-				<font>font12</font>
 				<align>center</align>
 			</control>
 			<control type="label">
@@ -1145,7 +1111,6 @@
 				<width>260</width>
 				<height>15</height>
 				<label>$INFO[ListItem.Property(Runtime),, $LOCALIZE[12391]]$INFO[ListItem.Property(Network), [COLOR=blue]-[/COLOR] (,)]</label>
-				<font>font12</font>
 				<align>center</align>
 			</control>
 		</itemlayout>
@@ -1193,7 +1158,6 @@
 				<height>15</height>
 				<label>$INFO[ListItem.Property(NextNumber),$LOCALIZE[20359] [COLOR=blue]-[/COLOR] ]</label>
 				<textcolor>selected</textcolor>
-				<font>font12</font>
 				<align>center</align>
 			</control>
 			<control type="label">
@@ -1204,7 +1168,6 @@
 				<height>15</height>
 				<label>$INFO[ListItem.Property(NextTitle)]</label>
 				<textcolor>selected</textcolor>
-				<font>font12</font>
 				<align>center</align>
 			</control>
 			<control type="label">
@@ -1215,7 +1178,6 @@
 				<height>15</height>
 				<label>$INFO[ListItem.Property(ShortTime)]$INFO[ListItem.Property(NextDate), [COLOR=blue]-[/COLOR] ]</label>
 				<textcolor>textfocus</textcolor>
-				<font>font12</font>
 				<align>center</align>
 			</control>
 			<control type="label">
@@ -1226,7 +1188,6 @@
 				<height>15</height>
 				<label>$INFO[ListItem.Property(Runtime),, $LOCALIZE[12391]]$INFO[ListItem.Property(Network), [COLOR=blue]-[/COLOR] (,)]</label>
 				<textcolor>textfocus</textcolor>
-				<font>font12</font>
 				<align>center</align>
 			</control>
 		</focusedlayout>

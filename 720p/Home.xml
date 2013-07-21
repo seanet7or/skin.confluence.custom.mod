@@ -78,10 +78,8 @@
 				<height>35</height>
 				<width>145</width>
 				<textwidth>150</textwidth>
-				<textoffsetx>10</textoffsetx>
 				<align>left</align>
 				<font>font12</font>
-				<focusedcolor>textfocus</focusedcolor>
 				<texturefocus flipy="true" border="0,2,0,2">home/sub-fo_light.png</texturefocus>
 				<texturenofocus flipy="true" border="0,2,0,2">home/sub-nf_light.png</texturenofocus>
 				<label>137</label>
@@ -403,10 +401,8 @@
 				<height>35</height>
 				<width>160</width>
 				<textwidth>150</textwidth>
-				<textoffsetx>10</textoffsetx>
 				<align>left</align>
 				<font>font12</font>
-				<focusedcolor>textfocus</focusedcolor>
 				<texturefocus flipy="true" border="0,2,0,2">home/sub-fo_light.png</texturefocus>
 				<texturenofocus flipy="true" border="0,2,0,2">home/sub-nf_light.png</texturenofocus>
 				<label>31008</label>
@@ -993,7 +989,7 @@
 				<pauseatend>200</pauseatend>
 				<label>$VAR[NextFiveSongScroller]</label>
 				<font>font12</font>
-				<textoffsetx>20</textoffsetx>
+				<textoffsetx>10</textoffsetx>
 				<visible>!Skin.HasSetting(AutoHidePowerBtn) + Player.HasAudio + !IsEmpty(MusicPlayer.offset(1).Artist) + !Skin.HasSetting(HideNextSongsInfo)</visible>
 			</control>
 			<control type="fadelabel" id="1">
@@ -1006,7 +1002,7 @@
 				<pauseatend>200</pauseatend>
 				<label>$VAR[NextFiveSongScroller]</label>
 				<font>font12</font>
-				<textoffsetx>20</textoffsetx>
+				<textoffsetx>10</textoffsetx>
 				<visible>Skin.HasSetting(AutoHidePowerBtn) + Player.HasAudio + !IsEmpty(MusicPlayer.offset(1).Artist) + !Skin.HasSetting(HideNextSongsInfo)</visible>
 			</control>
 		</control>

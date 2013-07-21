@@ -52,7 +52,6 @@
 					<posx>80</posx>
 					<width>250</width>
 					<height>35</height>
-					<font>font12</font>
 					<label>31006</label>
 					<textcolor>blue</textcolor>
 					<align>center</align>
@@ -62,12 +61,14 @@
 					<description>View As button</description>
 					<textwidth>235</textwidth>
 					<include>ButtonCommonValues</include>
+					<width>250</width>
 					<texturenofocus>-</texturenofocus>
 					<label>-</label>
 				</control>
 				<control type="button" id="3">
 					<description>Sort by button</description>
 					<include>ButtonCommonValues</include>
+					<width>250</width>
 					<texturenofocus>-</texturenofocus>
 					<label>103</label>
 				</control>
@@ -75,6 +76,9 @@
 					<posy>167</posy>
 					<description>Sort asc</description>
 					<include>ButtonCommonValues</include>
+					<textoffsetx>10</textoffsetx>
+					<aligny>center</aligny>
+					<width>250</width>
 					<texturenofocus>-</texturenofocus>
 					<texturefocus>buttons/fo_light.png</texturefocus>
 					<alttexturefocus>buttons/fo_light.png</alttexturefocus>
@@ -88,6 +92,7 @@
 					<description>Filter</description>
 					<textwidth>230</textwidth>
 					<include>ButtonCommonValues</include>
+					<width>250</width>
 					<texturenofocus>-</texturenofocus>
 					<label>587</label>
 				</control>
@@ -95,6 +100,7 @@
 					<visible>Container.CanFilterAdvanced</visible>
 					<description>Filter</description>
 					<include>ButtonCommonValues</include>
+					<width>250</width>
 					<label>587</label>
 					<selected>Container.Filtered</selected>
 					<onclick>right</onclick>
@@ -105,7 +111,6 @@
 					<posx>80</posx>
 					<width>250</width>
 					<height>35</height>
-					<font>font12</font>
 					<label>31026</label>
 					<textcolor>blue</textcolor>
 					<align>center</align>
@@ -115,6 +120,7 @@
 					<description>Subtitle Flags</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
+					<width>250</width>
 					<label>31092</label>
 					<onclick>Skin.ToggleSetting(ViewSubTitleFlag)</onclick>
 					<selected>Skin.HasSetting(ViewSubTitleFlag)</selected>
@@ -125,6 +131,7 @@
 					<description>TVShow Banners Banners</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
+					<width>250</width>
 					<label>31090</label>
 					<onclick>Skin.ToggleSetting(View515HideTVBanners)</onclick>
 					<selected>!Skin.HasSetting(View515HideTVBanners)</selected>
@@ -134,6 +141,7 @@
 					<description>TVShow Character Art</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
+					<width>250</width>
 					<label>31318</label>
 					<onclick>Skin.ToggleSetting(View503CharacterArt)</onclick>
 					<selected>Skin.HasSetting(View503CharacterArt)</selected>
@@ -143,6 +151,7 @@
 					<description>Show Season FanArt</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
+					<width>250</width>
 					<label>31315</label>
 					<onclick>Skin.ToggleSetting(View515SeasonArt)</onclick>
 					<selected>Skin.HasSetting(View515SeasonArt)</selected>
@@ -152,6 +161,7 @@
 					<description>Show Watched Banners</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
+					<width>250</width>
 					<label>31304</label>
 					<onclick>Skin.ToggleSetting(ViewStatusBanner)</onclick>
 					<selected>!Skin.HasSetting(ViewStatusBanner)</selected>
@@ -161,6 +171,7 @@
 					<description>Show ExtraFanArt Toggle</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
+					<width>250</width>
 					<label>31305</label>
 					<onclick>Skin.ToggleSetting(View504XtraFanArt)</onclick>
 					<selected>!Skin.HasSetting(View504XtraFanArt)</selected>
@@ -170,6 +181,7 @@
 					<description>Show Logo Toggle</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
+					<width>250</width>
 					<label>31306</label>
 					<onclick>Skin.ToggleSetting(View515Hidelogo)</onclick>
 					<selected>Skin.HasSetting(View515Hidelogo)</selected>
@@ -179,6 +191,7 @@
 					<description>Show Info Toggle</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
+					<width>250</width>
 					<label>31005</label>
 					<onclick>Skin.ToggleSetting(View508HideInfo)</onclick>
 					<selected>Skin.HasSetting(View508HideInfo)</selected>
@@ -188,6 +201,7 @@
 					<description>Disable Show Info Toggle 508 Delay</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
+					<width>250</width>
 					<label>$LOCALIZE[31307]</label>
 					<onclick>Skin.ToggleSetting(View508DelayInfo)</onclick>
 					<selected>!Skin.HasSetting(View508DelayInfo)</selected>
@@ -198,6 +212,7 @@
 					<description>Show Logo Toggle</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
+					<width>250</width>
 					<label>31306</label>
 					<onclick>Skin.ToggleSetting(View730HideLogo)</onclick>
 					<selected>Skin.HasSetting(View730HideLogo)</selected>
@@ -207,6 +222,7 @@
 					<description>Show Episode Thumbnail Toggle</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
+					<width>250</width>
 					<label>31195</label>
 					<onclick>Skin.ToggleSetting(View730ShowThumb)</onclick>
 					<selected>Skin.HasSetting(View730ShowThumb)</selected>
@@ -216,11 +232,13 @@
 					<description>Watched Toggle</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
+					<width>250</width>
 					<label>20367</label>
 				</control>
 				<control type="button" id="8">
 					<description>Search</description>
 					<include>ButtonCommonValues</include>
+					<width>250</width>
 					<texturenofocus>-</texturenofocus>
 					<label>137</label>
 				</control>
@@ -228,24 +246,28 @@
 					<description>Stack Toggle</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
+					<width>250</width>
 					<label>346</label>
 				</control>
 				<control type="radiobutton" id="17">
 					<description>Flatten</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
+					<width>250</width>
 					<label>20411</label>
 				</control>
 				<control type="radiobutton" id="16">
 					<description>PartyMode</description>
 					<label>589</label>
 					<include>ButtonCommonValues</include>
+					<width>250</width>
 					<visible>Container.Content(MusicVideos)</visible>
 				</control>
 				<control type="radiobutton" id="11">
 					<description>Unlock Shares</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
+					<width>250</width>
 					<label>20336</label>
 					<onclick>xbmc.mastermode</onclick>
 					<selected>system.ismaster</selected>

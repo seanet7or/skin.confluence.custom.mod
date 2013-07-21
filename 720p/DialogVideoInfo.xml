@@ -127,6 +127,7 @@
 								<posx>165</posx>
 								<width>160</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>right</align>
 								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
@@ -137,6 +138,7 @@
 								<posx>175</posx>
 								<width>565</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>left</align>
 								<aligny>center</aligny>
 								<selectedcolor>itemselected</selectedcolor>
@@ -154,6 +156,7 @@
 								<posx>165</posx>
 								<width>160</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>right</align>
 								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
@@ -164,6 +167,7 @@
 								<posx>175</posx>
 								<width>565</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>left</align>
 								<aligny>center</aligny>
 								<textcolor>textfocus</textcolor>
@@ -273,6 +277,7 @@
 								<posx>165</posx>
 								<width>160</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>right</align>
 								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
@@ -283,6 +288,7 @@
 								<posx>175</posx>
 								<width>565</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>left</align>
 								<aligny>center</aligny>
 								<selectedcolor>itemselected</selectedcolor>
@@ -300,6 +306,7 @@
 								<posx>165</posx>
 								<width>160</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>right</align>
 								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
@@ -310,6 +317,7 @@
 								<posx>175</posx>
 								<width>565</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>left</align>
 								<aligny>center</aligny>
 								<textcolor>textfocus</textcolor>
@@ -383,6 +391,7 @@
 								<posx>165</posx>
 								<width>160</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>right</align>
 								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
@@ -393,6 +402,7 @@
 								<posx>175</posx>
 								<width>465</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>left</align>
 								<aligny>center</aligny>
 								<selectedcolor>itemselected</selectedcolor>
@@ -410,6 +420,7 @@
 								<posx>165</posx>
 								<width>160</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>right</align>
 								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
@@ -420,6 +431,7 @@
 								<posx>175</posx>
 								<width>465</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>left</align>
 								<aligny>center</aligny>
 								<textcolor>textfocus</textcolor>
@@ -523,6 +535,7 @@
 								<posx>165</posx>
 								<width>160</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>right</align>
 								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
@@ -533,6 +546,7 @@
 								<posx>175</posx>
 								<width>465</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>left</align>
 								<aligny>center</aligny>
 								<selectedcolor>itemselected</selectedcolor>
@@ -550,6 +564,7 @@
 								<posx>165</posx>
 								<width>160</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>right</align>
 								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
@@ -560,6 +575,7 @@
 								<posx>175</posx>
 								<width>465</width>
 								<height>30</height>
+								<font>font13</font>
 								<align>left</align>
 								<aligny>center</aligny>
 								<textcolor>textfocus</textcolor>
@@ -676,7 +692,6 @@
 						<control type="label">
 							<width>410</width>
 							<height>40</height>
-							<font>font12</font>
 							<align>left</align>
 							<aligny>center</aligny>
 							<selectedcolor>itemselected</selectedcolor>
@@ -697,7 +712,6 @@
 							<textcolor>textfocus</textcolor>
 							<width>410</width>
 							<height>40</height>
-							<font>font12</font>
 							<align>left</align>
 							<aligny>center</aligny>
 							<selectedcolor>itemselected</selectedcolor>
@@ -721,6 +735,11 @@
 						<posy>167</posy>
 						<description>Play/browse to Show</description>
 						<include>ButtonInfoDialogsCommonValues</include>
+						<font>font12_title</font>
+						<textoffsetx>10</textoffsetx>
+						<aligny>center</aligny>
+						<align>center</align>
+						<width>170</width>
 						<texturenofocus>buttons/nf_light.png</texturenofocus>
 						<texturefocus>buttons/fo_light.png</texturefocus>
 						<label>208</label>
@@ -732,28 +751,43 @@
 					<control type="button" id="5">
 						<description>Cast/Review</description>
 						<include>ButtonInfoDialogsCommonValues</include>
+						<font>font12_title</font>
+						<align>center</align>
+						<width>170</width>
 						<label>206</label>
 					</control>
 					<control type="button" id="6">
 						<description>Refresh</description>
 						<include>ButtonInfoDialogsCommonValues</include>
+						<font>font12_title</font>
+						<align>center</align>
+						<width>170</width>
 						<label>184</label>
 					</control>
 					<control type="button" id="10">
 						<description>Get Thumb</description>
 						<include>ButtonInfoDialogsCommonValues</include>
+						<font>font12_title</font>
+						<align>center</align>
+						<width>170</width>
 						<label>13511</label>
 						<visible>!system.hasaddon(script.artwork.downloader) | Skin.HasSetting(HideArtworkDownloader)</visible>
 					</control>
 					<control type="button" id="11">
 						<description>Play Trailer</description>
 						<include>ButtonInfoDialogsCommonValues</include>
+						<font>font12_title</font>
+						<align>center</align>
+						<width>170</width>
 						<label>20410</label>
 						<visible>!IsEmpty(ListItem.Trailer) + !Skin.HasSetting(WindowedTrailer)</visible>
 					</control>
 					<control type="button" id="15">
 						<description>Play Trailer Windowed</description>
 						<include>ButtonInfoDialogsCommonValues</include>
+						<font>font12_title</font>
+						<align>center</align>
+						<width>170</width>
 						<label>20410</label>
 						<onclick>PlayMedia($INFO[ListItem.Trailer],1)</onclick>
 						<visible>!IsEmpty(ListItem.Trailer) + Skin.HasSetting(WindowedTrailer)</visible>
@@ -761,6 +795,9 @@
 					<control type="button" id="100">
 						<description>Get Artwork</description>
 						<include>ButtonInfoDialogsCommonValues</include>
+						<font>font12_title</font>
+						<align>center</align>
+						<width>170</width>
 						<label>$LOCALIZE[31323]</label>
 						<onclick condition="Container.Content(tvshows)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
 						<onclick condition="Container.Content(movies)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
@@ -771,6 +808,9 @@
 					<control type="button" id="101">
 						<description>Get ExtraFanart</description>
 						<include>ButtonInfoDialogsCommonValues</include>
+						<font>font12_title</font>
+						<align>center</align>
+						<width>170</width>
 						<label>$LOCALIZE[31324]</label>
 						<onclick condition="Container.Content(tvshows)">XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=tvshow, dbid=$INFO[ListItem.DBID], extrafanart)</onclick>
 						<onclick condition="Container.Content(movies)">XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=movie, dbid=$INFO[ListItem.DBID], extrafanart)</onclick>
@@ -781,6 +821,9 @@
 					<control type="button" id="102">
 						<description>Fetch TvTunes stuff</description>
 						<include>ButtonInfoDialogsCommonValues</include>
+						<font>font12_title</font>
+						<align>center</align>
+						<width>170</width>
 						<label>31127</label>
 						<onclick>XBMC.RunScript(script.tvtunes,mode=solo&amp;tvpath=$INFO[ListItem.FilenameAndPath]&amp;tvname=$INFO[ListItem.TVShowTitle])</onclick>
 						<visible>!Skin.HasSetting(HideTvTunes) + System.HasAddon(script.tvtunes) + Container.Content(TVShows)</visible>
