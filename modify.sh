@@ -1134,15 +1134,20 @@ else
 fi
 step
 
-printf "\nMoving tags out of button includes: "
-if grep -a -q -z -Po '<include name="ButtonCommonValues">\n\s*<height>40</height>' 720p/includes.xml ; then 
-	BUTTONINCS=$(grep -z -Po '<control type="button".*\n(\s*<[a-z].*\n)*' 720p/* | grep '<include>' | sed 's|^\s*<include>||'  | sed 's|</include>\s*||'| sort -u)
-	TAGS=$(echo "height" ; echo "texturefocus" ; echo "pulseonselect" ; echo "texturenofocus" )
+printf "\nMoving tags out of includes: "
+TOMOVE='button;height,texturefocus,pulseonselect,texturenofocus
+label;textcolor'
+IFS=$'\n'; for MOVE in $TOMOVE ; do
+	CONTROL=$(echo "$MOVE" | cut -f1 -d';')
+	TAGS=$(echo "$MOVE" | cut -f2 -d';' | tr ',' '\n')
+	printf "\nFor '$CONTROL' controls: "
+	INCS=$(grep -z -Po '<control type="'$CONTROL'".*\n(\s*<[a-z].*\n)*' 720p/* | grep '<include>' | sed 's|^\s*<include>||'  | sed 's|</include>\s*||'| sort -u)
 	for TAG in $TAGS; do
-		for INC in $BUTTONINCS ; do
+		for INC in $INCS ; do
 			INCTAG=$(grep -z -Po "<include name=\"$INC\".*\n(\s*<[a-z].*\n)*" 720p/* | grep "<$TAG[ >]" | sed 's|^\s*||' | sed 's|\s*$||' )
 			if ! [ -z "$INCTAG" ] ; then
-				perlregex 720p/includes.xml "s|(<include name=\"$INC\"[^#]*#(\s*<(?!$TAG)[a-z][^#]*#)*)\s*<$TAG[ >][^#]*#|\1|"
+				XMLS=$(2>/dev/null grep -a -l "include name=\"$INC\"" 720p/*)
+				perlregex $XMLS "s|(<include name=\"$INC\"[^#]*#(\s*<(?!$TAG)[a-z][^#]*#)*)\s*<$TAG[ >][^#]*#|\1|"
 				R="s|(\s*)(<include>$INC</include>\s*#)|\1\2\1$INCTAG#|g"
 				XMLS=$(2>/dev/null grep "<include>$INC</include>" -l 720p/*)
 				perlregex "$R" $XMLS
@@ -1150,9 +1155,7 @@ if grep -a -q -z -Po '<include name="ButtonCommonValues">\n\s*<height>40</height
 		done
 	done
 	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
+done
 step
 
 printf "\nChanging color scheme: "
@@ -1285,9 +1288,11 @@ if grep -q 'grey2' 720p/* ; then
 	perlregex $XMLS "$R"
 	XMLS=$(2>/dev/null grep 'COLOR=grey2\]' -l 720p/*)
 	perlregex $XMLS "s|COLOR=grey2\]|COLOR=textnofocus\]|g"
-	#XMLS=$(2>/dev/null grep 'COLOR=grey2' -l -r language/*)
-	#R="s|COLOR=grey2|COLOR=textnofocus|g"
-	#perlregex $XMLS "$R"
+	XMLS=$(2>/dev/null grep 'COLOR=grey2' -l -r language/*)
+	R="s|COLOR=grey2|COLOR=textnofocus|g"
+	for X in $XMLS ; do
+		sed "$R" -i "$X"
+	done
 
 	if grep -q 'grey2' 720p/* ; then
 		printf "\nERROR: Grey2 color still used!"
@@ -1310,9 +1315,11 @@ if grep -q 'grey3' 720p/* ; then
 	XMLS=$(2>/dev/null grep 'textcolor>grey3<' -l 720p/*)
 	R="s|textcolor>grey3<|textcolor>textdisabled<|g"
 	perlregex $XMLS "$R"
-	#XMLS=$(2>/dev/null grep 'COLOR=grey3' -l -r language/*)
-	#R="s|COLOR=grey3|COLOR=textnofocus|g"
-	#perlregex $XMLS "$R"
+	XMLS=$(2>/dev/null grep 'COLOR=grey3' -l -r language/*)
+	R="s|COLOR=grey3|COLOR=textnofocus|g"
+	for X in $XMLS ; do
+		sed "$R" -i "$X"
+	done
 	
 	if grep -q 'grey3' 720p/* ; then
 		printf "\nERROR: Grey3 color still used!"
@@ -1340,6 +1347,14 @@ if grep -q 'black' 720p/* ; then
 		exit 4
 	fi
 	perlregex colors/defaults.xml "s|\s*<color name=\"black\"[^#]*#||g"
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nChanging font colors for special strings: "
+if true ; then
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET

@@ -23,7 +23,6 @@
 				<height>25</height>
 				<align>left</align>
 				<aligny>center</aligny>
-				<textcolor>textnofocus</textcolor>
 				<label>$VAR[MusicHeaderLabel]</label>
 				<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(infodialog)">Conditional</animation>
 			</control>
@@ -101,7 +100,6 @@
 					<align>left</align>
 					<font>font12</font>
 					<label>$INFO[MusicPlayer.Artist]$INFO[MusicPlayer.Album, - ]</label>
-					<textcolor>textnofocus</textcolor>
 				</control>
 				<control type="grouplist">
 					<posx>20</posx>
@@ -173,7 +171,6 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font12</font>
-					<textcolor>textnofocus</textcolor>
 					<scroll>true</scroll>
 					<visible>MusicPlayer.HasNext  + Skin.HasSetting(HideNextSongsInfo) + !Window.IsVisible(MusicOSD)</visible>
 					<animation effect="fade" time="200">VisibleChange</animation>
@@ -183,7 +180,6 @@
 				<posx>330</posx>
 				<posy>95r</posy>
 				<control type="label">
-					<textcolor>textnofocus</textcolor>
 					<posx>0</posx>
 					<width>100</width>
 					<height>40</height>
@@ -200,7 +196,6 @@
 					<info>Player.Progress</info>
 				</control>
 				<control type="label">
-					<textcolor>textnofocus</textcolor>
 					<posx>920</posx>
 					<width>100</width>
 					<height>40</height>
@@ -223,7 +218,6 @@
 				<texture>dialogs/dialog-back_light.png</texture>
 			</control>
 			<control type="label">
-				<textcolor>textnofocus</textcolor>
 				<description>row 1 label</description>
 				<posx>50</posx>
 				<posy>10</posy>
@@ -232,7 +226,6 @@
 				<font>font12</font>
 			</control>
 			<control type="label">
-				<textcolor>textnofocus</textcolor>
 				<description>row 2 label</description>
 				<posx>50</posx>
 				<posy>40</posy>
@@ -242,7 +235,6 @@
 				<visible>Visualisation.Locked</visible>
 			</control>
 			<control type="label">
-				<textcolor>textnofocus</textcolor>
 				<description>Unlocked row 2 label</description>
 				<posx>50</posx>
 				<posy>40</posy>
@@ -252,7 +244,6 @@
 				<visible>!Visualisation.Locked</visible>
 			</control>
 			<control type="label">
-				<textcolor>textnofocus</textcolor>
 				<description>row 3 label</description>
 				<posx>50</posx>
 				<posy>70</posy>

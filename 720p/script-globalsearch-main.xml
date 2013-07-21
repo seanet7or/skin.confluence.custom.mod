@@ -244,7 +244,6 @@
 							<posy>32</posy>
 							<width>870</width>
 							<height>20</height>
-							<textcolor>textnofocus</textcolor>
 							<align>right</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
@@ -273,7 +272,6 @@
 							<posy>32</posy>
 							<width>870</width>
 							<height>20</height>
-							<textcolor>textnofocus</textcolor>
 							<align>right</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
@@ -354,7 +352,6 @@
 					<label>$INFO[Container(9000).ListItem.Label]</label>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>textnofocus</textcolor>
 					<visible>Control.IsVisible(198)</visible>
 				</control>
 				<control type="label">
@@ -379,7 +376,6 @@
 					<textcolor>-</textcolor>
 				</control>
 				<control type="label" id="191">
-					<textcolor>textnofocus</textcolor>
 					<posx>2000</posx>
 					<posy>2000</posy>
 					<width>100</width>
@@ -477,7 +473,6 @@
 									<height>12</height>
 									<label>[B]$INFO[ListItem.Label][/B]</label>
 									<font>font12</font>
-									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="label">
@@ -487,7 +482,6 @@
 									<height>15</height>
 									<label>$INFO[ListItem.Property(Year),, - ]$INFO[ListItem.Property(Duration),, $LOCALIZE[12391]]</label>
 									<font>font12</font>
-									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 									<visible>!SubString(ListItem.Property(Duration),min)</visible>
 								</control>
@@ -498,7 +492,6 @@
 									<height>15</height>
 									<label>$INFO[ListItem.Property(Year),, - ]$INFO[ListItem.Property(Duration)]</label>
 									<font>font12</font>
-									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 									<visible>SubString(ListItem.Property(Duration),min)</visible>
 								</control>
@@ -570,7 +563,6 @@
 									<height>15</height>
 									<label>$INFO[ListItem.Property(Year),, - ]$INFO[ListItem.Property(Duration),, $LOCALIZE[12391]]</label>
 									<font>font12</font>
-									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 									<visible>!SubString(ListItem.Property(Duration),min)</visible>
 								</control>
@@ -581,7 +573,6 @@
 									<height>15</height>
 									<label>$INFO[ListItem.Property(Year),, - ]$INFO[ListItem.Property(Duration)]</label>
 									<font>font12</font>
-									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 									<visible>SubString(ListItem.Property(Duration),min)</visible>
 								</control>
@@ -681,7 +672,6 @@
 									<height>15</height>
 									<label>[B]$INFO[ListItem.Label][/B]</label>
 									<font>font12</font>
-									<textcolor>textnofocus</textcolor>
 									<align>center</align>
 									<aligny>center</aligny>
 								</control>
@@ -692,7 +682,6 @@
 									<height>15</height>
 									<label>$INFO[ListItem.Property(Premiered)]</label>
 									<font>font12</font>
-									<textcolor>textnofocus</textcolor>
 									<align>center</align>
 									<aligny>center</aligny>
 								</control>
@@ -744,7 +733,6 @@
 									<height>15</height>
 									<label>$INFO[ListItem.Property(Premiered)]</label>
 									<font>font12</font>
-									<textcolor>textnofocus</textcolor>
 									<align>center</align>
 									<aligny>center</aligny>
 								</control>
@@ -813,7 +801,6 @@
 									<height>15</height>
 									<label>$VAR[MainItemLabel]</label>
 									<font>font12_title</font>
-									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="textbox">
@@ -921,7 +908,6 @@
 									<height>15</height>
 									<label>[B]$INFO[ListItem.Label][/B]</label>
 									<font>font12</font>
-									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="label">
@@ -931,7 +917,6 @@
 									<height>15</height>
 									<label>$INFO[ListItem.Property(TvShowTitle)]</label>
 									<font>font12</font>
-									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="textbox">
@@ -982,7 +967,6 @@
 									<height>15</height>
 									<label>$INFO[ListItem.Property(TvShowTitle)]</label>
 									<font>font12</font>
-									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="textbox">
@@ -1058,7 +1042,6 @@
 									<height>15</height>
 									<label>[B]$INFO[ListItem.Label][/B]</label>
 									<font>font12</font>
-									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="label">
@@ -1068,7 +1051,6 @@
 									<height>15</height>
 									<label>$INFO[ListItem.Property(Artist)]</label>
 									<font>font12</font>
-									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="label">
@@ -1078,7 +1060,6 @@
 									<height>15</height>
 									<label>$INFO[ListItem.Property(Year)]</label>
 									<font>font12</font>
-									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="label">
@@ -1088,7 +1069,6 @@
 									<height>15</height>
 									<label>$INFO[ListItem.Property(Duration)]</label>
 									<font>font12</font>
-									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 							</itemlayout>
@@ -1140,7 +1120,6 @@
 									<height>15</height>
 									<label>$INFO[ListItem.Property(Year)]</label>
 									<font>font12</font>
-									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="label">
@@ -1150,7 +1129,6 @@
 									<height>15</height>
 									<label>$INFO[ListItem.Property(Duration)]</label>
 									<font>font12</font>
-									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 							</focusedlayout>
@@ -1210,7 +1188,6 @@
 									<height>15</height>
 									<label>[B]$INFO[ListItem.Label][/B]</label>
 									<font>font12</font>
-									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="label">
@@ -1220,7 +1197,6 @@
 									<height>15</height>
 									<label>$INFO[ListItem.Property(Artist_Genre)]</label>
 									<font>font12</font>
-									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="textbox">
@@ -1263,7 +1239,6 @@
 									<height>15</height>
 									<label>$INFO[ListItem.Property(Artist_Genre)]</label>
 									<font>font12</font>
-									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="textbox">
@@ -1332,7 +1307,6 @@
 									<height>15</height>
 									<label>[B]$INFO[ListItem.Label][/B]</label>
 									<font>font12</font>
-									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="label">
@@ -1342,7 +1316,6 @@
 									<height>15</height>
 									<label>$INFO[ListItem.Property(Artist)]</label>
 									<font>font12</font>
-									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="textbox">
@@ -1385,7 +1358,6 @@
 									<height>15</height>
 									<label>$INFO[ListItem.Property(Artist)]</label>
 									<font>font12</font>
-									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="textbox">
@@ -1453,7 +1425,6 @@
 									<height>15</height>
 									<label>[B]$INFO[ListItem.Label][/B]</label>
 									<font>font12</font>
-									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="label">
@@ -1463,7 +1434,6 @@
 									<height>15</height>
 									<label>$INFO[ListItem.Property(Artist)]</label>
 									<font>font12</font>
-									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="label">
@@ -1473,7 +1443,6 @@
 									<height>15</height>
 									<label>$INFO[ListItem.Property(Genre)]</label>
 									<font>font12</font>
-									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="label">
@@ -1483,7 +1452,6 @@
 									<height>15</height>
 									<label>$INFO[ListItem.Property(Duration)]</label>
 									<font>font12</font>
-									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 							</itemlayout>
@@ -1527,7 +1495,6 @@
 									<height>15</height>
 									<label>$INFO[ListItem.Property(Genre)]</label>
 									<font>font12</font>
-									<textcolor>textnofocus</textcolor>
 									<aligny>center</aligny>
 								</control>
 								<control type="label">

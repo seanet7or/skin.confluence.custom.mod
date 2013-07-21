@@ -14,7 +14,6 @@
 				<height>25</height>
 				<align>left</align>
 				<aligny>center</aligny>
-				<textcolor>textnofocus</textcolor>
 				<label>$INFO[Player.ChapterName,[B][COLOR=textnofocus]$LOCALIZE[21396]: [/COLOR][/B]]</label>
 				<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(infodialog)">Conditional</animation>
 				<visible>Player.ChapterCount + !VideoPlayer.Content(LiveTV) + [!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)]</visible>
@@ -28,7 +27,6 @@
 				<height>25</height>
 				<align>left</align>
 				<aligny>center</aligny>
-				<textcolor>textnofocus</textcolor>
 				<label>[B]$INFO[Player.ChapterName][/B]</label>
 				<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(infodialog)">Conditional</animation>
 				<visible>Player.ChapterCount + !VideoPlayer.Content(LiveTV) + [!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)]</visible>
@@ -42,7 +40,6 @@
 				<height>25</height>
 				<align>left</align>
 				<aligny>center</aligny>
-				<textcolor>textnofocus</textcolor>
 				<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(infodialog)">Conditional</animation>
 				<label>$INFO[VideoPlayer.ChannelGroup,$LOCALIZE[31509]: ]</label>
 				<visible>VideoPlayer.Content(LiveTV)</visible>
@@ -56,7 +53,6 @@
 				<align>right</align>
 				<aligny>center</aligny>
 				<font>font35_title</font>
-				<textcolor>textnofocus</textcolor>
 				<label>$INFO[System.Time]</label>
 				<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
 				<animation effect="slide" start="0,0" end="0,-50" time="100" condition="Window.IsVisible(busydialog)">conditional</animation>
@@ -188,7 +184,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>$LOCALIZE[31040]</label>
-					<textcolor>textnofocus</textcolor>
 					<visible>![VideoPlayer.Content(LiveTV) + Player.Recording]</visible>
 					<animation effect="slide" start="0,0" end="0,25" time="0" condition="!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes) + !VideoPlayer.Content(MusicVideos) + !VideoPlayer.Content(LiveTV)">conditional</animation>
 				</control>
@@ -207,7 +202,6 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>$LOCALIZE[19158]</label>
-					<textcolor>textnofocus</textcolor>
 					<visible>VideoPlayer.Content(LiveTV) + Player.Recording</visible>
 				</control>
 				<control type="label" id="1">
@@ -219,7 +213,6 @@
 					<align>left</align>
 					<font>font12</font>
 					<label>$INFO[VideoPlayer.Studio]</label>
-					<textcolor>textnofocus</textcolor>
 					<visible>VideoPlayer.Content(Movies)</visible>
 				</control>
 				<control type="label" id="1">
@@ -231,7 +224,6 @@
 					<align>left</align>
 					<font>font12</font>
 					<label>$INFO[VideoPlayer.TVShowTitle] ($INFO[VideoPlayer.Season]x$INFO[VideoPlayer.Episode])</label>
-					<textcolor>textnofocus</textcolor>
 					<visible>VideoPlayer.Content(Episodes)</visible>
 				</control>
 				<control type="label" id="1">
@@ -243,7 +235,6 @@
 					<align>left</align>
 					<font>font12</font>
 					<label>$INFO[VideoPlayer.Artist] $INFO[VideoPlayer.Album, - ]</label>
-					<textcolor>textnofocus</textcolor>
 					<visible>VideoPlayer.Content(MusicVideos)</visible>
 				</control>
 				<control type="label" id="1">
@@ -255,7 +246,6 @@
 					<align>left</align>
 					<font>font12</font>
 					<label>$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.ChannelNumber, - ([COLOR=blue],[/COLOR])]</label>
-					<textcolor>textnofocus</textcolor>
 					<visible>VideoPlayer.Content(LiveTV)</visible>
 				</control>
 				<control type="grouplist" id="1">
@@ -308,7 +298,6 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font12</font>
-					<textcolor>textnofocus</textcolor>
 					<scroll>true</scroll>
 					<visible>!Window.IsVisible(VideoOSD) + !VideoPlayer.Content(LiveTV)</visible>
 					<animation effect="fade" time="200">VisibleChange</animation>
@@ -322,7 +311,6 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font12</font>
-					<textcolor>textnofocus</textcolor>
 					<scroll>true</scroll>
 					<visible>!Window.IsVisible(VideoOSD) + VideoPlayer.Content(LiveTV)</visible>
 					<animation effect="fade" time="200">VisibleChange</animation>
@@ -334,7 +322,6 @@
 				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
 				<visible>!VideoPlayer.Content(LiveTV) | [VideoPlayer.Content(LiveTV) + VideoPlayer.HasEpg]</visible>
 				<control type="label" id="1">
-					<textcolor>textnofocus</textcolor>
 					<visible>!VideoPlayer.Content(LiveTV)</visible>
 					<posx>0</posx>
 					<width>100</width>
@@ -344,7 +331,6 @@
 					<label>$INFO[Player.Time(hh:mm:ss)]</label>
 				</control>
 				<control type="label" id="1">
-					<textcolor>textnofocus</textcolor>
 					<visible>VideoPlayer.Content(LiveTV)</visible>
 					<posx>0</posx>
 					<width>100</width>
@@ -371,7 +357,6 @@
 					<info>Player.Progress</info>
 				</control>
 				<control type="label" id="1">
-					<textcolor>textnofocus</textcolor>
 					<visible>!VideoPlayer.Content(LiveTV)</visible>
 					<posx>920</posx>
 					<width>100</width>
@@ -381,7 +366,6 @@
 					<label>$INFO[Player.Duration(hh:mm:ss)]</label>
 				</control>
 				<control type="label" id="1">
-					<textcolor>textnofocus</textcolor>
 					<visible>VideoPlayer.Content(LiveTV)</visible>
 					<posx>920</posx>
 					<width>100</width>
@@ -402,7 +386,6 @@
 				<height>140</height>
 			</control>
 			<control type="label" id="10">
-				<textcolor>textnofocus</textcolor>
 				<description>row 1 label</description>
 				<posx>50</posx>
 				<posy>10</posy>
@@ -413,7 +396,6 @@
 				<font>font12</font>
 			</control>
 			<control type="label" id="11">
-				<textcolor>textnofocus</textcolor>
 				<description>row 2 label</description>
 				<posx>50</posx>
 				<posy>40</posy>
@@ -424,7 +406,6 @@
 				<font>font12</font>
 			</control>
 			<control type="label" id="12">
-				<textcolor>textnofocus</textcolor>
 				<description>row 3 label</description>
 				<posx>50</posx>
 				<posy>85</posy>
@@ -472,7 +453,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>textnofocus</textcolor>
 			</control>
 			<control type="label">
 				<description>Backend value</description>
@@ -484,7 +464,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>textnofocus</textcolor>
 			</control>
 			<control type="label">
 				<description>Device</description>
@@ -496,7 +475,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>textnofocus</textcolor>
 			</control>
 			<control type="label">
 				<description>Device value</description>
@@ -508,7 +486,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>textnofocus</textcolor>
 			</control>
 			<control type="label">
 				<description>Status</description>
@@ -520,7 +497,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>textnofocus</textcolor>
 			</control>
 			<control type="label">
 				<description>Status value</description>
@@ -532,7 +508,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>textnofocus</textcolor>
 			</control>
 			<control type="label">
 				<description>Signal</description>
@@ -544,7 +519,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>textnofocus</textcolor>
 			</control>
 			<control type="progress">
 				<description>Progressbar</description>
@@ -564,7 +538,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>textnofocus</textcolor>
 			</control>
 			<control type="label">
 				<description>SNR</description>
@@ -576,7 +549,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>textnofocus</textcolor>
 			</control>
 			<control type="progress">
 				<description>Progressbar</description>
@@ -596,7 +568,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>textnofocus</textcolor>
 			</control>
 			<control type="label">
 				<description>BER</description>
@@ -608,7 +579,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>textnofocus</textcolor>
 			</control>
 			<control type="label">
 				<description>BER value</description>
@@ -620,7 +590,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>textnofocus</textcolor>
 			</control>
 			<control type="label">
 				<description>UNC</description>
@@ -632,7 +601,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>textnofocus</textcolor>
 			</control>
 			<control type="label">
 				<description>UNC value</description>
@@ -644,7 +612,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>textnofocus</textcolor>
 			</control>
 			<control type="label">
 				<description>Encryption</description>
@@ -656,7 +623,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>textnofocus</textcolor>
 			</control>
 			<control type="label">
 				<description>Encryption value</description>
@@ -668,7 +634,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
-				<textcolor>textnofocus</textcolor>
 			</control>
 		</control>
 	</controls>
