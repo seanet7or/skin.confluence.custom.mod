@@ -1633,11 +1633,7 @@ step
 
 printf "\n############# CLEANING UP #####################################################"
 
-UNUSEDINCS="
-Dimensions_Fullscreen
-GenreTextPlace
-ButtonInfoDialogsCommonValues
-"
+UNUSEDINCS=$(grep -a -z -Po '<include name="[^"]*">\n\s*</include>' 720p/* | grep -v '</include>' | sed 's|^[^<]*<include name="||' | sed 's|">||')
 for INC in $UNUSEDINCS ; do
 	if [ -z "$INC" ] ; then continue ; fi
 	printf "\nRemoving unused include '$INC': "
@@ -1876,33 +1872,35 @@ for CONTROL in $CONTROLS ; do
 		TAG=$(echo "$TAG" | cut -f2 -d';')
 		DEFTAG=$(grep -a -z -Po "<default type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</default>" 720p/defaults.xml | grep "<$TAG[ >]" | sed 's|^\s*||')
 		if ! [ -z "$DEFTAG" ] ; then
-			NUMMISSING=$(grep -a -z -Po "<control type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</control>" 720p/* | tr -d $'\n' | sed 's|</control>|\n|g' | grep -v "<$TAG[ >]" | wc -l)
 			MOST=$(grep -a -z -Po "<control type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</control>" 720p/* | grep "<$TAG[ >]" | sed 's|^\s*||' | sort --batch-size=1021 | uniq -c | sort -n -r | head -1 | sed 's|^\s*||')
 			NUMMOST=$(echo "$MOST" | cut -f1 -d' ')
 			MOST=$(echo "$MOST" | sed 's|^[0-9]*\s*||')
-			if [ "$MOST" != "$DEFTAG" ] && [ $NUMMOST -gt $NUMMISSING ] ; then
-				if [ $NUMMISSING -gt 0 ] ; then
-					R="s|(<control type=\"$CONTROL\"[^#]*#)(\s*)"
-					R+="((\s*(?!<$TAG[ >])<[a-z][^#]*#)*"
-					R+="\s*</control>\s*#)"
-					R+="|\1\2$DEFTAG#\2\3|g"
-					XMLS=$(2>/dev/null grep "<control type=\"$CONTROL\"" -l 720p/*)
-					perlregex $XMLS "$R"
-				fi
+			if [ "$MOST" != "$DEFTAG" ] ; then
 				NUMMISSING=$(grep -a -z -Po "<control type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</control>" 720p/* | tr -d $'\n' | sed 's|</control>|\n|g' | grep -v "<$TAG[ >]" | wc -l)
-				if [ $NUMMISSING -gt 0 ] ; then
-					echo "There should be no more controls with missing tag, but we found some!"
-					exit
+				if [ $NUMMOST -gt $NUMMISSING ] ; then
+					if [ $NUMMISSING -gt 0 ] ; then
+						R="s|(<control type=\"$CONTROL\"[^#]*#)(\s*)"
+						R+="((\s*(?!<$TAG[ >])<[a-z][^#]*#)*"
+						R+="\s*</control>\s*#)"
+						R+="|\1\2$DEFTAG#\2\3|g"
+						XMLS=$(2>/dev/null grep "<control type=\"$CONTROL\"" -l 720p/*)
+						perlregex $XMLS "$R"
+					fi
+					NUMMISSING=$(grep -a -z -Po "<control type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</control>" 720p/* | tr -d $'\n' | sed 's|</control>|\n|g' | grep -v "<$TAG[ >]" | wc -l)
+					if [ $NUMMISSING -gt 0 ] ; then
+						echo "There should be no more controls with missing tag, but we found some!"
+						exit
+					fi
+					MOST=$(echo "$MOST" | sed 's/|/\\|/g')
+					R="s|(<default type=\"$CONTROL\"[^#]*#"		#1
+					R+="(\s*<[a-z][^#]*#)*?"					#2
+					R+="\s*)$DEFTAG(#"							#3
+					R+="(\s*<[a-z][^#]*#)*?"					#4
+					R+="\s*</default>#)"
+					R+="|\1$MOST\3|g"
+					perlregex 720p/defaults.xml "$R"
+					CHANGED=true
 				fi
-				MOST=$(echo "$MOST" | sed 's/|/\\|/g')
-				R="s|(<default type=\"$CONTROL\"[^#]*#"		#1
-				R+="(\s*<[a-z][^#]*#)*?"					#2
-				R+="\s*)$DEFTAG(#"							#3
-				R+="(\s*<[a-z][^#]*#)*?"					#4
-				R+="\s*</default>#)"
-				R+="|\1$MOST\3|g"
-				perlregex 720p/defaults.xml "$R"
-				CHANGED=true
 			fi
 		fi
 	done
@@ -1944,16 +1942,28 @@ done
 step
 
 printf "\nAdding xbmc defaults to defaults.xml: "
-if false; then #! grep -q '<loop>yes</loop>' 720p/defaults.xml ; then
+if true; then #! grep -q '<loop>yes</loop>' 720p/defaults.xml ; then
 	XBMCDEFS='
-;visible;<visible>true</visible>
-;enable;<enable>true</true>
-;pulseonselect;<pulseonselect>false</pulseonselect>
-edit;textoffsetx;<textoffsetx>10</textoffsetx>
-button;textoffsetx;<textoffsetx>10</textoffsetx>
+togglebutton;align;<align>left</align>
+togglebutton;aligny;<aligny>center</aligny>
+togglebutton;textoffsetx;<textoffsetx>10</textoffsetx>
+togglebutton;textwidth;<textwidth>290</textwidth>
+button;align;<align>left</align>
+radiobutton;align;<align>left</align>
+edit;align;<align>left</align>
+sliderex;posx;<posx>0</posx>
+sliderex;posy;<posy>0</posy>
+slider;aligny;<aligny>center</aligny>
+slider;texturefocus;<texturefocus>-</texturefocus>
+slider;texturenofocus;<texturenofocus>-</texturenofocus>
 fadelabel;textoffsetx;<textoffsetx>10</textoffsetx>
-label;textoffsetx;<textoffsetx>10</textoffsetx>
+label;aligny;<aligny>center</aligny>
+label;align;<align>left</align>
 '
+#;pulseonselect;<pulseonselect>false</pulseonselect>
+#edit;textoffsetx;<textoffsetx>10</textoffsetx>
+#button;textoffsetx;<textoffsetx>10</textoffsetx>
+#label;textoffsetx;<textoffsetx>10</textoffsetx>
 #fadelabel;resetonlabelchange;<resetonlabelchange>true</resetonlabelchange>
 #fadelabel;scrollspeed;<scrollspeed>60</scrollspeed>
 #label;align;<align>left</align>
@@ -1972,18 +1982,20 @@ label;textoffsetx;<textoffsetx>10</textoffsetx>
 for CONTROL in $CONTROLS ; do
 	for TAG in $(echo "$OPTTAGS" | grep "^$CONTROL;") ; do
 		TAG=$(echo "$TAG" | cut -f2 -d';')
-		DEFTAG=$(grep -a -z -Po "<default type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</default>" 720p/defaults.xml | grep "<$TAG[ >]" | sed 's|^\s*||')
-		NUMMISSING=$(grep -a -z -Po "<control type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</control>" 720p/* | tr -d $'\n' | sed 's|</control>|\n|g' | grep -v "<$TAG[ >]" | wc -l)
-		if [ -z "$DEFTAG" ] && [ $NUMMISSING -gt 0 ] ; then
-			XBMCDEF=$(echo "$XBMCDEFS" | grep "^;$TAG;" | head -1 )
-			if [ -z "$XBMCDEF" ] ; then
-				XBMCDEF=$(echo "$XBMCDEFS" | grep "^$CONTROL;$TAG;" | head -1 )
-			fi
-			if ! [ -z "$XBMCDEF" ] ; then
-				NEWDEFAULT=$(echo "$XBMCDEF" | cut -f3 -d';')
-				R="s|(\s*)(<default type=\"$CONTROL\"[^#]*#)"		#1#2
-				R+="|\1\2\1\1$NEWDEFAULT#|g"
-				perlregex "$R" 720p/defaults.xml
+		XBMCDEF=$(echo "$XBMCDEFS" | grep "^;$TAG;" | head -1 )
+		if [ -z "$XBMCDEF" ] ; then
+			XBMCDEF=$(echo "$XBMCDEFS" | grep "^$CONTROL;$TAG;" | head -1 )
+		fi
+		if ! [ -z "$XBMCDEF" ] ; then		
+			DEFTAG=$(grep -a -z -Po "<default type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</default>" 720p/defaults.xml | grep "<$TAG[ >]" | sed 's|^\s*||')
+			if [ -z "$DEFTAG" ] ; then
+				NUMMISSING=$(grep -a -z -Po "<control type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</control>" 720p/* | tr -d $'\n' | sed 's|</control>|\n|g' | grep -v "<$TAG[ >]" | wc -l)
+				if [ $NUMMISSING -gt 0 ] ; then
+					NEWDEFAULT=$(echo "$XBMCDEF" | cut -f3 -d';')
+					R="s|(\s*)(<default type=\"$CONTROL\"[^#]*#)"		#1#2
+					R+="|\1\2\1\1$NEWDEFAULT#|g"
+					perlregex "$R" 720p/defaults.xml
+				fi
 			fi
 		fi
 	done

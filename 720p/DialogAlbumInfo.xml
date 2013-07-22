@@ -26,7 +26,6 @@
 					<font>font24_title</font>
 					<label>$INFO[Listitem.Album]</label>
 					<align>center</align>
-					<aligny>center</aligny>
 					<visible>container.content(Albums)</visible>
 				</control>
 				<control type="label">
@@ -38,7 +37,6 @@
 					<font>font24_title</font>
 					<label>$INFO[Listitem.Artist]</label>
 					<align>center</align>
-					<aligny>center</aligny>
 					<visible>container.content(Artists)</visible>
 				</control>
 				<control type="group">
@@ -69,7 +67,6 @@
 							<height>380</height>
 							<font>font30_title</font>
 							<align>center</align>
-							<aligny>center</aligny>
 							<label>31311</label>
 						</control>
 					</control>
@@ -102,7 +99,6 @@
 								<height>30</height>
 								<font>font13</font>
 								<align>right</align>
-								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
@@ -112,8 +108,6 @@
 								<width>500</width>
 								<height>30</height>
 								<font>font13</font>
-								<align>left</align>
-								<aligny>center</aligny>
 								<selectedcolor>itemselected</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -131,7 +125,6 @@
 								<height>30</height>
 								<font>font13</font>
 								<align>right</align>
-								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
@@ -141,8 +134,6 @@
 								<width>500</width>
 								<height>30</height>
 								<font>font13</font>
-								<align>left</align>
-								<aligny>center</aligny>
 								<textcolor>textfocus</textcolor>
 								<selectedcolor>itemselected</selectedcolor>
 								<info>ListItem.Label2</info>
@@ -234,7 +225,6 @@
 								<height>30</height>
 								<font>font13</font>
 								<align>right</align>
-								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
@@ -244,8 +234,6 @@
 								<width>465</width>
 								<height>30</height>
 								<font>font13</font>
-								<align>left</align>
-								<aligny>center</aligny>
 								<selectedcolor>itemselected</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -263,7 +251,6 @@
 								<height>30</height>
 								<font>font13</font>
 								<align>right</align>
-								<aligny>center</aligny>
 								<textcolor>blue</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
@@ -273,8 +260,6 @@
 								<width>465</width>
 								<height>30</height>
 								<font>font13</font>
-								<align>left</align>
-								<aligny>center</aligny>
 								<textcolor>textfocus</textcolor>
 								<selectedcolor>itemselected</selectedcolor>
 								<info>ListItem.Label2</info>
@@ -388,8 +373,6 @@
 						<control type="label">
 							<width>410</width>
 							<height>40</height>
-							<align>left</align>
-							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
 							<label>([COLOR=selected][B]$INFO[ListItem.TrackNumber][/B][/COLOR]) - $INFO[ListItem.Label]</label>
 						</control>
@@ -398,7 +381,6 @@
 							<width>200</width>
 							<height>40</height>
 							<align>right</align>
-							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
 							<label>$INFO[ListItem.Duration]</label>
 						</control>
@@ -417,8 +399,6 @@
 							<textcolor>textfocus</textcolor>
 							<width>410</width>
 							<height>40</height>
-							<align>left</align>
-							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
 							<label>([COLOR=selected][B]$INFO[ListItem.TrackNumber][/B][/COLOR]) - $INFO[ListItem.Label]</label>
 						</control>
@@ -428,7 +408,6 @@
 							<width>200</width>
 							<height>40</height>
 							<align>right</align>
-							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
 							<label>$INFO[ListItem.Duration]</label>
 						</control>
@@ -440,8 +419,6 @@
 						<control type="label">
 							<width>410</width>
 							<height>40</height>
-							<align>left</align>
-							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
 							<label>$VAR[MainItemLabel]</label>
 						</control>
@@ -460,8 +437,6 @@
 							<textcolor>textfocus</textcolor>
 							<width>410</width>
 							<height>40</height>
-							<align>left</align>
-							<aligny>center</aligny>
 							<selectedcolor>selected</selectedcolor>
 							<label>$VAR[MainItemLabel]</label>
 						</control>
@@ -481,34 +456,30 @@
 					<ondown>49</ondown>
 					<control type="button" id="5">
 						<description>Cast/Review</description>
-						<include>ButtonInfoDialogsCommonValues</include>
-						<font>font12_title</font>
 						<align>center</align>
 						<width>170</width>
+						<font>font12_title</font>
 						<label>206</label>
 					</control>
 					<control type="button" id="6">
 						<description>Refresh</description>
-						<include>ButtonInfoDialogsCommonValues</include>
-						<font>font12_title</font>
 						<align>center</align>
 						<width>170</width>
+						<font>font12_title</font>
 						<label>184</label>
 					</control>
 					<control type="button" id="10">
 						<description>Get Thumb</description>
-						<include>ButtonInfoDialogsCommonValues</include>
-						<font>font12_title</font>
 						<align>center</align>
 						<width>170</width>
+						<font>font12_title</font>
 						<label>13405</label>
 					</control>
 					<control type="button" id="12">
 						<description>Get Fanart</description>
-						<include>ButtonInfoDialogsCommonValues</include>
-						<font>font12_title</font>
 						<align>center</align>
 						<width>170</width>
+						<font>font12_title</font>
 						<label>20413</label>
 					</control>
 				</control>

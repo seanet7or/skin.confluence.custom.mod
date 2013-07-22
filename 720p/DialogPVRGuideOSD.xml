@@ -25,7 +25,6 @@
 				<font>font12_title</font>
 				<label>$LOCALIZE[19222] - $INFO[VideoPlayer.ChannelName]</label>
 				<align>center</align>
-				<aligny>center</aligny>
 				<textcolor>blue</textcolor>
 			</control>
 			<control type="label">
@@ -37,7 +36,6 @@
 				<font>font11</font>
 				<label>$INFO[Container(11).ListItem.StartDate]</label>
 				<align>center</align>
-				<aligny>center</aligny>
 			</control>
 			<control type="list" id="11">
 				<posx>30</posx>
@@ -61,8 +59,6 @@
 						<height>30</height>
 						<font>font13</font>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.StartTime]</label>
 					</control>
 					<control type="image">
@@ -87,7 +83,6 @@
 						<height>30</height>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>![ListItem.IsRecording | ListItem.HasTimer]</visible>
 					</control>
@@ -97,7 +92,6 @@
 						<height>30</height>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>ListItem.IsRecording | ListItem.HasTimer</visible>
 					</control>
@@ -119,8 +113,6 @@
 						<height>30</height>
 						<font>font13</font>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.StartTime]</label>
 					</control>
 					<control type="image">
@@ -145,7 +137,6 @@
 						<height>30</height>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>![ListItem.IsRecording | ListItem.HasTimer]</visible>
 					</control>
@@ -155,7 +146,6 @@
 						<height>30</height>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>ListItem.IsRecording | ListItem.HasTimer</visible>
 					</control>

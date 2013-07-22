@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
 	<default type="multiimage">
-		<focusedcolor>textfocus</focusedcolor>
 		<width>150</width>
 		<timeperimage>8000</timeperimage>
 		<randomize>true</randomize>
@@ -12,7 +11,6 @@
 		<fadetime>500</fadetime>
 	</default>
 	<default type="rss">
-		<focusedcolor>textfocus</focusedcolor>
 		<width>1100</width>
 		<visible>!Skin.HasSetting(AutoHidePowerBtn) + [!Player.HasAudio | IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(HideNextSongsInfo)]</visible>
 		<urlset>1</urlset>
@@ -25,7 +23,6 @@
 		<font>font12</font>
 	</default>
 	<default type="scrollbar">
-		<focusedcolor>textfocus</focusedcolor>
 		<width>14</width>
 		<textureslidernibfocus>-</textureslidernibfocus>
 		<textureslidernib>-</textureslidernib>
@@ -39,7 +36,6 @@
 		<height>550</height>
 	</default>
 	<default type="videowindow">
-		<focusedcolor>textfocus</focusedcolor>
 		<width>1280</width>
 		<visible>Player.HasVideo</visible>
 		<posy>5</posy>
@@ -47,7 +43,6 @@
 		<height>720</height>
 	</default>
 	<default type="visualisation">
-		<focusedcolor>textfocus</focusedcolor>
 		<width>1280</width>
 		<posy>0</posy>
 		<posx>0</posx>
@@ -63,6 +58,8 @@
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="label">
+		<aligny>center</aligny>
+		<align>left</align>
 		<textcolor>textnofocus</textcolor>
 		<focusedcolor>textfocus</focusedcolor>
 		<posx>10</posx>
@@ -73,6 +70,7 @@
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="fadelabel">
+		<textoffsetx>10</textoffsetx>
 		<width>400</width>
 		<height>25</height>
 		<focusedcolor>textfocus</focusedcolor>
@@ -84,10 +82,11 @@
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="button">
+		<align>left</align>
 		<focusedcolor>textfocus</focusedcolor>
 		<posx>300</posx>
 		<posy>200</posy>
-		<width>300</width>
+		<width>750</width>
 		<height>40</height>
 		<texturefocus>buttons/fo_light.png</texturefocus>
 		<texturenofocus>buttons/nf_light.png</texturenofocus>
@@ -99,10 +98,14 @@
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="togglebutton">
+		<textwidth>290</textwidth>
+		<textoffsetx>10</textoffsetx>
+		<aligny>center</aligny>
+		<align>left</align>
 		<focusedcolor>textfocus</focusedcolor>
 		<posx>140</posx>
 		<posy>0</posy>
-		<width>23</width>
+		<width>50</width>
 		<height>40</height>
 		<texturefocus>OSDPauseFO.png</texturefocus>
 		<texturenofocus>OSDPauseNF.png</texturenofocus>
@@ -183,10 +186,11 @@
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="radiobutton">
+		<align>left</align>
 		<focusedcolor>textfocus</focusedcolor>
 		<posx>300</posx>
 		<posy>200</posy>
-		<width>300</width>
+		<width>750</width>
 		<height>40</height>
 		<radiowidth>24</radiowidth>
 		<radioheight>24</radioheight>
@@ -223,6 +227,9 @@
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="slider">
+		<texturenofocus>-</texturenofocus>
+		<texturefocus>-</texturefocus>
+		<aligny>center</aligny>
 		<width>720</width>
 		<textureslidernibfocus>controls/slider/nib-fo_light.png</textureslidernibfocus>
 		<textureslidernib>controls/slider/nib-nf_light.png</textureslidernib>
@@ -236,6 +243,8 @@
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="sliderex">
+		<posy>0</posy>
+		<posx>0</posx>
 		<focusedcolor>textfocus</focusedcolor>
 		<height>40</height>
 		<textoffsetx>10</textoffsetx>
@@ -273,10 +282,11 @@
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="edit">
+		<align>left</align>
 		<focusedcolor>textfocus</focusedcolor>
 		<posx>300</posx>
 		<posy>200</posy>
-		<width>300</width>
+		<width>250</width>
 		<height>40</height>
 		<texturefocus>buttons/fo_light.png</texturefocus>
 		<texturenofocus>buttons/nf_light.png</texturenofocus>

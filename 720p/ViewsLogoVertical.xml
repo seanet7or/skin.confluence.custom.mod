@@ -36,7 +36,6 @@
 						<posy>30</posy>
 						<width>330</width>
 						<height>89</height>
-						<align>left</align>
 						<font>font28_title</font>
 						<label>[B]$INFO[ListItem.Label][/B]</label>
 					</control>
@@ -85,7 +84,6 @@
 						<posy>30</posy>
 						<width>330</width>
 						<height>89</height>
-						<align>left</align>
 						<font>font28_title</font>
 						<label>[B]$LOCALIZE[20359] $INFO[ListItem.Episode][/B]</label>
 					</control>
@@ -95,7 +93,6 @@
 						<posy>30</posy>
 						<width>330</width>
 						<height>89</height>
-						<align>left</align>
 						<font>font28_title</font>
 						<label>[B]$INFO[ListItem.Label][/B]</label>
 					</control>
@@ -148,7 +145,6 @@
 						<posy>30</posy>
 						<width>270</width>
 						<height>89</height>
-						<align>left</align>
 						<aligny>bottom</aligny>
 						<font>font28_title</font>
 						<textcolor>textfocus</textcolor>
@@ -204,7 +200,6 @@
 						<posy>30</posy>
 						<width>270</width>
 						<height>89</height>
-						<align>left</align>
 						<aligny>bottom</aligny>
 						<font>font28_title</font>
 						<textcolor>textfocus</textcolor>
@@ -338,8 +333,6 @@
 					<height>25</height>
 					<font>font13</font>
 					<scroll>false</scroll>
-					<align>left</align>
-					<aligny>center</aligny>
 					<label>$VAR[MediaRuntime,[B][COLOR=blue]$LOCALIZE[2050]: [/COLOR][/B]]</label>
 					<visible>!Container.Content(TVShows) + !IsEmpty(ListItem.Duration)</visible>
 				</control>
@@ -349,8 +342,6 @@
 					<height>25</height>
 					<font>font13</font>
 					<scroll>false</scroll>
-					<align>left</align>
-					<aligny>center</aligny>
 					<label>$INFO[listitem.episode,[B][COLOR=blue]$LOCALIZE[20360]: [/COLOR][/B]]</label>
 					<visible>[Container.Content(TVShows) | Container.Content(Seasons)] + !IsEmpty(ListItem.episode)</visible>
 				</control>
@@ -362,7 +353,6 @@
 					<font>font13</font>
 					<scroll>false</scroll>
 					<align>right</align>
-					<aligny>center</aligny>
 					<label>$INFO[ListItem.Director,[B][COLOR=blue]$LOCALIZE[20339]: [/COLOR][/B]]</label>
 					<visible>!IsEmpty(ListItem.Director)</visible>
 				</control>
@@ -374,7 +364,6 @@
 					<font>font13</font>
 					<scroll>false</scroll>
 					<align>right</align>
-					<aligny>center</aligny>
 					<label>$INFO[ListItem.Premiered,[B][COLOR=blue]$LOCALIZE[31322]: [/COLOR][/B]]</label>
 					<visible>IsEmpty(ListItem.Director) + !IsEmpty(ListItem.Premiered)</visible>
 				</control>

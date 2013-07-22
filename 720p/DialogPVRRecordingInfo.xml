@@ -24,7 +24,6 @@
 			<font>font13_title</font>
 			<label>$LOCALIZE[19053]</label>
 			<align>center</align>
-			<aligny>center</aligny>
 			<textcolor>selected</textcolor>
 		</control>
 		<control type="label">
@@ -36,7 +35,6 @@
 			<font>font13_title</font>
 			<label>$INFO[ListItem.Title]</label>
 			<align>center</align>
-			<aligny>center</aligny>
 			<textcolor>blue</textcolor>
 		</control>
 		<control type="group">
@@ -48,7 +46,6 @@
 				<width>160</width>
 				<height>25</height>
 				<align>right</align>
-				<aligny>center</aligny>
 				<font>font13</font>
 				<textcolor>blue</textcolor>
 				<label>$LOCALIZE[552]:</label>
@@ -58,8 +55,6 @@
 				<posx>180</posx>
 				<width>470</width>
 				<height>25</height>
-				<align>left</align>
-				<aligny>center</aligny>
 				<font>font13</font>
 				<label>$INFO[ListItem.StartDate]</label>
 			</control>
@@ -70,7 +65,6 @@
 				<width>160</width>
 				<height>25</height>
 				<align>right</align>
-				<aligny>center</aligny>
 				<font>font13</font>
 				<textcolor>blue</textcolor>
 				<label>$LOCALIZE[142]</label>
@@ -81,8 +75,6 @@
 				<posy>35</posy>
 				<width>470</width>
 				<height>25</height>
-				<align>left</align>
-				<aligny>center</aligny>
 				<font>font13</font>
 				<label>$INFO[ListItem.StartTime]</label>
 			</control>
@@ -93,7 +85,6 @@
 				<width>160</width>
 				<height>25</height>
 				<align>right</align>
-				<aligny>center</aligny>
 				<font>font13</font>
 				<textcolor>blue</textcolor>
 				<label>$LOCALIZE[19148]:</label>
@@ -114,7 +105,6 @@
 				<width>160</width>
 				<height>25</height>
 				<align>right</align>
-				<aligny>center</aligny>
 				<font>font13</font>
 				<textcolor>blue</textcolor>
 				<label>$LOCALIZE[180]:</label>
@@ -125,7 +115,6 @@
 				<posy>105</posy>
 				<width>470</width>
 				<label>$INFO[ListItem.Duration]</label>
-				<align>left</align>
 				<font>font13</font>
 				<scroll>true</scroll>
 			</control>
@@ -136,7 +125,6 @@
 				<width>160</width>
 				<height>25</height>
 				<align>right</align>
-				<aligny>center</aligny>
 				<font>font13</font>
 				<textcolor>blue</textcolor>
 				<label>$LOCALIZE[135]:</label>
@@ -147,7 +135,6 @@
 				<posy>140</posy>
 				<width>470</width>
 				<label fallback="161">$INFO[ListItem.Genre]</label>
-				<align>left</align>
 				<font>font13</font>
 				<scroll>true</scroll>
 			</control>
@@ -197,10 +184,9 @@
 			<ondown>60</ondown>
 			<control type="button" id="10">
 				<description>OK</description>
-				<include>ButtonInfoDialogsCommonValues</include>
-				<font>font12_title</font>
 				<align>center</align>
 				<width>170</width>
+				<font>font12_title</font>
 				<label>186</label>
 			</control>
 		</control>

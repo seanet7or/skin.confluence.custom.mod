@@ -164,7 +164,6 @@
 				<textcolor>blue</textcolor>
 				<scroll>true</scroll>
 				<align>center</align>
-				<aligny>center</aligny>
 				<label>$VAR[DescriptiveLabel]</label>
 			</control>
 			<control type="label">
@@ -176,7 +175,6 @@
 				<wrapmultiline>true</wrapmultiline>
 				<scroll>false</scroll>
 				<align>center</align>
-				<aligny>center</aligny>
 				<label>$INFO[ListItem.Tagline]</label>
 				<visible>!IsEmpty(ListItem.Tagline) + Container.Content(Movies)</visible>
 			</control>
@@ -187,7 +185,6 @@
 				<height>20</height>
 				<scroll>true</scroll>
 				<align>center</align>
-				<aligny>center</aligny>
 				<label>$INFO[ListItem.Duration,$LOCALIZE[2050] , $LOCALIZE[12391]]</label>
 				<visible>Skin.HasSetting(View501GenreIcons)</visible>
 			</control>
@@ -219,7 +216,6 @@
 				<textcolor>blue</textcolor>
 				<scroll>true</scroll>
 				<align>center</align>
-				<aligny>center</aligny>
 				<label>$VAR[MainItemLabel]</label>
 			</control>
 			<control type="label">
@@ -230,7 +226,6 @@
 				<font>font30</font>
 				<scroll>true</scroll>
 				<align>center</align>
-				<aligny>center</aligny>
 				<label>$INFO[ListItem.TVShowTitle]</label>
 			</control>
 			<control type="label">
@@ -241,7 +236,6 @@
 				<font>font13</font>
 				<scroll>true</scroll>
 				<align>center</align>
-				<aligny>center</aligny>
 				<label>$INFO[ListItem.Episode,, $LOCALIZE[20453]]</label>
 			</control>
 			<control type="label">
@@ -251,7 +245,6 @@
 				<height>35</height>
 				<scroll>true</scroll>
 				<align>center</align>
-				<aligny>center</aligny>
 				<label>($INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102]] - $INFO[ListItem.Property(UnWatchedEpisodes), , $LOCALIZE[16101]])</label>
 			</control>
 		</control>
@@ -266,7 +259,6 @@
 				<textcolor>blue</textcolor>
 				<scroll>true</scroll>
 				<align>center</align>
-				<aligny>center</aligny>
 				<label>$VAR[MainItemLabel]</label>
 			</control>
 			<control type="label">
@@ -277,7 +269,6 @@
 				<font>font30</font>
 				<scroll>true</scroll>
 				<align>center</align>
-				<aligny>center</aligny>
 				<label>$INFO[ListItem.Genre]</label>
 				<visible>Skin.HasSetting(View501GenreIcons)</visible>
 			</control>
@@ -289,7 +280,6 @@
 				<font>font13</font>
 				<scroll>true</scroll>
 				<align>center</align>
-				<aligny>center</aligny>
 				<label>$INFO[ListItem.Episode,, $LOCALIZE[20453]]</label>
 			</control>
 			<control type="label">
@@ -299,7 +289,6 @@
 				<height>35</height>
 				<scroll>true</scroll>
 				<align>center</align>
-				<aligny>center</aligny>
 				<label>($INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102]] - $INFO[ListItem.Property(UnWatchedEpisodes), , $LOCALIZE[16101]])</label>
 			</control>
 		</control>
@@ -322,7 +311,6 @@
 				<font>font24_title</font>
 				<scroll>true</scroll>
 				<align>center</align>
-				<aligny>center</aligny>
 				<label>$VAR[MainItemLabel]</label>
 				<animation effect="slide" start="0,0" end="0,25" time="200" condition="!Control.HasFocus(508)">conditional</animation>
 			</control>
@@ -512,8 +500,6 @@
 						<height>40</height>
 						<font>font13</font>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
@@ -522,7 +508,6 @@
 						<height>40</height>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
 						<visible>Window.IsVisible(Videos)</visible>
 						<animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]">conditional</animation>
@@ -590,8 +575,6 @@
 						<font>font13</font>
 						<textcolor>textfocus</textcolor>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
@@ -600,7 +583,6 @@
 						<height>40</height>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
 						<visible>Window.IsVisible(Videos)</visible>
 						<animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]">conditional</animation>
@@ -696,7 +678,6 @@
 						<height>25</height>
 						<label>$LOCALIZE[20360]:</label>
 						<align>right</align>
-						<aligny>center</aligny>
 						<textcolor>blue</textcolor>
 					</control>
 					<control type="label">
@@ -706,8 +687,6 @@
 						<width>360</width>
 						<height>25</height>
 						<label fallback="416">$INFO[listitem.episode] [COLOR=textnofocus] ($INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102]] - $INFO[ListItem.Property(UnWatchedEpisodes), , $LOCALIZE[16101]])[/COLOR]</label>
-						<align>left</align>
-						<aligny>center</aligny>
 						<scroll>true</scroll>
 					</control>
 					<control type="label">
@@ -718,7 +697,6 @@
 						<height>25</height>
 						<label>$LOCALIZE[31322]:</label>
 						<align>right</align>
-						<aligny>center</aligny>
 						<textcolor>blue</textcolor>
 					</control>
 					<control type="label">
@@ -728,8 +706,6 @@
 						<width>360</width>
 						<height>25</height>
 						<label fallback="416">$INFO[listitem.premiered]</label>
-						<align>left</align>
-						<aligny>center</aligny>
 						<scroll>true</scroll>
 					</control>
 					<control type="label">
@@ -740,7 +716,6 @@
 						<height>25</height>
 						<label>$LOCALIZE[515]:</label>
 						<align>right</align>
-						<aligny>center</aligny>
 						<textcolor>blue</textcolor>
 					</control>
 					<control type="fadelabel">
@@ -846,7 +821,6 @@
 					<height>25</height>
 					<label>[COLOR=textnofocus]$LOCALIZE[20360]:[/COLOR] $INFO[ListItem.Property(WatchedEpisodes),([COLOR=blue],[/COLOR]) $LOCALIZE[16102]] $INFO[ListItem.Property(UnWatchedEpisodes),([COLOR=blue],[/COLOR]) $LOCALIZE[16101]]</label>
 					<align>center</align>
-					<aligny>center</aligny>
 				</control>
 			</control>
 			<control type="group">
@@ -909,8 +883,6 @@
 						<height>40</height>
 						<font>font13</font>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
@@ -919,7 +891,6 @@
 						<height>40</height>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
 						<visible>Window.IsVisible(Videos)</visible>
 						<animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]">conditional</animation>
@@ -987,8 +958,6 @@
 						<font>font13</font>
 						<textcolor>textfocus</textcolor>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
@@ -997,7 +966,6 @@
 						<height>40</height>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
 						<visible>Window.IsVisible(Videos)</visible>
 						<animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]">conditional</animation>
@@ -1105,7 +1073,6 @@
 					<height>25</height>
 					<label>$LOCALIZE[345]:</label>
 					<align>right</align>
-					<aligny>center</aligny>
 					<font>font13_title</font>
 					<textcolor>blue</textcolor>
 				</control>
@@ -1116,8 +1083,6 @@
 					<width>340</width>
 					<height>25</height>
 					<label fallback="416">$INFO[listitem.Year]</label>
-					<align>left</align>
-					<aligny>center</aligny>
 					<font>font13</font>
 					<scroll>true</scroll>
 				</control>
@@ -1129,7 +1094,6 @@
 					<height>25</height>
 					<label>$LOCALIZE[515]:</label>
 					<align>right</align>
-					<aligny>center</aligny>
 					<font>font13_title</font>
 					<textcolor>blue</textcolor>
 				</control>
@@ -1194,7 +1158,6 @@
 					<height>25</height>
 					<label>$LOCALIZE[31322]:</label>
 					<align>right</align>
-					<aligny>center</aligny>
 					<font>font13_title</font>
 					<textcolor>blue</textcolor>
 				</control>
@@ -1205,8 +1168,6 @@
 					<width>340</width>
 					<height>25</height>
 					<label fallback="416">$INFO[listitem.Premiered]</label>
-					<align>left</align>
-					<aligny>center</aligny>
 					<font>font13</font>
 					<scroll>true</scroll>
 				</control>
@@ -1218,7 +1179,6 @@
 					<height>25</height>
 					<label>$LOCALIZE[20359]:</label>
 					<align>right</align>
-					<aligny>center</aligny>
 					<font>font13_title</font>
 					<textcolor>blue</textcolor>
 				</control>
@@ -1265,8 +1225,6 @@
 						<height>40</height>
 						<font>font13</font>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>!stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
 					</control>
@@ -1275,8 +1233,6 @@
 						<height>40</height>
 						<font>font13</font>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>Skin.HasSetting(HideWatchStatus)</visible>
 					</control>
@@ -1321,8 +1277,6 @@
 						<font>font13</font>
 						<textcolor>textfocus</textcolor>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>!stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
 					</control>
@@ -1332,8 +1286,6 @@
 						<font>font13</font>
 						<textcolor>textfocus</textcolor>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>Skin.HasSetting(HideWatchStatus)</visible>
 					</control>
@@ -1380,8 +1332,6 @@
 						<height>70</height>
 						<font>font13</font>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>IsEmpty(ListItem.Art(banner))</visible>
 					</control>
@@ -1416,8 +1366,6 @@
 						<font>font13</font>
 						<textcolor>textfocus</textcolor>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>IsEmpty(ListItem.Art(banner))</visible>
 					</control>
@@ -1466,8 +1414,6 @@
 					<width>540</width>
 					<height>30</height>
 					<font>font24_title</font>
-					<align>left</align>
-					<aligny>center</aligny>
 					<label>$VAR[MainItemLabel]</label>
 					<visible>Skin.HasSetting(View515Hidelogo) | IsEmpty(ListItem.Title) | IsEmpty(ListItem.Art(clearlogo))</visible>
 				</control>
@@ -1530,8 +1476,6 @@
 					<width>540</width>
 					<height>30</height>
 					<font>font24_title</font>
-					<align>left</align>
-					<aligny>center</aligny>
 					<label>$VAR[MainItemLabel]</label>
 					<visible>Skin.HasSetting(View515Hidelogo) | IsEmpty(ListItem.Title) | IsEmpty(ListItem.Art(clearlogo))</visible>
 				</control>
@@ -1586,8 +1530,6 @@
 					<width>730</width>
 					<height>30</height>
 					<font>font24_title</font>
-					<align>left</align>
-					<aligny>center</aligny>
 					<label>$VAR[MainItemLabel]</label>
 				</control>
 				<control type="textbox">
@@ -1641,8 +1583,6 @@
 					<width>400</width>
 					<height>30</height>
 					<font>font24_title</font>
-					<align>left</align>
-					<aligny>center</aligny>
 					<label>$VAR[MainItemLabel]</label>
 				</control>
 				<control type="textbox">
@@ -1709,7 +1649,6 @@
 				<textcolor>blue</textcolor>
 				<scroll>true</scroll>
 				<align>center</align>
-				<aligny>center</aligny>
 				<label>$VAR[MainItemLabel]</label>
 			</control>
 			<control type="group">
@@ -1722,8 +1661,6 @@
 					<height>30</height>
 					<font>font13_title</font>
 					<scroll>true</scroll>
-					<align>left</align>
-					<aligny>center</aligny>
 					<label>31308</label>
 				</control>
 				<control type="fadelabel">
@@ -1781,8 +1718,6 @@
 					<height>30</height>
 					<font>font13_title</font>
 					<scroll>true</scroll>
-					<align>left</align>
-					<aligny>center</aligny>
 					<label>20339</label>
 				</control>
 				<control type="label">
@@ -1792,8 +1727,6 @@
 					<height>30</height>
 					<font>font13</font>
 					<scroll>true</scroll>
-					<align>left</align>
-					<aligny>center</aligny>
 					<label>$INFO[ListItem.Director]</label>
 				</control>
 				<control type="label">
@@ -1803,8 +1736,6 @@
 					<height>30</height>
 					<font>font13_title</font>
 					<scroll>true</scroll>
-					<align>left</align>
-					<aligny>center</aligny>
 					<label>20417</label>
 				</control>
 				<control type="label">
@@ -1814,7 +1745,6 @@
 					<height>30</height>
 					<font>font13</font>
 					<scroll>true</scroll>
-					<align>left</align>
 					<aligny>top</aligny>
 					<label>$INFO[ListItem.Writer]</label>
 				</control>
@@ -1829,8 +1759,6 @@
 					<height>30</height>
 					<font>font13_title</font>
 					<scroll>true</scroll>
-					<align>left</align>
-					<aligny>center</aligny>
 					<label>20351</label>
 				</control>
 				<control type="fadelabel">
@@ -1877,8 +1805,6 @@
 					<height>30</height>
 					<font>font13_title</font>
 					<scroll>true</scroll>
-					<align>left</align>
-					<aligny>center</aligny>
 					<label>20360</label>
 				</control>
 				<control type="label">
@@ -1888,8 +1814,6 @@
 					<height>30</height>
 					<font>font13</font>
 					<scroll>true</scroll>
-					<align>left</align>
-					<aligny>center</aligny>
 					<label>$LOCALIZE[20161] : $INFO[ListItem.Episode]</label>
 				</control>
 				<control type="label">
@@ -1899,8 +1823,6 @@
 					<height>30</height>
 					<font>font13</font>
 					<scroll>true</scroll>
-					<align>left</align>
-					<aligny>center</aligny>
 					<label>$LOCALIZE[16102] : $INFO[ListItem.Property(WatchedEpisodes)]</label>
 				</control>
 				<control type="label">
@@ -1910,8 +1832,6 @@
 					<height>30</height>
 					<font>font13</font>
 					<scroll>true</scroll>
-					<align>left</align>
-					<aligny>center</aligny>
 					<label>$LOCALIZE[16101] : $INFO[ListItem.Property(UnWatchedEpisodes)]</label>
 				</control>
 			</control>
@@ -1924,8 +1844,6 @@
 					<height>30</height>
 					<font>font13_title</font>
 					<scroll>true</scroll>
-					<align>left</align>
-					<aligny>center</aligny>
 					<label>207</label>
 				</control>
 				<control type="textbox">

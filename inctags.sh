@@ -1,7 +1,7 @@
 
 CONTROLS=$(grep -o '<control type="[a-z]*"' 720p/* | grep -o '"[a-z]*"' | tr -d '"' | sort -u -r | egrep -v 'list|group|panel|epggrid|karvisualisation')
 
-printf "\nScanning for tags to optimize: "
+printf "\nScanning for tags used in includes: "
 OPTTAGS=""
 for CONTROL in $CONTROLS ; do
 	TAGS=$(grep -a -z -Po "<control type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</control>" 720p/* | grep -o "<[a-z]*[ >]" | grep -v "<control" | tr -d '<> ' | sort -u )
@@ -11,8 +11,9 @@ for CONTROL in $CONTROLS ; do
 		INCLUDETAGS="$INCLUDETAGS"$'\n'$(grep -a -z -Po "<include name=\"$INCLUDE\".*\n(\s*<[a-z].*\n)*\s*</include>" 720p/* | grep -o "<[a-z]*[ >]" | grep -v "<include" | tr -d '<>' | sort -u)
 	done
 	INCLUDETAGS=$(echo "$INCLUDETAGS" | sort -u)
-	printf "\n'$CONTROL' control:"
-	printf "\n'$INCLUDETAGS'"
+	if ! [ -z "$INCLUDETAGS" ] ; then
+		printf "\n'$CONTROL' control: '$INCLUDETAGS'"
+	fi
 	for TAG in $TAGS ; do
 		if ! [[ *$INCLUDETAGS* = *$TAG* ]] ; then
 			OPTTAGS="$OPTTAGS"$'\n'"$CONTROL;$TAG"

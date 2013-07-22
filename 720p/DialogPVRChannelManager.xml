@@ -24,7 +24,6 @@
 			<font>font13_title</font>
 			<label>$LOCALIZE[19199] - $LOCALIZE[19023]</label>
 			<align>center</align>
-			<aligny>center</aligny>
 			<textcolor>selected</textcolor>
 			<visible>IsEmpty(Window.Property(IsRadio))</visible>
 		</control>
@@ -37,7 +36,6 @@
 			<font>font13_title</font>
 			<label>$LOCALIZE[19199] - $LOCALIZE[19024]</label>
 			<align>center</align>
-			<aligny>center</aligny>
 			<textcolor>selected</textcolor>
 			<visible>!IsEmpty(Window.Property(IsRadio))</visible>
 		</control>
@@ -92,8 +90,6 @@
 						<posx>45</posx>
 						<width>335</width>
 						<height>40</height>
-						<align>left</align>
-						<aligny>center</aligny>
 						<selectedcolor>selected</selectedcolor>
 						<label>$INFO[ListItem.Property(Number),(,) - ]$INFO[ListItem.Property(Name)]</label>
 						<visible>ListItem.Property(ActiveChannel)</visible>
@@ -102,8 +98,6 @@
 						<posx>45</posx>
 						<width>335</width>
 						<height>40</height>
-						<align>left</align>
-						<aligny>center</aligny>
 						<textcolor>textdisabled</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<label>$INFO[ListItem.Property(Number),(,) - ]$INFO[ListItem.Property(Name)]</label>
@@ -146,8 +140,6 @@
 						<posx>45</posx>
 						<width>335</width>
 						<height>40</height>
-						<align>left</align>
-						<aligny>center</aligny>
 						<textcolor>textfocus</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<label>$INFO[ListItem.Property(Number),(,) - ]$INFO[ListItem.Property(Name)]</label>
@@ -157,8 +149,6 @@
 						<posx>45</posx>
 						<width>335</width>
 						<height>40</height>
-						<align>left</align>
-						<aligny>center</aligny>
 						<textcolor>textdisabled</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<label>$INFO[ListItem.Property(Number),(,) - ]$INFO[ListItem.Property(Name)]</label>
@@ -177,8 +167,6 @@
 						<posy>30</posy>
 						<width>410</width>
 						<height>30</height>
-						<align>left</align>
-						<aligny>center</aligny>
 						<selectedcolor>selected</selectedcolor>
 						<label>$LOCALIZE[19210]: $INFO[ListItem.Property(ClientName)]</label>
 					</control>
@@ -195,8 +183,6 @@
 					<width>380</width>
 					<height>20</height>
 					<label>$LOCALIZE[31511]</label>
-					<align>left</align>
-					<aligny>center</aligny>
 					<textcolor>blue</textcolor>
 				</control>
 				<control type="radiobutton" id="7">
@@ -206,7 +192,6 @@
 					<width>380</width>
 					<height>35</height>
 					<font>font12</font>
-					<align>left</align>
 					<texturenofocus>buttons/nf_light.png</texturenofocus>
 					<label>19074</label>
 					<onleft>20</onleft>
@@ -257,7 +242,6 @@
 					<width>380</width>
 					<height>35</height>
 					<font>font12</font>
-					<align>left</align>
 					<texturenofocus>buttons/nf_light.png</texturenofocus>
 					<label>19206</label>
 					<onleft>20</onleft>
@@ -284,7 +268,6 @@
 					<width>380</width>
 					<height>35</height>
 					<font>font12</font>
-					<align>left</align>
 					<texturenofocus>buttons/nf_light.png</texturenofocus>
 					<label>19267</label>
 					<onleft>20</onleft>
@@ -302,8 +285,6 @@
 					<width>380</width>
 					<height>20</height>
 					<label>$LOCALIZE[31026]</label>
-					<align>left</align>
-					<aligny>center</aligny>
 					<textcolor>blue</textcolor>
 				</control>
 				<control type="button" id="30">

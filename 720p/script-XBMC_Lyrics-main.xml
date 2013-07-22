@@ -29,7 +29,6 @@
 				<font>font30_title</font>
 				<label>$LOCALIZE[SCRIPT0]</label>
 				<align>right</align>
-				<aligny>center</aligny>
 			</control>
 			<control type="label">
 				<description>Artist label</description>
@@ -40,7 +39,6 @@
 				<font>font13_title</font>
 				<label>$INFO[MusicPlayer.Artist]</label>
 				<align>right</align>
-				<aligny>center</aligny>
 			</control>
 			<control type="label">
 				<description>Song label</description>
@@ -51,7 +49,6 @@
 				<font>font13_title</font>
 				<label>$INFO[MusicPlayer.Title]</label>
 				<align>right</align>
-				<aligny>center</aligny>
 			</control>
 			<control type="textbox" id="100">
 				<description>textarea</description>
@@ -93,10 +90,8 @@
 						<width>550</width>
 						<height>25</height>
 						<font>font13</font>
-						<aligny>center</aligny>
 						<align>center</align>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<info>ListItem.Label</info>
 					</control>
 				</itemlayout>
@@ -106,11 +101,9 @@
 						<width>550</width>
 						<height>25</height>
 						<font>font13</font>
-						<aligny>center</aligny>
 						<align>center</align>
 						<textcolor>textfocus</textcolor>
 						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>!Control.HasFocus(110)</visible>
 					</control>
@@ -119,10 +112,8 @@
 						<width>550</width>
 						<height>25</height>
 						<font>font13</font>
-						<aligny>center</aligny>
 						<align>center</align>
 						<textcolor>selected</textcolor>
-						<align>left</align>
 						<label fallback="--">$INFO[ListItem.Label]</label>
 						<visible>Control.HasFocus(110)</visible>
 					</control>
@@ -144,7 +135,6 @@
 				<width>550</width>
 				<height>30</height>
 				<align>center</align>
-				<aligny>center</aligny>
 				<font>font13_title</font>
 				<label>31203</label>
 				<visible>Control.IsVisible(120) + ![Control.IsVisible(100) | Control.IsVisible(110)]</visible>
@@ -166,8 +156,6 @@
 						<width>530</width>
 						<height>40</height>
 						<font>font13</font>
-						<align>left</align>
-						<aligny>center</aligny>
 						<selectedcolor>selected</selectedcolor>
 						<info>ListItem.Label</info>
 					</control>
@@ -184,8 +172,6 @@
 						<width>530</width>
 						<height>40</height>
 						<font>font13</font>
-						<align>left</align>
-						<aligny>center</aligny>
 						<selectedcolor>selected</selectedcolor>
 						<info>ListItem.Label</info>
 					</control>
@@ -210,7 +196,6 @@
 				<label>$LOCALIZE[31205] - $INFO[Control.GetLabel(200)]</label>
 				<font>font12_title</font>
 				<align>right</align>
-				<aligny>center</aligny>
 			</control>
 			<control type="label" id="200">
 				<posy>60</posy>

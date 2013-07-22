@@ -78,7 +78,6 @@
 				<height>35</height>
 				<width>145</width>
 				<textwidth>150</textwidth>
-				<align>left</align>
 				<font>font12</font>
 				<texturefocus flipy="true" border="0,2,0,2">home/sub-fo_light.png</texturefocus>
 				<texturenofocus flipy="true" border="0,2,0,2">home/sub-nf_light.png</texturenofocus>
@@ -401,7 +400,6 @@
 				<height>35</height>
 				<width>160</width>
 				<textwidth>150</textwidth>
-				<align>left</align>
 				<font>font12</font>
 				<texturefocus flipy="true" border="0,2,0,2">home/sub-fo_light.png</texturefocus>
 				<texturenofocus flipy="true" border="0,2,0,2">home/sub-nf_light.png</texturenofocus>
@@ -423,7 +421,6 @@
 				<width>450</width>
 				<label>$VAR[InfoBarStats]</label>
 				<align>center</align>
-				<aligny>center</aligny>
 				<font>font12_title</font>
 				<visible>!Player.HasMedia + !Skin.HasSetting(HideHomeStats)</visible>
 			</control>
@@ -574,7 +571,6 @@
 						<font>font_MainMenu</font>
 						<textcolor>buttonnofocus</textcolor>
 						<align>center</align>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 				</itemlayout>
@@ -593,7 +589,6 @@
 						<font>font_MainMenu</font>
 						<textcolor>buttonfocus</textcolor>
 						<align>center</align>
-						<aligny>center</aligny>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 				</focusedlayout>
@@ -989,7 +984,6 @@
 				<pauseatend>200</pauseatend>
 				<label>$VAR[NextFiveSongScroller]</label>
 				<font>font12</font>
-				<textoffsetx>10</textoffsetx>
 				<visible>!Skin.HasSetting(AutoHidePowerBtn) + Player.HasAudio + !IsEmpty(MusicPlayer.offset(1).Artist) + !Skin.HasSetting(HideNextSongsInfo)</visible>
 			</control>
 			<control type="fadelabel" id="1">
@@ -1002,7 +996,6 @@
 				<pauseatend>200</pauseatend>
 				<label>$VAR[NextFiveSongScroller]</label>
 				<font>font12</font>
-				<textoffsetx>10</textoffsetx>
 				<visible>Skin.HasSetting(AutoHidePowerBtn) + Player.HasAudio + !IsEmpty(MusicPlayer.offset(1).Artist) + !Skin.HasSetting(HideNextSongsInfo)</visible>
 			</control>
 		</control>

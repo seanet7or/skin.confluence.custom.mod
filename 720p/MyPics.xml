@@ -53,32 +53,29 @@
 					<label>31006</label>
 					<textcolor>blue</textcolor>
 					<align>center</align>
-					<aligny>center</aligny>
 				</control>
 				<control type="button" id="2">
 					<description>View As button</description>
 					<textwidth>235</textwidth>
-					<include>ButtonCommonValues</include>
 					<width>250</width>
 					<texturenofocus>-</texturenofocus>
+					<textwidth>200</textwidth>
 					<label>-</label>
 				</control>
 				<control type="button" id="3">
 					<description>Sort by button</description>
-					<include>ButtonCommonValues</include>
 					<width>250</width>
 					<texturenofocus>-</texturenofocus>
+					<textwidth>200</textwidth>
 					<label>103</label>
 				</control>
 				<control type="togglebutton" id="4">
 					<posy>167</posy>
 					<description>Sort asc</description>
-					<include>ButtonCommonValues</include>
-					<textoffsetx>10</textoffsetx>
-					<aligny>center</aligny>
 					<width>250</width>
 					<texturenofocus>-</texturenofocus>
 					<texturefocus>buttons/fo_light.png</texturefocus>
+					<textwidth>200</textwidth>
 					<alttexturefocus>buttons/fo_light.png</alttexturefocus>
 					<alttexturenofocus>-</alttexturenofocus>
 					<label>31051</label>
@@ -89,16 +86,15 @@
 					<visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
 					<description>Filter</description>
 					<textwidth>230</textwidth>
-					<include>ButtonCommonValues</include>
-					<width>250</width>
 					<texturenofocus>-</texturenofocus>
+					<textwidth>200</textwidth>
 					<label>587</label>
 				</control>
 				<control type="radiobutton" id="20">
 					<visible>Container.CanFilterAdvanced</visible>
 					<description>Filter</description>
-					<include>ButtonCommonValues</include>
 					<width>250</width>
+					<textwidth>200</textwidth>
 					<label>587</label>
 					<onclick>right</onclick>
 					<onclick>Filter</onclick>
@@ -111,28 +107,27 @@
 					<label>31026</label>
 					<textcolor>blue</textcolor>
 					<align>center</align>
-					<aligny>center</aligny>
 				</control>
 				<control type="button" id="6">
 					<description>Slideshow</description>
 					<textwidth>235</textwidth>
-					<include>ButtonCommonValues</include>
 					<width>250</width>
 					<texturenofocus>-</texturenofocus>
+					<textwidth>200</textwidth>
 					<label>108</label>
 				</control>
 				<control type="button" id="7">
 					<description>Recersive Slideshow</description>
 					<textwidth>235</textwidth>
-					<include>ButtonCommonValues</include>
 					<width>250</width>
 					<texturenofocus>-</texturenofocus>
+					<textwidth>200</textwidth>
 					<label>361</label>
 				</control>
 				<control type="radiobutton" id="9">
 					<description>Randomize Toggle</description>
-					<include>ButtonCommonValues</include>
 					<width>250</width>
+					<textwidth>200</textwidth>
 					<label>13319</label>
 				</control>
 				<include>CommonNowPlaying_Controls</include>

@@ -6,6 +6,7 @@ CONTROLS=$(grep -o '<control type="[a-z]*"' 720p/* | grep -o '"[a-z]*"' | tr -d 
 IFS=$'\n' ; for CONTROL in $CONTROLS ; do
 	#echo "Control is '$CONTROL'."
 	TAGS=$(grep -a -z -Po "<control type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</control>" 720p/* | grep -o "<[a-z]*[ >]" | grep -v "<control" | tr -d '<> ' | sort -u )
+	TAGS=$(echo "$TAGS" | egrep -v 'onclick|ondown|onup|onleft|onright|onback')
 	#printf "\nAll tags for control '$CONTROL' are: '$TAGS'"
 	INCLUDES=$(grep -a -z -Po "<control type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</control>" 720p/* | grep "<include>" | sed 's|<[/]*include>||g' | sed 's|^\s*||' | sort -u )
 	#printf "\nIncludes are: '$INCLUDES'."
