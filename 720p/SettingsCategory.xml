@@ -2,7 +2,7 @@
 <window>
 	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol>3</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
+	<allowoverlay>false</allowoverlay>
 	<include condition="!Skin.HasSetting(InitialSetUpRun)">DefaultInitialSetup</include>
 	<onload condition="System.HasAddon(script.favourites)">XBMC.RunScript(script.favourites)</onload>
 	<onload>SetProperty(MenuItemActive,Settings,Home)</onload>
@@ -51,7 +51,6 @@
 				<posx>300</posx>
 				<posy>20</posy>
 				<width>740</width>
-				<height>30</height>
 				<font>font16</font>
 				<label>$INFO[Control.GetLabel(2)] - $LOCALIZE[5]</label>
 			</control>
@@ -81,29 +80,35 @@
 			<description>Default Category Button</description>
 			<height>60</height>
 			<width>260</width>
+			<textoffsetx>20</textoffsetx>
 			<align>right</align>
 			<font>font13_title</font>
-			<texturenofocus border="5">-</texturenofocus>
+			<focusedcolor>textfocus</focusedcolor>
+			<texturenofocus border="5"></texturenofocus>
 		</control>
 		<control type="button" id="7">
 			<width>300</width>
 			<description>Default Button</description>
 			<posx>0</posx>
 			<posy>0</posy>
-			<texturenofocus border="0,2,0,2">-</texturenofocus>
+			<focusedcolor>textfocus</focusedcolor>
+			<texturenofocus border="0,2,0,2"></texturenofocus>
 		</control>
 		<control type="radiobutton" id="8">
 			<width>300</width>
 			<description>Default RadioButton</description>
 			<posx>0</posx>
 			<posy>0</posy>
-			<texturenofocus border="0,2,0,2">-</texturenofocus>
+			<focusedcolor>textfocus</focusedcolor>
+			<texturenofocus border="0,2,0,2"></texturenofocus>
 		</control>
 		<control type="spincontrolex" id="9">
 			<description>Default SpinControlex</description>
-			<texturenofocus border="0,2,0,2">-</texturenofocus>
+			<focusedcolor>textfocus</focusedcolor>
+			<texturenofocus border="0,2,0,2"></texturenofocus>
 		</control>
 		<control type="image" id="11">
+			<width>1280</width>
 			<description>separator image</description>
 			<height>2</height>
 		</control>
@@ -112,7 +117,7 @@
 			<posx>0</posx>
 			<width>0</width>
 			<height>0</height>
-			<font>-</font>
+			<font></font>
 			<visible>false</visible>
 		</control>
 		<include>CommonNowPlaying</include>
@@ -129,8 +134,8 @@
 				<width>45</width>
 				<height>45</height>
 				<label>1036</label>
-				<font>-</font>
-				<aligny>-</aligny>
+				<font></font>
+				<aligny></aligny>
 				<onclick>$VAR[VolumeStepUp]</onclick>
 				<onclick>VolumeUp</onclick>
 				<onleft condition="Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)">84</onleft>
@@ -159,8 +164,8 @@
 				<width>45</width>
 				<height>45</height>
 				<label>1036</label>
-				<font>-</font>
-				<aligny>-</aligny>
+				<font></font>
+				<aligny></aligny>
 				<onclick>$VAR[VolumeStepDown]</onclick>
 				<onclick>VolumeDown</onclick>
 				<onleft>80</onleft>
@@ -188,8 +193,8 @@
 				<width>45</width>
 				<height>45</height>
 				<label>1036</label>
-				<font>-</font>
-				<aligny>-</aligny>
+				<font></font>
+				<aligny></aligny>
 				<onclick>back</onclick>
 				<onleft>81</onleft>
 				<onright>83</onright>
@@ -212,8 +217,8 @@
 				<width>45</width>
 				<height>45</height>
 				<label>31003</label>
-				<font>-</font>
-				<aligny>-</aligny>
+				<font></font>
+				<aligny></aligny>
 				<onclick>ActivateWindow(home)</onclick>
 				<onleft>82</onleft>
 				<onright>5</onright>

@@ -2,7 +2,7 @@
 <window>
 	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">10</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
+	<allowoverlay>false</allowoverlay>
 	<controls>
 		<control type="image">
 			<description>Startup Background Image</description>
@@ -17,8 +17,8 @@
 			<height>42</height>
 			<description>trigger</description>
 			<onfocus>ReplaceWindow(Home)</onfocus>
-			<texturenofocus>-</texturenofocus>
-			<texturefocus>-</texturefocus>
+			<texturenofocus></texturenofocus>
+			<texturefocus></texturefocus>
 			<visible>!Skin.HasSetting(Use_Startup_Playlist)</visible>
 		</control>
 		<control type="button" id="10">
@@ -27,8 +27,8 @@
 			<description>trigger with startup Playlist</description>
 			<onfocus>XBMC.PlayMedia($INFO[Skin.String(Startup_Playlist_Path)])</onfocus>
 			<onfocus>ReplaceWindow(Home)</onfocus>
-			<texturenofocus>-</texturenofocus>
-			<texturefocus>-</texturefocus>
+			<texturenofocus></texturenofocus>
+			<texturefocus></texturefocus>
 			<visible>Skin.HasSetting(Use_Startup_Playlist)</visible>
 		</control>
 	</controls>

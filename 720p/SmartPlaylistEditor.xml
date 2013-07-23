@@ -2,7 +2,7 @@
 <window>
 	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">22</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
+	<allowoverlay>false</allowoverlay>
 	<coordinates>
 		<system>1</system>
 		<posx>240</posx>
@@ -23,11 +23,10 @@
 				<posx>40</posx>
 				<posy>20</posy>
 				<width>720</width>
-				<height>30</height>
 				<font>font13_title</font>
 				<label>$LOCALIZE[21432]</label>
 				<align>center</align>
-				<textcolor>selected</textcolor>
+				<textcolor>heading1</textcolor>
 			</control>
 			<control type="spincontrolex" id="22">
 				<description>Set Playlist type</description>
@@ -41,33 +40,35 @@
 				<ondown>12</ondown>
 			</control>
 			<control type="label">
+				<height>0</height>
 				<description>Name Label</description>
 				<posx>30</posx>
 				<posy>120</posy>
 				<width>740</width>
 				<label>21433</label>
-				<textcolor>blue</textcolor>
+				<textcolor>heading2</textcolor>
 			</control>
 			<control type="edit" id="12">
 				<description>Name Button</description>
 				<posx>30</posx>
 				<posy>145</posy>
 				<width>740</width>
-				<textwidth>720</textwidth>
+				<textoffsetx>10</textoffsetx>
 				<align>center</align>
-				<label>-</label>
+				<label></label>
 				<onup>22</onup>
 				<onleft>12</onleft>
 				<onright>12</onright>
 				<ondown>10</ondown>
 			</control>
 			<control type="label">
+				<height>0</height>
 				<description>rules label</description>
 				<posx>30</posx>
 				<posy>200</posy>
 				<width>740</width>
 				<label>21434</label>
-				<textcolor>blue</textcolor>
+				<textcolor>heading2</textcolor>
 			</control>
 			<control type="list" id="10">
 				<description>Rules List Control</description>
@@ -87,7 +88,6 @@
 						<width>530</width>
 						<height>40</height>
 						<info>ListItem.Label</info>
-						<selectedcolor>selected</selectedcolor>
 						<font>font13</font>
 					</control>
 				</itemlayout>
@@ -106,7 +106,6 @@
 						<width>530</width>
 						<height>40</height>
 						<info>ListItem.Label</info>
-						<selectedcolor>selected</selectedcolor>
 						<font>font13</font>
 					</control>
 				</focusedlayout>
@@ -155,12 +154,13 @@
 				</control>
 			</control>
 			<control type="label">
+				<height>0</height>
 				<description>Name Label</description>
 				<posx>30</posx>
 				<posy>370</posy>
 				<width>740</width>
 				<label>31325</label>
-				<textcolor>blue</textcolor>
+				<textcolor>heading2</textcolor>
 			</control>
 			<control type="spincontrolex" id="16">
 				<posx>30</posx>

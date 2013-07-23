@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
 	<backgroundcolor>0</backgroundcolor>
-	<defaultcontrol>-</defaultcontrol>
+	<defaultcontrol></defaultcontrol>
 	<controls>
 		<control type="group" id="1">
 			<visible>[Player.ShowInfo | Window.IsActive(VideoOSD) | Window.IsVisible(infodialog)] | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | [!Skin.HasSetting(HideInfoStartOSD) + !IntegerGreaterThan(Player.time,5)]</visible>
@@ -46,7 +46,6 @@
 				<posx>15r</posx>
 				<posy>5</posy>
 				<width>345</width>
-				<height>30</height>
 				<align>right</align>
 				<font>font35_title</font>
 				<label>$INFO[System.Time]</label>
@@ -231,7 +230,7 @@
 					<posy>30</posy>
 					<width>910</width>
 					<height>25</height>
-					<label>$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.ChannelNumber, - ([COLOR=blue],[/COLOR])]</label>
+					<label>$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.ChannelNumber, - (,)]</label>
 					<visible>VideoPlayer.Content(LiveTV)</visible>
 				</control>
 				<control type="grouplist" id="1">
@@ -245,7 +244,6 @@
 						<posy>60</posy>
 						<posx>80</posx>
 						<width min="10" max="710">auto</width>
-						<height>30</height>
 						<font>font30</font>
 						<label>$VAR[VideoNowPlaying]</label>
 						<textcolor>orange</textcolor>
@@ -368,21 +366,18 @@
 				<posx>50</posx>
 				<posy>10</posy>
 				<width>1180</width>
-				<height>30</height>
 			</control>
 			<control type="label" id="11">
 				<description>row 2 label</description>
 				<posx>50</posx>
 				<posy>40</posy>
 				<width>1180</width>
-				<height>30</height>
 			</control>
 			<control type="label" id="12">
 				<description>row 3 label</description>
 				<posx>50</posx>
 				<posy>85</posy>
 				<width>1180</width>
-				<height>30</height>
 			</control>
 		</control>
 		<control type="selectbutton" id="503">
@@ -408,7 +403,7 @@
 				<height>25</height>
 				<label>$LOCALIZE[19005]</label>
 				<font>font13_title</font>
-				<textcolor>blue</textcolor>
+				<textcolor>heading2</textcolor>
 			</control>
 			<control type="label">
 				<description>Backend</description>

@@ -21,14 +21,12 @@
 						<width>520</width>
 						<height>40</height>
 						<font>font13</font>
-						<selectedcolor>selected</selectedcolor>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>555</posx>
 						<width>500</width>
 						<height>40</height>
-						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<label>$INFO[ListItem.Property(Addon.Status)]</label>
 					</control>
@@ -45,14 +43,12 @@
 						<height>40</height>
 						<font>font13</font>
 						<textcolor>textfocus</textcolor>
-						<selectedcolor>selected</selectedcolor>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>555</posx>
 						<width>500</width>
 						<height>40</height>
-						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<label>$INFO[ListItem.Property(Addon.Status)]</label>
 					</control>
@@ -100,15 +96,12 @@
 						<label>$LOCALIZE[21863]:</label>
 						<align>right</align>
 						<font>font13</font>
-						<textcolor>blue</textcolor>
+						<textcolor>heading2</textcolor>
 					</control>
 					<control type="fadelabel">
 						<description>Author Value</description>
 						<width>350</width>
 						<label fallback="416">$INFO[ListItem.Property(Addon.Creator)]</label>
-						<align>left</align>
-						<aligny>center</aligny>
-						<scrollout>false</scrollout>
 						<pauseatend>1000</pauseatend>
 					</control>
 					<control type="label">
@@ -120,7 +113,7 @@
 						<label>$LOCALIZE[24051]</label>
 						<align>right</align>
 						<font>font13</font>
-						<textcolor>blue</textcolor>
+						<textcolor>heading2</textcolor>
 					</control>
 					<control type="label">
 						<description>Version Value</description>
@@ -141,7 +134,7 @@
 						<label>$LOCALIZE[563]:</label>
 						<align>right</align>
 						<font>font13</font>
-						<textcolor>blue</textcolor>
+						<textcolor>heading2</textcolor>
 					</control>
 					<control type="image">
 						<description>Rating value</description>
@@ -219,7 +212,6 @@
 						<posy>160</posy>
 						<width>190</width>
 						<height>25</height>
-						<selectedcolor>selected</selectedcolor>
 						<align>center</align>
 						<info>ListItem.Label</info>
 					</control>
@@ -264,7 +256,6 @@
 						<width>190</width>
 						<height>25</height>
 						<textcolor>textfocus</textcolor>
-						<selectedcolor>selected</selectedcolor>
 						<align>center</align>
 						<info>ListItem.Label</info>
 					</control>
@@ -303,16 +294,13 @@
 						<label>$LOCALIZE[21863]:</label>
 						<align>right</align>
 						<font>font13</font>
-						<textcolor>blue</textcolor>
+						<textcolor>heading2</textcolor>
 					</control>
 					<control type="fadelabel">
 						<description>Author Value</description>
 						<posx>140</posx>
 						<width>155</width>
 						<label fallback="416">$INFO[ListItem.Property(Addon.Creator)]</label>
-						<align>left</align>
-						<aligny>center</aligny>
-						<scrollout>false</scrollout>
 						<pauseatend>1000</pauseatend>
 					</control>
 					<control type="label">
@@ -324,7 +312,7 @@
 						<label>$LOCALIZE[24051]</label>
 						<align>right</align>
 						<font>font13</font>
-						<textcolor>blue</textcolor>
+						<textcolor>heading2</textcolor>
 					</control>
 					<control type="label">
 						<description>Version Value</description>
@@ -345,13 +333,12 @@
 						<label>$LOCALIZE[563]:</label>
 						<align>right</align>
 						<font>font13</font>
-						<textcolor>blue</textcolor>
+						<textcolor>heading2</textcolor>
 					</control>
 					<control type="image">
 						<description>Rating value</description>
 						<posx>135</posx>
 						<posy>60</posy>
-						<width>150</width>
 						<height>30</height>
 						<aspectratio align="left">keep</aspectratio>
 						<texture fallback="LeftRating/rating0.png">$INFO[ListItem.Property(Addon.StarRating),LeftRating/]</texture>

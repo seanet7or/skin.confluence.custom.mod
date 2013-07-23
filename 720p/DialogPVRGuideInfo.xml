@@ -22,22 +22,20 @@
 				<posx>40</posx>
 				<posy>20</posy>
 				<width>650</width>
-				<height>30</height>
 				<font>font13_title</font>
 				<label>$LOCALIZE[19047]</label>
 				<align>center</align>
-				<textcolor>selected</textcolor>
+				<textcolor>heading1</textcolor>
 			</control>
 			<control type="label">
 				<description>Title label</description>
 				<posx>40</posx>
 				<posy>70</posy>
 				<width>650</width>
-				<height>30</height>
 				<font>font13_title</font>
 				<label>$INFO[ListItem.Title]</label>
 				<align>center</align>
-				<textcolor>blue</textcolor>
+				<textcolor>heading2</textcolor>
 			</control>
 			<control type="group">
 				<control type="group">
@@ -50,7 +48,7 @@
 						<height>25</height>
 						<align>right</align>
 						<font>font13</font>
-						<textcolor>blue</textcolor>
+						<textcolor>heading2</textcolor>
 						<label>$LOCALIZE[142]</label>
 					</control>
 					<control type="label">
@@ -69,7 +67,7 @@
 						<height>25</height>
 						<align>right</align>
 						<font>font13</font>
-						<textcolor>blue</textcolor>
+						<textcolor>heading2</textcolor>
 						<label>$LOCALIZE[180]:</label>
 					</control>
 					<control type="label">
@@ -89,16 +87,15 @@
 						<height>25</height>
 						<align>right</align>
 						<font>font13</font>
-						<textcolor>blue</textcolor>
+						<textcolor>heading2</textcolor>
 						<label>$LOCALIZE[19148]:</label>
 					</control>
 					<control type="fadelabel">
+						<pauseatend>1000</pauseatend>
 						<description>Channel Value</description>
 						<posx>180</posx>
 						<posy>70</posy>
 						<width>470</width>
-						<align>left</align>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.ChannelName]</label>
 					</control>
 					<control type="label">
@@ -109,10 +106,11 @@
 						<height>25</height>
 						<align>right</align>
 						<font>font13</font>
-						<textcolor>blue</textcolor>
+						<textcolor>heading2</textcolor>
 						<label>$LOCALIZE[135]:</label>
 					</control>
 					<control type="label">
+						<height>0</height>
 						<description>Genre value</description>
 						<posx>180</posx>
 						<posy>105</posy>
@@ -128,7 +126,7 @@
 					<posy>275</posy>
 					<width>650</width>
 					<height>295</height>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
 					<label fallback="161">$INFO[ListItem.Plot]</label>
 				</control>
@@ -146,6 +144,7 @@
 					<ondown>60</ondown>
 					<control type="button" id="5">
 						<description>Switch to Channel</description>
+						<textoffsetx>20</textoffsetx>
 						<align>center</align>
 						<width>170</width>
 						<font>font12_title</font>
@@ -153,13 +152,14 @@
 					</control>
 					<control type="button" id="6">
 						<description>Record</description>
+						<textoffsetx>20</textoffsetx>
 						<align>center</align>
 						<width>170</width>
 						<font>font12_title</font>
-						<label>-</label>
 					</control>
 					<control type="button" id="7">
 						<description>OK</description>
+						<textoffsetx>20</textoffsetx>
 						<align>center</align>
 						<width>170</width>
 						<font>font12_title</font>

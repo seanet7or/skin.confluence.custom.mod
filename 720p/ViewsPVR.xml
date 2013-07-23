@@ -23,7 +23,7 @@
 					<height>20</height>
 					<align>right</align>
 					<font>font10_title</font>
-					<textcolor>blue</textcolor>
+					<textcolor>heading2</textcolor>
 					<visible>Container(11).ListItem.HasEpg</visible>
 					<label>$INFO[Container(11).ListItem.StartTime]</label>
 				</control>
@@ -42,7 +42,7 @@
 					<width>80</width>
 					<height>20</height>
 					<font>font10_title</font>
-					<textcolor>blue</textcolor>
+					<textcolor>heading2</textcolor>
 					<visible>Container(11).ListItem.HasEpg</visible>
 					<label>$INFO[Container(11).ListItem.EndTime]</label>
 				</control>
@@ -52,7 +52,7 @@
 					<posy>43</posy>
 					<width>690</width>
 					<height>80</height>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<label>$INFO[Container(11).ListItem.Plot]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
 				</control>
@@ -62,7 +62,6 @@
 					<width>690</width>
 					<height>20</height>
 					<align>right</align>
-					<scroll>false</scroll>
 					<visible>!IsEmpty(Container(11).ListItem.NextTitle)</visible>
 					<label>$LOCALIZE[19031]: $INFO[Container(11).ListItem.NextTitle]</label>
 				</control>
@@ -85,7 +84,6 @@
 						<posy>-4</posy>
 						<width>40</width>
 						<height>35</height>
-						<selectedcolor>itemselected</selectedcolor>
 						<info>ListItem.ChannelNumber</info>
 					</control>
 					<control type="label">
@@ -93,7 +91,6 @@
 						<width>270</width>
 						<height>25</height>
 						<font>font13</font>
-						<selectedcolor>selected</selectedcolor>
 						<label>$INFO[ListItem.Plot]</label>
 					</control>
 					<control type="label">
@@ -101,7 +98,6 @@
 						<posy>25</posy>
 						<width>330</width>
 						<height>20</height>
-						<selectedcolor>itemselected</selectedcolor>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>IsEmpty(Listitem.Icon)</visible>
 					</control>
@@ -110,7 +106,6 @@
 						<posy>25</posy>
 						<width>280</width>
 						<height>20</height>
-						<selectedcolor>itemselected</selectedcolor>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>!IsEmpty(Listitem.Icon)</visible>
 					</control>
@@ -148,7 +143,6 @@
 						<posy>-4</posy>
 						<width>40</width>
 						<height>35</height>
-						<selectedcolor>itemselected</selectedcolor>
 						<info>ListItem.ChannelNumber</info>
 					</control>
 					<control type="label">
@@ -157,7 +151,6 @@
 						<height>25</height>
 						<font>font13</font>
 						<textcolor>textfocus</textcolor>
-						<selectedcolor>selected</selectedcolor>
 						<label>$INFO[ListItem.Plot]</label>
 					</control>
 					<control type="label">
@@ -165,7 +158,6 @@
 						<posy>25</posy>
 						<width>330</width>
 						<height>20</height>
-						<selectedcolor>itemselected</selectedcolor>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>IsEmpty(Listitem.Icon)</visible>
 					</control>
@@ -174,7 +166,6 @@
 						<posy>25</posy>
 						<width>280</width>
 						<height>20</height>
-						<selectedcolor>itemselected</selectedcolor>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>!IsEmpty(Listitem.Icon)</visible>
 					</control>
@@ -234,7 +225,7 @@
 					<height>20</height>
 					<align>right</align>
 					<font>font10_title</font>
-					<textcolor>blue</textcolor>
+					<textcolor>heading2</textcolor>
 					<visible>Container(12).ListItem.HasEpg</visible>
 					<label>$INFO[Container(12).ListItem.StartTime]</label>
 				</control>
@@ -253,7 +244,7 @@
 					<width>80</width>
 					<height>20</height>
 					<font>font10_title</font>
-					<textcolor>blue</textcolor>
+					<textcolor>heading2</textcolor>
 					<visible>Container(12).ListItem.HasEpg</visible>
 					<label>$INFO[Container(12).ListItem.EndTime]</label>
 				</control>
@@ -263,7 +254,7 @@
 					<posy>43</posy>
 					<width>690</width>
 					<height>80</height>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<label>$INFO[Container(12).ListItem.Plot]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
 				</control>
@@ -273,7 +264,6 @@
 					<width>690</width>
 					<height>20</height>
 					<align>right</align>
-					<scroll>false</scroll>
 					<visible>!IsEmpty(Container(12).ListItem.NextTitle)</visible>
 					<label>$LOCALIZE[19031]: $INFO[Container(12).ListItem.NextTitle]</label>
 				</control>
@@ -296,7 +286,6 @@
 						<posy>-4</posy>
 						<width>40</width>
 						<height>35</height>
-						<selectedcolor>itemselected</selectedcolor>
 						<info>ListItem.ChannelNumber</info>
 					</control>
 					<control type="label">
@@ -304,7 +293,6 @@
 						<width>270</width>
 						<height>25</height>
 						<font>font13</font>
-						<selectedcolor>selected</selectedcolor>
 						<label>$INFO[ListItem.Plot]</label>
 					</control>
 					<control type="label">
@@ -312,7 +300,6 @@
 						<posy>25</posy>
 						<width>330</width>
 						<height>20</height>
-						<selectedcolor>itemselected</selectedcolor>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>IsEmpty(Listitem.Icon)</visible>
 					</control>
@@ -321,7 +308,6 @@
 						<posy>25</posy>
 						<width>280</width>
 						<height>20</height>
-						<selectedcolor>itemselected</selectedcolor>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>!IsEmpty(Listitem.Icon)</visible>
 					</control>
@@ -359,7 +345,6 @@
 						<posy>-4</posy>
 						<width>40</width>
 						<height>35</height>
-						<selectedcolor>itemselected</selectedcolor>
 						<info>ListItem.ChannelNumber</info>
 					</control>
 					<control type="label">
@@ -368,7 +353,6 @@
 						<height>25</height>
 						<font>font13</font>
 						<textcolor>textfocus</textcolor>
-						<selectedcolor>selected</selectedcolor>
 						<label>$INFO[ListItem.Plot]</label>
 					</control>
 					<control type="label">
@@ -376,7 +360,6 @@
 						<posy>25</posy>
 						<width>330</width>
 						<height>20</height>
-						<selectedcolor>itemselected</selectedcolor>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>IsEmpty(Listitem.Icon)</visible>
 					</control>
@@ -385,7 +368,6 @@
 						<posy>25</posy>
 						<width>280</width>
 						<height>20</height>
-						<selectedcolor>itemselected</selectedcolor>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>!IsEmpty(Listitem.Icon)</visible>
 					</control>
@@ -451,14 +433,12 @@
 						<width>605</width>
 						<height>40</height>
 						<font>font13</font>
-						<selectedcolor>selected</selectedcolor>
 						<label>$INFO[ListItem.Plot]</label>
 					</control>
 					<control type="label">
 						<posx>725</posx>
 						<width>500</width>
 						<height>40</height>
-						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<label>$INFO[ListItem.Date]</label>
 					</control>
@@ -508,14 +488,12 @@
 						<height>40</height>
 						<font>font13</font>
 						<textcolor>textfocus</textcolor>
-						<selectedcolor>selected</selectedcolor>
 						<label>$INFO[ListItem.Plot]</label>
 					</control>
 					<control type="label">
 						<posx>725</posx>
 						<width>500</width>
 						<height>40</height>
-						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<label>$INFO[ListItem.Date]</label>
 					</control>
@@ -570,10 +548,7 @@
 					<posy>230</posy>
 					<width>290</width>
 					<label>$INFO[Container(13).ListItem.Title]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<textcolor>blue</textcolor>
-					<scrollout>false</scrollout>
+					<textcolor>heading2</textcolor>
 					<pauseatend>1000</pauseatend>
 				</control>
 				<control type="textbox">
@@ -613,7 +588,6 @@
 					<control type="label" id="2">
 						<width>34</width>
 						<height>29</height>
-						<selectedcolor>selected</selectedcolor>
 						<label>$INFO[ListItem.Plot]</label>
 					</control>
 				</rulerlayout>
@@ -628,7 +602,6 @@
 						<posy>5</posy>
 						<width>40</width>
 						<height>35</height>
-						<selectedcolor>itemselected</selectedcolor>
 						<info>ListItem.ChannelNumber</info>
 					</control>
 					<control type="image">
@@ -643,7 +616,6 @@
 						<width>160</width>
 						<height>52</height>
 						<font>special12</font>
-						<selectedcolor>selected</selectedcolor>
 						<label>$INFO[ListItem.ChannelName]</label>
 					</control>
 				</channellayout>
@@ -659,7 +631,6 @@
 						<posy>5</posy>
 						<width>40</width>
 						<height>35</height>
-						<selectedcolor>itemselected</selectedcolor>
 						<info>ListItem.ChannelNumber</info>
 					</control>
 					<control type="image">
@@ -674,7 +645,6 @@
 						<width>160</width>
 						<height>52</height>
 						<font>special12</font>
-						<selectedcolor>selected</selectedcolor>
 						<label>$INFO[ListItem.ChannelName]</label>
 					</control>
 				</focusedchannellayout>
@@ -690,7 +660,6 @@
 						<posy>3</posy>
 						<width>30</width>
 						<height>25</height>
-						<selectedcolor>selected</selectedcolor>
 						<info>ListItem.Label</info>
 					</control>
 					<control type="image">
@@ -728,7 +697,6 @@
 						<posy>3</posy>
 						<width>30</width>
 						<height>25</height>
-						<selectedcolor>selected</selectedcolor>
 						<info>ListItem.Label</info>
 					</control>
 					<control type="image">
@@ -833,7 +801,6 @@
 							<posx>50</posx>
 							<width>150</width>
 							<height>40</height>
-							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.ChannelName</info>
 						</control>
 						<control type="label">
@@ -841,7 +808,6 @@
 							<width>290</width>
 							<height>40</height>
 							<align>center</align>
-							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Label</info>
 						</control>
 						<control type="label">
@@ -849,7 +815,6 @@
 							<width>400</width>
 							<height>40</height>
 							<align>center</align>
-							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Date</info>
 						</control>
 						<control type="label">
@@ -857,7 +822,6 @@
 							<width>170</width>
 							<height>40</height>
 							<align>center</align>
-							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Comment</info>
 						</control>
 					</itemlayout>
@@ -902,7 +866,6 @@
 							<posx>50</posx>
 							<width>150</width>
 							<height>40</height>
-							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.ChannelName</info>
 						</control>
 						<control type="label">
@@ -911,7 +874,6 @@
 							<width>290</width>
 							<height>40</height>
 							<align>center</align>
-							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Label</info>
 						</control>
 						<control type="label">
@@ -920,7 +882,6 @@
 							<width>400</width>
 							<height>40</height>
 							<align>center</align>
-							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Date</info>
 						</control>
 						<control type="label">
@@ -929,7 +890,6 @@
 							<width>150</width>
 							<height>40</height>
 							<align>center</align>
-							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Comment</info>
 						</control>
 					</focusedlayout>
@@ -947,7 +907,6 @@
 					<posx>55</posx>
 					<posy>545</posy>
 					<width>1010</width>
-					<height>30</height>
 					<font>font13</font>
 					<align>center</align>
 					<scroll>true</scroll>
@@ -1026,19 +985,10 @@
 							<colordiffuse>33FFFFFF</colordiffuse>
 							<texture>buttons/fo_light.png</texture>
 						</control>
-						<control type="image">
-							<texture>-</texture>
-							<posx>10</posx>
-							<posy>5</posy>
-							<width>30</width>
-							<height>30</height>
-							<info>ListItem.Icon</info>
-						</control>
 						<control type="label">
 							<posx>50</posx>
 							<width>190</width>
 							<height>35</height>
-							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.ChannelName</info>
 						</control>
 						<control type="label">
@@ -1046,7 +996,6 @@
 							<width>650</width>
 							<height>35</height>
 							<font>font13</font>
-							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Label</info>
 						</control>
 						<control type="label">
@@ -1054,7 +1003,6 @@
 							<width>500</width>
 							<height>40</height>
 							<align>right</align>
-							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Date</info>
 						</control>
 						<control type="image">
@@ -1070,7 +1018,6 @@
 							<width>80</width>
 							<height>40</height>
 							<font>font10</font>
-							<selectedcolor>selected</selectedcolor>
 							<label>19043</label>
 							<visible>ListItem.IsRecording</visible>
 						</control>
@@ -1087,7 +1034,6 @@
 							<width>80</width>
 							<height>40</height>
 							<font>font10</font>
-							<selectedcolor>selected</selectedcolor>
 							<label>31510</label>
 							<visible>ListItem.HasTimer</visible>
 						</control>
@@ -1119,19 +1065,10 @@
 							<texture>buttons/fo_light.png</texture>
 							<visible>Control.HasFocus(17)</visible>
 						</control>
-						<control type="image">
-							<texture>-</texture>
-							<posx>10</posx>
-							<posy>5</posy>
-							<width>30</width>
-							<height>30</height>
-							<info>ListItem.Icon</info>
-						</control>
 						<control type="label">
 							<posx>50</posx>
 							<width>190</width>
 							<height>35</height>
-							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.ChannelName</info>
 						</control>
 						<control type="label">
@@ -1140,7 +1077,6 @@
 							<height>35</height>
 							<font>font13</font>
 							<textcolor>textfocus</textcolor>
-							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Label</info>
 						</control>
 						<control type="label">
@@ -1149,7 +1085,6 @@
 							<height>40</height>
 							<align>right</align>
 							<textcolor>textfocus</textcolor>
-							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Date</info>
 						</control>
 						<control type="image">
@@ -1165,7 +1100,6 @@
 							<width>80</width>
 							<height>40</height>
 							<font>font10</font>
-							<selectedcolor>selected</selectedcolor>
 							<label>19043</label>
 							<visible>ListItem.IsRecording</visible>
 						</control>
@@ -1182,7 +1116,6 @@
 							<width>80</width>
 							<height>40</height>
 							<font>font10</font>
-							<selectedcolor>selected</selectedcolor>
 							<label>31510</label>
 							<visible>ListItem.HasTimer</visible>
 						</control>
@@ -1264,7 +1197,6 @@
 							<width>280</width>
 							<height>40</height>
 							<align>center</align>
-							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Date</info>
 						</control>
 						<control type="label">
@@ -1272,7 +1204,6 @@
 							<width>640</width>
 							<height>40</height>
 							<font>font13</font>
-							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Label</info>
 						</control>
 						<control type="image">
@@ -1288,7 +1219,6 @@
 							<width>80</width>
 							<height>40</height>
 							<font>font10</font>
-							<selectedcolor>selected</selectedcolor>
 							<label>19043</label>
 							<visible>ListItem.IsRecording</visible>
 						</control>
@@ -1305,7 +1235,6 @@
 							<width>80</width>
 							<height>40</height>
 							<font>font10</font>
-							<selectedcolor>selected</selectedcolor>
 							<label>31510</label>
 							<visible>ListItem.HasTimer</visible>
 						</control>
@@ -1350,7 +1279,6 @@
 							<height>40</height>
 							<align>center</align>
 							<textcolor>textfocus</textcolor>
-							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Date</info>
 						</control>
 						<control type="label">
@@ -1359,7 +1287,6 @@
 							<height>40</height>
 							<font>font13</font>
 							<textcolor>textfocus</textcolor>
-							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Label</info>
 						</control>
 						<control type="textbox">
@@ -1368,7 +1295,7 @@
 							<posy>40</posy>
 							<width>1000</width>
 							<height>60</height>
-							<pagecontrol>-</pagecontrol>
+							<pagecontrol></pagecontrol>
 							<label>$VAR[VideoDescription]</label>
 						</control>
 						<control type="image">
@@ -1384,7 +1311,6 @@
 							<width>80</width>
 							<height>40</height>
 							<font>font10</font>
-							<selectedcolor>selected</selectedcolor>
 							<label>19043</label>
 							<visible>ListItem.IsRecording</visible>
 						</control>
@@ -1401,7 +1327,6 @@
 							<width>80</width>
 							<height>40</height>
 							<font>font10</font>
-							<selectedcolor>selected</selectedcolor>
 							<label>31510</label>
 							<visible>ListItem.HasTimer</visible>
 						</control>
@@ -1493,22 +1418,12 @@
 							<width>100</width>
 							<height>40</height>
 							<align>center</align>
-							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.StartTime</info>
-						</control>
-						<control type="image">
-							<texture>-</texture>
-							<posx>110</posx>
-							<posy>5</posy>
-							<width>30</width>
-							<height>30</height>
-							<info>ListItem.Icon</info>
 						</control>
 						<control type="label">
 							<posx>150</posx>
 							<width>190</width>
 							<height>35</height>
-							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.ChannelName</info>
 						</control>
 						<control type="label">
@@ -1516,7 +1431,6 @@
 							<width>590</width>
 							<height>35</height>
 							<font>font13</font>
-							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Label</info>
 						</control>
 						<control type="image">
@@ -1532,7 +1446,6 @@
 							<width>80</width>
 							<height>40</height>
 							<font>font10</font>
-							<selectedcolor>selected</selectedcolor>
 							<label>19043</label>
 							<visible>ListItem.IsRecording</visible>
 						</control>
@@ -1549,7 +1462,6 @@
 							<width>80</width>
 							<height>40</height>
 							<font>font10</font>
-							<selectedcolor>selected</selectedcolor>
 							<label>31510</label>
 							<visible>ListItem.HasTimer</visible>
 						</control>
@@ -1596,23 +1508,13 @@
 							<height>40</height>
 							<align>center</align>
 							<textcolor>textfocus</textcolor>
-							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.StartTime</info>
-						</control>
-						<control type="image">
-							<texture>-</texture>
-							<posx>110</posx>
-							<posy>5</posy>
-							<width>30</width>
-							<height>30</height>
-							<info>ListItem.Icon</info>
 						</control>
 						<control type="label">
 							<posx>150</posx>
 							<width>190</width>
 							<height>35</height>
 							<textcolor>textfocus</textcolor>
-							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.ChannelName</info>
 						</control>
 						<control type="label">
@@ -1621,7 +1523,6 @@
 							<height>35</height>
 							<font>font13</font>
 							<textcolor>textfocus</textcolor>
-							<selectedcolor>selected</selectedcolor>
 							<info>ListItem.Label</info>
 						</control>
 						<control type="textbox">
@@ -1630,7 +1531,7 @@
 							<posy>35</posy>
 							<width>1000</width>
 							<height>60</height>
-							<pagecontrol>-</pagecontrol>
+							<pagecontrol></pagecontrol>
 							<label>$VAR[VideoDescription]</label>
 						</control>
 						<control type="image">
@@ -1646,7 +1547,6 @@
 							<width>80</width>
 							<height>40</height>
 							<font>font10</font>
-							<selectedcolor>selected</selectedcolor>
 							<label>19043</label>
 							<visible>ListItem.IsRecording</visible>
 						</control>
@@ -1663,7 +1563,6 @@
 							<width>80</width>
 							<height>40</height>
 							<font>font10</font>
-							<selectedcolor>selected</selectedcolor>
 							<label>31510</label>
 							<visible>ListItem.HasTimer</visible>
 						</control>

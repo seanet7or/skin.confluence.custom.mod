@@ -20,32 +20,31 @@
 			<posx>40</posx>
 			<posy>20</posy>
 			<width>620</width>
-			<height>30</height>
 			<font>font13_title</font>
 			<label>$INFO[Window.Property(heading)]</label>
 			<align>center</align>
-			<textcolor>selected</textcolor>
+			<textcolor>heading1</textcolor>
 		</control>
 		<control type="image" id="2">
 			<description>profile image</description>
 			<posx>30</posx>
 			<posy>70</posy>
-			<width>150</width>
 			<height>150</height>
-			<align>left</align>
 			<aspectratio>stretch</aspectratio>
 			<texture>DefaultActor.png</texture>
 		</control>
 		<control type="label">
+			<height>0</height>
 			<description>profile name label</description>
 			<posx>200</posx>
 			<posy>70</posy>
 			<width>460</width>
 			<font>font13_title</font>
-			<textcolor>blue</textcolor>
+			<textcolor>heading2</textcolor>
 			<label>$LOCALIZE[20093]</label>
 		</control>
 		<control type="label" id="1000">
+			<height>0</height>
 			<description>profile name Value</description>
 			<posx>200</posx>
 			<posy>95</posy>
@@ -53,15 +52,17 @@
 			<font>font16</font>
 		</control>
 		<control type="label">
+			<height>0</height>
 			<description>profile directory label</description>
 			<posx>200</posx>
 			<posy>155</posy>
 			<width>460</width>
 			<font>font13_title</font>
-			<textcolor>blue</textcolor>
+			<textcolor>heading2</textcolor>
 			<label>$LOCALIZE[20070]</label>
 		</control>
 		<control type="label" id="1001">
+			<height>0</height>
 			<description>profile directory Value</description>
 			<posx>200</posx>
 			<posy>180</posy>
@@ -86,6 +87,7 @@
 			<description>Default Button</description>
 			<posx>0</posx>
 			<posy>0</posy>
+			<focusedcolor>textfocus</focusedcolor>
 		</control>
 		<control type="radiobutton" id="8">
 			<width>300</width>
@@ -93,11 +95,14 @@
 			<description>Default RadioButton</description>
 			<posx>0</posx>
 			<posy>0</posy>
+			<focusedcolor>textfocus</focusedcolor>
 		</control>
 		<control type="spincontrolex" id="9">
 			<description>Default SpinControlex</description>
+			<focusedcolor>textfocus</focusedcolor>
 		</control>
 		<control type="image" id="11">
+			<width>1280</width>
 			<description>separator image</description>
 			<height>2</height>
 		</control>

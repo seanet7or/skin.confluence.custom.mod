@@ -20,10 +20,9 @@
 			<posx>40</posx>
 			<posy>20</posy>
 			<width>650</width>
-			<height>30</height>
 			<font>font13_title</font>
 			<align>center</align>
-			<textcolor>selected</textcolor>
+			<textcolor>heading1</textcolor>
 		</control>
 		<control type="grouplist" id="5">
 			<description>control area</description>
@@ -70,27 +69,33 @@
 		<control type="button" id="7">
 			<width>300</width>
 			<description>Default Button</description>
+			<focusedcolor>textfocus</focusedcolor>
 		</control>
 		<control type="radiobutton" id="8">
 			<width>300</width>
 			<description>Default RadioButton</description>
+			<focusedcolor>textfocus</focusedcolor>
 			<texturenofocus>buttons/nf_light.png</texturenofocus>
 		</control>
 		<control type="spincontrolex" id="9">
 			<posy>160</posy>
 			<posx>530</posx>
 			<description>Default spincontrolex</description>
+			<focusedcolor>textfocus</focusedcolor>
 		</control>
 		<control type="sliderex" id="10">
 			<description>Default Slider</description>
 		</control>
 		<control type="image" id="11">
+			<width>1280</width>
 			<description>Default Seperator</description>
 			<height>2</height>
 		</control>
 		<control type="edit" id="12">
 			<width>300</width>
+			<label></label>
 			<description>Default Edit</description>
+			<focusedcolor>textfocus</focusedcolor>
 		</control>
 	</controls>
 </window>

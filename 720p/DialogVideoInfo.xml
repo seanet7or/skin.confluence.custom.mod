@@ -2,7 +2,7 @@
 <window>
 	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">8</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
+	<allowoverlay>false</allowoverlay>
 	<controls>
 		<control type="group">
 			<visible>!Window.IsVisible(FileBrowser)</visible>
@@ -22,7 +22,6 @@
 					<posx>210</posx>
 					<posy>40</posy>
 					<width>1030</width>
-					<height>30</height>
 					<font>font24_title</font>
 					<label>$INFO[Listitem.Title]</label>
 					<align>center</align>
@@ -117,25 +116,21 @@
 						<onright>49</onright>
 						<onup>9000</onup>
 						<ondown>61</ondown>
-						<pagecontrol>-</pagecontrol>
+						<pagecontrol></pagecontrol>
 						<scrolltime>200</scrolltime>
 						<itemlayout height="30">
 							<control type="label">
 								<posx>165</posx>
 								<width>160</width>
-								<height>30</height>
 								<font>font13</font>
 								<align>right</align>
-								<textcolor>blue</textcolor>
-								<selectedcolor>selected</selectedcolor>
+								<textcolor>heading2</textcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
 								<posx>175</posx>
 								<width>565</width>
-								<height>30</height>
 								<font>font13</font>
-								<selectedcolor>itemselected</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
 						</itemlayout>
@@ -149,20 +144,16 @@
 							<control type="label">
 								<posx>165</posx>
 								<width>160</width>
-								<height>30</height>
 								<font>font13</font>
 								<align>right</align>
-								<textcolor>blue</textcolor>
-								<selectedcolor>selected</selectedcolor>
+								<textcolor>heading2</textcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
 								<posx>175</posx>
 								<width>565</width>
-								<height>30</height>
 								<font>font13</font>
 								<textcolor>textfocus</textcolor>
-								<selectedcolor>itemselected</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
 						</focusedlayout>
@@ -261,25 +252,21 @@
 						<onright>49</onright>
 						<onup>9000</onup>
 						<ondown>61</ondown>
-						<pagecontrol>-</pagecontrol>
+						<pagecontrol></pagecontrol>
 						<scrolltime>200</scrolltime>
 						<itemlayout height="30">
 							<control type="label">
 								<posx>165</posx>
 								<width>160</width>
-								<height>30</height>
 								<font>font13</font>
 								<align>right</align>
-								<textcolor>blue</textcolor>
-								<selectedcolor>selected</selectedcolor>
+								<textcolor>heading2</textcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
 								<posx>175</posx>
 								<width>565</width>
-								<height>30</height>
 								<font>font13</font>
-								<selectedcolor>itemselected</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
 						</itemlayout>
@@ -293,20 +280,16 @@
 							<control type="label">
 								<posx>165</posx>
 								<width>160</width>
-								<height>30</height>
 								<font>font13</font>
 								<align>right</align>
-								<textcolor>blue</textcolor>
-								<selectedcolor>selected</selectedcolor>
+								<textcolor>heading2</textcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
 								<posx>175</posx>
 								<width>565</width>
-								<height>30</height>
 								<font>font13</font>
 								<textcolor>textfocus</textcolor>
-								<selectedcolor>itemselected</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
 						</focusedlayout>
@@ -369,25 +352,21 @@
 						<onright>49</onright>
 						<onup>9000</onup>
 						<ondown>61</ondown>
-						<pagecontrol>-</pagecontrol>
+						<pagecontrol></pagecontrol>
 						<scrolltime>200</scrolltime>
 						<itemlayout height="30">
 							<control type="label">
 								<posx>165</posx>
 								<width>160</width>
-								<height>30</height>
 								<font>font13</font>
 								<align>right</align>
-								<textcolor>blue</textcolor>
-								<selectedcolor>selected</selectedcolor>
+								<textcolor>heading2</textcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
 								<posx>175</posx>
 								<width>465</width>
-								<height>30</height>
 								<font>font13</font>
-								<selectedcolor>itemselected</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
 						</itemlayout>
@@ -401,20 +380,16 @@
 							<control type="label">
 								<posx>165</posx>
 								<width>160</width>
-								<height>30</height>
 								<font>font13</font>
 								<align>right</align>
-								<textcolor>blue</textcolor>
-								<selectedcolor>selected</selectedcolor>
+								<textcolor>heading2</textcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
 								<posx>175</posx>
 								<width>465</width>
-								<height>30</height>
 								<font>font13</font>
 								<textcolor>textfocus</textcolor>
-								<selectedcolor>itemselected</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
 						</focusedlayout>
@@ -507,25 +482,21 @@
 						<onright>49</onright>
 						<onup>9000</onup>
 						<ondown>61</ondown>
-						<pagecontrol>-</pagecontrol>
+						<pagecontrol></pagecontrol>
 						<scrolltime>200</scrolltime>
 						<itemlayout height="30">
 							<control type="label">
 								<posx>165</posx>
 								<width>160</width>
-								<height>30</height>
 								<font>font13</font>
 								<align>right</align>
-								<textcolor>blue</textcolor>
-								<selectedcolor>selected</selectedcolor>
+								<textcolor>heading2</textcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
 								<posx>175</posx>
 								<width>465</width>
-								<height>30</height>
 								<font>font13</font>
-								<selectedcolor>itemselected</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
 						</itemlayout>
@@ -539,20 +510,16 @@
 							<control type="label">
 								<posx>165</posx>
 								<width>160</width>
-								<height>30</height>
 								<font>font13</font>
 								<align>right</align>
-								<textcolor>blue</textcolor>
-								<selectedcolor>selected</selectedcolor>
+								<textcolor>heading2</textcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
 								<posx>175</posx>
 								<width>465</width>
-								<height>30</height>
 								<font>font13</font>
 								<textcolor>textfocus</textcolor>
-								<selectedcolor>itemselected</selectedcolor>
 								<info>ListItem.Label2</info>
 							</control>
 						</focusedlayout>
@@ -618,11 +585,12 @@
 					<description>Next page button</description>
 					<posx>120r</posx>
 					<posy>485</posy>
-					<font>-</font>
+					<font></font>
 					<onleft>61</onleft>
 					<onright>61</onright>
 					<ondown>9000</ondown>
 					<onup>49</onup>
+					<textcolor></textcolor>
 				</control>
 				<control type="textbox" id="400">
 					<description>Description Value for Movies</description>
@@ -665,7 +633,6 @@
 						<control type="label">
 							<width>410</width>
 							<height>40</height>
-							<selectedcolor>itemselected</selectedcolor>
 							<info>ListItem.Label</info>
 						</control>
 					</itemlayout>
@@ -683,7 +650,6 @@
 							<textcolor>textfocus</textcolor>
 							<width>410</width>
 							<height>40</height>
-							<selectedcolor>itemselected</selectedcolor>
 							<info>ListItem.Label</info>
 						</control>
 					</focusedlayout>
@@ -703,6 +669,7 @@
 					<control type="togglebutton" id="8">
 						<posy>167</posy>
 						<description>Play/browse to Show</description>
+						<textoffsetx>20</textoffsetx>
 						<align>center</align>
 						<width>170</width>
 						<texturenofocus>buttons/nf_light.png</texturenofocus>
@@ -716,6 +683,7 @@
 					</control>
 					<control type="button" id="5">
 						<description>Cast/Review</description>
+						<textoffsetx>20</textoffsetx>
 						<align>center</align>
 						<width>170</width>
 						<font>font12_title</font>
@@ -723,6 +691,7 @@
 					</control>
 					<control type="button" id="6">
 						<description>Refresh</description>
+						<textoffsetx>20</textoffsetx>
 						<align>center</align>
 						<width>170</width>
 						<font>font12_title</font>
@@ -730,6 +699,7 @@
 					</control>
 					<control type="button" id="10">
 						<description>Get Thumb</description>
+						<textoffsetx>20</textoffsetx>
 						<align>center</align>
 						<width>170</width>
 						<font>font12_title</font>
@@ -738,6 +708,7 @@
 					</control>
 					<control type="button" id="11">
 						<description>Play Trailer</description>
+						<textoffsetx>20</textoffsetx>
 						<align>center</align>
 						<width>170</width>
 						<font>font12_title</font>
@@ -746,6 +717,7 @@
 					</control>
 					<control type="button" id="15">
 						<description>Play Trailer Windowed</description>
+						<textoffsetx>20</textoffsetx>
 						<align>center</align>
 						<width>170</width>
 						<font>font12_title</font>
@@ -755,6 +727,7 @@
 					</control>
 					<control type="button" id="100">
 						<description>Get Artwork</description>
+						<textoffsetx>20</textoffsetx>
 						<align>center</align>
 						<width>170</width>
 						<font>font12_title</font>
@@ -767,6 +740,7 @@
 					</control>
 					<control type="button" id="101">
 						<description>Get ExtraFanart</description>
+						<textoffsetx>20</textoffsetx>
 						<align>center</align>
 						<width>170</width>
 						<font>font12_title</font>
@@ -779,6 +753,7 @@
 					</control>
 					<control type="button" id="102">
 						<description>Fetch TvTunes stuff</description>
+						<textoffsetx>20</textoffsetx>
 						<align>center</align>
 						<width>170</width>
 						<font>font12_title</font>

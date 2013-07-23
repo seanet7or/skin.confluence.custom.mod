@@ -2,20 +2,24 @@
 <window>
 	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol>32</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
+	<allowoverlay>false</allowoverlay>
 	<controls>
 		<include>CommonBackground</include>
 		<include>ContentPanelBackgroundsPVR</include>
 		<control type="label" id="29">
+			<width>1280</width>
 			<posy>60</posy>
 			<posx>80</posx>
+			<height>0</height>
 			<font>font13</font>
 			<description>Empty so we can pass the values up one level</description>
 			<visible>False</visible>
 		</control>
 		<control type="label" id="30">
+			<width>1280</width>
 			<posy>60</posy>
 			<posx>80</posx>
+			<height>0</height>
 			<font>font13</font>
 			<description>Empty so we can pass the values up one level</description>
 			<visible>False</visible>
@@ -106,7 +110,7 @@
 					<height>35</height>
 					<font>font12caps</font>
 					<label>31006</label>
-					<textcolor>blue</textcolor>
+					<textcolor>heading2</textcolor>
 					<align>center</align>
 				</control>
 				<control type="button" id="32">
@@ -114,8 +118,9 @@
 					<posx>0</posx>
 					<posy>0</posy>
 					<textwidth>235</textwidth>
+					<textoffsetx>10</textoffsetx>
 					<width>250</width>
-					<texturenofocus>-</texturenofocus>
+					<texturenofocus></texturenofocus>
 					<textwidth>200</textwidth>
 					<label>19023</label>
 				</control>
@@ -124,8 +129,9 @@
 					<posx>0</posx>
 					<posy>40</posy>
 					<textwidth>235</textwidth>
+					<textoffsetx>10</textoffsetx>
 					<width>250</width>
-					<texturenofocus>-</texturenofocus>
+					<texturenofocus></texturenofocus>
 					<textwidth>200</textwidth>
 					<label>19024</label>
 					<onleft>12</onleft>
@@ -136,8 +142,9 @@
 					<posx>0</posx>
 					<posy>80</posy>
 					<textwidth>235</textwidth>
+					<textoffsetx>10</textoffsetx>
 					<width>250</width>
-					<texturenofocus>-</texturenofocus>
+					<texturenofocus></texturenofocus>
 					<textwidth>200</textwidth>
 					<label>$LOCALIZE[19222]: $LOCALIZE[19030]</label>
 				</control>
@@ -146,8 +153,9 @@
 					<posx>0</posx>
 					<posy>120</posy>
 					<textwidth>235</textwidth>
+					<textoffsetx>10</textoffsetx>
 					<width>250</width>
-					<texturenofocus>-</texturenofocus>
+					<texturenofocus></texturenofocus>
 					<textwidth>200</textwidth>
 					<label>19163</label>
 				</control>
@@ -156,8 +164,9 @@
 					<posx>0</posx>
 					<posy>160</posy>
 					<textwidth>235</textwidth>
+					<textoffsetx>10</textoffsetx>
 					<width>250</width>
-					<texturenofocus>-</texturenofocus>
+					<texturenofocus></texturenofocus>
 					<textwidth>200</textwidth>
 					<label>19040</label>
 				</control>
@@ -165,8 +174,9 @@
 					<description>Search</description>
 					<posx>0</posx>
 					<textwidth>235</textwidth>
+					<textoffsetx>10</textoffsetx>
 					<width>250</width>
-					<texturenofocus>-</texturenofocus>
+					<texturenofocus></texturenofocus>
 					<textwidth>200</textwidth>
 					<label>137</label>
 				</control>

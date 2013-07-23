@@ -25,7 +25,7 @@
 				<font>font12_title</font>
 				<label>$LOCALIZE[19023] - $INFO[VideoPlayer.ChannelGroup]</label>
 				<align>center</align>
-				<textcolor>blue</textcolor>
+				<textcolor>heading1</textcolor>
 				<visible>!pvr.IsPlayingRadio</visible>
 			</control>
 			<control type="label">
@@ -37,7 +37,7 @@
 				<font>font12_title</font>
 				<label>$LOCALIZE[19024] - $INFO[MusicPlayer.ChannelGroup]</label>
 				<align>center</align>
-				<textcolor>blue</textcolor>
+				<textcolor>heading1</textcolor>
 				<visible>pvr.IsPlayingRadio</visible>
 			</control>
 			<control type="label">
@@ -70,8 +70,6 @@
 					<control type="label">
 						<posx>5</posx>
 						<width>40</width>
-						<height>30</height>
-						<selectedcolor>itemselected</selectedcolor>
 						<info>ListItem.ChannelNumber</info>
 					</control>
 					<control type="image">
@@ -87,7 +85,6 @@
 						<width>350</width>
 						<height>25</height>
 						<font>font13</font>
-						<selectedcolor>selected</selectedcolor>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
@@ -95,7 +92,6 @@
 						<posy>25</posy>
 						<width>350</width>
 						<height>20</height>
-						<selectedcolor>itemselected</selectedcolor>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>IsEmpty(Listitem.Icon)</visible>
 					</control>
@@ -104,7 +100,6 @@
 						<posy>25</posy>
 						<width>300</width>
 						<height>20</height>
-						<selectedcolor>itemselected</selectedcolor>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>!IsEmpty(Listitem.Icon)</visible>
 					</control>
@@ -114,8 +109,7 @@
 						<width>60</width>
 						<height>20</height>
 						<font>font10_title</font>
-						<textcolor>blue</textcolor>
-						<selectedcolor>blue</selectedcolor>
+						<textcolor>heading2</textcolor>
 						<label>$INFO[ListItem.StartTime]</label>
 						<visible>ListItem.HasEpg</visible>
 					</control>
@@ -134,8 +128,7 @@
 						<width>60</width>
 						<height>20</height>
 						<font>font10_title</font>
-						<textcolor>blue</textcolor>
-						<selectedcolor>blue</selectedcolor>
+						<textcolor>heading2</textcolor>
 						<label>$INFO[ListItem.EndTime]</label>
 						<visible>ListItem.HasEpg</visible>
 					</control>
@@ -161,8 +154,6 @@
 					<control type="label">
 						<posx>5</posx>
 						<width>40</width>
-						<height>30</height>
-						<selectedcolor>itemselected</selectedcolor>
 						<info>ListItem.ChannelNumber</info>
 					</control>
 					<control type="image">
@@ -179,7 +170,6 @@
 						<height>25</height>
 						<font>font13</font>
 						<textcolor>textfocus</textcolor>
-						<selectedcolor>selected</selectedcolor>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
@@ -187,7 +177,6 @@
 						<posy>25</posy>
 						<width>350</width>
 						<height>20</height>
-						<selectedcolor>itemselected</selectedcolor>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>IsEmpty(Listitem.Icon)</visible>
 					</control>
@@ -196,7 +185,6 @@
 						<posy>25</posy>
 						<width>300</width>
 						<height>20</height>
-						<selectedcolor>itemselected</selectedcolor>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>!IsEmpty(Listitem.Icon)</visible>
 					</control>
@@ -206,8 +194,7 @@
 						<width>60</width>
 						<height>20</height>
 						<font>font10_title</font>
-						<textcolor>blue</textcolor>
-						<selectedcolor>blue</selectedcolor>
+						<textcolor>heading2</textcolor>
 						<label>$INFO[ListItem.StartTime]</label>
 						<visible>ListItem.HasEpg</visible>
 					</control>
@@ -226,8 +213,7 @@
 						<width>60</width>
 						<height>20</height>
 						<font>font10_title</font>
-						<textcolor>blue</textcolor>
-						<selectedcolor>blue</selectedcolor>
+						<textcolor>heading2</textcolor>
 						<label>$INFO[ListItem.EndTime]</label>
 						<visible>ListItem.HasEpg</visible>
 					</control>

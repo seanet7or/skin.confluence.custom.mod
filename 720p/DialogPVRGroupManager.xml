@@ -21,11 +21,10 @@
 					<posx>160</posx>
 					<posy>40</posy>
 					<width>1080</width>
-					<height>30</height>
 					<font>font24_title</font>
 					<label>19143</label>
 					<align>center</align>
-					<textcolor>selected</textcolor>
+					<textcolor>heading1</textcolor>
 				</control>
 				<control type="group">
 					<description>Group list</description>
@@ -39,7 +38,7 @@
 						<font>font13</font>
 						<label>31506</label>
 						<align>center</align>
-						<textcolor>blue</textcolor>
+						<textcolor>heading2</textcolor>
 					</control>
 					<control type="image">
 						<posy>75</posy>
@@ -64,7 +63,6 @@
 							<control type="label">
 								<width>310</width>
 								<height>40</height>
-								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
 							</control>
 						</itemlayout>
@@ -82,7 +80,6 @@
 								<width>310</width>
 								<height>40</height>
 								<textcolor>textfocus</textcolor>
-								<selectedcolor>selected</selectedcolor>
 								<info>ListItem.Label</info>
 							</control>
 						</focusedlayout>
@@ -108,7 +105,7 @@
 						<height>70</height>
 						<font>font13</font>
 						<align>center</align>
-						<textcolor>blue</textcolor>
+						<textcolor>heading2</textcolor>
 					</control>
 					<control type="image">
 						<posy>75</posy>
@@ -141,7 +138,6 @@
 								<posx>40</posx>
 								<width>280</width>
 								<height>40</height>
-								<selectedcolor>selected</selectedcolor>
 								<label>$INFO[ListItem.ChannelNumber,(,) - ]$INFO[ListItem.ChannelName]</label>
 							</control>
 						</itemlayout>
@@ -167,7 +163,6 @@
 								<width>280</width>
 								<height>40</height>
 								<textcolor>textfocus</textcolor>
-								<selectedcolor>selected</selectedcolor>
 								<label>$INFO[ListItem.ChannelNumber,(,) - ]$INFO[ListItem.ChannelName]</label>
 							</control>
 						</focusedlayout>
@@ -193,7 +188,7 @@
 						<height>70</height>
 						<font>font13</font>
 						<align>center</align>
-						<textcolor>blue</textcolor>
+						<textcolor>heading2</textcolor>
 					</control>
 					<control type="image">
 						<posy>75</posy>
@@ -226,7 +221,6 @@
 								<posx>40</posx>
 								<width>280</width>
 								<height>40</height>
-								<selectedcolor>selected</selectedcolor>
 								<label>$INFO[ListItem.ChannelNumber,(,) - ]$INFO[ListItem.ChannelName]</label>
 							</control>
 						</itemlayout>
@@ -252,7 +246,6 @@
 								<width>280</width>
 								<height>40</height>
 								<textcolor>textfocus</textcolor>
-								<selectedcolor>selected</selectedcolor>
 								<label>$INFO[ListItem.ChannelNumber,(,) - ]$INFO[ListItem.ChannelName]</label>
 							</control>
 						</focusedlayout>
@@ -282,6 +275,7 @@
 					<control type="button" id="26">
 						<description>Add Group</description>
 						<width>230</width>
+						<textoffsetx>20</textoffsetx>
 						<align>center</align>
 						<width>170</width>
 						<font>font12_title</font>
@@ -290,6 +284,7 @@
 					<control type="button" id="27">
 						<description>Rename Group</description>
 						<width>230</width>
+						<textoffsetx>20</textoffsetx>
 						<align>center</align>
 						<width>170</width>
 						<font>font12_title</font>
@@ -298,6 +293,7 @@
 					<control type="button" id="28">
 						<description>Delete Group</description>
 						<width>230</width>
+						<textoffsetx>20</textoffsetx>
 						<align>center</align>
 						<width>170</width>
 						<font>font12_title</font>
@@ -306,6 +302,7 @@
 					<control type="button" id="29">
 						<description>OK</description>
 						<width>230</width>
+						<textoffsetx>20</textoffsetx>
 						<align>center</align>
 						<width>170</width>
 						<font>font12_title</font>
@@ -316,8 +313,10 @@
 		</control>
 		<include>UserLocalInfo</include>
 		<control type="label" id="20">
+			<width>1280</width>
 			<posy>60</posy>
 			<posx>80</posx>
+			<height>0</height>
 			<font>font13</font>
 			<description>Fake Label used to pass on name label</description>
 			<visible>false</visible>

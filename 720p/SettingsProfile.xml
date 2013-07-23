@@ -2,7 +2,7 @@
 <window>
 	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">2</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
+	<allowoverlay>false</allowoverlay>
 	<controls>
 		<include>CommonBackground</include>
 		<control type="group">
@@ -34,7 +34,7 @@
 				<font>font24_title</font>
 				<align>right</align>
 				<aligny>top</aligny>
-				<texturenofocus border="5">-</texturenofocus>
+				<texturenofocus border="5"></texturenofocus>
 				<onleft condition="Skin.HasSetting(DisableHomeReturnButtons)">2</onleft>
 				<onleft condition="!Skin.HasSetting(DisableHomeReturnButtons)">83</onleft>
 				<onright>2</onright>
@@ -77,7 +77,7 @@
 					<width>240</width>
 					<height>20</height>
 					<font>font12_title</font>
-					<textcolor>blue</textcolor>
+					<textcolor>heading2</textcolor>
 					<align>center</align>
 					<label>$LOCALIZE[31319]</label>
 				</control>
@@ -94,9 +94,8 @@
 					<posx>0</posx>
 					<posy>280</posy>
 					<width>240</width>
-					<height>30</height>
 					<font>font12_title</font>
-					<textcolor>blue</textcolor>
+					<textcolor>heading2</textcolor>
 					<align>center</align>
 					<label>$LOCALIZE[31320]</label>
 				</control>
@@ -104,7 +103,6 @@
 					<posx>0</posx>
 					<posy>305</posy>
 					<width>240</width>
-					<height>30</height>
 					<font>font13</font>
 					<align>center</align>
 					<label fallback="13170">$INFO[Container(2).ListItem.Label2]</label>
@@ -122,7 +120,6 @@
 				<posx>300</posx>
 				<posy>20</posy>
 				<width>740</width>
-				<height>30</height>
 				<font>font30_title</font>
 				<label>$LOCALIZE[10034]</label>
 			</control>
@@ -153,7 +150,6 @@
 						<width>178</width>
 						<height>25</height>
 						<font>font11</font>
-						<selectedcolor>selected</selectedcolor>
 						<align>center</align>
 						<info>ListItem.Label</info>
 					</control>
@@ -174,7 +170,6 @@
 						<height>25</height>
 						<font>font11</font>
 						<textcolor>textfocus</textcolor>
-						<selectedcolor>selected</selectedcolor>
 						<align>center</align>
 						<info>ListItem.Label</info>
 					</control>
@@ -202,8 +197,8 @@
 				<width>45</width>
 				<height>45</height>
 				<label>1036</label>
-				<font>-</font>
-				<aligny>-</aligny>
+				<font></font>
+				<aligny></aligny>
 				<onclick>$VAR[VolumeStepUp]</onclick>
 				<onclick>VolumeUp</onclick>
 				<onleft condition="Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)">84</onleft>
@@ -232,8 +227,8 @@
 				<width>45</width>
 				<height>45</height>
 				<label>1036</label>
-				<font>-</font>
-				<aligny>-</aligny>
+				<font></font>
+				<aligny></aligny>
 				<onclick>$VAR[VolumeStepDown]</onclick>
 				<onclick>VolumeDown</onclick>
 				<onleft>80</onleft>
@@ -261,8 +256,8 @@
 				<width>45</width>
 				<height>45</height>
 				<label>1036</label>
-				<font>-</font>
-				<aligny>-</aligny>
+				<font></font>
+				<aligny></aligny>
 				<onclick>back</onclick>
 				<onleft>81</onleft>
 				<onright>83</onright>
@@ -285,8 +280,8 @@
 				<width>45</width>
 				<height>45</height>
 				<label>31003</label>
-				<font>-</font>
-				<aligny>-</aligny>
+				<font></font>
+				<aligny></aligny>
 				<onclick>ActivateWindow(home)</onclick>
 				<onleft>82</onleft>
 				<onright>4</onright>

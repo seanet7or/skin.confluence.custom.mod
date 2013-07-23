@@ -2,7 +2,7 @@
 <window>
 	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol>20</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
+	<allowoverlay>false</allowoverlay>
 	<controls>
 		<include>CommonBackground</include>
 		<control type="group">
@@ -21,33 +21,22 @@
 				<height>620</height>
 				<texture>dialogs/content-back_light.png</texture>
 			</control>
-			<control type="image">
-				<texture>-</texture>
-				<posx>510</posx>
-				<posy>20</posy>
-				<width>80</width>
-				<height>80</height>
-				<aspectratio>keep</aspectratio>
-				<info>Container(20).ListItem.Icon</info>
-			</control>
 			<control type="label">
 				<description>header label</description>
 				<posx>30</posx>
 				<posy>30</posy>
 				<width>470</width>
-				<height>30</height>
 				<font>font35_title</font>
 				<label>A</label>
-				<textcolor>blue</textcolor>
+				<textcolor>heading1</textcolor>
 			</control>
 			<control type="label" id="101">
 				<description>current directory text label</description>
 				<posx>30</posx>
 				<posy>70</posy>
 				<width>470</width>
-				<height>30</height>
 				<font>font12_title</font>
-				<textcolor>selected</textcolor>
+				<textcolor>heading2</textcolor>
 				<scroll>true</scroll>
 			</control>
 			<control type="scrollbar" id="30">
@@ -76,7 +65,6 @@
 						<width>500</width>
 						<height>36</height>
 						<font>font13</font>
-						<selectedcolor>selected</selectedcolor>
 						<info>ListItem.Label</info>
 					</control>
 					<control type="label">
@@ -84,7 +72,6 @@
 						<posy>5</posy>
 						<width>200</width>
 						<height>24</height>
-						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<info>ListItem.Label2</info>
 					</control>
@@ -101,7 +88,6 @@
 						<width>500</width>
 						<height>36</height>
 						<font>font13</font>
-						<selectedcolor>selected</selectedcolor>
 						<textcolor>textfocus</textcolor>
 						<info>ListItem.Label</info>
 					</control>
@@ -110,7 +96,6 @@
 						<posy>5</posy>
 						<width>200</width>
 						<height>24</height>
-						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<info>ListItem.Label2</info>
 					</control>
@@ -133,34 +118,23 @@
 				<height>620</height>
 				<texture>dialogs/content-back_light.png</texture>
 			</control>
-			<control type="image">
-				<texture>-</texture>
-				<posx>20</posx>
-				<posy>20</posy>
-				<width>80</width>
-				<height>80</height>
-				<aspectratio>keep</aspectratio>
-				<info>Container(21).ListItem.Icon</info>
-			</control>
 			<control type="label">
 				<description>header label</description>
 				<posx>580</posx>
 				<posy>30</posy>
 				<width>470</width>
-				<height>30</height>
 				<font>font35_title</font>
 				<label>B</label>
 				<align>right</align>
-				<textcolor>blue</textcolor>
+				<textcolor>heading1</textcolor>
 			</control>
 			<control type="label" id="102">
 				<description>current directory text label</description>
 				<posx>580</posx>
 				<posy>70</posy>
 				<width>470</width>
-				<height>30</height>
 				<font>font12_title</font>
-				<textcolor>selected</textcolor>
+				<textcolor>heading2</textcolor>
 				<scroll>true</scroll>
 				<align>right</align>
 			</control>
@@ -190,7 +164,6 @@
 						<width>500</width>
 						<height>36</height>
 						<font>font13</font>
-						<selectedcolor>selected</selectedcolor>
 						<info>ListItem.Label</info>
 					</control>
 					<control type="label">
@@ -198,7 +171,6 @@
 						<posy>5</posy>
 						<width>200</width>
 						<height>24</height>
-						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<info>ListItem.Label2</info>
 					</control>
@@ -215,7 +187,6 @@
 						<width>500</width>
 						<height>36</height>
 						<font>font13</font>
-						<selectedcolor>selected</selectedcolor>
 						<textcolor>textfocus</textcolor>
 						<info>ListItem.Label</info>
 					</control>
@@ -224,7 +195,6 @@
 						<posy>5</posy>
 						<width>200</width>
 						<height>24</height>
-						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<info>ListItem.Label2</info>
 					</control>
@@ -244,8 +214,8 @@
 				<width>45</width>
 				<height>45</height>
 				<label>1036</label>
-				<font>-</font>
-				<aligny>-</aligny>
+				<font></font>
+				<aligny></aligny>
 				<onclick>back</onclick>
 				<onleft>50</onleft>
 				<onright>50</onright>
@@ -268,8 +238,8 @@
 				<width>45</width>
 				<height>45</height>
 				<label>31003</label>
-				<font>-</font>
-				<aligny>-</aligny>
+				<font></font>
+				<aligny></aligny>
 				<onclick>ActivateWindow(home)</onclick>
 				<onleft>50</onleft>
 				<onright>50</onright>

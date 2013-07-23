@@ -2,8 +2,8 @@
 <window>
 	<backgroundcolor>0</backgroundcolor>
 	<onload condition="System.HasAddon(script.artistslideshow) + IsEmpty(Window.Property(ArtistSlideshowRunning)) + [Skin.HasSetting(AllowSlideShowArt) | Skin.HasSetting(AllowSlideShowBio)]">RunScript(script.artistslideshow)</onload>
-	<defaultcontrol>-</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
+	<defaultcontrol></defaultcontrol>
+	<allowoverlay>false</allowoverlay>
 	<controls>
 		<include condition="Skin.HasSetting(ShowBackgroundAlbumWall)">AlbumArtMusicVizWall</include>
 		<include condition="!Skin.HasSetting(HideBackGroundFanart) + !Skin.HasSetting(ShowBackgroundAlbumWall)">MusicPlayingBottom</include>
@@ -43,7 +43,6 @@
 					<posy>250r</posy>
 					<width>500</width>
 					<height>500</height>
-					<aligny>center</aligny>
 					<texture fallback="livecdcase/DefaultCDArt.jpg" diffuse="livecdcase/cddiffuse.png" background="true">$INFO[Player.FolderPath,,cdart.png]</texture>
 					<aspectratio align="center">keep</aspectratio>
 					<include>CDArtSpinner</include>
@@ -113,7 +112,6 @@
 						<posy>60</posy>
 						<posx>80</posx>
 						<width min="10" max="700">auto</width>
-						<height>30</height>
 						<font>font30</font>
 						<label>$INFO[MusicPlayer.Title]</label>
 						<textcolor>orange</textcolor>
@@ -152,7 +150,6 @@
 					<posx>0</posx>
 					<posy>180</posy>
 					<width>950</width>
-					<scroll>true</scroll>
 					<scrollout>true</scrollout>
 					<scrollspeed>30</scrollspeed>
 					<pauseatend>400</pauseatend>
@@ -214,12 +211,16 @@
 				<texture>dialogs/dialog-back_light.png</texture>
 			</control>
 			<control type="label">
+				<width>1280</width>
+				<height>0</height>
 				<description>row 1 label</description>
 				<posx>50</posx>
 				<posy>10</posy>
 				<label>$INFO[musicplayer.Codec,$LOCALIZE[21446]: ,]$INFO[musicplayer.Bitrate, · $LOCALIZE[623]: ,kbps]$INFO[musicplayer.bitspersample, · $LOCALIZE[612]: ,]$INFO[musicplayer.Samplerate, · $LOCALIZE[613]: ,kHz]$INFO[musicplayer.Channels, · $LOCALIZE[21444]: ]</label>
 			</control>
 			<control type="label">
+				<width>1280</width>
+				<height>0</height>
 				<description>row 2 label</description>
 				<posx>50</posx>
 				<posy>40</posy>
@@ -227,6 +228,8 @@
 				<visible>Visualisation.Locked</visible>
 			</control>
 			<control type="label">
+				<width>1280</width>
+				<height>0</height>
 				<description>Unlocked row 2 label</description>
 				<posx>50</posx>
 				<posy>40</posy>
@@ -234,6 +237,8 @@
 				<visible>!Visualisation.Locked</visible>
 			</control>
 			<control type="label">
+				<width>1280</width>
+				<height>0</height>
 				<description>row 3 label</description>
 				<posx>50</posx>
 				<posy>70</posy>

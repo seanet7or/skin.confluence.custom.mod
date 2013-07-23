@@ -332,8 +332,7 @@
 					<width>290</width>
 					<height>25</height>
 					<font>font13</font>
-					<scroll>false</scroll>
-					<label>$VAR[MediaRuntime,[B][COLOR=blue]$LOCALIZE[2050]: [/COLOR][/B]]</label>
+					<label>$VAR[MediaRuntime,[B][COLOR=heading2]$LOCALIZE[2050]: [/COLOR][/B]]</label>
 					<visible>!Container.Content(TVShows) + !IsEmpty(ListItem.Duration)</visible>
 				</control>
 				<control type="label">
@@ -341,30 +340,25 @@
 					<width>290</width>
 					<height>25</height>
 					<font>font13</font>
-					<scroll>false</scroll>
-					<label>$INFO[listitem.episode,[B][COLOR=blue]$LOCALIZE[20360]: [/COLOR][/B]]</label>
+					<label>$INFO[listitem.episode,[B][COLOR=heading2]$LOCALIZE[20360]: [/COLOR][/B]]</label>
 					<visible>[Container.Content(TVShows) | Container.Content(Seasons)] + !IsEmpty(ListItem.episode)</visible>
 				</control>
 				<control type="label">
 					<posx>790</posx>
 					<posy>450</posy>
 					<width>490</width>
-					<height>30</height>
 					<font>font13</font>
-					<scroll>false</scroll>
 					<align>right</align>
-					<label>$INFO[ListItem.Director,[B][COLOR=blue]$LOCALIZE[20339]: [/COLOR][/B]]</label>
+					<label>$INFO[ListItem.Director,[B][COLOR=heading2]$LOCALIZE[20339]: [/COLOR][/B]]</label>
 					<visible>!IsEmpty(ListItem.Director)</visible>
 				</control>
 				<control type="label">
 					<posx>790</posx>
 					<posy>450</posy>
 					<width>490</width>
-					<height>30</height>
 					<font>font13</font>
-					<scroll>false</scroll>
 					<align>right</align>
-					<label>$INFO[ListItem.Premiered,[B][COLOR=blue]$LOCALIZE[31322]: [/COLOR][/B]]</label>
+					<label>$INFO[ListItem.Premiered,[B][COLOR=heading2]$LOCALIZE[31322]: [/COLOR][/B]]</label>
 					<visible>IsEmpty(ListItem.Director) + !IsEmpty(ListItem.Premiered)</visible>
 				</control>
 				<control type="textbox">

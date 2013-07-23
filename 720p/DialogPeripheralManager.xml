@@ -22,11 +22,10 @@
 				<posx>40</posx>
 				<posy>20</posy>
 				<width>530</width>
-				<height>30</height>
 				<font>font13_title</font>
 				<label>$LOCALIZE[35000]</label>
 				<align>center</align>
-				<textcolor>selected</textcolor>
+				<textcolor>heading1</textcolor>
 			</control>
 			<control type="list" id="20">
 				<posx>20</posx>
@@ -59,7 +58,6 @@
 						<width>520</width>
 						<height>20</height>
 						<label>$LOCALIZE[35504]:  [COLOR=textnofocus]$INFO[ListItem.Property(Product)][/COLOR]    $LOCALIZE[35503]:  [COLOR=textnofocus]$INFO[ListItem.Property(Vendor)][/COLOR]</label>
-						<textcolor>blue</textcolor>
 					</control>
 					<control type="label">
 						<description>class</description>
@@ -67,7 +65,6 @@
 						<width>520</width>
 						<height>20</height>
 						<label>$LOCALIZE[35501]:  [COLOR=textnofocus]$INFO[ListItem.Property(Class)][/COLOR]     $LOCALIZE[19114]:  [COLOR=textnofocus]$INFO[ListItem.Property(Version)][/COLOR]</label>
-						<textcolor>blue</textcolor>
 					</control>
 				</itemlayout>
 				<focusedlayout height="85" width="550">
@@ -97,7 +94,6 @@
 						<width>520</width>
 						<height>20</height>
 						<label>$LOCALIZE[35504]:  [COLOR=textnofocus]$INFO[ListItem.Property(Product)][/COLOR]    $LOCALIZE[35503]:  [COLOR=textnofocus]$INFO[ListItem.Property(Vendor)][/COLOR]</label>
-						<textcolor>blue</textcolor>
 					</control>
 					<control type="label">
 						<description>class</description>
@@ -105,7 +101,6 @@
 						<width>520</width>
 						<height>20</height>
 						<label>$LOCALIZE[35501]:  [COLOR=textnofocus]$INFO[ListItem.Property(Class)][/COLOR]     $LOCALIZE[19114]:  [COLOR=textnofocus]$INFO[ListItem.Property(Version)][/COLOR]</label>
-						<textcolor>blue</textcolor>
 					</control>
 				</focusedlayout>
 			</control>
@@ -125,6 +120,7 @@
 				<width>200</width>
 				<label>186</label>
 				<font>font12_title</font>
+				<focusedcolor>textfocus</focusedcolor>
 				<align>center</align>
 				<onleft>61</onleft>
 				<onright>20</onright>

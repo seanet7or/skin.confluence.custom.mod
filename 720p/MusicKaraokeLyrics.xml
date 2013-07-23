@@ -11,11 +11,10 @@
 			<visibility>false</visibility>
 		</control>
 		<control type="image" id="2">
-			<texture>-</texture>
+			<texture></texture>
 			<description>fullscreen image</description>
 			<width>1280</width>
 			<height>720</height>
-			<visibility>false</visibility>
 		</control>
 		<control type="group">
 			<visible>MusicPlayer.Offset(number).Exists + !IntegerGreaterThan(Player.TimeRemaining,20)</visible>
@@ -35,8 +34,8 @@
 				<width>470</width>
 				<height>25</height>
 				<font>font13_title</font>
-				<textcolor>blue</textcolor>
-				<label>[COLOR=blue]$LOCALIZE[209] :[/COLOR] [COLOR=selected]$INFO[MusicPlayer.offset(1).Title][/COLOR]</label>
+				<textcolor>heading2</textcolor>
+				<label>[COLOR=heading2]$LOCALIZE[209] :[/COLOR] [COLOR=selected]$INFO[MusicPlayer.offset(1).Title][/COLOR]</label>
 				<align>center</align>
 			</control>
 		</control>

@@ -2,7 +2,7 @@
 <window>
 	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">20</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
+	<allowoverlay>false</allowoverlay>
 	<coordinates>
 		<system>1</system>
 		<posx>190</posx>
@@ -20,11 +20,10 @@
 			<posx>40</posx>
 			<posy>20</posy>
 			<width>820</width>
-			<height>30</height>
 			<font>font13_title</font>
 			<label>$LOCALIZE[19199] - $LOCALIZE[19023]</label>
 			<align>center</align>
-			<textcolor>selected</textcolor>
+			<textcolor>heading1</textcolor>
 			<visible>IsEmpty(Window.Property(IsRadio))</visible>
 		</control>
 		<control type="label">
@@ -32,11 +31,10 @@
 			<posx>40</posx>
 			<posy>20</posy>
 			<width>820</width>
-			<height>30</height>
 			<font>font13_title</font>
 			<label>$LOCALIZE[19199] - $LOCALIZE[19024]</label>
 			<align>center</align>
-			<textcolor>selected</textcolor>
+			<textcolor>heading1</textcolor>
 			<visible>!IsEmpty(Window.Property(IsRadio))</visible>
 		</control>
 		<control type="group">
@@ -90,7 +88,6 @@
 						<posx>45</posx>
 						<width>335</width>
 						<height>40</height>
-						<selectedcolor>selected</selectedcolor>
 						<label>$INFO[ListItem.Property(Number),(,) - ]$INFO[ListItem.Property(Name)]</label>
 						<visible>ListItem.Property(ActiveChannel)</visible>
 					</control>
@@ -99,7 +96,6 @@
 						<width>335</width>
 						<height>40</height>
 						<textcolor>textdisabled</textcolor>
-						<selectedcolor>selected</selectedcolor>
 						<label>$INFO[ListItem.Property(Number),(,) - ]$INFO[ListItem.Property(Name)]</label>
 						<visible>!ListItem.Property(ActiveChannel)</visible>
 					</control>
@@ -141,7 +137,6 @@
 						<width>335</width>
 						<height>40</height>
 						<textcolor>textfocus</textcolor>
-						<selectedcolor>selected</selectedcolor>
 						<label>$INFO[ListItem.Property(Number),(,) - ]$INFO[ListItem.Property(Name)]</label>
 						<visible>ListItem.Property(ActiveChannel)</visible>
 					</control>
@@ -150,7 +145,6 @@
 						<width>335</width>
 						<height>40</height>
 						<textcolor>textdisabled</textcolor>
-						<selectedcolor>selected</selectedcolor>
 						<label>$INFO[ListItem.Property(Number),(,) - ]$INFO[ListItem.Property(Name)]</label>
 						<visible>!ListItem.Property(ActiveChannel)</visible>
 					</control>
@@ -166,8 +160,6 @@
 						<posx>5</posx>
 						<posy>30</posy>
 						<width>410</width>
-						<height>30</height>
-						<selectedcolor>selected</selectedcolor>
 						<label>$LOCALIZE[19210]: $INFO[ListItem.Property(ClientName)]</label>
 					</control>
 				</focusedlayout>
@@ -183,7 +175,7 @@
 					<width>380</width>
 					<height>20</height>
 					<label>$LOCALIZE[31511]</label>
-					<textcolor>blue</textcolor>
+					<textcolor>heading2</textcolor>
 				</control>
 				<control type="radiobutton" id="7">
 					<description>Channel activated</description>
@@ -192,6 +184,7 @@
 					<width>380</width>
 					<height>35</height>
 					<font>font12</font>
+					<focusedcolor>textfocus</focusedcolor>
 					<texturenofocus>buttons/nf_light.png</texturenofocus>
 					<label>19074</label>
 					<onleft>20</onleft>
@@ -206,6 +199,7 @@
 					<width>380</width>
 					<height>35</height>
 					<font>font12</font>
+					<focusedcolor>textfocus</focusedcolor>
 					<label>19201</label>
 					<onright>60</onright>
 					<onleft>20</onleft>
@@ -226,7 +220,7 @@
 					<ondown>12</ondown>
 				</control>
 				<control type="image" id="10">
-					<texture>-</texture>
+					<texture></texture>
 					<description>Current Channel Icon</description>
 					<posx>345</posx>
 					<posy>107</posy>
@@ -242,6 +236,7 @@
 					<width>380</width>
 					<height>35</height>
 					<font>font12</font>
+					<focusedcolor>textfocus</focusedcolor>
 					<texturenofocus>buttons/nf_light.png</texturenofocus>
 					<label>19206</label>
 					<onleft>20</onleft>
@@ -268,6 +263,7 @@
 					<width>380</width>
 					<height>35</height>
 					<font>font12</font>
+					<focusedcolor>textfocus</focusedcolor>
 					<texturenofocus>buttons/nf_light.png</texturenofocus>
 					<label>19267</label>
 					<onleft>20</onleft>
@@ -285,7 +281,7 @@
 					<width>380</width>
 					<height>20</height>
 					<label>$LOCALIZE[31026]</label>
-					<textcolor>blue</textcolor>
+					<textcolor>heading2</textcolor>
 				</control>
 				<control type="button" id="30">
 					<description>Group Manager Button</description>

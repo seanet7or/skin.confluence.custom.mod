@@ -20,13 +20,13 @@
 			<posx>40</posx>
 			<posy>20</posy>
 			<width>620</width>
-			<height>30</height>
 			<font>font13_title</font>
 			<label>$LOCALIZE[5]</label>
 			<align>center</align>
-			<textcolor>selected</textcolor>
+			<textcolor>heading1</textcolor>
 		</control>
 		<control type="label" id="3">
+			<height>0</height>
 			<description>No Settings Label</description>
 			<posx>20</posx>
 			<posy>180</posy>
@@ -63,6 +63,7 @@
 			<description>Default Button</description>
 			<posx>0</posx>
 			<posy>0</posy>
+			<focusedcolor>textfocus</focusedcolor>
 		</control>
 		<control type="radiobutton" id="8">
 			<width>300</width>
@@ -70,14 +71,17 @@
 			<description>Default RadioButton</description>
 			<posx>0</posx>
 			<posy>0</posy>
+			<focusedcolor>textfocus</focusedcolor>
 		</control>
 		<control type="spincontrolex" id="9">
 			<description>Default SpinControlex</description>
+			<focusedcolor>textfocus</focusedcolor>
 		</control>
 		<control type="sliderex" id="10">
 			<description>Default Slider</description>
 		</control>
 		<control type="image" id="11">
+			<width>1280</width>
 			<description>separator image</description>
 			<height>2</height>
 		</control>

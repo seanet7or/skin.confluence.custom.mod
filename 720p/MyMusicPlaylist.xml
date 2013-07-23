@@ -2,7 +2,7 @@
 <window>
 	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">50</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
+	<allowoverlay>false</allowoverlay>
 	<views>50,51,506</views>
 	<controls>
 		<include>CommonBackground</include>
@@ -38,16 +38,16 @@
 					<width>250</width>
 					<height>35</height>
 					<label>31006</label>
-					<textcolor>blue</textcolor>
+					<textcolor>heading2</textcolor>
 					<align>center</align>
 				</control>
 				<control type="button" id="2">
 					<description>View As button</description>
 					<textwidth>235</textwidth>
+					<textoffsetx>10</textoffsetx>
 					<width>250</width>
-					<texturenofocus>-</texturenofocus>
+					<texturenofocus></texturenofocus>
 					<textwidth>200</textwidth>
-					<label>-</label>
 				</control>
 				<control type="label" id="201">
 					<posy>60</posy>
@@ -55,29 +55,30 @@
 					<width>250</width>
 					<height>35</height>
 					<label>31026</label>
-					<textcolor>blue</textcolor>
+					<textcolor>heading2</textcolor>
 					<align>center</align>
 				</control>
 				<control type="radiobutton" id="20">
 					<description>Shuffle button</description>
+					<textoffsetx>10</textoffsetx>
 					<width>250</width>
-					<textwidth>200</textwidth>
 					<label>191</label>
 				</control>
 				<control type="button" id="26">
 					<description>Repeat button</description>
 					<textwidth>235</textwidth>
+					<textoffsetx>10</textoffsetx>
 					<width>250</width>
-					<texturenofocus>-</texturenofocus>
+					<texturenofocus></texturenofocus>
 					<textwidth>200</textwidth>
-					<label>-</label>
 				</control>
 				<control type="button" id="21">
 					<description>Save button</description>
 					<label>190</label>
 					<textwidth>235</textwidth>
+					<textoffsetx>10</textoffsetx>
 					<width>250</width>
-					<texturenofocus>-</texturenofocus>
+					<texturenofocus></texturenofocus>
 					<textwidth>200</textwidth>
 				</control>
 				<control type="button" id="22">
@@ -85,8 +86,9 @@
 					<label>192</label>
 					<onclick>ReplaceWindow(music)</onclick>
 					<textwidth>235</textwidth>
+					<textoffsetx>10</textoffsetx>
 					<width>250</width>
-					<texturenofocus>-</texturenofocus>
+					<texturenofocus></texturenofocus>
 					<textwidth>200</textwidth>
 				</control>
 				<include>CommonNowPlaying_Controls</include>

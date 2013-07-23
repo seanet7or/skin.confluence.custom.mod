@@ -19,7 +19,7 @@
 			<posx>0</posx>
 			<width>0</width>
 			<height>0</height>
-			<font>-</font>
+			<font></font>
 			<visible>false</visible>
 		</control>
 		<control type="label">
@@ -27,18 +27,16 @@
 			<posx>40</posx>
 			<posy>20</posy>
 			<width>530</width>
-			<height>30</height>
 			<font>font13_title</font>
 			<label>$INFO[Control.GetLabel(1)] $INFO[System.Progressbar,- ,%]</label>
 			<align>center</align>
-			<textcolor>selected</textcolor>
+			<textcolor>heading1</textcolor>
 		</control>
 		<control type="label" id="2">
 			<description>dialog line 1</description>
 			<posx>30</posx>
 			<posy>60</posy>
 			<width>550</width>
-			<height>30</height>
 			<haspath>true</haspath>
 			<font>font13</font>
 		</control>
@@ -47,7 +45,6 @@
 			<posx>30</posx>
 			<posy>85</posy>
 			<width>550</width>
-			<height>30</height>
 			<haspath>true</haspath>
 			<font>font13</font>
 		</control>
@@ -56,7 +53,6 @@
 			<posx>30</posx>
 			<posy>110</posy>
 			<width>550</width>
-			<height>30</height>
 			<haspath>true</haspath>
 			<font>font13</font>
 		</control>
@@ -75,6 +71,7 @@
 			<width>200</width>
 			<label>222</label>
 			<font>font12_title</font>
+			<focusedcolor>textfocus</focusedcolor>
 			<align>center</align>
 			<onleft>10</onleft>
 			<onright>10</onright>

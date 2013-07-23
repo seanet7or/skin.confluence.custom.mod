@@ -14,11 +14,10 @@
 			<posy>-16</posy>
 			<width>4</width>
 			<height>4</height>
-			<label>-</label>
-			<font>-</font>
+			<font></font>
 			<onfocus>down</onfocus>
-			<texturefocus>-</texturefocus>
-			<texturenofocus>-</texturenofocus>
+			<texturefocus></texturefocus>
+			<texturenofocus></texturenofocus>
 			<onleft>9000</onleft>
 			<onright>9000</onright>
 			<onup>9000</onup>
@@ -47,6 +46,7 @@
 			<control type="button" id="2">
 				<description>Exit button</description>
 				<width>340</width>
+				<focusedcolor>textfocus</focusedcolor>
 				<align>center</align>
 				<textwidth>290</textwidth>
 				<onclick>XBMC.Quit()</onclick>
@@ -56,6 +56,7 @@
 			<control type="button" id="3">
 				<description>Shutdown button</description>
 				<width>340</width>
+				<focusedcolor>textfocus</focusedcolor>
 				<align>center</align>
 				<textwidth>290</textwidth>
 				<onclick>XBMC.Powerdown()</onclick>
@@ -65,6 +66,7 @@
 			<control type="button" id="4">
 				<description>Custom Shutdown Timer</description>
 				<width>340</width>
+				<focusedcolor>textfocus</focusedcolor>
 				<align>center</align>
 				<textwidth>290</textwidth>
 				<onclick>XBMC.AlarmClock(shutdowntimer,XBMC.Shutdown())</onclick>
@@ -75,6 +77,7 @@
 			<control type="button" id="5">
 				<description>Cancel Shutdown Timer</description>
 				<width>340</width>
+				<focusedcolor>textfocus</focusedcolor>
 				<align>center</align>
 				<textwidth>290</textwidth>
 				<onclick>XBMC.CancelAlarm(shutdowntimer)</onclick>
@@ -84,6 +87,7 @@
 			<control type="button" id="6">
 				<description>Suspend button</description>
 				<width>340</width>
+				<focusedcolor>textfocus</focusedcolor>
 				<align>center</align>
 				<textwidth>290</textwidth>
 				<onclick>XBMC.Suspend()</onclick>
@@ -93,6 +97,7 @@
 			<control type="button" id="7">
 				<description>Hibernate button</description>
 				<width>340</width>
+				<focusedcolor>textfocus</focusedcolor>
 				<align>center</align>
 				<textwidth>290</textwidth>
 				<onclick>XBMC.Hibernate()</onclick>
@@ -102,6 +107,7 @@
 			<control type="button" id="8">
 				<description>Reboot button</description>
 				<width>340</width>
+				<focusedcolor>textfocus</focusedcolor>
 				<align>center</align>
 				<textwidth>290</textwidth>
 				<onclick>XBMC.Reset()</onclick>
@@ -111,6 +117,7 @@
 			<control type="button" id="9">
 				<description>Logoff button</description>
 				<width>340</width>
+				<focusedcolor>textfocus</focusedcolor>
 				<align>center</align>
 				<textwidth>290</textwidth>
 				<onclick>dialog.close(all,true)</onclick>
@@ -126,6 +133,7 @@
 				<label>20046</label>
 				<altlabel>20045</altlabel>
 				<align>center</align>
+				<focusedcolor>textfocus</focusedcolor>
 				<texturefocus>buttons/fo_light.png</texturefocus>
 				<texturenofocus>buttons/nf_light.png</texturenofocus>
 				<usealttexture>!System.IsMaster</usealttexture>
@@ -149,6 +157,7 @@
 			<control type="button" id="12">
 				<description>Inhibit idle shutdown</description>
 				<width>340</width>
+				<focusedcolor>textfocus</focusedcolor>
 				<align>center</align>
 				<textwidth>290</textwidth>
 				<onclick>XBMC.InhibitIdleShutdown(true)</onclick>
@@ -158,6 +167,7 @@
 			<control type="button" id="13">
 				<description>Allow idle shutdown</description>
 				<width>340</width>
+				<focusedcolor>textfocus</focusedcolor>
 				<align>center</align>
 				<textwidth>290</textwidth>
 				<onclick>XBMC.InhibitIdleShutdown(false)</onclick>
@@ -167,6 +177,7 @@
 			<control type="button" id="14">
 				<description>Skin Settings button</description>
 				<width>340</width>
+				<focusedcolor>textfocus</focusedcolor>
 				<align>center</align>
 				<textwidth>290</textwidth>
 				<onclick>dialog.close(shutdownmenu)</onclick>

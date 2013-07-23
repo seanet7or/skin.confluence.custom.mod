@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
 	<backgroundcolor>0</backgroundcolor>
-	<allowoverlay>no</allowoverlay>
+	<allowoverlay>false</allowoverlay>
 	<defaultcontrol>9000</defaultcontrol>
 	<coordinates>
 		<system>1</system>
@@ -106,8 +106,8 @@
 					<width>45</width>
 					<height>45</height>
 					<label>1036</label>
-					<font>-</font>
-					<aligny>-</aligny>
+					<font></font>
+					<aligny></aligny>
 					<onclick>$VAR[VolumeStepUp]</onclick>
 					<onclick>VolumeUp</onclick>
 					<onleft condition="Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)">84</onleft>
@@ -136,8 +136,8 @@
 					<width>45</width>
 					<height>45</height>
 					<label>1036</label>
-					<font>-</font>
-					<aligny>-</aligny>
+					<font></font>
+					<aligny></aligny>
 					<onclick>$VAR[VolumeStepDown]</onclick>
 					<onclick>VolumeDown</onclick>
 					<onleft>80</onleft>
@@ -165,8 +165,8 @@
 					<width>45</width>
 					<height>45</height>
 					<label>1036</label>
-					<font>-</font>
-					<aligny>-</aligny>
+					<font></font>
+					<aligny></aligny>
 					<onclick>back</onclick>
 					<onleft>81</onleft>
 					<onright>83</onright>
@@ -189,8 +189,8 @@
 					<width>45</width>
 					<height>45</height>
 					<label>31003</label>
-					<font>-</font>
-					<aligny>-</aligny>
+					<font></font>
+					<aligny></aligny>
 					<onclick>ActivateWindow(home)</onclick>
 					<onleft>82</onleft>
 					<onright>9000</onright>
@@ -235,7 +235,7 @@
 					<onright>101</onright>
 					<onup>9000</onup>
 					<ondown>9000</ondown>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>300</scrolltime>
 					<itemlayout height="60" width="260">
 						<control type="label">
@@ -335,7 +335,7 @@
 							<visible>Control.IsVisible(189)</visible>
 						</item>
 						<item id="10">
-							<label>[COLOR=blue]$INFO[Control.GetLabel(198)][/COLOR]</label>
+							<label>[COLOR=heading2]$INFO[Control.GetLabel(198)][/COLOR]</label>
 							<label2>$LOCALIZE[31207]</label2>
 							<onclick>Control.Setfocus(9000,0)</onclick>
 							<onclick>SendClick(198)</onclick>
@@ -355,7 +355,6 @@
 					<posx>300</posx>
 					<posy>20</posy>
 					<width>740</width>
-					<height>30</height>
 					<font>font16</font>
 					<label>$INFO[Container(9000).ListItem.Label]</label>
 					<visible>Control.IsVisible(198)</visible>
@@ -365,10 +364,9 @@
 					<posx>300</posx>
 					<posy>20</posy>
 					<width>740</width>
-					<height>30</height>
 					<font>font16</font>
 					<label>$INFO[Control.GetLabel(190)] $INFO[Control.GetLabel(191)]</label>
-					<textcolor>blue</textcolor>
+					<textcolor>heading1</textcolor>
 					<visible>!Control.IsVisible(198)</visible>
 				</control>
 				<control type="label" id="190">
@@ -376,15 +374,15 @@
 					<posy>2000</posy>
 					<width>100</width>
 					<height>0</height>
-					<font>-</font>
-					<textcolor>-</textcolor>
+					<font></font>
+					<textcolor></textcolor>
 				</control>
 				<control type="label" id="191">
 					<posx>2000</posx>
 					<posy>2000</posy>
 					<width>100</width>
 					<height>0</height>
-					<font>-</font>
+					<font></font>
 				</control>
 				<control type="label" id="199">
 					<posx>40</posx>
@@ -413,7 +411,6 @@
 					<posy>2000</posy>
 					<width>10</width>
 					<height>10</height>
-					<label>-</label>
 					<font>font10</font>
 					<textcolor>FFFFFFFF</textcolor>
 					<align>center</align>
@@ -433,8 +430,8 @@
 							<posy>2000</posy>
 							<width>100</width>
 							<height>0</height>
-							<font>-</font>
-							<textcolor>-</textcolor>
+							<font></font>
+							<textcolor></textcolor>
 						</control>
 						<control type="panel" id="111">
 							<visible>Container(9000).HasFocus(1)</visible>
@@ -620,8 +617,8 @@
 							<posy>2000</posy>
 							<width>100</width>
 							<height>0</height>
-							<font>-</font>
-							<textcolor>-</textcolor>
+							<font></font>
+							<textcolor></textcolor>
 						</control>
 						<control type="panel" id="121">
 							<visible>Container(9000).HasFocus(2)</visible>
@@ -749,8 +746,8 @@
 							<posy>2000</posy>
 							<width>100</width>
 							<height>0</height>
-							<font>-</font>
-							<textcolor>-</textcolor>
+							<font></font>
+							<textcolor></textcolor>
 						</control>
 						<control type="panel" id="131">
 							<visible>Container(9000).HasFocus(3)</visible>
@@ -845,8 +842,8 @@
 							<posy>2000</posy>
 							<width>100</width>
 							<height>0</height>
-							<font>-</font>
-							<textcolor>-</textcolor>
+							<font></font>
+							<textcolor></textcolor>
 						</control>
 						<control type="panel" id="141">
 							<visible>Container(9000).HasFocus(4)</visible>
@@ -869,7 +866,6 @@
 								<control type="image">
 									<posx>5</posx>
 									<posy>5</posy>
-									<width>150</width>
 									<height>90</height>
 									<aspectratio>scale</aspectratio>
 									<texture background="true">$INFO[ListItem.Icon]</texture>
@@ -914,7 +910,6 @@
 								<control type="image">
 									<posx>5</posx>
 									<posy>5</posy>
-									<width>150</width>
 									<height>90</height>
 									<aspectratio>scale</aspectratio>
 									<texture background="true">$INFO[ListItem.Icon]</texture>
@@ -972,8 +967,8 @@
 							<posy>2000</posy>
 							<width>100</width>
 							<height>0</height>
-							<font>-</font>
-							<textcolor>-</textcolor>
+							<font></font>
+							<textcolor></textcolor>
 						</control>
 						<control type="panel" id="151">
 							<visible>Container(9000).HasFocus(5)</visible>
@@ -1109,8 +1104,8 @@
 							<posy>2000</posy>
 							<width>100</width>
 							<height>0</height>
-							<font>-</font>
-							<textcolor>-</textcolor>
+							<font></font>
+							<textcolor></textcolor>
 						</control>
 						<control type="panel" id="161">
 							<visible>Container(9000).HasFocus(6)</visible>
@@ -1133,7 +1128,6 @@
 								<control type="image">
 									<posx>5</posx>
 									<posy>5</posy>
-									<width>150</width>
 									<height>90</height>
 									<aspectratio>keep</aspectratio>
 									<texture background="true">$INFO[ListItem.Icon]</texture>
@@ -1170,7 +1164,6 @@
 								<control type="image">
 									<posx>5</posx>
 									<posy>5</posy>
-									<width>150</width>
 									<height>90</height>
 									<aspectratio>keep</aspectratio>
 									<texture background="true">$INFO[ListItem.Icon]</texture>
@@ -1220,8 +1213,8 @@
 							<posy>2000</posy>
 							<width>100</width>
 							<height>0</height>
-							<font>-</font>
-							<textcolor>-</textcolor>
+							<font></font>
+							<textcolor></textcolor>
 						</control>
 						<control type="panel" id="171">
 							<visible>Container(9000).HasFocus(7)</visible>
@@ -1331,8 +1324,8 @@
 							<posy>2000</posy>
 							<width>100</width>
 							<height>0</height>
-							<font>-</font>
-							<textcolor>-</textcolor>
+							<font></font>
+							<textcolor></textcolor>
 						</control>
 						<control type="panel" id="181">
 							<visible>Container(9000).HasFocus(8)</visible>

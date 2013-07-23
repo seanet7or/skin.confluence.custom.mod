@@ -25,14 +25,13 @@
 				<font>font12_title</font>
 				<label>$LOCALIZE[19222] - $INFO[VideoPlayer.ChannelName]</label>
 				<align>center</align>
-				<textcolor>blue</textcolor>
+				<textcolor>heading1</textcolor>
 			</control>
 			<control type="label">
 				<description>Selected item's date</description>
 				<posx>40</posx>
 				<posy>60</posy>
 				<width>430</width>
-				<height>30</height>
 				<font>font11</font>
 				<label>$INFO[Container(11).ListItem.StartDate]</label>
 				<align>center</align>
@@ -56,9 +55,7 @@
 					</control>
 					<control type="label">
 						<width>100</width>
-						<height>30</height>
 						<font>font13</font>
-						<selectedcolor>selected</selectedcolor>
 						<label>$INFO[ListItem.StartTime]</label>
 					</control>
 					<control type="image">
@@ -80,8 +77,6 @@
 					<control type="label">
 						<posx>400</posx>
 						<width>300</width>
-						<height>30</height>
-						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>![ListItem.IsRecording | ListItem.HasTimer]</visible>
@@ -89,8 +84,6 @@
 					<control type="label">
 						<posx>400</posx>
 						<width>250</width>
-						<height>30</height>
-						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>ListItem.IsRecording | ListItem.HasTimer</visible>
@@ -110,9 +103,7 @@
 					</control>
 					<control type="label">
 						<width>100</width>
-						<height>30</height>
 						<font>font13</font>
-						<selectedcolor>selected</selectedcolor>
 						<label>$INFO[ListItem.StartTime]</label>
 					</control>
 					<control type="image">
@@ -134,8 +125,6 @@
 					<control type="label">
 						<posx>400</posx>
 						<width>300</width>
-						<height>30</height>
-						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>![ListItem.IsRecording | ListItem.HasTimer]</visible>
@@ -143,8 +132,6 @@
 					<control type="label">
 						<posx>400</posx>
 						<width>250</width>
-						<height>30</height>
-						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>ListItem.IsRecording | ListItem.HasTimer</visible>

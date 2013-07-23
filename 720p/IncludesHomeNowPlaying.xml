@@ -37,7 +37,6 @@
 				<description>Title label</description>
 				<posx>170</posx>
 				<posy>285</posy>
-				<height>30</height>
 				<width>1000</width>
 				<label>$INFO[MusicPlayer.Title]</label>
 				<font>font13_title</font>
@@ -46,9 +45,8 @@
 				<description>Time Label</description>
 				<posx>170</posx>
 				<posy>310</posy>
-				<height>30</height>
 				<width>300</width>
-				<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=blue] / [/COLOR]]</label>
+				<label>$INFO[Player.Time]$INFO[Player.Duration, / ]</label>
 			</control>
 		</control>
 		<control type="group">
@@ -85,7 +83,7 @@
 					<label>$LOCALIZE[19157]</label>
 					<align>right</align>
 					<font>font12_title</font>
-					<textcolor>blue</textcolor>
+					<textcolor>heading2</textcolor>
 				</control>
 				<control type="label">
 					<description>NextRecordingDateTime</description>
@@ -103,7 +101,7 @@
 					<posy>50</posy>
 					<height>25</height>
 					<width>800</width>
-					<label>$INFO[PVR.NextRecordingTitle][COLOR=textnofocus]$INFO[PVR.NextRecordingChannel, - [COLOR=blue]([/COLOR],[COLOR=blue])[/COLOR]][/COLOR]</label>
+					<label>$INFO[PVR.NextRecordingTitle][COLOR=textnofocus]$INFO[PVR.NextRecordingChannel, - (,)][/COLOR]</label>
 					<align>right</align>
 					<font>font12_title</font>
 					<scroll>true</scroll>
@@ -135,7 +133,7 @@
 					<label>$LOCALIZE[19158]</label>
 					<align>right</align>
 					<font>font12_title</font>
-					<textcolor>blue</textcolor>
+					<textcolor>heading2</textcolor>
 				</control>
 				<control type="label">
 					<description>NextRecordingDateTime</description>
@@ -151,9 +149,8 @@
 					<description>NextRecordingTitle Channel</description>
 					<posx>390</posx>
 					<posy>50</posy>
-					<height>30</height>
 					<width>800</width>
-					<label>$INFO[PVR.NowRecordingTitle][COLOR=textnofocus]$INFO[PVR.NowRecordingChannel, - [COLOR=blue]([/COLOR],[COLOR=blue])[/COLOR]][/COLOR]</label>
+					<label>$INFO[PVR.NowRecordingTitle][COLOR=textnofocus]$INFO[PVR.NowRecordingChannel, - (,)][/COLOR]</label>
 					<align>right</align>
 					<font>font12_title</font>
 					<scroll>true</scroll>
@@ -173,7 +170,6 @@
 					<description>Cover image</description>
 					<posx>20</posx>
 					<posy>45</posy>
-					<width>150</width>
 					<height>300</height>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<texture fallback="DefaultVideoCover.png">$INFO[Player.Art(thumb)]</texture>
@@ -182,7 +178,6 @@
 					<description>Title label</description>
 					<posx>190</posx>
 					<posy>285</posy>
-					<height>30</height>
 					<width>1000</width>
 					<label>$INFO[VideoPlayer.Title]</label>
 					<font>font13_title</font>
@@ -191,9 +186,8 @@
 					<description>Time Label</description>
 					<posx>190</posx>
 					<posy>310</posy>
-					<height>30</height>
 					<width>300</width>
-					<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=blue] / [/COLOR]]</label>
+					<label>$INFO[Player.Time]$INFO[Player.Duration, / ]</label>
 				</control>
 			</control>
 			<control type="group">
@@ -219,7 +213,6 @@
 					<description>Title label</description>
 					<posx>160</posx>
 					<posy>285</posy>
-					<height>30</height>
 					<width>1000</width>
 					<label>$INFO[VideoPlayer.Title]</label>
 					<font>font13_title</font>
@@ -228,9 +221,8 @@
 					<description>Time Label</description>
 					<posx>160</posx>
 					<posy>310</posy>
-					<height>30</height>
 					<width>300</width>
-					<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=blue] / [/COLOR]]</label>
+					<label>$INFO[Player.Time]$INFO[Player.Duration, / ]</label>
 				</control>
 			</control>
 			<control type="group">
@@ -256,7 +248,6 @@
 					<description>Title label</description>
 					<posx>160</posx>
 					<posy>285</posy>
-					<height>30</height>
 					<width>1000</width>
 					<label>$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Year,[COLOR=textnofocus] (,)[/COLOR]]</label>
 					<font>font13_title</font>
@@ -265,9 +256,8 @@
 					<description>Time Label</description>
 					<posx>160</posx>
 					<posy>310</posy>
-					<height>30</height>
 					<width>300</width>
-					<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=blue] / [/COLOR]]</label>
+					<label>$INFO[Player.Time]$INFO[Player.Duration, / ]</label>
 				</control>
 			</control>
 			<control type="group">
@@ -293,7 +283,6 @@
 					<description>Title label</description>
 					<posx>210</posx>
 					<posy>285</posy>
-					<height>30</height>
 					<width>1000</width>
 					<label>$INFO[VideoPlayer.Title]</label>
 					<font>font13_title</font>
@@ -302,9 +291,8 @@
 					<description>Time Label</description>
 					<posx>210</posx>
 					<posy>310</posy>
-					<height>30</height>
 					<width>300</width>
-					<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=blue] / [/COLOR]]</label>
+					<label>$INFO[Player.Time]$INFO[Player.Duration, / ]</label>
 				</control>
 			</control>
 		</control>

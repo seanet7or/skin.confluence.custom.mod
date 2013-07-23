@@ -30,7 +30,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="180">
@@ -45,7 +45,6 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 						</control>
 						<control type="label">
@@ -53,7 +52,6 @@
 							<posy>185</posy>
 							<width>150</width>
 							<height>20</height>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 						</control>
@@ -80,7 +78,6 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8000)</visible>
 						</control>
@@ -89,7 +86,6 @@
 							<posy>185</posy>
 							<width>150</width>
 							<height>20</height>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 						</control>
@@ -98,8 +94,7 @@
 							<posy>185</posy>
 							<width>150</width>
 							<height>20</height>
-							<textcolor>blue</textcolor>
-							<selectedcolor>selected</selectedcolor>
+							<textcolor>heading2</textcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 							<visible>Control.HasFocus(8000)</visible>
@@ -148,7 +143,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<focusposition>1</focusposition>
@@ -166,7 +161,6 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
 						</control>
@@ -177,7 +171,6 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.Thumb]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
 						</control>
@@ -196,7 +189,6 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font10</font>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
@@ -205,7 +197,6 @@
 							<posy>185</posy>
 							<width>200</width>
 							<height>20</height>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
 						</control>
@@ -235,7 +226,6 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8001)</visible>
 							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
@@ -259,7 +249,6 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.Thumb]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8001)</visible>
 							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
@@ -279,7 +268,6 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font10</font>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
@@ -288,7 +276,6 @@
 							<posy>185</posy>
 							<width>200</width>
 							<height>20</height>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
 						</control>
@@ -297,8 +284,7 @@
 							<posy>185</posy>
 							<width>200</width>
 							<height>20</height>
-							<textcolor>blue</textcolor>
-							<selectedcolor>selected</selectedcolor>
+							<textcolor>heading2</textcolor>
 							<align>center</align>
 							<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
 							<visible>Control.HasFocus(8001)</visible>
@@ -347,7 +333,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="200">
@@ -363,7 +349,6 @@
 							<height>155</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true" fallback="DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 						</control>
 						<control type="label">
@@ -372,7 +357,6 @@
 							<width>180</width>
 							<height>20</height>
 							<font>font10</font>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
@@ -381,7 +365,6 @@
 							<posy>190</posy>
 							<width>180</width>
 							<height>20</height>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 						</control>
@@ -410,7 +393,6 @@
 							<height>155</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true" fallback="DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8002)</visible>
 						</control>
@@ -420,7 +402,6 @@
 							<width>180</width>
 							<height>20</height>
 							<font>font10</font>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
@@ -429,7 +410,6 @@
 							<posy>190</posy>
 							<width>180</width>
 							<height>20</height>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 						</control>
@@ -438,8 +418,7 @@
 							<posy>190</posy>
 							<width>180</width>
 							<height>20</height>
-							<textcolor>blue</textcolor>
-							<selectedcolor>selected</selectedcolor>
+							<textcolor>heading2</textcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 							<visible>Control.HasFocus(8002)</visible>
@@ -489,7 +468,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="180">
@@ -504,7 +483,6 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 						</control>
 						<control type="label">
@@ -512,7 +490,6 @@
 							<posy>185</posy>
 							<width>150</width>
 							<height>20</height>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 						</control>
@@ -539,7 +516,6 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8003)</visible>
 						</control>
@@ -548,7 +524,6 @@
 							<posy>185</posy>
 							<width>150</width>
 							<height>20</height>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 						</control>
@@ -557,8 +532,7 @@
 							<posy>185</posy>
 							<width>150</width>
 							<height>20</height>
-							<textcolor>blue</textcolor>
-							<selectedcolor>selected</selectedcolor>
+							<textcolor>heading2</textcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 							<visible>Control.HasFocus(8003)</visible>
@@ -608,7 +582,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="180">
@@ -623,7 +597,6 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 						</control>
 						<control type="label">
@@ -631,7 +604,6 @@
 							<posy>185</posy>
 							<width>150</width>
 							<height>20</height>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 						</control>
@@ -658,7 +630,6 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8004)</visible>
 						</control>
@@ -667,7 +638,6 @@
 							<posy>185</posy>
 							<width>150</width>
 							<height>20</height>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 						</control>
@@ -676,8 +646,7 @@
 							<posy>185</posy>
 							<width>150</width>
 							<height>20</height>
-							<textcolor>blue</textcolor>
-							<selectedcolor>selected</selectedcolor>
+							<textcolor>heading2</textcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 							<visible>Control.HasFocus(8004)</visible>
@@ -726,7 +695,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<focusposition>1</focusposition>
@@ -744,7 +713,6 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
 						</control>
@@ -755,7 +723,6 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.Thumb]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
 						</control>
@@ -774,7 +741,6 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font10</font>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
@@ -783,7 +749,6 @@
 							<posy>185</posy>
 							<width>200</width>
 							<height>20</height>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
 						</control>
@@ -813,7 +778,6 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8005)</visible>
 							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
@@ -837,7 +801,6 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.Thumb]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8005)</visible>
 							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
@@ -857,7 +820,6 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font10</font>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
@@ -866,7 +828,6 @@
 							<posy>185</posy>
 							<width>200</width>
 							<height>20</height>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
 						</control>
@@ -875,8 +836,7 @@
 							<posy>185</posy>
 							<width>200</width>
 							<height>20</height>
-							<textcolor>blue</textcolor>
-							<selectedcolor>selected</selectedcolor>
+							<textcolor>heading2</textcolor>
 							<align>center</align>
 							<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
 							<visible>Control.HasFocus(8005)</visible>
@@ -925,7 +885,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="200">
@@ -941,7 +901,6 @@
 							<height>155</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true" fallback="DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 						</control>
 						<control type="label">
@@ -950,7 +909,6 @@
 							<width>180</width>
 							<height>20</height>
 							<font>font10</font>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
@@ -959,7 +917,6 @@
 							<posy>190</posy>
 							<width>180</width>
 							<height>20</height>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 						</control>
@@ -988,7 +945,6 @@
 							<height>155</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true" fallback="DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8006)</visible>
 						</control>
@@ -998,7 +954,6 @@
 							<width>180</width>
 							<height>20</height>
 							<font>font10</font>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
@@ -1007,7 +962,6 @@
 							<posy>190</posy>
 							<width>180</width>
 							<height>20</height>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 						</control>
@@ -1016,8 +970,7 @@
 							<posy>190</posy>
 							<width>180</width>
 							<height>20</height>
-							<textcolor>blue</textcolor>
-							<selectedcolor>selected</selectedcolor>
+							<textcolor>heading2</textcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 							<visible>Control.HasFocus(8006)</visible>
@@ -1067,7 +1020,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="180">
@@ -1082,7 +1035,6 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 						</control>
 						<control type="label">
@@ -1090,7 +1042,6 @@
 							<posy>185</posy>
 							<width>150</width>
 							<height>20</height>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 						</control>
@@ -1117,7 +1068,6 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8007)</visible>
 						</control>
@@ -1126,7 +1076,6 @@
 							<posy>185</posy>
 							<width>150</width>
 							<height>20</height>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 						</control>
@@ -1135,8 +1084,7 @@
 							<posy>185</posy>
 							<width>150</width>
 							<height>20</height>
-							<textcolor>blue</textcolor>
-							<selectedcolor>selected</selectedcolor>
+							<textcolor>heading2</textcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 							<visible>Control.HasFocus(8007)</visible>
@@ -1186,7 +1134,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="180">
@@ -1201,7 +1149,6 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 						</control>
 						<control type="label">
@@ -1209,7 +1156,6 @@
 							<posy>185</posy>
 							<width>150</width>
 							<height>20</height>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 						</control>
@@ -1236,7 +1182,6 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8008)</visible>
 						</control>
@@ -1245,7 +1190,6 @@
 							<posy>185</posy>
 							<width>150</width>
 							<height>20</height>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 						</control>
@@ -1254,8 +1198,7 @@
 							<posy>185</posy>
 							<width>150</width>
 							<height>20</height>
-							<textcolor>blue</textcolor>
-							<selectedcolor>selected</selectedcolor>
+							<textcolor>heading2</textcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 							<visible>Control.HasFocus(8008)</visible>
@@ -1304,7 +1247,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<focusposition>1</focusposition>
@@ -1322,7 +1265,6 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
 						</control>
@@ -1333,7 +1275,6 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[ListItem.Thumb]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
 						</control>
@@ -1352,7 +1293,6 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font10</font>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
@@ -1361,7 +1301,6 @@
 							<posy>185</posy>
 							<width>200</width>
 							<height>20</height>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
 						</control>
@@ -1391,7 +1330,6 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture>$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8009)</visible>
 							<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
@@ -1415,7 +1353,6 @@
 							<height>155</height>
 							<aspectratio>scale</aspectratio>
 							<texture>$INFO[ListItem.Thumb]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8009)</visible>
 							<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
@@ -1435,7 +1372,6 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font10</font>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
@@ -1444,7 +1380,6 @@
 							<posy>185</posy>
 							<width>200</width>
 							<height>20</height>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
 						</control>
@@ -1453,8 +1388,7 @@
 							<posy>185</posy>
 							<width>200</width>
 							<height>20</height>
-							<textcolor>blue</textcolor>
-							<selectedcolor>selected</selectedcolor>
+							<textcolor>heading2</textcolor>
 							<align>center</align>
 							<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
 							<visible>Control.HasFocus(8009)</visible>
@@ -1503,7 +1437,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="200">
@@ -1519,7 +1453,6 @@
 							<height>155</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true" fallback="DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 						</control>
 						<control type="label">
@@ -1528,7 +1461,6 @@
 							<width>180</width>
 							<height>20</height>
 							<font>font10</font>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
@@ -1537,7 +1469,6 @@
 							<posy>190</posy>
 							<width>180</width>
 							<height>20</height>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 						</control>
@@ -1566,7 +1497,6 @@
 							<height>155</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true" fallback="DefaultAlbumCover.png">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8010)</visible>
 						</control>
@@ -1576,7 +1506,6 @@
 							<width>180</width>
 							<height>20</height>
 							<font>font10</font>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
@@ -1585,7 +1514,6 @@
 							<posy>190</posy>
 							<width>180</width>
 							<height>20</height>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 						</control>
@@ -1594,8 +1522,7 @@
 							<posy>190</posy>
 							<width>180</width>
 							<height>20</height>
-							<textcolor>blue</textcolor>
-							<selectedcolor>selected</selectedcolor>
+							<textcolor>heading2</textcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 							<visible>Control.HasFocus(8010)</visible>
@@ -1645,7 +1572,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="180">
@@ -1660,7 +1587,6 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 						</control>
 						<control type="label">
@@ -1668,7 +1594,6 @@
 							<posy>185</posy>
 							<width>150</width>
 							<height>20</height>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 						</control>
@@ -1695,7 +1620,6 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8011)</visible>
 						</control>
@@ -1704,7 +1628,6 @@
 							<posy>185</posy>
 							<width>150</width>
 							<height>20</height>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 						</control>
@@ -1713,8 +1636,7 @@
 							<posy>185</posy>
 							<width>150</width>
 							<height>20</height>
-							<textcolor>blue</textcolor>
-							<selectedcolor>selected</selectedcolor>
+							<textcolor>heading2</textcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 							<visible>Control.HasFocus(8011)</visible>
@@ -1765,7 +1687,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<include>MovieWidgetLayout</include>
@@ -1788,7 +1710,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<include>MovieWidgetLayout</include>
@@ -1811,7 +1733,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<include>MovieWidgetLayout</include>
@@ -1834,7 +1756,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<include>MovieWidgetLayout</include>
@@ -1857,7 +1779,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<include>MovieWidgetLayout</include>
@@ -1880,7 +1802,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<include>MovieWidgetLayout</include>
@@ -1903,7 +1825,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<include>MovieWidgetLayout</include>
@@ -1926,7 +1848,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<include>MovieWidgetLayout</include>
@@ -1949,7 +1871,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<include>MovieWidgetLayout</include>
@@ -1972,7 +1894,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<include>MovieWidgetLayout</include>
@@ -2020,7 +1942,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<focusposition>1</focusposition>
@@ -2044,7 +1966,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<focusposition>1</focusposition>
@@ -2068,7 +1990,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<focusposition>1</focusposition>
@@ -2092,7 +2014,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<focusposition>1</focusposition>
@@ -2116,7 +2038,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<focusposition>1</focusposition>
@@ -2140,7 +2062,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<focusposition>1</focusposition>
@@ -2164,7 +2086,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<focusposition>1</focusposition>
@@ -2188,7 +2110,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<focusposition>1</focusposition>
@@ -2212,7 +2134,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<focusposition>1</focusposition>
@@ -2236,7 +2158,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<focusposition>1</focusposition>
@@ -2286,7 +2208,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<itemlayout height="220" width="180">
@@ -2301,7 +2223,6 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 						</control>
 						<control type="label">
@@ -2309,7 +2230,6 @@
 							<posy>185</posy>
 							<width>150</width>
 							<height>20</height>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 						</control>
@@ -2336,7 +2256,6 @@
 							<width>160</width>
 							<height>170</height>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8014)</visible>
 						</control>
@@ -2345,7 +2264,6 @@
 							<posy>185</posy>
 							<width>150</width>
 							<height>20</height>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 						</control>
@@ -2354,8 +2272,7 @@
 							<posy>185</posy>
 							<width>150</width>
 							<height>20</height>
-							<textcolor>blue</textcolor>
-							<selectedcolor>selected</selectedcolor>
+							<textcolor>heading2</textcolor>
 							<align>center</align>
 							<label>$VAR[MainItemLabel]</label>
 							<visible>Control.HasFocus(8014)</visible>
@@ -2404,7 +2321,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<focusposition>1</focusposition>
@@ -2422,7 +2339,6 @@
 							<height>155</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 						</control>
 						<control type="label">
@@ -2430,8 +2346,7 @@
 							<posy>15</posy>
 							<width>140</width>
 							<height>20</height>
-							<textcolor>blue</textcolor>
-							<selectedcolor>selected</selectedcolor>
+							<textcolor>heading2</textcolor>
 							<align>center</align>
 							<label>[B]$INFO[ListItem.Label][/B]</label>
 						</control>
@@ -2441,7 +2356,6 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font10</font>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>top</aligny>
 							<label>$INFO[ListItem.Property(Temperatures)]</label>
@@ -2452,7 +2366,6 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font10</font>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
@@ -2481,7 +2394,6 @@
 							<height>155</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8015)</visible>
 						</control>
@@ -2490,8 +2402,7 @@
 							<posy>15</posy>
 							<width>140</width>
 							<height>20</height>
-							<textcolor>blue</textcolor>
-							<selectedcolor>selected</selectedcolor>
+							<textcolor>heading2</textcolor>
 							<align>center</align>
 							<label>[B]$INFO[ListItem.Label][/B]</label>
 						</control>
@@ -2501,7 +2412,6 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font10</font>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>top</aligny>
 							<label>$INFO[ListItem.Property(Temperatures)]</label>
@@ -2512,7 +2422,6 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font10</font>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
@@ -2522,8 +2431,7 @@
 							<width>200</width>
 							<height>20</height>
 							<font>font10</font>
-							<textcolor>blue</textcolor>
-							<selectedcolor>selected</selectedcolor>
+							<textcolor>heading2</textcolor>
 							<align>center</align>
 							<label>$INFO[ListItem.Label2]</label>
 							<visible>Control.HasFocus(8015)</visible>
@@ -2552,7 +2460,7 @@
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">603</ondown>
 					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
 					<viewtype label="535">list</viewtype>
-					<pagecontrol>-</pagecontrol>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<focusposition>1</focusposition>
@@ -2570,7 +2478,6 @@
 							<height>155</height>
 							<aspectratio align="center" aligny="bottom">keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 						</control>
 						<control type="label">
@@ -2578,7 +2485,6 @@
 							<posy>168</posy>
 							<width>200</width>
 							<height>20</height>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
@@ -2607,7 +2513,6 @@
 							<height>155</height>
 							<aspectratio align="center" aligny="bottom">keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<bordertexture>-</bordertexture>
 							<bordersize>5</bordersize>
 							<visible>!Control.HasFocus(8016)</visible>
 						</control>
@@ -2616,8 +2521,7 @@
 							<posy>168</posy>
 							<width>200</width>
 							<height>20</height>
-							<textcolor>blue</textcolor>
-							<selectedcolor>selected</selectedcolor>
+							<textcolor>heading2</textcolor>
 							<align>center</align>
 							<label>$INFO[ListItem.Label]</label>
 							<visible>Control.HasFocus(8016)</visible>
@@ -2627,7 +2531,6 @@
 							<posy>168</posy>
 							<width>200</width>
 							<height>20</height>
-							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<label>$INFO[ListItem.Label]</label>
 							<visible>!Control.HasFocus(8016)</visible>
@@ -2671,7 +2574,6 @@
 				<width>160</width>
 				<height>170</height>
 				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-				<bordertexture>-</bordertexture>
 				<bordersize>5</bordersize>
 			</control>
 			<control type="label">
@@ -2679,7 +2581,6 @@
 				<posy>185</posy>
 				<width>150</width>
 				<height>20</height>
-				<selectedcolor>selected</selectedcolor>
 				<align>center</align>
 				<label>$VAR[MainItemLabel]</label>
 			</control>
@@ -2706,7 +2607,6 @@
 				<width>160</width>
 				<height>170</height>
 				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-				<bordertexture>-</bordertexture>
 				<bordersize>5</bordersize>
 				<visible>!Control.HasFocus(8012)</visible>
 			</control>
@@ -2715,7 +2615,6 @@
 				<posy>185</posy>
 				<width>150</width>
 				<height>20</height>
-				<selectedcolor>selected</selectedcolor>
 				<align>center</align>
 				<label>$VAR[MainItemLabel]</label>
 			</control>
@@ -2724,8 +2623,7 @@
 				<posy>185</posy>
 				<width>150</width>
 				<height>20</height>
-				<textcolor>blue</textcolor>
-				<selectedcolor>selected</selectedcolor>
+				<textcolor>heading2</textcolor>
 				<align>center</align>
 				<label>$VAR[MainItemLabel]</label>
 				<visible>Control.HasFocus(8012)</visible>
@@ -2746,7 +2644,6 @@
 				<height>155</height>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-				<bordertexture>-</bordertexture>
 				<bordersize>5</bordersize>
 				<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
 			</control>
@@ -2757,7 +2654,6 @@
 				<height>155</height>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[ListItem.Thumb]</texture>
-				<bordertexture>-</bordertexture>
 				<bordersize>5</bordersize>
 				<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
 			</control>
@@ -2767,7 +2663,6 @@
 				<width>200</width>
 				<height>20</height>
 				<font>font10</font>
-				<selectedcolor>selected</selectedcolor>
 				<align>center</align>
 				<label>$INFO[ListItem.Label2]</label>
 			</control>
@@ -2776,7 +2671,6 @@
 				<posy>185</posy>
 				<width>200</width>
 				<height>20</height>
-				<selectedcolor>selected</selectedcolor>
 				<align>center</align>
 				<label>$VAR[MainItemLabel]</label>
 			</control>
@@ -2806,7 +2700,6 @@
 				<height>155</height>
 				<aspectratio>scale</aspectratio>
 				<texture>$INFO[ListItem.ActualIcon]</texture>
-				<bordertexture>-</bordertexture>
 				<bordersize>5</bordersize>
 				<visible>!Control.HasFocus(8013)</visible>
 				<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
@@ -2830,7 +2723,6 @@
 				<height>155</height>
 				<aspectratio>scale</aspectratio>
 				<texture>$INFO[ListItem.Thumb]</texture>
-				<bordertexture>-</bordertexture>
 				<bordersize>5</bordersize>
 				<visible>!Control.HasFocus(8013)</visible>
 				<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
@@ -2841,7 +2733,6 @@
 				<width>200</width>
 				<height>20</height>
 				<font>font10</font>
-				<selectedcolor>selected</selectedcolor>
 				<align>center</align>
 				<label>$INFO[ListItem.Label2]</label>
 			</control>
@@ -2850,7 +2741,6 @@
 				<posy>185</posy>
 				<width>200</width>
 				<height>20</height>
-				<selectedcolor>selected</selectedcolor>
 				<align>center</align>
 				<label>$VAR[MainItemLabel]</label>
 			</control>
@@ -2859,8 +2749,7 @@
 				<posy>185</posy>
 				<width>200</width>
 				<height>20</height>
-				<textcolor>blue</textcolor>
-				<selectedcolor>selected</selectedcolor>
+				<textcolor>heading2</textcolor>
 				<align>center</align>
 				<label>$VAR[MainItemLabel]</label>
 				<visible>Control.HasFocus(8013)</visible>
