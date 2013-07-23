@@ -68,8 +68,8 @@
 		<scroll>false</scroll>
 		<height>30</height>
 		<angle>0</angle>
-		<aligny>center</aligny>
 		<align>left</align>
+		<aligny>center</aligny>
 		<posx>10</posx>
 		<posy>0</posy>
 		<label></label>
@@ -79,11 +79,11 @@
 	<default type="fadelabel">
 		<width>400</width>
 		<height>25</height>
-		<textoffsetx>10</textoffsetx>
-		<scrollspeed>60</scrollspeed>
-		<scrollout>false</scrollout>
-		<pauseatend>2000</pauseatend>
 		<label>$VAR[NextFiveSongScroller]</label>
+		<scrollout>false</scrollout>
+		<scrollspeed>60</scrollspeed>
+		<textoffsetx>10</textoffsetx>
+		<pauseatend>2000</pauseatend>
 		<posx>160</posx>
 		<posy>0</posy>
 		<font>font13</font>
@@ -91,12 +91,13 @@
 		<disabledcolor>textdisabled</disabledcolor>
 	</default>
 	<default type="button">
+		<focusedcolor>textfocus</focusedcolor>
+		<colordiffuse>ffffffff</colordiffuse>
 		<textwidth>730</textwidth>
 		<textoffsety>0</textoffsety>
-		<label></label>
-		<colordiffuse>ffffffff</colordiffuse>
 		<angle>0</angle>
 		<align>left</align>
+		<label></label>
 		<posx>300</posx>
 		<posy>200</posy>
 		<width>750</width>
@@ -111,6 +112,7 @@
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="togglebutton">
+		<focusedcolor>textfocus</focusedcolor>
 		<textwidth>290</textwidth>
 		<textoffsetx>10</textoffsetx>
 		<aligny>center</aligny>
@@ -151,6 +153,7 @@
 	</default>
 	<default type="spincontrol">
 		<showonepage>true</showonepage>
+		<focusedcolor>textfocus</focusedcolor>
 		<posx>520</posx>
 		<posy>650</posy>
 		<textureup flipy="true">buttons/spin-down-nf_light.png</textureup>
@@ -171,6 +174,7 @@
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="spincontrolex">
+		<focusedcolor>textfocus</focusedcolor>
 		<label></label>
 		<posx>0</posx>
 		<posy>0</posy>
@@ -194,6 +198,7 @@
 	</default>
 	<default type="radiobutton">
 		<align>left</align>
+		<focusedcolor>textfocus</focusedcolor>
 		<posx>300</posx>
 		<posy>200</posy>
 		<width>750</width>
@@ -213,6 +218,7 @@
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="selectbutton">
+		<focusedcolor>textfocus</focusedcolor>
 		<posx>440</posx>
 		<posy>100</posy>
 		<width>400</width>
@@ -241,6 +247,7 @@
 		<texturenofocus></texturenofocus>
 		<texturefocus></texturefocus>
 		<aligny>center</aligny>
+		<focusedcolor>textfocus</focusedcolor>
 		<controloffsetx>75</controloffsetx>
 		<controloffsety>0</controloffsety>
 	</default>
@@ -279,6 +286,7 @@
 		<texturenofocus></texturenofocus>
 	</default>
 	<default type="edit">
+		<focusedcolor>textfocus</focusedcolor>
 		<label>587</label>
 		<align>left</align>
 		<posx>300</posx>

@@ -274,7 +274,6 @@ REPL='\s*<\!--(?!-->).*?-->[^#]*#;;Removing uncommented tags;<\!--
  fallback="xbmc-logo.png";;Removing xbmc logo fallback from music visualisation
 \s*<shadowcolor>[a-z]*</shadowcolor>#;;Removing font dropshadows
 \s*<include>VisibleFadeEffect</include>#;;Removing VisibleFadeEffect
->MenuItemNF.png<;><;Removing menu items separator MenuItemNF.png
 <textoffsetx>[0-9]*<;<textoffsetx>10<;Unifying textoffsetx tags;<textoffsetx>0<
 <pulseonselect>true<;<pulseonselect>false<;Setting pulseonselect to false for all controls
 <bordersize>[^5]<;<bordersize>5<;Unifying bordersizes
@@ -375,7 +374,6 @@ media/HomeSeperator.png;
 media/homefloor.png;
 media/SideFade.png;
 media/HomeOverlay1.png;
-media/MenuItemNF.png;
 '
 
 printf "\nRemoving media files: "
@@ -408,6 +406,20 @@ if [ -d media/ClearCase ] ; then
 	remove_controlid radiobutton '<onclick>Skin.ToggleSetting\(View724DisableCases\)</onclick>' 720p/MyVideoNav.xml
 	remove_controlid radiobutton '<onclick>Skin.ToggleSetting\(UseDiscTypeCase\)</onclick>' 720p/MyVideoNav.xml
 	rm -rf media/ClearCase
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nRemoving menu items separator 'MenuItemNF.png': "
+if [ -f media/MenuItemNF.png ] ; then
+	XMLS=$(2>/dev/null grep '>MenuItemNF.png<' -l 720p/*)
+	remove_control 'image' '<texture[^>]*>MenuItemNF.png</texture>' "$XMLS"
+	XMLS=$(2>/dev/null grep 'MenuItemNF.png' -l 720p/*)
+	R='s|>MenuItemNF.png<|>-<|g'
+	perlregex $XMLS "$R"
+	check_and_remove media/MenuItemNF.png
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
@@ -1480,11 +1492,11 @@ step
 
 printf "\n############# CLEANING UP #####################################################"
 
-printf "\nRemoving image controls without texture: "
-XMLS=$(2>/dev/null grep '<texture[^>]*></texture>' -l 720p/*)
-remove_control 'image' '<texture[^>]*></texture>' "$XMLS"
-printf "%sDONE!%s" $GREEN $RESET
-step
+#printf "\nRemoving image controls without texture: "
+#XMLS=$(2>/dev/null grep '<texture[^>]*></texture>' -l 720p/*)
+#remove_control 'image' '<texture[^>]*></texture>' "$XMLS"
+#printf "%sDONE!%s" $GREEN $RESET
+#step
 
 printf "\nRemoving directories: "
 2>/dev/null rm -rf media/studios
@@ -1720,28 +1732,37 @@ step
 
 printf "\nAdding defaults to defaults.xml: "
 if ! grep -q '<loop>true</loop>' 720p/defaults.xml ; then
-	XBMCDEFS='
+	DEFS='
 togglebutton;align;<align>left</align>
 togglebutton;aligny;<aligny>center</aligny>
 togglebutton;textoffsetx;<textoffsetx>10</textoffsetx>
 togglebutton;textwidth;<textwidth>290</textwidth>
+togglebutton;focusedcolor;<focusedcolor>textfocus</focusedcolor>
 button;label;<label></label>
 button;align;<align>left</align>
 button;angle;<angle>0</angle>
 button;textoffsety;<textoffsety>0</textoffsety>
 button;textwidth;<textwidth>730</textwidth>
 button;colordiffuse;<colordiffuse>ffffffff</colordiffuse>
+button;focusedcolor;<focusedcolor>textfocus</focusedcolor>
+radiobutton;focusedcolor;<focusedcolor>textfocus</focusedcolor>
 radiobutton;align;<align>left</align>
 edit;align;<align>left</align>
 edit;label;<label></label>
+edit;focusedcolor;<focusedcolor>textfocus</focusedcolor>
 multiimage;loop;<loop>true</loop>
 multiimage;pauseatend;<pauseatend>0</pauseatend>
+selectbutton;focusedcolor;<focusedcolor>textfocus</focusedcolor>
 sliderex;posx;<posx>0</posx>
 sliderex;posy;<posy>0</posy>
+sliderex;focusedcolor;<focusedcolor>textfocus</focusedcolor>
+slider;focusedcolor;<focusedcolor>textfocus</focusedcolor>
 slider;aligny;<aligny>center</aligny>
 slider;texturefocus;<texturefocus></texturefocus>
 slider;texturenofocus;<texturenofocus></texturenofocus>
+spincontrol;focusedcolor;<focusedcolor>textfocus</focusedcolor>
 spincontrolex;label;<label></label>
+spincontrolex;focusedcolor;<focusedcolor>textfocus</focusedcolor>
 fadelabel;pauseatend;<pauseatend>1000</pauseatend>
 fadelabel;textoffsetx;<textoffsetx>10</textoffsetx>
 fadelabel;scrollspeed;<scrollspeed>60</scrollspeed>
@@ -1759,32 +1780,21 @@ label;selectedcolor;<selectedcolor>itemselected</selectedcolor>
 label;width;<width>1280</width>
 label;wrapmultiline;<wrapmultiline>false</wrapmultiline>
 '
-for CONTROL in $CONTROLS ; do
-	for TAG in $(echo "$OPTTAGS" | grep "^$CONTROL;") ; do
-		TAG=$(echo "$TAG" | cut -f2 -d';')
-		XBMCDEF=$(echo "$XBMCDEFS" | grep "^;$TAG;" | head -1 )
-		if [ -z "$XBMCDEF" ] ; then
-			XBMCDEF=$(echo "$XBMCDEFS" | grep "^$CONTROL;$TAG;" | head -1 )
-		fi
-		if ! [ -z "$XBMCDEF" ] ; then		
-			DEFTAG=$(grep -a -z -Po "<default type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</default>" 720p/defaults.xml | grep "<$TAG[ >]" | sed 's|^\s*||')
-			if [ -z "$DEFTAG" ] ; then
-				NUMMISSING=$(grep -a -z -Po "<control type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</control>" 720p/* | tr -d $'\n' | sed 's|</control>|\n|g' | grep -v "<$TAG[ >]" | wc -l)
-				if [ $NUMMISSING -gt 0 ] ; then
-					NEWDEFAULT=$(echo "$XBMCDEF" | cut -f3 -d';')
-					R="s|(\s*)(<default type=\"$CONTROL\"[^#]*#)"		#1#2
-					R+="|\1\2\1\1$NEWDEFAULT#|g"
-					perlregex "$R" 720p/defaults.xml
-				fi
+	for D in $DEFS ; do
+		CONTROL=$(echo "$D" | cut -f1 -d';')
+		TAG=$(echo "$D" | cut -f2 -d';')
+		STD=$(echo "$D" | cut -f3 -d';')
+		DEFTAG=$(grep -a -z -Po "<default type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</default>" 720p/defaults.xml | grep "<$TAG[ >]" | sed 's|^\s*||')
+		if [ -z "$DEFTAG" ] ; then
+			NUMMISSING=$(grep -a -z -Po "<control type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</control>" 720p/* | tr -d $'\n' | sed 's|</control>|\n|g' | grep -v "<$TAG[ >]" | wc -l)
+			if [ $NUMMISSING -gt 0 ] ; then
+				R="s|(\s*)(<default type=\"$CONTROL\"[^#]*#)"		#1#2
+				R+="|\1\2\1\1$STD#|g"
+				perlregex "$R" 720p/defaults.xml
 			fi
 		fi
 	done
-done
-printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-step
 
 printf "\nOptimizing tags with existing default values: "
 for CONTROL in $CONTROLS ; do

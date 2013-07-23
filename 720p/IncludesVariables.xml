@@ -1167,38 +1167,4 @@
 		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,99)">SetVolume(100)</value>
 		<value>VolumeUp</value>
 	</variable>
-	<variable name="CommonCountItems">
-		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(1)">$LOCALIZE[342]</value>
-		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(2)">$LOCALIZE[31021]</value>
-		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(4)">$LOCALIZE[20360]</value>
-		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(5)">$LOCALIZE[31121]</value>
-		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(6)">$LOCALIZE[133]</value>
-		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(7)">$LOCALIZE[132]</value>
-		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(8)">$LOCALIZE[134]</value>
-		<value condition="SubString(Container.FolderPath,program.advanced.launcher)">$LOCALIZE[31142]</value>
-		<value condition="SubString(Container.FolderPath,plugin://plugin.video.live.streams)">$LOCALIZE[31020]</value>
-		<value condition="stringcompare(Container.FolderPath,plugin://plugin.video.apple.movie.trailers.lite/)">$LOCALIZE[31019]</value>
-		<value condition="stringcompare(Container.FolderPath,videodb://1/7/)">$LOCALIZE[31018]</value>
-		<value condition="stringcompare(Container.FolderPath,special://skin/extras/Playlists/HDMovies.xsp)">$LOCALIZE[31017]</value>
-		<value condition="stringcompare(Container.FolderPath,special://skin/extras/Playlists/GenreFamily.xsp)">$LOCALIZE[31610] $LOCALIZE[20342]</value>
-		<value condition="stringcompare(Container.FolderPath,special://skin/extras/Playlists/GenreChildren.xsp)">$LOCALIZE[31604] $LOCALIZE[31016]</value>
-		<value condition="stringcompare(Container.FolderPath,special://skin/extras/Playlists/MoviesInProgress.xsp)">$LOCALIZE[31160]</value>
-		<value condition="Container.Content(movies)">$LOCALIZE[342]</value>
-		<value condition="Container.Content(TVShows)">$LOCALIZE[31021]</value>
-		<value condition="Container.Content(Seasons)">$LOCALIZE[33054]</value>
-		<value condition="Container.Content(Episodes)">$LOCALIZE[20360]</value>
-		<value condition="Container.Content(actors)">$LOCALIZE[344]</value>
-		<value condition="stringcompare(Container.FolderPath,musicdb://6/)">$INFO[Container.FolderName]</value>
-		<value condition="stringcompare(Container.FolderPath,musicdb://7/)">$INFO[Container.FolderName]</value>
-		<value condition="stringcompare(Container.FolderPath,musicdb://8/)">$INFO[Container.FolderName]</value>
-		<value condition="Container.Content(Albums)">$LOCALIZE[132]</value>
-		<value condition="Container.Content(Artists)">$LOCALIZE[133]</value>
-		<value condition="Container.Content(Songs)">$LOCALIZE[134]</value>
-		<value condition="Window.IsVisible(musicplaylist)">$INFO[ListItem.Album]</value>
-		<value condition="Container.Content(Genres)">$LOCALIZE[135]</value>
-		<value condition="Window.IsVisible(MyPVR) + Control.HasFocus(13)">$LOCALIZE[19163]</value>
-		<value condition="Window.IsVisible(MyPVR)">$LOCALIZE[19019]</value>
-		<value condition="StringCompare(ListItem.Label,..)">$LOCALIZE[31025]</value>
-		<value>$LOCALIZE[31025]</value>
-	</variable>
 </includes>

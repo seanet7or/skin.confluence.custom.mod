@@ -170,18 +170,15 @@
 					</control>
 					<control type="radiobutton" id="101">
 						<label>29801</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(ABCKeyBoard)</onclick>
 						<selected>!Skin.HasSetting(ABCKeyBoard)</selected>
 					</control>
 					<control type="radiobutton" id="102">
 						<label>31366</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(HideSystemClock)</onclick>
 						<selected>!Skin.HasSetting(HideSystemClock)</selected>
 					</control>
 					<control type="radiobutton" id="103">
-						<focusedcolor>textfocus</focusedcolor>
 						<label>31376</label>
 						<onclick>Skin.ToggleSetting(HideSystemWeather)</onclick>
 						<selected>Skin.HasSetting(HideSystemWeather)</selected>
@@ -189,62 +186,52 @@
 					</control>
 					<control type="radiobutton" id="104">
 						<label>31152</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(KioskMode)</onclick>
 						<selected>Skin.HasSetting(KioskMode)</selected>
 					</control>
 					<control type="radiobutton" id="105">
 						<label>31124</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(HideBusyAnimation)</onclick>
 						<selected>!Skin.HasSetting(HideBusyAnimation)</selected>
 					</control>
 					<control type="radiobutton" id="106">
 						<label>31671</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(DisableHomeReturnButtons)</onclick>
 						<selected>!Skin.HasSetting(DisableHomeReturnButtons)</selected>
 					</control>
 					<control type="radiobutton" id="107">
 						<label>31675</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(DisableFloorVolumeButtons)</onclick>
 						<selected>!Skin.HasSetting(DisableFloorVolumeButtons)</selected>
 					</control>
 					<control type="radiobutton" id="108">
 						<label>31677</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(SmallVolumeJump)</onclick>
 						<selected>!Skin.HasSetting(SmallVolumeJump)</selected>
 						<enable>!Skin.HasSetting(DisableFloorVolumeButtons)</enable>
 					</control>
 					<control type="radiobutton" id="109">
 						<label>$LOCALIZE[31359] "$LOCALIZE[31316]"</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(ParentDirLabel)</onclick>
 						<selected>!Skin.HasSetting(ParentDirLabel)</selected>
 					</control>
 					<control type="radiobutton" id="110">
 						<label>31117</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(MediaShortDescription)</onclick>
 						<selected>Skin.HasSetting(MediaShortDescription)</selected>
 					</control>
 					<control type="radiobutton" id="112">
 						<label>31119</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(HideBackGroundFanart)</onclick>
 						<selected>Skin.HasSetting(HideBackGroundFanart)</selected>
 					</control>
 					<control type="radiobutton" id="113">
 						<label>31358</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(HideEpisodeThumb)</onclick>
 						<selected>!Skin.HasSetting(HideEpisodeThumb)</selected>
 					</control>
 					<control type="radiobutton" id="114">
 						<label>31125</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(ShowBackgroundVis)</onclick>
 						<selected>!Skin.HasSetting(ShowBackgroundVis)</selected>
 					</control>
@@ -258,28 +245,24 @@
 					</control>
 					<control type="radiobutton" id="116">
 						<description>enable Now Playing Info</description>
-						<focusedcolor>textfocus</focusedcolor>
 						<label>31075</label>
 						<onclick>Skin.ToggleSetting(HideNowPlayingInfo)</onclick>
 						<selected>!Skin.HasSetting(HideNowPlayingInfo)</selected>
 					</control>
 					<control type="radiobutton" id="118">
 						<description>Show System Stats</description>
-						<focusedcolor>textfocus</focusedcolor>
 						<label>31113</label>
 						<onclick>Skin.ToggleSetting(HideHomeStats)</onclick>
 						<selected>!Skin.HasSetting(HideHomeStats)</selected>
 					</control>
 					<control type="radiobutton" id="119">
 						<description>Raise Main Menu</description>
-						<focusedcolor>textfocus</focusedcolor>
 						<label>31137</label>
 						<onclick>Skin.ToggleSetting(RaiseMainMenuBar)</onclick>
 						<selected>!Skin.HasSetting(RaiseMainMenuBar)</selected>
 					</control>
 					<control type="radiobutton" id="120">
 						<description>Show Global Search</description>
-						<focusedcolor>textfocus</focusedcolor>
 						<label>31129</label>
 						<onclick>Skin.ToggleSetting(HideHomeSearch)</onclick>
 						<selected>!Skin.HasSetting(HideHomeSearch)</selected>
@@ -287,7 +270,6 @@
 					</control>
 					<control type="button" id="121">
 						<label> - $LOCALIZE[31371]</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Addon.OpenSettings(script.globalsearch)</onclick>
 						<enable>!Skin.HasSetting(HideHomeSearch)</enable>
@@ -295,32 +277,27 @@
 					</control>
 					<control type="radiobutton" id="122">
 						<label>31108</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(AutoHideSubMenu)</onclick>
 						<selected>!Skin.HasSetting(AutoHideSubMenu)</selected>
 					</control>
 					<control type="radiobutton" id="123">
 						<label>31209</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(HideHomeAddonName)</onclick>
 						<selected>!Skin.HasSetting(HideHomeAddonName)</selected>
 					</control>
 					<control type="radiobutton" id="124">
 						<label>31114</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(AutoHidePowerBtn)</onclick>
 						<selected>!Skin.HasSetting(AutoHidePowerBtn)</selected>
 					</control>
 					<control type="radiobutton" id="125">
 						<label>31187</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(HideWidgetFanArt)</onclick>
 						<selected>!Skin.HasSetting(HideWidgetFanArt)</selected>
 						<enable>!Skin.HasSetting(HideBackGroundFanart)</enable>
 					</control>
 					<control type="radiobutton" id="126">
 						<description>RainDrop Effect</description>
-						<focusedcolor>textfocus</focusedcolor>
 						<label>$LOCALIZE[31672]</label>
 						<onclick>Skin.ToggleSetting(HideRainDropEffect)</onclick>
 						<selected>Skin.HasSetting(HideRainDropEffect)</selected>
@@ -335,48 +312,41 @@
 					</control>
 					<control type="radiobutton" id="128">
 						<label>31069</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(HideVisualizationCDart)</onclick>
 						<selected>!Skin.HasSetting(HideVisualizationCDart)</selected>
 					</control>
 					<control type="radiobutton" id="129">
 						<label>31089</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(HideTraditionalCDart)</onclick>
 						<selected>!Skin.HasSetting(HideTraditionalCDart)</selected>
 						<enable>!Skin.HasSetting(HideVisualizationCDart)</enable>
 					</control>
 					<control type="radiobutton" id="130">
 						<label>$LOCALIZE[31673]</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(ShowBackgroundAlbumWall)</onclick>
 						<onclick>Skin.SetBool(HideVisualizationFanart)</onclick>
 						<selected>Skin.HasSetting(ShowBackgroundAlbumWall)</selected>
 					</control>
 					<control type="radiobutton" id="131">
 						<label>31063</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(HideVisualizationFanart)</onclick>
 						<onclick>Skin.Reset(ShowBackgroundAlbumWall)</onclick>
 						<selected>!Skin.HasSetting(HideVisualizationFanart)</selected>
 					</control>
 					<control type="radiobutton" id="132">
 						<label>31067</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(AnimateVizFanart)</onclick>
 						<selected>Skin.HasSetting(AnimateVizFanart)</selected>
 						<enable>!Skin.HasSetting(HideVisualizationFanart)</enable>
 					</control>
 					<control type="radiobutton" id="133">
 						<label>31064</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(AllowTransparentFanart)</onclick>
 						<selected>Skin.HasSetting(AllowTransparentFanart)</selected>
 						<enable>!Skin.HasSetting(HideVisualizationFanart)</enable>
 					</control>
 					<control type="radiobutton" id="134">
 						<label>31065</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(AllowVizExtraFanart)</onclick>
 						<onclick>Skin.Reset(AllowSlideShowArt)</onclick>
 						<selected>Skin.HasSetting(AllowVizExtraFanart)</selected>
@@ -384,7 +354,6 @@
 					</control>
 					<control type="radiobutton" id="135">
 						<label>31066</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(AllowSlideShowArt)</onclick>
 						<onclick>Skin.Reset(AllowVizExtraFanart)</onclick>
 						<selected>Skin.HasSetting(AllowSlideShowArt)</selected>
@@ -392,14 +361,12 @@
 					</control>
 					<control type="radiobutton" id="136">
 						<label>31070</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(AllowSlideShowBio)</onclick>
 						<selected>Skin.HasSetting(AllowSlideShowBio)</selected>
 						<enable>System.HasAddon(script.artistslideshow)</enable>
 					</control>
 					<control type="button" id="137">
 						<label>- $LOCALIZE[31364]</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Addon.OpenSettings(script.artistslideshow)</onclick>
 						<enable>Skin.HasSetting(AllowSlideShowArt) | Skin.HasSetting(AllowSlideShowBio)</enable>
@@ -415,25 +382,21 @@
 					</control>
 					<control type="radiobutton" id="139">
 						<label>31071</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(HideInfoStartOSD)</onclick>
 						<selected>!Skin.HasSetting(HideInfoStartOSD)</selected>
 					</control>
 					<control type="radiobutton" id="140">
 						<label>31073</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(HidePauseInfo)</onclick>
 						<selected>!Skin.HasSetting(HidePauseInfo)</selected>
 					</control>
 					<control type="radiobutton" id="141">
 						<label>$LOCALIZE[31126]</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(OSDInfoLogo)</onclick>
 						<selected>Skin.HasSetting(OSDInfoLogo)</selected>
 					</control>
 					<control type="radiobutton" id="142">
 						<label>$LOCALIZE[31083]</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(HideSeekBarOSD)</onclick>
 						<selected>!Skin.HasSetting(HideSeekBarOSD)</selected>
 					</control>
@@ -447,14 +410,12 @@
 					</control>
 					<control type="radiobutton" id="144">
 						<label>31365</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(HideNextSongsInfo)</onclick>
 						<selected>!Skin.HasSetting(HideNextSongsInfo)</selected>
 					</control>
 					<control type="button" id="145">
 						<label>$LOCALIZE[31111]</label>
 						<label2>[COLOR=selected]$VAR[WatchTypeName][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Control.Move(9009,1)</onclick>
 						<onclick condition="stringcompare(Container(9009).ListItem.Label,Default)">Skin.Reset(WatchStatusType)</onclick>
@@ -462,26 +423,22 @@
 					</control>
 					<control type="radiobutton" id="146">
 						<label>20189</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(AutoScroll)</onclick>
 						<selected>Skin.HasSetting(AutoScroll)</selected>
 					</control>
 					<control type="radiobutton" id="147">
 						<label>31103</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(Show_SlideShow_Paused)</onclick>
 						<selected>!Skin.HasSetting(Show_SlideShow_Paused)</selected>
 					</control>
 					<control type="radiobutton" id="148">
 						<label>31104</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(WindowedTrailer)</onclick>
 						<selected>Skin.HasSetting(WindowedTrailer)</selected>
 					</control>
 					<control type="button" id="149">
 						<label>$LOCALIZE[31698]</label>
 						<label2>[COLOR=selected]$VAR[UsrMPAACountry][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Control.Move(9008,1)</onclick>
 						<onclick>Skin.SetString(MPAACountryCert,$INFO[Container(9008).ListItem.Label])</onclick>
@@ -557,13 +514,11 @@
 					</control>
 					<control type="radiobutton" id="160">
 						<label>21398</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(Use_Startup_Playlist)</onclick>
 						<selected>Skin.HasSetting(Use_Startup_Playlist)</selected>
 					</control>
 					<control type="button" id="161">
 						<description>Startup Playlist Path</description>
-						<focusedcolor>textfocus</focusedcolor>
 						<label>15311</label>
 						<label2>$INFO[Skin.String(Startup_Playlist_Path)]</label2>
 						<onclick>Skin.SetFile(Startup_Playlist_Path,,special://MusicPlaylists/)</onclick>
@@ -711,7 +666,6 @@
 					</control>
 					<control type="radiobutton" id="201">
 						<description>Sticky Menu No.1 Action</description>
-						<focusedcolor>textfocus</focusedcolor>
 						<label>$LOCALIZE[31674]</label>
 						<onclick>Skin.SetString(HomeItemLastLabel,$INFO[Skin.String(HomeItem.1.Label)])</onclick>
 						<onclick>Skin.SetString(HomeItemLastAction,$INFO[Skin.String(HomeItem.1.Path)])</onclick>
@@ -722,7 +676,6 @@
 					<control type="button" id="202">
 						<label>[B]$LOCALIZE[31143] - 1[/B]</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.1.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.Reset(StickyHomeMenuAction)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.1,home)</onclick>
@@ -732,7 +685,6 @@
 					<control type="button" id="203">
 						<label> - $LOCALIZE[31120]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemOneSubLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.Reset(StickyHomeMenuAction)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.1,home)</onclick>
@@ -742,7 +694,6 @@
 					<control type="button" id="204">
 						<label> - $LOCALIZE[31166]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemOneAddOnLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.1,home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
@@ -751,7 +702,6 @@
 					<control type="button" id="205">
 						<label> - $LOCALIZE[31174]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemOneWidgetLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.1,home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
@@ -760,7 +710,6 @@
 					<control type="button" id="206">
 						<label>[B]$LOCALIZE[31143] - 2[/B]</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.2.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.2,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
@@ -769,7 +718,6 @@
 					<control type="button" id="207">
 						<label> - $LOCALIZE[31120]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemTwoSubLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.2,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
@@ -778,7 +726,6 @@
 					<control type="button" id="208">
 						<label> - $LOCALIZE[31166]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemTwoAddOnLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.2,home)</onclick>
@@ -788,7 +735,6 @@
 					<control type="button" id="209">
 						<label> - $LOCALIZE[31174]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemTwoWidgetLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.2,home)</onclick>
@@ -798,7 +744,6 @@
 					<control type="button" id="210">
 						<label>[B]$LOCALIZE[31143] - 3[/B]</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.3.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.3,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
@@ -807,7 +752,6 @@
 					<control type="button" id="211">
 						<label> - $LOCALIZE[31120]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemThreeSubLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.3,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
@@ -816,7 +760,6 @@
 					<control type="button" id="212">
 						<label> - $LOCALIZE[31166]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemThreeAddOnLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.3,home)</onclick>
@@ -826,7 +769,6 @@
 					<control type="button" id="213">
 						<label> - $LOCALIZE[31174]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemThreeWidgetLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.3,home)</onclick>
@@ -836,7 +778,6 @@
 					<control type="button" id="214">
 						<label>[B]$LOCALIZE[31143] - 4[/B]</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.4.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.4,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
@@ -845,7 +786,6 @@
 					<control type="button" id="215">
 						<label> - $LOCALIZE[31120]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemFourSubLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.4,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
@@ -854,7 +794,6 @@
 					<control type="button" id="216">
 						<label> - $LOCALIZE[31166]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemFourAddOnLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.4,home)</onclick>
@@ -864,7 +803,6 @@
 					<control type="button" id="217">
 						<label> - $LOCALIZE[31174]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemFourWidgetLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.4,home)</onclick>
@@ -874,7 +812,6 @@
 					<control type="button" id="218">
 						<label>[B]$LOCALIZE[31143] - 5[/B]</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.5.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.5,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
@@ -883,7 +820,6 @@
 					<control type="button" id="219">
 						<label> - $LOCALIZE[31120]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemFiveSubLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.5,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
@@ -892,7 +828,6 @@
 					<control type="button" id="220">
 						<label> - $LOCALIZE[31166]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemFiveAddOnLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.5,home)</onclick>
@@ -902,7 +837,6 @@
 					<control type="button" id="221">
 						<label> - $LOCALIZE[31174]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemFiveWidgetLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.5,home)</onclick>
@@ -912,7 +846,6 @@
 					<control type="button" id="222">
 						<label>[B]$LOCALIZE[31143] - 6[/B]</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.6.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.6,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
@@ -921,7 +854,6 @@
 					<control type="button" id="223">
 						<label> - $LOCALIZE[31120]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemSixSubLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.6,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
@@ -930,7 +862,6 @@
 					<control type="button" id="224">
 						<label> - $LOCALIZE[31166]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemSixAddOnLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.6,home)</onclick>
@@ -940,7 +871,6 @@
 					<control type="button" id="225">
 						<label> - $LOCALIZE[31174]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemSixWidgetLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.6,home)</onclick>
@@ -950,7 +880,6 @@
 					<control type="button" id="226">
 						<label>[B]$LOCALIZE[31143] - 7[/B]</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.7.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.7,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
@@ -959,7 +888,6 @@
 					<control type="button" id="227">
 						<label> - $LOCALIZE[31120]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemSevenSubLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.7,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
@@ -968,7 +896,6 @@
 					<control type="button" id="228">
 						<label> - $LOCALIZE[31166]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemSevenAddOnLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.7,home)</onclick>
@@ -978,7 +905,6 @@
 					<control type="button" id="229">
 						<label> - $LOCALIZE[31174]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemSevenWidgetLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.7,home)</onclick>
@@ -988,7 +914,6 @@
 					<control type="button" id="230">
 						<label>[B]$LOCALIZE[31143] - 8[/B]</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.8.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.8,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
@@ -997,7 +922,6 @@
 					<control type="button" id="231">
 						<label> - $LOCALIZE[31120]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemEightSubLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.8,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
@@ -1006,7 +930,6 @@
 					<control type="button" id="232">
 						<label> - $LOCALIZE[31166]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemEightAddOnLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.8,home)</onclick>
@@ -1016,7 +939,6 @@
 					<control type="button" id="233">
 						<label> - $LOCALIZE[31174]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemEightWidgetLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.8,home)</onclick>
@@ -1026,7 +948,6 @@
 					<control type="button" id="234">
 						<label>[B]$LOCALIZE[31143] - 9[/B]</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.9.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.9,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
@@ -1035,7 +956,6 @@
 					<control type="button" id="235">
 						<label> - $LOCALIZE[31120]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemNineSubLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.9,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
@@ -1044,7 +964,6 @@
 					<control type="button" id="236">
 						<label> - $LOCALIZE[31166]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemNineAddOnLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.9,home)</onclick>
@@ -1054,7 +973,6 @@
 					<control type="button" id="237">
 						<label> - $LOCALIZE[31174]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemNineWidgetLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.9,home)</onclick>
@@ -1064,7 +982,6 @@
 					<control type="button" id="238">
 						<label>[B]$LOCALIZE[31143] - 10[/B]</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(HomeItem.10.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.10,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
@@ -1073,7 +990,6 @@
 					<control type="button" id="239">
 						<label> - $LOCALIZE[31120]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemTenSubLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.10,home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
@@ -1082,7 +998,6 @@
 					<control type="button" id="240">
 						<label> - $LOCALIZE[31166]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemTenAddOnLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.10,home)</onclick>
@@ -1092,7 +1007,6 @@
 					<control type="button" id="241">
 						<label> - $LOCALIZE[31174]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemTenWidgetLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.10,home)</onclick>
@@ -1101,14 +1015,12 @@
 					</control>
 					<control type="radiobutton" id="242">
 						<label>[B]$LOCALIZE[31367][/B]</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(HideSytemMenuItem)</onclick>
 						<selected>!Skin.HasSetting(HideSytemMenuItem)</selected>
 					</control>
 					<control type="button" id="243">
 						<label> - $LOCALIZE[31166]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemTwelveAddOnLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.12,home)</onclick>
@@ -1118,7 +1030,6 @@
 					<control type="button" id="244">
 						<label> - $LOCALIZE[31174]</label>
 						<label2>[COLOR=textnofocus]$VAR[UsrDefItemTwelveWidgetLabel][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.12,home)</onclick>
@@ -1157,14 +1068,12 @@
 					<control type="button" id="301">
 						<label>$LOCALIZE[31192]</label>
 						<label2>[COLOR=heading2]$VAR[UsersSubVideosName][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.SetString(UserVideosSubMenu)</onclick>
 					</control>
 					<control type="button" id="302">
 						<label>$LOCALIZE[31130] - 1</label>
 						<label2>[COLOR=selected]$VAR[SubMenuVideosOne][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubVideos.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1173,7 +1082,6 @@
 					<control type="button" id="303">
 						<label>$LOCALIZE[31130] - 2</label>
 						<label2>[COLOR=selected]$VAR[SubMenuVideosTwo][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubVideos.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1182,7 +1090,6 @@
 					<control type="button" id="304">
 						<label>$LOCALIZE[31130] - 3</label>
 						<label2>[COLOR=selected]$VAR[SubMenuVideosThree][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubVideos.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1191,7 +1098,6 @@
 					<control type="button" id="305">
 						<label>$LOCALIZE[31130] - 4</label>
 						<label2>[COLOR=selected]$VAR[SubMenuVideosFour][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubVideos.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1200,7 +1106,6 @@
 					<control type="button" id="306">
 						<label>$LOCALIZE[31130] - 5</label>
 						<label2>[COLOR=selected]$VAR[SubMenuVideosFive][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubVideos.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1209,7 +1114,6 @@
 					<control type="button" id="307">
 						<label>$LOCALIZE[31130] - 6</label>
 						<label2>[COLOR=selected]$VAR[SubMenuVideosSix][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubVideos.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1227,14 +1131,12 @@
 					<control type="button" id="309">
 						<label>$LOCALIZE[31192]</label>
 						<label2>[COLOR=heading2]$VAR[UsersSubMoviesName][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.SetString(UserMoviesSubMenu)</onclick>
 					</control>
 					<control type="button" id="310">
 						<label>$LOCALIZE[31130] - 1</label>
 						<label2>[COLOR=selected]$VAR[SubMenuMoviesOne][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1243,7 +1145,6 @@
 					<control type="button" id="311">
 						<label>$LOCALIZE[31130] - 2</label>
 						<label2>[COLOR=selected]$VAR[SubMenuMoviesTwo][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1252,7 +1153,6 @@
 					<control type="button" id="312">
 						<label>$LOCALIZE[31130] - 3</label>
 						<label2>[COLOR=selected]$VAR[SubMenuMoviesThree][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1261,7 +1161,6 @@
 					<control type="button" id="313">
 						<label>$LOCALIZE[31130] - 4</label>
 						<label2>[COLOR=selected]$VAR[SubMenuMoviesFour][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1270,7 +1169,6 @@
 					<control type="button" id="314">
 						<label>$LOCALIZE[31130] - 5</label>
 						<label2>[COLOR=selected]$VAR[SubMenuMoviesFive][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1279,7 +1177,6 @@
 					<control type="button" id="315">
 						<label>$LOCALIZE[31130] - 6</label>
 						<label2>[COLOR=selected]$VAR[SubMenuMoviesSix][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1297,14 +1194,12 @@
 					<control type="button" id="317">
 						<label>$LOCALIZE[31192]</label>
 						<label2>[COLOR=heading2]$VAR[UsersSubTVShowsName][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.SetString(UserTVShowsSubMenu)</onclick>
 					</control>
 					<control type="button" id="318">
 						<label>$LOCALIZE[31130] - 1</label>
 						<label2>[COLOR=selected]$VAR[SubMenuTVShowsOne][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubTVShows.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1313,7 +1208,6 @@
 					<control type="button" id="319">
 						<label>$LOCALIZE[31130] - 2</label>
 						<label2>[COLOR=selected]$VAR[SubMenuTVShowsTwo][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubTVShows.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1322,7 +1216,6 @@
 					<control type="button" id="320">
 						<label>$LOCALIZE[31130] - 3</label>
 						<label2>[COLOR=selected]$VAR[SubMenuTVShowsThree][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubTVShows.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1331,7 +1224,6 @@
 					<control type="button" id="321">
 						<label>$LOCALIZE[31130] - 4</label>
 						<label2>[COLOR=selected]$VAR[SubMenuTVShowsFour][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubTVShows.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1340,7 +1232,6 @@
 					<control type="button" id="322">
 						<label>$LOCALIZE[31130] - 5</label>
 						<label2>[COLOR=selected]$VAR[SubMenuTVShowsFive][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubTVShows.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1349,7 +1240,6 @@
 					<control type="button" id="323">
 						<label>$LOCALIZE[31130] - 6</label>
 						<label2>[COLOR=selected]$VAR[SubMenuTVShowsSix][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubTVShows.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1367,14 +1257,12 @@
 					<control type="button" id="325">
 						<label>$LOCALIZE[31192]</label>
 						<label2>[COLOR=heading2]$VAR[UsersSubConcertsName][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.SetString(UserConcertsSubMenu)</onclick>
 					</control>
 					<control type="button" id="326">
 						<label>$LOCALIZE[31130] - 1</label>
 						<label2>[COLOR=selected]$VAR[SubMenuConcertsOne][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubConcerts.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1383,7 +1271,6 @@
 					<control type="button" id="327">
 						<label>$LOCALIZE[31130] - 2</label>
 						<label2>[COLOR=selected]$VAR[SubMenuConcertsTwo][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubConcerts.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1392,7 +1279,6 @@
 					<control type="button" id="328">
 						<label>$LOCALIZE[31130] - 3</label>
 						<label2>[COLOR=selected]$VAR[SubMenuConcertsThree][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubConcerts.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1401,7 +1287,6 @@
 					<control type="button" id="329">
 						<label>$LOCALIZE[31130] - 4</label>
 						<label2>[COLOR=selected]$VAR[SubMenuConcertsFour][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubConcerts.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1410,7 +1295,6 @@
 					<control type="button" id="330">
 						<label>$LOCALIZE[31130] - 5</label>
 						<label2>[COLOR=selected]$VAR[SubMenuConcertsFive][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubConcerts.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1419,7 +1303,6 @@
 					<control type="button" id="331">
 						<label>$LOCALIZE[31130] - 6</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(SubConcerts.6.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubConcerts.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1437,14 +1320,12 @@
 					<control type="button" id="333">
 						<label>$LOCALIZE[31192]</label>
 						<label2>[COLOR=heading2]$VAR[UsersSubMusicName][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.SetString(UserMusicSubMenu)</onclick>
 					</control>
 					<control type="button" id="334">
 						<label>$LOCALIZE[31130] - 1</label>
 						<label2>[COLOR=selected]$VAR[SubMenuMusicOne][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1453,7 +1334,6 @@
 					<control type="button" id="335">
 						<label>$LOCALIZE[31130] - 2</label>
 						<label2>[COLOR=selected]$VAR[SubMenuMusicTwo][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1462,7 +1342,6 @@
 					<control type="button" id="336">
 						<label>$LOCALIZE[31130] - 3</label>
 						<label2>[COLOR=selected]$VAR[SubMenuMusicThree][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1471,7 +1350,6 @@
 					<control type="button" id="337">
 						<label>$LOCALIZE[31130] - 4</label>
 						<label2>[COLOR=selected]$VAR[SubMenuMusicFour][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1480,7 +1358,6 @@
 					<control type="button" id="338">
 						<label>$LOCALIZE[31130] - 5</label>
 						<label2>[COLOR=selected]$VAR[SubMenuMusicFive][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1489,7 +1366,6 @@
 					<control type="button" id="339">
 						<label>$LOCALIZE[31130] - 6</label>
 						<label2>[COLOR=selected]$VAR[SubMenuMusicSix][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1507,14 +1383,12 @@
 					<control type="button" id="341">
 						<label>$LOCALIZE[31192]</label>
 						<label2>[COLOR=heading2]$VAR[UsersSubProgsName][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.SetString(UserProgsSubMenu)</onclick>
 					</control>
 					<control type="button" id="342">
 						<label>$LOCALIZE[31130] - 1</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(SubProg.1.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubProg.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1523,7 +1397,6 @@
 					<control type="button" id="343">
 						<label>$LOCALIZE[31130] - 2</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(SubProg.2.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubProg.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1532,7 +1405,6 @@
 					<control type="button" id="344">
 						<label>$LOCALIZE[31130] - 3</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(SubProg.3.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubProg.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1541,7 +1413,6 @@
 					<control type="button" id="345">
 						<label>$LOCALIZE[31130] - 4</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(SubProg.4.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubProg.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1550,7 +1421,6 @@
 					<control type="button" id="346">
 						<label>$LOCALIZE[31130] - 5</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(SubProg.5.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubProg.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1559,7 +1429,6 @@
 					<control type="button" id="347">
 						<label>$LOCALIZE[31130] - 6</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(SubProg.6.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubProg.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1577,14 +1446,12 @@
 					<control type="button" id="349">
 						<label>$LOCALIZE[31192]</label>
 						<label2>[COLOR=heading2]$VAR[UsersSubPicturesName][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.SetString(UserPicturesSubMenu)</onclick>
 					</control>
 					<control type="button" id="350">
 						<label>$LOCALIZE[31130] - 1</label>
 						<label2>[COLOR=selected]$VAR[SubMenuPicturesOne][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubPictures.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1593,7 +1460,6 @@
 					<control type="button" id="351">
 						<label>$LOCALIZE[31130] - 2</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(SubPictures.2.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubPictures.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1602,7 +1468,6 @@
 					<control type="button" id="352">
 						<label>$LOCALIZE[31130] - 3</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(SubPictures.3.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubPictures.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1611,7 +1476,6 @@
 					<control type="button" id="353">
 						<label>$LOCALIZE[31130] - 4</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(SubPictures.4.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubPictures.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1620,7 +1484,6 @@
 					<control type="button" id="354">
 						<label>$LOCALIZE[31130] - 5</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(SubPictures.5.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubPictures.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1629,7 +1492,6 @@
 					<control type="button" id="355">
 						<label>$LOCALIZE[31130] - 6</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(SubPictures.6.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,SubPictures.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1647,14 +1509,12 @@
 					<control type="button" id="357">
 						<label>$LOCALIZE[31192]</label>
 						<label2>[COLOR=heading2]$VAR[UsersSubSelectOneName][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.SetString(UserSelectOneSubMenu)</onclick>
 					</control>
 					<control type="button" id="358">
 						<label>$LOCALIZE[31130] - 1</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubOne.1.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubOne.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1663,7 +1523,6 @@
 					<control type="button" id="359">
 						<label>$LOCALIZE[31130] - 2</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubOne.2.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubOne.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1672,7 +1531,6 @@
 					<control type="button" id="360">
 						<label>$LOCALIZE[31130] - 3</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubOne.3.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubOne.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1681,7 +1539,6 @@
 					<control type="button" id="361">
 						<label>$LOCALIZE[31130] - 4</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubOne.4.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubOne.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1690,7 +1547,6 @@
 					<control type="button" id="362">
 						<label>$LOCALIZE[31130] - 5</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubOne.5.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubOne.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1699,7 +1555,6 @@
 					<control type="button" id="363">
 						<label>$LOCALIZE[31130] - 6</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubOne.6.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubOne.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1717,14 +1572,12 @@
 					<control type="button" id="365">
 						<label>$LOCALIZE[31192]</label>
 						<label2>[COLOR=heading2]$VAR[UsersSubSelectTwoName][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.SetString(UserSelectTwoSubMenu)</onclick>
 					</control>
 					<control type="button" id="366">
 						<label>$LOCALIZE[31130] - 1</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubTwo.1.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1733,7 +1586,6 @@
 					<control type="button" id="367">
 						<label>$LOCALIZE[31130] - 2</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubTwo.2.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1742,7 +1594,6 @@
 					<control type="button" id="368">
 						<label>$LOCALIZE[31130] - 3</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubTwo.3.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1751,7 +1602,6 @@
 					<control type="button" id="369">
 						<label>$LOCALIZE[31130] - 4</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubTwo.4.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1760,7 +1610,6 @@
 					<control type="button" id="370">
 						<label>$LOCALIZE[31130] - 5</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubTwo.5.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1769,7 +1618,6 @@
 					<control type="button" id="371">
 						<label>$LOCALIZE[31130] - 6</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubTwo.6.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1787,14 +1635,12 @@
 					<control type="button" id="373">
 						<label>$LOCALIZE[31192]</label>
 						<label2>[COLOR=heading2]$VAR[UsersSubSelectThreeName][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.SetString(UserSelectThreeSubMenu)</onclick>
 					</control>
 					<control type="button" id="374">
 						<label>$LOCALIZE[31130] - 1</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubThree.1.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubThree.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1803,7 +1649,6 @@
 					<control type="button" id="375">
 						<label>$LOCALIZE[31130] - 2</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubThree.2.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubThree.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1812,7 +1657,6 @@
 					<control type="button" id="376">
 						<label>$LOCALIZE[31130] - 3</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubThree.3.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubThree.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1821,7 +1665,6 @@
 					<control type="button" id="377">
 						<label>$LOCALIZE[31130] - 4</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubThree.4.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubThree.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1830,7 +1673,6 @@
 					<control type="button" id="378">
 						<label>$LOCALIZE[31130] - 5</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubThree.5.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubThree.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1839,7 +1681,6 @@
 					<control type="button" id="379">
 						<label>$LOCALIZE[31130] - 6</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(UserSubThree.6.Label)][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,UserSubThree.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
@@ -1879,14 +1720,12 @@
 						<control type="button" id="401">
 							<label>$LOCALIZE[31192]</label>
 							<label2>[COLOR=heading2]$INFO[Skin.String(UserSelectAddon.1.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>Skin.SetString(UserSelectAddon.1.Label)</onclick>
 						</control>
 						<control type="button" id="402">
 							<label>$LOCALIZE[24000] [B]1[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetOne.1.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetOne.1,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -1894,7 +1733,6 @@
 						<control type="button" id="403">
 							<label>$LOCALIZE[24000] [B]2[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetOne.2.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetOne.2,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -1902,7 +1740,6 @@
 						<control type="button" id="404">
 							<label>$LOCALIZE[24000] [B]3[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetOne.3.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetOne.3,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -1910,7 +1747,6 @@
 						<control type="button" id="405">
 							<label>$LOCALIZE[24000] [B]4[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetOne.4.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetOne.4,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -1918,7 +1754,6 @@
 						<control type="button" id="406">
 							<label>$LOCALIZE[24000] [B]5[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetOne.5.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetOne.5,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -1934,14 +1769,12 @@
 						<control type="button" id="408">
 							<label>$LOCALIZE[31192]</label>
 							<label2>[COLOR=heading2]$INFO[Skin.String(UserSelectAddon.2.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>Skin.SetString(UserSelectAddon.2.Label)</onclick>
 						</control>
 						<control type="button" id="409">
 							<label>$LOCALIZE[24000] [B]1[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetTwo.1.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetTwo.1,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -1949,7 +1782,6 @@
 						<control type="button" id="410">
 							<label>$LOCALIZE[24000] [B]2[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetTwo.2.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetTwo.2,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -1957,7 +1789,6 @@
 						<control type="button" id="411">
 							<label>$LOCALIZE[24000] [B]3[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetTwo.3.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetTwo.3,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -1965,7 +1796,6 @@
 						<control type="button" id="412">
 							<label>$LOCALIZE[24000] [B]4[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetTwo.4.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetTwo.4,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -1973,7 +1803,6 @@
 						<control type="button" id="413">
 							<label>$LOCALIZE[24000] [B]5[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetTwo.5.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetTwo.5,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -1989,14 +1818,12 @@
 						<control type="button" id="415">
 							<label>$LOCALIZE[31192]</label>
 							<label2>[COLOR=heading2]$INFO[Skin.String(UserSelectAddon.3.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>Skin.SetString(UserSelectAddon.3.Label)</onclick>
 						</control>
 						<control type="button" id="416">
 							<label>$LOCALIZE[24000] [B]1[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetThree.1.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetThree.1,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2004,7 +1831,6 @@
 						<control type="button" id="417">
 							<label>$LOCALIZE[24000] [B]2[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetThree.2.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetThree.2,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2012,7 +1838,6 @@
 						<control type="button" id="418">
 							<label>$LOCALIZE[24000] [B]3[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetThree.3.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetThree.3,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2020,7 +1845,6 @@
 						<control type="button" id="419">
 							<label>$LOCALIZE[24000] [B]4[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetThree.4.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetThree.4,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2028,7 +1852,6 @@
 						<control type="button" id="420">
 							<label>$LOCALIZE[24000] [B]5[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetThree.5.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetThree.5,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2044,14 +1867,12 @@
 						<control type="button" id="422">
 							<label>$LOCALIZE[31192]</label>
 							<label2>[COLOR=heading2]$INFO[Skin.String(UserSelectAddon.4.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>Skin.SetString(UserSelectAddon.4.Label)</onclick>
 						</control>
 						<control type="button" id="423">
 							<label>$LOCALIZE[24000] [B]1[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetFour.1.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFour.1,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2059,7 +1880,6 @@
 						<control type="button" id="424">
 							<label>$LOCALIZE[24000] [B]2[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetFour.2.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFour.2,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2067,7 +1887,6 @@
 						<control type="button" id="425">
 							<label>$LOCALIZE[24000] [B]3[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetFour.3.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFour.3,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2075,7 +1894,6 @@
 						<control type="button" id="426">
 							<label>$LOCALIZE[24000] [B]4[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetFour.4.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFour.4,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2083,7 +1901,6 @@
 						<control type="button" id="427">
 							<label>$LOCALIZE[24000] [B]5[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetFour.5.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFour.5,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2099,14 +1916,12 @@
 						<control type="button" id="429">
 							<label>$LOCALIZE[31192]</label>
 							<label2>[COLOR=heading2]$INFO[Skin.String(UserSelectAddon.5.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>Skin.SetString(UserSelectAddon.5.Label)</onclick>
 						</control>
 						<control type="button" id="430">
 							<label>$LOCALIZE[24000] [B]1[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetFive.1.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFive.1,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2114,7 +1929,6 @@
 						<control type="button" id="431">
 							<label>$LOCALIZE[24000] [B]2[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetFive.2.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFive.2,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2122,7 +1936,6 @@
 						<control type="button" id="432">
 							<label>$LOCALIZE[24000] [B]3[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetFive.3.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFive.3,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2130,7 +1943,6 @@
 						<control type="button" id="433">
 							<label>$LOCALIZE[24000] [B]4[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetFive.4.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFive.4,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2138,7 +1950,6 @@
 						<control type="button" id="434">
 							<label>$LOCALIZE[24000] [B]5[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetFive.5.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetFive.5,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2154,14 +1965,12 @@
 						<control type="button" id="436">
 							<label>$LOCALIZE[31192]</label>
 							<label2>[COLOR=heading2]$INFO[Skin.String(UserSelectAddon.6.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>Skin.SetString(UserSelectAddon.6.Label)</onclick>
 						</control>
 						<control type="button" id="437">
 							<label>$LOCALIZE[24000] [B]1[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetSix.1.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetSix.1,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2169,7 +1978,6 @@
 						<control type="button" id="438">
 							<label>$LOCALIZE[24000] [B]2[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetSix.2.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetSix.2,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2177,7 +1985,6 @@
 						<control type="button" id="439">
 							<label>$LOCALIZE[24000] [B]3[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetSix.3.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetSix.3,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2185,7 +1992,6 @@
 						<control type="button" id="440">
 							<label>$LOCALIZE[24000] [B]4[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetSix.4.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetSix.4,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2193,7 +1999,6 @@
 						<control type="button" id="441">
 							<label>$LOCALIZE[24000] [B]5[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetSix.5.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetSix.5,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2209,14 +2014,12 @@
 						<control type="button" id="443">
 							<label>$LOCALIZE[31192]</label>
 							<label2>[COLOR=heading2]$INFO[Skin.String(UserSelectAddon.7.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>Skin.SetString(UserSelectAddon.7.Label)</onclick>
 						</control>
 						<control type="button" id="444">
 							<label>$LOCALIZE[24000] [B]1[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetSeven.1.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetSeven.1,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2224,7 +2027,6 @@
 						<control type="button" id="445">
 							<label>$LOCALIZE[24000] [B]2[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetSeven.2.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetSeven.2,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2232,7 +2034,6 @@
 						<control type="button" id="446">
 							<label>$LOCALIZE[24000] [B]3[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetSeven.3.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetSeven.3,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2240,7 +2041,6 @@
 						<control type="button" id="447">
 							<label>$LOCALIZE[24000] [B]4[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetSeven.4.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetSeven.4,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2248,7 +2048,6 @@
 						<control type="button" id="448">
 							<label>$LOCALIZE[24000] [B]5[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetSeven.5.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetSeven.5,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2264,14 +2063,12 @@
 						<control type="button" id="450">
 							<label>$LOCALIZE[31192]</label>
 							<label2>[COLOR=heading2]$INFO[Skin.String(UserSelectAddon.8.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>Skin.SetString(UserSelectAddon.8.Label)</onclick>
 						</control>
 						<control type="button" id="451">
 							<label>$LOCALIZE[24000] [B]1[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetEight.1.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetEight.1,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2279,7 +2076,6 @@
 						<control type="button" id="452">
 							<label>$LOCALIZE[24000] [B]2[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetEight.2.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetEight.2,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2287,7 +2083,6 @@
 						<control type="button" id="453">
 							<label>$LOCALIZE[24000] [B]3[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetEight.3.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetEight.3,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2295,7 +2090,6 @@
 						<control type="button" id="454">
 							<label>$LOCALIZE[24000] [B]4[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetEight.4.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetEight.4,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2303,7 +2097,6 @@
 						<control type="button" id="455">
 							<label>$LOCALIZE[24000] [B]5[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetEight.5.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetEight.5,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2319,14 +2112,12 @@
 						<control type="button" id="457">
 							<label>$LOCALIZE[31192]</label>
 							<label2>[COLOR=heading2]$INFO[Skin.String(UserSelectAddon.9.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>Skin.SetString(UserSelectAddon.9.Label)</onclick>
 						</control>
 						<control type="button" id="458">
 							<label>$LOCALIZE[24000] [B]1[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetNine.1.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetNine.1,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2334,7 +2125,6 @@
 						<control type="button" id="459">
 							<label>$LOCALIZE[24000] [B]2[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetNine.2.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetNine.2,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2342,7 +2132,6 @@
 						<control type="button" id="460">
 							<label>$LOCALIZE[24000] [B]3[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetNine.3.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetNine.3,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2350,7 +2139,6 @@
 						<control type="button" id="461">
 							<label>$LOCALIZE[24000] [B]4[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetNine.4.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetNine.4,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2358,7 +2146,6 @@
 						<control type="button" id="462">
 							<label>$LOCALIZE[24000] [B]5[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetNine.5.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetNine.5,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2374,14 +2161,12 @@
 						<control type="button" id="464">
 							<label>$LOCALIZE[31192]</label>
 							<label2>[COLOR=heading2]$INFO[Skin.String(UserSelectAddon.10.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>Skin.SetString(UserSelectAddon.10.Label)</onclick>
 						</control>
 						<control type="button" id="465">
 							<label>$LOCALIZE[24000] [B]1[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetTen.1.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetTen.1,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2389,7 +2174,6 @@
 						<control type="button" id="466">
 							<label>$LOCALIZE[24000] [B]2[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetTen.2.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetTen.2,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2397,7 +2181,6 @@
 						<control type="button" id="467">
 							<label>$LOCALIZE[24000] [B]3[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetTen.3.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetTen.3,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2405,7 +2188,6 @@
 						<control type="button" id="468">
 							<label>$LOCALIZE[24000] [B]4[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetTen.4.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetTen.4,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2413,7 +2195,6 @@
 						<control type="button" id="469">
 							<label>$LOCALIZE[24000] [B]5[/B]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(AddonSetTen.5.Label)][/COLOR]</label2>
-							<focusedcolor>textfocus</focusedcolor>
 							<texturenofocus></texturenofocus>
 							<onclick>SetProperty(UsrSelectBtn,AddonSetTen.5,home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
@@ -2436,7 +2217,6 @@
 						<posx>0</posx>
 						<posy>0</posy>
 						<label>31151</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(GlobalBackground)</onclick>
 						<onleft>9000</onleft>
 						<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
@@ -2702,7 +2482,6 @@
 								<width>160</width>
 								<label>31149</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.Reset(GlobalWeatherFanart)</onclick>
 								<onclick>Skin.SetImage(CustomBackgroundPath)</onclick>
@@ -2718,7 +2497,6 @@
 								<width>160</width>
 								<label>31150</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.Reset(GlobalWeatherFanart)</onclick>
 								<onclick>Skin.SetPath(CustomBackgroundPath)</onclick>
@@ -2734,7 +2512,6 @@
 								<width>160</width>
 								<label>24027</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.SetBool(GlobalWeatherFanart)</onclick>
 								<onclick>Skin.Reset(CustomBackgroundPath)</onclick>
@@ -2750,7 +2527,6 @@
 								<width>160</width>
 								<label>31189</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.Reset(GlobalWeatherFanart)</onclick>
 								<onclick>Skin.Reset(CustomBackgroundPath)</onclick>
@@ -2769,7 +2545,6 @@
 								<width>160</width>
 								<label>31149</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -2789,7 +2564,6 @@
 								<width>160</width>
 								<label>31150</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -2809,7 +2583,6 @@
 								<width>160</width>
 								<label>571</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Movies)">Skin.SetBool(ShowMovieDBFanart)</onclick>
@@ -2829,7 +2602,6 @@
 								<width>160</width>
 								<label>31189</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -2852,7 +2624,6 @@
 								<width>160</width>
 								<label>31149</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -2872,7 +2643,6 @@
 								<width>160</width>
 								<label>31150</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -2892,7 +2662,6 @@
 								<width>160</width>
 								<label>571</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Movies)">Skin.SetBool(ShowMovieDBFanart)</onclick>
@@ -2912,7 +2681,6 @@
 								<width>160</width>
 								<label>31189</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -2935,7 +2703,6 @@
 								<width>160</width>
 								<label>31149</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -2955,7 +2722,6 @@
 								<width>160</width>
 								<label>31150</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -2975,7 +2741,6 @@
 								<width>160</width>
 								<label>571</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Movies)">Skin.SetBool(ShowMovieDBFanart)</onclick>
@@ -2995,7 +2760,6 @@
 								<width>160</width>
 								<label>31189</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -3018,7 +2782,6 @@
 								<width>160</width>
 								<label>31149</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -3038,7 +2801,6 @@
 								<width>160</width>
 								<label>31150</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -3058,7 +2820,6 @@
 								<width>160</width>
 								<label>571</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Movies)">Skin.SetBool(ShowMovieDBFanart)</onclick>
@@ -3078,7 +2839,6 @@
 								<width>160</width>
 								<label>31189</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -3101,7 +2861,6 @@
 								<width>160</width>
 								<label>31149</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -3121,7 +2880,6 @@
 								<width>160</width>
 								<label>31150</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -3141,7 +2899,6 @@
 								<width>160</width>
 								<label>571</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Movies)">Skin.SetBool(ShowMovieDBFanart)</onclick>
@@ -3161,7 +2918,6 @@
 								<width>160</width>
 								<label>31189</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -3184,7 +2940,6 @@
 								<width>160</width>
 								<label>31149</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -3204,7 +2959,6 @@
 								<width>160</width>
 								<label>31150</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -3224,7 +2978,6 @@
 								<width>160</width>
 								<label>571</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Movies)">Skin.SetBool(ShowMovieDBFanart)</onclick>
@@ -3244,7 +2997,6 @@
 								<width>160</width>
 								<label>31189</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -3267,7 +3019,6 @@
 								<width>160</width>
 								<label>31149</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -3287,7 +3038,6 @@
 								<width>160</width>
 								<label>31150</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -3307,7 +3057,6 @@
 								<width>160</width>
 								<label>571</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Movies)">Skin.SetBool(ShowMovieDBFanart)</onclick>
@@ -3327,7 +3076,6 @@
 								<width>160</width>
 								<label>31189</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -3350,7 +3098,6 @@
 								<width>160</width>
 								<label>31149</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -3370,7 +3117,6 @@
 								<width>160</width>
 								<label>31150</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -3390,7 +3136,6 @@
 								<width>160</width>
 								<label>571</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Movies)">Skin.SetBool(ShowMovieDBFanart)</onclick>
@@ -3410,7 +3155,6 @@
 								<width>160</width>
 								<label>31189</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -3433,7 +3177,6 @@
 								<width>160</width>
 								<label>31149</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -3453,7 +3196,6 @@
 								<width>160</width>
 								<label>31150</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -3473,7 +3215,6 @@
 								<width>160</width>
 								<label>571</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Movies)">Skin.SetBool(ShowMovieDBFanart)</onclick>
@@ -3493,7 +3234,6 @@
 								<width>160</width>
 								<label>31189</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -3516,7 +3256,6 @@
 								<width>160</width>
 								<label>31149</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -3536,7 +3275,6 @@
 								<width>160</width>
 								<label>31150</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -3556,7 +3294,6 @@
 								<width>160</width>
 								<label>571</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Weather)">Skin.SetBool(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Movies)">Skin.SetBool(ShowMovieDBFanart)</onclick>
@@ -3576,7 +3313,6 @@
 								<width>160</width>
 								<label>31189</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Weather)">Skin.Reset(ShowWeatherFanart)</onclick>
 								<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Movies)">Skin.Reset(ShowMovieDBFanart)</onclick>
@@ -3599,7 +3335,6 @@
 								<width>160</width>
 								<label>31149</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.SetImage(HomeItem.11.FanArt)</onclick>
 								<onleft>503</onleft>
@@ -3614,7 +3349,6 @@
 								<width>160</width>
 								<label>31150</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.SetPath(HomeItem.11.FanArt)</onclick>
 								<onleft>500</onleft>
@@ -3629,7 +3363,6 @@
 								<width>160</width>
 								<label>571</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.SetString(HomeItem.11.FanArt,special://skin/backgrounds/default_light.jpg)</onclick>
 								<onleft>501</onleft>
@@ -3644,7 +3377,6 @@
 								<width>160</width>
 								<label>31189</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.Reset(HomeItem.11.FanArt)</onclick>
 								<onleft>502</onleft>
@@ -3662,7 +3394,6 @@
 								<width>160</width>
 								<label>31149</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.SetImage(HomeItem.12.FanArt)</onclick>
 								<onleft>503</onleft>
@@ -3677,7 +3408,6 @@
 								<width>160</width>
 								<label>31150</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.SetPath(HomeItem.12.FanArt)</onclick>
 								<onleft>500</onleft>
@@ -3692,7 +3422,6 @@
 								<width>160</width>
 								<label>571</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.SetString(HomeItem.12.FanArt,special://skin/backgrounds/default_light.jpg)</onclick>
 								<onleft>501</onleft>
@@ -3707,7 +3436,6 @@
 								<width>160</width>
 								<label>31189</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.Reset(HomeItem.12.FanArt)</onclick>
 								<onleft>502</onleft>
@@ -3725,7 +3453,6 @@
 								<width>180</width>
 								<label>31149</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.SetImage(SearchBtnBackground)</onclick>
 								<onleft>502</onleft>
@@ -3740,7 +3467,6 @@
 								<width>180</width>
 								<label>31170</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.Reset(SearchBtnBackground)</onclick>
 								<onleft>500</onleft>
@@ -3755,7 +3481,6 @@
 								<width>180</width>
 								<label>571</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.SetString(SearchBtnBackground,special://skin/backgrounds/default_light.jpg)</onclick>
 								<onleft>501</onleft>
@@ -3773,7 +3498,6 @@
 								<width>180</width>
 								<label>31149</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.SetImage(PowerBtnBackground)</onclick>
 								<onleft>502</onleft>
@@ -3788,7 +3512,6 @@
 								<width>180</width>
 								<label>31170</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.Reset(PowerBtnBackground)</onclick>
 								<onleft>500</onleft>
@@ -3803,7 +3526,6 @@
 								<width>180</width>
 								<label>571</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.SetString(PowerBtnBackground,special://skin/backgrounds/default_light.jpg)</onclick>
 								<onleft>501</onleft>
@@ -3821,7 +3543,6 @@
 								<width>180</width>
 								<label>31149</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.SetImage(FavBtnBackground)</onclick>
 								<onleft>502</onleft>
@@ -3836,7 +3557,6 @@
 								<width>180</width>
 								<label>31170</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.Reset(FavBtnBackground)</onclick>
 								<onleft>500</onleft>
@@ -3851,7 +3571,6 @@
 								<width>180</width>
 								<label>571</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick condition="IsEmpty(Skin.String(FavouritesFanartDir))">Skin.SetString(FavBtnBackground,special://skin/backgrounds/default_light.jpg)</onclick>
 								<onclick condition="!IsEmpty(Skin.String(FavouritesFanartDir))">Skin.SetString(FavBtnBackground,$INFO[Skin.String(FavouritesFanartDir)])</onclick>
@@ -3870,7 +3589,6 @@
 								<width>180</width>
 								<label>31149</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.SetImage(StartUpBackgroundPath)</onclick>
 								<onclick>Skin.Reset(HideStartUpBackground)</onclick>
@@ -3886,7 +3604,6 @@
 								<width>180</width>
 								<label>31170</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.Reset(StartUpBackgroundPath)</onclick>
 								<onclick>Skin.SetBool(HideStartUpBackground)</onclick>
@@ -3902,7 +3619,6 @@
 								<width>180</width>
 								<label>571</label>
 								<font>font12_title</font>
-								<focusedcolor>textfocus</focusedcolor>
 								<align>center</align>
 								<onclick>Skin.SetString(StartUpBackgroundPath,special://skin/backgrounds/default_light.jpg)</onclick>
 								<onclick>Skin.Reset(HideStartUpBackground)</onclick>
@@ -3954,7 +3670,6 @@
 					</control>
 					<control type="button" id="601">
 						<description>User Genre FanArt Path</description>
-						<focusedcolor>textfocus</focusedcolor>
 						<label>31094</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(UsrGenreFanartDir)][/COLOR]</label2>
 						<onclick>Skin.SetPath(UsrGenreFanartDir)</onclick>
@@ -3962,7 +3677,6 @@
 					</control>
 					<control type="button" id="602">
 						<description>User Movie FanArt Path</description>
-						<focusedcolor>textfocus</focusedcolor>
 						<label>31095</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(UsrMovieFanartDir)][/COLOR]</label2>
 						<onclick>Skin.SetPath(UsrMovieFanartDir)</onclick>
@@ -3970,7 +3684,6 @@
 					</control>
 					<control type="button" id="603">
 						<description>User TVShow FanArt Path</description>
-						<focusedcolor>textfocus</focusedcolor>
 						<label>31096</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(UsrTVShowFanartDir)][/COLOR]</label2>
 						<onclick>Skin.SetPath(UsrTVShowFanartDir)</onclick>
@@ -3978,7 +3691,6 @@
 					</control>
 					<control type="button" id="604">
 						<description>User Concerts FanArt Path</description>
-						<focusedcolor>textfocus</focusedcolor>
 						<label>31097</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(UsrConcertsFanartDir)][/COLOR]</label2>
 						<onclick>Skin.SetPath(UsrConcertsFanartDir)</onclick>
@@ -3986,7 +3698,6 @@
 					</control>
 					<control type="button" id="605">
 						<description>User Artists FanArt Path</description>
-						<focusedcolor>textfocus</focusedcolor>
 						<label>31098</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(UsrArtistsFanartDir)][/COLOR]</label2>
 						<onclick>Skin.SetPath(UsrArtistsFanartDir)</onclick>
@@ -3994,7 +3705,6 @@
 					</control>
 					<control type="button" id="606">
 						<description>User Album Thumbnails Path</description>
-						<focusedcolor>textfocus</focusedcolor>
 						<label>31099</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(UsrAlbumThumbsDir)][/COLOR]</label2>
 						<onclick>Skin.SetPath(UsrAlbumThumbsDir)</onclick>
@@ -4002,7 +3712,6 @@
 					</control>
 					<control type="button" id="607">
 						<description>User Favourites FanArt Path</description>
-						<focusedcolor>textfocus</focusedcolor>
 						<label>31107</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(FavouritesFanartDir)][/COLOR]</label2>
 						<onclick>Skin.SetPath(FavouritesFanartDir)</onclick>
@@ -4011,7 +3720,6 @@
 					</control>
 					<control type="button" id="608">
 						<description>User Weather FanArt Path</description>
-						<focusedcolor>textfocus</focusedcolor>
 						<label>31100</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(WeatherFanartDir)][/COLOR]</label2>
 						<onclick>Skin.SetPath(WeatherFanartDir)</onclick>
@@ -4019,7 +3727,6 @@
 					</control>
 					<control type="button" id="609">
 						<label> - $LOCALIZE[31375]</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Addon.OpenSettings(script.artworkorganizer)</onclick>
 						<enable>System.HasAddon(script.artworkorganizer)</enable>
@@ -4035,13 +3742,11 @@
 					<control type="button" id="611">
 						<label>$LOCALIZE[31132]</label>
 						<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(LyricScript_Path))][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</onclick>
 					</control>
 					<control type="button" id="612">
 						<label>- $LOCALIZE[24020]</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<enable>!IsEmpty(Skin.String(LyricScript_Path))</enable>
 						<onclick>Addon.OpenSettings($INFO[Skin.String(LyricScript_Path)])</onclick>
@@ -4057,13 +3762,11 @@
 					<control type="button" id="614">
 						<label>$LOCALIZE[31133]</label>
 						<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(SubtitleScript_Path))][/COLOR]</label2>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.SetAddon(SubtitleScript_Path,xbmc.python.subtitles)</onclick>
 					</control>
 					<control type="button" id="615">
 						<label>- $LOCALIZE[24020]</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<enable>!IsEmpty(Skin.String(SubtitleScript_Path))</enable>
 						<onclick>Addon.OpenSettings($INFO[Skin.String(SubtitleScript_Path)])</onclick>
@@ -4078,21 +3781,18 @@
 					</control>
 					<control type="button" id="617">
 						<label> - $LOCALIZE[31081]</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Addon.OpenSettings(service.skin.widgets)</onclick>
 						<enable>System.HasAddon(service.skin.widgets)</enable>
 					</control>
 					<control type="radiobutton" id="618">
 						<description>Enable Script RandomAndLastItems</description>
-						<focusedcolor>textfocus</focusedcolor>
 						<label>$LOCALIZE[31372]</label>
 						<onclick>Skin.ToggleSetting(DisableScriptPlayList)</onclick>
 						<selected>!Skin.HasSetting(DisableScriptPlayList)</selected>
 					</control>
 					<control type="radiobutton" id="619">
 						<description>randomandlastitems.script uses last not random</description>
-						<focusedcolor>textfocus</focusedcolor>
 						<label> - $LOCALIZE[31373]</label>
 						<onclick>Skin.ToggleSetting(EnableRandomPlaylist)</onclick>
 						<selected>Skin.HasSetting(EnableRandomPlaylist)</selected>
@@ -4100,7 +3800,6 @@
 					</control>
 					<control type="radiobutton" id="620">
 						<description>randomandlastitems.script only shows unwatched items</description>
-						<focusedcolor>textfocus</focusedcolor>
 						<label> - $LOCALIZE[31374]</label>
 						<onclick>Skin.ToggleSetting(EnableUnWatchedPlaylist)</onclick>
 						<selected>Skin.HasSetting(EnableUnWatchedPlaylist)</selected>
@@ -4116,14 +3815,12 @@
 					</control>
 					<control type="radiobutton" id="622">
 						<label>31361</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(HideArtworkDownloader)</onclick>
 						<selected>!Skin.HasSetting(HideArtworkDownloader)</selected>
 						<enable>System.HasAddon(script.artwork.downloader)</enable>
 					</control>
 					<control type="button" id="623">
 						<label>- $LOCALIZE[31363]</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Addon.OpenSettings(script.artwork.downloader)</onclick>
 						<enable>!Skin.HasSetting(HideArtworkDownloader)</enable>
@@ -4131,14 +3828,12 @@
 					</control>
 					<control type="radiobutton" id="624">
 						<label>31362</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(HideTvTunes)</onclick>
 						<selected>!Skin.HasSetting(HideTvTunes)</selected>
 						<enable>System.HasAddon(script.tvtunes)</enable>
 					</control>
 					<control type="button" id="625">
 						<label> - $LOCALIZE[31082]</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Addon.OpenSettings(script.tvtunes)</onclick>
 						<enable>!Skin.HasSetting(HideTvTunes)</enable>
@@ -4146,14 +3841,12 @@
 					</control>
 					<control type="radiobutton" id="626">
 						<label>31369</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<onclick>Skin.ToggleSetting(DisableWatchItLater)</onclick>
 						<selected>!Skin.HasSetting(DisableWatchItLater)</selected>
 						<enable>System.HasAddon(script.simpleplaylists)</enable>
 					</control>
 					<control type="button" id="627">
 						<label> - $LOCALIZE[31370]</label>
-						<focusedcolor>textfocus</focusedcolor>
 						<texturenofocus></texturenofocus>
 						<onclick>Addon.OpenSettings(script.simpleplaylists)</onclick>
 						<enable>!Skin.HasSetting(DisableWatchItLater)</enable>
@@ -4175,7 +3868,6 @@
 					</control>
 					<control type="button" id="630">
 						<description>Reset Skin Values</description>
-						<focusedcolor>textfocus</focusedcolor>
 						<align>center</align>
 						<textoffsetx>20</textoffsetx>
 						<label>$LOCALIZE[31173]</label>
