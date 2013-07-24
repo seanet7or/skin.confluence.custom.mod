@@ -42,7 +42,6 @@
 					<align>center</align>
 				</control>
 				<control type="label">
-					<font>font12</font>
 					<description>Provider Text</description>
 					<posx>20</posx>
 					<posy>50</posy>
@@ -63,7 +62,6 @@
 					<label>$INFO[Window.Property(Location)]</label>
 				</control>
 				<control type="label">
-					<font>font12</font>
 					<description>update label</description>
 					<posx>20</posx>
 					<posy>100</posy>
@@ -479,7 +477,6 @@
 							<scrolltime>200</scrolltime>
 							<itemlayout height="135" width="600">
 								<control type="label">
-									<font>font12</font>
 									<posx>50</posx>
 									<width>100</width>
 									<height>120</height>
@@ -495,7 +492,6 @@
 									<texture>$INFO[ListItem.Thumb]</texture>
 								</control>
 								<control type="label">
-									<font>font12</font>
 									<posx>590</posx>
 									<width>390</width>
 									<height>70</height>
@@ -517,7 +513,6 @@
 									<visible>Control.HasFocus(51)</visible>
 								</control>
 								<control type="label">
-									<font>font12</font>
 									<posx>50</posx>
 									<width>100</width>
 									<height>120</height>
@@ -534,7 +529,6 @@
 									<texture>$INFO[ListItem.Thumb]</texture>
 								</control>
 								<control type="label">
-									<font>font12</font>
 									<posx>590</posx>
 									<width>390</width>
 									<height>70</height>
@@ -712,7 +706,6 @@
 									<label>[COLOR=textnofocus]$INFO[Window.Property(36Hour.1.TemperatureHeading)][CR][/COLOR]$INFO[Window.Property(36Hour.1.Temperature),[B] ,[/B]]</label>
 								</control>
 								<control type="label">
-									<font>font12</font>
 									<posx>590</posx>
 									<posy>60</posy>
 									<width>390</width>
@@ -757,7 +750,6 @@
 									<label>[COLOR=textnofocus]$INFO[Window.Property(36Hour.2.TemperatureHeading)][CR][/COLOR]$INFO[Window.Property(36Hour.2.Temperature),[B] ,[/B]]</label>
 								</control>
 								<control type="label">
-									<font>font12</font>
 									<posx>590</posx>
 									<posy>60</posy>
 									<width>390</width>
@@ -802,7 +794,6 @@
 									<label>[COLOR=textnofocus]$INFO[Window.Property(36Hour.3.TemperatureHeading)][CR][/COLOR]$INFO[Window.Property(36Hour.3.Temperature),[B] ,[/B]]</label>
 								</control>
 								<control type="label">
-									<font>font12</font>
 									<posx>590</posx>
 									<posy>60</posy>
 									<width>390</width>
@@ -902,7 +893,6 @@
 									<label>$INFO[Window.Property(Weekend.1.Humidity),[COLOR=textnofocus]$LOCALIZE[406] :[/COLOR][B] ,[/B]][CR][CR]$INFO[Window.Property(Weekend.1.ShortWindDirection),[COLOR=textnofocus]$LOCALIZE[404] :[/COLOR][B] ,[/B]][CR][CR]$INFO[Window.Property(Weekend.1.Precipitation),[COLOR=textnofocus]$LOCALIZE[33021] :[/COLOR][B] ,[/B]]</label>
 								</control>
 								<control type="label">
-									<font>font12</font>
 									<posx>0</posx>
 									<posy>170</posy>
 									<width>590</width>
@@ -965,7 +955,6 @@
 									<label>$INFO[Window.Property(Weekend.2.Humidity),[COLOR=textnofocus]$LOCALIZE[406] :[/COLOR][B] ,[/B]][CR][CR]$INFO[Window.Property(Weekend.2.ShortWindDirection),[COLOR=textnofocus]$LOCALIZE[404] :[/COLOR][B] ,[/B]][CR][CR]$INFO[Window.Property(Weekend.2.Precipitation),[COLOR=textnofocus]$LOCALIZE[33021] :[/COLOR][B] ,[/B]]</label>
 								</control>
 								<control type="label">
-									<font>font12</font>
 									<posx>0</posx>
 									<posy>170</posy>
 									<width>590</width>
@@ -1008,7 +997,6 @@
 							<scrolltime>200</scrolltime>
 							<itemlayout height="135" width="600">
 								<control type="label">
-									<font>font12</font>
 									<posx>50</posx>
 									<width>100</width>
 									<height>120</height>
@@ -1024,7 +1012,6 @@
 									<texture>$INFO[ListItem.Thumb]</texture>
 								</control>
 								<control type="label">
-									<font>font12</font>
 									<posx>590</posx>
 									<posy>5</posy>
 									<width>390</width>
@@ -1047,7 +1034,6 @@
 									<visible>Control.HasFocus(52)</visible>
 								</control>
 								<control type="label">
-									<font>font12</font>
 									<posx>50</posx>
 									<width>100</width>
 									<height>120</height>
@@ -1064,7 +1050,6 @@
 									<texture>$INFO[ListItem.Thumb]</texture>
 								</control>
 								<control type="label">
-									<font>font12</font>
 									<posx>590</posx>
 									<posy>5</posy>
 									<width>390</width>
@@ -1404,7 +1389,6 @@
 				<onback>50</onback>
 				<itemgap>0</itemgap>
 				<control type="label" id="200">
-					<font>font12</font>
 					<posy>60</posy>
 					<posx>80</posx>
 					<width>250</width>
@@ -1491,7 +1475,6 @@
 					<visible>StringCompare(Weather.Plugin,weather.wunderground)</visible>
 				</control>
 				<control type="label" id="201">
-					<font>font12</font>
 					<posy>60</posy>
 					<posx>80</posx>
 					<width>250</width>
@@ -1533,7 +1516,6 @@
 					<textwidth>200</textwidth>
 				</control>
 				<control type="label" id="250">
-					<font>font12</font>
 					<posy>60</posy>
 					<posx>80</posx>
 					<width>250</width>

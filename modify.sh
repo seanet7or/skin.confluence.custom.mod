@@ -1216,7 +1216,7 @@ fi
 step
 
 printf "\nChanging font colors for original blue strings: "
-if grep -q 'blue[\"<]' 720p/* ; then
+if grep -q 'blue[\"<\]]' 720p/* ; then
 	XMLS=$(2>/dev/null grep -l '<textcolor>blue</textcolor>' 720p/*)
 	R="s|(\s*<description>header label</description>\s*#"
 	R+="(\s*<(?!control)[a-z][^#]*#)*"
@@ -1274,7 +1274,7 @@ if grep -q 'blue[\"<]' 720p/* ; then
 	perlregex $XMLS "s|<selectedcolor>blue<|<selectedcolor>itemselected<|g"
 	perlregex $XMLS "s|<titlecolor>blue<|<titlecolor>itemselected<|g"
 	
-	if grep -q 'blue[\"<]' 720p/* ; then
+	if grep -q 'blue[\]\"<]' 720p/* ; then
 		printf "\nERROR: Blue color still used!"
 		printf "\n"
 		grep 'blue[\"<]' 720p/* | head -n 10
@@ -1288,7 +1288,7 @@ fi
 step
 
 printf "\nChanging font colors for 'selected' colored strings: "
-if grep -q '>selected<' 720p/* ; then
+if grep "selected" 720p/* | egrep -q -v '<selected|itemselected' ; then
 	XMLS=$(2>/dev/null grep -l '<selectedcolor>selected</selectedcolor>' 720p/*)
 	perlregex $XMLS "s|<selectedcolor>selected</selectedcolor>|<selectedcolor>itemselected</selectedcolor>|g" --nocheck
 	
@@ -1317,12 +1317,15 @@ if grep -q '>selected<' 720p/* ; then
 	R+="|\1>textfocus<|g"
 	perlregex $XMLS "$R" --nocheck
 
-	perlregex $XMLS "s|<textcolor>selected</textcolor>|<textcolor>textnofocus</textcolor>|g"	
+	perlregex $XMLS "s|<textcolor>selected</textcolor>|<textcolor>textnofocus</textcolor>|g"
+	
+	XMLS=$(2>/dev/null grep -a -l '\[COLOR=selected\]' 720p/*)
+	perlregex $XMLS "s|\[COLOR=selected\]|\[COLOR=heading3\]|g"
 
-	if grep -q '[^a-z]selected[\"<]' 720p/* ; then
+	if grep "selected" 720p/* | egrep -q -v '<selected|itemselected' ; then
 		printf "\nERROR: Selected color still used!"
 		printf "\n"
-		grep '[^a-z]selected[\"<]' 720p/* | head -n 10
+		grep "selected" 720p/* | egrep -v '<selected|itemselected' | head -n 10
 		exit 4
 	fi
 	perlregex colors/defaults.xml "s|\s*<color name=\"selected\"[^#]*#||g"	
@@ -1371,9 +1374,60 @@ if grep -q 'font10' 720p/IncludesHomeWidget.xml ; then
 	perlregex "$R" 720p/IncludesHomeWidget.xml
 	# remove uppercase
 	perlregex "s|\[[/]*UPPERCASE\]||g" 720p/IncludesHomeWidget.xml
+	# remove bold
+	perlregex "s|\[[/]*B\]||g" 720p/IncludesHomeWidget.xml	
+	# weather day textcolor
+	perlregex "s|<textcolor>heading2</textcolor>|<textcolor>textnofocus</textcolor>|g" 720p/IncludesHomeWidget.xml
 	#remove extra colors for selected elements
 	remove_control 'label' '<visible>Control.HasFocus.(800[0-9]\|801[0-5]).</visible>' 720p/IncludesHomeWidget.xml
 	rm ypos.tmp
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nChanging label fonts: "
+if grep -q 'font12' 720p/AddonBrowser.xml ; then
+	R="s|(control type=\"label\"[^#]*#"
+	R+="(\s*<(?!font)[a-z][^#]*#)*"
+	R+="\s*<font)>font12<"
+	R+="|\1>font13<|g"
+	XMLS=$(2>/dev/null grep -l 'font12' 720p/*)
+	perlregex $XMLS "$R"
+	R="s|(control type=\"label\"[^#]*#"
+	R+="(\s*<(?!font)[a-z][^#]*#)*"
+	R+="\s*<font)>font10<"
+	R+="|\1>font13<|g"
+	perlregex 720p/includes.xml "$R"
+	R="s|(control type=\"label\"[^#]*#"
+	R+="(\s*<(?!font)[a-z][^#]*#)*"
+	R+="\s*<font)>font11<"
+	R+="|\1>font13<|g"
+	XMLS=$(2>/dev/null grep -l 'font11' 720p/*)
+	perlregex $XMLS "$R"
+	R="s|(control type=\"label\"[^#]*#"
+	R+="(\s*<(?!font)[a-z][^#]*#)*"
+	R+="\s*<font)>font12_title<"
+	R+="|\1>font13<|g"
+	XMLS=$(2>/dev/null grep -l 'font12_title' 720p/*)
+	perlregex $XMLS "$R"
+	
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
+printf "\nChanging button fonts: "
+if grep -q 'font12' 720p/IncludesHomeMenuItems.xml ; then
+	R="s|(control type=\"button\"[^#]*#"
+	R+="(\s*<(?!font)[a-z][^#]*#)*"
+	R+="\s*<font)>font12<"
+	R+="|\1>font13_title<|g"
+	XMLS=$(2>/dev/null grep -l 'font12' 720p/*)
+	perlregex $XMLS "$R"
+	perlregex "s|<width>180</width>|<width>200</width>|g" 720p/IncludesHomeMenuItems.xml
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET

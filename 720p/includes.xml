@@ -339,7 +339,6 @@
 				<texture>icon_player.png</texture>
 			</control>
 			<control type="label">
-				<font>font12</font>
 				<posx>0</posx>
 				<posy>2</posy>
 				<width>450</width>
@@ -354,7 +353,6 @@
 				<height>20</height>
 				<label>$INFO[MusicPlayer.Artist]$INFO[MusicPlayer.Album, - ]</label>
 				<align>right</align>
-				<font>font10</font>
 				<visible>Player.HasAudio</visible>
 			</control>
 			<control type="label">
@@ -364,7 +362,6 @@
 				<height>20</height>
 				<label>$INFO[VideoPlayer.Studio]</label>
 				<align>right</align>
-				<font>font10</font>
 				<visible>Player.HasVideo + VideoPlayer.Content(Movies)</visible>
 			</control>
 			<control type="label">
@@ -374,7 +371,6 @@
 				<height>20</height>
 				<label>$INFO[VideoPlayer.TVShowTitle]</label>
 				<align>right</align>
-				<font>font10</font>
 				<visible>Player.HasVideo + VideoPlayer.Content(Episodes)</visible>
 			</control>
 			<control type="label">
@@ -384,11 +380,9 @@
 				<height>20</height>
 				<label>$INFO[VideoPlayer.Artist]</label>
 				<align>right</align>
-				<font>font10</font>
 				<visible>Player.HasVideo + VideoPlayer.Content(MusicVideos)</visible>
 			</control>
 			<control type="label">
-				<font>font12</font>
 				<posx>0</posx>
 				<posy>25</posy>
 				<width>450</width>
@@ -421,7 +415,6 @@
 			<posy>20</posy>
 			<width>325</width>
 			<label>$INFO[MusicPlayer.Artist]</label>
-			<font>font12_title</font>
 		</control>
 		<control type="fadelabel">
 			<description>Title label</description>
@@ -432,7 +425,6 @@
 			<font>font13_title</font>
 		</control>
 		<control type="label">
-			<font>font12</font>
 			<description>Album Label</description>
 			<posx>160</posx>
 			<posy>70</posy>
@@ -440,7 +432,6 @@
 			<label>$INFO[MusicPlayer.Album]$INFO[musicplayer.discnumber, - $LOCALIZE[427]:]</label>
 		</control>
 		<control type="label">
-			<font>font12</font>
 			<description>Time Label</description>
 			<posx>160</posx>
 			<posy>95</posy>
@@ -448,7 +439,6 @@
 			<label>$INFO[MusicPlayer.Time]$INFO[MusicPlayer.Duration, / ]</label>
 		</control>
 		<control type="label">
-			<font>font12</font>
 			<description>Next Label</description>
 			<posx>485</posx>
 			<posy>120</posy>
@@ -480,7 +470,6 @@
 			<posy>20</posy>
 			<width>325</width>
 			<label>$INFO[VideoPlayer.Studio]</label>
-			<font>font12_title</font>
 			<visible>!videoplayer.content(episodes) + !videoplayer.content(musicvideos)</visible>
 		</control>
 		<control type="label">
@@ -489,7 +478,6 @@
 			<posy>20</posy>
 			<width>325</width>
 			<label>$INFO[VideoPlayer.tvshowtitle]</label>
-			<font>font12_title</font>
 			<visible>videoplayer.content(episodes)</visible>
 		</control>
 		<control type="fadelabel">
@@ -510,7 +498,6 @@
 			<font>font13_title</font>
 		</control>
 		<control type="label">
-			<font>font12</font>
 			<description>Genre label</description>
 			<posx>160</posx>
 			<posy>70</posy>
@@ -519,7 +506,6 @@
 			<visible>!videoplayer.content(episodes) + !videoplayer.content(musicvideos)</visible>
 		</control>
 		<control type="label">
-			<font>font12</font>
 			<posx>160</posx>
 			<posy>70</posy>
 			<width>325</width>
@@ -527,7 +513,6 @@
 			<visible>videoplayer.content(musicvideos)</visible>
 		</control>
 		<control type="label">
-			<font>font12</font>
 			<description>Season and Episode label</description>
 			<posx>160</posx>
 			<posy>70</posy>
@@ -536,7 +521,6 @@
 			<visible>videoplayer.content(episodes)</visible>
 		</control>
 		<control type="label">
-			<font>font12</font>
 			<description>Time Label</description>
 			<posx>160</posx>
 			<posy>95</posy>
@@ -546,7 +530,6 @@
 	</include>
 	<include name="CommonNowPlaying_Controls">
 		<control type="label" id="202">
-			<font>font12</font>
 			<posy>60</posy>
 			<posx>80</posx>
 			<width>250</width>
@@ -869,7 +852,6 @@
 					<description>Temp Units</description>
 					<width min="0" max="100">auto</width>
 					<height>22</height>
-					<font>font10</font>
 					<label>$INFO[System.TemperatureUnits]</label>
 					<visible>!IsEmpty(Window(Weather).Property(Current.Temperature))</visible>
 				</control>
@@ -922,7 +904,6 @@
 				<texture background="true">$INFO[ListItem.Icon]</texture>
 			</control>
 			<control type="label">
-				<font>font12</font>
 				<posx>91</posx>
 				<posy>125</posy>
 				<width>180</width>
@@ -952,7 +933,6 @@
 				<visible>ControlGroup(9002).HasFocus</visible>
 			</control>
 			<control type="label">
-				<font>font12</font>
 				<posx>91</posx>
 				<posy>125</posy>
 				<width>180</width>
@@ -964,7 +944,6 @@
 				<visible>!Skin.HasSetting(HideHomeAddonName)</visible>
 			</control>
 			<control type="label">
-				<font>font12</font>
 				<posx>91</posx>
 				<posy>125</posy>
 				<width>180</width>
@@ -1013,7 +992,6 @@
 				<visible>StringCompare(Window(Home).Property(TVGuide.ThumbType),2)</visible>
 			</control>
 			<control type="label">
-				<font>font12</font>
 				<description>Episode Number</description>
 				<posx>140</posx>
 				<posy>60</posy>
@@ -1023,7 +1001,6 @@
 				<align>center</align>
 			</control>
 			<control type="label">
-				<font>font12</font>
 				<description>Episode Name</description>
 				<posx>140</posx>
 				<posy>80</posy>
@@ -1033,7 +1010,6 @@
 				<align>center</align>
 			</control>
 			<control type="label">
-				<font>font12</font>
 				<description>Next air date/time</description>
 				<posx>140</posx>
 				<posy>100</posy>
@@ -1043,7 +1019,6 @@
 				<align>center</align>
 			</control>
 			<control type="label">
-				<font>font12</font>
 				<description>Duration</description>
 				<posx>140</posx>
 				<posy>120</posy>
@@ -1090,7 +1065,6 @@
 				<visible>StringCompare(Window(Home).Property(TVGuide.ThumbType),2)</visible>
 			</control>
 			<control type="label">
-				<font>font12</font>
 				<description>Episode Number</description>
 				<posx>140</posx>
 				<posy>60</posy>
@@ -1101,7 +1075,6 @@
 				<align>center</align>
 			</control>
 			<control type="label">
-				<font>font12</font>
 				<description>Episode Name</description>
 				<posx>140</posx>
 				<posy>80</posy>
@@ -1112,7 +1085,6 @@
 				<align>center</align>
 			</control>
 			<control type="label">
-				<font>font12</font>
 				<description>Next air date/time</description>
 				<posx>140</posx>
 				<posy>100</posy>
@@ -1123,7 +1095,6 @@
 				<align>center</align>
 			</control>
 			<control type="label">
-				<font>font12</font>
 				<description>Duration</description>
 				<posx>140</posx>
 				<posy>120</posy>

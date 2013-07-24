@@ -93,7 +93,6 @@
 					<aspectratio aligny="bottom" align="left">keep</aspectratio>
 				</control>
 				<control type="label" id="1">
-					<font>font12</font>
 					<description>Artist label</description>
 					<posx>20</posx>
 					<posy>75</posy>
@@ -159,7 +158,6 @@
 					<animation effect="fade" time="200">VisibleChange</animation>
 				</control>
 				<control type="label">
-					<font>font12</font>
 					<posx>0</posx>
 					<posy>180</posy>
 					<width>910</width>
@@ -210,7 +208,6 @@
 				<texture>dialogs/dialog-back_light.png</texture>
 			</control>
 			<control type="label">
-				<font>font12</font>
 				<width>1280</width>
 				<height>0</height>
 				<description>row 1 label</description>
@@ -219,7 +216,6 @@
 				<label>$INFO[musicplayer.Codec,$LOCALIZE[21446]: ,]$INFO[musicplayer.Bitrate, · $LOCALIZE[623]: ,kbps]$INFO[musicplayer.bitspersample, · $LOCALIZE[612]: ,]$INFO[musicplayer.Samplerate, · $LOCALIZE[613]: ,kHz]$INFO[musicplayer.Channels, · $LOCALIZE[21444]: ]</label>
 			</control>
 			<control type="label">
-				<font>font12</font>
 				<width>1280</width>
 				<height>0</height>
 				<description>row 2 label</description>
@@ -229,7 +225,6 @@
 				<visible>Visualisation.Locked</visible>
 			</control>
 			<control type="label">
-				<font>font12</font>
 				<width>1280</width>
 				<height>0</height>
 				<description>Unlocked row 2 label</description>
@@ -239,7 +234,6 @@
 				<visible>!Visualisation.Locked</visible>
 			</control>
 			<control type="label">
-				<font>font12</font>
 				<width>1280</width>
 				<height>0</height>
 				<description>row 3 label</description>
