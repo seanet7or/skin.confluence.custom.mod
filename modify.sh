@@ -51,7 +51,7 @@ remove_include() {(
 	local NAME=$1
 	local FILES=$2
 	if [ -z "$FILES" ] ; then
-		FILES=$(2>/dev/null grep -l "<include name=\"$NAME\"" 720p/*)
+		FILES=$(2>/dev/null grep -a -l "<include name=\"$NAME\"" 720p/*)
 	fi
 	local REGEX='s|\s*<include name="'$NAME'">#'
 	REGEX+='(\s*<[/a-z][^#]*#\|)*?'
@@ -77,7 +77,7 @@ remove_variable() {
 	REGEX+='\s*</variable>#'
 	REGEX+='||g'
 	if [ -z "$FILES" ] ; then
-		FILES=$(2>/dev/null grep -l "<variable name=\"$NAME\"" 720p/*)
+		FILES=$(2>/dev/null grep -a -l "<variable name=\"$NAME\"" 720p/*)
 	fi
 	perlregex "$REGEX" "$FILES"
 	if grep -I -q "$NAME" 720p/* ; then
@@ -292,7 +292,7 @@ IFS=$'\n' ; for R in $REPL ; do
 	else
 		printf "\n$MESSAGE: "
 	fi
-	XMLS=$(2>/dev/null grep -l -P "$PATTERN" 720p/*)
+	XMLS=$(2>/dev/null grep -a -l -P "$PATTERN" 720p/*)
 	if ! [ -z "$XMLS" ] ; then
 		perlregex $XMLS "s|$REPLACE|$WITH|g"
 		printf "%sDONE!%s" $GREEN $RESET
@@ -316,7 +316,7 @@ for R in $REMCONTROLS ; do
 	else
 		printf "\n$MESSAGE"
 	fi
-	XMLS=$(2>/dev/null grep -l "$LINE" 720p/*)
+	XMLS=$(2>/dev/null grep -a -l "$LINE" 720p/*)
 	if ! [ -z "$XMLS" ] ; then
 		CMD=remove_control$(echo "$R" | cut -f3 -d';')
 		$CMD "$TYPE" "$LINE" "$XMLS"
@@ -498,7 +498,7 @@ step
 printf "\n############# REPLACING MEDIA FILES ###########################################"
 
 REPLACE="
-media/HasSub.png;-
+media/HasSub.png;
 media/unknown-user.png;DefaultActor.png
 media/StackNF.png;$BUTTON_NF
 media/StackFO.png;$BUTTON_FO
@@ -520,7 +520,7 @@ media/ScrollBarH.png;$SCROLLBAR_HOR
 media/ScrollBarV.png;$SCROLLBAR_VER
 media/ScrollBarH_bar_focus.png;$SCROLLBAR_HOR_BAR_FO
 media/ScrollBarV_bar_focus.png;$SCROLLBAR_VER_BAR_FO
-media/ScrollBarNib.png;-
+media/ScrollBarNib.png;
 media/warning.png;DefaultIconWarning.png
 media/button-focus2.png;$BUTTON_FO
 media/button-focus.png;$BUTTON_FO
@@ -538,8 +538,8 @@ media/OSDProgressMidLight.png;$PROGRESS_MIDLIGHT
 media/OSDProgressMid.png;$PROGRESS_MID
 media/OSDProgressBack.png;$PROGRESS_BACK
 media/folder-focus.png;buttons/folder-focus_light.png
-media/seekslider.png;-
-media/seekslider2.png;-
+media/seekslider.png;
+media/seekslider2.png;
 media/osd_slider_bg.png;$SLIDER_BG
 media/osd_slider_bg_2.png;$SLIDER_BG
 media/osd_slider_nibNF.png;$SLIDER_NIB_NF
@@ -1216,8 +1216,8 @@ fi
 step
 
 printf "\nChanging font colors for original blue strings: "
-if grep -q 'blue[\"<\]]' 720p/* ; then
-	XMLS=$(2>/dev/null grep -l '<textcolor>blue</textcolor>' 720p/*)
+if grep 'blue' 720p/* | grep -q -v ',blue/' ; then
+	XMLS=$(2>/dev/null grep -a -l '<textcolor>blue</textcolor>' 720p/*)
 	R="s|(\s*<description>header label</description>\s*#"
 	R+="(\s*<(?!control)[a-z][^#]*#)*"
 	R+="\s*<textcolor)>blue<"
@@ -1266,18 +1266,18 @@ if grep -q 'blue[\"<\]]' 720p/* ; then
 	
 	perlregex $XMLS "s|<textcolor>blue</textcolor>|<textcolor>textnofocus</textcolor>|g"	
 	
-	XMLS=$(2>/dev/null grep -l "COLOR=blue" 720p/*)
+	XMLS=$(2>/dev/null grep -a -l "COLOR=blue" 720p/*)
 	perlregex $XMLS "s|\[COLOR=blue\]([ ]*.[ ]*)\[/COLOR\]|\1|g"
 	perlregex $XMLS "s|\[COLOR=blue\]|\[COLOR=heading2\]|g"
 	
-	XMLS=$(2>/dev/null grep -l ">blue<" 720p/*)
+	XMLS=$(2>/dev/null grep -a -l ">blue<" 720p/*)
 	perlregex $XMLS "s|<selectedcolor>blue<|<selectedcolor>itemselected<|g"
 	perlregex $XMLS "s|<titlecolor>blue<|<titlecolor>itemselected<|g"
 	
-	if grep -q 'blue[\]\"<]' 720p/* ; then
+	if grep 'blue' 720p/* | grep -v -q ',blue/' ; then
 		printf "\nERROR: Blue color still used!"
 		printf "\n"
-		grep 'blue[\"<]' 720p/* | head -n 10
+		grep 'blue' 720p/* | grep -v ',blue/' | head -n 10
 		exit 4
 	fi
 	perlregex colors/defaults.xml "s|\s*<color name=\"blue\"[^#]*#||g"	
@@ -1289,7 +1289,7 @@ step
 
 printf "\nChanging font colors for 'selected' colored strings: "
 if grep "selected" 720p/* | egrep -q -v '<selected|itemselected' ; then
-	XMLS=$(2>/dev/null grep -l '<selectedcolor>selected</selectedcolor>' 720p/*)
+	XMLS=$(2>/dev/null grep -a -l '<selectedcolor>selected</selectedcolor>' 720p/*)
 	perlregex $XMLS "s|<selectedcolor>selected</selectedcolor>|<selectedcolor>itemselected</selectedcolor>|g" --nocheck
 	
 	XMLS=$(2>/dev/null grep -a -l '<textcolor>selected</textcolor>' 720p/*)
@@ -1371,7 +1371,7 @@ if grep -q 'font10' 720p/IncludesHomeWidget.xml ; then
 	R+="((\s*<(?!font)[a-z][^#]*#)*"
 	R+="\s*</control)"
 	R+="|\1\2<font>font13</font>#\2\3|g"
-	perlregex "$R" 720p/IncludesHomeWidget.xml
+	perlregex "$R" 720p/IncludesHomeWidget.xml --nocheck
 	# remove uppercase
 	perlregex "s|\[[/]*UPPERCASE\]||g" 720p/IncludesHomeWidget.xml
 	# remove bold
@@ -1393,7 +1393,7 @@ if grep -q 'font12' 720p/AddonBrowser.xml ; then
 	R+="(\s*<(?!font)[a-z][^#]*#)*"
 	R+="\s*<font)>font12<"
 	R+="|\1>font13<|g"
-	XMLS=$(2>/dev/null grep -l 'font12' 720p/*)
+	XMLS=$(2>/dev/null grep -a -l 'font12' 720p/*)
 	perlregex $XMLS "$R"
 	R="s|(control type=\"label\"[^#]*#"
 	R+="(\s*<(?!font)[a-z][^#]*#)*"
@@ -1404,13 +1404,13 @@ if grep -q 'font12' 720p/AddonBrowser.xml ; then
 	R+="(\s*<(?!font)[a-z][^#]*#)*"
 	R+="\s*<font)>font11<"
 	R+="|\1>font13<|g"
-	XMLS=$(2>/dev/null grep -l 'font11' 720p/*)
+	XMLS=$(2>/dev/null grep -a -l 'font11' 720p/*)
 	perlregex $XMLS "$R"
 	R="s|(control type=\"label\"[^#]*#"
 	R+="(\s*<(?!font)[a-z][^#]*#)*"
 	R+="\s*<font)>font12_title<"
 	R+="|\1>font13<|g"
-	XMLS=$(2>/dev/null grep -l 'font12_title' 720p/*)
+	XMLS=$(2>/dev/null grep -a -l 'font12_title' 720p/*)
 	perlregex $XMLS "$R"
 	
 	printf "%sDONE!%s" $GREEN $RESET
@@ -1424,10 +1424,11 @@ if grep -q 'font12' 720p/IncludesHomeMenuItems.xml ; then
 	R="s|(control type=\"button\"[^#]*#"
 	R+="(\s*<(?!font)[a-z][^#]*#)*"
 	R+="\s*<font)>font12<"
-	R+="|\1>font13_title<|g"
-	XMLS=$(2>/dev/null grep -l 'font12' 720p/*)
+	R+="|\1>font13<|g"
+	XMLS=$(2>/dev/null grep -a -l 'font12' 720p/*)
 	perlregex $XMLS "$R"
 	perlregex "s|<width>180</width>|<width>200</width>|g" 720p/IncludesHomeMenuItems.xml
+	perlregex "s|<textwidth>195</textwidth>|<textwidth>220</textwidth>|g" 720p/IncludesHomeMenuItems.xml
 	printf "%sDONE!%s" $GREEN $RESET
 else
 	printf "%sSKIPPED.%s" $CYAN $RESET
