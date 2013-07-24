@@ -21,10 +21,10 @@
 					<control type="label">
 						<width>460</width>
 						<height>40</height>
-						<font>font13</font>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
+						<font>font12</font>
 						<posx>430</posx>
 						<width>400</width>
 						<height>40</height>
@@ -70,11 +70,11 @@
 					<control type="label">
 						<width>460</width>
 						<height>40</height>
-						<font>font13</font>
 						<textcolor>textfocus</textcolor>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
+						<font>font12</font>
 						<posx>430</posx>
 						<width>400</width>
 						<height>40</height>
@@ -194,6 +194,7 @@
 					<visible>!IsEmpty(ListItem.StarRating)</visible>
 				</control>
 				<control type="label">
+					<font>font12</font>
 					<posx>1260</posx>
 					<posy>615</posy>
 					<width>270</width>
@@ -206,7 +207,6 @@
 					<posx>1270</posx>
 					<posy>615</posy>
 					<width>430</width>
-					<font>font13</font>
 					<align>right</align>
 					<aligny>top</aligny>
 					<label>$INFO[ListItem.genre,[B][COLOR=heading2]$LOCALIZE[515]: [/COLOR][/B]]</label>

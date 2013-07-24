@@ -20,10 +20,10 @@
 					<control type="label">
 						<width>730</width>
 						<height>40</height>
-						<font>font13</font>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
+						<font>font12</font>
 						<posx>760</posx>
 						<width>700</width>
 						<height>40</height>
@@ -41,11 +41,11 @@
 					<control type="label">
 						<width>730</width>
 						<height>40</height>
-						<font>font13</font>
 						<textcolor>textfocus</textcolor>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
+						<font>font12</font>
 						<posx>760</posx>
 						<width>700</width>
 						<height>40</height>
@@ -91,7 +91,6 @@
 					<label>$INFO[ListItem.Album]</label>
 					<wrapmultiline>true</wrapmultiline>
 					<align>center</align>
-					<font>font13</font>
 				</control>
 				<control type="label">
 					<posy>420</posy>
@@ -124,7 +123,6 @@
 					<height>25</height>
 					<label>$INFO[listitem.TrackNumber,[COLOR=heading2]$LOCALIZE[31310]: [/COLOR]]</label>
 					<align>center</align>
-					<font>font13</font>
 					<visible>!Container.Content(Albums)</visible>
 				</control>
 				<control type="label">
@@ -134,7 +132,6 @@
 					<height>25</height>
 					<label>$INFO[listitem.Year,[COLOR=heading2]$LOCALIZE[345]: [/COLOR]]</label>
 					<align>center</align>
-					<font>font13</font>
 				</control>
 				<control type="image">
 					<description>Rating value</description>
@@ -263,7 +260,6 @@
 				<posy>20</posy>
 				<width>840</width>
 				<height>20</height>
-				<font>font13</font>
 				<scroll>true</scroll>
 				<align>center</align>
 				<label>$INFO[ListItem.Property(Album_Artist)]</label>
@@ -293,7 +289,6 @@
 					<posx>0</posx>
 					<posy>35</posy>
 					<width>850</width>
-					<font>font13</font>
 					<scroll>true</scroll>
 					<label>$LOCALIZE[515]: $INFO[ListItem.Genre]</label>
 				</control>
@@ -301,7 +296,6 @@
 					<posx>0</posx>
 					<posy>65</posy>
 					<width>850</width>
-					<font>font13</font>
 					<scroll>true</scroll>
 					<label>$LOCALIZE[562]: $INFO[ListItem.Year]</label>
 				</control>
@@ -353,10 +347,10 @@
 					<control type="label">
 						<width>720</width>
 						<height>40</height>
-						<font>font13</font>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
+						<font>font12</font>
 						<posx>730</posx>
 						<width>700</width>
 						<height>40</height>
@@ -381,11 +375,11 @@
 					<control type="label">
 						<width>720</width>
 						<height>40</height>
-						<font>font13</font>
 						<textcolor>textfocus</textcolor>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
+						<font>font12</font>
 						<posx>730</posx>
 						<width>700</width>
 						<height>40</height>
@@ -448,7 +442,6 @@
 					<label>$INFO[ListItem.Album]</label>
 					<wrapmultiline>true</wrapmultiline>
 					<align>center</align>
-					<font>font13</font>
 				</control>
 				<control type="label">
 					<posy>410</posy>
@@ -470,7 +463,6 @@
 					<scroll>true</scroll>
 					<align>center</align>
 					<aligny>top</aligny>
-					<font>font13</font>
 					<wrapmultiline>true</wrapmultiline>
 				</control>
 				<control type="label">
@@ -505,7 +497,6 @@
 					<control type="label">
 						<width>560</width>
 						<height>40</height>
-						<font>font13</font>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 				</itemlayout>
@@ -519,7 +510,6 @@
 					<control type="label">
 						<width>560</width>
 						<height>40</height>
-						<font>font13</font>
 						<textcolor>textfocus</textcolor>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
@@ -563,7 +553,6 @@
 						<width>350</width>
 						<height>25</height>
 						<label>$INFO[ListItem.Property(Artist_Born)]</label>
-						<font>font13</font>
 						<scroll>true</scroll>
 						<visible>!IsEmpty(ListItem.Property(Artist_Born))</visible>
 					</control>
@@ -584,7 +573,6 @@
 						<width>350</width>
 						<height>25</height>
 						<label>$INFO[ListItem.Property(Artist_Formed)]</label>
-						<font>font13</font>
 						<scroll>true</scroll>
 						<visible>!IsEmpty(ListItem.Property(Artist_Formed))</visible>
 					</control>
@@ -606,7 +594,6 @@
 						<width>350</width>
 						<height>25</height>
 						<label fallback="416">$INFO[ListItem.Property(Artist_Genre)]</label>
-						<font>font13</font>
 						<scroll>true</scroll>
 					</control>
 					<control type="textbox">
@@ -641,10 +628,10 @@
 					<control type="label">
 						<width>730</width>
 						<height>40</height>
-						<font>font13</font>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
+						<font>font12</font>
 						<posx>760</posx>
 						<width>700</width>
 						<height>40</height>
@@ -662,11 +649,11 @@
 					<control type="label">
 						<width>730</width>
 						<height>40</height>
-						<font>font13</font>
 						<textcolor>textfocus</textcolor>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
+						<font>font12</font>
 						<posx>760</posx>
 						<width>700</width>
 						<height>40</height>

@@ -331,7 +331,6 @@
 					<posy>450</posy>
 					<width>290</width>
 					<height>25</height>
-					<font>font13</font>
 					<label>$VAR[MediaRuntime,[B][COLOR=heading2]$LOCALIZE[2050]: [/COLOR][/B]]</label>
 					<visible>!Container.Content(TVShows) + !IsEmpty(ListItem.Duration)</visible>
 				</control>
@@ -339,7 +338,6 @@
 					<posy>450</posy>
 					<width>290</width>
 					<height>25</height>
-					<font>font13</font>
 					<label>$INFO[listitem.episode,[B][COLOR=heading2]$LOCALIZE[20360]: [/COLOR][/B]]</label>
 					<visible>[Container.Content(TVShows) | Container.Content(Seasons)] + !IsEmpty(ListItem.episode)</visible>
 				</control>
@@ -347,7 +345,6 @@
 					<posx>790</posx>
 					<posy>450</posy>
 					<width>490</width>
-					<font>font13</font>
 					<align>right</align>
 					<label>$INFO[ListItem.Director,[B][COLOR=heading2]$LOCALIZE[20339]: [/COLOR][/B]]</label>
 					<visible>!IsEmpty(ListItem.Director)</visible>
@@ -356,7 +353,6 @@
 					<posx>790</posx>
 					<posy>450</posy>
 					<width>490</width>
-					<font>font13</font>
 					<align>right</align>
 					<label>$INFO[ListItem.Premiered,[B][COLOR=heading2]$LOCALIZE[31322]: [/COLOR][/B]]</label>
 					<visible>IsEmpty(ListItem.Director) + !IsEmpty(ListItem.Premiered)</visible>

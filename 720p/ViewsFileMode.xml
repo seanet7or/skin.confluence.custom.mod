@@ -19,10 +19,10 @@
 					<control type="label">
 						<width>660</width>
 						<height>40</height>
-						<font>font13</font>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
+						<font>font12</font>
 						<posx>680</posx>
 						<width>400</width>
 						<height>40</height>
@@ -31,6 +31,7 @@
 						<visible>!Window.IsVisible(Videos)</visible>
 					</control>
 					<control type="label">
+						<font>font12</font>
 						<posx>620</posx>
 						<width>400</width>
 						<height>40</height>
@@ -99,7 +100,6 @@
 					<control type="label">
 						<width>660</width>
 						<height>40</height>
-						<font>font13</font>
 						<textcolor>textfocus</textcolor>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>!stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
@@ -107,12 +107,12 @@
 					<control type="label">
 						<width>680</width>
 						<height>40</height>
-						<font>font13</font>
 						<textcolor>textfocus</textcolor>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>Skin.HasSetting(HideWatchStatus)</visible>
 					</control>
 					<control type="label">
+						<font>font12</font>
 						<posx>680</posx>
 						<width>400</width>
 						<height>40</height>
@@ -121,6 +121,7 @@
 						<visible>!Window.IsVisible(Videos)</visible>
 					</control>
 					<control type="label">
+						<font>font12</font>
 						<posx>620</posx>
 						<width>400</width>
 						<height>40</height>
@@ -252,6 +253,7 @@
 						<visible>Container.Content(Episodes) + Skin.HasSetting(HideEpisodeThumb) + !StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="label">
+						<font>font12</font>
 						<posx>108</posx>
 						<posy>160</posy>
 						<width>200</width>
@@ -300,6 +302,7 @@
 						<visible>Container.Content(Episodes) + Skin.HasSetting(HideEpisodeThumb) + !StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="label">
+						<font>font12</font>
 						<posx>108</posx>
 						<posy>160</posy>
 						<width>200</width>
@@ -329,6 +332,7 @@
 						<animation effect="fade" start="60" end="80" time="0" condition="true">conditional</animation>
 					</control>
 					<control type="label">
+						<font>font12</font>
 						<posx>108</posx>
 						<posy>240</posy>
 						<width>200</width>
@@ -355,6 +359,7 @@
 						<texture background="true">$VAR[PosterThumb]</texture>
 					</control>
 					<control type="label">
+						<font>font12</font>
 						<posx>108</posx>
 						<posy>240</posy>
 						<width>200</width>
@@ -483,10 +488,10 @@
 						<posx>60</posx>
 						<width>950</width>
 						<height>40</height>
-						<font>font13</font>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
+						<font>font12</font>
 						<posx>1060</posx>
 						<width>1000</width>
 						<height>40</height>
@@ -495,6 +500,7 @@
 						<visible>!Window.IsVisible(Videos)</visible>
 					</control>
 					<control type="label">
+						<font>font12</font>
 						<posx>1005</posx>
 						<width>940</width>
 						<height>40</height>
@@ -580,11 +586,11 @@
 						<posx>60</posx>
 						<width>950</width>
 						<height>40</height>
-						<font>font13</font>
 						<textcolor>textfocus</textcolor>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
+						<font>font12</font>
 						<posx>1060</posx>
 						<width>1000</width>
 						<height>40</height>
@@ -593,6 +599,7 @@
 						<visible>!Window.IsVisible(Videos)</visible>
 					</control>
 					<control type="label">
+						<font>font12</font>
 						<posx>1005</posx>
 						<width>940</width>
 						<height>40</height>

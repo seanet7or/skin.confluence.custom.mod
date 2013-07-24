@@ -1332,6 +1332,54 @@ else
 fi
 step
 
+printf "\nChanging home widgets labels: "
+if grep -q 'font10' 720p/IncludesHomeWidget.xml ; then
+	grep -zo -P -I '<control type="label".*\n(\s*<[a-z].*\n)*\s*<font>font10</font>\n(\s*<[a-z].*\n)*\s*</control>' 720p/IncludesHomeWidget.xml \
+		| grep '<posy>' | sed 's|^\s*<posy>||g' | sed 's|</posy>||g' >ypos.tmp
+	IFS=$'\n' ; for YPOS in $( more ypos.tmp | sort -u )
+	do
+		NEWY=$((YPOS-5))
+		R="s|posy>$YPOS<([^#]*#"
+		R+="(\s*<[a-z][^#]*#)*"
+		R+="\s*<font>font10<)"
+		R+="|posy>$NEWY<\1|g"
+		perlregex "$R" 720p/IncludesHomeWidget.xml
+	done
+	perlregex 's|<font>font10<|<font>font13<|g' 720p/IncludesHomeWidget.xml
+	# label width
+	R="s|(control type=\"label\"[^#]*#"
+	R+="(\s*<[a-z][^#]*#)*"
+	R+="\s*<width)>200<"
+	R+="|\1>230<|g"
+	perlregex "$R" 720p/IncludesHomeWidget.xml	
+	# weather widget y pos
+	R="s|>163<(/posy>#"
+	R+="(\s*<[a-z][^#]*#)*"
+	R+="\s*<label>.INFO.ListItem.Property.Temperatures..)"
+	R+="|>158<\1|g"
+	perlregex "$R" 720p/IncludesHomeWidget.xml
+	R="s|>180<(/posy>#"
+	R+="(\s*<[a-z][^#]*#)*"
+	R+="\s*<label>.INFO.ListItem.Label2.</label>)"
+	R+="|>185<\1|g"
+	perlregex "$R" 720p/IncludesHomeWidget.xml	
+	# font size 13 everywhere
+	R="s|(control type=\"label\"[^#]*#)(\s*)"
+	R+="((\s*<(?!font)[a-z][^#]*#)*"
+	R+="\s*</control)"
+	R+="|\1\2<font>font13</font>#\2\3|g"
+	perlregex "$R" 720p/IncludesHomeWidget.xml
+	# remove uppercase
+	perlregex "s|\[[/]*UPPERCASE\]||g" 720p/IncludesHomeWidget.xml
+	#remove extra colors for selected elements
+	remove_control 'label' '<visible>Control.HasFocus.(800[0-9]\|801[0-5]).</visible>' 720p/IncludesHomeWidget.xml
+	rm ypos.tmp
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
+fi
+step
+
 printf "\n############# APPLYING HOME SCREEN MODIFICATIONS ##############################"
 
 printf "\nChanging main menu layout: "
