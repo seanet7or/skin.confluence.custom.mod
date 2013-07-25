@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
 	<onload>ClearProperty(TVGuide.MondayList,Home)</onload>
 	<onload>ClearProperty(TVGuide.TuesdayList,Home)</onload>
 	<onload>ClearProperty(TVGuide.WednesdayList,Home)</onload>
@@ -492,8 +491,6 @@
 					<texture>$INFO[system.addonicon(script.tv.show.next.aired)]</texture>
 				</control>
 				<control type="label" id="7">
-					<posy>60</posy>
-					<posx>80</posx>
 					<width>250</width>
 					<height>35</height>
 					<label>31006</label>
@@ -503,7 +500,6 @@
 				<control type="button" id="8">
 					<description>Settings</description>
 					<textwidth>235</textwidth>
-					<textoffsetx>10</textoffsetx>
 					<width>250</width>
 					<texturenofocus></texturenofocus>
 					<textwidth>200</textwidth>

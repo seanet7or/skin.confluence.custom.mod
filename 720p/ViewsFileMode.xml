@@ -17,12 +17,15 @@
 				<scrolltime>200</scrolltime>
 				<itemlayout height="40" width="580">
 					<control type="label">
+						<posx>10</posx>
+						<posy>0</posy>
 						<width>660</width>
 						<height>40</height>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>680</posx>
+						<posy>0</posy>
 						<width>400</width>
 						<height>40</height>
 						<align>right</align>
@@ -31,6 +34,7 @@
 					</control>
 					<control type="label">
 						<posx>620</posx>
+						<posy>0</posy>
 						<width>400</width>
 						<height>40</height>
 						<align>right</align>
@@ -92,10 +96,11 @@
 					<control type="image">
 						<width>690</width>
 						<height>41</height>
-						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(50)</visible>
 					</control>
 					<control type="label">
+						<posx>10</posx>
+						<posy>0</posy>
 						<width>660</width>
 						<height>40</height>
 						<textcolor>textfocus</textcolor>
@@ -103,6 +108,8 @@
 						<visible>!stringcompare(Skin.String(WatchStatusType),Hidden)</visible>
 					</control>
 					<control type="label">
+						<posx>10</posx>
+						<posy>0</posy>
 						<width>680</width>
 						<height>40</height>
 						<textcolor>textfocus</textcolor>
@@ -111,6 +118,7 @@
 					</control>
 					<control type="label">
 						<posx>680</posx>
+						<posy>0</posy>
 						<width>400</width>
 						<height>40</height>
 						<align>right</align>
@@ -119,6 +127,7 @@
 					</control>
 					<control type="label">
 						<posx>620</posx>
+						<posy>0</posy>
 						<width>400</width>
 						<height>40</height>
 						<align>right</align>
@@ -478,12 +487,14 @@
 					</control>
 					<control type="label">
 						<posx>60</posx>
+						<posy>0</posy>
 						<width>950</width>
 						<height>40</height>
 						<label>$VAR[MainItemLabel]</label>
 					</control>
 					<control type="label">
 						<posx>1060</posx>
+						<posy>0</posy>
 						<width>1000</width>
 						<height>40</height>
 						<align>right</align>
@@ -492,6 +503,7 @@
 					</control>
 					<control type="label">
 						<posx>1005</posx>
+						<posy>0</posy>
 						<width>940</width>
 						<height>40</height>
 						<align>right</align>
@@ -553,7 +565,6 @@
 					<control type="image">
 						<width>1080</width>
 						<height>41</height>
-						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(51)</visible>
 					</control>
 					<control type="image">
@@ -574,6 +585,7 @@
 					</control>
 					<control type="label">
 						<posx>60</posx>
+						<posy>0</posy>
 						<width>950</width>
 						<height>40</height>
 						<textcolor>textfocus</textcolor>
@@ -581,6 +593,7 @@
 					</control>
 					<control type="label">
 						<posx>1060</posx>
+						<posy>0</posy>
 						<width>1000</width>
 						<height>40</height>
 						<align>right</align>
@@ -589,6 +602,7 @@
 					</control>
 					<control type="label">
 						<posx>1005</posx>
+						<posy>0</posy>
 						<width>940</width>
 						<height>40</height>
 						<align>right</align>

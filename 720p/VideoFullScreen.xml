@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol></defaultcontrol>
 	<controls>
 		<control type="group" id="1">
@@ -43,6 +42,7 @@
 				<posx>15r</posx>
 				<posy>5</posy>
 				<width>345</width>
+				<height>30</height>
 				<align>right</align>
 				<font>font35_title</font>
 				<label>$INFO[System.Time]</label>
@@ -171,6 +171,7 @@
 				<control type="label" id="1">
 					<description>Heading label</description>
 					<posx>0</posx>
+					<posy>0</posy>
 					<width>910</width>
 					<height>25</height>
 					<label>$LOCALIZE[31040]</label>
@@ -187,6 +188,7 @@
 				<control type="label" id="1">
 					<description>Heading label</description>
 					<posx>50</posx>
+					<posy>0</posy>
 					<width>860</width>
 					<height>25</height>
 					<label>$LOCALIZE[19158]</label>
@@ -236,9 +238,8 @@
 					<itemgap>5</itemgap>
 					<orientation>horizontal</orientation>
 					<control type="label" id="1">
-						<posy>60</posy>
-						<posx>80</posx>
 						<width min="10" max="710">auto</width>
+						<height>30</height>
 						<font>font30</font>
 						<label>$VAR[VideoNowPlaying]</label>
 						<textcolor>orange</textcolor>
@@ -297,6 +298,7 @@
 				<control type="label" id="1">
 					<visible>!VideoPlayer.Content(LiveTV)</visible>
 					<posx>0</posx>
+					<posy>0</posy>
 					<width>100</width>
 					<height>40</height>
 					<label>$INFO[Player.Time(hh:mm:ss)]</label>
@@ -304,6 +306,7 @@
 				<control type="label" id="1">
 					<visible>VideoPlayer.Content(LiveTV)</visible>
 					<posx>0</posx>
+					<posy>0</posy>
 					<width>100</width>
 					<height>40</height>
 					<label>$INFO[Player.StartTime(hh:mm)]</label>
@@ -328,6 +331,7 @@
 				<control type="label" id="1">
 					<visible>!VideoPlayer.Content(LiveTV)</visible>
 					<posx>920</posx>
+					<posy>0</posy>
 					<width>100</width>
 					<height>40</height>
 					<align>right</align>
@@ -336,6 +340,7 @@
 				<control type="label" id="1">
 					<visible>VideoPlayer.Content(LiveTV)</visible>
 					<posx>920</posx>
+					<posy>0</posy>
 					<width>100</width>
 					<height>40</height>
 					<align>right</align>
@@ -351,24 +356,28 @@
 				<description>media info background image</description>
 				<width>1280</width>
 				<height>140</height>
+				<texture>buttons/nf_light.png</texture>
 			</control>
 			<control type="label" id="10">
 				<description>row 1 label</description>
 				<posx>50</posx>
 				<posy>10</posy>
 				<width>1180</width>
+				<height>30</height>
 			</control>
 			<control type="label" id="11">
 				<description>row 2 label</description>
 				<posx>50</posx>
 				<posy>40</posy>
 				<width>1180</width>
+				<height>30</height>
 			</control>
 			<control type="label" id="12">
 				<description>row 3 label</description>
 				<posx>50</posx>
 				<posy>85</posy>
 				<width>1180</width>
+				<height>30</height>
 			</control>
 		</control>
 		<control type="selectbutton" id="503">
@@ -385,6 +394,7 @@
 				<description>media info background image</description>
 				<width>1280</width>
 				<height>220</height>
+				<texture>buttons/nf_light.png</texture>
 			</control>
 			<control type="label">
 				<description>Header</description>

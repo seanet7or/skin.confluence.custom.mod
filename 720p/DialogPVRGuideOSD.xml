@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">11</defaultcontrol>
 	<coordinates>
 		<system>1</system>
@@ -29,8 +28,8 @@
 			<control type="label">
 				<description>Selected item's date</description>
 				<posx>40</posx>
-				<posy>60</posy>
 				<width>430</width>
+				<height>30</height>
 				<label>$INFO[Container(11).ListItem.StartDate]</label>
 				<align>center</align>
 			</control>
@@ -50,9 +49,13 @@
 					<control type="image">
 						<width>410</width>
 						<height>30</height>
+						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="label">
+						<posx>10</posx>
+						<posy>0</posy>
 						<width>100</width>
+						<height>30</height>
 						<label>$INFO[ListItem.StartTime]</label>
 					</control>
 					<control type="image">
@@ -73,14 +76,18 @@
 					</control>
 					<control type="label">
 						<posx>400</posx>
+						<posy>0</posy>
 						<width>300</width>
+						<height>30</height>
 						<align>right</align>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>![ListItem.IsRecording | ListItem.HasTimer]</visible>
 					</control>
 					<control type="label">
 						<posx>400</posx>
+						<posy>0</posy>
 						<width>250</width>
+						<height>30</height>
 						<align>right</align>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>ListItem.IsRecording | ListItem.HasTimer</visible>
@@ -90,16 +97,19 @@
 					<control type="image">
 						<width>410</width>
 						<height>30</height>
+						<texture>buttons/nf_light.png</texture>
 						<visible>!Control.HasFocus(11)</visible>
 					</control>
 					<control type="image">
 						<width>410</width>
 						<height>30</height>
-						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(11)</visible>
 					</control>
 					<control type="label">
+						<posx>10</posx>
+						<posy>0</posy>
 						<width>100</width>
+						<height>30</height>
 						<label>$INFO[ListItem.StartTime]</label>
 					</control>
 					<control type="image">
@@ -120,14 +130,18 @@
 					</control>
 					<control type="label">
 						<posx>400</posx>
+						<posy>0</posy>
 						<width>300</width>
+						<height>30</height>
 						<align>right</align>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>![ListItem.IsRecording | ListItem.HasTimer]</visible>
 					</control>
 					<control type="label">
 						<posx>400</posx>
+						<posy>0</posy>
 						<width>250</width>
+						<height>30</height>
 						<align>right</align>
 						<label>$VAR[MainItemLabel]</label>
 						<visible>ListItem.IsRecording | ListItem.HasTimer</visible>

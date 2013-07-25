@@ -39,6 +39,8 @@
 				<scrolltime>200</scrolltime>
 				<itemlayout height="40">
 					<control type="label">
+						<posx>10</posx>
+						<posy>0</posy>
 						<width>340</width>
 						<height>40</height>
 						<info>ListItem.Label</info>
@@ -48,10 +50,11 @@
 					<control type="image">
 						<width>360</width>
 						<visible>Control.HasFocus(450)</visible>
-						<texture>buttons/fo_light.png</texture>
 					</control>
 					<control type="label">
 						<textcolor>textfocus</textcolor>
+						<posx>10</posx>
+						<posy>0</posy>
 						<width>340</width>
 						<height>40</height>
 						<info>ListItem.Label</info>

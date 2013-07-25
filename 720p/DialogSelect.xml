@@ -20,6 +20,7 @@
 			<posx>40</posx>
 			<posy>20</posy>
 			<width>530</width>
+			<height>30</height>
 			<font>font13_title</font>
 			<label>$LOCALIZE[13406]</label>
 			<align>center</align>
@@ -40,9 +41,11 @@
 			<itemlayout height="46" width="550">
 				<control type="image">
 					<width>550</width>
+					<texture>buttons/nf_light.png</texture>
 				</control>
 				<control type="label">
 					<posx>20</posx>
+					<posy>0</posy>
 					<width>510</width>
 					<height>40</height>
 					<label>$VAR[MainItemLabel]</label>
@@ -51,15 +54,16 @@
 			<focusedlayout height="46" width="550">
 				<control type="image">
 					<width>550</width>
+					<texture>buttons/nf_light.png</texture>
 					<visible>!Control.HasFocus(3)</visible>
 				</control>
 				<control type="image">
 					<width>550</width>
-					<texture>buttons/fo_light.png</texture>
 					<visible>Control.HasFocus(3)</visible>
 				</control>
 				<control type="label">
 					<posx>20</posx>
+					<posy>0</posy>
 					<width>510</width>
 					<height>40</height>
 					<textcolor>textfocus</textcolor>
@@ -83,6 +87,7 @@
 				<control type="image">
 					<width>550</width>
 					<height>80</height>
+					<texture>buttons/nf_light.png</texture>
 				</control>
 				<control type="image">
 					<posx>2</posx>
@@ -93,7 +98,9 @@
 				</control>
 				<control type="label">
 					<posx>90</posx>
+					<posy>0</posy>
 					<width>450</width>
+					<height>30</height>
 					<label>[B]$INFO[ListItem.Label][/B]</label>
 				</control>
 				<control type="textbox">
@@ -108,12 +115,12 @@
 				<control type="image">
 					<width>550</width>
 					<height>80</height>
+					<texture>buttons/nf_light.png</texture>
 					<visible>!Control.HasFocus(6)</visible>
 				</control>
 				<control type="image">
 					<width>550</width>
 					<height>80</height>
-					<texture>buttons/fo_light.png</texture>
 					<visible>Control.HasFocus(6)</visible>
 				</control>
 				<control type="image">
@@ -125,7 +132,9 @@
 				</control>
 				<control type="label">
 					<posx>90</posx>
+					<posy>0</posy>
 					<width>450</width>
+					<height>30</height>
 					<textcolor>textfocus</textcolor>
 					<label>[B]$INFO[ListItem.Label][/B]</label>
 				</control>

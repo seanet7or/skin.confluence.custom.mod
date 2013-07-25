@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">10</defaultcontrol>
 	<coordinates>
 		<system>1</system>
@@ -22,6 +21,7 @@
 				<posx>40</posx>
 				<posy>20</posy>
 				<width>830</width>
+				<height>30</height>
 				<font>font13_title</font>
 				<label>$LOCALIZE[658]</label>
 				<align>center</align>
@@ -30,8 +30,8 @@
 			<control type="label">
 				<description>Song Title value</description>
 				<posx>40</posx>
-				<posy>60</posy>
 				<width>830</width>
+				<height>30</height>
 				<align>center</align>
 				<label>[B]$INFO[ListItem.Title][/B]</label>
 				<scroll>true</scroll>
@@ -50,6 +50,7 @@
 				<control type="label">
 					<description>Artist Title</description>
 					<posx>150</posx>
+					<posy>0</posy>
 					<width>150</width>
 					<height>25</height>
 					<align>right</align>
@@ -58,8 +59,12 @@
 				</control>
 				<control type="fadelabel">
 					<description>Artist Value</description>
+					<posx>160</posx>
+					<posy>0</posy>
 					<width>460</width>
+					<height>25</height>
 					<label fallback="161">$INFO[ListItem.Artist]</label>
+					<pauseatend>2000</pauseatend>
 				</control>
 				<control type="label">
 					<description>Album Title</description>
@@ -73,14 +78,16 @@
 				</control>
 				<control type="fadelabel">
 					<description>Album Value</description>
+					<posx>160</posx>
 					<posy>30</posy>
 					<width>460</width>
+					<height>25</height>
 					<label fallback="161">$INFO[ListItem.Album]$INFO[listitem.discnumber, - $LOCALIZE[427] ]</label>
+					<pauseatend>2000</pauseatend>
 				</control>
 				<control type="label">
 					<description>Genre Title</description>
 					<posx>150</posx>
-					<posy>60</posy>
 					<width>150</width>
 					<height>25</height>
 					<align>right</align>
@@ -88,10 +95,10 @@
 					<label>$LOCALIZE[515]:</label>
 				</control>
 				<control type="fadelabel">
-					<pauseatend>1000</pauseatend>
 					<description>Genre Value</description>
-					<posy>60</posy>
+					<posx>160</posx>
 					<width>460</width>
+					<height>25</height>
 					<label fallback="161">$INFO[ListItem.Genre]</label>
 				</control>
 				<control type="label">
@@ -105,10 +112,11 @@
 					<label>$LOCALIZE[562]:</label>
 				</control>
 				<control type="fadelabel">
-					<pauseatend>1000</pauseatend>
 					<description>Year Value</description>
+					<posx>160</posx>
 					<posy>90</posy>
 					<width>460</width>
+					<height>25</height>
 					<label fallback="161">$INFO[ListItem.Year]</label>
 				</control>
 				<control type="label">
@@ -122,10 +130,11 @@
 					<label>$LOCALIZE[554]:</label>
 				</control>
 				<control type="fadelabel">
-					<pauseatend>1000</pauseatend>
 					<description>Track Number Value</description>
+					<posx>160</posx>
 					<posy>120</posy>
 					<width>460</width>
+					<height>25</height>
 					<label fallback="161">$INFO[ListItem.TrackNumber]</label>
 				</control>
 				<control type="label">

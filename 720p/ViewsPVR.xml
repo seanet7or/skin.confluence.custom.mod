@@ -9,6 +9,7 @@
 				<posy>490</posy>
 				<control type="label">
 					<posx>0</posx>
+					<posy>0</posy>
 					<width>690</width>
 					<height>20</height>
 					<scroll>true</scroll>
@@ -16,7 +17,6 @@
 					<label>[B]$INFO[Container(11).ListItem.Title][/B]</label>
 				</control>
 				<control type="label">
-					<posx>80</posx>
 					<posy>22</posy>
 					<width>80</width>
 					<height>20</height>
@@ -87,6 +87,7 @@
 					</control>
 					<control type="label">
 						<posx>50</posx>
+						<posy>0</posy>
 						<width>270</width>
 						<height>25</height>
 						<label>$INFO[ListItem.Plot]</label>
@@ -133,7 +134,6 @@
 					<control type="image">
 						<width>390</width>
 						<height>61</height>
-						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(11)</visible>
 					</control>
 					<control type="label">
@@ -145,6 +145,7 @@
 					</control>
 					<control type="label">
 						<posx>50</posx>
+						<posy>0</posy>
 						<width>270</width>
 						<height>25</height>
 						<textcolor>textfocus</textcolor>
@@ -208,6 +209,7 @@
 				<posy>490</posy>
 				<control type="label">
 					<posx>0</posx>
+					<posy>0</posy>
 					<width>690</width>
 					<height>20</height>
 					<scroll>true</scroll>
@@ -215,7 +217,6 @@
 					<label>[B]$INFO[Container(12).ListItem.Title][/B]</label>
 				</control>
 				<control type="label">
-					<posx>80</posx>
 					<posy>22</posy>
 					<width>80</width>
 					<height>20</height>
@@ -286,6 +287,7 @@
 					</control>
 					<control type="label">
 						<posx>50</posx>
+						<posy>0</posy>
 						<width>270</width>
 						<height>25</height>
 						<label>$INFO[ListItem.Plot]</label>
@@ -332,7 +334,6 @@
 					<control type="image">
 						<width>390</width>
 						<height>61</height>
-						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(12)</visible>
 					</control>
 					<control type="label">
@@ -344,6 +345,7 @@
 					</control>
 					<control type="label">
 						<posx>50</posx>
+						<posy>0</posy>
 						<width>270</width>
 						<height>25</height>
 						<textcolor>textfocus</textcolor>
@@ -424,12 +426,14 @@
 					</control>
 					<control type="label">
 						<posx>50</posx>
+						<posy>0</posy>
 						<width>605</width>
 						<height>40</height>
 						<label>$INFO[ListItem.Plot]</label>
 					</control>
 					<control type="label">
 						<posx>725</posx>
+						<posy>0</posy>
 						<width>500</width>
 						<height>40</height>
 						<align>right</align>
@@ -465,7 +469,6 @@
 					<control type="image">
 						<width>760</width>
 						<height>41</height>
-						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(13)</visible>
 					</control>
 					<control type="image">
@@ -477,6 +480,7 @@
 					</control>
 					<control type="label">
 						<posx>50</posx>
+						<posy>0</posy>
 						<width>630</width>
 						<height>40</height>
 						<textcolor>textfocus</textcolor>
@@ -484,6 +488,7 @@
 					</control>
 					<control type="label">
 						<posx>725</posx>
+						<posy>0</posy>
 						<width>500</width>
 						<height>40</height>
 						<align>right</align>
@@ -539,9 +544,9 @@
 					<posx>10</posx>
 					<posy>230</posy>
 					<width>290</width>
+					<height>25</height>
 					<label>$INFO[Container(13).ListItem.Title]</label>
 					<textcolor>heading2</textcolor>
-					<pauseatend>1000</pauseatend>
 				</control>
 				<control type="textbox">
 					<description>Description Value for TV Show</description>
@@ -576,8 +581,11 @@
 					<control type="image" id="1">
 						<width>40</width>
 						<height>29</height>
+						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="label" id="2">
+						<posx>10</posx>
+						<posy>0</posy>
 						<width>34</width>
 						<height>29</height>
 						<label>$INFO[ListItem.Plot]</label>
@@ -588,6 +596,7 @@
 					<control type="image" id="1">
 						<width>270</width>
 						<height>52</height>
+						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="label">
 						<posx>5</posx>
@@ -605,9 +614,9 @@
 					</control>
 					<control type="label" id="1">
 						<posx>94</posx>
+						<posy>0</posy>
 						<width>160</width>
 						<height>52</height>
-						<font>special12</font>
 						<label>$INFO[ListItem.ChannelName]</label>
 					</control>
 				</channellayout>
@@ -616,7 +625,6 @@
 					<control type="image" id="1">
 						<width>270</width>
 						<height>52</height>
-						<texture>buttons/fo_light.png</texture>
 					</control>
 					<control type="label">
 						<posx>5</posx>
@@ -634,9 +642,9 @@
 					</control>
 					<control type="label" id="1">
 						<posx>94</posx>
+						<posy>0</posy>
 						<width>160</width>
 						<height>52</height>
-						<font>special12</font>
 						<label>$INFO[ListItem.ChannelName]</label>
 					</control>
 				</focusedchannellayout>
@@ -774,13 +782,11 @@
 							<posx>220</posx>
 							<width>300</width>
 							<colordiffuse>33FFFFFF</colordiffuse>
-							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>940</posx>
 							<width>155</width>
 							<colordiffuse>33FFFFFF</colordiffuse>
-							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="image">
 							<posy>8</posy>
@@ -791,12 +797,14 @@
 						</control>
 						<control type="label">
 							<posx>50</posx>
+							<posy>0</posy>
 							<width>150</width>
 							<height>40</height>
 							<info>ListItem.ChannelName</info>
 						</control>
 						<control type="label">
 							<posx>370</posx>
+							<posy>0</posy>
 							<width>290</width>
 							<height>40</height>
 							<align>center</align>
@@ -804,6 +812,7 @@
 						</control>
 						<control type="label">
 							<posx>730</posx>
+							<posy>0</posy>
 							<width>400</width>
 							<height>40</height>
 							<align>center</align>
@@ -811,6 +820,7 @@
 						</control>
 						<control type="label">
 							<posx>1018</posx>
+							<posy>0</posy>
 							<width>170</width>
 							<height>40</height>
 							<align>center</align>
@@ -822,28 +832,24 @@
 							<posx>220</posx>
 							<width>300</width>
 							<colordiffuse>33FFFFFF</colordiffuse>
-							<texture>buttons/fo_light.png</texture>
 							<visible>!Control.HasFocus(14)</visible>
 						</control>
 						<control type="image">
 							<posx>940</posx>
 							<width>155</width>
 							<colordiffuse>33FFFFFF</colordiffuse>
-							<texture>buttons/fo_light.png</texture>
 							<visible>!Control.HasFocus(14)</visible>
 						</control>
 						<control type="image">
 							<posx>220</posx>
 							<width>300</width>
 							<colordiffuse>88FFFFFF</colordiffuse>
-							<texture>buttons/fo_light.png</texture>
 							<visible>Control.HasFocus(14)</visible>
 						</control>
 						<control type="image">
 							<posx>940</posx>
 							<width>155</width>
 							<colordiffuse>88FFFFFF</colordiffuse>
-							<texture>buttons/fo_light.png</texture>
 							<visible>Control.HasFocus(14)</visible>
 						</control>
 						<control type="image">
@@ -856,6 +862,7 @@
 						<control type="label">
 							<textcolor>textfocus</textcolor>
 							<posx>50</posx>
+							<posy>0</posy>
 							<width>150</width>
 							<height>40</height>
 							<info>ListItem.ChannelName</info>
@@ -863,6 +870,7 @@
 						<control type="label">
 							<textcolor>textfocus</textcolor>
 							<posx>370</posx>
+							<posy>0</posy>
 							<width>290</width>
 							<height>40</height>
 							<align>center</align>
@@ -871,6 +879,7 @@
 						<control type="label">
 							<textcolor>textfocus</textcolor>
 							<posx>730</posx>
+							<posy>0</posy>
 							<width>400</width>
 							<height>40</height>
 							<align>center</align>
@@ -879,6 +888,7 @@
 						<control type="label">
 							<textcolor>textfocus</textcolor>
 							<posx>1018</posx>
+							<posy>0</posy>
 							<width>150</width>
 							<height>40</height>
 							<align>center</align>
@@ -899,6 +909,7 @@
 					<posx>55</posx>
 					<posy>545</posy>
 					<width>1010</width>
+					<height>30</height>
 					<align>center</align>
 					<scroll>true</scroll>
 					<label>$INFO[PVR.NextTimer]</label>
@@ -968,13 +979,11 @@
 						<control type="image">
 							<width>250</width>
 							<colordiffuse>33FFFFFF</colordiffuse>
-							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>960</posx>
 							<width>140</width>
 							<colordiffuse>33FFFFFF</colordiffuse>
-							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="image">
 							<texture></texture>
@@ -986,18 +995,21 @@
 						</control>
 						<control type="label">
 							<posx>50</posx>
+							<posy>0</posy>
 							<width>190</width>
 							<height>35</height>
 							<info>ListItem.ChannelName</info>
 						</control>
 						<control type="label">
 							<posx>260</posx>
+							<posy>0</posy>
 							<width>650</width>
 							<height>35</height>
 							<info>ListItem.Label</info>
 						</control>
 						<control type="label">
 							<posx>950</posx>
+							<posy>0</posy>
 							<width>500</width>
 							<height>40</height>
 							<align>right</align>
@@ -1013,6 +1025,7 @@
 						</control>
 						<control type="label">
 							<posx>1005</posx>
+							<posy>0</posy>
 							<width>80</width>
 							<height>40</height>
 							<font>font10</font>
@@ -1029,6 +1042,7 @@
 						</control>
 						<control type="label">
 							<posx>1000</posx>
+							<posy>0</posy>
 							<width>80</width>
 							<height>40</height>
 							<font>font10</font>
@@ -1040,27 +1054,23 @@
 						<control type="image">
 							<width>250</width>
 							<colordiffuse>33FFFFFF</colordiffuse>
-							<texture>buttons/fo_light.png</texture>
 							<visible>!Control.HasFocus(17)</visible>
 						</control>
 						<control type="image">
 							<posx>960</posx>
 							<width>140</width>
 							<colordiffuse>33FFFFFF</colordiffuse>
-							<texture>buttons/fo_light.png</texture>
 							<visible>!Control.HasFocus(17)</visible>
 						</control>
 						<control type="image">
 							<width>250</width>
 							<colordiffuse>88FFFFFF</colordiffuse>
-							<texture>buttons/fo_light.png</texture>
 							<visible>Control.HasFocus(17)</visible>
 						</control>
 						<control type="image">
 							<posx>960</posx>
 							<width>140</width>
 							<colordiffuse>88FFFFFF</colordiffuse>
-							<texture>buttons/fo_light.png</texture>
 							<visible>Control.HasFocus(17)</visible>
 						</control>
 						<control type="image">
@@ -1073,12 +1083,14 @@
 						</control>
 						<control type="label">
 							<posx>50</posx>
+							<posy>0</posy>
 							<width>190</width>
 							<height>35</height>
 							<info>ListItem.ChannelName</info>
 						</control>
 						<control type="label">
 							<posx>260</posx>
+							<posy>0</posy>
 							<width>650</width>
 							<height>35</height>
 							<textcolor>textfocus</textcolor>
@@ -1086,6 +1098,7 @@
 						</control>
 						<control type="label">
 							<posx>950</posx>
+							<posy>0</posy>
 							<width>500</width>
 							<height>40</height>
 							<align>right</align>
@@ -1102,6 +1115,7 @@
 						</control>
 						<control type="label">
 							<posx>1005</posx>
+							<posy>0</posy>
 							<width>80</width>
 							<height>40</height>
 							<font>font10</font>
@@ -1118,6 +1132,7 @@
 						</control>
 						<control type="label">
 							<posx>1000</posx>
+							<posy>0</posy>
 							<width>80</width>
 							<height>40</height>
 							<font>font10</font>
@@ -1189,16 +1204,15 @@
 						<control type="image">
 							<width>300</width>
 							<colordiffuse>33FFFFFF</colordiffuse>
-							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>960</posx>
 							<width>140</width>
 							<colordiffuse>33FFFFFF</colordiffuse>
-							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="label">
 							<posx>150</posx>
+							<posy>0</posy>
 							<width>280</width>
 							<height>40</height>
 							<align>center</align>
@@ -1206,6 +1220,7 @@
 						</control>
 						<control type="label">
 							<posx>310</posx>
+							<posy>0</posy>
 							<width>640</width>
 							<height>40</height>
 							<info>ListItem.Label</info>
@@ -1220,6 +1235,7 @@
 						</control>
 						<control type="label">
 							<posx>1005</posx>
+							<posy>0</posy>
 							<width>80</width>
 							<height>40</height>
 							<font>font10</font>
@@ -1236,6 +1252,7 @@
 						</control>
 						<control type="label">
 							<posx>1000</posx>
+							<posy>0</posy>
 							<width>80</width>
 							<height>40</height>
 							<font>font10</font>
@@ -1254,31 +1271,28 @@
 						<control type="image">
 							<width>300</width>
 							<colordiffuse>AAFFFFFF</colordiffuse>
-							<texture>buttons/fo_light.png</texture>
 							<visible>!Control.HasFocus(15)</visible>
 						</control>
 						<control type="image">
 							<posx>960</posx>
 							<width>140</width>
 							<colordiffuse>AAFFFFFF</colordiffuse>
-							<texture>buttons/fo_light.png</texture>
 							<visible>!Control.HasFocus(15)</visible>
 						</control>
 						<control type="image">
 							<width>300</width>
 							<colordiffuse>88FFFFFF</colordiffuse>
-							<texture>buttons/fo_light.png</texture>
 							<visible>Control.HasFocus(15)</visible>
 						</control>
 						<control type="image">
 							<posx>960</posx>
 							<width>140</width>
 							<colordiffuse>88FFFFFF</colordiffuse>
-							<texture>buttons/fo_light.png</texture>
 							<visible>Control.HasFocus(15)</visible>
 						</control>
 						<control type="label">
 							<posx>150</posx>
+							<posy>0</posy>
 							<width>280</width>
 							<height>40</height>
 							<align>center</align>
@@ -1287,6 +1301,7 @@
 						</control>
 						<control type="label">
 							<posx>310</posx>
+							<posy>0</posy>
 							<width>640</width>
 							<height>40</height>
 							<textcolor>textfocus</textcolor>
@@ -1311,6 +1326,7 @@
 						</control>
 						<control type="label">
 							<posx>1005</posx>
+							<posy>0</posy>
 							<width>80</width>
 							<height>40</height>
 							<font>font10</font>
@@ -1327,6 +1343,7 @@
 						</control>
 						<control type="label">
 							<posx>1000</posx>
+							<posy>0</posy>
 							<width>80</width>
 							<height>40</height>
 							<font>font10</font>
@@ -1408,16 +1425,15 @@
 							<posx>100</posx>
 							<width>250</width>
 							<colordiffuse>33FFFFFF</colordiffuse>
-							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>960</posx>
 							<width>140</width>
 							<colordiffuse>33FFFFFF</colordiffuse>
-							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="label">
 							<posx>50</posx>
+							<posy>0</posy>
 							<width>100</width>
 							<height>40</height>
 							<align>center</align>
@@ -1433,12 +1449,14 @@
 						</control>
 						<control type="label">
 							<posx>150</posx>
+							<posy>0</posy>
 							<width>190</width>
 							<height>35</height>
 							<info>ListItem.ChannelName</info>
 						</control>
 						<control type="label">
 							<posx>360</posx>
+							<posy>0</posy>
 							<width>590</width>
 							<height>35</height>
 							<info>ListItem.Label</info>
@@ -1453,6 +1471,7 @@
 						</control>
 						<control type="label">
 							<posx>1005</posx>
+							<posy>0</posy>
 							<width>80</width>
 							<height>40</height>
 							<font>font10</font>
@@ -1469,6 +1488,7 @@
 						</control>
 						<control type="label">
 							<posx>1000</posx>
+							<posy>0</posy>
 							<width>80</width>
 							<height>40</height>
 							<font>font10</font>
@@ -1488,32 +1508,29 @@
 							<posx>100</posx>
 							<width>250</width>
 							<colordiffuse>AAFFFFFF</colordiffuse>
-							<texture>buttons/fo_light.png</texture>
 							<visible>!Control.HasFocus(16)</visible>
 						</control>
 						<control type="image">
 							<posx>960</posx>
 							<width>140</width>
 							<colordiffuse>AAFFFFFF</colordiffuse>
-							<texture>buttons/fo_light.png</texture>
 							<visible>!Control.HasFocus(16)</visible>
 						</control>
 						<control type="image">
 							<posx>100</posx>
 							<width>250</width>
 							<colordiffuse>88FFFFFF</colordiffuse>
-							<texture>buttons/fo_light.png</texture>
 							<visible>Control.HasFocus(16)</visible>
 						</control>
 						<control type="image">
 							<posx>960</posx>
 							<width>140</width>
 							<colordiffuse>88FFFFFF</colordiffuse>
-							<texture>buttons/fo_light.png</texture>
 							<visible>Control.HasFocus(16)</visible>
 						</control>
 						<control type="label">
 							<posx>50</posx>
+							<posy>0</posy>
 							<width>100</width>
 							<height>40</height>
 							<align>center</align>
@@ -1530,6 +1547,7 @@
 						</control>
 						<control type="label">
 							<posx>150</posx>
+							<posy>0</posy>
 							<width>190</width>
 							<height>35</height>
 							<textcolor>textfocus</textcolor>
@@ -1537,6 +1555,7 @@
 						</control>
 						<control type="label">
 							<posx>360</posx>
+							<posy>0</posy>
 							<width>590</width>
 							<height>35</height>
 							<textcolor>textfocus</textcolor>
@@ -1561,6 +1580,7 @@
 						</control>
 						<control type="label">
 							<posx>1005</posx>
+							<posy>0</posy>
 							<width>80</width>
 							<height>40</height>
 							<font>font10</font>
@@ -1577,6 +1597,7 @@
 						</control>
 						<control type="label">
 							<posx>1000</posx>
+							<posy>0</posy>
 							<width>80</width>
 							<height>40</height>
 							<font>font10</font>

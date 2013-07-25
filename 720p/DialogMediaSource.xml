@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol>10</defaultcontrol>
 	<coordinates>
 		<system>1</system>
@@ -20,6 +19,7 @@
 			<posx>40</posx>
 			<posy>20</posy>
 			<width>720</width>
+			<height>30</height>
 			<font>font13_title</font>
 			<label>$LOCALIZE[13406]</label>
 			<align>center</align>
@@ -30,6 +30,7 @@
 			<posx>20</posx>
 			<posy>65</posy>
 			<width>760</width>
+			<height>30</height>
 			<align>center</align>
 			<label>1021</label>
 			<textcolor>heading2</textcolor>
@@ -48,8 +49,11 @@
 			<itemlayout height="45">
 				<control type="image">
 					<width>525</width>
+					<texture>buttons/nf_light.png</texture>
 				</control>
 				<control type="label">
+					<posx>10</posx>
+					<posy>0</posy>
 					<width>490</width>
 					<height>40</height>
 					<info>ListItem.Label</info>
@@ -59,15 +63,17 @@
 				<control type="image">
 					<width>525</width>
 					<visible>!Control.HasFocus(10)</visible>
+					<texture>buttons/nf_light.png</texture>
 				</control>
 				<control type="image">
 					<width>525</width>
 					<height>41</height>
 					<visible>Control.HasFocus(10)</visible>
-					<texture>buttons/fo_light.png</texture>
 				</control>
 				<control type="label">
 					<textcolor>textfocus</textcolor>
+					<posx>10</posx>
+					<posy>0</posy>
 					<width>490</width>
 					<height>40</height>
 					<info>ListItem.Label</info>
@@ -129,6 +135,7 @@
 			<posx>30</posx>
 			<posy>335</posy>
 			<width>740</width>
+			<height>30</height>
 			<align>center</align>
 			<label>1022</label>
 			<textcolor>heading2</textcolor>
@@ -139,6 +146,7 @@
 			<posy>370</posy>
 			<width>740</width>
 			<align>center</align>
+			<label></label>
 			<onup>10</onup>
 			<onleft>12</onleft>
 			<onright>19</onright>

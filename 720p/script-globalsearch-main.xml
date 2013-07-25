@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
 	<allowoverlay>false</allowoverlay>
 	<defaultcontrol>9000</defaultcontrol>
 	<coordinates>
@@ -261,7 +260,6 @@
 						<control type="image">
 							<width>260</width>
 							<height>61</height>
-							<texture>buttons/fo_light.png</texture>
 							<animation effect="fade" start="100" end="50" time="100" condition="!Control.HasFocus(9000)">Conditional</animation>
 						</control>
 						<control type="label">
@@ -353,6 +351,7 @@
 					<posx>300</posx>
 					<posy>20</posy>
 					<width>740</width>
+					<height>30</height>
 					<font>font16</font>
 					<label>$INFO[Container(9000).ListItem.Label]</label>
 					<visible>Control.IsVisible(198)</visible>
@@ -362,6 +361,7 @@
 					<posx>300</posx>
 					<posy>20</posy>
 					<width>740</width>
+					<height>30</height>
 					<font>font16</font>
 					<label>$INFO[Control.GetLabel(190)] $INFO[Control.GetLabel(191)]</label>
 					<textcolor>heading1</textcolor>
@@ -371,7 +371,6 @@
 					<posx>2000</posx>
 					<posy>2000</posy>
 					<width>100</width>
-					<height>0</height>
 					<font></font>
 					<textcolor></textcolor>
 				</control>
@@ -379,7 +378,6 @@
 					<posx>2000</posx>
 					<posy>2000</posy>
 					<width>100</width>
-					<height>0</height>
 					<font></font>
 				</control>
 				<control type="label" id="199">
@@ -409,6 +407,7 @@
 					<posy>2000</posy>
 					<width>10</width>
 					<height>10</height>
+					<label></label>
 					<font>font10</font>
 					<textcolor>FFFFFFFF</textcolor>
 					<align>center</align>
@@ -427,7 +426,6 @@
 							<posx>2000</posx>
 							<posy>2000</posy>
 							<width>100</width>
-							<height>0</height>
 							<font></font>
 							<textcolor></textcolor>
 						</control>
@@ -448,6 +446,7 @@
 								<control type="image">
 									<width>370</width>
 									<height>125</height>
+									<texture>buttons/nf_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -521,7 +520,6 @@
 								<control type="image">
 									<width>370</width>
 									<height>125</height>
-									<texture>buttons/fo_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -614,7 +612,6 @@
 							<posx>2000</posx>
 							<posy>2000</posy>
 							<width>100</width>
-							<height>0</height>
 							<font></font>
 							<textcolor></textcolor>
 						</control>
@@ -635,6 +632,7 @@
 								<control type="image">
 									<width>370</width>
 									<height>170</height>
+									<texture>buttons/nf_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -680,7 +678,6 @@
 								<control type="image">
 									<width>370</width>
 									<height>170</height>
-									<texture>buttons/fo_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -743,7 +740,6 @@
 							<posx>2000</posx>
 							<posy>2000</posy>
 							<width>100</width>
-							<height>0</height>
 							<font></font>
 							<textcolor></textcolor>
 						</control>
@@ -764,6 +760,7 @@
 								<control type="image">
 									<width>370</width>
 									<height>125</height>
+									<texture>buttons/nf_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -792,7 +789,6 @@
 								<control type="image">
 									<width>370</width>
 									<height>125</height>
-									<texture>buttons/fo_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -837,7 +833,6 @@
 							<posx>2000</posx>
 							<posy>2000</posy>
 							<width>100</width>
-							<height>0</height>
 							<font></font>
 							<textcolor></textcolor>
 						</control>
@@ -858,6 +853,7 @@
 								<control type="image">
 									<width>750</width>
 									<height>101</height>
+									<texture>buttons/nf_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -901,7 +897,6 @@
 								<control type="image">
 									<width>750</width>
 									<height>101</height>
-									<texture>buttons/fo_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -962,7 +957,6 @@
 							<posx>2000</posx>
 							<posy>2000</posy>
 							<width>100</width>
-							<height>0</height>
 							<font></font>
 							<textcolor></textcolor>
 						</control>
@@ -983,6 +977,7 @@
 								<control type="image">
 									<width>370</width>
 									<height>101</height>
+									<texture>buttons/nf_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -1032,7 +1027,6 @@
 								<control type="image">
 									<width>370</width>
 									<height>101</height>
-									<texture>buttons/fo_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -1099,7 +1093,6 @@
 							<posx>2000</posx>
 							<posy>2000</posy>
 							<width>100</width>
-							<height>0</height>
 							<font></font>
 							<textcolor></textcolor>
 						</control>
@@ -1120,6 +1113,7 @@
 								<control type="image">
 									<width>750</width>
 									<height>101</height>
+									<texture>buttons/nf_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -1155,7 +1149,6 @@
 								<control type="image">
 									<width>750</width>
 									<height>101</height>
-									<texture>buttons/fo_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -1208,7 +1201,6 @@
 							<posx>2000</posx>
 							<posy>2000</posy>
 							<width>100</width>
-							<height>0</height>
 							<font></font>
 							<textcolor></textcolor>
 						</control>
@@ -1229,6 +1221,7 @@
 								<control type="image">
 									<width>750</width>
 									<height>101</height>
+									<texture>buttons/nf_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -1265,7 +1258,6 @@
 								<control type="image">
 									<width>750</width>
 									<height>101</height>
-									<texture>buttons/fo_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -1319,7 +1311,6 @@
 							<posx>2000</posx>
 							<posy>2000</posy>
 							<width>100</width>
-							<height>0</height>
 							<font></font>
 							<textcolor></textcolor>
 						</control>
@@ -1340,6 +1331,7 @@
 								<control type="image">
 									<width>370</width>
 									<height>101</height>
+									<texture>buttons/nf_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>
@@ -1381,7 +1373,6 @@
 								<control type="image">
 									<width>370</width>
 									<height>101</height>
-									<texture>buttons/fo_light.png</texture>
 								</control>
 								<control type="image">
 									<posx>5</posx>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol>2</defaultcontrol>
 	<coordinates>
 		<system>1</system>
@@ -21,13 +20,13 @@
 				<posx>40</posx>
 				<posy>20</posy>
 				<width>720</width>
+				<height>30</height>
 				<font>font13_title</font>
 				<label>$LOCALIZE[31048]</label>
 				<align>center</align>
 				<textcolor>heading1</textcolor>
 			</control>
 			<control type="label" id="4">
-				<height>0</height>
 				<description>No Settings Label</description>
 				<posx>20</posx>
 				<posy>180</posy>
@@ -49,8 +48,11 @@
 				<itemlayout height="45" width="720">
 					<control type="image">
 						<width>720</width>
+						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="label">
+						<posx>10</posx>
+						<posy>0</posy>
 						<width>700</width>
 						<height>40</height>
 						<label>$VAR[MainItemLabel]</label>
@@ -59,14 +61,16 @@
 				<focusedlayout height="45" width="720">
 					<control type="image">
 						<width>720</width>
+						<texture>buttons/nf_light.png</texture>
 						<visible>!Control.HasFocus(2)</visible>
 					</control>
 					<control type="image">
 						<width>720</width>
-						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(2)</visible>
 					</control>
 					<control type="label">
+						<posx>10</posx>
+						<posy>0</posy>
 						<width>700</width>
 						<height>40</height>
 						<textcolor>textfocus</textcolor>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">5</defaultcontrol>
 	<allowoverlay>false</allowoverlay>
 	<controls>
@@ -22,6 +21,7 @@
 					<posx>210</posx>
 					<posy>50</posy>
 					<width>1030</width>
+					<height>30</height>
 					<font>font24_title</font>
 					<label>$INFO[Listitem.Album]</label>
 					<align>center</align>
@@ -32,6 +32,7 @@
 					<posx>210</posx>
 					<posy>50</posy>
 					<width>1030</width>
+					<height>30</height>
 					<font>font24_title</font>
 					<label>$INFO[Listitem.Artist]</label>
 					<align>center</align>
@@ -61,6 +62,7 @@
 						</control>
 						<control type="label">
 							<posx>0</posx>
+							<posy>0</posy>
 							<width>675</width>
 							<height>380</height>
 							<font>font30_title</font>
@@ -93,14 +95,18 @@
 						<itemlayout height="30">
 							<control type="label">
 								<posx>140</posx>
+								<posy>0</posy>
 								<width>160</width>
+								<height>30</height>
 								<align>right</align>
 								<textcolor>heading2</textcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
 								<posx>150</posx>
+								<posy>0</posy>
 								<width>500</width>
+								<height>30</height>
 								<info>ListItem.Label2</info>
 							</control>
 						</itemlayout>
@@ -109,18 +115,21 @@
 								<width>640</width>
 								<height>30</height>
 								<visible>Control.HasFocus(49)</visible>
-								<texture>buttons/fo_light.png</texture>
 							</control>
 							<control type="label">
 								<posx>140</posx>
+								<posy>0</posy>
 								<width>160</width>
+								<height>30</height>
 								<align>right</align>
 								<textcolor>heading2</textcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
 								<posx>150</posx>
+								<posy>0</posy>
 								<width>500</width>
+								<height>30</height>
 								<textcolor>textfocus</textcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -207,14 +216,18 @@
 						<itemlayout height="30">
 							<control type="label">
 								<posx>165</posx>
+								<posy>0</posy>
 								<width>160</width>
+								<height>30</height>
 								<align>right</align>
 								<textcolor>heading2</textcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
 								<posx>175</posx>
+								<posy>0</posy>
 								<width>465</width>
+								<height>30</height>
 								<info>ListItem.Label2</info>
 							</control>
 						</itemlayout>
@@ -223,18 +236,21 @@
 								<width>640</width>
 								<height>30</height>
 								<visible>Control.HasFocus(49)</visible>
-								<texture>buttons/fo_light.png</texture>
 							</control>
 							<control type="label">
 								<posx>165</posx>
+								<posy>0</posy>
 								<width>160</width>
+								<height>30</height>
 								<align>right</align>
 								<textcolor>heading2</textcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
 								<posx>175</posx>
+								<posy>0</posy>
 								<width>465</width>
+								<height>30</height>
 								<textcolor>textfocus</textcolor>
 								<info>ListItem.Label2</info>
 							</control>
@@ -344,14 +360,18 @@
 					<itemlayout condition="Container.Content(Albums)" height="40" width="430">
 						<control type="image">
 							<width>430</width>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="label">
+							<posx>10</posx>
+							<posy>0</posy>
 							<width>410</width>
 							<height>40</height>
 							<label>([COLOR=heading3][B]$INFO[ListItem.TrackNumber][/B][/COLOR]) - $INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
 							<posx>420</posx>
+							<posy>0</posy>
 							<width>200</width>
 							<height>40</height>
 							<align>right</align>
@@ -362,14 +382,16 @@
 						<control type="image">
 							<width>430</width>
 							<visible>!Control.HasFocus(50)</visible>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<width>430</width>
 							<visible>Control.HasFocus(50)</visible>
-							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="label">
 							<textcolor>textfocus</textcolor>
+							<posx>10</posx>
+							<posy>0</posy>
 							<width>410</width>
 							<height>40</height>
 							<label>([COLOR=heading3][B]$INFO[ListItem.TrackNumber][/B][/COLOR]) - $INFO[ListItem.Label]</label>
@@ -377,6 +399,7 @@
 						<control type="label">
 							<textcolor>textfocus</textcolor>
 							<posx>420</posx>
+							<posy>0</posy>
 							<width>200</width>
 							<height>40</height>
 							<align>right</align>
@@ -386,8 +409,11 @@
 					<itemlayout condition="Container.Content(Artists)" height="40" width="430">
 						<control type="image">
 							<width>430</width>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="label">
+							<posx>10</posx>
+							<posy>0</posy>
 							<width>410</width>
 							<height>40</height>
 							<label>$VAR[MainItemLabel]</label>
@@ -397,14 +423,16 @@
 						<control type="image">
 							<width>430</width>
 							<visible>!Control.HasFocus(50)</visible>
+							<texture>buttons/nf_light.png</texture>
 						</control>
 						<control type="image">
 							<width>430</width>
 							<visible>Control.HasFocus(50)</visible>
-							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="label">
 							<textcolor>textfocus</textcolor>
+							<posx>10</posx>
+							<posy>0</posy>
 							<width>410</width>
 							<height>40</height>
 							<label>$VAR[MainItemLabel]</label>
@@ -425,7 +453,6 @@
 					<ondown>49</ondown>
 					<control type="button" id="5">
 						<description>Cast/Review</description>
-						<textoffsetx>20</textoffsetx>
 						<align>center</align>
 						<width>170</width>
 						<font>font12_title</font>
@@ -433,7 +460,6 @@
 					</control>
 					<control type="button" id="6">
 						<description>Refresh</description>
-						<textoffsetx>20</textoffsetx>
 						<align>center</align>
 						<width>170</width>
 						<font>font12_title</font>
@@ -441,7 +467,6 @@
 					</control>
 					<control type="button" id="10">
 						<description>Get Thumb</description>
-						<textoffsetx>20</textoffsetx>
 						<align>center</align>
 						<width>170</width>
 						<font>font12_title</font>
@@ -449,7 +474,6 @@
 					</control>
 					<control type="button" id="12">
 						<description>Get Fanart</description>
-						<textoffsetx>20</textoffsetx>
 						<align>center</align>
 						<width>170</width>
 						<font>font12_title</font>

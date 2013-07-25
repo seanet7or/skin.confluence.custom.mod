@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol>3</defaultcontrol>
 	<allowoverlay>false</allowoverlay>
 	<include condition="!Skin.HasSetting(InitialSetUpRun)">DefaultInitialSetup</include>
@@ -51,6 +50,7 @@
 				<posx>300</posx>
 				<posy>20</posy>
 				<width>740</width>
+				<height>30</height>
 				<font>font16</font>
 				<label>$INFO[Control.GetLabel(2)] - $LOCALIZE[5]</label>
 			</control>
@@ -80,7 +80,6 @@
 			<description>Default Category Button</description>
 			<height>60</height>
 			<width>260</width>
-			<textoffsetx>20</textoffsetx>
 			<align>right</align>
 			<font>font13_title</font>
 			<texturenofocus border="5"></texturenofocus>
@@ -107,12 +106,13 @@
 			<width>1280</width>
 			<description>separator image</description>
 			<height>2</height>
+			<texture>buttons/nf_light.png</texture>
 		</control>
 		<control type="label" id="2">
 			<description>Fake Label so we can pass it value down to the one below</description>
 			<posx>0</posx>
+			<posy>0</posy>
 			<width>0</width>
-			<height>0</height>
 			<font></font>
 			<visible>false</visible>
 		</control>

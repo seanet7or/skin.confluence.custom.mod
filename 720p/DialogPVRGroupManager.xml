@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">29</defaultcontrol>
 	<controls>
 		<control type="group">
@@ -21,6 +20,7 @@
 					<posx>160</posx>
 					<posy>40</posy>
 					<width>1080</width>
+					<height>30</height>
 					<font>font24_title</font>
 					<label>19143</label>
 					<align>center</align>
@@ -33,6 +33,7 @@
 					<control type="label">
 						<description>name label</description>
 						<posx>0</posx>
+						<posy>0</posy>
 						<width>340</width>
 						<height>70</height>
 						<label>31506</label>
@@ -43,6 +44,7 @@
 						<posy>75</posy>
 						<width>340</width>
 						<height>460</height>
+						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="list" id="13">
 						<posx>5</posx>
@@ -58,8 +60,11 @@
 						<itemlayout height="45">
 							<control type="image">
 								<width>330</width>
+								<texture>buttons/nf_light.png</texture>
 							</control>
 							<control type="label">
+								<posx>10</posx>
+								<posy>0</posy>
 								<width>310</width>
 								<height>40</height>
 								<info>ListItem.Label</info>
@@ -68,14 +73,16 @@
 						<focusedlayout height="45">
 							<control type="image">
 								<width>330</width>
+								<texture>buttons/nf_light.png</texture>
 								<visible>!Control.HasFocus(13)</visible>
 							</control>
 							<control type="image">
 								<width>330</width>
-								<texture>buttons/fo_light.png</texture>
 								<visible>Control.HasFocus(13)</visible>
 							</control>
 							<control type="label">
+								<posx>10</posx>
+								<posy>0</posy>
 								<width>310</width>
 								<height>40</height>
 								<textcolor>textfocus</textcolor>
@@ -100,6 +107,7 @@
 					<control type="label" id="21">
 						<description>name label</description>
 						<posx>0</posx>
+						<posy>0</posy>
 						<width>340</width>
 						<height>70</height>
 						<align>center</align>
@@ -109,6 +117,7 @@
 						<posy>75</posy>
 						<width>340</width>
 						<height>460</height>
+						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="list" id="11">
 						<posx>5</posx>
@@ -124,6 +133,7 @@
 						<itemlayout height="45">
 							<control type="image">
 								<width>330</width>
+								<texture>buttons/nf_light.png</texture>
 							</control>
 							<control type="image">
 								<width>32</width>
@@ -134,6 +144,7 @@
 							</control>
 							<control type="label">
 								<posx>40</posx>
+								<posy>0</posy>
 								<width>280</width>
 								<height>40</height>
 								<label>$INFO[ListItem.ChannelNumber,(,) - ]$INFO[ListItem.ChannelName]</label>
@@ -142,11 +153,11 @@
 						<focusedlayout height="45">
 							<control type="image">
 								<width>330</width>
+								<texture>buttons/nf_light.png</texture>
 								<visible>!Control.HasFocus(11)</visible>
 							</control>
 							<control type="image">
 								<width>330</width>
-								<texture>buttons/fo_light.png</texture>
 								<visible>Control.HasFocus(11)</visible>
 							</control>
 							<control type="image">
@@ -158,6 +169,7 @@
 							</control>
 							<control type="label">
 								<posx>40</posx>
+								<posy>0</posy>
 								<width>280</width>
 								<height>40</height>
 								<textcolor>textfocus</textcolor>
@@ -182,6 +194,7 @@
 					<control type="label" id="22">
 						<description>name label</description>
 						<posx>0</posx>
+						<posy>0</posy>
 						<width>340</width>
 						<height>70</height>
 						<align>center</align>
@@ -191,6 +204,7 @@
 						<posy>75</posy>
 						<width>340</width>
 						<height>460</height>
+						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="list" id="12">
 						<posx>5</posx>
@@ -206,6 +220,7 @@
 						<itemlayout height="45">
 							<control type="image">
 								<width>330</width>
+								<texture>buttons/nf_light.png</texture>
 							</control>
 							<control type="image">
 								<width>32</width>
@@ -216,6 +231,7 @@
 							</control>
 							<control type="label">
 								<posx>40</posx>
+								<posy>0</posy>
 								<width>280</width>
 								<height>40</height>
 								<label>$INFO[ListItem.ChannelNumber,(,) - ]$INFO[ListItem.ChannelName]</label>
@@ -224,11 +240,11 @@
 						<focusedlayout height="45">
 							<control type="image">
 								<width>330</width>
+								<texture>buttons/nf_light.png</texture>
 								<visible>!Control.HasFocus(12)</visible>
 							</control>
 							<control type="image">
 								<width>330</width>
-								<texture>buttons/fo_light.png</texture>
 								<visible>Control.HasFocus(12)</visible>
 							</control>
 							<control type="image">
@@ -240,6 +256,7 @@
 							</control>
 							<control type="label">
 								<posx>40</posx>
+								<posy>0</posy>
 								<width>280</width>
 								<height>40</height>
 								<textcolor>textfocus</textcolor>
@@ -272,7 +289,6 @@
 					<control type="button" id="26">
 						<description>Add Group</description>
 						<width>230</width>
-						<textoffsetx>20</textoffsetx>
 						<align>center</align>
 						<width>170</width>
 						<font>font12_title</font>
@@ -281,7 +297,6 @@
 					<control type="button" id="27">
 						<description>Rename Group</description>
 						<width>230</width>
-						<textoffsetx>20</textoffsetx>
 						<align>center</align>
 						<width>170</width>
 						<font>font12_title</font>
@@ -290,7 +305,6 @@
 					<control type="button" id="28">
 						<description>Delete Group</description>
 						<width>230</width>
-						<textoffsetx>20</textoffsetx>
 						<align>center</align>
 						<width>170</width>
 						<font>font12_title</font>
@@ -299,7 +313,6 @@
 					<control type="button" id="29">
 						<description>OK</description>
 						<width>230</width>
-						<textoffsetx>20</textoffsetx>
 						<align>center</align>
 						<width>170</width>
 						<font>font12_title</font>
@@ -310,10 +323,6 @@
 		</control>
 		<include>UserLocalInfo</include>
 		<control type="label" id="20">
-			<width>1280</width>
-			<posy>60</posy>
-			<posx>80</posx>
-			<height>0</height>
 			<description>Fake Label used to pass on name label</description>
 			<visible>false</visible>
 		</control>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<allowoverlay>false</allowoverlay>
 	<include condition="!Skin.HasSetting(InitialSetUpRun)">DefaultInitialSetup</include>
@@ -32,6 +31,7 @@
 			<posy>-20</posy>
 			<width>1</width>
 			<height>1</height>
+			<label></label>
 			<font></font>
 			<texturefocus></texturefocus>
 			<texturenofocus></texturenofocus>
@@ -76,7 +76,6 @@
 				<posy>0</posy>
 				<height>35</height>
 				<width>145</width>
-				<textoffsetx>10</textoffsetx>
 				<font>font12</font>
 				<texturefocus flipy="true" border="0,2,0,2">home/sub-fo_light.png</texturefocus>
 				<texturenofocus flipy="true" border="0,2,0,2">home/sub-nf_light.png</texturenofocus>
@@ -119,6 +118,7 @@
 						<posy>2</posy>
 						<width>30</width>
 						<height>30</height>
+						<label></label>
 						<texturefocus>OSDPrevTrackFO.png</texturefocus>
 						<texturenofocus>OSDPrevTrackNF.png</texturenofocus>
 						<onleft>612</onleft>
@@ -133,6 +133,7 @@
 						<posy>2</posy>
 						<width>30</width>
 						<height>30</height>
+						<label></label>
 						<texturefocus>OSDRewindFO.png</texturefocus>
 						<texturenofocus>OSDRewindNF.png</texturenofocus>
 						<onleft>601</onleft>
@@ -160,6 +161,7 @@
 						<posy>2</posy>
 						<width>30</width>
 						<height>30</height>
+						<label></label>
 						<texturefocus>OSDStopFO.png</texturefocus>
 						<texturenofocus>OSDStopNF.png</texturenofocus>
 						<onleft>603</onleft>
@@ -175,6 +177,7 @@
 						<posy>2</posy>
 						<width>30</width>
 						<height>30</height>
+						<label></label>
 						<texturefocus>OSDForwardFO.png</texturefocus>
 						<texturenofocus>OSDForwardNF.png</texturenofocus>
 						<onleft>604</onleft>
@@ -189,6 +192,7 @@
 						<posy>2</posy>
 						<width>30</width>
 						<height>30</height>
+						<label></label>
 						<texturefocus>OSDNextTrackFO.png</texturefocus>
 						<texturenofocus>OSDNextTrackNF.png</texturenofocus>
 						<onleft>605</onleft>
@@ -203,6 +207,7 @@
 						<posy>2</posy>
 						<width>30</width>
 						<height>30</height>
+						<label></label>
 						<texturefocus>OSDVolUpFO.png</texturefocus>
 						<texturenofocus>OSDVolUpNF.png</texturenofocus>
 						<onleft>606</onleft>
@@ -219,6 +224,7 @@
 						<posy>2</posy>
 						<width>30</width>
 						<height>30</height>
+						<label></label>
 						<texturefocus>OSDVolDownFO.png</texturefocus>
 						<texturenofocus>OSDVolDownNF.png</texturenofocus>
 						<onleft>607</onleft>
@@ -235,6 +241,7 @@
 						<posy>2</posy>
 						<width>30</width>
 						<height>30</height>
+						<label></label>
 						<texturefocus>lastfm/lastfm-love-focus.png</texturefocus>
 						<texturenofocus>lastfm/lastfm-love-nofocus.png</texturenofocus>
 						<onleft>608</onleft>
@@ -252,6 +259,7 @@
 						<posy>2</posy>
 						<width>30</width>
 						<height>30</height>
+						<label></label>
 						<texturefocus>lastfm/lastfm-hate-focus.png</texturefocus>
 						<texturenofocus>lastfm/lastfm-hate-nofocus.png</texturenofocus>
 						<onleft>609</onleft>
@@ -271,6 +279,7 @@
 						<posy>2</posy>
 						<width>30</width>
 						<height>30</height>
+						<label></label>
 						<texturefocus>OSDChannelUPFO.png</texturefocus>
 						<texturenofocus>OSDChannelUPNF.png</texturenofocus>
 						<onleft>612</onleft>
@@ -285,6 +294,7 @@
 						<posy>2</posy>
 						<width>30</width>
 						<height>30</height>
+						<label></label>
 						<texturefocus>OSDChannelDownFO.png</texturefocus>
 						<texturenofocus>OSDChannelDownNF.png</texturenofocus>
 						<onleft>601</onleft>
@@ -299,6 +309,7 @@
 						<posy>2</posy>
 						<width>30</width>
 						<height>30</height>
+						<label></label>
 						<texturefocus>OSDStopFO.png</texturefocus>
 						<texturenofocus>OSDStopNF.png</texturenofocus>
 						<onleft>602</onleft>
@@ -329,6 +340,7 @@
 						<posy>2</posy>
 						<width>30</width>
 						<height>30</height>
+						<label></label>
 						<texturefocus>OSDVolUpFO.png</texturefocus>
 						<texturenofocus>OSDVolUpNF.png</texturenofocus>
 						<onleft>604</onleft>
@@ -345,6 +357,7 @@
 						<posy>2</posy>
 						<width>30</width>
 						<height>30</height>
+						<label></label>
 						<texturefocus>OSDVolDownFO.png</texturefocus>
 						<texturenofocus>OSDVolDownNF.png</texturenofocus>
 						<onleft>605</onleft>
@@ -361,6 +374,7 @@
 						<posy>2</posy>
 						<width>30</width>
 						<height>30</height>
+						<label></label>
 						<texturefocus>OSDRecordOffFO.png</texturefocus>
 						<texturenofocus>OSDRecordOffNF.png</texturenofocus>
 						<onleft>606</onleft>
@@ -383,7 +397,6 @@
 				<posy>0</posy>
 				<height>35</height>
 				<width>160</width>
-				<textoffsetx>10</textoffsetx>
 				<font>font12</font>
 				<texturefocus flipy="true" border="0,2,0,2">home/sub-fo_light.png</texturefocus>
 				<texturenofocus flipy="true" border="0,2,0,2">home/sub-nf_light.png</texturenofocus>
@@ -549,6 +562,7 @@
 				<itemlayout height="60" width="340">
 					<control type="label">
 						<posx>170</posx>
+						<posy>0</posy>
 						<width>340</width>
 						<height>60</height>
 						<font>font_MainMenu</font>
@@ -567,6 +581,7 @@
 					</control>
 					<control type="label">
 						<posx>170</posx>
+						<posy>0</posy>
 						<width>330</width>
 						<height>60</height>
 						<font>font_MainMenu</font>
@@ -960,25 +975,27 @@
 			<control type="fadelabel" id="1">
 				<description>Next Five Songs</description>
 				<posx>100</posx>
+				<posy>0</posy>
 				<height>30</height>
 				<width>1045</width>
 				<scrollout>true</scrollout>
 				<pauseatend>200</pauseatend>
 				<label>$VAR[NextFiveSongScroller]</label>
 				<font>font12</font>
-				<textoffsetx>20</textoffsetx>
+				<textoffsetx>10</textoffsetx>
 				<visible>!Skin.HasSetting(AutoHidePowerBtn) + Player.HasAudio + !IsEmpty(MusicPlayer.offset(1).Artist) + !Skin.HasSetting(HideNextSongsInfo)</visible>
 			</control>
 			<control type="fadelabel" id="1">
 				<description>Next Five Songs</description>
 				<posx>45</posx>
+				<posy>0</posy>
 				<height>30</height>
 				<width>1100</width>
 				<scrollout>true</scrollout>
 				<pauseatend>200</pauseatend>
 				<label>$VAR[NextFiveSongScroller]</label>
 				<font>font12</font>
-				<textoffsetx>20</textoffsetx>
+				<textoffsetx>10</textoffsetx>
 				<visible>Skin.HasSetting(AutoHidePowerBtn) + Player.HasAudio + !IsEmpty(MusicPlayer.offset(1).Artist) + !Skin.HasSetting(HideNextSongsInfo)</visible>
 			</control>
 		</control>

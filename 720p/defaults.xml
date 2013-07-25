@@ -57,35 +57,33 @@
 		<bordertexture></bordertexture>
 		<posx>0</posx>
 		<posy>0</posy>
-		<texture>buttons/nf_light.png</texture>
+		<texture>buttons/fo_light.png</texture>
 		<colorkey>0</colorkey>
 	</default>
 	<default type="label">
-		<textcolor>textnofocus</textcolor>
 		<wrapmultiline>false</wrapmultiline>
-		<width>750</width>
+		<width>1280</width>
 		<selectedcolor>itemselected</selectedcolor>
 		<scroll>false</scroll>
-		<height>30</height>
+		<height>0</height>
 		<angle>0</angle>
 		<align>left</align>
 		<aligny>center</aligny>
-		<posx>10</posx>
-		<posy>0</posy>
+		<textcolor>textnofocus</textcolor>
+		<posx>80</posx>
+		<posy>60</posy>
 		<label></label>
 		<font>font13</font>
 		<disabledcolor>textdisabled</disabledcolor>
 	</default>
 	<default type="fadelabel">
-		<width>400</width>
-		<height>25</height>
-		<label>$VAR[NextFiveSongScroller]</label>
+		<height>720</height>
+		<width>1280</width>
 		<scrollout>false</scrollout>
 		<scrollspeed>60</scrollspeed>
-		<textoffsetx>10</textoffsetx>
-		<pauseatend>2000</pauseatend>
-		<posx>160</posx>
-		<posy>0</posy>
+		<pauseatend>1000</pauseatend>
+		<posx>80</posx>
+		<posy>60</posy>
 		<font>font13</font>
 		<textcolor>textnofocus</textcolor>
 		<disabledcolor>textdisabled</disabledcolor>
@@ -97,7 +95,6 @@
 		<textoffsety>0</textoffsety>
 		<angle>0</angle>
 		<align>left</align>
-		<label></label>
 		<posx>300</posx>
 		<posy>200</posy>
 		<width>750</width>
@@ -107,7 +104,7 @@
 		<font>font13</font>
 		<textcolor>textnofocus</textcolor>
 		<disabledcolor>textdisabled</disabledcolor>
-		<textoffsetx>7</textoffsetx>
+		<textoffsetx>10</textoffsetx>
 		<aligny>center</aligny>
 		<pulseonselect>false</pulseonselect>
 	</default>
@@ -168,14 +165,13 @@
 		<textcolor>textnofocus</textcolor>
 		<disabledcolor>textdisabled</disabledcolor>
 		<subtype>page</subtype>
-		<textoffsetx>-5</textoffsetx>
+		<textoffsetx>10</textoffsetx>
 		<textoffsety>0</textoffsety>
 		<aligny></aligny>
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="spincontrolex">
 		<focusedcolor>textfocus</focusedcolor>
-		<label></label>
 		<posx>0</posx>
 		<posy>0</posy>
 		<width>300</width>
@@ -191,7 +187,7 @@
 		<font>font13</font>
 		<textcolor>textnofocus</textcolor>
 		<disabledcolor>textdisabled</disabledcolor>
-		<textoffsetx>7</textoffsetx>
+		<textoffsetx>10</textoffsetx>
 		<aligny>center</aligny>
 		<reverse>true</reverse>
 		<pulseonselect>false</pulseonselect>
@@ -213,7 +209,7 @@
 		<font>font13</font>
 		<textcolor>textnofocus</textcolor>
 		<disabledcolor>textdisabled</disabledcolor>
-		<textoffsetx>7</textoffsetx>
+		<textoffsetx>10</textoffsetx>
 		<aligny>center</aligny>
 		<pulseonselect>false</pulseonselect>
 	</default>
@@ -256,7 +252,7 @@
 		<posy>0</posy>
 		<posx>0</posx>
 		<height>40</height>
-		<textoffsetx>7</textoffsetx>
+		<textoffsetx>10</textoffsetx>
 		<aligny>center</aligny>
 		<texturefocus>buttons/fo_light.png</texturefocus>
 		<texturenofocus>buttons/nf_light.png</texturenofocus>
@@ -287,7 +283,6 @@
 	</default>
 	<default type="edit">
 		<focusedcolor>textfocus</focusedcolor>
-		<label>587</label>
 		<align>left</align>
 		<posx>300</posx>
 		<posy>200</posy>
@@ -298,7 +293,7 @@
 		<font>font13</font>
 		<textcolor>textnofocus</textcolor>
 		<disabledcolor>textdisabled</disabledcolor>
-		<textoffsetx>7</textoffsetx>
+		<textoffsetx>10</textoffsetx>
 		<aligny>center</aligny>
 		<pulseonselect>false</pulseonselect>
 	</default>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">450</defaultcontrol>
 	<allowoverlay>false</allowoverlay>
 	<coordinates>
@@ -28,6 +27,7 @@
 					<posx>660</posx>
 					<posy>40</posy>
 					<width>630</width>
+					<height>30</height>
 					<font>font13_title</font>
 					<label>1023</label>
 					<align>right</align>
@@ -38,6 +38,7 @@
 					<posx>660</posx>
 					<posy>70</posy>
 					<width>630</width>
+					<height>30</height>
 					<haspath>true</haspath>
 					<align>right</align>
 				</control>
@@ -56,7 +57,6 @@
 						<description>OK button</description>
 						<height>48</height>
 						<align>center</align>
-						<textoffsetx>20</textoffsetx>
 						<width>221</width>
 						<font>font12_title</font>
 						<textwidth>195</textwidth>
@@ -66,7 +66,6 @@
 						<description>Cancel button</description>
 						<height>48</height>
 						<align>center</align>
-						<textoffsetx>20</textoffsetx>
 						<width>221</width>
 						<font>font12_title</font>
 						<textwidth>195</textwidth>
@@ -76,7 +75,6 @@
 						<description>Create folder button</description>
 						<height>48</height>
 						<align>center</align>
-						<textoffsetx>20</textoffsetx>
 						<width>221</width>
 						<font>font12_title</font>
 						<textwidth>195</textwidth>
@@ -86,7 +84,6 @@
 						<description>Flip Image button</description>
 						<height>48</height>
 						<align>center</align>
-						<textoffsetx>20</textoffsetx>
 						<width>221</width>
 						<texturenofocus>buttons/nf_light.png</texturenofocus>
 						<font>font12_title</font>
@@ -98,6 +95,7 @@
 					<posy>460</posy>
 					<width>420</width>
 					<height>210</height>
+					<texture>buttons/nf_light.png</texture>
 				</control>
 				<control type="image">
 					<posx>250</posx>
@@ -138,6 +136,7 @@
 						</control>
 						<control type="label">
 							<posx>55</posx>
+							<posy>0</posy>
 							<width>580</width>
 							<height>40</height>
 							<selectedcolor>green</selectedcolor>
@@ -149,7 +148,6 @@
 							<width>640</width>
 							<height>41</height>
 							<visible>Control.HasFocus(450)</visible>
-							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -161,6 +159,7 @@
 						<control type="label">
 							<textcolor>textfocus</textcolor>
 							<posx>55</posx>
+							<posy>0</posy>
 							<width>580</width>
 							<height>40</height>
 							<selectedcolor>green</selectedcolor>
@@ -189,6 +188,7 @@
 						</control>
 						<control type="label">
 							<posx>55</posx>
+							<posy>0</posy>
 							<width>580</width>
 							<height>40</height>
 							<selectedcolor>green</selectedcolor>
@@ -200,7 +200,6 @@
 							<width>640</width>
 							<height>41</height>
 							<visible>Control.HasFocus(451)</visible>
-							<texture>buttons/fo_light.png</texture>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -212,6 +211,7 @@
 						<control type="label">
 							<textcolor>textfocus</textcolor>
 							<posx>55</posx>
+							<posy>0</posy>
 							<width>580</width>
 							<height>40</height>
 							<selectedcolor>green</selectedcolor>

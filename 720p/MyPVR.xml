@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol>32</defaultcontrol>
 	<allowoverlay>false</allowoverlay>
 	<controls>
 		<include>CommonBackground</include>
 		<include>ContentPanelBackgroundsPVR</include>
 		<control type="label" id="29">
-			<width>1280</width>
-			<posy>60</posy>
-			<posx>80</posx>
-			<height>0</height>
 			<description>Empty so we can pass the values up one level</description>
 			<visible>False</visible>
 		</control>
 		<control type="label" id="30">
-			<width>1280</width>
-			<posy>60</posy>
-			<posx>80</posx>
-			<height>0</height>
 			<description>Empty so we can pass the values up one level</description>
 			<visible>False</visible>
 		</control>
@@ -31,6 +22,7 @@
 			<control type="image">
 				<width>690</width>
 				<height>400</height>
+				<texture>buttons/nf_light.png</texture>
 			</control>
 			<control type="image">
 				<posx>5</posx>
@@ -102,8 +94,6 @@
 				<ondown>9000</ondown>
 				<itemgap>0</itemgap>
 				<control type="label" id="200">
-					<posy>60</posy>
-					<posx>80</posx>
 					<width>250</width>
 					<height>35</height>
 					<font>font12caps</font>
@@ -116,7 +106,6 @@
 					<posx>0</posx>
 					<posy>0</posy>
 					<textwidth>235</textwidth>
-					<textoffsetx>10</textoffsetx>
 					<width>250</width>
 					<texturenofocus></texturenofocus>
 					<textwidth>200</textwidth>
@@ -127,7 +116,6 @@
 					<posx>0</posx>
 					<posy>40</posy>
 					<textwidth>235</textwidth>
-					<textoffsetx>10</textoffsetx>
 					<width>250</width>
 					<texturenofocus></texturenofocus>
 					<textwidth>200</textwidth>
@@ -140,7 +128,6 @@
 					<posx>0</posx>
 					<posy>80</posy>
 					<textwidth>235</textwidth>
-					<textoffsetx>10</textoffsetx>
 					<width>250</width>
 					<texturenofocus></texturenofocus>
 					<textwidth>200</textwidth>
@@ -151,7 +138,6 @@
 					<posx>0</posx>
 					<posy>120</posy>
 					<textwidth>235</textwidth>
-					<textoffsetx>10</textoffsetx>
 					<width>250</width>
 					<texturenofocus></texturenofocus>
 					<textwidth>200</textwidth>
@@ -162,7 +148,6 @@
 					<posx>0</posx>
 					<posy>160</posy>
 					<textwidth>235</textwidth>
-					<textoffsetx>10</textoffsetx>
 					<width>250</width>
 					<texturenofocus></texturenofocus>
 					<textwidth>200</textwidth>
@@ -172,7 +157,6 @@
 					<description>Search</description>
 					<posx>0</posx>
 					<textwidth>235</textwidth>
-					<textoffsetx>10</textoffsetx>
 					<width>250</width>
 					<texturenofocus></texturenofocus>
 					<textwidth>200</textwidth>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">22</defaultcontrol>
 	<allowoverlay>false</allowoverlay>
 	<coordinates>
@@ -23,6 +22,7 @@
 				<posx>40</posx>
 				<posy>20</posy>
 				<width>720</width>
+				<height>30</height>
 				<font>font13_title</font>
 				<label>$LOCALIZE[21432]</label>
 				<align>center</align>
@@ -40,7 +40,6 @@
 				<ondown>12</ondown>
 			</control>
 			<control type="label">
-				<height>0</height>
 				<description>Name Label</description>
 				<posx>30</posx>
 				<posy>120</posy>
@@ -53,7 +52,6 @@
 				<posx>30</posx>
 				<posy>145</posy>
 				<width>740</width>
-				<textoffsetx>10</textoffsetx>
 				<align>center</align>
 				<label></label>
 				<onup>22</onup>
@@ -62,7 +60,6 @@
 				<ondown>10</ondown>
 			</control>
 			<control type="label">
-				<height>0</height>
 				<description>rules label</description>
 				<posx>30</posx>
 				<posy>200</posy>
@@ -83,8 +80,11 @@
 				<itemlayout width="560" height="45">
 					<control type="image">
 						<width>550</width>
+						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="label">
+						<posx>10</posx>
+						<posy>0</posy>
 						<width>530</width>
 						<height>40</height>
 						<info>ListItem.Label</info>
@@ -93,15 +93,17 @@
 				<focusedlayout width="560" height="45">
 					<control type="image">
 						<width>550</width>
-						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(10)</visible>
 					</control>
 					<control type="image">
 						<width>550</width>
+						<texture>buttons/nf_light.png</texture>
 						<visible>!Control.HasFocus(10)</visible>
 					</control>
 					<control type="label">
 						<textcolor>textfocus</textcolor>
+						<posx>10</posx>
+						<posy>0</posy>
 						<width>530</width>
 						<height>40</height>
 						<info>ListItem.Label</info>
@@ -152,7 +154,6 @@
 				</control>
 			</control>
 			<control type="label">
-				<height>0</height>
 				<description>Name Label</description>
 				<posx>30</posx>
 				<posy>370</posy>

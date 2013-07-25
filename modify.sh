@@ -270,11 +270,12 @@ REPL='\s*<\!--(?!-->).*?-->[^#]*#;;Removing uncommented tags;<\!--
 >no</;>false</;
 >-</;></;
 >(<[^/]);>#\1;Adding missing newlines before opening tags
+\s*<font>special12</font>#;;Removing invalid special12 font tags
 >(</control>);>#\1;Adding missing newlines befor closing controls
  fallback="xbmc-logo.png";;Removing xbmc logo fallback from music visualisation
 \s*<shadowcolor>[a-z]*</shadowcolor>#;;Removing font dropshadows
 \s*<include>VisibleFadeEffect</include>#;;Removing VisibleFadeEffect
-<textoffsetx>[0-9]*<;<textoffsetx>10<;Unifying textoffsetx tags;<textoffsetx>0<
+<textoffsetx>[-0-9]*<;<textoffsetx>10<;Unifying textoffsetx tags;<textoffsetx>
 <pulseonselect>true<;<pulseonselect>false<;Setting pulseonselect to false for all controls
 <bordersize>[^5]<;<bordersize>5<;Unifying bordersizes
 OSD_;osd_;Correcting filenames
@@ -548,7 +549,7 @@ media/floor_button.png;$BUTTON_NF
 media/floor_buttonFO.png;$BUTTON_FO
 media/HomeSubNF.png;$HOME_SUB_NF
 media/HomeSubFO.png;$HOME_SUB_FO
-media/RecentAddedBack.png;$BUTTON_NF
+media/RecentAddedBack.png;$CONTENT_BG
 "
 
 printf "\nReplacing media files: "
@@ -1687,23 +1688,23 @@ else
 fi
 step
 
-printf "\nDon't clear background: "
-if ! grep -I -q '<backgroundcolor>0</backgroundcolor>' 720p/AddonBrowser.xml ; then
-	XMLS=$(2>/dev/null grep '<window>' -l 720p/*)
-	R='s|(\s*<window[^#]*#)'
-	#all kind of lines, but not <backgroundcolor
-	R+='(((\s*)(?!<backgroundcolor)(?!</window)[^#]*#)*?' 		
-	R+=')\s*</window>'
-	R+='|\1\4<backgroundcolor>0</backgroundcolor>#\2</window>|g'
-	perlregex $XMLS "$R"
-	#not for dialogs without background
-	R='s|\s*<backgroundcolor>0</backgroundcolor>#||g'
-	perlregex 720p/SettingsScreenCalibration.xml 720p/SlideShow.xml "$R"
-	printf "%sDONE!%s" $GREEN $RESET
-else
-	printf "%sSKIPPED.%s" $CYAN $RESET
-fi
-step
+#printf "\nDon't clear background: "
+#if ! grep -I -q '<backgroundcolor>0</backgroundcolor>' 720p/AddonBrowser.xml ; then
+#	XMLS=$(2>/dev/null grep '<window>' -l 720p/*)
+#	R='s|(\s*<window[^#]*#)'
+#	#all kind of lines, but not <backgroundcolor
+#	R+='(((\s*)(?!<backgroundcolor)(?!</window)[^#]*#)*?' 		
+#	R+=')\s*</window>'
+#	R+='|\1\4<backgroundcolor>0</backgroundcolor>#\2</window>|g'
+#	perlregex $XMLS "$R"
+#	#not for dialogs without background
+#	R='s|\s*<backgroundcolor>0</backgroundcolor>#||g'
+#	perlregex 720p/SettingsScreenCalibration.xml 720p/SlideShow.xml "$R"
+#	printf "%sDONE!%s" $GREEN $RESET
+#else
+#	printf "%sSKIPPED.%s" $CYAN $RESET
+#fi
+#step
 
 source textures.sh
 OLDIFS=$IFS ; IFS=$'\n'
@@ -1829,7 +1830,7 @@ for CONTROL in $CONTROLS ; do
 		fi
 	done
 done
-OPTTAGS=$(echo "$OPTTAGS" | egrep -v 'description|include|onup|ondown|onleft|onright|onclick')
+OPTTAGS=$(echo "$OPTTAGS" | egrep -v 'description|include|onup|ondown|onleft|onright|onclick|label|info')
 printf "%sDONE!%s" $GREEN $RESET
 step
 
@@ -1841,7 +1842,6 @@ togglebutton;aligny;<aligny>center</aligny>
 togglebutton;textoffsetx;<textoffsetx>10</textoffsetx>
 togglebutton;textwidth;<textwidth>290</textwidth>
 togglebutton;focusedcolor;<focusedcolor>textfocus</focusedcolor>
-button;label;<label></label>
 button;align;<align>left</align>
 button;angle;<angle>0</angle>
 button;textoffsety;<textoffsety>0</textoffsety>
@@ -1851,7 +1851,6 @@ button;focusedcolor;<focusedcolor>textfocus</focusedcolor>
 radiobutton;focusedcolor;<focusedcolor>textfocus</focusedcolor>
 radiobutton;align;<align>left</align>
 edit;align;<align>left</align>
-edit;label;<label></label>
 edit;focusedcolor;<focusedcolor>textfocus</focusedcolor>
 multiimage;loop;<loop>true</loop>
 multiimage;pauseatend;<pauseatend>0</pauseatend>
@@ -1864,16 +1863,16 @@ slider;aligny;<aligny>center</aligny>
 slider;texturefocus;<texturefocus></texturefocus>
 slider;texturenofocus;<texturenofocus></texturenofocus>
 spincontrol;focusedcolor;<focusedcolor>textfocus</focusedcolor>
-spincontrolex;label;<label></label>
 spincontrolex;focusedcolor;<focusedcolor>textfocus</focusedcolor>
 fadelabel;pauseatend;<pauseatend>1000</pauseatend>
-fadelabel;textoffsetx;<textoffsetx>10</textoffsetx>
 fadelabel;scrollspeed;<scrollspeed>60</scrollspeed>
 fadelabel;scrollout;<scrollout>false</scrollout>
-fadelabel;label;<label></label>
+fadelabel;width;<width>1280</width>
+fadelabel;height;<height>720</height>
 image;bordertexture;<bordertexture></bordertexture>
 image;colordiffuse;<colordiffuse>ffffffff</colordiffuse>
 image;width;<width>1280</width>
+label;textcolor;<textcolor>textnofocus</textcolor>
 label;aligny;<aligny>center</aligny>
 label;align;<align>left</align>
 label;angle;<angle>0</angle>
@@ -1888,17 +1887,24 @@ label;wrapmultiline;<wrapmultiline>false</wrapmultiline>
 		TAG=$(echo "$D" | cut -f2 -d';')
 		STD=$(echo "$D" | cut -f3 -d';')
 		DEFTAG=$(grep -a -z -Po "<default type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</default>" 720p/defaults.xml | grep "<$TAG[ >]" | sed 's|^\s*||')
+		debug "Control: '$CONTROL', Tag: '$TAG', Std: '$STD, Def: '$DEFTAG'."
 		if [ -z "$DEFTAG" ] ; then
-			NUMMISSING=$(grep -a -z -Po "<control type=\"$CONTROL\".*\n(\s*<[a-z].*\n)*\s*</control>" 720p/* | tr -d $'\n' | sed 's|</control>|\n|g' | grep -v "<$TAG[ >]" | wc -l)
-			if [ $NUMMISSING -gt 0 ] ; then
+			debug "Default tag is empty."
+			MISSING=$(grep -a -z -Po "control type=\"$CONTROL\".*\n(\s*(<[a-z]|</[va]).*\n)*\s*</control" 720p/* | grep -v "<$TAG[ >]" | grep "control type" | wc -l)
+			debug "$MISSING controls without value."
+			if [ $MISSING -gt 0 ] ; then
 				R="s|(\s*)(<default type=\"$CONTROL\"[^#]*#)"		#1#2
 				R+="|\1\2\1\1$STD#|g"
 				perlregex "$R" 720p/defaults.xml
 			fi
 		fi
 	done
+	printf "%sDONE!%s" $GREEN $RESET
+else
+	printf "%sSKIPPED.%s" $CYAN $RESET
 fi
-
+step
+	
 printf "\nOptimizing tags with existing default values: "
 for CONTROL in $CONTROLS ; do
 	printf "\nOptimizing '$CONTROL' control: "

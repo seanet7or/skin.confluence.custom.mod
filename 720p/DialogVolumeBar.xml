@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol>1</defaultcontrol>
 	<animation effect="slide" start="0,-45" end="0,0" time="100">WindowOpen</animation>
 	<animation effect="slide" start="0,0" end="0,-45" delay="400" time="100">WindowClose</animation>
@@ -24,6 +23,7 @@
 					<info>Player.Volume</info>
 				</control>
 				<control type="label" id="1">
+					<posx>10</posx>
 					<posy>26</posy>
 					<width>270</width>
 					<height>20</height>

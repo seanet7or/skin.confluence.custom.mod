@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
 	<allowoverlay>false</allowoverlay>
 	<defaultcontrol always="false">101</defaultcontrol>
 	<coordinates>
@@ -25,6 +24,7 @@
 				<posx>580</posx>
 				<posy>30</posy>
 				<width>550</width>
+				<height>30</height>
 				<font>font30_title</font>
 				<label>$LOCALIZE[SCRIPT0]</label>
 				<align>right</align>
@@ -32,8 +32,8 @@
 			<control type="label">
 				<description>Artist label</description>
 				<posx>580</posx>
-				<posy>60</posy>
 				<width>550</width>
+				<height>30</height>
 				<font>font13_title</font>
 				<label>$INFO[MusicPlayer.Artist]</label>
 				<align>right</align>
@@ -43,6 +43,7 @@
 				<posx>580</posx>
 				<posy>85</posy>
 				<width>550</width>
+				<height>30</height>
 				<font>font13_title</font>
 				<label>$INFO[MusicPlayer.Title]</label>
 				<align>right</align>
@@ -83,6 +84,7 @@
 				<itemlayout height="25">
 					<control type="label">
 						<posx>275</posx>
+						<posy>0</posy>
 						<width>550</width>
 						<height>25</height>
 						<align>center</align>
@@ -92,6 +94,7 @@
 				<focusedlayout height="25">
 					<control type="label">
 						<posx>275</posx>
+						<posy>0</posy>
 						<width>550</width>
 						<height>25</height>
 						<align>center</align>
@@ -101,6 +104,7 @@
 					</control>
 					<control type="label">
 						<posx>275</posx>
+						<posy>0</posy>
 						<width>550</width>
 						<height>25</height>
 						<align>center</align>
@@ -122,6 +126,7 @@
 				<posx>30</posx>
 				<posy>130</posy>
 				<width>550</width>
+				<height>30</height>
 				<align>center</align>
 				<font>font13_title</font>
 				<label>31203</label>
@@ -141,6 +146,8 @@
 				<animation effect="slide" start="0,0" end="20,0" time="0" condition="!Control.IsVisible(121)">Conditional</animation>
 				<itemlayout height="40">
 					<control type="label">
+						<posx>10</posx>
+						<posy>0</posy>
 						<width>530</width>
 						<height>40</height>
 						<info>ListItem.Label</info>
@@ -151,10 +158,11 @@
 						<width>550</width>
 						<height>41</height>
 						<visible>Control.HasFocus(120)</visible>
-						<texture>buttons/fo_light.png</texture>
 					</control>
 					<control type="label">
 						<textcolor>textfocus</textcolor>
+						<posx>10</posx>
+						<posy>0</posy>
 						<width>530</width>
 						<height>40</height>
 						<info>ListItem.Label</info>
@@ -175,14 +183,11 @@
 				<posx>580</posx>
 				<posy>680</posy>
 				<width>550</width>
+				<height>30</height>
 				<label>$LOCALIZE[31205] - $INFO[Control.GetLabel(200)]</label>
 				<align>right</align>
 			</control>
 			<control type="label" id="200">
-				<width>1280</width>
-				<posy>60</posy>
-				<posx>80</posx>
-				<height>0</height>
 				<description>Scraper label</description>
 				<visible>false</visible>
 			</control>

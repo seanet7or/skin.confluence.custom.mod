@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol>20</defaultcontrol>
 	<allowoverlay>false</allowoverlay>
 	<controls>
@@ -35,6 +34,7 @@
 				<posx>30</posx>
 				<posy>30</posy>
 				<width>470</width>
+				<height>30</height>
 				<font>font35_title</font>
 				<label>A</label>
 				<textcolor>heading1</textcolor>
@@ -44,6 +44,7 @@
 				<posx>30</posx>
 				<posy>70</posy>
 				<width>470</width>
+				<height>30</height>
 				<textcolor>heading2</textcolor>
 				<scroll>true</scroll>
 			</control>
@@ -70,6 +71,7 @@
 				<itemlayout height="35" width="540">
 					<control type="label">
 						<posx>0</posx>
+						<posy>0</posy>
 						<width>500</width>
 						<height>36</height>
 						<info>ListItem.Label</info>
@@ -88,10 +90,10 @@
 						<width>540</width>
 						<height>36</height>
 						<visible>Control.HasFocus(20)</visible>
-						<texture>buttons/fo_light.png</texture>
 					</control>
 					<control type="label">
 						<posx>0</posx>
+						<posy>0</posy>
 						<width>500</width>
 						<height>36</height>
 						<textcolor>textfocus</textcolor>
@@ -138,6 +140,7 @@
 				<posx>580</posx>
 				<posy>30</posy>
 				<width>470</width>
+				<height>30</height>
 				<font>font35_title</font>
 				<label>B</label>
 				<align>right</align>
@@ -148,6 +151,7 @@
 				<posx>580</posx>
 				<posy>70</posy>
 				<width>470</width>
+				<height>30</height>
 				<textcolor>heading2</textcolor>
 				<scroll>true</scroll>
 				<align>right</align>
@@ -175,6 +179,7 @@
 				<itemlayout height="35">
 					<control type="label">
 						<posx>0</posx>
+						<posy>0</posy>
 						<width>500</width>
 						<height>36</height>
 						<info>ListItem.Label</info>
@@ -193,10 +198,10 @@
 						<width>540</width>
 						<height>36</height>
 						<visible>Control.HasFocus(21)</visible>
-						<texture>buttons/fo_light.png</texture>
 					</control>
 					<control type="label">
 						<posx>0</posx>
+						<posy>0</posy>
 						<width>500</width>
 						<height>36</height>
 						<textcolor>textfocus</textcolor>

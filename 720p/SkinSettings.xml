@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<include condition="!Skin.HasSetting(InitialSetUpRun)">DefaultInitialSetup</include>
 	<onload condition="System.HasAddon(script.favourites)">XBMC.RunScript(script.favourites)</onload>
@@ -75,7 +74,6 @@
 					<control type="image">
 						<width>260</width>
 						<height>81</height>
-						<texture>buttons/fo_light.png</texture>
 						<animation effect="fade" start="100" end="30" time="100" condition="!Control.HasFocus(9000)">Conditional</animation>
 					</control>
 					<control type="label">
@@ -142,6 +140,7 @@
 				<posx>300</posx>
 				<posy>20</posy>
 				<width>740</width>
+				<height>30</height>
 				<font>font16</font>
 				<label>$LOCALIZE[20077] - $INFO[Container(9000).ListItem.Label]</label>
 			</control>
@@ -159,8 +158,7 @@
 					<onup>9001</onup>
 					<ondown>9001</ondown>
 					<control type="label" id="100">
-						<posy>60</posy>
-						<posx>80</posx>
+						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>31068</label>
@@ -234,8 +232,7 @@
 						<selected>!Skin.HasSetting(ShowBackgroundVis)</selected>
 					</control>
 					<control type="label" id="115">
-						<posy>60</posy>
-						<posx>80</posx>
+						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>31101</label>
@@ -301,8 +298,7 @@
 						<selected>Skin.HasSetting(HideRainDropEffect)</selected>
 					</control>
 					<control type="label" id="127">
-						<posy>60</posy>
-						<posx>80</posx>
+						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>31062</label>
@@ -371,8 +367,7 @@
 						<visible>System.HasAddon(script.artistslideshow)</visible>
 					</control>
 					<control type="label" id="138">
-						<posy>60</posy>
-						<posx>80</posx>
+						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>31072</label>
@@ -399,8 +394,7 @@
 						<selected>!Skin.HasSetting(HideSeekBarOSD)</selected>
 					</control>
 					<control type="label" id="143">
-						<posy>60</posy>
-						<posx>80</posx>
+						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>31106</label>
@@ -442,8 +436,7 @@
 						<onclick>Skin.SetString(MPAACountryCert,$INFO[Container(9008).ListItem.Label])</onclick>
 					</control>
 					<control type="label" id="150">
-						<posy>60</posy>
-						<posx>80</posx>
+						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>$LOCALIZE[31007]</label>
@@ -503,8 +496,7 @@
 						</control>
 					</control>
 					<control type="label" id="158">
-						<posy>60</posy>
-						<posx>80</posx>
+						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>512</label>
@@ -655,8 +647,7 @@
 					<onup>9002</onup>
 					<ondown>9002</ondown>
 					<control type="label" id="200">
-						<posy>60</posy>
-						<posx>80</posx>
+						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>31105</label>
@@ -1056,8 +1047,7 @@
 					<onup>9003</onup>
 					<ondown>9003</ondown>
 					<control type="label" id="300">
-						<posy>60</posy>
-						<posx>80</posx>
+						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>$VAR[UsersSubVideosName] $LOCALIZE[31120]</label>
@@ -1119,8 +1109,7 @@
 						<enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable>
 					</control>
 					<control type="label" id="308">
-						<posy>60</posy>
-						<posx>80</posx>
+						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>$VAR[UsersSubMoviesName] $LOCALIZE[31120]</label>
@@ -1182,8 +1171,7 @@
 						<enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable>
 					</control>
 					<control type="label" id="316">
-						<posy>60</posy>
-						<posx>80</posx>
+						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>$VAR[UsersSubTVShowsName] $LOCALIZE[31120]</label>
@@ -1245,8 +1233,7 @@
 						<enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable>
 					</control>
 					<control type="label" id="324">
-						<posy>60</posy>
-						<posx>80</posx>
+						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>$VAR[UsersSubConcertsName] $LOCALIZE[31120]</label>
@@ -1308,8 +1295,7 @@
 						<enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable>
 					</control>
 					<control type="label" id="332">
-						<posy>60</posy>
-						<posx>80</posx>
+						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>$VAR[UsersSubMusicName] $LOCALIZE[31120]</label>
@@ -1371,8 +1357,7 @@
 						<enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable>
 					</control>
 					<control type="label" id="340">
-						<posy>60</posy>
-						<posx>80</posx>
+						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>$VAR[UsersSubProgsName] $LOCALIZE[31120]</label>
@@ -1434,8 +1419,7 @@
 						<enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable>
 					</control>
 					<control type="label" id="348">
-						<posy>60</posy>
-						<posx>80</posx>
+						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>$VAR[UsersSubPicturesName] $LOCALIZE[31120]</label>
@@ -1497,8 +1481,7 @@
 						<enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable>
 					</control>
 					<control type="label" id="356">
-						<posy>60</posy>
-						<posx>80</posx>
+						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>$VAR[UsersSubSelectOneName] $LOCALIZE[31120]</label>
@@ -1560,8 +1543,7 @@
 						<enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable>
 					</control>
 					<control type="label" id="364">
-						<posy>60</posy>
-						<posx>80</posx>
+						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>$VAR[UsersSubSelectTwoName] $LOCALIZE[31120]</label>
@@ -1623,8 +1605,7 @@
 						<enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable>
 					</control>
 					<control type="label" id="372">
-						<posy>60</posy>
-						<posx>80</posx>
+						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>$VAR[UsersSubSelectThreeName] $LOCALIZE[31120]</label>
@@ -1708,8 +1689,7 @@
 						<onup>9004</onup>
 						<ondown>9004</ondown>
 						<control type="label" id="400">
-							<posy>60</posy>
-							<posx>80</posx>
+							<width>750</width>
 							<height>45</height>
 							<font>font13_title</font>
 							<label>$LOCALIZE[31135] $LOCALIZE[31166]</label>
@@ -1757,8 +1737,7 @@
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="label" id="407">
-							<posy>60</posy>
-							<posx>80</posx>
+							<width>750</width>
 							<height>45</height>
 							<font>font13_title</font>
 							<label>$LOCALIZE[31136] $LOCALIZE[31166]</label>
@@ -1806,8 +1785,7 @@
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="label" id="414">
-							<posy>60</posy>
-							<posx>80</posx>
+							<width>750</width>
 							<height>45</height>
 							<font>font13_title</font>
 							<label>$LOCALIZE[31190] $LOCALIZE[31166]</label>
@@ -1855,8 +1833,7 @@
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="label" id="421">
-							<posy>60</posy>
-							<posx>80</posx>
+							<width>750</width>
 							<height>45</height>
 							<font>font13_title</font>
 							<label>$LOCALIZE[31191] $LOCALIZE[31166]</label>
@@ -1904,8 +1881,7 @@
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="label" id="428">
-							<posy>60</posy>
-							<posx>80</posx>
+							<width>750</width>
 							<height>45</height>
 							<font>font13_title</font>
 							<label>$LOCALIZE[31196] $LOCALIZE[31166]</label>
@@ -1953,8 +1929,7 @@
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="label" id="435">
-							<posy>60</posy>
-							<posx>80</posx>
+							<width>750</width>
 							<height>45</height>
 							<font>font13_title</font>
 							<label>$LOCALIZE[31197] $LOCALIZE[31166]</label>
@@ -2002,8 +1977,7 @@
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="label" id="442">
-							<posy>60</posy>
-							<posx>80</posx>
+							<width>750</width>
 							<height>45</height>
 							<font>font13_title</font>
 							<label>$LOCALIZE[31198] $LOCALIZE[31166]</label>
@@ -2051,8 +2025,7 @@
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="label" id="449">
-							<posy>60</posy>
-							<posx>80</posx>
+							<width>750</width>
 							<height>45</height>
 							<font>font13_title</font>
 							<label>$LOCALIZE[31199] $LOCALIZE[31166]</label>
@@ -2100,8 +2073,7 @@
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="label" id="456">
-							<posy>60</posy>
-							<posx>80</posx>
+							<width>750</width>
 							<height>45</height>
 							<font>font13_title</font>
 							<label>$LOCALIZE[31200] $LOCALIZE[31166]</label>
@@ -2149,8 +2121,7 @@
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="label" id="463">
-							<posy>60</posy>
-							<posx>80</posx>
+							<width>750</width>
 							<height>45</height>
 							<font>font13_title</font>
 							<label>$LOCALIZE[31201] $LOCALIZE[31166]</label>
@@ -2229,6 +2200,7 @@
 						<posy>53</posy>
 						<width>33</width>
 						<height>22</height>
+						<label></label>
 						<font></font>
 						<texturenofocus>buttons/spin-down-nf_light.png</texturenofocus>
 						<texturefocus>buttons/spin-down-fo_light.png</texturefocus>
@@ -2244,6 +2216,7 @@
 						<posy>53</posy>
 						<width>33</width>
 						<height>22</height>
+						<label></label>
 						<font></font>
 						<texturenofocus flipy="true">buttons/spin-down-nf_light.png</texturenofocus>
 						<texturefocus flipy="true">buttons/spin-down-fo_light.png</texturefocus>
@@ -2270,16 +2243,19 @@
 						<focusedlayout height="40" width="750">
 							<control type="image">
 								<width>750</width>
-								<texture>buttons/fo_light.png</texture>
 								<visible>[Control.HasFocus(504) | Control.HasFocus(505)]</visible>
 							</control>
 							<control type="label">
+								<posx>10</posx>
+								<posy>0</posy>
 								<width>600</width>
 								<height>40</height>
 								<label>$LOCALIZE[31110]</label>
 								<visible>![Control.HasFocus(504) | Control.HasFocus(505)]</visible>
 							</control>
 							<control type="label">
+								<posx>10</posx>
+								<posy>0</posy>
 								<width>600</width>
 								<height>40</height>
 								<textcolor>textfocus</textcolor>
@@ -2288,6 +2264,7 @@
 							</control>
 							<control type="label">
 								<posx>650</posx>
+								<posy>0</posy>
 								<width>640</width>
 								<height>40</height>
 								<align>right</align>
@@ -2296,6 +2273,7 @@
 							</control>
 							<control type="label">
 								<posx>650</posx>
+								<posy>0</posy>
 								<width>640</width>
 								<height>40</height>
 								<textcolor>textfocus</textcolor>
@@ -2463,6 +2441,7 @@
 						<posy>100</posy>
 						<width>740</width>
 						<height>435</height>
+						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="group">
 						<posx>45</posx>
@@ -3654,8 +3633,7 @@
 					<onup>9006</onup>
 					<ondown>9006</ondown>
 					<control type="label" id="600">
-						<posy>60</posy>
-						<posx>80</posx>
+						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>31080</label>
@@ -3725,8 +3703,7 @@
 						<enable>System.HasAddon(script.artworkorganizer)</enable>
 					</control>
 					<control type="label" id="610">
-						<posy>60</posy>
-						<posx>80</posx>
+						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>31140</label>
@@ -3745,8 +3722,7 @@
 						<onclick>Addon.OpenSettings($INFO[Skin.String(LyricScript_Path)])</onclick>
 					</control>
 					<control type="label" id="613">
-						<posy>60</posy>
-						<posx>80</posx>
+						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>31141</label>
@@ -3765,8 +3741,7 @@
 						<onclick>Addon.OpenSettings($INFO[Skin.String(SubtitleScript_Path)])</onclick>
 					</control>
 					<control type="label" id="616">
-						<posy>60</posy>
-						<posx>80</posx>
+						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>31188</label>
@@ -3799,8 +3774,7 @@
 						<enable>System.HasAddon(script.randomandlastitems) + !Skin.HasSetting(DisableScriptPlayList)</enable>
 					</control>
 					<control type="label" id="621">
-						<posy>60</posy>
-						<posx>80</posx>
+						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>31360</label>
@@ -3846,8 +3820,7 @@
 						<visible>System.HasAddon(script.simpleplaylists)</visible>
 					</control>
 					<control type="label" id="628">
-						<posy>60</posy>
-						<posx>80</posx>
+						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>$LOCALIZE[31171] $LOCALIZE[31172]</label>
@@ -3862,7 +3835,6 @@
 					<control type="button" id="630">
 						<description>Reset Skin Values</description>
 						<align>center</align>
-						<textoffsetx>20</textoffsetx>
 						<label>$LOCALIZE[31173]</label>
 						<onclick>ActivateWindow(2121)</onclick>
 					</control>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">20</defaultcontrol>
 	<coordinates>
 		<system>1</system>
@@ -22,6 +21,7 @@
 				<posx>40</posx>
 				<posy>20</posy>
 				<width>530</width>
+				<height>30</height>
 				<font>font13_title</font>
 				<label>$LOCALIZE[35000]</label>
 				<align>center</align>
@@ -43,9 +43,11 @@
 					<control type="image">
 						<width>550</width>
 						<height>80</height>
+						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="label">
 						<description>Name</description>
+						<posx>10</posx>
 						<posy>5</posy>
 						<width>520</width>
 						<height>20</height>
@@ -53,6 +55,7 @@
 					</control>
 					<control type="label">
 						<description>Product ID Vendor ID</description>
+						<posx>10</posx>
 						<posy>30</posy>
 						<width>520</width>
 						<height>20</height>
@@ -60,6 +63,7 @@
 					</control>
 					<control type="label">
 						<description>class</description>
+						<posx>10</posx>
 						<posy>50</posy>
 						<width>520</width>
 						<height>20</height>
@@ -70,16 +74,17 @@
 					<control type="image">
 						<width>550</width>
 						<height>80</height>
+						<texture>buttons/nf_light.png</texture>
 						<visible>!Control.HasFocus(20)</visible>
 					</control>
 					<control type="image">
 						<width>550</width>
 						<height>80</height>
-						<texture>buttons/fo_light.png</texture>
 						<visible>Control.HasFocus(20)</visible>
 					</control>
 					<control type="label">
 						<description>Name</description>
+						<posx>10</posx>
 						<posy>5</posy>
 						<width>520</width>
 						<height>20</height>
@@ -88,6 +93,7 @@
 					</control>
 					<control type="label">
 						<description>Product ID Vendor ID</description>
+						<posx>10</posx>
 						<posy>30</posy>
 						<width>520</width>
 						<height>20</height>
@@ -95,6 +101,7 @@
 					</control>
 					<control type="label">
 						<description>class</description>
+						<posx>10</posx>
 						<posy>50</posy>
 						<width>520</width>
 						<height>20</height>
