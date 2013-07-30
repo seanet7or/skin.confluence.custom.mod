@@ -154,6 +154,16 @@ read_origmaster() {
 	local ZIP='Mudislander-master.zip'
 	printf "\nDownloading from GitHub."
 	#wget -O- --no-check-certificate --progress=bar "$URL" >"$ZIP"
+	while ! 2>/dev/null >/dev/null which curl ; do
+		printf "\nERROR: curl was not found."
+		if 2>/dev/null >/dev/null which apt-get ; then
+			printf "\nExecuting sudo apt-get install curl: "
+			sudo apt-get install curl
+		else
+			exit 3
+		fi
+	done
+	2>/dev/null rm "$ZIP"
 	curl -L --progress-bar "$URL" >"$ZIP"
 	mkdir -p Mudislander-master
 	printf "Extracting the archive."
@@ -279,7 +289,8 @@ REPL='\s*<\!--(?!-->).*?-->[^#]*#;;Removing uncommented tags;<\!--
 <pulseonselect>true<;<pulseonselect>false<;Setting pulseonselect to false for all controls
 <bordersize>[^5]<;<bordersize>5<;Unifying bordersizes
 OSD_;osd_;Correcting filenames
-.INFO.Skin.CurrentTheme,special://skin/backgrounds/,.jpg.;'$BACKGROUND_DEF';Replacing some backgrounds'
+.INFO.Skin.CurrentTheme,special://skin/backgrounds/,.jpg.;'$BACKGROUND_DEF';Replacing some backgrounds
+<showonepage>true</showonepage>;<showonepage>false</showonepage>;Hide scrollbar for short content'
 IFS=$'\n' ; for R in $REPL ; do
 	REPLACE=$(echo "$R" | cut -f1 -d';')
 	WITH=$(echo "$R" | cut -f2 -d';')
@@ -418,7 +429,7 @@ if [ -f media/MenuItemNF.png ] ; then
 	XMLS=$(2>/dev/null grep '>MenuItemNF.png<' -l 720p/*)
 	remove_control 'image' '<texture[^>]*>MenuItemNF.png</texture>' "$XMLS"
 	XMLS=$(2>/dev/null grep 'MenuItemNF.png' -l 720p/*)
-	R='s|>MenuItemNF.png<|>-<|g'
+	R='s|>MenuItemNF.png<|><|g'
 	perlregex $XMLS "$R"
 	check_and_remove media/MenuItemNF.png
 	printf "%sDONE!%s" $GREEN $RESET
@@ -1606,41 +1617,42 @@ printf "\nRemoving directories: "
 2>/dev/null rm -rf media/studios
 printf "%sDONE!%s" $GREEN $RESET
 
-EMPTYINCS=$(grep -a -z -Po '<include name="[^"]*">\n\s*</include>' 720p/* | grep -v '</include>' | sed 's|^[^<]*<include name="||' | sed 's|">||')
-for INC in $EMPTYINCS ; do
-	if [ -z "$INC" ] ; then continue ; fi
-	printf "\nRemoving empty include '$INC': "
-	if grep -I -q "$INC" 720p/* ; then
-		XMLS=$(2>/dev/null grep -a -l "$INC" 720p/*)
-		perlregex $XMLS "s|\s*<include>$INC</include>\s*#||g"
-		remove_include "$INC"
-		printf "%sDONE!%s" $GREEN $RESET
-	else
-		printf "%sSKIPPED.%s" $CYAN $RESET
-	fi
-done
-step
+printf "\nCleaning variables and includes: "
+for I in 1 2 3 4 ; do
+	EMPTYINCS=$(grep -a -z -Po '<include name="[^"]*">\n\s*</include>' 720p/* | grep -v '</include>' | sed 's|^[^<]*<include name="||' | sed 's|">||')
+	for INC in $EMPTYINCS ; do
+		if [ -z "$INC" ] ; then continue ; fi
+		printf "\nRemoving empty include '$INC': "
+		if grep -I -q "$INC" 720p/* ; then
+			XMLS=$(2>/dev/null grep -a -l "$INC" 720p/*)
+			perlregex $XMLS "s|\s*<include>$INC</include>\s*#||g"
+			remove_include "$INC"
+			printf "%sDONE!%s" $GREEN $RESET
+		else
+			printf "%sSKIPPED.%s" $CYAN $RESET
+		fi
+	done
 
-printf "\nRemoving unused include definitions: "
-INCDEFS=$(grep "<include name=\"[^\"]*" 720p/* | grep -o "\"[^\"]*\"" | sort -u | tr -d '"')
-for DEF in $INCDEFS ; do
-	if ! grep -q ">$DEF</include>" 720p/* ; then
-		printf "\nRemoving unused include '$DEF'."
-		remove_include "$DEF"
-	fi
-done
-printf "%sDONE!%s" $GREEN $RESET
-step
+	printf "\nRemoving unused include definitions: "
+	INCDEFS=$(grep "<include name=\"[^\"]*" 720p/* | grep -o "\"[^\"]*\"" | sort -u | tr -d '"')
+	for DEF in $INCDEFS ; do
+		if ! grep -q ">$DEF</include>" 720p/* ; then
+			printf "\nRemoving unused include '$DEF'."
+			remove_include "$DEF"
+		fi
+	done
+	printf "%sDONE!%s" $GREEN $RESET
 
-printf "\nRemoving unused variables: "
-VARDEFS=$(grep "<variable name=\"[^\"]*" 720p/* | grep -o "\"[^\"]*\"" | sort -u | tr -d '"')
-for DEF in $VARDEFS ; do
-	if ! grep -q "[^\"]$DEF[^\"]" 720p/* ; then
-		printf "\nRemoving unused variable '$DEF'."
-		remove_variable "$DEF"
-	fi
+	printf "\nRemoving unused variables: "
+	VARDEFS=$(grep "<variable name=\"[^\"]*" 720p/* | grep -o "\"[^\"]*\"" | sort -u | tr -d '"')
+	for DEF in $VARDEFS ; do
+		if ! grep -q "[^\"]$DEF[^\"]" 720p/* ; then
+			printf "\nRemoving unused variable '$DEF'."
+			remove_variable "$DEF"
+		fi
+	done
+	printf "%sDONE!%s" $GREEN $RESET
 done
-printf "%sDONE!%s" $GREEN $RESET
 step
 
 printf "\nRemoving buttons/nf_light.png where not nedded: "

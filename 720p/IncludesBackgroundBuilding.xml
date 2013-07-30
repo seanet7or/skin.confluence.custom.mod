@@ -5,6 +5,7 @@
 			<height>720</height>
 			<width>1280</width>
 			<imagepath background="true">$VAR[HomeMenuItemBackground]</imagepath>
+			<timeperimage>8000</timeperimage>
 			<fadetime>1000</fadetime>
 			<visible>Window.IsVisible(home) + !Skin.HasSetting(GlobalBackground)</visible>
 		</control>
@@ -13,6 +14,7 @@
 				<height>720</height>
 				<width>1280</width>
 				<imagepath background="true">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
+				<timeperimage>8000</timeperimage>
 				<fadetime>1000</fadetime>
 				<visible>Skin.HasSetting(GlobalWeatherFanart) + Window.IsVisible(home)</visible>
 			</control>
@@ -29,6 +31,7 @@
 				<height>720</height>
 				<width>1280</width>
 				<imagepath background="true">$INFO[Skin.String(CustomBackgroundPath)]</imagepath>
+				<timeperimage>8000</timeperimage>
 				<fadetime>1000</fadetime>
 				<visible>Window.IsVisible(home)</visible>
 				<visible>!Skin.HasSetting(GlobalWeatherFanart) + !IsEmpty(Skin.String(CustomBackgroundPath))</visible>
@@ -208,6 +211,7 @@
 				<width>1280</width>
 				<aspectratio>scale</aspectratio>
 				<imagepath background="true">$INFO[Container(8015).ListItem.Thumb]</imagepath>
+				<timeperimage>8000</timeperimage>
 				<fadetime>1000</fadetime>
 				<visible>Control.HasFocus(8015)</visible>
 			</control>
@@ -240,6 +244,7 @@
 			<height>720</height>
 			<width>1280</width>
 			<imagepath background="true">$VAR[CommonMenuItemBackground]</imagepath>
+			<timeperimage>8000</timeperimage>
 			<fadetime>1000</fadetime>
 			<visible>!Window.IsVisible(home)</visible>
 		</control>

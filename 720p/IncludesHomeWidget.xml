@@ -5895,7 +5895,8 @@
 			<item>
 				<label>$LOCALIZE[143]</label>
 				<label2>$INFO[Window(Weather).Property(Current.Condition)]</label2>
-				<onclick>ActivateWindow(Weather)</onclick>
+				<onclick>Weather.Refresh</onclick>
+				<onclick>Weather.LocationNext</onclick>
 				<icon>$INFO[Window(Weather).Property(Current.ConditionIcon)]</icon>
 				<thumb>$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</thumb>
 				<property name="Temperatures">[COLOR=textnofocus]$LOCALIZE[419] : [/COLOR]$INFO[Window(Weather).Property(Day0.HighTemp)]$INFO[System.TemperatureUnits]     [COLOR=textnofocus]$LOCALIZE[418] : [/COLOR]$INFO[Window(Weather).Property(Day0.LowTemp)]$INFO[System.TemperatureUnits]</property>
@@ -5904,7 +5905,8 @@
 			<item>
 				<label>$INFO[Window(Weather).Property(Day1.Title)]</label>
 				<label2>$INFO[Window(Weather).Property(Day1.Outlook)]</label2>
-				<onclick>ActivateWindow(Weather)</onclick>
+				<onclick>Weather.Refresh</onclick>
+				<onclick>Weather.LocationNext</onclick>
 				<icon>$INFO[Window(Weather).Property(Day1.OutlookIcon)]</icon>
 				<thumb>$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Day1.FanartCode)]</thumb>
 				<property name="Temperatures">[COLOR=textnofocus]$LOCALIZE[419] : [/COLOR]$INFO[Window(Weather).Property(Day1.HighTemp)]$INFO[System.TemperatureUnits]     [COLOR=textnofocus]$LOCALIZE[418] : [/COLOR]$INFO[Window(Weather).Property(Day1.LowTemp)]$INFO[System.TemperatureUnits]</property>
@@ -5912,7 +5914,8 @@
 			<item>
 				<label>$INFO[Window(Weather).Property(Day2.Title)]</label>
 				<label2>$INFO[Window(Weather).Property(Day2.Outlook)]</label2>
-				<onclick>ActivateWindow(Weather)</onclick>
+				<onclick>Weather.Refresh</onclick>
+				<onclick>Weather.LocationNext</onclick>
 				<icon>$INFO[Window(Weather).Property(Day2.OutlookIcon)]</icon>
 				<thumb>$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Day2.FanartCode)]</thumb>
 				<property name="Temperatures">[COLOR=textnofocus]$LOCALIZE[419] : [/COLOR]$INFO[Window(Weather).Property(Day2.HighTemp)]$INFO[System.TemperatureUnits]     [COLOR=textnofocus]$LOCALIZE[418] : [/COLOR]$INFO[Window(Weather).Property(Day2.LowTemp)]$INFO[System.TemperatureUnits]</property>
@@ -5920,7 +5923,8 @@
 			<item>
 				<label>$INFO[Window(Weather).Property(Day3.Title)]</label>
 				<label2>$INFO[Window(Weather).Property(Day3.Outlook)]</label2>
-				<onclick>ActivateWindow(Weather)</onclick>
+				<onclick>Weather.Refresh</onclick>
+				<onclick>Weather.LocationNext</onclick>
 				<icon>$INFO[Window(Weather).Property(Day3.OutlookIcon)]</icon>
 				<thumb>$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Day3.FanartCode)]</thumb>
 				<property name="Temperatures">[COLOR=textnofocus]$LOCALIZE[419] : [/COLOR]$INFO[Window(Weather).Property(Day3.HighTemp)]$INFO[System.TemperatureUnits]     [COLOR=textnofocus]$LOCALIZE[418] : [/COLOR]$INFO[Window(Weather).Property(Day3.LowTemp)]$INFO[System.TemperatureUnits]</property>
@@ -5928,7 +5932,8 @@
 			<item>
 				<label>$INFO[Window(Weather).Property(Day4.Title)]</label>
 				<label2>$INFO[Window(Weather).Property(Day4.Outlook)]</label2>
-				<onclick>ActivateWindow(Weather)</onclick>
+				<onclick>Weather.Refresh</onclick>
+				<onclick>Weather.LocationNext</onclick>
 				<icon>$INFO[Window(Weather).Property(Day4.OutlookIcon)]</icon>
 				<thumb>$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Day4.FanartCode)]</thumb>
 				<property name="Temperatures">[COLOR=textnofocus]$LOCALIZE[419] : [/COLOR]$INFO[Window(Weather).Property(Day4.HighTemp)]$INFO[System.TemperatureUnits]     [COLOR=textnofocus]$LOCALIZE[418] : [/COLOR]$INFO[Window(Weather).Property(Day4.LowTemp)]$INFO[System.TemperatureUnits]</property>

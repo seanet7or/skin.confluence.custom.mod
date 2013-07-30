@@ -210,7 +210,6 @@
 				<font></font>
 				<aligny></aligny>
 				<onclick>$VAR[VolumeStepUp]</onclick>
-				<onclick>VolumeUp</onclick>
 				<onleft condition="Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)">84</onleft>
 				<onleft condition="!Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)">50</onleft>
 				<onright>81</onright>
@@ -238,7 +237,6 @@
 				<font></font>
 				<aligny></aligny>
 				<onclick>$VAR[VolumeStepDown]</onclick>
-				<onclick>VolumeDown</onclick>
 				<onleft>80</onleft>
 				<onright>82</onright>
 				<onup>50</onup>
@@ -890,7 +888,7 @@
 			<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
 			<animation effect="slide" start="0,0" end="0,-50" time="100" condition="Window.IsVisible(busydialog)">conditional</animation>
 			<animation effect="slide" start="0,0" end="350,0" time="200" condition="Window.IsVisible(extendedprogressdialog)">conditional</animation>
-			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(volumebar)">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(volumebar) | Window.IsVisible(filebrowser) | Window.IsVisible(movieinformation)">Conditional</animation>
 			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(CustomAddMenuItems.xml) | Window.IsVisible(CustomAddonSelection.xml) | Window.IsVisible(CustomAddonType.xml) | Window.IsVisible(CustomAddSubMenuItems.xml) | Window.IsVisible(CustomSubMenuType.xml) | Window.IsVisible(CustomWidgetType.xml) | Window.IsVisible(Favourites)">Conditional</animation>
 			<visible>!Skin.HasSetting(HideSystemClock)</visible>
 		</control>
@@ -1141,7 +1139,7 @@
 		<animation effect="fade" time="250">WindowOpen</animation>
 		<animation effect="fade" time="250">WindowClose</animation>
 	</include>
-	<include name="dialogeffect">
+	<include name="DialogEffect">
 		<animation effect="fade" time="250">WindowOpen</animation>
 		<animation effect="fade" time="250">WindowClose</animation>
 	</include>
@@ -1149,8 +1147,15 @@
 		<control type="group">
 			<animation effect="fade" time="600">VisibleChange</animation>
 			<include>Window_OpenClose_Animation</include>
-			<visible>IsEmpty(Player.Art(fanart)) | Skin.HasSetting(HideVisualizationFanart)</visible>
+			<visible>IsEmpty(Player.Art(fanart)) | Skin.HasSetting(HideVisualizationFanart) | !IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
 			<visible>Window.IsVisible(home) | !Skin.HasSetting(AllowSlideShowArt)</visible>
+			<control type="image">
+				<description>Default Global Background Image</description>
+				<height>720</height>
+				<width>1280</width>
+				<aspectratio>scale</aspectratio>
+				<texture fallback="special://skin/special://skin/backgrounds/default_light.jpg">special://skin/backgrounds/default_light.jpg</texture>
+			</control>
 			<control type="group">
 				<posx>-133</posx>
 				<control type="group">
@@ -1322,7 +1327,6 @@
 				<imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
 				<aspectratio>keep</aspectratio>
 				<fadetime>4000</fadetime>
-				<timeperimage>9000</timeperimage>
 				<animation effect="fade" start="0" end="100" time="300">Visible</animation>
 				<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
 				<visible>Skin.HasSetting(AllowSlideShowArt) + !Skin.HasSetting(HideVisualizationFanart)</visible>
@@ -1336,7 +1340,18 @@
 				<fadetime>600</fadetime>
 				<animation effect="fade" start="0" end="100" time="300">Visible</animation>
 				<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
-				<visible>!IsEmpty(Player.Art(fanart)) + !Skin.HasSetting(HideVisualizationFanart) + !Skin.HasSetting(AllowSlideShowArt)</visible>
+				<visible>!IsEmpty(Player.Art(fanart)) + !Skin.HasSetting(HideVisualizationFanart) + !Skin.HasSetting(AllowSlideShowArt) + !Skin.HasSetting(AllowVizExtraFanart) + IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
+			</control>
+			<control type="image">
+				<description>Physical Fanart Image for Artist</description>
+				<height>720</height>
+				<width>1280</width>
+				<include condition="Skin.HasSetting(AnimateVizFanart)">KBurnsAnimateFanart</include>
+				<texture background="true">$INFO[Skin.String(PhysicalMusicFolder)]/$INFO[MusicPlayer.Artist]/fanart.jpg</texture>
+				<fadetime>600</fadetime>
+				<animation effect="fade" start="0" end="100" time="300">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
+				<visible>!IsEmpty(Player.Art(fanart)) + !Skin.HasSetting(HideVisualizationFanart) + !Skin.HasSetting(AllowSlideShowArt) + !Skin.HasSetting(AllowVizExtraFanart) + !IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
 			</control>
 			<control type="multiimage">
 				<description>Artist ExtraFanArt Multi-image Background</description>
@@ -1346,10 +1361,22 @@
 				<imagepath background="true">$INFO[Player.FolderPath,,../extrafanart/]</imagepath>
 				<aspectratio>keep</aspectratio>
 				<fadetime>4000</fadetime>
-				<timeperimage>9000</timeperimage>
 				<animation effect="fade" start="0" end="100" time="300">Visible</animation>
 				<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
-				<visible>Skin.HasSetting(AllowVizExtraFanart) + !Skin.HasSetting(HideVisualizationFanart) + !Skin.HasSetting(AllowSlideShowArt)</visible>
+				<visible>Skin.HasSetting(AllowVizExtraFanart) + !Skin.HasSetting(HideVisualizationFanart) + !Skin.HasSetting(AllowSlideShowArt) + IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
+				<visible>![SubString(Player.FolderPath,mms://,Left) | SubString(Player.FolderPath,http://,Left)]</visible>
+			</control>
+			<control type="multiimage">
+				<description>Artist ExtraFanArt Multi-image Background</description>
+				<height>720</height>
+				<width>1280</width>
+				<include condition="Skin.HasSetting(AnimateVizFanart)">KBurnsAnimateFanart</include>
+				<imagepath background="true">$INFO[Skin.String(PhysicalMusicFolder)]/$INFO[MusicPlayer.Artist]/extrafanart/</imagepath>
+				<aspectratio>keep</aspectratio>
+				<fadetime>4000</fadetime>
+				<animation effect="fade" start="0" end="100" time="300">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
+				<visible>Skin.HasSetting(AllowVizExtraFanart) + !Skin.HasSetting(HideVisualizationFanart) + !Skin.HasSetting(AllowSlideShowArt) + !IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
 				<visible>![SubString(Player.FolderPath,mms://,Left) | SubString(Player.FolderPath,http://,Left)]</visible>
 			</control>
 			<visible>IsEmpty(Visualisation.Name) | stringcompare(Visualisation.Name,Waveform) | stringcompare(Visualisation.Name,DirectX Spectrum)</visible>
@@ -1366,7 +1393,6 @@
 				<colordiffuse>AAFFFFFF</colordiffuse>
 				<aspectratio>keep</aspectratio>
 				<fadetime>4000</fadetime>
-				<timeperimage>9000</timeperimage>
 				<animation effect="fade" start="0" end="100" time="300">Visible</animation>
 				<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
 				<visible>Skin.HasSetting(AllowSlideShowArt) + !Skin.HasSetting(HideVisualizationFanart)</visible>
@@ -1381,8 +1407,20 @@
 				<fadetime>600</fadetime>
 				<animation effect="fade" start="0" end="100" time="300">Visible</animation>
 				<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
-				<visible>!IsEmpty(Player.Art(fanart)) + !Skin.HasSetting(HideVisualizationFanart) + !Skin.HasSetting(AllowSlideShowArt) + !Skin.HasSetting(AllowVizExtraFanart)</visible>
+				<visible>!IsEmpty(Player.Art(fanart)) + !Skin.HasSetting(HideVisualizationFanart) + !Skin.HasSetting(AllowSlideShowArt) + !Skin.HasSetting(AllowVizExtraFanart) + IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
 			</control>
+			<control type="image">
+				<description>Physical Fanart Image for Artist</description>
+				<height>720</height>
+				<width>1280</width>
+				<include condition="Skin.HasSetting(AnimateVizFanart)">KBurnsAnimateFanart</include>
+				<texture background="true">$INFO[Skin.String(PhysicalMusicFolder)]/$INFO[MusicPlayer.Artist]/fanart.jpg</texture>
+				<colordiffuse>AAFFFFFF</colordiffuse>
+				<fadetime>600</fadetime>
+				<animation effect="fade" start="0" end="100" time="300">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
+				<visible>!IsEmpty(Player.Art(fanart)) + !Skin.HasSetting(HideVisualizationFanart) + !Skin.HasSetting(AllowSlideShowArt) + !Skin.HasSetting(AllowVizExtraFanart) + !IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
+			</control>			
 			<control type="multiimage">
 				<description>Artist ExtraFanArt Multi-image Background</description>
 				<height>720</height>
@@ -1392,10 +1430,23 @@
 				<colordiffuse>AAFFFFFF</colordiffuse>
 				<aspectratio>keep</aspectratio>
 				<fadetime>4000</fadetime>
-				<timeperimage>9000</timeperimage>
 				<animation effect="fade" start="0" end="100" time="300">Visible</animation>
 				<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
-				<visible>Skin.HasSetting(AllowVizExtraFanart) + !Skin.HasSetting(HideVisualizationFanart) + !Skin.HasSetting(AllowSlideShowArt)</visible>
+				<visible>Skin.HasSetting(AllowVizExtraFanart) + !Skin.HasSetting(HideVisualizationFanart) + !Skin.HasSetting(AllowSlideShowArt) + IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
+				<visible>![SubString(Player.FolderPath,mms://,Left) | SubString(Player.FolderPath,http://,Left)]</visible>
+			</control>
+			<control type="multiimage">
+				<description>Artist ExtraFanArt Multi-image Background</description>
+				<height>720</height>
+				<width>1280</width>
+				<include condition="Skin.HasSetting(AnimateVizFanart)">KBurnsAnimateFanart</include>
+				<imagepath background="true">$INFO[Skin.String(PhysicalMusicFolder)]/$INFO[MusicPlayer.Artist]/extrafanart/</imagepath>
+				<colordiffuse>AAFFFFFF</colordiffuse>
+				<aspectratio>keep</aspectratio>
+				<fadetime>4000</fadetime>
+				<animation effect="fade" start="0" end="100" time="300">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
+				<visible>Skin.HasSetting(AllowVizExtraFanart) + !Skin.HasSetting(HideVisualizationFanart) + !Skin.HasSetting(AllowSlideShowArt) + !IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
 				<visible>![SubString(Player.FolderPath,mms://,Left) | SubString(Player.FolderPath,http://,Left)]</visible>
 			</control>
 			<visible>Skin.HasSetting(AllowTransparentFanart) + !IsEmpty(Visualisation.Name) + !stringcompare(Visualisation.Name,Waveform) + !stringcompare(Visualisation.Name,DirectX Spectrum)</visible>

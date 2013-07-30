@@ -108,7 +108,6 @@
 					<font></font>
 					<aligny></aligny>
 					<onclick>$VAR[VolumeStepUp]</onclick>
-					<onclick>VolumeUp</onclick>
 					<onleft condition="Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)">84</onleft>
 					<onleft condition="!Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)">9000</onleft>
 					<onright>81</onright>
@@ -138,7 +137,6 @@
 					<font></font>
 					<aligny></aligny>
 					<onclick>$VAR[VolumeStepDown]</onclick>
-					<onclick>VolumeDown</onclick>
 					<onleft>80</onleft>
 					<onright>82</onright>
 					<onup>9000</onup>

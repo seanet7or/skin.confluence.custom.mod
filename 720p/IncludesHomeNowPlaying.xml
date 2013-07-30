@@ -14,7 +14,7 @@
 				<width>130</width>
 				<height>295</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<texture fallback="DefaultAlbumCover.png">$INFO[Player.Art(thumb)]</texture>
+				<texture fallback="DefaultAlbumCover.png">$INFO[MusicPlayer.Cover]</texture>
 			</control>
 			<control type="image">
 				<posx>170</posx>
@@ -23,6 +23,17 @@
 				<height>52</height>
 				<texture>$INFO[Player.FolderPath,,../logo.png]</texture>
 				<aspectratio aligny="bottom" align="left">keep</aspectratio>
+				<visible>IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
+				<visible>![Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding]</visible>
+			</control>
+			<control type="image">
+				<posx>170</posx>
+				<posy>210</posy>
+				<width>132</width>
+				<height>52</height>
+				<texture>$INFO[Skin.String(PhysicalMusicFolder)]/$INFO[MusicPlayer.Artist]/logo.png</texture>
+				<aspectratio aligny="bottom" align="left">keep</aspectratio>
+				<visible>!IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
 				<visible>![Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding]</visible>
 			</control>
 			<control type="label">

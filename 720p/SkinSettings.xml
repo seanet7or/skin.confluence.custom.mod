@@ -3643,6 +3643,7 @@
 						<description>User Genre FanArt Path</description>
 						<label>31094</label>
 						<label2>[COLOR=heading3]$INFO[Skin.String(UsrGenreFanartDir)][/COLOR]</label2>
+						<onclick>Skin.Reset(UsrGenreFanartDir)</onclick>
 						<onclick>Skin.SetPath(UsrGenreFanartDir)</onclick>
 						<texturenofocus></texturenofocus>
 					</control>
@@ -3650,6 +3651,7 @@
 						<description>User Movie FanArt Path</description>
 						<label>31095</label>
 						<label2>[COLOR=heading3]$INFO[Skin.String(UsrMovieFanartDir)][/COLOR]</label2>
+						<onclick>Skin.Reset(UsrMovieFanartDir)</onclick>
 						<onclick>Skin.SetPath(UsrMovieFanartDir)</onclick>
 						<texturenofocus></texturenofocus>
 					</control>
@@ -3657,6 +3659,7 @@
 						<description>User TVShow FanArt Path</description>
 						<label>31096</label>
 						<label2>[COLOR=heading3]$INFO[Skin.String(UsrTVShowFanartDir)][/COLOR]</label2>
+						<onclick>Skin.Reset(UsrTVShowFanartDir)</onclick>
 						<onclick>Skin.SetPath(UsrTVShowFanartDir)</onclick>
 						<texturenofocus></texturenofocus>
 					</control>
@@ -3664,6 +3667,7 @@
 						<description>User Concerts FanArt Path</description>
 						<label>31097</label>
 						<label2>[COLOR=heading3]$INFO[Skin.String(UsrConcertsFanartDir)][/COLOR]</label2>
+						<onclick>Skin.Reset(UsrConcertsFanartDir)</onclick>
 						<onclick>Skin.SetPath(UsrConcertsFanartDir)</onclick>
 						<texturenofocus></texturenofocus>
 					</control>
@@ -3671,6 +3675,7 @@
 						<description>User Artists FanArt Path</description>
 						<label>31098</label>
 						<label2>[COLOR=heading3]$INFO[Skin.String(UsrArtistsFanartDir)][/COLOR]</label2>
+						<onclick>Skin.Reset(UsrArtistsFanartDir)</onclick>
 						<onclick>Skin.SetPath(UsrArtistsFanartDir)</onclick>
 						<texturenofocus></texturenofocus>
 					</control>
@@ -3678,6 +3683,7 @@
 						<description>User Album Thumbnails Path</description>
 						<label>31099</label>
 						<label2>[COLOR=heading3]$INFO[Skin.String(UsrAlbumThumbsDir)][/COLOR]</label2>
+						<onclick>Skin.Reset(UsrAlbumThumbsDir)</onclick>
 						<onclick>Skin.SetPath(UsrAlbumThumbsDir)</onclick>
 						<texturenofocus></texturenofocus>
 					</control>
@@ -3685,6 +3691,7 @@
 						<description>User Favourites FanArt Path</description>
 						<label>31107</label>
 						<label2>[COLOR=heading3]$INFO[Skin.String(FavouritesFanartDir)][/COLOR]</label2>
+						<onclick>Skin.Reset(FavouritesFanartDir)</onclick>
 						<onclick>Skin.SetPath(FavouritesFanartDir)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(FavouritesFanartDir))">Skin.SetString(FavBtnBackground,$INFO[Skin.String(FavouritesFanartDir)])</onclick>
 						<texturenofocus></texturenofocus>
@@ -3693,6 +3700,7 @@
 						<description>User Weather FanArt Path</description>
 						<label>31100</label>
 						<label2>[COLOR=heading3]$INFO[Skin.String(WeatherFanartDir)][/COLOR]</label2>
+						<onclick>Skin.Reset(WeatherFanartDir)</onclick>
 						<onclick>Skin.SetPath(WeatherFanartDir)</onclick>
 						<texturenofocus></texturenofocus>
 					</control>
@@ -3706,133 +3714,148 @@
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
+						<label>31211</label>
+						<textcolor>heading2</textcolor>
+					</control>					
+					<control type="button" id="611">
+						<description>Physical Music Folder</description>
+						<label>31212</label>
+						<label2>[COLOR=heading3]$INFO[Skin.String(PhysicalMusicFolder)][/COLOR]</label2>
+						<onclick>Skin.Reset(PhysicalMusicFolder)</onclick>
+						<onclick>Skin.SetPath(PhysicalMusicFolder)</onclick>
+						<texturenofocus></texturenofocus>
+					</control>					
+					<control type="label" id="612">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
 						<label>31140</label>
 						<textcolor>heading2</textcolor>
 					</control>
-					<control type="button" id="611">
+					<control type="button" id="613">
 						<label>$LOCALIZE[31132]</label>
 						<label2>[COLOR=heading3]$INFO[system.addontitle(Skin.String(LyricScript_Path))][/COLOR]</label2>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</onclick>
 					</control>
-					<control type="button" id="612">
+					<control type="button" id="614">
 						<label>- $LOCALIZE[24020]</label>
 						<texturenofocus></texturenofocus>
 						<enable>!IsEmpty(Skin.String(LyricScript_Path))</enable>
 						<onclick>Addon.OpenSettings($INFO[Skin.String(LyricScript_Path)])</onclick>
 					</control>
-					<control type="label" id="613">
+					<control type="label" id="615">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>31141</label>
 						<textcolor>heading2</textcolor>
 					</control>
-					<control type="button" id="614">
+					<control type="button" id="616">
 						<label>$LOCALIZE[31133]</label>
 						<label2>[COLOR=heading3]$INFO[system.addontitle(Skin.String(SubtitleScript_Path))][/COLOR]</label2>
 						<texturenofocus></texturenofocus>
 						<onclick>Skin.SetAddon(SubtitleScript_Path,xbmc.python.subtitles)</onclick>
 					</control>
-					<control type="button" id="615">
+					<control type="button" id="617">
 						<label>- $LOCALIZE[24020]</label>
 						<texturenofocus></texturenofocus>
 						<enable>!IsEmpty(Skin.String(SubtitleScript_Path))</enable>
 						<onclick>Addon.OpenSettings($INFO[Skin.String(SubtitleScript_Path)])</onclick>
 					</control>
-					<control type="label" id="616">
+					<control type="label" id="618">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>31188</label>
 						<textcolor>heading2</textcolor>
 					</control>
-					<control type="button" id="617">
+					<control type="button" id="619">
 						<label> - $LOCALIZE[31081]</label>
 						<texturenofocus></texturenofocus>
 						<onclick>Addon.OpenSettings(service.skin.widgets)</onclick>
 						<enable>System.HasAddon(service.skin.widgets)</enable>
 					</control>
-					<control type="radiobutton" id="618">
+					<control type="radiobutton" id="620">
 						<description>Enable Script RandomAndLastItems</description>
 						<label>$LOCALIZE[31372]</label>
 						<onclick>Skin.ToggleSetting(DisableScriptPlayList)</onclick>
 						<selected>!Skin.HasSetting(DisableScriptPlayList)</selected>
 					</control>
-					<control type="radiobutton" id="619">
+					<control type="radiobutton" id="621">
 						<description>randomandlastitems.script uses last not random</description>
 						<label> - $LOCALIZE[31373]</label>
 						<onclick>Skin.ToggleSetting(EnableRandomPlaylist)</onclick>
 						<selected>Skin.HasSetting(EnableRandomPlaylist)</selected>
 						<enable>System.HasAddon(script.randomandlastitems) + !Skin.HasSetting(DisableScriptPlayList)</enable>
 					</control>
-					<control type="radiobutton" id="620">
+					<control type="radiobutton" id="622">
 						<description>randomandlastitems.script only shows unwatched items</description>
 						<label> - $LOCALIZE[31374]</label>
 						<onclick>Skin.ToggleSetting(EnableUnWatchedPlaylist)</onclick>
 						<selected>Skin.HasSetting(EnableUnWatchedPlaylist)</selected>
 						<enable>System.HasAddon(script.randomandlastitems) + !Skin.HasSetting(DisableScriptPlayList)</enable>
 					</control>
-					<control type="label" id="621">
+					<control type="label" id="623">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>31360</label>
 						<textcolor>heading2</textcolor>
 					</control>
-					<control type="radiobutton" id="622">
+					<control type="radiobutton" id="624">
 						<label>31361</label>
 						<onclick>Skin.ToggleSetting(HideArtworkDownloader)</onclick>
 						<selected>!Skin.HasSetting(HideArtworkDownloader)</selected>
 						<enable>System.HasAddon(script.artwork.downloader)</enable>
 					</control>
-					<control type="button" id="623">
+					<control type="button" id="625">
 						<label>- $LOCALIZE[31363]</label>
 						<texturenofocus></texturenofocus>
 						<onclick>Addon.OpenSettings(script.artwork.downloader)</onclick>
 						<enable>!Skin.HasSetting(HideArtworkDownloader)</enable>
 						<visible>System.HasAddon(script.artwork.downloader)</visible>
 					</control>
-					<control type="radiobutton" id="624">
+					<control type="radiobutton" id="626">
 						<label>31362</label>
 						<onclick>Skin.ToggleSetting(HideTvTunes)</onclick>
 						<selected>!Skin.HasSetting(HideTvTunes)</selected>
 						<enable>System.HasAddon(script.tvtunes)</enable>
 					</control>
-					<control type="button" id="625">
+					<control type="button" id="627">
 						<label> - $LOCALIZE[31082]</label>
 						<texturenofocus></texturenofocus>
 						<onclick>Addon.OpenSettings(script.tvtunes)</onclick>
 						<enable>!Skin.HasSetting(HideTvTunes)</enable>
 						<visible>System.HasAddon(script.tvtunes)</visible>
 					</control>
-					<control type="radiobutton" id="626">
+					<control type="radiobutton" id="628">
 						<label>31369</label>
 						<onclick>Skin.ToggleSetting(DisableWatchItLater)</onclick>
 						<selected>!Skin.HasSetting(DisableWatchItLater)</selected>
 						<enable>System.HasAddon(script.simpleplaylists)</enable>
 					</control>
-					<control type="button" id="627">
+					<control type="button" id="629">
 						<label> - $LOCALIZE[31370]</label>
 						<texturenofocus></texturenofocus>
 						<onclick>Addon.OpenSettings(script.simpleplaylists)</onclick>
 						<enable>!Skin.HasSetting(DisableWatchItLater)</enable>
 						<visible>System.HasAddon(script.simpleplaylists)</visible>
 					</control>
-					<control type="label" id="628">
+					<control type="label" id="630">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>$LOCALIZE[31171] $LOCALIZE[31172]</label>
 						<textcolor>heading2</textcolor>
 					</control>
-					<control type="image" id="629">
+					<control type="image" id="631">
 						<width>750</width>
 						<height>120</height>
 						<aspectratio aligny="center" align="center">keep</aspectratio>
 						<texture>DefaultIconWarning.png</texture>
 					</control>
-					<control type="button" id="630">
+					<control type="button" id="632">
 						<description>Reset Skin Values</description>
 						<align>center</align>
 						<label>$LOCALIZE[31173]</label>
@@ -3866,7 +3889,6 @@
 				<font></font>
 				<aligny></aligny>
 				<onclick>$VAR[VolumeStepUp]</onclick>
-				<onclick>VolumeUp</onclick>
 				<onleft condition="Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)">84</onleft>
 				<onleft condition="!Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)">9010</onleft>
 				<onright>81</onright>
@@ -3896,7 +3918,6 @@
 				<font></font>
 				<aligny></aligny>
 				<onclick>$VAR[VolumeStepDown]</onclick>
-				<onclick>VolumeDown</onclick>
 				<onleft>80</onleft>
 				<onright>82</onright>
 				<onup>9010</onup>

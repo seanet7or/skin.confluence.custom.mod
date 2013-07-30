@@ -447,152 +447,261 @@
 		<value>$LOCALIZE[20459]</value>
 	</variable>
 	<variable name="UsrDefItemOneSubLabel" type="text">
-		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),Videos)">$VAR[UsersSubVideosName]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),Movies)">$VAR[UsersSubMoviesName]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),TVShows)">$VAR[UsersSubTVShowsName]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),Concerts)">$VAR[UsersSubConcertsName]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),Music)">$VAR[UsersSubMusicName]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),Programs)">$VAR[UsersSubProgsName]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),Pictures)">$VAR[UsersSubPicturesName]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),UserOne)">$VAR[UsersSubSelectOneName]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),UserTwo)">$VAR[UsersSubSelectTwoName]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),UserThree)">$VAR[UsersSubSelectThreeName]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),Videos) + !IsEmpty(Skin.String(UserVideosSubMenu))">$INFO[Skin.String(UserVideosSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),Videos) + IsEmpty(Skin.String(UserVideosSubMenu))">$LOCALIZE[3]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),Movies) + !IsEmpty(Skin.String(UserMoviesSubMenu))">$INFO[Skin.String(UserMoviesSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),Movies) + IsEmpty(Skin.String(UserMoviesSubMenu))">$LOCALIZE[20342]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),TVShows) + !IsEmpty(Skin.String(UserTVShowsSubMenu))">$INFO[Skin.String(UserTVShowsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),TVShows) + IsEmpty(Skin.String(UserTVShowsSubMenu))">$LOCALIZE[31131]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),Concerts) + !IsEmpty(Skin.String(UserConcertsSubMenu))">$INFO[Skin.String(UserConcertsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),Concerts) + IsEmpty(Skin.String(UserConcertsSubMenu))">$LOCALIZE[31121]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),Music) + !IsEmpty(Skin.String(UserMusicSubMenu))">$INFO[Skin.String(UserMusicSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),Music) + IsEmpty(Skin.String(UserMusicSubMenu))">$LOCALIZE[1211]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),Programs) + !IsEmpty(Skin.String(UserProgsSubMenu))">$INFO[Skin.String(UserProgsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),Programs) + IsEmpty(Skin.String(UserProgsSubMenu))">$LOCALIZE[10506]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),Pictures) + !IsEmpty(Skin.String(UserPicturesSubMenu))">$INFO[Skin.String(UserPicturesSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),Pictures) + IsEmpty(Skin.String(UserPicturesSubMenu))">$LOCALIZE[1213]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),UserOne) + !IsEmpty(Skin.String(UserSelectOneSubMenu))">$INFO[Skin.String(UserSelectOneSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),UserOne) + IsEmpty(Skin.String(UserSelectOneSubMenu))">$LOCALIZE[31135]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),UserTwo) + !IsEmpty(Skin.String(UserSelectTwoSubMenu))">$INFO[Skin.String(UserSelectTwoSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),UserTwo) + IsEmpty(Skin.String(UserSelectTwoSubMenu))">$LOCALIZE[31136]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),UserThree) + !IsEmpty(Skin.String(UserSelectThreeSubMenu))">$INFO[Skin.String(UserSelectThreeSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),UserThree) + IsEmpty(Skin.String(UserSelectThreeSubMenu))">$LOCALIZE[31190]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),Favourites)">$LOCALIZE[1036]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),LiveTV)">$LOCALIZE[31502]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),Settings)">$LOCALIZE[10004]</value>
 		<value>$LOCALIZE[31093]</value>
 	</variable>
 	<variable name="UsrDefItemTwoSubLabel" type="text">
-		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),UserOne)">$LOCALIZE[31135]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),UserTwo)">$LOCALIZE[31136]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),Videos)">$LOCALIZE[3]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),Movies)">$LOCALIZE[342]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),TVShows)">$LOCALIZE[20364]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),Concerts)">$LOCALIZE[31121]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),Videos) + !IsEmpty(Skin.String(UserVideosSubMenu))">$INFO[Skin.String(UserVideosSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),Videos) + IsEmpty(Skin.String(UserVideosSubMenu))">$LOCALIZE[3]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),Movies) + !IsEmpty(Skin.String(UserMoviesSubMenu))">$INFO[Skin.String(UserMoviesSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),Movies) + IsEmpty(Skin.String(UserMoviesSubMenu))">$LOCALIZE[20342]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),TVShows) + !IsEmpty(Skin.String(UserTVShowsSubMenu))">$INFO[Skin.String(UserTVShowsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),TVShows) + IsEmpty(Skin.String(UserTVShowsSubMenu))">$LOCALIZE[31131]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),Concerts) + !IsEmpty(Skin.String(UserConcertsSubMenu))">$INFO[Skin.String(UserConcertsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),Concerts) + IsEmpty(Skin.String(UserConcertsSubMenu))">$LOCALIZE[31121]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),Music) + !IsEmpty(Skin.String(UserMusicSubMenu))">$INFO[Skin.String(UserMusicSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),Music) + IsEmpty(Skin.String(UserMusicSubMenu))">$LOCALIZE[1211]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),Programs) + !IsEmpty(Skin.String(UserProgsSubMenu))">$INFO[Skin.String(UserProgsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),Programs) + IsEmpty(Skin.String(UserProgsSubMenu))">$LOCALIZE[10506]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),Pictures) + !IsEmpty(Skin.String(UserPicturesSubMenu))">$INFO[Skin.String(UserPicturesSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),Pictures) + IsEmpty(Skin.String(UserPicturesSubMenu))">$LOCALIZE[1213]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),UserOne) + !IsEmpty(Skin.String(UserSelectOneSubMenu))">$INFO[Skin.String(UserSelectOneSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),UserOne) + IsEmpty(Skin.String(UserSelectOneSubMenu))">$LOCALIZE[31135]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),UserTwo) + !IsEmpty(Skin.String(UserSelectTwoSubMenu))">$INFO[Skin.String(UserSelectTwoSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),UserTwo) + IsEmpty(Skin.String(UserSelectTwoSubMenu))">$LOCALIZE[31136]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),UserThree) + !IsEmpty(Skin.String(UserSelectThreeSubMenu))">$INFO[Skin.String(UserSelectThreeSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),UserThree) + IsEmpty(Skin.String(UserSelectThreeSubMenu))">$LOCALIZE[31190]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),LiveTV)">$LOCALIZE[31502]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),Music)">$LOCALIZE[2]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),Pictures)">$LOCALIZE[10002]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),Programs)">$LOCALIZE[10001]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),Settings)">$LOCALIZE[10004]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.2.Sub),Favourites)">$LOCALIZE[1036]</value>
 		<value>$LOCALIZE[31093]</value>
 	</variable>
 	<variable name="UsrDefItemThreeSubLabel" type="text">
-		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),UserOne)">$LOCALIZE[31135]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),UserTwo)">$LOCALIZE[31136]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),Videos)">$LOCALIZE[3]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),Movies)">$LOCALIZE[342]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),TVShows)">$LOCALIZE[20364]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),Concerts)">$LOCALIZE[31121]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),Videos) + !IsEmpty(Skin.String(UserVideosSubMenu))">$INFO[Skin.String(UserVideosSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),Videos) + IsEmpty(Skin.String(UserVideosSubMenu))">$LOCALIZE[3]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),Movies) + !IsEmpty(Skin.String(UserMoviesSubMenu))">$INFO[Skin.String(UserMoviesSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),Movies) + IsEmpty(Skin.String(UserMoviesSubMenu))">$LOCALIZE[20342]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),TVShows) + !IsEmpty(Skin.String(UserTVShowsSubMenu))">$INFO[Skin.String(UserTVShowsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),TVShows) + IsEmpty(Skin.String(UserTVShowsSubMenu))">$LOCALIZE[31131]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),Concerts) + !IsEmpty(Skin.String(UserConcertsSubMenu))">$INFO[Skin.String(UserConcertsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),Concerts) + IsEmpty(Skin.String(UserConcertsSubMenu))">$LOCALIZE[31121]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),Music) + !IsEmpty(Skin.String(UserMusicSubMenu))">$INFO[Skin.String(UserMusicSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),Music) + IsEmpty(Skin.String(UserMusicSubMenu))">$LOCALIZE[1211]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),Programs) + !IsEmpty(Skin.String(UserProgsSubMenu))">$INFO[Skin.String(UserProgsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),Programs) + IsEmpty(Skin.String(UserProgsSubMenu))">$LOCALIZE[10506]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),Pictures) + !IsEmpty(Skin.String(UserPicturesSubMenu))">$INFO[Skin.String(UserPicturesSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),Pictures) + IsEmpty(Skin.String(UserPicturesSubMenu))">$LOCALIZE[1213]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),UserOne) + !IsEmpty(Skin.String(UserSelectOneSubMenu))">$INFO[Skin.String(UserSelectOneSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),UserOne) + IsEmpty(Skin.String(UserSelectOneSubMenu))">$LOCALIZE[31135]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),UserTwo) + !IsEmpty(Skin.String(UserSelectTwoSubMenu))">$INFO[Skin.String(UserSelectTwoSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),UserTwo) + IsEmpty(Skin.String(UserSelectTwoSubMenu))">$LOCALIZE[31136]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),UserThree) + !IsEmpty(Skin.String(UserSelectThreeSubMenu))">$INFO[Skin.String(UserSelectThreeSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),UserThree) + IsEmpty(Skin.String(UserSelectThreeSubMenu))">$LOCALIZE[31190]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),LiveTV)">$LOCALIZE[31502]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),Music)">$LOCALIZE[2]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),Pictures)">$LOCALIZE[10002]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),Programs)">$LOCALIZE[10001]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),Settings)">$LOCALIZE[10004]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.3.Sub),Favourites)">$LOCALIZE[1036]</value>
 		<value>$LOCALIZE[31093]</value>
 	</variable>
 	<variable name="UsrDefItemFourSubLabel" type="text">
-		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),UserOne)">$LOCALIZE[31135]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),UserTwo)">$LOCALIZE[31136]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),Videos)">$LOCALIZE[3]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),Movies)">$LOCALIZE[342]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),TVShows)">$LOCALIZE[20364]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),Concerts)">$LOCALIZE[31121]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),Videos) + !IsEmpty(Skin.String(UserVideosSubMenu))">$INFO[Skin.String(UserVideosSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),Videos) + IsEmpty(Skin.String(UserVideosSubMenu))">$LOCALIZE[3]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),Movies) + !IsEmpty(Skin.String(UserMoviesSubMenu))">$INFO[Skin.String(UserMoviesSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),Movies) + IsEmpty(Skin.String(UserMoviesSubMenu))">$LOCALIZE[20342]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),TVShows) + !IsEmpty(Skin.String(UserTVShowsSubMenu))">$INFO[Skin.String(UserTVShowsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),TVShows) + IsEmpty(Skin.String(UserTVShowsSubMenu))">$LOCALIZE[31131]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),Concerts) + !IsEmpty(Skin.String(UserConcertsSubMenu))">$INFO[Skin.String(UserConcertsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),Concerts) + IsEmpty(Skin.String(UserConcertsSubMenu))">$LOCALIZE[31121]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),Music) + !IsEmpty(Skin.String(UserMusicSubMenu))">$INFO[Skin.String(UserMusicSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),Music) + IsEmpty(Skin.String(UserMusicSubMenu))">$LOCALIZE[1211]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),Programs) + !IsEmpty(Skin.String(UserProgsSubMenu))">$INFO[Skin.String(UserProgsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),Programs) + IsEmpty(Skin.String(UserProgsSubMenu))">$LOCALIZE[10506]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),Pictures) + !IsEmpty(Skin.String(UserPicturesSubMenu))">$INFO[Skin.String(UserPicturesSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),Pictures) + IsEmpty(Skin.String(UserPicturesSubMenu))">$LOCALIZE[1213]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),UserOne) + !IsEmpty(Skin.String(UserSelectOneSubMenu))">$INFO[Skin.String(UserSelectOneSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),UserOne) + IsEmpty(Skin.String(UserSelectOneSubMenu))">$LOCALIZE[31135]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),UserTwo) + !IsEmpty(Skin.String(UserSelectTwoSubMenu))">$INFO[Skin.String(UserSelectTwoSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),UserTwo) + IsEmpty(Skin.String(UserSelectTwoSubMenu))">$LOCALIZE[31136]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),UserThree) + !IsEmpty(Skin.String(UserSelectThreeSubMenu))">$INFO[Skin.String(UserSelectThreeSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),UserThree) + IsEmpty(Skin.String(UserSelectThreeSubMenu))">$LOCALIZE[31190]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),LiveTV)">$LOCALIZE[31502]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),Music)">$LOCALIZE[2]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),Pictures)">$LOCALIZE[10002]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),Programs)">$LOCALIZE[10001]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),Settings)">$LOCALIZE[10004]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.4.Sub),Favourites)">$LOCALIZE[1036]</value>
 		<value>$LOCALIZE[31093]</value>
 	</variable>
 	<variable name="UsrDefItemFiveSubLabel" type="text">
-		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),UserOne)">$LOCALIZE[31135]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),UserTwo)">$LOCALIZE[31136]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),Videos)">$LOCALIZE[3]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),Movies)">$LOCALIZE[342]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),TVShows)">$LOCALIZE[20364]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),Concerts)">$LOCALIZE[31121]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),Videos) + !IsEmpty(Skin.String(UserVideosSubMenu))">$INFO[Skin.String(UserVideosSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),Videos) + IsEmpty(Skin.String(UserVideosSubMenu))">$LOCALIZE[3]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),Movies) + !IsEmpty(Skin.String(UserMoviesSubMenu))">$INFO[Skin.String(UserMoviesSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),Movies) + IsEmpty(Skin.String(UserMoviesSubMenu))">$LOCALIZE[20342]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),TVShows) + !IsEmpty(Skin.String(UserTVShowsSubMenu))">$INFO[Skin.String(UserTVShowsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),TVShows) + IsEmpty(Skin.String(UserTVShowsSubMenu))">$LOCALIZE[31131]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),Concerts) + !IsEmpty(Skin.String(UserConcertsSubMenu))">$INFO[Skin.String(UserConcertsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),Concerts) + IsEmpty(Skin.String(UserConcertsSubMenu))">$LOCALIZE[31121]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),Music) + !IsEmpty(Skin.String(UserMusicSubMenu))">$INFO[Skin.String(UserMusicSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),Music) + IsEmpty(Skin.String(UserMusicSubMenu))">$LOCALIZE[1211]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),Programs) + !IsEmpty(Skin.String(UserProgsSubMenu))">$INFO[Skin.String(UserProgsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),Programs) + IsEmpty(Skin.String(UserProgsSubMenu))">$LOCALIZE[10506]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),Pictures) + !IsEmpty(Skin.String(UserPicturesSubMenu))">$INFO[Skin.String(UserPicturesSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),Pictures) + IsEmpty(Skin.String(UserPicturesSubMenu))">$LOCALIZE[1213]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),UserOne) + !IsEmpty(Skin.String(UserSelectOneSubMenu))">$INFO[Skin.String(UserSelectOneSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),UserOne) + IsEmpty(Skin.String(UserSelectOneSubMenu))">$LOCALIZE[31135]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),UserTwo) + !IsEmpty(Skin.String(UserSelectTwoSubMenu))">$INFO[Skin.String(UserSelectTwoSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),UserTwo) + IsEmpty(Skin.String(UserSelectTwoSubMenu))">$LOCALIZE[31136]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),UserThree) + !IsEmpty(Skin.String(UserSelectThreeSubMenu))">$INFO[Skin.String(UserSelectThreeSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),UserThree) + IsEmpty(Skin.String(UserSelectThreeSubMenu))">$LOCALIZE[31190]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),LiveTV)">$LOCALIZE[31502]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),Music)">$LOCALIZE[2]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),Pictures)">$LOCALIZE[10002]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),Programs)">$LOCALIZE[10001]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),Settings)">$LOCALIZE[10004]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.5.Sub),Favourites)">$LOCALIZE[1036]</value>
 		<value>$LOCALIZE[31093]</value>
 	</variable>
 	<variable name="UsrDefItemSixSubLabel" type="text">
-		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),UserOne)">$LOCALIZE[31135]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),UserTwo)">$LOCALIZE[31136]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),Videos)">$LOCALIZE[3]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),Movies)">$LOCALIZE[342]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),TVShows)">$LOCALIZE[20364]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),Concerts)">$LOCALIZE[31121]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),Videos) + !IsEmpty(Skin.String(UserVideosSubMenu))">$INFO[Skin.String(UserVideosSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),Videos) + IsEmpty(Skin.String(UserVideosSubMenu))">$LOCALIZE[3]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),Movies) + !IsEmpty(Skin.String(UserMoviesSubMenu))">$INFO[Skin.String(UserMoviesSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),Movies) + IsEmpty(Skin.String(UserMoviesSubMenu))">$LOCALIZE[20342]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),TVShows) + !IsEmpty(Skin.String(UserTVShowsSubMenu))">$INFO[Skin.String(UserTVShowsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),TVShows) + IsEmpty(Skin.String(UserTVShowsSubMenu))">$LOCALIZE[31131]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),Concerts) + !IsEmpty(Skin.String(UserConcertsSubMenu))">$INFO[Skin.String(UserConcertsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),Concerts) + IsEmpty(Skin.String(UserConcertsSubMenu))">$LOCALIZE[31121]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),Music) + !IsEmpty(Skin.String(UserMusicSubMenu))">$INFO[Skin.String(UserMusicSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),Music) + IsEmpty(Skin.String(UserMusicSubMenu))">$LOCALIZE[1211]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),Programs) + !IsEmpty(Skin.String(UserProgsSubMenu))">$INFO[Skin.String(UserProgsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),Programs) + IsEmpty(Skin.String(UserProgsSubMenu))">$LOCALIZE[10506]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),Pictures) + !IsEmpty(Skin.String(UserPicturesSubMenu))">$INFO[Skin.String(UserPicturesSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),Pictures) + IsEmpty(Skin.String(UserPicturesSubMenu))">$LOCALIZE[1213]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),UserOne) + !IsEmpty(Skin.String(UserSelectOneSubMenu))">$INFO[Skin.String(UserSelectOneSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),UserOne) + IsEmpty(Skin.String(UserSelectOneSubMenu))">$LOCALIZE[31135]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),UserTwo) + !IsEmpty(Skin.String(UserSelectTwoSubMenu))">$INFO[Skin.String(UserSelectTwoSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),UserTwo) + IsEmpty(Skin.String(UserSelectTwoSubMenu))">$LOCALIZE[31136]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),UserThree) + !IsEmpty(Skin.String(UserSelectThreeSubMenu))">$INFO[Skin.String(UserSelectThreeSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),UserThree) + IsEmpty(Skin.String(UserSelectThreeSubMenu))">$LOCALIZE[31190]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),LiveTV)">$LOCALIZE[31502]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),Music)">$LOCALIZE[2]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),Pictures)">$LOCALIZE[10002]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),Programs)">$LOCALIZE[10001]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),Settings)">$LOCALIZE[10004]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.6.Sub),Favourites)">$LOCALIZE[1036]</value>
 		<value>$LOCALIZE[31093]</value>
 	</variable>
 	<variable name="UsrDefItemSevenSubLabel" type="text">
-		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),UserOne)">$LOCALIZE[31135]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),UserTwo)">$LOCALIZE[31136]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),Videos)">$LOCALIZE[3]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),Movies)">$LOCALIZE[342]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),TVShows)">$LOCALIZE[20364]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),Concerts)">$LOCALIZE[31121]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),Videos) + !IsEmpty(Skin.String(UserVideosSubMenu))">$INFO[Skin.String(UserVideosSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),Videos) + IsEmpty(Skin.String(UserVideosSubMenu))">$LOCALIZE[3]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),Movies) + !IsEmpty(Skin.String(UserMoviesSubMenu))">$INFO[Skin.String(UserMoviesSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),Movies) + IsEmpty(Skin.String(UserMoviesSubMenu))">$LOCALIZE[20342]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),TVShows) + !IsEmpty(Skin.String(UserTVShowsSubMenu))">$INFO[Skin.String(UserTVShowsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),TVShows) + IsEmpty(Skin.String(UserTVShowsSubMenu))">$LOCALIZE[31131]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),Concerts) + !IsEmpty(Skin.String(UserConcertsSubMenu))">$INFO[Skin.String(UserConcertsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),Concerts) + IsEmpty(Skin.String(UserConcertsSubMenu))">$LOCALIZE[31121]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),Music) + !IsEmpty(Skin.String(UserMusicSubMenu))">$INFO[Skin.String(UserMusicSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),Music) + IsEmpty(Skin.String(UserMusicSubMenu))">$LOCALIZE[1211]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),Programs) + !IsEmpty(Skin.String(UserProgsSubMenu))">$INFO[Skin.String(UserProgsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),Programs) + IsEmpty(Skin.String(UserProgsSubMenu))">$LOCALIZE[10506]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),Pictures) + !IsEmpty(Skin.String(UserPicturesSubMenu))">$INFO[Skin.String(UserPicturesSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),Pictures) + IsEmpty(Skin.String(UserPicturesSubMenu))">$LOCALIZE[1213]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),UserOne) + !IsEmpty(Skin.String(UserSelectOneSubMenu))">$INFO[Skin.String(UserSelectOneSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),UserOne) + IsEmpty(Skin.String(UserSelectOneSubMenu))">$LOCALIZE[31135]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),UserTwo) + !IsEmpty(Skin.String(UserSelectTwoSubMenu))">$INFO[Skin.String(UserSelectTwoSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),UserTwo) + IsEmpty(Skin.String(UserSelectTwoSubMenu))">$LOCALIZE[31136]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),UserThree) + !IsEmpty(Skin.String(UserSelectThreeSubMenu))">$INFO[Skin.String(UserSelectThreeSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),UserThree) + IsEmpty(Skin.String(UserSelectThreeSubMenu))">$LOCALIZE[31190]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),LiveTV)">$LOCALIZE[31502]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),Music)">$LOCALIZE[2]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),Pictures)">$LOCALIZE[10002]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),Programs)">$LOCALIZE[10001]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),Settings)">$LOCALIZE[10004]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.7.Sub),Favourites)">$LOCALIZE[1036]</value>
 		<value>$LOCALIZE[31093]</value>
 	</variable>
 	<variable name="UsrDefItemEightSubLabel" type="text">
-		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),UserOne)">$LOCALIZE[31135]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),UserTwo)">$LOCALIZE[31136]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),Videos)">$LOCALIZE[3]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),Movies)">$LOCALIZE[342]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),TVShows)">$LOCALIZE[20364]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),Concerts)">$LOCALIZE[31121]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),Videos) + !IsEmpty(Skin.String(UserVideosSubMenu))">$INFO[Skin.String(UserVideosSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),Videos) + IsEmpty(Skin.String(UserVideosSubMenu))">$LOCALIZE[3]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),Movies) + !IsEmpty(Skin.String(UserMoviesSubMenu))">$INFO[Skin.String(UserMoviesSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),Movies) + IsEmpty(Skin.String(UserMoviesSubMenu))">$LOCALIZE[20342]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),TVShows) + !IsEmpty(Skin.String(UserTVShowsSubMenu))">$INFO[Skin.String(UserTVShowsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),TVShows) + IsEmpty(Skin.String(UserTVShowsSubMenu))">$LOCALIZE[31131]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),Concerts) + !IsEmpty(Skin.String(UserConcertsSubMenu))">$INFO[Skin.String(UserConcertsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),Concerts) + IsEmpty(Skin.String(UserConcertsSubMenu))">$LOCALIZE[31121]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),Music) + !IsEmpty(Skin.String(UserMusicSubMenu))">$INFO[Skin.String(UserMusicSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),Music) + IsEmpty(Skin.String(UserMusicSubMenu))">$LOCALIZE[1211]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),Programs) + !IsEmpty(Skin.String(UserProgsSubMenu))">$INFO[Skin.String(UserProgsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),Programs) + IsEmpty(Skin.String(UserProgsSubMenu))">$LOCALIZE[10506]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),Pictures) + !IsEmpty(Skin.String(UserPicturesSubMenu))">$INFO[Skin.String(UserPicturesSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),Pictures) + IsEmpty(Skin.String(UserPicturesSubMenu))">$LOCALIZE[1213]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),UserOne) + !IsEmpty(Skin.String(UserSelectOneSubMenu))">$INFO[Skin.String(UserSelectOneSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),UserOne) + IsEmpty(Skin.String(UserSelectOneSubMenu))">$LOCALIZE[31135]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),UserTwo) + !IsEmpty(Skin.String(UserSelectTwoSubMenu))">$INFO[Skin.String(UserSelectTwoSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),UserTwo) + IsEmpty(Skin.String(UserSelectTwoSubMenu))">$LOCALIZE[31136]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),UserThree) + !IsEmpty(Skin.String(UserSelectThreeSubMenu))">$INFO[Skin.String(UserSelectThreeSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),UserThree) + IsEmpty(Skin.String(UserSelectThreeSubMenu))">$LOCALIZE[31190]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),LiveTV)">$LOCALIZE[31502]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),Music)">$LOCALIZE[2]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),Pictures)">$LOCALIZE[10002]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),Programs)">$LOCALIZE[10001]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),Settings)">$LOCALIZE[10004]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.8.Sub),Favourites)">$LOCALIZE[1036]</value>
 		<value>$LOCALIZE[31093]</value>
 	</variable>
 	<variable name="UsrDefItemNineSubLabel" type="text">
-		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),UserOne)">$LOCALIZE[31135]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),UserTwo)">$LOCALIZE[31136]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),Videos)">$LOCALIZE[3]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),Movies)">$LOCALIZE[342]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),TVShows)">$LOCALIZE[20364]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),Concerts)">$LOCALIZE[31121]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),Videos) + !IsEmpty(Skin.String(UserVideosSubMenu))">$INFO[Skin.String(UserVideosSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),Videos) + IsEmpty(Skin.String(UserVideosSubMenu))">$LOCALIZE[3]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),Movies) + !IsEmpty(Skin.String(UserMoviesSubMenu))">$INFO[Skin.String(UserMoviesSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),Movies) + IsEmpty(Skin.String(UserMoviesSubMenu))">$LOCALIZE[20342]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),TVShows) + !IsEmpty(Skin.String(UserTVShowsSubMenu))">$INFO[Skin.String(UserTVShowsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),TVShows) + IsEmpty(Skin.String(UserTVShowsSubMenu))">$LOCALIZE[31131]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),Concerts) + !IsEmpty(Skin.String(UserConcertsSubMenu))">$INFO[Skin.String(UserConcertsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),Concerts) + IsEmpty(Skin.String(UserConcertsSubMenu))">$LOCALIZE[31121]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),Music) + !IsEmpty(Skin.String(UserMusicSubMenu))">$INFO[Skin.String(UserMusicSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),Music) + IsEmpty(Skin.String(UserMusicSubMenu))">$LOCALIZE[1211]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),Programs) + !IsEmpty(Skin.String(UserProgsSubMenu))">$INFO[Skin.String(UserProgsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),Programs) + IsEmpty(Skin.String(UserProgsSubMenu))">$LOCALIZE[10506]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),Pictures) + !IsEmpty(Skin.String(UserPicturesSubMenu))">$INFO[Skin.String(UserPicturesSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),Pictures) + IsEmpty(Skin.String(UserPicturesSubMenu))">$LOCALIZE[1213]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),UserOne) + !IsEmpty(Skin.String(UserSelectOneSubMenu))">$INFO[Skin.String(UserSelectOneSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),UserOne) + IsEmpty(Skin.String(UserSelectOneSubMenu))">$LOCALIZE[31135]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),UserTwo) + !IsEmpty(Skin.String(UserSelectTwoSubMenu))">$INFO[Skin.String(UserSelectTwoSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),UserTwo) + IsEmpty(Skin.String(UserSelectTwoSubMenu))">$LOCALIZE[31136]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),UserThree) + !IsEmpty(Skin.String(UserSelectThreeSubMenu))">$INFO[Skin.String(UserSelectThreeSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),UserThree) + IsEmpty(Skin.String(UserSelectThreeSubMenu))">$LOCALIZE[31190]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),LiveTV)">$LOCALIZE[31502]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),Music)">$LOCALIZE[2]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),Pictures)">$LOCALIZE[10002]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),Programs)">$LOCALIZE[10001]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),Settings)">$LOCALIZE[10004]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.9.Sub),Favourites)">$LOCALIZE[1036]</value>
 		<value>$LOCALIZE[31093]</value>
 	</variable>
 	<variable name="UsrDefItemTenSubLabel" type="text">
-		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),UserOne)">$LOCALIZE[31135]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),UserTwo)">$LOCALIZE[31136]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),Videos)">$LOCALIZE[3]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),Movies)">$LOCALIZE[342]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),TVShows)">$LOCALIZE[20364]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),Concerts)">$LOCALIZE[31121]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),Videos) + !IsEmpty(Skin.String(UserVideosSubMenu))">$INFO[Skin.String(UserVideosSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),Videos) + IsEmpty(Skin.String(UserVideosSubMenu))">$LOCALIZE[3]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),Movies) + !IsEmpty(Skin.String(UserMoviesSubMenu))">$INFO[Skin.String(UserMoviesSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),Movies) + IsEmpty(Skin.String(UserMoviesSubMenu))">$LOCALIZE[20342]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),TVShows) + !IsEmpty(Skin.String(UserTVShowsSubMenu))">$INFO[Skin.String(UserTVShowsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),TVShows) + IsEmpty(Skin.String(UserTVShowsSubMenu))">$LOCALIZE[31131]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),Concerts) + !IsEmpty(Skin.String(UserConcertsSubMenu))">$INFO[Skin.String(UserConcertsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),Concerts) + IsEmpty(Skin.String(UserConcertsSubMenu))">$LOCALIZE[31121]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),Music) + !IsEmpty(Skin.String(UserMusicSubMenu))">$INFO[Skin.String(UserMusicSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),Music) + IsEmpty(Skin.String(UserMusicSubMenu))">$LOCALIZE[1211]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),Programs) + !IsEmpty(Skin.String(UserProgsSubMenu))">$INFO[Skin.String(UserProgsSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),Programs) + IsEmpty(Skin.String(UserProgsSubMenu))">$LOCALIZE[10506]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),Pictures) + !IsEmpty(Skin.String(UserPicturesSubMenu))">$INFO[Skin.String(UserPicturesSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),Pictures) + IsEmpty(Skin.String(UserPicturesSubMenu))">$LOCALIZE[1213]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),UserOne) + !IsEmpty(Skin.String(UserSelectOneSubMenu))">$INFO[Skin.String(UserSelectOneSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),UserOne) + IsEmpty(Skin.String(UserSelectOneSubMenu))">$LOCALIZE[31135]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),UserTwo) + !IsEmpty(Skin.String(UserSelectTwoSubMenu))">$INFO[Skin.String(UserSelectTwoSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),UserTwo) + IsEmpty(Skin.String(UserSelectTwoSubMenu))">$LOCALIZE[31136]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),UserThree) + !IsEmpty(Skin.String(UserSelectThreeSubMenu))">$INFO[Skin.String(UserSelectThreeSubMenu)]</value>
+		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),UserThree) + IsEmpty(Skin.String(UserSelectThreeSubMenu))">$LOCALIZE[31190]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),LiveTV)">$LOCALIZE[31502]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),Music)">$LOCALIZE[2]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),Pictures)">$LOCALIZE[10002]</value>
-		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),Programs)">$LOCALIZE[10001]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),Settings)">$LOCALIZE[10004]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.10.Sub),Favourites)">$LOCALIZE[1036]</value>
 		<value>$LOCALIZE[31093]</value>
@@ -1142,29 +1251,29 @@
 		<value>$INFO[Skin.String(UsrGenreFanartDir)]$INFO[ListItem.Label,,.jpg]</value>
 	</variable>
 	<variable name="VolumeStepDown" type="text">
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,90)">SetVolume(90)</value>
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,80)">SetVolume(80)</value>
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,70)">SetVolume(70)</value>
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,60)">SetVolume(60)</value>
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,50)">SetVolume(50)</value>
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,40)">SetVolume(40)</value>
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,30)">SetVolume(30)</value>
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,20)">SetVolume(20)</value>
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,10)">SetVolume(10)</value>
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,1)">SetVolume(1)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,90)">SetVolume(90,true)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,80)">SetVolume(80,true)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,70)">SetVolume(70,true)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,60)">SetVolume(60,true)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,50)">SetVolume(50,true)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,40)">SetVolume(40,true)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,30)">SetVolume(30,true)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,20)">SetVolume(20,true)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,10)">SetVolume(10,true)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + IntegerGreaterThan(player.volume,1)">SetVolume(1,true)</value>
 		<value>VolumeDown</value>
 	</variable>
 	<variable name="VolumeStepUp" type="text">
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,10)">SetVolume(11)</value>
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,20)">SetVolume(21)</value>
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,30)">SetVolume(31)</value>
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,40)">SetVolume(41)</value>
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,50)">SetVolume(51)</value>
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,60)">SetVolume(61)</value>
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,70)">SetVolume(71)</value>
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,80)">SetVolume(81)</value>
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,90)">SetVolume(91)</value>
-		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,99)">SetVolume(100)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,10)">SetVolume(11,true)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,20)">SetVolume(21,true)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,30)">SetVolume(31,true)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,40)">SetVolume(41,true)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,50)">SetVolume(51,true)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,60)">SetVolume(61,true)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,70)">SetVolume(71,true)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,80)">SetVolume(81,true)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,90)">SetVolume(91,true)</value>
+		<value condition="!Skin.HasSetting(SmallVolumeJump) + !IntegerGreaterThan(player.volume,99)">SetVolume(100,true)</value>
 		<value>VolumeUp</value>
 	</variable>
 </includes>

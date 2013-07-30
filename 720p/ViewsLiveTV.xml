@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
+<includes>
 	<include name="LiveTVView1">
 		<control type="group">
 			<visible>Control.IsVisible(560)</visible>
@@ -22,7 +23,7 @@
 						<posy>0</posy>
 						<width>730</width>
 						<height>40</height>
-						<label>$INFO[ListItem.Plot]</label>
+						<label>$INFO[ListItem.Label]</label>
 					</control>
 					<control type="label">
 						<posx>750</posx>
@@ -45,7 +46,7 @@
 						<width>730</width>
 						<height>40</height>
 						<textcolor>textfocus</textcolor>
-						<label>$INFO[ListItem.Plot]</label>
+						<label>$INFO[ListItem.Label]</label>
 					</control>
 					<control type="label">
 						<posx>750</posx>
@@ -90,7 +91,7 @@
 					<posy>330</posy>
 					<width>290</width>
 					<height>220</height>
-					<label>$VAR[VideoDescription]</label>
+					<label>$INFO[ListItem.Plot]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
 			</control>
