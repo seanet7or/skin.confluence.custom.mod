@@ -176,6 +176,7 @@ read_origmaster() {
 	rm -rf extras
 	rm -rf themes 2>/dev/null
 	rm -rf Mudislander-master/skin.confluence.custom.mod-master/themes
+	rm Mudislander-master/skin.confluence.custom.mod-master/icon.png
 	cp -rf Mudislander-master/skin.confluence.custom.mod-master/* .
 	cp -rf lightmod/* .
 	printf "\nCopied all files."
