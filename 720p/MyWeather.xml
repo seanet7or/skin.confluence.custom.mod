@@ -651,12 +651,12 @@
 					<control type="group">
 						<visible>StringCompare(Window.Property(Weather.CurrentView),36hour)</visible>
 						<control type="button" id="997">
+							<texturenofocus></texturenofocus>
 							<description>Hidden Button for focus</description>
 							<posx>-600</posx>
 							<posy>-20</posy>
 							<width>1</width>
 							<height>1</height>
-							<texturenofocus></texturenofocus>
 							<texturefocus></texturefocus>
 							<onleft>9000</onleft>
 							<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
@@ -822,12 +822,12 @@
 					<control type="group">
 						<visible>StringCompare(Window.Property(Weather.CurrentView),weekend)</visible>
 						<control type="button" id="998">
+							<texturenofocus></texturenofocus>
 							<description>Hidden Button for focus</description>
 							<posx>-600</posx>
 							<posy>-20</posy>
 							<width>1</width>
 							<height>1</height>
-							<texturenofocus></texturenofocus>
 							<texturefocus></texturefocus>
 							<onleft>9000</onleft>
 							<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
@@ -1196,12 +1196,12 @@
 					<control type="group">
 						<visible>StringCompare(Window.Property(Weather.CurrentView),map)</visible>
 						<control type="button" id="999">
+							<texturenofocus></texturenofocus>
 							<description>Hidden Button for focus</description>
 							<posx>-600</posx>
 							<posy>-20</posy>
 							<width>1</width>
 							<height>1</height>
-							<texturenofocus></texturenofocus>
 							<texturefocus></texturefocus>
 							<onleft>9000</onleft>
 							<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
@@ -1303,8 +1303,6 @@
 				<description>volume Icon</description>
 				<posx>5</posx>
 				<posy>5</posy>
-				<width>35</width>
-				<height>35</height>
 				<aspectratio>keep</aspectratio>
 				<texture>icon_volplus.png</texture>
 				<visible>!Skin.HasSetting(DisableFloorVolumeButtons)</visible>
@@ -1331,8 +1329,6 @@
 				<description>Volume Icon</description>
 				<posx>60</posx>
 				<posy>5</posy>
-				<width>35</width>
-				<height>35</height>
 				<aspectratio>keep</aspectratio>
 				<texture>icon_volminus.png</texture>
 				<visible>!Skin.HasSetting(DisableFloorVolumeButtons)</visible>
@@ -1357,8 +1353,6 @@
 				<description>Back Icon</description>
 				<posx>115</posx>
 				<posy>5</posy>
-				<width>35</width>
-				<height>35</height>
 				<aspectratio>keep</aspectratio>
 				<texture>icon_back.png</texture>
 			</control>
@@ -1381,8 +1375,6 @@
 				<description>Home Icon</description>
 				<posx>170</posx>
 				<posy>5</posy>
-				<width>35</width>
-				<height>35</height>
 				<aspectratio>keep</aspectratio>
 				<texture>icon_home.png</texture>
 			</control>
@@ -1434,50 +1426,50 @@
 					</control>
 				</control>
 				<control type="button" id="302">
+					<texturenofocus></texturenofocus>
 					<description>10 day forcast button</description>
 					<textwidth>235</textwidth>
 					<width>250</width>
-					<texturenofocus></texturenofocus>
 					<textwidth>200</textwidth>
 					<label>31904</label>
 					<onfocus>ClearProperty(Weather.CurrentView)</onfocus>
 					<visible>StringCompare(Weather.Plugin,weather.wunderground)</visible>
 				</control>
 				<control type="button" id="303">
+					<texturenofocus></texturenofocus>
 					<description>36 hour forcast button</description>
 					<textwidth>235</textwidth>
 					<width>250</width>
-					<texturenofocus></texturenofocus>
 					<textwidth>200</textwidth>
 					<label>31901</label>
 					<onfocus>SetProperty(Weather.CurrentView,36hour)</onfocus>
 					<visible>StringCompare(Weather.Plugin,weather.wunderground)</visible>
 				</control>
 				<control type="button" id="304">
+					<texturenofocus></texturenofocus>
 					<description>Weekend forcast button</description>
 					<textwidth>235</textwidth>
 					<width>250</width>
-					<texturenofocus></texturenofocus>
 					<textwidth>200</textwidth>
 					<label>31903</label>
 					<onfocus>SetProperty(Weather.CurrentView,weekend)</onfocus>
 					<visible>StringCompare(Weather.Plugin,weather.wunderground)</visible>
 				</control>
 				<control type="button" id="305">
+					<texturenofocus></texturenofocus>
 					<description>Hourly forcast button</description>
 					<textwidth>235</textwidth>
 					<width>250</width>
-					<texturenofocus></texturenofocus>
 					<textwidth>200</textwidth>
 					<label>31902</label>
 					<onfocus>SetProperty(Weather.CurrentView,hourly)</onfocus>
 					<visible>StringCompare(Weather.Plugin,weather.wunderground)</visible>
 				</control>
 				<control type="button" id="306">
+					<texturenofocus></texturenofocus>
 					<description>Hourly forcast button</description>
 					<textwidth>235</textwidth>
 					<width>250</width>
-					<texturenofocus></texturenofocus>
 					<textwidth>200</textwidth>
 					<label>31910</label>
 					<onfocus>SetProperty(Weather.CurrentView,map)</onfocus>
@@ -1491,14 +1483,15 @@
 					<align>center</align>
 				</control>
 				<control type="button" id="2">
+					<texturenofocus></texturenofocus>
 					<description>Refresh button</description>
 					<textwidth>235</textwidth>
 					<width>250</width>
-					<texturenofocus></texturenofocus>
 					<textwidth>200</textwidth>
 					<label>103</label>
 				</control>
 				<control type="button" id="5">
+					<texturenofocus></texturenofocus>
 					<description>Custom Weather Script Button</description>
 					<label>$INFO[Skin.String(WeatherScript_Label)]</label>
 					<onclick>SetFocus(50)</onclick>
@@ -1506,17 +1499,16 @@
 					<onclick>SetFocus(50)</onclick>
 					<textwidth>235</textwidth>
 					<width>250</width>
-					<texturenofocus></texturenofocus>
 					<textwidth>200</textwidth>
 					<visible>Skin.HasSetting(WeatherScript_Enable) + !IsEmpty(Skin.String(WeatherScript_Label))</visible>
 				</control>
 				<control type="button" id="4">
+					<texturenofocus></texturenofocus>
 					<description>Settings button</description>
 					<label>5</label>
 					<onclick>ActivateWindow(MyWeatherSettings)</onclick>
 					<textwidth>235</textwidth>
 					<width>250</width>
-					<texturenofocus></texturenofocus>
 					<textwidth>200</textwidth>
 				</control>
 				<control type="label" id="250">
@@ -1527,8 +1519,8 @@
 					<align>center</align>
 				</control>
 				<control type="button" id="251">
-					<width>250</width>
 					<texturenofocus></texturenofocus>
+					<width>250</width>
 					<textwidth>200</textwidth>
 					<label>31317</label>
 					<onclick>Skin.SetPath(WeatherFanartDir)</onclick>

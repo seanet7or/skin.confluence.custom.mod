@@ -324,6 +324,7 @@
 				<posx>10</posx>
 				<posy>120</posy>
 				<width>30</width>
+				<height>40</height>
 				<texture>buttons/spin-left-fo_light.png</texture>
 				<visible>Container(2000).HasPrevious</visible>
 			</control>
@@ -332,6 +333,7 @@
 				<posx>10</posx>
 				<posy>170r</posy>
 				<width>30</width>
+				<height>40</height>
 				<texture>buttons/spin-left-fo_light.png</texture>
 				<visible>Container(2000).HasPrevious</visible>
 			</control>
@@ -340,6 +342,7 @@
 				<posx>1240</posx>
 				<posy>120</posy>
 				<width>30</width>
+				<height>40</height>
 				<texture flipx="true">buttons/spin-left-fo_light.png</texture>
 				<visible>Container(2000).HasNext</visible>
 			</control>
@@ -348,6 +351,7 @@
 				<posx>1240</posx>
 				<posy>170r</posy>
 				<width>30</width>
+				<height>40</height>
 				<texture flipx="true">buttons/spin-left-fo_light.png</texture>
 				<visible>Container(2000).HasNext</visible>
 			</control>
@@ -381,8 +385,6 @@
 				<description>volume Icon</description>
 				<posx>5</posx>
 				<posy>5</posy>
-				<width>35</width>
-				<height>35</height>
 				<aspectratio>keep</aspectratio>
 				<texture>icon_volplus.png</texture>
 				<visible>!Skin.HasSetting(DisableFloorVolumeButtons)</visible>
@@ -409,8 +411,6 @@
 				<description>Volume Icon</description>
 				<posx>60</posx>
 				<posy>5</posy>
-				<width>35</width>
-				<height>35</height>
 				<aspectratio>keep</aspectratio>
 				<texture>icon_volminus.png</texture>
 				<visible>!Skin.HasSetting(DisableFloorVolumeButtons)</visible>
@@ -435,8 +435,6 @@
 				<description>Back Icon</description>
 				<posx>115</posx>
 				<posy>5</posy>
-				<width>35</width>
-				<height>35</height>
 				<aspectratio>keep</aspectratio>
 				<texture>icon_back.png</texture>
 			</control>
@@ -459,8 +457,6 @@
 				<description>Home Icon</description>
 				<posx>170</posx>
 				<posy>5</posy>
-				<width>35</width>
-				<height>35</height>
 				<aspectratio>keep</aspectratio>
 				<texture>icon_home.png</texture>
 			</control>
@@ -496,10 +492,10 @@
 					<align>center</align>
 				</control>
 				<control type="button" id="8">
+					<texturenofocus></texturenofocus>
 					<description>Settings</description>
 					<textwidth>235</textwidth>
 					<width>250</width>
-					<texturenofocus></texturenofocus>
 					<textwidth>200</textwidth>
 					<label>5</label>
 					<onright>200</onright>

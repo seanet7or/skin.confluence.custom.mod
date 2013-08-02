@@ -56,10 +56,10 @@
 					<posy>15</posy>&gt;
 					<width>170</width>
 <height>175</height>
-					<include>CDArtSpinner</include>
-					<texture fallback="livecdcase/DefaultCDArt_small.png" background="true">$INFO[Player.FolderPath,,cdart.png]</texture>
-					<aspectratio align="center">keep</aspectratio>
-				</control>
+<include>CDArtSpinner</include>
+<texture fallback="livecdcase/DefaultCDArt_small.png" background="true">$INFO[Player.FolderPath,,cdart.png]</texture>
+<aspectratio align="center">keep</aspectratio>
+</control>
 				<control type="image">
 					<description>Cover Image</description>
 					<posx>40</posx>
@@ -99,7 +99,7 @@
 					<texture>$INFO[Skin.String(PhysicalMusicFolder)]/$INFO[MusicPlayer.Artist]/logo.png</texture>
 					<aspectratio aligny="bottom" align="left">keep</aspectratio>
 					<visible>!IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
-				</control>				
+				</control>
 				<control type="label" id="1">
 					<description>Artist label</description>
 					<posx>20</posx>
@@ -126,7 +126,6 @@
 					<control type="image">
 						<description>Audio Codec Image</description>
 						<width>80</width>
-						<height>35</height>
 						<aspectratio align="right">keep</aspectratio>
 						<texture>$INFO[MusicPlayer.Codec,flagging/audio/,.png]</texture>
 					</control>
@@ -137,7 +136,6 @@
 						<control type="image">
 							<description>rating back</description>
 							<width>110</width>
-							<height>35</height>
 							<aspectratio align="left">stretch</aspectratio>
 							<texture border="4">flagging/blank.png</texture>
 						</control>
@@ -145,7 +143,6 @@
 							<description>Rating</description>
 							<posx>5</posx>
 							<width>100</width>
-							<height>35</height>
 							<aspectratio align="center">keep</aspectratio>
 							<texture fallback="LeftRating/rating0.png">$INFO[Player.StarRating,LeftRating/]</texture>
 						</control>

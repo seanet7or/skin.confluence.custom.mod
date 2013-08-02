@@ -41,6 +41,7 @@
 			<itemlayout height="46" width="550">
 				<control type="image">
 					<width>550</width>
+					<height>40</height>
 					<texture>buttons/nf_light.png</texture>
 				</control>
 				<control type="label">
@@ -54,11 +55,13 @@
 			<focusedlayout height="46" width="550">
 				<control type="image">
 					<width>550</width>
+					<height>40</height>
 					<texture>buttons/nf_light.png</texture>
 					<visible>!Control.HasFocus(3)</visible>
 				</control>
 				<control type="image">
 					<width>550</width>
+					<height>40</height>
 					<visible>Control.HasFocus(3)</visible>
 				</control>
 				<control type="label">

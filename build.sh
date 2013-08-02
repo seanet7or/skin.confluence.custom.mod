@@ -10,18 +10,23 @@ fi
 2>/dev/null rm -rf "$BUILDDIR/$VERSION"
 
 TARGETDIR="$BUILDDIR/$VERSION/$ADDONNAME"
+
+2>/dev/null rm -rf "$TARGETDIR"
 mkdir -p "$TARGETDIR"
+
+sed "s|version=\"[0-9\.]*\"$|version=\"$VERSION\"|g" -i addon.xml
 
 FILES="fanart.jpg
 icon.png"
 
+IFS=$'\n'
 for F in $FILES ; do
 	cp "$F" "$TARGETDIR/$F"
 done
 
+touch "$TARGETDIR/changelog.txt"
 cp -r 720p "$TARGETDIR"
 cp addon.xml "$TARGETDIR"
-cp changelog.txt "$TARGETDIR"
 cp -r sounds "$TARGETDIR"
 cp LICENSE.GPL.txt "$TARGETDIR" 
 cp -r backgrounds "$TARGETDIR"
@@ -46,5 +51,5 @@ done
 2>/dev/null rm "$BUILDDIR/$VERSION/$ADDONNAME-$VERSION.zip"
 cpulimit -e 7za -l 30 -b
 cd "$TARGETDIR"
+cd ..
 7za a -tzip -mx=9 "$ADDONNAME-$VERSION.zip" "*"
-mv "$ADDONNAME-$VERSION.zip" ..

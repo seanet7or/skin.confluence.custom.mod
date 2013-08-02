@@ -27,6 +27,7 @@
 		<include condition="!Skin.HasSetting(HideNowPlayingInfo)">MediaNowPlaying</include>
 		<include>HomeWidgetPanel</include>
 		<control type="button" id="9003">
+			<texturenofocus></texturenofocus>
 			<posx>-20</posx>
 			<posy>-20</posy>
 			<width>1</width>
@@ -34,7 +35,6 @@
 			<label></label>
 			<font></font>
 			<texturefocus></texturefocus>
-			<texturenofocus></texturenofocus>
 			<onleft>9000</onleft>
 			<onright>9000</onright>
 			<onup>21</onup>
@@ -63,8 +63,6 @@
 			</animation>
 			<control type="image">
 				<description>Background End image</description>
-				<width>35</width>
-				<height>35</height>
 				<colordiffuse>CCFFFFFF</colordiffuse>
 				<texture flipy="true" border="0,2,0,2" flipx="true">HomeSubEnd.png</texture>
 				<animation effect="slide" start="0,0" end="145,0" time="0" condition="Skin.HasSetting(HideHomeSearch)">Conditional</animation>
@@ -100,7 +98,6 @@
 				<control type="image">
 					<description>Background image</description>
 					<width>205</width>
-					<height>35</height>
 					<texture flipy="true" border="0,2,0,2">home/sub-nf_light.png</texture>
 					<colordiffuse>CCFFFFFF</colordiffuse>
 					<animation effect="zoom" start="0,0,205,35" end="0,0,465,35" delay="0" time="300" condition="!Player.HasMedia + !Skin.HasSetting(HideHomeStats)">conditional</animation>
@@ -398,8 +395,6 @@
 				<texturenofocus flipy="true" border="0,2,0,2">home/sub-nf_light.png</texturenofocus>
 				<label>31008</label>
 				<onclick>fullscreen</onclick>
-				<textureradiofocus>GoFullscreen.png</textureradiofocus>
-				<textureradionofocus>GoFullscreen.png</textureradionofocus>
 				<onleft>603</onleft>
 				<onright>612</onright>
 				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
@@ -428,111 +423,7 @@
 				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
 				<effect type="fade" start="100" end="0" time="300" />
 			</animation>
-			<control type="group" id="9001">
-				<posx>0</posx>
-				<posy>70</posy>
-				<onup>9000</onup>
-				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
-				<control type="grouplist" id="9010">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9010</onleft>
-					<onright>9010</onright>
-					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Videos)</visible>
-					<include>HomeSubMenuVideos</include>
-				</control>
-				<control type="grouplist" id="9016">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9016</onleft>
-					<onright>9016</onright>
-					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Movies)</visible>
-					<include>HomeSubMenuMovies</include>
-				</control>
-				<control type="grouplist" id="9017">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9017</onleft>
-					<onright>9017</onright>
-					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),TVShows)</visible>
-					<include>HomeSubMenuTVShows</include>
-				</control>
-				<control type="grouplist" id="9011">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9011</onleft>
-					<onright>9011</onright>
-					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Music)</visible>
-					<include>HomeSubMenuMusic</include>
-				</control>
-				<control type="grouplist" id="9012">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9012</onleft>
-					<onright>9012</onright>
-					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Settings)</visible>
-					<include>HomeSubMenuSystem</include>
-				</control>
-				<control type="grouplist" id="9013">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9013</onleft>
-					<onright>9013</onright>
-					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),PlayDisc)</visible>
-					<include>HomeSubMenuPlayDisc</include>
-				</control>
-				<control type="grouplist" id="9014">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9014</onleft>
-					<onright>9014</onright>
-					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),LiveTV)</visible>
-					<include>HomeSubMenuLiveTV</include>
-				</control>
-				<control type="grouplist" id="9015">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9013</onleft>
-					<onright>9013</onright>
-					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Pictures)</visible>
-					<include>HomeSubMenuPictures</include>
-				</control>
-				<control type="grouplist" id="9019">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9019</onleft>
-					<onright>9019</onright>
-					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Concerts)</visible>
-					<include>HomeSubMenuConcerts</include>
-				</control>
-				<control type="grouplist" id="9020">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9020</onleft>
-					<onright>9020</onright>
-					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Favourites)</visible>
-					<include>HomeSubMenuFavourites</include>
-				</control>
-				<control type="grouplist" id="9021">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9021</onleft>
-					<onright>9021</onright>
-					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),UserOne)</visible>
-					<include>HomeSubMenuUserOne</include>
-				</control>
-				<control type="grouplist" id="9022">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9022</onleft>
-					<onright>9022</onright>
-					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),UserTwo)</visible>
-					<include>HomeSubMenuUserTwo</include>
-				</control>
-				<control type="grouplist" id="9023">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9023</onleft>
-					<onright>9023</onright>
-					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Programs)</visible>
-					<include>HomeSubMenuProg</include>
-				</control>
-				<control type="grouplist" id="9024">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9024</onleft>
-					<onright>9024</onright>
-					<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),UserThree)</visible>
-					<include>HomeSubMenuUserThree</include>
-				</control>
-			</control>
+			<include>HomeSubMenuControl</include>
 			<control type="image">
 				<posx>-100</posx>
 				<width>1480</width>
@@ -564,7 +455,7 @@
 						<font>font_MainMenu</font>
 						<textcolor>buttonnofocus</textcolor>
 						<align>center</align>
-						<label>$VAR[MainItemLabel]</label>
+						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout height="60" width="340">
@@ -583,7 +474,7 @@
 						<font>font_MainMenu</font>
 						<textcolor>buttonfocus</textcolor>
 						<align>center</align>
-						<label>$VAR[MainItemLabel]</label>
+						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</focusedlayout>
 				<content>
@@ -785,174 +676,7 @@
 				</content>
 			</control>
 		</control>
-		<control type="group" id="9002">
-			<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
-			<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
-			<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
-			<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">611</ondown>
-			<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">612</ondown>
-			<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">611</ondown>
-			<control type="fixedlist" id="700">
-				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(700).NumItems,2) | StringCompare(Container(700).NumItems,4)">conditional</animation>
-				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetOne)</visible>
-				<onleft>700</onleft>
-				<onright>700</onright>
-				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
-				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
-				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">611</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">612</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">611</ondown>
-				<include>HomeAddonsCommonLayout</include>
-				<content>
-					<include>HomeAddonSetOne</include>
-				</content>
-			</control>
-			<control type="fixedlist" id="703">
-				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(703).NumItems,2) | StringCompare(Container(703).NumItems,4)">conditional</animation>
-				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetTwo)</visible>
-				<onleft>703</onleft>
-				<onright>703</onright>
-				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
-				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
-				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">611</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">612</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">611</ondown>
-				<include>HomeAddonsCommonLayout</include>
-				<content>
-					<include>HomeAddonSetTwo</include>
-				</content>
-			</control>
-			<control type="fixedlist" id="704">
-				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(704).NumItems,2) | StringCompare(Container(704).NumItems,4)">conditional</animation>
-				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetThree)</visible>
-				<onleft>704</onleft>
-				<onright>704</onright>
-				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
-				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
-				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">611</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">612</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">611</ondown>
-				<include>HomeAddonsCommonLayout</include>
-				<content>
-					<include>HomeAddonSetThree</include>
-				</content>
-			</control>
-			<control type="fixedlist" id="705">
-				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(705).NumItems,2) | StringCompare(Container(705).NumItems,4)">conditional</animation>
-				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetFour)</visible>
-				<onleft>705</onleft>
-				<onright>705</onright>
-				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
-				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
-				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">611</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">612</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">611</ondown>
-				<include>HomeAddonsCommonLayout</include>
-				<content>
-					<include>HomeAddonSetFour</include>
-				</content>
-			</control>
-			<control type="fixedlist" id="706">
-				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(706).NumItems,2) | StringCompare(Container(706).NumItems,4)">conditional</animation>
-				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetFive)</visible>
-				<onleft>706</onleft>
-				<onright>706</onright>
-				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
-				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
-				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">611</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">612</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">611</ondown>
-				<include>HomeAddonsCommonLayout</include>
-				<content>
-					<include>HomeAddonSetFive</include>
-				</content>
-			</control>
-			<control type="fixedlist" id="707">
-				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(707).NumItems,2) | StringCompare(Container(707).NumItems,4)">conditional</animation>
-				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetSix)</visible>
-				<onleft>707</onleft>
-				<onright>707</onright>
-				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
-				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
-				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">611</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">612</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">611</ondown>
-				<include>HomeAddonsCommonLayout</include>
-				<content>
-					<include>HomeAddonSetSix</include>
-				</content>
-			</control>
-			<control type="fixedlist" id="708">
-				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(708).NumItems,2) | StringCompare(Container(708).NumItems,4)">conditional</animation>
-				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetSeven)</visible>
-				<onleft>708</onleft>
-				<onright>708</onright>
-				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
-				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
-				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">611</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">612</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">611</ondown>
-				<include>HomeAddonsCommonLayout</include>
-				<content>
-					<include>HomeAddonSetSeven</include>
-				</content>
-			</control>
-			<control type="fixedlist" id="709">
-				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(709).NumItems,2) | StringCompare(Container(709).NumItems,4)">conditional</animation>
-				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetEight)</visible>
-				<onleft>709</onleft>
-				<onright>709</onright>
-				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
-				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
-				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">611</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">612</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">611</ondown>
-				<include>HomeAddonsCommonLayout</include>
-				<content>
-					<include>HomeAddonSetEight</include>
-				</content>
-			</control>
-			<control type="fixedlist" id="710">
-				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(710).NumItems,2) | StringCompare(Container(710).NumItems,4)">conditional</animation>
-				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetNine)</visible>
-				<onleft>710</onleft>
-				<onright>710</onright>
-				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
-				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
-				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">611</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">612</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">611</ondown>
-				<include>HomeAddonsCommonLayout</include>
-				<content>
-					<include>HomeAddonSetNine</include>
-				</content>
-			</control>
-			<control type="fixedlist" id="711">
-				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(711).NumItems,2) | StringCompare(Container(711).NumItems,4)">conditional</animation>
-				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetTen)</visible>
-				<onleft>711</onleft>
-				<onright>711</onright>
-				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
-				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
-				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + Player.HasMedia">611</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideHomeSearch) + !Player.HasMedia">612</ondown>
-				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideHomeSearch)">611</ondown>
-				<include>HomeAddonsCommonLayout</include>
-				<content>
-					<include>HomeAddonSetTen</include>
-				</content>
-			</control>
-		</control>
+		<include>HomeAddonSystem</include>
 		<control type="group">
 			<posx>0</posx>
 			<posy>33r</posy>
@@ -1007,7 +731,6 @@
 				<height>45</height>
 				<label>31003</label>
 				<font></font>
-				<aligny></aligny>
 				<onclick>ActivateWindow(ShutdownMenu)</onclick>
 				<onleft>21</onleft>
 				<onright>21</onright>
@@ -1020,8 +743,6 @@
 				<description>Power Icon</description>
 				<posx>60</posx>
 				<posy>5</posy>
-				<width>35</width>
-				<height>35</height>
 				<aspectratio>keep</aspectratio>
 				<texture>icon_power.png</texture>
 				<visible>!Skin.HasSetting(AutoHidePowerBtn)</visible>
@@ -1046,8 +767,6 @@
 				<description>Favourites Icon</description>
 				<posx>5</posx>
 				<posy>5</posy>
-				<width>35</width>
-				<height>35</height>
 				<aspectratio>keep</aspectratio>
 				<texture>icon_favourites.png</texture>
 			</control>

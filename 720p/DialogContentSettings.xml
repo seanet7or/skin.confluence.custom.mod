@@ -109,12 +109,12 @@
 				<itemlayout height="45">
 					<control type="image">
 						<width>360</width>
+						<height>40</height>
 						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="image">
 						<posx>5</posx>
 						<posy>5</posy>
-						<width>35</width>
 						<height>30</height>
 						<texture>$INFO[Listitem.Icon]</texture>
 					</control>
@@ -129,17 +129,18 @@
 				<focusedlayout height="45">
 					<control type="image">
 						<width>360</width>
+						<height>40</height>
 						<visible>!Control.HasFocus(4)</visible>
 						<texture>buttons/nf_light.png</texture>
 					</control>
 					<control type="image">
 						<width>360</width>
+						<height>40</height>
 						<visible>Control.HasFocus(4)</visible>
 					</control>
 					<control type="image">
 						<posx>5</posx>
 						<posy>5</posy>
-						<width>35</width>
 						<height>30</height>
 						<texture>$INFO[Listitem.Icon]</texture>
 					</control>

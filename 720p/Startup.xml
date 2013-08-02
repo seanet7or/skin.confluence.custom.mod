@@ -12,21 +12,21 @@
 			<visible>!Skin.HasSetting(HideStartUpBackground)</visible>
 		</control>
 		<control type="button" id="10">
+			<texturenofocus></texturenofocus>
 			<width>300</width>
 			<height>42</height>
 			<description>trigger</description>
 			<onfocus>ReplaceWindow(Home)</onfocus>
-			<texturenofocus></texturenofocus>
 			<texturefocus></texturefocus>
 			<visible>!Skin.HasSetting(Use_Startup_Playlist)</visible>
 		</control>
 		<control type="button" id="10">
+			<texturenofocus></texturenofocus>
 			<width>300</width>
 			<height>42</height>
 			<description>trigger with startup Playlist</description>
 			<onfocus>XBMC.PlayMedia($INFO[Skin.String(Startup_Playlist_Path)])</onfocus>
 			<onfocus>ReplaceWindow(Home)</onfocus>
-			<texturenofocus></texturenofocus>
 			<texturefocus></texturefocus>
 			<visible>Skin.HasSetting(Use_Startup_Playlist)</visible>
 		</control>

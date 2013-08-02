@@ -155,12 +155,12 @@
 			<control type="group">
 				<animation effect="slide" start="0,0" end="40,0" time="0" condition="!Player.HasAudio">Conditional</animation>
 				<control type="button" id="609">
+					<texturenofocus></texturenofocus>
 					<posx>325</posx>
 					<posy>0</posy>
 					<width>40</width>
 					<label></label>
 					<texturefocus></texturefocus>
-					<texturenofocus></texturenofocus>
 					<onclick>XBMC.PlayerControl(Repeat)</onclick>
 					<onleft>608</onleft>
 					<onright>610</onright>
@@ -171,6 +171,7 @@
 				<control type="image">
 					<posx>325</posx>
 					<width>40</width>
+					<height>40</height>
 					<texture>OSD/OSDRepeatNF.png</texture>
 					<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
 					<visible>!Control.HasFocus(609)</visible>
@@ -179,6 +180,7 @@
 				<control type="image">
 					<posx>325</posx>
 					<width>40</width>
+					<height>40</height>
 					<texture>OSD/OSDRepeatFO.png</texture>
 					<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
 					<visible>Control.HasFocus(609)</visible>
@@ -187,6 +189,7 @@
 				<control type="image">
 					<posx>325</posx>
 					<width>40</width>
+					<height>40</height>
 					<texture>OSD/OSDRepeatOneNF.png</texture>
 					<visible>Playlist.IsRepeatOne</visible>
 					<visible>!Control.HasFocus(609)</visible>
@@ -195,6 +198,7 @@
 				<control type="image">
 					<posx>325</posx>
 					<width>40</width>
+					<height>40</height>
 					<texture>OSD/OSDRepeatOneFO.png</texture>
 					<visible>Playlist.IsRepeatOne</visible>
 					<visible>Control.HasFocus(609)</visible>
@@ -203,6 +207,7 @@
 				<control type="image">
 					<posx>325</posx>
 					<width>40</width>
+					<height>40</height>
 					<texture>OSD/OSDRepeatAllNF.png</texture>
 					<visible>Playlist.IsRepeat</visible>
 					<visible>!Control.HasFocus(609)</visible>
@@ -211,6 +216,7 @@
 				<control type="image">
 					<posx>325</posx>
 					<width>40</width>
+					<height>40</height>
 					<texture>OSD/OSDRepeatAllFO.png</texture>
 					<visible>Playlist.IsRepeat</visible>
 					<visible>Control.HasFocus(609)</visible>
