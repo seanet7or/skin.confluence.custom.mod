@@ -245,6 +245,15 @@
 					<selected>system.ismaster</selected>
 					<visible>system.haslocks</visible>
 				</control>
+				<control type="button" id="104">
+					<texturenofocus></texturenofocus>
+					<description>Trakt.tv</description>
+					<width>250</width>
+					<textwidth>200</textwidth>
+					<label>31077</label>
+					<onclick>RunScript(script.trakt,action=contextmenu)</onclick>
+					<visible>System.HasAddon(plugin.video.trakt_list_manager)</visible>
+				</control>					
 				<include>CommonNowPlaying_Controls</include>
 			</control>
 		</control>

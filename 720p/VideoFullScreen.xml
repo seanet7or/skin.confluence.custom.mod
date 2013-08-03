@@ -49,7 +49,7 @@
 				<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
 				<animation effect="slide" start="0,0" end="0,-50" time="100" condition="Window.IsVisible(busydialog)">conditional</animation>
 				<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(volumebar)">Conditional</animation>
-				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
+				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD) | Player.ShowInfo</visible>
 				<visible>!Skin.HasSetting(HideSystemClock)</visible>
 			</control>
 		</control>
@@ -58,7 +58,7 @@
 			<visible>![Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
 			<control type="group" id="1">
 				<visible>!Skin.HasSetting(HidePauseInfo) + !IsEmpty(VideoPlayer.Plot) + Player.Paused + !Player.Caching</visible>
-				<animation effect="slide" end="-300,160" time="100" tween="back" easing="out" condition="!Window.IsActive(VideoOSD) + Skin.HasSetting(HideSeekBarOSD)" reversible="true">Conditional</animation>
+				<animation effect="slide" end="-300,160" time="100" tween="back" easing="out" condition="!Window.IsActive(VideoOSD) + !Player.ShowInfo + Skin.HasSetting(HideSeekBarOSD)" reversible="true">Conditional</animation>
 				<posx>320</posx>
 				<posy>395r</posy>
 				<control type="image" id="1">
@@ -83,7 +83,7 @@
 				<width>1280</width>
 				<height>230</height>
 				<texture>HomeNowPlayingBack.png</texture>
-				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
+				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD) | Player.ShowInfo</visible>
 			</control>
 			<control type="group" id="1">
 				<control type="image" id="1">
@@ -117,7 +117,7 @@
 					<visible>[IsEmpty(Player.Art(clearart)) + IsEmpty(Player.Art(clearlogo)) + !Skin.HasSetting(OSDInfoLogo)] | [IsEmpty(Player.Art(clearlogo)) + Skin.HasSetting(OSDInfoLogo)]</visible>
 				</control>
 				<visible>VideoPlayer.Content(Movies)</visible>
-				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
+				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD) | Player.ShowInfo</visible>
 			</control>
 			<control type="group" id="1">
 				<control type="image" id="1">
@@ -151,7 +151,7 @@
 					<visible>[IsEmpty(Player.Art(tvshow.clearart)) + IsEmpty(Player.Art(tvshow.clearlogo)) + !Skin.HasSetting(OSDInfoLogo)] | [IsEmpty(Player.Art(tvshow.clearlogo)) + Skin.HasSetting(OSDInfoLogo)]</visible>
 				</control>
 				<visible>VideoPlayer.Content(Episodes)</visible>
-				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
+				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD) | Player.ShowInfo</visible>
 			</control>
 			<control type="image" id="1">
 				<description>cover image</description>
@@ -162,10 +162,10 @@
 				<texture fallback="DefaultVideoCover.png">$INFO[Player.Art(thumb)]</texture>
 				<aspectratio aligny="bottom">keep</aspectratio>
 				<visible>!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes)</visible>
-				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
+				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD) | Player.ShowInfo</visible>
 			</control>
 			<control type="group" id="1">
-				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
+				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD) | Player.ShowInfo</visible>
 				<posx>330</posx>
 				<posy>190r</posy>
 				<control type="label" id="1">
@@ -290,7 +290,7 @@
 			<control type="group" id="1">
 				<posx>330</posx>
 				<posy>100r</posy>
-				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
+				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD) | Player.ShowInfo</visible>
 				<visible>!VideoPlayer.Content(LiveTV) | [VideoPlayer.Content(LiveTV) + VideoPlayer.HasEpg]</visible>
 				<control type="label" id="1">
 					<visible>!VideoPlayer.Content(LiveTV)</visible>
