@@ -23,7 +23,7 @@
 	<onload condition="!Skin.HasSetting(DisableScriptPlayList) + !IsEmpty(Skin.String(HomeItem.10.Playlist))">XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(HomeItem.10.Playlist)],method=$VAR[RandomOrLastAction],limit=10,unwatched=$VAR[RandomOrLastUnWatched],resume=False,property=HomePlayListTen)</onload>
 	<controls>
 		<include>CommonBackground</include>
-		<include>BackgroundRainDropEffect</include>
+		<include  condition="!Skin.HasSetting(EnableMinSpec)">BackgroundRainDropEffect</include>
 		<include condition="!Skin.HasSetting(HideNowPlayingInfo)">MediaNowPlaying</include>
 		<include>HomeWidgetPanel</include>
 		<control type="button" id="9003">

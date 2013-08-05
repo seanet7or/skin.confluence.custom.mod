@@ -44,10 +44,21 @@
 		<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 	</include>
 	<include name="DefaultInitialSetup">
+		<onload condition="System.HasAddon(script.raspbmc.settings)">Skin.Setbool(EnableMinSpec)</onload>
 		<onload condition="!System.HasAddon(script.globalsearch)">Skin.Setbool(HideHomeSearch)</onload>
 		<onload condition="!System.HasAddon(script.randomandlastitems)">Skin.Setbool(DisableScriptPlayList)</onload>
 		<onload>Skin.SetString(WeatherFanartDir,)</onload>
 		<onload>Skin.SetString(UsrGenreFanartDir,)</onload>
+		<onload condition="Skin.HasSetting(EnableMinSpec)">Skin.Setbool(GlobalBackground)</onload>
+		<onload condition="Skin.HasSetting(EnableMinSpec)">Skin.Setbool(HideBusyAnimation)</onload>
+		<onload condition="Skin.HasSetting(EnableMinSpec)">Skin.Setbool(MediaShortDescription)</onload>
+		<onload condition="Skin.HasSetting(EnableMinSpec)">Skin.Setbool(HideBackGroundFanart)</onload>
+		<onload condition="Skin.HasSetting(EnableMinSpec)">Skin.Setbool(ShowBackgroundVis)</onload>
+		<onload condition="Skin.HasSetting(EnableMinSpec)">Skin.Setbool(HideHomeStats)</onload>
+		<onload condition="Skin.HasSetting(EnableMinSpec)">Skin.Setbool(HideVisualizationCDart)</onload>
+		<onload condition="Skin.HasSetting(EnableMinSpec)">Skin.Setbool(HideVisualizationFanart)</onload>
+		<onload condition="Skin.HasSetting(EnableMinSpec)">Skin.Setbool(HideNextSongsInfo)</onload>
+		<onload condition="Skin.HasSetting(EnableMinSpec)">Skin.Setbool(HideXBMCIntro)</onload>
 		<onload>Skin.SetBool(ShowWeatherFanart)</onload>
 		<onload>Skin.SetBool(ShowMovieDBFanart)</onload>
 		<onload>Skin.SetBool(ShowTVShowDBFanart)</onload>
@@ -810,7 +821,7 @@
 		<control type="group">
 			<posx>20</posx>
 			<posy>0</posy>
-			<visible>!IsEmpty(Weather.Conditions) + Weather.IsFetched + !IsEmpty(Weather.Plugin) + Skin.HasSetting(HideSystemWeather)</visible>
+			<visible>!Skin.HasSetting(EnableMinSpec) + !IsEmpty(Weather.Conditions) + Weather.IsFetched + !IsEmpty(Weather.Plugin) + Skin.HasSetting(HideSystemWeather)</visible>
 			<visible>![Window.IsVisible(FullscreenVideo) | Window.IsVisible(Visualisation)  | Window.IsVisible(loginscreen)]</visible>
 			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(infodialog)">Conditional</animation>
 			<include>Window_OpenClose_Animation</include>

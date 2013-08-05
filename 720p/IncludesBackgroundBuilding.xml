@@ -274,6 +274,7 @@
 			<height>720</height>
 			<width>1280</width>
 			<texture>special://skin/backgrounds/default_light.jpg</texture>
+			<visible>!Skin.HasSetting(EnableMinSpec)</visible>
 			<visible>Player.HasVideo + ![Window.IsVisible(PVR) + [Control.IsVisible(11) | Control.IsVisible(12)]]</visible>
 		</control>
 		<control type="group">
@@ -287,6 +288,7 @@
 		<control type="videowindow">
 			<posy>0</posy>
 			<posx>0</posx>
+			<visible>!Skin.HasSetting(EnableMinSpec)</visible>
 			<visible>Player.HasVideo + ![Window.IsVisible(PVR) + [Control.IsVisible(11) | Control.IsVisible(12)]]</visible>
 		</control>
 	</include>

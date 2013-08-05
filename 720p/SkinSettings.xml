@@ -165,252 +165,273 @@
 						<textcolor>heading2</textcolor>
 					</control>
 					<control type="radiobutton" id="101">
+						<label>31079</label>
+						<onclick>Skin.ToggleSetting(EnableMinSpec)</onclick>
+						<onclick>Skin.Setbool(GlobalBackground)</onclick>
+						<onclick>Skin.Setbool(HideBusyAnimation)</onclick>
+						<onclick>Skin.Setbool(MediaShortDescription)</onclick>
+						<onclick>Skin.Setbool(HideBackGroundFanart)</onclick>
+						<onclick>Skin.Setbool(ShowBackgroundVis)</onclick>
+						<onclick>Skin.Setbool(HideHomeStats)</onclick>
+						<onclick>Skin.Setbool(HideVisualizationCDart)</onclick>
+						<onclick>Skin.Setbool(HideVisualizationFanart)</onclick>
+						<onclick>Skin.Setbool(HideNextSongsInfo)</onclick>
+						<onclick>Skin.Setbool(HideXBMCIntro)</onclick>
+						<onclick>Skin.Reset(AutoScroll)</onclick>
+						<selected>Skin.HasSetting(EnableMinSpec)</selected>
+					</control>					
+					<control type="radiobutton" id="102">
 						<label>29801</label>
 						<onclick>Skin.ToggleSetting(ABCKeyBoard)</onclick>
 						<selected>!Skin.HasSetting(ABCKeyBoard)</selected>
 					</control>
-					<control type="radiobutton" id="102">
+					<control type="radiobutton" id="103">
 						<label>31366</label>
 						<onclick>Skin.ToggleSetting(HideSystemClock)</onclick>
 						<selected>!Skin.HasSetting(HideSystemClock)</selected>
 					</control>
-					<control type="radiobutton" id="103">
+					<control type="radiobutton" id="104">
 						<label>31376</label>
 						<onclick>Skin.ToggleSetting(HideSystemWeather)</onclick>
 						<selected>Skin.HasSetting(HideSystemWeather)</selected>
+						<enable>!Skin.HasSetting(EnableMinSpec)</enable>
 						<visible>!IsEmpty(Weather.Plugin)</visible>
 					</control>
-					<control type="radiobutton" id="104">
+					<control type="radiobutton" id="105">
 						<label>31152</label>
 						<onclick>Skin.ToggleSetting(KioskMode)</onclick>
 						<selected>Skin.HasSetting(KioskMode)</selected>
 					</control>
-					<control type="radiobutton" id="105">
+					<control type="radiobutton" id="106">
 						<label>31124</label>
 						<onclick>Skin.ToggleSetting(HideBusyAnimation)</onclick>
+						<enable>!Skin.HasSetting(EnableMinSpec)</enable>
 						<selected>!Skin.HasSetting(HideBusyAnimation)</selected>
 					</control>
-					<control type="radiobutton" id="106">
+					<control type="radiobutton" id="107">
 						<label>31671</label>
 						<onclick>Skin.ToggleSetting(DisableHomeReturnButtons)</onclick>
 						<selected>!Skin.HasSetting(DisableHomeReturnButtons)</selected>
 					</control>
-					<control type="radiobutton" id="107">
+					<control type="radiobutton" id="108">
 						<label>31675</label>
 						<onclick>Skin.ToggleSetting(DisableFloorVolumeButtons)</onclick>
 						<selected>!Skin.HasSetting(DisableFloorVolumeButtons)</selected>
 					</control>
-					<control type="radiobutton" id="108">
+					<control type="radiobutton" id="109">
 						<label>31677</label>
 						<onclick>Skin.ToggleSetting(SmallVolumeJump)</onclick>
 						<selected>!Skin.HasSetting(SmallVolumeJump)</selected>
 						<enable>!Skin.HasSetting(DisableFloorVolumeButtons)</enable>
 					</control>
-					<control type="radiobutton" id="109">
+					<control type="radiobutton" id="110">
 						<label>$LOCALIZE[31359] "$LOCALIZE[31316]"</label>
 						<onclick>Skin.ToggleSetting(ParentDirLabel)</onclick>
 						<selected>!Skin.HasSetting(ParentDirLabel)</selected>
 					</control>
-					<control type="radiobutton" id="110">
+					<control type="radiobutton" id="111">
 						<label>31117</label>
 						<onclick>Skin.ToggleSetting(MediaShortDescription)</onclick>
 						<selected>Skin.HasSetting(MediaShortDescription)</selected>
 					</control>
-					<control type="radiobutton" id="112">
+					<control type="radiobutton" id="113">
 						<label>31119</label>
 						<onclick>Skin.ToggleSetting(HideBackGroundFanart)</onclick>
+						<enable>!Skin.HasSetting(EnableMinSpec)</enable>
 						<selected>Skin.HasSetting(HideBackGroundFanart)</selected>
 					</control>
-					<control type="radiobutton" id="113">
+					<control type="radiobutton" id="114">
 						<label>31358</label>
 						<onclick>Skin.ToggleSetting(HideEpisodeThumb)</onclick>
 						<selected>!Skin.HasSetting(HideEpisodeThumb)</selected>
 					</control>
-					<control type="radiobutton" id="114">
+					<control type="radiobutton" id="115">
 						<label>31125</label>
 						<onclick>Skin.ToggleSetting(ShowBackgroundVis)</onclick>
+						<enable>!Skin.HasSetting(EnableMinSpec)</enable>
 						<selected>!Skin.HasSetting(ShowBackgroundVis)</selected>
 					</control>
-					<control type="label" id="115">
+					<control type="label" id="116">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>31101</label>
 						<textcolor>heading2</textcolor>
 					</control>
-					<control type="radiobutton" id="116">
+					<control type="radiobutton" id="117">
 						<description>enable Now Playing Info</description>
 						<label>31075</label>
 						<onclick>Skin.ToggleSetting(HideNowPlayingInfo)</onclick>
 						<selected>!Skin.HasSetting(HideNowPlayingInfo)</selected>
 					</control>
-					<control type="radiobutton" id="117">
+					<control type="radiobutton" id="118">
 						<description>Show System Stats</description>
 						<label>31113</label>
 						<onclick>Skin.ToggleSetting(HideHomeStats)</onclick>
 						<selected>!Skin.HasSetting(HideHomeStats)</selected>
 					</control>
-					<control type="radiobutton" id="118">
+					<control type="radiobutton" id="119">
 						<description>Raise Main Menu</description>
 						<label>31137</label>
 						<onclick>Skin.ToggleSetting(RaiseMainMenuBar)</onclick>
 						<selected>!Skin.HasSetting(RaiseMainMenuBar)</selected>
 					</control>
-					<control type="radiobutton" id="119">
+					<control type="radiobutton" id="120">
 						<description>Show Global Search</description>
 						<label>31129</label>
 						<onclick>Skin.ToggleSetting(HideHomeSearch)</onclick>
 						<selected>!Skin.HasSetting(HideHomeSearch)</selected>
 						<enable>System.HasAddon(script.globalsearch)</enable>
 					</control>
-					<control type="button" id="120">
+					<control type="button" id="121">
 						<texturenofocus></texturenofocus>
 						<label> - $LOCALIZE[31371]</label>
 						<onclick>Addon.OpenSettings(script.globalsearch)</onclick>
 						<enable>!Skin.HasSetting(HideHomeSearch)</enable>
 						<visible>System.HasAddon(script.globalsearch)</visible>
 					</control>
-					<control type="radiobutton" id="121">
+					<control type="radiobutton" id="122">
 						<label>31108</label>
 						<onclick>Skin.ToggleSetting(AutoHideSubMenu)</onclick>
 						<selected>!Skin.HasSetting(AutoHideSubMenu)</selected>
 					</control>
-					<control type="radiobutton" id="122">
+					<control type="radiobutton" id="123">
 						<label>31209</label>
 						<onclick>Skin.ToggleSetting(HideHomeAddonName)</onclick>
 						<selected>!Skin.HasSetting(HideHomeAddonName)</selected>
 					</control>
-					<control type="radiobutton" id="123">
+					<control type="radiobutton" id="124">
 						<label>31114</label>
 						<onclick>Skin.ToggleSetting(AutoHidePowerBtn)</onclick>
 						<selected>!Skin.HasSetting(AutoHidePowerBtn)</selected>
 					</control>
-					<control type="radiobutton" id="124">
+					<control type="radiobutton" id="125">
 						<label>31187</label>
 						<onclick>Skin.ToggleSetting(HideWidgetFanArt)</onclick>
 						<selected>!Skin.HasSetting(HideWidgetFanArt)</selected>
 						<enable>!Skin.HasSetting(HideBackGroundFanart)</enable>
 					</control>
-					<control type="radiobutton" id="125">
+					<control type="radiobutton" id="126">
 						<description>RainDrop Effect</description>
 						<label>$LOCALIZE[31672]</label>
 						<onclick>Skin.ToggleSetting(HideRainDropEffect)</onclick>
 						<selected>Skin.HasSetting(HideRainDropEffect)</selected>
+						<enable>!Skin.HasSetting(EnableMinSpec)</enable>
 					</control>
-					<control type="label" id="126">
+					<control type="label" id="127">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>31062</label>
 						<textcolor>heading2</textcolor>
 					</control>
-					<control type="radiobutton" id="127">
+					<control type="radiobutton" id="128">
 						<label>31076</label>
 						<onclick>Skin.ToggleSetting(AutoStartVisualization)</onclick>
 						<selected>Skin.HasSetting(AutoStartVisualization)</selected>
 					</control>
-					<control type="radiobutton" id="128">
+					<control type="radiobutton" id="129">
 						<label>31069</label>
 						<onclick>Skin.ToggleSetting(HideVisualizationCDart)</onclick>
 						<selected>!Skin.HasSetting(HideVisualizationCDart)</selected>
 					</control>
-					<control type="radiobutton" id="129">
+					<control type="radiobutton" id="130">
 						<label>31089</label>
 						<onclick>Skin.ToggleSetting(HideTraditionalCDart)</onclick>
 						<selected>!Skin.HasSetting(HideTraditionalCDart)</selected>
 						<enable>!Skin.HasSetting(HideVisualizationCDart)</enable>
 					</control>
-					<control type="radiobutton" id="130">
+					<control type="radiobutton" id="131">
 						<label>$LOCALIZE[31673]</label>
 						<onclick>Skin.ToggleSetting(ShowBackgroundAlbumWall)</onclick>
 						<onclick>Skin.SetBool(HideVisualizationFanart)</onclick>
 						<selected>Skin.HasSetting(ShowBackgroundAlbumWall)</selected>
 					</control>
-					<control type="radiobutton" id="131">
+					<control type="radiobutton" id="132">
 						<label>31063</label>
 						<onclick>Skin.ToggleSetting(HideVisualizationFanart)</onclick>
 						<onclick>Skin.Reset(ShowBackgroundAlbumWall)</onclick>
 						<selected>!Skin.HasSetting(HideVisualizationFanart)</selected>
 					</control>
-					<control type="radiobutton" id="132">
+					<control type="radiobutton" id="133">
 						<label>31067</label>
 						<onclick>Skin.ToggleSetting(AnimateVizFanart)</onclick>
 						<selected>Skin.HasSetting(AnimateVizFanart)</selected>
 						<enable>!Skin.HasSetting(HideVisualizationFanart)</enable>
 					</control>
-					<control type="radiobutton" id="133">
+					<control type="radiobutton" id="134">
 						<label>31064</label>
 						<onclick>Skin.ToggleSetting(AllowTransparentFanart)</onclick>
 						<selected>Skin.HasSetting(AllowTransparentFanart)</selected>
 						<enable>!Skin.HasSetting(HideVisualizationFanart)</enable>
 					</control>
-					<control type="radiobutton" id="134">
+					<control type="radiobutton" id="135">
 						<label>31065</label>
 						<onclick>Skin.ToggleSetting(AllowVizExtraFanart)</onclick>
 						<onclick>Skin.Reset(AllowSlideShowArt)</onclick>
 						<selected>Skin.HasSetting(AllowVizExtraFanart)</selected>
 						<enable>!Skin.HasSetting(HideVisualizationFanart)</enable>
 					</control>
-					<control type="radiobutton" id="135">
+					<control type="radiobutton" id="136">
 						<label>31066</label>
 						<onclick>Skin.ToggleSetting(AllowSlideShowArt)</onclick>
 						<onclick>Skin.Reset(AllowVizExtraFanart)</onclick>
 						<selected>Skin.HasSetting(AllowSlideShowArt)</selected>
 						<enable>System.HasAddon(script.artistslideshow) + !Skin.HasSetting(HideVisualizationFanart)</enable>
 					</control>
-					<control type="radiobutton" id="136">
+					<control type="radiobutton" id="137">
 						<label>31070</label>
 						<onclick>Skin.ToggleSetting(AllowSlideShowBio)</onclick>
 						<selected>Skin.HasSetting(AllowSlideShowBio)</selected>
 						<enable>System.HasAddon(script.artistslideshow)</enable>
 					</control>
-					<control type="button" id="137">
+					<control type="button" id="138">
 						<texturenofocus></texturenofocus>
 						<label>- $LOCALIZE[31364]</label>
 						<onclick>Addon.OpenSettings(script.artistslideshow)</onclick>
 						<enable>Skin.HasSetting(AllowSlideShowArt) | Skin.HasSetting(AllowSlideShowBio)</enable>
 						<visible>System.HasAddon(script.artistslideshow)</visible>
 					</control>
-					<control type="label" id="138">
+					<control type="label" id="139">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>31072</label>
 						<textcolor>heading2</textcolor>
 					</control>
-					<control type="radiobutton" id="139">
+					<control type="radiobutton" id="140">
 						<label>31071</label>
 						<onclick>Skin.ToggleSetting(HideInfoStartOSD)</onclick>
 						<selected>!Skin.HasSetting(HideInfoStartOSD)</selected>
 					</control>
-					<control type="radiobutton" id="140">
+					<control type="radiobutton" id="141">
 						<label>31073</label>
 						<onclick>Skin.ToggleSetting(HidePauseInfo)</onclick>
 						<selected>!Skin.HasSetting(HidePauseInfo)</selected>
 					</control>
-					<control type="radiobutton" id="141">
+					<control type="radiobutton" id="142">
 						<label>$LOCALIZE[31126]</label>
 						<onclick>Skin.ToggleSetting(OSDInfoLogo)</onclick>
 						<selected>Skin.HasSetting(OSDInfoLogo)</selected>
 					</control>
-					<control type="radiobutton" id="142">
+					<control type="radiobutton" id="143">
 						<label>$LOCALIZE[31083]</label>
 						<onclick>Skin.ToggleSetting(HideSeekBarOSD)</onclick>
 						<selected>!Skin.HasSetting(HideSeekBarOSD)</selected>
 					</control>
-					<control type="label" id="143">
+					<control type="label" id="144">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>31106</label>
 						<textcolor>heading2</textcolor>
 					</control>
-					<control type="radiobutton" id="144">
+					<control type="radiobutton" id="145">
 						<label>31365</label>
 						<onclick>Skin.ToggleSetting(HideNextSongsInfo)</onclick>
 						<selected>!Skin.HasSetting(HideNextSongsInfo)</selected>
 					</control>
-					<control type="button" id="145">
+					<control type="button" id="146">
 						<texturenofocus></texturenofocus>
 						<label>$LOCALIZE[31111]</label>
 						<label2>[COLOR=heading3]$VAR[WatchTypeName][/COLOR]</label2>
@@ -418,47 +439,47 @@
 						<onclick condition="stringcompare(Container(9009).ListItem.Label,Default)">Skin.Reset(WatchStatusType)</onclick>
 						<onclick condition="!stringcompare(Container(9009).ListItem.Label,Default)">Skin.SetString(WatchStatusType,$INFO[Container(9009).ListItem.Label])</onclick>
 					</control>
-					<control type="radiobutton" id="146">
+					<control type="radiobutton" id="147">
 						<label>20189</label>
 						<onclick>Skin.ToggleSetting(AutoScroll)</onclick>
 						<selected>Skin.HasSetting(AutoScroll)</selected>
 					</control>
-					<control type="radiobutton" id="147">
+					<control type="radiobutton" id="148">
 						<label>31103</label>
 						<onclick>Skin.ToggleSetting(Show_SlideShow_Paused)</onclick>
 						<selected>!Skin.HasSetting(Show_SlideShow_Paused)</selected>
 					</control>
-					<control type="radiobutton" id="148">
+					<control type="radiobutton" id="149">
 						<label>31104</label>
 						<onclick>Skin.ToggleSetting(WindowedTrailer)</onclick>
 						<selected>Skin.HasSetting(WindowedTrailer)</selected>
 					</control>
-					<control type="button" id="149">
+					<control type="button" id="150">
 						<texturenofocus></texturenofocus>
 						<label>$LOCALIZE[31698]</label>
 						<label2>[COLOR=heading3]$VAR[UsrMPAACountry][/COLOR]</label2>
 						<onclick>Control.Move(9008,1)</onclick>
 						<onclick>Skin.SetString(MPAACountryCert,$INFO[Container(9008).ListItem.Label])</onclick>
 					</control>
-					<control type="label" id="150">
+					<control type="label" id="151">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>$LOCALIZE[31007]</label>
 						<textcolor>heading2</textcolor>
 					</control>
-					<control type="group" id="151">
+					<control type="group" id="152">
 						<width>750</width>
 						<height>40</height>
-						<control type="grouplist" id="152">
+						<control type="grouplist" id="153">
 							<orientation>horizontal</orientation>
 							<width>750</width>
 							<height>40</height>
 							<itemgap>0</itemgap>
-							<onup>149</onup>
+							<onup>150</onup>
 							<ondown>160</ondown>
 							<align>left</align>
-							<control type="radiobutton" id="153">
+							<control type="radiobutton" id="154">
 								<description>Default</description>
 								<width>150</width>
 								<label> $LOCALIZE[571]</label>
@@ -466,7 +487,7 @@
 								<onclick>Skin.Reset(MediaPanelTrans)</onclick>
 								<selected>IsEmpty(Skin.String(MediaPanelTrans))</selected>
 							</control>
-							<control type="radiobutton" id="154">
+							<control type="radiobutton" id="155">
 								<description>Step 1</description>
 								<width>150</width>
 								<label> $LOCALIZE[31368] 1</label>
@@ -474,7 +495,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,EEEEEEEE)</onclick>
 								<selected>stringcompare(Skin.String(MediaPanelTrans),EEEEEEEE)</selected>
 							</control>
-							<control type="radiobutton" id="155">
+							<control type="radiobutton" id="156">
 								<description>Step 2</description>
 								<width>150</width>
 								<label> $LOCALIZE[31368] 2</label>
@@ -482,7 +503,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,DDDDDDDD)</onclick>
 								<selected>stringcompare(Skin.String(MediaPanelTrans),DDDDDDDD)</selected>
 							</control>
-							<control type="radiobutton" id="156">
+							<control type="radiobutton" id="157">
 								<description>Step 3</description>
 								<width>150</width>
 								<label> $LOCALIZE[31368] 3</label>
@@ -490,7 +511,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,CCCCCCCC)</onclick>
 								<selected>stringcompare(Skin.String(MediaPanelTrans),CCCCCCCC)</selected>
 							</control>
-							<control type="radiobutton" id="157">
+							<control type="radiobutton" id="158">
 								<description>Step 4</description>
 								<width>150</width>
 								<label> $LOCALIZE[31368] 4</label>
@@ -500,19 +521,19 @@
 							</control>
 						</control>
 					</control>
-					<control type="label" id="158">
+					<control type="label" id="159">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
 						<label>512</label>
 						<textcolor>heading2</textcolor>
 					</control>
-					<control type="radiobutton" id="160">
+					<control type="radiobutton" id="161">
 						<label>21398</label>
 						<onclick>Skin.ToggleSetting(Use_Startup_Playlist)</onclick>
 						<selected>Skin.HasSetting(Use_Startup_Playlist)</selected>
 					</control>
-					<control type="button" id="161">
+					<control type="button" id="162">
 						<texturenofocus></texturenofocus>
 						<description>Startup Playlist Path</description>
 						<label>15311</label>
